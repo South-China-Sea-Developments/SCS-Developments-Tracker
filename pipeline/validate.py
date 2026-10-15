@@ -8,13 +8,16 @@ Rules (docs/spec.md, "Validator"):
   SOURCE_EVENT    a source must point at an existing event
   EVENT_NO_SOURCE an accepted event must have at least one source
   DUPLICATE       identifiers are unique
-  COMPARABILITY   CN/VN/PH 1970-2015 moves with coded_by=chubb equal MATS 1.02 (counts per
-                  claimant-year, Type totals, and every field of every row) apart from
-                  corrections documented in corrections.csv
+  COMPARABILITY   accepted CN/VN/PH moves for 1970-2015 equal MATS 1.02: counts per claimant-year
+                  and Type totals over ALL accepted moves in that scope (whoever coded them), and
+                  every xlsx field of every coded_by=chubb row (plus the two MAVD-only columns),
+                  apart from corrections documented in corrections.csv. Packed codes are a
+                  function of the flags, so the field-by-field check covers them.
+  (CODE also covers corrections.csv rows: known move, known field.)
 
-The comparability check reads the raw xlsx with its own small reader, independent of the loader.
+The comparability check reads the raw inputs with its own small reader, independent of the loader.
 
-Usage: python -m pipeline.validate [--data data] [--xlsx data/raw/mats-1.02/MATS_1-02_all_cases.xlsx]
+Usage: python -m pipeline.validate [--data DIR] [--xlsx FILE] [--mavd FILE]
 """
 from __future__ import annotations
 
@@ -26,19 +29,9 @@ from pathlib import Path
 
 from pipeline import schema
 
-XLSX_FIELDS = {  # canonical column -> xlsx column
-    "claimant": "CountryCode", "year": "Year", "dyads": "Dyads",
-    "description": "Case description and sources", "ongoing_through": "Ongoing through",
-    "ongoing_through_notes": "Ongoing through notes", "org_case_no": "OrgCaseNo",
-    "declarative": "Declarative", "demonstrative": "Demonstrative", "coercive": "Coercive", "force": "Force",
-    "domestic": "Domestic", "diplomatic": "Diplomatic", "physical": "Physical",
-    "military": "Military", "administrative": "Administrative", "energy": "Energy",
-    "fisheries": "Fisheries", "politics": "Politics",
-    "loc01_tonkin": "Tonkin", "loc02_paracels": "Paracels", "loc03_central_west": "CentralWest",
-    "loc04_central_east": "CentralEast", "loc05_spratly_nw": "SpratlyNW", "loc06_spratly_ne": "SpratlyNE",
-    "loc07_spratly_se": "SpratlySE", "loc08_spratly_sw": "SpratlySW", "loc09_nam_con_son": "NamConSon",
-    "loc10_far_south": "FarSouth",
-}
+ROOT = Path(__file__).resolve().parents[1]
+XLSX_FIELDS = schema.MATS_XLSX_COLUMNS
+GUARDED_FIELDS = list(XLSX_FIELDS) + list(schema.MAVD_EXTRA_COLUMNS)
 
 
 def _read_csv(path: Path) -> tuple[list[str], list[dict]]:
@@ -60,22 +53,35 @@ def read_mats_xlsx(path: Path) -> dict[str, dict]:
     import openpyxl
 
     wb = openpyxl.load_workbook(path, read_only=True)
-    rows = list(wb["MATS 1.02 cases"].iter_rows(values_only=True))
+    rows = list(wb[schema.MATS_XLSX_SHEET].iter_rows(values_only=True))
     header = rows[0]
+    idx = header.index(schema.MATS_XLSX_ID)
     out = {}
     for r in rows[1:]:
-        if not r[2]:
+        if not r[idx]:
             continue
         d = dict(zip(header, r))
         rec = {}
         for col, xcol in XLSX_FIELDS.items():
             v = d[xcol]
-            rec[col] = ("1" if int(v) else "0") if col in schema.FLAG_COLUMNS else _norm(v)
-        out[_norm(d["AltCaseNo"])] = rec
+            if col in schema.FLAG_COLUMNS:
+                if _norm(v) not in ("", "0", "1"):
+                    raise ValueError(f"MATS 1.02 {d[schema.MATS_XLSX_ID]} {xcol}: flag value {v!r} is not 0/1")
+                rec[col] = "1" if _norm(v) == "1" else "0"
+            else:
+                rec[col] = _norm(v)
+        out[_norm(d[schema.MATS_XLSX_ID])] = rec
     return out
 
 
-def validate(data_dir: Path, xlsx_path: Path | None) -> list[str]:
+def read_mavd_extras(path: Path) -> dict[str, dict]:
+    """The MAVD-only columns per move, normalised like the loader does."""
+    with open(path, newline="", encoding="utf-8") as f:
+        return {r["AltCaseNo"]: {col: r[src].strip() for col, src in schema.MAVD_EXTRA_COLUMNS.items()}
+                for r in csv.DictReader(f) if r["AltCaseNo"]}
+
+
+def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = None) -> list[str]:
     data_dir = Path(data_dir)
     errors: list[str] = []
     tables: dict[str, list[dict]] = {}
@@ -113,7 +119,7 @@ def validate(data_dir: Path, xlsx_path: Path | None) -> list[str]:
             errors.append(f"CODE: moves {mid} status {m['status']!r}")
         if m["coded_by"] not in schema.CODED_BY:
             errors.append(f"CODE: moves {mid} coded_by {m['coded_by']!r}")
-        if m["intensification_criterion"] not in schema.INTENSIFICATION_CRITERIA:
+        if m["intensification_criterion"] and m["intensification_criterion"] not in schema.INTENSIFICATION_CRITERIA:
             errors.append(f"CODE: moves {mid} intensification_criterion {m['intensification_criterion']!r}")
         for f in schema.FLAG_COLUMNS:
             if m[f] not in ("0", "1"):
@@ -153,54 +159,74 @@ def validate(data_dir: Path, xlsx_path: Path | None) -> list[str]:
         if e["status"] == "accepted" and not sourced[e["event_id"]]:
             errors.append(f"EVENT_NO_SOURCE: events {e['event_id']} is accepted but has no source")
 
+    for c in tables["corrections"]:
+        if c["move_id"] not in move_ids:
+            errors.append(f"CODE: corrections move_id {c['move_id']!r} does not exist")
+        if c["field"] not in GUARDED_FIELDS:
+            errors.append(f"CODE: corrections field {c['field']!r} is not a guarded field")
+
     if xlsx_path is not None:
-        errors += comparability(moves, tables["corrections"], Path(xlsx_path))
+        errors += comparability(moves, tables["corrections"], Path(xlsx_path),
+                                Path(mavd_path) if mavd_path else None)
     return errors
 
 
-def comparability(moves: list[dict], corrections: list[dict], xlsx_path: Path) -> list[str]:
+def comparability(moves: list[dict], corrections: list[dict], xlsx_path: Path,
+                  mavd_path: Path | None = None) -> list[str]:
     errors = []
     expected = read_mats_xlsx(xlsx_path)
-    ours = {m["move_id"]: m for m in moves if m["coded_by"] == "chubb" and m["status"] == "accepted"
-            and m["data_version"] == "1.02"}
     corrected = {(c["move_id"], c["field"]): c["new_value"] for c in corrections}
 
-    missing = sorted(set(expected) - set(ours))
-    extra = sorted(set(ours) - set(expected))
+    # Counts: every accepted move in MATS's scope counts, whoever coded it (ADR 0001).
+    in_scope = {m["move_id"]: m for m in moves if m["status"] == "accepted"
+                and m["claimant"] in schema.MATS_CLAIMANTS and m["year"].isdigit()
+                and int(m["year"]) in schema.MATS_YEARS}
+    exp_cy = Counter((r["claimant"], r["year"]) for r in expected.values())
+    our_cy = Counter((m["claimant"], m["year"]) for m in in_scope.values())
+    for key in sorted(set(exp_cy) | set(our_cy)):
+        if exp_cy[key] != our_cy[key]:
+            errors.append(f"COMPARABILITY: {key[0]} {key[1]} has {our_cy[key]} accepted moves, MATS 1.02 has {exp_cy[key]}")
+    for t in schema.TYPE_FLAGS:
+        a = sum(r[t] == "1" for r in expected.values())
+        b = sum(m[t] == "1" for m in in_scope.values())
+        if a != b:
+            errors.append(f"COMPARABILITY: Type total {t} is {b}, MATS 1.02 has {a}")
+
+    # Rows: every MATS 1.02 move is present as coded_by=chubb and field-identical, bar documented corrections.
+    chubb = {m["move_id"]: m for m in moves if m["coded_by"] == "chubb" and m["data_version"] == "1.02"}
+    missing = sorted(set(expected) - set(chubb))
+    extra = sorted(set(chubb) - set(expected))
     if missing:
         errors.append(f"COMPARABILITY: MATS 1.02 moves missing from moves.csv: {missing[:10]}{'...' if len(missing) > 10 else ''}")
     if extra:
         errors.append(f"COMPARABILITY: moves claim data_version 1.02 but are not in MATS 1.02: {extra[:10]}")
-
-    exp_cy = Counter((r["claimant"], r["year"]) for r in expected.values())
-    our_cy = Counter((m["claimant"], m["year"]) for m in ours.values())
-    for key in sorted(set(exp_cy) | set(our_cy)):
-        if exp_cy[key] != our_cy[key]:
-            errors.append(f"COMPARABILITY: {key[0]} {key[1]} has {our_cy[key]} moves, MATS 1.02 has {exp_cy[key]}")
-    for t in schema.TYPE_FLAGS:
-        a = sum(r[t] == "1" for r in expected.values())
-        b = sum(m[t] == "1" for m in ours.values())
-        if a != b:
-            errors.append(f"COMPARABILITY: Type total {t} is {b}, MATS 1.02 has {a}")
-
-    for mid in sorted(set(expected) & set(ours)):
+    for mid in sorted(set(expected) & set(chubb)):
+        if chubb[mid]["status"] != "accepted":
+            errors.append(f"COMPARABILITY: {mid} is a MATS 1.02 move but status is {chubb[mid]['status']!r}")
         for col in XLSX_FIELDS:
             want = corrected.get((mid, col), expected[mid][col])
-            if ours[mid][col] != want:
+            if chubb[mid][col] != want:
                 errors.append(f"COMPARABILITY: {mid}.{col} differs from MATS 1.02 and no correction is documented")
+    if mavd_path is not None:
+        extras = read_mavd_extras(mavd_path)
+        for mid in sorted(set(extras) & set(chubb)):
+            for col in schema.MAVD_EXTRA_COLUMNS:
+                want = corrected.get((mid, col), extras[mid][col])
+                if chubb[mid][col] != want:
+                    errors.append(f"COMPARABILITY: {mid}.{col} differs from the MAVD table and no correction is documented")
     return errors
 
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--data", type=Path, default=Path("data"))
-    p.add_argument("--xlsx", type=Path, default=Path("data/raw/mats-1.02/MATS_1-02_all_cases.xlsx"))
+    p.add_argument("--data", type=Path, default=ROOT / "data")
+    p.add_argument("--xlsx", type=Path, default=ROOT / "data/raw/mats-1.02/MATS_1-02_all_cases.xlsx")
+    p.add_argument("--mavd", type=Path, default=ROOT / "data/raw/mavd-arcgis-2023/All_Actions7.csv")
     a = p.parse_args(argv)
-    errors = validate(a.data, a.xlsx)
+    errors = validate(a.data, a.xlsx, a.mavd)
     for e in errors:
         print(e)
-    n_moves = len(_read_csv(a.data / "moves.csv")[1]) if (a.data / "moves.csv").exists() else 0
-    print(f"{'FAIL' if errors else 'OK'}: {len(errors)} error(s); {n_moves} moves checked")
+    print(f"{'FAIL' if errors else 'OK'}: {len(errors)} error(s)")
     return 1 if errors else 0
 
 

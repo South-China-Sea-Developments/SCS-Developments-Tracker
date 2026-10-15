@@ -21,6 +21,6 @@ def raw_xlsx_rows():
     import openpyxl
 
     wb = openpyxl.load_workbook(RAW_XLSX, read_only=True)
-    rows = list(wb["MATS 1.02 cases"].iter_rows(values_only=True))
+    rows = list(wb["MATS 1.02 cases"].iter_rows(values_only=True))  # sheet name fixed by the raw file
     header = rows[0]
     return [dict(zip(header, r)) for r in rows[1:] if r[2]]

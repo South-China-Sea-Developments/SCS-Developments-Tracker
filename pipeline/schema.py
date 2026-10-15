@@ -30,7 +30,7 @@ SUBREGION_FLAGS = [
     "loc10_far_south",
 ]
 SUBREGION_NAMES = [
-    "Gulf of Tonkin", "Paracels", "Central-West", "Central-East", "Spratly NW",
+    "Tonkin", "Paracels", "Central-West", "Central-East", "Spratly NW",
     "Spratly NE", "Spratly SE", "Spratly SW", "Nam Con Son", "Far South",
 ]
 FLAG_COLUMNS = TYPE_FLAGS + DOMAIN_FLAGS + ISSUE_FLAGS + SUBREGION_FLAGS
@@ -42,7 +42,7 @@ DYAD_LETTERS = set("RCPVMBIAU")
 
 MOVE_STATUS = ["accepted", "pending"]
 CODED_BY = ["chubb", "project"]
-INTENSIFICATION_CRITERIA = ["", "novelty", "frequency", "scope"]
+INTENSIFICATION_CRITERIA = ["novelty", "frequency", "scope"]  # optional: empty allowed
 
 EVENT_STATUS = ["candidate", "accepted", "rejected", "merged"]
 DATE_PRECISION = ["day", "month", "year"]
@@ -75,6 +75,30 @@ TABLES = {
     ],
     "corrections": ["move_id", "field", "new_value", "date", "by", "reason"],
 }
+
+# MATS 1.02 xlsx vocabulary: canonical column -> xlsx column (sheet "MATS 1.02 cases").
+MATS_XLSX_SHEET = "MATS 1.02 cases"
+MATS_XLSX_ID = "AltCaseNo"
+MATS_XLSX_COLUMNS = {
+    "claimant": "CountryCode", "year": "Year", "dyads": "Dyads",
+    "description": "Case description and sources", "ongoing_through": "Ongoing through",
+    "ongoing_through_notes": "Ongoing through notes", "org_case_no": "OrgCaseNo",
+    "declarative": "Declarative", "demonstrative": "Demonstrative", "coercive": "Coercive", "force": "Force",
+    "domestic": "Domestic", "diplomatic": "Diplomatic", "physical": "Physical",
+    "military": "Military", "administrative": "Administrative", "energy": "Energy",
+    "fisheries": "Fisheries", "politics": "Politics",
+    "loc01_tonkin": "Tonkin", "loc02_paracels": "Paracels", "loc03_central_west": "CentralWest",
+    "loc04_central_east": "CentralEast", "loc05_spratly_nw": "SpratlyNW", "loc06_spratly_ne": "SpratlyNE",
+    "loc07_spratly_se": "SpratlySE", "loc08_spratly_sw": "SpratlySW", "loc09_nam_con_son": "NamConSon",
+    "loc10_far_south": "FarSouth",
+}
+MATS_XLSX_PACKED = {"Domains": "packed_domains", "Issues": "packed_issues", "Locations": "packed_locations"}
+# MAVD online table (All_Actions7): canonical column -> MAVD column, for the columns the xlsx lacks.
+MAVD_EXTRA_COLUMNS = {"diminished_notes": "Cases_of_diminished_assertive_a", "other_possible_cases": "Other_Possible_Cases"}
+
+# Scope of the comparability guarantee (ADR 0001): these claimants and years must equal MATS 1.02.
+MATS_CLAIMANTS = ["CN", "VN", "PH"]
+MATS_YEARS = range(1970, 2016)
 
 ID_COLUMN = {"claimants": "code", "moves": "move_id", "events": "event_id", "sources": "source_id"}
 

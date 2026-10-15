@@ -2,17 +2,14 @@
 import csv
 from collections import Counter
 
+import pytest
+
 from tests.conftest import RAW_MAVD
 
-SUBREGION_COLS = [
-    "loc01_tonkin", "loc02_paracels", "loc03_central_west", "loc04_central_east",
-    "loc05_spratly_nw", "loc06_spratly_ne", "loc07_spratly_se", "loc08_spratly_sw",
-    "loc09_nam_con_son", "loc10_far_south",
-]
-XLSX_SUBREGION_COLS = [
-    "Tonkin", "Paracels", "CentralWest", "CentralEast", "SpratlyNW", "SpratlyNE",
-    "SpratlySE", "SpratlySW", "NamConSon", "FarSouth",
-]
+from pipeline import schema
+
+SUBREGION_COLS = schema.SUBREGION_FLAGS
+XLSX_SUBREGION_COLS = [schema.MATS_XLSX_COLUMNS[c] for c in SUBREGION_COLS]
 
 
 def accepted_chubb(loaded):
@@ -83,8 +80,11 @@ def test_seed_events_one_per_date_token_with_sources(loaded):
     events = loaded["events"]
     assert len(events) == expected_tokens
     assert {e["move_id"] for e in events} == set(dates)
-    assert all(e["status"] == "accepted" for e in events)
+    assert {e["status"] for e in events if e["move_id"] != "VN197304"} == {"accepted"}
+    assert [e["status"] for e in events if e["move_id"] == "VN197304"] == ["candidate"]  # pending move
     assert all(e["date_precision"] in ("day", "month", "year") for e in events)
+    assert all(e["reviewer"] == "Andrew Chubb" and e["review_date"] for e in events)
+    assert all(e["location_precision"] == "unknown" and e["subregion"] == "" for e in events)
     by_move = Counter(e["move_id"] for e in events)
     assert by_move["VN197301"] == 5
     # dated precisely
@@ -102,10 +102,27 @@ def test_seed_events_one_per_date_token_with_sources(loaded):
     assert all(s["excerpt"] for s in sources)
 
 
+def test_seed_event_dates_outside_move_years_are_flagged(loaded):
+    anomalies = {(a["move_id"], a["event_id"]) for a in loaded["anomalies"]}
+    assert anomalies == {("VN197601", "VN197601-E01"), ("VN199303", "VN199303-E02"), ("VN201302", "VN201302-E01")}
+    e = next(e for e in loaded["events"] if e["event_id"] == "VN201302-E01")
+    assert "outside the move's year" in e["review_note"].lower()
+
+
+def test_flag_values_other_than_0_1_are_rejected():
+    from pipeline.load_mats import _flag
+
+    assert _flag(None) == "0" and _flag(1) == "1" and _flag("0") == "0"
+    with pytest.raises(ValueError):
+        _flag(2, "test")
+    with pytest.raises(ValueError):
+        _flag(0.5, "test")
+
+
 def test_description_and_flag_differences_logged(loaded):
     log = loaded["differences"]
-    assert sum(1 for d in log if d["field"] == "description") == 75
-    flag_diffs = {(d["move_id"], d["field"]) for d in log if d["field"] not in ("description", "Domains")}
+    assert sum(1 for d in log if d["kind"] == "description") == 75
+    flag_diffs = {(d["move_id"], d["field"]) for d in log if d["kind"] == "flag"}
     assert flag_diffs == {
         ("VN197302", "loc03_central_west"), ("VN197302", "loc04_central_east"),
         ("VN197306", "military"), ("VN197306", "energy"), ("VN197306", "fisheries"), ("VN197306", "politics"),
@@ -119,7 +136,7 @@ def test_description_and_flag_differences_logged(loaded):
         ("PH201404", "physical"),
     }
     # xlsx-internal inconsistency between packed code and flags is logged too
-    assert [(d["move_id"], d["field"]) for d in log if d["field"] == "Domains"] == [("PH197701", "Domains")]
+    assert [(d["move_id"], d["field"]) for d in log if d["kind"] == "xlsx-internal"] == [("PH197701", "Domains")]
 
 
 def test_loader_is_deterministic(loaded):

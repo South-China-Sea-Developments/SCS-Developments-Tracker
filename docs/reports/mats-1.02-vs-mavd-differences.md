@@ -35,6 +35,16 @@ Packed code column disagrees with the 0/1 flag columns; the flags are what the c
 | VN201102 | loc04_central_east | 0 | 1 |
 | PH201404 | physical | 1 | 0 |
 
+## Seed-event dates outside the move's year (3)
+
+From the MAVD `Dates` column; transcribed as given and flagged in the event's review note.
+
+| move | event | date | move year |
+|---|---|---|---|
+| VN197601 | VN197601-E01 | 1975 | 1976 |
+| VN199303 | VN199303-E02 | 1994/06/04 | 1993 |
+| VN201302 | VN201302-E01 | 2014/07/03 | 2013 |
+
 ## Description differences (75)
 
 ### PH197003
