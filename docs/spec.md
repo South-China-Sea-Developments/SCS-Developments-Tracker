@@ -71,6 +71,10 @@ Three seams, agreed: (1) the canonical files, via the validator — schema, inte
 - Republishing to ArcGIS Online; a server-side database; user accounts on the site.
 - Weighting moves by significance (explicitly not done in MATS).
 
+## Amendments
+
+- 2026-10-15 (ticket 06): the validator's move rule reads "an event with a `move_id` must point at an existing move of the same claimant and year; an accepted or merged event must have one; a candidate or rejected event may have none". Rejected events keep no move, so the original wording (any non-candidate needs a move) is relaxed for them. Event status `merged` means "judged a duplicate report of an accepted event; attached to that event's move". A rejected event needs a review note; a project-coded move needs its intensification criterion.
+
 ## Further Notes
 
 - Build order: tracer bullet first (load MATS 1.02 → validator → first site pages reproducing MAVD's counts), then the harvester and review queue on CN/VN/PH 2016+, then the event map, then the three new claimants' 1970–2015 backfill, then Airtable.

@@ -4,8 +4,9 @@ Rules (docs/spec.md, "Validator"):
   SCHEMA          columns of each table are exactly the schema's
   CODE            codes within allowed sets (claimant, status, precision, flags 0/1, dyad letters)
   NO_TYPE         a move must have at least one Type flag
-  EVENT_MOVE      an accepted or merged event must point at an existing move (candidates and
-                  rejected events may have none)
+  EVENT_MOVE      an accepted or merged event must point at an existing move of the same claimant
+                  and year; a candidate or rejected event may have none, but never a dangling one
+  DATE            event dates are ISO dates, end >= start; lat/lon numeric and in range
   SOURCE_EVENT    a source must point at an existing event
   EVENT_NO_SOURCE an accepted event must have at least one source
   DUPLICATE       identifiers are unique
@@ -40,6 +41,15 @@ def _read_csv(path: Path) -> tuple[list[str], list[dict]]:
     with open(path, newline="", encoding="utf-8") as f:
         r = csv.DictReader(f)
         return list(r.fieldnames or []), list(r)
+
+
+def _is_iso_date(s: str) -> bool:
+    import datetime as _dt
+    try:
+        _dt.date.fromisoformat(s)
+        return len(s) == 10
+    except ValueError:
+        return False
 
 
 def _norm(v) -> str:
@@ -137,6 +147,7 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"NO_TYPE: moves {mid} has no Type flag set")
 
     move_ids = {m["move_id"] for m in moves}
+    move_by_id = {m["move_id"]: m for m in moves}
     events = tables["events"]
     for e in events:
         eid = e["event_id"]
@@ -150,10 +161,32 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"CODE: events {eid} location_precision {e['location_precision']!r}")
         if e["subregion"] and e["subregion"] not in {str(i) for i in range(1, 11)}:
             errors.append(f"CODE: events {eid} subregion {e['subregion']!r}")
-        if e["status"] in ("accepted", "merged") and e["move_id"] not in move_ids:
+        if e["move_id"] and e["move_id"] not in move_ids:
             errors.append(f"EVENT_MOVE: events {eid} ({e['status']}) move_id {e['move_id']!r} does not exist")
+        elif e["status"] in ("accepted", "merged") and not e["move_id"]:
+            errors.append(f"EVENT_MOVE: events {eid} ({e['status']}) has no move")
+        elif e["move_id"]:
+            mv = move_by_id[e["move_id"]]
+            if mv["claimant"] != e["claimant"]:
+                errors.append(f"EVENT_MOVE: events {eid} claimant {e['claimant']} but move {e['move_id']} is {mv['claimant']}")
+            elif (e["status"] in ("accepted", "merged") and e["date_start"][:4] != mv["year"]
+                  and e["harvest_run_id"] != "seed-mats-1.02"):   # three MAVD seed dates are known typos, logged for the author
+                errors.append(f"EVENT_MOVE: events {eid} dated {e['date_start']} but move {e['move_id']} is {mv['year']}")
         if e["status"] == "rejected" and not e["review_note"]:
             errors.append(f"CODE: events {eid} is rejected without a review note")
+        for col in ("date_start", "date_end"):
+            if e[col] and not _is_iso_date(e[col]):
+                errors.append(f"DATE: events {eid} {col} {e[col]!r} is not an ISO date")
+        if e["date_start"] and e["date_end"] and _is_iso_date(e["date_start"]) and _is_iso_date(e["date_end"]) and e["date_end"] < e["date_start"]:
+            errors.append(f"DATE: events {eid} ends before it starts")
+        for col, lo, hi in (("lat", -90.0, 90.0), ("lon", -180.0, 180.0)):
+            if e[col]:
+                try:
+                    v = float(e[col])
+                except ValueError:
+                    v = None
+                if v is None or not lo <= v <= hi:
+                    errors.append(f"DATE: events {eid} {col} {e[col]!r} is not a coordinate")
 
     event_ids = {e["event_id"] for e in events}
     sourced = Counter()

@@ -47,9 +47,9 @@ DYAD_LETTERS = set("RCPVMBIAU")
 
 MOVE_STATUS = ["accepted", "pending"]
 CODED_BY = ["chubb", "project"]
-INTENSIFICATION_CRITERIA = ["novelty", "frequency", "scope"]  # optional: empty allowed
+INTENSIFICATION_CRITERIA = ["novelty", "frequency", "scope"]  # required on project-coded moves; empty on MATS-era ones
 
-EVENT_STATUS = ["candidate", "accepted", "rejected", "merged"]
+EVENT_STATUS = ["candidate", "accepted", "rejected", "merged"]   # merged = judged a duplicate of an accepted event
 DATE_PRECISION = ["day", "month", "year"]
 LOCATION_PRECISION = ["point", "feature", "subregion", "unknown"]
 

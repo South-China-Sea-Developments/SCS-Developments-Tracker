@@ -3,8 +3,10 @@
   open    append a run's candidates to data/events.csv and data/sources.csv on a branch, write the
           review page, commit, and (unless --no-push) push and open the pull request
   page    (re)generate the review page for the candidates currently in data/events.csv
-  decide  apply a decisions file to the canonical files: reject, merge into an existing move, or
-          form a new move (optionally with field edits); then commit on the current branch
+  decide  apply a decisions file to the canonical files, all or nothing: reject, merge into an
+          existing move (or one formed in the same batch), form a new move, or mark a duplicate of
+          an accepted event; edits ride on any of them; the validator runs before anything is
+          written; then commit on the current branch
 
 The review page is a self-contained HTML file: the coder opens it from the checked-out branch, makes
 decisions in the browser, exports decisions.json, and runs `decide`. Only decisions applied through
@@ -91,37 +93,57 @@ def cmd_open(args) -> int:
     data_dir = root / "data"
     run_dir = Path(args.run).resolve()
     run_id = run_dir.name
+    for name in ("candidates.csv", "sources.csv"):
+        if not (run_dir / name).exists():
+            print(f"{run_dir / name} is missing; is {run_dir} a harvest run folder?", file=sys.stderr)
+            return 1
     report = json.loads((run_dir / "run.json").read_text(encoding="utf-8")) if (run_dir / "run.json").exists() else {}
+    with open(run_dir / "candidates.csv", newline="", encoding="utf-8") as f:
+        n_cand = sum(1 for _ in csv.DictReader(f))
+    if not n_cand:
+        print(f"run {run_id} has no candidates; nothing to review, no branch made")
+        return 0
     branch = f"harvest/{run_id}"
-    base = git("rev-parse", "--abbrev-ref", "HEAD", cwd=root)
     if git("status", "--porcelain", "--", "data", cwd=root):
         print("data/ has uncommitted changes; commit or stash them first", file=sys.stderr)
         return 1
-    git("checkout", "-b", branch, cwd=root)
+    exists = git("branch", "--list", branch, cwd=root)
+    git("checkout", "-q", branch if exists else "-b", *([] if exists else [branch]), cwd=root)
+    if exists:
+        print(f"resuming existing branch {branch}")
     n_e, n_s = append_run(run_dir, data_dir)
     page = root / "docs" / "review" / f"{run_id}.html"
     write_review_page(page, data_dir, run_id=run_id)
     git("add", "data/events.csv", "data/sources.csv", str(page.relative_to(root)), cwd=root)
-    if (root / "harvest" / "state.json").exists():
-        git("add", "harvest/state.json", cwd=root)
-    git("commit", "-q", "-m", f"Harvest {run_id}: {n_e} candidate events for review\n\nExtractor: {report.get('extractor', '?')}. "
-        f"Documents: {report.get('documents', '?')}. Review page: docs/review/{run_id}.html", cwd=root)
-    print(f"branch {branch}: {n_e} candidate events, {n_s} sources, review page {page.relative_to(root)}")
+    if git("status", "--porcelain", "--", "data", str(page.relative_to(root)), cwd=root):
+        git("commit", "-q", "-m", f"Harvest {run_id}: {n_e} candidate events for review\n\nExtractor: {report.get('extractor', '?')}. "
+            f"Documents: {report.get('documents', '?')}. Review page: docs/review/{run_id}.html", cwd=root)
+    print(f"branch {branch}: {n_e} new candidate events, {n_s} sources, review page {page.relative_to(root)}")
     if args.no_push:
         return 0
-    git("push", "-q", "-u", "origin", branch, cwd=root)
-    body = (f"Candidate events from harvest run `{run_id}` ({n_e} events, {n_s} sources). "
+    try:
+        git("push", "-q", "-u", "origin", branch, cwd=root)
+    except RuntimeError as e:
+        print(f"push failed ({e}); fix the remote and run the same command again to resume", file=sys.stderr)
+        return 1
+    existing = subprocess.run(["gh", "api", f"repos/{REPO}/pulls?head={REPO.split('/')[0]}:{branch}&state=open", "--jq", ".[0].html_url"],
+                              cwd=root, capture_output=True, text=True)
+    if existing.returncode == 0 and existing.stdout.strip():
+        print(f"pull request already open: {existing.stdout.strip()}")
+        return 0
+    body = (f"Candidate events from harvest run `{run_id}` ({n_cand} events). "
             f"Extractor: `{report.get('extractor', '?')}`; documents: {report.get('documents', '?')}; "
             f"possible duplicates flagged: {report.get('duplicates', '?')}.\n\n"
-            f"**How to review:** check out this branch, open `docs/review/{run_id}.html` in a browser, decide each candidate, "
-            f"export `decisions.json`, then run `python -m pipeline.queue decide decisions.json --reviewer \"Your name\"` and push. "
+            f"**How to review:** `git checkout {branch}`, open `docs/review/{run_id}.html` in a browser, decide each candidate, "
+            f"export the decisions file, then run `python -m pipeline.queue decide decisions-{run_id}.json --reviewer \"Your name\"` and `git push`. "
             f"Merging this pull request is acceptance; the validator must pass first.\n\n"
             f"Nothing here enters the dataset until it is reviewed (ADR 0003).")
-    r = subprocess.run(["gh", "api", "-X", "POST", f"repos/{REPO}/pulls", "-f", f"title=Harvest {run_id}: {n_e} candidate events for review",
-                        "-f", f"head={branch}", "-f", f"base={base}", "-f", f"body={body}", "--jq", ".html_url"],
+    r = subprocess.run(["gh", "api", "-X", "POST", f"repos/{REPO}/pulls", "-f", f"title=Harvest {run_id}: {n_cand} candidate events for review",
+                        "-f", f"head={branch}", "-f", f"base={args.base}", "-f", f"body={body}", "--jq", ".html_url"],
                        cwd=root, capture_output=True, text=True)
     if r.returncode:
-        print(f"pull request not opened: {r.stderr.strip()[:300]}", file=sys.stderr)
+        print(f"branch pushed but the pull request was not opened: {r.stderr.strip()[:300]}\n"
+              f"open it by hand from {branch} onto {args.base}, or run the same command again", file=sys.stderr)
         return 1
     print(f"pull request: {r.stdout.strip()}")
     return 0
@@ -190,93 +212,196 @@ EDITABLE = ["date_start", "date_end", "date_precision", "lat", "lon", "location_
             "summary", "actors"]
 
 
+def _iso(s: str) -> str:
+    try:
+        return dt.date.fromisoformat(s).isoformat() if len(s) == 10 else ""
+    except ValueError:
+        return ""
+
+
+def _check_edits(eid: str, e: dict, edits: dict) -> dict:
+    """Validated edits; an empty value means keep (the page says 'leave blank to keep')."""
+    out = {}
+    for k, v in edits.items():
+        if k not in EDITABLE:
+            raise ValueError(f"{eid}: field {k!r} is not editable at review")
+        v = str(v).strip()
+        if v == "":
+            continue
+        if k in ("date_start", "date_end") and not _iso(v):
+            raise ValueError(f"{eid}: {k} {v!r} is not an ISO date")
+        if k == "date_precision" and v not in schema.DATE_PRECISION:
+            raise ValueError(f"{eid}: date_precision must be one of {schema.DATE_PRECISION}")
+        if k == "location_precision" and v not in schema.LOCATION_PRECISION:
+            raise ValueError(f"{eid}: location_precision must be one of {schema.LOCATION_PRECISION}")
+        if k == "subregion" and v not in {str(i) for i in range(1, 11)}:
+            raise ValueError(f"{eid}: subregion must be 1-10")
+        if k in ("lat", "lon"):
+            try:
+                f = float(v)
+            except ValueError:
+                raise ValueError(f"{eid}: {k} {v!r} is not a number")
+            if not (-90 <= f <= 90 if k == "lat" else -180 <= f <= 180):
+                raise ValueError(f"{eid}: {k} {v!r} is out of range")
+            v = f"{f:.4f}"
+        out[k] = v
+    start, end = out.get("date_start", e["date_start"]), out.get("date_end", e["date_end"])
+    if start and end and end < start:
+        raise ValueError(f"{eid}: date_end is before date_start")
+    return out
+
+
 def next_move_id(claimant: str, year: int, moves: list[dict]) -> str:
     used = {int(m["move_id"][-2:]) for m in moves if m["move_id"].startswith(f"{claimant}{year}") and m["move_id"][-2:].isdigit()}
     n = 1
     while n in used:
         n += 1
+    if n > 99:
+        raise ValueError(f"{claimant} {year} already has 99 moves; the id scheme allows no more")
     return f"{claimant}{year}{n:02d}"
 
 
-def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: Path) -> dict:
-    """Mutates the canonical files. Returns counts. Raises ValueError on an invalid decision (nothing written)."""
+def _build_move(eid: str, e: dict, spec: dict, reviewer: str, date: str, moves: list[dict], existing_ids: set[str]) -> dict:
+    crit = spec.get("intensification_criterion", "")
+    if crit not in schema.INTENSIFICATION_CRITERIA:
+        raise ValueError(f"{eid}: a new move needs intensification_criterion in {schema.INTENSIFICATION_CRITERIA}")
+    t = spec.get("type")
+    if t not in schema.TYPE_FLAGS:
+        raise ValueError(f"{eid}: a new move needs exactly one type")
+    year_s = str(spec.get("year") or e["date_start"][:4]).strip()
+    if not year_s.isdigit():
+        raise ValueError(f"{eid}: year {year_s!r} is not a year")
+    year = int(year_s)
+    claimant = e["claimant"]
+    mid = str(spec.get("move_id") or "").strip() or next_move_id(claimant, year, moves)
+    if not (mid.startswith(f"{claimant}{year}") and len(mid) == 8 and mid[-2:].isdigit()):
+        raise ValueError(f"{eid}: move id {mid!r} must have the form {claimant}{year}NN")
+    if mid in existing_ids:
+        raise ValueError(f"{eid}: move {mid} already exists")
+    for key, allowed in (("domains", schema.DOMAIN_FLAGS), ("issues", schema.ISSUE_FLAGS)):
+        bad = [x for x in spec.get(key, []) if x not in allowed]
+        if bad:
+            raise ValueError(f"{eid}: unknown {key} {bad}")
+    subs = [str(s) for s in spec.get("subregions", [])]
+    if any(s not in {str(i) for i in range(1, 11)} for s in subs):
+        raise ValueError(f"{eid}: sub-regions must be 1-10")
+    dyads = [str(x).strip() for x in spec.get("dyads", []) if str(x).strip()]
+    if any(not (1 <= len(x) <= 2 and set(x) <= schema.DYAD_LETTERS) for x in dyads):
+        raise ValueError(f"{eid}: dyads must be one or two of the letters {''.join(sorted(schema.DYAD_LETTERS))}")
+    ongoing = str(spec.get("ongoing_through") or year).strip()
+    if not ongoing.isdigit() or int(ongoing) < year:
+        raise ValueError(f"{eid}: ongoing_through must be a year not before {year}")
+    m = {c: "" for c in schema.TABLES["moves"]}
+    for f in schema.FLAG_COLUMNS:
+        m[f] = "0"
+    m[t] = "1"
+    for x in spec.get("domains", []):
+        m[x] = "1"
+    for x in spec.get("issues", []):
+        m[x] = "1"
+    for s in subs:
+        m[schema.SUBREGION_FLAGS[int(s) - 1]] = "1"
+    m.update(move_id=mid, claimant=claimant, year=str(year), instance_no=str(int(mid[-2:])),
+             dyads=" ".join(dyads), description=(spec.get("description") or e["summary"]).strip(),
+             ongoing_through=ongoing, ongoing_through_notes="", intensification_criterion=crit,
+             coded_by="project", coder=reviewer, coding_date=date, data_version=schema.DATASET_VERSION, status="accepted")
+    return m
+
+
+def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: Path,
+                    xlsx_path: Path | None = None, mavd_path: Path | None = None) -> dict:
+    """Apply a batch of decisions to the canonical files. All-or-nothing: an invalid decision, or a result
+    the validator rejects, raises ValueError and writes nothing.
+
+    Actions: reject (note required); merge (into an existing move, or into the move formed from another
+    candidate in this batch via move_of_event); new_move; duplicate (of an accepted event: status merged).
+    """
     events = read_table("events", data_dir)
     moves = read_table("moves", data_dir)
     by_id = {e["event_id"]: e for e in events}
-    move_ids = {m["move_id"] for m in moves}
-    counts = {"rejected": 0, "merged": 0, "new_moves": 0, "accepted_events": 0}
+    move_by_id = {m["move_id"]: m for m in moves}
+    counts = {"rejected": 0, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0}
     new_moves: list[dict] = []
+    move_of_event: dict[str, str] = {}
 
     for d in decisions:
         eid = d.get("event_id")
-        e = by_id.get(eid)
-        if not e:
+        if eid not in by_id:
             raise ValueError(f"decision for unknown event {eid!r}")
-        if e["status"] != "candidate":
-            raise ValueError(f"event {eid} is {e['status']}, not a candidate")
-        action = d.get("action")
-        note = (d.get("note") or "").strip()
-        for k, v in (d.get("edits") or {}).items():
-            if k not in EDITABLE:
-                raise ValueError(f"{eid}: field {k!r} is not editable at review")
-            e[k] = str(v)
-        if action == "reject":
-            if not note:
-                raise ValueError(f"{eid}: a rejection needs a note")
-            e["status"] = "rejected"
-            counts["rejected"] += 1
-        elif action == "merge":
-            target = d.get("move_id", "")
-            if target not in move_ids:
-                raise ValueError(f"{eid}: merge target {target!r} does not exist")
-            e["move_id"] = target
-            e["status"] = "accepted"
-            counts["merged"] += 1
-            counts["accepted_events"] += 1
-        elif action == "new_move":
-            spec = d.get("new_move") or {}
-            crit = spec.get("intensification_criterion", "")
-            if crit not in schema.INTENSIFICATION_CRITERIA:
-                raise ValueError(f"{eid}: a new move needs intensification_criterion in {schema.INTENSIFICATION_CRITERIA}")
-            t = spec.get("type")
-            if t not in schema.TYPE_FLAGS:
-                raise ValueError(f"{eid}: a new move needs exactly one type")
-            year = int(spec.get("year") or e["date_start"][:4])
-            claimant = e["claimant"]
-            mid = spec.get("move_id") or next_move_id(claimant, year, moves + new_moves)
-            if mid in move_ids:
-                raise ValueError(f"{eid}: move {mid} already exists")
-            m = {c: "" for c in schema.TABLES["moves"]}
-            for f in schema.FLAG_COLUMNS:
-                m[f] = "0"
-            m[t] = "1"
-            for dmn in spec.get("domains", []):
-                if dmn in schema.DOMAIN_FLAGS:
-                    m[dmn] = "1"
-            for iss in spec.get("issues", []):
-                if iss in schema.ISSUE_FLAGS:
-                    m[iss] = "1"
-            for sub in spec.get("subregions", []):
-                if str(sub) in {str(i) for i in range(1, 11)}:
-                    m[schema.SUBREGION_FLAGS[int(sub) - 1]] = "1"
-            dyads = [x for x in spec.get("dyads", []) if isinstance(x, str) and 1 <= len(x) <= 2 and set(x) <= schema.DYAD_LETTERS]
-            m.update(move_id=mid, claimant=claimant, year=str(year), instance_no=str(int(mid[-2:])),
-                     dyads=" ".join(dyads), description=(spec.get("description") or e["summary"]).strip(),
-                     ongoing_through=str(spec.get("ongoing_through") or year), ongoing_through_notes="",
-                     intensification_criterion=crit, coded_by="project", coder=reviewer, coding_date=date,
-                     data_version=schema.DATASET_VERSION, status="accepted")
-            new_moves.append(m)
-            move_ids.add(mid)
-            e["move_id"] = mid
-            e["status"] = "accepted"
-            counts["new_moves"] += 1
-            counts["accepted_events"] += 1
-        else:
-            raise ValueError(f"{eid}: unknown action {action!r}")
+        if by_id[eid]["status"] != "candidate":
+            raise ValueError(f"event {eid} is {by_id[eid]['status']}, not a candidate")
+    if len({d["event_id"] for d in decisions}) != len(decisions):
+        raise ValueError("an event has more than one decision in this batch")
+
+    def finish(e: dict, d: dict, note: str):
         e["reviewer"] = reviewer
         e["review_date"] = date
         if note:
-            e["review_note"] = (e["review_note"] + " " + note).strip() if e["review_note"] else note
+            e["review_note"] = (e["review_note"] + " | Reviewer: " + note) if e["review_note"] else note
+
+    # pass 1: new moves (so merges can target them), rejections, duplicates
+    pending_merges = []
+    for d in decisions:
+        eid, e = d["event_id"], by_id[d["event_id"]]
+        action, note = d.get("action"), (d.get("note") or "").strip()
+        edits = _check_edits(eid, e, d.get("edits") or {})
+        if action == "reject":
+            if not note:
+                raise ValueError(f"{eid}: a rejection needs a note")
+            e.update(edits); e["status"] = "rejected"; counts["rejected"] += 1; finish(e, d, note)
+        elif action == "new_move":
+            m = _build_move(eid, e, d.get("new_move") or {}, reviewer, date, moves + new_moves, set(move_by_id) | {x["move_id"] for x in new_moves})
+            new_moves.append(m); move_of_event[eid] = m["move_id"]
+            e.update(edits); e["move_id"] = m["move_id"]; e["status"] = "accepted"
+            counts["new_moves"] += 1; counts["accepted_events"] += 1; finish(e, d, note)
+        elif action == "duplicate":
+            target = by_id.get(d.get("duplicate_of", ""))
+            if not target or target["status"] != "accepted" or not target["move_id"]:
+                raise ValueError(f"{eid}: duplicate_of must name an accepted event with a move")
+            if target["claimant"] != e["claimant"]:
+                raise ValueError(f"{eid}: duplicate_of names a {target['claimant']} event")
+            e.update(edits); e["move_id"] = target["move_id"]; e["status"] = "merged"
+            counts["duplicates"] += 1
+            finish(e, d, f"Duplicate of {target['event_id']}." + (" " + note if note else ""))
+        elif action == "merge":
+            pending_merges.append((d, e, edits, note))
+        else:
+            raise ValueError(f"{eid}: unknown action {action!r}")
+
+    # pass 2: merges, into existing moves or moves formed above
+    all_moves = {**move_by_id, **{m["move_id"]: m for m in new_moves}}
+    for d, e, edits, note in pending_merges:
+        eid = e["event_id"]
+        target = str(d.get("move_id") or "").strip()
+        if d.get("move_of_event"):
+            target = move_of_event.get(d["move_of_event"], "")
+            if not target:
+                raise ValueError(f"{eid}: {d['move_of_event']} does not form a new move in this batch")
+        if target not in all_moves:
+            raise ValueError(f"{eid}: merge target {target!r} does not exist")
+        mv = all_moves[target]
+        if mv["claimant"] != e["claimant"]:
+            raise ValueError(f"{eid}: cannot merge a {e['claimant']} event into {target} ({mv['claimant']})")
+        start = edits.get("date_start", e["date_start"])
+        if start[:4] != mv["year"]:
+            raise ValueError(f"{eid}: event is dated {start} but move {target} is {mv['year']}")
+        e.update(edits); e["move_id"] = target; e["status"] = "accepted"
+        counts["merged"] += 1; counts["accepted_events"] += 1; finish(e, d, note)
+
+    # the merge gate, before anything is written
+    import tempfile
+    from pipeline.validate import validate
+    with tempfile.TemporaryDirectory() as tmp:
+        td = Path(tmp)
+        for name in ("claimants", "sources", "corrections"):
+            (td / f"{name}.csv").write_bytes((data_dir / f"{name}.csv").read_bytes())
+        write_table("events", events, td)
+        write_table("moves", moves + new_moves, td)
+        xlsx = xlsx_path or data_dir / "raw/mats-1.02/MATS_1-02_all_cases.xlsx"
+        mavd = mavd_path or data_dir / "raw/mavd-arcgis-2023/All_Actions7.csv"
+        errors = validate(td, xlsx if xlsx.exists() else None, mavd if mavd.exists() else None)
+    if errors:
+        raise ValueError("the result would not pass the validator:\n  " + "\n  ".join(errors[:10]))
 
     write_table("events", events, data_dir)
     if new_moves:
@@ -285,21 +410,29 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
 
 
 def cmd_decide(args) -> int:
-    decisions = json.loads(Path(args.decisions).read_text(encoding="utf-8"))
-    if isinstance(decisions, dict):
-        decisions = decisions.get("decisions", [])
+    payload = json.loads(Path(args.decisions).read_text(encoding="utf-8"))
+    decisions = payload.get("decisions", []) if isinstance(payload, dict) else payload
+    if not decisions:
+        print("the decisions file holds no decisions", file=sys.stderr)
+        return 1
     date = args.date or dt.date.today().isoformat()
     root = repo_root()
-    if not args.reviewer.strip():
-        print("a reviewer name is required", file=sys.stderr)
+    reviewer = (args.reviewer or (payload.get("reviewer", "") if isinstance(payload, dict) else "")).strip()
+    if not reviewer:
+        print("a reviewer name is required (--reviewer, or the reviewer field of the decisions file)", file=sys.stderr)
         return 1
-    counts = apply_decisions(decisions, args.reviewer.strip(), date, root / "data")
+    try:
+        counts = apply_decisions(decisions, reviewer, date, root / "data")
+    except ValueError as e:
+        print(f"nothing applied: {e}", file=sys.stderr)
+        return 1
+    ids = ", ".join(sorted(d["event_id"] for d in decisions))
     print(f"applied {len(decisions)} decisions: {counts}")
     if args.no_commit:
         return 0
     git("add", "data/events.csv", "data/moves.csv", cwd=root)
-    git("commit", "-q", "-m", f"Review by {args.reviewer}: {counts['rejected']} rejected, {counts['merged']} merged, "
-        f"{counts['new_moves']} new moves\n\nDecisions applied with pipeline.queue decide on {date}.", cwd=root)
+    git("commit", "-q", "-m", f"Review by {reviewer}: {counts['rejected']} rejected, {counts['merged']} merged, "
+        f"{counts['new_moves']} new moves, {counts['duplicates']} duplicates\n\nEvents: {ids}\nApplied with pipeline.queue decide on {date}.", cwd=root)
     print("committed; push and let the validator run")
     return 0
 
@@ -307,9 +440,10 @@ def cmd_decide(args) -> int:
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
-    so = sub.add_parser("open"); so.add_argument("--run", required=True); so.add_argument("--no-push", action="store_true"); so.set_defaults(fn=cmd_open)
+    so = sub.add_parser("open"); so.add_argument("--run", required=True); so.add_argument("--no-push", action="store_true")
+    so.add_argument("--base", default="main"); so.set_defaults(fn=cmd_open)
     sp = sub.add_parser("page"); sp.add_argument("--out", default=""); sp.add_argument("--run-id", default=""); sp.set_defaults(fn=cmd_page)
-    sd = sub.add_parser("decide"); sd.add_argument("decisions"); sd.add_argument("--reviewer", required=True)
+    sd = sub.add_parser("decide"); sd.add_argument("decisions"); sd.add_argument("--reviewer", default="")
     sd.add_argument("--date", default=""); sd.add_argument("--no-commit", action="store_true"); sd.set_defaults(fn=cmd_decide)
     a = p.parse_args(argv)
     return a.fn(a)
