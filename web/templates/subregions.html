@@ -3,7 +3,7 @@
 {% block content %}
 <section class="lede">
   <h1>Where in the sea</h1>
-  <p class="lede-text">MATS places each move in one or more of ten sub-regions. A move that spans several counts in each of them, so the map and the charts count mentions, not moves.</p>
+  <p class="lede-text">MATS places each move in one or more of ten sub-regions. Within a sub-region the counts are moves; a move that spans several sub-regions is counted in each of them, so sums across sub-regions overstate the number of moves.</p>
 </section>
 
 <section class="filters" aria-label="Filters">
@@ -23,7 +23,7 @@
     <div class="chart choropleth" data-chart="choropleth"></div>
     <div class="map-side">
       <fieldset class="bins" id="map-bin"><legend>Period</legend></fieldset>
-      <p class="figure-note">Shading runs from no moves to the busiest sub-region in the period shown. Hover or tap a sub-region for its counts by type.</p>
+      <p class="figure-note">Shading runs from no moves to the busiest sub-region in the period shown. Hover over or tap a sub-region for its counts by type.</p>
     </div>
   </div>
   <div class="table-view" hidden></div>

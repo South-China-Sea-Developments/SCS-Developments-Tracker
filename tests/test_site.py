@@ -255,7 +255,8 @@ def test_issues_and_domains_pages_match_the_files(browser, dist):
     page.locator('.chip[data-code="CN"] input').uncheck(force=True)
     page.wait_for_timeout(100)
     row = page.locator("#fig-issues-all .table-view tbody tr", has_text="1988").first.inner_text().split("\t")
-    assert row[header.index("Diplomatic") if False else 1] == str(sum(1 for m in moves if m["year"] == "1988" and m["military"] == "1" and m["claimant"] != "CN"))
+    header = page.locator("#fig-issues-all .table-view thead th").all_inner_texts()
+    assert row[header.index("Military")] == str(sum(1 for m in moves if m["year"] == "1988" and m["military"] == "1" and m["claimant"] != "CN"))
     assert problems == []
     page.close()
 
@@ -267,6 +268,13 @@ def test_subregions_page_map_and_bins(browser, dist):
     assert page.locator('[data-chart="years"][data-dim="subregion"] svg').count() == 10
     bins = page.locator("#map-bin label span").all_inner_texts()
     assert bins[:3] == ["All years", "1970", "1971–75"] and bins[-1] == "2011–15"
+    # the small multiples use one colour per selection, never China's on every claimant
+    page.locator('#map-claimant input[value="VN"]').check(force=True)
+    page.wait_for_timeout(150)
+    fill = page.locator('[data-chart="years"][data-dim="subregion"] .seg').first.get_attribute("fill")
+    assert fill.lower() == page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--vn').trim()").lower()
+    page.locator('#map-claimant input[value="ALL"]').check(force=True)
+    page.wait_for_timeout(150)
     # fills change with the period
     fills = lambda: [z.get_attribute("fill") for z in page.locator(".choropleth .zone").all()]
     before = fills()
@@ -299,3 +307,15 @@ def test_subregions_page_map_and_bins(browser, dist):
     assert "Spratly NE" in page.locator(".tooltip").inner_text()
     assert problems == []
     page.close()
+
+
+def test_periods_extend_with_the_years():
+    from web.build import periods
+
+    labels = lambda ys: [p["label"] for p in periods(ys)]
+    assert labels(list(range(1970, 2016))) == ["All years", "1970", "1971–75", "1976–80", "1981–85", "1986–90", "1991–95",
+                                                "1996–00", "2001–05", "2006–10", "2011–15"]
+    assert labels(list(range(1970, 2027)))[-3:] == ["2016–20", "2021–25", "2026"]
+    assert labels(list(range(1970, 2023)))[-1] == "2021–22"
+    assert periods(list(range(1970, 2027)))[-1]["years"] == [2026]
+    assert sum(len(p["years"]) for p in periods(list(range(1970, 2027)))[1:]) == 57   # every year in exactly one bin

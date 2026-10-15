@@ -226,7 +226,8 @@ def aggregates(moves: list[dict]) -> dict:
     """Counts of accepted moves per claimant and year for every flag, and per sub-region cross-tabs.
 
     Years run 1970..latest accepted move. Flags other than Type are non-exclusive, so their
-    sums are mentions, not moves; "total" is always the number of moves.
+    sums are mentions, not moves; "total" is always the number of moves. Per-year rows carry the
+    Type, Domain and Issue flags; sub-region counts per year live in the sparse "subregion_years".
     """
     accepted = [m for m in moves if m["status"] == "accepted"]
     last = max((int(m["year"]) for m in accepted), default=1970)
@@ -238,7 +239,7 @@ def aggregates(moves: list[dict]) -> dict:
            "by_claimant": {}}
     dims = schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS
     for c in schema.CLAIMANT_CODES:
-        per_year = {str(y): {**{f: 0 for f in schema.FLAG_COLUMNS}, "total": 0} for y in years}
+        per_year = {str(y): {**{f: 0 for f in dims}, "total": 0} for y in years}
         per_loc = {str(i + 1): {**{f: 0 for f in dims}, "total": 0} for i in range(len(schema.SUBREGION_FLAGS))}
         loc_years: dict[str, dict] = {str(i + 1): {} for i in range(len(schema.SUBREGION_FLAGS))}  # sparse: years with moves
         for m in accepted:
@@ -246,7 +247,7 @@ def aggregates(moves: list[dict]) -> dict:
                 continue
             row = per_year[m["year"]]
             row["total"] += 1
-            for f in schema.FLAG_COLUMNS:
+            for f in dims:
                 if m[f] == "1":
                     row[f] += 1
             for i, loc in enumerate(schema.SUBREGION_FLAGS):
@@ -261,7 +262,9 @@ def aggregates(moves: list[dict]) -> dict:
                     for t_ in schema.TYPE_FLAGS:
                         if m[t_] == "1":
                             ly[t_] += 1
-        totals = {f: sum(r[f] for r in per_year.values()) for f in schema.FLAG_COLUMNS}
+        totals = {f: sum(r[f] for r in per_year.values()) for f in dims}
+        for i, loc in enumerate(schema.SUBREGION_FLAGS):
+            totals[loc] = per_loc[str(i + 1)]["total"]
         totals["total"] = sum(r["total"] for r in per_year.values())
         out["by_claimant"][c] = {"years": per_year, "totals": totals, "subregions": per_loc, "subregion_years": loc_years}
     return out

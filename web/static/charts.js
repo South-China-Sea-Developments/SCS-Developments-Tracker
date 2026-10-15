@@ -15,6 +15,7 @@
     domains: { keys: AGG.domains || [], labels: AGG.domain_labels || {}, prefix: "--d-" },
     issues: { keys: AGG.issues || [], labels: AGG.issue_labels || {}, prefix: "--i-" }
   };
+  var DIM_WORD = { types: "Type", domains: "Domain", issues: "Issue" };
   var LOCS = (AGG.subregions || []).map(function (flag, i) {
     return { flag: flag, n: String(i + 1), name: (AGG.subregion_names || {})[String(i + 1)] || String(i + 1) };
   });
@@ -50,17 +51,7 @@
   };
   CLAIMANTS.forEach(function (c) { state.selected[c] = true; });
 
-  // ---- periods for the map: 1970, 1971-75, ..., extending as years are added ---
-  var BINS = (function () {
-    var bins = [{ key: "all", label: "All years", years: YEARS.slice() }];
-    var first = YEARS[0], last = YEARS[YEARS.length - 1];
-    bins.push({ key: String(first), label: String(first), years: [first] });
-    for (var start = first + 1; start <= last; start += 5) {
-      var end = Math.min(start + 4, last);
-      bins.push({ key: start + "-" + end, label: start + "–" + String(end).slice(2), years: YEARS.filter(function (y) { return y >= start && y <= end; }) });
-    }
-    return bins;
-  })();
+  var BINS = AGG.periods || [{ key: "all", label: "All years", years: YEARS.slice() }];
 
   // ---- tooltip (one for the page) ---------------------------------------
   var tip = html("div", "tooltip");
@@ -152,7 +143,7 @@
       var rows = segs.slice().reverse().map(function (s) { return { color: s.sr.color, value: s.v, label: s.sr.label }; });
       var title = segs.length ? c.label : c.label + ": none";
       hit.addEventListener("pointerenter", function () { g.classList.add("is-hover"); });
-      hit.addEventListener("pointermove", function (ev) { showTip(ev.clientX, ev.clientY, title, rows, segs.length && series.length > 1 ? acc : undefined); });
+      hit.addEventListener("pointermove", function (ev) { showTip(ev.clientX, ev.clientY, title, rows, segs.length && opts.partsOfWhole ? acc : undefined); });
       hit.addEventListener("pointerleave", function () { g.classList.remove("is-hover"); hideTip(); });
     });
     if (width > avail) container.scrollLeft = width;   // open at the latest categories
@@ -188,8 +179,9 @@
     return lg;
   }
 
-  // table twin: rows = categories, columns = series (+ total when the series are parts of a whole)
-  function table(container, categories, series, caption, firstHeader, withTotal) {
+  // table twin: rows = categories, columns = series (+ total when the series are parts of a whole;
+  // + a footer when summing down a column is meaningful, i.e. the categories do not overlap)
+  function table(container, categories, series, caption, firstHeader, withTotal, withFooter) {
     container.textContent = "";
     var t = html("table", null, null, container);
     html("caption", "sr-only", caption, t);
@@ -204,8 +196,9 @@
       series.forEach(function (sr) { var v = sr.values[c.key] || 0; tot += v; html("td", null, String(v), row); });
       if (withTotal) html("td", null, String(tot), row);
     });
+    if (withFooter === false) return;
     var foot = html("tfoot", null, null, t), fr = html("tr", null, null, foot), all = 0;
-    html("th", null, "All", fr);
+    html("th", null, firstHeader === "Year" ? "All years" : "All", fr);
     series.forEach(function (sr) {
       var s = sum(categories.map(function (c) { return sr.values[c.key] || 0; }));
       all += s; html("td", null, String(s), fr);
@@ -254,7 +247,7 @@
       return;
     }
     if (btn) btn.hidden = false;
-    table(tv, categories, series, opts.ariaLabel, opts.firstHeader || "Year", !!opts.partsOfWhole);
+    table(tv, categories, series, opts.ariaLabel, opts.firstHeader || "Year", !!opts.partsOfWhole, opts.footer !== false);
     if (tableOn) {
       chart.textContent = "";
     } else {
@@ -276,7 +269,7 @@
     fig.hidden = false;
     var total = sum(codes.map(function (c) { return AGG.by_claimant[c].totals.total; }));
     var empty = !codes.length ? "No claimants selected. Pick at least one above."
-              : !total ? "No coded moves yet for " + who + ". Coding for this claimant is in progress." : null;
+              : !total ? "No coded moves yet for " + who + "." + (codes.length === 1 ? " Coding for this claimant is in progress." : "") : null;
 
     if (kind === "all-claimants") {
       var series = state.stackBy === "type"
@@ -290,14 +283,21 @@
     } else if (kind === "years" && dim === "subregion") {
       var loc = chart.getAttribute("data-loc");
       var name = (AGG.subregion_names || {})[loc] || loc;
-      renderFigure(fig, YEAR_CATS, [{ key: loc, label: name, color: token("--cn"), values: perYear(codes, AGG.subregions[parseInt(loc, 10) - 1]) }],
+      var vals = {};
+      YEARS.forEach(function (y) {
+        vals[String(y)] = sum(codes.map(function (c) { var cell = AGG.by_claimant[c].subregion_years[loc][String(y)]; return cell ? cell.total : 0; }));
+      });
+      // one series: the selected claimant's colour, or the default single-series slot when all are shown
+      var colour = codes.length === 1 ? claimantColor(codes[0]) : token("--series-1");
+      renderFigure(fig, YEAR_CATS, [{ key: loc, label: name, color: colour, values: vals }],
         { yearAxis: true, small: small, empty: empty, ariaLabel: "Moves per year in " + name + ", " + who });
     } else if (kind === "years") {
       renderFigure(fig, YEAR_CATS, dimSeries(dim, function (k) { return perYear(codes, k); }),
-        { yearAxis: true, small: small, empty: empty, ariaLabel: DIMS[dim] ? dim + " mentions per year, " + who : "" });
+        { yearAxis: true, small: small, empty: empty, ariaLabel: DIM_WORD[dim] + " mentions per year, " + who });
     } else if (kind === "subregions") {
       renderFigure(fig, LOC_CATS, dimSeries(dim, function (k) { return perLoc(codes, k); }),
-        { small: small, empty: empty, firstHeader: "Sub-region", partsOfWhole: dim === "types", ariaLabel: dim + " by sub-region, " + who });
+        { small: small, empty: empty, firstHeader: "Sub-region", partsOfWhole: dim === "types", footer: false,
+          ariaLabel: (dim === "types" ? "Moves" : DIM_WORD[dim] + " mentions") + " by sub-region, " + who });
     }
   }
 
@@ -319,6 +319,13 @@
   function ramp() {
     return token("--seq").split(",").map(function (s) { return s.trim(); });
   }
+  function luminance(hex) {               // relative luminance of a #rrggbb colour
+    var m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+    if (!m) return 1;
+    var n = parseInt(m[1], 16);
+    var f = function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
+    return 0.2126 * f(n >> 16) + 0.7152 * f((n >> 8) & 255) + 0.0722 * f(n & 255);
+  }
   function renderChoropleth(fig) {
     var chart = fig.querySelector(".chart");
     var tv = fig.querySelector(".table-view");
@@ -338,7 +345,8 @@
       BINS.slice(1).forEach(function (b) { vals[b.key] = binCounts(codes, l, b).total; });
       return { key: l.n, label: l.n + " " + l.name, color: "", values: vals };
     });
-    table(tv, periodCats, locSeries, "Moves by sub-region and period, " + who, "Period", false);
+    table(tv, periodCats, locSeries, "Moves by sub-region and period, " + who, "Period", false, false);
+    var old = fig.querySelector(".legend"); if (old) old.remove();
     if (tableOn) { chart.textContent = ""; return; }
 
     chart.textContent = "";
@@ -351,30 +359,38 @@
     var steps = ramp();
     LOCS.forEach(function (l, i) {
       var v = counts[i];
-      var fill = v === 0 || maxV === 0 ? token("--surface") : steps[Math.min(steps.length - 1, Math.floor((v / maxV) * (steps.length - 1) + 0.999))];
+      var fill = v === 0 || maxV === 0 ? token("--surface") : steps[Math.max(0, Math.ceil((v / maxV) * steps.length) - 1)];
       var p = el("path", { d: AGG.subregion_paths[l.n], "class": "zone", fill: fill }, svg);
+      p.setAttribute("data-fill-dark", luminance(fill) < 0.45 ? "1" : "0");
       var rows = AGG.types.map(function (t) { return { color: token("--t-" + t), label: DIMS.types.labels[t] || t, value: cells[i][t] }; })
         .filter(function (r) { return r.value > 0; }).reverse();
+      var periodWord = bin.key === "all" ? "all years" : bin.label;
       p.addEventListener("pointerenter", function () { p.classList.add("is-hover"); });
       p.addEventListener("pointermove", function (ev) {
-        showTip(ev.clientX, ev.clientY, l.n + " " + l.name + ", " + bin.label, rows, v);
+        if (ev.pointerType === "touch") return;
+        showTip(ev.clientX, ev.clientY, l.n + " " + l.name + ", " + periodWord, rows, v);
       });
-      p.addEventListener("pointerleave", function () { p.classList.remove("is-hover"); hideTip(); });
+      p.addEventListener("pointerdown", function (ev) {   // a tap keeps the tooltip until the next tap elsewhere
+        if (ev.pointerType !== "touch") return;
+        ev.stopPropagation();
+        showTip(ev.clientX, ev.clientY, l.n + " " + l.name + ", " + periodWord, rows, v);
+      });
+      p.addEventListener("pointerleave", function (ev) { p.classList.remove("is-hover"); if (ev.pointerType !== "touch") hideTip(); });
     });
     // labels: the sub-region number at the polygon's centroid-ish position (bbox centre)
     LOCS.forEach(function (l, i) {
       var box = svg.querySelectorAll(".zone")[i].getBBox();
       var t = el("text", { x: box.x + box.width / 2, y: box.y + box.height / 2 + 4, "text-anchor": "middle", "class": "zone-label" }, svg);
       t.textContent = l.n;
-      if (counts[i] > 0 && counts[i] / Math.max(1, maxV) > 0.4) t.classList.add("on-dark");
+      if (svg.querySelectorAll(".zone")[i].getAttribute("data-fill-dark") === "1") t.classList.add("on-dark");
     });
-    // scale legend
+    // scale legend: a surface swatch for zero, then the steps up to the busiest sub-region
     var lg = html("div", "legend seq");
     html("span", "seq-end", "0", lg);
+    html("i", "zero", null, lg).style.setProperty("--c", token("--surface"));
     steps.forEach(function (s) { html("i", null, null, lg).style.setProperty("--c", s); });
     html("span", "seq-end", String(maxV), lg);
-    html("span", "seq-caption", "moves in " + bin.label + ", " + who, lg);
-    var old = fig.querySelector(".legend"); if (old) old.remove();
+    html("span", "seq-caption", "moves in " + (bin.key === "all" ? "all years" : bin.label) + ", " + who, lg);
     var side = fig.querySelector(".map-side");
     if (side) side.insertAdjacentElement("afterbegin", lg); else chart.insertAdjacentElement("afterend", lg);
   }
@@ -436,6 +452,7 @@
     }, 120);
   });
   document.addEventListener("scroll", hideTip, { passive: true });
+  document.addEventListener("pointerdown", function (ev) { if (ev.pointerType === "touch") hideTip(); });
 
   renderAll();
 })();

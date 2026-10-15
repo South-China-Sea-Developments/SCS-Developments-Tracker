@@ -256,34 +256,28 @@ h3 { font-size: 1rem; font-weight: 600; margin: 0; }
   .nav a { padding: 8px 0 10px; font-size: 0.9375rem; }
 }
 
-/* Issue and domain series colours: categorical slots in fixed order (validated) */
+/* Issue and domain series: the categorical slots in fixed order, aliased so they follow the mode */
 :root {
-  --i-military: #2a78d6; --i-administrative: #eb6834; --i-energy: #1baf7a; --i-fisheries: #eda100; --i-politics: #e87ba4;
-  --d-domestic: #2a78d6; --d-diplomatic: #eb6834; --d-physical: #1baf7a;
+  --series-1: var(--cn);
+  --i-military: var(--cn); --i-administrative: var(--vn); --i-energy: var(--ph); --i-fisheries: var(--my); --i-politics: var(--id);
+  --d-domestic: var(--cn); --d-diplomatic: var(--vn); --d-physical: var(--ph);
   --seq: #cde2fb, #9ec5f4, #6da7ec, #3987e5, #256abf, #184f95, #0d366b;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --i-military: #3987e5; --i-administrative: #d95926; --i-energy: #199e70; --i-fisheries: #c98500; --i-politics: #d55181;
-    --d-domestic: #3987e5; --d-diplomatic: #d95926; --d-physical: #199e70;
-    --seq: #0d366b, #184f95, #256abf, #3987e5, #6da7ec, #9ec5f4, #cde2fb;
-  }
+  :root:not([data-theme="light"]) { --seq: #0d366b, #184f95, #256abf, #3987e5, #6da7ec, #9ec5f4, #cde2fb; }
 }
-:root[data-theme="dark"] {
-  --i-military: #3987e5; --i-administrative: #d95926; --i-energy: #199e70; --i-fisheries: #c98500; --i-politics: #d55181;
-  --d-domestic: #3987e5; --d-diplomatic: #d95926; --d-physical: #199e70;
-  --seq: #0d366b, #184f95, #256abf, #3987e5, #6da7ec, #9ec5f4, #cde2fb;
-}
+:root[data-theme="dark"] { --seq: #0d366b, #184f95, #256abf, #3987e5, #6da7ec, #9ec5f4, #cde2fb; }
+/* On a page whose series use the categorical slots, the claimant chips go neutral so one hue has one meaning */
+.chips-neutral .chip { --c: var(--ink-2); }
 
 /* Sub-regions page */
 .filters .segmented { flex-wrap: wrap; border-radius: 12px; }
-.segmented label span { white-space: nowrap; }
 .map-layout { display: grid; grid-template-columns: minmax(220px, 420px) 1fr; gap: 20px; align-items: start; }
-@media (max-width: 640px) { .map-layout { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .map-layout { grid-template-columns: 1fr; } .map-side { order: -1; } }
 .choropleth svg { width: 100%; height: auto; display: block; background: var(--paper); border: 1px solid var(--grid); border-radius: var(--radius); }
 .choropleth .zone { stroke: var(--baseline); stroke-width: 1; }
 .choropleth .zone.is-hover { stroke: var(--ink); stroke-width: 1.5; }
-.choropleth .zone-label { font-size: 11px; fill: var(--ink-2); pointer-events: none; font-variant-numeric: tabular-nums; }
+.choropleth .zone-label { font-size: 11px; fill: #12222c; pointer-events: none; font-variant-numeric: tabular-nums; } /* label colour follows the fill, not the mode */
 .choropleth .zone-label.on-dark { fill: #fff; }
 .bins { border: 0; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 6px; }
 .bins legend { padding: 0; color: var(--muted); font-size: 0.875rem; width: 100%; margin-bottom: 4px; }
@@ -295,5 +289,6 @@ h3 { font-size: 1rem; font-weight: 600; margin: 0; }
 .legend.seq { align-items: center; gap: 2px; }
 .legend.seq { margin: 0 0 12px; }
 .legend.seq i { width: 18px; height: 10px; border-radius: 2px; background: var(--c); }
+.legend.seq i.zero { box-shadow: inset 0 0 0 1px var(--baseline); margin-right: 4px; }
 .legend.seq .seq-end { padding: 0 6px; font-variant-numeric: tabular-nums; }
 .legend.seq .seq-caption { margin-left: 8px; color: var(--muted); }

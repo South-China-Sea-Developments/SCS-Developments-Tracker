@@ -7,7 +7,7 @@
 </section>
 
 <section class="filters" aria-label="Filters">
-  <div class="chips" id="claimant-filter" role="group" aria-label="Claimants shown">
+  <div class="chips chips-neutral" id="claimant-filter" role="group" aria-label="Claimants shown">
     {% for c in claimants %}
     <label class="chip" data-code="{{ c.code }}"><input type="checkbox" value="{{ c.code }}" checked><span class="swatch" aria-hidden="true"></span><span>{{ c.name }}</span></label>
     {% endfor %}
@@ -79,9 +79,6 @@
 
 <section class="types">
   <h2>Definitions</h2>
-  <dl class="type-list">
-    <div class="type"><dt>Issues</dt><dd>Military; administrative (acts of governance over disputed features or waters); energy (oil and gas); fisheries; politics (statements, law, diplomacy about the claim itself).</dd></div>
-    <div class="type"><dt>Domains</dt><dd>Domestic (inside the claimant's own political and legal system); diplomatic (between governments); physical (on the water or on the features).</dd></div>
-  </dl>
+  <p class="figure-note">In Chubb's coding each move is tagged with the issues it addressed — security, administrative control, resources (energy and fisheries) and politics — and the domains it played out in: domestic, diplomatic, physical. The full definitions are in the <a href="methodology.html">methodology</a> and the codebook.</p>
 </section>
 {% endblock %}

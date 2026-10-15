@@ -59,7 +59,7 @@ def compute_aggregates(moves: list[dict]) -> dict:
         per_year = {}
         for y in years:
             in_year = [m for m in mine if m["year"] == str(y)]
-            per_year[str(y)] = {**{f: sum(int(m[f]) for m in in_year) for f in schema.FLAG_COLUMNS}, "total": len(in_year)}
+            per_year[str(y)] = {**{f: sum(int(m[f]) for m in in_year) for f in dims}, "total": len(in_year)}
         per_loc, loc_years = {}, {}
         for i, loc in enumerate(schema.SUBREGION_FLAGS, start=1):
             in_loc = [m for m in mine if m[loc] == "1"]
@@ -132,6 +132,27 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
     }
 
 
+def periods(years: list[int]) -> list[dict]:
+    """The map's periods: the first year alone, then five-year bins, extending as years are added.
+
+    [1970, 1971-75, ..., 2011-15, 2016-20, 2021-25, 2026] for 1970..2026; a trailing bin shorter
+    than five years is labelled by its actual span (a single year by that year alone).
+    """
+    out = [{"key": "all", "label": "All years", "years": list(years)}]
+    if not years:
+        return out
+    first, last = years[0], years[-1]
+    out.append({"key": str(first), "label": str(first), "years": [first]})
+    start = first + 1
+    while start <= last:
+        end = min(start + 4, last)
+        span = [y for y in years if start <= y <= end]
+        label = str(start) if start == end else f"{start}–{str(end)[2:]}"
+        out.append({"key": f"{start}-{end}", "label": label, "years": span})
+        start += 5
+    return out
+
+
 def git_describe() -> str:
     try:
         return subprocess.run(["git", "describe", "--always", "--dirty"], cwd=ROOT, capture_output=True,
@@ -158,8 +179,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     agg["domain_labels"] = DOMAIN_LABELS
     agg["issue_labels"] = ISSUE_LABELS
     agg["subregion_names"] = dict(zip((str(i) for i in range(1, 11)), schema.SUBREGION_NAMES))
-    agg["subregion_paths"] = {str(k): v for k, v in subregion_paths(data_dir / "reference" / "mavd_subregions.geojson").items()}
+    agg["subregion_paths"] = {str(k): v for k, v in paths.items()}
     agg["view"] = [VIEW_W, VIEW_H]
+    agg["periods"] = periods(agg["years"])
     agg["mats_last_year"] = schema.MATS_YEARS[-1]
     agg["coded_by_chubb"] = sum(1 for m in moves if m["coded_by"] == "chubb" and m["status"] == "accepted")
     meta = {
