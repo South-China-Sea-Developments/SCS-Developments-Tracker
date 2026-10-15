@@ -2,7 +2,7 @@
 
 A continuously updated database of **assertive moves by claimant states in the South China Sea**, built as the successor to Andrew Chubb's *Maritime Assertiveness Time Series* (MATS 1.0, 1970–2015) and its public visualization, the *Maritime Assertiveness Visualization Dashboard* (MAVD, NBR, 2023).
 
-**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07).
+**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07); the site has an event map with a time slider and filters, and a gazetteer places events at named features (08).
 
 **Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main`). **Harvest:** every Monday on GitHub Actions; review pull requests are the queue.
 
@@ -37,9 +37,10 @@ python -m pipeline.ops --help      # what the scheduled run does around a harves
 | `data/raw/mats-1.02/` | MATS 1.02 as provided by the author (xlsx, plus a verbatim CSV export). 357 cases, 1970–2015. **Never edited.** |
 | `data/raw/mavd-arcgis-2023/` | The tables and app configuration behind the public MAVD v1.2 dashboard, pulled from NBR's public ArcGIS services on 2026-10-15. Includes columns absent from the xlsx (`Dates`, `Other_Possible_Cases`, `Cases_of_diminished_assertive_a`). **Never edited.** |
 | `data/reference/mavd_subregions.geojson` | The ten MAVD sub-region polygons (WGS84), from the same ArcGIS service. |
+| `data/reference/gazetteer.csv`, `gazetteer_extra.csv` | Named features of the sea (reefs, shoals, banks, islands) with coordinates, sub-region and names in five languages: generated from Wikidata (`pipeline.gazetteer_wikidata`) plus hand corrections. Places harvested events. |
 | `docs/sources/` | Notes on where each raw input came from and how it was retrieved. |
 | `CONTEXT.md` | Project glossary. Definitions only. |
-| `web/` | The public site: build script, templates, stylesheet, chart script, vendored font. Output in `web/dist/` (not committed). |
+| `web/` | The public site: build script, templates, stylesheet, chart and map scripts, vendored font and Leaflet. Output in `web/dist/` (not committed). |
 
 ## Provenance and citation
 

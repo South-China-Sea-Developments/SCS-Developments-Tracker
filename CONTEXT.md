@@ -30,6 +30,8 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Description** *(MATS)* — The free-text account of a move with its sources cited inline. Called `Case description and sources` in the xlsx and `Intensified_assertive_actions` in the ArcGIS tables.
 
+**Gazetteer** — The project's list of named features of the South China Sea (reefs, shoals, banks, islands) with coordinates, sub-region and names in English, Chinese, Vietnamese, Filipino and Malay. An event whose sources name a feature is placed at it; an event whose sources name only an area is not placed.
+
 **Master timeline** *(MATS)* — Chubb's Stage 1 collection: every plausibly relevant development in the dispute, confirmed or not, from which moves are later refined. In this project the events table plays this role.
 
 **Diminishment** *(MATS)* — A year in which an aspect of a claimant's assertiveness recorded by an earlier move falls away (fewer, or qualitatively less escalatory, actions). Recorded in Chubb's data as "Cases of diminished assertive actions"; absence of evidence of equivalent actions in the following year is normally treated as diminishment.

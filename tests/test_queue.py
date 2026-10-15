@@ -46,6 +46,33 @@ def test_open_appends_candidates_that_pass_the_validator(opened):
     assert validate(opened, RAW_XLSX, RAW_MAVD) == []
 
 
+def test_open_places_candidates_whose_feature_the_gazetteer_knows(opened):
+    """Ticket 08: a named feature becomes coordinates and a sub-region at open; an unnamed one stays unplaced."""
+    by_name = {x["location_name"][:12]: x for x in candidates(opened)}
+    stas = by_name["Second Thoma"]
+    assert (stas["lat"], stas["lon"], stas["subregion"], stas["location_precision"]) == ("9.65000", "115.85000", "6", "feature")
+    scar = by_name["Scarborough "]
+    assert scar["subregion"] == "4" and float(scar["lat"]) == pytest.approx(15.18, abs=0.02)
+    headline = by_name[""]
+    assert headline["lat"] == "" and headline["location_precision"] in ("", "unknown")
+
+
+def test_edited_locations_are_resolved_again(opened):
+    """A corrected name is placed afresh (old coordinates do not survive it); typed coordinates get
+    their sub-region from the polygons; an unknown name clears the position."""
+    cands = candidates(opened)
+    stas = next(x for x in cands if x["location_name"].startswith("Second"))
+    assert stas["subregion"] == "6"
+    out = queue._check_edits(stas["event_id"], stas, {"location_name": "Whitsun Reef"})
+    assert (out["lat"], out["subregion"], out["location_precision"]) == ("9.96667", "5", "feature")
+    out = queue._check_edits(stas["event_id"], stas, {"location_name": "somewhere in the sea"})
+    assert (out["lat"], out["lon"], out["subregion"], out["location_precision"]) == ("", "", "", "unknown")
+    out = queue._check_edits(stas["event_id"], stas, {"lat": "15.18", "lon": "117.77"})
+    assert out["subregion"] == "4" and "location_precision" not in out      # feature stays feature
+    out = queue._check_edits(stas["event_id"], dict(stas, location_precision="unknown"), {"lat": "15.18", "lon": "117.77", "subregion": "3"})
+    assert out["subregion"] == "3" and out["location_precision"] == "point"   # a stated sub-region is kept for the validator to judge
+
+
 def test_review_page_shows_what_the_coder_needs(opened, tmp_path):
     page = tmp_path / "review.html"
     assert queue.write_review_page(page, opened, run_id="fixture") == 5

@@ -10,6 +10,8 @@ These files are the dataset. A record exists only if it is here, on `main` (ADR 
 | `sources.csv` | source per event | Seed events cite the MATS case description. |
 | `corrections.csv` | documented correction to a MATS-era row | Empty. Any change to a `coded_by = chubb` field must be listed here (move, field, new value, date, by, reason) or the validator rejects it. |
 | `reference/mavd_subregions.geojson` | sub-region polygon | Ten MAVD polygons, `LocationNo` 1–10. |
+| `reference/gazetteer.csv` | feature | Generated from Wikidata (`python -m pipeline.gazetteer_wikidata`); do not edit by hand. Columns: `feature_id`, names in en/zh/vi/fil/ms, `aliases`, `lat`, `lon`, `subregion`, `kind`, `wikidata`, `retrieved`. |
+| `reference/gazetteer_extra.csv` | feature | Hand additions and corrections, same columns; a row with an existing `feature_id` corrects it (blank fields keep the generated value, aliases are added; `subregion` `-` means the feature spans several). Edit this one. |
 | `raw/` | — | Inputs as received. Never edited. |
 
 Regenerate from raw inputs: `python -m pipeline.load_mats`. Check: `python -m pipeline.validate`. CI runs both on every pull request and refuses a merge that fails either, or whose files differ from a fresh regeneration.

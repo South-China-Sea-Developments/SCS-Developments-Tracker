@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Event map — SCS Developments Tracker{% endblock %}
+{% block description %}Where assertive moves in the South China Sea happened: dated events on a map, with a time slider and filters by claimant, type, domain, issue and counterpart.{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/leaflet/leaflet.css">
+<script id="mapdata" type="application/json">{{ map_json|safe }}</script>{% endblock %}
+{% block content %}
+<section class="lede">
+  <h1>Where and when</h1>
+  <p class="lede-text">Every move is backed by dated events. Events with a known position are points; events known only to a sub-region are counted on the sub-region itself. Scrub through time, narrow by claimant, type, domain, issue or counterpart, and open a point for the event and its move. {{ n_map_events }} events{% if n_map_points %}, {{ n_map_points }} of them placed{% endif %}; for 1970–{{ meta.mats_last_year }} events exist where the original dataset recorded dates, which is Vietnam's moves, so the early years are a partial picture.</p>
+</section>
+
+<form class="case-filters map-filters" id="map-filters" aria-label="Filter events">
+  <div class="filter-row">
+    <div class="chips" id="claimant-filter" role="group" aria-label="Claimants">
+      {% for c in claimants %}
+      <label class="chip" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="swatch" aria-hidden="true"></span><span>{{ c.name }}</span></label>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="filter-row filter-groups">
+    <fieldset><legend>Type</legend>
+      {% for key, label, blurb in types %}<label><input type="checkbox" name="t" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Domain</legend>
+      {% for key, label in domain_labels.items() %}<label><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Issue</legend>
+      {% for key, label in issue_labels.items() %}<label><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Directed at</legend>
+      <select id="target" aria-label="Directed at">
+        <option value="">any counterpart</option>
+        {% for code, name in dyad_targets.items() %}<option value="{{ code }}">{{ name }}</option>{% endfor %}
+      </select>
+    </fieldset>
+    <button type="button" class="toggle" id="reset">Clear filters</button>
+  </div>
+</form>
+
+<section class="figure map-figure" id="fig-events" aria-label="Event map">
+  <div class="time-row">
+    <button type="button" class="toggle play" id="play" aria-pressed="false" aria-label="Play through time">Play</button>
+    <label class="time-window">Show
+      <select id="window" aria-label="Time window">
+        <option value="1">the month</option>
+        <option value="12" selected>the year</option>
+        <option value="60">five years</option>
+        <option value="0">everything up to</option>
+      </select>
+    </label>
+    <label class="time-slider"><span class="sr-only">Month</span>
+      <input type="range" id="month" min="0" max="0" step="1" value="0"></label>
+    <output class="time-label" id="time-label" for="month"></output>
+  </div>
+  <div class="map-stage">
+    <div id="map" class="leaflet-map" role="region" aria-label="Map of the South China Sea with event locations"></div>
+    <div class="map-legend" aria-hidden="true">
+      <span class="legend-point"><i class="dot"></i> event at a known position</span>
+      <span class="legend-point"><i class="dot feature"></i> at a named feature</span>
+      <span class="legend-point"><i class="count-swatch">n</i> events known only to the sub-region</span>
+    </div>
+  </div>
+  <p class="filters-note" id="map-count" aria-live="polite"></p>
+  <div class="figure-head"><h2 class="h-small">Events in view</h2><button class="toggle" type="button" id="list-toggle" aria-pressed="false">List</button></div>
+  <ol class="event-list" id="event-list" hidden aria-label="Events in the current view"></ol>
+</section>
+
+<section class="prose">
+  <h2>Reading the map</h2>
+  <p>A point is one event: a patrol intercept, a statement, a drilling start, dated and sourced on its move's page. A filled point has coordinates of its own; a hollow point stands at the named feature (reef, shoal, island) the sources mention, placed with the project's <a href="{{ meta.repo_url }}/blob/main/data/reference/gazetteer.csv">gazetteer</a>. Where the sources name only a wider area, or the original dataset recorded no place, the event is counted on its move's sub-region instead; those counts are the numbers on the ten polygons. The filters use the move's coding (type, domain, issue, counterpart), because MATS variables belong to the move, not the event. Base map tiles come from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> (© OpenStreetMap contributors, ODbL) and are the only thing on this page not in the bundle; without them the sub-regions and events still draw. Boundaries and names on the base map are those of its providers and imply no position on any claim.</p>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/leaflet/leaflet.js"></script><script src="{{ root }}assets/map.js"></script>{% endblock %}

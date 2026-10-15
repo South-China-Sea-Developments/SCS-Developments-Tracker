@@ -153,6 +153,57 @@ def periods(years: list[int]) -> list[dict]:
     return out
 
 
+def map_subregions(e: dict, move: dict) -> list[str]:
+    """Where an event without coordinates counts: its own sub-region, else its move's (same rule as
+    pipeline.validate.map_subregions, written twice on purpose: seam 3 holds the two to one answer)."""
+    if e["subregion"]:
+        return [e["subregion"]]
+    return [str(i + 1) for i, f in enumerate(schema.SUBREGION_FLAGS) if move[f] == "1"]
+
+
+def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> dict:
+    """What the event map draws: accepted events of accepted moves, as points when they have
+    coordinates and as sub-region counts otherwise, with the move's coding for the filters."""
+    move_by_id = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
+    out = []
+    counts = {"n_events": 0, "n_points": 0, "by_claimant": {c: {"events": 0, "points": 0, "subregions": {str(i): 0 for i in range(1, 11)}, "years": {}}
+                                                             for c in schema.CLAIMANT_CODES}}
+    for e in sorted(events, key=lambda e: (e["date_start"], e["event_id"])):
+        m = move_by_id.get(e["move_id"])
+        if e["status"] != "accepted" or m is None:
+            continue
+        cc = counts["by_claimant"][e["claimant"]]
+        counts["n_events"] += 1
+        cc["events"] += 1
+        y = e["date_start"][:4] or m["year"]
+        cc["years"][y] = cc["years"].get(y, 0) + 1
+        rec = {"id": e["event_id"], "m": m["move_id"], "c": e["claimant"], "y": int(m["year"]),
+               "ds": e["date_start"] or f"{m['year']}-01-01", "de": e["date_end"] or e["date_start"] or f"{m['year']}-12-31", "dp": e["date_precision"] or "year",
+               "s": e["summary"][:400], "n": e["location_name"], "lp": e["location_precision"] or "unknown",
+               "t": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "d": [d for d in schema.DOMAIN_FLAGS if m[d] == "1"],
+               "i": [i for i in schema.ISSUE_FLAGS if m[i] == "1"], "g": sorted({d[1] for d in m["dyads"].split() if len(d) == 2}),
+               "src": len(sources_by_event.get(e["event_id"], [])), "seed": e["harvest_run_id"] == SEED_RUN}
+        if e["lat"] and e["lon"]:
+            rec["lat"], rec["lon"] = round(float(e["lat"]), 4), round(float(e["lon"]), 4)
+            cc["points"] += 1
+            counts["n_points"] += 1
+        else:
+            rec["sr"] = map_subregions(e, m)
+            for sr in rec["sr"]:
+                cc["subregions"][sr] += 1
+        out.append(rec)
+    return {"events": out, "counts": counts}
+
+
+def slim_geojson(gj: dict) -> dict:
+    """The ten polygons with only their number and name, coordinates to 4 decimals (~11 m)."""
+    def rnd(c):
+        return [rnd(x) for x in c] if isinstance(c[0], list) else [round(c[0], 4), round(c[1], 4)]
+    feats = [{"type": "Feature", "properties": {"n": int(f["properties"]["LocationNo"]), "name": f["properties"]["Location_Name"]},
+              "geometry": {"type": f["geometry"]["type"], "coordinates": rnd(f["geometry"]["coordinates"])}} for f in gj["features"]]
+    return {"type": "FeatureCollection", "features": sorted(feats, key=lambda f: f["properties"]["n"])}
+
+
 def git_describe() -> str:
     try:
         return subprocess.run(["git", "describe", "--always", "--dirty"], cwd=ROOT, capture_output=True,
@@ -164,8 +215,9 @@ def git_describe() -> str:
 def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     moves = read_csv(data_dir / "moves.csv")
     claimants = read_csv(data_dir / "claimants.csv")
+    events = read_csv(data_dir / "events.csv")
     events_by_move: dict[str, list[dict]] = {}
-    for e in read_csv(data_dir / "events.csv"):
+    for e in events:
         events_by_move.setdefault(e["move_id"], []).append(e)
     sources_by_event: dict[str, list[dict]] = {}
     for s in read_csv(data_dir / "sources.csv"):
@@ -217,6 +269,14 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
                    "x": v["description"]} for v in views],
     }
     index_json = json.dumps(index, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    mapd = map_data(events, moves, sources_by_event)
+    mapd["subregions"] = slim_geojson(json.loads((data_dir / "reference" / "mavd_subregions.geojson").read_text(encoding="utf-8")))
+    mapd["names"] = names
+    mapd["type_labels"] = TYPE_LABELS
+    mapd["subregion_names"] = dict(zip((str(i) for i in range(1, 11)), schema.SUBREGION_NAMES))
+    mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
+    (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
+    map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]))
     ctx = {
@@ -226,13 +286,14 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
         "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
     }
-    ctx.update(names=names, n_moves_all=len(views), index_json=index_json,
+    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, map_json=map_json,
+               n_map_events=mapd["counts"]["n_events"], n_map_points=mapd["counts"]["n_points"],
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
     pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html",
-             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html"}
+             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html", "map.html": "map.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
         (out_dir / out_name).write_text(html, encoding="utf-8")

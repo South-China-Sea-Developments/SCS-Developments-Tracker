@@ -60,7 +60,7 @@
     <div class="head">
       <h2 id="h-{{ e.event_id }}" style="font-size:1.05rem;margin:0">{{ it.claimant_name }}</h2>
       <span>{{ e.date_start }}{% if e.date_end != e.date_start %} – {{ e.date_end }}{% endif %} ({{ e.date_precision }})</span>
-      {% if e.location_name %}<span>{{ e.location_name }}{% if e.subregion %}, sub-region {{ e.subregion }}{% endif %}</span>{% endif %}
+      {% if e.location_name %}<span>{{ e.location_name }}{% if e.subregion %}, sub-region {{ e.subregion }}{% endif %}{% if e.lat %} — placed at {{ e.lat }}, {{ e.lon }} ({{ e.location_precision }}){% else %} — not placed (name not in the gazetteer){% endif %}</span>{% endif %}
       {% if e.suggested_type %}<span class="pill">suggested: {{ e.suggested_type }}</span>{% endif %}
       {% if it.duplicate_of %}<span class="pill dup">possible duplicate of {{ it.duplicate_of.event_id }}</span>{% endif %}
       <span class="id">{{ e.event_id }}</span>
@@ -129,7 +129,7 @@
         <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">{{ e.summary }}</textarea>
       </div>
       <div class="panel p-edits">
-        <p class="k">Edits to the event (a blank field keeps the current value)</p>
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
         <div class="grid2">
           <label><span>Date start</span><input type="date" class="f-e-date_start" value="{{ e.date_start }}"></label>
           <label><span>Date end</span><input type="date" class="f-e-date_end" value="{{ e.date_end }}"></label>

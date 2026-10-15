@@ -7,6 +7,9 @@ Rules (docs/spec.md, "Validator"):
   EVENT_MOVE      an accepted or merged event must point at an existing move of the same claimant
                   and year; a candidate or rejected event may have none, but never a dangling one
   DATE            event dates are ISO dates, end >= start; lat/lon numeric and in range
+  LOCATION        a point event has both coordinates (a feature event names a feature; it has them
+                  when the gazetteer knows the name); a located event's sub-region, when stated, is
+                  the one its coordinates fall in (data/reference/mavd_subregions.geojson)
   SOURCE_EVENT    a source must point at an existing event
   EVENT_NO_SOURCE an accepted event must have at least one source
   DUPLICATE       identifiers are unique
@@ -18,7 +21,8 @@ Rules (docs/spec.md, "Validator"):
   (CODE also covers corrections.csv rows: known move, known field.)
 
 The comparability check reads the raw inputs with its own small reader, independent of the loader.
-aggregates() computes the chart numbers independently of the site build (seam 3).
+aggregates() and event_aggregates() compute the chart and map numbers independently of the site
+build (seam 3).
 
 Usage: python -m pipeline.validate [--data DIR] [--xlsx FILE] [--mavd FILE]
 """
@@ -30,7 +34,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from pipeline import schema
+from pipeline import gazetteer, schema
 
 ROOT = Path(__file__).resolve().parents[1]
 XLSX_FIELDS = schema.MATS_XLSX_COLUMNS
@@ -179,6 +183,7 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
                 errors.append(f"DATE: events {eid} {col} {e[col]!r} is not an ISO date")
         if e["date_start"] and e["date_end"] and _is_iso_date(e["date_start"]) and _is_iso_date(e["date_end"]) and e["date_end"] < e["date_start"]:
             errors.append(f"DATE: events {eid} ends before it starts")
+        coords = {}
         for col, lo, hi in (("lat", -90.0, 90.0), ("lon", -180.0, 180.0)):
             if e[col]:
                 try:
@@ -187,6 +192,14 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
                     v = None
                 if v is None or not lo <= v <= hi:
                     errors.append(f"DATE: events {eid} {col} {e[col]!r} is not a coordinate")
+                else:
+                    coords[col] = v
+        if e["location_precision"] == "point" and len(coords) < 2:
+            errors.append(f"LOCATION: events {eid} is a point but lacks coordinates")
+        if len(coords) == 2 and e["subregion"]:
+            actual = gazetteer.subregion_of(coords["lat"], coords["lon"])
+            if actual and str(actual) != e["subregion"]:
+                errors.append(f"LOCATION: events {eid} says subregion {e['subregion']} but ({e['lat']}, {e['lon']}) lies in {actual}")
 
     event_ids = {e["event_id"] for e in events}
     sourced = Counter()
@@ -305,6 +318,38 @@ def aggregates(moves: list[dict]) -> dict:
             totals[loc] = per_loc[str(i + 1)]["total"]
         totals["total"] = sum(r["total"] for r in per_year.values())
         out["by_claimant"][c] = {"years": per_year, "totals": totals, "subregions": per_loc, "subregion_years": loc_years}
+    return out
+
+
+def map_subregions(e: dict, move: dict) -> list[str]:
+    """Where an event without coordinates counts on the map: its own sub-region if stated, else every
+    sub-region of its move (MATS-era seed events carry no location of their own)."""
+    if e["subregion"]:
+        return [e["subregion"]]
+    return [str(i + 1) for i, f in enumerate(schema.SUBREGION_FLAGS) if move[f] == "1"]
+
+
+def event_aggregates(events: list[dict], moves: list[dict]) -> dict:
+    """The map's numbers: accepted events of accepted moves, split into points (both coordinates)
+    and sub-region counts (no coordinates; see map_subregions), per claimant and per year."""
+    move_by_id = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
+    shown = [e for e in events if e["status"] == "accepted" and e["move_id"] in move_by_id]
+    out = {"n_events": len(shown), "n_points": 0, "by_claimant": {}}
+    for c in schema.CLAIMANT_CODES:
+        cc = {"events": 0, "points": 0, "subregions": {str(i): 0 for i in range(1, 11)}, "years": {}}
+        for e in shown:
+            if e["claimant"] != c:
+                continue
+            cc["events"] += 1
+            y = e["date_start"][:4] or move_by_id[e["move_id"]]["year"]
+            cc["years"][y] = cc["years"].get(y, 0) + 1
+            if e["lat"] and e["lon"]:
+                cc["points"] += 1
+            else:
+                for sr in map_subregions(e, move_by_id[e["move_id"]]):
+                    cc["subregions"][sr] += 1
+        out["n_points"] += cc["points"]
+        out["by_claimant"][c] = cc
     return out
 
 def main(argv=None) -> int:

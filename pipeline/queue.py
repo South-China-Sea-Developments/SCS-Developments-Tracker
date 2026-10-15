@@ -30,7 +30,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import schema
+from pipeline import gazetteer, schema
 
 TEMPLATES = Path(__file__).resolve().parent / "templates"
 REPO = os.environ.get("GITHUB_REPOSITORY") or "South-China-Sea-Developments/SCS-Developments-Tracker"
@@ -82,7 +82,7 @@ def append_run(run_dir: Path, data_dir: Path) -> tuple[int, int]:
     sources = read_table("sources", data_dir)
     have_e = {e["event_id"] for e in events}
     have_s = {s["source_id"] for s in sources}
-    new_e = [c for c in cand if c["event_id"] not in have_e]
+    new_e = [gazetteer.locate(c) for c in cand if c["event_id"] not in have_e]   # named features get coordinates
     new_s = [s for s in srcs if s["source_id"] not in have_s and s["event_id"] in have_e | {c["event_id"] for c in new_e}]
     write_table("events", events + new_e, data_dir)
     write_table("sources", sources + new_s, data_dir)
@@ -246,6 +246,21 @@ def _check_edits(eid: str, e: dict, edits: dict) -> dict:
                 raise ValueError(f"{eid}: {k} {v!r} is out of range")
             v = f"{f:.4f}"
         out[k] = v
+    if "location_name" in out and not {"lat", "lon"} & out.keys():
+        # a corrected name is resolved afresh; the old coordinates do not survive it
+        probe = {"location_name": out["location_name"], "lat": "", "lon": "", "subregion": out.get("subregion", ""),
+                 "location_precision": out.get("location_precision", "")}
+        gazetteer.locate(probe)
+        out["lat"], out["lon"] = probe["lat"], probe["lon"]
+        out["subregion"] = probe["subregion"]
+        out["location_precision"] = probe["location_precision"] or "unknown"
+    elif {"lat", "lon"} <= out.keys() or ({"lat", "lon"} & out.keys() and e["lat"] and e["lon"]):
+        lat, lon = float(out.get("lat", e["lat"])), float(out.get("lon", e["lon"]))
+        if "subregion" not in out:
+            sr = gazetteer.subregion_of(lat, lon)
+            out["subregion"] = str(sr) if sr else e["subregion"]
+        if "location_precision" not in out and e["location_precision"] in ("", "unknown", "subregion"):
+            out["location_precision"] = "point"
     start, end = out.get("date_start", e["date_start"]), out.get("date_end", e["date_end"])
     if start and end and end < start:
         raise ValueError(f"{eid}: date_end is before date_start")
