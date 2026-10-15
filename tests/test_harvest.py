@@ -251,6 +251,7 @@ def test_extractor_drops_malformed_events_and_sanitises_fields():
     assert e["suggested_domains"] == "physical" and e["suggested_dyads"] == "VC"
     assert e["lat"] == "" and e["lon"] == ""
     assert e["summary"].startswith("'=")                       # never a live formula in a spreadsheet
+    assert e["actors"] == "" and e["location_name"] == ""      # empty stays empty
     assert "Excerpt not found verbatim" in e["review_note"]
     assert e["suggestion_reasoning"].endswith("[confidence: unstated]")
     assert e["extractor"].startswith("fake-model@prompt-")

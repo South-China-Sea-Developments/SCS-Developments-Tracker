@@ -128,7 +128,7 @@ def excerpt_in_text(excerpt: str, text: str) -> bool:
 
 def _clean_text(v, limit: int = MAX_TEXT_FIELD) -> str:
     s = str(v if v is not None else "").strip()[:limit]
-    return ("'" + s) if s[:1] in "=+-@" else s        # never a formula if the CSV is opened in a spreadsheet
+    return ("'" + s) if s and s[0] in "=+-@" else s    # never a formula if the CSV is opened in a spreadsheet
 
 
 def _clean_coord(v, lo: float, hi: float) -> str:

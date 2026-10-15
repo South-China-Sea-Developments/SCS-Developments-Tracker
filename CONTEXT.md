@@ -6,6 +6,12 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Event** — A single dated, located, sourced incident (a patrol intercept, a statement, a drilling start). Each event belongs to exactly one move; a move groups one or more events. Dates, coordinates and sources are recorded at event level; MATS variables are not.
 
+**Candidate** — An event proposed by the harvester and not yet decided (`status = candidate`). It has no move and is not counted anywhere.
+
+**Review queue** — The pull request a harvest run opens, holding its candidates, plus the review page generated for it. Merging the pull request is acceptance; nothing enters the dataset otherwise.
+
+**Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note. Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
+
 **Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`).
 
 **Type** *(MATS)* — The intensity class of a move. Four mutually ordered classes, each a 0/1 flag on the move: **Declarative** (verbal assertions via non-coercive statements, diplomatic protests, legislation); **Demonstrative** (unilateral administration of disputed possessions without confrontation: patrols, surveys, resource development, construction, state-sanctioned tourism or activism, domestic judicial proceedings, cooperative agreements with third parties); **Coercive** (threat or imposition of punishment: verbal, diplomatic, administrative or economic punishment, warning shots, physical interference with foreign activities); **Force** (application of military force, or direct seizure and occupation of a disputed possession).
