@@ -2,6 +2,10 @@
 
 A self-contained static bundle built from `data/*.csv` by `python -m web.build`. No framework, no build chain: Jinja2 templates, one stylesheet, one script, one vendored font (Instrument Sans, OFL). Relative paths only, so the output folder can be dropped onto any host (GitHub Pages for now; ASPI later) or opened from disk.
 
+## Pages
+
+- `index.html` overview; `cases.html` searchable case browser (client-side filtering of an inline index); `cases/<move_id>.html` one page per move with coding, events, sources and an inset map of the sub-regions (simplified polygons inlined, ~1 KB); `methodology.html`.
+
 ## Design notes
 
 Subject: a research dataset about contested waters. Audience: researchers, analysts, journalists. Job: trends at a glance, then down to the evidence.
