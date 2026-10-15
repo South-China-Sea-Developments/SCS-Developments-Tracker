@@ -1,0 +1,9 @@
+{
+ "model": "hand-authored-fixture",
+ "recorded_at": "2026-10-15T00:00:00+00:00",
+ "user_prompt_head": "Source: Asia Maritime Transparency Initiative (CSIS) (amti)\nURL: https://amti.csis.org/risk-and-strategy-for-indonesia-china-marine-scientific-research-cooperation/\nTitle: Risk and strategy for Indonesia – China Marine Scientific Research cooperation\nPublished: 2026-10-08\nFetched: 2026-10-15\nLanguag",
+ "text": "{\n \"events\": []\n}",
+ "input_tokens": 0,
+ "output_tokens": 0,
+ "stop_reason": "end_turn"
+}

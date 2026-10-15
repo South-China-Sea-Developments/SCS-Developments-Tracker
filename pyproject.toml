@@ -7,6 +7,7 @@ dependencies = ["openpyxl>=3.1", "jinja2>=3.1"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "playwright>=1.45"]
+llm = ["anthropic>=0.40"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -21,3 +22,4 @@ packages = ["pipeline", "web"]
 
 [tool.setuptools.package-data]
 web = ["templates/*", "static/*", "static/fonts/*"]
+pipeline = ["sources.json", "prompts/*"]

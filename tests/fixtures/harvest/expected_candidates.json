@@ -1,0 +1,72 @@
+[
+ {
+  "event_id": "ev-3e2e76c263",
+  "claimant": "CN",
+  "date_start": "2026-10-08",
+  "date_end": "2026-10-08",
+  "date_precision": "day",
+  "location_name": "Second Thomas Shoal (Ren'ai Jiao)",
+  "subregion": "6",
+  "suggested_type": "coercive",
+  "suggested_domains": "physical",
+  "suggested_issues": "military administrative",
+  "suggested_dyads": "CP",
+  "status": "candidate"
+ },
+ {
+  "event_id": "ev-bd3332f27e",
+  "claimant": "CN",
+  "date_start": "2026-10-04",
+  "date_end": "2026-10-04",
+  "date_precision": "day",
+  "location_name": "Scarborough Shoal (Huangyan Dao)",
+  "subregion": "4",
+  "suggested_type": "coercive",
+  "suggested_domains": "physical",
+  "suggested_issues": "military administrative",
+  "suggested_dyads": "CP",
+  "status": "candidate"
+ },
+ {
+  "event_id": "ev-a9c937cf64",
+  "claimant": "CN",
+  "date_start": "2026-10-04",
+  "date_end": "2026-10-04",
+  "date_precision": "day",
+  "location_name": "Thitu Island and Sandy Cay (Zhongye Dao, Tiexian Jiao)",
+  "subregion": "5",
+  "suggested_type": "coercive",
+  "suggested_domains": "physical",
+  "suggested_issues": "military administrative",
+  "suggested_dyads": "CP",
+  "status": "candidate"
+ },
+ {
+  "event_id": "ev-7c4e2bc486",
+  "claimant": "CN",
+  "date_start": "2026-10-14",
+  "date_end": "2026-10-14",
+  "date_precision": "day",
+  "location_name": "'",
+  "subregion": "",
+  "suggested_type": "coercive",
+  "suggested_domains": "diplomatic",
+  "suggested_issues": "politics",
+  "suggested_dyads": "CR",
+  "status": "candidate"
+ },
+ {
+  "event_id": "ev-0b4811f8e6",
+  "claimant": "VN",
+  "date_start": "2026-08-28",
+  "date_end": "2026-08-28",
+  "date_precision": "day",
+  "location_name": "Hải Sâm (Antelope Reef) and Ba Ba Island, Paracels",
+  "subregion": "2",
+  "suggested_type": "declarative",
+  "suggested_domains": "diplomatic",
+  "suggested_issues": "politics administrative",
+  "suggested_dyads": "VC",
+  "status": "candidate"
+ }
+]
