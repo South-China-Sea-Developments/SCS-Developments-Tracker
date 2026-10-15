@@ -142,7 +142,7 @@
       if (!srCenters[s]) return;
       var n = srCounts[s];
       var icon = L.divIcon({ className: "", iconSize: [30, 22], iconAnchor: [15, 11], html: '<span class="sr-count">' + n + "</span>" });
-      var title = n + (n === 1 ? " event" : " events") + " known only to sub-region " + s + " " + SR_NAMES[s];
+      var title = n + (n === 1 ? " event" : " events") + " in sub-region " + s + " " + SR_NAMES[s] + " without a point";
       var inSr = hits.filter(function (e) { return e.lat === undefined && e.sr.indexOf(s) >= 0; });
       L.marker(srCenters[s], { icon: icon, title: title, alt: title, keyboard: true })
         .bindPopup(function () { return popupFor(inSr); }, { maxWidth: 360, className: "evt-popup" }).addTo(countLayer);

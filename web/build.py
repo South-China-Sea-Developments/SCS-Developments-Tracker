@@ -154,8 +154,8 @@ def periods(years: list[int]) -> list[dict]:
 
 
 def map_subregions(e: dict, move: dict) -> list[str]:
-    """Where an event without coordinates counts: its own sub-region, else its move's (same rule as
-    pipeline.validate.map_subregions, written twice on purpose: seam 3 holds the two to one answer)."""
+    """Where an event without coordinates counts: its own sub-region, else every sub-region of its
+    move. pipeline.validate.event_aggregates computes the same numbers another way (seam 3)."""
     if e["subregion"]:
         return [e["subregion"]]
     return [str(i + 1) for i, f in enumerate(schema.SUBREGION_FLAGS) if move[f] == "1"]

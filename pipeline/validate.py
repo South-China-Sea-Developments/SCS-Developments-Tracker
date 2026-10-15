@@ -326,36 +326,30 @@ def aggregates(moves: list[dict]) -> dict:
     return out
 
 
-def map_subregions(e: dict, move: dict) -> list[str]:
-    """Where an event without coordinates counts on the map: its own sub-region if stated, else every
-    sub-region of its move (MATS-era seed events carry no location of their own)."""
-    if e["subregion"]:
-        return [e["subregion"]]
-    return [str(i + 1) for i, f in enumerate(schema.SUBREGION_FLAGS) if move[f] == "1"]
-
-
 def event_aggregates(events: list[dict], moves: list[dict]) -> dict:
-    """The map's numbers: accepted events of accepted moves, split into points (both coordinates)
-    and sub-region counts (no coordinates; see map_subregions), per claimant and per year."""
-    move_by_id = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
-    shown = [e for e in events if e["status"] == "accepted" and e["move_id"] in move_by_id]
-    out = {"n_events": len(shown), "n_points": 0, "by_claimant": {}}
+    """The map's numbers, computed a different way from web.build.map_data (seam 3 holds the two to
+    one answer): accepted events of accepted moves; "points" have both coordinates; the rest count
+    once on their own sub-region or, having none, once on each sub-region of their move, read off
+    the flag names (loc05_... -> "5")."""
+    accepted_moves = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
+    flag_number = {f: str(int(f[3:5])) for f in schema.SUBREGION_FLAGS}
+    shown = [e for e in events if e["status"] == "accepted" and e["move_id"] in accepted_moves]
+    per_claimant_year = Counter((e["claimant"], (e["date_start"][:4] or accepted_moves[e["move_id"]]["year"])) for e in shown)
+    points = Counter(e["claimant"] for e in shown if e["lat"] and e["lon"])
+    subregions: Counter = Counter()
+    for e in shown:
+        if e["lat"] and e["lon"]:
+            continue
+        where = [e["subregion"]] if e["subregion"] else [n for f, n in flag_number.items() if accepted_moves[e["move_id"]][f] == "1"]
+        subregions.update((e["claimant"], sr) for sr in where)
+    n_events = Counter(e["claimant"] for e in shown)
+    out = {"n_events": len(shown), "n_points": sum(points.values()), "by_claimant": {}}
     for c in schema.CLAIMANT_CODES:
-        cc = {"events": 0, "points": 0, "subregions": {str(i): 0 for i in range(1, 11)}, "years": {}}
-        for e in shown:
-            if e["claimant"] != c:
-                continue
-            cc["events"] += 1
-            y = e["date_start"][:4] or move_by_id[e["move_id"]]["year"]
-            cc["years"][y] = cc["years"].get(y, 0) + 1
-            if e["lat"] and e["lon"]:
-                cc["points"] += 1
-            else:
-                for sr in map_subregions(e, move_by_id[e["move_id"]]):
-                    cc["subregions"][sr] += 1
-        out["n_points"] += cc["points"]
-        out["by_claimant"][c] = cc
+        out["by_claimant"][c] = {"events": n_events[c], "points": points[c],
+                                 "subregions": {str(i): subregions[(c, str(i))] for i in range(1, 11)},
+                                 "years": {y: n for (cc, y), n in sorted(per_claimant_year.items()) if cc == c}}
     return out
+
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

@@ -258,7 +258,8 @@ def _check_edits(eid: str, e: dict, edits: dict) -> dict:
         gazetteer.locate(probe)
         out["lat"], out["lon"] = probe["lat"], probe["lon"]
         if probe["lat"]:
-            out["subregion"] = probe["subregion"]
+            if "subregion" not in out:
+                out["subregion"] = probe["subregion"]
             out["location_precision"] = probe["location_precision"] or "feature"
         else:
             kept = out.get("subregion", e["subregion"])

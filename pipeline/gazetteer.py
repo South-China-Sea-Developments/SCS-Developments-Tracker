@@ -213,12 +213,11 @@ def locate(event: dict, gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXT
     if feat["kind"] == "island group" or precision == "subregion":   # an area, not a point
         if not event.get("subregion") and feat["subregion"]:
             event["subregion"] = str(feat["subregion"])
-        if precision == "unknown" and event.get("subregion"):
-            event["location_precision"] = "subregion"
+        if precision in ("unknown", "feature", "point"):
+            event["location_precision"] = "subregion" if event.get("subregion") else "unknown"
         return event
     event["lat"], event["lon"] = f"{feat['lat']:.5f}", f"{feat['lon']:.5f}"
     sr = feat["subregion"] or subregion_of(feat["lat"], feat["lon"])
     event["subregion"] = str(sr) if sr else event.get("subregion", "")
-    if precision == "unknown":
-        event["location_precision"] = "feature"
+    event["location_precision"] = "feature"   # the coordinates are the feature's, never the event's own
     return event

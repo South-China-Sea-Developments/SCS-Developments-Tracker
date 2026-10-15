@@ -67,6 +67,8 @@ def test_edited_locations_are_resolved_again(opened):
     assert (out["lat"], out["subregion"], out["location_precision"]) == ("9.96667", "5", "feature")
     out = queue._check_edits(stas["event_id"], stas, {"location_name": "somewhere in the sea"})
     assert (out["lat"], out["lon"], out["location_precision"]) == ("", "", "subregion") and "subregion" not in out   # sub-region 6 kept
+    out = queue._check_edits(stas["event_id"], stas, {"location_name": "Whitsun Reef", "subregion": "7"})
+    assert out["lat"] == "9.96667" and out["subregion"] == "7"      # the reviewer's sub-region stands; the validator will judge the pair
     out = queue._check_edits(stas["event_id"], stas, {"location_name": "North Reef"})       # ambiguous: unplaced, reviewer decides
     assert out["lat"] == "" and out["location_precision"] == "subregion"
     out = queue._check_edits(stas["event_id"], stas, {"lat": "15.18", "lon": "117.77"})

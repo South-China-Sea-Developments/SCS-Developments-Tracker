@@ -4,7 +4,7 @@ A self-contained static bundle built from `data/*.csv` by `python -m web.build`.
 
 ## Pages
 
-- `index.html` overview; `issues-domains.html` (issue and domain mentions by year, by claimant and by sub-region); `subregions.html` (choropleth by period with a claimant selector, moves by sub-region and type, one chart per sub-region over time); `cases.html` searchable case browser (client-side filtering of an inline index); `cases/<move_id>.html` one page per move with coding, events, sources and an inset map of the sub-regions (simplified polygons inlined, ~1 KB); `map.html` event map (Leaflet, vendored; events and polygons inline, also written to `data/events.json`; OpenStreetMap tiles are the one external request); `methodology.html`.
+- `index.html` overview; `issues-domains.html` (issue and domain mentions by year, by claimant and by sub-region); `subregions.html` (choropleth by period with a claimant selector, moves by sub-region and type, one chart per sub-region over time); `cases.html` searchable case browser (client-side filtering of an inline index); `cases/<move_id>.html` one page per move with coding, events, sources and an inset map of the sub-regions (simplified polygons inlined, ~1 KB); `map.html` event map (Leaflet, vendored; events and polygons inline, also written to `data/events.json`; OpenStreetMap tiles are the one external request — OSM's standard tile server is donated infrastructure for light use, so a host with real traffic, such as ASPI's, should point the one tile URL in `map.js` at its own tile source); `methodology.html`.
 
 ## Design notes
 

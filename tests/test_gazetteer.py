@@ -115,6 +115,12 @@ def test_locate_trusts_coordinates_over_names_and_names_over_stated_subregions()
     # a stated sub-region that disagrees with the named feature is replaced (the validator would reject the pair)
     e = g.locate({"location_name": "Second Thomas Shoal", "lat": "", "lon": "", "subregion": "5", "location_precision": ""})
     assert (e["subregion"], e["lat"]) == ("6", "9.65000")
+    # an area named by the sources is not a feature, whatever the extractor stamped on it
+    e = g.locate({"location_name": "Natuna waters", "lat": "", "lon": "", "subregion": "10", "location_precision": "feature"})
+    assert (e["lat"], e["subregion"], e["location_precision"]) == ("", "10", "subregion")
+    # gazetteer coordinates are the feature's, never the event's own
+    e = g.locate({"location_name": "Mischief Reef", "lat": "", "lon": "", "subregion": "", "location_precision": "point"})
+    assert (e["lat"], e["location_precision"]) == ("9.91667", "feature")
     # precision "subregion" means the event is not a point: no coordinates, the sub-region stays
     e = g.locate({"location_name": "Mischief Reef", "lat": "", "lon": "", "subregion": "7", "location_precision": "subregion"})
     assert (e["subregion"], e["location_precision"], e["lat"]) == ("7", "subregion", "")

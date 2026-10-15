@@ -374,7 +374,7 @@ def test_map_renders_offline_without_errors(browser, dist, viewport, scheme):
     shown = {}
     for el in page.locator(".leaflet-marker-icon").element_handles():
         title = el.get_attribute("title") or ""
-        mm = re.search(r"^(\d+) events? known only to sub-region (\d+)", title)
+        mm = re.search(r"^(\d+) events? in sub-region (\d+) .* without a point$", title)
         if mm:
             shown[mm.group(2)] = int(mm.group(1))
     want = {}
@@ -446,6 +446,10 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     assert counts_at(2012, 4)[0] == 1 and counts_at(2012, 4 + 1)[0] == 1 and counts_at(2012, 6)[0] == 0   # two day-dated events
     counts_at(2014, 5)
     assert page.inner_text("#time-label") == "May 2014" and page.get_attribute("#month", "aria-valuetext") == "May 2014"
+    # the move page shows each event's place (spec story 3)
+    case = (dist_placed / "cases/CN201201.html").read_text(encoding="utf-8")
+    assert "Scarborough Shoal (15.18000, 117.77000, at the named feature) · sub-region 4 Central-East" in case
+    assert "Manila" in (dist_placed / "cases/PH201301.html").read_text(encoding="utf-8")
     assert page.locator(".sr-poly[tabindex]").count() == 0, "polygons are not tab stops"
     assert page.locator(".sr-label").count() == 10
     assert not problems, problems
