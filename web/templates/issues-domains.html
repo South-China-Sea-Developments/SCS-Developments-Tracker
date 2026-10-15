@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Issues and domains — SCS Developments Tracker{% endblock %}
+{% block content %}
+<section class="lede">
+  <h1>What the moves were about, and where they played out</h1>
+  <p class="lede-text">Every move is tagged with the issues at stake and the domains it played out in. A move can carry several of each, so these charts count mentions: a move about both energy and fisheries appears under both.</p>
+</section>
+
+<section class="filters" aria-label="Filters">
+  <div class="chips chips-neutral" id="claimant-filter" role="group" aria-label="Claimants shown">
+    {% for c in claimants %}
+    <label class="chip" data-code="{{ c.code }}"><input type="checkbox" value="{{ c.code }}" checked><span class="swatch" aria-hidden="true"></span><span>{{ c.name }}</span></label>
+    {% endfor %}
+  </div>
+  <p class="filters-note" id="filters-note"></p>
+</section>
+
+<section class="figure" id="fig-issues-all">
+  <div class="figure-head">
+    <h2>Issues by year, all shown claimants</h2>
+    <button class="toggle" type="button" data-toggle-table="fig-issues-all" aria-pressed="false">Table</button>
+  </div>
+  <div class="chart" data-chart="years" data-dim="issues" data-scope="all"></div>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="figure-grid">
+  <h2>Issues by claimant</h2>
+  <div class="grid">
+    {% for c in claimants %}
+    <section class="figure small" data-claimant="{{ c.code }}" id="fig-issues-{{ c.code }}">
+      <div class="figure-head"><h3>{{ c.name }}</h3><button class="toggle" type="button" data-toggle-table="fig-issues-{{ c.code }}" aria-pressed="false">Table</button></div>
+      <div class="chart" data-chart="years" data-dim="issues" data-claimant="{{ c.code }}"></div>
+      <div class="table-view" hidden></div>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="figure" id="fig-issues-loc">
+  <div class="figure-head">
+    <h2>Issues by sub-region, all years</h2>
+    <button class="toggle" type="button" data-toggle-table="fig-issues-loc" aria-pressed="false">Table</button>
+  </div>
+  <div class="chart" data-chart="subregions" data-dim="issues"></div>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="figure" id="fig-domains-all">
+  <div class="figure-head">
+    <h2>Domains by year, all shown claimants</h2>
+    <button class="toggle" type="button" data-toggle-table="fig-domains-all" aria-pressed="false">Table</button>
+  </div>
+  <div class="chart" data-chart="years" data-dim="domains" data-scope="all"></div>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="figure-grid">
+  <h2>Domains by claimant</h2>
+  <div class="grid">
+    {% for c in claimants %}
+    <section class="figure small" data-claimant="{{ c.code }}" id="fig-domains-{{ c.code }}">
+      <div class="figure-head"><h3>{{ c.name }}</h3><button class="toggle" type="button" data-toggle-table="fig-domains-{{ c.code }}" aria-pressed="false">Table</button></div>
+      <div class="chart" data-chart="years" data-dim="domains" data-claimant="{{ c.code }}"></div>
+      <div class="table-view" hidden></div>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="figure" id="fig-domains-loc">
+  <div class="figure-head">
+    <h2>Domains by sub-region, all years</h2>
+    <button class="toggle" type="button" data-toggle-table="fig-domains-loc" aria-pressed="false">Table</button>
+  </div>
+  <div class="chart" data-chart="subregions" data-dim="domains"></div>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="types">
+  <h2>Definitions</h2>
+  <p class="figure-note">In Chubb's coding each move is tagged with the issues it addressed — security, administrative control, resources (energy and fisheries) and politics — and the domains it played out in: domestic, diplomatic, physical. The full definitions are in the <a href="methodology.html">methodology</a> and the codebook.</p>
+</section>
+{% endblock %}

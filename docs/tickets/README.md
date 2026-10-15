@@ -7,7 +7,7 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 01 | [Canonical schema and MATS 1.02 loader](01-canonical-schema-and-mats-loader.md) | None, can start immediately | done |
 | 02 | [Site skeleton with the MAVD-equivalent overview](02-site-skeleton-and-overview.md) | 01 | done |
 | 03 | [Case browser and move detail](03-case-browser-and-move-detail.md) | 02 | done |
-| 04 | [Issues/Domains and Sub-regions pages](04-issues-domains-and-subregions-pages.md) | 02 | ready |
+| 04 | [Issues/Domains and Sub-regions pages](04-issues-domains-and-subregions-pages.md) | 02 | done |
 | 05 | [Source registry and harvester with fixtures](05-source-registry-and-harvester-with-fixtures.md) | 01 | ready |
 | 06 | [Review queue as pull request, with review page](06-review-queue-as-pull-request.md) | 05 | ready |
 | 07 | [Scheduled runs and failure alerts](07-scheduled-runs-and-failure-alerts.md) | 06 | ready |

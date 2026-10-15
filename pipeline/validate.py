@@ -223,32 +223,51 @@ def comparability(moves: list[dict], corrections: list[dict], xlsx_path: Path,
 # the site build so a test can hold the two to the same answer (seam 3).
 
 def aggregates(moves: list[dict]) -> dict:
-    """Counts of accepted moves per claimant, year and Type; years run 1970..latest accepted move."""
+    """Counts of accepted moves per claimant and year for every flag, and per sub-region cross-tabs.
+
+    Years run 1970..latest accepted move. Flags other than Type are non-exclusive, so their
+    sums are mentions, not moves; "total" is always the number of moves. Per-year rows carry the
+    Type, Domain and Issue flags; sub-region counts per year live in the sparse "subregion_years".
+    """
     accepted = [m for m in moves if m["status"] == "accepted"]
     last = max((int(m["year"]) for m in accepted), default=1970)
     years = list(range(1970, max(last, 1970) + 1))
-    out = {"years": years, "types": list(schema.TYPE_FLAGS), "claimants": list(schema.CLAIMANT_CODES),
+    out = {"years": years, "types": list(schema.TYPE_FLAGS), "domains": list(schema.DOMAIN_FLAGS),
+           "issues": list(schema.ISSUE_FLAGS), "subregions": list(schema.SUBREGION_FLAGS),
+           "claimants": list(schema.CLAIMANT_CODES),
            "n_moves": len(accepted), "n_pending": sum(1 for m in moves if m["status"] == "pending"),
            "by_claimant": {}}
+    dims = schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS
     for c in schema.CLAIMANT_CODES:
-        per_year = {}
-        for y in years:
-            row = {t: 0 for t in schema.TYPE_FLAGS}
-            row["total"] = 0
-            per_year[str(y)] = row
+        per_year = {str(y): {**{f: 0 for f in dims}, "total": 0} for y in years}
+        per_loc = {str(i + 1): {**{f: 0 for f in dims}, "total": 0} for i in range(len(schema.SUBREGION_FLAGS))}
+        loc_years: dict[str, dict] = {str(i + 1): {} for i in range(len(schema.SUBREGION_FLAGS))}  # sparse: years with moves
         for m in accepted:
             if m["claimant"] != c:
                 continue
             row = per_year[m["year"]]
             row["total"] += 1
-            for t in schema.TYPE_FLAGS:
-                if m[t] == "1":
-                    row[t] += 1
-        totals = {t: sum(r[t] for r in per_year.values()) for t in schema.TYPE_FLAGS}
+            for f in dims:
+                if m[f] == "1":
+                    row[f] += 1
+            for i, loc in enumerate(schema.SUBREGION_FLAGS):
+                if m[loc] == "1":
+                    cell = per_loc[str(i + 1)]
+                    cell["total"] += 1
+                    for f in dims:
+                        if m[f] == "1":
+                            cell[f] += 1
+                    ly = loc_years[str(i + 1)].setdefault(m["year"], {**{t_: 0 for t_ in schema.TYPE_FLAGS}, "total": 0})
+                    ly["total"] += 1
+                    for t_ in schema.TYPE_FLAGS:
+                        if m[t_] == "1":
+                            ly[t_] += 1
+        totals = {f: sum(r[f] for r in per_year.values()) for f in dims}
+        for i, loc in enumerate(schema.SUBREGION_FLAGS):
+            totals[loc] = per_loc[str(i + 1)]["total"]
         totals["total"] = sum(r["total"] for r in per_year.values())
-        out["by_claimant"][c] = {"years": per_year, "totals": totals}
+        out["by_claimant"][c] = {"years": per_year, "totals": totals, "subregions": per_loc, "subregion_years": loc_years}
     return out
-
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

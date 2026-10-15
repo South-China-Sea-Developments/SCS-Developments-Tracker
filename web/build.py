@@ -52,20 +52,29 @@ def compute_aggregates(moves: list[dict]) -> dict:
     """The site's own computation of the chart numbers (the validator has an independent one)."""
     accepted = [m for m in moves if m["status"] == "accepted"]
     years = list(range(1970, max([int(m["year"]) for m in accepted] + [1970]) + 1))
+    dims = schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS
     by_claimant = {}
     for code in schema.CLAIMANT_CODES:
-        per_year = {str(y): {**{t: 0 for t in schema.TYPE_FLAGS}, "total": 0} for y in years}
-        for m in accepted:
-            if m["claimant"] == code:
-                per_year[m["year"]]["total"] += 1
-                for t in schema.TYPE_FLAGS:
-                    per_year[m["year"]][t] += int(m[t])
-        totals = {k: sum(r[k] for r in per_year.values()) for k in [*schema.TYPE_FLAGS, "total"]}
-        by_claimant[code] = {"years": per_year, "totals": totals}
-    return {"years": years, "types": list(schema.TYPE_FLAGS), "claimants": list(schema.CLAIMANT_CODES),
+        mine = [m for m in accepted if m["claimant"] == code]
+        per_year = {}
+        for y in years:
+            in_year = [m for m in mine if m["year"] == str(y)]
+            per_year[str(y)] = {**{f: sum(int(m[f]) for m in in_year) for f in dims}, "total": len(in_year)}
+        per_loc, loc_years = {}, {}
+        for i, loc in enumerate(schema.SUBREGION_FLAGS, start=1):
+            in_loc = [m for m in mine if m[loc] == "1"]
+            per_loc[str(i)] = {**{f: sum(int(m[f]) for m in in_loc) for f in dims}, "total": len(in_loc)}
+            loc_years[str(i)] = {}
+            for y in sorted({m["year"] for m in in_loc}, key=int):
+                in_y = [m for m in in_loc if m["year"] == y]
+                loc_years[str(i)][y] = {**{t: sum(int(m[t]) for m in in_y) for t in schema.TYPE_FLAGS}, "total": len(in_y)}
+        totals = {**{f: sum(int(m[f]) for m in mine) for f in schema.FLAG_COLUMNS}, "total": len(mine)}
+        by_claimant[code] = {"years": per_year, "totals": totals, "subregions": per_loc, "subregion_years": loc_years}
+    return {"years": years, "types": list(schema.TYPE_FLAGS), "domains": list(schema.DOMAIN_FLAGS),
+            "issues": list(schema.ISSUE_FLAGS), "subregions": list(schema.SUBREGION_FLAGS),
+            "claimants": list(schema.CLAIMANT_CODES),
             "n_moves": len(accepted), "n_pending": sum(1 for m in moves if m["status"] == "pending"),
             "by_claimant": by_claimant}
-
 
 def dyad_label(code: str) -> str:
     """'CV' -> 'China (PRC) → Vietnam'; 'A' -> 'all claimants'."""
@@ -123,6 +132,27 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
     }
 
 
+def periods(years: list[int]) -> list[dict]:
+    """The map's periods: the first year alone, then five-year bins, extending as years are added.
+
+    [1970, 1971-75, ..., 2011-15, 2016-20, 2021-25, 2026] for 1970..2026; a trailing bin shorter
+    than five years is labelled by its actual span (a single year by that year alone).
+    """
+    out = [{"key": "all", "label": "All years", "years": list(years)}]
+    if not years:
+        return out
+    first, last = years[0], years[-1]
+    out.append({"key": str(first), "label": str(first), "years": [first]})
+    start = first + 1
+    while start <= last:
+        end = min(start + 4, last)
+        span = [y for y in years if start <= y <= end]
+        label = str(start) if start == end else f"{start}–{str(end)[2:]}"
+        out.append({"key": f"{start}-{end}", "label": label, "years": span})
+        start += 5
+    return out
+
+
 def git_describe() -> str:
     try:
         return subprocess.run(["git", "describe", "--always", "--dirty"], cwd=ROOT, capture_output=True,
@@ -146,6 +176,12 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     agg = compute_aggregates(moves)
     agg["claimant_names"] = names
     agg["type_labels"] = TYPE_LABELS
+    agg["domain_labels"] = DOMAIN_LABELS
+    agg["issue_labels"] = ISSUE_LABELS
+    agg["subregion_names"] = dict(zip((str(i) for i in range(1, 11)), schema.SUBREGION_NAMES))
+    agg["subregion_paths"] = {str(k): v for k, v in paths.items()}
+    agg["view"] = [VIEW_W, VIEW_H]
+    agg["periods"] = periods(agg["years"])
     agg["mats_last_year"] = schema.MATS_YEARS[-1]
     agg["coded_by_chubb"] = sum(1 for m in moves if m["coded_by"] == "chubb" and m["status"] == "accepted")
     meta = {
@@ -195,7 +231,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
-    pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html"}
+    pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html",
+             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
         (out_dir / out_name).write_text(html, encoding="utf-8")
