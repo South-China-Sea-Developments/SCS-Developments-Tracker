@@ -1,0 +1,8 @@
+{
+ "model": "hand-authored-fixture",
+ "recorded_at": "2026-10-15T00:00:00+00:00",
+ "user_prompt_head": "Source: Taiwan Coast Guard Administration (tw_cga)\nURL: https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=80516&ctNode=8114&mp=999\nTitle: 海洋委員會海巡署全球資訊網-總統的話-總統的話\nPublished: unknown\nFetched: 2026-10-15\nLanguage: zh-TW\n\nDocument:\n×\n:::\n回首頁\n網站導覽\n常見問答\n雙語詞彙\nEnglish\n搜尋 小 中 大\n:::\n現在位置：首頁>海洋事務>總統的話\n回上頁\nFacebook",
+ "text": "{\n \"events\": []\n}",
+ "input_tokens": 0,
+ "output_tokens": 0
+}

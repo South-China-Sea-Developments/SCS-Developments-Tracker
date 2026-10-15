@@ -1,0 +1,288 @@
+{
+ "_doc": "Source registry for the harvester. kind: rss (feed items, each linked article captured) or html_list (a listing page; links matching link_pattern are captured). status: active | blocked_from_cloud | needs_work (the site refuses requests from cloud egress; kept for a future proxy or manual capture). Probe results are refreshed with `python -m pipeline.harvest probe`.",
+ "sources": [
+  {
+   "id": "amti",
+   "name": "Asia Maritime Transparency Initiative (CSIS)",
+   "kind": "rss",
+   "url": "https://amti.csis.org/feed/",
+   "language": "en",
+   "claimants": [
+    "CN",
+    "VN",
+    "PH",
+    "MY",
+    "ID",
+    "TW"
+   ],
+   "cadence": "weekly",
+   "max_items": 20,
+   "status": "active",
+   "notes": "Analysis and island-tracker updates; secondary source, often cites primary reporting."
+  },
+  {
+   "id": "scspi",
+   "name": "South China Sea Strategic Situation Probing Initiative (Peking University)",
+   "kind": "html_list",
+   "url": "http://www.scspi.org/en/node",
+   "language": "en",
+   "claimants": [
+    "CN",
+    "VN",
+    "PH",
+    "MY",
+    "ID",
+    "TW"
+   ],
+   "cadence": "weekly",
+   "max_items": 20,
+   "status": "active",
+   "notes": "The RSS feed at /en/rss.xml is empty; the English listing is used instead.",
+   "link_pattern": "href=\"(/en/dynamic/\\d+|/en/node/\\d+|/en/[a-z]+/\\d+)\""
+  },
+  {
+   "id": "cn_mfa_press",
+   "name": "China MFA spokesperson regular press conferences",
+   "kind": "html_list",
+   "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/",
+   "link_pattern": "href=\"(\\./\\d{6}/t\\d{8}_\\d+\\.html)\"",
+   "language": "en",
+   "claimants": [
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 15,
+   "status": "active",
+   "notes": "Primary source for declarative moves and official framing of incidents."
+  },
+  {
+   "id": "cn_ccg",
+   "name": "China Coast Guard news",
+   "kind": "html_list",
+   "url": "https://www.ccg.gov.cn/hjyw/index.html",
+   "link_pattern": "href=\"([^\"]+\\.html)\"",
+   "language": "zh",
+   "claimants": [
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 15,
+   "status": "blocked_from_cloud",
+   "notes": "Returns 418/timeouts from cloud egress (2026-10-15). Needs a different fetch route; CCG statements also surface via cn_mfa_press and news."
+  },
+  {
+   "id": "ph_pcg",
+   "name": "Philippine Coast Guard news",
+   "kind": "html_list",
+   "url": "https://coastguard.gov.ph/index.php/news",
+   "link_pattern": "href=\"([^\"]*/news/[^\"]+)\"",
+   "language": "en",
+   "claimants": [
+    "PH"
+   ],
+   "cadence": "daily",
+   "max_items": 15,
+   "status": "blocked_from_cloud",
+   "notes": "403 from cloud egress (2026-10-15); covered meanwhile by ph_news."
+  },
+  {
+   "id": "ph_dfa",
+   "name": "Philippines DFA releases",
+   "kind": "html_list",
+   "url": "https://dfa.gov.ph/dfa-news/dfa-releasesupdate",
+   "link_pattern": "href=\"([^\"]*dfa-releases[^\"]+)\"",
+   "language": "en",
+   "claimants": [
+    "PH"
+   ],
+   "cadence": "daily",
+   "max_items": 15,
+   "status": "blocked_from_cloud",
+   "notes": "403 from cloud egress (2026-10-15); covered meanwhile by ph_news."
+  },
+  {
+   "id": "ph_bfar",
+   "name": "Philippines Bureau of Fisheries and Aquatic Resources",
+   "kind": "html_list",
+   "url": "https://www.bfar.da.gov.ph/news/",
+   "link_pattern": "href=\"([^\"]*/news/[^\"]+)\"",
+   "language": "en",
+   "claimants": [
+    "PH"
+   ],
+   "cadence": "weekly",
+   "max_items": 10,
+   "status": "blocked_from_cloud",
+   "notes": "Connection fails from cloud egress (2026-10-15)."
+  },
+  {
+   "id": "ph_news",
+   "name": "News search: Philippine Coast Guard / West Philippine Sea",
+   "kind": "rss",
+   "url": "https://news.google.com/rss/search?q=%22Philippine+Coast+Guard%22+OR+%22West+Philippine+Sea%22&hl=en-PH&gl=PH&ceid=PH:en",
+   "language": "en",
+   "claimants": [
+    "PH",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Aggregator; the publisher article is captured when reachable, else the headline and snippet."
+  },
+  {
+   "id": "vn_mfa",
+   "name": "Vietnam MFA (press)",
+   "kind": "html_list",
+   "url": "https://www.mofa.gov.vn/",
+   "link_pattern": "href=\"(https?://(?:www\\.)?mofa\\.gov\\.vn/[^\"]*(?:bao-chi|spokesperson|nguoi-phat-ngon)[^\"]*)\"",
+   "language": "vi",
+   "claimants": [
+    "VN"
+   ],
+   "cadence": "daily",
+   "max_items": 15,
+   "status": "active",
+   "notes": "Vietnamese-language site; the English press site (press.mofa.gov.vn) is unreachable from cloud egress."
+  },
+  {
+   "id": "vn_news",
+   "name": "News search: Vietnam East Sea",
+   "kind": "rss",
+   "url": "https://news.google.com/rss/search?q=Vietnam+%22East+Sea%22+OR+%22Bien+Dong%22+Paracel+OR+Spratly&hl=en-US&gl=US&ceid=US:en",
+   "language": "en",
+   "claimants": [
+    "VN",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": ""
+  },
+  {
+   "id": "my_mmea",
+   "name": "Malaysian Maritime Enforcement Agency",
+   "kind": "html_list",
+   "url": "https://www.mmea.gov.my/",
+   "link_pattern": "href=\"([^\"]*(?:berita|news|siaran)[^\"]+)\"",
+   "language": "ms",
+   "claimants": [
+    "MY"
+   ],
+   "cadence": "weekly",
+   "max_items": 15,
+   "status": "active",
+   "notes": "Wisma Putra (kln.gov.my) unreachable from cloud egress."
+  },
+  {
+   "id": "my_news",
+   "name": "News search: Malaysia South China Sea",
+   "kind": "rss",
+   "url": "https://news.google.com/rss/search?q=Malaysia+%22South+China+Sea%22+OR+%22Luconia%22+OR+%22Sabah%22+coast+guard&hl=en-MY&gl=MY&ceid=MY:en",
+   "language": "en",
+   "claimants": [
+    "MY",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": ""
+  },
+  {
+   "id": "id_kemlu",
+   "name": "Indonesia Ministry of Foreign Affairs press releases",
+   "kind": "html_list",
+   "url": "https://kemlu.go.id/portal/en/list/siaran_pers",
+   "link_pattern": "href=\"([^\"]*siaran_pers[^\"]+)\"",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "cadence": "weekly",
+   "max_items": 15,
+   "status": "needs_work",
+   "notes": "Listing is script-rendered: the HTML carries no article links (probe 2026-10-15). Needs the underlying JSON endpoint; covered meanwhile by id_news."
+  },
+  {
+   "id": "id_bakamla",
+   "name": "Indonesia Maritime Security Agency (Bakamla)",
+   "kind": "html_list",
+   "url": "https://bakamla.go.id/",
+   "link_pattern": "href=\"([^\"]*(?:berita|news)[^\"]+)\"",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "cadence": "weekly",
+   "max_items": 15,
+   "status": "active",
+   "notes": ""
+  },
+  {
+   "id": "id_news",
+   "name": "News search: Indonesia Natuna",
+   "kind": "rss",
+   "url": "https://news.google.com/rss/search?q=Indonesia+Natuna+%22coast+guard%22+OR+Bakamla+OR+%22South+China+Sea%22&hl=en-ID&gl=ID&ceid=ID:en",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": ""
+  },
+  {
+   "id": "tw_mofa",
+   "name": "Taiwan MOFA news",
+   "kind": "html_list",
+   "url": "https://en.mofa.gov.tw/News.aspx?n=1328&sms=273",
+   "link_pattern": "href=\"(News_Content\\.aspx\\?n=1328&s=\\d+)\"",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "cadence": "daily",
+   "max_items": 15,
+   "status": "active",
+   "notes": ""
+  },
+  {
+   "id": "tw_cga",
+   "name": "Taiwan Coast Guard Administration",
+   "kind": "html_list",
+   "url": "https://www.cga.gov.tw/GipOpen/wSite/mp?mp=9996",
+   "link_pattern": "href=\"([^\"]*ct\\?xItem=\\d+[^\"]*)\"",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "cadence": "weekly",
+   "max_items": 15,
+   "status": "active",
+   "notes": "English site; link pattern to be confirmed on first live run."
+  },
+  {
+   "id": "scs_news",
+   "name": "News search: South China Sea",
+   "kind": "rss",
+   "url": "https://news.google.com/rss/search?q=%22South+China+Sea%22&hl=en-US&gl=US&ceid=US:en",
+   "language": "en",
+   "claimants": [
+    "CN",
+    "VN",
+    "PH",
+    "MY",
+    "ID",
+    "TW"
+   ],
+   "cadence": "daily",
+   "max_items": 40,
+   "status": "active",
+   "notes": "The general net. Most candidates will come from here and be confirmed against primary sources by the coder."
+  }
+ ]
+}

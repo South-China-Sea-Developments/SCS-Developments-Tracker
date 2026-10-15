@@ -8,7 +8,7 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 02 | [Site skeleton with the MAVD-equivalent overview](02-site-skeleton-and-overview.md) | 01 | done |
 | 03 | [Case browser and move detail](03-case-browser-and-move-detail.md) | 02 | done |
 | 04 | [Issues/Domains and Sub-regions pages](04-issues-domains-and-subregions-pages.md) | 02 | done |
-| 05 | [Source registry and harvester with fixtures](05-source-registry-and-harvester-with-fixtures.md) | 01 | ready |
+| 05 | [Source registry and harvester with fixtures](05-source-registry-and-harvester-with-fixtures.md) | 01 | done (live run pending secret) |
 | 06 | [Review queue as pull request, with review page](06-review-queue-as-pull-request.md) | 05 | ready |
 | 07 | [Scheduled runs and failure alerts](07-scheduled-runs-and-failure-alerts.md) | 06 | ready |
 | 08 | [Event map with time slider and filters](08-event-map-with-time-slider.md) | 03, 06 | ready |

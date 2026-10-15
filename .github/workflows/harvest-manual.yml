@@ -1,0 +1,57 @@
+name: harvest (manual)
+
+# A live harvest run started by hand. Fetches the active sources, extracts candidate events with the
+# language model, and uploads the run folder (captures, candidates, sources, run.json with cost and
+# yield) as a workflow artifact. Needs the ANTHROPIC_API_KEY repository secret. Ticket 07 turns this
+# into the weekly scheduled run that opens a review pull request.
+
+on:
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Only items published on or after this date (YYYY-MM-DD); empty = everything listed"
+        default: ""
+      only:
+        description: "Comma-separated source ids to restrict the run (empty = all active)"
+        default: ""
+      model:
+        description: "Extractor model"
+        default: "claude-sonnet-5-5"
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Probe sources
+        run: python -m pipeline.harvest probe || true
+      - name: Fetch and extract
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          RUN_ID=$(date -u +%Y%m%dT%H%M)
+          echo "RUN_ID=$RUN_ID" >> "$GITHUB_ENV"
+          python -m pipeline.harvest run --run-id "$RUN_ID" --since "${{ inputs.since }}" --only "${{ inputs.only }}" \
+            --model "${{ inputs.model }}" --record --recordings "harvest/recordings/$RUN_ID"
+      - name: Summary
+        run: |
+          echo "## Harvest $RUN_ID" >> "$GITHUB_STEP_SUMMARY"
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          r = json.load(open(f"harvest/runs/{os.environ['RUN_ID']}/run.json"))
+          print(f"- captures: {r['captures']}\n- candidates: {r['candidates']} (possible duplicates {r['duplicates']})")
+          print(f"- tokens in/out: {r['input_tokens']}/{r['output_tokens']}; estimated cost: ${r['estimated_cost_usd']:.2f}")
+          print(f"- extractor: {r['extractor']}\n- failures: {len(r['failures'])}")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harvest-${{ env.RUN_ID }}
+          path: |
+            harvest/captures/${{ env.RUN_ID }}
+            harvest/runs/${{ env.RUN_ID }}
+            harvest/recordings/${{ env.RUN_ID }}
+            harvest/state.json

@@ -7,3 +7,7 @@ node_modules/
 .DS_Store
 *.egg-info/
 web/dist/
+harvest/captures/
+harvest/runs/
+harvest/recordings/
+harvest/state.json

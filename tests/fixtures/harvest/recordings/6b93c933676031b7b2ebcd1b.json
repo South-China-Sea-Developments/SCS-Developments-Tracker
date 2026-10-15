@@ -1,0 +1,8 @@
+{
+ "model": "hand-authored-fixture",
+ "recorded_at": "2026-10-15T00:00:00+00:00",
+ "user_prompt_head": "Source: Vietnam MFA (press) (vn_mfa)\nURL: https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-cuoc-tan-cong-gan-day-nham-vao-cac-co-so-ha-tang-dan-su-tai-vuong-quoc-a-rap-xe-ut-62782-10.",
+ "text": "{\n \"events\": []\n}",
+ "input_tokens": 0,
+ "output_tokens": 0
+}

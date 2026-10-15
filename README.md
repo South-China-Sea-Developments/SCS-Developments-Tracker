@@ -2,7 +2,7 @@
 
 A continuously updated database of **assertive moves by claimant states in the South China Sea**, built as the successor to Andrew Chubb's *Maritime Assertiveness Time Series* (MATS 1.0, 1970–2015) and its public visualization, the *Maritime Assertiveness Visualization Dashboard* (MAVD, NBR, 2023).
 
-**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (ticket 01); the public site shows the overview and methodology pages (ticket 02).
+**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05).
 
 **Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main`).
 
@@ -14,6 +14,8 @@ python -m pytest                   # tests at the canonical-file seam
 python -m pipeline.validate        # checks data/*.csv against the schema and MATS 1.02
 python -m pipeline.load_mats       # regenerates data/*.csv from data/raw/
 python -m web.build                # builds the site into web/dist/ (open web/dist/index.html)
+python -m pipeline.harvest probe   # checks the registered sources are reachable
+python -m pipeline.harvest run     # fetches new items and extracts candidate events (needs ANTHROPIC_API_KEY)
 ```
 
 ## What is here
@@ -21,7 +23,8 @@ python -m web.build                # builds the site into web/dist/ (open web/di
 | Path | Contents |
 |---|---|
 | `data/*.csv` | **The canonical dataset**: claimants, moves, events, sources, corrections. See `data/README.md`. |
-| `pipeline/` | Loader and validator (Python). |
+| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt). |
+| `harvest/` | Working folder for harvest runs (not committed). |
 | `tests/` | Tests at the agreed seams. |
 | `docs/spec.md`, `docs/tickets/` | What is being built and in which slices. |
 | `docs/decisions/`, `docs/adr/` | Why. |

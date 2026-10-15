@@ -1,0 +1,8 @@
+{
+ "model": "hand-authored-fixture",
+ "recorded_at": "2026-10-15T00:00:00+00:00",
+ "user_prompt_head": "Source: News search: South China Sea (scs_news)\nURL: https://news.google.com/rss/articles/CBMijwFBVV95cUxNcFQtelFKVTFwSEo4aXRjd0JBZWxaeldOeHJ2ZE51ZEJZR2pBMmJmVjZhVVFDaHNyYzlOaUVybFJvUTNkZjZjeUZBT19UZklWd1VDMEJJN0pXS0d6QUNoMG9UX2hhUWp3QzVOb0J1ejRuc1RpQ1FOQS1odk9LMVlfdHdqZ2gtVGFudXk1bzVMSQ?oc=5&hl=en-",
+ "text": "{\n \"events\": [\n  {\n   \"claimant\": \"CN\",\n   \"date_start\": \"2026-10-14\",\n   \"date_end\": \"2026-10-14\",\n   \"date_precision\": \"day\",\n   \"location_name\": \"\",\n   \"subregion\": \"\",\n   \"summary\": \"China warned that Taiwan must 'bear the consequences' of a water cannon incident, according to a Yahoo headline.\",\n   \"actors\": \"\",\n   \"excerpt\": \"Taiwan must 'bear the consequences' of water cannon incident, China says\",\n   \"suggested_type\": \"coercive\",\n   \"suggested_domains\": [\n    \"diplomatic\"\n   ],\n   \"suggested_issues\": [\n    \"politics\"\n   ],\n   \"suggested_dyads\": [\n    \"CR\"\n   ],\n   \"reasoning\": \"Only a headline is available: a Chinese verbal threat toward Taiwan over a water cannon incident. The incident itself, its place and date are not in the text, so this is a low-confidence pointer for the coder to follow to the publisher.\",\n   \"confidence\": \"low\"\n  }\n ]\n}",
+ "input_tokens": 0,
+ "output_tokens": 0
+}
