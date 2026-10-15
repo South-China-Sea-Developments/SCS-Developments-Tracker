@@ -21,12 +21,17 @@ on:
 jobs:
   harvest:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      SINCE: ${{ inputs.since }}
+      ONLY: ${{ inputs.only }}
+      MODEL: ${{ inputs.model }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -e .
+      - run: pip install -e ".[llm]"
       - name: Probe sources
         run: python -m pipeline.harvest probe || true
       - name: Fetch and extract
@@ -35,19 +40,35 @@ jobs:
         run: |
           RUN_ID=$(date -u +%Y%m%dT%H%M)
           echo "RUN_ID=$RUN_ID" >> "$GITHUB_ENV"
-          python -m pipeline.harvest run --run-id "$RUN_ID" --since "${{ inputs.since }}" --only "${{ inputs.only }}" \
-            --model "${{ inputs.model }}" --record --recordings "harvest/recordings/$RUN_ID"
+          python -m pipeline.harvest run --run-id "$RUN_ID" --since "$SINCE" --only "$ONLY" \
+            --model "$MODEL" --record --recordings "harvest/recordings/$RUN_ID"
       - name: Summary
+        if: always()
         run: |
           echo "## Harvest $RUN_ID" >> "$GITHUB_STEP_SUMMARY"
           python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
           import json, os
-          r = json.load(open(f"harvest/runs/{os.environ['RUN_ID']}/run.json"))
-          print(f"- captures: {r['captures']}\n- candidates: {r['candidates']} (possible duplicates {r['duplicates']})")
-          print(f"- tokens in/out: {r['input_tokens']}/{r['output_tokens']}; estimated cost: ${r['estimated_cost_usd']:.2f}")
-          print(f"- extractor: {r['extractor']}\n- failures: {len(r['failures'])}")
+          rid = os.environ["RUN_ID"]
+          try:
+              f = json.load(open(f"harvest/captures/{rid}/fetch-report.json"))
+              print("### Fetch\n| source | listed | captured | skipped | document errors | errors |\n|---|---|---|---|---|---|")
+              for s in f["sources"]:
+                  print(f"| {s['source']} | {s['listed']} | {s['captured']} | {s['skipped']} | {s['document_errors']} | {'; '.join(s['errors'])[:80]} |")
+          except FileNotFoundError:
+              print("fetch report missing")
+          try:
+              r = json.load(open(f"harvest/runs/{rid}/run.json"))
+              cost = f"${r['estimated_cost_usd']:.2f}" if r["estimated_cost_usd"] is not None else "unknown"
+              print(f"### Extract\n- documents: {r['documents']}\n- candidates: {r['candidates']} (possible duplicates {r['duplicates']})")
+              print(f"- tokens in/out: {r['input_tokens']}/{r['output_tokens']}; estimated cost: {cost}")
+              print(f"- extractor: {r['extractor']}\n- failures: {len(r['failures'])}\n\n| source | documents | candidates | failures |\n|---|---|---|---|")
+              for sid, s in r["by_source"].items():
+                  print(f"| {sid} | {s['documents']} | {s['candidates']} | {s['failures']} |")
+          except FileNotFoundError:
+              print("run report missing")
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: harvest-${{ env.RUN_ID }}
           path: |

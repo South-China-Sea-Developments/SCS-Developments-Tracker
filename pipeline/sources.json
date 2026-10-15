@@ -1,5 +1,5 @@
 {
- "_doc": "Source registry for the harvester. kind: rss (feed items, each linked article captured) or html_list (a listing page; links matching link_pattern are captured). status: active | blocked_from_cloud | needs_work (the site refuses requests from cloud egress; kept for a future proxy or manual capture). Probe results are refreshed with `python -m pipeline.harvest probe`.",
+ "_doc": "Source registry for the harvester. kind: rss (feed items, each linked article captured) or html_list (a listing page; links matching link_pattern are captured). status: active; blocked_from_cloud (the site refuses requests from cloud egress, kept for a future fetch route or manual capture); needs_work (reachable but the parser does not yet find articles). cadence is advisory for the scheduler (ticket 07). Probe results are refreshed with `python -m pipeline.harvest probe`.",
  "sources": [
   {
    "id": "amti",
@@ -24,7 +24,7 @@
    "id": "scspi",
    "name": "South China Sea Strategic Situation Probing Initiative (Peking University)",
    "kind": "html_list",
-   "url": "http://www.scspi.org/en/node",
+   "url": "https://www.scspi.org/en/node",
    "language": "en",
    "claimants": [
     "CN",
@@ -60,7 +60,7 @@
    "name": "China Coast Guard news",
    "kind": "html_list",
    "url": "https://www.ccg.gov.cn/hjyw/index.html",
-   "link_pattern": "href=\"([^\"]+\\.html)\"",
+   "link_pattern": "href=\"(/hjyw/[^\"]+\\.html)\"",
    "language": "zh",
    "claimants": [
     "CN"
@@ -263,7 +263,7 @@
    "cadence": "weekly",
    "max_items": 15,
    "status": "active",
-   "notes": "English site; link pattern to be confirmed on first live run."
+   "notes": "Chinese-language site (mp=999 pages); link pattern matches article pages and was exercised in the 2026-10-15 trial fetch."
   },
   {
    "id": "scs_news",

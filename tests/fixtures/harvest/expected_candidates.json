@@ -47,12 +47,26 @@
   "date_start": "2026-10-14",
   "date_end": "2026-10-14",
   "date_precision": "day",
-  "location_name": "",
+  "location_name": "'",
   "subregion": "",
   "suggested_type": "coercive",
   "suggested_domains": "diplomatic",
   "suggested_issues": "politics",
   "suggested_dyads": "CR",
+  "status": "candidate"
+ },
+ {
+  "event_id": "ev-0b4811f8e6",
+  "claimant": "VN",
+  "date_start": "2026-08-28",
+  "date_end": "2026-08-28",
+  "date_precision": "day",
+  "location_name": "Hải Sâm (Antelope Reef) and Ba Ba Island, Paracels",
+  "subregion": "2",
+  "suggested_type": "declarative",
+  "suggested_domains": "diplomatic",
+  "suggested_issues": "politics administrative",
+  "suggested_dyads": "VC",
   "status": "candidate"
  }
 ]

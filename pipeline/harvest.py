@@ -2,7 +2,9 @@
 
 Stages, each a command:
   probe    check every registered source is reachable and report
-  fetch    fetch new items from active sources into a capture folder (one JSON file per document)
+  fetch    fetch new items from active sources into a capture folder (one JSON file per document);
+           --since filters feed items by publication date (listing pages carry no dates); --state keeps
+           the guids of documents already captured with text so they are not fetched again
   extract  turn a capture folder into candidate events + sources in the canonical schema
   run      fetch then extract
 
@@ -43,7 +45,9 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "pipeline" / "sources.json"
 USER_AGENT = "Mozilla/5.0 (compatible; SCSTrackerBot/0.1; +https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker)"
 MAX_TEXT = 20000      # characters of plain text kept per capture (press conferences are long)
-TIMEOUT = 30
+MAX_BODY = 3_000_000  # bytes read per document; anything larger is cut (text pages are far smaller)
+TIMEOUT = 30          # per socket operation
+TEXT_TYPES = ("html", "xml", "text/plain", "json")
 
 
 # ---------------------------------------------------------------------------
@@ -72,9 +76,9 @@ def http_get(url: str, timeout: int = TIMEOUT) -> tuple[int, str, bytes, str]:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
     try:
         with urllib.request.urlopen(req, timeout=timeout, context=SSL_CONTEXT) as resp:
-            return resp.status, resp.headers.get("Content-Type", ""), resp.read(), resp.geturl()
+            return resp.status, resp.headers.get("Content-Type", ""), resp.read(MAX_BODY), resp.geturl()
     except urllib.error.HTTPError as e:
-        return e.code, e.headers.get("Content-Type", "") if e.headers else "", e.read() if e.fp else b"", url
+        return e.code, e.headers.get("Content-Type", "") if e.headers else "", e.read(MAX_BODY) if e.fp else b"", url
 
 
 class _TextExtractor(HTMLParser):
@@ -135,7 +139,7 @@ def html_to_text(body: bytes, content_type: str = "") -> tuple[str, str]:
         p.feed(text)
     except Exception:  # malformed markup: keep what we got
         pass
-    return html.unescape(p.title).strip(), p.text()
+    return re.sub(r"\s+", " ", p.title).strip(), p.text()
 
 
 def parse_rss(body: bytes) -> list[dict]:
@@ -198,7 +202,7 @@ def capture_id(url: str) -> str:
 def fetch_source(src: dict, out_dir: Path, since: str = "", known: set[str] | None = None, sleep: float = 0.5) -> dict:
     """Fetch one source's new documents into out_dir/<source_id>/. Returns a small report."""
     known = known or set()
-    report = {"source": src["id"], "listed": 0, "captured": 0, "skipped": 0, "errors": []}
+    report = {"source": src["id"], "listed": 0, "captured": 0, "skipped": 0, "document_errors": 0, "errors": []}
     sdir = out_dir / src["id"]
     sdir.mkdir(parents=True, exist_ok=True)
     try:
@@ -211,7 +215,7 @@ def fetch_source(src: dict, out_dir: Path, since: str = "", known: set[str] | No
         return report
 
     docs: list[dict] = []
-    if src["kind"] == "rss":
+    if src["kind"] == "rss":   # --since applies to feed items only; listing pages carry no dates
         try:
             items = parse_rss(body)
         except ET.ParseError as e:
@@ -246,18 +250,20 @@ def fetch_source(src: dict, out_dir: Path, since: str = "", known: set[str] | No
         try:
             st, ct, b, fin = http_get(d["url"])
             rec["status"], rec["content_type"], rec["final_url"] = st, ct, fin
-            if st == 200 and ("html" in ct or "xml" in ct or not ct):
+            if st != 200:
+                rec["error"] = f"HTTP {st}"
+            elif not ct or any(k in ct for k in TEXT_TYPES):
                 title, text = html_to_text(b, ct)
                 rec["title"] = rec["title"] or title
                 rec["text"] = text[:MAX_TEXT]
-            elif st == 200:
-                rec["text"] = b[:MAX_TEXT].decode("utf-8", errors="replace")
             else:
-                rec["error"] = f"HTTP {st}"
+                rec["error"] = f"not a text document ({ct.split(';')[0]})"   # PDFs, images: not sent to the model
         except Exception as e:
             rec["error"] = str(e)[:200]
         if not rec["text"] and d["feed_summary"]:
             rec["text"] = d["feed_summary"]            # the aggregator's snippet is better than nothing
+        if rec["error"]:
+            report["document_errors"] += 1
         path.write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
         report["captured"] += 1
         time.sleep(sleep)
@@ -278,14 +284,25 @@ def cmd_fetch(args) -> int:
             continue
         r = fetch_source(src, out, since=args.since, known=known, sleep=args.sleep)
         reports.append(r)
-        print(f"{src['id']:<12} listed {r['listed']:>3} captured {r['captured']:>3} skipped {r['skipped']:>3}"
-              + (f"  errors: {'; '.join(r['errors'])[:160]}" if r["errors"] else ""))
+        print(f"{src['id']:<12} listed {r['listed']:>3} captured {r['captured']:>3} skipped {r['skipped']:>3} "
+              f"document errors {r['document_errors']:>2}" + (f"  errors: {'; '.join(r['errors'])[:160]}" if r["errors"] else ""))
     (out / "fetch-report.json").write_text(json.dumps({"fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                                                        "since": args.since, "sources": reports}, indent=1), encoding="utf-8")
     if state_path:
-        seen = known | {json.loads(p.read_text(encoding="utf-8"))["guid"] for p in out.rglob("*.json") if p.name != "fetch-report.json"}
+        # only documents that yielded text count as seen; failed fetches are retried next run
+        seen = set(known)
+        for p in out.rglob("*.json"):
+            if p.name == "fetch-report.json":
+                continue
+            rec = json.loads(p.read_text(encoding="utf-8"))
+            if rec.get("text"):
+                seen.add(rec["guid"])
         state_path.parent.mkdir(parents=True, exist_ok=True)
         state_path.write_text(json.dumps({"seen": sorted(seen)}, indent=0), encoding="utf-8")
+    failed = [r["source"] for r in reports if r["errors"]]
+    if reports and len(failed) == len(reports):
+        print("every active source failed", file=sys.stderr)
+        return 1
     return 0
 
 
@@ -356,10 +373,13 @@ def cmd_extract(args) -> int:
             for r in rows:
                 w.writerow({c: r.get(c, "") for c in cols})
     (out / "run.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
-    print(f"captures {report['captures']}, with text {report['documents']}, candidates {report['candidates']}, "
-          f"possible duplicates {report['duplicates']}, tokens in/out {report['input_tokens']}/{report['output_tokens']}, "
-          f"estimated cost ${report['estimated_cost_usd']:.2f}, failures {len(report['failures'])} -> {out}/")
-    return 0
+    cost = f"${report['estimated_cost_usd']:.2f}" if report["estimated_cost_usd"] is not None else "unknown"
+    print(f"documents {report['documents']}, candidates {report['candidates']}, possible duplicates {report['duplicates']}, "
+          f"tokens in/out {report['input_tokens']}/{report['output_tokens']}, estimated cost {cost}, "
+          f"failures {len(report['failures'])} -> {out}/")
+    for sid, s in report["by_source"].items():
+        print(f"  {sid:<12} documents {s['documents']:>3} candidates {s['candidates']:>3} failures {s['failures']:>2}")
+    return 1 if report["failures"] and not report["candidates"] else 0
 
 
 def cmd_run(args) -> int:

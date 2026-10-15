@@ -1,0 +1,9 @@
+{
+ "model": "hand-authored-fixture",
+ "recorded_at": "2026-10-15T00:00:00+00:00",
+ "user_prompt_head": "Source: Vietnam MFA (press) (vn_mfa)\nURL: https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-cuoc-tan-cong-gan-day-nham-vao-cac-co-so-ha-tang-dan-su-tai-vuong-quoc-a-rap-xe-ut-62782-10.",
+ "text": "{\n \"events\": [\n  {\n   \"claimant\": \"VN\",\n   \"date_start\": \"2026-08-28\",\n   \"date_end\": \"2026-08-28\",\n   \"date_precision\": \"day\",\n   \"location_name\": \"Hải Sâm (Antelope Reef) and Ba Ba Island, Paracels\",\n   \"subregion\": \"2\",\n   \"summary\": \"Vietnam's foreign ministry spokesperson protested China's reclamation and construction at Antelope Reef (Hải Sâm) and Ba Ba Island in the Paracels, which Vietnam claims.\",\n   \"actors\": \"Vietnam MOFA spokesperson Phạm Thu Hằng\",\n   \"excerpt\": \"Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:\",\n   \"suggested_type\": \"declarative\",\n   \"suggested_domains\": [\n    \"diplomatic\"\n   ],\n   \"suggested_issues\": [\n    \"politics\",\n    \"administrative\"\n   ],\n   \"suggested_dyads\": [\n    \"VC\"\n   ],\n   \"reasoning\": \"A dated official protest asserting Vietnam's claim is a declarative move; it appears in the page's sidebar listing of recent statements, so the coder should open the linked statement for the full text.\",\n   \"confidence\": \"medium\"\n  }\n ]\n}",
+ "input_tokens": 0,
+ "output_tokens": 0,
+ "stop_reason": "end_turn"
+}

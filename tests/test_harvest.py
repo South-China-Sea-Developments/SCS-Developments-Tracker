@@ -71,10 +71,12 @@ def test_list_links_resolves_relative_and_dedupes():
     assert links == ["https://h/eng/xw/202610/t1.html", "https://h/eng/xw/202609/t2.html"]
 
 
-def test_parse_events_json_tolerates_fences_and_garbage():
+def test_parse_events_json_tolerates_fences_and_prose_but_not_garbage():
     assert parse_events_json('```json\n{"events": [{"claimant": "CN"}]}\n```') == [{"claimant": "CN"}]
-    assert parse_events_json("no json here") == []
-    assert parse_events_json('{"events": "not a list"}') == []
+    assert parse_events_json('Here you go: {"events": []}\nNote: {see above}') == []
+    assert parse_events_json("no json here") is None          # a failure, not "no events"
+    assert parse_events_json('{"events": "not a list"}') is None
+    assert parse_events_json('{"meta": {"events": [1]}, "events": [{"a": 1}, 2]}') == [{"a": 1}]
 
 
 # ---- fetcher against a local server ------------------------------------------
@@ -90,11 +92,14 @@ def local_site(tmp_path_factory):
     (root / "202610/t20261009_1.html").write_text("<html><head><title>PC 9 Oct</title></head><body><p>Transcript one.</p></body></html>")
     (root / "202610/t20261008_2.html").write_text("<html><head><title>PC 8 Oct</title></head><body><p>Transcript two.</p></body></html>")
     handler = lambda *a, **k: http.server.SimpleHTTPRequestHandler(*a, directory=str(root), **k)
+    (root / "doc.pdf").write_bytes(b"%PDF-1.4 binary")
+    (root / "pdffeed.xml").write_bytes(b'<rss version="2.0"><channel><item><title>P</title><link>/doc.pdf</link><guid>pdf1</guid></item></channel></rss>')
     srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     t = threading.Thread(target=srv.serve_forever, daemon=True)
     t.start()
     yield f"http://127.0.0.1:{srv.server_address[1]}"
     srv.shutdown()
+    srv.server_close()
 
 
 def test_fetch_rss_source_captures_articles(local_site, tmp_path):
@@ -122,6 +127,29 @@ def test_fetch_html_list_source(local_site, tmp_path):
     assert titles == ["PC 8 Oct", "PC 9 Oct"]
 
 
+def test_non_text_documents_are_not_captured_as_text(local_site, tmp_path):
+    src = {"id": "t_pdf", "name": "PDF feed", "kind": "rss", "url": local_site + "/pdffeed.xml", "language": "en",
+           "claimants": ["MY"], "max_items": 5, "status": "active"}
+    report = harvest.fetch_source(src, tmp_path, sleep=0)
+    rec = json.loads(next(tmp_path.glob("t_pdf/*.json")).read_text(encoding="utf-8"))
+    assert rec["text"] == "" and rec["error"].startswith("not a text document") and report["document_errors"] == 1
+
+
+def test_state_keeps_only_documents_that_yielded_text(local_site, tmp_path):
+    """A failed document fetch is retried next run: its guid is not marked as seen."""
+    reg = tmp_path / "reg.json"
+    reg.write_text(json.dumps({"sources": [
+        {"id": "ok", "name": "ok", "kind": "rss", "url": local_site + "/feed.xml", "language": "en", "claimants": ["PH"], "cadence": "daily", "max_items": 5, "status": "active"},
+        {"id": "pdf", "name": "pdf", "kind": "rss", "url": local_site + "/pdffeed.xml", "language": "en", "claimants": ["MY"], "cadence": "daily", "max_items": 5, "status": "active"},
+    ]}), encoding="utf-8")
+    state = tmp_path / "state.json"
+    rc = harvest.main(["fetch", "--out", str(tmp_path / "cap"), "--state", str(state), "--sleep", "0", "--registry", str(reg)])
+    assert rc == 0
+    seen = set(json.loads(state.read_text(encoding="utf-8"))["seen"])
+    assert "g1" in seen and "pdf1" not in seen
+    assert (tmp_path / "cap" / "fetch-report.json").exists()
+
+
 def test_fetch_reports_http_errors_without_raising(local_site, tmp_path):
     src = {"id": "t_404", "name": "Missing", "kind": "rss", "url": local_site + "/nope.xml", "language": "en",
            "claimants": ["CN"], "max_items": 5, "status": "active"}
@@ -146,14 +174,20 @@ def test_fixture_yields_the_expected_candidates(fixture_run):
     expected = json.loads((FIX / "expected_candidates.json").read_text(encoding="utf-8"))
     assert [{k: r[k] for k in expected[0]} for r in rows] == expected
     assert all(r["status"] == "candidate" and r["move_id"] == "" and r["harvest_run_id"] == "fixture" for r in rows)
-    assert all(r["extractor"].endswith("@prompt-" + r["extractor"].split("@prompt-")[1]) and len(r["extractor"].split("@prompt-")[1]) == 12 for r in rows)
+    assert all(r["extractor"] == "hand-authored-fixture@prompt-" + r["extractor"].rsplit("-", 1)[1] and len(r["extractor"].rsplit("-", 1)[1]) == 12 for r in rows)
+    # the duplicate path is exercised: the two same-day China events are flagged for the reviewer, not dropped
+    flagged = [r for r in rows if r["review_note"].startswith("Possible duplicate of ")]
+    assert len(flagged) == 1 and flagged[0]["location_name"].startswith("Thitu")
+    assert {r["claimant"] for r in rows} == {"CN", "VN"}
     assert all(r["suggestion_reasoning"] for r in rows)
     with open(fixture_run / "sources.csv", newline="", encoding="utf-8") as f:
         sources = list(csv.DictReader(f))
     assert [s["event_id"] for s in sources] == [r["event_id"] for r in rows]
     assert all(s["url"] and s["excerpt"] and len(s["excerpt"]) <= 400 and s["accessed_date"] for s in sources)
     report = json.loads((fixture_run / "run.json").read_text(encoding="utf-8"))
-    assert report["captures"] == 7 and report["candidates"] == 4 and report["failures"] == []
+    assert report["documents"] == 7 and report["candidates"] == 5 and report["failures"] == []
+    assert report["by_source"]["cn_mfa_press"] == {"documents": 2, "candidates": 3, "failures": 0}
+    assert report["estimated_cost_usd"] is None   # unknown model -> unknown, never a silent zero
 
 
 def test_candidates_fit_the_canonical_schema(fixture_run, tmp_path):
@@ -181,6 +215,9 @@ def test_duplicate_detection():
     same = {"event_id": "ev-new", "claimant": "CN", "date_start": "2026-10-09", "date_end": "2026-10-09",
             "location_name": "Second Thomas Shoal", "summary": "CCG used water cannon against a PCG vessel on a medical evacuation mission at Second Thomas Shoal."}
     assert find_duplicate(same, existing) == "ev-old"
+    parenthetical = dict(same, location_name="Second Thomas Shoal (Ren'ai Jiao)",
+                         summary="CCG water cannon against a PCG resupply at Second Thomas Shoal (Ren'ai Jiao) during a rotation.")
+    assert find_duplicate(parenthetical, existing) == "ev-old"   # location match carries a weaker summary match
     other_claimant = dict(same, claimant="PH")
     assert find_duplicate(other_claimant, existing) == ""
     far_away = dict(same, date_start="2026-11-20", date_end="2026-11-20")
@@ -189,20 +226,50 @@ def test_duplicate_detection():
     assert find_duplicate(unrelated, existing) == ""
 
 
-def test_extractor_drops_malformed_events():
-    class Fake:
-        model = "fake"
-        def complete(self, system, user):
-            return json.dumps({"events": [
-                {"claimant": "XX", "date_start": "2026-01-01", "date_end": "2026-01-01", "summary": "bad claimant"},
-                {"claimant": "VN", "date_start": "January 2026", "date_end": "", "summary": "bad date"},
-                {"claimant": "VN", "date_start": "2026-01-01", "date_end": "2026-01-31", "date_precision": "weird",
-                 "subregion": "42", "suggested_type": "nope", "suggested_domains": ["physical", "lunar"], "suggested_dyads": ["VC", "zz"],
-                 "summary": "ok"}]}), 10, 5
-    ex = Extractor(Fake(), run_id="t")
-    events, sources, i, o = ex.extract_one({"guid": "g", "url": "u", "text": "x", "fetched_at": "2026-10-15T00:00:00+00:00"})
+class _Fake:
+    model = "fake-model"
+    def __init__(self, text, stop="end_turn"):
+        self.text, self.stop = text, stop
+    def complete(self, system, user):
+        return self.text, 10, 5, self.stop
+
+
+def test_extractor_drops_malformed_events_and_sanitises_fields():
+    fake = _Fake(json.dumps({"events": [
+        {"claimant": "XX", "date_start": "2026-01-01", "date_end": "2026-01-01", "summary": "bad claimant"},
+        {"claimant": "VN", "date_start": "January 2026", "date_end": "", "summary": "bad date"},
+        {"claimant": "VN", "date_start": "2026-13-45", "date_end": "2026-13-45", "summary": "impossible date"},
+        {"claimant": "VN", "date_start": "2026-02-10", "date_end": "2026-02-01", "summary": "end before start"},
+        {"claimant": "VN", "date_start": "2026-01-01", "date_end": "2026-01-31", "date_precision": "weird",
+         "subregion": "42", "suggested_type": "nope", "suggested_domains": ["physical", "lunar"], "suggested_dyads": ["VC", "zz"],
+         "lat": {"x": 1}, "lon": "999", "summary": "=HYPERLINK(evil)", "excerpt": "not in the document", "confidence": "certain"}]}))
+    ex = Extractor(fake, run_id="t")
+    events, sources, i, o = ex.extract_one({"guid": "g", "url": "u", "text": "the real text", "fetched_at": "2026-10-15T00:00:00+00:00"})
     assert len(events) == 1
     e = events[0]
     assert e["date_precision"] == "month" and e["subregion"] == "" and e["suggested_type"] == ""
     assert e["suggested_domains"] == "physical" and e["suggested_dyads"] == "VC"
+    assert e["lat"] == "" and e["lon"] == ""
+    assert e["summary"].startswith("'=")                       # never a live formula in a spreadsheet
+    assert "Excerpt not found verbatim" in e["review_note"]
+    assert e["suggestion_reasoning"].endswith("[confidence: unstated]")
+    assert e["extractor"].startswith("fake-model@prompt-")
     assert (i, o) == (10, 5)
+
+
+def test_truncated_or_non_json_responses_are_failures_not_quiet_weeks():
+    cap = {"capture_id": "c1", "source_id": "s", "guid": "g", "url": "u", "text": "x", "fetched_at": "2026-10-15T00:00:00+00:00"}
+    ex = Extractor(_Fake('{"events": [{"claimant": "CN", "date_start": "2026-01-01', stop="max_tokens"), run_id="t")
+    events, sources, report = ex.extract_all([cap])
+    assert events == [] and len(report["failures"]) == 1 and "truncated" in report["failures"][0]["error"]
+    ex = Extractor(_Fake("Sorry, I cannot help with that."), run_id="t")
+    events, sources, report = ex.extract_all([cap])
+    assert events == [] and len(report["failures"]) == 1 and "not the requested JSON" in report["failures"][0]["error"]
+    assert report["by_source"]["s"] == {"documents": 1, "candidates": 0, "failures": 1}
+
+
+def test_excerpt_check_ignores_quote_style_and_whitespace():
+    from pipeline.extract import excerpt_in_text
+    assert excerpt_in_text("China’s permission,  intruded", "without China's permission, intruded the")
+    assert not excerpt_in_text("something else entirely", "without China's permission")
+    assert not excerpt_in_text("", "anything")
