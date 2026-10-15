@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Sub-regions — SCS Developments Tracker{% endblock %}
+{% block content %}
+<section class="lede">
+  <h1>Where in the sea</h1>
+  <p class="lede-text">MATS places each move in one or more of ten sub-regions. A move that spans several counts in each of them, so the map and the charts count mentions, not moves.</p>
+</section>
+
+<section class="filters" aria-label="Filters">
+  <fieldset class="segmented" id="map-claimant">
+    <legend class="sr-only">Claimant</legend>
+    <label><input type="radio" name="map-claimant" value="ALL" checked><span>All claimants</span></label>
+    {% for c in claimants %}<label><input type="radio" name="map-claimant" value="{{ c.code }}"><span>{{ c.name }}</span></label>{% endfor %}
+  </fieldset>
+</section>
+
+<section class="figure" id="fig-map">
+  <div class="figure-head">
+    <h2>Moves by sub-region and period</h2>
+    <button class="toggle" type="button" data-toggle-table="fig-map" aria-pressed="false">Table</button>
+  </div>
+  <div class="map-layout">
+    <div class="chart choropleth" data-chart="choropleth"></div>
+    <div class="map-side">
+      <fieldset class="bins" id="map-bin"><legend>Period</legend></fieldset>
+      <p class="figure-note">Shading runs from no moves to the busiest sub-region in the period shown. Hover or tap a sub-region for its counts by type.</p>
+    </div>
+  </div>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="figure" id="fig-loc-type">
+  <div class="figure-head">
+    <h2>Moves by sub-region and type, all years</h2>
+    <button class="toggle" type="button" data-toggle-table="fig-loc-type" aria-pressed="false">Table</button>
+  </div>
+  <div class="chart" data-chart="subregions" data-dim="types" data-scope="map"></div>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="figure-grid">
+  <h2>Each sub-region over time</h2>
+  <p class="figure-note">One chart per sub-region; the claimant selector above applies.</p>
+  <div class="grid">
+    {% for n, name in subregions %}
+    <section class="figure small" id="fig-loc-{{ n }}">
+      <div class="figure-head"><h3>{{ n }} {{ name }}</h3><button class="toggle" type="button" data-toggle-table="fig-loc-{{ n }}" aria-pressed="false">Table</button></div>
+      <div class="chart" data-chart="years" data-dim="subregion" data-loc="{{ n }}" data-scope="map"></div>
+      <div class="table-view" hidden></div>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

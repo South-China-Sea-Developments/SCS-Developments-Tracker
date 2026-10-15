@@ -52,20 +52,29 @@ def compute_aggregates(moves: list[dict]) -> dict:
     """The site's own computation of the chart numbers (the validator has an independent one)."""
     accepted = [m for m in moves if m["status"] == "accepted"]
     years = list(range(1970, max([int(m["year"]) for m in accepted] + [1970]) + 1))
+    dims = schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS
     by_claimant = {}
     for code in schema.CLAIMANT_CODES:
-        per_year = {str(y): {**{t: 0 for t in schema.TYPE_FLAGS}, "total": 0} for y in years}
-        for m in accepted:
-            if m["claimant"] == code:
-                per_year[m["year"]]["total"] += 1
-                for t in schema.TYPE_FLAGS:
-                    per_year[m["year"]][t] += int(m[t])
-        totals = {k: sum(r[k] for r in per_year.values()) for k in [*schema.TYPE_FLAGS, "total"]}
-        by_claimant[code] = {"years": per_year, "totals": totals}
-    return {"years": years, "types": list(schema.TYPE_FLAGS), "claimants": list(schema.CLAIMANT_CODES),
+        mine = [m for m in accepted if m["claimant"] == code]
+        per_year = {}
+        for y in years:
+            in_year = [m for m in mine if m["year"] == str(y)]
+            per_year[str(y)] = {**{f: sum(int(m[f]) for m in in_year) for f in schema.FLAG_COLUMNS}, "total": len(in_year)}
+        per_loc, loc_years = {}, {}
+        for i, loc in enumerate(schema.SUBREGION_FLAGS, start=1):
+            in_loc = [m for m in mine if m[loc] == "1"]
+            per_loc[str(i)] = {**{f: sum(int(m[f]) for m in in_loc) for f in dims}, "total": len(in_loc)}
+            loc_years[str(i)] = {}
+            for y in sorted({m["year"] for m in in_loc}, key=int):
+                in_y = [m for m in in_loc if m["year"] == y]
+                loc_years[str(i)][y] = {**{t: sum(int(m[t]) for m in in_y) for t in schema.TYPE_FLAGS}, "total": len(in_y)}
+        totals = {**{f: sum(int(m[f]) for m in mine) for f in schema.FLAG_COLUMNS}, "total": len(mine)}
+        by_claimant[code] = {"years": per_year, "totals": totals, "subregions": per_loc, "subregion_years": loc_years}
+    return {"years": years, "types": list(schema.TYPE_FLAGS), "domains": list(schema.DOMAIN_FLAGS),
+            "issues": list(schema.ISSUE_FLAGS), "subregions": list(schema.SUBREGION_FLAGS),
+            "claimants": list(schema.CLAIMANT_CODES),
             "n_moves": len(accepted), "n_pending": sum(1 for m in moves if m["status"] == "pending"),
             "by_claimant": by_claimant}
-
 
 def dyad_label(code: str) -> str:
     """'CV' -> 'China (PRC) → Vietnam'; 'A' -> 'all claimants'."""
@@ -146,6 +155,11 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     agg = compute_aggregates(moves)
     agg["claimant_names"] = names
     agg["type_labels"] = TYPE_LABELS
+    agg["domain_labels"] = DOMAIN_LABELS
+    agg["issue_labels"] = ISSUE_LABELS
+    agg["subregion_names"] = dict(zip((str(i) for i in range(1, 11)), schema.SUBREGION_NAMES))
+    agg["subregion_paths"] = {str(k): v for k, v in subregion_paths(data_dir / "reference" / "mavd_subregions.geojson").items()}
+    agg["view"] = [VIEW_W, VIEW_H]
     agg["mats_last_year"] = schema.MATS_YEARS[-1]
     agg["coded_by_chubb"] = sum(1 for m in moves if m["coded_by"] == "chubb" and m["status"] == "accepted")
     meta = {
@@ -195,7 +209,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
-    pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html"}
+    pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html",
+             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
         (out_dir / out_name).write_text(html, encoding="utf-8")

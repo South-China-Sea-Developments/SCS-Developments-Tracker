@@ -21,7 +21,7 @@ def dist(tmp_path_factory):
 def test_aggregates_match_validator(dist):
     built = json.loads((dist / "data/aggregates.json").read_text(encoding="utf-8"))
     independent = aggregates(read_csv(DATA_DIR / "moves.csv"))
-    for key in ("years", "types", "claimants", "n_moves", "n_pending", "by_claimant"):
+    for key in ("years", "types", "domains", "issues", "subregions", "claimants", "n_moves", "n_pending", "by_claimant"):
         assert built[key] == independent[key], key
     # the inline copy the page uses is the same data
     inline = re.search(r'<script id="agg" type="application/json">(.*?)</script>', (dist / "index.html").read_text(encoding="utf-8"), re.S)
@@ -76,7 +76,7 @@ def _open(browser, dist, page_name, viewport=(1280, 900), color_scheme="light"):
     return page, problems
 
 
-@pytest.mark.parametrize("page_name", ["index.html", "methodology.html"])
+@pytest.mark.parametrize("page_name", ["index.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html"])
 @pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
 def test_pages_render_without_errors(browser, dist, page_name, viewport, scheme):
     page, problems = _open(browser, dist, page_name, viewport, scheme)
@@ -220,4 +220,82 @@ def test_case_pages_render_without_errors(browser, dist, move_id):
     assert problems == []
     assert page.locator(".inset svg path").count() == 10
     assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
+    page.close()
+
+
+# ---- ticket 04: issues/domains and sub-regions pages -----------------------
+
+def _count(moves, **flags):
+    return sum(1 for m in moves if all(m[k] == v for k, v in flags.items()))
+
+
+def test_issues_and_domains_pages_match_the_files(browser, dist):
+    page, problems = _open(browser, dist, "issues-domains.html")
+    moves = [m for m in _moves() if m["status"] == "accepted"]
+    # issues by year (all claimants): 1988 energy mentions
+    page.locator('[data-toggle-table="fig-issues-all"]').click()
+    page.wait_for_timeout(100)
+    row = page.locator("#fig-issues-all .table-view tbody tr", has_text="1988").first.inner_text().split("\t")
+    header = page.locator("#fig-issues-all .table-view thead th").all_inner_texts()
+    assert row[header.index("Energy")] == str(_count(moves, year="1988", energy="1"))
+    assert row[header.index("Military")] == str(_count(moves, year="1988", military="1"))
+    # issues by sub-region: Paracels x Fisheries, all claimants
+    page.locator('[data-toggle-table="fig-issues-loc"]').click()
+    page.wait_for_timeout(100)
+    row = page.locator("#fig-issues-loc .table-view tbody tr", has_text="2 Paracels").first.inner_text().split("\t")
+    header = page.locator("#fig-issues-loc .table-view thead th").all_inner_texts()
+    assert row[header.index("Fisheries")] == str(_count(moves, loc02_paracels="1", fisheries="1"))
+    # domains per claimant: Vietnam, diplomatic, 1994
+    page.locator('[data-toggle-table="fig-domains-VN"]').click()
+    page.wait_for_timeout(100)
+    row = page.locator("#fig-domains-VN .table-view tbody tr", has_text="1994").first.inner_text().split("\t")
+    header = page.locator("#fig-domains-VN .table-view thead th").all_inner_texts()
+    assert row[header.index("Diplomatic")] == str(_count(moves, claimant="VN", year="1994", diplomatic="1"))
+    # the filter row scopes everything: drop China and the all-claimants chart's China share disappears
+    page.locator('.chip[data-code="CN"] input').uncheck(force=True)
+    page.wait_for_timeout(100)
+    row = page.locator("#fig-issues-all .table-view tbody tr", has_text="1988").first.inner_text().split("\t")
+    assert row[header.index("Diplomatic") if False else 1] == str(sum(1 for m in moves if m["year"] == "1988" and m["military"] == "1" and m["claimant"] != "CN"))
+    assert problems == []
+    page.close()
+
+
+def test_subregions_page_map_and_bins(browser, dist):
+    page, problems = _open(browser, dist, "subregions.html")
+    moves = [m for m in _moves() if m["status"] == "accepted"]
+    assert page.locator(".choropleth .zone").count() == 10
+    assert page.locator('[data-chart="years"][data-dim="subregion"] svg').count() == 10
+    bins = page.locator("#map-bin label span").all_inner_texts()
+    assert bins[:3] == ["All years", "1970", "1971–75"] and bins[-1] == "2011–15"
+    # fills change with the period
+    fills = lambda: [z.get_attribute("fill") for z in page.locator(".choropleth .zone").all()]
+    before = fills()
+    page.locator('#map-bin input[value="2011-2015"]').check(force=True)
+    page.wait_for_timeout(150)
+    after = fills()
+    assert before != after
+    # the table twin holds the period counts: Paracels (2), 2011-15, all claimants
+    page.locator('[data-toggle-table="fig-map"]').click()
+    page.wait_for_timeout(100)
+    header = page.locator("#fig-map .table-view thead th").all_inner_texts()
+    row = page.locator("#fig-map .table-view tbody tr", has_text="2011–15").first.inner_text().split("\t")
+    expect = sum(1 for m in moves if m["loc02_paracels"] == "1" and 2011 <= int(m["year"]) <= 2015)
+    assert row[header.index("2 Paracels")] == str(expect)
+    # claimant selector scopes the map, the type chart and the small multiples
+    page.locator('#map-claimant input[value="PH"]').check(force=True)
+    page.wait_for_timeout(150)
+    row = page.locator("#fig-map .table-view tbody tr", has_text="2011–15").first.inner_text().split("\t")
+    expect = sum(1 for m in moves if m["claimant"] == "PH" and m["loc02_paracels"] == "1" and 2011 <= int(m["year"]) <= 2015)
+    assert row[header.index("2 Paracels")] == str(expect)
+    page.locator('[data-toggle-table="fig-loc-type"]').click()
+    page.wait_for_timeout(100)
+    header = page.locator("#fig-loc-type .table-view thead th").all_inner_texts()
+    row = page.locator("#fig-loc-type .table-view tbody tr", has_text="6 Spratly NE").first.inner_text().split("\t")
+    assert row[header.index("Total")] == str(sum(1 for m in moves if m["claimant"] == "PH" and m["loc06_spratly_ne"] == "1"))
+    # hovering a zone shows its counts
+    page.locator('[data-toggle-table="fig-map"]').click()
+    page.hover(".choropleth .zone >> nth=5")
+    page.wait_for_timeout(50)
+    assert "Spratly NE" in page.locator(".tooltip").inner_text()
+    assert problems == []
     page.close()
