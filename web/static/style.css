@@ -102,8 +102,8 @@ h3 { font-size: 1rem; font-weight: 600; margin: 0; }
 .chip .swatch { width: 12px; height: 12px; border-radius: 3px; background: var(--c); }
 .chip input:not(:checked) + .swatch { background: transparent; box-shadow: inset 0 0 0 2px var(--c); }
 .chip input:not(:checked) ~ span:last-child { color: var(--muted); }
-.chip[data-code="CN"] { --c: var(--cn); } .chip[data-code="VN"] { --c: var(--vn); } .chip[data-code="PH"] { --c: var(--ph); }
-.chip[data-code="MY"] { --c: var(--my); } .chip[data-code="ID"] { --c: var(--id); } .chip[data-code="TW"] { --c: var(--tw); }
+[data-code="CN"] { --c: var(--cn); } [data-code="VN"] { --c: var(--vn); } [data-code="PH"] { --c: var(--ph); }
+[data-code="MY"] { --c: var(--my); } [data-code="ID"] { --c: var(--id); } [data-code="TW"] { --c: var(--tw); }
 .filters-note { margin: 0; color: var(--muted); font-size: 0.9375rem; }
 
 /* Figures */
@@ -210,17 +210,14 @@ h3 { font-size: 1rem; font-weight: 600; margin: 0; }
 .case-link { text-decoration: none; color: var(--ink); font-weight: 600; display: inline-flex; gap: 8px; align-items: baseline; }
 .case-link:hover .case-year, .case-link:hover .case-claimant { text-decoration: underline; }
 .case-claimant::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; background: var(--c, var(--muted)); vertical-align: 0; }
-.case-claimant[data-code="CN"] { --c: var(--cn); } .case-claimant[data-code="VN"] { --c: var(--vn); } .case-claimant[data-code="PH"] { --c: var(--ph); }
-.case-claimant[data-code="MY"] { --c: var(--my); } .case-claimant[data-code="ID"] { --c: var(--id); } .case-claimant[data-code="TW"] { --c: var(--tw); }
 .case-id { color: var(--muted); font-size: 0.875rem; font-variant-numeric: tabular-nums; margin-left: auto; }
 .case-types { display: inline-flex; flex-wrap: wrap; gap: 4px; }
-.type-pill { font-size: 0.8125rem; padding: 1px 8px; border-radius: 999px; color: #fff; background: var(--t-demonstrative); }
-.type-pill[data-type="declarative"] { background: var(--t-declarative); color: var(--ink); }
-.type-pill[data-type="demonstrative"] { background: var(--t-demonstrative); }
-.type-pill[data-type="coercive"] { background: var(--t-coercive); }
-.type-pill[data-type="force"] { background: var(--t-force); }
-:root[data-theme="dark"] .type-pill[data-type="declarative"], :root[data-theme="dark"] .type-pill[data-type="demonstrative"] { color: #fff; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .type-pill[data-type="declarative"], :root:not([data-theme="light"]) .type-pill[data-type="demonstrative"] { color: #fff; } :root:not([data-theme="light"]) .type-pill[data-type="force"] { color: var(--ink); } }
+.type-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8125rem; padding: 1px 8px 1px 6px; border-radius: 999px; border: 1px solid var(--grid); color: var(--ink-2); background: var(--surface); }
+.type-pill::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: var(--t, var(--muted)); }
+.type-pill[data-type="declarative"] { --t: var(--t-declarative); }
+.type-pill[data-type="demonstrative"] { --t: var(--t-demonstrative); }
+.type-pill[data-type="coercive"] { --t: var(--t-coercive); }
+.type-pill[data-type="force"] { --t: var(--t-force); }
 .pending-pill { font-size: 0.8125rem; padding: 1px 8px; border-radius: 999px; border: 1px dashed var(--baseline); color: var(--ink-2); }
 .case-excerpt { margin: 0; color: var(--ink-2); font-size: 0.9375rem; }
 
@@ -251,7 +248,7 @@ h3 { font-size: 1rem; font-weight: 600; margin: 0; }
 .inset { margin: 14px 0; }
 .inset svg { width: 100%; max-width: 240px; height: auto; display: block; background: var(--paper); border: 1px solid var(--grid); border-radius: var(--radius); }
 .inset .sr { fill: var(--surface); stroke: var(--baseline); stroke-width: 1; }
-.inset .sr.is-on { fill: var(--cn); fill-opacity: 0.55; stroke: var(--ink); }
+.inset .sr.is-on { fill: var(--ink); fill-opacity: 0.45; stroke: var(--ink); }
 .inset figcaption { color: var(--muted); font-size: 0.8125rem; margin-top: 4px; }
 @media (max-width: 640px) {
   .masthead-row { min-height: 52px; gap: 4px 12px; }

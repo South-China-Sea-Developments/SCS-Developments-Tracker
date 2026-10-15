@@ -8,9 +8,10 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-VIEW_W, VIEW_H = 240, 300
 LON_MIN, LON_MAX = 106.5, 120.0
 LAT_MIN, LAT_MAX = 2.5, 21.5
+VIEW_W = 240
+VIEW_H = round(VIEW_W * (LAT_MAX - LAT_MIN) / (LON_MAX - LON_MIN))   # same scale on both axes
 
 
 def project(lon: float, lat: float) -> tuple[float, float]:

@@ -18,6 +18,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from pipeline import schema
+from pipeline.load_mats import SEED_RUN
 from web.geo import VIEW_H, VIEW_W, subregion_paths
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,9 +26,10 @@ HERE = Path(__file__).resolve().parent
 
 DYAD_NAMES = {"R": "Taiwan (ROC)", "C": "China (PRC)", "P": "Philippines", "V": "Vietnam", "M": "Malaysia",
               "B": "Brunei", "I": "Indonesia", "A": "all claimants", "U": "unclear"}
-DOMAIN_LABELS = {"domestic": "Domestic", "diplomatic": "Diplomatic", "physical": "Physical"}
-ISSUE_LABELS = {"military": "Military", "administrative": "Administrative", "energy": "Energy",
-                "fisheries": "Fisheries", "politics": "Politics"}
+DOMAIN_LABELS = schema.DOMAIN_LABELS
+ISSUE_LABELS = schema.ISSUE_LABELS
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+          "November", "December"]
 
 TYPE_LABELS = schema.TYPE_LABELS
 TYPE_BLURBS = {
@@ -72,17 +74,41 @@ def dyad_label(code: str) -> str:
     return DYAD_NAMES.get(code, code)
 
 
-def move_view(m: dict, events: list[dict], sources_by_event: dict) -> dict:
+def date_label(start: str, end: str, precision: str) -> str:
+    """ISO dates -> what a reader expects: '29 January 1973', 'May 1971', '1974'."""
+    y, mo, d = start[:4], int(start[5:7] or 1), int(start[8:10] or 1)
+    if precision == "day":
+        return f"{d} {MONTHS[mo - 1]} {y}"
+    if precision == "month":
+        return f"{MONTHS[mo - 1]} {y}"
+    return y
+
+
+def event_view(e: dict, move_year: int, sources: list[dict]) -> dict:
+    """An event with the facts the page branches on computed from data, not from prose."""
+    return dict(
+        e,
+        sources=sources,
+        is_seed=e["harvest_run_id"] == SEED_RUN,
+        approximate=e["summary"].startswith("Approximate date."),
+        outside_year=bool(e["date_start"]) and int(e["date_start"][:4]) != move_year,
+        date_label=date_label(e["date_start"], e["date_end"], e["date_precision"]) if e["date_start"] else "undated",
+    )
+
+
+def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
     """Everything a move page or list row needs, with codes expanded to labels."""
     types = [t for t in schema.TYPE_FLAGS if m[t] == "1"]
     domains = [d for d in schema.DOMAIN_FLAGS if m[d] == "1"]
     issues = [i for i in schema.ISSUE_FLAGS if m[i] == "1"]
     subregions = [i + 1 for i, f in enumerate(schema.SUBREGION_FLAGS) if m[f] == "1"]
     dyads = m["dyads"].split()
-    evs = sorted((e for e in events if e["move_id"] == m["move_id"]), key=lambda e: (e["date_start"], e["event_id"]))
+    year = int(m["year"])
+    evs = sorted(events_by_move.get(m["move_id"], []), key=lambda e: (e["date_start"], e["event_id"]))
     return {
-        "id": m["move_id"], "claimant": m["claimant"], "year": int(m["year"]),
+        "id": m["move_id"], "claimant": m["claimant"], "year": year,
         "types": types, "type_labels": [TYPE_LABELS[t] for t in types],
+        "type_pairs": [(t, TYPE_LABELS[t]) for t in types],
         "domains": domains, "domain_labels": [DOMAIN_LABELS[d] for d in domains],
         "issues": issues, "issue_labels": [ISSUE_LABELS[i] for i in issues],
         "subregions": subregions, "subregion_labels": [schema.SUBREGION_NAMES[i - 1] for i in subregions],
@@ -93,7 +119,7 @@ def move_view(m: dict, events: list[dict], sources_by_event: dict) -> dict:
         "diminished_notes": m["diminished_notes"], "other_possible_cases": m["other_possible_cases"],
         "intensification_criterion": m["intensification_criterion"], "org_case_no": m["org_case_no"],
         "coded_by": m["coded_by"], "coder": m["coder"], "data_version": m["data_version"], "status": m["status"],
-        "events": [dict(e, sources=sources_by_event.get(e["event_id"], [])) for e in evs],
+        "events": [event_view(e, year, sources_by_event.get(e["event_id"], [])) for e in evs],
     }
 
 
@@ -108,15 +134,17 @@ def git_describe() -> str:
 def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     moves = read_csv(data_dir / "moves.csv")
     claimants = read_csv(data_dir / "claimants.csv")
-    events = read_csv(data_dir / "events.csv")
+    events_by_move: dict[str, list[dict]] = {}
+    for e in read_csv(data_dir / "events.csv"):
+        events_by_move.setdefault(e["move_id"], []).append(e)
     sources_by_event: dict[str, list[dict]] = {}
     for s in read_csv(data_dir / "sources.csv"):
         sources_by_event.setdefault(s["event_id"], []).append(s)
     names = {c["code"]: c["name"] for c in claimants}
-    views = [move_view(m, events, sources_by_event) for m in sorted(moves, key=lambda m: (m["year"], m["move_id"]))]
+    views = [move_view(m, events_by_move, sources_by_event) for m in sorted(moves, key=lambda m: (m["year"], m["move_id"]))]
     paths = subregion_paths(data_dir / "reference" / "mavd_subregions.geojson")
     agg = compute_aggregates(moves)
-    agg["claimant_names"] = {c["code"]: c["name"] for c in claimants}
+    agg["claimant_names"] = names
     agg["type_labels"] = TYPE_LABELS
     agg["mats_last_year"] = schema.MATS_YEARS[-1]
     agg["coded_by_chubb"] = sum(1 for m in moves if m["coded_by"] == "chubb" and m["status"] == "accepted")
@@ -146,14 +174,15 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     shutil.copytree(HERE / "static", out_dir / "assets")
     (out_dir / "data" / "aggregates.json").write_text(json.dumps(agg, indent=1), encoding="utf-8")
     # the case list the browser filters client-side: one compact record per move
-    index = [{"id": v["id"], "c": v["claimant"], "y": v["year"], "t": v["types"], "d": v["domains"], "i": v["issues"],
-              "s": v["subregions"], "g": v["targets"], "st": v["status"], "cb": v["coded_by"],
-              "x": v["description"]} for v in views]
+    index = {
+        "names": names, "type_labels": TYPE_LABELS,
+        "cases": [{"id": v["id"], "c": v["claimant"], "y": v["year"], "t": v["types"], "d": v["domains"],
+                   "i": v["issues"], "s": v["subregions"], "g": v["targets"], "st": v["status"],
+                   "x": v["description"]} for v in views],
+    }
     index_json = json.dumps(index, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    (out_dir / "data" / "cases.json").write_text(json.dumps(index, ensure_ascii=False), encoding="utf-8")
 
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]))
-    env.globals["zip"] = zip
     ctx = {
         "meta": meta,
         "agg_json": json.dumps(agg, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>
@@ -165,7 +194,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
-               dyad_targets={k: v for k, v in DYAD_NAMES.items() if k not in ("A", "U")})
+               dyad_targets=DYAD_NAMES)
     pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)

@@ -1,6 +1,7 @@
 """Seam 3: the site build. Aggregates equal the validator's; pages render without errors; bundle is portable."""
 import json
 import re
+from html import escape as html_escape
 from pathlib import Path
 
 import pytest
@@ -38,13 +39,13 @@ def test_known_counts_appear_in_aggregates(dist):
 
 
 def test_bundle_is_self_contained_and_relative(dist):
-    for page in ("index.html", "methodology.html"):
+    for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html"):
         html = (dist / page).read_text(encoding="utf-8")
-        # every src/href that is not an external link is relative (no leading slash, no absolute file path)
+        # every src/href that is not an external link is relative and resolves from the page's own folder
         for attr, target in re.findall(r'(src|href)="([^"]+)"', html):
             assert not target.startswith("/"), (page, target)
             if not target.startswith(("http://", "https://", "#", "mailto:")):
-                assert (dist / target.split("#")[0]).exists(), (page, target)
+                assert ((dist / page).parent / target.split("#")[0]).resolve().exists(), (page, target)
     css = (dist / "assets/style.css").read_text(encoding="utf-8")
     for url in re.findall(r'url\("([^"]+)"\)', css):
         assert (dist / "assets" / url).exists(), url
@@ -150,10 +151,11 @@ def test_every_move_has_a_stable_page(dist):
 def test_case_page_content_matches_the_files(dist):
     m = next(m for m in _moves() if m["move_id"] == "VN197301")
     html = (dist / "cases/VN197301.html").read_text(encoding="utf-8")
-    import html as html_mod
-    assert html_mod.escape(m["description"][:60]) in html
+    assert html_escape(m["description"][:60]) in html
     assert html.count('<time datetime="1973-') == 5          # five seed events, in date order
     assert html.index('datetime="1973-01-29"') < html.index('datetime="1973-08-14"')
+    assert "29 January 1973" in html and html.count('<ul class="sources">') == 5   # a source per event
+    assert 'href="#description"' in html                                            # seed sources link to the description
     assert 'class="sr is-on" data-loc="2"' in html and 'class="sr is-on" data-loc="5"' in html  # Paracels, Spratly NW
     assert html.count('class="sr is-on"') == 2
     pending = (dist / "cases/VN197304.html").read_text(encoding="utf-8")
@@ -161,7 +163,9 @@ def test_case_page_content_matches_the_files(dist):
 
 
 def test_case_index_matches_the_files(dist):
-    index = json.loads((dist / "data/cases.json").read_text(encoding="utf-8"))
+    page = (dist / "cases.html").read_text(encoding="utf-8")
+    inline = re.search(r'<script id="cases" type="application/json">(.*?)</script>', page, re.S)
+    index = json.loads(inline.group(1))["cases"]
     moves = {m["move_id"]: m for m in _moves()}
     assert {c["id"] for c in index} == set(moves)
     c = next(c for c in index if c["id"] == "CN197401")
@@ -172,14 +176,15 @@ def test_case_browser_filters(browser, dist):
     page, problems = _open(browser, dist, "cases.html")
     moves = _moves()
     n_all = len(moves)
-    assert page.locator("#count").inner_text() == f"{n_all} moves"
+    n_acc = sum(1 for m in moves if m["status"] == "accepted")
+    assert page.locator("#count").inner_text() == f"{n_acc} moves and {n_all - n_acc} pending"
     assert page.locator("#case-list li").count() == n_all
     # free-text search
     expect = sum(1 for m in moves if "scarborough" in m["description"].lower())
     page.fill("#q", "Scarborough")
     page.wait_for_timeout(200)
     assert page.locator("#case-list li").count() == expect
-    assert page.locator("#count").inner_text() == f"{expect} of {n_all} moves"
+    assert page.locator("#count").inner_text().startswith(f"{expect} of {n_all}")
     # claimant + type + year range
     page.fill("#q", "")
     page.locator('.chip[data-code="VN"] input').uncheck(force=True)

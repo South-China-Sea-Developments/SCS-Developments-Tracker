@@ -10,37 +10,32 @@
   {% endif %}
   <header class="case-head">
     <h1><span class="case-claimant" data-code="{{ move.claimant }}">{{ names[move.claimant] }}</span>, {{ move.year }}</h1>
-    <p class="case-types">{% for t, label in zip(move.types, move.type_labels) %}<span class="type-pill" data-type="{{ t }}">{{ label }}</span>{% endfor %}
+    <p class="case-types">{% for t, label in move.type_pairs %}<span class="type-pill" data-type="{{ t }}">{{ label }}</span>{% endfor %}
       {% if move.ongoing_through and move.ongoing_through|int > move.year %}<span class="ongoing">ongoing through {{ move.ongoing_through }}</span>{% endif %}</p>
   </header>
 
   <div class="case-body">
     <section class="case-main">
-      <h2>What happened</h2>
+      <h2 id="description">What happened</h2>
       <p class="description">{{ move.description }}</p>
 
       <h2>Events</h2>
-      {% set seeds = move.events|selectattr('harvest_run_id', 'equalto', 'seed-mats-1.02')|list %}
-      {% if seeds %}<p class="event-note">Dates below were transcribed from the author's MAVD table; the evidence for each is the case description above.</p>{% endif %}
+      {% if move.events|selectattr('is_seed')|list %}<p class="event-note">Dates below were transcribed from the author's MAVD table; the evidence for each is the case description above.</p>{% endif %}
       {% if move.events %}
       <ol class="events">
         {% for e in move.events %}
         <li>
-          <p class="event-date"><time datetime="{{ e.date_start }}">{{ e.date_start }}{% if e.date_end != e.date_start %} to {{ e.date_end }}{% endif %}</time>
-            <span class="event-precision">({{ e.date_precision }} precision{% if e.status != 'accepted' %}, {{ e.status }}{% endif %})</span></p>
-          {% if e.harvest_run_id == 'seed-mats-1.02' %}
-          <p class="event-seed">Dated incident within this move.{% if 'Approximate' in e.summary %} Approximate date.{% endif %}</p>
-          {% if 'Outside the move' in e.review_note %}<p class="event-note">This date falls outside the move's year; possibly a typo in the MAVD table, flagged for the author.</p>{% endif %}
-          {% else %}
-          <p>{{ e.summary }}</p>
-          {% if e.review_note %}<p class="event-note">{{ e.review_note }}</p>{% endif %}
+          <p class="event-date"><time datetime="{{ e.date_start }}">{{ e.date_label }}</time>
+            <span class="event-precision">({{ e.date_precision }} precision{% if e.approximate %}, approximate{% endif %}{% if e.status != 'accepted' %}, {{ e.status }}{% endif %})</span></p>
+          {% if e.is_seed %}<p class="event-seed">Dated incident within this move.</p>{% else %}<p>{{ e.summary }}</p>{% endif %}
+          {% if e.outside_year %}<p class="event-note">This date falls outside the move's year ({{ move.year }}); possibly a typo in the MAVD table, flagged for the author.</p>{% endif %}
+          {% if not e.is_seed and e.review_note %}<p class="event-note">{{ e.review_note }}</p>{% endif %}
           {% if e.sources %}
           <ul class="sources">
             {% for s in e.sources %}
-            <li>{% if s.url %}<a href="{{ s.url }}">{{ s.title or s.url }}</a>{% else %}{{ s.title }}{% endif %}{% if s.publisher %}, {{ s.publisher }}{% endif %}{% if s.pub_date %} ({{ s.pub_date }}){% endif %}{% if s.archive_url %} · <a href="{{ s.archive_url }}">archived copy</a>{% endif %}</li>
+            <li>{% if s.url %}<a href="{{ s.url }}">{{ s.title or s.url }}</a>{% elif e.is_seed %}<a href="#description">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}{% if s.publisher %}, {{ s.publisher }}{% endif %}{% if s.pub_date %} ({{ s.pub_date }}){% endif %}{% if s.archive_url %} · <a href="{{ s.archive_url }}">archived copy</a>{% endif %}</li>
             {% endfor %}
           </ul>
-          {% endif %}
           {% endif %}
         </li>
         {% endfor %}

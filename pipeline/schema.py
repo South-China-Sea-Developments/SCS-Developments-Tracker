@@ -18,7 +18,10 @@ TYPE_FLAGS = ["declarative", "demonstrative", "coercive", "force"]
 TYPE_LABELS = {"declarative": "Declarative", "demonstrative": "Demonstrative", "coercive": "Coercive",
                "force": "Use of force"}  # Chubb's own table headings
 DOMAIN_FLAGS = ["domestic", "diplomatic", "physical"]
+DOMAIN_LABELS = {"domestic": "Domestic", "diplomatic": "Diplomatic", "physical": "Physical"}
 ISSUE_FLAGS = ["military", "administrative", "energy", "fisheries", "politics"]
+ISSUE_LABELS = {"military": "Military", "administrative": "Administrative", "energy": "Energy",
+                "fisheries": "Fisheries", "politics": "Politics"}
 SUBREGION_FLAGS = [
     "loc01_tonkin",
     "loc02_paracels",

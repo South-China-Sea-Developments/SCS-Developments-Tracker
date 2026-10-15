@@ -3,9 +3,13 @@
   "use strict";
   var src = document.getElementById("cases");
   if (!src) return;
-  var CASES = JSON.parse(src.textContent);
-  var NAMES = { CN: "China", VN: "Vietnam", PH: "Philippines", MY: "Malaysia", ID: "Indonesia", TW: "Taiwan" };
-  var TYPE_LABELS = { declarative: "Declarative", demonstrative: "Demonstrative", coercive: "Coercive", force: "Use of force" };
+  var INDEX = JSON.parse(src.textContent);
+  var CASES = INDEX.cases;
+  var NAMES = INDEX.names;
+  var TYPE_LABELS = INDEX.type_labels;
+  CASES.forEach(function (c) { c.lx = c.x.toLowerCase(); c.lid = c.id.toLowerCase(); });
+  var N_ACCEPTED = CASES.filter(function (c) { return c.st === "accepted"; }).length;
+  var N_PENDING = CASES.length - N_ACCEPTED;
 
   var list = document.getElementById("case-list");
   var count = document.getElementById("count");
@@ -36,7 +40,7 @@
     if (!anyOf(f.types, c.t) || !anyOf(f.domains, c.d) || !anyOf(f.issues, c.i)) return false;
     if (f.target && c.g.indexOf(f.target) < 0) return false;
     if (f.subregion && c.s.indexOf(parseInt(f.subregion, 10)) < 0) return false;
-    if (f.q && (c.x.toLowerCase().indexOf(f.q) < 0 && c.id.toLowerCase().indexOf(f.q) < 0)) return false;
+    if (f.q && c.lx.indexOf(f.q) < 0 && c.lid.indexOf(f.q) < 0) return false;
     return true;
   }
 
@@ -50,7 +54,8 @@
         return "… " + text.slice(start + 1, start + 1 + max).replace(/\s+\S*$/, "") + " …";
       }
     }
-    return text.slice(0, max).replace(/\s+\S*$/, "") + " …";
+    var cut = text.slice(0, max).replace(/\s+\S*$/, "");
+    return cut.length < text.length ? cut + " …" : cut;
   }
 
   function el(tag, cls, text, parent) {
@@ -79,14 +84,15 @@
       el("p", "case-excerpt", excerpt(c.x, f.q), li);
     });
     noMatch.hidden = hits.length > 0;
-    count.textContent = hits.length === CASES.length
-      ? CASES.length + " moves"
-      : hits.length + " of " + CASES.length + " moves";
+    var all = N_ACCEPTED + " moves" + (N_PENDING ? " and " + N_PENDING + " pending" : "");
+    count.textContent = hits.length === CASES.length ? all : hits.length + " of " + CASES.length + " (" + all + ")";
   }
 
   var timer = null;
-  form.addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(render, 80); });
-  form.addEventListener("change", render);
+  function schedule() { clearTimeout(timer); timer = setTimeout(render, 80); }
+  form.addEventListener("input", schedule);
+  form.addEventListener("change", schedule);
+  form.addEventListener("submit", function (ev) { ev.preventDefault(); render(); });
   document.getElementById("reset").addEventListener("click", function () {
     form.querySelectorAll('input[type="checkbox"]').forEach(function (i) { i.checked = i.name === "claimant"; });
     document.getElementById("q").value = "";
