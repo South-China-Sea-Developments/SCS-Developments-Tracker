@@ -8,5 +8,5 @@ The source registry is `pipeline/sources.json`; the extraction prompt is `pipeli
 `state.json` (guids already captured) is restored from and saved to the `harvest-state` branch by the scheduled run (`python -m pipeline.ops state pull|push`); a local run can do the same, or use `--since` to bound itself.
 
 Commands: `python -m pipeline.harvest probe|fetch|extract|run` (`--help` on each). The scheduled run is the
-"harvest" workflow (Mondays, or dispatch it by hand, with a dry-run option); it needs the `ANTHROPIC_API_KEY` repository secret.
+"harvest" workflow (Mondays, or dispatch it by hand, with a dry-run option); it needs the `ANTHROPIC_API_KEY` repository secret, and a `HARVEST_TOKEN` secret for the validator to run on the pull requests it opens (decision 08).
 Operations around it (state branch, failure issue, reminders): `python -m pipeline.ops` (`--help`).

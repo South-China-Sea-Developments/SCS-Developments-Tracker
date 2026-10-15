@@ -16,7 +16,7 @@ GitHub calls go through `gh api` with whatever token the environment carries (GH
 
 Usage:
   python -m pipeline.ops state pull
-  python -m pipeline.ops state push --run-id <id> [--report harvest/runs/<id>/run.json]
+  python -m pipeline.ops state push --run-id <id> [--report harvest/runs/<id>/run.json] [--captures harvest/captures/<id>]
   python -m pipeline.ops failure-issue --run-id <id> --run-url <url> [--resolved] [--dry-run]
   python -m pipeline.ops remind --maintainer <login> [--days 7] [--dry-run]
 """
@@ -36,6 +36,7 @@ from pipeline.queue import REPO, git, repo_root
 
 STATE_BRANCH = "harvest-state"
 FAILURE_LABEL = "harvest-failure"
+FAILURE_TITLE = "Scheduled harvest run failed"
 REMINDER_MARK = "<!-- scs-review-reminder -->"
 FAILURE_MARK = "<!-- scs-harvest-failure -->"
 
@@ -76,11 +77,13 @@ def _dry(gh: Gh, dry_run: bool) -> Gh:
 # ---------------------------------------------------------------------------
 # failure issues
 
-def failure_issue(gh: Gh, run_id: str, run_url: str, resolved: bool = False, detail: str = "", dry_run: bool = False) -> str:
+def failure_issue(gh: Gh, run_id: str, run_url: str, resolved: bool = False, detail: str = "", dry_run: bool = False,
+                  status: str = "failed") -> str:
     """Returns what was done: 'created', 'commented', 'closed' or 'nothing'."""
     gh = _dry(gh, dry_run)
-    open_issues = gh("GET", f"repos/{REPO}/issues?state=open&labels={FAILURE_LABEL}&per_page=10") or []
-    open_issues = [i for i in open_issues if "pull_request" not in i]
+    open_issues = [i for i in (gh("GET", f"repos/{REPO}/issues?state=open&per_page=100") or [])
+                   if "pull_request" not in i and (FAILURE_LABEL in {l.get("name") for l in i.get("labels", [])}
+                                                   or i.get("title") == FAILURE_TITLE or FAILURE_MARK in (i.get("body") or ""))]
     if resolved:
         if not open_issues:
             return "nothing"
@@ -89,11 +92,11 @@ def failure_issue(gh: Gh, run_id: str, run_url: str, resolved: bool = False, det
                body=f"{FAILURE_MARK}\nScheduled run `{run_id}` succeeded: {run_url}. Closing.")
             gh("PATCH", f"repos/{REPO}/issues/{i['number']}", state="closed")
         return "closed"
-    text = f"{FAILURE_MARK}\nScheduled harvest run `{run_id}` failed: {run_url}\n\n{detail}".rstrip() + "\n"
+    text = f"{FAILURE_MARK}\nScheduled harvest run `{run_id}` {status}: {run_url}\n\n{detail}".rstrip() + "\n"
     if open_issues:
         gh("POST", f"repos/{REPO}/issues/{open_issues[0]['number']}/comments", body=text)
         return "commented"
-    gh("POST", f"repos/{REPO}/issues", title="Scheduled harvest run failed", labels=[FAILURE_LABEL],
+    gh("POST", f"repos/{REPO}/issues", title=FAILURE_TITLE, labels=[FAILURE_LABEL],
        body=text + "\nThe log is at the link above. This issue stays open while runs keep failing; each further "
                    "failure is a comment here, not a new issue. It closes itself after the next successful run.\n")
     return "created"
@@ -119,7 +122,8 @@ def remind(gh: Gh, maintainer: str, days: int = 7, now: dt.datetime | None = Non
         age = _age_days(pr["created_at"], now)
         if age < days:
             continue
-        comments = gh("GET", f"repos/{REPO}/issues/{pr['number']}/comments?per_page=100") or []
+        since = (now - dt.timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        comments = gh("GET", f"repos/{REPO}/issues/{pr['number']}/comments?since={since}&per_page=100") or []
         recent = [c for c in comments if REMINDER_MARK in (c.get("body") or "") and _age_days(c["created_at"], now) < days]
         if recent:
             continue
@@ -134,12 +138,27 @@ def remind(gh: Gh, maintainer: str, days: int = 7, now: dt.datetime | None = Non
 # ---------------------------------------------------------------------------
 # state branch
 
+def remote_branch_exists(root: Path, branch: str) -> bool:
+    """True/False from the remote; raises on anything else (auth, network), because "no branch" and
+    "could not ask" must not both become "start from an empty state"."""
+    r = subprocess.run(["git", "ls-remote", "--exit-code", "--heads", "origin", branch], cwd=root, capture_output=True, text=True)
+    if r.returncode == 0:
+        return True
+    if r.returncode == 2:
+        return False
+    raise RuntimeError(f"could not query origin for {branch}: {r.stderr.strip()[:300]}")
+
+
+def _fetch_branch(root: Path, branch: str) -> None:
+    git("fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}", cwd=root)
+
+
 def state_pull(root: Path, branch: str = STATE_BRANCH) -> bool:
     """Writes harvest/state.json from the state branch; False (and no file) if the branch does not exist."""
-    r = subprocess.run(["git", "fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}"], cwd=root, capture_output=True, text=True)
-    if r.returncode:
+    if not remote_branch_exists(root, branch):
         print(f"no {branch} branch on origin yet; starting from an empty state")
         return False
+    _fetch_branch(root, branch)
     dest = root / "harvest" / "state.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(git("show", f"origin/{branch}:state.json", cwd=root) + "\n", encoding="utf-8")
@@ -147,21 +166,49 @@ def state_pull(root: Path, branch: str = STATE_BRANCH) -> bool:
     return True
 
 
-def run_log_line(run_id: str, report: dict | None, now: dt.datetime | None = None) -> dict:
+def run_log_line(run_id: str, report: dict | None, now: dt.datetime | None = None, fetch_report: dict | None = None) -> dict:
     r = report or {}
+    f = fetch_report or {}
     return {"run_id": run_id, "date": (now or dt.datetime.now(dt.timezone.utc)).strftime("%Y-%m-%dT%H:%MZ"),
             "documents": r.get("documents"), "candidates": r.get("candidates"), "duplicates": r.get("duplicates"),
             "input_tokens": r.get("input_tokens"), "output_tokens": r.get("output_tokens"),
-            "estimated_cost_usd": r.get("estimated_cost_usd"), "extractor": r.get("extractor"), "failures": len(r.get("failures", []))}
+            "estimated_cost_usd": r.get("estimated_cost_usd"), "extractor": r.get("extractor"), "failures": len(r.get("failures", [])),
+            "sources_with_errors": sorted(s["source"] for s in f.get("sources", []) if s.get("errors"))}
 
 
-def state_push(root: Path, run_id: str, report: dict | None = None, branch: str = STATE_BRANCH, now: dt.datetime | None = None) -> None:
+def drop_failed(state_path: Path, report: dict | None, captures_dir: Path | None) -> int:
+    """Removes from the state the documents whose extraction failed in this run, so the next run
+    fetches and tries them again (the fetcher marks a document seen as soon as it has its text).
+    Returns how many were dropped."""
+    failed_ids = {f.get("capture_id") for f in (report or {}).get("failures", [])} - {None}
+    if not failed_ids or not captures_dir or not Path(captures_dir).exists():
+        return 0
+    guids = set()
+    for p in Path(captures_dir).rglob("*.json"):
+        if p.name == "fetch-report.json":
+            continue
+        rec = json.loads(p.read_text(encoding="utf-8"))
+        if rec.get("capture_id") in failed_ids:
+            guids.add(rec.get("guid"))
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    before = len(state.get("seen", []))
+    state["seen"] = sorted(set(state.get("seen", [])) - guids)
+    state_path.write_text(json.dumps(state, indent=0), encoding="utf-8")
+    return before - len(state["seen"])
+
+
+def state_push(root: Path, run_id: str, report: dict | None = None, branch: str = STATE_BRANCH, now: dt.datetime | None = None,
+               captures_dir: Path | None = None, fetch_report: dict | None = None) -> None:
     """Commits harvest/state.json and a run-log line to the state branch (created orphan if absent) and pushes."""
     state = root / "harvest" / "state.json"
     if not state.exists():
         raise RuntimeError(f"{state} does not exist; nothing to push")
-    exists = subprocess.run(["git", "fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}"],
-                            cwd=root, capture_output=True, text=True).returncode == 0
+    dropped = drop_failed(state, report, captures_dir)
+    if dropped:
+        print(f"{dropped} document(s) whose extraction failed will be retried next run")
+    exists = remote_branch_exists(root, branch)
+    if exists:
+        _fetch_branch(root, branch)
     wt = Path(tempfile.mkdtemp(prefix="scs-state-"))
     # the local branch exists only for the length of this call; a stale one is left by an earlier failed push
     subprocess.run(["git", "branch", "-q", "-D", branch], cwd=root, capture_output=True)
@@ -180,7 +227,7 @@ def state_push(root: Path, run_id: str, report: dict | None = None, branch: str 
                                           f"fetched per source. `runs.jsonl`: one line per completed run. Never merged.\n", encoding="utf-8")
         shutil.copyfile(state, wt / "state.json")
         with open(wt / "runs.jsonl", "a", encoding="utf-8") as f:
-            f.write(json.dumps(run_log_line(run_id, report, now)) + "\n")
+            f.write(json.dumps(run_log_line(run_id, report, now, fetch_report)) + "\n")
         git("add", "-A", cwd=wt)
         git("commit", "-q", "-m", f"Harvest {run_id}: state after run", cwd=wt)
         git("push", "-q", "origin", f"{branch}:{branch}", cwd=wt)
@@ -198,9 +245,10 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("state"); s.add_argument("action", choices=["pull", "push"]); s.add_argument("--run-id", default="")
-    s.add_argument("--report", default=""); s.add_argument("--branch", default=STATE_BRANCH)
+    s.add_argument("--report", default=""); s.add_argument("--captures", default=""); s.add_argument("--branch", default=STATE_BRANCH)
     f = sub.add_parser("failure-issue"); f.add_argument("--run-id", required=True); f.add_argument("--run-url", required=True)
     f.add_argument("--resolved", action="store_true"); f.add_argument("--detail", default=""); f.add_argument("--dry-run", action="store_true")
+    f.add_argument("--status", default="failed", help="how the run ended, e.g. failure or cancelled")
     r = sub.add_parser("remind"); r.add_argument("--maintainer", required=True); r.add_argument("--days", type=int, default=7)
     r.add_argument("--dry-run", action="store_true")
     a = p.parse_args(argv)
@@ -212,10 +260,12 @@ def main(argv=None) -> int:
             if not a.run_id:
                 p.error("state push needs --run-id")
             report = json.loads(Path(a.report).read_text(encoding="utf-8")) if a.report and Path(a.report).exists() else None
-            state_push(root, a.run_id, report, a.branch)
+            fetch_path = Path(a.captures) / "fetch-report.json" if a.captures else None
+            fetch_report = json.loads(fetch_path.read_text(encoding="utf-8")) if fetch_path and fetch_path.exists() else None
+            state_push(root, a.run_id, report, a.branch, captures_dir=Path(a.captures) if a.captures else None, fetch_report=fetch_report)
         return 0
     if a.cmd == "failure-issue":
-        print(failure_issue(gh_api, a.run_id, a.run_url, resolved=a.resolved, detail=a.detail, dry_run=a.dry_run))
+        print(failure_issue(gh_api, a.run_id, a.run_url, resolved=a.resolved, detail=a.detail, dry_run=a.dry_run, status=a.status))
         return 0
     if a.cmd == "remind":
         n = remind(gh_api, a.maintainer, a.days, dry_run=a.dry_run)

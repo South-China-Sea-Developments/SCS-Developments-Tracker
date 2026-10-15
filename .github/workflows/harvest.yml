@@ -7,8 +7,10 @@ name: harvest
 # is the ANTHROPIC_API_KEY repository secret; nothing here reads it except the extract step.
 #
 # Dry run (workflow_dispatch with dry_run = true): fetches the live sources, but extracts the fixture
-# captures with the recorded responses, opens no pull request, saves no state and posts nothing;
-# every step still runs, so the wiring is tested without spending extractor budget.
+# captures with the recorded responses; `queue open` stops before the push (branch and commit only);
+# the state is not saved; the issue and reminder steps read GitHub but print their writes instead
+# of making them. No extractor budget is spent. What a dry run does not exercise: the branch push,
+# the pull request creation and the state push (the token's write side); the first real run shows those.
 #
 # Tokens: GITHUB_TOKEN can open the pull request, but a pull request it opens does not trigger the
 # validate workflow until a person pushes to it. Add a fine-grained HARVEST_TOKEN secret (contents
@@ -88,10 +90,9 @@ jobs:
         run: python -m pipeline.queue open --run "harvest/runs/$RUN_ID" ${DRY_RUN:+--no-push}
       - name: Save harvest state
         if: env.DRY_RUN == ''
-        run: python -m pipeline.ops state push --run-id "$RUN_ID" --report "harvest/runs/$RUN_ID/run.json"
+        run: python -m pipeline.ops state push --run-id "$RUN_ID" --report "harvest/runs/$RUN_ID/run.json" --captures "harvest/captures/$RUN_ID"
       - name: Close the failure issue if one is open
-        if: env.DRY_RUN == ''
-        run: python -m pipeline.ops failure-issue --resolved --run-id "$RUN_ID" --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+        run: python -m pipeline.ops failure-issue --resolved --run-id "$RUN_ID" --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" ${DRY_RUN:+--dry-run}
       - name: Remind the maintainer of old review pull requests
         if: ${{ !cancelled() }}
         run: python -m pipeline.ops remind --maintainer "$MAINTAINER" --days 7 ${DRY_RUN:+--dry-run}
@@ -100,7 +101,7 @@ jobs:
         run: |
           python - <<'PY' > harvest/summary.md
           import json, os
-          rid = os.environ["RUN_ID"]
+          rid = os.environ.get("RUN_ID", "?")
           print(f"## Harvest {rid}" + (" (dry run)" if os.environ.get("DRY_RUN") else ""))
           try:
               f = json.load(open(f"harvest/captures/{rid}/fetch-report.json"))
@@ -122,11 +123,12 @@ jobs:
           PY
           cat harvest/summary.md >> "$GITHUB_STEP_SUMMARY"
       - name: Open or update the failure issue
-        if: failure() && env.DRY_RUN == ''
+        # not success(): a run cancelled by the 90-minute timeout is a failure too
+        if: ${{ !success() }}
         run: |
-          python -m pipeline.ops failure-issue --run-id "$RUN_ID" \
+          python -m pipeline.ops failure-issue --run-id "${RUN_ID:-$GITHUB_RUN_ID}" --status "${{ job.status }}" \
             --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
-            --detail "$(cat harvest/summary.md 2>/dev/null || echo 'no summary')"
+            --detail "$(cat harvest/summary.md 2>/dev/null || echo 'no summary')" ${DRY_RUN:+--dry-run}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
