@@ -2,9 +2,9 @@
 
 A continuously updated database of **assertive moves by claimant states in the South China Sea**, built as the successor to Andrew Chubb's *Maritime Assertiveness Time Series* (MATS 1.0, 1970–2015) and its public visualization, the *Maritime Assertiveness Visualization Dashboard* (MAVD, NBR, 2023).
 
-**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06).
+**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07).
 
-**Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main`).
+**Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main`). **Harvest:** every Monday on GitHub Actions; review pull requests are the queue.
 
 ## Quick start
 
@@ -18,6 +18,7 @@ python -m pipeline.harvest probe   # checks the registered sources are reachable
 python -m pipeline.harvest run     # fetches new items and extracts candidate events (needs ANTHROPIC_API_KEY)
 python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review page + pull request
 python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
+python -m pipeline.ops --help      # what the scheduled run does around a harvest: state branch, failure issue, reminders
 ```
 
 ## What is here
@@ -25,8 +26,8 @@ python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the c
 | Path | Contents |
 |---|---|
 | `data/*.csv` | **The canonical dataset**: claimants, moves, events, sources, corrections. See `data/README.md`. |
-| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt). |
-| `harvest/` | Working folder for harvest runs (not committed, except `state.json`). |
+| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt), review queue, scheduled-run operations. |
+| `harvest/` | Working folder for harvest runs (not committed; the state between runs lives on the `harvest-state` branch). |
 | `docs/review/` | Review pages, one per harvest run. |
 | `tests/` | Tests at the agreed seams. |
 | `docs/spec.md`, `docs/tickets/` | What is being built and in which slices. |

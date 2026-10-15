@@ -11,4 +11,4 @@ The open decisions between here and a working, automatically updated database, o
 | 05 | Canonical storage | 04 | settled → ADR 0004 |
 | 06 | Public front end | 05 | settled |
 | 07 | Governance: licence, versioning, attribution, author relationship | 01 | open |
-| 08 | Operations: where scheduled runs happen, who maintains | 04, 05 | open |
+| 08 | Operations: where scheduled runs happen, who maintains | 04, 05 | settled |

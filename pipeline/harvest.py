@@ -386,7 +386,8 @@ def cmd_run(args) -> int:
     run_id = args.run_id or dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M")
     ns = argparse.Namespace(out=str(ROOT / "harvest" / "captures" / run_id), since=args.since, only=args.only,
                             registry=args.registry, state=str(ROOT / "harvest" / "state.json"), sleep=args.sleep)
-    cmd_fetch(ns)
+    if cmd_fetch(ns):
+        return 1
     ns2 = argparse.Namespace(captures=ns.out, out=str(ROOT / "harvest" / "runs" / run_id), recordings=args.recordings,
                              record=args.record, model=args.model, run_id=run_id)
     return cmd_extract(ns2)
