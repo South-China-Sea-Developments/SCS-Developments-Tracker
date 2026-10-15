@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review queue — harvest {{ run_id }}</title>
+<style>
+  :root { color-scheme: light dark; --ink: #12222c; --ink-2: #46555e; --muted: #5e6b73; --grid: #dfe6ea; --surface: #fbfdfd; --paper: #f1f5f7; --accent: #0e5a86; --warn: #b45309; --ok: #1f7a3a; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #88949c; --grid: #273440; --surface: #16212a; --paper: #0f171c; --accent: #7fc0ea; --warn: #f0a35b; --ok: #6fcf8a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.05rem; margin: 0; }
+  .lede { color: var(--ink-2); margin: 0 0 16px; }
+  .bar { position: sticky; top: 0; z-index: 3; background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 16px; }
+  .bar label { display: inline-flex; align-items: center; gap: 6px; font-size: .9375rem; }
+  input[type=text], input[type=date], select, textarea { font: inherit; padding: 4px 8px; border: 1px solid var(--grid); border-radius: 6px; background: var(--surface); color: var(--ink); }
+  textarea { width: 100%; min-height: 56px; }
+  button { font: inherit; padding: 6px 12px; border: 1px solid var(--grid); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .cand { background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .cand.decided { border-left: 4px solid var(--ok); } .cand.decided.is-reject { border-left-color: var(--warn); }
+  .head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 6px; }
+  .head b { font-size: 1.05rem; } .id { color: var(--muted); font-size: .85rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .pill { font-size: .8125rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--grid); color: var(--ink-2); }
+  .pill.dup { border-color: var(--warn); color: var(--warn); }
+  .cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 18px; }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+  .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
+  blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
+  .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
+  .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
+  .choices label { display: inline-flex; gap: 6px; align-items: center; }
+  .panel { display: none; margin: 8px 0; padding: 10px; border: 1px dashed var(--grid); border-radius: 6px; }
+  .panel.on { display: block; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 14px; }
+  .grid2 label { display: block; font-size: .9rem; } .grid2 label > span { display: block; color: var(--muted); font-size: .8rem; }
+  .checks label { display: inline-flex; gap: 4px; margin-right: 10px; font-size: .9rem; }
+  .muted { color: var(--muted); font-size: .85rem; }
+  .req { color: var(--warn); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review queue — harvest {{ run_id }}</h1>
+  <p class="lede">{{ items|length }} candidate event{{ 's' if items|length != 1 else '' }}, generated {{ generated }}. Decide each one, export the decisions, apply them with <code>python -m pipeline.queue decide decisions.json --reviewer "Your name"</code>, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.</p>
+
+  <div class="bar">
+    <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
+    <span class="muted" id="progress"></span>
+    <button type="button" id="export" class="primary">Export decisions.json</button>
+    <button type="button" id="clear">Clear draft</button>
+  </div>
+
+  {% for it in items %}{% set e = it.event %}
+  <section class="cand" id="c-{{ e.event_id }}" data-event="{{ e.event_id }}">
+    <div class="head">
+      <b>{{ it.claimant_name }}</b>
+      <span>{{ e.date_start }}{% if e.date_end != e.date_start %} – {{ e.date_end }}{% endif %} ({{ e.date_precision }})</span>
+      {% if e.location_name %}<span>{{ e.location_name }}{% if e.subregion %}, sub-region {{ e.subregion }}{% endif %}</span>{% endif %}
+      {% if e.suggested_type %}<span class="pill">suggested: {{ e.suggested_type }}</span>{% endif %}
+      {% if it.duplicate_of %}<span class="pill dup">possible duplicate of {{ it.duplicate_of.event_id }}</span>{% endif %}
+      <span class="id">{{ e.event_id }}</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">{{ e.summary }}</p>
+        {% if e.actors %}<p class="muted">Actors: {{ e.actors }}</p>{% endif %}
+        {% for s in it.sources %}
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title or s.url }}</a> — {{ s.publisher }}{% if s.pub_date %}, {{ s.pub_date }}{% endif %}</p>
+        {% if s.excerpt %}<blockquote>{{ s.excerpt }}</blockquote>{% endif %}
+        {% endfor %}
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type {{ e.suggested_type or '—' }} · domains {{ e.suggested_domains or '—' }} · issues {{ e.suggested_issues or '—' }} · dyads {{ e.suggested_dyads or '—' }}</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">{{ e.suggestion_reasoning }}</p>
+        {% if e.review_note %}<p class="muted">Note from the extractor: {{ e.review_note }}</p>{% endif %}
+        {% if it.duplicate_of %}
+        <p class="k">The event it may duplicate</p>
+        <p class="muted" style="margin:0">{{ it.duplicate_of.event_id }} · {{ it.duplicate_of.date_start }} · {{ it.duplicate_of.status }}{% if it.duplicate_of.move_id %} · move {{ it.duplicate_of.move_id }}{% endif %}: {{ it.duplicate_of.summary }}</p>
+        {% endif %}
+      </div>
+      <div>
+        <p class="k">{{ it.claimant_name }}'s moves in {{ it.year - 1 if it.year else 'the previous year' }}</p>
+        {% if it.previous_year_moves %}
+        <ul class="moves">{% for m in it.previous_year_moves %}<li><code>{{ m.move_id }}</code> ({{ m.types|join(', ') }}) {{ m.description }}{% if m.description|length >= 300 %}…{% endif %}</li>{% endfor %}</ul>
+        {% else %}<p class="muted">None recorded.</p>{% endif %}
+        <p class="k">{{ it.claimant_name }}'s moves already in {{ it.year or 'this year' }}</p>
+        {% if it.same_year_moves %}
+        <ul class="moves">{% for m in it.same_year_moves %}<li><code>{{ m.move_id }}</code> ({{ m.types|join(', ') }}{% if m.coded_by == 'project' %}, project{% endif %}) {{ m.description }}{% if m.description|length >= 300 %}…{% endif %}</li>{% endfor %}</ul>
+        {% else %}<p class="muted">None yet.</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="decision">
+      <div class="choices">
+        <label><input type="radio" name="a-{{ e.event_id }}" value=""> undecided</label>
+        <label><input type="radio" name="a-{{ e.event_id }}" value="merge"> merge into an existing move</label>
+        <label><input type="radio" name="a-{{ e.event_id }}" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-{{ e.event_id }}" value="reject"> reject</label>
+      </div>
+      <div class="panel p-merge">
+        <label>Move <select class="f-move_id"><option value="">choose a move of {{ it.year or '…' }}</option>{% for m in it.same_year_moves %}<option value="{{ m.move_id }}">{{ m.move_id }} — {{ m.description[:90] }}</option>{% endfor %}</select></label>
+        <span class="muted">or type a move id:</span> <input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12">
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type"><option value="">—</option>{% for k, l in types %}<option value="{{ k }}"{% if k == e.suggested_type %} selected{% endif %}>{{ l }}</option>{% endfor %}</select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit"><option value="">—</option>{% for c in criteria %}<option value="{{ c }}">{{ c }}</option>{% endfor %}</select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="{{ it.year or '' }}" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="{{ it.year or '' }}" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="{{ e.suggested_dyads }}"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks">{% for k, l in domains %}<label><input type="checkbox" class="f-domain" value="{{ k }}"{% if k in e.suggested_domains.split() %} checked{% endif %}>{{ l }}</label>{% endfor %}</div>
+        <p class="k">Issues</p><div class="checks">{% for k, l in issues %}<label><input type="checkbox" class="f-issue" value="{{ k }}"{% if k in e.suggested_issues.split() %} checked{% endif %}>{{ l }}</label>{% endfor %}</div>
+        <p class="k">Sub-regions</p><div class="checks">{% for n, l in subregions %}<label><input type="checkbox" class="f-sub" value="{{ n }}"{% if e.subregion == n|string %} checked{% endif %}>{{ n }} {{ l }}</label>{% endfor %}</div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">{{ e.summary }}</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (leave blank to keep)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="{{ e.date_start }}"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="{{ e.date_end }}"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day"{% if e.date_precision=='day' %} selected{% endif %}>day</option><option value="month"{% if e.date_precision=='month' %} selected{% endif %}>month</option><option value="year"{% if e.date_precision=='year' %} selected{% endif %}>year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="{{ e.location_name }}"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="{{ e.subregion }}" size="3"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">{{ e.summary }}</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  {% endfor %}
+  {% if not items %}<p class="muted">No candidates to review.</p>{% endif %}
+</div>
+
+<script id="ctx" type="application/json">{{ ctx_json|safe }}</script>
+<script>
+(function () {
+  "use strict";
+  var CTX = JSON.parse(document.getElementById("ctx").textContent);
+  var KEY = "scs-review-" + CTX.run_id;
+  var draft = {};
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { draft = {}; }
+  var reviewer = document.getElementById("reviewer");
+  reviewer.value = draft._reviewer || "";
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(draft)); } catch (e) {} progress(); }
+  function progress() {
+    var n = CTX.items.length, done = CTX.items.filter(function (it) { return (draft[it.event.event_id] || {}).action; }).length;
+    document.getElementById("progress").textContent = done + " of " + n + " decided";
+  }
+  function orig(id) { for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) return CTX.items[i].event; return {}; }
+
+  function readCard(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    var d = { event_id: id, action: action, note: card.querySelector(".f-note").value.trim() };
+    if (action === "merge") d.move_id = card.querySelector(".f-move_id_text").value.trim() || card.querySelector(".f-move_id").value;
+    if (action === "new_move") {
+      d.new_move = {
+        type: card.querySelector(".f-type").value, intensification_criterion: card.querySelector(".f-crit").value,
+        year: card.querySelector(".f-year").value.trim(), ongoing_through: card.querySelector(".f-ongoing").value.trim(),
+        dyads: card.querySelector(".f-dyads").value.trim().split(/\s+/).filter(Boolean),
+        domains: Array.prototype.map.call(card.querySelectorAll(".f-domain:checked"), function (i) { return i.value; }),
+        issues: Array.prototype.map.call(card.querySelectorAll(".f-issue:checked"), function (i) { return i.value; }),
+        subregions: Array.prototype.map.call(card.querySelectorAll(".f-sub:checked"), function (i) { return i.value; }),
+        description: card.querySelector(".f-desc").value.trim()
+      };
+    }
+    if (action === "merge" || action === "new_move") {
+      var o = orig(id), edits = {};
+      ["date_start", "date_end", "date_precision", "location_name", "subregion", "summary"].forEach(function (f) {
+        var v = card.querySelector(".f-e-" + f).value.trim();
+        if (v !== (o[f] || "")) edits[f] = v;
+      });
+      if (Object.keys(edits).length) d.edits = edits;
+    }
+    return d;
+  }
+  function paint(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    card.querySelector(".p-merge").classList.toggle("on", action === "merge");
+    card.querySelector(".p-new").classList.toggle("on", action === "new_move");
+    card.querySelector(".p-edits").classList.toggle("on", action === "merge" || action === "new_move");
+    card.querySelector(".p-reject-req").hidden = action !== "reject";
+    card.classList.toggle("decided", !!action);
+    card.classList.toggle("is-reject", action === "reject");
+  }
+  function restore(card) {
+    var id = card.getAttribute("data-event"), d = draft[id];
+    if (!d) return;
+    var r = card.querySelector('input[name="a-' + id + '"][value="' + (d.action || "") + '"]'); if (r) r.checked = true;
+    card.querySelector(".f-note").value = d.note || "";
+    if (d.move_id) card.querySelector(".f-move_id_text").value = d.move_id;
+    if (d.new_move) {
+      var m = d.new_move;
+      card.querySelector(".f-type").value = m.type || ""; card.querySelector(".f-crit").value = m.intensification_criterion || "";
+      card.querySelector(".f-year").value = m.year || ""; card.querySelector(".f-ongoing").value = m.ongoing_through || "";
+      card.querySelector(".f-dyads").value = (m.dyads || []).join(" "); card.querySelector(".f-desc").value = m.description || "";
+      card.querySelectorAll(".f-domain").forEach(function (i) { i.checked = (m.domains || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-issue").forEach(function (i) { i.checked = (m.issues || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-sub").forEach(function (i) { i.checked = (m.subregions || []).indexOf(i.value) >= 0; });
+    }
+    if (d.edits) Object.keys(d.edits).forEach(function (f) { var el = card.querySelector(".f-e-" + f); if (el) el.value = d.edits[f]; });
+  }
+
+  var cards = document.querySelectorAll(".cand");
+  cards.forEach(function (card) {
+    restore(card); paint(card);
+    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+  });
+  reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
+
+  function validate(decisions) {
+    var problems = [];
+    decisions.forEach(function (d) {
+      if (d.action === "reject" && !d.note) problems.push(d.event_id + ": a rejection needs a note");
+      if (d.action === "merge" && !d.move_id) problems.push(d.event_id + ": choose the move to merge into");
+      if (d.action === "new_move") {
+        if (!d.new_move.type) problems.push(d.event_id + ": a new move needs a type");
+        if (!d.new_move.intensification_criterion) problems.push(d.event_id + ": a new move needs its intensification criterion");
+      }
+    });
+    return problems;
+  }
+  document.getElementById("export").addEventListener("click", function () {
+    var decisions = [];
+    cards.forEach(function (card) { var d = readCard(card); if (d.action) decisions.push(d); });
+    var problems = validate(decisions);
+    if (!decisions.length) { alert("No decisions yet."); return; }
+    if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
+    var out = { run_id: CTX.run_id, reviewer: reviewer.value.trim(), exported: new Date().toISOString().slice(0, 10), decisions: decisions };
+    var blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "decisions-" + CTX.run_id + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  document.getElementById("clear").addEventListener("click", function () {
+    if (!confirm("Discard the saved draft for this page?")) return;
+    draft = {}; try { localStorage.removeItem(KEY); } catch (e) {} location.reload();
+  });
+  progress();
+})();
+</script>
+</body>
+</html>

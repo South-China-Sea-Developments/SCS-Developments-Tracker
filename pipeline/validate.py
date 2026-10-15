@@ -4,7 +4,8 @@ Rules (docs/spec.md, "Validator"):
   SCHEMA          columns of each table are exactly the schema's
   CODE            codes within allowed sets (claimant, status, precision, flags 0/1, dyad letters)
   NO_TYPE         a move must have at least one Type flag
-  EVENT_MOVE      a non-candidate event must point at an existing move
+  EVENT_MOVE      an accepted or merged event must point at an existing move (candidates and
+                  rejected events may have none)
   SOURCE_EVENT    a source must point at an existing event
   EVENT_NO_SOURCE an accepted event must have at least one source
   DUPLICATE       identifiers are unique
@@ -120,6 +121,8 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"CODE: moves {mid} status {m['status']!r}")
         if m["coded_by"] not in schema.CODED_BY:
             errors.append(f"CODE: moves {mid} coded_by {m['coded_by']!r}")
+        if m["coded_by"] == "project" and not m["intensification_criterion"]:
+            errors.append(f"CODE: moves {mid} is project-coded without an intensification_criterion")
         if m["intensification_criterion"] and m["intensification_criterion"] not in schema.INTENSIFICATION_CRITERIA:
             errors.append(f"CODE: moves {mid} intensification_criterion {m['intensification_criterion']!r}")
         for f in schema.FLAG_COLUMNS:
@@ -147,8 +150,10 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"CODE: events {eid} location_precision {e['location_precision']!r}")
         if e["subregion"] and e["subregion"] not in {str(i) for i in range(1, 11)}:
             errors.append(f"CODE: events {eid} subregion {e['subregion']!r}")
-        if e["status"] != "candidate" and e["move_id"] not in move_ids:
+        if e["status"] in ("accepted", "merged") and e["move_id"] not in move_ids:
             errors.append(f"EVENT_MOVE: events {eid} ({e['status']}) move_id {e['move_id']!r} does not exist")
+        if e["status"] == "rejected" and not e["review_note"]:
+            errors.append(f"CODE: events {eid} is rejected without a review note")
 
     event_ids = {e["event_id"] for e in events}
     sourced = Counter()

@@ -22,4 +22,4 @@ packages = ["pipeline", "web"]
 
 [tool.setuptools.package-data]
 web = ["templates/*", "static/*", "static/fonts/*"]
-pipeline = ["sources.json", "prompts/*"]
+pipeline = ["sources.json", "prompts/*", "templates/*"]

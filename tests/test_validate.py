@@ -131,13 +131,29 @@ def test_event_with_missing_move(good):
     assert "EVENT_MOVE" in codes(validate(good, RAW_XLSX, RAW_MAVD))
 
 
-def test_candidate_event_may_have_no_move(good):
+def test_candidate_or_rejected_event_may_have_no_move(good):
     def fn(rows):
         rows[0]["move_id"] = ""
         rows[0]["status"] = "candidate"
+        rows[1]["move_id"] = ""
+        rows[1]["status"] = "rejected"
+        rows[1]["review_note"] = "not an assertive act"
         return rows
     edit(good, "events", fn)
     assert "EVENT_MOVE" not in codes(validate(good, RAW_XLSX, RAW_MAVD))
+
+
+def test_rejected_event_needs_a_note_and_merged_needs_a_move(good):
+    def fn(rows):
+        rows[0]["status"] = "rejected"
+        rows[0]["review_note"] = ""
+        rows[1]["status"] = "merged"
+        rows[1]["move_id"] = ""
+        return rows
+    edit(good, "events", fn)
+    errs = validate(good, RAW_XLSX, RAW_MAVD)
+    assert any("rejected without a review note" in e for e in errs)
+    assert any(e.startswith("EVENT_MOVE") and "(merged)" in e for e in errs)
 
 
 def test_source_with_missing_event(good):
