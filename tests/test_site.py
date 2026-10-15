@@ -326,21 +326,32 @@ def test_periods_extend_with_the_years():
 PNG_1x1 = bytes.fromhex("89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d4944415478da6364f8cfc000000301010018dd8db00000000049454e44ae426082")
 
 
+EMPTY_TILEJSON = json.dumps({"tilejson": "3.0.0", "tiles": ["https://tiles.openfreemap.org/stub/{z}/{x}/{y}.pbf"], "minzoom": 0, "maxzoom": 14, "vector_layers": []})
+HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
+
+
 def _open_map(browser, dist, viewport=(1280, 900), color_scheme="light"):
-    """The map page with the basemap tiles answered locally: the test is offline except for that stub."""
+    """The map page with the basemap answered locally: the TileJSON names a stub tile URL that
+    returns no content, as do fonts and sprites. The test is offline except for those stubs."""
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]}, color_scheme=color_scheme)
     page = ctx.new_page()
     problems = []
-    page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") else None)
+    page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
     page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
     tiles = []
     def stub(route):
-        tiles.append(route.request.url)
-        route.fulfill(status=200, content_type="image/png", body=PNG_1x1)
-    page.route("https://tile.openstreetmap.org/**", stub)
+        url = route.request.url
+        tiles.append(url)
+        if url.rstrip("/").endswith("/planet"):
+            route.fulfill(status=200, content_type="application/json", body=EMPTY_TILEJSON)
+        elif ".pbf" in url and "/stub/" in url:
+            route.fulfill(status=204, body=b"")
+        else:   # fonts and sprites: no content (a 404 would be a console error of the browser's own)
+            route.fulfill(status=204, body=b"")
+    page.route("https://tiles.openfreemap.org/**", stub)
     page.goto((dist / "map.html").resolve().as_uri())
-    page.wait_for_timeout(600)
+    page.wait_for_timeout(1200)
     page.on("close", lambda _: ctx.close())
     return page, problems, tiles
 
@@ -366,13 +377,14 @@ def test_map_renders_offline_without_errors(browser, dist, viewport, scheme):
     from pipeline.validate import event_aggregates
     page, problems, tiles = _open_map(browser, dist, viewport, scheme)
     expected = event_aggregates(read_csv(DATA_DIR / "events.csv"), read_csv(DATA_DIR / "moves.csv"))
-    assert page.locator(".sr-poly").count() == 10
-    assert page.locator(".leaflet-tile-loaded").count() > 0 and tiles, "basemap tiles requested from the attribution-compliant provider"
+    assert page.locator("canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
+    assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
+    assert "OpenFreeMap" in page.inner_text(".maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text(".maplibregl-ctrl-attrib")
     text = page.inner_text("#map-count")
     assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text
     # the sub-region counts on the map are the validator's, summed over claimants
     shown = {}
-    for el in page.locator(".leaflet-marker-icon").element_handles():
+    for el in page.locator("[role='button'][tabindex='0']").element_handles():
         title = el.get_attribute("title") or ""
         mm = re.search(r"^(\d+) events? in sub-region (\d+) .* without a point$", title)
         if mm:
@@ -383,7 +395,7 @@ def test_map_renders_offline_without_errors(browser, dist, viewport, scheme):
             if n:
                 want[sr] = want.get(sr, 0) + n
     assert shown == want
-    assert page.locator(".leaflet-marker-icon[tabindex='0']").count() == len(want) + len({(e.get("lat"), e.get("lon")) for e in json.loads((dist / "data/events.json").read_text(encoding="utf-8"))["events"] if "lat" in e})
+    assert page.locator(".evt, .sr-count").count() == len(want) + len({(e.get("lat"), e.get("lon")) for e in json.loads((dist / "data/events.json").read_text(encoding="utf-8"))["events"] if "lat" in e})
     assert not problems, problems
     page.close()
 
@@ -425,8 +437,7 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     assert stacked.count() == 1 and stacked.inner_text() == "2"
     assert page.locator(".evt:not(.feature)").inner_text() == ""
     # keyboard: the marker is a focusable button; Enter opens the popup, summaries are text not HTML
-    marker = page.locator(".leaflet-marker-icon[tabindex='0']").filter(has=stacked)
-    marker.focus()
+    stacked.focus()
     page.keyboard.press("Enter")
     page.wait_for_timeout(300)
     popup = page.locator(".evt-popup")
@@ -450,8 +461,14 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     case = (dist_placed / "cases/CN201201.html").read_text(encoding="utf-8")
     assert "Scarborough Shoal (15.18000, 117.77000, at the named feature) · sub-region 4 Central-East" in case
     assert "Manila" in (dist_placed / "cases/PH201301.html").read_text(encoding="utf-8")
-    assert page.locator(".sr-poly[tabindex]").count() == 0, "polygons are not tab stops"
+    assert page.locator(".sr-label[tabindex]").count() == 0, "labels are not tab stops"
     assert page.locator(".sr-label").count() == 10
+    # the basemap style asks for English names in the Latin alphabet
+    style = json.loads(re.search(r'<script id="mapstyle" type="application/json">(.*?)</script>', (dist_placed / "map.html").read_text(encoding="utf-8"), re.S).group(1))
+    for layer in style["layers"]:
+        tf = layer.get("layout", {}).get("text-field")
+        if tf and "name" in json.dumps(tf):
+            assert tf[:2] == ["coalesce", ["get", "name:en"]], layer["id"]
     assert not problems, problems
     page.close()
 
