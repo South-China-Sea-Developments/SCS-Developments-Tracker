@@ -4,9 +4,9 @@
 
 **Blocked by:** 02
 
-**Status:** ready
+**Status:** done (2026-10-15, PR #3)
 
-- [ ] List page with free-text search over description and filters by claimant, year range, Type, Domain, Issue, Dyad, Sub-region; counts update with filters.
-- [ ] Detail page per move: description, all MATS variables rendered with their labels, Ongoing-through, dyads, sub-regions on a small inset map, events in date order with their sources as links, provenance (coded_by, data version), and `pending` status shown where applicable.
-- [ ] Deep links: each move has a stable URL within the bundle.
-- [ ] Headless render test over a sample of moves; aggregates unchanged.
+- [x] List page with free-text search over description and filters by claimant, year range, Type, Domain, Issue, Dyad, Sub-region; counts update with filters.
+- [x] Detail page per move: description, all MATS variables rendered with their labels, Ongoing-through, dyads, sub-regions on a small inset map, events in date order with their sources as links, provenance (coded_by, data version), and `pending` status shown where applicable.
+- [x] Deep links: each move has a stable URL within the bundle.
+- [x] Headless render test over a sample of moves; aggregates unchanged.

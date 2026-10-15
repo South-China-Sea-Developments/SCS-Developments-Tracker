@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Cases — SCS Developments Tracker{% endblock %}
+{% block head_data %}<script id="cases" type="application/json">{{ index_json|safe }}</script>{% endblock %}
+{% block content %}
+<section class="lede">
+  <h1>Every move, searchable</h1>
+  <p class="lede-text">{{ meta.n_moves }} moves with their full coding{% if meta.n_pending %}, plus {{ meta.n_pending }} pending the author's confirmation{% endif %}. Search the case descriptions, narrow by claimant, year, type, domain, issue, counterpart or sub-region, and open any move for its events and sources.</p>
+</section>
+
+<form class="case-filters" id="case-filters" aria-label="Filter cases">
+  <div class="filter-row">
+    <label class="search"><span class="sr-only">Search descriptions</span>
+      <input type="search" id="q" placeholder="Search descriptions, e.g. Scarborough, drilling, fishermen" autocomplete="off"></label>
+    <div class="chips" id="claimant-filter" role="group" aria-label="Claimants">
+      {% for c in claimants %}
+      <label class="chip" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="swatch" aria-hidden="true"></span><span>{{ c.name }}</span></label>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="filter-row filter-groups">
+    <fieldset><legend>Years</legend>
+      <label>from <input type="number" id="y0" min="{{ meta.first_year }}" max="{{ meta.last_year }}" value="{{ meta.first_year }}"></label>
+      <label>to <input type="number" id="y1" min="{{ meta.first_year }}" max="{{ meta.last_year }}" value="{{ meta.last_year }}"></label>
+    </fieldset>
+    <fieldset><legend>Type</legend>
+      {% for key, label, blurb in types %}<label><input type="checkbox" name="t" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Domain</legend>
+      {% for key, label in domain_labels.items() %}<label><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Issue</legend>
+      {% for key, label in issue_labels.items() %}<label><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Directed at</legend>
+      <select id="target" aria-label="Directed at">
+        <option value="">any counterpart</option>
+        {% for code, name in dyad_targets.items() %}<option value="{{ code }}">{{ name }}</option>{% endfor %}
+      </select>
+    </fieldset>
+    <fieldset><legend>Sub-region</legend>
+      <select id="subregion" aria-label="Sub-region">
+        <option value="">any sub-region</option>
+        {% for n, name in subregion_names.items() %}<option value="{{ n }}">{{ n }} {{ name }}</option>{% endfor %}
+      </select>
+    </fieldset>
+    <button type="button" class="toggle" id="reset">Clear filters</button>
+  </div>
+  <p class="filters-note" id="count" aria-live="polite"></p>
+</form>
+
+<ol class="case-list" id="case-list" aria-label="Matching moves"></ol>
+<p class="empty" id="no-match" hidden>No moves match. Loosen a filter or clear them.</p>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/cases.js"></script>{% endblock %}

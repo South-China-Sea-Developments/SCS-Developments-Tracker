@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — SCS Developments Tracker{% endblock %}
+{% block description %}{{ move.description[:160] }}{% endblock %}
+{% block head_data %}{% endblock %}
+{% block content %}
+<article class="case">
+  <p class="crumbs"><a href="{{ root }}cases.html">Cases</a> / {{ move.id }}</p>
+  {% if move.status == 'pending' %}
+  <p class="notice">This case appears in the online MAVD table but not in MATS 1.02 and awaits the author's confirmation. It is not counted in any chart.</p>
+  {% endif %}
+  <header class="case-head">
+    <h1><span class="case-claimant" data-code="{{ move.claimant }}">{{ names[move.claimant] }}</span>, {{ move.year }}</h1>
+    <p class="case-types">{% for t, label in move.type_pairs %}<span class="type-pill" data-type="{{ t }}">{{ label }}</span>{% endfor %}
+      {% if move.ongoing_through and move.ongoing_through|int > move.year %}<span class="ongoing">ongoing through {{ move.ongoing_through }}</span>{% endif %}</p>
+  </header>
+
+  <div class="case-body">
+    <section class="case-main">
+      <h2 id="description">What happened</h2>
+      <p class="description">{{ move.description }}</p>
+
+      <h2>Events</h2>
+      {% if move.events|selectattr('is_seed')|list %}<p class="event-note">Dates below were transcribed from the author's MAVD table; the evidence for each is the case description above.</p>{% endif %}
+      {% if move.events %}
+      <ol class="events">
+        {% for e in move.events %}
+        <li>
+          <p class="event-date"><time datetime="{{ e.date_start }}">{{ e.date_label }}</time>
+            <span class="event-precision">({{ e.date_precision }} precision{% if e.approximate %}, approximate{% endif %}{% if e.status != 'accepted' %}, {{ e.status }}{% endif %})</span></p>
+          {% if e.is_seed %}<p class="event-seed">Dated incident within this move.</p>{% else %}<p>{{ e.summary }}</p>{% endif %}
+          {% if e.outside_year %}<p class="event-note">This date falls outside the move's year ({{ move.year }}); possibly a typo in the MAVD table, flagged for the author.</p>{% endif %}
+          {% if not e.is_seed and e.review_note %}<p class="event-note">{{ e.review_note }}</p>{% endif %}
+          {% if e.sources %}
+          <ul class="sources">
+            {% for s in e.sources %}
+            <li>{% if s.url %}<a href="{{ s.url }}">{{ s.title or s.url }}</a>{% elif e.is_seed %}<a href="#description">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}{% if s.publisher %}, {{ s.publisher }}{% endif %}{% if s.pub_date %} ({{ s.pub_date }}){% endif %}{% if s.archive_url %} · <a href="{{ s.archive_url }}">archived copy</a>{% endif %}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+      {% else %}
+      <p class="empty">No dated events have been attached to this move yet. The description above carries the sources inline, as in MATS.</p>
+      {% endif %}
+
+      {% if move.diminished_notes or move.other_possible_cases %}
+      <h2>Author's notes</h2>
+      {% if move.diminished_notes %}<p><b>Diminished assertive actions:</b> {{ move.diminished_notes }}</p>{% endif %}
+      {% if move.other_possible_cases %}<p><b>Other possible cases:</b> {{ move.other_possible_cases }}</p>{% endif %}
+      {% endif %}
+    </section>
+
+    <aside class="case-side">
+      <h2>Coding</h2>
+      <dl class="coding">
+        <dt>Case</dt><dd>{{ move.id }}{% if move.org_case_no %} (v0.1: {{ move.org_case_no }}){% endif %}</dd>
+        <dt>Type</dt><dd>{{ move.type_labels|join(', ') }}</dd>
+        <dt>Domain</dt><dd>{{ move.domain_labels|join(', ') or '—' }}</dd>
+        <dt>Issue</dt><dd>{{ move.issue_labels|join(', ') or '—' }}</dd>
+        <dt>Dyads</dt><dd>{% for d in move.dyad_labels %}{{ d }}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+        <dt>Ongoing through</dt><dd>{{ move.ongoing_through }}{% if move.ongoing_through_notes and move.ongoing_through_notes not in (move.ongoing_through, '-') %} ({{ move.ongoing_through_notes }}){% endif %}</dd>
+        {% if move.intensification_criterion %}<dt>Criterion</dt><dd>{{ move.intensification_criterion }}</dd>{% endif %}
+        <dt>Sub-regions</dt><dd>{{ move.subregion_labels|join(', ') or '—' }}</dd>
+      </dl>
+      <figure class="inset">
+        <svg viewBox="0 0 {{ view_w }} {{ view_h }}" role="img" aria-label="Sub-regions of the South China Sea; highlighted: {{ move.subregion_labels|join(', ') or 'none' }}">
+          {% for n, d in subregion_paths.items()|sort %}
+          <path d="{{ d }}" class="sr{% if n in move.subregions %} is-on{% endif %}" data-loc="{{ n }}"><title>{{ n }} {{ subregion_names[n] }}</title></path>
+          {% endfor %}
+        </svg>
+        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}</figcaption>
+      </figure>
+      <h2>Provenance</h2>
+      <dl class="coding">
+        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'project' }}, SCS Developments Tracker {{ move.data_version }}{% endif %}</dd>
+        <dt>Status</dt><dd>{{ move.status }}</dd>
+      </dl>
+    </aside>
+  </div>
+</article>
+{% endblock %}
+{% block scripts %}{% endblock %}
