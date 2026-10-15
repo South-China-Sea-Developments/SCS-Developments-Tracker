@@ -1,10 +1,10 @@
 /* Event map: dated events as points (or as counts on their sub-region when unplaced), a time
-   window scrubbed by month, and the same filter semantics as the case browser. Leaflet draws the
+   window scrubbed by month, and the same filter semantics as the case browser. MapLibre draws the
    map; the data is inline (data/events.json has the same content for reuse). */
 (function () {
   "use strict";
   var src = document.getElementById("mapdata");
-  if (!src || typeof L === "undefined") return;
+  if (!src || typeof maplibregl === "undefined") return;
   var DATA = JSON.parse(src.textContent);
   var EVENTS = DATA.events;
   var NAMES = DATA.names;
@@ -28,31 +28,72 @@
   windowSel.value = "0";
 
   // ---- map -------------------------------------------------------------------------------------
-  var map = L.map("map", { minZoom: 4, maxZoom: 11, zoomSnap: 0.5, worldCopyJump: false, attributionControl: true, zoomControl: true });
-  map.attributionControl.setPrefix("");
-  // OpenStreetMap's standard tiles (ODbL data, attribution required, light use); in dark mode the
-  // stylesheet re-tones them. Without network the polygons and events still draw on the page plane.
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  // the polygons are context, not controls: not focusable, labelled once each
-  var polygons = L.geoJSON(DATA.subregions, {
-    interactive: false,
-    style: function () { return { className: "sr-poly", weight: 1, fill: true, fillOpacity: 0.06, opacity: 0.8 }; }
-  }).addTo(map);
-  map.fitBounds(polygons.getBounds(), { padding: [8, 8] });
-  var srCenters = {};
-  polygons.eachLayer(function (layer) {
-    var n = String(layer.feature.properties.n), c = layer.getBounds().getCenter();
-    srCenters[n] = c;
-    L.marker(c, { interactive: false, keyboard: false, icon: L.divIcon({ className: "", iconSize: [120, 16], iconAnchor: [60, 30],
-      html: '<span class="sr-label">' + n + " " + layer.feature.properties.name + "</span>" }) }).addTo(map);
+  // MapLibre over OpenFreeMap vector tiles with an English-first label style (vendored, inlined by
+  // the build). Tiles, fonts and sprites are the only network requests; without them the sub-regions
+  // and events still draw on the page plane.
+  var styleEl = document.getElementById("mapstyle");
+  var STYLE = styleEl ? JSON.parse(styleEl.textContent) : { version: 8, sources: {}, layers: [] };
+  var bounds = geoBounds(DATA.subregions);
+  var map = new maplibregl.Map({
+    container: "map", style: STYLE, bounds: bounds, fitBoundsOptions: { padding: 12 },
+    minZoom: 3.5, maxZoom: 11, cooperativeGestures: true, attributionControl: false, dragRotate: false, pitchWithRotate: false
+  });
+  map.touchZoomRotate.disableRotation();
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-left");
+  map.addControl(new maplibregl.AttributionControl({ compact: false }));   // the style carries OpenFreeMap, OpenMapTiles and OSM
+  map.on("error", function (e) {   // a missing tile, font or sprite is the offline case, not a fault
+    var msg = e && e.error ? String(e.error.message || e.error) : "";
+    if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("map: " + msg);
   });
 
-  var pointLayer = L.layerGroup().addTo(map);
-  var countLayer = L.layerGroup().addTo(map);
+  function geoBounds(gj) {
+    var w = Infinity, s = Infinity, e = -Infinity, n = -Infinity;
+    function walk(c) {
+      if (typeof c[0] === "number") { w = Math.min(w, c[0]); e = Math.max(e, c[0]); s = Math.min(s, c[1]); n = Math.max(n, c[1]); }
+      else c.forEach(walk);
+    }
+    gj.features.forEach(function (f) { walk(f.geometry.coordinates); });
+    return [[w, s], [e, n]];
+  }
+  function center(f) {
+    var b = geoBounds({ features: [f] });
+    return [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
+  }
+  // the polygons are context, not controls. They are painted in light-mode colours whatever the
+  // scheme: in dark mode the stylesheet inverts the whole canvas, basemap and polygons together.
+  map.on("load", function () {
+    map.addSource("subregions", { type: "geojson", data: DATA.subregions });
+    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": "#0e5a86", "fill-opacity": 0.07 } });
+    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": "#5e6b73", "line-width": 1, "line-opacity": 0.9 } });
+  });
+
+  var srCenters = {};
+  DATA.subregions.features.forEach(function (f) {
+    var n = String(f.properties.n), c = center(f);
+    srCenters[n] = c;
+    var label = document.createElement("span");
+    label.className = "sr-label";
+    label.textContent = n + " " + f.properties.name;
+    new maplibregl.Marker({ element: label, anchor: "bottom", offset: [0, -14] }).setLngLat(c).addTo(map);
+    label.removeAttribute("role"); label.removeAttribute("tabindex"); label.setAttribute("aria-hidden", "true");   // decoration, not a control
+  });
+
+  var live = [];   // markers of the current render
+  function clearMarkers() { live.forEach(function (m) { m.remove(); }); live = []; }
+  function addMarker(lnglat, el, title, popupBuilder) {
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-label", title);
+    el.title = title;
+    var popup = new maplibregl.Popup({ maxWidth: "360px", className: "evt-popup", offset: 14, focusAfterOpen: true });
+    popup.on("open", function () { popup.setDOMContent(popupBuilder()); });
+    var m = new maplibregl.Marker({ element: el }).setLngLat(lnglat).setPopup(popup).addTo(map);
+    el.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); m.togglePopup(); }
+    });
+    live.push(m);
+    return m;
+  }
 
   // ---- filters ---------------------------------------------------------------------------------
   function checked(name) {
@@ -113,8 +154,7 @@
   function render() {
     var f = readFilters();
     var hits = EVENTS.filter(function (e) { return matches(e, f); });
-    pointLayer.clearLayers();
-    countLayer.clearLayers();
+    clearMarkers();
     var stacks = {}, order = [];
     var srCounts = {}, placed = 0;
     hits.forEach(function (e) {
@@ -131,21 +171,23 @@
       var g = stacks[key];
       var codes = g.map(function (e) { return e.c; }).filter(function (c, i, a) { return a.indexOf(c) === i; });
       var size = Math.min(34, 14 + Math.round(5 * Math.sqrt(g.length - 1)));
-      var cls = "evt" + (g.every(function (e) { return e.lp === "feature"; }) ? " feature" : "") + (codes.length > 1 ? " mixed" : "");
-      var icon = L.divIcon({ className: "", iconSize: [size, size], iconAnchor: [size / 2, size / 2],
-        html: '<span class="' + cls + '" data-code="' + (codes.length === 1 ? codes[0] : "") + '">' + (g.length > 1 ? g.length : "") + "</span>" });
+      var el = document.createElement("span");
+      el.className = "evt" + (g.every(function (e) { return e.lp === "feature"; }) ? " feature" : "") + (codes.length > 1 ? " mixed" : "");
+      el.setAttribute("data-code", codes.length === 1 ? codes[0] : "");
+      el.style.width = el.style.height = size + "px";
+      el.textContent = g.length > 1 ? String(g.length) : "";
       var title = g.length === 1 ? (NAMES[g[0].c] || g[0].c) + ", " + dateLabel(g[0]) + (g[0].n ? ", " + g[0].n : "") : g.length + " events" + (g[0].n ? " at " + g[0].n : "");
-      L.marker([g[0].lat, g[0].lon], { icon: icon, title: title, alt: title, keyboard: true, riseOnHover: true })
-        .bindPopup(function () { return popupFor(g); }, { maxWidth: 360, className: "evt-popup" }).addTo(pointLayer);
+      addMarker([g[0].lon, g[0].lat], el, title, function () { return popupFor(g); });
     });
     Object.keys(srCounts).forEach(function (s) {
       if (!srCenters[s]) return;
       var n = srCounts[s];
-      var icon = L.divIcon({ className: "", iconSize: [30, 22], iconAnchor: [15, 11], html: '<span class="sr-count">' + n + "</span>" });
+      var el = document.createElement("span");
+      el.className = "sr-count";
+      el.textContent = String(n);
       var title = n + (n === 1 ? " event" : " events") + " in sub-region " + s + " " + SR_NAMES[s] + " without a point";
       var inSr = hits.filter(function (e) { return e.lat === undefined && e.sr.indexOf(s) >= 0; });
-      L.marker(srCenters[s], { icon: icon, title: title, alt: title, keyboard: true })
-        .bindPopup(function () { return popupFor(inSr); }, { maxWidth: 360, className: "evt-popup" }).addTo(countLayer);
+      addMarker(srCenters[s], el, title, function () { return popupFor(inSr); });
     });
     var when = f.w ? (f.w === 1 ? monthName(f.to) : monthName(f.from) + " – " + monthName(f.to)) : "through " + monthName(f.to);
     timeLabel.value = when;

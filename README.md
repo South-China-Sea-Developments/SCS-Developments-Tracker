@@ -40,7 +40,7 @@ python -m pipeline.ops --help      # what the scheduled run does around a harves
 | `data/reference/gazetteer.csv`, `gazetteer_extra.csv` | Named features of the sea (reefs, shoals, banks, islands) with coordinates, sub-region and names in five languages: generated from Wikidata (`pipeline.gazetteer_wikidata`) plus hand corrections. Places harvested events. |
 | `docs/sources/` | Notes on where each raw input came from and how it was retrieved. |
 | `CONTEXT.md` | Project glossary. Definitions only. |
-| `web/` | The public site: build script, templates, stylesheet, chart and map scripts, vendored font and Leaflet. Output in `web/dist/` (not committed). |
+| `web/` | The public site: build script, templates, stylesheet, chart and map scripts, vendored font, MapLibre and basemap style. Output in `web/dist/` (not committed). |
 
 ## Provenance and citation
 

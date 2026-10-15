@@ -292,6 +292,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
 
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]))
     ctx = {
@@ -301,7 +302,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
         "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
     }
-    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, map_json=map_json,
+    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, map_json=map_json, map_style_json=map_style_json,
                n_map_events=mapd["counts"]["n_events"], n_map_points=mapd["counts"]["n_points"],
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
