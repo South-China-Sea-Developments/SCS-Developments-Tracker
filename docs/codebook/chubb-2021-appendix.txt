@@ -1,0 +1,690 @@
+Chubb, A. “China’s Assertiveness in the South China Sea, 1970-2015,”
+International Security, Vol. 45, No. 3 (Winter 2020/21).
+
+Appendix
+
+Maritime Assertiveness Time Series Dataset:
+
+PRC in the South China Sea, 1970-2015
+
+This article’s time series of assertive changes in the PRC’s behavior in
+the South China Sea dispute between 1970 and 2015 is the first dataset
+in a larger Maritime Assertiveness Time Series (MATS) project. As of
+March 2020, data collection is complete for Vietnam and the Philippines’
+assertive behavior in the South China Sea across the same time period;
+planned future rounds of data collection will include the PRC and Japan
+in the East China Sea, and the PRC and India in their terrestrial border
+dispute.
+
+Preliminary data on assertive changes in the PRC’s behavior in the South
+China Sea dispute between 1970 and 2015 were compiled from publicly
+available materials in English- and Chinese-language, as well as some
+Vietnamese-language sources accessed through Google Translate. However,
+as noted, a present-centric bias exists in the information supply on
+such events due to recent increases in attention towards the South China
+Sea issue, as well as greater publicity from the PRC regarding its own
+activities. This makes assertive behavior more likely to be observed in
+recent years. To counteract this, the dataset used here draws
+extensively upon historical PRC sources. These include
+internal-circulation PRC chronologies on major events in the South China
+Sea covering the period up to 1996 (Zhang, NSQDDSJ), advisory reports on
+the South China Sea from 2002 to 2009 (NISCSS, NHXSPGBG), archived PRC
+maritime agency web pages (SOA, “Dashiji”), reports on state-run
+scientific expeditions in the 1980s (CAS, Nansha Qundao), and yearbooks
+of PRC government maritime agencies covering the 1970s through to
+present (SOA, ZGHYNJ; Fisheries, ZGYYNJ). Other publicly available
+materials used included one declassified US military reports and several
+leaked State Department cables. A full list is appended in the data
+file.
+
+Stage 1: Master timeline
+
+Data collection took place via a two-stage process. The first was the
+generation of a master timeline file (not restricted to the post-1970
+era) into which was entered any potentially relevant historical
+developments in the South China Sea dispute, as encountered by the
+author in the course of researching the issue. The sources for this base
+of raw information on the dispute included existing academic literature
+and policy analysis, open-source reports by foreign government
+departments, archived press reporting accessed through the Factiva
+database, and news on contemporary events acquired through English and
+Chinese language media, usually online. The content of the master
+timeline was not limited to PRC actions and those of its rivals, but
+included any plausibly relevant information on developments in the
+dispute: reported actions of third countries, notable statements by
+officials, bilateral meetings and agreements, important domestic
+political events, and exogenous international developments. The aim in
+this process was to cast the net as widely as possible, leaving analysis
+and verification to the second stage.
+
+The timeline has been continuously added to, filled in, corrected and
+updated throughout the seven-year duration (as of early 2020) of the
+project, as more and better information on came to hand. A major step in
+this process was the systematic study of several important PRC sources
+mentioned above. Besides identifying numerous otherwise unreported
+events, this process clarified the timing and nature (and in some cases
+existence) of already-reported events, while adding valuable inside-out
+perspective on how the dispute’s progression appeared from within
+China’s party-state system. The master timeline therefore serves as a
+reference resource on the context of China’s actions in the South China
+Sea. It also provides the basis for a more refined set of data with
+which to identify the timing and nature of the recent changes in the
+state’s behavior.
+
+Stage 2: Refined time series
+
+The second stage involved refining content from the master timeline by
+applying the concept of assertiveness outlined in the main text and
+coding each event that met the definition qualitatively within the
+four-way typology. The resultant time series captures the variation in
+China’s assertiveness between 1970 and 2015, relative to 1970. The
+appropriateness of this reference point is discussed below. Each case
+constituted an intensification of the PRC’s assertiveness in comparison
+with the previous year. In total, 132 instances of assertive change,
+year-on-year, in PRC’s conduct were identified. Per the conceptual
+framework established in the main text of the article, three criteria
+determined whether a given action constituted an intensification of
+assertiveness: qualitative novelty, increased frequency or expanded
+geographic scope. Using the previous calendar year as reference point
+served this project’s requirement for fairly precise indications of the
+timing of policy change. The limitations of this method are discussed
+separately below.
+
+[::A_DATA:SCS (DATA):RMRB assertions of SCS sovereignty, 1948-2014.png]
+
+Figure A1: Yearly number of People’s Daily articles mentioning South
+China Sea islands and sovereignty, 1948-2015. Cases of intensified
+declarative assertiveness were recorded wherever the number of articles
+increased by 33% over the previous year, to a minimum of 5 articles.
+This is indicated by the red bars. From People’s Daily database, search
+string {沙群岛 主权}.
+
+Most cases of intensified assertive activity were identified from the
+master timeline, but three other sources of supplementary data also
+contributed. (1) Search results from of the People’s Daily database,
+which served as a proxy for the PRC’s level of verbal assertiveness in
+each year (Figure A1); (2) A chronological list of known PLA Navy
+exercises in the South China Sea between 2006 and 2015, assembled from
+the master timeline and searches of Baidu News; and (3) Yearly frequency
+of civilian maritime patrols in the South China Sea as revealed in a
+2013 CCTV documentary (CCTV, “Nanhai Jixing”).
+
+Verification of cases
+
+Although it was not possible to achieve complete certainty regarding the
+details of every case, each was cross-checked with other sources where
+available, and considered with specific regard to possible motivations
+that could bias the source of the information. Several candidate cases
+from the main timeline were set aside pending possible future
+confirmation (see data file).
+
+The background to each candidate case of intensified assertive behavior
+demanded careful consideration. Various aspects of the “status quo” in
+disputed maritime areas change constantly, such as numbers of ships,
+patterns of navigation, personnel and equipment. Where a significantly
+new situation arises, the question of whether a particular state action
+constitutes an assertive change in behavior hinges on a counterfactual
+judgment as to how the state would have responded if the same
+circumstances had arisen in the past.[1] To take a concrete example, PRC
+on-water enforcement actions against foreign fishing increased in 2007,
+but this could not automatically be considered a case of intensified
+assertiveness. The number of Vietnamese fishers operating in the Paracel
+Islands had increased sharply, and if this had occurred in previous
+years it is quite likely that PRC enforcement would also have
+quantitatively increased. The case’s eventual inclusion in the dataset
+was on the qualitative basis that China’s enforcement methods shifted
+from the previous practice of harassment and warnings, towards
+confiscation of property and detention of Vietnamese personnel.
+
+The next step was to consider the likely duration of each action, or
+pattern of action, in order to identify whether it continued,
+intensified further or diminished in subsequent years. In most
+instances, an absence of evidence of equivalent actions in the following
+year was treated as a diminishment of that particular aspect of China’s
+assertiveness. There were exceptions, however particularly where long
+periods separated available data points. One example concerned PRC
+fishing. Chinese, Vietnamese and Philippine sources reported an increase
+in PRC fishing activities in disputed parts of the South China Sea in
+1994, and the China Fisheries Yearbook records a 26 percent rise in PRC
+state-sanctioned fishing trips to the Spratly Islands in 2001, but the
+intensity of China’s fishing activities in the intervening years was
+unknown. In this case the assumption was made that Chinese fishing had
+been occurring at approximately the same level across that time period –
+a more cautious conclusion than to assume either further increases or
+diminishment. PRC fishing was therefore regarded as having intensified
+in 1994, and continued over the following seven years, before
+intensifying again in 2001.
+
+Limitations
+
+These events data are inevitably incomplete, for an assertive state and
+its adversaries may both have incentives to keep such events secret. To
+mitigate this risk of unobserved events the author consulted historical
+sources from different contending sides of the dispute, and concentrated
+special attention to uncovering events from the period before the
+dispute became subject to widespread English-language media and
+scholarly attention, over a period of six years (2011-2017). In
+recognition of the fact that events in the distant past are both harder
+to verify and less likely to be found in the first place, stricter
+evidentiary standards were applied for more recent events.
+Methodologically, this is appropriate for a study seeking to identify
+and explain change, for it reduces the probability that changes detected
+will be spurious or overstated. It should also increase analytic
+confidence in the existence of any recent changes that are identified.
+
+As with any attempt to distil social processes to numbers, it is crucial
+to bear in mind the relevant context that may be obscured by these
+methods. First, these data only include non-cooperative aspects of
+China’s behaviour. The assertiveness framework does capture moderations
+of behavior — that is, shifts to fewer, or qualitatively less
+escalatory, assertive actions over a given time period. But it does not
+account for actively conciliatory actions such as agreements over
+resource exploitation or management, joint patrols and other
+confidence-building measures (CBMs). While it would be desirable to
+capture all aspects of a state’s dispute behavior in one dataset, the
+exclusion of cooperative actions was necessary because actively
+conciliatory measures do not necessarily offset or mitigate assertive
+actions.[2] This decision also reflects the project’s purpose of
+identifying the timing and nature of the recent change in state
+behaviour in the South China Sea in order to better understand its
+causes. Future work may develop appropriate ways to simultaneously
+account for both non-cooperative and cooperative dispute behaviour.
+
+Second, the events data are limited to those actions that are observable
+and documented in the sources consulted. The strategy employed to
+counteract this consisted of (1) casting the data-gathering net as
+widely as possible, including both English-and Chinese-language sources,
+and (2) including all possibly relevant developments, both confirmed and
+unconfirmed, in the master timeline from which the events data were
+drawn, thus allowing time for evidence to emerge that could confirm or
+refute candidate cases. Another related limitation inherent in relying
+on events data is that there may be a lag between important political
+decisions that set in motion a policy change, and the observable
+manifestations of this. Thus, positivist approach that underpin these
+data need to be complemented by close analysis of speech and text, in
+order to account for how the actors involved understood their actions,
+as well as to identify more remote but nonetheless fundamental causes of
+policy change.
+
+Third, being focused on China’s assertiveness, these data do not account
+for other states’ assertive actions. Instead, these are discussed
+separately in the process of explaining the observed changes in PRC
+behavior. External developments, for example, relate closely to the
+“declining claim strength” explanation. As noted above, external
+developments were included in the master timeline, but not the 132 cases
+of PRC policy change that constitute the time series analyzed here.
+Although beyond the scope of this article’s analysis, the MATS project
+has so far gathered data matching time series on the assertive actions
+of the Philippines and Vietnam. Analysis of these and other matched time
+series capturing behavioral changes of other claimants and powers that
+operate in the area, such as the U.S., Australia, Japan and India, could
+offer new insight into the action-reaction dynamics of the
+Asia-Pacific’s disputed maritime spaces.[3] Further planned expansion of
+the MATS project will encompass include territorial disputes, starting
+with the PRC-India border dispute.
+
+Unit of analysis
+
+Measuring behavioral change by comparing state actions in one calendar
+year with the one that preceded it was a pragmatic decision. Other units
+of comparison could generate different findings about when, or even
+whether, change has occurred. The specific actions taken in the
+Impeccable incident, for example, were probably unprecedented, but the
+incident can also be understood as a continuation of the policy that
+produced the EP-3 incident in a similar area in 2001. Similarly, the
+unilateral resource survey activities China carried out in 2014 are not
+known to have occurred in 2013, but similar activities were observed in
+similar geographical areas in 2010 and 2007. Although this could be
+characterized this as a single case of change (no explorations before
+2007, explorations every 3-4 years afterwards), under the year-on-year
+method this constitutes three separate cases of intensification of
+assertive activity, followed by its diminishment the following year.
+Besides allowing for the identification of the timing of behavioural
+change down to a one-year range, using calendar years also seems a less
+arbitrary choice than wider units of time.
+
+The quantitative assertiveness framework implicitly gives equal weight
+to actions of varying significance. For example, the method of handling
+Vietnamese fishers in the Paracels became more coercive in 2009 and 2011
+with the increased detentions of personnel and seizure of boats, but its
+intensity remained far below that seen in the January 2005
+Sino-Vietnamese fisheries incident in the Gulf of Tonkin, in which nine
+Vietnamese personnel were killed, or the fatal 2007 incident in the
+Paracels. South China Sea sovereignty declarations in the party’s
+official press increased substantially 2009 and 2011, but the party
+media had been equally vociferous in 1999 and 2004, and much more vocal
+in 1988 and 1995. The massive land reclamation works since late 2013 are
+also not weighted for their significance, except insofar as they enable
+further assertive actions in the future. The typology used here
+represents a compromise between the need for a more systematic
+measurement of change, and the need to account for the significance of
+different kinds of actions.
+
+Baseline 1970
+
+The year 1970 is a logical starting point because it follows closely
+after preliminary surveys suggested the possible presence of major
+resource deposits in the area. This “discovery” created one of the key
+factors in the high-stakes dispute that exists today. Although several
+states, including the PRC, announced claims in the area in the 1940s and
+1950s, the UN Economic Commission for Asia and the Far East’s survey
+indicating potentially massive oil and gas bounties sharply increased
+the incentives for claimants on all sides to pursue those claims.[4] The
+list below shows a selection of known instances of PRC actions over the
+South China Sea between 1949 and 1969 that provides the zero-baseline
+for comparing the PRC’s assertiveness between 1970 and 2015.
+
++-----------------------------------------------------------------------+
+| Selected assertive PRC actions in South China Sea in 1949-1969        |
++-----------------------------------------------------------------------+
+| 1949, November: First PRC map published incorporating ROC eleven-dash |
+| line (“Xin Zhongghuo diyizhang ditu,”)                                |
+|                                                                       |
+| 1950, May 20: PRC publicly asserts sovereignty over Spratlys in RMRB  |
+| p.1 articles condemning Philippines’ claims (Chen, “China’s ASEAN     |
+| policy,” p. 149).                                                     |
+|                                                                       |
+| 1950-1956: Qionghai fishers operate in Spratlys (Zhang, NSQDDSJ, 3).  |
+| But according to another source the PRC prohibited its citizens from  |
+| fishing in Spratlys form 1954 onwards (Guo Jinfu, “Nansha yuye        |
+| ziyuan,” p. 298).                                                     |
+|                                                                       |
+| 1950-1956: Guangdong Hainan Administrative Region allegedly erects    |
+| weather stations, conducts surveys, extracts phosophorous and         |
+| “manages fishing” in Paracels. (Zhang, NSQDDSJ, p. 3).                |
+|                                                                       |
+| 1951, August: Zhou Enlai publicly asserts sovereignty over four South |
+| China Sea “island groups” (Samuels, Contest, pp. 78-9).               |
+|                                                                       |
+| 1956: PRC occupies Amphritrite Group in north-eastern Paracels.       |
+|                                                                       |
+| 1956-1959: PRC mines more than 100,000 tons of phosphates in          |
+| Paracels. By 1961 the supply was exhausted (Lei, NSZGSZH, p. 133).    |
+|                                                                       |
+| 1958: PRC Territorial Sea Declaration asserts territorial sovereignty |
+| and seas around the four South China Sea “island groups,” but not     |
+| Diaoyu Islands.                                                       |
+|                                                                       |
+| 1959: Office for Zhongsha, Xisha and Nansha Affairs established.      |
+|                                                                       |
+| 1959: first PLAN patrol of Paracels (Fravel, Strong Borders, p.       |
+| 275n25).                                                              |
+|                                                                       |
+| 1960: construction of radio masts & observation tower at Woody        |
+| Island. (Fravel, Strong Borders, p. 275).                             |
+|                                                                       |
+| 1960: PLAN conducts sixteen patrols to protect Chinese fishers in the |
+| Paracels. (Fravel, Strong Borders, p. 275).                           |
+|                                                                       |
+| 1960-1973: Average of 5 PLAN patrols per year in the Paraces (Fravel, |
+| Strong Borders, p. 275).                                              |
+|                                                                       |
+| 1958-1971: China issues 497 protests and warnings over US             |
+| surveillance above the Paracels (Fravel, Strong Borders, p. 275n32).  |
++-----------------------------------------------------------------------+
+
+Figures A2 to A4 below reproduce Figure 2 from the main article at a
+higher scale, illustrating the PRC’s overall level of assertiveness in
+each year, relative to the 1970 baseline. Case numbers corresponding to
+those used in the events data set are added.
+
+[A picture containing map Description automatically generated]
+
+Figure A2: Accumulation of PRC assertive behaviors in South China Sea,
+1970-2015. Four periods of rapidly intensifying assertiveness are
+highlighted.
+
+[A close up of a map Description automatically generated]
+
+Figure A3: Accumulation of PRC assertive behaviors in South China Sea,
+1970-1995, with case labels. See data file for individual case details.
+
+[A close up of a map Description automatically generated]
+
+Figure A4: Accumulation of PRC assertive behaviors in South China Sea,
+1996-2015, with case labels. See data file for individual case details.
+
+Descriptive statistics
+
+The PRC’s assertiveness in the South China Sea intensified in some form
+in 8 out of the 10 years in the 1970s, 9 out of 10 years in the 1980s, 9
+out of 10 years in the 1990s, and every year between 2000 and 2015. Most
+intensifications of PRC assertive activity continued in subsequent
+years, establishing new baselines. Of the 132 cases in the events
+dataset, 50 (37.8%) are likely to have continued through 2015, and a
+further 23 (17.4%) continued at least into the following year. Only 55
+(41.7%) were one-off incidents or temporary surges in activity that
+lasted less than a year.
+
+  --------------------------------------------------------------------------
+                    Once-off or  Continued    Ongoing      2015      Total
+                    diminished   but          through 2015 cases     
+                    in next year diminished                          
+                                 by 2015                             
+  ----------------- ------------ ------------ ------------ --------- -------
+  No. of cases (%   55 (41.7%)   23 (17.4%)   50 (37.8%)   4 (3.0%)  132
+  total)                                                             
+
+  --------------------------------------------------------------------------
+
+Table A1: Estimated duration of cases of intensified PRC assertiveness,
+1970-2015.
+
+Overall, the 132 cases of intensified assertive behavior identified
+between 1970 and 2015 equate to an average of 2.9 per year. Outside the
+four periods of rapid intensification of assertive activity, the average
+number of intensified assertive behaviors observed in each year was 1.8.
+This can be regarded as illustrative of the baseline rate of growth of
+PRC assertiveness.
+
+  -----------------------------------------------------------------------
+  Period         Cases of           Number of years    Mean cases per
+                 intensified PRC                       year
+                 assertiveness                         
+  -------------- ------------------ ------------------ ------------------
+  (1970-1972)    3                  3                  1.0
+
+  1973-1975      9                  3                  3.0
+
+  (1976-1986)    19                 11                 1.7
+
+  1987-1988      10                 2                  5.0
+
+  (1989-1991)    5                  3                  1.7
+
+  1992-1994      14                 3                  4.7
+
+  (1995-2006)    26                 12                 2.2
+
+  2007-2015      46                 9                  5.1
+
+  Total          132                46                 2.9
+  -----------------------------------------------------------------------
+
+Table A2: Periods of intensifying PRC assertiveness (bold) in South
+China Sea.
+
+Focusing on new coercive actions, only 13 cases of intensified PRC
+coercive behaviors were identified between 1970 and 2006 – an average of
+0.3 cases per year. In contrast, 19 such cases are observed in the nine
+years from 2007 to 2015, an average of 2.1 per year. Table A3 reports
+the results of an independent samples t-test confirming the statistical
+significance of this change. It also indicates that, if coercive forms
+of assertive activity are excluded, the difference between the PRC’s
+level of assertiveness pre- and post-2007 periods no longer meets
+conventional levels of statistical significance.
+
+  ---------------------------------------------------------------------------
+  Types of         Period      Number of   Mean cases   t          Sig.
+  assertiveness                cases       per year                (2-tail)
+  ---------------- ----------- ----------- ------------ ---------- ----------
+  Declarative      1970-2006   20          0.5          0.95       0.37
+
+                   2007-2015   8           0.9                     
+
+  Demonstrative    1970-2006   50          1.4          1.74       0.11
+
+                   2007-2015   17          2.0                     
+
+  Coercive         1970-2006   13          0.4          8.17       0.00
+
+                   2007-2015   20          2.1                     
+
+  Force            1970-2006   3           0.1          0.25       0.81
+
+                   2007-2015   1           0.1                     
+
+  Total            1970-2006   86          2.3          4.22       0.00
+
+                   2007-2015   46          5.1                     
+
+  Total excl.      1970-2006   70          1.9          1.74       0.11
+  coercive                                                         
+
+                   2007-2015   26          2.9                     
+  ---------------------------------------------------------------------------
+
+Table A3: Independent samples t-test for equality of mean annual number
+of PRC intensified assertive actions in South China Sea, pre- and
+post-2007 periods (equal variances not assumed).
+
+Dyadic and issue analysis
+
+To identify variation in the targets and immediate purposes of the PRC’s
+assertiveness, each intensified assertive action was coded according to
+which bilateral relationships was implicated, and which of the key
+issues of security, administrative control, resources and politics the
+action addressed.
+
+In 64 cases (48%) a single dyad was identifiable, usually due to one
+particular state’s assets being targeted, or because the events in
+question concerned the Paracel Islands and Scarborough Shoal, which are
+bilateral PRC-Vietnam (coded V) and PRC-Philippines disputes (coded P)
+respectively. Other activities concerned disputes over surveillance
+activities and interpretations of international law between the PRC and
+the US (coded U). Some 21 assertive actions (16%) have implications for
+states at large — such as introduction of civil airspace regulations, or
+military exercises taking place in unspecified waters within the sea.
+Such cases were coded (A).
+
+Events concerning the Spratly Islands present the most complexity in
+identifying the bilateral relationships impacted by assertive actions.
+Where an action took place in, or was targeted at, an identifiable
+geographical area, this was considered to involve the dyads formed
+between the PRC and other claimants to that area. For example,
+activities to strengthen administration of the “central South China Sea”
+area referred to in many PRC sources, concern areas between the Paracel
+and Spratly Islands that touch upon the EEZ and continental shelf claims
+of the Philippines as well as Vietnam. Such cases were thus coded as
+both (P) and (V). The PRC’s outposts in the Spratly Islands are disputed
+by Vietnam and the Philippines only, so actions taking place there were
+likewise coded as (P) and (V), except where they had clear strategic
+implications for other states, such as the large-scale island-building
+campaign in that area from 2013 onwards. Where an action concerned PRC
+claims to the Spratly Islands as a whole, as the PRC’s verbal assertions
+typically do, this would implicate three bilateral relationships:
+PRC-Malaysia (M), PRC-Philippines (P), and PRC-Vietnam (V). Finally,
+where the PRC’s actions concerned the entire nine-dash line area, such
+as surveys or patrols of the area, this also implied, in the case of
+energy developments, PRC-Brunei relations (B) and, in the case of
+fisheries, PRC-Indonesia relations (I).
+
+Not surprisingly, given the larger scope of dispute between the two
+countries the Sino-Vietnamese relationship was the most often impacted
+by the PRC’s assertive conduct, with 71% of the cases involving
+PRC-Vietnam disputes. China-Philippine disputes were the next most
+commonly featured, with 52% of cases. PRC actions implicating its
+relations with Malaysia comprised 36%, with Brunei 15%, and Indonesia
+11%. Only 8% of assertive behavioral changes — 11 of the 132 cases — had
+specific implications for Sino-US relations, while twenty-three cases,
+or 17%, had implications for states in general.
+
+Over time, as Table A4 shows, the PRC’s assertive advances have tended
+to impinge on the interests of a broadening array of states. The PRC’s
+surges in the 1970s, 1980s and 1990s were predominantly at the expense
+of Vietnam and the Philippines, and to a lesser extent Malaysia and
+Brunei. However, the post-2007 period has seen an increase in assertive
+actions affecting the claims and interests of Indonesia, the United
+States, and states in general (A).
+
+  ----------------------------------------------------------------------------------------------
+              To-tal   Vietnam   Philip-pines   Malaysia   Brunei   Indonesia   U.S.    All
+                       (V)       (P)            (M)        (B)      (I)         (U)     states
+                                                                                        (A)
+  ----------- -------- --------- -------------- ---------- -------- ----------- ------- --------
+  1973-1975   9        8 (89%)   5 (56%)        3 (33%)    -        -           1 (11%) 1 (11%)
+
+  1987-1988   10       9 (90%)   7 (70%)        6 (60%)    2 (20%)  1 (10%)     -       -
+
+  1992-1994   14       12 (86%)  9 (64%)        6 (43%)    3 (21%)  1 (7%)      1 (7%)  1 (7%)
+
+  2007-2015   46       25 (54%)  21 (46%)       15 (33%)   8 (17%)  9 (20%)     5 (11%) 9 (20%)
+  ----------------------------------------------------------------------------------------------
+
+Table A4: Dyadic composition of case counts during assertive surge
+periods
+
+Overall, 39 out of the 132 cases of assertive change in the PRC’s
+behavior directly concerned the military and security aspects of the
+dispute, such as territorial control and military activities (30%). The
+majority of the cases, 74 (56%), were actions that directly advanced the
+PRC’s administrative control, such as surveying, patrolling and
+infrastructure construction. The PRC’s claims to the area’s energy
+resources were advanced in 26 cases (20%), while 23 cases (17%)
+concerned fisheries. One quarter of the PRC‘s new assertive actions were
+direct political statements and lobbying attempts.
+
+As Table A5 shows, the PRC’s surges in the South China Sea have become
+increasingly civilianized, with proportionally less of the relevant
+events concerning military and security interests over time, and
+correspondingly more related to administrative control. This is to be
+expected as the PRC has fought its way into the Spratly area, and then
+normalized its presence from an initially tenuous position.
+Interestingly, resource issues were at the center of events only in the
+surge beginning in 1992.
+
+  -------------------------------------------------------------------------------------
+               Total   Military/   Administrative   Energy      Fisheries   Political
+                       security    control          resources               
+  ------------ ------- ----------- ---------------- ----------- ----------- -----------
+  1973-1975    9       4 (44%)     4 (44%)          1 (11%)     1 (11%)     5 (56%)
+
+  1987-1988    10      5 (50%)     3 (30%)          1 (10%)     1 (10%)     3 (30%)
+
+  1992-1994    14      3 (21%)     7 (50%)          5 (36%)     3 (21%)     4 (29%)
+
+  2007-2015    46      8 (17%)     31 (67%)         6 (13%)     7 (15%)     12 (26%)
+  -------------------------------------------------------------------------------------
+
+Table A5: Issue composition of case counts during assertive surge
+periods
+
+Coding checks
+
+The four types of assertive action that comprise the typology outlined
+in the main text were designed to be clearly defined and mutually
+exclusive. Despite these efforts, some ambiguities inevitably remain. To
+check the analytic validity of the typology and the author’s coding
+(C0), two students were employed to independently re-code the 132 cases
+on the basis of the case narratives and the typology as described in the
+article. One brought a background knowledge of the South China Sea
+dispute (C1), while the other had previously studied architecture and
+had recently commenced a Master’s degree in international affairs (C2).
+One was an American citizen, the other a PRC citizen, and both were
+enrolled at US universities. C1’s coding matched the author’s for 122
+out of 132 cases (92.4%), while C2’s was identical for 115 cases
+(87.1%). Both C1 and C2’s codings produce even larger differences in the
+mean number of coercive cases before and after 2007. This should
+increase confidence that the qualitative behavioral change identified in
+2007 is the result of a qualitative shift in the PRC’s conduct, rather
+than biases of the author.
+
+  ---------------- ------------- --------------- ------------- -------------
+  Author (C0)      Declarative   Demonstrative   Coercive      Use of force
+
+  Total 1970-2006  20            50              13            3
+
+                   0.54          1.35            0.35          0.08
+
+  Total 2007-2015  8             18              19            1
+
+                   0.89          2.00            2.11          0.11
+
+  Totals           28            68              32            4
+  ---------------- ------------- --------------- ------------- -------------
+
+  ---------------- ------------- --------------- ------------- -------------
+  Coder 1 (C1)     Declarative   Demonstrative   Coercive      Use of force
+
+  Total 1970-2006  17            51              15            3
+
+                   0.46          1.38            0.41          0.08
+
+  Total 2007-2015  6             17              22            1
+
+                   0.67          1.89            2.44          0.11
+
+  Totals           23            68              37            4
+  ---------------- ------------- --------------- ------------- -------------
+
+  ---------------- ------------- --------------- ------------- -------------
+  Coder 2 (C2)     Declarative   Demonstrative   Coercive      Use of force
+
+  Total 1970-2006  16            51              12            7
+
+                   0.43          1.38            0.32          0.19
+
+  Total 2007-2015  7             17              21            1
+
+                   0.78          1.89            2.33          0.11
+
+  Totals           23            68              33            8
+  ---------------- ------------- --------------- ------------- -------------
+
+Tables A5-A7: Pre-2006 and post-2007 coding results for three coders
+
+  ------------- ------------- ------ ------ --------------- ------ ------ ---------- ------ ------ ------- ------ ------
+                Declarative                 Demonstrative                 Coercive                 Use of         
+                                                                                                   force          
+
+                C0            C1     C2     C0              C1     C2     C0         C1     C2     C0      C1     C2
+
+  Total         20            17     16     50              51     51     13         15     12     3       3      7
+  1970-2006                                                                                                       
+
+  Mean          0.54          0.46   0.43   1.35            1.38   1.38   0.35       0.41   0.32   0.08    0.08   0.19
+
+  Total         8             6      7      18              17     17     19         22     21     1       1      1
+  2007-2015                                                                                                       
+
+  Mean          0.89          0.67   0.78   2.00            1.89   1.89   2.11       2.44   2.33   0.11    0.11   0.11
+
+  Totals        28            23     23     68              68     68     32         37     33     4       4      8
+  ------------- ------------- ------ ------ --------------- ------ ------ ---------- ------ ------ ------- ------ ------
+
+Table A8: Summary results of coding checks
+
+[1] Johnston, “How New and How Assertive,” pp. 27-28. Johnston cites the
+PRC’s actions in the 2010 Diaoyu Islands incident as a plausible but
+indeterminate example of a more-assertive policy, based on a
+counterfactual scenario analogous to the 2010 situation occurring in an
+earlier period. Johnston considers it possible that China would have
+responded similarly in the past if Japan had used domestic legal
+processes to try a Chinese national detained in the disputed islands’
+territorial waters.
+
+[2] Given the importance of worst-case planning in state security
+policies, the perception of security threats resulting from increased
+assertiveness may outweigh the material benefits of any simultaneous
+conciliatory actions. If so, it is not appropriate to implicitly equate
+the two by offsetting assertiveness against conciliatory actions in the
+same dataset. This is not to dismiss the significance of conciliatory
+measures, but it does suggest they should be considered separately.
+Assertiveness in maritime territorial disputes could be mitigated by
+conciliatory and cooperative actions if they credibly suggest some
+limitation on assertive actions in the future. Resource-sharing
+arrangements, such as joint development of energy resources and
+cooperative fisheries management, may help to ease rivals’ concerns
+about missing out on disputed resources altogether. Joint patrols allow
+two countries to simultaneously manifest administrative presence in a
+disputed area without undermining each other’s claims, as does
+cooperation over non-traditional security challenges affecting the area.
+CBMs and crisis management mechanisms such as hotlines and on-water
+protocols, if implemented effectively, can increase the security of all
+states’ positions by rendering their rivals’ actions more predictable,
+thereby decreasing the likelihood that an unplanned encounter will
+result in a sudden severe negative shift in their relative bargaining
+position. And multilateral documents pledging policy restraint, such as
+the 2003 ASEAN-China DOC, can also mitigate assertiveness to the extent
+that they generate belief in the likelihood of future assertive actions
+diminishing or at least not intensifying. However, establishing how, and
+indeed if, the two should to be balanced against each other, will
+require significant further investigation.
+
+[3] Yung and McNulty’s database of actions, if eventually released
+publicly, could offer a starting point for such a project, as it
+includes actions by all South China Sea claimants actions since 1995.
+See Yung and McNulty, “China’s Tailored Coercion”; and Yung and McNulty,
+“Empirical Analysis.”
+
+[4] Samuels, Contest, 155, 164-165n4.
