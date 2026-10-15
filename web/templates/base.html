@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}SCS Developments Tracker{% endblock %}</title>
-<meta name="description" content="{% block description %}Assertive moves by claimant states in the South China Sea, 1970 to the present. A continuation of the Maritime Assertiveness Time Series (MATS).{% endblock %}">
+<meta name="description" content="{% block description %}Assertive moves by claimant states in the South China Sea from 1970 onward. A continuation of the Maritime Assertiveness Time Series (MATS).{% endblock %}">
 <link rel="stylesheet" href="assets/style.css">
 <script id="agg" type="application/json">{{ agg_json|safe }}</script>
 </head>
@@ -19,7 +19,7 @@
     <nav class="nav" aria-label="Site">
       <a href="index.html"{% if page == 'index.html' %} aria-current="page"{% endif %}>Overview</a>
       <a href="methodology.html"{% if page == 'methodology.html' %} aria-current="page"{% endif %}>Methodology</a>
-      <a href="https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker">Data and code</a>
+      <a href="{{ meta.repo_url }}">Data and code</a>
     </nav>
   </div>
 </header>
@@ -28,7 +28,7 @@
 </main>
 <footer class="colophon wrap">
   <p>Data for 1970–{{ meta.mats_last_year }}: Andrew Chubb, <em>Maritime Assertiveness Time Series</em> (MATS 1.02), used with permission.
-    Later years and additional claimants: SCS Developments Tracker project coding. Build {{ meta.version }}, {{ meta.build_date }}.</p>
+    Later years and additional claimants: SCS Developments Tracker project coding. Dataset version {{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}.</p>
   <p>Cite: Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). See <a href="methodology.html#cite">how to cite this dataset</a>.</p>
 </footer>
 <script src="assets/charts.js"></script>

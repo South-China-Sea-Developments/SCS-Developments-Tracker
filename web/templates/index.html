@@ -21,10 +21,17 @@
 <section class="figure" id="fig-all">
   <div class="figure-head">
     <h2>Assertive moves by year, all claimants</h2>
-    <button class="toggle" type="button" data-toggle-table="fig-all" aria-pressed="false">Table</button>
+    <div class="figure-controls">
+      <fieldset class="segmented" id="stack-by">
+        <legend class="sr-only">Stack columns by</legend>
+        <label><input type="radio" name="stack" value="claimant" checked><span>By claimant</span></label>
+        <label><input type="radio" name="stack" value="type"><span>By type</span></label>
+      </fieldset>
+      <button class="toggle" type="button" data-toggle-table="fig-all" aria-pressed="false">Table</button>
+    </div>
   </div>
-  <div class="chart" data-chart="all-claimants" aria-describedby="fig-all-desc"></div>
-  <p class="sr-only" id="fig-all-desc">Stacked column chart of moves per year, one colour per claimant. A table view is available with the Table button.</p>
+  <div class="chart" data-chart="all-claimants"></div>
+  <p class="sr-only" id="fig-all-desc">Stacked column chart of moves per year, stacked by claimant or by type. The same numbers are in the table view.</p>
   <div class="table-view" hidden></div>
 </section>
 

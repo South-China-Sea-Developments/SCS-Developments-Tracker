@@ -71,6 +71,7 @@ def _open(browser, dist, page_name, viewport=(1280, 900), color_scheme="light"):
     page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
     page.goto((dist / page_name).resolve().as_uri())
     page.wait_for_timeout(300)
+    page.on("close", lambda _: ctx.close())
     return page, problems
 
 
@@ -81,6 +82,10 @@ def test_pages_render_without_errors(browser, dist, page_name, viewport, scheme)
     assert problems == []
     assert page.title()
     assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth"), "horizontal page scroll"
+    if page_name == "index.html":
+        # the main chart fits the viewport at phone width (no internal scroll hiding recent years)
+        assert page.locator('[data-chart="all-claimants"].is-scrollable').count() == 0
+    page.close()
 
 
 def test_overview_charts_and_controls(browser, dist):
@@ -91,8 +96,14 @@ def test_overview_charts_and_controls(browser, dist):
     assert page.locator('[data-chart="by-type"] .empty').count() == 3
     # 357 columns worth of segments: China+Vietnam+Philippines across the years
     assert page.locator('[data-chart="all-claimants"] .seg').count() > 100
+    # stack the main chart by type: four series, same totals as MAVD's all-countries chart
+    page.locator('#stack-by input[value="type"]').check(force=True)
+    page.wait_for_timeout(100)
+    assert page.locator("#fig-all .legend .key").count() == 4
+    assert "Use of force" in page.locator("#fig-all .legend").inner_text()
+    page.locator('#stack-by input[value="claimant"]').check(force=True)
+    page.wait_for_timeout(100)
     # filter: drop China and the legend and note follow
-    page.locator('.chip[data-code="CN"] input').check(force=True)
     page.locator('.chip[data-code="CN"] input').uncheck(force=True)
     page.wait_for_timeout(100)
     assert "213 moves across 5 of 6 claimants" in page.locator("#filters-note").inner_text()
@@ -104,6 +115,14 @@ def test_overview_charts_and_controls(browser, dist):
     rows = page.locator("#fig-all .table-view tbody tr").count()
     assert rows == 46  # 1970..2015
     assert "213" in page.locator("#fig-all .table-view tfoot").inner_text()
+    # table state survives a re-render (filter change) and the legend stays hidden
+    page.locator('.chip[data-code="CN"] input').check(force=True)
+    page.wait_for_timeout(100)
+    assert page.locator("#fig-all .table-view").is_visible()
+    assert page.locator("#fig-all .legend").count() == 0
+    assert "357" in page.locator("#fig-all .table-view tfoot").inner_text()
+    # empty claimant panels have no table toggle
+    assert page.locator('#fig-MY [data-toggle-table]').is_hidden()
     # hover tooltip appears on a column
     page.locator('[data-toggle-table="fig-all"]').click()
     page.hover('[data-chart="all-claimants"] .hit >> nth=41')
@@ -111,3 +130,4 @@ def test_overview_charts_and_controls(browser, dist):
     assert page.locator(".tooltip").is_visible()
     assert "2011" in page.locator(".tooltip").inner_text()
     assert problems == []
+    page.close()

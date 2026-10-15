@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -27,9 +27,7 @@ jobs:
       - run: pip install -e .
       - name: Build the static bundle
         run: python -m web.build --out web/dist
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - uses: actions/configure-pages@v5   # Pages must be set to "GitHub Actions" once, in repository settings
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web/dist

@@ -18,3 +18,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = ["pipeline", "web"]
+
+[tool.setuptools.package-data]
+web = ["templates/*", "static/*", "static/fonts/*"]

@@ -16,6 +16,7 @@ Rules (docs/spec.md, "Validator"):
   (CODE also covers corrections.csv rows: known move, known field.)
 
 The comparability check reads the raw inputs with its own small reader, independent of the loader.
+aggregates() computes the chart numbers independently of the site build (seam 3).
 
 Usage: python -m pipeline.validate [--data DIR] [--xlsx FILE] [--mavd FILE]
 """
@@ -217,23 +218,6 @@ def comparability(moves: list[dict], corrections: list[dict], xlsx_path: Path,
     return errors
 
 
-def main(argv=None) -> int:
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--data", type=Path, default=ROOT / "data")
-    p.add_argument("--xlsx", type=Path, default=ROOT / "data/raw/mats-1.02/MATS_1-02_all_cases.xlsx")
-    p.add_argument("--mavd", type=Path, default=ROOT / "data/raw/mavd-arcgis-2023/All_Actions7.csv")
-    a = p.parse_args(argv)
-    errors = validate(a.data, a.xlsx, a.mavd)
-    for e in errors:
-        print(e)
-    print(f"{'FAIL' if errors else 'OK'}: {len(errors)} error(s)")
-    return 1 if errors else 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())
-
-
 # ---------------------------------------------------------------------------
 # Aggregates: the numbers the site's charts draw, computed here independently of
 # the site build so a test can hold the two to the same answer (seam 3).
@@ -264,3 +248,20 @@ def aggregates(moves: list[dict]) -> dict:
         totals["total"] = sum(r["total"] for r in per_year.values())
         out["by_claimant"][c] = {"years": per_year, "totals": totals}
     return out
+
+
+def main(argv=None) -> int:
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--data", type=Path, default=ROOT / "data")
+    p.add_argument("--xlsx", type=Path, default=ROOT / "data/raw/mats-1.02/MATS_1-02_all_cases.xlsx")
+    p.add_argument("--mavd", type=Path, default=ROOT / "data/raw/mavd-arcgis-2023/All_Actions7.csv")
+    a = p.parse_args(argv)
+    errors = validate(a.data, a.xlsx, a.mavd)
+    for e in errors:
+        print(e)
+    print(f"{'FAIL' if errors else 'OK'}: {len(errors)} error(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

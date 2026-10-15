@@ -32,9 +32,14 @@
     return node;
   }
 
-  // ---- state -------------------------------------------------------------
-  var selected = {};
-  CLAIMANTS.forEach(function (c) { selected[c] = true; });
+  // ---- view state (the DOM is a projection of this, never the source) -----
+  var state = {
+    selected: {},          // claimant code -> shown?
+    stackBy: "claimant",   // main chart: "claimant" | "type"
+    tableOn: {},           // figure id -> table view on?
+    width: window.innerWidth
+  };
+  CLAIMANTS.forEach(function (c) { state.selected[c] = true; });
 
   // ---- tooltip (one for the page) ---------------------------------------
   var tip = html("div", "tooltip");
@@ -45,8 +50,7 @@
     html("div", "tt-title", title, tip);
     rows.forEach(function (r) {
       var row = html("div", "tt-row", null, tip);
-      var key = html("i", null, null, row);
-      key.style.setProperty("--c", r.color);
+      html("i", null, null, row).style.setProperty("--c", r.color);
       html("b", null, String(r.value), row);
       html("span", null, r.label, row);
     });
@@ -70,17 +74,19 @@
   // series: [{key, label, color, values: {year: n}}] in stack order (first at the bottom)
   function stackedColumns(container, series, opts) {
     container.textContent = "";
-    var avail = Math.max(280, container.clientWidth || 600);
+    container.classList.remove("is-scrollable");
+    var avail = container.clientWidth;
+    if (!avail) return null;                         // hidden: render when revealed
     var small = !!opts.small;
     var height = small ? 180 : 300;
     var m = { top: 12, right: 8, bottom: 26, left: 30 };
     var n = YEARS.length;
-    // Never let a year band drop below 8px: the chart grows and the container scrolls instead.
-    var minBand = 8;
+    // Columns shrink to a 5px band before the chart scrolls; if it scrolls it opens at the latest years.
+    var minBand = 5;
     var width = Math.max(avail, n * minBand + m.left + m.right);
     var pw = width - m.left - m.right, ph = height - m.top - m.bottom;
     var band = pw / n;
-    var gap = band >= 12 ? 2 : 1;               // the surface gap between segments and neighbours
+    var gap = band >= 12 ? 2 : 1;                     // the surface gap between segments and neighbours
     var bar = Math.min(24, Math.max(3, band - gap));
 
     var totals = YEARS.map(function (y) {
@@ -93,27 +99,24 @@
     function xPos(i) { return m.left + i * band + (band - bar) / 2; }
 
     var svg = el("svg", { viewBox: "0 0 " + width + " " + height, role: "img", "aria-label": opts.ariaLabel || "" }, container);
-    if (width > avail) { svg.style.width = width + "px"; svg.style.maxWidth = "none"; }
+    if (opts.describedBy) svg.setAttribute("aria-describedby", opts.describedBy);
+    if (width > avail) { svg.style.width = width + "px"; svg.style.maxWidth = "none"; container.classList.add("is-scrollable"); }
 
-    // gridlines and y ticks
     for (var v = 0; v <= yMax; v += step) {
       var y = yScale(v);
       el("line", { x1: m.left, x2: width - m.right, y1: y, y2: y, "class": v === 0 ? "baseline" : "gridline" }, svg);
       if (v > 0) el("text", { x: m.left - 6, y: y + 4, "text-anchor": "end", "class": "tick" }, svg).textContent = String(v);
     }
-    // x ticks: every 5 years, or 10 when narrow
     var every = band < 9 ? 10 : 5;
     YEARS.forEach(function (yr, i) {
-      if (yr % every === 0 || i === n - 1 && yr % 5 !== 0 && n < 8) {
+      if (yr % every === 0) {
         el("text", { x: m.left + i * band + band / 2, y: height - 8, "text-anchor": "middle", "class": "tick" }, svg)
           .textContent = String(yr);
       }
     });
 
-    // columns, one group per year; the 2px surface gap is the segment stroke
     YEARS.forEach(function (yr, i) {
-      var acc = 0, x = xPos(i), top = null;
-      var segs = [];
+      var acc = 0, x = xPos(i), segs = [];
       series.forEach(function (sr) {
         var v = sr.values[yr] || 0;
         if (!v) return;
@@ -125,26 +128,17 @@
       segs.forEach(function (s, k) {
         var last = k === segs.length - 1;
         var r = last ? Math.min(4, bar / 2, s.h / 2) : 0;
-        var d = roundedTop(x, s.y, bar, s.h, r);
-        el("path", { d: d, fill: s.sr.color, "class": "seg", "stroke-width": gap, "data-key": s.sr.key }, g);
+        el("path", { d: roundedTop(x, s.y, bar, s.h, r), fill: s.sr.color, "class": "seg", "stroke-width": gap }, g);
       });
-      // one hit target per column (never a pinpoint), covering the whole band
-      var hit = el("rect", { x: m.left + i * band, y: m.top, width: band, height: ph, "class": "hit", tabindex: "0" }, g);
-      hit.setAttribute("aria-label", yr + ": " + acc + " moves");
+      // one pointer hit target per year covering the whole band; the table view is the keyboard route
+      var hit = el("rect", { x: m.left + i * band, y: m.top, width: band, height: ph, "class": "hit" }, g);
       var rows = segs.slice().reverse().map(function (s) { return { color: s.sr.color, value: s.v, label: s.sr.label }; });
       var title = segs.length ? String(yr) : yr + ": no moves";
-      function onEnter(ev) {
-        var p = ev.touches ? ev.touches[0] : ev;
-        showTip(p.clientX || 0, p.clientY || 0, title, rows, segs.length ? acc : undefined);
-      }
-      hit.addEventListener("pointermove", onEnter);
-      hit.addEventListener("pointerleave", hideTip);
-      hit.addEventListener("focus", function () {
-        var b = hit.getBoundingClientRect();
-        showTip(b.left + b.width / 2, b.top, title, rows, segs.length ? acc : undefined);
-      });
-      hit.addEventListener("blur", hideTip);
+      hit.addEventListener("pointerenter", function () { g.classList.add("is-hover"); });
+      hit.addEventListener("pointermove", function (ev) { showTip(ev.clientX, ev.clientY, title, rows, segs.length ? acc : undefined); });
+      hit.addEventListener("pointerleave", function () { g.classList.remove("is-hover"); hideTip(); });
     });
+    if (width > avail) container.scrollLeft = width;   // open at the latest years
     return svg;
   }
 
@@ -158,7 +152,7 @@
   }
 
   function niceStep(maxV, targetTicks) {
-    var raw = maxV / targetTicks;
+    var raw = Math.max(1, maxV / targetTicks);         // counts: never a fractional tick
     var pow = Math.pow(10, Math.floor(Math.log10(raw)));
     var candidates = [1, 2, 5, 10];
     for (var i = 0; i < candidates.length; i++) {
@@ -167,8 +161,8 @@
     return 10 * pow;
   }
 
-  function legend(container, series) {
-    var lg = html("div", "legend", null, container);
+  function legend(series) {
+    var lg = html("div", "legend");
     series.forEach(function (sr) {
       var key = html("span", "key", null, lg);
       html("i", null, null, key).style.setProperty("--c", sr.color);
@@ -202,14 +196,25 @@
   }
 
   // ---- series builders ---------------------------------------------------
-  function allClaimantsSeries() {
-    return CLAIMANTS.filter(function (c) { return selected[c]; }).map(function (c) {
+  function shownClaimants() { return CLAIMANTS.filter(function (c) { return state.selected[c]; }); }
+  function allByClaimant() {
+    return shownClaimants().map(function (c) {
       var vals = {};
       YEARS.forEach(function (y) { vals[y] = AGG.by_claimant[c].years[String(y)].total; });
       return { key: c, label: NAMES[c] || c, color: claimantColor(c), values: vals };
     });
   }
-  function byTypeSeries(code) {
+  function allByType() {
+    var shown = shownClaimants();
+    return TYPES.map(function (t) {
+      var vals = {};
+      YEARS.forEach(function (y) {
+        vals[y] = shown.reduce(function (s, c) { return s + AGG.by_claimant[c].years[String(y)][t]; }, 0);
+      });
+      return { key: t, label: TYPE_LABELS[t] || t, color: typeColor(t), values: vals };
+    });
+  }
+  function byType(code) {
     return TYPES.map(function (t) {
       var vals = {};
       YEARS.forEach(function (y) { vals[y] = AGG.by_claimant[code].years[String(y)][t]; });
@@ -217,74 +222,91 @@
     });
   }
 
-  // ---- render all --------------------------------------------------------
-  function renderAll() {
-    var all = document.querySelector('[data-chart="all-claimants"]');
-    if (all) {
-      var series = allClaimantsSeries();
-      var fig = all.closest(".figure");
-      var old = fig.querySelector(".legend"); if (old) old.remove();
-      if (!series.length) {
-        all.textContent = "";
-        html("p", "empty", "No claimants selected. Pick at least one above.", all);
-      } else {
-        stackedColumns(all, series, { ariaLabel: "Assertive moves per year by claimant" });
-        legend(fig, series).insertAdjacentElement("afterend", fig.querySelector(".table-view"));
-        var tv = fig.querySelector(".table-view");
-        table(tv, series, "Assertive moves per year by claimant");
-      }
+  // ---- figure rendering --------------------------------------------------
+  // A figure = .figure-head, .chart, (legend), .table-view. Projects state onto one figure.
+  function renderFigure(fig, series, opts) {
+    var chart = fig.querySelector(".chart");
+    var tv = fig.querySelector(".table-view");
+    var btn = fig.querySelector("[data-toggle-table]");
+    var old = fig.querySelector(".legend"); if (old) old.remove();
+    var tableOn = !!state.tableOn[fig.id];
+    chart.classList.toggle("is-hidden", tableOn);
+    tv.hidden = !tableOn;
+    if (btn) btn.setAttribute("aria-pressed", tableOn ? "true" : "false");
+    if (opts.empty) {
+      chart.textContent = "";
+      html("p", "empty", opts.empty, chart);
+      tv.textContent = "";
+      if (btn) btn.hidden = true;
+      return;
     }
-    document.querySelectorAll('[data-chart="by-type"]').forEach(function (c) {
-      var code = c.getAttribute("data-claimant");
-      var fig = c.closest(".figure");
-      fig.hidden = !selected[code];
+    if (btn) btn.hidden = false;
+    if (tableOn) {
+      chart.textContent = "";
+      table(tv, series, opts.ariaLabel);
+    } else {
+      stackedColumns(chart, series, opts);
+      chart.insertAdjacentElement("afterend", legend(series));
+      table(tv, series, opts.ariaLabel);     // kept current so the toggle is instant
+    }
+  }
+
+  function renderAll() {
+    var figAll = document.getElementById("fig-all");
+    if (figAll) {
+      var shown = shownClaimants();
+      var series = state.stackBy === "type" ? allByType() : allByClaimant();
+      var label = state.stackBy === "type" ? "Assertive moves per year by type, all shown claimants"
+                                           : "Assertive moves per year by claimant";
+      renderFigure(figAll, series, {
+        ariaLabel: label, describedBy: "fig-all-desc",
+        empty: shown.length ? null : "No claimants selected. Pick at least one above."
+      });
+    }
+    document.querySelectorAll('.figure[data-claimant]').forEach(function (fig) {
+      var code = fig.getAttribute("data-claimant");
+      fig.hidden = !state.selected[code];
       if (fig.hidden) return;
-      var series = byTypeSeries(code);
       var total = AGG.by_claimant[code].totals.total;
-      var old = fig.querySelector(".legend"); if (old) old.remove();
-      if (!total) {
-        c.textContent = "";
-        html("p", "empty", "No coded moves yet for " + (NAMES[code] || code) + ". Coding for this claimant is in progress.", c);
-        fig.querySelector(".table-view").textContent = "";
-        return;
-      }
-      stackedColumns(c, series, { small: true, ariaLabel: "Assertive moves per year by type, " + (NAMES[code] || code) });
-      legend(fig, series);
-      table(fig.querySelector(".table-view"), series, "Assertive moves per year by type, " + (NAMES[code] || code));
+      var name = NAMES[code] || code;
+      renderFigure(fig, byType(code), {
+        small: true, ariaLabel: "Assertive moves per year by type, " + name,
+        empty: total ? null : "No coded moves yet for " + name + ". Coding for this claimant is in progress."
+      });
     });
     var note = document.getElementById("filters-note");
     if (note) {
-      var shown = CLAIMANTS.filter(function (c) { return selected[c]; });
-      var sum = shown.reduce(function (s, c) { return s + AGG.by_claimant[c].totals.total; }, 0);
-      note.textContent = shown.length === CLAIMANTS.length
+      var sel = shownClaimants();
+      var sum = sel.reduce(function (s, c) { return s + AGG.by_claimant[c].totals.total; }, 0);
+      note.textContent = sel.length === CLAIMANTS.length
         ? sum + " moves across all claimants"
-        : sum + " moves across " + shown.length + " of " + CLAIMANTS.length + " claimants";
+        : sum + " moves across " + sel.length + " of " + CLAIMANTS.length + " claimants";
     }
   }
 
   // ---- controls ----------------------------------------------------------
   document.querySelectorAll("#claimant-filter input").forEach(function (box) {
-    box.addEventListener("change", function () {
-      selected[box.value] = box.checked;
-      renderAll();
-    });
+    box.addEventListener("change", function () { state.selected[box.value] = box.checked; renderAll(); });
+  });
+  document.querySelectorAll("#stack-by input").forEach(function (radio) {
+    radio.addEventListener("change", function () { if (radio.checked) { state.stackBy = radio.value; renderAll(); } });
   });
   document.querySelectorAll("[data-toggle-table]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var fig = document.getElementById(btn.getAttribute("data-toggle-table"));
-      var on = btn.getAttribute("aria-pressed") !== "true";
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.textContent = on ? "Chart" : "Table";
-      fig.querySelector(".chart").classList.toggle("is-hidden", on);
-      var lg = fig.querySelector(".legend"); if (lg) lg.hidden = on;
-      fig.querySelector(".table-view").hidden = !on;
+      var id = btn.getAttribute("data-toggle-table");
+      state.tableOn[id] = !state.tableOn[id];
+      renderAll();
     });
   });
 
   var resizeTimer = null;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(renderAll, 120);
+    resizeTimer = setTimeout(function () {
+      if (window.innerWidth === state.width) return;   // height-only changes (mobile URL bar) need no re-render
+      state.width = window.innerWidth;
+      renderAll();
+    }, 120);
   });
   document.addEventListener("scroll", hideTip, { passive: true });
 
