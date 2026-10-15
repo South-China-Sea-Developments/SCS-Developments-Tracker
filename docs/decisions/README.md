@@ -8,7 +8,7 @@ The open decisions between here and a working, automatically updated database, o
 | 02 | Unit of analysis for new data | 01 | settled → ADR 0002 |
 | 03 | Claimant scope | 01 | settled |
 | 04 | Collection method and the automation boundary | 01, 02 | settled → ADR 0003 |
-| 05 | Canonical storage | 04 | open |
+| 05 | Canonical storage | 04 | settled → ADR 0004 |
 | 06 | Public front end | 05 | open |
 | 07 | Governance: licence, versioning, attribution, author relationship | 01 | open |
 | 08 | Operations: where scheduled runs happen, who maintains | 04, 05 | open |
