@@ -7,7 +7,7 @@ The open decisions between here and a working, automatically updated database, o
 | 01 | Coding scheme fidelity | — | settled → ADR 0001 |
 | 02 | Unit of analysis for new data | 01 | settled → ADR 0002 |
 | 03 | Claimant scope | 01 | settled |
-| 04 | Collection method and the automation boundary | 01, 02 | open |
+| 04 | Collection method and the automation boundary | 01, 02 | settled → ADR 0003 |
 | 05 | Canonical storage | 04 | open |
 | 06 | Public front end | 05 | open |
 | 07 | Governance: licence, versioning, attribution, author relationship | 01 | open |

@@ -4,4 +4,4 @@
 
 **Question.** How are candidate events found, how do they become coded moves, and which steps are automated versus human?
 
-**Status:** open.
+**Settled 2026-10-15:** harvest and propose, humans decide. See ADR 0003.
