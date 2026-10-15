@@ -272,9 +272,9 @@ def citation(version: str, tag: str, date: str, build_date: str) -> dict:
             f"in the South China Sea, 1970 onward. Dataset version {version} ({accessed}). {schema.REPO_URL}. "
             f"A continuation of Chubb, A. (2022), Maritime Assertiveness Time Series (MATS 1.02).")
     key = "scs_developments_tracker_" + re.sub(r"[^0-9a-z]+", "_", version.lower()).strip("_")
-    bibtex = (f"@dataset{{{key},\n  author = {{South-China-Sea-Developments project and M., Angelo}},\n"
+    bibtex = (f"@misc{{{key},\n  author = {{{{South-China-Sea-Developments project}} and M., Angelo}},\n"
               f"  title = {{SCS Developments Tracker: assertive moves by claimant states in the South China Sea, 1970 onward}},\n"
-              f"  year = {{{year}}},\n  version = {{{version}}},\n  url = {{{schema.REPO_URL}}},\n"
+              f"  year = {{{year}}},\n  howpublished = {{Dataset, version {version}, \\url{{{schema.REPO_URL}}}}},\n"
               f"  note = {{A continuation of Andrew Chubb's Maritime Assertiveness Time Series (MATS 1.02); cite Chubb (2021, 2022) alongside}}\n}}")
     return {"text": text, "bibtex": bibtex}
 
@@ -285,9 +285,9 @@ def release_context(root: Path, data_dir: Path, out_dir: Path, build_date: str) 
     tag = release.latest_tag(root)
     if tag:
         m = release.build_assets(root, tag, out_dir / "downloads")
-        notes = release.changelog_section(tag, root / "CHANGELOG.md")
+        notes = release.changelog_section(tag, text=release.file_at(root, tag, "CHANGELOG.md").decode("utf-8"))
     else:
-        m = release.working_assets(data_dir, out_dir / "downloads", date=build_date + "T00:00:00+00:00")
+        m = release.working_assets(data_dir, out_dir / "downloads", date=build_date + "T00:00:00+00:00", root=root)
         notes = ""
     for f in m["files"]:
         f["what"] = FILE_WHAT.get(f["name"], "")
@@ -410,6 +410,11 @@ def main(argv=None) -> None:
     p.add_argument("--out", type=Path, default=ROOT / "web" / "dist")
     p.add_argument("--build-date", default=None)
     a = p.parse_args(argv)
+    if a.build_date:
+        try:
+            dt.date.fromisoformat(a.build_date)
+        except ValueError:
+            p.error(f"--build-date {a.build_date!r} is not YYYY-MM-DD")
     agg = build(a.data, a.out, a.build_date)
     print(f"built {a.out}: {agg['n_moves']} moves, {agg['years'][0]}-{agg['years'][-1]}, "
           f"{len(list((a.out / 'cases').glob('*.html')))} case pages")

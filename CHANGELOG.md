@@ -1,6 +1,6 @@
 # Changelog
 
-One section per release tag, newest first. The section's body becomes the GitHub release notes and the "What changed" text on the Downloads page. Dataset versions follow `MAJOR.MINOR.PATCH`: MAJOR for a change to the coding scheme or the unit of analysis (none planned: ADR 0001, 0002), MINOR for new coverage (years, claimants), PATCH for corrections. The `-dev` suffix marks a dataset still being built.
+One section per release tag, newest first. The section's body becomes the GitHub release notes and the "What changed" text on the Downloads page, which renders only paragraphs, flat `- ` bullets and `code` spans; keep to those. Dataset versions follow `MAJOR.MINOR.PATCH`: MAJOR for a change to the coding scheme or the unit of analysis (none planned: ADR 0001, 0002), MINOR for new coverage (years, claimants), PATCH for corrections. The `-dev` suffix marks a dataset still being built.
 
 ## v2.0.0-dev — 2026-10-15
 

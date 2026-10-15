@@ -13,7 +13,7 @@
 
 <section class="prose downloads">
   <h2>Files</h2>
-  <p><a class="download-all" href="downloads/{{ release.zip.name }}" download>Everything as one zip</a> — {{ release.zip.name }}, {{ release.zip.size_label }}, SHA-256 <code class="sum">{{ release.zip.sha256 }}</code></p>
+  <p><a class="download-all" href="downloads/{{ release.zip.name }}" download>Everything as one zip</a> — {{ release.zip.name }}, {{ release.zip.size_label }} (stored uncompressed, so the same bytes wherever it is built), SHA-256 <code class="sum">{{ release.zip.sha256 }}</code></p>
   <table class="data downloads-table">
     <thead><tr><th scope="col">File</th><th scope="col">What it holds</th><th scope="col" class="num">Size</th><th scope="col">SHA-256</th></tr></thead>
     <tbody>
@@ -22,7 +22,7 @@
     {% endfor %}
     </tbody>
   </table>
-  <p>CSV files are UTF-8 with a header row; column definitions are in <a href="{{ meta.repo_url }}/blob/main/data/README.md">data/README.md</a>. The sub-region polygons are WGS84 GeoJSON. To check a file: <code>sha256sum -c SHA256SUMS</code> in the folder you unzipped.</p>
+  <p>CSV files are UTF-8 with a header row; column definitions are in <code>COLUMNS.md</code> (<a href="{{ meta.repo_url }}/blob/{{ release.tag if release.tag != 'unreleased' else 'main' }}/data/README.md">data/README.md</a> at this version), the coding rules in Chubb's appendix, both included. The sub-region polygons are WGS84 GeoJSON. To check a file: <code>sha256sum -c SHA256SUMS</code> in the folder you unzipped.</p>
 
   {% if release.notes %}
   <h2>What changed in {{ release.tag }}</h2>
