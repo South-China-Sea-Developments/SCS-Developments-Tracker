@@ -39,7 +39,7 @@ def test_known_counts_appear_in_aggregates(dist):
 
 
 def test_bundle_is_self_contained_and_relative(dist):
-    for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html"):
+    for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html", "downloads.html", "map.html"):
         html = (dist / page).read_text(encoding="utf-8")
         # every src/href that is not an external link is relative and resolves from the page's own folder
         for attr, target in re.findall(r'(src|href)="([^"]+)"', html):
@@ -76,7 +76,7 @@ def _open(browser, dist, page_name, viewport=(1280, 900), color_scheme="light"):
     return page, problems
 
 
-@pytest.mark.parametrize("page_name", ["index.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html"])
+@pytest.mark.parametrize("page_name", ["index.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html", "downloads.html"])
 @pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
 def test_pages_render_without_errors(browser, dist, page_name, viewport, scheme):
     page, problems = _open(browser, dist, page_name, viewport, scheme)

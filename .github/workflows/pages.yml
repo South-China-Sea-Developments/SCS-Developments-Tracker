@@ -3,6 +3,7 @@ name: publish site
 on:
   push:
     branches: [main]
+    tags: ["v[0-9]*"]   # a release tag refreshes the Downloads page
   workflow_dispatch:
 
 permissions:

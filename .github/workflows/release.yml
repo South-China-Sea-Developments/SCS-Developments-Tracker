@@ -1,0 +1,38 @@
+name: release
+
+# A pushed tag vX.Y.Z[-suffix] becomes a GitHub Release holding the dataset files at that tag, with
+# checksums, a citation file and one zip (docs/releases.md). The validator must pass at the tag.
+
+on:
+  push:
+    tags: ["v[0-9]*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Validate the canonical files at the tag
+        run: python -m pipeline.validate
+      - name: Build the release assets
+        run: |
+          python -m pipeline.release assets --tag "$GITHUB_REF_NAME" --out release-assets
+          python -m pipeline.release notes --tag "$GITHUB_REF_NAME" > release-notes.md
+          ls -l release-assets
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PRE=""; case "$GITHUB_REF_NAME" in *-*) PRE="--prerelease";; esac
+          gh release create "$GITHUB_REF_NAME" --title "Dataset $GITHUB_REF_NAME" --notes-file release-notes.md $PRE \
+            release-assets/*.csv release-assets/*.geojson release-assets/CITATION.cff release-assets/README.txt \
+            release-assets/SHA256SUMS release-assets/*.zip release-assets/manifest.json

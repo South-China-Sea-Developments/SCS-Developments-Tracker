@@ -11,13 +11,14 @@ import argparse
 import csv
 import datetime as dt
 import json
+import re
 import shutil
 import subprocess
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import schema
+from pipeline import release, schema
 from pipeline.load_mats import SEED_RUN
 from web.geo import VIEW_H, VIEW_W, subregion_paths
 
@@ -219,15 +220,94 @@ def slim_geojson(gj: dict) -> dict:
     return {"type": "FeatureCollection", "features": sorted(feats, key=lambda f: f["properties"]["n"])}
 
 
-def git_describe() -> str:
+FILE_WHAT = {
+    "claimants.csv": "Claimant codes and names.",
+    "moves.csv": "One row per move: Type, Domain, Issue and sub-region flags, dyads, description, ongoing-through, provenance.",
+    "events.csv": "One row per event: dates, place, summary, status, machine suggestions, review and harvest provenance.",
+    "sources.csv": "One row per source per event: URL, title, publisher, date, excerpt.",
+    "corrections.csv": "Documented corrections to MATS-era rows.",
+    "mavd_subregions.geojson": "The ten MAVD sub-region polygons (WGS84).",
+    "gazetteer.csv": "Named features with coordinates and sub-region, from Wikidata.",
+    "gazetteer_extra.csv": "The project's additions and corrections to the gazetteer.",
+    "CITATION.cff": "Machine-readable citation for this version.",
+    "README.txt": "What the files are and how to cite.",
+    "SHA256SUMS": "Checksums of every file here.",
+}
+
+
+def size_label(n: int) -> str:
+    return f"{n / 1_000_000:.1f} MB" if n >= 1_000_000 else f"{n / 1000:.0f} KB" if n >= 1000 else f"{n} B"
+
+
+def notes_html(md: str) -> str:
+    """CHANGELOG prose (paragraphs, '- ' bullets, `code`) as HTML; anything else is left as text."""
+    import html as h
+    def inline(t):
+        return re.sub(r"`([^`]+)`", lambda m: "<code>" + m.group(1) + "</code>", h.escape(t))
+    out, para, items = [], [], []
+    def flush():
+        if para:
+            out.append("<p>" + inline(" ".join(para)) + "</p>"); para.clear()
+        if items:
+            out.append("<ul>" + "".join("<li>" + inline(i) + "</li>" for i in items) + "</ul>"); items.clear()
+    for line in md.splitlines():
+        if line.startswith("- "):
+            if para:
+                flush()
+            items.append(line[2:].strip())
+        elif not line.strip():
+            flush()
+        else:
+            if items:
+                flush()
+            para.append(line.strip())
+    flush()
+    return "\n".join(out)
+
+
+def citation(version: str, tag: str, date: str, build_date: str) -> dict:
+    year = date[:4]
+    accessed = f"accessed {build_date}" if tag == "unreleased" else f"released {date[:10]}"
+    text = (f"South-China-Sea-Developments project (Angelo M., maintainer) ({year}). SCS Developments Tracker: assertive moves by claimant states "
+            f"in the South China Sea, 1970 onward. Dataset version {version} ({accessed}). {schema.REPO_URL}. "
+            f"A continuation of Chubb, A. (2022), Maritime Assertiveness Time Series (MATS 1.02).")
+    key = "scs_developments_tracker_" + re.sub(r"[^0-9a-z]+", "_", version.lower()).strip("_")
+    bibtex = (f"@dataset{{{key},\n  author = {{South-China-Sea-Developments project and M., Angelo}},\n"
+              f"  title = {{SCS Developments Tracker: assertive moves by claimant states in the South China Sea, 1970 onward}},\n"
+              f"  year = {{{year}}},\n  version = {{{version}}},\n  url = {{{schema.REPO_URL}}},\n"
+              f"  note = {{A continuation of Andrew Chubb's Maritime Assertiveness Time Series (MATS 1.02); cite Chubb (2021, 2022) alongside}}\n}}")
+    return {"text": text, "bibtex": bibtex}
+
+
+def release_context(root: Path, data_dir: Path, out_dir: Path, build_date: str) -> dict:
+    """The downloads/ folder and what the Downloads page says about it: the latest reachable tag's
+    files when there is one, else the working files labelled unreleased."""
+    tag = release.latest_tag(root)
+    if tag:
+        m = release.build_assets(root, tag, out_dir / "downloads")
+        notes = release.changelog_section(tag, root / "CHANGELOG.md")
+    else:
+        m = release.working_assets(data_dir, out_dir / "downloads", date=build_date + "T00:00:00+00:00")
+        notes = ""
+    for f in m["files"]:
+        f["what"] = FILE_WHAT.get(f["name"], "")
+        f["size_label"] = size_label(f["bytes"])
+    m["zip"]["size_label"] = size_label(m["zip"]["bytes"])
+    m["notes"] = notes
+    m["notes_html"] = notes_html(notes)
+    m["prerelease"] = "-" in m["tag"]
+    return m
+
+
+def git_describe(root: Path = ROOT) -> str:
     try:
-        return subprocess.run(["git", "describe", "--always", "--dirty"], cwd=ROOT, capture_output=True,
+        return subprocess.run(["git", "describe", "--always", "--dirty"], cwd=root, capture_output=True,
                               text=True, check=True).stdout.strip()
     except Exception:  # not a git checkout (e.g. a downloaded bundle)
         return "unversioned"
 
 
-def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
+def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Path = ROOT) -> dict:
     moves = read_csv(data_dir / "moves.csv")
     claimants = read_csv(data_dir / "claimants.csv")
     events = read_csv(data_dir / "events.csv")
@@ -253,7 +333,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     agg["coded_by_chubb"] = sum(1 for m in moves if m["coded_by"] == "chubb" and m["status"] == "accepted")
     meta = {
         "build_date": build_date or dt.date.today().isoformat(),
-        "version": git_describe(),
+        "version": git_describe(repo),
         "dataset_version": schema.DATASET_VERSION,
         "repo_url": schema.REPO_URL,
         "n_moves": agg["n_moves"],
@@ -294,8 +374,11 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
 
+    rel = release_context(repo, data_dir, out_dir, meta["build_date"])
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]))
     ctx = {
+        "release": rel,
+        "citation": citation(rel["version"], rel["tag"], rel["date"], meta["build_date"]),
         "meta": meta,
         "agg_json": json.dumps(agg, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>
         "claimants": claimants,
@@ -309,7 +392,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None) -> dict:
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
     pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html",
-             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html", "map.html": "map.html"}
+             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html", "map.html": "map.html",
+             "downloads.html": "downloads.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
         (out_dir / out_name).write_text(html, encoding="utf-8")
