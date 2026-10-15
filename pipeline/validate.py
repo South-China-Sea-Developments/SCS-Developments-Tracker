@@ -16,6 +16,7 @@ Rules (docs/spec.md, "Validator"):
   (CODE also covers corrections.csv rows: known move, known field.)
 
 The comparability check reads the raw inputs with its own small reader, independent of the loader.
+aggregates() computes the chart numbers independently of the site build (seam 3).
 
 Usage: python -m pipeline.validate [--data DIR] [--xlsx FILE] [--mavd FILE]
 """
@@ -215,6 +216,38 @@ def comparability(moves: list[dict], corrections: list[dict], xlsx_path: Path,
                 if chubb[mid][col] != want:
                     errors.append(f"COMPARABILITY: {mid}.{col} differs from the MAVD table and no correction is documented")
     return errors
+
+
+# ---------------------------------------------------------------------------
+# Aggregates: the numbers the site's charts draw, computed here independently of
+# the site build so a test can hold the two to the same answer (seam 3).
+
+def aggregates(moves: list[dict]) -> dict:
+    """Counts of accepted moves per claimant, year and Type; years run 1970..latest accepted move."""
+    accepted = [m for m in moves if m["status"] == "accepted"]
+    last = max((int(m["year"]) for m in accepted), default=1970)
+    years = list(range(1970, max(last, 1970) + 1))
+    out = {"years": years, "types": list(schema.TYPE_FLAGS), "claimants": list(schema.CLAIMANT_CODES),
+           "n_moves": len(accepted), "n_pending": sum(1 for m in moves if m["status"] == "pending"),
+           "by_claimant": {}}
+    for c in schema.CLAIMANT_CODES:
+        per_year = {}
+        for y in years:
+            row = {t: 0 for t in schema.TYPE_FLAGS}
+            row["total"] = 0
+            per_year[str(y)] = row
+        for m in accepted:
+            if m["claimant"] != c:
+                continue
+            row = per_year[m["year"]]
+            row["total"] += 1
+            for t in schema.TYPE_FLAGS:
+                if m[t] == "1":
+                    row[t] += 1
+        totals = {t: sum(r[t] for r in per_year.values()) for t in schema.TYPE_FLAGS}
+        totals["total"] = sum(r["total"] for r in per_year.values())
+        out["by_claimant"][c] = {"years": per_year, "totals": totals}
+    return out
 
 
 def main(argv=None) -> int:

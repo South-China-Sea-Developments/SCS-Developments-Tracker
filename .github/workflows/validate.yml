@@ -14,7 +14,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -e ".[dev]"
-      - name: Unit tests (seam 1)
+      - name: Install a browser for the site render tests
+        run: python -m playwright install --with-deps chromium
+      - name: Tests at the three seams
         run: python -m pytest
       - name: Validate canonical files
         run: python -m pipeline.validate

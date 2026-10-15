@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="lede">
+  <h1>Who pressed their claim in the South China Sea, and when</h1>
+  <p class="lede-text">Each bar is a year; each segment is a <dfn>move</dfn>: a step up in one claimant's assertiveness compared with the year before, coded by type, domain, issue and sub-region. {{ meta.n_moves }} moves so far, {{ meta.first_year }}–{{ meta.last_year }}.{% if meta.n_pending %} {% if meta.n_pending == 1 %}One further case awaits{% else %}{{ meta.n_pending }} further cases await{% endif %} the author's confirmation and {% if meta.n_pending == 1 %}is{% else %}are{% endif %} not counted.{% endif %}</p>
+</section>
+
+<section class="filters" aria-label="Filters">
+  <div class="chips" id="claimant-filter" role="group" aria-label="Claimants shown">
+    {% for c in claimants %}
+    <label class="chip" data-code="{{ c.code }}">
+      <input type="checkbox" value="{{ c.code }}" checked>
+      <span class="swatch" aria-hidden="true"></span>
+      <span>{{ c.name }}</span>
+    </label>
+    {% endfor %}
+  </div>
+  <p class="filters-note" id="filters-note"></p>
+</section>
+
+<section class="figure" id="fig-all">
+  <div class="figure-head">
+    <h2>Assertive moves by year, all claimants</h2>
+    <div class="figure-controls">
+      <fieldset class="segmented" id="stack-by">
+        <legend class="sr-only">Stack columns by</legend>
+        <label><input type="radio" name="stack" value="claimant" checked><span>By claimant</span></label>
+        <label><input type="radio" name="stack" value="type"><span>By type</span></label>
+      </fieldset>
+      <button class="toggle" type="button" data-toggle-table="fig-all" aria-pressed="false">Table</button>
+    </div>
+  </div>
+  <div class="chart" data-chart="all-claimants"></div>
+  <p class="sr-only" id="fig-all-desc">Stacked column chart of moves per year, stacked by claimant or by type. The same numbers are in the table view.</p>
+  <div class="table-view" hidden></div>
+</section>
+
+<section class="figure-grid" id="per-claimant">
+  <h2>By claimant and type of move</h2>
+  <p class="figure-note">Types are ordered by intensity, from declarative statements to the use of force. Pale to dark follows that order.</p>
+  <div class="grid">
+    {% for c in claimants %}
+    <section class="figure small" data-claimant="{{ c.code }}" id="fig-{{ c.code }}">
+      <div class="figure-head">
+        <h3>{{ c.name }}</h3>
+        <button class="toggle" type="button" data-toggle-table="fig-{{ c.code }}" aria-pressed="false">Table</button>
+      </div>
+      <div class="chart" data-chart="by-type" data-claimant="{{ c.code }}"></div>
+      <div class="table-view" hidden></div>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="types">
+  <h2>The four types</h2>
+  <dl class="type-list">
+    {% for key, label, blurb in types %}
+    <div class="type"><dt><span class="type-swatch" data-type="{{ key }}" aria-hidden="true"></span>{{ label }}</dt><dd>{{ blurb }}</dd></div>
+    {% endfor %}
+  </dl>
+</section>
+{% endblock %}

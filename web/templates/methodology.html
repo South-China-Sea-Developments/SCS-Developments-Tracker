@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Methodology — SCS Developments Tracker{% endblock %}
+{% block content %}
+<article class="prose">
+<h1>Methodology and credits</h1>
+
+<p>The SCS Developments Tracker continues Andrew Chubb's <em>Maritime Assertiveness Time Series</em> (MATS). MATS 1.0 coded assertive moves by China, Vietnam and the Philippines in the South China Sea from 1970 to 2015. This project keeps that coding scheme unchanged, carries the series forward to the present, extends it to Malaysia, Indonesia and Taiwan, and adds an event layer beneath each move with dates, locations and sources.</p>
+
+<h2>What counts as a move</h2>
+<p>A move is an intensification of a claimant's assertiveness compared with the previous calendar year, shown by one of three criteria: qualitative novelty, increased frequency, or expanded geographic scope. An action that merely continues the previous year's behaviour at the same level is not a new move; it is covered by the earlier move's estimated duration. Only non-cooperative behaviour is coded; conciliatory actions are deliberately excluded.</p>
+
+<h2>How a move is coded</h2>
+<dl class="defs">
+  {% for key, label, blurb in types %}
+  <dt>{{ label }}</dt><dd>{{ blurb }}</dd>
+  {% endfor %}
+</dl>
+<p>Each move also records its domains (domestic, diplomatic, physical), the issues at stake (military, administrative, energy, fisheries, politics), the dyads involved, the sub-regions concerned, and the estimated last year the behaviour continued.</p>
+
+<h2>Sub-regions</h2>
+<p>Ten zones, numbered as in MATS: {% for n, name in subregions %}{{ n }} {{ name }}{% if not loop.last %}; {% endif %}{% endfor %}.</p>
+
+<h2>Where the data come from</h2>
+<p>The 1970–2015 moves for China, Vietnam and the Philippines are Chubb's MATS 1.02, loaded unchanged ({{ meta.n_moves }} accepted moves at this build{% if meta.n_pending %}, plus {{ meta.n_pending }} pending the author's confirmation{% endif %}). The full methodology, including source lists, verification practice and inter-coder checks, is in the <a href="https://doi.org/10.7910/DVN/3Y7NRU">appendix to Chubb (2021)</a>, released under CC0 and kept as the project codebook in <a href="{{ meta.repo_url }}/tree/main/docs/codebook">the repository</a>.</p>
+<p>For later years and for the additional claimants, scheduled runs harvest a documented list of sources and propose candidate events; a human coder decides what enters the dataset. Every machine suggestion is kept beside the coder's final decision so that agreement can be measured. Project-coded moves are labelled as such wherever they appear.</p>
+<p>Every change to the dataset is a reviewed, versioned commit in the <a href="{{ meta.repo_url }}">public repository</a>, and an automatic check refuses any change that would alter the 1970–2015 figures for the original three claimants.</p>
+
+<h2 id="cite">How to cite</h2>
+<p>Any use of these data must cite one or more of:</p>
+<ul>
+  <li>Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea: China, the Philippines, and Vietnam, 1970–2015</em> (Washington, D.C.: National Bureau of Asian Research).</li>
+  <li>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121. <a href="https://doi.org/10.1162/isec_a_00400">doi:10.1162/isec_a_00400</a></li>
+  <li>Chubb, A. (2022), “Maritime Assertiveness Time Series (MATS 1.0)” dataset, version 1.02.</li>
+</ul>
+<p>For this continuation: SCS Developments Tracker, dataset version {{ meta.dataset_version }}, build {{ meta.version }} ({{ meta.build_date }}), South-China-Sea-Developments, {{ meta.repo_url }}. A tagged release and a downloads page will follow.</p>
+
+<h2>Credits</h2>
+<p>Original dataset and coding scheme: Andrew Chubb. Original visualisation: the Maritime Assertiveness Visualization Dashboard (National Bureau of Asian Research, 2023). Continuation and this site: Angelo M. and the South-China-Sea-Developments project. Typeface: Instrument Sans (SIL Open Font License).</p>
+</article>
+{% endblock %}

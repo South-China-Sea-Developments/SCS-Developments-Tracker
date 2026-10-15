@@ -3,10 +3,10 @@ name = "scs-developments-tracker"
 version = "2.0.0.dev0"
 description = "Pipeline, validator and site build for the SCS Developments Tracker (MATS continuation)"
 requires-python = ">=3.11"
-dependencies = ["openpyxl>=3.1"]
+dependencies = ["openpyxl>=3.1", "jinja2>=3.1"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "playwright>=1.45"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -17,4 +17,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["pipeline"]
+packages = ["pipeline", "web"]
+
+[tool.setuptools.package-data]
+web = ["templates/*", "static/*", "static/fonts/*"]
