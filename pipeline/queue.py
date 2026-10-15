@@ -23,6 +23,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -32,7 +33,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pipeline import schema
 
 TEMPLATES = Path(__file__).resolve().parent / "templates"
-REPO = "South-China-Sea-Developments/SCS-Developments-Tracker"
+REPO = os.environ.get("GITHUB_REPOSITORY") or "South-China-Sea-Developments/SCS-Developments-Tracker"
 
 
 def repo_root(start: Path | None = None) -> Path:

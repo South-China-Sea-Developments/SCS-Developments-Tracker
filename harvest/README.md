@@ -5,7 +5,8 @@ Run output lives here and is not committed (see `.gitignore`): `captures/<run_id
 `recordings/<run_id>/` (the model's responses, replayable offline), `state.json` (guids already seen).
 
 The source registry is `pipeline/sources.json`; the extraction prompt is `pipeline/prompts/extract_events.md`.
-`state.json` (guids already captured) is local for now; ticket 07 decides how it travels between scheduled runs. Until then, use `--since` to bound a run.
+`state.json` (guids already captured) is restored from and saved to the `harvest-state` branch by the scheduled run (`python -m pipeline.ops state pull|push`); a local run can do the same, or use `--since` to bound itself.
 
-Commands: `python -m pipeline.harvest probe|fetch|extract|run` (`--help` on each). A live run from CI: the
-"harvest (manual)" workflow, which needs the `ANTHROPIC_API_KEY` repository secret.
+Commands: `python -m pipeline.harvest probe|fetch|extract|run` (`--help` on each). The scheduled run is the
+"harvest" workflow (Mondays, or dispatch it by hand, with a dry-run option); it needs the `ANTHROPIC_API_KEY` repository secret, and a `HARVEST_TOKEN` secret for the validator to run on the pull requests it opens (decision 08).
+Operations around it (state branch, failure issue, reminders): `python -m pipeline.ops` (`--help`).

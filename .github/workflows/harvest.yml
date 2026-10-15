@@ -1,0 +1,141 @@
+name: harvest
+
+# The scheduled run (ticket 07). Every Monday, and on demand: restore the harvest state, fetch the
+# active sources, extract candidate events with the language model, open the review pull request,
+# save the state, remind the maintainer of review pull requests older than seven days. A failed run
+# opens one issue (further failures comment on it; the next success closes it). The extractor's key
+# is the ANTHROPIC_API_KEY repository secret; nothing here reads it except the extract step.
+#
+# Dry run (workflow_dispatch with dry_run = true): fetches the live sources, but extracts the fixture
+# captures with the recorded responses; `queue open` stops before the push (branch and commit only);
+# the state is not saved; the issue and reminder steps read GitHub but print their writes instead
+# of making them. No extractor budget is spent. What a dry run does not exercise: the branch push,
+# the pull request creation and the state push (the token's write side); the first real run shows those.
+#
+# Tokens: GITHUB_TOKEN can open the pull request, but a pull request it opens does not trigger the
+# validate workflow until a person pushes to it. Add a fine-grained HARVEST_TOKEN secret (contents
+# and pull requests: write) to have the validator run on the review pull request from the start.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run: live fetch, recorded extractor, no pull request, no state, no posts"
+        type: boolean
+        default: false
+      since:
+        description: "Only items published on or after this date (YYYY-MM-DD); empty = everything new"
+        default: ""
+      only:
+        description: "Comma-separated source ids to restrict the run (empty = all active)"
+        default: ""
+      model:
+        description: "Extractor model"
+        default: "claude-sonnet-5-5"
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: harvest
+  cancel-in-progress: false
+
+env:
+  MAINTAINER: Angelo-M-SCS
+  DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+  SINCE: ${{ inputs.since }}
+  ONLY: ${{ inputs.only }}
+  MODEL: ${{ inputs.model || 'claude-sonnet-5-5' }}
+  GH_TOKEN: ${{ secrets.HARVEST_TOKEN || secrets.GITHUB_TOKEN }}
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.HARVEST_TOKEN || github.token }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[llm]"
+      - name: Run id and git identity
+        run: |
+          echo "RUN_ID=$(date -u +%Y%m%dT%H%M)" >> "$GITHUB_ENV"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Restore harvest state
+        run: python -m pipeline.ops state pull
+      - name: Probe sources
+        run: python -m pipeline.harvest probe || true
+      - name: Fetch and extract
+        if: env.DRY_RUN == ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m pipeline.harvest run --run-id "$RUN_ID" --since "$SINCE" --only "$ONLY" \
+            --model "$MODEL" --record --recordings "harvest/recordings/$RUN_ID"
+      - name: Fetch and extract (dry run, recorded extractor)
+        if: env.DRY_RUN != ''
+        run: |
+          python -m pipeline.harvest fetch --out "harvest/captures/$RUN_ID" --since "$SINCE" --only "$ONLY" --state harvest/state.json
+          python -m pipeline.harvest extract --captures tests/fixtures/harvest/captures --out "harvest/runs/$RUN_ID" \
+            --recordings tests/fixtures/harvest/recordings --run-id "$RUN_ID"
+      - name: Open the review pull request
+        run: python -m pipeline.queue open --run "harvest/runs/$RUN_ID" ${DRY_RUN:+--no-push}
+      - name: Save harvest state
+        if: env.DRY_RUN == ''
+        run: python -m pipeline.ops state push --run-id "$RUN_ID" --report "harvest/runs/$RUN_ID/run.json" --captures "harvest/captures/$RUN_ID"
+      - name: Close the failure issue if one is open
+        run: python -m pipeline.ops failure-issue --resolved --run-id "$RUN_ID" --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" ${DRY_RUN:+--dry-run}
+      - name: Remind the maintainer of old review pull requests
+        if: ${{ !cancelled() }}
+        run: python -m pipeline.ops remind --maintainer "$MAINTAINER" --days 7 ${DRY_RUN:+--dry-run}
+      - name: Summary
+        if: always()
+        run: |
+          python - <<'PY' > harvest/summary.md
+          import json, os
+          rid = os.environ.get("RUN_ID", "?")
+          print(f"## Harvest {rid}" + (" (dry run)" if os.environ.get("DRY_RUN") else ""))
+          try:
+              f = json.load(open(f"harvest/captures/{rid}/fetch-report.json"))
+              print("### Fetch\n| source | listed | captured | skipped | document errors | errors |\n|---|---|---|---|---|---|")
+              for s in f["sources"]:
+                  print(f"| {s['source']} | {s['listed']} | {s['captured']} | {s['skipped']} | {s['document_errors']} | {'; '.join(s['errors'])[:80]} |")
+          except FileNotFoundError:
+              print("fetch report missing")
+          try:
+              r = json.load(open(f"harvest/runs/{rid}/run.json"))
+              cost = f"${r['estimated_cost_usd']:.2f}" if r["estimated_cost_usd"] is not None else "unknown"
+              print(f"### Extract\n- documents: {r['documents']}\n- candidates: {r['candidates']} (possible duplicates {r['duplicates']})")
+              print(f"- tokens in/out: {r['input_tokens']}/{r['output_tokens']}; estimated cost: {cost}")
+              print(f"- extractor: {r['extractor']}\n- failures: {len(r['failures'])}\n\n| source | documents | candidates | failures |\n|---|---|---|---|")
+              for sid, s in r["by_source"].items():
+                  print(f"| {sid} | {s['documents']} | {s['candidates']} | {s['failures']} |")
+          except FileNotFoundError:
+              print("run report missing")
+          PY
+          cat harvest/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open or update the failure issue
+        # not success(): a run cancelled by the 90-minute timeout is a failure too
+        if: ${{ !success() }}
+        run: |
+          python -m pipeline.ops failure-issue --run-id "${RUN_ID:-$GITHUB_RUN_ID}" --status "${{ job.status }}" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --detail "$(cat harvest/summary.md 2>/dev/null || echo 'no summary')" ${DRY_RUN:+--dry-run}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: harvest-${{ env.RUN_ID }}
+          path: |
+            harvest/captures/${{ env.RUN_ID }}
+            harvest/runs/${{ env.RUN_ID }}
+            harvest/recordings/${{ env.RUN_ID }}
+            harvest/state.json
+            harvest/summary.md
