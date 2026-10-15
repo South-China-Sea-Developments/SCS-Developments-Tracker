@@ -153,6 +153,9 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
     move_ids = {m["move_id"] for m in moves}
     move_by_id = {m["move_id"]: m for m in moves}
     events = tables["events"]
+    polygons = data_dir / "reference" / "mavd_subregions.geojson"
+    if not polygons.exists():
+        polygons = gazetteer.SUBREGIONS
     for e in events:
         eid = e["event_id"]
         if e["status"] not in schema.EVENT_STATUS:
@@ -196,8 +199,10 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
                     coords[col] = v
         if e["location_precision"] == "point" and len(coords) < 2:
             errors.append(f"LOCATION: events {eid} is a point but lacks coordinates")
+        if bool(e["lat"]) != bool(e["lon"]):
+            errors.append(f"LOCATION: events {eid} has one coordinate without the other")
         if len(coords) == 2 and e["subregion"]:
-            actual = gazetteer.subregion_of(coords["lat"], coords["lon"])
+            actual = gazetteer.subregion_of(coords["lat"], coords["lon"], polygons)
             if actual and str(actual) != e["subregion"]:
                 errors.append(f"LOCATION: events {eid} says subregion {e['subregion']} but ({e['lat']}, {e['lon']}) lies in {actual}")
 

@@ -60,7 +60,7 @@
     <div class="head">
       <h2 id="h-{{ e.event_id }}" style="font-size:1.05rem;margin:0">{{ it.claimant_name }}</h2>
       <span>{{ e.date_start }}{% if e.date_end != e.date_start %} – {{ e.date_end }}{% endif %} ({{ e.date_precision }})</span>
-      {% if e.location_name %}<span>{{ e.location_name }}{% if e.subregion %}, sub-region {{ e.subregion }}{% endif %}{% if e.lat %} — placed at {{ e.lat }}, {{ e.lon }} ({{ e.location_precision }}){% else %} — not placed (name not in the gazetteer){% endif %}</span>{% endif %}
+      {% if e.location_name %}<span>{{ e.location_name }}{% if e.subregion %}, sub-region {{ e.subregion }}{% endif %}{% if e.lat %} — placed at {{ e.lat }}, {{ e.lon }}{% if e.placed_name %} = {{ e.placed_name }}{% endif %} ({{ e.location_precision }}){% elif e.placed_area %} — an area ({{ e.placed_area }}), sub-region only{% elif e.ambiguous %} — not placed: the name could mean {{ e.ambiguous }}; set the coordinates or sub-region in the edits{% else %} — not placed (no feature in the gazetteer by that name){% endif %}</span>{% endif %}
       {% if e.suggested_type %}<span class="pill">suggested: {{ e.suggested_type }}</span>{% endif %}
       {% if it.duplicate_of %}<span class="pill dup">possible duplicate of {{ it.duplicate_of.event_id }}</span>{% endif %}
       <span class="id">{{ e.event_id }}</span>

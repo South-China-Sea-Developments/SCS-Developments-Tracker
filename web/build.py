@@ -161,6 +161,21 @@ def map_subregions(e: dict, move: dict) -> list[str]:
     return [str(i + 1) for i, f in enumerate(schema.SUBREGION_FLAGS) if move[f] == "1"]
 
 
+def date_end_for(e: dict, year: str) -> str:
+    """The last day an event is shown for: its date_end, else the end of its month or year when
+    that is its precision, else its start day."""
+    start = e["date_start"] or f"{year}-01-01"
+    end = e["date_end"] or start
+    precision = e["date_precision"] or ("year" if not e["date_start"] else "day")
+    if precision == "year":
+        return max(end, start[:4] + "-12-31")
+    if precision == "month":
+        y, mth = int(start[:4]), int(start[5:7])
+        last = (dt.date(y + (mth == 12), mth % 12 + 1, 1) - dt.timedelta(days=1)).isoformat()
+        return max(end, last)
+    return end
+
+
 def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> dict:
     """What the event map draws: accepted events of accepted moves, as points when they have
     coordinates and as sub-region counts otherwise, with the move's coding for the filters."""
@@ -178,7 +193,7 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
         y = e["date_start"][:4] or m["year"]
         cc["years"][y] = cc["years"].get(y, 0) + 1
         rec = {"id": e["event_id"], "m": m["move_id"], "c": e["claimant"], "y": int(m["year"]),
-               "ds": e["date_start"] or f"{m['year']}-01-01", "de": e["date_end"] or e["date_start"] or f"{m['year']}-12-31", "dp": e["date_precision"] or "year",
+               "ds": e["date_start"] or f"{m['year']}-01-01", "de": date_end_for(e, m["year"]), "dp": e["date_precision"] or "year",
                "s": e["summary"][:400], "n": e["location_name"], "lp": e["location_precision"] or "unknown",
                "t": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "d": [d for d in schema.DOMAIN_FLAGS if m[d] == "1"],
                "i": [i for i in schema.ISSUE_FLAGS if m[i] == "1"], "g": sorted({d[1] for d in m["dyads"].split() if len(d) == 2}),

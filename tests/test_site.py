@@ -383,8 +383,73 @@ def test_map_renders_offline_without_errors(browser, dist, viewport, scheme):
             if n:
                 want[sr] = want.get(sr, 0) + n
     assert shown == want
-    assert page.locator(".leaflet-marker-icon").count() == len(want) + len({(e.get("lat"), e.get("lon")) for e in json.loads((dist / "data/events.json").read_text(encoding="utf-8"))["events"] if "lat" in e})
+    assert page.locator(".leaflet-marker-icon[tabindex='0']").count() == len(want) + len({(e.get("lat"), e.get("lon")) for e in json.loads((dist / "data/events.json").read_text(encoding="utf-8"))["events"] if "lat" in e})
     assert not problems, problems
+    page.close()
+
+
+@pytest.fixture(scope="module")
+def dist_placed(tmp_path_factory):
+    """A build from a data copy with four placed events (two stacked at one feature, one point, one
+    unplaced) so the point-marker code is exercised while the real data has no coordinates yet."""
+    import csv
+    import shutil
+    d = tmp_path_factory.mktemp("placed") / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    rows = list(csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    cols = list(rows[0])
+    extra = [("CN201201", "2012-04-10", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Standoff begins at <b>Scarborough</b> Shoal."),
+             ("CN201201", "2012-05-15", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Fishing ban extended to the shoal."),
+             ("CN201401", "2014-05-02", "south of Triton Island", "15.90000", "111.20000", "2", "point", "month", "HYSY 981 rig placed."),
+             ("PH201301", "2013-01-22", "Manila", "", "", "", "unknown", "year", "Arbitration filed.")]
+    for i, (m, ds, n, lat, lon, sr, lp, dp, summary) in enumerate(extra):
+        rows.append({c: "" for c in cols} | {"event_id": f"{m}-T{i}", "move_id": m, "claimant": m[:2], "date_start": ds, "date_end": "",
+                     "date_precision": dp, "lat": lat, "lon": lon, "location_name": n, "location_precision": lp, "subregion": sr,
+                     "summary": summary, "status": "accepted", "harvest_run_id": "test", "reviewer": "t", "review_date": "2026-10-15"})
+    with open(d / "events.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    out = tmp_path_factory.mktemp("dist-placed")
+    build(d, out, build_date="2026-01-01")
+    return out
+
+
+def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
+    page, problems, _ = _open_map(browser, dist_placed)
+    assert "3 placed" in page.inner_text("#map-count")
+    # two events at one feature stack into one hollow marker carrying their count; the point event is filled
+    evts = page.locator(".evt")
+    assert evts.count() == 2
+    stacked = page.locator(".evt.feature")
+    assert stacked.count() == 1 and stacked.inner_text() == "2"
+    assert page.locator(".evt:not(.feature)").inner_text() == ""
+    # keyboard: the marker is a focusable button; Enter opens the popup, summaries are text not HTML
+    marker = page.locator(".leaflet-marker-icon[tabindex='0']").filter(has=stacked)
+    marker.focus()
+    page.keyboard.press("Enter")
+    page.wait_for_timeout(300)
+    popup = page.locator(".evt-popup")
+    assert popup.locator(".event-row").count() == 2
+    assert "<b>" in popup.inner_text() and popup.locator("b").count() == 0
+    assert (dist_placed / popup.locator("a.case-id").first.get_attribute("href")).exists()
+    # a month-precision event is in view for its whole month, a year-precision one all year
+    def counts_at(year, month_no):
+        page.select_option("#window", "1")
+        page.fill("#month", str((year - 1970) * 12 + month_no - 1))
+        page.dispatch_event("#month", "input")
+        page.wait_for_timeout(250)
+        text = page.inner_text("#map-count")
+        return int(re.search(r"(\d+) placed", text).group(1)), int(re.search(r"(\d+) by sub-region", text).group(1))
+    assert counts_at(2014, 5)[0] == 1 and counts_at(2014, 5 + 1)[0] == 0          # the rig, dated to May 2014
+    assert counts_at(2013, 11)[1] >= 1 and counts_at(2013, 1)[1] >= 1            # the filing, dated to 2013
+    assert counts_at(2012, 4)[0] == 1 and counts_at(2012, 4 + 1)[0] == 1 and counts_at(2012, 6)[0] == 0   # two day-dated events
+    counts_at(2014, 5)
+    assert page.inner_text("#time-label") == "May 2014" and page.get_attribute("#month", "aria-valuetext") == "May 2014"
+    assert page.locator(".sr-poly[tabindex]").count() == 0, "polygons are not tab stops"
+    assert page.locator(".sr-label").count() == 10
+    assert not problems, problems
+    page.close()
 
 
 def test_map_time_window_and_filters(browser, dist):
@@ -421,3 +486,4 @@ def test_map_time_window_and_filters(browser, dist):
     page.wait_for_timeout(300)
     assert page.locator(".evt-popup .event-row").count() >= 1
     assert not problems, problems
+    page.close()

@@ -170,6 +170,10 @@ def review_context(data_dir: Path, run_id: str | None = None) -> dict:
 
     items = []
     for e in cands:
+        feat = gazetteer.resolve(e["location_name"]) if e["location_name"] else None
+        e = dict(e, placed_name=feat["name_en"] if feat and e["lat"] and f"{feat['lat']:.5f}" == e["lat"] else "",
+                 placed_area=feat["name_en"] if feat and not e["lat"] and e["subregion"] else "",
+                 ambiguous=", ".join(f"{a['name_en']} (sub-region {a['subregion']})" for a in gazetteer.ambiguous(e["location_name"])) if e["location_name"] and not feat else "")
         year = int(e["date_start"][:4]) if e["date_start"][:4].isdigit() else None
         prev = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year - 1]
         same = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year]
@@ -247,20 +251,32 @@ def _check_edits(eid: str, e: dict, edits: dict) -> dict:
             v = f"{f:.4f}"
         out[k] = v
     if "location_name" in out and not {"lat", "lon"} & out.keys():
-        # a corrected name is resolved afresh; the old coordinates do not survive it
+        # a corrected name is placed afresh; the old coordinates do not survive it; a name the
+        # gazetteer does not know leaves the event unplaced but keeps a stated sub-region
         probe = {"location_name": out["location_name"], "lat": "", "lon": "", "subregion": out.get("subregion", ""),
                  "location_precision": out.get("location_precision", "")}
         gazetteer.locate(probe)
         out["lat"], out["lon"] = probe["lat"], probe["lon"]
-        out["subregion"] = probe["subregion"]
-        out["location_precision"] = probe["location_precision"] or "unknown"
-    elif {"lat", "lon"} <= out.keys() or ({"lat", "lon"} & out.keys() and e["lat"] and e["lon"]):
-        lat, lon = float(out.get("lat", e["lat"])), float(out.get("lon", e["lon"]))
-        if "subregion" not in out:
-            sr = gazetteer.subregion_of(lat, lon)
+        if probe["lat"]:
+            out["subregion"] = probe["subregion"]
+            out["location_precision"] = probe["location_precision"] or "feature"
+        else:
+            kept = out.get("subregion", e["subregion"])
+            if "subregion" not in out and probe["subregion"]:
+                out["subregion"] = kept = probe["subregion"]
+            if out.get("location_precision", e["location_precision"]) in ("", "unknown", "point", "feature"):
+                out["location_precision"] = "subregion" if kept else "unknown"
+    merged = {**e, **out}
+    if bool(merged["lat"]) != bool(merged["lon"]):
+        raise ValueError(f"{eid}: latitude and longitude go together; give both or neither")
+    if merged["lat"] and merged["lon"]:
+        if "subregion" not in out and ({"lat", "lon"} & out.keys()):
+            sr = gazetteer.subregion_of(float(merged["lat"]), float(merged["lon"]))
             out["subregion"] = str(sr) if sr else e["subregion"]
-        if "location_precision" not in out and e["location_precision"] in ("", "unknown", "subregion"):
+        if "location_precision" not in out and ({"lat", "lon"} & out.keys()) and e["location_precision"] in ("", "unknown", "subregion"):
             out["location_precision"] = "point"
+    elif merged["location_precision"] == "point":
+        raise ValueError(f"{eid}: location_precision 'point' needs coordinates")
     start, end = out.get("date_start", e["date_start"]), out.get("date_end", e["date_end"])
     if start and end and end < start:
         raise ValueError(f"{eid}: date_end is before date_start")

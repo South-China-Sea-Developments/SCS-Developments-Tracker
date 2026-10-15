@@ -66,11 +66,18 @@ def test_edited_locations_are_resolved_again(opened):
     out = queue._check_edits(stas["event_id"], stas, {"location_name": "Whitsun Reef"})
     assert (out["lat"], out["subregion"], out["location_precision"]) == ("9.96667", "5", "feature")
     out = queue._check_edits(stas["event_id"], stas, {"location_name": "somewhere in the sea"})
-    assert (out["lat"], out["lon"], out["subregion"], out["location_precision"]) == ("", "", "", "unknown")
+    assert (out["lat"], out["lon"], out["location_precision"]) == ("", "", "subregion") and "subregion" not in out   # sub-region 6 kept
+    out = queue._check_edits(stas["event_id"], stas, {"location_name": "North Reef"})       # ambiguous: unplaced, reviewer decides
+    assert out["lat"] == "" and out["location_precision"] == "subregion"
     out = queue._check_edits(stas["event_id"], stas, {"lat": "15.18", "lon": "117.77"})
     assert out["subregion"] == "4" and "location_precision" not in out      # feature stays feature
     out = queue._check_edits(stas["event_id"], dict(stas, location_precision="unknown"), {"lat": "15.18", "lon": "117.77", "subregion": "3"})
     assert out["subregion"] == "3" and out["location_precision"] == "point"   # a stated sub-region is kept for the validator to judge
+    unplaced = dict(stas, lat="", lon="", location_precision="unknown")
+    with pytest.raises(ValueError, match="go together"):
+        queue._check_edits(stas["event_id"], unplaced, {"lat": "9.5"})
+    with pytest.raises(ValueError, match="needs coordinates"):
+        queue._check_edits(stas["event_id"], unplaced, {"location_precision": "point"})
 
 
 def test_review_page_shows_what_the_coder_needs(opened, tmp_path):

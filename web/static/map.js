@@ -33,17 +33,23 @@
   // OpenStreetMap's standard tiles (ODbL data, attribution required, light use); in dark mode the
   // stylesheet re-tones them. Without network the polygons and events still draw on the page plane.
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19, crossOrigin: true,
+    maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
+  // the polygons are context, not controls: not focusable, labelled once each
   var polygons = L.geoJSON(DATA.subregions, {
-    style: function () { return { className: "sr-poly", weight: 1, fill: true, fillOpacity: 0.06, opacity: 0.8 }; },
-    onEachFeature: function (f, layer) { layer.bindTooltip(f.properties.n + " " + f.properties.name, { sticky: true, className: "sr-tip" }); }
+    interactive: false,
+    style: function () { return { className: "sr-poly", weight: 1, fill: true, fillOpacity: 0.06, opacity: 0.8 }; }
   }).addTo(map);
   map.fitBounds(polygons.getBounds(), { padding: [8, 8] });
   var srCenters = {};
-  polygons.eachLayer(function (layer) { srCenters[String(layer.feature.properties.n)] = layer.getBounds().getCenter(); });
+  polygons.eachLayer(function (layer) {
+    var n = String(layer.feature.properties.n), c = layer.getBounds().getCenter();
+    srCenters[n] = c;
+    L.marker(c, { interactive: false, keyboard: false, icon: L.divIcon({ className: "", iconSize: [120, 16], iconAnchor: [60, 30],
+      html: '<span class="sr-label">' + n + " " + layer.feature.properties.name + "</span>" }) }).addTo(map);
+  });
 
   var pointLayer = L.layerGroup().addTo(map);
   var countLayer = L.layerGroup().addTo(map);
@@ -143,6 +149,7 @@
     });
     var when = f.w ? (f.w === 1 ? monthName(f.to) : monthName(f.from) + " – " + monthName(f.to)) : "through " + monthName(f.to);
     timeLabel.value = when;
+    slider.setAttribute("aria-valuetext", when);
     countEl.textContent = hits.length + (hits.length === 1 ? " event " : " events ") + when + ": " + placed + " placed, " + (hits.length - placed) + " by sub-region" +
       (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : "");
     listEl.textContent = "";

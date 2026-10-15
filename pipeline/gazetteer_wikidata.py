@@ -124,6 +124,12 @@ def main(argv=None) -> int:
     for r in rows:
         if seen[r["feature_id"]] > 1:
             r["feature_id"] = f"{r['feature_id']}-{r['subregion']}"
+    again = {}
+    for r in rows:
+        again[r["feature_id"]] = again.get(r["feature_id"], 0) + 1
+    for r in rows:
+        if again[r["feature_id"]] > 1:   # same name, same sub-region: the QID tells them apart
+            r["feature_id"] = f"{r['feature_id']}-{r['wikidata'].lower()}"
     rows.sort(key=lambda r: (r["subregion"], r["feature_id"]))
     with open(a.out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
