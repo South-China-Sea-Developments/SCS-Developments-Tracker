@@ -4,7 +4,7 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 
 | # | Title | Blocked by | Status |
 |---|---|---|---|
-| 01 | [Canonical schema and MATS 1.02 loader](01-canonical-schema-and-mats-loader.md) | None, can start immediately | ready |
+| 01 | [Canonical schema and MATS 1.02 loader](01-canonical-schema-and-mats-loader.md) | None, can start immediately | done |
 | 02 | [Site skeleton with the MAVD-equivalent overview](02-site-skeleton-and-overview.md) | 01 | ready |
 | 03 | [Case browser and move detail](03-case-browser-and-move-detail.md) | 02 | ready |
 | 04 | [Issues/Domains and Sub-regions pages](04-issues-domains-and-subregions-pages.md) | 02 | ready |

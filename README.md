@@ -2,19 +2,34 @@
 
 A continuously updated database of **assertive moves by claimant states in the South China Sea**, built as the successor to Andrew Chubb's *Maritime Assertiveness Time Series* (MATS 1.0, 1970–2015) and its public visualization, the *Maritime Assertiveness Visualization Dashboard* (MAVD, NBR, 2023).
 
-**Status:** project setup. The coding scheme, scope and update pipeline are being decided; see `CONTEXT.md` for the vocabulary and `docs/adr/` for decisions as they are made.
+**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Ticket 01 is done: the canonical files hold MATS 1.02 and pass the validator in CI.
+
+## Quick start
+
+```
+pip install -e ".[dev]"
+python -m pytest                   # tests at the canonical-file seam
+python -m pipeline.validate        # checks data/*.csv against the schema and MATS 1.02
+python -m pipeline.load_mats       # regenerates data/*.csv from data/raw/
+```
 
 ## What is here
 
 | Path | Contents |
 |---|---|
+| `data/*.csv` | **The canonical dataset**: claimants, moves, events, sources, corrections. See `data/README.md`. |
+| `pipeline/` | Loader and validator (Python). |
+| `tests/` | Tests at the agreed seams. |
+| `docs/spec.md`, `docs/tickets/` | What is being built and in which slices. |
+| `docs/decisions/`, `docs/adr/` | Why. |
+| `docs/codebook/` | Chubb's methodology appendix (CC0), the coding rules. |
+| `docs/reports/` | Generated reports, e.g. xlsx-vs-MAVD differences for the author. |
 | `data/raw/mats-1.02/` | MATS 1.02 as provided by the author (xlsx, plus a verbatim CSV export). 357 cases, 1970–2015. **Never edited.** |
 | `data/raw/mavd-arcgis-2023/` | The tables and app configuration behind the public MAVD v1.2 dashboard, pulled from NBR's public ArcGIS services on 2026-10-15. Includes columns absent from the xlsx (`Dates`, `Other_Possible_Cases`, `Cases_of_diminished_assertive_a`). **Never edited.** |
 | `data/reference/mavd_subregions.geojson` | The ten MAVD sub-region polygons (WGS84), from the same ArcGIS service. |
 | `docs/sources/` | Notes on where each raw input came from and how it was retrieved. |
-| `docs/adr/` | Architecture decision records. |
 | `CONTEXT.md` | Project glossary. Definitions only. |
-| `pipeline/`, `site/`, `tests/` | Reserved for the update pipeline, the public site and their tests. Empty until the spec is agreed. |
+| `site/` | Reserved for the public site (ticket 02). |
 
 ## Provenance and citation
 

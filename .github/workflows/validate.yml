@@ -1,0 +1,25 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - name: Unit tests (seam 1)
+        run: python -m pytest
+      - name: Validate canonical files
+        run: python -m pipeline.validate
+      - name: Canonical files are reproducible from raw inputs
+        run: |
+          python -m pipeline.load_mats --out /tmp/regen --diff-log /tmp/regen-diff.md
+          for t in claimants moves events sources; do diff -q data/$t.csv /tmp/regen/$t.csv; done
+          diff -q docs/reports/mats-1.02-vs-mavd-differences.md /tmp/regen-diff.md
