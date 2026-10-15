@@ -27,7 +27,8 @@
         <li>
           <p class="event-date"><time datetime="{{ e.date_start }}">{{ e.date_label }}</time>
             <span class="event-precision">({{ e.date_precision }} precision{% if e.approximate %}, approximate{% endif %}{% if e.status != 'accepted' %}, {{ e.status }}{% endif %})</span></p>
-          {% if e.is_seed %}<p class="event-seed">Dated incident within this move.</p>{% else %}<p>{{ e.summary }}</p>{% endif %}
+          {% if e.is_seed %}<p class="event-seed">Dated incident within this move.</p>{% else %}<p>{{ e.summary }}</p>
+          {% if e.location_name or e.subregion or e.lat %}<p class="event-place">{% if e.location_name %}{{ e.location_name }}{% endif %}{% if e.lat %} ({{ e.lat }}, {{ e.lon }}{% if e.location_precision == 'feature' %}, at the named feature{% endif %}){% endif %}{% if e.subregion %} · sub-region {{ e.subregion }} {{ subregion_names[e.subregion|int] }}{% endif %}{% if not e.lat %} · no point{% endif %}</p>{% endif %}{% endif %}
           {% if e.outside_year %}<p class="event-note">This date falls outside the move's year ({{ move.year }}); possibly a typo in the MAVD table, flagged for the author.</p>{% endif %}
           {% if not e.is_seed and e.review_note %}<p class="event-note">{{ e.review_note }}</p>{% endif %}
           {% if e.sources %}

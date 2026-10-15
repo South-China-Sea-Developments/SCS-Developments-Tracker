@@ -30,7 +30,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import schema
+from pipeline import gazetteer, schema
 
 TEMPLATES = Path(__file__).resolve().parent / "templates"
 REPO = os.environ.get("GITHUB_REPOSITORY") or "South-China-Sea-Developments/SCS-Developments-Tracker"
@@ -82,7 +82,7 @@ def append_run(run_dir: Path, data_dir: Path) -> tuple[int, int]:
     sources = read_table("sources", data_dir)
     have_e = {e["event_id"] for e in events}
     have_s = {s["source_id"] for s in sources}
-    new_e = [c for c in cand if c["event_id"] not in have_e]
+    new_e = [gazetteer.locate(c) for c in cand if c["event_id"] not in have_e]   # named features get coordinates
     new_s = [s for s in srcs if s["source_id"] not in have_s and s["event_id"] in have_e | {c["event_id"] for c in new_e}]
     write_table("events", events + new_e, data_dir)
     write_table("sources", sources + new_s, data_dir)
@@ -170,6 +170,10 @@ def review_context(data_dir: Path, run_id: str | None = None) -> dict:
 
     items = []
     for e in cands:
+        feat = gazetteer.resolve(e["location_name"]) if e["location_name"] else None
+        e = dict(e, placed_name=feat["name_en"] if feat and e["lat"] and f"{feat['lat']:.5f}" == e["lat"] else "",
+                 placed_area=feat["name_en"] if feat and not e["lat"] and e["subregion"] else "",
+                 ambiguous=", ".join(f"{a['name_en']} (sub-region {a['subregion']})" for a in gazetteer.ambiguous(e["location_name"])) if e["location_name"] and not feat else "")
         year = int(e["date_start"][:4]) if e["date_start"][:4].isdigit() else None
         prev = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year - 1]
         same = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year]
@@ -246,6 +250,34 @@ def _check_edits(eid: str, e: dict, edits: dict) -> dict:
                 raise ValueError(f"{eid}: {k} {v!r} is out of range")
             v = f"{f:.4f}"
         out[k] = v
+    if "location_name" in out and not {"lat", "lon"} & out.keys():
+        # a corrected name is placed afresh; the old coordinates do not survive it; a name the
+        # gazetteer does not know leaves the event unplaced but keeps a stated sub-region
+        probe = {"location_name": out["location_name"], "lat": "", "lon": "", "subregion": out.get("subregion", ""),
+                 "location_precision": out.get("location_precision", "")}
+        gazetteer.locate(probe)
+        out["lat"], out["lon"] = probe["lat"], probe["lon"]
+        if probe["lat"]:
+            if "subregion" not in out:
+                out["subregion"] = probe["subregion"]
+            out["location_precision"] = probe["location_precision"] or "feature"
+        else:
+            kept = out.get("subregion", e["subregion"])
+            if "subregion" not in out and probe["subregion"]:
+                out["subregion"] = kept = probe["subregion"]
+            if out.get("location_precision", e["location_precision"]) in ("", "unknown", "point", "feature"):
+                out["location_precision"] = "subregion" if kept else "unknown"
+    merged = {**e, **out}
+    if bool(merged["lat"]) != bool(merged["lon"]):
+        raise ValueError(f"{eid}: latitude and longitude go together; give both or neither")
+    if merged["lat"] and merged["lon"]:
+        if "subregion" not in out and ({"lat", "lon"} & out.keys()):
+            sr = gazetteer.subregion_of(float(merged["lat"]), float(merged["lon"]))
+            out["subregion"] = str(sr) if sr else e["subregion"]
+        if "location_precision" not in out and ({"lat", "lon"} & out.keys()) and e["location_precision"] in ("", "unknown", "subregion"):
+            out["location_precision"] = "point"
+    elif merged["location_precision"] == "point":
+        raise ValueError(f"{eid}: location_precision 'point' needs coordinates")
     start, end = out.get("date_start", e["date_start"]), out.get("date_end", e["date_end"])
     if start and end and end < start:
         raise ValueError(f"{eid}: date_end is before date_start")

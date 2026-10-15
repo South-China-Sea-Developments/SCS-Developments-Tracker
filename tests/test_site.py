@@ -319,3 +319,175 @@ def test_periods_extend_with_the_years():
     assert labels(list(range(1970, 2023)))[-1] == "2021–22"
     assert periods(list(range(1970, 2027)))[-1]["years"] == [2026]
     assert sum(len(p["years"]) for p in periods(list(range(1970, 2027)))[1:]) == 57   # every year in exactly one bin
+
+
+# ---- ticket 08: event map -------------------------------------------------
+
+PNG_1x1 = bytes.fromhex("89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d4944415478da6364f8cfc000000301010018dd8db00000000049454e44ae426082")
+
+
+def _open_map(browser, dist, viewport=(1280, 900), color_scheme="light"):
+    """The map page with the basemap tiles answered locally: the test is offline except for that stub."""
+    ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]}, color_scheme=color_scheme)
+    page = ctx.new_page()
+    problems = []
+    page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") else None)
+    page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
+    page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
+    tiles = []
+    def stub(route):
+        tiles.append(route.request.url)
+        route.fulfill(status=200, content_type="image/png", body=PNG_1x1)
+    page.route("https://tile.openstreetmap.org/**", stub)
+    page.goto((dist / "map.html").resolve().as_uri())
+    page.wait_for_timeout(600)
+    page.on("close", lambda _: ctx.close())
+    return page, problems, tiles
+
+
+def test_map_data_matches_the_validator(dist):
+    from pipeline.validate import event_aggregates
+    data = json.loads((dist / "data/events.json").read_text(encoding="utf-8"))
+    expected = event_aggregates(read_csv(DATA_DIR / "events.csv"), read_csv(DATA_DIR / "moves.csv"))
+    assert data["counts"] == expected
+    assert len(data["events"]) == expected["n_events"]
+    # every event drawn is accepted, belongs to an accepted move, and is either a point or counted on sub-regions
+    moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
+    for e in data["events"]:
+        assert moves[e["m"]]["status"] == "accepted"
+        assert ("lat" in e) != ("sr" in e)
+        if "sr" in e:
+            assert e["sr"] and all(s in {str(i) for i in range(1, 11)} for s in e["sr"])
+    assert [f["properties"]["n"] for f in data["subregions"]["features"]] == list(range(1, 11))
+
+
+@pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
+def test_map_renders_offline_without_errors(browser, dist, viewport, scheme):
+    from pipeline.validate import event_aggregates
+    page, problems, tiles = _open_map(browser, dist, viewport, scheme)
+    expected = event_aggregates(read_csv(DATA_DIR / "events.csv"), read_csv(DATA_DIR / "moves.csv"))
+    assert page.locator(".sr-poly").count() == 10
+    assert page.locator(".leaflet-tile-loaded").count() > 0 and tiles, "basemap tiles requested from the attribution-compliant provider"
+    text = page.inner_text("#map-count")
+    assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text
+    # the sub-region counts on the map are the validator's, summed over claimants
+    shown = {}
+    for el in page.locator(".leaflet-marker-icon").element_handles():
+        title = el.get_attribute("title") or ""
+        mm = re.search(r"^(\d+) events? in sub-region (\d+) .* without a point$", title)
+        if mm:
+            shown[mm.group(2)] = int(mm.group(1))
+    want = {}
+    for c in expected["by_claimant"].values():
+        for sr, n in c["subregions"].items():
+            if n:
+                want[sr] = want.get(sr, 0) + n
+    assert shown == want
+    assert page.locator(".leaflet-marker-icon[tabindex='0']").count() == len(want) + len({(e.get("lat"), e.get("lon")) for e in json.loads((dist / "data/events.json").read_text(encoding="utf-8"))["events"] if "lat" in e})
+    assert not problems, problems
+    page.close()
+
+
+@pytest.fixture(scope="module")
+def dist_placed(tmp_path_factory):
+    """A build from a data copy with four placed events (two stacked at one feature, one point, one
+    unplaced) so the point-marker code is exercised while the real data has no coordinates yet."""
+    import csv
+    import shutil
+    d = tmp_path_factory.mktemp("placed") / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    rows = list(csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    cols = list(rows[0])
+    extra = [("CN201201", "2012-04-10", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Standoff begins at <b>Scarborough</b> Shoal."),
+             ("CN201201", "2012-05-15", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Fishing ban extended to the shoal."),
+             ("CN201401", "2014-05-02", "south of Triton Island", "15.90000", "111.20000", "2", "point", "month", "HYSY 981 rig placed."),
+             ("PH201301", "2013-01-22", "Manila", "", "", "", "unknown", "year", "Arbitration filed.")]
+    for i, (m, ds, n, lat, lon, sr, lp, dp, summary) in enumerate(extra):
+        rows.append({c: "" for c in cols} | {"event_id": f"{m}-T{i}", "move_id": m, "claimant": m[:2], "date_start": ds, "date_end": "",
+                     "date_precision": dp, "lat": lat, "lon": lon, "location_name": n, "location_precision": lp, "subregion": sr,
+                     "summary": summary, "status": "accepted", "harvest_run_id": "test", "reviewer": "t", "review_date": "2026-10-15"})
+    with open(d / "events.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    out = tmp_path_factory.mktemp("dist-placed")
+    build(d, out, build_date="2026-01-01")
+    return out
+
+
+def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
+    page, problems, _ = _open_map(browser, dist_placed)
+    assert "3 placed" in page.inner_text("#map-count")
+    # two events at one feature stack into one hollow marker carrying their count; the point event is filled
+    evts = page.locator(".evt")
+    assert evts.count() == 2
+    stacked = page.locator(".evt.feature")
+    assert stacked.count() == 1 and stacked.inner_text() == "2"
+    assert page.locator(".evt:not(.feature)").inner_text() == ""
+    # keyboard: the marker is a focusable button; Enter opens the popup, summaries are text not HTML
+    marker = page.locator(".leaflet-marker-icon[tabindex='0']").filter(has=stacked)
+    marker.focus()
+    page.keyboard.press("Enter")
+    page.wait_for_timeout(300)
+    popup = page.locator(".evt-popup")
+    assert popup.locator(".event-row").count() == 2
+    assert "<b>" in popup.inner_text() and popup.locator("b").count() == 0
+    assert (dist_placed / popup.locator("a.case-id").first.get_attribute("href")).exists()
+    # a month-precision event is in view for its whole month, a year-precision one all year
+    def counts_at(year, month_no):
+        page.select_option("#window", "1")
+        page.fill("#month", str((year - 1970) * 12 + month_no - 1))
+        page.dispatch_event("#month", "input")
+        page.wait_for_timeout(250)
+        text = page.inner_text("#map-count")
+        return int(re.search(r"(\d+) placed", text).group(1)), int(re.search(r"(\d+) by sub-region", text).group(1))
+    assert counts_at(2014, 5)[0] == 1 and counts_at(2014, 5 + 1)[0] == 0          # the rig, dated to May 2014
+    assert counts_at(2013, 11)[1] >= 1 and counts_at(2013, 1)[1] >= 1            # the filing, dated to 2013
+    assert counts_at(2012, 4)[0] == 1 and counts_at(2012, 4 + 1)[0] == 1 and counts_at(2012, 6)[0] == 0   # two day-dated events
+    counts_at(2014, 5)
+    assert page.inner_text("#time-label") == "May 2014" and page.get_attribute("#month", "aria-valuetext") == "May 2014"
+    # the move page shows each event's place (spec story 3)
+    case = (dist_placed / "cases/CN201201.html").read_text(encoding="utf-8")
+    assert "Scarborough Shoal (15.18000, 117.77000, at the named feature) · sub-region 4 Central-East" in case
+    assert "Manila" in (dist_placed / "cases/PH201301.html").read_text(encoding="utf-8")
+    assert page.locator(".sr-poly[tabindex]").count() == 0, "polygons are not tab stops"
+    assert page.locator(".sr-label").count() == 10
+    assert not problems, problems
+    page.close()
+
+
+def test_map_time_window_and_filters(browser, dist):
+    page, problems, _ = _open_map(browser, dist)
+    events = read_csv(DATA_DIR / "events.csv")
+    moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
+    shown = [e for e in events if e["status"] == "accepted" and moves.get(e["move_id"], {}).get("status") == "accepted"]
+    # the year window ending Dec 2014 holds the events that overlap 2014
+    first = int(page.get_attribute("#month", "min") or 0)
+    page.select_option("#window", "12")
+    page.fill("#month", str((2014 - 1970) * 12 + 11))
+    page.dispatch_event("#month", "input")
+    page.wait_for_timeout(300)
+    in_2014 = [e for e in shown if e["date_start"][:4] <= "2014" and (e["date_end"] or e["date_start"])[:4] >= "2014"]
+    assert page.inner_text("#map-count").startswith(f"{len(in_2014)} events Jan 2014 – Dec 2014")
+    # unchecking a claimant removes its events; a type filter keeps only moves of that type
+    page.uncheck('input[name="claimant"][value="VN"]')
+    page.wait_for_timeout(300)
+    assert page.inner_text("#map-count").startswith(f"{len([e for e in in_2014 if e['claimant'] != 'VN'])} events")
+    page.click("#reset")
+    page.check('input[name="t"][value="coercive"]')
+    page.wait_for_timeout(300)
+    coercive = [e for e in shown if moves[e["move_id"]]["coercive"] == "1"]
+    assert page.inner_text("#map-count").startswith(f"{len(coercive)} events through")
+    # the list twin names every event in view with a link to its move
+    page.click("#list-toggle")
+    page.wait_for_timeout(300)
+    rows = page.locator("#event-list .event-row")
+    assert rows.count() == min(len(coercive), 400)
+    href = rows.first.locator("a.case-id").get_attribute("href")
+    assert href and (dist / href).exists()
+    # a sub-region count opens a popup listing its events
+    page.locator(".sr-count").first.click()
+    page.wait_for_timeout(300)
+    assert page.locator(".evt-popup .event-row").count() >= 1
+    assert not problems, problems
+    page.close()

@@ -8,7 +8,7 @@ The dataset needs a canonical home that supports a review queue (ADR 0003), a pu
 
 ## Decision
 
-The canonical data are **plain files in this repository** under `data/`: moves, events and sources as CSV (UTF-8, one row per record) and reference geometry as GeoJSON. A record exists only if it is in the files on the main branch.
+The canonical data are **plain files in this repository** under `data/`: moves, events and sources as CSV (UTF-8, one row per record) and reference files: the sub-region geometry as GeoJSON and, since ticket 08, the gazetteer as CSV (generated from Wikidata plus a hand-edited file of corrections; its consistency with the polygons is checked by a test rather than by the validator). A record exists only if it is in the files on the main branch.
 
 The **review queue is a pull request**: a scheduled run opens one PR per harvest containing candidate events (and suggested moves/coding) as additions to the files; the coder edits and merges; merging is acceptance. The public site is rebuilt from the files on every merge.
 

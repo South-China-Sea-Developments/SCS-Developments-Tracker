@@ -11,7 +11,7 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 05 | [Source registry and harvester with fixtures](05-source-registry-and-harvester-with-fixtures.md) | 01 | done (live run pending secret) |
 | 06 | [Review queue as pull request, with review page](06-review-queue-as-pull-request.md) | 05 | done |
 | 07 | [Scheduled runs and failure alerts](07-scheduled-runs-and-failure-alerts.md) | 06 | done |
-| 08 | [Event map with time slider and filters](08-event-map-with-time-slider.md) | 03, 06 | ready |
+| 08 | [Event map with time slider and filters](08-event-map-with-time-slider.md) | 03, 06 | done |
 | 09 | [Downloads, citation and tagged releases](09-downloads-citation-and-releases.md) | 02 | ready |
 | 10 | [Agreement report](10-agreement-report.md) | 06 | ready |
 | 11 | [New claimants: baselines and 2016+ coding for MY, ID, TW](11-new-claimants-baselines-and-2016-plus.md) | 06 | ready |
