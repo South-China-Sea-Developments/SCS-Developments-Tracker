@@ -15,13 +15,13 @@ Version numbers: MAJOR for a change to the coding scheme or the unit of analysis
 ## Procedure
 
 1. On `main`, with the validator green (`python -m pipeline.validate`), set `DATASET_VERSION` in `pipeline/schema.py`, update `version` and `date-released` in `CITATION.cff`, and add the `## vX.Y.Z — date` section to `CHANGELOG.md`. Open and merge that as a pull request like any other change.
-2. The maintainer tags the merge commit on the day `CITATION.cff` says (`date-released` must equal the tagged commit's date; the release refuses otherwise) and pushes the tag:
+2. The maintainer tags the merge commit on the day `CITATION.cff` says (`date-released` must equal the tagged commit's date; the release refuses otherwise). Either run the **release** workflow by hand (Actions → release → Run workflow, enter the tag, e.g. `v2.0.0-dev`): it checks, creates the tag on the current `main`, builds the release and refreshes the site; or from a checkout:
    ```
    git checkout main && git pull
    git tag -a vX.Y.Z -m "Dataset vX.Y.Z"
    git push origin vX.Y.Z
    ```
-3. The `release` workflow checks that the tag is on `main` and equals `v` + `DATASET_VERSION` at the tag, runs the validator at the tag, builds the assets with `python -m pipeline.release assets`, and creates the GitHub Release with the CHANGELOG section as notes. The `publish site` workflow also runs on the tag push, so the Downloads page shows the new version within minutes.
+3. On a pushed tag, the `release` workflow checks that the tag is on `main`, equals `v` + `DATASET_VERSION` at the tag and matches `CITATION.cff`'s date, runs the validator at the tag, builds the assets with `python -m pipeline.release assets`, and creates the GitHub Release with the CHANGELOG section as notes. The `publish site` workflow also runs on the tag push, so the Downloads page shows the new version within minutes.
 4. Check the release page and the Downloads page. If something is wrong, fix it on `main`, delete the tag and the release, and tag again; never move a tag that anyone may have cited.
 
 `python -m pipeline.release latest` prints the newest tag reachable from the current commit; `python -m pipeline.release notes` prints its CHANGELOG section.

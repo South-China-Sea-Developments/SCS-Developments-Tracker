@@ -1,14 +1,28 @@
 name: release
 
-# A pushed tag vX.Y.Z[-suffix] becomes a GitHub Release holding the dataset files at that tag, with
+# A tag vX.Y.Z[-suffix] becomes a GitHub Release holding the dataset files at that tag, with
 # checksums, a citation file and one zip (docs/releases.md). The validator must pass at the tag.
+#
+# Two ways in: push the tag yourself, or run this workflow by hand with the tag name and it creates
+# the tag on the current main for you (the maintainer's one click). A tag made by the workflow does
+# not trigger other workflows, so the dispatch path also refreshes the site itself.
 
 on:
   push:
     tags: ["v[0-9]*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to create on the current main and release, e.g. v2.0.0-dev (must equal v + DATASET_VERSION)"
+        required: true
 
 permissions:
   contents: write
+  actions: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   release:
@@ -17,31 +31,60 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -e .
-      - name: The tag is on main and names the version the code states
+      - name: Name the tag
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            TAG="${{ inputs.tag }}"
+            case "$TAG" in v[0-9]*.[0-9]*.[0-9]*) ;; *) echo "tag must look like vX.Y.Z[-suffix], got '$TAG'"; exit 1;; esac
+            if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then echo "tag $TAG already exists; push a new version first"; exit 1; fi
+          else
+            TAG="$GITHUB_REF_NAME"
+          fi
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+      - name: The commit is on main and the code states this version
         run: |
           git fetch -q origin main
-          git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "tag $GITHUB_REF_NAME is not on main"; exit 1; }
-          python - "$GITHUB_REF_NAME" <<'PY'
-          import sys
+          git merge-base --is-ancestor HEAD origin/main || { echo "$TAG is not on main"; exit 1; }
+          python - "$TAG" <<'PY'
+          import re, sys
           from pipeline import schema
           tag = sys.argv[1]
           if tag != "v" + schema.DATASET_VERSION:
               sys.exit(f"tag {tag} but pipeline/schema.py says DATASET_VERSION = {schema.DATASET_VERSION}; see docs/releases.md")
+          import subprocess
+          commit_date = subprocess.run(["git", "log", "-1", "--format=%cI"], capture_output=True, text=True).stdout[:10]
+          cff = open("CITATION.cff", encoding="utf-8").read()
+          m = re.search(r'^date-released:\s*"(\d{4}-\d{2}-\d{2})"', cff, re.M)
+          if not m or m.group(1) != commit_date:
+              sys.exit(f"CITATION.cff date-released {m.group(1) if m else '?'} but the commit to tag is dated {commit_date}; see docs/releases.md")
           PY
-      - name: Validate the canonical files at the tag
+      - name: Validate the canonical files
         run: python -m pipeline.validate
+      - name: Create and push the tag (dispatch only)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" -m "Dataset $TAG"
+          git push origin "$TAG"
       - name: Build the release assets
         run: |
-          python -m pipeline.release assets --tag "$GITHUB_REF_NAME" --out release-assets
-          python -m pipeline.release notes --tag "$GITHUB_REF_NAME" > release-notes.md
+          python -m pipeline.release assets --tag "$TAG" --out release-assets
+          python -m pipeline.release notes --tag "$TAG" > release-notes.md
           ls -l release-assets
       - name: Create the GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          PRE=""; case "$GITHUB_REF_NAME" in *-*) PRE="--prerelease";; esac
-          gh release create "$GITHUB_REF_NAME" --title "Dataset $GITHUB_REF_NAME" --notes-file release-notes.md $PRE release-assets/*
+          PRE=""; case "$TAG" in *-*) PRE="--prerelease";; esac
+          gh release create "$TAG" --title "Dataset $TAG" --notes-file release-notes.md $PRE release-assets/*
+      - name: Refresh the site (a tag made here triggers no other workflow)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
