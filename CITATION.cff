@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: "If you use this dataset, cite it together with Andrew Chubb's original work (see references)."
+type: dataset
+title: "SCS Developments Tracker: assertive moves by claimant states in the South China Sea, 1970 onward"
+version: "2.0.0-dev"
+date-released: "2026-10-16"
+repository-code: "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
+url: "https://south-china-sea-developments.github.io/SCS-Developments-Tracker/"
+authors:
+  - name: "South-China-Sea-Developments project"
+  - family-names: "M."
+    given-names: "Angelo"
+abstract: >-
+  A continuation of Andrew Chubb's Maritime Assertiveness Time Series (MATS 1.02, 1970-2015):
+  the same coding scheme and unit of analysis (the move), extended forward and to six claimants,
+  with a dated, located and sourced event layer under each move. The 1970-2015 moves for China,
+  Vietnam and the Philippines are Chubb's, used with permission.
+keywords:
+  - South China Sea
+  - maritime disputes
+  - assertiveness
+  - event data
+references:
+  - type: article
+    title: "PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970-2015"
+    authors:
+      - family-names: Chubb
+        given-names: Andrew
+    journal: International Security
+    volume: 45
+    issue: 3
+    start: 79
+    end: 121
+    year: 2021
+    doi: 10.1162/isec_a_00400
+  - type: book
+    title: "Dynamics of Assertiveness in the South China Sea: China, the Philippines, and Vietnam, 1970-2015"
+    authors:
+      - family-names: Chubb
+        given-names: Andrew
+    publisher:
+      name: National Bureau of Asian Research
+    year: 2022
+  - type: data
+    title: "Maritime Assertiveness Time Series (MATS 1.0)"
+    authors:
+      - family-names: Chubb
+        given-names: Andrew
+    year: 2022
+    version: "1.01"
+    url: https://mavd.nbr.org
+    notes: "The author's suggested citation (version 1.01, May 18, 2022); the file supplied to this project is version 1.02."
+  - type: generic
+    title: "Methodology appendix to PRC Assertiveness in the South China Sea"
+    authors:
+      - family-names: Chubb
+        given-names: Andrew
+    year: 2021
+    doi: 10.7910/DVN/3Y7NRU
+    publisher:
+      name: Harvard Dataverse
