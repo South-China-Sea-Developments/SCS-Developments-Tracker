@@ -4,7 +4,7 @@ A continuously updated database of **assertive moves by claimant states in the S
 
 **Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07); the site has an event map with a time slider and filters, and a gazetteer places events at named features (08); releases are tags, with a Downloads page, checksums and a citation (09).
 
-**Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main`). **Harvest:** every Monday on GitHub Actions; review pull requests are the queue.
+**Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main` and on every release tag). **Harvest:** every Monday on GitHub Actions; review pull requests are the queue.
 
 ## Quick start
 
@@ -50,7 +50,7 @@ The 1970–2015 data are Andrew Chubb's, used with his permission. Any use of th
 
 - Chubb, A. (2022), *Dynamics of Assertiveness in the South China Sea: China, the Philippines, and Vietnam, 1970–2015* (Washington, D.C.: National Bureau of Asian Research). https://www.nbr.org/publication/dynamics-of-assertiveness-in-the-south-china-sea-china-the-philippines-and-vietnam-1970-2015
 - Chubb, A. (2021), "PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015," *International Security* 45(3): 79–121. https://doi.org/10.1162/isec_a_00400
-- Chubb, A. (2022), "Maritime Assertiveness Time Series (MATS 1.0)" dataset, version 1.02. https://mavd.nbr.org
+- Chubb, A. (2022), "Maritime Assertiveness Time Series (MATS 1.0)" dataset, version 1.01, May 18. https://mavd.nbr.org (the author's suggested citation as given in the xlsx; the file supplied to this project is version 1.02)
 - Methodology appendix: Chubb, A. (2021), Harvard Dataverse. https://doi.org/10.7910/DVN/3Y7NRU
 
 The MAVD dashboard: https://experience.arcgis.com/experience/679733cea527406bb0aa1b936aa37b90/

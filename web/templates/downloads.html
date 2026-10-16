@@ -7,13 +7,13 @@
   {% if release.tag != 'unreleased' %}
   <p class="lede-text">Dataset version <strong>{{ release.version }}</strong>, tagged <code>{{ release.tag }}</code> on {{ release.date[:10] }}. The files below are exactly what the tag holds, served from this site and mirrored on the <a href="{{ meta.repo_url }}/releases/tag/{{ release.tag }}">GitHub release</a>; the checksums let you verify either copy.{% if release.prerelease %} The <code>-dev</code> suffix means the dataset is still being built: cite it as work in progress.{% endif %}</p>
   {% else %}
-  <p class="lede-text">This site was built from an <strong>unreleased working copy</strong> ({{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}): no release tag is reachable from the commit it was built from. The files below are the working files at build time. For a citable version use the <a href="{{ meta.repo_url }}/releases">GitHub releases</a>.</p>
+  <p class="lede-text">This site was built from an <strong>unreleased working copy</strong> ({{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}): no release tag is reachable from the commit it was built from. The files below are the working files at build time; do not cite them. For a citable version use the <a href="{{ meta.repo_url }}/releases">GitHub releases</a>, once one exists.</p>
   {% endif %}
 </section>
 
 <section class="prose downloads">
   <h2>Files</h2>
-  <p><a class="download-all" href="downloads/{{ release.zip.name }}" download>Everything as one zip</a> — {{ release.zip.name }}, {{ release.zip.size_label }} (stored uncompressed, so the same bytes wherever it is built), SHA-256 <code class="sum">{{ release.zip.sha256 }}</code></p>
+  <p><a class="download-all" href="downloads/{{ release.zip.name }}" download>Everything as one zip</a> — {{ release.zip.name }}, {{ release.zip.size_label }}{% if release.tag != 'unreleased' %} (stored uncompressed with the tag's timestamps, so the same bytes wherever it is built){% endif %}, SHA-256 <code class="sum">{{ release.zip.sha256 }}</code></p>
   <table class="data downloads-table">
     <thead><tr><th scope="col">File</th><th scope="col">What it holds</th><th scope="col" class="num">Size</th><th scope="col">SHA-256</th></tr></thead>
     <tbody>
@@ -33,21 +33,25 @@
   <h2 id="cite">How to cite</h2>
   <p>Cite this dataset together with Andrew Chubb's original work: the 1970–{{ meta.mats_last_year }} moves for China, Vietnam and the Philippines are his, used with permission.</p>
   <h3>This dataset</h3>
+  {% if release.tag != 'unreleased' %}
   <pre class="cite" id="cite-text">{{ citation.text }}</pre>
   <details>
     <summary>BibTeX</summary>
     <pre class="cite">{{ citation.bibtex }}</pre>
   </details>
-  <p>A machine-readable <a href="downloads/CITATION.cff">CITATION.cff</a> is in every download.</p>
+  <p>A machine-readable <a href="downloads/CITATION.cff">CITATION.cff</a> is in the zip.</p>
+  {% else %}
+  <p class="cite" id="cite-text">An unreleased working copy has no citation. Cite a tagged version from the <a href="{{ meta.repo_url }}/releases">GitHub releases</a>; the form it takes is in <a href="downloads/CITATION.cff">CITATION.cff</a>.</p>
+  {% endif %}
   <h3>The original work</h3>
   <ul>
     <li>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121. <a href="https://doi.org/10.1162/isec_a_00400">doi:10.1162/isec_a_00400</a></li>
     <li>Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea: China, the Philippines, and Vietnam, 1970–2015</em> (Washington, D.C.: National Bureau of Asian Research).</li>
-    <li>Chubb, A. (2022), “Maritime Assertiveness Time Series (MATS 1.0)” dataset, version 1.02. <a href="https://mavd.nbr.org">mavd.nbr.org</a></li>
+    <li>Chubb, A. (2022), “Maritime Assertiveness Time Series (MATS 1.0)” dataset, version 1.01, May 18. <a href="https://mavd.nbr.org">mavd.nbr.org</a> (the author's suggested citation; the file he supplied to this project is version 1.02)</li>
     <li>Methodology appendix: Chubb, A. (2021), Harvard Dataverse. <a href="https://doi.org/10.7910/DVN/3Y7NRU">doi:10.7910/DVN/3Y7NRU</a></li>
   </ul>
 
   <h2>Licence</h2>
-  <p>The licence for the data is pending agreement with the original author; until a licence file is added to the repository, all rights to the data remain with their respective authors, and the files here are offered for verification and non-commercial research use with the citations above. The code's licence is stated in the repository.</p>
+  <p>Not yet decided, pending agreement with the original author. Until a licence file is added to the repository, all rights to the data remain with their respective authors; the files are published here so that the figures on this site can be checked against them, with the citations above.</p>
 </section>
 {% endblock %}

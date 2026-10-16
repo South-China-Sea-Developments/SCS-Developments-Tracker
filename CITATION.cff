@@ -3,7 +3,7 @@ message: "If you use this dataset, cite it together with Andrew Chubb's original
 type: dataset
 title: "SCS Developments Tracker: assertive moves by claimant states in the South China Sea, 1970 onward"
 version: "2.0.0-dev"
-date-released: "2026-10-15"
+date-released: "2026-10-16"
 repository-code: "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
 url: "https://south-china-sea-developments.github.io/SCS-Developments-Tracker/"
 authors:
@@ -47,4 +47,15 @@ references:
       - family-names: Chubb
         given-names: Andrew
     year: 2022
+    version: "1.01"
     url: https://mavd.nbr.org
+    notes: "The author's suggested citation (version 1.01, May 18, 2022); the file supplied to this project is version 1.02."
+  - type: generic
+    title: "Methodology appendix to PRC Assertiveness in the South China Sea"
+    authors:
+      - family-names: Chubb
+        given-names: Andrew
+    year: 2021
+    doi: 10.7910/DVN/3Y7NRU
+    publisher:
+      name: Harvard Dataverse

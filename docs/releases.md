@@ -1,10 +1,10 @@
 # Releases
 
-A release is a git tag on `main`. Tagging is the only manual step; everything a researcher downloads or cites is derived from the tag.
+A release is a git tag on `main`. Tagging is the only manual step and the maintainer does it; everything a researcher downloads or cites is derived from the tag. Between a version's merge and its tag the public Downloads page says "unreleased working copy" and offers no citation, so tag promptly after merging.
 
 ## What a release is
 
-- The tag `vX.Y.Z` (or `vX.Y.Z-dev` while the dataset is being built) on a commit of `main` that passes the validator.
+- The tag `vX.Y.Z`, or `vX.Y.Z-suffix` (`-dev` while the dataset is being built, `-rc.1` for a candidate) for a pre-release, on a commit of `main` that passes the validator.
 - `CHANGELOG.md` has a `## vX.Y.Z — YYYY-MM-DD` section describing what changed; it becomes the release notes.
 - `pipeline/schema.py` `DATASET_VERSION` equals `X.Y.Z` (it is written onto every project-coded move as `data_version`), and `CITATION.cff` at the repository root carries the same version and date.
 - The GitHub Release (created by the `release` workflow from the tag) holds the dataset files *as they are at the tag*, the column definitions, the spec, Chubb's codebook appendix, the changelog, CITATION.cff, a README, `SHA256SUMS` and one zip of all of them. The zip stores the files uncompressed with fixed metadata, so it is byte-identical wherever it is built and its checksum matches between the GitHub release and the site.
@@ -15,7 +15,7 @@ Version numbers: MAJOR for a change to the coding scheme or the unit of analysis
 ## Procedure
 
 1. On `main`, with the validator green (`python -m pipeline.validate`), set `DATASET_VERSION` in `pipeline/schema.py`, update `version` and `date-released` in `CITATION.cff`, and add the `## vX.Y.Z — date` section to `CHANGELOG.md`. Open and merge that as a pull request like any other change.
-2. Tag the merge commit and push the tag:
+2. The maintainer tags the merge commit on the day `CITATION.cff` says (`date-released` must equal the tagged commit's date; the release refuses otherwise) and pushes the tag:
    ```
    git checkout main && git pull
    git tag -a vX.Y.Z -m "Dataset vX.Y.Z"

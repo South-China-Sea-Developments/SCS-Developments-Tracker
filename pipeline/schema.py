@@ -101,7 +101,7 @@ MATS_XLSX_PACKED = {"Domains": "packed_domains", "Issues": "packed_issues", "Loc
 # MAVD online table (All_Actions7): canonical column -> MAVD column, for the columns the xlsx lacks.
 MAVD_EXTRA_COLUMNS = {"diminished_notes": "Cases_of_diminished_assertive_a", "other_possible_cases": "Other_Possible_Cases"}
 
-DATASET_VERSION = "2.0.0-dev"   # 1.x is Chubb's; tagged releases will replace -dev
+DATASET_VERSION = "2.0.0-dev"   # 1.x is Chubb's; -dev while the dataset is being built; equals the release tag without its v
 REPO_URL = "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
 
 # Scope of the comparability guarantee (ADR 0001): these claimants and years must equal MATS 1.02.
