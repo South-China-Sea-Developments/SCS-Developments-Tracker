@@ -283,6 +283,143 @@
    "max_items": 40,
    "status": "active",
    "notes": "The general net. Most candidates will come from here and be confirmed against primary sources by the coder."
+  },
+  {
+   "id": "my_malaymail",
+   "name": "Malay Mail (Malaysia news feed)",
+   "kind": "rss",
+   "url": "https://www.malaymail.com/feed/rss/malaysia",
+   "language": "en",
+   "claimants": [
+    "MY",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "English national daily; carries Wisma Putra statements, MMEA and RMN releases, Bernama copy. Added for ticket 11."
+  },
+  {
+   "id": "my_fmt",
+   "name": "Free Malaysia Today (nation feed)",
+   "kind": "rss",
+   "url": "https://cms.freemalaysiatoday.com/category/nation/feed",
+   "language": "en",
+   "claimants": [
+    "MY",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Added for ticket 11."
+  },
+  {
+   "id": "id_antara",
+   "name": "ANTARA (politik, Indonesian)",
+   "kind": "rss",
+   "url": "https://www.antaranews.com/rss/politik.xml",
+   "language": "id",
+   "claimants": [
+    "ID",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "State news agency; carries Kemlu, Bakamla, TNI AL and KKP statements in Indonesian. Added for ticket 11."
+  },
+  {
+   "id": "id_antara_en",
+   "name": "ANTARA English",
+   "kind": "rss",
+   "url": "https://en.antaranews.com/rss/news.xml",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Added for ticket 11."
+  },
+  {
+   "id": "tw_cna",
+   "name": "Central News Agency (politics, Chinese)",
+   "kind": "rss",
+   "url": "https://feeds.feedburner.com/rsscna/politics",
+   "language": "zh-TW",
+   "claimants": [
+    "TW",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "State news agency of the ROC; carries MOFA, MND, OAC and CGA statements. Added for ticket 11."
+  },
+  {
+   "id": "tw_ltn",
+   "name": "Liberty Times (politics)",
+   "kind": "rss",
+   "url": "https://news.ltn.com.tw/rss/politics.xml",
+   "language": "zh-TW",
+   "claimants": [
+    "TW",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Added for ticket 11."
+  },
+  {
+   "id": "tw_taipei_times",
+   "name": "Taipei Times",
+   "kind": "rss",
+   "url": "https://www.taipeitimes.com/xml/index.rss",
+   "language": "en",
+   "claimants": [
+    "TW",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Added for ticket 11."
+  },
+  {
+   "id": "tw_oac",
+   "name": "Taiwan Ocean Affairs Council news",
+   "kind": "html_list",
+   "url": "https://www.oac.gov.tw/en/home.jsp?id=242&parentpath=0,239",
+   "link_pattern": "href=\"([^\"]*news[^\"]+)\"",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "cadence": "weekly",
+   "max_items": 15,
+   "status": "needs_work",
+   "notes": "Listing is script-rendered (probe 2026-10-18): no article links in the HTML. Covered meanwhile by tw_cna and tw_cga."
+  },
+  {
+   "id": "benarnews",
+   "name": "BenarNews (English)",
+   "kind": "rss",
+   "url": "https://www.benarnews.org/arc/outboundfeeds/english/rss/",
+   "language": "en",
+   "claimants": [
+    "MY",
+    "ID",
+    "PH",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "needs_work",
+   "notes": "The RSS feed returned a channel with no items on 2026-10-18; the news sitemap at /arc/outboundfeeds/english/sitemap-news/ has the articles but is not RSS. Revisit."
   }
  ]
 }

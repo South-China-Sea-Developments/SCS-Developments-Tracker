@@ -33,6 +33,7 @@ RELEASE_FILES = {"data/claimants.csv": "claimants.csv", "data/moves.csv": "moves
                  "data/sources.csv": "sources.csv", "data/corrections.csv": "corrections.csv",
                  "data/reference/mavd_subregions.geojson": "mavd_subregions.geojson",
                  "data/reference/gazetteer.csv": "gazetteer.csv", "data/reference/gazetteer_extra.csv": "gazetteer_extra.csv",
+                 **{f"data/baselines/{c}.md": f"BASELINE-{c}.md" for c in ("CN", "VN", "PH", "MY", "ID", "TW")},
                  "data/README.md": "COLUMNS.md", "docs/spec.md": "SPEC.md", "docs/codebook/chubb-2021-appendix.txt": "CODEBOOK-chubb-2021-appendix.txt",
                  "CHANGELOG.md": "CHANGELOG.md", "CITATION.cff": "CITATION.cff"}
 CHANGELOG = ROOT / "CHANGELOG.md"
@@ -107,6 +108,7 @@ Files
   corrections.csv               documented corrections to MATS-era rows (empty until the author confirms any)
   mavd_subregions.geojson       the ten MAVD sub-region polygons (WGS84)
   gazetteer.csv, gazetteer_extra.csv   named features with coordinates and sub-region (Wikidata, CC0, plus corrections)
+  BASELINE-<claimant>.md        each claimant's pre-1970 baseline: the actions against which 1970 is measured
   COLUMNS.md                    column definitions of every table (data/README.md in the repository)
   SPEC.md                       the project specification at this version
   CODEBOOK-chubb-2021-appendix.txt   Andrew Chubb's methodology appendix, the coding rules (CC0)

@@ -82,6 +82,8 @@ Three seams, agreed: (1) the canonical files, via the validator — schema, inte
 
 - 2026-10-18 (ticket 10): the agreement report's unit is the accepted event carrying a suggestion, compared with its move's final coding (one row per event, so a move formed from several candidates counts once per candidate); "period" is the event's calendar year, not the five-year MAVD bin. It also reports dyads, grouping where an extractor proposed a move, the outcome of every decided suggestion, and a Type confusion matrix. `pipeline.agreement` is unit-tested against a hand-counted fixture outside the three seams; at seam 3 the build emits `data/agreement.json` and the methodology page renders the tables without console errors.
 
+- 2026-10-18 (ticket 11): baselines live in `data/baselines/<claimant>.md` and ship with every release. Candidates may also be compiled by hand (a researcher's or an assistant's reading of sources, in the extractor's output shape with a `sources` list per event) and imported with `pipeline.harvest import`, which runs them through the extractor's normalisation, fetches each first source to check the excerpt, flags duplicates and names the compiler as the extractor; they then enter the review queue like any harvested candidate (ADR 0003 unchanged: nothing is accepted by a machine). The first such import is the 2016+ candidate set for MY, ID and TW.
+
 ## Further Notes
 
 - Build order: tracer bullet first (load MATS 1.02 → validator → first site pages reproducing MAVD's counts), then the harvester and review queue on CN/VN/PH 2016+, then the event map, then the three new claimants' 1970–2015 backfill, then Airtable.
