@@ -80,7 +80,7 @@ Three seams, agreed: (1) the canonical files, via the validator — schema, inte
 
 - 2026-10-16 (ticket 09): a release is a tag `vX.Y.Z[-suffix]` on `main`; the Downloads page and the GitHub Release serve the dataset files as they are at the tag (read from git, never the working tree) with checksums, a reproducible zip, `CITATION.cff` and the changelog section, from inside the site bundle; a build with no reachable tag serves the working files labelled unreleased and offers no citation. `pipeline.release` is tested against a temporary tagged repository, outside the three seams; the release workflow is verified by the first real tag.
 
-- 2026-10-18 (ticket 10): the agreement report's unit is the accepted event carrying a suggestion, compared with its move's final coding; it also reports dyads, grouping (which move the event belongs to) and the outcome of every decided suggestion, and includes a Type confusion matrix. Tested against a hand-counted fixture (seam 3: the build emits it and the page renders it).
+- 2026-10-18 (ticket 10): the agreement report's unit is the accepted event carrying a suggestion, compared with its move's final coding (one row per event, so a move formed from several candidates counts once per candidate); "period" is the event's calendar year, not the five-year MAVD bin. It also reports dyads, grouping where an extractor proposed a move, the outcome of every decided suggestion, and a Type confusion matrix. `pipeline.agreement` is unit-tested against a hand-counted fixture outside the three seams; at seam 3 the build emits `data/agreement.json` and the methodology page renders the tables without console errors.
 
 ## Further Notes
 

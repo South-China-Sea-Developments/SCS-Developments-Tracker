@@ -7,10 +7,10 @@ renders it; this module also prints it as Markdown.
 What is compared. A "compared" event is an accepted event that carries a suggestion (an extractor
 and a suggested Type) and belongs to an accepted move: its suggested Type, Domains, Issues and
 dyads against the move's. Agreement on a set (Domains, Issues, dyads) is exact set equality.
-"Grouping" compares what the machine said about which move the event belongs to: a suggested
-move_id agrees when it is the move the coder chose; no suggestion (a new move) agrees when the
-coder formed a new move with it (the move's coding date is the event's review date). A "decided"
-event is any accepted, merged (duplicate) or rejected event with a suggestion; the outcome counts
+"Grouping" compares a suggested move_id, where the extractor proposed one, with the move the coder
+chose; today's extractor proposes none, so that column stays empty until one does. A suggestion
+whose Type the extractor could not name counts as a Type disagreement. A "decided" event is any
+accepted, merged (duplicate) or rejected event that came from an extractor; the outcome counts
 show how many suggestions became dataset content. Period = the event's year; extractor version =
 the model and prompt hash recorded on the event. MATS-era seed events carry no suggestion and are
 never counted.
@@ -48,19 +48,17 @@ def compare(e: dict, m: dict) -> dict:
     s_dom, f_dom = set(e["suggested_domains"].split()), _flags(m, schema.DOMAIN_FLAGS)
     s_iss, f_iss = set(e["suggested_issues"].split()), _flags(m, schema.ISSUE_FLAGS)
     s_dy, f_dy = set(e["suggested_dyads"].split()), set(m["dyads"].split())
-    if e["suggested_move_id"]:
-        grouping = e["suggested_move_id"] == m["move_id"]
-    else:
-        grouping = m["coded_by"] == "project" and m["coding_date"] == e["review_date"]
-    out = {"type": f_types == {s_type}, "domains": s_dom == f_dom, "issues": s_iss == f_iss, "dyads": s_dy == f_dy, "grouping": grouping}
+    out = {"type": bool(s_type) and f_types == {s_type}, "domains": s_dom == f_dom, "issues": s_iss == f_iss, "dyads": s_dy == f_dy,
+           "grouping": (e["suggested_move_id"] == m["move_id"]) if e["suggested_move_id"] else None}   # None: not applicable
     out["all_three"] = out["type"] and out["domains"] and out["issues"]
     return out
 
 
 def report(events: list[dict], moves: list[dict]) -> dict:
     moves_by_id = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
-    decided = [e for e in events if e["extractor"] and e["suggested_type"] and e["status"] in OUTCOMES]
+    decided = [e for e in events if e["extractor"] and e["status"] in OUTCOMES]
     compared = [e for e in decided if e["status"] == "accepted" and e["move_id"] in moves_by_id]
+    compared_ids = {e["event_id"] for e in compared}
     totals, by_ext, by_period = _new_cell(), {}, {}
     confusion = {t: Counter() for t in schema.TYPE_FLAGS}
     flags = {"domains": {f: {"suggested": 0, "final": 0, "both": 0} for f in schema.DOMAIN_FLAGS},
@@ -69,18 +67,21 @@ def report(events: list[dict], moves: list[dict]) -> dict:
         cells = [totals, by_ext.setdefault(e["extractor"], _new_cell()), by_period.setdefault(e["date_start"][:4] or "undated", _new_cell())]
         for c in cells:
             c["outcome"][e["status"]] += 1
-        if e not in compared:
+        if e["event_id"] not in compared_ids:
             continue
         m = moves_by_id[e["move_id"]]
         res = compare(e, m)
         for c in cells:
             c["n"] += 1
             for d in DIMENSIONS:
+                if res[d] is None:
+                    continue
                 c[d]["n"] += 1
                 c[d]["agree"] += int(res[d])
         final_types = _flags(m, schema.TYPE_FLAGS)
-        if e["suggested_type"] in confusion and final_types:
-            confusion[e["suggested_type"]][sorted(final_types)[0]] += 1
+        if e["suggested_type"] in confusion:
+            for t in final_types:   # a move carries one Type; were it ever to carry two, the event would count under each
+                confusion[e["suggested_type"]][t] += 1
         for dim, flist in (("domains", schema.DOMAIN_FLAGS), ("issues", schema.ISSUE_FLAGS)):
             sugg = set(e[f"suggested_{dim}"].split())
             fin = _flags(m, flist)
@@ -94,7 +95,7 @@ def report(events: list[dict], moves: list[dict]) -> dict:
             "dimensions": list(DIMENSIONS)}
 
 
-LABELS = {"type": "Type", "domains": "Domains", "issues": "Issues", "dyads": "Dyads", "grouping": "Grouping", "all_three": "Type, Domains and Issues all"}
+LABELS = {"type": "Type", "domains": "Domains", "issues": "Issues", "dyads": "Dyads", "grouping": "Grouping", "all_three": "All"}
 
 
 def markdown(r: dict) -> str:
@@ -121,7 +122,7 @@ def main(argv=None) -> int:
     with open(a.data / "moves.csv", newline="", encoding="utf-8") as f:
         moves = list(csv.DictReader(f))
     r = report(events, moves)
-    print(json.dumps(r, indent=1) if a.json else markdown(r), end="")
+    print(json.dumps(r, indent=1) if a.json else markdown(r), end="" if not a.json else "\n")
     return 0
 
 

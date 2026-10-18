@@ -18,7 +18,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import agreement, gazetteer, release, schema
+from pipeline import agreement, release, schema
 from pipeline.load_mats import SEED_RUN
 from web.geo import VIEW_H, VIEW_W, subregion_paths
 

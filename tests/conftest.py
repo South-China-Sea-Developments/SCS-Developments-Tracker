@@ -24,3 +24,14 @@ def raw_xlsx_rows():
     rows = list(wb["MATS 1.02 cases"].iter_rows(values_only=True))  # sheet name fixed by the raw file
     header = rows[0]
     return [dict(zip(header, r)) for r in rows[1:] if r[2]]
+
+
+@pytest.fixture(scope="module")
+def browser():
+    """One headless Chromium per test module, for the seam-3 render tests."""
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        yield b
+        b.close()

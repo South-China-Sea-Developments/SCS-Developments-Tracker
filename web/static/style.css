@@ -375,7 +375,9 @@ pre.cite { white-space: pre-wrap; background: var(--surface); border: 1px solid 
 .definitions { margin: 8px 0 12px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; color: var(--ink-2); }
 .definitions dt { font-weight: 600; color: var(--ink); }
 .definitions dd { margin: 0; }
-.agreement-table { margin: 10px 0 18px; font-size: 0.9375rem; display: block; overflow-x: auto; max-width: 100%; }
+.table-scroll { overflow-x: auto; max-width: 100%; margin: 10px 0 18px; }
+.table-scroll:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.agreement-table { margin: 0; font-size: 0.9375rem; border-collapse: collapse; }
 .agreement-table th, .agreement-table td { padding: 5px 10px; white-space: nowrap; text-align: left; border-bottom: 1px solid var(--grid); vertical-align: baseline; }
 .agreement-table th.num, .agreement-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .agreement-table tbody th[scope="row"] { font-weight: 500; }

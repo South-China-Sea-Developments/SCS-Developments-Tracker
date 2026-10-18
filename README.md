@@ -28,7 +28,7 @@ python -m pipeline.release latest  # the newest release tag; `assets --out DIR` 
 | Path | Contents |
 |---|---|
 | `data/*.csv` | **The canonical dataset**: claimants, moves, events, sources, corrections. See `data/README.md`. |
-| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt), review queue, scheduled-run operations. |
+| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt), review queue, scheduled-run operations, releases, agreement report. |
 | `harvest/` | Working folder for harvest runs (not committed; the state between runs lives on the `harvest-state` branch). |
 | `docs/review/` | Review pages, one per harvest run. |
 | `tests/` | Tests at the agreed seams. |

@@ -44,24 +44,28 @@ def fixture():
         move("CN202501", coercive=1, physical=1, fisheries=1),   # an older move an event was merged into
     ]
     events = [
-        # extractor A, 2026: type right, domains right, issues partly wrong, dyads right; formed a new move (suggested none)
+        # extractor A, 2026: type right, domains right, issues partly wrong, dyads right; no move suggested (grouping not applicable)
         event("e1", "CN202601", "accepted", EXTRACTOR_A, "coercive", "physical", "military", "CP"),
-        # extractor A, 2026: type wrong (said demonstrative), domains wrong, issues right, dyads right; merged into a move the machine named
-        event("e2", "CN202601", "accepted", EXTRACTOR_A, "demonstrative", "physical diplomatic", "military administrative", "CP", s_move="CN202601"),
-        # extractor A, 2026: everything right incl. dyads CV; suggested a new move (none) and one was formed
+        # extractor A, 2026: type wrong (said demonstrative), domains wrong, issues right, dyads right; suggested the existing move CN202501, coder chose CN202601
+        event("e2", "CN202601", "accepted", EXTRACTOR_A, "demonstrative", "physical diplomatic", "military administrative", "CP", s_move="CN202501"),
+        # extractor A, 2026: everything right incl. dyads CV; no move suggested
         event("e3", "CN202602", "accepted", EXTRACTOR_A, "demonstrative", "physical", "energy", "CV"),
-        # extractor A, 2026: rejected by the coder (counts against precision, not in coding agreement)
+        # extractor A, 2026: rejected by the coder (counts as an outcome, not a coding comparison)
         event("e4", "", "rejected", EXTRACTOR_A, "declarative", "diplomatic", "politics", "CP"),
-        # extractor A, 2026: duplicate report (status merged) - not a coding comparison
+        # extractor A, 2026: duplicate report (status merged): an outcome, not a coding comparison
         event("e5", "CN202601", "merged", EXTRACTOR_A, "coercive", "physical", "military", "CP"),
-        # extractor B, 2026: type right, suggested joining CN202601 but the coder put it in a new move VN... (claimant differs: grouping wrong)
+        # extractor B, 2026: type right; suggested the existing move VN202501, the coder formed VN202601 (grouping wrong)
         event("e6", "VN202601", "accepted", EXTRACTOR_B, "declarative", "diplomatic", "politics", "VC", s_move="VN202501"),
-        # extractor B, 2025: merged into the older move the machine named; type right, dyads wrong
+        # extractor B, 2025: suggested the older move CN202501 and the coder merged it there (grouping right); type right, dyads wrong
         event("e7", "CN202501", "accepted", EXTRACTOR_B, "coercive", "physical", "fisheries", "CV", s_move="CN202501", year="2025", review_date="2026-10-21"),
         # a candidate still waiting: not counted anywhere
         event("e8", "", "candidate", EXTRACTOR_B, "coercive", "physical", "military", "CP"),
         # a MATS-era seed event: no extractor, never counted
         event("e9", "CN202501", "accepted", "", "", "", "", ""),
+        # extractor B, 2026: the extractor could not name a Type; rejected - still a decided suggestion
+        event("e10", "", "rejected", EXTRACTOR_B, "", "physical", "military", "CP"),
+        # extractor B, 2026: no Type named, accepted into CN202602: a Type disagreement, domains right
+        event("e11", "CN202602", "accepted", EXTRACTOR_B, "", "physical", "energy", "CV"),
     ]
     return moves, events
 
@@ -69,38 +73,56 @@ def fixture():
 def test_report_numbers_by_hand(fixture):
     moves, events = fixture
     r = agreement.report(events, moves)
-    assert r["n_compared"] == 5 and r["n_decided"] == 7           # e1 e2 e3 e6 e7 compared; + e4 e5 decided
+    assert r["n_compared"] == 6 and r["n_decided"] == 9           # e1 e2 e3 e6 e7 e11 compared; + e4 e5 e10 decided
     total = r["totals"]
-    assert total["type"] == {"agree": 4, "n": 5}                   # e2 wrong
-    assert total["domains"] == {"agree": 4, "n": 5}                # e2 wrong
-    assert total["issues"] == {"agree": 4, "n": 5}                 # e1 partly wrong
-    assert total["dyads"] == {"agree": 4, "n": 5}                  # e7 wrong
-    assert total["grouping"] == {"agree": 4, "n": 5}               # e6 wrong: named VN202501, coder formed VN202601
-    assert total["all_three"] == {"agree": 3, "n": 5}              # e3 e6 e7 fully right on type+domains+issues
-    assert total["outcome"] == {"accepted": 5, "merged": 1, "rejected": 1}
-    # per-flag detail: issues military suggested 3 times (e1 e2 e5 excluded... e1, e2), present on the move 2 times
+    assert total["type"] == {"agree": 4, "n": 6}                   # e2 wrong; e11 named no Type
+    assert total["domains"] == {"agree": 5, "n": 6}                # e2 wrong
+    assert total["issues"] == {"agree": 5, "n": 6}                 # e1 partly wrong
+    assert total["dyads"] == {"agree": 5, "n": 6}                  # e7 wrong
+    assert total["grouping"] == {"agree": 1, "n": 3}               # only e2 e6 e7 proposed a move; e7 right
+    assert total["all_three"] == {"agree": 3, "n": 6}              # e3 e6 e7
+    assert total["outcome"] == {"accepted": 6, "merged": 1, "rejected": 2}
     a = r["by_extractor"][EXTRACTOR_A]
-    assert a["n"] == 3 and a["type"] == {"agree": 2, "n": 3} and a["outcome"] == {"accepted": 3, "merged": 1, "rejected": 1}
+    assert a["n"] == 3 and a["type"] == {"agree": 2, "n": 3} and a["grouping"] == {"agree": 0, "n": 1}
+    assert a["outcome"] == {"accepted": 3, "merged": 1, "rejected": 1}
     b = r["by_extractor"][EXTRACTOR_B]
-    assert b["n"] == 2 and b["dyads"] == {"agree": 1, "n": 2} and b["grouping"] == {"agree": 1, "n": 2}
-    assert set(r["by_period"]) == {"2025", "2026"} and r["by_period"]["2025"]["n"] == 1 and r["by_period"]["2026"]["n"] == 4
-    # the type confusion matrix names what was said and what was decided
+    assert b["n"] == 3 and b["dyads"] == {"agree": 2, "n": 3} and b["grouping"] == {"agree": 1, "n": 2} and b["type"] == {"agree": 2, "n": 3}
+    assert set(r["by_period"]) == {"2025", "2026"} and r["by_period"]["2025"]["n"] == 1 and r["by_period"]["2026"]["n"] == 5
+    # the type confusion matrix names what was said and what was decided; a nameless suggestion is in no row
     assert r["type_confusion"]["demonstrative"]["coercive"] == 1 and r["type_confusion"]["coercive"]["coercive"] == 2
+    assert sum(sum(c.values()) for c in r["type_confusion"].values()) == 5
+    # per-flag detail over the six compared events: issues "military" suggested by e1 e2, on the move for e1 e2 (CN202601)
     assert r["flags"]["issues"]["military"] == {"suggested": 2, "final": 2, "both": 2}
     assert r["flags"]["issues"]["administrative"] == {"suggested": 1, "final": 2, "both": 1}
+    assert r["flags"]["issues"]["energy"] == {"suggested": 2, "final": 2, "both": 2}   # e3 e11
 
 
 def test_empty_report_when_nothing_has_been_reviewed():
+    """Seed events carry no extractor and are never counted; an empty list gives the same empty report."""
     moves = [dict(r) for r in csv.DictReader(open(DATA_DIR / "moves.csv", newline="", encoding="utf-8"))]
     events = [dict(r) for r in csv.DictReader(open(DATA_DIR / "events.csv", newline="", encoding="utf-8"))]
-    r = agreement.report(events, moves)
+    seeds_only = [e for e in events if not e["extractor"]]
+    r = agreement.report(seeds_only, moves)
     assert r["n_compared"] == 0 and r["n_decided"] == 0 and r["by_extractor"] == {} and r["totals"]["type"] == {"agree": 0, "n": 0}
+    assert agreement.report([], moves) == r
 
 
-def test_markdown_table_has_the_definitions(fixture):
+def test_outcomes_alone_when_every_suggestion_was_rejected(fixture):
+    moves, events = fixture
+    rejected = [dict(e, status="rejected", move_id="", review_note="n") for e in events if e["extractor"]]
+    r = agreement.report(rejected, moves)
+    assert r["n_compared"] == 0 and r["n_decided"] == 10 and r["totals"]["outcome"] == {"accepted": 0, "merged": 0, "rejected": 10}   # e8 the candidate too
+
+
+def test_markdown_table(fixture):
     moves, events = fixture
     md = agreement.markdown(agreement.report(events, moves))
-    assert "| Extractor |" in md and EXTRACTOR_A in md and "4/5" in md and "Grouping" in md
+    lines = md.splitlines()
+    assert lines[0] == "Compared events: 6 (decided suggestions: 9)."
+    assert lines[2] == "| Extractor | n | Type | Domains | Issues | Dyads | Grouping | All | accepted | merged | rejected |"
+    assert f"| {EXTRACTOR_A} | 3 | 2/3 | 2/3 | 2/3 | 3/3 | 0/1 | 1/3 | 3 | 1 | 1 |" in lines
+    assert "| all | 6 | 4/6 | 5/6 | 5/6 | 5/6 | 1/3 | 3/6 | 6 | 1 | 2 |" in lines
+    assert "| 2025 | 1 | 1/1 | 1/1 | 1/1 | 0/1 | 1/1 | 1/1 |" in lines
 
 
 def test_build_regenerates_the_file_and_the_page_renders_it(tmp_path, fixture, browser):
@@ -115,30 +137,28 @@ def test_build_regenerates_the_file_and_the_page_renders_it(tmp_path, fixture, b
     out = tmp_path / "dist"
     build(d, out, build_date="2026-10-20")
     r = json.loads((out / "data/agreement.json").read_text(encoding="utf-8"))
-    assert r["n_compared"] == 5 and r["totals"]["type"] == {"agree": 4, "n": 5}
+    assert r["n_compared"] == 6 and r["totals"]["type"] == {"agree": 4, "n": 6}
     html = (out / "methodology.html").read_text(encoding="utf-8")
-    assert "4 of 5" in html and EXTRACTOR_A in html and "Grouping" in html
+    assert "4 of 6" in html and EXTRACTOR_A in html and "Grouping" in html
     page = browser.new_page()
     problems = []
-    page.on("pageerror", lambda e: problems.append(str(e)))
+    page.on("console", lambda m: problems.append((m.type, m.text)) if m.type in ("error", "warning") else None)
+    page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
     page.goto((out / "methodology.html").resolve().as_uri())
-    assert page.locator("#agreement table").count() >= 2
-    assert not problems
+    assert page.locator("#agreement table").count() == 3
+    assert page.locator("#agreement .table-scroll[tabindex='0']").count() == 3
+    assert not problems, problems
     page.close()
 
 
-def test_the_real_page_says_nothing_is_reviewed_yet(tmp_path):
+def test_the_built_page_matches_the_report_whatever_the_data_holds(tmp_path):
+    """State-independent: the page's empty state appears exactly when the report is empty."""
     from web.build import build
     out = tmp_path / "dist"
     build(DATA_DIR, out, build_date="2026-10-20")
+    r = json.loads((out / "data/agreement.json").read_text(encoding="utf-8"))
+    moves = [dict(x) for x in csv.DictReader(open(DATA_DIR / "moves.csv", newline="", encoding="utf-8"))]
+    events = [dict(x) for x in csv.DictReader(open(DATA_DIR / "events.csv", newline="", encoding="utf-8"))]
+    assert r == agreement.report(events, moves)
     html = (out / "methodology.html").read_text(encoding="utf-8")
-    assert "No machine suggestions have been reviewed yet" in html
-
-
-@pytest.fixture(scope="module")
-def browser():
-    from playwright.sync_api import sync_playwright
-    with sync_playwright() as p:
-        b = p.chromium.launch()
-        yield b
-        b.close()
+    assert ("No machine suggestion has been reviewed yet" in html) == (r["n_decided"] == 0)
