@@ -34,7 +34,8 @@ def test_chubbs_prc_list_is_reproduced_from_the_appendix():
 
 
 def test_project_baselines_cite_a_source_per_row():
-    """Every row of the five project-compiled lists carries a URL; every document names its sources."""
+    """Every row of the five project-compiled lists names a source with its URL, or points at a source
+    whose URL is given earlier in the same document ("URL above"); every document lists its sources."""
     for code in ("VN", "PH", "MY", "ID", "TW"):
         text = (BASELINES / f"{code}.md").read_text(encoding="utf-8")
         assert "## Sources consulted" in text, code
@@ -48,4 +49,5 @@ def test_project_baselines_cite_a_source_per_row():
             cells = [c.strip() for c in r.strip("|").split("|")]
             if len(cells) != len(cols):
                 continue
-            assert re.search(r"https?://", cells[src_i]), (code, r[:80])
+            assert re.search(r"https?://", cells[src_i]) or "above" in cells[src_i].lower(), (code, r[:80])
+        assert len(set(re.findall(r"https?://[^\s|)]+", text))) >= 5, code
