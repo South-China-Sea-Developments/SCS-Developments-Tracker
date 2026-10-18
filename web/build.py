@@ -18,7 +18,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import release, schema
+from pipeline import agreement, release, schema
 from pipeline.load_mats import SEED_RUN
 from web.geo import VIEW_H, VIEW_W, subregion_paths
 
@@ -360,6 +360,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     marker.write_text("written by web.build; this folder is cleared on every build\n", encoding="utf-8")
     shutil.copytree(HERE / "static", out_dir / "assets")
     (out_dir / "data" / "aggregates.json").write_text(json.dumps(agg, indent=1), encoding="utf-8")
+    agree = agreement.report(events, moves)
+    (out_dir / "data" / "agreement.json").write_text(json.dumps(agree, indent=1), encoding="utf-8")
     # the case list the browser filters client-side: one compact record per move
     index = {
         "names": names, "type_labels": TYPE_LABELS,
@@ -389,7 +391,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
         "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
     }
-    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, map_json=map_json, map_style_json=map_style_json,
+    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, agreement=agree, agreement_labels=agreement.LABELS, map_json=map_json, map_style_json=map_style_json,
                n_map_events=mapd["counts"]["n_events"], n_map_points=mapd["counts"]["n_points"],
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),

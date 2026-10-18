@@ -53,16 +53,6 @@ def test_bundle_is_self_contained_and_relative(dist):
     assert not re.search(r"https?://", (dist / "assets/charts.js").read_text(encoding="utf-8").replace("http://www.w3.org/2000/svg", ""))
 
 
-@pytest.fixture(scope="module")
-def browser():
-    from playwright.sync_api import sync_playwright
-
-    with sync_playwright() as p:
-        b = p.chromium.launch()
-        yield b
-        b.close()
-
-
 def _open(browser, dist, page_name, viewport=(1280, 900), color_scheme="light"):
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]}, color_scheme=color_scheme)
     page = ctx.new_page()

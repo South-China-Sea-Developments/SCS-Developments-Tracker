@@ -24,8 +24,58 @@
 
 <h2>Where the data come from</h2>
 <p>The 1970–2015 moves for China, Vietnam and the Philippines are Chubb's MATS 1.02, loaded unchanged ({{ meta.n_moves }} accepted moves at this build{% if meta.n_pending %}, plus {{ meta.n_pending }} pending the author's confirmation{% endif %}). The full methodology, including source lists, verification practice and inter-coder checks, is in the <a href="https://doi.org/10.7910/DVN/3Y7NRU">appendix to Chubb (2021)</a>, released under CC0 and kept as the project codebook in <a href="{{ meta.repo_url }}/tree/main/docs/codebook">the repository</a>.</p>
-<p>For later years and for the additional claimants, scheduled runs harvest a documented list of sources and propose candidate events; a human coder decides what enters the dataset. Every machine suggestion is kept beside the coder's final decision so that agreement can be measured. Project-coded moves are labelled as such wherever they appear.</p>
+<p>For later years and for the additional claimants, scheduled runs harvest a documented list of sources and propose candidate events; a human coder decides what enters the dataset. Every machine suggestion is kept beside the coder's final decision so that agreement can be measured (<a href="#agreement">the report is below</a>). Project-coded moves are labelled as such wherever they appear.</p>
 <p>Every change to the dataset is a reviewed, versioned commit in the <a href="{{ meta.repo_url }}">public repository</a>, and an automatic check refuses any change that would alter the 1970–2015 figures for the original three claimants.</p>
+
+<section id="agreement">
+<h2>How good are the machine's suggestions</h2>
+<p>Every candidate event the harvester proposes carries a suggested coding (Type, Domains, Issues, dyads and, should an extractor propose one, the move it belongs to) and the name of the extractor that made it. The coder's decision is final; the suggestion stays on the row. This report compares the two for every accepted event with a suggestion, by extractor version and by the year of the event, and is regenerated on every build (<a href="data/agreement.json">agreement.json</a>). It is a measure of the suggestions, not of the dataset: the dataset holds only what a coder decided.</p>
+{% if agreement.n_decided == 0 %}
+<p class="figure-note">No machine suggestion has been reviewed yet; the tables fill from the first reviewed harvest.</p>
+{% else %}
+<dl class="definitions">
+  <dt>Type, Domains, Issues, Dyads</dt><dd>Agreement means the suggestion equals the move's final coding exactly: the one Type; the full set of domains, of issues, of dyads.</dd>
+  <dt>Grouping</dt><dd>Where the extractor proposed which move the event belongs to, whether the coder chose that move. The current extractor proposes none, so this column is empty until one does.</dd>
+  <dt>All</dt><dd>Type, Domains and Issues all agree.</dd>
+  <dt>accepted / merged / rejected</dt><dd>What became of every decided suggestion: entered a move; judged a duplicate report of an accepted event; rejected.</dd>
+</dl>
+<p>{{ agreement.n_compared }} compared events, {{ agreement.n_decided }} decided suggestions.{% if agreement.n_compared == 0 %} None has yet entered an accepted move, so only the outcomes can be shown.{% endif %}</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Agreement by extractor version">
+<table class="agreement-table">
+  <caption>By extractor version</caption>
+  <thead><tr><th scope="col">Extractor</th><th scope="col" class="num">n</th>{% for d in agreement.dimensions %}<th scope="col" class="num">{{ 'All' if d == 'all_three' else agreement_labels[d] }}</th>{% endfor %}<th scope="col" class="num">accepted</th><th scope="col" class="num">merged</th><th scope="col" class="num">rejected</th></tr></thead>
+  <tbody>
+  {% for name, c in agreement.by_extractor.items() %}
+  <tr><th scope="row"><code>{{ name }}</code></th><td class="num">{{ c.n }}</td>{% for d in agreement.dimensions %}<td class="num">{% if c[d].n %}{{ c[d].agree }} of {{ c[d].n }}{% else %}–{% endif %}</td>{% endfor %}<td class="num">{{ c.outcome.accepted }}</td><td class="num">{{ c.outcome.merged }}</td><td class="num">{{ c.outcome.rejected }}</td></tr>
+  {% endfor %}
+  <tr class="total"><th scope="row">All extractors</th><td class="num">{{ agreement.totals.n }}</td>{% for d in agreement.dimensions %}<td class="num">{% if agreement.totals[d].n %}{{ agreement.totals[d].agree }} of {{ agreement.totals[d].n }}{% else %}–{% endif %}</td>{% endfor %}<td class="num">{{ agreement.totals.outcome.accepted }}</td><td class="num">{{ agreement.totals.outcome.merged }}</td><td class="num">{{ agreement.totals.outcome.rejected }}</td></tr>
+  </tbody>
+</table>
+</div>
+{% if agreement.n_compared %}
+<div class="table-scroll" tabindex="0" role="region" aria-label="Agreement by year of the event">
+<table class="agreement-table">
+  <caption>By year of the event</caption>
+  <thead><tr><th scope="col">Year</th><th scope="col" class="num">n</th>{% for d in agreement.dimensions %}<th scope="col" class="num">{{ 'All' if d == 'all_three' else agreement_labels[d] }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for name, c in agreement.by_period.items() %}
+  <tr><th scope="row">{{ name }}</th><td class="num">{{ c.n }}</td>{% for d in agreement.dimensions %}<td class="num">{% if c[d].n %}{{ c[d].agree }} of {{ c[d].n }}{% else %}–{% endif %}</td>{% endfor %}</tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Type confusion matrix">
+<table class="agreement-table">
+  <caption>Type: what the machine suggested (rows) against what the coder decided (columns)</caption>
+  <thead><tr><th scope="col">Suggested</th>{% for t in types %}<th scope="col" class="num">{{ t[1] }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for t in types %}<tr><th scope="row">{{ t[1] }}</th>{% for u in types %}<td class="num{% if t[0] == u[0] %} diag{% endif %}">{{ agreement.type_confusion[t[0]].get(u[0], 0) }}</td>{% endfor %}</tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endif %}
+</section>
 
 <h2 id="cite">How to cite</h2>
 <p>Any use of these data must cite one or more of:</p>

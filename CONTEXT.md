@@ -36,6 +36,8 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Diminishment** *(MATS)* — A year in which an aspect of a claimant's assertiveness recorded by an earlier move falls away (fewer, or qualitatively less escalatory, actions). Recorded in Chubb's data as "Cases of diminished assertive actions"; absence of evidence of equivalent actions in the following year is normally treated as diminishment.
 
+**Agreement report** — The derived comparison of the machine's suggested coding (Type, Domains, Issues, dyads; the move, where one was proposed) with the coder's final coding, for every accepted event that carried a suggestion, by extractor version and by year, together with what became of every decided suggestion (accepted, duplicate, rejected). Derived from the events and moves, never a file in the dataset.
+
 **Dataset version** — The number this project gives the dataset (`DATASET_VERSION`, `MAJOR.MINOR.PATCH`, a `-dev` suffix while it is being built), written on every project-coded move as `data_version`. Versions 1.x are Chubb's MATS; this project's are 2.x.
 
 **Release** — A dataset version fixed as a git tag `vX.Y.Z[-suffix]` on `main`; what the Downloads page and the GitHub Release serve, with checksums and a citation.
