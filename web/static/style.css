@@ -370,3 +370,16 @@ pre.cite { white-space: pre-wrap; background: var(--surface); border: 1px solid 
   .downloads-table td.num { text-align: left; }
   .downloads-table td.num::before { content: "Size "; color: var(--muted); }
 }
+
+/* ---- agreement report --------------------------------------------------------------------- */
+.definitions { margin: 8px 0 12px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; color: var(--ink-2); }
+.definitions dt { font-weight: 600; color: var(--ink); }
+.definitions dd { margin: 0; }
+.agreement-table { margin: 10px 0 18px; font-size: 0.9375rem; display: block; overflow-x: auto; max-width: 100%; }
+.agreement-table th, .agreement-table td { padding: 5px 10px; white-space: nowrap; text-align: left; border-bottom: 1px solid var(--grid); vertical-align: baseline; }
+.agreement-table th.num, .agreement-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.agreement-table tbody th[scope="row"] { font-weight: 500; }
+.agreement-table caption { text-align: left; color: var(--muted); font-size: 0.875rem; margin-bottom: 4px; }
+.agreement-table .total th, .agreement-table .total td { border-top: 2px solid var(--baseline); font-weight: 600; }
+.agreement-table td.diag { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+@media (max-width: 640px) { .definitions { grid-template-columns: 1fr; } }

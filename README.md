@@ -19,6 +19,7 @@ python -m pipeline.harvest run     # fetches new items and extracts candidate ev
 python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review page + pull request
 python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
 python -m pipeline.ops --help      # what the scheduled run does around a harvest: state branch, failure issue, reminders
+python -m pipeline.agreement       # machine suggestions vs the coder's final coding, as a Markdown table
 python -m pipeline.release latest  # the newest release tag; `assets --out DIR` writes the downloadable files for it (docs/releases.md)
 ```
 

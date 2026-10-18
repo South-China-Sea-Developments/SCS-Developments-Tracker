@@ -80,6 +80,8 @@ Three seams, agreed: (1) the canonical files, via the validator — schema, inte
 
 - 2026-10-16 (ticket 09): a release is a tag `vX.Y.Z[-suffix]` on `main`; the Downloads page and the GitHub Release serve the dataset files as they are at the tag (read from git, never the working tree) with checksums, a reproducible zip, `CITATION.cff` and the changelog section, from inside the site bundle; a build with no reachable tag serves the working files labelled unreleased and offers no citation. `pipeline.release` is tested against a temporary tagged repository, outside the three seams; the release workflow is verified by the first real tag.
 
+- 2026-10-18 (ticket 10): the agreement report's unit is the accepted event carrying a suggestion, compared with its move's final coding; it also reports dyads, grouping (which move the event belongs to) and the outcome of every decided suggestion, and includes a Type confusion matrix. Tested against a hand-counted fixture (seam 3: the build emits it and the page renders it).
+
 ## Further Notes
 
 - Build order: tracer bullet first (load MATS 1.02 → validator → first site pages reproducing MAVD's counts), then the harvester and review queue on CN/VN/PH 2016+, then the event map, then the three new claimants' 1970–2015 backfill, then Airtable.
