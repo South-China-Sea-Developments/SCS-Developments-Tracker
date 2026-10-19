@@ -20,8 +20,9 @@ jobs:
         run: python -m pytest
       - name: Validate canonical files
         run: python -m pipeline.validate
-      - name: Canonical files are reproducible from raw inputs
+      - name: MATS-era rows are reproducible from the raw inputs
+        # project-coded moves and harvested events are not the loader's; a review branch must pass too
         run: |
+          python -m pipeline.load_mats --check data
           python -m pipeline.load_mats --out /tmp/regen --diff-log /tmp/regen-diff.md
-          for t in claimants moves events sources; do diff -q data/$t.csv /tmp/regen/$t.csv; done
           diff -q docs/reports/mats-1.02-vs-mavd-differences.md /tmp/regen-diff.md

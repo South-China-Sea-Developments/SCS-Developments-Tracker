@@ -246,14 +246,58 @@ def write_differences(path: Path, differences: list[dict], anomalies: list[dict]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def check_mats_rows(data_dir: Path, tables: dict) -> list[str]:
+    """The MATS-era rows in the canonical files equal what the loader produces from the raw inputs:
+    every move the loader makes (chubb-coded, plus the pending one), the seed events, their sources
+    and the claimants, field for field. Project-coded rows and harvested events are not the
+    loader's and are ignored, so a review branch or an accepted harvest passes."""
+    import csv
+
+    def rows(name):
+        with open(data_dir / f"{name}.csv", newline="", encoding="utf-8") as f:
+            return list(csv.DictReader(f))
+
+    errors = []
+    expect_moves = {m["move_id"]: m for m in tables["moves"]}
+    have_moves = {m["move_id"]: m for m in rows("moves") if m["move_id"] in expect_moves}
+    for mid, m in expect_moves.items():
+        if mid not in have_moves:
+            errors.append(f"move {mid} from the raw inputs is missing")
+        elif have_moves[mid] != m:
+            errors.append(f"move {mid} differs from the raw inputs: " + ", ".join(k for k in m if have_moves[mid].get(k) != m[k]))
+    expect_events = {e["event_id"]: e for e in tables["events"]}
+    have_events = {e["event_id"]: e for e in rows("events") if e["event_id"] in expect_events}
+    for eid, e in expect_events.items():
+        if eid not in have_events:
+            errors.append(f"seed event {eid} is missing")
+        elif have_events[eid] != e:
+            errors.append(f"seed event {eid} differs: " + ", ".join(k for k in e if have_events[eid].get(k) != e[k]))
+    expect_sources = {s["source_id"]: s for s in tables["sources"]}
+    have_sources = {s["source_id"]: s for s in rows("sources") if s["source_id"] in expect_sources}
+    for sid, s_ in expect_sources.items():
+        if have_sources.get(sid) != s_:
+            errors.append(f"seed source {sid} is missing or differs")
+    if rows("claimants") != tables["claimants"]:
+        errors.append("claimants.csv differs from the loader's")
+    return errors
+
+
 def main(argv=None) -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--xlsx", type=Path, default=ROOT / "data/raw/mats-1.02/MATS_1-02_all_cases.xlsx")
     p.add_argument("--mavd", type=Path, default=ROOT / "data/raw/mavd-arcgis-2023/All_Actions7.csv")
     p.add_argument("--out", type=Path, default=ROOT / "data")
     p.add_argument("--diff-log", type=Path, default=ROOT / "docs/reports/mats-1.02-vs-mavd-differences.md")
+    p.add_argument("--check", type=Path, default=None, help="do not write; check that DIR's MATS-era rows equal the loader's output")
     a = p.parse_args(argv)
     t = load_tables(a.xlsx, a.mavd)
+    if a.check:
+        errors = check_mats_rows(a.check, t)
+        for e in errors:
+            print(e)
+        print(f"{'OK' if not errors else 'FAILED'}: MATS-era rows in {a.check} {'equal' if not errors else 'differ from'} the raw inputs "
+              f"({len(t['moves'])} moves, {len(t['events'])} seed events, {len(t['sources'])} seed sources)")
+        raise SystemExit(1 if errors else 0)
     a.out.mkdir(parents=True, exist_ok=True)
     for name in ("claimants", "moves", "events", "sources"):
         write_csv(a.out / f"{name}.csv", t[name], schema.TABLES[name])
