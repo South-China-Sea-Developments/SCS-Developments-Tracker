@@ -2,7 +2,7 @@
 
 A continuously updated database of **assertive moves by claimant states in the South China Sea**, built as the successor to Andrew Chubb's *Maritime Assertiveness Time Series* (MATS 1.0, 1970–2015) and its public visualization, the *Maritime Assertiveness Visualization Dashboard* (MAVD, NBR, 2023).
 
-**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07); the site has an event map with a time slider and filters, and a gazetteer places events at named features (08); releases are tags, with a Downloads page, checksums and a citation (09).
+**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07); the site has an event map with a time slider and filters, and a gazetteer places events at named features (08); releases are tags, with a Downloads page, checksums and a citation (09); the methodology page reports machine–coder agreement (10); baselines for all six claimants and hand-compiled candidate sets enter the same queue (11); the archival source lists and routine for the 1970–2015 backfill are in place, coding not started (12); candidates can be reviewed in Airtable with the decisions landing in the pull request unchanged (13).
 
 **Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main` and on every release tag). **Harvest:** every Monday on GitHub Actions; review pull requests are the queue.
 
@@ -19,6 +19,8 @@ python -m pipeline.harvest run     # fetches new items and extracts candidate ev
 python -m pipeline.harvest import events.json --run-id <id> --extractor "who"   # hand-compiled candidates into the same queue
 python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review page + pull request
 python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
+python -m pipeline.airtable push --run <run_id> --pr N   # mirror a run's candidates into the Airtable review table (needs AIRTABLE_TOKEN)
+python -m pipeline.airtable pull --run <run_id> --out decisions.json   # the decisions made there, as the file `queue decide` reads
 python -m pipeline.ops --help      # what the scheduled run does around a harvest: state branch, failure issue, reminders
 python -m pipeline.agreement       # machine suggestions vs the coder's final coding, as a Markdown table
 python -m pipeline.release latest  # the newest release tag; `assets --out DIR` writes the downloadable files for it (docs/releases.md)
@@ -31,7 +33,7 @@ python -m pipeline.release latest  # the newest release tag; `assets --out DIR` 
 | `data/*.csv` | **The canonical dataset**: claimants, moves, events, sources, corrections. See `data/README.md`. |
 | `data/baselines/` | Each claimant's pre-1970 baseline list (Chubb's for the PRC; the project's, sourced, for the other five; provenance in `docs/sources/`). |
 | `harvest/manual/` | Hand-compiled candidate sets kept on record before they enter the review queue. |
-| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt), review queue, scheduled-run operations, releases, agreement report. |
+| `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt), review queue, Airtable front end (`airtable.py`, `airtable.json`), scheduled-run operations, releases, agreement report. |
 | `harvest/` | Working folder for harvest runs (not committed; the state between runs lives on the `harvest-state` branch). |
 | `docs/review/` | Review pages, one per harvest run. |
 | `tests/` | Tests at the agreed seams. |

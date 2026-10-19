@@ -23,5 +23,5 @@ The **review queue is a pull request**: a scheduled run opens one PR per harvest
 
 - Every change to the dataset is a diff with an author and a date; a release is a tag; a citation can name a commit.
 - Schema changes are migrations of CSV files, reviewed like any other change.
-- The Airtable sync is optional tooling and must be safe to switch off at any time.
+- The Airtable sync is optional tooling and must be safe to switch off at any time. *(Built 2026-10-19, ticket 13: `pipeline/airtable.py`; `enabled: false` in `pipeline/airtable.json` switches it off and nothing else reads that file.)*
 - Large binary sources (PDF captures of cited pages) are stored outside git or via Git LFS if they are kept at all; the repository holds references.
