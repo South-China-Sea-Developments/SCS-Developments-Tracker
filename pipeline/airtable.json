@@ -1,0 +1,22 @@
+{
+ "enabled": true,
+ "base_id": "appK9OckCTV15vQwx",
+ "table": "Candidates",
+ "table_id": "tbl1jZACWLq6FXPOq",
+ "interface": "https://airtable.com/appK9OckCTV15vQwx/pbdWq70PPQffUrIye",
+ "field_ids": {
+  "event_id": "fldYslClcFl43XHsR", "run_id": "fldZINTpPC0Ic2DSG", "pull_request": "fldQU03I9eAjADbPE", "claimant": "fldRex95IyKecX3ec",
+  "date_start": "fldlIzt0pknkSneHM", "date_end": "fld4Zu1vOOvJBEfCK", "date_precision": "fldYtRkvPUOqkvknO", "location_name": "fldJS4KlLazxVn3D6",
+  "location_precision": "fldTF6XLGQKSGkZxH", "subregion": "fldbxIOm6TT9Nq61d", "lat": "fld26aj0W1NWJRWoh", "lon": "fldsqkUaTl9oqcDd8",
+  "summary": "fldj9iJBhPaZgkz5W", "actors": "fld01j5Vip55jPnlM", "sources": "fldOteMwLwE76Nmam", "excerpt": "fld9IVsuyn7HPjUYk",
+  "suggested_type": "fldGCvNV3wq1D6qme", "suggested_domains": "fld8z3JWu7OvPwkRC", "suggested_issues": "fldgOS7EY5MAA0oIX", "suggested_dyads": "fld3CiyMSnRAYyJi4",
+  "suggestion_reasoning": "fld40yVJy9dshd10k", "machine_note": "fldOCTu8WApH7UbeG", "possible_duplicate_of": "fld1NDwsjzgHgdSU7",
+  "previous_year_moves": "fldm9TF1AHrNhVyew", "same_year_moves": "fldaTja3pKY7Hq1lX",
+  "decision": "fldnmdasrI25UhMZk", "merge_into_move": "fldJEpTZGk3TK4FjS", "merge_into_candidate": "fldlOqmONrRZ1bwaL", "duplicate_of": "fldfhoGTlmqM1ells",
+  "new_type": "fldUP1jlk4YpZaiHF", "new_criterion": "fldsJ4900hcboIlMs", "new_year": "fldCn2kqfg1FVrDOj", "new_ongoing_through": "fld8mO32Xk5OpVlVb",
+  "new_dyads": "fld7gFD7cz3bK1o2E", "new_domains": "fldzgwmZyIEZsaK2V", "new_issues": "fldS6D2bKCl7ZCfRW", "new_subregions": "fldZdv90qeU1Py2At",
+  "new_description": "fldBie4Fc6HAAXjwn", "edit_date_start": "fldFck9Mn9kZRhrGR", "edit_date_end": "fldaI4osvE07jWkRl", "edit_date_precision": "fldp89ehUfWeWFLvW",
+  "edit_location_name": "fldjupaFzgOxtmBWN", "edit_subregion": "fld8AnSioFINvcQ9M", "edit_lat": "fldgNCFJJ8QyAhqVh", "edit_lon": "fld4maiTYK141tNTc",
+  "edit_actors": "fldzZZnBjPbkp9GUU", "edit_summary": "fldGJjT4ketPGSek4", "note": "fldZgCssshr9rdGRM", "reviewer": "fldOXKyfJUPqLiC73"
+ }
+}
