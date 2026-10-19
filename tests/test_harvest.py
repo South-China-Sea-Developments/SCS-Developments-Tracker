@@ -293,6 +293,7 @@ def test_excerpt_check_ignores_quote_style_and_whitespace():
 def test_import_hand_compiled_candidates(tmp_path, monkeypatch):
     """Hand-compiled events enter the queue through the extractor's own normalisation: same ids,
     same cleaning, same duplicate flagging, the compiler named as the extractor."""
+    monkeypatch.setattr(harvest, "ROOT", tmp_path)   # duplicates are checked against ROOT/data/events.csv: none here
     items = [
         {"date_start": "2016-06-17", "date_end": "2016-06-17", "date_precision": "day", "claimant": "ID", "location_name": "Natuna waters",
          "subregion": "10", "summary": "KRI Imam Bonjol fires on Chinese boats.", "actors": "TNI AL",
@@ -328,6 +329,7 @@ def test_import_checks_excerpts_and_flags_duplicates(tmp_path, monkeypatch):
              "https://example.org/gone": (404, "text/html", b"")}
     monkeypatch.setattr(harvest, "http_get", lambda url, timeout=0: pages[url] + (url,))
     monkeypatch.setattr(harvest.time, "sleep", lambda s: None)
+    monkeypatch.setattr(harvest, "ROOT", tmp_path)   # not against the live dataset, which may hold this very event
     base = {"date_start": "2016-06-17", "date_end": "2016-06-17", "date_precision": "day", "claimant": "ID", "location_name": "Natuna waters",
             "subregion": "10", "actors": "", "suggested_type": "coercive", "suggested_domains": ["physical"], "suggested_issues": ["fisheries"],
             "suggested_dyads": ["IC"], "reasoning": "r", "confidence": "high"}
