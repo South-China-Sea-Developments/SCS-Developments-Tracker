@@ -4,7 +4,7 @@ from collections import Counter
 
 import pytest
 
-from tests.conftest import RAW_MAVD
+from tests.conftest import DATA_DIR, RAW_MAVD
 
 from pipeline import schema
 
@@ -145,3 +145,27 @@ def test_loader_is_deterministic(loaded):
 
     again = load_tables(RAW_XLSX, RAW_MAVD)
     assert again == loaded
+
+
+def test_check_passes_with_extra_project_rows_and_fails_on_a_changed_mats_row(tmp_path, loaded):
+    """`--check` compares only the loader's own rows: added candidates/moves are ignored, an edit to a
+    MATS-era row is caught."""
+    import csv
+    import shutil
+    from pipeline import load_mats, schema
+    d = tmp_path / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    assert load_mats.check_mats_rows(d, loaded) == []
+    with open(d / "events.csv", "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["events"], lineterminator="\n")
+        w.writerow({**{c: "" for c in schema.TABLES["events"]}, "event_id": "ev-extra", "claimant": "MY", "date_start": "2021-06-01",
+                    "status": "candidate", "harvest_run_id": "x", "extractor": "manual:x"})
+    assert load_mats.check_mats_rows(d, loaded) == []
+    rows = list(csv.DictReader(open(d / "moves.csv", newline="", encoding="utf-8")))
+    rows[0]["description"] += " edited"
+    with open(d / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    errs = load_mats.check_mats_rows(d, loaded)
+    assert len(errs) == 1 and errs[0].startswith(f"move {rows[0]['move_id']} differs") and "description" in errs[0]
