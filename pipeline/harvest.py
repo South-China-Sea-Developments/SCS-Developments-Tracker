@@ -61,6 +61,12 @@ def load_registry(path: Path = REGISTRY) -> list[dict]:
     return json.loads(Path(path).read_text(encoding="utf-8"))["sources"]
 
 
+def archival_sources(path: Path = REGISTRY) -> list[dict]:
+    """Archives for the backfill (kind "archive"): where a coder looks for 1970–2015, never fetched
+    by the harvester. Each carries coverage years, access and how to use it."""
+    return [s for s in load_registry(path) if s["kind"] == "archive"]
+
+
 # ---------------------------------------------------------------------------
 # fetching
 
@@ -294,7 +300,7 @@ def cmd_fetch(args) -> int:
         known = set(json.loads(state_path.read_text(encoding="utf-8")).get("seen", []))
     reports = []
     for src in load_registry(args.registry):
-        if src["status"] != "active" or (only and src["id"] not in only):
+        if src["kind"] == "archive" or src["status"] != "active" or (only and src["id"] not in only):
             continue
         r = fetch_source(src, out, since=args.since, known=known, sleep=args.sleep)
         reports.append(r)
@@ -323,6 +329,9 @@ def cmd_fetch(args) -> int:
 def cmd_probe(args) -> int:
     ok = True
     for src in load_registry(args.registry):
+        if src["kind"] == "archive":
+            print(f"{src['id']:<12} {src['status']:<18} archive {src['coverage'][0]}–{src['coverage'][1] or ''} ({src['access']}); not fetched")
+            continue
         try:
             st, ct, body, final = http_get(src["url"], timeout=20)
             n = ""

@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from pipeline import schema
 from pipeline.validate import main, validate
 from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX
 
@@ -220,3 +221,27 @@ def test_documented_correction_is_allowed(good):
     with open(good / "corrections.csv", "a", newline="", encoding="utf-8") as f:
         csv.writer(f).writerow(["CN201105", "description", new_text, "2026-10-15", "test", "test correction"])
     assert validate(good, RAW_XLSX, RAW_MAVD) == []
+
+
+def test_comparability_ignores_project_coded_moves_for_the_new_claimants(good):
+    """Ticket 12: a Malaysian 1985 move coded by the project is outside the comparability guarantee."""
+    rows = list(csv.DictReader(open(good / "moves.csv", newline="", encoding="utf-8")))
+    m = {c: "" for c in schema.TABLES["moves"]}
+    m.update(move_id="MY198501", claimant="MY", year="1985", instance_no="01", status="accepted", coded_by="project", coder="T",
+             coding_date="2026-10-19", data_version=schema.DATASET_VERSION, dyads="MC", intensification_criterion="novelty",
+             description="Test.", ongoing_through="1985")
+    for f in schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS + schema.SUBREGION_FLAGS:
+        m[f] = "1" if f in ("demonstrative", "physical", "military", "loc07_spratly_se") else "0"
+    rows.append(m)
+    with open(good / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    assert validate(good, RAW_XLSX, RAW_MAVD) == []
+    # ... whereas a project-coded Chinese 1985 move would shift the MATS counts and is refused
+    rows[-1].update(move_id="CN198599", claimant="CN", dyads="CV")
+    with open(good / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    assert any(e.startswith("COMPARABILITY") for e in validate(good, RAW_XLSX, RAW_MAVD))

@@ -80,6 +80,7 @@
       var pills = el("span", "case-types", undefined, head);
       c.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
       if (c.st !== "accepted") el("span", "pending-pill", "pending", pills);
+      if (c.cb !== "chubb") el("span", "pending-pill project-pill", "project coding", pills).title = "Coded by this project, not part of MATS 1.02";
       el("span", "case-id", c.id, head);
       el("p", "case-excerpt", excerpt(c.x, f.q), li);
     });

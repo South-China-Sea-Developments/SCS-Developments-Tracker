@@ -27,16 +27,33 @@ def test_registry_is_complete_and_well_formed():
     assert len(ids) == len(set(ids))
     assert REQUIRED_SOURCES <= set(ids)
     for s in sources:
-        assert s["kind"] in ("rss", "html_list"), s["id"]
-        assert s["status"] in ("active", "blocked_from_cloud", "needs_work"), s["id"]
         assert s["url"].startswith("http"), s["id"]
         assert set(s["claimants"]) <= set(schema.CLAIMANT_CODES), s["id"]
-        assert s["cadence"] in ("daily", "weekly"), s["id"]
         assert s["language"], s["id"]
+        if s["kind"] == "archive":   # ticket 12: where a coder looks for 1970-2015; never fetched
+            assert s["status"] == "archival" and s["archive_kind"] in ("chronology", "yearbook", "government", "press_archive", "scholarly", "legal_deposit"), s["id"]
+            assert len(s["coverage"]) == 2 and 1900 <= s["coverage"][0] <= 2026 and (s["coverage"][1] is None or s["coverage"][1] >= s["coverage"][0]), s["id"]
+            assert s["access"] in ("open", "free_registration", "paywalled", "library") and s["how_to_use"], s["id"]
+            continue
+        assert s["kind"] in ("rss", "html_list"), s["id"]
+        assert s["status"] in ("active", "blocked_from_cloud", "needs_work"), s["id"]
+        assert s["cadence"] in ("daily", "weekly"), s["id"]
         if s["kind"] == "html_list":
             assert s["link_pattern"], s["id"]
         if s["status"] != "active":
             assert s["notes"], f"{s['id']}: an inactive source must say why"
+
+
+def test_archives_are_listed_but_never_fetched(tmp_path):
+    reg = tmp_path / "reg.json"
+    reg.write_text(json.dumps({"sources": [
+        {"id": "arch", "name": "An archive", "kind": "archive", "archive_kind": "press_archive", "url": "https://example.org/arch", "language": "en",
+         "claimants": ["MY"], "coverage": [1970, 1999], "access": "open", "how_to_use": "search", "status": "archival", "notes": ""}]}), encoding="utf-8")
+    assert [s["id"] for s in harvest.archival_sources(reg)] == ["arch"]
+    rc = harvest.main(["fetch", "--out", str(tmp_path / "cap"), "--sleep", "0", "--registry", str(reg)])
+    assert rc == 0 and not list((tmp_path / "cap").rglob("arch*"))
+    report = json.loads((tmp_path / "cap" / "fetch-report.json").read_text(encoding="utf-8"))
+    assert report["sources"] == []
 
 
 # ---- parsers ----------------------------------------------------------------

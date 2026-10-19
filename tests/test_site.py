@@ -543,6 +543,7 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
         assert "project" in page_html.lower() and "Test move for" in page_html
     index = json.loads(re.search(r'<script id="cases"[^>]*>(.*?)</script>', (out / "cases.html").read_text(encoding="utf-8"), re.S).group(1).replace("<\\/", "</"))
     assert {c["c"] for c in index["cases"]} >= {"MY", "ID", "TW"}
+    assert {c["cb"] for c in index["cases"] if c["c"] in ("MY", "ID", "TW")} == {"project"}   # labelled as project coding in the list
     events = json.loads((out / "data/events.json").read_text(encoding="utf-8"))
     assert {e["c"] for e in events["events"]} >= {"MY", "ID", "TW"}
     # the overview's chart data carries the new claimants' columns and the extended year axis
