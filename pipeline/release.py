@@ -161,13 +161,20 @@ def build_assets(root: Path, tag: str, out: Path) -> dict:
     tag whose number is not the DATASET_VERSION the code states at that tag."""
     if version_at(root, tag) != tag[1:]:
         raise RuntimeError(f"tag {tag} but DATASET_VERSION at the tag is {version_at(root, tag)}; see docs/releases.md")
-    files = {name: file_at(root, tag, path) for path, name in RELEASE_FILES.items()}
+    files, absent = {}, []
+    for path, name in RELEASE_FILES.items():
+        try:
+            files[name] = file_at(root, tag, path)
+        except RuntimeError:   # a file added to the repository after this tag: not part of this release
+            absent.append(name)
     date = tag_date(root, tag)
     m = re.search(r'^date-released:\s*"(\d{4}-\d{2}-\d{2})"', files["CITATION.cff"].decode("utf-8"), re.M)
     if not m or m.group(1) != date[:10]:
         raise RuntimeError(f"CITATION.cff at {tag} says date-released {m.group(1) if m else '?'} but the tagged commit is dated {date[:10]}; "
                            f"fix the file on main and tag that commit (docs/releases.md)")
-    return assemble(files, tag, tag[1:], date, out)
+    manifest = assemble(files, tag, tag[1:], date, out)
+    manifest["absent_at_tag"] = absent
+    return manifest
 
 
 def working_assets(data_dir: Path, out: Path, date: str | None = None, root: Path | None = None) -> dict:

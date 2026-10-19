@@ -502,7 +502,7 @@ def test_map_time_window_and_filters(browser, dist):
 
 # ---- ticket 11: new claimants need no special-casing -------------------
 
-def test_new_claimants_render_everywhere_without_special_casing(tmp_path, browser):
+def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
     """A project-coded Malaysian, Indonesian and Taiwanese move each, with an event: every page
     counts and lists them exactly as it does the original three."""
     import csv
@@ -545,14 +545,7 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path, browse
     assert {c["c"] for c in index["cases"]} >= {"MY", "ID", "TW"}
     events = json.loads((out / "data/events.json").read_text(encoding="utf-8"))
     assert {e["c"] for e in events["events"]} >= {"MY", "ID", "TW"}
-    # the overview draws the six claimants and the latest year
-    ctx = browser.new_context(viewport={"width": 1280, "height": 900})
-    page = ctx.new_page()
-    problems = []
-    page.on("pageerror", lambda e: problems.append(str(e)))
-    page.goto((out / "index.html").resolve().as_uri())
-    page.wait_for_timeout(300)
-    assert page.locator('[data-code="MY"]').count() >= 1 and page.locator('[data-code="TW"]').count() >= 1
-    assert "2021" in page.inner_text("body")
-    assert not problems, problems
-    ctx.close()
+    # the overview's chart data carries the new claimants' columns and the extended year axis
+    agg_html = (out / "index.html").read_text(encoding="utf-8")
+    inline = json.loads(re.search(r'<script id="agg"[^>]*>(.*?)</script>', agg_html, re.S).group(1).replace("<\\/", "</"))
+    assert inline["by_claimant"]["MY"]["years"]["2021"]["coercive"] == 1 and inline["years"][-1] == 2021

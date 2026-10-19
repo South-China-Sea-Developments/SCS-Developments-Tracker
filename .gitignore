@@ -12,3 +12,4 @@ harvest/runs/
 harvest/recordings/
 harvest/state.json
 harvest/summary.md
+!harvest/manual/

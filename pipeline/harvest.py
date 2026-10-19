@@ -413,29 +413,39 @@ def cmd_import(args) -> int:
     items = json.loads(Path(args.file).read_text(encoding="utf-8"))
     if isinstance(items, dict):
         items = items.get("events", [])
-    out = Path(args.out) if args.out else ROOT / "harvest" / "runs" / (args.run_id or "import")
-    run_id = args.run_id or out.name
+    run_id = args.run_id or ("import-" + dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M"))
+    out = Path(args.out) if args.out else ROOT / "harvest" / "runs" / run_id
     ex = Extractor(_ManualClient(args.extractor), run_id=run_id)
+    ex.extractor_id = f"manual:{args.extractor}"   # no prompt was used; the compiler is the extractor
     today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     events, sources, failures = [], [], []
     by_source: dict[str, dict] = {}
+    NOT_FOUND = "Excerpt not found verbatim in the captured text."
     for n, ev in enumerate(items, start=1):
         srcs = ev.get("sources") or []
         if not srcs or not srcs[0].get("url"):
             failures.append({"capture_id": f"item-{n}", "source_id": "manual", "url": "", "error": "no source url"})
             continue
         first = srcs[0]
-        text = ""
-        if not args.no_fetch:
+        text, why_unchecked = "", ""
+        if args.no_fetch:
+            why_unchecked = "Excerpt not checked against the source (imported without fetching)."
+        else:
+            if n > 1:
+                time.sleep(args.sleep)
             try:
                 status, ctype, body, final = http_get(first["url"])
-                if status == 200 and body:
-                    text = html_to_text(body, ctype)[1] if "html" in ctype else body.decode("utf-8", "replace")
-            except Exception:   # unreachable source: noted on the candidate below
-                text = ""
-        capture = {"capture_id": f"item-{n}", "source_id": "manual", "source_name": first.get("publisher", ""), "language": first.get("language", "en"),
-                   "url": first["url"], "guid": first["url"], "title": first.get("title", ""), "published": first.get("pub_date", ""),
-                   "fetched_at": today, "text": text}
+            except Exception:
+                status, ctype, body = 0, "", b""
+            if status != 200 or not body:
+                why_unchecked = f"Source page could not be fetched (HTTP {status or 'error'}); excerpt not checked."
+            elif "html" in ctype or ctype.startswith("text/"):
+                text = html_to_text(body, ctype)[1] if "html" in ctype else body.decode("utf-8", "replace")
+            else:
+                why_unchecked = f"Source is {ctype.split(';')[0] or 'not text'}; excerpt not checked."
+        capture = {"capture_id": f"item-{n}", "source_id": "manual", "source_name": first.get("publisher", ""), "language": first.get("language", ""),
+                   "url": first["url"], "guid": first["url"], "title": first.get("title", ""), "published": parse_date(first.get("pub_date", "")) or first.get("pub_date", ""),
+                   "fetched_at": "" if args.no_fetch else today, "text": text}
         ev = dict(ev, excerpt=first.get("excerpt", ""))
         res = ex._normalise(capture, ev, n)
         stat = by_source.setdefault(first.get("publisher") or "manual", {"documents": 0, "candidates": 0, "failures": 0})
@@ -445,18 +455,15 @@ def cmd_import(args) -> int:
             stat["failures"] += 1
             continue
         event, source = res
-        if args.no_fetch:
-            event["review_note"] = event["review_note"].replace("Excerpt not found verbatim in the captured text.",
-                                                                "Excerpt not checked against the source (imported without fetching).").strip()
-        elif not text:
-            event["review_note"] = (event["review_note"] + " Source page could not be fetched to check the excerpt.").strip()
+        if why_unchecked:   # nothing was compared, so the normaliser's "not found" would be false
+            event["review_note"] = (event["review_note"].replace(NOT_FOUND, "") + " " + why_unchecked).strip()
         events.append(event)
         sources.append(source)
         for k, extra in enumerate(srcs[1:], start=2):   # further sources: recorded, not fetched
             sources.append({**{c: "" for c in schema.TABLES["sources"]}, "source_id": f"{event['event_id']}-S{k:02d}", "event_id": event["event_id"],
                             "url": extra.get("url", ""), "title": _clean_text(extra.get("title", ""), 300), "publisher": extra.get("publisher", ""),
-                            "pub_date": extra.get("pub_date", ""), "language": extra.get("language", "en"), "accessed_date": today,
-                            "excerpt": _clean_text(extra.get("excerpt", ""), 400)})
+                            "pub_date": parse_date(extra.get("pub_date", "")) or extra.get("pub_date", ""), "language": extra.get("language", ""),
+                            "accessed_date": "", "excerpt": _clean_text(extra.get("excerpt", ""), 400)})
         stat["candidates"] += 1
     existing = []
     events_csv = ROOT / "data" / "events.csv"
@@ -464,11 +471,13 @@ def cmd_import(args) -> int:
         with open(events_csv, newline="", encoding="utf-8") as f:
             existing = list(csv.DictReader(f))
     dups = 0
+    pool = list(existing)   # as extract_all: each candidate against the dataset and the earlier candidates
     for e in events:
-        d = find_duplicate(e, existing + [x for x in events if x is not e])
+        d = find_duplicate(e, pool)
         if d:
-            e["review_note"] = (e["review_note"] + f" Possible duplicate of {d['event_id']}.").strip()
+            e["review_note"] = (e["review_note"] + f" Possible duplicate of {d}.").strip()
             dups += 1
+        pool.append(e)
     out.mkdir(parents=True, exist_ok=True)
     for name, rows in (("candidates", events), ("sources", sources)):
         with open(out / f"{name}.csv", "w", newline="", encoding="utf-8") as f:
@@ -512,8 +521,8 @@ def main(argv=None) -> int:
     sr.add_argument("--record", action="store_true"); sr.add_argument("--model", default=Extractor.DEFAULT_MODEL)
     sr.add_argument("--registry", **common["registry"]); sr.set_defaults(fn=cmd_run)
     si = sub.add_parser("import"); si.add_argument("file"); si.add_argument("--run-id", default="")
-    si.add_argument("--out", default=""); si.add_argument("--extractor", default="hand-compiled")
-    si.add_argument("--no-fetch", action="store_true"); si.set_defaults(fn=cmd_import)
+    si.add_argument("--out", default=""); si.add_argument("--extractor", required=True, help="who compiled the list, e.g. a name or 'claude-fable-5-1'")
+    si.add_argument("--no-fetch", action="store_true"); si.add_argument("--sleep", type=float, default=0.5); si.set_defaults(fn=cmd_import)
     a = p.parse_args(argv)
     return a.fn(a)
 

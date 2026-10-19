@@ -199,3 +199,11 @@ def test_every_data_file_is_in_the_release():
     """A new file under data/ (a baselines document, say) must be added to RELEASE_FILES by hand; this catches the omission."""
     data_files = {str(p.relative_to(ROOT)) for p in (ROOT / "data").rglob("*") if p.is_file() and "raw" not in p.parts and "__pycache__" not in p.parts}
     assert data_files <= set(release.RELEASE_FILES), data_files - set(release.RELEASE_FILES)
+
+
+def test_a_file_added_after_the_tag_is_left_out_of_that_release(tagged_repo, tmp_path, monkeypatch):
+    """RELEASE_FILES names today's set; an older tag lacks the newer files and must still build."""
+    monkeypatch.setitem(release.RELEASE_FILES, "data/added-later.csv", "ADDED-LATER.csv")
+    m = release.build_assets(tagged_repo, "v2.0.0-dev", tmp_path / "out")
+    assert "ADDED-LATER.csv" in m["absent_at_tag"] and not (tmp_path / "out/ADDED-LATER.csv").exists()
+    assert "moves.csv" in {f["name"] for f in m["files"]}

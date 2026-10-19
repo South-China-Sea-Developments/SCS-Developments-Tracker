@@ -316,9 +316,9 @@
   },
   {
    "id": "id_antara",
-   "name": "ANTARA (politik, Indonesian)",
+   "name": "ANTARA (terkini, Indonesian)",
    "kind": "rss",
-   "url": "https://www.antaranews.com/rss/politik.xml",
+   "url": "https://www.antaranews.com/rss/terkini.xml",
    "language": "id",
    "claimants": [
     "ID",
@@ -327,7 +327,7 @@
    "cadence": "daily",
    "max_items": 30,
    "status": "active",
-   "notes": "State news agency; carries Kemlu, Bakamla, TNI AL and KKP statements in Indonesian. Added for ticket 11."
+   "notes": "State news agency, latest-news feed (the politik feed is domestic politics); carries Kemlu, Bakamla, TNI AL and KKP statements in Indonesian. Added for ticket 11."
   },
   {
    "id": "id_antara_en",
@@ -420,6 +420,36 @@
    "max_items": 30,
    "status": "needs_work",
    "notes": "The RSS feed returned a channel with no items on 2026-10-18; the news sitemap at /arc/outboundfeeds/english/sitemap-news/ has the articles but is not RSS. Revisit."
+  },
+  {
+   "id": "my_bharian",
+   "name": "Berita Harian (Malay)",
+   "kind": "rss",
+   "url": "https://www.bharian.com.my/feed",
+   "language": "ms",
+   "claimants": [
+    "MY",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Malay-language national daily. Added for ticket 11 (probe 2026-10-19)."
+  },
+  {
+   "id": "my_utusan",
+   "name": "Utusan Malaysia (Malay)",
+   "kind": "rss",
+   "url": "https://www.utusan.com.my/feed/",
+   "language": "ms",
+   "claimants": [
+    "MY",
+    "CN"
+   ],
+   "cadence": "daily",
+   "max_items": 30,
+   "status": "active",
+   "notes": "Malay-language national daily. Added for ticket 11 (probe 2026-10-19)."
   }
  ]
 }
