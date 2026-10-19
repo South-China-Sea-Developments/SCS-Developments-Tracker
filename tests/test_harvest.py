@@ -48,6 +48,20 @@ RSS = b"""<?xml version="1.0"?><rss version="2.0"><channel><title>t</title>
 ATOM = b"""<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><entry><title>E</title><link rel="alternate" href="http://y/e"/><id>u1</id><published>2026-10-01T10:00:00Z</published></entry></feed>"""
 
 
+RDF = b"""<?xml version="1.0"?><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://purl.org/rss/1.0/">
+<channel rdf:about="https://example.org/"><title>T</title></channel>
+<item rdf:about="https://example.org/a"><title>Coast guard statement</title><link>https://example.org/a</link><dc:date>2026-10-18T08:00:00+08:00</dc:date><description>&lt;p&gt;Text&lt;/p&gt;</description></item>
+</rdf:RDF>"""
+
+
+def test_parse_rss1_rdf():
+    """Taipei Times publishes RSS 1.0: namespaced items with dc:date and no guid."""
+    items = harvest.parse_rss(RDF)
+    assert len(items) == 1 and items[0]["title"] == "Coast guard statement" and items[0]["link"] == "https://example.org/a"
+    assert items[0]["guid"] == "https://example.org/a" and items[0]["summary"] == "Text"
+    assert harvest.parse_date(items[0]["published"]) == "2026-10-18"
+
+
 def test_parse_rss_and_atom():
     items = harvest.parse_rss(RSS)
     assert [i["title"] for i in items] == ["A & B", "C"]
@@ -274,3 +288,64 @@ def test_excerpt_check_ignores_quote_style_and_whitespace():
     assert excerpt_in_text("China’s permission,  intruded", "without China's permission, intruded the")
     assert not excerpt_in_text("something else entirely", "without China's permission")
     assert not excerpt_in_text("", "anything")
+
+
+def test_import_hand_compiled_candidates(tmp_path, monkeypatch):
+    """Hand-compiled events enter the queue through the extractor's own normalisation: same ids,
+    same cleaning, same duplicate flagging, the compiler named as the extractor."""
+    items = [
+        {"date_start": "2016-06-17", "date_end": "2016-06-17", "date_precision": "day", "claimant": "ID", "location_name": "Natuna waters",
+         "subregion": "10", "summary": "KRI Imam Bonjol fires on Chinese boats.", "actors": "TNI AL",
+         "sources": [{"url": "https://example.org/a", "title": "A", "publisher": "Reuters", "pub_date": "2016-06-18", "excerpt": "fired warning shots"},
+                     {"url": "https://example.org/b", "title": "B", "publisher": "AMTI", "pub_date": "", "excerpt": "second account"}],
+         "suggested_type": "coercive", "suggested_domains": ["physical"], "suggested_issues": ["fisheries"], "suggested_dyads": ["IC"],
+         "reasoning": "Warning shots and detention.", "confidence": "high"},
+        {"date_start": "not a date", "claimant": "ID", "sources": [{"url": "https://example.org/c"}]},   # dropped: invalid date
+        {"date_start": "2016-06-17", "claimant": "ID", "summary": "no source"},                          # dropped: no source
+    ]
+    f = tmp_path / "events.json"
+    f.write_text(json.dumps(items), encoding="utf-8")
+    out = tmp_path / "run"
+    assert harvest.main(["import", str(f), "--run-id", "manual-test", "--out", str(out), "--extractor", "researcher", "--no-fetch"]) == 0
+    cands = list(csv.DictReader(open(out / "candidates.csv", newline="", encoding="utf-8")))
+    srcs = list(csv.DictReader(open(out / "sources.csv", newline="", encoding="utf-8")))
+    assert len(cands) == 1 and len(srcs) == 2
+    c = cands[0]
+    assert c["event_id"].startswith("ev-") and c["status"] == "candidate" and c["harvest_run_id"] == "manual-test"
+    assert c["extractor"] == "manual:researcher" and c["suggested_type"] == "coercive" and c["suggested_dyads"] == "IC"
+    assert c["review_note"] == "Excerpt not checked against the source (imported without fetching)."
+    assert [s["source_id"] for s in srcs] == [c["event_id"] + "-S01", c["event_id"] + "-S02"] and srcs[1]["publisher"] == "AMTI"
+    assert srcs[0]["accessed_date"] == "" and srcs[0]["language"] == ""
+    report = json.loads((out / "run.json").read_text(encoding="utf-8"))
+    assert report["candidates"] == 1 and len(report["failures"]) == 2 and report["estimated_cost_usd"] is None
+
+
+def test_import_checks_excerpts_and_flags_duplicates(tmp_path, monkeypatch):
+    """With fetching: an HTML page is compared, a PDF or an unreachable page is said to be unchecked;
+    a candidate that repeats the dataset or an earlier candidate is flagged once, like extract_all."""
+    pages = {"https://example.org/html": (200, "text/html; charset=utf-8", b"<html><body><p>The corvette fired warning shots at the boats.</p></body></html>"),
+             "https://example.org/pdf": (200, "application/pdf", b"%PDF-1.4 binary"),
+             "https://example.org/gone": (404, "text/html", b"")}
+    monkeypatch.setattr(harvest, "http_get", lambda url, timeout=0: pages[url] + (url,))
+    monkeypatch.setattr(harvest.time, "sleep", lambda s: None)
+    base = {"date_start": "2016-06-17", "date_end": "2016-06-17", "date_precision": "day", "claimant": "ID", "location_name": "Natuna waters",
+            "subregion": "10", "actors": "", "suggested_type": "coercive", "suggested_domains": ["physical"], "suggested_issues": ["fisheries"],
+            "suggested_dyads": ["IC"], "reasoning": "r", "confidence": "high"}
+    items = [dict(base, summary="KRI Imam Bonjol fired warning shots at Chinese fishing boats off Natuna.",
+                  sources=[{"url": "https://example.org/html", "title": "A", "publisher": "P", "pub_date": "Mon, 20 Jun 2016 10:00:00 +0000", "excerpt": "fired warning shots at the boats"}]),
+             dict(base, summary="KRI Imam Bonjol fired warning shots at Chinese fishing boats off Natuna, seizing one.",   # repeats the first
+                  sources=[{"url": "https://example.org/pdf", "title": "B", "publisher": "Q", "pub_date": "", "excerpt": "anything"}]),
+             dict(base, date_start="2016-03-19", date_end="2016-03-19", summary="KP Hiu 11 arrested the trawler Kway Fey.",
+                  sources=[{"url": "https://example.org/gone", "title": "C", "publisher": "R", "pub_date": "", "excerpt": "arrested"}])]
+    f = tmp_path / "events.json"
+    f.write_text(json.dumps(items), encoding="utf-8")
+    out = tmp_path / "run"
+    assert harvest.main(["import", str(f), "--run-id", "t", "--out", str(out), "--extractor", "x"]) == 0
+    cands = list(csv.DictReader(open(out / "candidates.csv", newline="", encoding="utf-8")))
+    srcs = list(csv.DictReader(open(out / "sources.csv", newline="", encoding="utf-8")))
+    assert cands[0]["review_note"] == ""                                              # excerpt found on the page
+    assert cands[1]["review_note"] == f"Source is application/pdf; excerpt not checked. Possible duplicate of {cands[0]['event_id']}."
+    assert cands[2]["review_note"] == "Source page could not be fetched (HTTP 404); excerpt not checked."
+    assert srcs[0]["pub_date"] == "2016-06-20" and srcs[0]["accessed_date"] and srcs[0]["language"] == ""
+    report = json.loads((out / "run.json").read_text(encoding="utf-8"))
+    assert report["duplicates"] == 1 and report["extractor"] == "manual:x"

@@ -7,6 +7,9 @@ Stages, each a command:
            the guids of documents already captured with text so they are not fetched again
   extract  turn a capture folder into candidate events + sources in the canonical schema
   run      fetch then extract
+  import   turn a hand-compiled JSON list of events (a researcher's or an assistant's reading of
+           sources, in the extractor's output shape plus a `sources` list per event) into a run
+           folder, fetching each source to check its excerpt, so it enters the same review queue
 
 A capture folder is a plain directory and is also what the tests use as a fixture. The language
 model is reached through a small client interface with a recorded-response layer, so tests run
@@ -17,6 +20,7 @@ Usage:
   python -m pipeline.harvest fetch   --out harvest/captures/<run_id> [--since YYYY-MM-DD] [--only id,id]
   python -m pipeline.harvest extract --captures DIR --out harvest/runs/<run_id> [--recordings DIR] [--record]
   python -m pipeline.harvest run     --run-id <id>
+  python -m pipeline.harvest import  events.json --run-id <id> --extractor "<who compiled it>" [--no-fetch]
 """
 from __future__ import annotations
 
@@ -39,7 +43,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from pipeline import schema
-from pipeline.extract import Extractor, LLMClient, RecordedClient, RecordingClient, AnthropicClient
+from pipeline.extract import Extractor, LLMClient, RecordedClient, RecordingClient, AnthropicClient, find_duplicate, _clean_text
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "pipeline" / "sources.json"
@@ -143,10 +147,20 @@ def html_to_text(body: bytes, content_type: str = "") -> tuple[str, str]:
 
 
 def parse_rss(body: bytes) -> list[dict]:
-    """Items of an RSS 2.0 or Atom feed: {title, link, published, summary, guid}."""
+    """Items of an RSS 2.0, RSS 1.0 (RDF) or Atom feed: {title, link, published, summary, guid}."""
     root = ET.fromstring(body)
     items = []
     ns_atom = "{http://www.w3.org/2005/Atom}"
+    ns_rss1 = "{http://purl.org/rss/1.0/}"
+    dc_date = "{http://purl.org/dc/elements/1.1/}date"
+    for it in root.iter(ns_rss1 + "item"):   # RSS 1.0: namespaced elements, dc:date, no guid
+        link = (it.findtext(ns_rss1 + "link") or it.get("{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about") or "").strip()
+        items.append({
+            "title": (it.findtext(ns_rss1 + "title") or "").strip(), "link": link,
+            "published": (it.findtext(dc_date) or "").strip(),
+            "summary": re.sub(r"<[^>]+>", " ", html.unescape(it.findtext(ns_rss1 + "description") or "")).strip(),
+            "guid": link,
+        })
     for it in root.iter("item"):
         items.append({
             "title": (it.findtext("title") or "").strip(),
@@ -382,6 +396,104 @@ def cmd_extract(args) -> int:
     return 1 if report["failures"] and not report["candidates"] else 0
 
 
+class _ManualClient:
+    """Stands in for the language model when candidates were compiled by hand: Extractor only
+    needs a model name for the extractor id."""
+
+    def __init__(self, name: str):
+        self.model = name
+
+    def complete(self, system: str, user: str):   # never called
+        raise RuntimeError("hand-compiled candidates are not extracted")
+
+
+def cmd_import(args) -> int:
+    """Hand-compiled candidates go through the extractor's normalisation and into a run folder, so
+    the review queue treats them exactly like harvested ones (ADR 0003: they are proposals)."""
+    items = json.loads(Path(args.file).read_text(encoding="utf-8"))
+    if isinstance(items, dict):
+        items = items.get("events", [])
+    run_id = args.run_id or ("import-" + dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M"))
+    out = Path(args.out) if args.out else ROOT / "harvest" / "runs" / run_id
+    ex = Extractor(_ManualClient(args.extractor), run_id=run_id)
+    ex.extractor_id = f"manual:{args.extractor}"   # no prompt was used; the compiler is the extractor
+    today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    events, sources, failures = [], [], []
+    by_source: dict[str, dict] = {}
+    NOT_FOUND = "Excerpt not found verbatim in the captured text."
+    for n, ev in enumerate(items, start=1):
+        srcs = ev.get("sources") or []
+        if not srcs or not srcs[0].get("url"):
+            failures.append({"capture_id": f"item-{n}", "source_id": "manual", "url": "", "error": "no source url"})
+            continue
+        first = srcs[0]
+        text, why_unchecked = "", ""
+        if args.no_fetch:
+            why_unchecked = "Excerpt not checked against the source (imported without fetching)."
+        else:
+            if n > 1:
+                time.sleep(args.sleep)
+            try:
+                status, ctype, body, final = http_get(first["url"])
+            except Exception:
+                status, ctype, body = 0, "", b""
+            if status != 200 or not body:
+                why_unchecked = f"Source page could not be fetched (HTTP {status or 'error'}); excerpt not checked."
+            elif "html" in ctype or ctype.startswith("text/"):
+                text = html_to_text(body, ctype)[1] if "html" in ctype else body.decode("utf-8", "replace")
+            else:
+                why_unchecked = f"Source is {ctype.split(';')[0] or 'not text'}; excerpt not checked."
+        capture = {"capture_id": f"item-{n}", "source_id": "manual", "source_name": first.get("publisher", ""), "language": first.get("language", ""),
+                   "url": first["url"], "guid": first["url"], "title": first.get("title", ""), "published": parse_date(first.get("pub_date", "")) or first.get("pub_date", ""),
+                   "fetched_at": "" if args.no_fetch else today, "text": text}
+        ev = dict(ev, excerpt=first.get("excerpt", ""))
+        res = ex._normalise(capture, ev, n)
+        stat = by_source.setdefault(first.get("publisher") or "manual", {"documents": 0, "candidates": 0, "failures": 0})
+        stat["documents"] += 1
+        if res is None:
+            failures.append({"capture_id": f"item-{n}", "source_id": "manual", "url": first["url"], "error": "claimant or dates invalid"})
+            stat["failures"] += 1
+            continue
+        event, source = res
+        if why_unchecked:   # nothing was compared, so the normaliser's "not found" would be false
+            event["review_note"] = (event["review_note"].replace(NOT_FOUND, "") + " " + why_unchecked).strip()
+        events.append(event)
+        sources.append(source)
+        for k, extra in enumerate(srcs[1:], start=2):   # further sources: recorded, not fetched
+            sources.append({**{c: "" for c in schema.TABLES["sources"]}, "source_id": f"{event['event_id']}-S{k:02d}", "event_id": event["event_id"],
+                            "url": extra.get("url", ""), "title": _clean_text(extra.get("title", ""), 300), "publisher": extra.get("publisher", ""),
+                            "pub_date": parse_date(extra.get("pub_date", "")) or extra.get("pub_date", ""), "language": extra.get("language", ""),
+                            "accessed_date": "", "excerpt": _clean_text(extra.get("excerpt", ""), 400)})
+        stat["candidates"] += 1
+    existing = []
+    events_csv = ROOT / "data" / "events.csv"
+    if events_csv.exists():
+        with open(events_csv, newline="", encoding="utf-8") as f:
+            existing = list(csv.DictReader(f))
+    dups = 0
+    pool = list(existing)   # as extract_all: each candidate against the dataset and the earlier candidates
+    for e in events:
+        d = find_duplicate(e, pool)
+        if d:
+            e["review_note"] = (e["review_note"] + f" Possible duplicate of {d}.").strip()
+            dups += 1
+        pool.append(e)
+    out.mkdir(parents=True, exist_ok=True)
+    for name, rows in (("candidates", events), ("sources", sources)):
+        with open(out / f"{name}.csv", "w", newline="", encoding="utf-8") as f:
+            cols = schema.TABLES["events" if name == "candidates" else "sources"]
+            w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
+            w.writeheader()
+            for r in rows:
+                w.writerow({c: r.get(c, "") for c in cols})
+    report = {"run_id": run_id, "extractor": ex.extractor_id, "documents": len(items), "candidates": len(events), "duplicates": dups,
+              "input_tokens": 0, "output_tokens": 0, "estimated_cost_usd": None, "by_source": by_source, "failures": failures,
+              "imported_from": str(args.file)}
+    (out / "run.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
+    print(f"imported {len(events)} candidate(s), {len(sources)} source row(s), possible duplicates {dups}, failures {len(failures)} -> {out}/")
+    return 1 if failures and not events else 0
+
+
 def cmd_run(args) -> int:
     run_id = args.run_id or dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M")
     ns = argparse.Namespace(out=str(ROOT / "harvest" / "captures" / run_id), since=args.since, only=args.only,
@@ -408,6 +520,9 @@ def main(argv=None) -> int:
     sr.add_argument("--only", default=""); sr.add_argument("--sleep", type=float, default=0.5); sr.add_argument("--recordings", default="")
     sr.add_argument("--record", action="store_true"); sr.add_argument("--model", default=Extractor.DEFAULT_MODEL)
     sr.add_argument("--registry", **common["registry"]); sr.set_defaults(fn=cmd_run)
+    si = sub.add_parser("import"); si.add_argument("file"); si.add_argument("--run-id", default="")
+    si.add_argument("--out", default=""); si.add_argument("--extractor", required=True, help="who compiled the list, e.g. a name or 'claude-fable-5-1'")
+    si.add_argument("--no-fetch", action="store_true"); si.add_argument("--sleep", type=float, default=0.5); si.set_defaults(fn=cmd_import)
     a = p.parse_args(argv)
     return a.fn(a)
 

@@ -498,3 +498,54 @@ def test_map_time_window_and_filters(browser, dist):
     assert page.locator(".evt-popup .event-row").count() >= 1
     assert not problems, problems
     page.close()
+
+
+# ---- ticket 11: new claimants need no special-casing -------------------
+
+def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
+    """A project-coded Malaysian, Indonesian and Taiwanese move each, with an event: every page
+    counts and lists them exactly as it does the original three."""
+    import csv
+    import shutil
+    from pipeline import schema
+    from pipeline.validate import validate
+    from tests.conftest import RAW_MAVD, RAW_XLSX
+    d = tmp_path / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    new_moves, new_events, new_sources = [], [], []
+    for code, year, feat, sr in (("MY", "2021", "coercive", "loc10_far_south"), ("ID", "2016", "coercive", "loc10_far_south"), ("TW", "2016", "demonstrative", "loc05_spratly_nw")):
+        m = {c: "" for c in schema.TABLES["moves"]}
+        m.update(move_id=f"{code}{year}01", claimant=code, year=year, instance_no="01", status="accepted", coded_by="project", coder="T",
+                 coding_date="2026-10-18", data_version=schema.DATASET_VERSION, dyads=f"{ {'MY': 'M', 'ID': 'I', 'TW': 'R'}[code] }C",
+                 intensification_criterion="novelty", description=f"Test move for {code}.", ongoing_through=year)
+        for f in schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS + schema.SUBREGION_FLAGS:
+            m[f] = "1" if f in (feat, "physical", "military", sr) else "0"
+        new_moves.append(m)
+        e = {c: "" for c in schema.TABLES["events"]}
+        e.update(event_id=f"{code}{year}01-T1", move_id=m["move_id"], claimant=code, date_start=f"{year}-06-01", date_end=f"{year}-06-01",
+                 date_precision="day", summary=f"Test event for {code}.", status="accepted", harvest_run_id="test", extractor="t@prompt-x",
+                 suggested_type=feat, reviewer="T", review_date="2026-10-18", location_precision="unknown")
+        new_events.append(e)
+        new_sources.append({**{c: "" for c in schema.TABLES["sources"]}, "source_id": e["event_id"] + "-S01", "event_id": e["event_id"],
+                            "url": "https://example.org/s", "title": "s", "publisher": "p", "accessed_date": "2026-10-18", "excerpt": "x"})
+    for name, rows in (("moves", new_moves), ("events", new_events), ("sources", new_sources)):
+        with open(d / f"{name}.csv", "a", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=schema.TABLES[name], lineterminator="\n")
+            w.writerows(rows)
+    assert validate(d, RAW_XLSX, RAW_MAVD) == []
+    out = tmp_path / "dist"
+    build(d, out, build_date="2026-10-18")
+    agg = json.loads((out / "data/aggregates.json").read_text(encoding="utf-8"))
+    assert agg["by_claimant"]["MY"]["totals"]["total"] == 1 and agg["by_claimant"]["TW"]["years"]["2016"]["demonstrative"] == 1
+    assert agg["years"][-1] == 2021
+    for mid in ("MY202101", "ID201601", "TW201601"):
+        page_html = (out / f"cases/{mid}.html").read_text(encoding="utf-8")
+        assert "project" in page_html.lower() and "Test move for" in page_html
+    index = json.loads(re.search(r'<script id="cases"[^>]*>(.*?)</script>', (out / "cases.html").read_text(encoding="utf-8"), re.S).group(1).replace("<\\/", "</"))
+    assert {c["c"] for c in index["cases"]} >= {"MY", "ID", "TW"}
+    events = json.loads((out / "data/events.json").read_text(encoding="utf-8"))
+    assert {e["c"] for e in events["events"]} >= {"MY", "ID", "TW"}
+    # the overview's chart data carries the new claimants' columns and the extended year axis
+    agg_html = (out / "index.html").read_text(encoding="utf-8")
+    inline = json.loads(re.search(r'<script id="agg"[^>]*>(.*?)</script>', agg_html, re.S).group(1).replace("<\\/", "</"))
+    assert inline["by_claimant"]["MY"]["years"]["2021"]["coercive"] == 1 and inline["years"][-1] == 2021

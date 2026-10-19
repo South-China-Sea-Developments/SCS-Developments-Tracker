@@ -229,6 +229,7 @@ FILE_WHAT = {
     "mavd_subregions.geojson": "The ten MAVD sub-region polygons (WGS84).",
     "gazetteer.csv": "Named features with coordinates and sub-region, from Wikidata.",
     "gazetteer_extra.csv": "The project's additions and corrections to the gazetteer.",
+    **{f"BASELINE-{c}.md": f"{n}: pre-1970 baseline actions, with sources." for c, n in (("CN", "China"), ("VN", "Vietnam"), ("PH", "Philippines"), ("MY", "Malaysia"), ("ID", "Indonesia"), ("TW", "Taiwan"))},
     "COLUMNS.md": "Column definitions of every table (data/README.md at this version).",
     "SPEC.md": "The project specification at this version.",
     "CODEBOOK-chubb-2021-appendix.txt": "Andrew Chubb's methodology appendix: the coding rules (CC0).",

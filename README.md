@@ -16,6 +16,7 @@ python -m pipeline.load_mats       # regenerates data/*.csv from data/raw/
 python -m web.build                # builds the site into web/dist/ (open web/dist/index.html)
 python -m pipeline.harvest probe   # checks the registered sources are reachable
 python -m pipeline.harvest run     # fetches new items and extracts candidate events (needs ANTHROPIC_API_KEY)
+python -m pipeline.harvest import events.json --run-id <id> --extractor "who"   # hand-compiled candidates into the same queue
 python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review page + pull request
 python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
 python -m pipeline.ops --help      # what the scheduled run does around a harvest: state branch, failure issue, reminders
@@ -28,6 +29,8 @@ python -m pipeline.release latest  # the newest release tag; `assets --out DIR` 
 | Path | Contents |
 |---|---|
 | `data/*.csv` | **The canonical dataset**: claimants, moves, events, sources, corrections. See `data/README.md`. |
+| `data/baselines/` | Each claimant's pre-1970 baseline list (Chubb's for the PRC; the project's, sourced, for the other five; provenance in `docs/sources/`). |
+| `harvest/manual/` | Hand-compiled candidate sets kept on record before they enter the review queue. |
 | `pipeline/` | Loader, validator, harvester (source registry, fetcher, extractor and its prompt), review queue, scheduled-run operations, releases, agreement report. |
 | `harvest/` | Working folder for harvest runs (not committed; the state between runs lives on the `harvest-state` branch). |
 | `docs/review/` | Review pages, one per harvest run. |

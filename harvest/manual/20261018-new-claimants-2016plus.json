@@ -1,0 +1,951 @@
+[
+ {
+  "date_start": "2019-12-12",
+  "date_end": "2019-12-12",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "northern part of the South China Sea (continental shelf beyond 200 nm off Sarawak/Sabah)",
+  "subregion": "",
+  "summary": "Malaysia filed a partial submission with the UN Commission on the Limits of the Continental Shelf claiming continental shelf beyond 200 nautical miles in the northern part of the South China Sea, an area overlapping Chinese, Vietnamese and Philippine claims. China lodged a protest note with the UN Secretary-General the same day.",
+  "actors": "Government of Malaysia; Permanent Mission of Malaysia to the UN; Wisma Putra",
+  "sources": [
+   {
+    "url": "https://www.un.org/Depts/los/clcs_new/submissions_files/submission_mys_12_12_2019.html",
+    "title": "Partial Submission by Malaysia in the South China Sea - Commission on the Limits of the Continental Shelf (CLCS)",
+    "publisher": "UN Division for Ocean Affairs and the Law of the Sea",
+    "pub_date": "",
+    "excerpt": "On 12 December 2019, Malaysia submitted to the Commission on the Limits of the Continental Shelf, in accordance with Article 76, paragraph 8, of the Convention, information on the limits of its continental shelf beyond 200 nautical miles"
+   },
+   {
+    "url": "https://www.malaymail.com/news/malaysia/2019/12/17/report-china-objects-to-malaysias-un-submission-on-south-china-sea/1819973",
+    "title": "Report: China objects to Malaysia's UN submission on South China Sea",
+    "publisher": "Malay Mail",
+    "pub_date": "2019-12-17",
+    "excerpt": "Malaysia said in its submission dated December 12 that there were areas of potential overlapping claims."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "MA"
+  ],
+  "reasoning": "A formal legal filing asserting Malaysia's maritime entitlements in disputed waters is a verbal/legal claim assertion without coercion, hence declarative; it is directed at all rival claimants (China protested immediately, Vietnam and the Philippines later), so the dyad is coded toward all states.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2019-12-01",
+  "date_end": "2020-05-12",
+  "date_precision": "month",
+  "claimant": "MY",
+  "location_name": "Petronas exploration area off Sarawak also claimed by Vietnam and China (West Capella site, c. 337 km off Borneo)",
+  "subregion": "",
+  "summary": "Petronas continued hydrocarbon exploration with the Seadrill-operated drillship West Capella in Malaysia's EEZ in waters also claimed by Vietnam and China from December 2019 until 12 May 2020, despite Chinese harassment of its supply vessels and a survey by the Chinese government ship Haiyang Dizhi 8 with coast guard and maritime militia escorts from mid-April 2020. Foreign Minister Hishammuddin Hussein said on 23 April 2020 that Malaysia remained committed to safeguarding its interests in the South China Sea.",
+  "actors": "Petronas; Seadrill (West Capella); Wisma Putra (Hishammuddin Hussein)",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/seasia/2020/04/23/malaysia-calls-for-peaceful-end-to-months-long-south-china-sea-standoff",
+    "title": "Malaysia calls for peaceful end to months-long South China Sea standoff",
+    "publisher": "The Jakarta Post (Reuters)",
+    "pub_date": "2020-04-23",
+    "excerpt": "Since December, Chinese forces have been harassing supply ships servicing the West Capella, an oil exploration vessel operated by Petronas, Poling said."
+   },
+   {
+    "url": "https://www.malaymail.com/news/malaysia/2020/05/12/malaysian-oil-exploration-vessel-leaves-south-china-sea-waters-after-stando/1865565",
+    "title": "Malaysian oil exploration vessel leaves South China Sea waters after standoff",
+    "publisher": "Malay Mail (Reuters)",
+    "pub_date": "2020-05-12",
+    "excerpt": "left the disputed waters today, three security sources and the vessel operator said."
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC",
+   "MV"
+  ],
+  "reasoning": "Unilateral resource development in a disputed area, continued to completion in the face of Chinese pressure, is demonstrative assertion; the start date is known only to the month (reports say harassment began in December 2019), so precision is 'month', while the departure date 12 May 2020 is reported to the day.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2020-07-29",
+  "date_end": "2020-07-29",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "",
+  "subregion": "",
+  "summary": "Malaysia's Permanent Mission to the UN circulated Note Verbale HA 26/20 responding to China's note CML/14/2019, rejecting China's claims to historic rights or other sovereign rights and jurisdiction within the 'nine-dash line' as contrary to UNCLOS and without lawful effect, and rejecting China's claim to entitlements from maritime features in the South China Sea.",
+  "actors": "Permanent Mission of Malaysia to the United Nations; Wisma Putra",
+  "sources": [
+   {
+    "url": "https://www.un.org/Depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_07_29_MYS_NV_UN_002_OLA-2020-00373.pdf",
+    "title": "Note Verbale HA 26/20 of the Permanent Mission of Malaysia to the United Nations",
+    "publisher": "UN Division for Ocean Affairs and the Law of the Sea",
+    "pub_date": "2020-07-29",
+    "excerpt": "the Government of Malaysia rejects China's claims to historic rights, or other sovereign rights or jurisdiction"
+   },
+   {
+    "url": "https://www.un.org/Depts/los/clcs_new/submissions_files/submission_mys_12_12_2019.html",
+    "title": "Partial Submission by Malaysia in the South China Sea - Commission on the Limits of the Continental Shelf (CLCS)",
+    "publisher": "UN Division for Ocean Affairs and the Law of the Sea",
+    "pub_date": "",
+    "excerpt": "Malaysia Communication dated 29 July 2020"
+   },
+   {
+    "url": "https://m8.malaysiakini.com/en/news/536911",
+    "title": "Malaysia sends 'unusually strong' protest to China over maritime claims",
+    "publisher": "Malaysiakini",
+    "pub_date": "",
+    "excerpt": "South China Morning Post reported yesterday that Malaysia had submitted a note verbale to the UN on July 29."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "A diplomatic note explicitly rejecting China's legal claims is a non-coercive verbal assertion, hence declarative; the 29 July 2020 date is confirmed by the UN CLCS listing (the PDF itself carries the reference HA 26/20 but no date in the extracted text).",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2021-05-19",
+  "date_end": "2021-06-13",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "Kasawari gas field, block SK316, off Sarawak",
+  "subregion": "10",
+  "summary": "Petronas proceeded with installation of a wellhead platform at the Kasawari gas field off Sarawak: it moved materials to Miri on 19-24 May 2021 under a government notice to mariners, and the Sapura 2000 installation barge arrived on 4 June 2021. The Royal Malaysian Navy deployed the auxiliary Bunga Mas Lima to the site a day ahead of the barge and kept it there until 13 June while China Coast Guard vessels CCG 5403 and then CCG 5303 loitered nearby.",
+  "actors": "Petronas; Sapura Energy (Sapura 2000); Royal Malaysian Navy (Bunga Mas Lima); MMEA",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/contest-at-kasawari-another-malaysian-gas-project-faces-pressure/",
+    "title": "Contest at Kasawari: Another Malaysian Gas Project Faces Pressure",
+    "publisher": "Asia Maritime Transparency Initiative (CSIS)",
+    "pub_date": "2021-07-07",
+    "excerpt": "From May 19 to 24, Malaysia’s state-owned Petronas used six tugs to transport materials to the port of Miri in Sarawak in preparation for the installation of a wellhead platform at Kasawari."
+   },
+   {
+    "url": "https://amti.csis.org/contest-at-kasawari-another-malaysian-gas-project-faces-pressure/",
+    "title": "Contest at Kasawari: Another Malaysian Gas Project Faces Pressure",
+    "publisher": "Asia Maritime Transparency Initiative (CSIS)",
+    "pub_date": "2021-07-07",
+    "excerpt": "This is despite the presence of the Royal Malaysian Navy’s Bunga Mas Lima, a naval auxiliary ship"
+   },
+   {
+    "url": "https://www.rfa.org/english/news/china/harasses-07082021182547.html",
+    "title": "US Think-Tank: China Coast Guard Harasses Malaysian Oil, Gas Operation Off Sarawak",
+    "publisher": "Radio Free Asia",
+    "pub_date": "2021-07-08",
+    "excerpt": "a China Coast Guard ship remained at Kasawari along with two Malaysian barges, Sapura 2000 and Sapura 3000"
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy",
+   "military"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "Construction of an energy installation in waters within China's nine-dash line, with a naval escort but no reported confrontation, is unilateral administration of a disputed area (demonstrative); the Kasawari field lies near Luconia Shoals off Sarawak, in MATS sub-region 10.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2021-05-31",
+  "date_end": "2021-06-01",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "Kota Kinabalu FIR, about 60 nautical miles from Beting Patinggi Ali (Luconia Shoals), off Sarawak",
+  "subregion": "10",
+  "summary": "On 31 May 2021 the Royal Malaysian Air Force scrambled fighter jets to intercept 16 PLAAF Il-76 and Y-20 transport aircraft flying in formation that approached within 60 nautical miles of the Sarawak coast near Beting Patinggi Ali without responding to air traffic control, and called the incident a serious threat to national sovereignty. On 1 June 2021 the Ministry of Foreign Affairs announced a diplomatic note of protest to China and the summoning of the Chinese ambassador.",
+  "actors": "Royal Malaysian Air Force; Wisma Putra (Hishammuddin Hussein)",
+  "sources": [
+   {
+    "url": "https://www.benarnews.org/english/news/malaysian/my-ch-planes-06012021135102.html",
+    "title": "Malaysia Will Lodge Diplomatic Protest with China over Maritime Airspace 'Intrusion'",
+    "publisher": "BenarNews",
+    "pub_date": "2021-06-01",
+    "excerpt": "Malaysian officials said that the Chinese aircraft flew to as close as 60 nautical miles from Kuala Lumpur-administered Beting Patinggi Ali – also known as Luconia Shoals"
+   },
+   {
+    "url": "https://www.kln.gov.my/web/guest/-/ministry-of-foreign-affairs-will-issue-a-diplomatic-protest-and-summon-the-ambassador-of-the-people-s-republic-of-china",
+    "title": "Ministry of Foreign Affairs Will Issue a Diplomatic Protest and Summon the Ambassador of the People's Republic of China",
+    "publisher": "Ministry of Foreign Affairs, Malaysia (Wisma Putra)",
+    "pub_date": "2021-06-01",
+    "excerpt": "The Ministry will also summon the Ambassador of the People's Republic of China"
+   },
+   {
+    "url": "https://www.malaymail.com/news/malaysia/2021/06/01/rmaf-says-16-chinese-military-planes-almost-violated-malaysian-airspace-wit/1978813",
+    "title": "RMAF says 16 Chinese military planes almost violated Malaysian airspace with 'suspicious' activity",
+    "publisher": "Malay Mail",
+    "pub_date": "2021-06-01",
+    "excerpt": "This incident is a serious threat to national sovereignty and flight safety due to the air traffic density over the airways,"
+   }
+  ],
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "Scrambling armed jets to intercept foreign military aircraft is physical interference with a rival's activity in disputed airspace (coercive), followed by a formal diplomatic protest and summons; a coder preferring to separate the two acts could record the 1 June protest as declarative.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2021-10-04",
+  "date_end": "2021-10-04",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "Malaysia's EEZ off Sabah and Sarawak",
+  "subregion": "10",
+  "summary": "Malaysia's Ministry of Foreign Affairs summoned Chinese ambassador Ouyang Yujing on 4 October 2021 to protest the presence and activities of Chinese vessels, including a survey vessel, in Malaysia's exclusive economic zone off Sabah and Sarawak, stating that the presence of the ships contravened Malaysian and international law.",
+  "actors": "Wisma Putra (Ministry of Foreign Affairs)",
+  "sources": [
+   {
+    "url": "https://malaysianow.com/news/2021/10/05/wisma-putra-summons-chinese-envoy-to-protest-south-china-sea-incursion",
+    "title": "Wisma Putra summons Chinese envoy to protest South China Sea incursion",
+    "publisher": "MalaysiaNow (AFP)",
+    "pub_date": "2021-10-05",
+    "excerpt": "Chinese ambassador Ouyang Yujing was summoned “to convey Malaysia’s position and protest against the presence and activities of Chinese vessels, including a survey vessel, in Malaysia’s exclusive economic zone”, the ministry said in a statement."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "Summoning an ambassador to lodge a formal protest is a non-coercive diplomatic assertion of jurisdiction (declarative); the waters off Sabah and Sarawak fall within MATS sub-region 10, though the exact position of the Chinese survey vessel was not given.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2023-04-04",
+  "date_end": "2023-04-04",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "Petronas exploration area off Sarawak (widely understood to be the Kasawari gas field)",
+  "subregion": "10",
+  "summary": "Answering a parliamentary question on 4 April 2023 after his first official visit to China, Prime Minister Anwar Ibrahim disclosed that Chinese officials had objected to a major Petronas activity in an area also claimed by China, and said he had told them Malaysia considers the area its own territory and that Petronas would continue its exploration activities there.",
+  "actors": "Prime Minister Anwar Ibrahim; Petronas",
+  "sources": [
+   {
+    "url": "https://www.aljazeera.com/economy/2023/4/25/malaysian-energy-needs-clash-with-china-claims-in-south-china-sea",
+    "title": "Malaysia's energy needs face Chinese pushback in South China Sea",
+    "publisher": "Al Jazeera",
+    "pub_date": "2023-04-25",
+    "excerpt": "China was concerned that state-owned energy company Petronas “carried out a major activity at an area that is also claimed by China,” Anwar said in response to a parliamentary question on April 4."
+   },
+   {
+    "url": "https://www.aljazeera.com/economy/2023/4/25/malaysian-energy-needs-clash-with-china-claims-in-south-china-sea",
+    "title": "Malaysia's energy needs face Chinese pushback in South China Sea",
+    "publisher": "Al Jazeera",
+    "pub_date": "2023-04-25",
+    "excerpt": "Anwar said he told his Chinese counterparts that Malaysia considers the area Malaysian territory and “therefore Petronas will continue its exploration activities there”."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "A head-of-government statement in parliament publicly rejecting China's objection and affirming continued exploration is a verbal claim assertion (declarative); the site was not named by Anwar, so the Kasawari/sub-region 10 attribution rests on the article's own inference.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2024-09-05",
+  "date_end": "2024-09-05",
+  "date_precision": "day",
+  "claimant": "MY",
+  "location_name": "Luconia Shoals, off Sarawak",
+  "subregion": "10",
+  "summary": "After the Philippine Daily Inquirer published a leaked Chinese diplomatic note dated 18 February 2024 demanding that Malaysia stop oil and gas activities near Luconia Shoals, Prime Minister Anwar Ibrahim said on 5 September 2024 in Vladivostok that Malaysia's oil exploration was within its own waters, that Beijing's protests had been answered, and that Malaysia must proceed for its economic survival; Wisma Putra separately called the leak an irresponsible act and requested an investigation.",
+  "actors": "Prime Minister Anwar Ibrahim; Wisma Putra; Petronas",
+  "sources": [
+   {
+    "url": "https://www.rfa.org/english/news/southchinasea/malaysia-china-diplomatic-note-anwar-09052024051231.html",
+    "title": "Malaysia probes reported leak of note from 'great friend' China",
+    "publisher": "Radio Free Asia",
+    "pub_date": "2024-09-05",
+    "excerpt": "“We have made it clear that what we are doing with oil exploration is within our own waters,” Anwar said on the sidelines of the Eastern Economic Forum in Vladivostok, Russia."
+   },
+   {
+    "url": "https://www.rfa.org/english/news/southchinasea/malaysia-china-diplomatic-note-anwar-09052024051231.html",
+    "title": "Malaysia probes reported leak of note from 'great friend' China",
+    "publisher": "Radio Free Asia",
+    "pub_date": "2024-09-05",
+    "excerpt": "“We’ve explained that we must proceed as it concerns our economic survival,” he said."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "A public prime-ministerial rejection of China's demand to halt exploration near Luconia Shoals is a non-coercive verbal assertion (declarative); the underlying continued drilling could be coded separately as demonstrative if a dated operational source is found.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2016-03-19",
+  "date_end": "2016-03-21",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "On 19 March 2016 the KKP patrol boat KP Hiu 11 boarded and arrested the Chinese trawler KM Kway Fey 10078 for illegal fishing in Indonesia's Natuna EEZ; an armed China Coast Guard vessel intervened, rammed the trawler and freed it. On 21 March Foreign Minister Retno Marsudi summoned the Chinese chargé d'affaires and lodged a formal protest.",
+  "actors": "KKP (KP Hiu 11); Kemlu",
+  "sources": [
+   {
+    "url": "https://setkab.go.id/panggil-kuasa-usaha-tiongkok-pemerintah-protes-intervensi-penangkapan-km-kway-fey/",
+    "title": "Panggil Kuasa Usaha Tiongkok, Pemerintah Protes Intervensi Penangkapan KM Kway Fey",
+    "publisher": "Sekretariat Kabinet RI",
+    "pub_date": "2016-03-21",
+    "excerpt": "sebanyak tiga personil KP Hiu 11 kemudian melompat ke KM Kway Fey 10078 dan berhasil melumpuhkan awak kapal"
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2016/03/22/ri-china-sea-spat-continues.html",
+    "title": "RI - China sea spat continues",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2016-03-22",
+    "excerpt": "was rammed by an armed Chinese coast guard boat at the border of Indonesian waters"
+   },
+   {
+    "url": "https://en.tempo.co/amp/755485/indonesian-navy-confirms-kway-fey-boat-arrest",
+    "title": "Indonesian Navy Confirms Kway Fey Boat Arrest",
+    "publisher": "Tempo",
+    "pub_date": "",
+    "excerpt": "After the boat was arrested, officers of Patrol Boat (KP) Hiu 11 intended to escort the boat."
+   }
+  ],
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Indonesia physically interfered with (boarded, arrested, attempted to tow) a Chinese fishing vessel in the Natuna EEZ and followed with a formal diplomatic protest, which fits Chubb's coercive category rather than mere declaration.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2016-06-17",
+  "date_end": "2016-06-17",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "On 17 June 2016 the Indonesian Navy corvette KRI Imam Bonjol, on patrol off Natuna, fired warning shots at a group of Chinese fishing boats that ignored orders to stop, then seized one Chinese-flagged boat (hull number 19038) and detained its seven crew. China's Foreign Ministry protested and said one fisherman was injured; the Navy vowed further decisive action.",
+  "actors": "TNI AL (KRI Imam Bonjol)",
+  "sources": [
+   {
+    "url": "https://www.cnnindonesia.com/nasional/20160620133053-20-139466/tni-al-beber-kronologi-tembaki-kapal-china-di-natuna",
+    "title": "TNI AL Beber Kronologi Tembaki Kapal China di Natuna",
+    "publisher": "CNN Indonesia",
+    "pub_date": "2016-06-20",
+    "excerpt": "KRI Imam Bonjol pun mengejarnya dan memberikan peringatan melalui tembakan, namun diabaikan."
+   },
+   {
+    "url": "https://www.thejakartapost.com/seasia/2016/06/20/indonesia-vows-more-decisive-action-after-chinese-ship-spat",
+    "title": "Indonesia vows more decisive action after Chinese ship spat",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2016-06-20",
+    "excerpt": "We will not hesitate to take decisive action against foreign ships, whatever their flag and nationality."
+   }
+  ],
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "military"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Warning shots fired by a naval vessel and detention of a Chinese boat and crew are imposition of punishment and physical interference with foreign fishing, i.e. coercive under Chubb's typology.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2016-06-23",
+  "date_end": "2016-06-23",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "On 23 June 2016 President Joko Widodo made his first visit to Natuna and held a limited cabinet meeting aboard the warship KRI Imam Bonjol, the vessel that had fired on Chinese fishing boats days earlier, instructing ministers to develop the Natuna economy, fisheries and defence posture.",
+  "actors": "President Joko Widodo; Cabinet; TNI AL (KRI Imam Bonjol)",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/news/2016/06/24/jokowi-marks-ris-turf",
+    "title": "Jokowi marks RI's turf",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2016-06-24",
+    "excerpt": "In a rare gesture, the President on Thursday held a limited Cabinet meeting on board the Imam Bonjol in the Natuna Sea."
+   },
+   {
+    "url": "https://setkab.go.id/en/president-jokowi-leads-limited-meeting-on-natuna-economic-development/",
+    "title": "President Jokowi Leads Limited Meeting on Natuna Economic Development",
+    "publisher": "Cabinet Secretariat of the Republic of Indonesia",
+    "pub_date": "2016-06-23",
+    "excerpt": "led a limited meeting discussing Natuna Islands Economic Potentials Development on KRI Imam Bonjol"
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A head-of-state visit and cabinet meeting aboard a warship in the contested EEZ is a non-confrontational display of administration and presence, i.e. demonstrative.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2017-07-14",
+  "date_end": "2017-07-14",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "North Natuna Sea",
+  "subregion": "10",
+  "summary": "On 14 July 2017 the Indonesian government launched an updated official national map that renamed the waters of its EEZ north of the Natuna Islands the \"North Natuna Sea\", a name announced by Arif Havas Oegroseno of the Coordinating Ministry for Maritime Affairs at a Jakarta press conference.",
+  "actors": "Coordinating Ministry for Maritime Affairs (Arif Havas Oegroseno); Badan Informasi Geospasial",
+  "sources": [
+   {
+    "url": "https://www.benarnews.org/english/news/indonesian/North-Natuna-Sea-07142017160831.html",
+    "title": "Indonesia Gives New Name to Sea Region North of Natuna Islands",
+    "publisher": "BenarNews",
+    "pub_date": "2017-07-14",
+    "excerpt": "We updated the sea column on the northern side of Natuna so its name is in line with its continental shelf."
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Renaming a maritime area on the official state map is a unilateral administrative act over the contested area without confrontation, coded demonstrative per the project's typology (renaming listed under demonstrative).",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2019-12-30",
+  "date_end": "2020-01-08",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "After Bakamla spotted dozens of Chinese fishing boats escorted by China Coast Guard ships in the Natuna EEZ from 19 December 2019, the Foreign Ministry summoned Chinese Ambassador Xiao Qian on 30 December and lodged a strong protest over IUU fishing and coast guard violations; Indonesia then deployed at least eight warships and four F-16s, and President Joko Widodo visited Natuna on 8 January 2020 vowing to enforce sovereign rights.",
+  "actors": "Kemlu; Bakamla; TNI AL; TNI AU; President Joko Widodo",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/news/2020/01/01/indonesia-lodges-strong-protestagainst-china-for-trespassing-poaching-in-natunas",
+    "title": "Indonesia lodges strong protest against China for trespassing, poaching in Natunas",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2019-12-30",
+    "excerpt": "The Foreign Ministry has summoned Chinese Ambassador to Indonesia Xiao Qian to lodge a diplomatic protest"
+   },
+   {
+    "url": "https://www.rfa.org/english/news/china/indonesia-natuna-12302019160748.html",
+    "title": "Indonesia Protests Beijing's Alleged Encroachments Around Natuna Islands",
+    "publisher": "Radio Free Asia",
+    "pub_date": "2019-12-30",
+    "excerpt": "summoned China’s ambassador in Jakarta and conveyed our strong protest over the incidents"
+   },
+   {
+    "url": "https://www.rfa.org/english/news/china/indonesia-natuna-01082020155021.html",
+    "title": "Indonesia: Jokowi Vows to Enforce Maritime Rights amid China Tensions",
+    "publisher": "Radio Free Asia",
+    "pub_date": "2020-01-08",
+    "excerpt": "accompanied by two Chinese coast guard ships and a fishing surveillance vessel"
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "diplomatic",
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "The stand-off combined a formal protest (declarative) with a show of military presence and a presidential visit that did not involve direct confrontation, so the overall episode is best captured as demonstrative with a declarative component; a coder may wish to split the 30 Dec protest as a separate declarative event.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2020-05-26",
+  "date_end": "2020-05-26",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "North Natuna Sea",
+  "subregion": "10",
+  "summary": "On 26 May 2020 Indonesia's Permanent Mission submitted a note verbale to UN Secretary-General António Guterres rejecting China's nine-dash line as having no basis in international law, citing the 12 July 2016 arbitral award, and affirming that Indonesia has no territorial dispute with China. China's UN mission replied on 2 June 2020.",
+  "actors": "Permanent Mission of Indonesia to the UN; Kemlu",
+  "sources": [
+   {
+    "url": "https://fulcrum.sg/south-china-sea-indonesia-crosses-swords-with-china/",
+    "title": "South China Sea: Indonesia Crosses Swords with China",
+    "publisher": "Fulcrum (ISEAS - Yusof Ishak Institute)",
+    "pub_date": "2020-06-26",
+    "excerpt": "submitted a note verbale (circular note) to UN Secretary-General Antonio Guterres"
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A diplomatic note to the UN contesting China's claim is a verbal, non-coercive assertion of Indonesia's legal position, i.e. declarative.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2021-06-30",
+  "date_end": "2021-11-19",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "North Natuna Sea, Tuna Block",
+  "subregion": "10",
+  "summary": "From 30 June to 19 November 2021 the Noble Clyde Boudreaux rig drilled two appraisal wells in the Tuna Block in Indonesia's Natuna EEZ; China sent a letter to the Foreign Ministry demanding the drilling stop, and Indonesia refused, continuing the drilling on the grounds of its sovereign rights (reported by Reuters on 1 December 2021).",
+  "actors": "SKK Migas; Harbour Energy (Tuna Block operator); Kemlu; DPR Commission I",
+  "sources": [
+   {
+    "url": "https://www.malaymail.com/news/world/2021/12/01/china-protests-indonesian-drilling-military-exercises/2025121",
+    "title": "China protests Indonesian drilling, military exercises",
+    "publisher": "Malay Mail (Reuters)",
+    "pub_date": "2021-12-01",
+    "excerpt": "Our reply was very firm, that we are not going to stop the drilling because it is our sovereign right."
+   },
+   {
+    "url": "https://english.kontan.co.id/news/china-protested-indonesian-drilling-military-exercises",
+    "title": "China protested Indonesian drilling, military exercises",
+    "publisher": "Kontan (Reuters)",
+    "pub_date": "2021-12-02",
+    "excerpt": "clearly told Indonesia to halt drilling at a temporary offshore rig"
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Unilateral hydrocarbon drilling in waters overlapped by China's claim, continued over China's objection, is resource development without physical confrontation, i.e. demonstrative; the diplomatic refusal is a declarative component.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2024-10-21",
+  "date_end": "2024-10-25",
+  "date_precision": "day",
+  "claimant": "ID",
+  "location_name": "North Natuna Sea",
+  "subregion": "10",
+  "summary": "Between 21 and 25 October 2024 Bakamla three times intercepted and expelled China Coast Guard vessel CCG-5402 from Indonesia's EEZ in the North Natuna Sea, where it had disrupted a Pertamina seismic survey by MV Geo Coral; Bakamla's KN Pulau Dana-323 shadowed and radioed the vessel, backed by Navy ships KRI Sutedi Senaputra-378 and KRI Bontang-907.",
+  "actors": "Bakamla (KN Pulau Dana-323); TNI AL (KRI Sutedi Senaputra-378, KRI Bontang-907); PT Pertamina East Natuna",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/world/2024/10/27/bakamla-drives-chinese-ship-from-disputed-waters-again",
+    "title": "Bakamla drives Chinese ship from disputed waters again",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2024-10-27",
+    "excerpt": "The China Coast Guard-5402 (CCG-5402) re-entered the Indonesian jurisdiction on Friday"
+   },
+   {
+    "url": "https://inp.polri.go.id/artikel/bakamla-expels-chinese-coast-guard-vessel-from-north-natuna-sea",
+    "title": "Bakamla Expels Chinese Coast Guard Vessel from North Natuna Sea",
+    "publisher": "Indonesia National Police News (INP)",
+    "pub_date": "2024-10-27",
+    "excerpt": "ongoing seismic survey operations by PT Pertamina East Natuna using MV Geo Coral"
+   }
+  ],
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Intercepting, shadowing and driving a Chinese government vessel out of the EEZ is physical interference with a foreign state's activity, i.e. coercive; the sources identify the ship as CCG-5402, not CCG 5901 as in the task prompt.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2016-01-28",
+  "date_end": "2016-01-28",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "ROC President Ma Ying-jeou led government officials and scholars on a visit to Taiwan-held Taiping Island in the Spratlys, where he asserted that Taiping is an island under UNCLOS Article 121 entitled to an EEZ and continental shelf.",
+  "actors": "Presidential Office (President Ma Ying-jeou); CGA; ROC Navy transport",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4832",
+    "title": "Remarks by President Ma on Taiping Island",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-01-28",
+    "excerpt": "On January 28, President Ma Ying-jeou led government officials and scholars to visit Taiping Island in the Nansha Islands."
+   },
+   {
+    "url": "https://english.president.gov.tw/NEWS/4832",
+    "title": "Remarks by President Ma on Taiping Island",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-01-28",
+    "excerpt": "Taiping Island is categorically not a rock, but an island, and meets the criteria for an island as specified in Article 121 of UNCLOS."
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A head-of-state visit to a held feature is unilateral administration without confrontation (demonstrative), accompanied by declarative claims on the island's legal status aimed at the arbitral proceedings and all other claimants.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2016-07-12",
+  "date_end": "2016-07-12",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On the day the Philippines v. China arbitral award was issued, the ROC government (Presidential Office) declared that it did not accept the tribunal's decisions, particularly on the status of Taiping Island, and that they had no legally binding force on the ROC, reiterating ROC sovereignty over the South China Sea Islands and their relevant waters.",
+  "actors": "Presidential Office; MOFA",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4939",
+    "title": "ROC government position on the South China Sea arbitration",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-07-12",
+    "excerpt": "The ROC government does not accept any decisions that undermine the rights of the ROC, and declares that they have no legally binding force on the ROC."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP"
+  ],
+  "reasoning": "A formal government statement rejecting the award and reasserting sovereignty is a verbal, non-coercive assertion of the claim (declarative), directed at the Philippines as applicant and at all parties.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2016-07-13",
+  "date_end": "2016-07-13",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "South China Sea patrol from Zuoying (Taiping Island area)",
+  "subregion": "5",
+  "summary": "President Tsai Ing-wen boarded the Kang Ding-class frigate Di Hua (Dyi-huah) at Zuoying Naval Base and addressed its crew before the ship departed, a day early, on a South China Sea patrol intended to demonstrate Taiwan's determination to defend its interests after the arbitral award.",
+  "actors": "Presidential Office (President Tsai Ing-wen); ROC Navy Fleet Command; frigate Di Hua (Kang Ding-class)",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4942",
+    "title": "President Tsai addresses troops at Naval Fleet Command",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-07-13",
+    "excerpt": "While there she boarded the Di Hua Frigate, which was soon to depart to patrol the South China Sea, and delivered an address to the officers and enlisted personnel aboard ship."
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2016/07/14/2003650986",
+    "title": "Tsai Ing-wen visits frigate, vows that the nation will safeguard its interests",
+    "publisher": "Taipei Times",
+    "pub_date": "2016-07-14",
+    "excerpt": "“Today [Wednesday], the Kang Ding-class frigate Dyi-huah is to embark on a patrol mission in the South China Sea,” Tsai said in a morning speech to the crew of the frigate."
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Dispatch of a naval patrol to the disputed area, framed by the president as a show of determination, is unilateral administration/patrolling without confrontation (demonstrative); the accompanying rejection of the award is declarative.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2020-07-24",
+  "date_end": "2020-09-10",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "Pratas (Dongsha) Islands",
+  "subregion": "",
+  "summary": "Taiwan's Coast Guard Administration detained a Chinese fishing boat and its captain and 17 crew found fishing in waters around the Taiwan-held Dongsha (Pratas) Islands on 24 July 2020; the crew were held for 46 days, fined NT$600,000 and deported on 10 September 2020.",
+  "actors": "CGA (Kaohsiung); Kaohsiung District Prosecutors' Office",
+  "sources": [
+   {
+    "url": "https://www.taiwannews.com.tw/en/news/4006619",
+    "title": "Taiwan deports crew of Chinese vessel after 46-day detention",
+    "publisher": "Taiwan News",
+    "pub_date": "2020-09-11",
+    "excerpt": "The captain and 17 crew members of a Chinese fishing boat caught trespassing in the waters around Taiwan's Dongsha Islands in July were deported Thursday (Sept. 10) after a 46-day detention"
+   },
+   {
+    "url": "https://www.taiwannews.com.tw/en/news/4006619",
+    "title": "Taiwan deports crew of Chinese vessel after 46-day detention",
+    "publisher": "Taiwan News",
+    "pub_date": "2020-09-11",
+    "excerpt": "Taiwan's Coast Guard spotted the Chinese vessel fishing in its waters on July 24."
+   }
+  ],
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Detention of a foreign fishing vessel and crew, with fines and prosecution, is the imposition of punishment on a rival claimant's nationals (coercive) in waters Taiwan administers around Pratas.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2022-11-29",
+  "date_end": "2022-12-02",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan conducted routine live-fire drills near Taiping Island (Itu Aba) on Tuesday 29 November 2022; after Vietnam's foreign ministry called the exercise illegal, ROC MOFA on 2 December rejected the comments as unacceptable and said it was unquestionable that Itu Aba is ROC territory.",
+  "actors": "CGA garrison on Taiping; MOFA",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2022/12/04/2003790074",
+    "title": "Taipei rejects Hanoi labeling military exercise as ‘illegal’",
+    "publisher": "Taipei Times (with CNA)",
+    "pub_date": "2022-12-04",
+    "excerpt": "The Ministry of Foreign Affairs (MOFA) said in a statement that the comments made by its Vietnamese counterpart about the military’s routine live-fire drills near Itu Aba on Tuesday were “unacceptable.”"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2022/12/04/2003790074",
+    "title": "Taipei rejects Hanoi labeling military exercise as ‘illegal’",
+    "publisher": "Taipei Times (with CNA)",
+    "pub_date": "2022-12-04",
+    "excerpt": "MOFA said in its statement it was “unquestionable that Itu Aba is part of the Republic of China territory”"
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RA"
+  ],
+  "reasoning": "A live-fire exercise on a held feature is unilateral military administration without confrontation (demonstrative); the follow-on MOFA rebuttal to Vietnam is declarative and directed at Vietnam specifically.",
+  "confidence": "medium"
+ },
+ {
+  "date_start": "2024-01-29",
+  "date_end": "2024-01-29",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's Coast Guard Administration confirmed completion of a dredging project to upgrade the wharf at Taiping Island so that larger vessels can dock, concluding multi-year harbour expansion works on the Taiwan-held feature.",
+  "actors": "CGA",
+  "sources": [
+   {
+    "url": "https://focustaiwan.tw/politics/202401290007",
+    "title": "Coast Guard confirms completion of Taiping Island wharf upgrades",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2024-01-29",
+    "excerpt": "The Coast Guard Administration (CGA) on Monday confirmed that a dredging project to allow larger vessels to dock at a wharf serving the Taiwan-controlled Taiping Island in the South China Sea has been completed."
+   }
+  ],
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Construction and infrastructure upgrades on a disputed held feature are unilateral administration without confrontation (demonstrative); the date records the CGA's public confirmation of completion rather than the (unspecified) end of works.",
+  "confidence": "high"
+ },
+ {
+  "date_start": "2026-07-12",
+  "date_end": "2026-07-12",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "South China Sea (Taiping Island referenced)",
+  "subregion": "",
+  "summary": "On the tenth anniversary of the Philippines v. China arbitral award, ROC MOFA issued a news release reaffirming the ROC's sovereignty claims and longstanding South China Sea policy, insisting Taiwan should not be excluded from dispute-resolution efforts and describing Taiping Island as a base for cooperation, conservation, humanitarian assistance and research.",
+  "actors": "MOFA",
+  "sources": [
+   {
+    "url": "https://focustaiwan.tw/politics/202607130006",
+    "title": "Taiwan upholds South China Sea policy 10 years after international ruling",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2026-07-13",
+    "excerpt": "The Ministry of Foreign Affairs (MOFA) on Sunday reiterated Taiwan's stance on the South China Sea, saying the country should not be excluded from efforts to address issues affecting its rights and interests"
+   },
+   {
+    "url": "https://focustaiwan.tw/politics/202607130006",
+    "title": "Taiwan upholds South China Sea policy 10 years after international ruling",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2026-07-13",
+    "excerpt": "Taiwan has used Taiping Island as a base to promote maritime cooperation, environmental conservation, humanitarian assistance, and scientific research in the region, MOFA added."
+   }
+  ],
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A formal MOFA statement reasserting sovereignty claims and the ROC's exclusion from the arbitration is a non-coercive verbal assertion (declarative) directed at all parties; it is borderline as it also stresses cooperation.",
+  "confidence": "medium"
+ },
+ {
+  "date_start": "2026-10-01",
+  "date_end": "2026-10-01",
+  "date_precision": "day",
+  "claimant": "TW",
+  "location_name": "Pratas (Dongsha) Islands",
+  "subregion": "",
+  "summary": "The CGA patrol vessel Yunlin expelled two Chinese fishing boats (Yue Hui Dong Yu 75066 and Jin Sha) from Taiwan's prohibited/restricted waters east of Pratas Island on 1 October 2026, using its water cannon for 30 seconds and then 90 seconds against the Jin Sha after it refused repeated warnings to leave.",
+  "actors": "CGA patrol vessel Yunlin",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/10/03/2003865326",
+    "title": "CGA expels Chinese boats near Pratas",
+    "publisher": "Taipei Times (with CNA)",
+    "pub_date": "2026-10-03",
+    "excerpt": "The Coast Guard Administration (CGA) yesterday said it expelled two Chinese fishing boats that had entered Taiwan’s prohibited waters near Pratas Islands (Dongsha Islands, 東沙群島)."
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/10/03/2003865326",
+    "title": "CGA expels Chinese boats near Pratas",
+    "publisher": "Taipei Times (with CNA)",
+    "pub_date": "2026-10-03",
+    "excerpt": "The Yunlin then gradually approached the Jin Sha and sprayed water at it for 90 seconds, the agency added."
+   }
+  ],
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Physical interference with foreign fishing vessels, including use of a water cannon to force compliance, is the imposition of punishment on a rival claimant's vessels (coercive) in waters Taiwan administers around Pratas.",
+  "confidence": "high"
+ }
+]
