@@ -348,6 +348,9 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
 
     Actions: reject (note required); merge (into an existing move, or into the move formed from another
     candidate in this batch via move_of_event); new_move; duplicate (of an accepted event: status merged).
+
+    The order of the decisions in the batch does not matter: they are applied in the order of their
+    events in events.csv, so new moves are numbered the same whichever front end exported the file.
     """
     events = read_table("events", data_dir)
     moves = read_table("moves", data_dir)
@@ -365,6 +368,8 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
             raise ValueError(f"event {eid} is {by_id[eid]['status']}, not a candidate")
     if len({d["event_id"] for d in decisions}) != len(decisions):
         raise ValueError("an event has more than one decision in this batch")
+    position = {e["event_id"]: i for i, e in enumerate(events)}
+    decisions = sorted(decisions, key=lambda d: position[d["event_id"]])
 
     def finish(e: dict, d: dict, note: str):
         e["reviewer"] = reviewer

@@ -123,18 +123,19 @@ def test_every_decision_type_yields_the_expected_files(opened):
 
     ev = {e["event_id"]: e for e in rows(opened, "events")}
     mv = {m["move_id"]: m for m in rows(opened, "moves")}
-    # new moves: ids follow the MATS form and instance numbering per claimant-year
-    assert ev[scar["event_id"]]["move_id"] == "CN202601" and ev[stas["event_id"]]["move_id"] == "CN202602"
+    # new moves: ids follow the MATS form and instance numbering per claimant-year, in events.csv order
+    # (the Second Thomas candidate precedes the Scarborough one in the file, whatever the order of the decisions)
+    assert ev[stas["event_id"]]["move_id"] == "CN202601" and ev[scar["event_id"]]["move_id"] == "CN202602"
     assert ev[vn["event_id"]]["move_id"] == "VN202601"
-    m = mv["CN202601"]
+    m = mv["CN202602"]
     assert m["coercive"] == "1" and m["declarative"] == "0" and m["physical"] == "1" and m["loc04_central_east"] == "1"
     assert m["dyads"] == "CP" and m["intensification_criterion"] == "frequency" and m["coded_by"] == "project"
     assert m["coder"] == REVIEWER and m["coding_date"] == DATE and m["data_version"] == schema.DATASET_VERSION and m["status"] == "accepted"
     assert m["description"].startswith("2026, October 4")
-    assert mv["CN202602"]["description"] == stas["summary"]       # description defaults to the event summary
+    assert mv["CN202601"]["description"] == stas["summary"]       # description defaults to the event summary
     # merged event: joined the new move, edits applied, provenance recorded
     t = ev[thitu["event_id"]]
-    assert t["status"] == "accepted" and t["move_id"] == "CN202601" and t["subregion"] == "5"
+    assert t["status"] == "accepted" and t["move_id"] == "CN202602" and t["subregion"] == "5"
     assert t["summary"] == "Same-day interference near Thitu Island and Sandy Cay."
     assert t["reviewer"] == REVIEWER and t["review_date"] == DATE
     assert t["review_note"].startswith("Possible duplicate of ") and t["review_note"].endswith("| Reviewer: Same operation, second area.")

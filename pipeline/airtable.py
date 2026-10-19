@@ -5,10 +5,13 @@ and applied with `pipeline.queue decide`. Airtable is never read by the loader, 
 the site build, and this module is the only one that knows it exists.
 
 Configuration: pipeline/airtable.json  {"enabled": true|false, "base_id": "app...", "table": "Candidates",
-"table_id": "tbl...", "field_ids": {name: "fld..."}}; the ids are only needed to read an export made with
-another Airtable client (pull --from), the REST client works by field name.
-The access token is the environment variable AIRTABLE_TOKEN (a repository secret in CI); it never
-appears in a file. With enabled = false, or no token, every command says so and does nothing.
+"table_id": "tbl...", "interface": "<url of the review interface, for people>", "field_ids": {name: "fld..."}};
+the field ids are only needed to read an export made with another Airtable client (pull --from), the
+REST client works by field name and addresses the table by its id.
+The access token is the environment variable AIRTABLE_TOKEN only (a repository secret if a workflow
+ever runs the sync; none does today); it never appears in a file. With enabled = false, no base_id or
+no token, every command that would call Airtable says so and does nothing; schema, records and
+pull --from never call it.
 
 Budget: the free plan allows 1,000 API calls per workspace per month. Records travel ten per call;
 every command counts its calls and refuses to start a step that would pass --max-calls.
@@ -28,6 +31,7 @@ import datetime as dt
 import json
 import os
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -107,6 +111,7 @@ CODER_FIELDS = FIELD_NAMES[FIELD_NAMES.index("decision"):]
 # configuration
 
 def load_config(path: Path | None = None) -> dict:
+    """The configuration file's values over the defaults; a missing file means disabled."""
     path = path or CONFIG
     cfg = {"enabled": False, "base_id": "", "table": "Candidates"}
     if path.exists():
@@ -128,8 +133,14 @@ def why_disabled(cfg: dict, token: str | None) -> str:
 # ---------------------------------------------------------------------------
 # the client and its counted calls
 
+def run_filter(run_id: str) -> str:
+    """The Airtable formula selecting one run's records; a quote in the id is escaped, not a break-out."""
+    return "{run_id} = '" + run_id.replace("\\", "\\\\").replace("'", "\\'") + "'"
+
+
 class Client:
-    """Airtable REST, ten records a call, every call counted. Raises RuntimeError on HTTP errors."""
+    """Airtable REST, ten records a call, every call counted. Raises RuntimeError on HTTP and network
+    errors. `table` may be the table's id (preferred: survives a rename) or its name."""
 
     def __init__(self, token: str, base_id: str, table: str, max_calls: int = 200):
         self.token, self.base_id, self.table, self.max_calls = token, base_id, table, max_calls
@@ -141,7 +152,7 @@ class Client:
 
     def _request(self, method: str, path: str = "", params: dict | None = None, body: dict | None = None) -> dict:
         self._check()
-        url = f"{API}/{self.base_id}/{urllib.parse.quote(self.table)}{path}"
+        url = f"{API}/{self.base_id}/{urllib.parse.quote(self.table, safe='')}{path}"
         if params:
             url += "?" + urllib.parse.urlencode(params, doseq=True)
         data = json.dumps(body).encode("utf-8") if body is not None else None
@@ -153,6 +164,8 @@ class Client:
                 return json.loads(r.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
             raise RuntimeError(f"Airtable {method} {path or '/'}: HTTP {e.code} {e.read().decode('utf-8', 'replace')[:300]}") from None
+        except urllib.error.URLError as e:
+            raise RuntimeError(f"Airtable {method} {path or '/'}: {e.reason}") from None
 
     def list(self, filter_formula: str = "") -> list[dict]:
         out, offset = [], None
@@ -168,20 +181,24 @@ class Client:
             if not offset:
                 return out
 
+    @staticmethod
+    def batches(n: int) -> int:
+        return (n + BATCH - 1) // BATCH
+
     def create(self, records: list[dict]) -> list[dict]:
-        self._check((len(records) + BATCH - 1) // BATCH)
+        self._check(self.batches(len(records)))
         out = []
         for i in range(0, len(records), BATCH):
             out += self._request("POST", body={"records": [{"fields": r} for r in records[i:i + BATCH]], "typecast": True}).get("records", [])
         return out
 
     def update(self, records: list[tuple[str, dict]]) -> None:
-        self._check((len(records) + BATCH - 1) // BATCH)
+        self._check(self.batches(len(records)))
         for i in range(0, len(records), BATCH):
             self._request("PATCH", body={"records": [{"id": rid, "fields": f} for rid, f in records[i:i + BATCH]], "typecast": True})
 
     def delete(self, ids: list[str]) -> None:
-        self._check((len(ids) + BATCH - 1) // BATCH)
+        self._check(self.batches(len(ids)))
         for i in range(0, len(ids), BATCH):
             self._request("DELETE", params={"records[]": ids[i:i + BATCH]})
 
@@ -190,6 +207,7 @@ class Client:
 # candidates -> records
 
 def _num(s: str) -> float | None:
+    """A CSV number cell as a number; blank or unparsable is None (the cell stays empty in Airtable)."""
     try:
         return float(s) if s not in ("", None) else None
     except ValueError:
@@ -197,43 +215,56 @@ def _num(s: str) -> float | None:
 
 
 def _subregion_choice(n: str) -> str:
+    """The select option for a sub-region number ("4" -> "4 Central-East"); blank when not 1-10."""
     return SUBREGION_CHOICES[int(n) - 1] if n and n.isdigit() and 1 <= int(n) <= 10 else ""
 
 
 def _moves_text(moves: list[dict]) -> str:
+    """The claimant's moves of a year as the review page lists them, one per line."""
     return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}]{' pending' if m['status'] != 'accepted' else ''}: {m['description']}" for m in moves)
 
 
 def records_for_run(data_dir: Path, run_id: str, pr: int | None = None) -> list[dict]:
-    """One Airtable record per candidate of the run, with the review page's context fields filled
-    and the coder's fields empty (decision = undecided)."""
+    """One Airtable record per candidate of the run: the review page's context fields, and the coder's
+    fields prefilled as the page prefills them (decision undecided; the new move's type, dyads, domains,
+    issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag).
+    Year and description are left blank: `decide` defaults them to the event's year and summary, as the
+    page does. Only `push` on a new record writes the coder's fields; a refresh never touches them."""
     ctx = review_context(data_dir, run_id=run_id)
     out = []
     for it in ctx["items"]:
         e = it["event"]
         srcs = it["sources"]
+        dup = it["duplicate_of"]["event_id"] if it.get("duplicate_of") else ""
         rec = {
             "event_id": e["event_id"], "run_id": run_id, "pull_request": pr, "claimant": e["claimant"],
             "date_start": e["date_start"] or None, "date_end": e["date_end"] or None, "date_precision": e["date_precision"] or None,
             "location_name": e["location_name"], "location_precision": e["location_precision"] or None,
             "subregion": _subregion_choice(e["subregion"]) or None, "lat": _num(e["lat"]), "lon": _num(e["lon"]),
             "summary": e["summary"], "actors": e["actors"],
-            "sources": "\n".join(f"{s['title'] or s['url']} — {s['publisher']} {s['pub_date']}\n{s['url']}".strip() for s in srcs),
+            "sources": "\n".join(" ".join(x for x in (s["title"] or s["url"], "—", s["publisher"], s["pub_date"]) if x) + "\n" + s["url"] for s in srcs),
             "excerpt": "\n\n".join(s["excerpt"] for s in srcs if s["excerpt"]),
             "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"], "suggested_issues": e["suggested_issues"],
             "suggested_dyads": e["suggested_dyads"], "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
-            "possible_duplicate_of": it["duplicate_of"]["event_id"] if it.get("duplicate_of") else "",
+            "possible_duplicate_of": dup,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
-            "decision": "undecided",
+            "decision": "undecided", "duplicate_of": dup,
+            "new_type": e["suggested_type"] or None, "new_dyads": e["suggested_dyads"],
+            "new_domains": e["suggested_domains"].split() or None, "new_issues": e["suggested_issues"].split() or None,
+            "new_subregions": [_subregion_choice(e["subregion"])] if _subregion_choice(e["subregion"]) else None,
         }
         out.append({k: v for k, v in rec.items() if v not in (None, "")})
     return out
+
+
+CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS]
 
 
 # ---------------------------------------------------------------------------
 # records -> decisions (the review page's export shape, exactly)
 
 def _sub_number(choice: str) -> str:
+    """The sub-region number of a select option ("4 Central-East" -> "4")."""
     return choice.split(" ", 1)[0] if choice else ""
 
 
@@ -259,16 +290,32 @@ def normalise_record(r: dict, field_ids: dict[str, str] | None = None) -> dict:
     return {k: _plain(v) for k, v in raw.items()}
 
 
-def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: dict[str, str] | None = None) -> dict:
+def _same(col: str, edited, shown) -> bool:
+    """Whether an edit column repeats the value the record shows, so there is nothing to change."""
+    if col == "subregion":
+        return _sub_number(edited or "") == _sub_number(shown or "")
+    if col in ("lat", "lon"):
+        return _num(str(edited)) == _num(str(shown)) if shown not in (None, "") else False
+    return str(edited).strip() == str(shown or "").strip()
+
+
+def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: dict[str, str] | None = None,
+                           run_id: str | None = None) -> dict:
     """The decisions file `pipeline.queue decide` reads, from the coder's fields. Records left
-    'undecided' are skipped; blank edit fields keep the event's value, as on the page."""
+    'undecided', and records of other runs when run_id is given, are skipped; a blank edit field, or
+    one repeating the value shown, keeps the event's value, as on the page. Decisions come out in
+    event-id order; `apply_decisions` orders them by the events file anyway."""
     decisions = []
     reviewers = set()
     for r in records:
         f = normalise_record(r, field_ids)
+        if run_id is not None and f.get("run_id") != run_id:
+            continue
         action = f.get("decision") or "undecided"
         if action == "undecided":
             continue
+        if not f.get("event_id"):
+            raise ValueError(f"record {r.get('id', '?')} has a decision ({action}) but no event_id; only rows the sync created can be decided")
         d: dict[str, Any] = {"event_id": f["event_id"], "action": action, "note": (f.get("note") or "").strip()}
         if f.get("reviewer"):
             reviewers.add(f["reviewer"].strip())
@@ -290,7 +337,7 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
             edits = {}
             for col in EDITABLE:
                 v = f.get(f"edit_{col}")
-                if v in (None, ""):
+                if v in (None, "") or _same(col, v, f.get(col)):
                     continue
                 if col == "subregion":
                     v = _sub_number(v)
@@ -310,11 +357,13 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
 # commands
 
 def push(client: Client, records: list[dict], run_id: str) -> dict:
-    """Create the run's records that are not yet there; refresh the context fields of those that
-    are, without touching the coder's fields. Idempotent."""
-    existing = {r["fields"].get("event_id"): r["id"] for r in client.list(f"{{run_id}} = '{run_id}'")}
+    """Create the run's records that are not yet there; refresh every context field of those that
+    are (a field now blank is blanked), without touching the coder's fields. Idempotent. The whole
+    push is checked against the budget before anything is sent."""
+    existing = {r["fields"].get("event_id"): r["id"] for r in client.list(run_filter(run_id))}
     new = [r for r in records if r["event_id"] not in existing]
-    upd = [(existing[r["event_id"]], {k: v for k, v in r.items() if k not in CODER_FIELDS}) for r in records if r["event_id"] in existing]
+    upd = [(existing[r["event_id"]], {k: r.get(k) for k in CONTEXT_FIELDS}) for r in records if r["event_id"] in existing]
+    client._check(client.batches(len(new)) + client.batches(len(upd)))
     if new:
         client.create(new)
     if upd:
@@ -323,17 +372,20 @@ def push(client: Client, records: list[dict], run_id: str) -> dict:
 
 
 def pull(client: Client, run_id: str, reviewer: str = "") -> dict:
-    return decisions_from_records(client.list(f"{{run_id}} = '{run_id}'"), reviewer)
+    """The run's decisions as the file `queue decide` reads (see decisions_from_records)."""
+    return decisions_from_records(client.list(run_filter(run_id)), reviewer, run_id=run_id)
 
 
 def clear(client: Client, run_id: str) -> int:
-    ids = [r["id"] for r in client.list(f"{{run_id}} = '{run_id}'")]
+    """Delete the run's records (after its pull request is merged; the files are the record)."""
+    ids = [r["id"] for r in client.list(run_filter(run_id))]
     if ids:
         client.delete(ids)
     return len(ids)
 
 
 def table_schema() -> dict:
+    """The Candidates table as Airtable's schema API wants it; the live base was created from it."""
     return {"name": load_config().get("table", "Candidates"), "fields": [{"name": n, "type": t, **({"options": o} if o else {})} for n, t, o in FIELDS]}
 
 
@@ -344,8 +396,9 @@ def main(argv=None) -> int:
         s = sub.add_parser(name)
         s.add_argument("--run", required=True)
         s.add_argument("--data", type=Path, default=None)
-        s.add_argument("--max-calls", type=int, default=200)
-        if name == "push":
+        if name != "records":
+            s.add_argument("--max-calls", type=int, default=200)
+        if name in ("push", "records"):
             s.add_argument("--pr", type=int, default=None)
         if name in ("pull", "records"):
             s.add_argument("--out", type=Path, required=True)
@@ -359,7 +412,7 @@ def main(argv=None) -> int:
         return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
-        recs = records_for_run(data_dir, a.run)
+        recs = records_for_run(data_dir, a.run, a.pr)
         a.out.write_text(json.dumps(recs, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(recs)} record(s) -> {a.out} (nothing sent)")
         return 0
@@ -367,7 +420,7 @@ def main(argv=None) -> int:
         exported = json.loads(a.from_file.read_text(encoding="utf-8"))
         if isinstance(exported, dict):
             exported = exported.get("records", [])
-        d = decisions_from_records(exported, a.reviewer, load_config().get("field_ids"))
+        d = decisions_from_records(exported, a.reviewer, load_config().get("field_ids"), run_id=a.run)
         a.out.write_text(json.dumps(d, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(d['decisions'])} decision(s) -> {a.out}")
         return 0
@@ -377,7 +430,7 @@ def main(argv=None) -> int:
     if reason:
         print(f"nothing done: {reason}")
         return 0
-    client = Client(token, cfg["base_id"], cfg["table"], a.max_calls)
+    client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls)
     if a.cmd == "push":
         res = push(client, records_for_run(data_dir, a.run, a.pr), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")

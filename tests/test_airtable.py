@@ -23,12 +23,15 @@ REVIEWER, DATE = "Test Coder", "2026-10-15"
 
 
 class FakeAirtable(airtable.Client):
-    """The same interface, backed by a dict, with the same call counting and batching rules."""
+    """The same interface, backed by a dict, enforcing what Airtable enforces: ten records a write,
+    pages of `page` records on reads with an offset to continue. Records come back in reverse order
+    of creation, so nothing may rely on table order."""
 
-    def __init__(self, max_calls: int = 200):
-        super().__init__("fake-token", "appFAKE", "Candidates", max_calls)
+    def __init__(self, max_calls: int = 200, page: int = 100):
+        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls)
         self.rows: dict[str, dict] = {}
         self.n = 0
+        self.page = page
 
     def _request(self, method, path="", params=None, body=None):
         self._check()
@@ -36,8 +39,14 @@ class FakeAirtable(airtable.Client):
         if method == "GET":
             formula = (params or {}).get("filterByFormula", "")
             run = formula.split("'")[1] if "'" in formula else None
-            recs = [{"id": i, "fields": dict(f)} for i, f in self.rows.items() if run is None or f.get("run_id") == run]
-            return {"records": recs}
+            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get("run_id") == run]
+            start = int((params or {}).get("offset") or 0)
+            page = recs[start:start + self.page]
+            return {"records": page, **({"offset": str(start + self.page)} if start + self.page < len(recs) else {})}
+        if method in ("POST", "PATCH"):
+            assert len(body["records"]) <= airtable.BATCH, "Airtable refuses more than ten records a call"
+        if method == "DELETE":
+            assert len(params["records[]"]) <= airtable.BATCH
         if method == "POST":
             out = []
             for r in body["records"]:
@@ -94,7 +103,7 @@ def test_same_decisions_through_airtable_and_through_the_review_page_yield_ident
                       "domains": ["physical"], "issues": ["military", "administrative"], "subregions": ["4"],
                       "description": "2026, October 4: CCG and PLA units interfere with Philippine aircraft and vessels near Scarborough Shoal."}},
         {"event_id": thitu["event_id"], "action": "merge", "note": "Same operation, second area.", "move_of_event": scar["event_id"],
-         "edits": {"subregion": "5", "summary": "Same-day interference near Thitu Island and Sandy Cay."}},
+         "edits": {"summary": "Same-day interference near Thitu Island and Sandy Cay."}},
         {"event_id": stas["event_id"], "action": "new_move", "note": "",
          "new_move": {"type": "coercive", "intensification_criterion": "novelty", "year": "", "ongoing_through": "", "dyads": ["CP"],
                       "domains": ["physical"], "issues": ["military"], "subregions": ["6"], "description": ""}},
@@ -120,8 +129,13 @@ def test_same_decisions_through_airtable_and_through_the_review_page_yield_ident
     fake.decide(vn["event_id"], decision="new_move", new_type="declarative", new_criterion="novelty", new_year="2026", new_dyads="VC",
                 new_domains=["diplomatic"], new_issues=["politics"], new_subregions=[airtable.SUBREGION_CHOICES[1]])
     pulled = airtable.pull(fake, "fixture")
-    page_decisions["decisions"].sort(key=lambda d: d["event_id"])
-    assert pulled == page_decisions                                                   # byte-for-byte the page's export
+    # the same decision objects as the page exports (the page file also carries run_id and exported,
+    # which `decide` ignores); the page lists cards in events.csv order, the pull is in event-id order
+    assert sorted(pulled["decisions"], key=lambda d: d["event_id"]) == sorted(page_decisions["decisions"], key=lambda d: d["event_id"])
+    assert pulled["reviewer"] == REVIEWER
+    assert [d["event_id"] for d in pulled["decisions"]] != [d["event_id"] for d in page_decisions["decisions"]]
+    # two CN 2026 new moves (scar, stas) whose event-id order differs from card order: the files must still agree
+    assert [d["event_id"] for d in page_decisions["decisions"] if d["action"] == "new_move" and d["event_id"] != vn["event_id"]] == [scar["event_id"], stas["event_id"]]
 
     ca = queue.apply_decisions(pulled["decisions"], pulled["reviewer"], DATE, a, RAW_XLSX, RAW_MAVD)
     cb = queue.apply_decisions(page_decisions["decisions"], page_decisions["reviewer"], DATE, b, RAW_XLSX, RAW_MAVD)
@@ -139,15 +153,46 @@ def test_push_is_idempotent_and_never_touches_the_coders_columns(tmp_path):
     recs = airtable.records_for_run(d, "fixture", pr=17)
     airtable.push(fake, recs, "fixture")
     eid = recs[0]["event_id"]
-    fake.decide(eid, decision="reject", note="keep me")
-    res = airtable.push(fake, recs, "fixture")
+    fake.decide(eid, decision="reject", note="keep me", new_type="force")
+    again = airtable.records_for_run(d, "fixture", pr=18)                          # the PR number changed, a note went away
+    again[0]["summary"] = "corrected summary"
+    again[0].pop("machine_note", None)
+    res = airtable.push(fake, again, "fixture")
     assert res["created"] == 0 and res["updated"] == 5
     row = next(f for f in fake.rows.values() if f["event_id"] == eid)
-    assert row["decision"] == "reject" and row["note"] == "keep me" and row["pull_request"] == 17
+    assert row["pull_request"] == 18 and row["summary"] == "corrected summary" and row["machine_note"] is None
+    assert row["decision"] == "reject" and row["note"] == "keep me" and row["new_type"] == "force"
     assert len(fake.rows) == 5
-    # context the coder needs is there, as on the page
+    # context the coder needs is there, as on the page, and the suggestion is prefilled as the page prefills it
     assert all(r["sources"] and r["summary"] and r["claimant"] for r in recs)
-    assert any(r.get("possible_duplicate_of") for r in recs)            # the fixture run has one flagged duplicate
+    flagged = next(r for r in recs if r.get("possible_duplicate_of"))           # the fixture run has one flagged duplicate
+    assert flagged["duplicate_of"] == flagged["possible_duplicate_of"]
+    typed = next(r for r in recs if r.get("suggested_type"))
+    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"].split()
+
+
+def test_push_batches_ten_a_call_and_list_follows_the_pages():
+    fake = FakeAirtable(page=7)
+    recs = [{"event_id": f"e{i:02d}", "run_id": "r", "summary": "s"} for i in range(25)]
+    res = airtable.push(fake, recs, "r")
+    assert res == {"created": 25, "updated": 0, "calls": 4}                        # one (empty) list + three batches
+    assert len(fake.list(airtable.run_filter("r"))) == 25 and fake.calls == 4 + 4  # 25 records in pages of 7: four pages, each counted
+    res = airtable.push(fake, recs, "r")
+    assert res["created"] == 0 and res["updated"] == 25 and res["calls"] == 8 + 4 + 3
+
+
+def test_an_edit_that_repeats_the_shown_value_is_not_an_edit():
+    recs = [{"fields": {"event_id": "e1", "run_id": "r", "decision": "merge", "merge_into_move": "CN201501", "lat": 10.375, "lon": 114.36667,
+                        "subregion": airtable.SUBREGION_CHOICES[4], "date_start": "2026-05-01", "summary": "same",
+                        "edit_lat": 10.375, "edit_lon": 114.36667, "edit_subregion": airtable.SUBREGION_CHOICES[4],
+                        "edit_date_start": "2026-05-01", "edit_summary": "same ", "edit_actors": "new actors"}}]
+    d = airtable.decisions_from_records(recs)
+    assert d["decisions"][0]["edits"] == {"actors": "new actors"}
+
+
+def test_a_decided_row_the_sync_did_not_create_is_refused():
+    with pytest.raises(ValueError, match="no event_id"):
+        airtable.decisions_from_records([{"id": "recX", "fields": {"run_id": "r", "decision": "reject", "note": "n"}}])
 
 
 def test_undecided_rows_and_blank_edits_are_skipped():
@@ -196,15 +241,25 @@ def test_disabled_configuration_does_nothing(tmp_path, monkeypatch, capsys):
     cfg.write_text(json.dumps({"enabled": True, "base_id": "appX", "table": "Candidates"}))
     assert airtable.main(["clear", "--run", "fixture"]) == 0
     assert "AIRTABLE_TOKEN is not set" in capsys.readouterr().out
+    monkeypatch.setenv("AIRTABLE_TOKEN", "pat-not-a-real-token")
+    cfg.write_text(json.dumps({"enabled": False, "base_id": "appX", "table": "Candidates"}))
+    assert airtable.main(["pull", "--run", "fixture", "--out", str(tmp_path / "d.json")]) == 0
+    assert "disabled" in capsys.readouterr().out and not (tmp_path / "d.json").exists()
+    cfg.write_text(json.dumps({"enabled": True, "table": "Candidates"}))
+    assert airtable.main(["push", "--run", "fixture"]) == 0
+    assert "no base_id" in capsys.readouterr().out
 
 
 def test_offline_routes_need_no_token(tmp_path, monkeypatch):
+    monkeypatch.delenv("AIRTABLE_TOKEN", raising=False)
+    monkeypatch.setattr(airtable.Client, "_request", lambda *a, **k: pytest.fail("Airtable was called"))
     d = opened_copy(tmp_path, "d")
     out = tmp_path / "records.json"
-    assert airtable.main(["records", "--run", "fixture", "--data", str(d), "--out", str(out)]) == 0
+    assert airtable.main(["records", "--run", "fixture", "--data", str(d), "--out", str(out), "--pr", "17"]) == 0
     recs = json.loads(out.read_text(encoding="utf-8"))
-    assert len(recs) == 5 and all(r["decision"] == "undecided" for r in recs)
+    assert len(recs) == 5 and all(r["decision"] == "undecided" and r["pull_request"] == 17 for r in recs)
     recs[0].update(decision="reject", note="n")
+    recs.append({"event_id": "ev-other-run", "run_id": "another", "decision": "reject", "note": "not this run"})
     out.write_text(json.dumps(recs), encoding="utf-8")
     dec = tmp_path / "decisions.json"
     assert airtable.main(["pull", "--run", "fixture", "--from", str(out), "--out", str(dec), "--reviewer", "R"]) == 0
@@ -236,8 +291,7 @@ def imports_of(path: Path) -> set[str]:
 
 
 def test_nothing_that_builds_the_dataset_or_the_site_knows_airtable_exists():
-    for p in [ROOT / "pipeline" / f for f in ("load_mats.py", "validate.py", "queue.py", "harvest.py", "release.py", "agreement.py", "gazetteer.py")] \
-            + list((ROOT / "web").glob("*.py")):
+    for p in [f for f in (ROOT / "pipeline").glob("*.py") if f.name != "airtable.py"] + list((ROOT / "web").glob("*.py")):
         assert not any("airtable" in i for i in imports_of(p)), p
     # and a clean subprocess that loads, validates and builds never imports the module
     code = "import sys; from pipeline import validate, queue, load_mats; import web.build; print('pipeline.airtable' in sys.modules)"
