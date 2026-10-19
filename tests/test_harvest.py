@@ -32,8 +32,10 @@ def test_registry_is_complete_and_well_formed():
         assert s["language"], s["id"]
         if s["kind"] == "archive":   # ticket 12: where a coder looks for 1970-2015; never fetched
             assert s["status"] == "archival" and s["archive_kind"] in ("chronology", "yearbook", "government", "press_archive", "scholarly", "legal_deposit"), s["id"]
-            assert len(s["coverage"]) == 2 and 1800 <= s["coverage"][0] <= 2026 and (s["coverage"][1] is None or s["coverage"][1] >= s["coverage"][0]), s["id"]
+            start, end = s["coverage"]
+            assert start <= 2015 and (end is None or end >= max(start, 1970)), (s["id"], "an archive must overlap 1970-2015")
             assert s["access"] in ("open", "free_registration", "paywalled", "library") and s["how_to_use"], s["id"]
+            assert s["claimants"] and isinstance(s["reachable_from_cloud"], bool), s["id"]
             continue
         assert s["kind"] in ("rss", "html_list"), s["id"]
         assert s["status"] in ("active", "blocked_from_cloud", "needs_work"), s["id"]
@@ -54,6 +56,8 @@ def test_archives_are_listed_but_never_fetched(tmp_path):
     assert rc == 0 and not list((tmp_path / "cap").rglob("arch*"))
     report = json.loads((tmp_path / "cap" / "fetch-report.json").read_text(encoding="utf-8"))
     assert report["sources"] == []
+    assert harvest.main(["archives", "--registry", str(reg)]) == 0
+    assert harvest.main(["probe", "--registry", str(reg)]) == 0   # an archive with an open end prints and never fails the probe
 
 
 # ---- parsers ----------------------------------------------------------------
