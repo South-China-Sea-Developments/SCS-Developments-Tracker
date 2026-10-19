@@ -15,5 +15,5 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 09 | [Downloads, citation and tagged releases](09-downloads-citation-and-releases.md) | 02 | done |
 | 10 | [Agreement report](10-agreement-report.md) | 06 | done |
 | 11 | [New claimants: baselines and 2016+ coding for MY, ID, TW](11-new-claimants-baselines-and-2016-plus.md) | 06 | built; candidates queued after merge |
-| 12 | [New claimants: 1970–2015 backfill](12-new-claimants-1970-2015-backfill.md) | 11 | ready |
+| 12 | [New claimants: 1970–2015 backfill](12-new-claimants-1970-2015-backfill.md) | 11 | prepared; coding awaits the maintainer |
 | 13 | [Airtable review front end](13-airtable-review-front-end.md) | 06 | ready |

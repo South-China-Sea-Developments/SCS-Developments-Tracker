@@ -14,7 +14,13 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note. Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
 
-**Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`).
+**Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`); this project adds Malaysia (`MY`), Indonesia (`ID`) and Taiwan (`TW`) (decision 03).
+
+**Project coding** — A move or event coded by this project rather than taken from MATS (`coded_by = project`); labelled as such wherever it appears and outside the comparability guarantee.
+
+**Archive (registry)** — A source recorded in the registry as a place to look for 1970–2015 — a chronology, yearbook, government or legal deposit, press archive or scholarly work — with its coverage years and access; never fetched by the harvester.
+
+**Chunk** — One claimant and one decade of the backfill, worked and reviewed as a unit.
 
 **Type** *(MATS)* — The intensity class of a move. Four mutually ordered classes, each a 0/1 flag on the move: **Declarative** (verbal assertions via non-coercive statements, diplomatic protests, legislation); **Demonstrative** (unilateral administration of disputed possessions without confrontation: patrols, surveys, resource development, construction, state-sanctioned tourism or activism, domestic judicial proceedings, cooperative agreements with third parties); **Coercive** (threat or imposition of punishment: verbal, diplomatic, administrative or economic punishment, warning shots, physical interference with foreign activities); **Force** (application of military force, or direct seizure and occupation of a disputed possession).
 

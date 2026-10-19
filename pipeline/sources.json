@@ -1,5 +1,5 @@
 {
- "_doc": "Source registry for the harvester. kind: rss (feed items, each linked article captured) or html_list (a listing page; links matching link_pattern are captured). status: active; blocked_from_cloud (the site refuses requests from cloud egress, kept for a future fetch route or manual capture); needs_work (reachable but the parser does not yet find articles). cadence is advisory for the scheduler (ticket 07). Probe results are refreshed with `python -m pipeline.harvest probe`.",
+ "_doc": "Source registry for the harvester. kind: rss (feed items, each linked article captured) or html_list (a listing page; links matching link_pattern are captured). status: active; blocked_from_cloud (the site refuses requests from cloud egress, kept for a future fetch route or manual capture); needs_work (reachable but the parser does not yet find articles). cadence is advisory for the scheduler (ticket 07). Probe results are refreshed with `python -m pipeline.harvest probe`. kind: archive (ticket 12): a place a coder looks for 1970-2015 — chronology, yearbook, government, press_archive, scholarly or legal_deposit (archive_kind) — with coverage [start, end|null], access (open | free_registration | paywalled | library), how_to_use and reachable_from_cloud; status archival; never fetched by the harvester.",
  "sources": [
   {
    "id": "amti",
@@ -450,6 +450,1297 @@
    "max_items": 30,
    "status": "active",
    "notes": "Malay-language national daily. Added for ticket 11 (probe 2026-10-19)."
+  },
+  {
+   "id": "arch_newspapersg",
+   "name": "NewspaperSG (National Library Board Singapore) - The Straits Times, Business Times, Berita Harian (SG) and other digitised titles",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://eresources.nlb.gov.sg/newspapers/FAQ",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "MY",
+    "TW"
+   ],
+   "coverage": [
+    1845,
+    2021
+   ],
+   "access": "open",
+   "how_to_use": "Search The Straits Times and Business Times full text (free from home for issues older than about 25 years, so 1970–c. 2001; later years on site at the National Library, Singapore) for Malaysian, Indonesian and regional South China Sea reporting; Berita Harian (Singapore) in Malay.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Languages: en/ms. Landing/FAQ page fetched; the search and browse pages are served with a bot challenge; use a browser, so searches must be run in a browser. Home (remote) users cannot view the most recent ~25 years of SPH titles (rolling window, roughly post-2000 is library-only) and wire-service (Reuters/AFP/AP) items from the last 70 years; pre-2000 Straits Times/Business Times articles are viewable from anywhere. No downloads; print copies via NLB document delivery. (Verified 2026-10-19.) Languages: en (also Malay: Berita Harian; Chinese titles). FAQ (opened) says: 'The Straits Times | 1845 - 2021' digitised; 'Users will also not be able to view articles published in the last 25 years for SPH Media's newspapers' (home users). Landing page https://eresources.nlb.gov.sg/newspapers/ also opened; the per-title page (/digitised/newspaper/straitstimes) is disallowed to automated clients to the page proxy. A 2009 LAS notice (opened) confirms the 1845-1982 run was the first batch digitised. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_nstp-klik-newspaper-archive-new-straits-",
+   "name": "NSTP KLIK newspaper archive (New Straits Times Press: New Straits Times, Berita Harian (MY), Harian Metro and predecessors)",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://www.nstp.com.my/klik",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1845,
+    null
+   ],
+   "access": "paywalled",
+   "how_to_use": "NSTP's in-house digital repository (51 million+ articles, pages and images back to 1845) is the only full run of the New Straits Times / Berita Harian (Malaysia) for 1970-2015; search by feature name (Layang-Layang, Terumbu Ubi, Terumbu Mantanani, Terumbu Siput, Beting Peninjau, Beting Serupai/James Shoal), 'Spratly', 'Peta Baru', 'Wisma Putra bantahan', and fisheries terms ('nelayan asing', 'pencerobohan').",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Languages: en/ms. Landing page confirms the archive exists and its 1845 start date but does not state access terms or list titles; assume a commercial/corporate subscription or on-site request. No free online full-text of the New Straits Times for the 1970s-1990s was found (Google News Archive could not be verified from cloud egress). Two 2019 NST retrospectives on the five naval stations (see its own entry) give construction dates. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_far-eastern-economic-review-archive-proq",
+   "name": "Far Eastern Economic Review Archive (ProQuest), with free FEER annual indexes on the Internet Archive",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://about.proquest.com/es/products-services/far-eastern-economic-review-archive",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1946,
+    2009
+   ],
+   "access": "library",
+   "how_to_use": "Cover-to-cover searchable scans of every FEER issue 1946-2009; FEER's Malaysia correspondents and 'Regional Affairs' pages reported the 1979 map, the 1983 Swallow Reef landing, the 1986 and 1999 occupations, Malaysian oil/gas blocks off Sarawak/Sabah and Mahathir's 1995 visit. The companion Asia Yearbook (annual) has a Malaysia chapter and chronology per year.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Subscription database via university libraries. Internet Archive holds FEER quarterly/cumulative indexes (identifiers sim_far-eastern-economic-review_* for Oct-Dec 1971 and 1990-1996) which can be used free to locate article dates before requesting pages; full 1970s-1990s issues are not free online (archive.org full issues found only for 1946-1957). Asia Yearbook volumes were not found as full-view items on archive.org or HathiTrust (HathiTrust search pages need a browser). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_keesing-s-record-of-world-events-keesing",
+   "name": "Keesing's Record of World Events / Keesing's Contemporary Archives (Keesing's World News Archive)",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://edesiderata.crl.edu/resources/keesings-world-news-archive",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "MY",
+    "TW"
+   ],
+   "coverage": [
+    1931,
+    null
+   ],
+   "access": "library",
+   "how_to_use": "Monthly digests of world events indexed by nation; browse 'Malaysia' and 'South China Sea / Spratly Islands' entries year by year for dated summaries of diplomatic protests, boundary agreements, incidents and claims. Keesing's Contemporary Archives covers 1931-1987 and Record of World Events 1987 onward.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "The keesings.com homepage loads but is content-light; description verified via the Center for Research Libraries record. Subscription only (CRL member libraries, many universities). Print volumes widely held in libraries and useful for the 1970s-1980s where online press is thin. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_foreign-broadcast-information-service-fb",
+   "name": "Foreign Broadcast Information Service (FBIS) Daily Reports, Asia & Pacific / East Asia (Readex)",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://www.readex.com/products/foreign-broadcast-information-service-fbis-daily-reports-1974-1996",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1974,
+    1996
+   ],
+   "access": "library",
+   "how_to_use": "English translations/transcripts of Bernama, Radio Malaysia, Malaysian press and Chinese/Vietnamese reactions, filed daily; search 'Malaysia' with 'Spratly', 'Swallow Reef', 'Layang-Layang', 'continental shelf', 'Amboyna', 'Commodore Reef', 'fishermen' for dated statements by Malaysian ministers and the Navy 1974-1996. Also cross-searches JPRS (1957-1994).",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Institutional subscription (Readex/NewsBank); some libraries hold FBIS on microfiche. Coverage of Malaysia is selective but FBIS is the standard source for government statements reported in Malay-language broadcasts in the 1980s-1990s. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_southeast-asian-affairs",
+   "name": "Southeast Asian Affairs (ISEAS annual)",
+   "kind": "archive",
+   "archive_kind": "yearbook",
+   "url": "https://muse.jhu.edu/journal/639",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "MY",
+    "TW"
+   ],
+   "coverage": [
+    1974,
+    null
+   ],
+   "access": "paywalled",
+   "how_to_use": "One country chapter per year from 1974 (Malaysia, Indonesia; regional chapters cover the South China Sea); Project MUSE and JSTOR, paywalled; DOIs 10.1355/seaa[yy]x.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Chapters (DOIs 10.1355/seaa[yy]x) were verified through Crossref: 40 Malaysia-titled chapters. Chapters carry DOIs 10.1355/seaa[yy]x and are hosted on Project MUSE and JSTOR (both need a browser; existence verified through Crossref's index). The ISEAS flagship page could not be fetched (proxy rate-limited). Print volumes in most Asian-studies libraries; ISEAS bookshop sells back volumes. (Verified 2026-10-19.) MUSE page for Southeast Asian Affairs 2014 opened (Indonesia chapter 'Indonesia in 2013: Anticipating 2014', pp. 119-138; 'Open Access: No'). Crossref API query (opened) lists Indonesia chapters from 'Indonesia in Focus' (SEAA 1974, 10.1355/seaa74e) through the 1990s, confirming the series starts in 1974. SEAA 2023 page (muse.jhu.edu/book/111323) also opened. JSTOR journal page is JavaScript-blocked to the proxy. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_parliament-of-malaysia-digital-hansard-p",
+   "name": "Parliament of Malaysia Digital Hansard Portal (Dewan Rakyat / Dewan Negara)",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://hansard.parlimen.gov.my/en-GB",
+   "language": "ms",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1959,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Full-text keyword search across all Dewan Rakyat and Dewan Negara debates from 1959; search Malay terms 'Kepulauan Spratly', 'Terumbu Layang-Layang', 'Pulau Layang-Layang', 'pelantar benua', 'Laut China Selatan', 'Beting Serupai', 'nelayan asing', 'Zon Ekonomi Eksklusif' to retrieve ministerial written and oral answers that date deployments, protests, fisheries arrests and the 1979 map; filter by chamber and MP.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Languages: ms/en. Portal page loads but does not itself state the 1959 start; a 2026 press report on the portal gives 1959-2026 and the Parliament's DSpace repository (repositori.parlimen.gov.my) holds scanned Penyata Rasmi PDFs organised by Parliament term from the First Parliament (1959-1964) onward, which were opened and verified. The older HTML Hansard pages on parlimen.gov.my need a browser. Debates are in Malay (English in the 1960s-early 1970s). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_un-doalos-maritime-space-malaysia-nation",
+   "name": "UN DOALOS Maritime Space: Malaysia national legislation, maps and treaties (Continental Shelf Act 1966, EEZ Proclamation 1978, EEZ Act 1984, boundary agreements)",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://www.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/MYS.htm",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1966,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Authoritative texts and dates for Malaysia's legal assertions: Continental Shelf Act 1966 (amended 1972), Emergency Ordinance No. 7 of 1969, Proclamation of the Economic Zone 25 April 1978, Exclusive Economic Zone Act 1984 (Act 311, full PDF at static.un.org/Depts/los/LEGISLATIONANDTREATIES/PDFFILES/MYS_1984_Act.pdf), 1969-1971 Indonesia/Thailand shelf agreements, 1979 Thailand MOU, 2022 baselines deposit; use for coding legislative/legal events.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "The 21 December 1979 'Peta Baru' continental shelf map itself is NOT deposited here (only the 1979 Thailand-Malaysia MOU map is); the map must be sourced from the Director of National Mapping Malaysia / library copies or secondary literature. Page also links the 2009 joint and 2019 unilateral CLCS submissions. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_un-clcs-joint-submission-by-malaysia-and",
+   "name": "UN CLCS: Joint submission by Malaysia and Viet Nam (southern South China Sea), 6 May 2009, with notes verbales",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://www.un.org/depts/los/clcs_new/submissions_files/submission_mysvnm_33_2009.htm",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "MY"
+   ],
+   "coverage": [
+    2009,
+    2011
+   ],
+   "access": "open",
+   "how_to_use": "Executive summary with charts/coordinates of the joint extended-shelf claim, plus the dated diplomatic exchanges it triggered: China (7 May 2009, 14 Apr 2011), Viet Nam (8 May 2009, 18 Aug 2009, 3 May 2011), Malaysia (20 May 2009, 21 Aug 2009), Philippines (4 Aug 2009, 5 Apr 2011), Indonesia (8 Jul 2010). Malaysia's 20 May 2009 note is a key assertive statement for coding.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Malaysia's separate partial submission of 12 December 2019 and the 2019-2020 note-verbale exchanges are on a sibling CLCS page (submission_mys_12_12_2019). Documents are PDFs. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_limits-in-the-seas",
+   "name": "US Department of State, Limits in the Seas series (FSU College of Law digital collection)",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://library.law.fsu.edu/Digital-Collections/LimitsinSeas/numerical.html",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "MY",
+    "TW"
+   ],
+   "coverage": [
+    1970,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "US State Department boundary studies: Nos. 1, 50, 81 (Malaysia), the Indonesian baselines and shelf studies, and later numbers; open PDFs.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "No Limits in the Seas issue analyses the 1979 Malaysian map directly (as of the numbered list opened). Later issues on China's claims (e.g. No. 143, 2014; No. 150, 2022) are on the State Department site. (Verified 2026-10-19.) Collection landing page opened (scans provided by American University WCL, University of Chicago and FSU; links to the numerical list, which failed to load from the proxy). The No. 35 PDF (ls035.pdf) was already fetched for the ID baseline. Current issues are on state.gov/limits-in-the-seas (fetch failed). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_csis-asia-maritime-transparency-initiati",
+   "name": "CSIS Asia Maritime Transparency Initiative - Malaysia Island Tracker (Swallow Reef, Ardasier, Mariveles, Erica, Investigator)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://amti.csis.org/island-tracker/malaysia/",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1983,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "One page per Malaysian-occupied feature with multilingual names, coordinates, legal status, dated satellite imagery (2016 onward) and the year Malaysia took possession (e.g. Swallow Reef 'first took possession in 1983'); use to confirm feature identities and to code post-2015 construction, and follow links to AMTI analyses (e.g. 'Airpower in the South China Sea').",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Occupation years appear on the individual feature pages, not the index. Pre-2015 history is thin; pair with the UPNM/CDiSS monograph and the 2019 NST retrospectives for 1983-1999 construction dates. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_hamzah-b-a-adam-leong-kok-wey-and-vivian",
+   "name": "Hamzah, B.A., Adam Leong Kok Wey and Vivian L. Forbes (eds), 'Malaysia and South China Sea: Policy, Strategy and Risks' (CDiSS, National Defence University of Malaysia, 2020) - Chapter 1 chronology of the Spratly occupations",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1974,
+    2019
+   ],
+   "access": "open",
+   "how_to_use": "The single most detailed dated account of Malaysia's physical assertions, written by RMN veterans (Mat Taib Yasin, Azhar Abdul Rahman, Johari Ramzan Ahmad): 1974 decision; early-1975 KD Sri Langkawi marker-laying incl. Amboyna Cay; 1978-79 Amboyna markers destroyed/Vietnam occupies; 13 Jun 1979 Cabinet orders monuments; 1979 map; Jun 1980 Philippines removes Commodore Reef monument; 21 Aug 1981 Cabinet orders occupation of Swallow Reef; 5 May 1983 PASKAL landing; 17 Apr 1984 Station LIMA; 25 Sep 1985 Cabinet decides on Mantanani/Ubi; 1986 modules; Jun 1987 Semarang Peninjau command; 17 Mar 1987 deep-sea fishing initiative; 15 Jan 1990 resort opens; 29 Mar 1992 renaming; 18 May 1994 Mantanani protected zone; 21 Oct 1996 Cabinet approves Peninjau/Siput; May 1999 Stations PAPA/SIERRA; 2009 and 2019 CLCS submissions. Later chapters cover boundaries, EEZ enforcement (MMEA) and IUU fishing.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Full PDF open on the UPNM site (opened; ~112k characters, first 100k read). Dates come from the authors' service records and interviews rather than archival citations, so cite as participant testimony and cross-check with press/Hansard where possible. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_lai-yew-meng-kuik-cheng-chwee-and-amy-az",
+   "name": "Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, 'Pulau Layang-Layang in Malaysia's South China Sea Policy', International Journal of China Studies 12(2), 2021",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1966,
+    2021
+   ],
+   "access": "open",
+   "how_to_use": "Peer-reviewed article with a timeline of Malaysian measures at Swallow Reef and the wider Spratlys: 1966-70 legislation and boundaries, 1974-78 'Ops Terumbu' marker deployments and loss of Amboyna Cay (June 1978), 21 Dec 1979 Peta Baru, 1980 Ops Tugu monuments, Aug 1981 Cabinet order, 5 May 1983 landing, Apr 1984 Station Lima and Mahathir visit, 1987-90 fishing/research/resort, 1992 renaming, 1995 Mahathir visit and exercise, 1996 UNCLOS ratification, 1999 Erica/Investigator, 2009 CLCS, 2019-2021 incidents; footnotes point to primary Malay sources.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "PDF hosted by the Institute of China Studies, Universiti Malaya (also at ejournal.um.edu.my/index.php/IJCS/article/view/36495, verified). Same author network (Kuik, Lai) has further Malaysia SCS policy work to mine for citations. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_dzirhan-mahadzir-malaysia-s-maritime-cla",
+   "name": "Dzirhan Mahadzir, 'Malaysia's Maritime Claims in the South China Sea: Security and Military Dimensions', ch. 10 in 'Entering Uncharted Waters? ASEAN and the South China Sea' (ISEAS, 2014)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://www.cambridge.org/core/books/entering-uncharted-waters/malaysias-maritime-claims-in-the-south-china-sea-security-and-military-dimensions/4E728F7EE8B68AF3308F38773AA1405B",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1978,
+    2010
+   ],
+   "access": "paywalled",
+   "how_to_use": "Defence journalist's chapter on the 12 claimed and 5 occupied features, the 1978 Amboyna Cay landing, the gradual occupations from May 1983, outpost development, and translated government replies to Senator Tunku Abdul Aziz (6 May and 28 July 2010) stating Malaysia's official position; useful for military-dimension events and official wording.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Abstract page opened on Cambridge Core; full text requires Cambridge/ISEAS access or the print volume (ISEAS 2014, ed. Pavin Chachavalpongpun). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_new-straits-times-how-malaysia-s-five-na",
+   "name": "New Straits Times, 'How Malaysia's five naval stations in the Spratlys were built' and 'It takes a lot to protect our Spratlys territories' (Adrian David, 4 March 2019)",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1983,
+    2019
+   ],
+   "access": "open",
+   "how_to_use": "Retrospective reporting giving station-by-station dates: Station Lima/Swallow Reef (commandos May 1983, station April 1986 per article), Station Uniform/Ardasier (commandos 16 April 1986), Station Mike/Mariveles (construction Sept 1986, officiated 3 Nov 1986), Station Sierra/Erica (barge towed April 1999, established 10 May 1999), Station Papa/Investigator (April 1999); also describes CB90 and Kedah-class patrol routines.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Based on anonymous official and veteran sources; some dates differ slightly from the CDiSS monograph (e.g. Station Lima officiated 17 April 1984 there vs 'set up April 1986' here) - record both and flag. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_parliament-of-australia-parliamentary-li",
+   "name": "Parliament of Australia Parliamentary Library, 'South China Sea Chronology' (1909 - February 2022)",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/Chronologies/2021-22/SouthChinaSeaChronology",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1909,
+    2022
+   ],
+   "access": "open",
+   "how_to_use": "Sourced, dated milestone table for all claimants; Malaysia entries include Dec 1979 continental shelf map, 1983 Swallow Reef occupation, 1986 runway/resort, Oct 1996 UNCLOS ratification, May 2009 joint CLCS submission, 2020 West Capella standoff. Use as a scaffold and follow its cited source documents.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Malaysia coverage is sparse compared with China/Vietnam/Philippines entries; good for cross-checking dates rather than discovering events. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_marwyn-s-samuels-contest-for-the-south-c",
+   "name": "Marwyn S. Samuels, 'Contest for the South China Sea' (Methuen, 1982)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://www.w-ilmu.intan.my/neuseal/Record/0000040767",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1970,
+    1982
+   ],
+   "access": "library",
+   "how_to_use": "Standard early history of the Spratly/Paracel disputes; its final chapters and notes cover the late-1970s round of claims including Malaysia's 1979 map and marker-laying, drawing on FEER, Straits Times and FBIS of the period - mine its footnotes for primary press citations for 1974-1981.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Library catalogue record opened (INTAN Malaysia; ISBN 0416331408). Not available full-view online (Google Books could not be queried from cloud egress); widely held in university libraries. Later syntheses to pair with it: Fravel, 'Strong Borders, Secure Nation' (2008) for the Chinese side; Haller-Trost, 'The Contested Maritime and Territorial Boundaries of Malaysia' (Kluwer, 1998) for the legal side (catalogue record not reachable from the cloud, so not listed separately). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_chandran-jeshurun-malaysia-fifty-years-o",
+   "name": "Chandran Jeshurun, 'Malaysia: Fifty Years of Diplomacy 1957-2007' (The Other Press, 2007)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://bookshop.iseas.edu.sg/component/get/9254",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1957,
+    2007
+   ],
+   "access": "library",
+   "how_to_use": "Chronologically organised history of Wisma Putra and Malaysian foreign policy by premiership, with interview-based accounts of the South China Sea claims; use for the diplomatic side (protests, bilateral talks with Philippines/Vietnam/China, ASEAN positions) and its footnotes to Foreign Affairs Malaysia and press.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "The page opened was a review of the book; the book itself is library-held. Verified via the ISEAS-published review in Contemporary Southeast Asia 30(2), 2008 (Johan Saravanamuttu), opened on the ISEAS bookshop site; the book itself is print/library only. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_mat-taib-yasin-johari-ramzan-ahmad-and-a",
+   "name": "Mat Taib Yasin, Johari Ramzan Ahmad and Azhar Abdul Rahman, 'Battling the Waves in the South China Sea: The Untold Stories of Malaysian Pioneers in the Spratly' (Royal Malaysian Navy Sea Power Centre, 2021)",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://psnz.umt.edu.my/seal/Record/0000155796",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1975,
+    1999
+   ],
+   "access": "library",
+   "how_to_use": "Official RMN Sea Power Centre oral-history volume by the officers who ran the 1970s marker operations and the 1983-1999 occupations; the closest thing to an official Navy history of the Spratly stations, to be used with the same authors' CDiSS chapter for operation names, ship names and dates.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Only the Universiti Malaysia Terengganu catalogue record (call no. D 27 .M3 2021) could be opened; no online full text found. Request via Malaysian university libraries or the RMN Sea Power Centre. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_my_r-haller-trost-the-territorial-dispute-b",
+   "name": "R. Haller-Trost, 'The Territorial Dispute between Indonesia and Malaysia over Pulau Sipadan and Pulau Ligitan' (IBRU Boundary & Territory Briefing 2(2), 1995)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/boundary-amp-territory-briefings/btb_2-2.pdf",
+   "language": "en",
+   "claimants": [
+    "MY"
+   ],
+   "coverage": [
+    1979,
+    1995
+   ],
+   "access": "open",
+   "how_to_use": "Not a South China Sea study, but its footnotes document the 21 December 1979 'Malaysian Map' of territorial waters and continental shelf boundaries and Indonesia's 1980 protest - a dated, citable reference for the map's publication and the first foreign protest; IBRU's Durham publications database also lists Haller-Trost's later Malaysia boundary work.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "PDF opened (106k characters). Useful chiefly as a legal-citation trail for the 1979 map and for the 1969-1971 boundary agreements. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_trove-national-library-of-australia-the-",
+   "name": "Trove (National Library of Australia) - The Canberra Times 1926-1995",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://trove.nla.gov.au/newspaper/title/11",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1926,
+    1995
+   ],
+   "access": "open",
+   "how_to_use": "Search Trove's digitised Canberra Times (AAP/Reuters wire coverage of Indonesia) for 1970-1995 items on Natuna, Indonesian naval exercises, UNCLOS ratification and Jakarta-Beijing exchanges; free OCR text and page images. Useful as an English-language cross-check for the 1970s-80s where NewspaperSG is the only other open daily.",
+   "reachable_from_cloud": false,
+   "status": "archival",
+   "notes": "Title page returns an Anubis bot-challenge (HTTP 200 but no content) from cloud egress; must be used from a browser. Coverage verified via a Canberra Times report (https://canberratimes.com.au/story/6155487/four-more-decades-of-print-now-in-digital, opened): Trove already held 1926-1954 and was adding 'the editions of the years 1955 to 1995', free of charge. Search results also show Trove newspaper pages for Natuna-related queries. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_internet-archive-far-eastern-economic-re",
+   "name": "Internet Archive - Far Eastern Economic Review bound volumes and cumulative indexes",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://archive.org/search?query=far+eastern+economic+review",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1971,
+    1996
+   ],
+   "access": "free_registration",
+   "how_to_use": "Borrow the scanned quarterly volumes (identifiers sim_far-eastern-economic-review_january-march-1971_71 ... october-december-1971_74 and the four 1990 quarters) with a free archive.org account and use the in-viewer full-text search for 'Natuna', 'Indonesia'; use the 1991-1996 cumulative indexes to locate articles to request through a library. FEER's annual Asia Yearbook Indonesia chapters are not in this set.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Holdings were listed through the archive.org search API (identifiers sim_far-eastern-economic-review_*). The advanced-search API (opened) returns numFound 14 for 1970-2010: all of 1971, all of 1990, and cumulative indexes for 1991, 1992, 1993, 1994, 1995 and Dec 1995-Dec 1996. Nothing for 1972-1989 or 1997+; those years need ProQuest/Factiva or microfilm. 1946-1958 issues are also on archive.org. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_asian-survey",
+   "name": "Asian Survey annual country reviews (\"Malaysia in [year]\", \"Indonesia in [year]\", \"Taiwan in [year]\")",
+   "kind": "archive",
+   "archive_kind": "yearbook",
+   "url": "https://online.ucpress.edu/as",
+   "language": "en",
+   "claimants": [
+    "ID",
+    "MY",
+    "TW"
+   ],
+   "coverage": [
+    1980,
+    2015
+   ],
+   "access": "paywalled",
+   "how_to_use": "One review article per country per year in the January/February issues (UC Press; JSTOR for back issues), each with a chronology of the year's foreign-policy events; paywalled.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Journal landing page opened (volume 64, 2024; six issues a year). The annual Indonesia reviews were verified through Crossref's index: 26 'Indonesia in YYYY' articles from 'Indonesia in 1980: Regime Fatigue?' (10.2307/2643768, vol. 21) to 'Indonesia in 2015' (10.1525/as.2016.56.1.129); some years (1982, 1987-88, 1992, 1995-96, 2000, 2003-05, 2009) did not match the title pattern in that query and must be located by issue. Full text via JSTOR/UC Press subscription; issue pages return 403 from cloud egress. (Verified 2026-10-19.) Existence and DOIs of the yearly reviews were verified through Crossref (e.g. 10.2307/2644435). JSTOR and online.ucpress.edu article pages are served with a browser challenge; existence and DOIs verified through the Crossref API. Journal founded 1961; the yearly Malaysia review series runs through the 2010s. Access via JSTOR/UC Press subscription. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_indonesia-cornell-university-southeast-a",
+   "name": "Indonesia (Cornell University Southeast Asia Program journal) on eCommons - incl. 'Current Data on the Indonesian Military Elite'",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://ecommons.cornell.edu/entities/publication/d9e59d51-f13a-498f-a7d9-359c3ff25183",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1966,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Use the semi-annual 'Current Data on the Indonesian Military Elite' listings (open PDFs on eCommons, e.g. INDO_10 Oct 1970, INDO_60 covering Sep 1993-Sep 1995) to date changes of Navy Chief of Staff, Western Fleet and Riau naval commanders and to confirm who ordered Natuna deployments; search the journal's articles for 'Natuna' and 'law of the sea' for contemporaneous analysis.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Record opened: 'Current Data on the Indonesian Military Elite after the Reorganization of 1969-1970', Indonesia vol. 10 (Oct 1970), pp. 195-208, with a direct PDF bitstream. Vol. 2 (Oct 1966) collection page and the INDO_60 (1995) PDF also opened. Cornell SEAP page confirms 'Published since April 1966'. Also mirrored on Project MUSE (restricted). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_analisis-csis-formerly-analisa-centre-fo",
+   "name": "Analisis CSIS (formerly Analisa), Centre for Strategic and International Studies Jakarta - OJS back archive",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://journals.csis.or.id/index.php/analisis/issue/archive",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1978,
+    2013
+   ],
+   "access": "open",
+   "how_to_use": "Browse the 158 digitised issues (1978-2013) for Indonesian-language analysis of the law of the sea, Natuna, ASEAN and China by CSIS authors (Hasjim Djalal, Jusuf Wanandi, Asnani Usman); articles are downloadable PDFs (the 1979 Analisa article on the Indonesia-Vietnam continental-shelf boundary, used in the ID baseline, came from this archive).",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Archive page opened: 25 of 158 issues listed, volume years 1978-1987 on page 1 plus 2013 issues; 'publication dates' shown as 2023 are OJS upload dates. Open PDF confirmed earlier for article/download/280/666/1375. Coverage figures are what the OJS listing shows; some 1972-77 volumes may exist in print only. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_the-indonesian-quarterly-csis-jakarta-oj",
+   "name": "The Indonesian Quarterly (CSIS Jakarta) - OJS back archive",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://journals.csis.or.id/index.php/iq/issue/archive",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1972,
+    2024
+   ],
+   "access": "open",
+   "how_to_use": "English-language quarterly with documentation sections and commentary by Indonesian officials and CSIS scholars; scan the 1980s-1990s issues for pieces on the archipelagic regime, UNCLOS ratification (1985), the 1990s South China Sea workshops and Natuna, and the 2010s issues for the fishing-boat incidents.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Archive page opened: earliest Vol. 1 No. 01 (1972), latest Vol. 52 No. 4 (2024). The listing is open; per-article PDF availability for early volumes was not individually confirmed. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_kompaspedia-harian-kompas-data-and-chron",
+   "name": "Kompaspedia - Harian Kompas data and chronology portal (Kompas archive since 1965)",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://kompaspedia.kompas.id/?s=natuna",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1965,
+    null
+   ],
+   "access": "paywalled",
+   "how_to_use": "Use the 'Paparan Topik' and 'Kronologi' entries - e.g. 'Sengketa Laut China Selatan dan Ancaman Kedaulatan Indonesia' (17 Apr 2024), 'Kedaulatan Maritim Indonesia: Sejarah dan Potretnya' (17 Sep 2024), 'Menjaga Tapal Batas Nusantara' (2026) - as Kompas-sourced chronologies of Indonesia's Natuna/South China Sea actions, then follow their citations into the Kompas print archive (kompas.id subscription) for exact dates.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Search page opened via curl (HTTP 200); the SCS topic page loads only the lede and contains paywall markup, so full text needs a Kompas.id subscription. kompaspedia.kompas.id and www.kompas.id are disallowed to some automated clients. Kompas has published daily since 1965 (Kontan report on Kompas's curated 1965-2022 events, search result). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_tempo-magazine-majalah-tempo-co-digital-",
+   "name": "Tempo magazine (majalah.tempo.co) - digital back issues",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://majalah.tempo.co/",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1971,
+    null
+   ],
+   "access": "paywalled",
+   "how_to_use": "Search the weekly's digitised issues for 'Natuna', 'Laut Cina Selatan', 'Esso Natuna', 'Hasjim Djalal'; Tempo reported the 1980 Exxon-Pertamina Natuna contract, the 1985 UNCLOS ratification debate, the 1993-96 China exchanges and the 1996 exercise. Registration gives a few free articles per week; full archive needs a subscription. Note the publication gap during the ban of 21 June 1994 until 1998.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Root page opened (showed a 2022 issue page; 'metered, registration-based paywall ... 4 artikel gratis setelah Register'). The /arsip index is disallowed to automated clients and returns 403 to some clients, so archive depth was not browsed. First issue 6 March 1971 and the 1994 ban/1998 resumption verified from the English Wikipedia article (opened). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_antara-news-online-archive-antaranews-co",
+   "name": "ANTARA News online archive (antaranews.com)",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://www.antaranews.com/berita/100000/",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    2007,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "The state news agency's website holds its wire stories from January 2007 onward with stable /berita/<id>/ URLs; search for 'Natuna', 'kapal ikan China', 'Bakorkamla', 'penenggelaman kapal' to date the 2009-2010 fishery-administration incidents, 2010s detentions and the 2014 sinking policy. Pre-2007 ANTARA bulletins exist only in print/library holdings.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Languages: id (English edition en.antaranews.com). Article id 100000 opened (dated 22 April 2008); ids 50000 (2 Jan 2007) and 1 (1 Jan 2009) also resolved, so the online run starts in early 2007 (ids are not strictly chronological). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_inside-indonesia-irip-quarterly-magazine",
+   "name": "Inside Indonesia (IRIP) - quarterly magazine with digitised back editions 1983-2007 via NLA",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://www.insideindonesia.org/archive",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1983,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Use the online articles (2007-) and the NLA-hosted scans of editions 1-89 (1983-2007) for English-language reporting and commentary on Indonesian naval and Natuna affairs in the Suharto and reformasi years; keyword-search each digitised edition in the NLA catalogue.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Archive page opened: 'editions 1 (1983) to 89 (2007)' digitised through the National Library of Australia; magazine describes itself as 'a volunteer-run, open access magazine'. Coverage of maritime topics is uneven; treat as a supplementary source. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_un-doalos-indonesia-maritime-space-legis",
+   "name": "UN DOALOS - Indonesia maritime-space legislation, deposits and treaties (Maritime Space: Maritime Zones and Maritime Delimitation)",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://www.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1969,
+    2022
+   ],
+   "access": "open",
+   "how_to_use": "Anchor declarative moves to the deposited texts: 1980 EEZ Declaration, Act No. 5/1983 on the EEZ, Act No. 6/1996 on Indonesian Waters, Government Regulation No. 61/1998 on Natuna Sea baseline coordinates, PP 37/2002 on archipelagic sea lanes, the 25 March 2009 archipelagic-baseline deposit (M.Z.N.67.2009.LOS), and the 1969-2014 boundary treaties (Malaysia 1969/1970/1971, Vietnam 2003 shelf, Philippines 2014 EEZ).",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Page opened and lists all items above plus CLCS submissions 2008, 2019, 2020, 2022. It does not give the UNCLOS ratification date (3 Feb 1986 must be taken from the UN Treaty Collection status table); the CLCS page states UNCLOS entered into force for Indonesia on 16 November 1994. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_un-clcs-submission-by-indonesia-north-we",
+   "name": "UN CLCS - Submission by Indonesia (North West of Sumatra), 16 June 2008",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://www.un.org/depts/los/clcs_new/submissions_files/submission_idn.htm",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    2008,
+    2011
+   ],
+   "access": "open",
+   "how_to_use": "Primary record of Indonesia's 2008 partial continental-shelf submission, India's note of 25 March 2009, Indonesia's reply of 30 April 2009 and the Commission's recommendations of 28 March 2011; cite the executive summary PDF for the 2008 declarative move.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Page opened; links to the Continental Shelf Notification (2008), Executive Summary and 2011 Summary of Recommendations. Not SCS-specific (Sumatra), but part of Indonesia's UNCLOS practice record. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_un-doalos-law-of-the-sea-bulletin-no-1-s",
+   "name": "UN DOALOS Law of the Sea Bulletin (No. 1, September 1983 - No. 120, 2026)",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://www.un.org/depts/los/doalos_publications/los_bult.htm",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1983,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "The Bulletin reprints national legislation, declarations on ratification, baseline deposits, boundary treaties and diplomatic communications as received by the UN; search the PDFs for 'Indonesia' to find the official English texts and the dates the UN received Indonesia's 1983 EEZ Act, 1985/86 ratification declaration, 1996 Waters Act, 1998 Natuna baseline regulation, 2003 Vietnam shelf treaty and 2009 deposit.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Languages: en (fr, es editions). Index page opened (issues 1-120 plus Special Bulletin IV, PDFs linked). Bulletin No. 1 PDF (bulE1.pdf) downloaded; its cover reads 'No. 1 September 1983', Office of the Special Representative of the Secretary-General for the Law of the Sea. Early issues are unsearchable scans; OCR locally. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_database-peraturan-jdih-bpk-peraturan-bp",
+   "name": "Database Peraturan JDIH BPK (peraturan.bpk.go.id) - Indonesian laws and regulations 1945-",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://peraturan.bpk.go.id/",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1945,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Retrieve the authentic Indonesian texts and enactment/gazette dates of UU 1/1973 (continental shelf), Keppres and UU 5/1983 (EEZ), UU 17/1985 (UNCLOS ratification), UU 6/1996 (Indonesian waters), PP 61/1998 (Natuna baselines), PP 38/2002 and PP 37/2008 (baseline coordinates), UU 32/2014 (Kelautan), Perpres 178/2014 (Bakamla) and the ministerial regulations behind the 2014 sinking policy; filter by type and year.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Site opened: run by BPK's JDIH, covers UU, Perpu, PP, Perpres, Keppres, Inpres, ministerial and regional regulations with a year filter from 1945, 'secara gratis dan tanpa syarat'. Used already in the ID baseline (Perpu 4/1960, Details/53369). peraturan.go.id (Kemenkumham) was 'Website dalam perbaikan' and jdih.setkab.go.id unreachable (502) at the time of checking. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_kementerian-esdm-arsip-berita-news-and-p",
+   "name": "Kementerian ESDM - Arsip Berita (news and press-release archive, 1999-)",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1999,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Use ministry releases for the energy-domain moves around Natuna: the 16 Jan 2009 release 'Penjelasan Pemerintah Mengenai Status KKS Natuna D-Alpha' (No. 04/HUMAS DESDM/2009) gives the official contract history (KKS signed 8 Jan 1980 Pertamina-Esso Natuna; Basic Agreement 9 Jan 1995; 1996 Mobil farm-in; 2005 lapse; 2009 BPMIGAS rejection of the Esso POD); search the archive for 'Natuna', 'East Natuna', 'Blok Natuna' for 2010-2015 tenders and PSC signings.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "The 2009 Natuna D-Alpha history release (penjelasan-tentang-natuna-d-alpha) is one item in this archive. Release page opened and summarised; archive listing (arsip-berita) opened with ~804 pages, last page items dated 30 November 1999 (one garbled date). Pre-1999 contract events must be sourced from press/yearbooks. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_kementerian-kelautan-dan-perikanan-kkp-s",
+   "name": "Kementerian Kelautan dan Perikanan (KKP) - Siaran Pers archive, JDIH KKP and Portal Data KP",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://kkp.go.id/news.html",
+   "language": "id",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    2014,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Press releases are the official record of the post-Oct 2014 vessel-sinking (penenggelaman) policy and of Natuna fishing-boat detentions and 'Satgas 115' operations; use jdih.kkp.go.id for Permen KP regulations and portaldata.kkp.go.id for statistics. For 2000-2013 detentions rely on ANTARA/Kompas instead.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Homepage and news listing opened (189 pages of 'Siaran Pers'; links to https://jdih.kkp.go.id/ and https://portaldata.kkp.go.id/). The listing's last page also displayed 2026 items, so the true earliest release date could not be read from the cloud; coverage_start is set to the year the sinking policy began, which the archive is known to document, not to the archive's first item. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_suryadinata-izzuddin-the-natunas-territo",
+   "name": "Suryadinata & Izzuddin, 'The Natunas: Territorial Integrity in the Forefront of Indonesia-China Relations' (ISEAS, 2017)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://www.cambridge.org/core/books/natunas/natunas-territorial-integrity-in-the-forefront-of-indonesiachina-relations/B60C1A95B0B71B525127C60AEA771AC9",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1990,
+    2017
+   ],
+   "access": "paywalled",
+   "how_to_use": "Short ISEAS monograph that narrates Indonesia's Natuna policy from the 1990s workshops and 1993-96 China exchanges through the 2010 note verbale, 2014 sinking policy, 2016 clashes and 2017 exercise; use its footnotes to locate the Kompas/Jakarta Post/Tempo items for each dated action.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Cambridge Core chapter page opened (Chapter 1, pp. 1-33; print 2017, online 12 Mar 2019; restricted). ISEAS bookshop sells the print/PDF. Coverage years are from the chapter summary (events since the 1990 workshops through May 2017); earlier background is brief. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_supriyanto-out-of-its-comfort-zone-indon",
+   "name": "Supriyanto, 'Out of Its Comfort Zone: Indonesia and the South China Sea', Asia Policy 21 (NBR, Jan 2016)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://nbr.org/?p=5838",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    2014,
+    2015
+   ],
+   "access": "paywalled",
+   "how_to_use": "Roundtable essay on Indonesia as a 'non-claimant' that documents the 2014-2015 shift (Jokowi's visits, Natuna reinforcement, rejection of the U-shaped line, sinking policy); use for the 2014-2015 moves and their sources, not for earlier decades.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "NBR page opened: Asia Policy 21 roundtable 'Non-claimant Perspectives on the South China Sea Disputes', 20 Jan 2016; 'Purchase PDF' (also on Project MUSE). Related free RSIS commentary CO12126 (2012) by the same author exists (search result). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_sebastian-supriyanto-arsana-indonesia-an",
+   "name": "Sebastian, Supriyanto & Arsana, 'Indonesia and the Law of the Sea: Beyond the Archipelagic Outlook', in 'Indonesia at Home and Abroad' (ANU National Security College, 2014)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://apo.org.au/node/40641",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1957,
+    2014
+   ],
+   "access": "open",
+   "how_to_use": "Chapter by RSIS/UGM maritime specialists reviewing Indonesia's archipelagic doctrine, boundary delimitation and Natuna/South China Sea posture up to 2014; good for distinguishing cooperative acts (workshops, treaties) from assertive ones and for pointers to Indonesian legal instruments.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "APO record opened ('Indonesia at home and abroad: economics, politics and security', posted 1 Aug 2014, access rights 'open'; chief investigators Roberts, Habir, Sebastian); RSIS listing (opened) gives chapter authors and 'Issue Brief No. 9, 1 May 2014'. A direct PDF link was not displayed on the APO page as fetched. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_butcher-elson-sovereignty-and-the-sea-ho",
+   "name": "Butcher & Elson, 'Sovereignty and the Sea: How Indonesia Became an Archipelagic State' (NUS Press, 2017)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://nuspress.nus.edu.sg/collections/frontpage/products/sovereignty-and-the-sea-how-indonesia-became-an-archipelagic-state",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1957,
+    1982
+   ],
+   "access": "library",
+   "how_to_use": "The standard archival history (560 pp., 23 maps) of Indonesia's archipelagic campaign from the 1957 Djuanda Declaration to UNCLOS 1982, built on Indonesian and foreign archives; use its dated narrative and notes for 1970-1982 declarative moves (1973 shelf law, 1980 EEZ declaration, UNCLOS III positions) and for the Natuna basepoints.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "NUS Press page opened (ISBN 978-981-3250-08-6 pbk; print only, no OA edition). Reviews on Cambridge Core and ISEAS bookshop confirm scope. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_hasjim-djalal-indonesia-and-the-law-of-t",
+   "name": "Hasjim Djalal, 'Indonesia and the Law of the Sea' (CSIS Jakarta, 1995)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://search-jogjalib.jogjaprov.go.id/Record/unylib-slims-9010",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1957,
+    1995
+   ],
+   "access": "library",
+   "how_to_use": "Collected papers by Indonesia's chief law-of-the-sea negotiator (viii, 450 pp.) covering the archipelagic concept, UNCLOS III, the 1985 ratification, the 1990s SCS workshops he convened and Indonesia's view of China's claim; use for the official Indonesian rationale and dates behind 1970-1995 legal moves. Print only; not on Google Books full view.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Yogyakarta union-catalogue record opened: Djalal, Hasjim; CSIS; 1995; viii, 450 p. Google Books could not be queried from cloud egress so viewability could not be checked. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_alverdian-the-evolution-of-indonesia-s-m",
+   "name": "Alverdian, 'The Evolution of Indonesia's Maritime Policy from Independence to 2019' (PhD thesis, ANCORS, University of Wollongong, 2022)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://ro.uow.edu.au/theses1/1434",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1945,
+    2019
+   ],
+   "access": "library",
+   "how_to_use": "Thesis-length narrative of Indonesian maritime policy by period (Sukarno, New Order, reformasi, Jokowi) with a bibliography of Indonesian sources; use as a secondary chronology for the 1970-2015 span and mine its references for primary items.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Repository record opened (title, author, degree, department); the PDF download could not be confirmed from cloud egress (viewcontent request failed, page returned HTTP 202 bot check), so access is marked library until checked in a browser; UOW Research Online theses are normally open. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_id_globalsecurity-org-natuna-islands-disput",
+   "name": "GlobalSecurity.org - 'Natuna Islands' dispute profile",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://www.globalsecurity.org/military/world/war/natunas.htm",
+   "language": "en",
+   "claimants": [
+    "ID"
+   ],
+   "coverage": [
+    1973,
+    2020
+   ],
+   "access": "open",
+   "how_to_use": "Unsourced but dated narrative of the Natuna dispute (1973, 1983, 1990 workshops, 1993 Chinese map, 1995 Chinese clarification, 1996 exercise, 2008 Exxon termination, 2009-2010, 2016 incidents, 2020); use only as a pointer list of candidate years to verify in the press-archive entries for Malaysia, never as a citable source.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Page opened; it cites no sources (no footnotes or links) and attributes statements loosely to officials and companies. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_roc-ministry-of-foreign-affairs-english-",
+   "name": "ROC Ministry of Foreign Affairs (English) - 'South China Sea Issue' topic page and press-release archive",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://en.mofa.gov.tw/theme.aspx?n=1462&s=40&sms=294",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    2012,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Topic page collects MOFA/Presidential/MOI statements on Taiping Island, the 2013-16 arbitration, the 2015 South China Sea Peace Initiative, the Dec 2015 wharf/lighthouse opening and the ROC-Philippines fisheries agreement; the Press Releases archive (News.aspx?n=1329&sms=272, 59 pages/1179 items, keyword + advanced search, RSS/CSV/JSON open data) covers later years. Chinese site 新聞稿 archive is at https://www.mofa.gov.tw/News.aspx?n=96&sms=74.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Topic page dated 2014-03-06 (last updated 2026-10-08); listed items are undated on the index and cluster in 2012-2016, so open each item for its date. Earliest press release in the online archive not shown on the first page; use the CSV open-data export to find the floor. Also links to the 1946-2016 chronology in the position paper (separate entry). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_position-paper-on-roc-south-china-sea-po",
+   "name": "Position Paper on ROC South China Sea Policy (MOFA, 21 March 2016) / 中華民國南海政策說帖",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1931,
+    2016
+   ],
+   "access": "open",
+   "how_to_use": "Official government chronology: use its dated entries (1931/1933 protests to France, 1946-47 recovery and the 1947 map, 1956 Cloma incidents and naval patrols, 1963 Vietnamese marker removal, 'from 1970 onward' protests to the Philippines/Vietnam/Malaysia, 1980 civilian domiciles, 2000 CGA takeover, 2011/2014 solar power, 2015 Peace Initiative/fisheries agreement/wharf ceremony, 2016 Ma visit) as the official-position anchor list, then source each event independently.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Checked: PDF text readable. Pre-1931 entries are dynastic claims, not actions. Chinese-language version (中華民國南海政策說帖) surfaced in search as a .docx on roc-taiwan.org (not opened). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_office-of-the-president-roc-remarks-by-p",
+   "name": "Office of the President (ROC) - 'Remarks by President Ma on Taiping Island' (28 Jan 2016) and English news archive",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://english.president.gov.tw/NEWS/4832",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1946,
+    2016
+   ],
+   "access": "open",
+   "how_to_use": "Transcript of the 2016 presidential visit; contains the government's own dated timeline (Dec 1946 recovery, June 1950 withdrawal, June 1956 return, 1978 WMO weather station, 2000 CGA takeover of defense, 2015 airstrip renovation 25 Nov and wharf/lighthouse 12 Dec). The english.president.gov.tw/NEWS/ series also holds the 2016 70th-anniversary and press-conference items (NEWS/4851, NEWS/5036).",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Chinese Presidential Office site (www.president.gov.tw) carries 總統府新聞 archive; Chen Shui-bian's Feb 2008 visit should be searched there and in Taipei Times/CNA (arch_tw_taipei-times-online-archive-1999, arch_tw_central-news-agency-full-text-news-datab). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_presidential-office-gazette-online-searc",
+   "name": "總統府公報 (Presidential Office Gazette) online search",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://www.president.gov.tw/Page/129",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1948,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Search by date range, issue number (公報號次), category (法律令, 總統令, 專載, 總統及副總統活動紀要, 總統府新聞稿 ...) or keyword; each hit links to a PDF of the issue. Use for promulgation of the 1998 領海及鄰接區法 / 專屬經濟海域及大陸礁層法 (Jan 1998), the 1999 baselines decree, and presidential activity logs around island visits.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": ": listing shows latest issue 7887 (14 Oct 2026) and '第1頁 共975頁'. The earliest issue date is NOT shown on the landing page; 1948 is the gazette's historical first year and must be confirmed with the date filter. For pre-1998 issues, NCL's 政府公報資訊網 (entry below) is the digitized route. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_gazette-online-national-central-library-",
+   "name": "政府公報資訊網 Gazette Online (National Central Library) - 總統府/行政院/立法院/監察院 etc. gazettes",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://gaz.ncl.edu.tw/",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1912,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Browse 總統府公報, 行政院公報 (pre-2005 ministry gazettes incl. 內政部/外交部 公報 were merged into it in Jan 2005), 立法院公報, 監察院公報, or run simple/advanced search by 案由, issuing agency, document number, related law, person/organisation, subject; results open PDF page images with online reading/download. Best single route to 1970s-1990s promulgations, Executive Yuan decisions (e.g. 1993 南海政策綱領 follow-ups) and ministerial notices.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Landing page serves a bot challenge to some clients and the 系統簡介 page read: covers 60+ central and local gazettes 'since ROC year 1 (1912)'; index database since 1984; 4.35 million page images (digitised 1998-2017 batch), 570k born-digital PDFs from 2005, 1.39 million metadata records from 1998. Depth of pre-1998 page-image coverage varies by title; check the 刊名瀏覽 for each gazette. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_executive-yuan-gazette-online",
+   "name": "行政院公報資訊網 Executive Yuan Gazette Online",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://gazette.nat.gov.tw/",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1995,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Full-text quick search plus advanced/integrated search, browse by volume/issue, by 篇別 (incl. 內政 and 外交國防), by type (法規命令, 公告, 專載 ...); open data downloads of historical data. Use for 1999 territorial-sea baseline announcement (內政部), maritime/fisheries regulations, Coast Guard organisational orders.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": ": current issue Vol.032 No.193 (2026-10-19), 5,436 issues/167,028 items. Start year inferred from volume numbering (Vol.1 = 1995) - the page itself does not state the floor. Pre-1995 and pre-2005 ministry gazettes are on NCL's Gazette Online instead. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_legislative-yuan-proceedings-and-gazette",
+   "name": "立法院議事暨公報資訊網 (Legislative Yuan Proceedings and Gazette System, ppg.ly.gov.tw)",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://ppg.ly.gov.tw/ppg/publications",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    2006,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Search 立法院公報 full text (院會紀錄, 委員會紀錄, interpellations) for ministerial answers on 南沙/太平島/東沙 incidents, Coast Guard testimony, airstrip and wharf budgets, and the 1998 territorial-sea law debates. Each issue and article is a downloadable PDF (e.g. /ppg/PublicationBulletinDetail/download/communique/final/pdf/95/36/...).",
+   "reachable_from_cloud": false,
+   "status": "archival",
+   "notes": "ppg.ly.gov.tw refuses requests from cloud egress; existence and PDF URL pattern verified from web-search results (issues from 卷95/2006 and 卷104/2015) and from the openfun 'tw-ly-gazette' Hugging Face mirror (vols 101-114). The site's own holdings reach back further than 2006 (gazette dates to the 1950s) but only 2006+ PDFs were observed; for 1970s-1990s issues use NCL Gazette Online or the 立法院國會圖書館. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_laws-regulations-database-of-the-roc",
+   "name": "全國法規資料庫 Laws & Regulations Database of the ROC - 中華民國領海及鄰接區法 / 專屬經濟海域及大陸礁層法",
+   "kind": "archive",
+   "archive_kind": "legal_deposit",
+   "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000009",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1998,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Authoritative text and legislative history (沿革, 立法歷程) of the Territorial Sea and Contiguous Zone Act (promulgated 21 Jan 1998, pcode A0000009) and the EEZ and Continental Shelf Act (A0000010); 'EN' toggle gives official English translations. Use to date the 1998 laws and to trace the 1999 baseline announcement authority (Art. 5).",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "The page serves a bot challenge to some clients; its text reads: '法規名稱：中華民國領海及鄰接區法 公布日期：民國87年01月21日'. The baseline/outer-limit tables (1999 行政院公告) are separate 公告, not in this database - find them via the gazette sites. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_national-archives-information-network-na",
+   "name": "國家檔案資訊網 National Archives Information Network (檔案管理局, National Archives Administration)",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://aa.archives.gov.tw/",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1949,
+    null
+   ],
+   "access": "free_registration",
+   "how_to_use": "Simple/advanced search of national-archive catalogues (3.2 million open full-image pages, 28.4 million digitised pages); popular fonds include 國防部史政編譯局, 國防部, 外交部. Search 南沙/太平島/東沙/南海 to locate MND garrison files, naval patrol reports, MOFA protest correspondence; apply online (member login + 檔案應用申請) to view restricted items.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "on 2026-10-19 (availability from cloud egress was intermittent). Landing page does not state earliest record date; 1949 is a conservative floor for ROC-on-Taiwan agency files (many fonds pre-date it). The Archives Administration co-hosted the Dec 2016 '經略南海‧永保太平' 70th-anniversary exhibition (Executive Yuan release https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/ca543461-ebb4-4197-91f2-fb294209a1aa, verified), a pointer to its South China Sea holdings. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_academia-historica-archives-search-ahonl",
+   "name": "國史館檔案史料文物查詢系統 Academia Historica Archives Search (ahonline.drnh.gov.tw)",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://www.drnh.gov.tw/p/412-1003-150.php?Lang=zh-tw",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1949,
+    null
+   ],
+   "access": "free_registration",
+   "how_to_use": "Entry point (閱覽服務須知) lists the archive search system https://ahonline.drnh.gov.tw/index.php?act=Archive plus the presidential databases (歷任總統資料庫, 蔣經國, 李登輝). Search fonds such as 外交部, 行政院, 總統文物 for 1970s-1990s South China Sea files (protest notes, 1993 policy guidelines drafting, Taiping supply/garrison decisions); request digital copies by mail service.",
+   "reachable_from_cloud": false,
+   "status": "archival",
+   "notes": "The drnh.gov.tw portal pages were fetched ; ahonline.drnh.gov.tw itself returned server errors/redirect loops from cloud egress, though a search-result URL on it was found via web search. Earliest date not stated on the pages read; fonds extend well before 1949. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_coast-guard-dongsha-nansha-branch-histor",
+   "name": "海巡署東南沙分署 - 南沙(太平島) 歷史沿革 / Coast Guard Dongsha-Nansha Branch historical chronologies",
+   "kind": "archive",
+   "archive_kind": "chronology",
+   "url": "https://www.cga.gov.tw/GipOpen/wSite/np?ctNode=10489&mp=9994&idPath=10446_10454_10467_10473_10489",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1935,
+    2014
+   ],
+   "access": "open",
+   "how_to_use": "Year-by-year official chronology of Taiping Island: 1946 recovery/stele, 1950 withdrawal, 1956 marine garrison and three naval patrols, 1967 first civilian landing, 1988 stele rebuilt, 1990 MOI 南疆鎖鑰 stone, 1994 MOI mural, 1998 CGS Tang Fei landing, 2000 CGA takeover and 南沙指揮部, 2003 cadastral survey, 2008 airstrip completion, 2014 new pier. Dongsha page (ctNode=10478) covers Pratas to 1954; 海巡新聞 list (ctNode=10545) for post-2000 incidents.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Companion CGA pages: 歷年重大事紀摘要 (283 entries, https://www.cga.gov.tw/GipOpen/wSite/lp?ctNode=1557&mp=999&idPath=600_601_781_1557 - entries are script-rendered) and the bilingual 'The Ocean and the Seas of Taiwan' Spratly chapter PDF (https://www.cga.gov.tw/GipOpen/wSite/public/Data/spratly_islands.pdf, verified; 1948 map, 1993 guidelines, 1999 baselines, Feb 2000 CGA replaces navy, 2003-2007 items). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_south-china-sea-policy-guidelines-execut",
+   "name": "南海政策綱領 South China Sea Policy Guidelines (Executive Yuan, 13 April 1993) - full text PDF hosted by the Coast Guard Administration",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1259488571867.pdf",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1993,
+    1993
+   ],
+   "access": "open",
+   "how_to_use": "Primary text of the 1993 guidelines (sovereignty over 東沙/西沙/中沙/南沙, 'historic waters' jurisdiction, implementation plan covering land survey, maritime patrols, weather stations, airport/port construction). Cite as the policy baseline for 1993-2005 actions; pair with Kuan-Ming Sun (1996) and Lin (1997) for commentary.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Checked: pages 138-139 of a compiled CGA publication. The guidelines were rescinded by the Executive Yuan in Dec 2005 under Chen Shui-bian - confirm the rescission date via 行政院公報. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_taipei-times-online-archive-1999",
+   "name": "Taipei Times online archive (1999- )",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://www.taipeitimes.com/News/front/archives/2008/02/03/2003400014",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1999,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "Full-text, free English daily from 15 June 1999; article URLs are date-structured (/News/<section>/archives/YYYY/MM/DD/<id>), so browse by date or use site search / Google site:taipeitimes.com for 'Taiping', 'Itu Aba', 'Pratas', 'Spratly'. Verified example: 'President visits disputed islands' (3 Feb 2008, Chen Shui-bian opens 1,150 m airstrip, Vietnam/Philippines protests, 'Spratly Initiative').",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Individual article pages fetch fine from the cloud; the homepage and date-index pages (e.g. /News/front/archives/1999/06/15) returned client errors/404, so navigate via search results. Copyright line '1999-2026' confirms span. Earlier English coverage (pre-1999) needs the GIO weekly Free China Journal/Taiwan Journal (print; see Taiwan Review entry) or the China Post (not verified). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_central-news-agency-full-text-news-datab",
+   "name": "Central News Agency (中央社) full-text news databases and Focus Taiwan",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://www.cna.com.tw/about/product.aspx",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1991,
+    null
+   ],
+   "access": "paywalled",
+   "how_to_use": "CNA's licensed 新聞全文檢索 database covers Chinese-language domestic/foreign news from 1 Jan 1991 and English wire from 1 Jan 1996 (3 million+ records), plus a 2-million-record 電腦剪報資料庫 of Taiwan/HK/PRC newspaper clippings (16 search fields: title, date, keyword, person, place) and a photo archive from 1927. Public sites: www.cna.com.tw (Chinese) and focustaiwan.tw (English) for recent years.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Product page checked; contact sales@mail.cna.com.tw / (02)2505-1180 for licensing, or use via subscribing university libraries. Focus Taiwan homepage verified (reachable) but it shows no browsable archive index. 2008 CNA English items on the Chen visit are mirrored at globalsecurity.org (e.g. /wmd/library/news/taiwan/2008/taiwan-080202-cna01.htm, verified). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_udndata-united-daily-news-full-text-news",
+   "name": "聯合知識庫 udndata (United Daily News full-text newspaper database, 聯合報 1951- )",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://udndata.com/",
+   "language": "zh-TW",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1951,
+    null
+   ],
+   "access": "paywalled",
+   "how_to_use": "Full text of 聯合報 (1951- ), 經濟日報 (1967- ), 聯合晚報 (1988-2020), 民生報 (1978-2006) and others, 12 million+ articles with page images; keyword-search 太平島/南沙/東沙/菲律賓 漁船/越南 砲擊 by date range for the 1970s-1990s incidents (e.g. 1995 Vietnamese shelling of Taiping, Pratas fisheries clashes). Access via subscribing libraries (Yale, Stanford, NTU etc.) or udndata.com personal subscription.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Coverage verified through a Yale University Library guide . udndata.com returned HTTP 200 but a JavaScript shell with no readable text, so the Yale East Asia Library description page was used as the verified landing page. The China Times (中國時報) equivalent is the 知識贏家 database (not verified); chinatimes.com free articles were verified only for 2016. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_issues-studies-institute-of-internationa",
+   "name": "Issues & Studies (Institute of International Relations, NCCU, Taipei, 1964- ) - incl. Kuan-Ming Sun, 'The Republic of China's Policy toward the South China Sea: A Review' (1996)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://ah.lib.nccu.edu.tw/handle/140.119/102097",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1964,
+    null
+   ],
+   "access": "open",
+   "how_to_use": "NCCU's institutional repository hosts open PDFs of many Issues & Studies articles; Sun (vol. 32 no. 3, March 1996, pp. 40-54) reviews ROC policy before/after the 1993 guidelines. The journal's monthly/quarterly issues also carried a 'Chronology' of ROC events in the 1970s-1990s - consult print volumes or the repository by year.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Repository record and full-text PDF link checked. Journal start year (1964, IIR Taipei) verified via SUDOC record https://www.sudoc.fr/040145484; since 2016 published by World Scientific (site robots-blocked). NCCU repository also holds Chen Hsi-chieh's 2003 MA thesis on ROC South China Sea policy with open full text (https://irtest.lib.nccu.edu.tw/handle/140.119/33646, verified). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_free-china-review-taipei-review-taiwan-r",
+   "name": "Free China Review / Taipei Review / Taiwan Review (GIO-MOFA monthly, 1951-2026)",
+   "kind": "archive",
+   "archive_kind": "press_archive",
+   "url": "https://papr.crl.edu/record/64227",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1951,
+    2026
+   ],
+   "access": "library",
+   "how_to_use": "Official English monthly with retrospective features on Taiping/Pratas garrisons and policy; print runs held by CRL, EAST, WRLC and others (v.1 1951-v.50 2000 as Free China Review), HathiTrust has 1951-2000 search-only (https://catalog.hathitrust.org/Record/000678378). Use HathiTrust full-text search to locate issues, then read in a library.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "CRL PAPR and HathiTrust records verified. Per Wikipedia , the Taiwan Review/Taiwan Today digital archives were taken offline from July 2026 and the print edition ended March 2026; taiwantoday.tw now renders as an empty shell. The GIO weekly Free China Journal/Taiwan Journal (print, 1964-2009) is an additional source held e.g. at Texas Tech (https://vva.vietnam.ttu.edu/repositories/2/prdcl_titles/2483, verified). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_the-republic-of-china-yearbook-kwang-hwa",
+   "name": "The Republic of China Yearbook (Kwang Hwa/GIO, 1989-2002; later Taiwan Yearbook) - HathiTrust",
+   "kind": "archive",
+   "archive_kind": "yearbook",
+   "url": "https://catalog.hathitrust.org/Record/002524812",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1989,
+    2002
+   ],
+   "access": "library",
+   "how_to_use": "Annual official yearbook with chapters on foreign relations, defence and 'Taiwan's territory' (South China Sea islands); 42 digitised volumes 1989-2002 are search-only on HathiTrust, so use full-text search to find page hits for 'Spratly', 'Pratas', 'Taiping' then consult print copies. Predecessor China Yearbook (China Publishing Co., Taipei, 1950s-1980s) is in library catalogues but was not found on HathiTrust in this check.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Record checked; all items 'Limited (search only)'. HathiTrust catalogue search pages are robots-blocked; use the catalog Record URLs directly. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_roc-national-defense-reports-1992-2017-c",
+   "name": "ROC National Defense Reports 1992-2017 (complete PDF collection, Taiwan in Perspective)",
+   "kind": "archive",
+   "archive_kind": "government",
+   "url": "https://taiwan-in-perspective.com/2017/05/18/complete-collection-of-taiwans-defence-policy-documents/",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1992,
+    2017
+   ],
+   "access": "open",
+   "how_to_use": "Download MND National Defense Reports (1992, 1993-94, 1996, 1998, 2000, 2002, 2004, 2006, 2008, 2011, 2013, 2015, 2017), the 2006/2008 National Security Reports and 2009/2013/2017 QDRs; check each report's sections on Dongsha/Nansha garrison, coast guard transfer (2000), and South China Sea threat assessments. Pre-2008 files are unsearched scans.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "MND's own site (mnd.gov.tw) served only a news list from cloud egress and its 國防報告書 tag page is robots-blocked; the Chinese originals are also catalogued at gpi.culture.tw (search results only). (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_hsiao-lin-taiwan-s-evolving-policy-towar",
+   "name": "Hsiao & Lin, 'Taiwan's Evolving Policy towards the South China Sea Dispute, 1992-2016' (in Storey & Lin eds., The South China Sea Dispute, ISEAS 2016)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://www.cambridge.org/core/books/south-china-sea-dispute/taiwans-evolving-policy-towards-the-south-china-sea-dispute-19922016/709BB10CBED02E9B0A5CDB1D5E3B8435",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1992,
+    2016
+   ],
+   "access": "paywalled",
+   "how_to_use": "Academic narrative of Taiwan's policy 1992-2016 by Anne Hsiu-An Hsiao and Cheng-Yi Lin (Academia Sinica), with footnotes to Chinese press and government sources that can be mined for exact dates of protests, drills, visits and construction.",
+   "reachable_from_cloud": true,
+   "status": "archival",
+   "notes": "Checked: chapter 4, pp. 74-103; online 19 May 2017. Related: Yann-huei Song's chapters in Song & Zou (eds.), Major Law and Policy Issues in the South China Sea (Ashgate 2014) and 'The South China Sea Workshop Process and Taiwan's Participation' (Routledge 2013; Sinica record https://ir.sinica.edu.tw/handle/201000000A/55839 verified); Russell Hsiao, 'Taiwan Lands on the Spratlys', China Brief 8(3), 15 Feb 2008 (https://jamestown.org/?p=38568, verified) for the 2008 airstrip test flight. (Verified 2026-10-19.)"
+  },
+  {
+   "id": "arch_tw_south-china-sea-island-disputes-1877-198",
+   "name": "South China Sea Island Disputes: 1877-1988 (East View archival database)",
+   "kind": "archive",
+   "archive_kind": "scholarly",
+   "url": "https://rhhss.sinica.edu.tw/posts/186584",
+   "language": "en",
+   "claimants": [
+    "TW"
+   ],
+   "coverage": [
+    1877,
+    1988
+   ],
+   "access": "paywalled",
+   "how_to_use": "Digitised texts, maps and official documents from multiple national archives on the island disputes up to the 1988 Sino-Vietnamese clash; useful for 1970s-1980s diplomatic correspondence that mentions ROC garrisons and protests. Access at ae.eastview.com/scs via subscribing institutions.",
+   "reachable_from_cloud": false,
+   "status": "archival",
+   "notes": "Academia Sinica trial announcement (Apr 2025) checked; ae.eastview.com/scs itself refuses requests from cloud egress. Producer not named on the announcement page. (Verified 2026-10-19.)"
   }
  ]
 }

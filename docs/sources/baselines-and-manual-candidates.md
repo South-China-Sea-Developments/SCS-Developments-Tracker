@@ -10,3 +10,7 @@
 ## `harvest/manual/`
 
 - `20261018-new-claimants-2016plus.json`: 24 candidate events (8 each for Malaysia, Indonesia, Taiwan; 2016–2026) compiled on 2026-10-18 by three research agents run by Claude Fable 5.1 for ticket 11, each from one or two pages the agent fetched, with a verbatim excerpt and a suggested MATS coding with its reasoning. Imported with `pipeline.harvest import` (which re-fetches each first source and checks the excerpt) and opened as a review pull request for the coder; nothing in it is accepted by that import.
+
+## Archival sources in the registry (`kind: archive`, ticket 12)
+
+64 entries compiled on 2026-10-19 by three research agents run by Claude Fable 5.1, one per claimant (Malaysia, Indonesia, Taiwan), from a brief naming the kinds of source Chubb's master timeline drew on. "Verified" means the agent opened the landing or search page, or an authoritative record of it (a catalogue entry, a Crossref index entry, a library guide), and took coverage years only from what that page stated; `reachable_from_cloud` records whether the page answered from cloud egress. Candidates it could not verify (the Jakarta Post's archive start, Kemlu's treaty room, Wisma Putra's statement archive, Bernama's BLIS, MOFA's 外交年鑑, Taiwan Today's retrospectives, the China Yearbook on HathiTrust) were left out rather than guessed. A review on 2026-10-19 spot-checked fourteen pages, merged four duplicate entries and replaced query URLs with landing pages.

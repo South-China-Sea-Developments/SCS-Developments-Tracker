@@ -333,6 +333,7 @@ h3 { font-size: 1rem; font-weight: 600; margin: 0; }
 .legend-point .dot.feature { background: var(--surface); border: 2px solid var(--ink-2); box-sizing: border-box; }
 .legend-point .count-swatch { font-style: normal; display: inline-block; padding: 0 7px; border-radius: 999px; border: 1px solid var(--baseline); font-size: 11px; font-weight: 600; background: var(--surface); }
 .event-place { margin: 0 0 4px; color: var(--muted); font-size: 0.875rem; }
+.project-pill { border-style: solid; color: var(--ink-2); }
 .h-small { font-size: 1rem; margin: 0; }
 .event-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 8px; }
 .event-row { background: var(--surface); border: 1px solid var(--grid); border-radius: var(--radius); padding: 10px 12px; }

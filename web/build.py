@@ -367,7 +367,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     index = {
         "names": names, "type_labels": TYPE_LABELS,
         "cases": [{"id": v["id"], "c": v["claimant"], "y": v["year"], "t": v["types"], "d": v["domains"],
-                   "i": v["issues"], "s": v["subregions"], "g": v["targets"], "st": v["status"],
+                   "i": v["issues"], "s": v["subregions"], "g": v["targets"], "st": v["status"], "cb": v["coded_by"],
                    "x": v["description"]} for v in views],
     }
     index_json = json.dumps(index, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")

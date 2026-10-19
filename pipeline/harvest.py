@@ -7,6 +7,7 @@ Stages, each a command:
            the guids of documents already captured with text so they are not fetched again
   extract  turn a capture folder into candidate events + sources in the canonical schema
   run      fetch then extract
+  archives list the archival sources for the 1970-2015 backfill (kind "archive"), offline
   import   turn a hand-compiled JSON list of events (a researcher's or an assistant's reading of
            sources, in the extractor's output shape plus a `sources` list per event) into a run
            folder, fetching each source to check its excerpt, so it enters the same review queue
@@ -59,6 +60,12 @@ TEXT_TYPES = ("html", "xml", "text/plain", "json")
 
 def load_registry(path: Path = REGISTRY) -> list[dict]:
     return json.loads(Path(path).read_text(encoding="utf-8"))["sources"]
+
+
+def archival_sources(path: Path = REGISTRY) -> list[dict]:
+    """Archives for the backfill (kind "archive"): where a coder looks for 1970–2015, never fetched
+    by the harvester. Each carries coverage years, access and how to use it."""
+    return [s for s in load_registry(path) if s["kind"] == "archive"]
 
 
 # ---------------------------------------------------------------------------
@@ -294,6 +301,10 @@ def cmd_fetch(args) -> int:
         known = set(json.loads(state_path.read_text(encoding="utf-8")).get("seen", []))
     reports = []
     for src in load_registry(args.registry):
+        if src["kind"] == "archive":
+            if only and src["id"] in only:
+                print(f"{src['id']}: an archive, never fetched (see docs/backfill.md)", file=sys.stderr)
+            continue
         if src["status"] != "active" or (only and src["id"] not in only):
             continue
         r = fetch_source(src, out, since=args.since, known=known, sleep=args.sleep)
@@ -320,9 +331,20 @@ def cmd_fetch(args) -> int:
     return 0
 
 
+def cmd_archives(args) -> int:
+    """The archival sources, offline: id, claimants, kind, coverage, access, how to use."""
+    for s in archival_sources(args.registry):
+        end = s["coverage"][1] or "ongoing"
+        print(f"{s['id']}\n  {','.join(s['claimants'])}  {s['archive_kind']}  {s['coverage'][0]}–{end}  {s['access']}  {s['language']}\n  {s['name']}: {s['url']}\n  {s['how_to_use']}")
+    return 0
+
+
 def cmd_probe(args) -> int:
     ok = True
     for src in load_registry(args.registry):
+        if src["kind"] == "archive":
+            print(f"archive      {src['id']:<48} {src['coverage'][0]}–{src['coverage'][1] or ''} ({src['access']}); not fetched")
+            continue
         try:
             st, ct, body, final = http_get(src["url"], timeout=20)
             n = ""
@@ -510,6 +532,7 @@ def main(argv=None) -> int:
     sub = p.add_subparsers(dest="cmd", required=True)
     common = {"registry": dict(default=REGISTRY, type=Path)}
     sp = sub.add_parser("probe"); sp.add_argument("--registry", **common["registry"]); sp.set_defaults(fn=cmd_probe)
+    sa = sub.add_parser("archives"); sa.add_argument("--registry", **common["registry"]); sa.set_defaults(fn=cmd_archives)
     sf = sub.add_parser("fetch"); sf.add_argument("--out", required=True); sf.add_argument("--since", default="")
     sf.add_argument("--only", default=""); sf.add_argument("--state", default=""); sf.add_argument("--sleep", type=float, default=0.5)
     sf.add_argument("--registry", **common["registry"]); sf.set_defaults(fn=cmd_fetch)
