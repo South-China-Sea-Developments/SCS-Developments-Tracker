@@ -4,9 +4,93 @@
 
 **Blocked by:** 11
 
-**Status:** ready
+**Status:** prepared; coding not started (2026-10-19, PR #21). Reading taken: on the maintainer's instruction of 2026-10-19, no project-coded entry enters the dataset or the queue until he has reviewed it himself, so this ticket delivers the source lists, the procedure and the progress table, and no candidates.
 
-- [ ] An archival source list per claimant (histories, chronologies, yearbooks, government statements, press archives) recorded in the registry with coverage years.
-- [ ] Harvester runs over archival captures per claimant-decade; candidates reviewed and accepted or rejected through the queue.
-- [ ] Progress table in this ticket: claimant × decade → status.
-- [ ] Comparability tests remain limited to CN/VN/PH; the three new series are labelled as project coding on every page.
+- [x] An archival source list per claimant (histories, chronologies, yearbooks, government statements, press archives) recorded in the registry with coverage years. *68 entries of `kind: archive` in `pipeline/sources.json` (72 claimant-sources; four shared), each with archive kind, coverage years, language, access, how to use it and whether it is reachable from cloud egress, compiled by research agents on 2026-10-19 and verified by opening each landing page or a record of it; `python -m pipeline.harvest probe` lists them and the fetcher never touches them. Highlights: the open-access RMN chronology 1974–2019 in the UPNM/CDiSS monograph (MY); NewspaperSG's free Straits Times full text for 1970–~2001 (all three); the ROC MOFA 2016 position paper's dated chronology, the CGA Nansha chronology and the NCL government-gazette portal (TW); DOALOS state files, CLCS submissions and the ESDM Natuna gas history (ID). Gaps stated plainly: no open Indonesian-language daily archive before 2007; Wisma Putra's and Bernama's archives not verifiable from here; several portals (JSTOR, HathiTrust, CIA CREST) are blocked from cloud egress and need a library route.*
+
+| Claimant | Kind | Source | Coverage | Lang. | Access |
+|---|---|---|---|---|---|
+| MY | chronology | [Parliament of Australia Parliamentary Library, 'South China Sea Chronology' (1909 - February 2022)](https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/Chronologies/2021-22/SouthChinaSeaChronology) | 1909–2022 | en | open |
+| MY | chronology | [Keesing's Record of World Events / Keesing's Contemporary Archives (Keesing's World News Archive)](https://edesiderata.crl.edu/resources/keesings-world-news-archive) | 1931– | en | library |
+| MY | chronology | [Hamzah, B.A., Adam Leong Kok Wey and Vivian L. Forbes (eds), 'Malaysia and South China Sea: Policy, Strategy and Risks' (CDiSS, National Defence University of Malaysia, 2020) - Chapter 1 chronology of the Spratly occupations](https://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf) | 1974–2019 | en | open |
+| MY | government | [Parliament of Malaysia Digital Hansard Portal (Dewan Rakyat / Dewan Negara)](https://hansard.parlimen.gov.my/en-GB) | 1959– | ms | open |
+| MY | government | [Mat Taib Yasin, Johari Ramzan Ahmad and Azhar Abdul Rahman, 'Battling the Waves in the South China Sea: The Untold Stories of Malaysian Pioneers in the Spratly' (Royal Malaysian Navy Sea Power Centre, 2021)](https://psnz.umt.edu.my/seal/Record/0000155796) | 1975–1999 | en | library |
+| MY | legal_deposit | [UN DOALOS Maritime Space: Malaysia national legislation, maps and treaties (Continental Shelf Act 1966, EEZ Proclamation 1978, EEZ Act 1984, boundary agreements)](https://www.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/MYS.htm) | 1966– | en | open |
+| MY | legal_deposit | [US Department of State, Limits in the Seas series (FSU College of Law digital collection)](https://library.law.fsu.edu/Digital-Collections/LimitsinSeas/numerical.html) | 1970–1980 | en | open |
+| MY | legal_deposit | [UN CLCS: Joint submission by Malaysia and Viet Nam (southern South China Sea), 6 May 2009, with notes verbales](https://www.un.org/depts/los/clcs_new/submissions_files/submission_mysvnm_33_2009.htm) | 2009–2011 | en | open |
+| MY | press_archive | [NewspaperSG (National Library Board Singapore) - The Straits Times, Business Times, Berita Harian (SG) and other digitised titles](https://eresources.nlb.gov.sg/newspapers/FAQ) | 1845–2017 | en | open |
+| MY | press_archive | [NSTP KLIK newspaper archive (New Straits Times Press: New Straits Times, Berita Harian (MY), Harian Metro and predecessors)](https://www.nstp.com.my/klik) | 1845– | en | paywalled |
+| MY | press_archive | [Far Eastern Economic Review Archive (ProQuest), with free FEER annual indexes on the Internet Archive](https://about.proquest.com/es/products-services/far-eastern-economic-review-archive) | 1946–2009 | en | library |
+| MY | press_archive | [Foreign Broadcast Information Service (FBIS) Daily Reports, Asia & Pacific / East Asia (Readex)](https://www.readex.com/products/foreign-broadcast-information-service-fbis-daily-reports-1974-1996) | 1974–1996 | en | library |
+| MY | press_archive | [New Straits Times, 'How Malaysia's five naval stations in the Spratlys were built' and 'It takes a lot to protect our Spratlys territories' (Adrian David, 4 March 2019)](https://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built) | 1983–2019 | en | open |
+| MY | scholarly | [Chandran Jeshurun, 'Malaysia: Fifty Years of Diplomacy 1957-2007' (The Other Press, 2007)](https://bookshop.iseas.edu.sg/component/get/9254) | 1957–2007 | en | library |
+| MY | scholarly | [Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, 'Pulau Layang-Layang in Malaysia's South China Sea Policy', International Journal of China Studies 12(2), 2021](https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf) | 1966–2021 | en | open |
+| MY | scholarly | [Marwyn S. Samuels, 'Contest for the South China Sea' (Methuen, 1982)](https://www.w-ilmu.intan.my/neuseal/Record/0000040767) | 1970–1982 | en | library |
+| MY | scholarly | [Dzirhan Mahadzir, 'Malaysia's Maritime Claims in the South China Sea: Security and Military Dimensions', ch. 10 in 'Entering Uncharted Waters? ASEAN and the South China Sea' (ISEAS, 2014)](https://www.cambridge.org/core/books/entering-uncharted-waters/malaysias-maritime-claims-in-the-south-china-sea-security-and-military-dimensions/4E728F7EE8B68AF3308F38773AA1405B) | 1978–2010 | en | paywalled |
+| MY | scholarly | [R. Haller-Trost, 'The Territorial Dispute between Indonesia and Malaysia over Pulau Sipadan and Pulau Ligitan' (IBRU Boundary & Territory Briefing 2(2), 1995)](https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/boundary-amp-territory-briefings/btb_2-2.pdf) | 1979–1995 | en | open |
+| MY | scholarly | [CSIS Asia Maritime Transparency Initiative - Malaysia Island Tracker (Swallow Reef, Ardasier, Mariveles, Erica, Investigator)](https://amti.csis.org/island-tracker/malaysia/) | 1983– | en | open |
+| MY | yearbook | [Asian Survey annual 'Malaysia in [year]' review articles (University of California Press; on JSTOR)](https://api.crossref.org/works?query.bibliographic=%22Malaysia+in+1983%22&filter=container-title:Asian+Survey&rows=5) | 1961– | en | paywalled |
+| MY | yearbook | [Southeast Asian Affairs (ISEAS - Yusof Ishak Institute annual) - Malaysia chapters](https://api.crossref.org/works?query.bibliographic=Malaysia&filter=container-title:Southeast+Asian+Affairs&rows=8&sort=published&order=asc) | 1974– | en | paywalled |
+| ID | chronology | [Keesing's Record of World Events / Keesing's Contemporary Archives (Keesing's World News Archive)](https://edesiderata.crl.edu/resources/keesings-world-news-archive) | 1931– | en | library |
+| ID | chronology | [Kompaspedia - Harian Kompas data and chronology portal (Kompas archive since 1965)](https://kompaspedia.kompas.id/?s=natuna) | 1965– | id | paywalled |
+| ID | chronology | [GlobalSecurity.org - 'Natuna Islands' dispute profile](https://www.globalsecurity.org/military/world/war/natunas.htm) | 1973–2020 | en | open |
+| ID | government | [Database Peraturan JDIH BPK (peraturan.bpk.go.id) - Indonesian laws and regulations 1945-](https://peraturan.bpk.go.id/) | 1945– | id | open |
+| ID | government | [Kementerian ESDM - Arsip Berita (news and press-release archive, 1999-)](https://www.esdm.go.id/id/media-center/arsip-berita/penjelasan-pemerintah-mengenai-status-kks-natuna-d-alpha) | 1999– | id | open |
+| ID | government | [Kementerian Kelautan dan Perikanan (KKP) - Siaran Pers archive, JDIH KKP and Portal Data KP](https://kkp.go.id/news.html) | 2014– | id | open |
+| ID | legal_deposit | [UN DOALOS - Indonesia maritime-space legislation, deposits and treaties (Maritime Space: Maritime Zones and Maritime Delimitation)](https://www.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm) | 1969–2022 | en | open |
+| ID | legal_deposit | [Limits in the Seas (US Department of State) - FSU College of Law digital collection, incl. No. 35 'Straight Baselines: Indonesia' (1971)](https://library.law.fsu.edu/Digital-Collections/LimitsinSeas/) | 1970– | en | open |
+| ID | legal_deposit | [UN DOALOS Law of the Sea Bulletin (No. 1, September 1983 - No. 120, 2026)](https://www.un.org/depts/los/doalos_publications/los_bult.htm) | 1983– | en | open |
+| ID | legal_deposit | [UN CLCS - Submission by Indonesia (North West of Sumatra), 16 June 2008](https://www.un.org/depts/los/clcs_new/submissions_files/submission_idn.htm) | 2008–2011 | en | open |
+| ID | legal_deposit | [UN CLCS: Joint submission by Malaysia and Viet Nam (southern South China Sea), 6 May 2009, with notes verbales](https://www.un.org/depts/los/clcs_new/submissions_files/submission_mysvnm_33_2009.htm) | 2009–2011 | en | open |
+| ID | press_archive | [NewspaperSG (National Library Board Singapore) - The Straits Times and other Singapore titles](https://eresources.nlb.gov.sg/newspapers/faq) | 1845–2021 | en | open |
+| ID | press_archive | [Trove (National Library of Australia) - The Canberra Times 1926-1995](https://trove.nla.gov.au/newspaper/title/11) | 1926–1995 | en | open |
+| ID | press_archive | [Internet Archive - Far Eastern Economic Review bound volumes and cumulative indexes](https://archive.org/advancedsearch.php?q=identifier%3A%28sim_far-eastern-economic-review*%29+AND+year%3A%5B1970+TO+2010%5D&fl%5B%5D=identifier&fl%5B%5D=year&sort%5B%5D=year+asc&rows=40&output=json) | 1971–1996 | en | free_registration |
+| ID | press_archive | [Tempo magazine (majalah.tempo.co) - digital back issues](https://majalah.tempo.co/) | 1971– | id | paywalled |
+| ID | press_archive | [Inside Indonesia (IRIP) - quarterly magazine with digitised back editions 1983-2007 via NLA](https://www.insideindonesia.org/archive) | 1983– | en | open |
+| ID | press_archive | [ANTARA News online archive (antaranews.com)](https://www.antaranews.com/berita/100000/) | 2007– | id | open |
+| ID | scholarly | [Alverdian, 'The Evolution of Indonesia's Maritime Policy from Independence to 2019' (PhD thesis, ANCORS, University of Wollongong, 2022)](https://ro.uow.edu.au/theses1/1434) | 1945–2019 | en | library |
+| ID | scholarly | [Sebastian, Supriyanto & Arsana, 'Indonesia and the Law of the Sea: Beyond the Archipelagic Outlook', in 'Indonesia at Home and Abroad' (ANU National Security College, 2014)](https://apo.org.au/node/40641) | 1957–2014 | en | open |
+| ID | scholarly | [Butcher & Elson, 'Sovereignty and the Sea: How Indonesia Became an Archipelagic State' (NUS Press, 2017)](https://nuspress.nus.edu.sg/collections/frontpage/products/sovereignty-and-the-sea-how-indonesia-became-an-archipelagic-state) | 1957–1982 | en | library |
+| ID | scholarly | [Hasjim Djalal, 'Indonesia and the Law of the Sea' (CSIS Jakarta, 1995)](https://search-jogjalib.jogjaprov.go.id/Record/unylib-slims-9010) | 1957–1995 | en | library |
+| ID | scholarly | [Indonesia (Cornell University Southeast Asia Program journal) on eCommons - incl. 'Current Data on the Indonesian Military Elite'](https://ecommons.cornell.edu/entities/publication/d9e59d51-f13a-498f-a7d9-359c3ff25183) | 1966– | en | open |
+| ID | scholarly | [The Indonesian Quarterly (CSIS Jakarta) - OJS back archive](https://journals.csis.or.id/index.php/iq/issue/archive) | 1972–2024 | en | open |
+| ID | scholarly | [Analisis CSIS (formerly Analisa), Centre for Strategic and International Studies Jakarta - OJS back archive](https://journals.csis.or.id/index.php/analisis/issue/archive) | 1978–2013 | id | open |
+| ID | scholarly | [Suryadinata & Izzuddin, 'The Natunas: Territorial Integrity in the Forefront of Indonesia-China Relations' (ISEAS, 2017)](https://www.cambridge.org/core/books/natunas/natunas-territorial-integrity-in-the-forefront-of-indonesiachina-relations/B60C1A95B0B71B525127C60AEA771AC9) | 1990–2017 | en | paywalled |
+| ID | scholarly | [Supriyanto, 'Out of Its Comfort Zone: Indonesia and the South China Sea', Asia Policy 21 (NBR, Jan 2016)](https://nbr.org/?p=5838) | 2014–2015 | en | paywalled |
+| ID | yearbook | [Southeast Asian Affairs (ISEAS-Yusof Ishak Institute) - annual Indonesia chapters](https://muse.jhu.edu/book/35188) | 1974– | en | paywalled |
+| ID | yearbook | [Asian Survey - annual 'Indonesia in [year]' review articles (University of California Press)](https://online.ucpress.edu/as) | 1980–2015 | en | paywalled |
+| TW | chronology | [Keesing's Record of World Events / Keesing's Contemporary Archives (Keesing's World News Archive)](https://edesiderata.crl.edu/resources/keesings-world-news-archive) | 1931– | en | library |
+| TW | chronology | [Position Paper on ROC South China Sea Policy (MOFA, 21 March 2016) / 中華民國南海政策說帖](https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf) | 1931–2016 | en | open |
+| TW | chronology | [海巡署東南沙分署 - 南沙(太平島) 歷史沿革 / Coast Guard Dongsha-Nansha Branch historical chronologies](https://www.cga.gov.tw/GipOpen/wSite/np?ctNode=10489&mp=9994&idPath=10446_10454_10467_10473_10489) | 1935–2014 | zh-TW | open |
+| TW | government | [Office of the President (ROC) - 'Remarks by President Ma on Taiping Island' (28 Jan 2016) and English news archive](https://english.president.gov.tw/NEWS/4832) | 1946–2016 | en | open |
+| TW | government | [國家檔案資訊網 National Archives Information Network (檔案管理局, National Archives Administration)](https://aa.archives.gov.tw/) | 1949– | zh-TW | free_registration |
+| TW | government | [國史館檔案史料文物查詢系統 Academia Historica Archives Search (ahonline.drnh.gov.tw)](https://www.drnh.gov.tw/p/412-1003-150.php?Lang=zh-tw) | 1949– | zh-TW | free_registration |
+| TW | government | [ROC National Defense Reports 1992-2017 (complete PDF collection, Taiwan in Perspective)](https://taiwan-in-perspective.com/2017/05/18/complete-collection-of-taiwans-defence-policy-documents/) | 1992–2017 | en | open |
+| TW | government | [南海政策綱領 South China Sea Policy Guidelines (Executive Yuan, 13 April 1993) - full text PDF hosted by the Coast Guard Administration](https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1259488571867.pdf) | 1993–1993 | zh-TW | open |
+| TW | government | [ROC Ministry of Foreign Affairs (English) - 'South China Sea Issue' topic page and press-release archive](https://en.mofa.gov.tw/theme.aspx?n=1462&s=40&sms=294) | 2012– | en | open |
+| TW | legal_deposit | [政府公報資訊網 Gazette Online (National Central Library) - 總統府/行政院/立法院/監察院 etc. gazettes](https://gaz.ncl.edu.tw/) | 1912– | zh-TW | open |
+| TW | legal_deposit | [總統府公報 (Presidential Office Gazette) online search](https://www.president.gov.tw/Page/129) | 1948– | zh-TW | open |
+| TW | legal_deposit | [行政院公報資訊網 Executive Yuan Gazette Online](https://gazette.nat.gov.tw/) | 1995– | zh-TW | open |
+| TW | legal_deposit | [全國法規資料庫 Laws & Regulations Database of the ROC - 中華民國領海及鄰接區法 / 專屬經濟海域及大陸礁層法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000009) | 1998– | zh-TW | open |
+| TW | legal_deposit | [立法院議事暨公報資訊網 (Legislative Yuan Proceedings and Gazette System, ppg.ly.gov.tw)](https://ppg.ly.gov.tw/ppg/publications) | 2006– | zh-TW | open |
+| TW | press_archive | [聯合知識庫 udndata (United Daily News full-text newspaper database, 聯合報 1951- )](https://web.library.yale.edu/node/146646) | 1951– | zh-TW | paywalled |
+| TW | press_archive | [Free China Review / Taipei Review / Taiwan Review (GIO-MOFA monthly, 1951-2026)](https://papr.crl.edu/record/64227) | 1951–2026 | en | library |
+| TW | press_archive | [Central News Agency (中央社) full-text news databases and Focus Taiwan](https://www.cna.com.tw/about/product.aspx) | 1991– | zh-TW | paywalled |
+| TW | press_archive | [Taipei Times online archive (1999- )](https://www.taipeitimes.com/News/front/archives/2008/02/03/2003400014) | 1999– | en | open |
+| TW | scholarly | [South China Sea Island Disputes: 1877-1988 (East View archival database)](https://rhhss.sinica.edu.tw/posts/186584) | 1877–1988 | en | paywalled |
+| TW | scholarly | [Issues & Studies (Institute of International Relations, NCCU, Taipei, 1964- ) - incl. Kuan-Ming Sun, 'The Republic of China's Policy toward the South China Sea: A Review' (1996)](https://ah.lib.nccu.edu.tw/handle/140.119/102097) | 1964– | en | open |
+| TW | scholarly | [Hsiao & Lin, 'Taiwan's Evolving Policy towards the South China Sea Dispute, 1992-2016' (in Storey & Lin eds., The South China Sea Dispute, ISEAS 2016)](https://www.cambridge.org/core/books/south-china-sea-dispute/taiwans-evolving-policy-towards-the-south-china-sea-dispute-19922016/709BB10CBED02E9B0A5CDB1D5E3B8435) | 1992–2016 | en | paywalled |
+| TW | yearbook | [Asian Survey - annual 'Indonesia in [year]' review articles (University of California Press)](https://online.ucpress.edu/as) | 1980–2015 | en | paywalled |
+| TW | yearbook | [The Republic of China Yearbook (Kwang Hwa/GIO, 1989-2002; later Taiwan Yearbook) - HathiTrust](https://catalog.hathitrust.org/Record/002524812) | 1989–2002 | en | library |
+
+- [ ] Harvester runs over archival captures per claimant-decade; candidates reviewed and accepted or rejected through the queue. *Not started: the maintainer reviews every non-MATS entry himself and asked that none be included yet. The routine for a chunk is written in `docs/backfill.md` (hand-compiled or extracted master timeline → `harvest import` / `extract` → `queue open` → the coder's decisions).*
+- [x] Progress table in this ticket: claimant × decade → status.
+
+| Claimant | 1970s | 1980s | 1990s | 2000s | 2010–15 |
+|---|---|---|---|---|---|
+| Malaysia | not started | not started | not started | not started | not started |
+| Indonesia | not started | not started | not started | not started | not started |
+| Taiwan | not started | not started | not started | not started | not started |
+
+*A cell becomes "in review (PR #n)" when a chunk's candidates are queued and "done (n moves, date)" when merged.*
+- [x] Comparability tests remain limited to CN/VN/PH; the three new series are labelled as project coding on every page. *The validator's comparability rules name `MATS_CLAIMANTS`; a test adds a project-coded Malaysian 1985 move and shows the validator accepts it while a project-coded Chinese 1985 move is refused. Labelling: the move page states the coder and dataset version; the case list now carries a "project coding" pill on every non-MATS move (the index records `coded_by`); the Downloads README and the methodology page say which rows are Chubb's.*

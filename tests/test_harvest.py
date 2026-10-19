@@ -32,7 +32,7 @@ def test_registry_is_complete_and_well_formed():
         assert s["language"], s["id"]
         if s["kind"] == "archive":   # ticket 12: where a coder looks for 1970-2015; never fetched
             assert s["status"] == "archival" and s["archive_kind"] in ("chronology", "yearbook", "government", "press_archive", "scholarly", "legal_deposit"), s["id"]
-            assert len(s["coverage"]) == 2 and 1900 <= s["coverage"][0] <= 2026 and (s["coverage"][1] is None or s["coverage"][1] >= s["coverage"][0]), s["id"]
+            assert len(s["coverage"]) == 2 and 1800 <= s["coverage"][0] <= 2026 and (s["coverage"][1] is None or s["coverage"][1] >= s["coverage"][0]), s["id"]
             assert s["access"] in ("open", "free_registration", "paywalled", "library") and s["how_to_use"], s["id"]
             continue
         assert s["kind"] in ("rss", "html_list"), s["id"]
