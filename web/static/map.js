@@ -60,12 +60,16 @@
     var b = geoBounds({ features: [f] });
     return [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
   }
-  // the polygons are context, not controls. They are painted in light-mode colours whatever the
-  // scheme: in dark mode the stylesheet inverts the whole canvas, basemap and polygons together.
+  // the polygons are context, not controls. Their colours are the stylesheet's --map-zone tokens,
+  // stated in light-mode terms whatever the scheme: in dark mode the stylesheet inverts the whole
+  // canvas, basemap and polygons together.
+  var rootStyle = getComputedStyle(document.documentElement);
+  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#1a4f7e").trim();
+  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#5f6d77").trim();
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
-    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": "#0e5a86", "fill-opacity": 0.07 } });
-    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": "#5e6b73", "line-width": 1, "line-opacity": 0.9 } });
+    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.07 } });
+    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.9 } });
   });
 
   var srCenters = {};
@@ -205,7 +209,8 @@
   form.addEventListener("change", schedule);
   slider.addEventListener("input", schedule);
   windowSel.addEventListener("change", schedule);
-  document.getElementById("reset").addEventListener("click", function () {
+  var resetBtn = document.getElementById("reset");   // the home page's compact row has none
+  if (resetBtn) resetBtn.addEventListener("click", function () {
     form.querySelectorAll('input[type="checkbox"]').forEach(function (i) { i.checked = i.name === "claimant"; });
     if (targetSel) targetSel.value = "";
     windowSel.value = "0";

@@ -118,9 +118,12 @@ def latest_developments(events: list[dict], moves: list[dict], names: dict, n: i
         if e["status"] != "accepted" or not e["date_start"] or not m or m["status"] != "accepted":
             continue
         own = bool(e.get("extractor")) or m["coded_by"] != "chubb"
-        text = e["summary"] if own else m["description"]
+        if not own and e["date_start"][:4] != m["year"]:
+            continue    # a MATS-era seed date outside its move's year is one of the known MAVD typos; not a "latest development"
+        text = (e["summary"] if own else "") or re.sub(r"^\d{4}[^:]{0,24}:\s*", "", m["description"])   # MATS descriptions open with their own date
         rows.append({"event_id": e["event_id"], "move_id": m["move_id"], "claimant": e["claimant"], "claimant_name": names.get(e["claimant"], e["claimant"]),
                      "date": e["date_start"], "date_precision": e["date_precision"], "date_label": date_label(e["date_start"], e["date_start"], e["date_precision"]),
+                     "datetime": {"year": e["date_start"][:4], "month": e["date_start"][:7]}.get(e["date_precision"], e["date_start"]),
                      "text": text[:280].rsplit(" ", 1)[0] + "…" if len(text) > 280 else text, "location": e["location_name"],
                      "types": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "project": m["coded_by"] != "chubb"})
     rows.sort(key=lambda r: (r["date"], r["event_id"]), reverse=True)
@@ -419,6 +422,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "agg_json": json.dumps(agg, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>
         "claimants": claimants,
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
+        "type_labels": TYPE_LABELS,
         "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
     }
     ctx.update(names=names, n_moves_all=len(views), index_json=index_json, latest=latest_developments(events, moves, names), agreement=agree, agreement_labels=agreement.LABELS, map_json=map_json, map_style_json=map_style_json,

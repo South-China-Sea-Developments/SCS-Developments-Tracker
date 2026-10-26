@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block body_class %}home{% endblock %}
 {% block head_data %}<script id="agg" type="application/json">{{ agg_json|safe }}</script>
 <link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
 <script id="mapdata" type="application/json">{{ map_json|safe }}</script>
@@ -8,35 +7,33 @@
 <section class="hero">
   <div class="hero-text">
     <h1>Who pressed their claim in the South China Sea, and when</h1>
-    <p class="lede-text">A dated record of assertive moves by the six claimant states — statements, patrols, construction, interference, force — coded with the rules of the <dfn>Maritime Assertiveness Time Series</dfn> and continued past 2015 from the claimants' own sources. Every move is a step up in one claimant's assertiveness on the year before; every move rests on dated, sourced events.</p>
+    <p class="lede-text">Assertive moves by the claimant states — statements, patrols, construction, interference, force — coded with the rules of the <dfn>Maritime Assertiveness Time Series</dfn> and being extended past 2015 from a documented list of sources. A move is a step up in one claimant's assertiveness on the year before. Moves since 2016, and Vietnam's since 1970, rest on dated events; the rest carry their sources in their descriptions.</p>
   </div>
-  <dl class="stats" aria-label="The dataset in numbers">
+  <dl class="stats">
     <div class="stat"><dt>Moves</dt><dd data-stat="moves">{{ "{:,}".format(meta.n_moves) }}</dd><dd class="stat-note">{% if meta.n_pending %}{{ meta.n_pending }} more pending the author's confirmation{% else %}all reviewed by a person{% endif %}</dd></div>
     <div class="stat"><dt>Claimants coded</dt><dd data-stat="claimants">{{ meta.n_claimants_coded }}</dd><dd class="stat-note">of {{ meta.n_claimants }}; the others in progress</dd></div>
     <div class="stat"><dt>Years</dt><dd data-stat="years">{{ meta.first_year }}–{{ meta.last_year }}</dd><dd class="stat-note">{{ n_map_events }} dated events{% if n_map_points %}, {{ n_map_points }} placed on the map{% endif %}</dd></div>
   </dl>
 </section>
 
-<section class="map-section" aria-labelledby="map-heading">
-  <div class="section-head">
-    <h2 id="map-heading">Where and when</h2>
-    <p class="section-note">Scrub through time; narrow by claimant or type; open a point for the event and its move. Sub-region counts stand for events known only to an area.</p>
-  </div>
+<section class="map-section" aria-label="Where and when">
+  <h2 class="sr-only">Where and when</h2>
   {% with compact=true %}{% include "_map.html" %}{% endwith %}
+  <p class="map-caption">Scrub through time; narrow by claimant or type; open a point for the event and its move. A count on a sub-region stands for events known only to that area. <a href="{{ root }}map.html">The full map</a> filters by domain, issue and counterpart.</p>
 </section>
 
 <section class="latest" id="latest" aria-labelledby="latest-heading">
   <div class="section-head">
     <h2 id="latest-heading">Latest developments</h2>
-    <p class="section-note">The newest dated events in the dataset. Candidates proposed by the weekly harvest appear here once a coder has reviewed them.</p>
+    <p class="section-note">{% if latest and not latest[0].project %}No project-coded event has been accepted yet; these are the newest dated events in MATS 1.02, which recorded dates for Vietnam's moves only. Candidates from the weekly harvest appear here once a coder has reviewed them.{% else %}The newest accepted events, one per move. Candidates from the weekly harvest appear here once a coder has reviewed them.{% endif %}</p>
   </div>
   {% if latest %}
   <ol class="latest-list">
     {% for r in latest %}
     <li class="latest-row" data-event="{{ r.event_id }}" data-code="{{ r.claimant }}">
-      <time class="latest-date" datetime="{{ r.date }}">{{ r.date_label }}</time>
+      <time class="latest-date" datetime="{{ r.datetime }}">{{ r.date_label }}</time>
       <div class="latest-body">
-        <p class="latest-head"><span class="case-claimant">{{ r.claimant_name }}</span>{% for t in r.types %}<span class="type-pill" data-type="{{ t }}">{{ types|selectattr(0, 'equalto', t)|map(attribute=1)|first }}</span>{% endfor %}{% if r.project %}<span class="type-pill project-pill">project coding</span>{% endif %}{% if r.location %}<span class="latest-place">{{ r.location }}</span>{% endif %}</p>
+        <p class="latest-head"><span class="case-claimant">{{ r.claimant_name }}</span>{% for t in r.types %}<span class="type-pill" data-type="{{ t }}">{{ type_labels[t] }}</span>{% endfor %}{% if r.project %}<span class="type-pill project-pill">project coding</span>{% endif %}{% if r.location %}<span class="latest-place">{{ r.location }}</span>{% endif %}</p>
         <p class="latest-text">{{ r.text }}</p>
         <p class="latest-link"><a href="{{ root }}cases/{{ r.move_id }}.html">Move {{ r.move_id }}</a></p>
       </div>

@@ -7,13 +7,17 @@
       <label class="chip" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="swatch" aria-hidden="true"></span><span>{{ c.name }}</span></label>
       {% endfor %}
     </div>
-    {% if compact %}<a class="more-link" href="{{ root }}map.html">All filters and the full map</a>{% endif %}
+    {% if compact %}
+    <fieldset><legend>Type</legend>
+      {% for key, label, blurb in types %}<label><input type="checkbox" name="t" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+    </fieldset>
+    {% endif %}
   </div>
+  {% if not compact %}
   <div class="filter-row filter-groups">
     <fieldset><legend>Type</legend>
       {% for key, label, blurb in types %}<label><input type="checkbox" name="t" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
     </fieldset>
-    {% if not compact %}
     <fieldset><legend>Domain</legend>
       {% for key, label in domain_labels.items() %}<label><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
     </fieldset>
@@ -26,9 +30,9 @@
         {% for code, name in dyad_targets.items() %}<option value="{{ code }}">{{ name }}</option>{% endfor %}
       </select>
     </fieldset>
-    {% endif %}
     <button type="button" class="toggle" id="reset">Clear filters</button>
   </div>
+  {% endif %}
 </form>
 
 <section class="figure map-figure{% if compact %} map-figure-hero{% endif %}" id="fig-events" aria-label="Event map">
@@ -55,6 +59,6 @@
     </div>
   </div>
   <p class="filters-note" id="map-count" aria-live="polite"></p>
-  <div class="figure-head"><h2 class="h-small">Events in view</h2><button class="toggle" type="button" id="list-toggle" aria-pressed="false">List</button></div>
+  <div class="figure-head">{% if compact %}<h3 class="h-small">Events in view</h3>{% else %}<h2 class="h-small">Events in view</h2>{% endif %}<button class="toggle" type="button" id="list-toggle" aria-pressed="false">List</button></div>
   <ol class="event-list" id="event-list" hidden aria-label="Events in the current view"></ol>
 </section>

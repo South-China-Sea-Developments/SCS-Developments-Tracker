@@ -108,13 +108,20 @@ def test_home_leads_with_numbers_map_and_latest_developments(browser, dist):
     claimants_coded = sum(1 for c, v in agg["by_claimant"].items() if sum(y["total"] for y in v["years"].values()))
     assert nums["claimants"] == str(claimants_coded)
     assert nums["years"] == f"{agg['years'][0]}–{agg['years'][-1]}"
-    # the map is on the home page and draws offline; its canvas sits in the first viewport at desktop width
+    # the map is on the home page and draws offline, and takes most of the first viewport (the maintainer's
+    # ask): at least half of the viewport height is map canvas, at a tall and at a short desktop window
     assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
-    top = page.evaluate("document.getElementById('map').getBoundingClientRect().top")
-    assert top < 900, "the map starts within the first viewport"
-    assert page.evaluate("document.getElementById('map').getBoundingClientRect().height") >= 420
-    # latest developments: the newest accepted events, newest first, one row per move, each linking to its move
-    events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and e["date_start"]]
+    for vh, share in ((900, 0.5), (720, 0.4)):   # a short laptop window keeps the lede and numbers, so the map gets a little less
+        page.set_viewport_size({"width": 1280, "height": vh})
+        page.wait_for_timeout(200)
+        visible = page.evaluate("(vh) => { const r = document.getElementById('map').getBoundingClientRect(); return Math.min(r.bottom, vh) - Math.max(r.top, 0); }", vh)
+        assert visible >= share * vh, f"{visible}px of map visible in a {vh}px viewport"
+    page.set_viewport_size({"width": 1280, "height": 900})
+    # latest developments: the newest accepted events of accepted moves, newest first, one row per move,
+    # MATS-era seed dates outside their move's year (known MAVD typos) left out, each linking to its move
+    moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
+    events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and e["date_start"]
+              and moves[e["move_id"]]["status"] == "accepted" and (e["extractor"] or e["date_start"][:4] == moves[e["move_id"]]["year"])]
     events.sort(key=lambda e: (e["date_start"], e["event_id"]), reverse=True)
     expected, seen = [], set()
     for e in events:
@@ -126,16 +133,38 @@ def test_home_leads_with_numbers_map_and_latest_developments(browser, dist):
         row = rows.nth(i)
         assert row.get_attribute("data-event") == expected[i]["event_id"]
         assert row.locator("a[href^='cases/']").first.get_attribute("href") == f"cases/{expected[i]['move_id']}.html"
+        dt_attr = row.locator("time").get_attribute("datetime")
+        assert dt_attr == {"year": expected[i]["date_start"][:4], "month": expected[i]["date_start"][:7]}.get(expected[i]["date_precision"], expected[i]["date_start"])
+    page.close()
+
+
+@pytest.mark.parametrize("viewport,scheme", [((390, 800), "light"), ((1280, 900), "dark")])
+def test_home_map_draws_at_phone_width_and_in_dark_mode(browser, dist, viewport, scheme):
+    page, problems = _open(browser, dist, "index.html", viewport, scheme)
+    assert problems == []
+    assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
     page.close()
 
 
 def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
     page, problems = _open(browser, dist, "cases.html", viewport=(390, 800))
     assert problems == []
-    nav = page.locator(".nav")
-    assert page.evaluate("getComputedStyle(document.querySelector('.nav')).overflowX") in ("auto", "scroll")
-    assert page.evaluate("document.querySelector('.nav').getBoundingClientRect().height") < 60, "one row"
+    nav = "document.querySelector('.nav')"
+    assert page.evaluate(f"{nav}.scrollWidth > {nav}.clientWidth"), "the links overflow the row and scroll"
+    assert page.evaluate(f"{nav}.getBoundingClientRect().height") < 60, "one row"
     assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
+    # the last link is reachable: tabbing to it scrolls it into view
+    for _ in range(12):
+        page.keyboard.press("Tab")
+        if page.evaluate("document.activeElement && document.activeElement.textContent") == "Data and code":
+            break
+    assert page.evaluate("document.activeElement.textContent") == "Data and code"
+    box = page.evaluate("(() => { const r = document.activeElement.getBoundingClientRect(); return [r.left, r.right]; })()")
+    assert 0 <= box[0] and box[1] <= 390, box
+    # at a tablet width the nav has moved under the brand rather than hiding links behind the brand
+    page.set_viewport_size({"width": 1024, "height": 800})
+    page.wait_for_timeout(100)
+    assert page.evaluate(f"{nav}.getBoundingClientRect().top") > page.evaluate("document.querySelector('.brand').getBoundingClientRect().bottom") - 1
     page.close()
 
 
