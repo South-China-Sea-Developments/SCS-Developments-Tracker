@@ -3,6 +3,7 @@
 {% block head_data %}<script id="cases" type="application/json">{{ index_json|safe }}</script>{% endblock %}
 {% block content %}
 <section class="lede">
+  <p class="kicker">Case browser</p>
   <h1>Every move, searchable</h1>
   <p class="lede-text">{{ meta.n_moves }} moves with their full coding{% if meta.n_pending %}, plus {{ meta.n_pending }} pending the author's confirmation{% endif %}. Search the case descriptions, narrow by claimant, year, type, domain, issue, counterpart or sub-region, and open any move for its events and sources.</p>
 </section>

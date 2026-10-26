@@ -6,11 +6,14 @@
 <script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
 {% block content %}
 <section class="lede">
+  <p class="kicker">Event map</p>
   <h1>Where and when</h1>
   <p class="lede-text">Every move is backed by dated events. Events with a known position are points; events known only to a sub-region are counted on the sub-region itself. Scrub through time, narrow by claimant, type, domain, issue or counterpart, and open a point for the event and its move. {{ n_map_events }} events{% if n_map_points %}, {{ n_map_points }} of them placed{% endif %}; for 1970–{{ meta.mats_last_year }} events exist where the original dataset recorded dates, which is Vietnam's moves, so the early years are a partial picture.</p>
 </section>
 
-{% with compact=false %}{% include "_map.html" %}{% endwith %}
+<section class="map-section" aria-label="Event map">
+  {% with compact=false %}{% include "_map.html" %}{% endwith %}
+</section>
 
 <section class="prose">
   <h2>Reading the map</h2>

@@ -54,6 +54,12 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Relevance filter** — The check that spares the extractor documents naming no South China Sea term or feature (`pipeline/relevance.py`); not a coding judgment. With the per-run cap it bounds what a run costs; documents over the cap are deferred to the next run.
 
+**Token block** — The first block of `web/static/style.css`: the site's faces, colours, kicker style and spacing, read from the three references the maintainer supplied (the institute's programme banner, its article pages, the MAVD dashboard). The visual language is adopted; the institution's name, logo, mark, wordmark and photographs appear nowhere in the site, and a seam-3 test checks the built bundle for them.
+
+**The sea** — The dark navy-to-teal plane that carries the masthead on every page and the hero on the home page; drawn with gradients and an inline SVG (foam, lagoon blooms, contours, dashed boundary lines), never a raster image.
+
+**Kicker** — The small bold letter-spaced capitals over a page or section title, on the headline numbers' labels, the brand name and the footer headings; the site's one all-caps style, in the manner of the institute's wordmark.
+
 **Dataset version** — The number this project gives the dataset (`DATASET_VERSION`, `MAJOR.MINOR.PATCH`, a `-dev` suffix while it is being built), written on every project-coded move as `data_version`. Versions 1.x are Chubb's MATS; this project's are 2.x.
 
 **Release** — A dataset version fixed as a git tag `vX.Y.Z[-suffix]` on `main`; what the Downloads page and the GitHub Release serve, with checksums and a citation.

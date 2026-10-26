@@ -10,6 +10,55 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="sea{% if page == 'index.html' %} sea-home{% endif %}">
+{% if page == 'index.html' %}
+{# The sea from the banner, drawn rather than photographed: a navy-to-teal plane, the foam of a swell at the
+   top left, lagoon blooms where a reef rises at the right, faint contours and dashed boundary lines. Colours
+   come from the tokens, so the hero follows the brand block. #}
+<svg class="sea-art" viewBox="0 0 1600 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sea-plane" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0" style="stop-color: var(--sea-deep)"/>
+      <stop offset="0.42" style="stop-color: var(--sea)"/>
+      <stop offset="0.72" style="stop-color: var(--sea-mid)"/>
+      <stop offset="1" style="stop-color: var(--sea-light)"/>
+    </linearGradient>
+    <radialGradient id="lagoon-a" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" style="stop-color: var(--lagoon); stop-opacity: 0.85"/>
+      <stop offset="0.55" style="stop-color: var(--sea-light); stop-opacity: 0.5"/>
+      <stop offset="1" style="stop-color: var(--sea-light); stop-opacity: 0"/>
+    </radialGradient>
+    <radialGradient id="lagoon-b" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" style="stop-color: var(--foam); stop-opacity: 0.55"/>
+      <stop offset="0.4" style="stop-color: var(--lagoon); stop-opacity: 0.45"/>
+      <stop offset="1" style="stop-color: var(--lagoon); stop-opacity: 0"/>
+    </radialGradient>
+    <linearGradient id="foam" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" style="stop-color: var(--foam); stop-opacity: 0.55"/>
+      <stop offset="0.5" style="stop-color: var(--foam); stop-opacity: 0.12"/>
+      <stop offset="1" style="stop-color: var(--foam); stop-opacity: 0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="28"/></filter>
+    <filter id="softer" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <rect width="1600" height="640" fill="url(#sea-plane)"/>
+  <path d="M-40 -20 C 260 40, 520 80, 760 -30 L 760 -80 L -40 -80 Z" fill="url(#foam)" filter="url(#softer)"/>
+  <path d="M-40 60 C 180 110, 420 150, 700 10" fill="none" stroke="var(--foam)" stroke-opacity="0.18" stroke-width="40" filter="url(#soft)"/>
+  <ellipse cx="1330" cy="330" rx="260" ry="150" fill="url(#lagoon-a)" filter="url(#softer)" transform="rotate(-28 1330 330)"/>
+  <ellipse cx="1180" cy="520" rx="150" ry="80" fill="url(#lagoon-a)" filter="url(#softer)" transform="rotate(-20 1180 520)"/>
+  <ellipse cx="1420" cy="250" rx="70" ry="30" fill="url(#lagoon-b)" filter="url(#softer)" transform="rotate(-30 1420 250)"/>
+  <g fill="none" stroke="var(--foam)" stroke-opacity="0.07" stroke-width="1.2">
+    <path d="M300 640 C 520 480, 700 560, 900 420 S 1240 300, 1600 180"/>
+    <path d="M100 640 C 380 520, 560 600, 780 470 S 1120 360, 1600 280"/>
+    <path d="M700 0 C 820 120, 1000 160, 1160 80 S 1420 20, 1600 60"/>
+  </g>
+  <g fill="none" stroke="var(--band-ink)" stroke-opacity="0.5" stroke-width="1.4" stroke-dasharray="9 9" stroke-linecap="round">
+    <path d="M1010 640 C 1070 520, 1120 440, 1210 350 S 1400 260, 1600 230"/>
+    <path d="M1290 640 C 1330 570, 1380 540, 1430 500"/>
+    <path d="M-20 560 C 80 540, 150 520, 240 480"/>
+  </g>
+</svg>
+{% endif %}
 <header class="masthead">
   <div class="wrap masthead-row">
     <a class="brand" href="{{ root }}index.html">
@@ -32,6 +81,8 @@
     </nav>
   </div>
 </header>
+{% block hero %}{% endblock %}
+</div>
 <main id="main" class="wrap">
 {% block content %}{% endblock %}
 </main>

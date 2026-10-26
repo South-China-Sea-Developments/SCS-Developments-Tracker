@@ -3,19 +3,21 @@
 <link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
 <script id="mapdata" type="application/json">{{ map_json|safe }}</script>
 <script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
-{% block content %}
-<section class="hero">
+{% block hero %}
+<section class="hero wrap">
   <div class="hero-text">
+    <p class="kicker">A continuation of the Maritime Assertiveness Time Series</p>
     <h1>Who pressed their claim in the South China Sea, and when</h1>
-    <p class="lede-text">Assertive moves by the claimant states — statements, patrols, construction, interference, force — coded with the rules of the <dfn>Maritime Assertiveness Time Series</dfn> and being extended past 2015 from a documented list of sources. A move is a step up in one claimant's assertiveness on the year before. Moves since 2016, and Vietnam's since 1970, rest on dated events; the rest carry their sources in their descriptions.</p>
+    <p class="lede-text">Assertive moves by the claimant states — statements, patrols, construction, interference, force — coded with the rules of the <dfn>Maritime Assertiveness Time Series</dfn> and extended past 2015 from a documented list of sources. A move is a step up in one claimant's assertiveness on the year before; moves since 2016, and Vietnam's since 1970, rest on dated events.</p>
   </div>
   <dl class="stats">
     <div class="stat"><dt>Moves</dt><dd data-stat="moves">{{ "{:,}".format(meta.n_moves) }}</dd><dd class="stat-note">{% if meta.n_pending %}{{ meta.n_pending }} more pending the author's confirmation{% else %}all reviewed by a person{% endif %}</dd></div>
-    <div class="stat"><dt>Claimants coded</dt><dd data-stat="claimants">{{ meta.n_claimants_coded }}</dd><dd class="stat-note">of {{ meta.n_claimants }}; the others in progress</dd></div>
+    <div class="stat"><dt>Claimants</dt><dd data-stat="claimants">{{ meta.n_claimants_coded }}</dd><dd class="stat-note">coded, of {{ meta.n_claimants }}; the others in progress</dd></div>
     <div class="stat"><dt>Years</dt><dd data-stat="years">{{ meta.first_year }}–{{ meta.last_year }}</dd><dd class="stat-note">{{ n_map_events }} dated events{% if n_map_points %}, {{ n_map_points }} placed on the map{% endif %}</dd></div>
   </dl>
 </section>
-
+{% endblock %}
+{% block content %}
 <section class="map-section" aria-label="Where and when">
   <h2 class="sr-only">Where and when</h2>
   {% with compact=true %}{% include "_map.html" %}{% endwith %}

@@ -85,7 +85,7 @@ def _tile_stub(tiles):
 
 
 @pytest.mark.parametrize("page_name", ["index.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html", "downloads.html"])
-@pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
+@pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((1024, 768), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
 def test_pages_render_without_errors(browser, dist, page_name, viewport, scheme):
     page, problems = _open(browser, dist, page_name, viewport, scheme)
     assert problems == []
@@ -144,6 +144,49 @@ def test_home_map_draws_at_phone_width_and_in_dark_mode(browser, dist, viewport,
     assert problems == []
     assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
     page.close()
+
+
+def _luma(css_rgb):
+    """Gamma-encoded luma of a CSS rgb() string, enough to tell a dark plane from a light one."""
+    r, g, b = [int(x) for x in re.findall(r"\d+", css_rgb)[:3]]
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def test_visual_identity_follows_the_references(browser, dist):
+    """Ticket 16: the home page opens on a dark sea band with the title in the light display face in
+    white over it and a short rule under it, drawn (an inline SVG), not photographed; the map sits in a
+    dark panel with light labels; inner pages are white article pages with a kicker over the title;
+    the display face is the vendored geometric sans; and no page or asset carries the institution's
+    name or mark (its visual language is adopted; its identity is not)."""
+    page, problems = _open(browser, dist, "index.html")
+    assert problems == []
+    assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')"), "the display face is Outfit, loaded from the bundle"
+    title_rgb, band_rgb = page.evaluate("[getComputedStyle(document.querySelector('.hero h1')).color, getComputedStyle(document.querySelector('.sea')).backgroundColor]")
+    assert _luma(title_rgb) > 230 and _luma(band_rgb) < 60, (title_rgb, band_rgb)
+    assert "Outfit" in page.evaluate("getComputedStyle(document.querySelector('.hero h1')).fontFamily")
+    assert int(page.evaluate("getComputedStyle(document.querySelector('.hero h1')).fontWeight")) <= 400, "light, as in the banner"
+    rule = page.evaluate("(() => { const s = getComputedStyle(document.querySelector('.hero h1'), '::after'); return [s.content, parseFloat(s.width), s.backgroundColor]; })()")
+    assert rule[0] != "none" and 40 <= rule[1] <= 160 and _luma(rule[2]) > 200, rule
+    assert page.locator(".sea > svg.sea-art").count() == 1 and page.locator(".sea img").count() == 0
+    assert "url(" not in page.evaluate("getComputedStyle(document.querySelector('.sea')).backgroundImage")
+    panel_rgb, chip_rgb = page.evaluate("[getComputedStyle(document.querySelector('.map-section')).backgroundColor, getComputedStyle(document.querySelector('#map-claimant-filter .chip span:last-child')).color]")
+    assert _luma(panel_rgb) < 60 and _luma(chip_rgb) > 180, (panel_rgb, chip_rgb)
+    page.close()
+    page, problems = _open(browser, dist, "methodology.html")
+    assert problems == []
+    assert _luma(page.evaluate("getComputedStyle(document.body).backgroundColor")) > 250, "white article paper"
+    kicker = page.locator("main .kicker").first
+    assert page.evaluate("(k) => [getComputedStyle(k).textTransform, parseFloat(getComputedStyle(k).letterSpacing) > 0.5]", kicker.element_handle()) == ["uppercase", True]
+    assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING"), "the kicker precedes the title"
+    page.close()
+    # the site's chrome — templates, styles, scripts, assets — carries no institution's name or mark; the data
+    # pages (cases, their index, the latest list) and the project documents under downloads/ are data and may
+    forbidden = re.compile(r"asia\s*society|\bASPI\b|leogryph|asiasociety", re.I)
+    chrome = [p for d in (Path("web/templates"), Path("web/static"), dist / "assets") for p in d.rglob("*") if p.is_file() and p.suffix in (".html", ".css", ".js", ".svg", ".json", ".txt")]
+    assert len(chrome) > 10
+    for path in chrome:
+        assert not forbidden.search(path.read_text(encoding="utf-8", errors="ignore")), path
+    assert not [p for p in (dist / "assets").rglob("*") if p.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif")], "no photographs in the bundle"
 
 
 def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):

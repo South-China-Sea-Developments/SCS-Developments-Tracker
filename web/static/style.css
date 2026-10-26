@@ -1,7 +1,12 @@
 /* SCS Developments Tracker — one stylesheet, no build step.
-   Design tokens first (ticket 15): the display and body faces, the ink/paper/accent colours and the
+   Design tokens first (tickets 15, 16): the display and body faces, the sea/paper/ink colours and the
    spacing scale drive every page, so the hosting institution's own type and colours slot in here and
-   nowhere else. The claimant and type palettes below them are the dataviz palette (validated) and
+   nowhere else. The values are read from three references the maintainer supplied: a programme banner
+   (deep navy-to-teal sea seen from above, a light geometric sans title in white with a short rule under
+   it, dashed boundary lines), the institute's article pages (white paper, bold sans headlines under a
+   small letter-spaced kicker, grey meta lines, hairline rules) and the original dashboard (near-black
+   panels with white labels around a light-grey map canvas). The language is adopted; no name, logo or
+   wordmark is. The claimant and type palettes below the block are the dataviz palette (validated) and
    do not change with the brand. */
 
 @font-face {
@@ -12,9 +17,9 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("fonts/source-serif-4-latin-normal.woff2") format("woff2");
-  font-weight: 400 700;
+  font-family: "Outfit";
+  src: url("fonts/outfit-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -22,25 +27,41 @@
 :root {
   color-scheme: light;
   /* ---- brand tokens: the block to change for the host institution ---- */
-  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;   /* headlines, numbers, the lede */
+  --font-display: "Outfit", "Avenir Next", "Century Gothic", system-ui, sans-serif;   /* titles, headline numbers, the brand: light geometric, as on the banner */
   --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;  /* everything else */
-  --paper: #f6f8f9;          /* page plane */
-  --surface: #ffffff;        /* figures, panels, the map frame */
-  --band: #0f1d2a;           /* the masthead: chart-ink navy */
-  --band-ink: #f3f6f8;       /* text on the band */
-  --band-muted: #9fb0bd;
-  --ink: #0f1d2a;
-  --ink-2: #3f4f5c;
-  --muted: #5f6d77;
-  --rule: #d9e0e5;           /* hairlines */
-  --rule-strong: #b7c4cb;
-  --accent: #1a4f7e;         /* links, the current page, the one coloured control */
+  --display-weight: 300;     /* the banner's title weight */
+  --heading-weight: 600;     /* article headlines */
+  --kicker: 700 0.75rem/1.3 var(--font-display);  /* the small capitals over titles and sections, in the wordmark's manner */
+  --kicker-spacing: 0.14em;
+  --paper: #ffffff;          /* page plane: the article pages' white */
+  --surface: #ffffff;        /* figures, the map frame */
+  --surface-2: #f4f7f9;      /* a plane one step off the paper: insets, citation blocks */
+  /* the sea, from the banner: deep navy at the surface's shadow, teal where the reef rises */
+  --sea-deep: #060f22;
+  --sea: #0c1c33;
+  --sea-mid: #1c3952;
+  --sea-light: #1f6372;
+  --lagoon: #3a8f96;
+  --foam: #e2e3e2;
+  --band: var(--sea);        /* the masthead on inner pages */
+  --band-ink: #f4f6f7;       /* text on the band and the sea */
+  --band-muted: #a9bac6;
+  --panel: #0b1522;          /* the dashboard's instrument panel around the map */
+  --panel-2: #142131;
+  --panel-rule: #27394a;
+  --ink: #0c1a2a;
+  --ink-2: #3c4c59;
+  --muted: #5d6b76;
+  --rule: #dde3e8;           /* hairlines */
+  --rule-strong: #b9c5cd;
+  --accent: #1a5e78;         /* links, the current page, the one coloured control: the sea's teal, 7:1 on white */
   --accent-ink: #ffffff;
-  --focus: #c4620c;
-  --map-zone: #1a4f7e;       /* the sub-region polygons on the event map, stated in light terms (dark mode inverts the canvas) */
-  --map-zone-line: #5f6d77;
-  --shadow: 15, 29, 42;      /* the ink as rgb, for shadows */
-  --radius: 4px;
+  --focus: #b4700e;          /* focus rings on paper (4:1 on white); the dark planes use the dashboard's amber, --focus-dark */
+  --focus-dark: #e3a128;
+  --map-zone: #1a5e78;       /* the sub-region polygons on the event map, stated in light terms (dark mode inverts the canvas) */
+  --map-zone-line: #5d6b76;
+  --shadow: 12, 26, 42;      /* the ink as rgb, for shadows */
+  --radius: 3px;
   --wrap: 1180px;
   --gutter: 20px;
   --measure: 38rem;          /* prose line length */
@@ -56,18 +77,20 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #0f171c; --surface: #16212a; --band: #141f29; --band-ink: #e8eef1; --band-muted: #93a1ab;
-    --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #8e9aa3; --rule: #273440; --rule-strong: #3b4b57;
-    --accent: #7fc0ea; --accent-ink: #0f171c; --focus: #f0a35b; --shadow: 0, 0, 0;
+    --paper: #0d151d; --surface: #131e28; --surface-2: #182530; --band: #0a1420; --band-ink: #e8eef1; --band-muted: #9bacb8;
+    --panel: #080f18; --panel-2: #121c28; --panel-rule: #243443;
+    --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #8e9aa3; --rule: #243240; --rule-strong: #3a4a57;
+    --accent: #7fc4e0; --accent-ink: #0d151d; --focus: #f0b24f; --focus-dark: #f0b24f; --shadow: 0, 0, 0;
     --cn: #3987e5; --vn: #d95926; --ph: #199e70; --my: #c98500; --id: #d55181; --tw: #008300;
     --t-declarative: #184f95; --t-demonstrative: #256abf; --t-coercive: #5598e7; --t-force: #9ec5f4;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #0f171c; --surface: #16212a; --band: #141f29; --band-ink: #e8eef1; --band-muted: #93a1ab;
-  --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #8e9aa3; --rule: #273440; --rule-strong: #3b4b57;
-  --accent: #7fc0ea; --accent-ink: #0f171c; --focus: #f0a35b; --shadow: 0, 0, 0;
+  --paper: #0d151d; --surface: #131e28; --surface-2: #182530; --band: #0a1420; --band-ink: #e8eef1; --band-muted: #9bacb8;
+  --panel: #080f18; --panel-2: #121c28; --panel-rule: #243443;
+  --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #8e9aa3; --rule: #243240; --rule-strong: #3a4a57;
+  --accent: #7fc4e0; --accent-ink: #0d151d; --focus: #f0b24f; --focus-dark: #f0b24f; --shadow: 0, 0, 0;
   --cn: #3987e5; --vn: #d95926; --ph: #199e70; --my: #c98500; --id: #d55181; --tw: #008300;
   --t-declarative: #184f95; --t-demonstrative: #256abf; --t-coercive: #5598e7; --t-force: #9ec5f4;
 }
@@ -92,14 +115,23 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch {
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 
-/* ---- masthead: one dark band, the brand mark and the navigation ------------------------------ */
-.masthead { background: var(--band); color: var(--band-ink); border-bottom: 1px solid color-mix(in srgb, var(--band-ink) 14%, transparent); }
+/* ---- the sea: one dark plane that carries the masthead everywhere and, on the home page, the hero ---- */
+.sea { position: relative; background: var(--band); color: var(--band-ink); isolation: isolate; --focus: var(--focus-dark); }
+.sea-home { background: var(--sea); }
+.sea-art { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; display: block; }
+
+/* ---- masthead: the brand mark and name in the wordmark's manner, and the navigation ------------ */
+.masthead { border-bottom: 1px solid color-mix(in srgb, var(--band-ink) 14%, transparent); }
+.sea-home .masthead { border-bottom-color: color-mix(in srgb, var(--band-ink) 10%, transparent); }
 .masthead-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--band-ink); text-decoration: none; flex: none; }
 .brand-mark { width: 28px; height: 28px; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-.brand-name { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; letter-spacing: -0.005em; }
-.brand-sub { font-size: 0.75rem; color: var(--band-muted); }
+.kicker, .stat dt, .colophon-title, .brand-name { font: var(--kicker); text-transform: uppercase; letter-spacing: var(--kicker-spacing); }
+.brand-name { font-size: 0.8125rem; line-height: 1.2; }
+.brand-sub { font-size: 0.75rem; color: var(--band-muted); margin-top: 2px; }
+.kicker, .prose .kicker { color: var(--accent); margin: 0 0 var(--s2); }
+.sea .kicker { color: var(--band-muted); }
 .nav { display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; white-space: nowrap; }
 .nav::-webkit-scrollbar { display: none; }
 .nav a { color: var(--band-muted); text-decoration: none; padding: 23px 0; border-bottom: 2px solid transparent; font-size: 0.9rem; flex: none; }
@@ -119,33 +151,61 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch {
 }
 
 /* ---- type scale ---------------------------------------------------------------------------- */
-h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem); line-height: 1.08; letter-spacing: -0.015em; font-weight: 600; margin: 0 0 var(--s4); text-wrap: balance; }
-h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: -0.008em; margin: 0; line-height: 1.2; }
+h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem); line-height: 1.1; letter-spacing: -0.005em; font-weight: var(--heading-weight); margin: 0 0 var(--s4); text-wrap: balance; }
+h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: var(--heading-weight); letter-spacing: 0; margin: 0; line-height: 1.2; }
 h3 { font-size: 1.0625rem; font-weight: 600; margin: 0; }
 h4 { font-size: 1rem; font-weight: 600; margin: 0; }
-.lede { padding: var(--s7) 0 var(--s2); max-width: var(--measure); }
-.lede-text { font-size: 1.125rem; color: var(--ink-2); margin: 0; max-width: var(--measure); }
+/* inner pages open like the article pages: kicker, title, a grey standfirst, then a hairline */
+.lede { padding: var(--s7) 0 var(--s5); max-width: 52rem; border-bottom: 1px solid var(--rule); margin-bottom: var(--s2); }
+.lede h1 { margin-bottom: var(--s3); }
+.lede-text { font-size: 1.125rem; color: var(--ink-2); margin: 0; max-width: var(--measure); line-height: 1.5; }
 dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--s1) var(--s6); margin: var(--s8) 0 var(--s4); padding-top: var(--s4); border-top: 1px solid var(--rule); }
 .section-note { margin: 0; color: var(--muted); font-size: 0.9375rem; max-width: 44rem; }
 .more-link { font-size: 0.9375rem; margin-left: auto; white-space: nowrap; }
 
-/* ---- home: the hero, the numbers, the map, the latest developments ------------------------- */
-.hero { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: var(--s4) var(--s7); align-items: end; padding: var(--s5) 0 var(--s2); }
-.hero h1 { margin-bottom: var(--s2); font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.375rem); }
-.hero .lede-text { font-size: 0.9375rem; max-width: 48rem; line-height: 1.5; }
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); margin: 0; padding: 0; }
-.stat { border-top: 2px solid var(--ink); padding-top: var(--s2); }
-.stat dt { font-size: 0.8125rem; color: var(--muted); margin-bottom: 2px; }
+/* ---- home: the hero on the sea, the numbers, the map in its panel, the latest developments ---- */
+.hero { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(400px, 1fr); gap: var(--s4) var(--s7); align-items: end; padding-top: var(--s4); padding-bottom: var(--s5); color: var(--band-ink); }
+.hero .kicker { margin-bottom: var(--s1); }
+.hero h1 { margin-bottom: var(--s3); font-size: clamp(1.75rem, 1.1rem + 1.8vw, 2.375rem); font-weight: var(--display-weight); letter-spacing: 0.002em; line-height: 1.12; color: var(--band-ink); }
+.hero h1::after { content: ""; display: block; width: 72px; height: 1px; background: var(--band-ink); margin-top: var(--s3); }   /* the banner's short rule */
+.hero .lede-text { font-size: 0.9375rem; max-width: 46rem; line-height: 1.5; color: color-mix(in srgb, var(--band-ink) 86%, transparent); }
+.hero .lede-text dfn { color: var(--band-ink); }
+.stats { display: grid; grid-template-columns: 1fr 1fr 1.45fr; gap: var(--s4); margin: 0; padding: 0; }   /* the year range is the widest figure */
+.stat { border-top: 1px solid color-mix(in srgb, var(--band-ink) 45%, transparent); padding-top: var(--s2); }
+.stat dt { color: var(--band-ink); margin-bottom: 4px; }   /* the band's ink, not its muted grey: the numbers sit over the teal end of the sea */
 .stat dd { margin: 0; }
-.stat [data-stat] { font-family: var(--font-display); font-size: clamp(1.6rem, 1.1rem + 1.4vw, 2.25rem); line-height: 1.05; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.01em; white-space: nowrap; }
-.stat .stat-note { font-size: 0.8125rem; color: var(--muted); margin-top: var(--s1); text-wrap: pretty; }
-@media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: var(--s6); } .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.stat [data-stat] { font-family: var(--font-display); font-size: 1.875rem; line-height: 1.05; font-weight: var(--display-weight); font-variant-numeric: tabular-nums lining-nums; letter-spacing: 0; color: var(--band-ink); }
+.stat .stat-note { font-size: 0.8125rem; color: color-mix(in srgb, var(--band-ink) 90%, transparent); margin-top: var(--s1); text-wrap: pretty; }
+@media (max-height: 780px) and (min-width: 1181px) { .hero { padding-top: var(--s3); padding-bottom: var(--s4); gap: var(--s3) var(--s6); } .hero .kicker { margin-bottom: 2px; } .hero h1 { font-size: clamp(1.6rem, 1rem + 1.6vw, 2.125rem); margin-bottom: var(--s2); } .hero h1::after { margin-top: var(--s2); } .hero .lede-text { font-size: 0.875rem; line-height: 1.45; } .map-section { padding-top: var(--s2); } }   /* a short laptop window: everything tightens so the map keeps its share; nothing is hidden */
+@media (max-width: 1180px) { .hero { grid-template-columns: 1fr; padding-top: var(--s6); } .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } .stat [data-stat] { font-size: clamp(1.75rem, 1rem + 2vw, 2.25rem); } }   /* under 1180px (the wrap no longer at full width) the numbers go in a row under the lede rather than squeezing beside it */
 @media (max-width: 560px) { .stats { grid-template-columns: 1fr 1fr; } .stat:first-child { grid-column: 1 / -1; } }
-.map-section { margin-top: var(--s2); }
-.map-section .map-caption { margin: var(--s2) 0 0; color: var(--muted); font-size: 0.875rem; max-width: 52rem; }
-/* the map takes the rest of the first viewport: its top sits about 360px down at desktop widths */
-.map-figure-hero { padding-top: var(--s3); }
+/* the map in the dashboard's instrument panel: full bleed, near-black, white labels, the light canvas inside */
+.map-section { background: var(--panel); color: var(--band-ink); --focus: var(--focus-dark); box-shadow: 0 0 0 100vmax var(--panel); clip-path: inset(0 -100vmax); padding: var(--s3) 0 var(--s5); }
+.map-section .map-caption { margin: var(--s3) 0 0; color: var(--band-muted); font-size: 0.875rem; max-width: 52rem; }
+.map-section a { color: var(--band-ink); }
+.map-section .chip { background: var(--panel-2); border-color: var(--panel-rule); color: var(--band-ink); }
+.map-section .chip input:not(:checked) ~ span:last-child { color: var(--band-muted); }
+.map-section .time-window select, .map-section .search input, .map-section .filter-groups select, .map-section .filter-groups input[type="number"] { background: var(--panel-2); color: var(--band-ink); border-color: var(--panel-rule); }
+.map-section .time-label, .map-section .filter-groups label, .map-section .map-filters-compact fieldset label { color: var(--band-ink); }
+.map-section legend, .map-section .map-legend, .map-section .filters-note { color: var(--band-muted); }
+.map-section .time-slider input[type="range"] { accent-color: var(--lagoon); }
+.map-section .map-canvas { border-color: var(--panel-rule); }
+.map-section .legend-point .dot { background: var(--band-muted); }
+.map-section .legend-point .dot.feature { background: transparent; border-color: var(--band-muted); }
+.map-section .legend-point .count-swatch { background: var(--panel-2); color: var(--band-ink); border-color: var(--panel-rule); }
+.map-section .toggle { color: var(--band-ink); border-color: var(--panel-rule); }
+.map-section .toggle[aria-pressed="true"] { background: var(--band-ink); color: var(--panel); border-color: var(--band-ink); }
+.map-section .event-summary, .map-section .popup-head { color: var(--band-ink); }
+.map-section .event-date, .map-section .event-meta, .map-section .event-place, .map-section .popup-more, .map-section .map-filters-compact legend { color: var(--band-muted); }
+.map-section .event-list, .map-section .event-row { border-color: var(--panel-rule); }
+.map-section .type-pill { background: var(--panel-2); color: var(--band-ink); border-color: var(--panel-rule); }
+.map-section select:focus-visible, .map-section input[type="range"]:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.map-section .figure { background: transparent; border: 0; padding: 0; margin: 0; }
+.map-section .time-row .play { background: var(--panel-2); color: var(--band-ink); border: 1px solid var(--panel-rule); }
+.map-section .time-row .play:disabled { color: var(--band-muted); }
+.map-section .time-window { color: var(--band-muted); }
+/* the map takes the rest of the first viewport: its top sits about 436px down in a 900px window, 424px in a 720px one */
 .map-figure-hero .time-row { margin-bottom: var(--s2); }
 .map-figure-hero .map-canvas { height: clamp(420px, calc(100vh - 300px), 760px); max-height: none; }
 .map-filters-compact { margin: 0 0 var(--s2); }
@@ -251,7 +311,9 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 
 /* Prose pages */
 .prose { max-width: 42rem; padding: var(--s7) 0 var(--s5); }
-.prose h1 { margin-bottom: var(--s5); }
+.prose h1 { margin-bottom: var(--s5); padding-bottom: var(--s5); border-bottom: 1px solid var(--rule); }
+.lede + .prose { padding-top: var(--s5); }
+.lede + .prose > h2:first-child { margin-top: 0; }
 .prose h2 { margin: var(--s6) 0 var(--s2); font-size: 1.375rem; }
 .prose p, .prose li { line-height: 1.6; }
 .prose p, .prose li { color: var(--ink-2); }
@@ -260,15 +322,18 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .defs dt { font-weight: 600; margin-top: 8px; }
 .defs dd { margin: 0; color: var(--ink-2); }
 
-.colophon { padding: var(--s6) 0 var(--s7); color: var(--muted); font-size: 0.875rem; border-top: 1px solid var(--rule); margin-top: var(--s8); background: var(--surface); }
+.colophon { padding: var(--s6) 0 var(--s7); color: var(--muted); font-size: 0.875rem; border-top: 1px solid var(--rule); margin-top: var(--s8); background: var(--surface-2); }
 .colophon-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5) var(--s6); }
 .colophon p { margin: 0 0 var(--s2); line-height: 1.5; }
-.colophon .colophon-title { font-family: var(--font-display); font-size: 1rem; color: var(--ink); font-weight: 600; margin-bottom: var(--s1); }
+.colophon .colophon-title { color: var(--ink); margin-bottom: var(--s2); }
 .colophon a { color: var(--ink-2); }
 @media (max-width: 760px) { .colophon-grid { grid-template-columns: 1fr; } }
 
 @media print {
-  .masthead, .toggle, .filters { display: none; }
+  .masthead, .toggle, .filters, .sea-art { display: none; }
+  .sea, .map-section { background: none; box-shadow: none; clip-path: none; color: var(--ink); }
+  .hero, .hero h1, .hero .lede-text, .hero .kicker, .stat dt, .stat [data-stat], .stat .stat-note, .map-section .map-caption, .map-section a { color: var(--ink); }
+  .hero h1::after { background: var(--ink); }
   .table-view[hidden] { display: block; }
 }
 
@@ -305,7 +370,7 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .case { padding: var(--s6) 0 var(--s5); }
 .crumbs { margin: 0 0 12px; color: var(--muted); font-size: 0.875rem; }
 .crumbs a { color: var(--ink-2); }
-.notice { background: var(--surface); border: 1px dashed var(--baseline); border-radius: var(--radius); padding: 10px 14px; color: var(--ink-2); margin: 0 0 16px; }
+.notice { background: var(--surface-2); border: 1px dashed var(--baseline); border-radius: var(--radius); padding: 10px 14px; color: var(--ink-2); margin: 0 0 16px; }
 .case-head h1 { margin-bottom: 8px; }
 .case-head h1 .case-claimant::before { width: 0.42em; height: 0.42em; border-radius: 0.1em; vertical-align: 0.08em; margin-right: 0.28em; }
 .case-types .ongoing { color: var(--ink-2); font-size: 0.9375rem; margin-left: 4px; }
@@ -313,7 +378,7 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 @media (max-width: 760px) { .case-body { grid-template-columns: 1fr; } }
 .case-main h2, .case-side h2 { margin: 20px 0 8px; font-size: 1.0625rem; }
 .case-main h2:first-child, .case-side h2:first-child { margin-top: 0; }
-.description { font-family: var(--font-display); font-size: 1.125rem; line-height: 1.6; margin: 0; max-width: 42rem; white-space: pre-line; }
+.description { font-family: var(--font-display); font-weight: 400; font-size: 1.125rem; line-height: 1.6; margin: 0; max-width: 42rem; white-space: pre-line; }
 .events { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--grid); }
 .events li { position: relative; padding: 0 0 14px 18px; }
 .events li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); border: 2px solid var(--surface); box-sizing: border-box; }
@@ -440,7 +505,7 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .downloads-table th, .downloads-table td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--grid); vertical-align: top; }
 .downloads-table th.num, .downloads-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .sum { font-size: 0.75rem; word-break: break-all; color: var(--ink-2); }
-pre.cite { white-space: pre-wrap; background: var(--surface); border: 1px solid var(--grid); border-radius: var(--radius); padding: 10px 12px; font-size: 0.875rem; color: var(--ink); }
+pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px solid var(--grid); border-radius: var(--radius); padding: 10px 12px; font-size: 0.875rem; color: var(--ink); }
 .downloads details { margin: 0 0 12px; }
 .downloads summary { cursor: pointer; color: var(--link); }
 @media (max-width: 640px) {
