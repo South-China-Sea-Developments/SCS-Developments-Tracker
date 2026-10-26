@@ -39,6 +39,26 @@ FAILURE_LABEL = "harvest-failure"
 FAILURE_TITLE = "Scheduled harvest run failed"
 REMINDER_MARK = "<!-- scs-review-reminder -->"
 FAILURE_MARK = "<!-- scs-harvest-failure -->"
+WAITING_LABEL = "harvest-waiting"
+WAITING_TITLE = "Harvest: documents fetched, waiting for extraction"
+WAITING_MARK = "<!-- scs-harvest-waiting -->"
+WAITING_HOW = """No extractor credential is set, so this run fetched the sources and stopped. The documents are not marked seen:
+the next run fetches them again and extracts them once a credential exists.
+
+- **Automatic route:** add the repository secret `CLAUDE_CODE_OAUTH_TOKEN` (from `claude setup-token`; runs on the
+  maintainer's Claude subscription) or `ANTHROPIC_API_KEY` (API billing). The next scheduled run then extracts.
+- **Session route** (when the maintainer asks for it, decision 07): in a session with the repository checked out, run
+  `python -m pipeline.ops state pull`,
+  `python -m pipeline.harvest fetch --out harvest/captures/<id> --state harvest/state.json`,
+  `python -m pipeline.harvest prompts --captures harvest/captures/<id> --out harvest/prompts/<id> --max-documents 80 --answered-by claude-code/<model>`,
+  then the `/harvest-extract` skill, then `python -m pipeline.harvest extract --captures harvest/captures/<id>
+  --out harvest/runs/<id> --prompts harvest/prompts/<id> --recordings harvest/recordings/<id>`,
+  `python -m pipeline.queue open --run harvest/runs/<id>` and, so that the next scheduled run does not propose the same
+  documents again, `python -m pipeline.ops state push --run-id <id> --report harvest/runs/<id>/run.json --captures harvest/captures/<id>`.
+  Details: README.md, "Extraction without an API key".
+
+This issue stays open while runs keep waiting; each further waiting run is a comment here. It closes itself after the
+next run that extracts."""
 
 Gh = Callable[..., Any]  # gh(method, path, **fields) -> parsed JSON (or None)
 
@@ -77,28 +97,42 @@ def _dry(gh: Gh, dry_run: bool) -> Gh:
 # ---------------------------------------------------------------------------
 # failure issues
 
+KINDS = {"failure": (FAILURE_LABEL, FAILURE_TITLE, FAILURE_MARK), "waiting": (WAITING_LABEL, WAITING_TITLE, WAITING_MARK)}
+
+
+def _issues_of_kind(issues: list[dict], kind: str) -> list[dict]:
+    """The open issues that are this kind's conversation: by label, by title or by the marker in the body."""
+    label, title, mark = KINDS[kind]
+    return [i for i in issues if "pull_request" not in i and (label in {l.get("name") for l in i.get("labels", [])}
+                                                              or i.get("title") == title or mark in (i.get("body") or ""))]
+
+
 def failure_issue(gh: Gh, run_id: str, run_url: str, resolved: bool = False, detail: str = "", dry_run: bool = False,
-                  status: str = "failed") -> str:
-    """Returns what was done: 'created', 'commented', 'closed' or 'nothing'."""
+                  status: str = "failed", kind: str = "failure") -> str:
+    """One open issue per kind: "failure" (the run broke) or "waiting" (it fetched but had no credential to
+    extract). Further runs of the same kind comment on it; `resolved` (a run that extracted) closes the
+    open issues of both kinds. Returns what was done: 'created', 'commented', 'closed' or 'nothing'."""
     gh = _dry(gh, dry_run)
-    open_issues = [i for i in (gh("GET", f"repos/{REPO}/issues?state=open&per_page=100") or [])
-                   if "pull_request" not in i and (FAILURE_LABEL in {l.get("name") for l in i.get("labels", [])}
-                                                   or i.get("title") == FAILURE_TITLE or FAILURE_MARK in (i.get("body") or ""))]
+    all_open = gh("GET", f"repos/{REPO}/issues?state=open&per_page=100") or []
     if resolved:
-        if not open_issues:
+        to_close = {i["number"]: (i, k) for k in KINDS for i in _issues_of_kind(all_open, k)}
+        if not to_close:
             return "nothing"
-        for i in open_issues:
+        for i, k in to_close.values():
             gh("POST", f"repos/{REPO}/issues/{i['number']}/comments",
-               body=f"{FAILURE_MARK}\nScheduled run `{run_id}` succeeded: {run_url}. Closing.")
+               body=f"{KINDS[k][2]}\nScheduled run `{run_id}` {'extracted' if k == 'waiting' else 'succeeded'}: {run_url}. Closing.")
             gh("PATCH", f"repos/{REPO}/issues/{i['number']}", state="closed")
         return "closed"
-    text = f"{FAILURE_MARK}\nScheduled harvest run `{run_id}` {status}: {run_url}\n\n{detail}".rstrip() + "\n"
+    label, title, mark = KINDS[kind]
+    open_issues = _issues_of_kind(all_open, kind)
+    what = f"{status}" if kind == "failure" else "fetched, waiting for extraction"
+    text = f"{mark}\nScheduled harvest run `{run_id}` {what}: {run_url}\n\n{detail}".rstrip() + "\n"
     if open_issues:
         gh("POST", f"repos/{REPO}/issues/{open_issues[0]['number']}/comments", body=text)
         return "commented"
-    gh("POST", f"repos/{REPO}/issues", title=FAILURE_TITLE, labels=[FAILURE_LABEL],
-       body=text + "\nThe log is at the link above. This issue stays open while runs keep failing; each further "
-                   "failure is a comment here, not a new issue. It closes itself after the next successful run.\n")
+    tail = ("\nThe log is at the link above. This issue stays open while runs keep failing; each further "
+            "failure is a comment here, not a new issue. It closes itself after the next successful run.\n") if kind == "failure" else "\n" + WAITING_HOW + "\n"
+    gh("POST", f"repos/{REPO}/issues", title=title, labels=[label], body=text + tail)
     return "created"
 
 
@@ -249,6 +283,7 @@ def main(argv=None) -> int:
     f = sub.add_parser("failure-issue"); f.add_argument("--run-id", required=True); f.add_argument("--run-url", required=True)
     f.add_argument("--resolved", action="store_true"); f.add_argument("--detail", default=""); f.add_argument("--dry-run", action="store_true")
     f.add_argument("--status", default="failed", help="how the run ended, e.g. failure or cancelled")
+    f.add_argument("--kind", choices=["failure", "waiting"], default="failure", help="waiting: fetched, no credential to extract")
     r = sub.add_parser("remind"); r.add_argument("--maintainer", required=True); r.add_argument("--days", type=int, default=7)
     r.add_argument("--dry-run", action="store_true")
     a = p.parse_args(argv)
@@ -265,7 +300,7 @@ def main(argv=None) -> int:
             state_push(root, a.run_id, report, a.branch, captures_dir=Path(a.captures) if a.captures else None, fetch_report=fetch_report)
         return 0
     if a.cmd == "failure-issue":
-        print(failure_issue(gh_api, a.run_id, a.run_url, resolved=a.resolved, detail=a.detail, dry_run=a.dry_run, status=a.status))
+        print(failure_issue(gh_api, a.run_id, a.run_url, resolved=a.resolved, detail=a.detail, dry_run=a.dry_run, status=a.status, kind=a.kind))
         return 0
     if a.cmd == "remind":
         n = remind(gh_api, a.maintainer, a.days, dry_run=a.dry_run)

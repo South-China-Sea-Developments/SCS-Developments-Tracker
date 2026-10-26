@@ -21,6 +21,8 @@ Usage:
   python -m pipeline.harvest fetch   --out harvest/captures/<run_id> [--since YYYY-MM-DD] [--only id,id]
   python -m pipeline.harvest extract --captures DIR --out harvest/runs/<run_id> [--recordings DIR] [--record]
   python -m pipeline.harvest run     --run-id <id>
+  python -m pipeline.harvest prompts --captures DIR --out harvest/prompts/<id> [--max-documents N] [--all]
+  python -m pipeline.harvest extract --captures DIR --out harvest/runs/<id> --prompts harvest/prompts/<id> --recordings harvest/recordings/<id>
   python -m pipeline.harvest import  events.json --run-id <id> --extractor "<who compiled it>" [--no-fetch]
 """
 from __future__ import annotations
@@ -44,7 +46,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from pipeline import schema
-from pipeline.extract import Extractor, LLMClient, RecordedClient, RecordingClient, AnthropicClient, find_duplicate, _clean_text
+from pipeline.extract import Extractor, LLMClient, RecordedClient, RecordingClient, AnthropicClient, find_duplicate, _clean_text, write_prompts, prompt_hash
+from pipeline import relevance
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "pipeline" / "sources.json"
@@ -389,6 +392,19 @@ def make_client(args) -> LLMClient:
     return AnthropicClient(model=args.model)
 
 
+def cmd_prompts(args) -> int:
+    """The extraction prompts of a capture folder as files, for a route that answers them outside
+    this process (the Claude Code GitHub Action, or a live session, with the /harvest-extract skill);
+    `extract --prompts DIR --recordings ANSWERS` then reads the answers. Relevance and the cap decide
+    which documents get a prompt (see pipeline.relevance)."""
+    captures = load_captures(Path(args.captures))
+    selected, irrelevant, deferred = relevance.select(captures, max_documents=args.max_documents, everything=args.all)
+    write_prompts(selected, Path(args.out), irrelevant=irrelevant, deferred=deferred, answered_by=args.answered_by)
+    print(f"{len(captures)} document(s): {len(selected)} prompt(s) written to {args.out}/prompts/, "
+          f"{len(irrelevant)} not about the South China Sea, {len(deferred)} deferred to the next run")
+    return 0
+
+
 def cmd_extract(args) -> int:
     captures = load_captures(Path(args.captures))
     client = make_client(args)
@@ -398,7 +414,12 @@ def cmd_extract(args) -> int:
     if events_csv.exists():
         with open(events_csv, newline="", encoding="utf-8") as f:
             existing = list(csv.DictReader(f))
-    events, sources, report = ex.extract_all(captures, existing_events=existing)
+    selection = json.loads((Path(args.prompts) / "index.json").read_text(encoding="utf-8")) if getattr(args, "prompts", "") else None
+    if selection and selection.get("prompt_hash") != prompt_hash(ex.system):
+        print(f"the prompts in {args.prompts} were written for prompt {selection.get('prompt_hash')}, the system prompt is now "
+              f"{prompt_hash(ex.system)}: no answer would match; write the prompts again", file=sys.stderr)
+        return 1
+    events, sources, report = ex.extract_all(captures, existing_events=existing, selection=selection)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     for name, rows in (("candidates", events), ("sources", sources)):
@@ -412,10 +433,12 @@ def cmd_extract(args) -> int:
     cost = f"${report['estimated_cost_usd']:.2f}" if report["estimated_cost_usd"] is not None else "unknown"
     print(f"documents {report['documents']}, candidates {report['candidates']}, possible duplicates {report['duplicates']}, "
           f"tokens in/out {report['input_tokens']}/{report['output_tokens']}, estimated cost {cost}, "
-          f"failures {len(report['failures'])} -> {out}/")
+          f"failures {len(report['failures'])}" + (f" (deferred {report['deferred']}), not about the sea {report['irrelevant']}" if selection else "") + f" -> {out}/")
     for sid, s in report["by_source"].items():
-        print(f"  {sid:<12} documents {s['documents']:>3} candidates {s['candidates']:>3} failures {s['failures']:>2}")
-    return 1 if report["failures"] and not report["candidates"] else 0
+        print(f"  {sid:<12} documents {s['documents']:>3} candidates {s['candidates']:>3} failures {s['failures']:>2}"
+              + (f" not about the sea {s['irrelevant']:>3}" if s.get("irrelevant") else ""))
+    real_failures = [f for f in report["failures"] if f["error"] != Extractor.DEFERRED]   # a deferred document is next run's work
+    return 1 if real_failures and not report["candidates"] else 0
 
 
 class _ManualClient:
@@ -538,7 +561,13 @@ def main(argv=None) -> int:
     sf.add_argument("--registry", **common["registry"]); sf.set_defaults(fn=cmd_fetch)
     se = sub.add_parser("extract"); se.add_argument("--captures", required=True); se.add_argument("--out", required=True)
     se.add_argument("--recordings", default=""); se.add_argument("--record", action="store_true")
+    se.add_argument("--prompts", default="", help="a prompts folder written by `prompts`: only its selected documents are extracted")
     se.add_argument("--model", default=Extractor.DEFAULT_MODEL); se.add_argument("--run-id", default=""); se.set_defaults(fn=cmd_extract)
+    sp = sub.add_parser("prompts"); sp.add_argument("--captures", required=True); sp.add_argument("--out", required=True)
+    sp.add_argument("--max-documents", type=int, default=0, help="prompts per run; the rest are deferred to the next run (0 = all)")
+    sp.add_argument("--all", action="store_true", help="a prompt for every document, relevant or not")
+    sp.add_argument("--answered-by", default="", help="the exact model string the answerer writes, e.g. claude-code/claude-sonnet-5-5")
+    sp.set_defaults(fn=cmd_prompts)
     sr = sub.add_parser("run"); sr.add_argument("--run-id", default=""); sr.add_argument("--since", default="")
     sr.add_argument("--only", default=""); sr.add_argument("--sleep", type=float, default=0.5); sr.add_argument("--recordings", default="")
     sr.add_argument("--record", action="store_true"); sr.add_argument("--model", default=Extractor.DEFAULT_MODEL)

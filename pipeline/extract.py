@@ -9,6 +9,7 @@ from __future__ import annotations
 import datetime as dt
 import hashlib
 import json
+from collections.abc import Sequence
 import re
 from pathlib import Path
 
@@ -60,18 +61,32 @@ def _key(system: str, user: str) -> str:
 
 
 class RecordedClient(LLMClient):
-    """Replays saved responses; raises if a prompt has no recording (tests must be complete)."""
+    """Replays saved responses (test recordings, or answers written by another route). A prompt
+    without a recording, or whose file is not JSON, fails that document only: the extractor records
+    it as a failure and the state mechanism fetches the document again. `text` may be the answer
+    object itself rather than a string (an answerer writing JSON by hand need not escape it)."""
     def __init__(self, directory: Path):
         self.dir = Path(directory)
-        models = {json.loads(p.read_text(encoding="utf-8")).get("model", "recorded") for p in self.dir.glob("*.json")}
+        models = set()
+        for p in self.dir.glob("*.json"):
+            try:
+                models.add(json.loads(p.read_text(encoding="utf-8")).get("model", "recorded"))
+            except (ValueError, AttributeError):
+                continue    # reported per document by complete()
         self.model = sorted(models)[0] if len(models) == 1 else "recorded" if not models else "recorded-mixed"
 
     def complete(self, system: str, user: str) -> tuple[str, int, int, str]:
         path = self.dir / f"{_key(system, user)}.json"
         if not path.exists():
-            raise FileNotFoundError(f"no recorded response for this prompt: {path.name}")
-        rec = json.loads(path.read_text(encoding="utf-8"))
-        return rec["text"], rec.get("input_tokens", 0), rec.get("output_tokens", 0), rec.get("stop_reason", "end_turn")
+            raise FileNotFoundError(f"no answer recorded for this prompt: {path.name}")
+        try:
+            rec = json.loads(path.read_text(encoding="utf-8"))
+            text = rec["text"]
+        except (ValueError, KeyError, TypeError) as e:
+            raise ValueError(f"answer file {path.name} is not the expected JSON ({e})") from None
+        if not isinstance(text, str):
+            text = json.dumps(text, ensure_ascii=False)
+        return text, rec.get("input_tokens", 0) or 0, rec.get("output_tokens", 0) or 0, rec.get("stop_reason", "end_turn")
 
 
 class RecordingClient(LLMClient):
@@ -103,7 +118,13 @@ def parse_events_json(text: str) -> list[dict] | None:
     return None
 
 
+MAX_DOCUMENT_CHARS = 20_000   # the fetcher's own cut (harvest.MAX_TEXT); applied here too so that a hand-made
+                              # capture is bounded the same way whichever route answers the prompt
+
+
 def user_prompt(capture: dict) -> str:
+    """The per-document half of the prompt: the capture's provenance and its text, cut at
+    MAX_DOCUMENT_CHARS so that every route sees the same document."""
     head = [f"Source: {capture.get('source_name', capture.get('source_id', ''))} ({capture.get('source_id', '')})",
             f"URL: {capture.get('final_url') or capture.get('url', '')}",
             f"Title: {capture.get('title', '')}",
@@ -111,7 +132,45 @@ def user_prompt(capture: dict) -> str:
             f"Fetched: {capture.get('fetched_at', '')[:10]}",
             f"Language: {capture.get('language', '')}"]
     body = capture.get("text", "").replace("</document>", "</ document>")
+    if len(body) > MAX_DOCUMENT_CHARS:
+        body = body[:MAX_DOCUMENT_CHARS] + f"\n[document cut here at {MAX_DOCUMENT_CHARS} characters]"
     return "\n".join(head) + "\n\n<document>\n" + body + "\n</document>"
+
+
+def prompt_key(capture: dict, system: str | None = None) -> str:
+    """The name under which a prompt's answer is recorded (the RecordedClient's key)."""
+    return _key(system if system is not None else system_prompt(), user_prompt(capture))
+
+
+def _brief(cap: dict) -> dict:
+    return {"capture_id": cap.get("capture_id"), "source_id": cap.get("source_id"), "title": cap.get("title", "")[:200],
+            "url": cap.get("final_url") or cap.get("url", ""), "published": cap.get("published", "")}
+
+
+def write_prompts(captures: list[dict], out_dir: Path, irrelevant: Sequence[dict] = (), deferred: Sequence[dict] = (),
+                  answered_by: str = "") -> dict:
+    """The run's prompts as files for whoever answers them: system.md once, prompts/<key>.md per
+    document (the user prompt verbatim), index.json naming each document's key and provenance and
+    listing, with title and url, the documents left out (so the maintainer can spot-check the
+    filter). Answers go to a recordings folder as <key>.json in the RecordedClient's format
+    ({"model", "text", optional token counts and "stop_reason"}); `answered_by` is the exact model
+    string the answerer is to write, so the extractor id names the route."""
+    out = Path(out_dir)
+    (out / "prompts").mkdir(parents=True, exist_ok=True)
+    system = system_prompt()
+    (out / "system.md").write_text(system, encoding="utf-8")
+    docs = []
+    for cap in captures:
+        key = prompt_key(cap, system)
+        (out / "prompts" / f"{key}.md").write_text(user_prompt(cap), encoding="utf-8")
+        docs.append({"key": key, **_brief(cap), "chars": len(cap.get("text", ""))})
+    index = {"prompt_hash": prompt_hash(system), "documents": docs, "irrelevant": [_brief(c) for c in irrelevant],
+             "deferred": [_brief(c) for c in deferred],
+             "answer_format": {"model": answered_by or "<route>/<model>, e.g. claude-code/claude-sonnet-5-5",
+                               "text": "the answer, the JSON object the system prompt asks for (as a string, or as the object itself)",
+                               "stop_reason": "end_turn, or max_tokens if the answer was cut"}}
+    (out / "index.json").write_text(json.dumps(index, indent=1, ensure_ascii=False), encoding="utf-8")
+    return index
 
 
 _QUOTES = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "\u00a0": " "})
@@ -265,13 +324,31 @@ class Extractor:
                 events.append(norm[0]); sources.append(norm[1])
         return events, sources, i, o
 
-    def extract_all(self, captures: list[dict], existing_events: list[dict] | None = None) -> tuple[list[dict], list[dict], dict]:
+    DEFERRED = "deferred: over this run's document cap; fetched again next run"
+
+    def extract_all(self, captures: list[dict], existing_events: list[dict] | None = None,
+                    selection: dict | None = None) -> tuple[list[dict], list[dict], dict]:
+        """Every capture gets a prompt unless `selection` (a prompts index) says otherwise: a document
+        it lists as irrelevant is skipped and counted, one it lists as deferred is a failure with
+        Extractor.DEFERRED as its error (so the state mechanism fetches it again next run)."""
         events, sources, failures = [], [], []
         in_tok = out_tok = 0
         by_source: dict[str, dict] = {}
+        ids = lambda key: {x["capture_id"] if isinstance(x, dict) else x for x in (selection or {}).get(key, [])}
+        irrelevant_ids, deferred_ids = ids("irrelevant"), ids("deferred")
+        n_irrelevant = n_deferred = 0
         for cap in captures:
-            stat = by_source.setdefault(cap.get("source_id", "?"), {"documents": 0, "candidates": 0, "failures": 0})
+            stat = by_source.setdefault(cap.get("source_id", "?"), {"documents": 0, "candidates": 0, "failures": 0, "irrelevant": 0})
+            if cap.get("capture_id") in irrelevant_ids:
+                stat["irrelevant"] += 1    # not a document the extractor saw
+                n_irrelevant += 1
+                continue
             stat["documents"] += 1
+            if cap.get("capture_id") in deferred_ids:
+                failures.append({"capture_id": cap.get("capture_id"), "source_id": cap.get("source_id"), "url": cap.get("url"), "error": self.DEFERRED})
+                stat["failures"] += 1
+                n_deferred += 1
+                continue
             try:
                 ev, so, i, o = self.extract_one(cap)
             except Exception as e:  # one bad document must not sink the run, but it is a failure, not "no events"
@@ -292,8 +369,10 @@ class Extractor:
         price = PRICES.get(self.client.model)
         report = {"run_id": self.run_id, "extractor": self.extractor_id, "model": self.client.model,
                   "documents": len(captures), "candidates": len(events), "duplicates": dup,
+                  "irrelevant": n_irrelevant, "deferred": n_deferred,
                   "input_tokens": in_tok, "output_tokens": out_tok,
-                  "estimated_cost_usd": (in_tok * price[0] + out_tok * price[1]) / 1e6 if price else None,
+                  # answers without token counts (another route answered) cost "unknown", not $0.00
+                  "estimated_cost_usd": (in_tok * price[0] + out_tok * price[1]) / 1e6 if price and (in_tok or out_tok) else None,
                   "by_source": by_source, "failures": failures,
                   "finished_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
         return events, sources, report
