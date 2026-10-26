@@ -1,6 +1,6 @@
 # Public site
 
-A self-contained static bundle built from `data/*.csv` by `python -m web.build`. No framework, no build chain: Jinja2 templates, one stylesheet, one script, one vendored font (Instrument Sans, OFL). Relative paths only, so the output folder can be dropped onto any host (GitHub Pages for now; ASPI later) or opened from disk.
+A self-contained static bundle built from `data/*.csv` by `python -m web.build`. No framework, no build chain: Jinja2 templates, one stylesheet, three scripts, two vendored fonts (Instrument Sans and Source Serif 4, both OFL). Relative paths only, so the output folder can be dropped onto any host (GitHub Pages for now; ASPI later) or opened from disk.
 
 ## Pages
 
@@ -10,9 +10,11 @@ A self-contained static bundle built from `data/*.csv` by `python -m web.build`.
 
 Subject: a research dataset about contested waters. Audience: researchers, analysts, journalists. Job: trends at a glance, then down to the evidence.
 
-- **Identity device:** the masthead carries a faint graticule, a nod to hydrographic charts. It is the only decoration; everything else is data and type.
-- **Type:** Instrument Sans throughout, one family; headline weight 600 with tight tracking; no all-caps labels, no eyebrows.
-- **Colour:** page plane is a pale hydrographic tint, surfaces near-white, ink blue-black. Claimants use the dataviz categorical palette in fixed slot order (China, Vietnam, Philippines, Malaysia, Indonesia, Taiwan) so a filter never repaints survivors. Move types are an ordered intensity scale and use one blue ramp, pale (declarative) to dark (use of force). Issues and domains use the categorical slots in fixed order on their own page. The choropleth uses the sequential blue ramp, reversed in dark mode so zero recedes toward the surface. All palettes validated with the dataviz validator in light and dark mode.
+- **Tokens (ticket 15):** the block at the top of `style.css` holds the brand: display face, body face, paper, surface, band, ink, accent, radius, measure and spacing. It carries an institutional default (Source Serif 4 for headlines, numbers and the lede; Instrument Sans for everything else; a chart-ink navy band; cool near-white paper) and is the one place to change when the site takes the hosting institution's type and colours. The data palettes below it do not follow the brand. No institution's name, logo or wordmark is in the bundle.
+- **Identity device:** one dark masthead band with a compass-rose mark; the rest is paper, hairlines, data and type. Lists are rows divided by hairlines, not cards; figures keep a thin frame because they are the one thing on the page that is a picture.
+- **Home page:** lede and three headline numbers side by side, then the event map at 72 % of the viewport height with a compact filter row (claimant, type; the full set lives on the map page), then the latest developments (the newest accepted events, one row per move, project coding marked), then the charts and the four types.
+- **Type:** Source Serif 4 for h1, h2, the headline numbers, dates in the latest list and move descriptions; Instrument Sans for interface, labels, charts and body; no all-caps labels, no eyebrows.
+- **Colour:** page plane is a cool near-white, surfaces white, ink blue-black, the masthead the same navy as the chart ink. Claimants use the dataviz categorical palette in fixed slot order (China, Vietnam, Philippines, Malaysia, Indonesia, Taiwan) so a filter never repaints survivors. Move types are an ordered intensity scale and use one blue ramp, pale (declarative) to dark (use of force). Issues and domains use the categorical slots in fixed order on their own page. The choropleth uses the sequential blue ramp, reversed in dark mode so zero recedes toward the surface. All palettes validated with the dataviz validator in light and dark mode.
 - **Marks:** stacked columns ≤ 24px wide, 4px rounded data-end, surface-coloured gaps between segments (2px, 1px when bands are narrow), hairline solid gridlines, muted axis ticks, tabular figures on ticks and in tables.
 - **Pills in the case list:** a dashed pill marks a move pending the author's confirmation; a solid pill marks project coding (any move not from MATS 1.02), so the two provenances never pass for one another.
 - **Case browser filters:** within a group (type, domain, issue) any checked value matches; across groups all must match; the claimant chips are a show/hide set like the overview's, so unchecking all shows nothing.

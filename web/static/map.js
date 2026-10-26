@@ -17,6 +17,7 @@
   var timeLabel = document.getElementById("time-label");
   var countEl = document.getElementById("map-count");
   var listEl = document.getElementById("event-list");
+  var targetSel = document.getElementById("target");   // absent on the home page's compact filter row
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function monthIndex(iso) { return (parseInt(iso.slice(0, 4), 10) - FIRST) * 12 + parseInt(iso.slice(5, 7), 10) - 1; }
@@ -106,7 +107,7 @@
   function readFilters() {
     var w = parseInt(windowSel.value, 10), k = parseInt(slider.value, 10);
     return { claimants: checked("claimant"), types: checked("t"), domains: checked("d"), issues: checked("i"),
-             target: document.getElementById("target").value, from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w };
+             target: targetSel ? targetSel.value : "", from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w };
   }
   function matches(e, f) {
     if (f.claimants.indexOf(e.c) < 0) return false;
@@ -206,7 +207,7 @@
   windowSel.addEventListener("change", schedule);
   document.getElementById("reset").addEventListener("click", function () {
     form.querySelectorAll('input[type="checkbox"]').forEach(function (i) { i.checked = i.name === "claimant"; });
-    document.getElementById("target").value = "";
+    if (targetSel) targetSel.value = "";
     windowSel.value = "0";
     slider.value = slider.max;
     stopPlay();
