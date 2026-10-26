@@ -221,7 +221,7 @@ def test_fixture_yields_the_expected_candidates(fixture_run):
     assert all(s["url"] and s["excerpt"] and len(s["excerpt"]) <= 400 and s["accessed_date"] for s in sources)
     report = json.loads((fixture_run / "run.json").read_text(encoding="utf-8"))
     assert report["documents"] == 7 and report["candidates"] == 5 and report["failures"] == []
-    assert report["by_source"]["cn_mfa_press"] == {"documents": 2, "candidates": 3, "failures": 0}
+    assert report["by_source"]["cn_mfa_press"] == {"documents": 2, "candidates": 3, "failures": 0, "irrelevant": 0}
     assert report["estimated_cost_usd"] is None   # unknown model -> unknown, never a silent zero
 
 
@@ -301,7 +301,7 @@ def test_truncated_or_non_json_responses_are_failures_not_quiet_weeks():
     ex = Extractor(_Fake("Sorry, I cannot help with that."), run_id="t")
     events, sources, report = ex.extract_all([cap])
     assert events == [] and len(report["failures"]) == 1 and "not the requested JSON" in report["failures"][0]["error"]
-    assert report["by_source"]["s"] == {"documents": 1, "candidates": 0, "failures": 1}
+    assert report["by_source"]["s"] == {"documents": 1, "candidates": 0, "failures": 1, "irrelevant": 0}
 
 
 def test_excerpt_check_ignores_quote_style_and_whitespace():

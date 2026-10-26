@@ -10,6 +10,7 @@ web/dist/
 harvest/captures/
 harvest/runs/
 harvest/recordings/
+harvest/prompts/
 harvest/state.json
 harvest/summary.md
 !harvest/manual/

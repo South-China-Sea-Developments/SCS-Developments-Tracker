@@ -46,7 +46,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from pipeline import schema
-from pipeline.extract import Extractor, LLMClient, RecordedClient, RecordingClient, AnthropicClient, find_duplicate, _clean_text, write_prompts
+from pipeline.extract import Extractor, LLMClient, RecordedClient, RecordingClient, AnthropicClient, find_duplicate, _clean_text, write_prompts, prompt_hash
 from pipeline import relevance
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -399,7 +399,7 @@ def cmd_prompts(args) -> int:
     which documents get a prompt (see pipeline.relevance)."""
     captures = load_captures(Path(args.captures))
     selected, irrelevant, deferred = relevance.select(captures, max_documents=args.max_documents, everything=args.all)
-    index = write_prompts(selected, Path(args.out), irrelevant=irrelevant, deferred=deferred)
+    write_prompts(selected, Path(args.out), irrelevant=irrelevant, deferred=deferred, answered_by=args.answered_by)
     print(f"{len(captures)} document(s): {len(selected)} prompt(s) written to {args.out}/prompts/, "
           f"{len(irrelevant)} not about the South China Sea, {len(deferred)} deferred to the next run")
     return 0
@@ -415,6 +415,10 @@ def cmd_extract(args) -> int:
         with open(events_csv, newline="", encoding="utf-8") as f:
             existing = list(csv.DictReader(f))
     selection = json.loads((Path(args.prompts) / "index.json").read_text(encoding="utf-8")) if getattr(args, "prompts", "") else None
+    if selection and selection.get("prompt_hash") != prompt_hash(ex.system):
+        print(f"the prompts in {args.prompts} were written for prompt {selection.get('prompt_hash')}, the system prompt is now "
+              f"{prompt_hash(ex.system)}: no answer would match; write the prompts again", file=sys.stderr)
+        return 1
     events, sources, report = ex.extract_all(captures, existing_events=existing, selection=selection)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -431,8 +435,10 @@ def cmd_extract(args) -> int:
           f"tokens in/out {report['input_tokens']}/{report['output_tokens']}, estimated cost {cost}, "
           f"failures {len(report['failures'])}" + (f" (deferred {report['deferred']}), not about the sea {report['irrelevant']}" if selection else "") + f" -> {out}/")
     for sid, s in report["by_source"].items():
-        print(f"  {sid:<12} documents {s['documents']:>3} candidates {s['candidates']:>3} failures {s['failures']:>2}")
-    return 1 if report["failures"] and not report["candidates"] else 0
+        print(f"  {sid:<12} documents {s['documents']:>3} candidates {s['candidates']:>3} failures {s['failures']:>2}"
+              + (f" not about the sea {s['irrelevant']:>3}" if s.get("irrelevant") else ""))
+    real_failures = [f for f in report["failures"] if f["error"] != Extractor.DEFERRED]   # a deferred document is next run's work
+    return 1 if real_failures and not report["candidates"] else 0
 
 
 class _ManualClient:
@@ -559,7 +565,9 @@ def main(argv=None) -> int:
     se.add_argument("--model", default=Extractor.DEFAULT_MODEL); se.add_argument("--run-id", default=""); se.set_defaults(fn=cmd_extract)
     sp = sub.add_parser("prompts"); sp.add_argument("--captures", required=True); sp.add_argument("--out", required=True)
     sp.add_argument("--max-documents", type=int, default=0, help="prompts per run; the rest are deferred to the next run (0 = all)")
-    sp.add_argument("--all", action="store_true", help="a prompt for every document, relevant or not"); sp.set_defaults(fn=cmd_prompts)
+    sp.add_argument("--all", action="store_true", help="a prompt for every document, relevant or not")
+    sp.add_argument("--answered-by", default="", help="the exact model string the answerer writes, e.g. claude-code/claude-sonnet-5-5")
+    sp.set_defaults(fn=cmd_prompts)
     sr = sub.add_parser("run"); sr.add_argument("--run-id", default=""); sr.add_argument("--since", default="")
     sr.add_argument("--only", default=""); sr.add_argument("--sleep", type=float, default=0.5); sr.add_argument("--recordings", default="")
     sr.add_argument("--record", action="store_true"); sr.add_argument("--model", default=Extractor.DEFAULT_MODEL)

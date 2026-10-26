@@ -47,12 +47,15 @@ the next run fetches them again and extracts them once a credential exists.
 
 - **Automatic route:** add the repository secret `CLAUDE_CODE_OAUTH_TOKEN` (from `claude setup-token`; runs on the
   maintainer's Claude subscription) or `ANTHROPIC_API_KEY` (API billing). The next scheduled run then extracts.
-- **Session route:** in a session with the repository checked out, run `python -m pipeline.ops state pull`,
+- **Session route** (when the maintainer asks for it, decision 07): in a session with the repository checked out, run
+  `python -m pipeline.ops state pull`,
   `python -m pipeline.harvest fetch --out harvest/captures/<id> --state harvest/state.json`,
-  `python -m pipeline.harvest prompts --captures harvest/captures/<id> --out harvest/prompts/<id> --max-documents 80`,
+  `python -m pipeline.harvest prompts --captures harvest/captures/<id> --out harvest/prompts/<id> --max-documents 80 --answered-by claude-code/<model>`,
   then the `/harvest-extract` skill, then `python -m pipeline.harvest extract --captures harvest/captures/<id>
-  --out harvest/runs/<id> --prompts harvest/prompts/<id> --recordings harvest/recordings/<id>` and
-  `python -m pipeline.queue open --run harvest/runs/<id>`. Details: README.md, "Extraction without an API key".
+  --out harvest/runs/<id> --prompts harvest/prompts/<id> --recordings harvest/recordings/<id>`,
+  `python -m pipeline.queue open --run harvest/runs/<id>` and, so that the next scheduled run does not propose the same
+  documents again, `python -m pipeline.ops state push --run-id <id> --report harvest/runs/<id>/run.json --captures harvest/captures/<id>`.
+  Details: README.md, "Extraction without an API key".
 
 This issue stays open while runs keep waiting; each further waiting run is a comment here. It closes itself after the
 next run that extracts."""
@@ -98,6 +101,7 @@ KINDS = {"failure": (FAILURE_LABEL, FAILURE_TITLE, FAILURE_MARK), "waiting": (WA
 
 
 def _issues_of_kind(issues: list[dict], kind: str) -> list[dict]:
+    """The open issues that are this kind's conversation: by label, by title or by the marker in the body."""
     label, title, mark = KINDS[kind]
     return [i for i in issues if "pull_request" not in i and (label in {l.get("name") for l in i.get("labels", [])}
                                                               or i.get("title") == title or mark in (i.get("body") or ""))]
@@ -111,12 +115,12 @@ def failure_issue(gh: Gh, run_id: str, run_url: str, resolved: bool = False, det
     gh = _dry(gh, dry_run)
     all_open = gh("GET", f"repos/{REPO}/issues?state=open&per_page=100") or []
     if resolved:
-        to_close = _issues_of_kind(all_open, "failure") + [i for i in _issues_of_kind(all_open, "waiting") if i not in _issues_of_kind(all_open, "failure")]
+        to_close = {i["number"]: (i, k) for k in KINDS for i in _issues_of_kind(all_open, k)}
         if not to_close:
             return "nothing"
-        for i in to_close:
+        for i, k in to_close.values():
             gh("POST", f"repos/{REPO}/issues/{i['number']}/comments",
-               body=f"{FAILURE_MARK}\nScheduled run `{run_id}` succeeded: {run_url}. Closing.")
+               body=f"{KINDS[k][2]}\nScheduled run `{run_id}` {'extracted' if k == 'waiting' else 'succeeded'}: {run_url}. Closing.")
             gh("PATCH", f"repos/{REPO}/issues/{i['number']}", state="closed")
         return "closed"
     label, title, mark = KINDS[kind]

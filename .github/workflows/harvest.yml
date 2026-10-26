@@ -52,7 +52,6 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
-  id-token: write
 
 concurrency:
   group: harvest
@@ -99,28 +98,38 @@ jobs:
         run: |
           python -m pipeline.harvest run --run-id "$RUN_ID" --since "$SINCE" --only "$ONLY" \
             --model "$MODEL" --record --recordings "harvest/recordings/$RUN_ID"
-      - name: Fetch and extract (dry run, recorded extractor)
+      - name: Fetch and extract (dry run, recorded extractor, through the prompt files)
         if: env.ROUTE == 'dry'
         run: |
           python -m pipeline.harvest fetch --out "harvest/captures/$RUN_ID" --since "$SINCE" --only "$ONLY" --state harvest/state.json
+          python -m pipeline.harvest prompts --captures tests/fixtures/harvest/captures --out "harvest/prompts/$RUN_ID" --all
           python -m pipeline.harvest extract --captures tests/fixtures/harvest/captures --out "harvest/runs/$RUN_ID" \
-            --recordings tests/fixtures/harvest/recordings --run-id "$RUN_ID"
+            --prompts "harvest/prompts/$RUN_ID" --recordings tests/fixtures/harvest/recordings --run-id "$RUN_ID"
       - name: Fetch and write the prompts
         if: env.ROUTE == 'subscription' || env.ROUTE == 'none'
         run: |
           python -m pipeline.harvest fetch --out "harvest/captures/$RUN_ID" --since "$SINCE" --only "$ONLY" --state harvest/state.json
-          python -m pipeline.harvest prompts --captures "harvest/captures/$RUN_ID" --out "harvest/prompts/$RUN_ID" --max-documents "$MAX_DOCUMENTS"
+          python -m pipeline.harvest prompts --captures "harvest/captures/$RUN_ID" --out "harvest/prompts/$RUN_ID" \
+            --max-documents "$MAX_DOCUMENTS" --answered-by "claude-code/$MODEL"
+          echo "PROMPTS=$(python -c "import json; print(len(json.load(open('harvest/prompts/$RUN_ID/index.json'))['documents']))")" >> "$GITHUB_ENV"
       - name: Answer the prompts on the maintainer's subscription
-        if: env.ROUTE == 'subscription'
+        if: env.ROUTE == 'subscription' && env.PROMPTS != '0'
         # A prompt the action leaves unanswered is a failure in run.json and is fetched again next run,
-        # so the action's own outcome does not decide the job's; the extract step does.
+        # so the action's own outcome does not decide the job's; the extract step does. The agent gets
+        # the skill's tools only: it can read the prompts and write answer files, nothing else.
         continue-on-error: true
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          prompt: "/harvest-extract ${{ env.RUN_ID }}"
-          claude_args: "--model ${{ env.MODEL }} --max-turns 400"
+          prompt: "/harvest-extract ${{ env.RUN_ID }} claude-code/${{ env.MODEL }}"
+          claude_args: "--model ${{ env.MODEL }} --max-turns 400 --allowedTools Read,Write,Glob,Agent --disallowedTools Bash"
+      - name: Check that the agent touched nothing but the answers
+        if: env.ROUTE == 'subscription'
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "the working tree changed outside harvest/recordings/ during the answer step:"; git status --porcelain; exit 1
+          fi
       - name: Extract from the answers
         if: env.ROUTE == 'subscription'
         run: |
@@ -155,6 +164,11 @@ jobs:
           try:
               x = json.load(open(f"harvest/prompts/{rid}/index.json"))
               print(f"### Prompts\n- written: {len(x['documents'])}\n- not about the South China Sea: {len(x['irrelevant'])}\n- deferred to the next run: {len(x['deferred'])}")
+              if x["irrelevant"]:
+                  print("\n<details><summary>Dropped as not about the sea (first 30; spot-check the filter)</summary>\n")
+                  for d in x["irrelevant"][:30]:
+                      print(f"- {d['source_id']}: [{d['title'] or d['url']}]({d['url']})")
+                  print("\n</details>")
           except FileNotFoundError:
               pass
           try:
@@ -190,5 +204,6 @@ jobs:
             harvest/captures/${{ env.RUN_ID }}
             harvest/runs/${{ env.RUN_ID }}
             harvest/recordings/${{ env.RUN_ID }}
+            harvest/prompts/${{ env.RUN_ID }}
             harvest/state.json
             harvest/summary.md

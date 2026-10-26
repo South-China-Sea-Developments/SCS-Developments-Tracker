@@ -10,36 +10,40 @@ You are the language model of this project's harvester for one run. The pipeline
 prompts; you answer them; the pipeline parses, checks and normalises every answer. You decide
 nothing about the dataset: every candidate you propose goes to a human coder (ADR 0003).
 
-**Input.** The run id is given in the invocation (`/harvest-extract <run_id>`), or is the only folder
-under `harvest/prompts/`. In `harvest/prompts/<run_id>/`:
+**Input.** The run id is the first word of `$ARGUMENTS` (`/harvest-extract <run_id>`), or, when
+none is given, the only folder under `harvest/prompts/`. In `harvest/prompts/<run_id>/`:
 
 - `system.md` — the instructions to follow for every document. Read it once, in full.
-- `index.json` — `documents`: one entry per prompt with its `key`, `capture_id`, `source_id`, `title`, `url`.
+- `index.json` — `documents`: one entry per prompt with its `key`, `capture_id`, `source_id`, `title`, `url`;
+  `answer_format.model`: the exact string to write as `"model"` in every answer.
 - `prompts/<key>.md` — one user prompt per document: provenance lines, then the document between
   `<document>` tags.
 
 **Output.** For every entry in `index.json` `documents`, write `harvest/recordings/<run_id>/<key>.json`:
 
 ```json
-{"model": "claude-code/<the model you are running as, e.g. claude-sonnet-5-5>",
- "text": "<your answer: bare JSON exactly as system.md asks, no code fence, no prose>",
+{"model": "<answer_format.model from index.json, copied verbatim>",
+ "text": {"events": [ ... ]},
  "stop_reason": "end_turn"}
 ```
 
-The pipeline reads `text` as the model's answer. It must be the JSON object the system prompt
-describes, `{"events": [ ... ]}` (`{"events": []}` when the document reports no assertive action by
-a claimant). Write `"stop_reason": "max_tokens"` only if you had to stop before finishing it. If the environment
-variable `MODEL` or the invocation names a model, use it in `"model"`; otherwise name the model you
-are running as.
+`text` is your answer: the JSON object the system prompt describes, `{"events": [ ... ]}`
+(`{"events": []}` when the document reports no assertive action by a claimant). Write it as the
+object itself, as above, not as an escaped string; no code fence, no prose. Write
+`"stop_reason": "max_tokens"` only if you had to stop before finishing it. Every answer in the run
+carries the same `"model"` string, the one in `index.json`; if `answer_format.model` is a
+placeholder, use the second word of `$ARGUMENTS`, and failing that `claude-code/unknown`. The
+pipeline rejects a file that is not valid JSON and fetches that document again next run.
 
 **How to work.**
 
 1. Read `system.md` and `index.json`. Count the documents.
 2. Answer them in batches of about eight. For each batch start a subagent (the `Agent` tool) whose
-   prompt contains the full text of `system.md`, the list of the batch's prompt files and the exact
-   output path and format above; tell it to read each prompt file, answer it following `system.md`,
-   and write the answer file. Running several batches in parallel is fine. If no `Agent` tool is
-   available, do the batches yourself, one document at a time.
+   prompt contains the full text of `system.md`, the list of the batch's prompt files, the exact
+   `"model"` string and the exact output path and format above; tell it to read each prompt file,
+   answer it following `system.md`, and write the answer file with the `Write` tool. Running several
+   batches in parallel is fine. If no `Agent` tool is available, or a subagent reports it cannot
+   write, do the batches yourself, one document at a time.
 3. When every batch is done, list `harvest/recordings/<run_id>/` with Glob and compare with
    `index.json`: answer any prompt still missing yourself. A prompt without an answer file is
    recorded as a failure by the pipeline and fetched again next run, so a missing answer is a

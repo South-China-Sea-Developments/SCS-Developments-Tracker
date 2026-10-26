@@ -48,7 +48,7 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Airtable front end** — The optional mirror of a review run's candidates in an Airtable table (`pipeline/airtable.py`), where a coder may decide instead of on the review page; `pull` turns the decisions into the review page's decisions file. Never read when building the dataset or the site (ADR 0004).
 
-**Extraction route** — Who answers the harvester's extraction prompts: the API (`ANTHROPIC_API_KEY`), the Claude Code GitHub Action on the maintainer's subscription (`CLAUDE_CODE_OAUTH_TOKEN`), or a person or assistant in a session. The prompt and the checks are the same on every route; the route is named in the event's `extractor`.
+**Extraction route** — Who answers the harvester's extraction prompts: the API (`ANTHROPIC_API_KEY`), the Claude Code GitHub Action on the maintainer's subscription (`CLAUDE_CODE_OAUTH_TOKEN`), or a person or assistant in a session. The prompt and the checks are the same on every route; the subscription route is named in the event's `extractor` (`claude-code/<model>`), the API route by the bare model id.
 
 **Prompt files** — A run's extraction prompts written to disk (`harvest/prompts/<run_id>/`: `system.md`, one user prompt per document, `index.json`) and their answers (`harvest/recordings/<run_id>/<key>.json`, the recorded-response format). The contract between the pipeline and whatever answers.
 
