@@ -1,0 +1,1 @@
+{"run_id": "20261026T1615", "date": "2026-10-26T16:27Z", "documents": 386, "candidates": 3, "duplicates": 0, "input_tokens": 0, "output_tokens": 0, "estimated_cost_usd": null, "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "failures": 158, "sources_with_errors": ["my_mmea", "tw_cga", "tw_ltn"]}
