@@ -3,8 +3,18 @@ name: harvest
 # The scheduled run (ticket 07). Every Monday, and on demand: restore the harvest state, fetch the
 # active sources, extract candidate events with the language model, open the review pull request,
 # save the state, remind the maintainer of review pull requests older than seven days. A failed run
-# opens one issue (further failures comment on it; the next success closes it). The extractor's key
-# is the ANTHROPIC_API_KEY repository secret; nothing here reads it except the extract step.
+# opens one issue (further failures comment on it; the next success closes it).
+#
+# Who answers the extraction prompts (ticket 14), decided by which secret exists:
+#   api           ANTHROPIC_API_KEY: the pipeline calls the API itself (`harvest run`).
+#   subscription  CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`): the pipeline writes the prompts as
+#                 files, the Claude Code GitHub Action answers them with the /harvest-extract skill on the
+#                 maintainer's subscription, the pipeline reads the answers (`harvest prompts` / `extract`).
+#                 A relevance filter and max_documents keep the weekly cost small; documents over the cap
+#                 are fetched again next run.
+#   none          neither: the run fetches, opens or updates one "waiting for extraction" issue (with the
+#                 session route spelled out) and leaves the state untouched, so nothing is lost.
+# Nothing reads either secret except the step that extracts.
 #
 # Dry run (workflow_dispatch with dry_run = true): fetches the live sources, but extracts the fixture
 # captures with the recorded responses; `queue open` stops before the push (branch and commit only);
@@ -34,11 +44,15 @@ on:
       model:
         description: "Extractor model"
         default: "claude-sonnet-5-5"
+      max_documents:
+        description: "Prompts per run on the subscription route; the rest are deferred to the next run (0 = all)"
+        default: "80"
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
+  id-token: write
 
 concurrency:
   group: harvest
@@ -50,6 +64,9 @@ env:
   SINCE: ${{ inputs.since }}
   ONLY: ${{ inputs.only }}
   MODEL: ${{ inputs.model || 'claude-sonnet-5-5' }}
+  MAX_DOCUMENTS: ${{ inputs.max_documents || '80' }}
+  # dry | api | subscription | none (see the header)
+  ROUTE: ${{ inputs.dry_run == true && 'dry' || secrets.ANTHROPIC_API_KEY != '' && 'api' || secrets.CLAUDE_CODE_OAUTH_TOKEN != '' && 'subscription' || 'none' }}
   GH_TOKEN: ${{ secrets.HARVEST_TOKEN || secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -73,25 +90,50 @@ jobs:
         run: python -m pipeline.ops state pull
       - name: Probe sources
         run: python -m pipeline.harvest probe || true
-      - name: Fetch and extract
-        if: env.DRY_RUN == ''
+      - name: Route
+        run: echo "extraction route $ROUTE, model $MODEL, max documents $MAX_DOCUMENTS"
+      - name: Fetch and extract (API)
+        if: env.ROUTE == 'api'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           python -m pipeline.harvest run --run-id "$RUN_ID" --since "$SINCE" --only "$ONLY" \
             --model "$MODEL" --record --recordings "harvest/recordings/$RUN_ID"
       - name: Fetch and extract (dry run, recorded extractor)
-        if: env.DRY_RUN != ''
+        if: env.ROUTE == 'dry'
         run: |
           python -m pipeline.harvest fetch --out "harvest/captures/$RUN_ID" --since "$SINCE" --only "$ONLY" --state harvest/state.json
           python -m pipeline.harvest extract --captures tests/fixtures/harvest/captures --out "harvest/runs/$RUN_ID" \
             --recordings tests/fixtures/harvest/recordings --run-id "$RUN_ID"
+      - name: Fetch and write the prompts
+        if: env.ROUTE == 'subscription' || env.ROUTE == 'none'
+        run: |
+          python -m pipeline.harvest fetch --out "harvest/captures/$RUN_ID" --since "$SINCE" --only "$ONLY" --state harvest/state.json
+          python -m pipeline.harvest prompts --captures "harvest/captures/$RUN_ID" --out "harvest/prompts/$RUN_ID" --max-documents "$MAX_DOCUMENTS"
+      - name: Answer the prompts on the maintainer's subscription
+        if: env.ROUTE == 'subscription'
+        # A prompt the action leaves unanswered is a failure in run.json and is fetched again next run,
+        # so the action's own outcome does not decide the job's; the extract step does.
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: "/harvest-extract ${{ env.RUN_ID }}"
+          claude_args: "--model ${{ env.MODEL }} --max-turns 400"
+      - name: Extract from the answers
+        if: env.ROUTE == 'subscription'
+        run: |
+          python -m pipeline.harvest extract --captures "harvest/captures/$RUN_ID" --out "harvest/runs/$RUN_ID" \
+            --prompts "harvest/prompts/$RUN_ID" --recordings "harvest/recordings/$RUN_ID" --run-id "$RUN_ID"
       - name: Open the review pull request
+        if: env.ROUTE != 'none'
         run: python -m pipeline.queue open --run "harvest/runs/$RUN_ID" ${DRY_RUN:+--no-push}
       - name: Save harvest state
-        if: env.DRY_RUN == ''
+        if: env.ROUTE == 'api' || env.ROUTE == 'subscription'
         run: python -m pipeline.ops state push --run-id "$RUN_ID" --report "harvest/runs/$RUN_ID/run.json" --captures "harvest/captures/$RUN_ID"
-      - name: Close the failure issue if one is open
+      - name: Close the failure or waiting issue if one is open
+        if: env.ROUTE != 'none'
         run: python -m pipeline.ops failure-issue --resolved --run-id "$RUN_ID" --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" ${DRY_RUN:+--dry-run}
       - name: Remind the maintainer of old review pull requests
         if: ${{ !cancelled() }}
@@ -111,17 +153,28 @@ jobs:
           except FileNotFoundError:
               print("fetch report missing")
           try:
+              x = json.load(open(f"harvest/prompts/{rid}/index.json"))
+              print(f"### Prompts\n- written: {len(x['documents'])}\n- not about the South China Sea: {len(x['irrelevant'])}\n- deferred to the next run: {len(x['deferred'])}")
+          except FileNotFoundError:
+              pass
+          try:
               r = json.load(open(f"harvest/runs/{rid}/run.json"))
               cost = f"${r['estimated_cost_usd']:.2f}" if r["estimated_cost_usd"] is not None else "unknown"
               print(f"### Extract\n- documents: {r['documents']}\n- candidates: {r['candidates']} (possible duplicates {r['duplicates']})")
               print(f"- tokens in/out: {r['input_tokens']}/{r['output_tokens']}; estimated cost: {cost}")
-              print(f"- extractor: {r['extractor']}\n- failures: {len(r['failures'])}\n\n| source | documents | candidates | failures |\n|---|---|---|---|")
+              print(f"- extractor: {r['extractor']}\n- failures: {len(r['failures'])} (deferred {r.get('deferred', 0)}); not about the sea: {r.get('irrelevant', 0)}\n\n| source | documents | candidates | failures |\n|---|---|---|---|")
               for sid, s in r["by_source"].items():
                   print(f"| {sid} | {s['documents']} | {s['candidates']} | {s['failures']} |")
           except FileNotFoundError:
-              print("run report missing")
+              print("run report missing" if os.environ.get("ROUTE") != "none" else "no extraction: no credential (see the waiting issue)")
           PY
           cat harvest/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open or update the waiting issue (no credential to extract)
+        if: env.ROUTE == 'none' && success()
+        run: |
+          python -m pipeline.ops failure-issue --kind waiting --run-id "$RUN_ID" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --detail "$(cat harvest/summary.md 2>/dev/null || echo 'no summary')"
       - name: Open or update the failure issue
         # not success(): a run cancelled by the 90-minute timeout is a failure too
         if: ${{ !success() }}

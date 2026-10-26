@@ -48,6 +48,12 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Airtable front end** — The optional mirror of a review run's candidates in an Airtable table (`pipeline/airtable.py`), where a coder may decide instead of on the review page; `pull` turns the decisions into the review page's decisions file. Never read when building the dataset or the site (ADR 0004).
 
+**Extraction route** — Who answers the harvester's extraction prompts: the API (`ANTHROPIC_API_KEY`), the Claude Code GitHub Action on the maintainer's subscription (`CLAUDE_CODE_OAUTH_TOKEN`), or a person or assistant in a session. The prompt and the checks are the same on every route; the route is named in the event's `extractor`.
+
+**Prompt files** — A run's extraction prompts written to disk (`harvest/prompts/<run_id>/`: `system.md`, one user prompt per document, `index.json`) and their answers (`harvest/recordings/<run_id>/<key>.json`, the recorded-response format). The contract between the pipeline and whatever answers.
+
+**Relevance filter** — The check that spares the extractor documents naming no South China Sea term or feature (`pipeline/relevance.py`); not a coding judgment. With the per-run cap it bounds what a run costs; documents over the cap are deferred to the next run.
+
 **Dataset version** — The number this project gives the dataset (`DATASET_VERSION`, `MAJOR.MINOR.PATCH`, a `-dev` suffix while it is being built), written on every project-coded move as `data_version`. Versions 1.x are Chubb's MATS; this project's are 2.x.
 
 **Release** — A dataset version fixed as a git tag `vX.Y.Z[-suffix]` on `main`; what the Downloads page and the GitHub Release serve, with checksums and a citation.

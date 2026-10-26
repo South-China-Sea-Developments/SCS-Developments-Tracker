@@ -16,6 +16,8 @@ python -m pipeline.load_mats       # regenerates data/*.csv from data/raw/
 python -m web.build                # builds the site into web/dist/ (open web/dist/index.html)
 python -m pipeline.harvest probe   # checks the registered sources are reachable
 python -m pipeline.harvest run     # fetches new items and extracts candidate events (needs ANTHROPIC_API_KEY)
+python -m pipeline.harvest prompts --captures harvest/captures/<id> --out harvest/prompts/<id> --max-documents 80   # the prompts as files, for the subscription or session route
+python -m pipeline.harvest extract --captures harvest/captures/<id> --out harvest/runs/<id> --prompts harvest/prompts/<id> --recordings harvest/recordings/<id>   # candidates from the answers
 python -m pipeline.harvest import events.json --run-id <id> --extractor "who"   # hand-compiled candidates into the same queue
 python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review page + pull request
 python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
@@ -49,7 +51,18 @@ python -m pipeline.release latest  # the newest release tag; `assets --out DIR` 
 | `data/reference/gazetteer.csv`, `gazetteer_extra.csv` | Named features of the sea (reefs, shoals, banks, islands) with coordinates, sub-region and names in five languages: generated from Wikidata (`pipeline.gazetteer_wikidata`) plus hand corrections. Places harvested events. |
 | `docs/sources/` | Notes on where each raw input came from and how it was retrieved. |
 | `CONTEXT.md` | Project glossary. Definitions only. |
+| `.claude/skills/harvest-extract/` | The skill that answers a run's extraction prompts (used by the weekly run on the subscription route and in sessions). |
 | `web/` | The public site: build script, templates, stylesheet, chart and map scripts, vendored font, MapLibre and basemap style. Output in `web/dist/` (not committed). |
+
+## Extraction without an API key
+
+The weekly run (`.github/workflows/harvest.yml`) needs a language model only for one step, turning fetched documents into candidate events. Which credential exists decides the route:
+
+- `ANTHROPIC_API_KEY` (API billing): the pipeline calls the API itself.
+- `CLAUDE_CODE_OAUTH_TOKEN` (a Claude subscription; from `claude setup-token`): the pipeline writes the prompts as files, the Claude Code GitHub Action answers them with the `/harvest-extract` skill on the maintainer's subscription, and the pipeline reads the answers. A relevance filter (`pipeline/relevance.py`) drops documents that name no South China Sea term or feature, and `max_documents` (default 80 a run) defers the rest to the next run, so a week costs the subscription as little as possible. The answers are named `claude-code/<model>` in the `extractor` field, so the agreement report keeps this route apart from the API's.
+- Neither: the run fetches, opens one "waiting for extraction" issue and leaves the state untouched; nothing is lost. The same prompts can then be answered in a session: `python -m pipeline.ops state pull`, `python -m pipeline.harvest fetch --out harvest/captures/<id> --state harvest/state.json`, `python -m pipeline.harvest prompts …`, the `/harvest-extract` skill, `python -m pipeline.harvest extract … --prompts … --recordings …`, `python -m pipeline.queue open --run harvest/runs/<id>`, `python -m pipeline.ops state push …`.
+
+Whichever route answers, the prompt, the parsing and every check are the pipeline's, and every candidate still goes to a human coder (ADR 0003).
 
 ## Provenance and citation
 

@@ -4,7 +4,7 @@
 
 **Blocked by:** 01
 
-**Status:** done except the live run (2026-10-15, PR #5); the live run waits for the `ANTHROPIC_API_KEY` repository secret
+**Status:** done except the live run (2026-10-15, PR #5); the live run waits for the `ANTHROPIC_API_KEY` repository secret — or, since ticket 14, for `CLAUDE_CODE_OAUTH_TOKEN` (the subscription route)
 
 - [x] A committed source registry (name, URL/feed, type, language, claimants covered, cadence, notes) covering at least: AMTI, SCSPI, Philippine Coast Guard / DFA / BFAR releases, China MFA and CCG releases, Vietnam MFA, Malaysian, Indonesian and Taiwanese agency releases, one general news feed; each entry has a tested fetcher. *The two fetch paths (feeds, listing pages) are tested against a local server; per-entry link patterns were exercised in a live trial fetch, not in tests. Reachability from cloud egress on 2026-10-15: the Philippine government sites (PCG, DFA, BFAR) and the China Coast Guard site refuse or reset connections and are registered as `blocked_from_cloud`; Kemlu's listing is script-rendered (`needs_work`). Philippine and Indonesian coverage comes meanwhile from news searches. Google News items yield the headline and source only; resolving them to the publisher article is a follow-up.*
 - [x] The fetcher saves raw captures with timestamp and URL; a capture folder is a valid fixture.
