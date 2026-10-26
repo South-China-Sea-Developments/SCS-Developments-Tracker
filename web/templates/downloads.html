@@ -3,6 +3,7 @@
 {% block description %}Download the SCS Developments Tracker dataset (moves, events, sources, sub-regions, gazetteer) at a tagged version, with checksums, and copy a citation.{% endblock %}
 {% block content %}
 <section class="lede">
+  <p class="kicker">Data and citation</p>
   <h1>Downloads and citation</h1>
   {% if release.tag != 'unreleased' %}
   <p class="lede-text">Dataset version <strong>{{ release.version }}</strong>, tagged <code>{{ release.tag }}</code> on {{ release.date[:10] }}. The files below are exactly what the tag holds, served from this site and mirrored on the <a href="{{ meta.repo_url }}/releases/tag/{{ release.tag }}">GitHub release</a>; the checksums let you verify either copy.{% if release.prerelease %} The <code>-dev</code> suffix means the dataset is still being built: cite it as work in progress.{% endif %}</p>

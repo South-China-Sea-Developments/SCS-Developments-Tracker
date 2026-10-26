@@ -146,6 +146,45 @@ def test_home_map_draws_at_phone_width_and_in_dark_mode(browser, dist, viewport,
     page.close()
 
 
+def _luminance(css_rgb):
+    r, g, b = [int(x) for x in re.findall(r"\d+", css_rgb)[:3]]
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def test_visual_identity_follows_the_references(browser, dist):
+    """Ticket 16: the home page opens on a dark sea band with the title in the light display face in
+    white over it and a short rule under it, drawn (an inline SVG), not photographed; the map sits in a
+    dark panel with light labels; inner pages are white article pages with a kicker over the title;
+    the display face is the vendored geometric sans; and no page or asset carries the institution's
+    name or mark (its visual language is adopted; its identity is not)."""
+    page, problems = _open(browser, dist, "index.html")
+    assert problems == []
+    assert page.evaluate("document.fonts.check('300 32px Outfit')"), "the display face is Outfit, loaded from the bundle"
+    title_rgb, band_rgb = page.evaluate("[getComputedStyle(document.querySelector('.hero h1')).color, getComputedStyle(document.querySelector('.sea')).backgroundColor]")
+    assert _luminance(title_rgb) > 230 and _luminance(band_rgb) < 60, (title_rgb, band_rgb)
+    assert "Outfit" in page.evaluate("getComputedStyle(document.querySelector('.hero h1')).fontFamily")
+    assert int(page.evaluate("getComputedStyle(document.querySelector('.hero h1')).fontWeight")) <= 400, "light, as in the banner"
+    rule = page.evaluate("(() => { const s = getComputedStyle(document.querySelector('.hero h1'), '::after'); return [s.content, parseFloat(s.width), s.backgroundColor]; })()")
+    assert rule[0] != "none" and 40 <= rule[1] <= 160 and _luminance(rule[2]) > 200, rule
+    assert page.locator(".sea > svg.sea-art").count() == 1 and page.locator(".sea img").count() == 0
+    assert page.evaluate("document.querySelector('.sea').style.backgroundImage") == "" and "url(" not in page.evaluate("getComputedStyle(document.querySelector('.sea')).backgroundImage")
+    panel_rgb, chip_rgb = page.evaluate("[getComputedStyle(document.querySelector('.map-section')).backgroundColor, getComputedStyle(document.querySelector('#map-claimant-filter .chip span:last-child')).color]")
+    assert _luminance(panel_rgb) < 60 and _luminance(chip_rgb) > 180, (panel_rgb, chip_rgb)
+    page.close()
+    page, problems = _open(browser, dist, "methodology.html")
+    assert problems == []
+    assert _luminance(page.evaluate("getComputedStyle(document.body).backgroundColor")) > 250, "white article paper"
+    kicker = page.locator("main .kicker").first
+    assert kicker.count() == 1 and page.evaluate("(k) => [getComputedStyle(k).textTransform, parseFloat(getComputedStyle(k).letterSpacing) > 0.5]", kicker.element_handle()) == ["uppercase", True]
+    assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING"), "the kicker precedes the title"
+    page.close()
+    forbidden = re.compile(r"asia\s*society|\bASPI\b|leogryph", re.I)
+    for path in dist.rglob("*"):
+        if path.is_file() and path.suffix in (".html", ".css", ".js", ".svg", ".json", ".txt"):   # the project documents under downloads/ (.md) name the intended host, as they must
+            assert not forbidden.search(path.read_text(encoding="utf-8", errors="ignore")), path.relative_to(dist)
+    assert not list((dist / "assets").rglob("*.png")) and not list((dist / "assets").rglob("*.jpg")), "no photographs in the bundle"
+
+
 def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
     page, problems = _open(browser, dist, "cases.html", viewport=(390, 800))
     assert problems == []

@@ -18,4 +18,5 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 12 | [New claimants: 1970–2015 backfill](12-new-claimants-1970-2015-backfill.md) | 11 | prepared; coding awaits the maintainer |
 | 13 | [Airtable review front end](13-airtable-review-front-end.md) | 06 | done |
 | 14 | [Extraction without an API key](14-extraction-on-the-subscription.md) | 07 | done; the weekly run is a scheduled task on the maintainer's subscription |
-| 15 | [Site restyle](15-site-restyle.md) | 08, 09 | built; ASPI's type and colours to drop into the token block |
+| 15 | [Site restyle](15-site-restyle.md) | 08, 09 | done |
+| 16 | [Visual identity from the three references](16-visual-identity.md) | 15 | done |
