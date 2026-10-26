@@ -1,6 +1,6 @@
 name: harvest
 
-# The scheduled run (ticket 07). Every Monday, and on demand: restore the harvest state, fetch the
+# The harvest run (ticket 07). On demand: restore the harvest state, fetch the
 # active sources, extract candidate events with the language model, open the review pull request,
 # save the state, remind the maintainer of review pull requests older than seven days. A failed run
 # opens one issue (further failures comment on it; the next success closes it).
@@ -26,9 +26,10 @@ name: harvest
 # validate workflow until a person pushes to it. Add a fine-grained HARVEST_TOKEN secret (contents
 # and pull requests: write) to have the validator run on the review pull request from the start.
 
+# Since 2026-10-26 (decision 08, amended) the weekly run is a scheduled task on the maintainer's Claude
+# subscription that performs the same steps in a session (README, "Extraction without an API key"); this
+# workflow is run on demand, for the api and subscription-token routes and for dry runs.
 on:
-  schedule:
-    - cron: "17 6 * * 1"
   workflow_dispatch:
     inputs:
       dry_run:

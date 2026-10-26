@@ -4,7 +4,7 @@
 
 **Blocked by:** 07
 
-**Status:** built (2026-10-26); the subscription route's live run awaits the `CLAUDE_CODE_OAUTH_TOKEN` secret, the waiting route runs on the next schedule without it.
+**Status:** built (2026-10-26). Same day, the maintainer decided on no external key or token at all: the weekly run is a scheduled task on his Claude subscription performing the session route (decision 08, second amendment); the workflow's cron was removed and the GitHub Action route stays available on demand should a token ever be added. First live harvest from a session: see below.
 
 **Why.** Ticket 05's live run has waited since 2026-10-15 for `ANTHROPIC_API_KEY`; the maintainer cannot fund API billing. GitHub Models, considered as a free route, was retired on 2026-07-30. The Claude Code GitHub Action accepts a subscription token (`claude setup-token`; Pro, Max, Team and Enterprise plans) and its runs "use your Claude subscription instead of API billing" (code.claude.com/docs/en/github-actions). The extraction prompt, the parsing and every check stay the pipeline's (ADR 0003 unchanged); only who answers the prompt changes, and the answerer is named in the `extractor` field so the agreement report keeps the routes apart.
 

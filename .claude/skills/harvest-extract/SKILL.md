@@ -1,6 +1,6 @@
 ---
 name: harvest-extract
-description: Answer a harvest run's extraction prompts (harvest/prompts/<run_id>/) and write the answers to harvest/recordings/<run_id>/ in the recorded-response format, so `python -m pipeline.harvest extract --prompts … --recordings …` can turn them into candidate events. Used by the weekly GitHub Actions run (Claude Code GitHub Action on the maintainer's subscription) and in a live session when no credential is set.
+description: Answer a harvest run's extraction prompts (harvest/prompts/<run_id>/) and write the answers to harvest/recordings/<run_id>/ in the recorded-response format, so `python -m pipeline.harvest extract --prompts … --recordings …` can turn them into candidate events. Used by the weekly scheduled task on the maintainer's subscription, by the GitHub Actions workflow's token route, and in a live session.
 allowed-tools: Read, Write, Glob, Agent
 ---
 
