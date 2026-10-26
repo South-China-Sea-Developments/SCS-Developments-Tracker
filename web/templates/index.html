@@ -12,7 +12,7 @@
   </div>
   <dl class="stats">
     <div class="stat"><dt>Moves</dt><dd data-stat="moves">{{ "{:,}".format(meta.n_moves) }}</dd><dd class="stat-note">{% if meta.n_pending %}{{ meta.n_pending }} more pending the author's confirmation{% else %}all reviewed by a person{% endif %}</dd></div>
-    <div class="stat"><dt>Claimants coded</dt><dd data-stat="claimants">{{ meta.n_claimants_coded }}</dd><dd class="stat-note">of {{ meta.n_claimants }}; the others in progress</dd></div>
+    <div class="stat"><dt>Claimants</dt><dd data-stat="claimants">{{ meta.n_claimants_coded }}</dd><dd class="stat-note">coded, of {{ meta.n_claimants }}; the others in progress</dd></div>
     <div class="stat"><dt>Years</dt><dd data-stat="years">{{ meta.first_year }}–{{ meta.last_year }}</dd><dd class="stat-note">{{ n_map_events }} dated events{% if n_map_points %}, {{ n_map_points }} placed on the map{% endif %}</dd></div>
   </dl>
 </section>
