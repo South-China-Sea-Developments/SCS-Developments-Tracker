@@ -17,6 +17,7 @@
   var timeLabel = document.getElementById("time-label");
   var countEl = document.getElementById("map-count");
   var listEl = document.getElementById("event-list");
+  var targetSel = document.getElementById("target");   // absent on the home page's compact filter row
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function monthIndex(iso) { return (parseInt(iso.slice(0, 4), 10) - FIRST) * 12 + parseInt(iso.slice(5, 7), 10) - 1; }
@@ -59,12 +60,16 @@
     var b = geoBounds({ features: [f] });
     return [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
   }
-  // the polygons are context, not controls. They are painted in light-mode colours whatever the
-  // scheme: in dark mode the stylesheet inverts the whole canvas, basemap and polygons together.
+  // the polygons are context, not controls. Their colours are the stylesheet's --map-zone tokens,
+  // stated in light-mode terms whatever the scheme: in dark mode the stylesheet inverts the whole
+  // canvas, basemap and polygons together.
+  var rootStyle = getComputedStyle(document.documentElement);
+  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#1a4f7e").trim();
+  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#5f6d77").trim();
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
-    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": "#0e5a86", "fill-opacity": 0.07 } });
-    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": "#5e6b73", "line-width": 1, "line-opacity": 0.9 } });
+    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.07 } });
+    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.9 } });
   });
 
   var srCenters = {};
@@ -106,7 +111,7 @@
   function readFilters() {
     var w = parseInt(windowSel.value, 10), k = parseInt(slider.value, 10);
     return { claimants: checked("claimant"), types: checked("t"), domains: checked("d"), issues: checked("i"),
-             target: document.getElementById("target").value, from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w };
+             target: targetSel ? targetSel.value : "", from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w };
   }
   function matches(e, f) {
     if (f.claimants.indexOf(e.c) < 0) return false;
@@ -204,9 +209,10 @@
   form.addEventListener("change", schedule);
   slider.addEventListener("input", schedule);
   windowSel.addEventListener("change", schedule);
-  document.getElementById("reset").addEventListener("click", function () {
+  var resetBtn = document.getElementById("reset");   // the home page's compact row has none
+  if (resetBtn) resetBtn.addEventListener("click", function () {
     form.querySelectorAll('input[type="checkbox"]').forEach(function (i) { i.checked = i.name === "claimant"; });
-    document.getElementById("target").value = "";
+    if (targetSel) targetSel.value = "";
     windowSel.value = "0";
     slider.value = slider.max;
     stopPlay();

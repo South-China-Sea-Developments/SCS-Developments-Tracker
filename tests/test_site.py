@@ -11,6 +11,10 @@ from tests.conftest import DATA_DIR
 from web.build import build, read_csv
 
 
+EMPTY_TILEJSON = json.dumps({"tilejson": "3.0.0", "tiles": ["https://tiles.openfreemap.org/stub/{z}/{x}/{y}.pbf"], "minzoom": 0, "maxzoom": 14, "vector_layers": []})
+HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
+
+
 @pytest.fixture(scope="module")
 def dist(tmp_path_factory):
     out = tmp_path_factory.mktemp("dist")
@@ -54,16 +58,30 @@ def test_bundle_is_self_contained_and_relative(dist):
 
 
 def _open(browser, dist, page_name, viewport=(1280, 900), color_scheme="light"):
+    """Any page, offline: the basemap host is answered by the same stubs as on the map page, since
+    the home page carries the map too."""
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]}, color_scheme=color_scheme)
     page = ctx.new_page()
     problems = []
-    page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") else None)
+    page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
     page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
+    page.route("https://tiles.openfreemap.org/**", _tile_stub([]))
     page.goto((dist / page_name).resolve().as_uri())
-    page.wait_for_timeout(300)
+    page.wait_for_timeout(300 if page_name != "index.html" else 1200)
     page.on("close", lambda _: ctx.close())
     return page, problems
+
+
+def _tile_stub(tiles):
+    def stub(route):
+        url = route.request.url
+        tiles.append(url)
+        if url.rstrip("/").endswith("/planet"):
+            route.fulfill(status=200, content_type="application/json", body=EMPTY_TILEJSON)
+        else:   # tiles, fonts and sprites: no content (a 404 would be a console error of the browser's own)
+            route.fulfill(status=204, body=b"")
+    return stub
 
 
 @pytest.mark.parametrize("page_name", ["index.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html", "downloads.html"])
@@ -76,6 +94,77 @@ def test_pages_render_without_errors(browser, dist, page_name, viewport, scheme)
     if page_name == "index.html":
         # the main chart fits the viewport at phone width (no internal scroll hiding recent years)
         assert page.locator('[data-chart="all-claimants"].is-scrollable').count() == 0
+    page.close()
+
+
+def test_home_leads_with_numbers_map_and_latest_developments(browser, dist):
+    """Ticket 15: the first viewport carries the lede, three headline numbers from the aggregates and the
+    event map; the latest-developments list is the newest accepted events in the files, newest first."""
+    agg = aggregates(read_csv(DATA_DIR / "moves.csv"))
+    page, problems = _open(browser, dist, "index.html")
+    assert problems == []
+    nums = {el.get_attribute("data-stat"): el.inner_text().replace(",", "") for el in page.locator(".stat [data-stat]").element_handles()}
+    assert nums["moves"] == str(agg["n_moves"])
+    claimants_coded = sum(1 for c, v in agg["by_claimant"].items() if sum(y["total"] for y in v["years"].values()))
+    assert nums["claimants"] == str(claimants_coded)
+    assert nums["years"] == f"{agg['years'][0]}–{agg['years'][-1]}"
+    # the map is on the home page and draws offline, and takes most of the first viewport (the maintainer's
+    # ask): at least half of the viewport height is map canvas, at a tall and at a short desktop window
+    assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
+    for vh, share in ((900, 0.5), (720, 0.4)):   # a short laptop window keeps the lede and numbers, so the map gets a little less
+        page.set_viewport_size({"width": 1280, "height": vh})
+        page.wait_for_timeout(200)
+        visible = page.evaluate("(vh) => { const r = document.getElementById('map').getBoundingClientRect(); return Math.min(r.bottom, vh) - Math.max(r.top, 0); }", vh)
+        assert visible >= share * vh, f"{visible}px of map visible in a {vh}px viewport"
+    page.set_viewport_size({"width": 1280, "height": 900})
+    # latest developments: the newest accepted events of accepted moves, newest first, one row per move,
+    # MATS-era seed dates outside their move's year (known MAVD typos) left out, each linking to its move
+    moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
+    events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and e["date_start"]
+              and moves[e["move_id"]]["status"] == "accepted" and (e["extractor"] or e["date_start"][:4] == moves[e["move_id"]]["year"])]
+    events.sort(key=lambda e: (e["date_start"], e["event_id"]), reverse=True)
+    expected, seen = [], set()
+    for e in events:
+        if e["move_id"] not in seen:
+            seen.add(e["move_id"]); expected.append(e)
+    rows = page.locator("#latest .latest-row")
+    assert rows.count() == min(8, len(expected))
+    for i in range(rows.count()):
+        row = rows.nth(i)
+        assert row.get_attribute("data-event") == expected[i]["event_id"]
+        assert row.locator("a[href^='cases/']").first.get_attribute("href") == f"cases/{expected[i]['move_id']}.html"
+        dt_attr = row.locator("time").get_attribute("datetime")
+        assert dt_attr == {"year": expected[i]["date_start"][:4], "month": expected[i]["date_start"][:7]}.get(expected[i]["date_precision"], expected[i]["date_start"])
+    page.close()
+
+
+@pytest.mark.parametrize("viewport,scheme", [((390, 800), "light"), ((1280, 900), "dark")])
+def test_home_map_draws_at_phone_width_and_in_dark_mode(browser, dist, viewport, scheme):
+    page, problems = _open(browser, dist, "index.html", viewport, scheme)
+    assert problems == []
+    assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
+    page.close()
+
+
+def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
+    page, problems = _open(browser, dist, "cases.html", viewport=(390, 800))
+    assert problems == []
+    nav = "document.querySelector('.nav')"
+    assert page.evaluate(f"{nav}.scrollWidth > {nav}.clientWidth"), "the links overflow the row and scroll"
+    assert page.evaluate(f"{nav}.getBoundingClientRect().height") < 60, "one row"
+    assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
+    # the last link is reachable: tabbing to it scrolls it into view
+    for _ in range(12):
+        page.keyboard.press("Tab")
+        if page.evaluate("document.activeElement && document.activeElement.textContent") == "Data and code":
+            break
+    assert page.evaluate("document.activeElement.textContent") == "Data and code"
+    box = page.evaluate("(() => { const r = document.activeElement.getBoundingClientRect(); return [r.left, r.right]; })()")
+    assert 0 <= box[0] and box[1] <= 390, box
+    # at a tablet width the nav has moved under the brand rather than hiding links behind the brand
+    page.set_viewport_size({"width": 1024, "height": 800})
+    page.wait_for_timeout(100)
+    assert page.evaluate(f"{nav}.getBoundingClientRect().top") > page.evaluate("document.querySelector('.brand').getBoundingClientRect().bottom") - 1
     page.close()
 
 
@@ -94,8 +183,8 @@ def test_overview_charts_and_controls(browser, dist):
     assert "Use of force" in page.locator("#fig-all .legend").inner_text()
     page.locator('#stack-by input[value="claimant"]').check(force=True)
     page.wait_for_timeout(100)
-    # filter: drop China and the legend and note follow
-    page.locator('.chip[data-code="CN"] input').uncheck(force=True)
+    # filter: drop China and the legend and note follow (the overview's own chips, not the map's)
+    page.locator('#claimant-filter .chip[data-code="CN"] input').uncheck(force=True)
     page.wait_for_timeout(100)
     assert "213 moves across 5 of 6 claimants" in page.locator("#filters-note").inner_text()
     assert page.locator("#fig-CN").is_hidden()
@@ -107,7 +196,7 @@ def test_overview_charts_and_controls(browser, dist):
     assert rows == 46  # 1970..2015
     assert "213" in page.locator("#fig-all .table-view tfoot").inner_text()
     # table state survives a re-render (filter change) and the legend stays hidden
-    page.locator('.chip[data-code="CN"] input').check(force=True)
+    page.locator('#claimant-filter .chip[data-code="CN"] input').check(force=True)
     page.wait_for_timeout(100)
     assert page.locator("#fig-all .table-view").is_visible()
     assert page.locator("#fig-all .legend").count() == 0
@@ -316,8 +405,6 @@ def test_periods_extend_with_the_years():
 PNG_1x1 = bytes.fromhex("89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d4944415478da6364f8cfc000000301010018dd8db00000000049454e44ae426082")
 
 
-EMPTY_TILEJSON = json.dumps({"tilejson": "3.0.0", "tiles": ["https://tiles.openfreemap.org/stub/{z}/{x}/{y}.pbf"], "minzoom": 0, "maxzoom": 14, "vector_layers": []})
-HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
 
 
 def _open_map(browser, dist, viewport=(1280, 900), color_scheme="light"):
@@ -330,16 +417,7 @@ def _open_map(browser, dist, viewport=(1280, 900), color_scheme="light"):
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
     page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
     tiles = []
-    def stub(route):
-        url = route.request.url
-        tiles.append(url)
-        if url.rstrip("/").endswith("/planet"):
-            route.fulfill(status=200, content_type="application/json", body=EMPTY_TILEJSON)
-        elif ".pbf" in url and "/stub/" in url:
-            route.fulfill(status=204, body=b"")
-        else:   # fonts and sprites: no content (a 404 would be a console error of the browser's own)
-            route.fulfill(status=204, body=b"")
-    page.route("https://tiles.openfreemap.org/**", stub)
+    page.route("https://tiles.openfreemap.org/**", _tile_stub(tiles))
     page.goto((dist / "map.html").resolve().as_uri())
     page.wait_for_timeout(1200)
     page.on("close", lambda _: ctx.close())

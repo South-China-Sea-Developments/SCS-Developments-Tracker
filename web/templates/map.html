@@ -10,61 +10,7 @@
   <p class="lede-text">Every move is backed by dated events. Events with a known position are points; events known only to a sub-region are counted on the sub-region itself. Scrub through time, narrow by claimant, type, domain, issue or counterpart, and open a point for the event and its move. {{ n_map_events }} events{% if n_map_points %}, {{ n_map_points }} of them placed{% endif %}; for 1970–{{ meta.mats_last_year }} events exist where the original dataset recorded dates, which is Vietnam's moves, so the early years are a partial picture.</p>
 </section>
 
-<form class="case-filters map-filters" id="map-filters" aria-label="Filter events">
-  <div class="filter-row">
-    <div class="chips" id="claimant-filter" role="group" aria-label="Claimants">
-      {% for c in claimants %}
-      <label class="chip" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="swatch" aria-hidden="true"></span><span>{{ c.name }}</span></label>
-      {% endfor %}
-    </div>
-  </div>
-  <div class="filter-row filter-groups">
-    <fieldset><legend>Type</legend>
-      {% for key, label, blurb in types %}<label><input type="checkbox" name="t" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
-    </fieldset>
-    <fieldset><legend>Domain</legend>
-      {% for key, label in domain_labels.items() %}<label><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
-    </fieldset>
-    <fieldset><legend>Issue</legend>
-      {% for key, label in issue_labels.items() %}<label><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
-    </fieldset>
-    <fieldset><legend>Directed at</legend>
-      <select id="target" aria-label="Directed at">
-        <option value="">any counterpart</option>
-        {% for code, name in dyad_targets.items() %}<option value="{{ code }}">{{ name }}</option>{% endfor %}
-      </select>
-    </fieldset>
-    <button type="button" class="toggle" id="reset">Clear filters</button>
-  </div>
-</form>
-
-<section class="figure map-figure" id="fig-events" aria-label="Event map">
-  <div class="time-row">
-    <button type="button" class="toggle play" id="play" aria-pressed="false" aria-label="Play through time">Play</button>
-    <label class="time-window">Show
-      <select id="window" aria-label="Time window">
-        <option value="1">the month</option>
-        <option value="12">the year</option>
-        <option value="60">five years</option>
-        <option value="0" selected>everything up to</option>
-      </select>
-    </label>
-    <label class="time-slider"><span class="sr-only">Month</span>
-      <input type="range" id="month" min="0" max="0" step="1" value="0"></label>
-    <output class="time-label" id="time-label" for="month"></output>
-  </div>
-  <div class="map-stage">
-    <div id="map" class="map-canvas" role="region" aria-label="Map of the South China Sea with event locations"></div>
-    <div class="map-legend" aria-hidden="true">
-      <span class="legend-point"><i class="dot"></i> event at a known position</span>
-      <span class="legend-point"><i class="dot feature"></i> at a named feature</span>
-      <span class="legend-point"><i class="count-swatch">n</i> events known only to the sub-region</span>
-    </div>
-  </div>
-  <p class="filters-note" id="map-count" aria-live="polite"></p>
-  <div class="figure-head"><h2 class="h-small">Events in view</h2><button class="toggle" type="button" id="list-toggle" aria-pressed="false">List</button></div>
-  <ol class="event-list" id="event-list" hidden aria-label="Events in the current view"></ol>
-</section>
+{% with compact=false %}{% include "_map.html" %}{% endwith %}
 
 <section class="prose">
   <h2>Reading the map</h2>

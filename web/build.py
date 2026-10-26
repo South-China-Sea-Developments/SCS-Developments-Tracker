@@ -106,6 +106,36 @@ def event_view(e: dict, move_year: int, sources: list[dict]) -> dict:
     )
 
 
+def latest_developments(events: list[dict], moves: list[dict], names: dict, n: int = 8) -> list[dict]:
+    """The newest accepted events, newest first, one row per move (its newest event), for the home
+    page: date and precision, claimant, the event's own summary when the project coded it, otherwise
+    its move's description (a MATS-era seed event has only a mechanical summary), the move to link to,
+    and whether the coding is the project's."""
+    move_by_id = {m["move_id"]: m for m in moves}
+    rows = []
+    for e in events:
+        m = move_by_id.get(e["move_id"])
+        if e["status"] != "accepted" or not e["date_start"] or not m or m["status"] != "accepted":
+            continue
+        own = bool(e.get("extractor")) or m["coded_by"] != "chubb"
+        if not own and e["date_start"][:4] != m["year"]:
+            continue    # a MATS-era seed date outside its move's year is one of the known MAVD typos; not a "latest development"
+        text = (e["summary"] if own else "") or re.sub(r"^\d{4}[^:]{0,24}:\s*", "", m["description"])   # MATS descriptions open with their own date
+        rows.append({"event_id": e["event_id"], "move_id": m["move_id"], "claimant": e["claimant"], "claimant_name": names.get(e["claimant"], e["claimant"]),
+                     "date": e["date_start"], "date_precision": e["date_precision"], "date_label": date_label(e["date_start"], e["date_start"], e["date_precision"]),
+                     "datetime": {"year": e["date_start"][:4], "month": e["date_start"][:7]}.get(e["date_precision"], e["date_start"]),
+                     "text": text[:280].rsplit(" ", 1)[0] + "…" if len(text) > 280 else text, "location": e["location_name"],
+                     "types": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "project": m["coded_by"] != "chubb"})
+    rows.sort(key=lambda r: (r["date"], r["event_id"]), reverse=True)
+    seen, out = set(), []
+    for r in rows:
+        if r["move_id"] in seen:
+            continue
+        seen.add(r["move_id"])
+        out.append(r)
+    return out[:n]
+
+
 def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
     """Everything a move page or list row needs, with codes expanded to labels."""
     types = [t for t in schema.TYPE_FLAGS if m[t] == "1"]
@@ -346,6 +376,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "first_year": agg["years"][0],
         "last_year": agg["years"][-1],
         "mats_last_year": schema.MATS_YEARS[-1],
+        "n_claimants_coded": sum(1 for c, v in agg["by_claimant"].items() if sum(y["total"] for y in v["years"].values())),
+        "n_claimants": len(claimants),
     }
 
     out_dir = Path(out_dir).resolve()
@@ -390,9 +422,10 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "agg_json": json.dumps(agg, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>
         "claimants": claimants,
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
+        "type_labels": TYPE_LABELS,
         "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
     }
-    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, agreement=agree, agreement_labels=agreement.LABELS, map_json=map_json, map_style_json=map_style_json,
+    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, latest=latest_developments(events, moves, names), agreement=agree, agreement_labels=agreement.LABELS, map_json=map_json, map_style_json=map_style_json,
                n_map_events=mapd["counts"]["n_events"], n_map_points=mapd["counts"]["n_points"],
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),

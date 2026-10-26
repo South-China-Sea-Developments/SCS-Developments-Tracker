@@ -13,15 +13,19 @@
 <header class="masthead">
   <div class="wrap masthead-row">
     <a class="brand" href="{{ root }}index.html">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">SCS Developments Tracker</span>
+      <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+        <circle cx="14" cy="14" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M3 14h22M14 3v22" stroke="currentColor" stroke-width="1" opacity=".55"/>
+        <circle cx="14" cy="14" r="3.2" fill="currentColor"/>
+      </svg>
+      <span class="brand-text"><span class="brand-name">SCS Developments Tracker</span><span class="brand-sub">Assertive moves in the South China Sea since 1970</span></span>
     </a>
     <nav class="nav" aria-label="Site">
       <a href="{{ root }}index.html"{% if page == 'index.html' %} aria-current="page"{% endif %}>Overview</a>
-      <a href="{{ root }}issues-domains.html"{% if page == 'issues-domains.html' %} aria-current="page"{% endif %}>Issues and domains</a>
-      <a href="{{ root }}subregions.html"{% if page == 'subregions.html' %} aria-current="page"{% endif %}>Sub-regions</a>
       <a href="{{ root }}map.html"{% if page == 'map.html' %} aria-current="page"{% endif %}>Event map</a>
       <a href="{{ root }}cases.html"{% if page in ('cases.html', 'case') %} aria-current="page"{% endif %}>Cases</a>
+      <a href="{{ root }}issues-domains.html"{% if page == 'issues-domains.html' %} aria-current="page"{% endif %}>Issues and domains</a>
+      <a href="{{ root }}subregions.html"{% if page == 'subregions.html' %} aria-current="page"{% endif %}>Sub-regions</a>
       <a href="{{ root }}methodology.html"{% if page == 'methodology.html' %} aria-current="page"{% endif %}>Methodology</a>
       <a href="{{ root }}downloads.html"{% if page == 'downloads.html' %} aria-current="page"{% endif %}>Downloads</a>
       <a href="{{ meta.repo_url }}">Data and code</a>
@@ -31,10 +35,21 @@
 <main id="main" class="wrap">
 {% block content %}{% endblock %}
 </main>
-<footer class="colophon wrap">
-  <p>Data for 1970–{{ meta.mats_last_year }}: Andrew Chubb, <em>Maritime Assertiveness Time Series</em> (MATS 1.02), used with permission.
-    Later years and additional claimants: SCS Developments Tracker project coding. Dataset version {{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}.</p>
-  <p>Cite: Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). See <a href="{{ root }}downloads.html#cite">how to cite this dataset</a>.</p>
+<footer class="colophon">
+  <div class="wrap colophon-grid">
+    <div class="colophon-about">
+      <p class="colophon-title">SCS Developments Tracker</p>
+      <p>Andrew Chubb's <em>Maritime Assertiveness Time Series</em>, being extended to the present and to six claimants with the same coding rules. Machines propose candidate events; every move in the dataset was decided by a person.</p>
+    </div>
+    <div>
+      <p class="colophon-title">Provenance</p>
+      <p>Data for 1970–{{ meta.mats_last_year }}: Chubb, MATS 1.02, used with permission. Later years and additional claimants: project coding. Dataset version {{ meta.dataset_version }}; build {{ meta.version }}, {{ meta.build_date }}.</p>
+    </div>
+    <div>
+      <p class="colophon-title">Cite</p>
+      <p>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). <a href="{{ root }}downloads.html#cite">How to cite this dataset</a>.</p>
+    </div>
+  </div>
 </footer>
 {% block scripts %}<script src="{{ root }}assets/charts.js"></script>{% endblock %}
 </body>
