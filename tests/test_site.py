@@ -163,14 +163,17 @@ def test_public_face(browser, dist):
     no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "index.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 710
+    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 1420
+    assert page.evaluate("(() => { const i = document.querySelector('.banner-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
     assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
+    # ticket 18: the tracker is white like the rest of the site; only the navigation band and the banner's band are dark
     side_rgb, map_rgb, nav_rgb = page.evaluate("[getComputedStyle(document.querySelector('.side')).backgroundColor, getComputedStyle(document.getElementById('map')).backgroundColor, getComputedStyle(document.querySelector('.navband')).backgroundColor]")
-    assert _luma(side_rgb) < 60 and _luma(map_rgb) < 60 and _luma(nav_rgb) < 80, (side_rgb, map_rgb, nav_rgb)
+    assert _luma(side_rgb) > 240 and _luma(map_rgb) > 230 and _luma(nav_rgb) < 80, (side_rgb, map_rgb, nav_rgb)
     assert nav_rgb == "rgb(5, 44, 89)", "the logo's navy"
-    assert _luma(page.evaluate("getComputedStyle(document.querySelector('.side h1')).color")) > 230
+    assert _luma(page.evaluate("getComputedStyle(document.querySelector('.side h1')).color")) < 60
     label = page.locator("#map-claimant-filter .check").first
-    assert page.evaluate("(l) => [getComputedStyle(l.querySelector('.check-label')).color, getComputedStyle(l.querySelector('.dot')).backgroundColor]", label.element_handle())[0].startswith("rgb(244")
+    assert _luma(page.evaluate("(l) => getComputedStyle(l.querySelector('.check-label')).color", label.element_handle())) < 80
+    assert "dark-en" not in page.content() and "positron" in page.content().lower(), "the light basemap"
     page.close()
     page, problems = _open(browser, dist, "methodology.html")
     assert problems == []
@@ -682,16 +685,3 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
     inline = json.loads(re.search(r'<script id="agg"[^>]*>(.*?)</script>', agg_html, re.S).group(1).replace("<\\/", "</"))
     assert inline["by_claimant"]["MY"]["years"]["2021"]["coercive"] == 1 and inline["years"][-1] == 2021
 
-
-def test_dark_basemap_style_is_the_derived_one(tmp_path):
-    """The committed dark style is exactly what the derivation script produces from the vendored
-    Positron style, so a Positron refresh without a re-run fails here; land is the background, water
-    is drawn over it, labels are light on dark halos."""
-    from web.tools.derive_dark_style import VENDOR, derive
-    out = tmp_path / "dark-en.json"
-    style = derive(dst=out)
-    assert out.read_bytes() == (VENDOR / "dark-en.json").read_bytes()
-    by_id = {l["id"]: l for l in style["layers"]}
-    assert by_id["background"]["paint"]["background-color"] != by_id["water"]["paint"]["fill-color"]
-    assert all(l["paint"]["text-halo-color"].startswith("rgba(10, 26, 48") for l in style["layers"] if l["type"] == "symbol")
-    assert "raster" not in {s["type"] for s in style["sources"].values()}

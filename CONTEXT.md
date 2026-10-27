@@ -56,9 +56,9 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Token block** — The first block of `web/static/style.css`: the site's faces, colours, kicker style and spacing. Since ticket 17 the colours are the programme banner's (the logo's navy, the sea's teals) and the manner is CFR's Global Conflict Tracker; one colour scheme, no dark mode.
 
-**The banner** — The "South China Sea Research Initiative" image the maintainer supplied (`web/static/img/banner.png`, logo and title as sent), the header of every page. The site presents itself as the institute's at the maintainer's request (decision 06, amended 2026-10-27).
+**The banner** — The "South China Sea Research Initiative" image the maintainer supplied (`web/static/img/banner.jpg`, logo and title as sent, served as a 2× upscale until the institute's original replaces it at the same path), the header of every page. The site presents itself as the institute's at the maintainer's request (decision 06, amended 2026-10-27).
 
-**The tracker** — The home page (`index.html`, also served as `map.html`): a dark sidebar — title, the count of events in view, search, filters with the claimant dots as legend, time controls, the events in view newest first — beside the event map on a dark basemap, filling the viewport under the header. The charts live on the Trends page.
+**The tracker** — The home page (`index.html`, also served as `map.html`): a dark sidebar — title, the count of events in view, search, filters with the claimant dots as legend, time controls, the events in view newest first — beside the event map, filling the viewport under the navigation band; white like the rest of the site since ticket 18. The charts live on the Trends page.
 
 **Kicker** — The small bold letter-spaced capitals over a page title, on the navigation, the sidebar's group labels, the brand name and the footer headings; the site's one all-caps style.
 

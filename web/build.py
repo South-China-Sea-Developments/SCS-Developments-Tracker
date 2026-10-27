@@ -355,7 +355,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "dark-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
+    map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
 
     rel = release_context(repo, data_dir, out_dir, meta["build_date"])
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]))

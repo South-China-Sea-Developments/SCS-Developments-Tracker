@@ -21,3 +21,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 15 | [Site restyle](15-site-restyle.md) | 08, 09 | done |
 | 16 | [Visual identity from the three references](16-visual-identity.md) | 15 | done |
 | 17 | [The tracker face](17-tracker-face.md) | 16 | done |
+| 18 | [Light tracker and a sharper banner](18-light-tracker.md) | 17 | done |
