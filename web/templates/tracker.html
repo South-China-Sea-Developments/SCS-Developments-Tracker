@@ -13,7 +13,7 @@
   <aside class="side" aria-label="Filters and events in view">
     <div class="side-head">
       <h1>SCS Developments Tracker</h1>
-      <p class="byline">Assertive moves by the claimant states in the South China Sea since 1970 — statements, patrols, construction, interference, force — on the coding rules of the <em>Maritime Assertiveness Time Series</em>.</p>
+      <p class="byline">Assertive moves by the claimant states in the South China Sea since 1970 — statements, patrols, construction, interference, force — on the coding rules of the <em>Maritime Assertiveness Time Series</em>. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
     </div>
     <div class="side-count">
       <p class="count" id="map-count" aria-live="polite"></p>
@@ -22,9 +22,9 @@
     <form class="side-filters" id="map-filters" aria-label="Filter events">
       <label class="search"><span class="sr-only">Find an event</span><input type="search" id="search" placeholder="Find an event" autocomplete="off"></label>
       <fieldset class="fgroup"><legend>Claimant</legend>
-        <div class="checks chips" id="map-claimant-filter">
+        <div class="checks" id="map-claimant-filter">
           {% for c in claimants %}
-          <label class="chip check" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="box" aria-hidden="true"></span><span class="check-label">{{ c.name }}</span><span class="swatch dot" aria-hidden="true"></span></label>
+          <label class="check" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="box" aria-hidden="true"></span><span class="check-label">{{ c.name }}</span><span class="dot" aria-hidden="true"></span></label>
           {% endfor %}
         </div>
       </fieldset>

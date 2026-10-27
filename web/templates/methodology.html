@@ -29,11 +29,16 @@
 <p>For later years and for the additional claimants, scheduled runs harvest a documented list of sources and propose candidate events; a human coder decides what enters the dataset. Candidates compiled by hand from sources enter the same queue and are labelled by their compiler rather than by a model. Every machine suggestion is kept beside the coder's final decision so that agreement can be measured (<a href="#agreement">the report is below</a>). Project-coded moves are labelled as such wherever they appear.</p>
 <p>Every change to the dataset is a reviewed, versioned commit in the <a href="{{ meta.repo_url }}">public repository</a>, and an automatic check refuses any change that would alter the 1970–2015 figures for the original three claimants.</p>
 
+<section id="map">
+<h2>Reading the map</h2>
+<p>A point is one event: a patrol intercept, a statement, a drilling start, dated and sourced on its move's page. A filled point has coordinates of its own; a hollow point stands at the named feature (reef, shoal, island) the sources mention, placed with the project's <a href="{{ meta.repo_url }}/blob/main/data/reference/gazetteer.csv">gazetteer</a>. Where the sources name only a wider area, or the original dataset recorded no place, the event is counted on a sub-region instead: its own if one is known, otherwise once on each sub-region of its move, so the numbers on the ten polygons can add up to more than the number of events. The filters use the move's coding (type, domain, issue, counterpart), because MATS variables belong to the move, not the event. The base map is drawn from <a href="https://openfreemap.org">OpenFreeMap</a> vector tiles (<a href="https://www.openmaptiles.org/">OpenMapTiles</a> schema, © OpenStreetMap contributors, ODbL), recoloured by the project, with English names in the Latin alphabet wherever the data has them; the tiles and their fonts are the only things on the tracker not in the bundle, and without them the sub-regions and events still draw. Boundaries and names on the base map are those of its providers; the feature names this project uses follow the source text and Wikidata's English labels; neither implies a position on any claim.</p>
+</section>
+
 <section id="agreement">
 <h2>How good are the machine's suggestions</h2>
 <p>Every candidate event the harvester proposes carries a suggested coding (Type, Domains, Issues, dyads and, should an extractor propose one, the move it belongs to) and the name of the extractor that made it. The coder's decision is final; the suggestion stays on the row. This report compares the two for every accepted event with a suggestion, by extractor version and by the year of the event, and is regenerated on every build (<a href="data/agreement.json">agreement.json</a>). It is a measure of the suggestions, not of the dataset: the dataset holds only what a coder decided.</p>
 {% if agreement.n_decided == 0 %}
-<p class="figure-note">No machine suggestion has been reviewed yet; the tables fill from the first reviewed harvest.</p>
+<p class="figure-note">The tables are filled from reviewed harvest runs.</p>
 {% else %}
 <dl class="definitions">
   <dt>Type, Domains, Issues, Dyads</dt><dd>Agreement means the suggestion equals the move's final coding exactly: the one Type; the full set of domains, of issues, of dyads.</dd>

@@ -29,8 +29,8 @@
   slider.value = String(lastMonth);
   windowSel.value = "0";
 
-  // the tracker fills the viewport under the site header, whatever the banner's height at this width
-  var head = document.querySelector(".site-head");
+  // the tracker fills the viewport under the navigation band (the banner scrolls off), whatever the band's height at this width
+  var head = document.querySelector(".navband");
   function sizeTracker() { if (head) document.documentElement.style.setProperty("--head-h", head.offsetHeight + "px"); }
   sizeTracker();
   window.addEventListener("resize", sizeTracker);
@@ -74,7 +74,8 @@
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
     map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.1 } });
-    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.8, "line-dasharray": [2, 2] } });
+    // solid outlines: the basemap's boundaries are the dashed ones
+    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.75 } });
   });
 
   var srCenters = {};
@@ -142,7 +143,8 @@
   function dateLabel(e) {
     if (e.dp === "year") return e.ds.slice(0, 4);
     if (e.dp === "month") return MONTHS[parseInt(e.ds.slice(5, 7), 10) - 1] + " " + e.ds.slice(0, 4);
-    return e.ds + (e.de && e.de !== e.ds ? " to " + e.de : "");
+    function day(iso) { return parseInt(iso.slice(8, 10), 10) + " " + MONTHS[parseInt(iso.slice(5, 7), 10) - 1] + " " + iso.slice(0, 4); }
+    return day(e.ds) + (e.de && e.de !== e.ds ? " to " + day(e.de) : "");
   }
   function eventRow(e, parent) {
     var li = el("li", "event-row", undefined, parent);
@@ -214,10 +216,24 @@
     el("span", "count-n", hits.length + (hits.length === 1 ? " event" : " events"), countEl);
     el("span", "count-detail", " " + when + " · " + placed + " placed, " + (hits.length - placed) + " by sub-region" +
       (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : ""), countEl);
+    renderList(hits);
+  }
+
+  // the sidebar list: newest first, a page at a time so a long list never makes a long page
+  var LIST_PAGE = 60, listShown = LIST_PAGE, listKey = "";
+  function renderList(hits) {
+    var sorted = hits.slice().sort(function (a, b) { return a.ds < b.ds ? 1 : a.ds > b.ds ? -1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+    var key = sorted.map(function (e) { return e.id; }).join(",");
+    if (key !== listKey) { listKey = key; listShown = LIST_PAGE; }   // a new result set starts at the first page
     listEl.textContent = "";
-    if (!listEl.hidden) hits.slice().sort(function (a, b) { return a.ds < b.ds ? 1 : a.ds > b.ds ? -1 : 0; }).slice(0, 400).forEach(function (e) { eventRow(e, listEl); });   // newest first
-    if (!listEl.hidden && hits.length > 400) el("li", "popup-more", "showing the first 400; narrow the filters", listEl);
-    if (!listEl.hidden && !hits.length) el("li", "popup-more", "No events match. Widen the time window or clear a filter.", listEl);
+    sorted.slice(0, listShown).forEach(function (e) { eventRow(e, listEl); });
+    if (!sorted.length) el("li", "popup-more", "No events match. Widen the time window or clear a filter.", listEl);
+    if (sorted.length > listShown) {
+      var li = el("li", "list-more", undefined, listEl);
+      var b = el("button", "more", "Show " + Math.min(LIST_PAGE, sorted.length - listShown) + " more of " + sorted.length, li);
+      b.type = "button";
+      b.addEventListener("click", function () { listShown += LIST_PAGE; renderList(hits); });
+    }
   }
 
   var timer = null;
@@ -236,12 +252,6 @@
     render();
   });
   if (searchEl) searchEl.addEventListener("input", schedule);
-  var listToggle = document.getElementById("list-toggle");   // the tracker's sidebar shows the list always; older pages toggle it
-  if (listToggle) listToggle.addEventListener("click", function () {
-    listEl.hidden = !listEl.hidden;
-    listToggle.setAttribute("aria-pressed", String(!listEl.hidden));
-    render();
-  });
 
   // ---- play ------------------------------------------------------------------------------------
   var playBtn = document.getElementById("play"), playTimer = null;

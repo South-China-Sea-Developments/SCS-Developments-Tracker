@@ -6,7 +6,7 @@
   <p class="kicker">Data and citation</p>
   <h1>Downloads and citation</h1>
   {% if release.tag != 'unreleased' %}
-  <p class="lede-text">Dataset version <strong>{{ release.version }}</strong>, tagged <code>{{ release.tag }}</code> on {{ release.date[:10] }}. The files below are exactly what the tag holds, served from this site and mirrored on the <a href="{{ meta.repo_url }}/releases/tag/{{ release.tag }}">GitHub release</a>; the checksums let you verify either copy.{% if release.prerelease %} The <code>-dev</code> suffix means the dataset is still being built: cite it as work in progress.{% endif %}</p>
+  <p class="lede-text">Dataset version <strong>{{ release.version }}</strong>, tagged <code>{{ release.tag }}</code> on {{ release.date[:10] }}. The files below are exactly what the tag holds, served from this site and mirrored on the <a href="{{ meta.repo_url }}/releases/tag/{{ release.tag }}">GitHub release</a>; the checksums let you verify either copy.{% if release.prerelease %} A <code>-dev</code> version is a development snapshot: cite it with its date.{% endif %}</p>
   {% else %}
   <p class="lede-text">This site was built from an <strong>unreleased working copy</strong> ({{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}): no release tag is reachable from the commit it was built from. The files below are the working files at build time; do not cite them. For a citable version use the <a href="{{ meta.repo_url }}/releases">GitHub releases</a>, once one exists.</p>
   {% endif %}

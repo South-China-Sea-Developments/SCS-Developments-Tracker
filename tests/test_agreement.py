@@ -161,4 +161,4 @@ def test_the_built_page_matches_the_report_whatever_the_data_holds(tmp_path):
     events = [dict(x) for x in csv.DictReader(open(DATA_DIR / "events.csv", newline="", encoding="utf-8"))]
     assert r == agreement.report(events, moves)
     html = (out / "methodology.html").read_text(encoding="utf-8")
-    assert ("No machine suggestion has been reviewed yet" in html) == (r["n_decided"] == 0)
+    assert ("The tables are filled from reviewed harvest runs" in html) == (r["n_decided"] == 0)

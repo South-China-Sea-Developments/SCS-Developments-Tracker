@@ -216,7 +216,7 @@
   // ---- data access -------------------------------------------------------
   var YEAR_CATS = YEARS.map(function (y) { return { key: String(y), label: String(y), short: String(y) }; });
   var LOC_CATS = LOCS.map(function (l) { return { key: l.n, label: l.n + " " + l.name, short: l.n }; });
-  function shownClaimants() { return CLAIMANTS.filter(function (c) { return state.selected[c]; }); }
+  function shownClaimants() { return CLAIMANTS.filter(function (c) { return state.selected[c] && hasMoves(c); }); }   // a claimant with no moves is not on the page
   function mapClaimants() { return state.mapClaimant === "ALL" ? CLAIMANTS : [state.mapClaimant]; }
   function perYear(codes, field) {        // {year: sum over codes}
     var out = {};
@@ -423,7 +423,8 @@
     var note = document.getElementById("filters-note");
     if (note) {
       var sel = shownClaimants();
-      note.textContent = sel.length === CLAIMANTS.length ? "All claimants" : sel.length + " of " + CLAIMANTS.length + " claimants";
+      var all = CLAIMANTS.filter(hasMoves).length;
+      note.textContent = sel.length === all ? "All claimants" : sel.length + " of " + all + " claimants";
     }
   }
 

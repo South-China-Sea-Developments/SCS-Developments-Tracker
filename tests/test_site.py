@@ -57,7 +57,7 @@ def test_bundle_is_self_contained_and_relative(dist):
     assert not re.search(r"https?://", (dist / "assets/charts.js").read_text(encoding="utf-8").replace("http://www.w3.org/2000/svg", ""))
 
 
-def _open(browser, dist, page_name, viewport=(1280, 900), ):
+def _open(browser, dist, page_name, viewport=(1280, 900)):
     """Any page, offline: the basemap host is answered by the same stubs as on the map page, since
     the home page carries the map too."""
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
@@ -105,13 +105,20 @@ def test_tracker_is_the_home_page(browser, dist):
     assert problems == []
     moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
     events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and moves[e["move_id"]]["status"] == "accepted"]
+    # newest first; ties on the date break on the event id, as the page does
+    events.sort(key=lambda e: (e["date_start"] or f"{moves[e['move_id']]['year']}-01-01", e["event_id"]))
     events.sort(key=lambda e: e["date_start"] or f"{moves[e['move_id']]['year']}-01-01", reverse=True)
     rows = page.locator("#event-list .event-row")
-    assert rows.count() == min(400, len(events)) and page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(events)} events")
-    assert rows.first.get_attribute("data-event") == events[0]["event_id"]
+    assert rows.count() == min(60, len(events)) and page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(events)} events")
+    assert [r.get_attribute("data-event") for r in rows.element_handles()[:10]] == [e["event_id"] for e in events[:10]]
     assert rows.first.locator("a.case-id").get_attribute("href") == f"cases/{events[0]['move_id']}.html"
-    dates = [page.evaluate("(r) => r.querySelector('.event-date').textContent", r) for r in rows.element_handles()[:5]]
-    assert dates == [page.evaluate("(r) => r.querySelector('.event-date').textContent", r) for r in rows.element_handles()[:5]]   # stable
+    # a seed event shows its move's description, not the mechanical seed summary
+    assert "seed event" not in rows.first.inner_text().lower()
+    # the list comes a page at a time; "show more" extends it
+    if len(events) > 60:
+        page.click("#event-list .list-more .more")
+        page.wait_for_timeout(200)
+        assert page.locator("#event-list .event-row").count() == min(120, len(events))
     # the map fills the viewport beside the sidebar
     assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
     page.evaluate("document.querySelector('.tracker').scrollIntoView()")
@@ -119,13 +126,18 @@ def test_tracker_is_the_home_page(browser, dist):
     visible = page.evaluate("(() => { const r = document.getElementById('map').getBoundingClientRect(); return Math.min(r.bottom, innerHeight) - Math.max(r.top, 0); })()")
     assert visible >= 0.5 * 900, f"{visible}px of map visible"
     # search narrows the list and the count
-    page.fill("#search", "scarborough")
+    page.fill("#search", "drill")   # a word in summaries, not in a sub-region name or a move id
     page.wait_for_timeout(300)
-    hits = [e for e in events if "scarborough" in (e["summary"] + " " + e["location_name"] + " " + moves[e["move_id"]]["description"][:0]).lower()]
-    assert page.locator("#event-list .event-row").count() == len(hits) and page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(hits)} event")
+    # the search looks through the text the row shows (the move's description for a seed event, else the summary) and the place
+    def shown_text(e):   # what the row shows: the move's description (minus its leading date) for a seed event, else the summary; 400 characters at most
+        text = re.sub(r"^\d{4}[^:]{0,24}:\s*", "", moves[e["move_id"]]["description"]) if e["harvest_run_id"] == "seed-mats-1.02" else e["summary"]
+        return text[:400] + " " + e["location_name"]
+    hits = [e for e in events if "drill" in shown_text(e).lower()]
+    assert hits, "the fixture has drilling events"
+    assert page.locator("#event-list .event-row").count() == min(60, len(hits)) and page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(hits)} event")
     page.click("#reset")
     page.wait_for_timeout(300)
-    assert page.locator("#event-list .event-row").count() == min(400, len(events))
+    assert page.locator("#event-list .event-row").count() == min(60, len(events))
     page.close()
 
 
@@ -168,12 +180,17 @@ def test_public_face(browser, dist):
     page.close()
     css = (dist / "assets/style.css").read_text(encoding="utf-8")
     assert "prefers-color-scheme" not in css and "data-theme" not in css, "one colour scheme"
-    forbidden = re.compile(r"pending the author|author.s confirmation|awaits the author|more pending|and \d+ pending|claimants coded|moves coded|coding (for this claimant )?is in progress|project-coded event has been accepted", re.I)
+    # the words that would give the review state away, in any page's visible text; case pages carry the
+    # data's own prose (a source may say "pending" or "in progress"), so they are held to the phrases only
+    forbidden = re.compile(r"\bpending\b|\bconfirmation\b|flagged for the author|awaits the author|being built|work in progress|claimants coded|moves coded|coding is in progress|reviewed yet|not yet", re.I)
+    forbidden_in_data_pages = re.compile(r"pending the author|author.s confirmation|flagged for the author|awaits the author", re.I)
     pending = [m["move_id"] for m in read_csv(DATA_DIR / "moves.csv") if m["status"] != "accepted"]
     assert pending, "the fixture data has a pending move to keep off the site"
     for path in dist.rglob("*.html"):   # the visible text; the inline data blocks carry the aggregates as data
         visible = re.sub(r"<script[^>]*>.*?</script>", "", path.read_text(encoding="utf-8"), flags=re.S)
-        assert not forbidden.search(visible), path.relative_to(dist)
+        rule = forbidden_in_data_pages if path.parent.name == "cases" else forbidden
+        assert not rule.search(visible), (path.relative_to(dist), rule.search(visible).group(0))
+    assert "n_pending" not in (dist / "trends.html").read_text(encoding="utf-8"), "the review-state count stays in data/aggregates.json only"
     for path in (dist / "assets").glob("*.js"):
         assert "pending" not in path.read_text(encoding="utf-8").lower(), path.name
     for move_id in pending:
@@ -224,9 +241,9 @@ def test_overview_charts_and_controls(browser, dist):
     # filter: drop China and the legend and note follow (the overview's own chips, not the map's)
     page.locator('#claimant-filter .chip[data-code="CN"] input').uncheck(force=True)
     page.wait_for_timeout(100)
-    assert page.locator("#filters-note").inner_text() == "5 of 6 claimants"
+    assert page.locator("#filters-note").inner_text() == "2 of 3 claimants"   # of the claimants with moves on the page
     assert page.locator("#fig-CN").is_hidden()
-    assert page.locator('#fig-all .legend .key').count() == 5
+    assert page.locator('#fig-all .legend .key').count() == 2   # the two shown claimants with moves; the legend never lists an uncoded one
     # table view twin
     page.locator('[data-toggle-table="fig-all"]').click()
     assert page.locator("#fig-all .table-view").is_visible()
@@ -445,7 +462,7 @@ PNG_1x1 = bytes.fromhex("89504e470d0a1a0a0000000d4948445200000001000000010806000
 
 
 
-def _open_map(browser, dist, viewport=(1280, 900), ):
+def _open_map(browser, dist, viewport=(1280, 900)):
     """The map page with the basemap answered locally: the TileJSON names a stub tile URL that
     returns no content, as do fonts and sprites. The test is offline except for those stubs."""
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
@@ -664,3 +681,17 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
     agg_html = (out / "trends.html").read_text(encoding="utf-8")
     inline = json.loads(re.search(r'<script id="agg"[^>]*>(.*?)</script>', agg_html, re.S).group(1).replace("<\\/", "</"))
     assert inline["by_claimant"]["MY"]["years"]["2021"]["coercive"] == 1 and inline["years"][-1] == 2021
+
+
+def test_dark_basemap_style_is_the_derived_one(tmp_path):
+    """The committed dark style is exactly what the derivation script produces from the vendored
+    Positron style, so a Positron refresh without a re-run fails here; land is the background, water
+    is drawn over it, labels are light on dark halos."""
+    from web.tools.derive_dark_style import VENDOR, derive
+    out = tmp_path / "dark-en.json"
+    style = derive(dst=out)
+    assert out.read_bytes() == (VENDOR / "dark-en.json").read_bytes()
+    by_id = {l["id"]: l for l in style["layers"]}
+    assert by_id["background"]["paint"]["background-color"] != by_id["water"]["paint"]["fill-color"]
+    assert all(l["paint"]["text-halo-color"].startswith("rgba(10, 26, 48") for l in style["layers"] if l["type"] == "symbol")
+    assert "raster" not in {s["type"] for s in style["sources"].values()}

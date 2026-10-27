@@ -154,7 +154,7 @@ def test_site_serves_the_tagged_files_and_says_so(tagged_repo, tmp_path):
     m = json.loads((out / "downloads/manifest.json").read_text(encoding="utf-8"))
     assert m["tag"] == "v2.0.0-dev"
     assert "tagged <code>v2.0.0-dev</code> on 2026-10-16" in html and "unreleased working copy" not in html
-    assert "still being built" in html                                   # the -dev suffix is explained
+    assert "development snapshot" in html                                 # the -dev suffix is explained
     for f in m["files"]:
         assert f'href="downloads/{f["name"]}"' in html and f["sha256"] in html
     assert f'href="downloads/{m["zip"]["name"]}"' in html and m["zip"]["sha256"] in html

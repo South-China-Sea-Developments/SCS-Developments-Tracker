@@ -195,7 +195,10 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
         cc["years"][y] = cc["years"].get(y, 0) + 1
         rec = {"id": e["event_id"], "m": m["move_id"], "c": e["claimant"], "y": int(m["year"]),
                "ds": e["date_start"] or f"{m['year']}-01-01", "de": date_end_for(e, m["year"]), "dp": e["date_precision"] or "year",
-               "s": e["summary"][:400], "n": e["location_name"], "lp": e["location_precision"] or "unknown",
+               # a MATS-era seed event has only a mechanical summary; the tracker shows its move's description
+               # (minus the date MATS descriptions open with) instead, as the latest-developments list did
+               "s": (re.sub(r"^\d{4}[^:]{0,24}:\s*", "", m["description"]) if e["harvest_run_id"] == SEED_RUN else e["summary"])[:400],
+               "n": e["location_name"], "lp": e["location_precision"] or "unknown",
                "t": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "d": [d for d in schema.DOMAIN_FLAGS if m[d] == "1"],
                "i": [i for i in schema.ISSUE_FLAGS if m[i] == "1"], "g": sorted({d[1] for d in m["dyads"].split() if len(d) == 2}),
                "src": len(sources_by_event.get(e["event_id"], [])), "seed": e["harvest_run_id"] == SEED_RUN}
@@ -244,32 +247,6 @@ def size_label(n: int) -> str:
     return f"{n / 1_000_000:.1f} MB" if n >= 1_000_000 else f"{n / 1000:.0f} KB" if n >= 1000 else f"{n} B"
 
 
-def notes_html(md: str) -> str:
-    """CHANGELOG prose (paragraphs, '- ' bullets, `code`) as HTML; anything else is left as text."""
-    import html as h
-    def inline(t):
-        return re.sub(r"`([^`]+)`", lambda m: "<code>" + m.group(1) + "</code>", h.escape(t))
-    out, para, items = [], [], []
-    def flush():
-        if para:
-            out.append("<p>" + inline(" ".join(para)) + "</p>"); para.clear()
-        if items:
-            out.append("<ul>" + "".join("<li>" + inline(i) + "</li>" for i in items) + "</ul>"); items.clear()
-    for line in md.splitlines():
-        if line.startswith("- "):
-            if para:
-                flush()
-            items.append(line[2:].strip())
-        elif not line.strip():
-            flush()
-        else:
-            if items:
-                flush()
-            para.append(line.strip())
-    flush()
-    return "\n".join(out)
-
-
 def citation(version: str, tag: str, date: str, build_date: str) -> dict:
     year = date[:4]
     accessed = f"accessed {build_date}" if tag == "unreleased" else f"released {date[:10]}"
@@ -290,16 +267,12 @@ def release_context(root: Path, data_dir: Path, out_dir: Path, build_date: str) 
     tag = release.latest_tag(root)
     if tag:
         m = release.build_assets(root, tag, out_dir / "downloads")
-        notes = release.changelog_section(tag, text=release.file_at(root, tag, "CHANGELOG.md").decode("utf-8"))
     else:
         m = release.working_assets(data_dir, out_dir / "downloads", date=build_date + "T00:00:00+00:00", root=root)
-        notes = ""
     for f in m["files"]:
         f["what"] = FILE_WHAT.get(f["name"], "")
         f["size_label"] = size_label(f["bytes"])
     m["zip"]["size_label"] = size_label(m["zip"]["bytes"])
-    m["notes"] = notes
-    m["notes_html"] = notes_html(notes)
     m["prerelease"] = "-" in m["tag"]
     return m
 
@@ -390,7 +363,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "release": rel,
         "citation": citation(rel["version"], rel["tag"], rel["date"], meta["build_date"]),
         "meta": meta,
-        "agg_json": json.dumps(agg, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>
+        "agg_json": json.dumps({k: v for k, v in agg.items() if k != "n_pending"}, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>; the review-state count stays in data/aggregates.json only
         "claimants": claimants,
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
         "type_labels": TYPE_LABELS,

@@ -4,8 +4,9 @@ The tracker (ticket 17) draws the event map on a dark basemap in the manner of C
 Conflict Tracker: slate land on a navy sea, light labels with dark halos, boundaries as pale
 dashed lines, roads and buildings nearly invisible at the zooms the map uses. Rather than vendor
 a second upstream style, this script recolours ``positron-en.json`` layer by layer (the English
-label expressions, sources, sprite and glyph URLs stay as they are) and writes ``dark-en.json``
-next to it. Run it after refreshing the Positron file:
+label expressions, sprite and glyph URLs stay as they are; the unused shaded-relief raster *source*
+is dropped — Positron declares it but draws no layer from it) and writes ``dark-en.json`` next to
+it. It is deterministic: running it twice gives the same bytes. Run it after refreshing the Positron file:
 
     python -m web.tools.derive_dark_style
 
@@ -42,7 +43,7 @@ def recolour(layer: dict) -> dict | None:
     """The same layer with dark paint; None drops it."""
     lid, ltype = layer["id"], layer["type"]
     paint = dict(layer.get("paint", {}))
-    if ltype == "raster":            # the shaded-relief raster is a light image; the dark map does without
+    if ltype == "raster":            # none in Positron today; a raster layer would be a light image the dark map does without
         return None
     if ltype == "background":        # the background is the land; water is drawn over it
         paint["background-color"] = LAND
@@ -85,7 +86,7 @@ def derive(src: Path = VENDOR / "positron-en.json", dst: Path = VENDOR / "dark-e
     style["layers"] = layers
     style["name"] = "OpenFreeMap Positron recoloured dark, English labels (SCS Developments Tracker)"
     style["metadata"] = {"source": style.get("metadata", {}).get("source", ""),
-                         "derived": "web/tools/derive_dark_style.py recolours every layer of positron-en.json and drops the shaded-relief raster; the English label expressions, sources, sprite and glyphs are unchanged"}
+                         "derived": "web/tools/derive_dark_style.py recolours every layer of positron-en.json and drops the unused shaded-relief raster source; the English label expressions, the vector source, sprite and glyphs are unchanged"}
     dst.write_text(json.dumps(style, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf-8")
     return style
 
