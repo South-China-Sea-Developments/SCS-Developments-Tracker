@@ -163,7 +163,7 @@ def test_public_face(browser, dist):
     no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "index.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 1420
+    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 2219
     assert page.evaluate("(() => { const i = document.querySelector('.banner-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
     assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
     # ticket 18: the tracker is white like the rest of the site; only the navigation band and the banner's band are dark
