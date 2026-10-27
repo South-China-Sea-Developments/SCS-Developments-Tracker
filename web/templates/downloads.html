@@ -25,11 +25,7 @@
   </table>
   <p>CSV files are UTF-8 with a header row; column definitions are in <code>COLUMNS.md</code> (<a href="{{ meta.repo_url }}/blob/{{ release.tag if release.tag != 'unreleased' else 'main' }}/data/README.md">data/README.md</a> at this version), the coding rules in Chubb's appendix, both included. The sub-region polygons are WGS84 GeoJSON. To check a file: <code>sha256sum -c SHA256SUMS</code> in the folder you unzipped.</p>
 
-  {% if release.notes %}
-  <h2>What changed in {{ release.tag }}</h2>
-  {{ release.notes_html|safe }}
-  <p>Every version: <a href="{{ meta.repo_url }}/blob/main/CHANGELOG.md">CHANGELOG.md</a>. Release procedure: <a href="{{ meta.repo_url }}/blob/main/docs/releases.md">docs/releases.md</a>.</p>
-  {% endif %}
+  <p>What changed in each version: <a href="{{ meta.repo_url }}/blob/main/CHANGELOG.md">CHANGELOG.md</a>. Release procedure: <a href="{{ meta.repo_url }}/blob/main/docs/releases.md">docs/releases.md</a>.</p>
 
   <h2 id="cite">How to cite</h2>
   <p>Cite this dataset together with Andrew Chubb's original work: the 1970–{{ meta.mats_last_year }} moves for China, Vietnam and the Philippines are his, used with permission.</p>
@@ -53,6 +49,6 @@
   </ul>
 
   <h2>Licence</h2>
-  <p>Not yet decided, pending agreement with the original author. Until a licence file is added to the repository, all rights to the data remain with their respective authors; the files are published here so that the figures on this site can be checked against them, with the citations above.</p>
+  <p>Until a licence file is added to the repository, all rights to the data remain with their respective authors; the files are published here so that the figures on this site can be checked against them, with the citations above.</p>
 </section>
 {% endblock %}

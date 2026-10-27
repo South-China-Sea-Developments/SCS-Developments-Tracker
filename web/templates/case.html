@@ -5,9 +5,6 @@
 {% block content %}
 <article class="case">
   <p class="crumbs"><a href="{{ root }}cases.html">Cases</a> / {{ move.id }}</p>
-  {% if move.status == 'pending' %}
-  <p class="notice">This case appears in the online MAVD table but not in MATS 1.02 and awaits the author's confirmation. It is not counted in any chart.</p>
-  {% endif %}
   <header class="case-head">
     <h1><span class="case-claimant" data-code="{{ move.claimant }}">{{ names[move.claimant] }}</span>, {{ move.year }}</h1>
     <p class="case-types">{% for t, label in move.type_pairs %}<span class="type-pill" data-type="{{ t }}">{{ label }}</span>{% endfor %}

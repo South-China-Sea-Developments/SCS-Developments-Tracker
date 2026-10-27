@@ -28,7 +28,7 @@ def test_aggregates_match_validator(dist):
     for key in ("years", "types", "domains", "issues", "subregions", "claimants", "n_moves", "n_pending", "by_claimant"):
         assert built[key] == independent[key], key
     # the inline copy the page uses is the same data
-    inline = re.search(r'<script id="agg" type="application/json">(.*?)</script>', (dist / "index.html").read_text(encoding="utf-8"), re.S)
+    inline = re.search(r'<script id="agg" type="application/json">(.*?)</script>', (dist / "trends.html").read_text(encoding="utf-8"), re.S)
     assert json.loads(inline.group(1))["by_claimant"] == independent["by_claimant"]
 
 
@@ -57,10 +57,10 @@ def test_bundle_is_self_contained_and_relative(dist):
     assert not re.search(r"https?://", (dist / "assets/charts.js").read_text(encoding="utf-8").replace("http://www.w3.org/2000/svg", ""))
 
 
-def _open(browser, dist, page_name, viewport=(1280, 900), color_scheme="light"):
+def _open(browser, dist, page_name, viewport=(1280, 900), ):
     """Any page, offline: the basemap host is answered by the same stubs as on the map page, since
     the home page carries the map too."""
-    ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]}, color_scheme=color_scheme)
+    ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
     page = ctx.new_page()
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
@@ -84,65 +84,57 @@ def _tile_stub(tiles):
     return stub
 
 
-@pytest.mark.parametrize("page_name", ["index.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html", "downloads.html"])
-@pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((1024, 768), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
-def test_pages_render_without_errors(browser, dist, page_name, viewport, scheme):
-    page, problems = _open(browser, dist, page_name, viewport, scheme)
+@pytest.mark.parametrize("page_name", ["index.html", "trends.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html", "downloads.html"])
+@pytest.mark.parametrize("viewport", [(1280, 900), (1024, 768), (390, 800)])
+def test_pages_render_without_errors(browser, dist, page_name, viewport):
+    page, problems = _open(browser, dist, page_name, viewport)
     assert problems == []
     assert page.title()
     assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth"), "horizontal page scroll"
-    if page_name == "index.html":
+    if page_name == "trends.html":
         # the main chart fits the viewport at phone width (no internal scroll hiding recent years)
         assert page.locator('[data-chart="all-claimants"].is-scrollable').count() == 0
     page.close()
 
 
-def test_home_leads_with_numbers_map_and_latest_developments(browser, dist):
-    """Ticket 15: the first viewport carries the lede, three headline numbers from the aggregates and the
-    event map; the latest-developments list is the newest accepted events in the files, newest first."""
-    agg = aggregates(read_csv(DATA_DIR / "moves.csv"))
+def test_tracker_is_the_home_page(browser, dist):
+    """Ticket 17: the home page is the tracker — the sidebar lists the events in view newest first (all of
+    them, by default) with a link to each move, the search box narrows them, and the map takes at least
+    half of a desktop viewport once the page is scrolled to it."""
     page, problems = _open(browser, dist, "index.html")
     assert problems == []
-    nums = {el.get_attribute("data-stat"): el.inner_text().replace(",", "") for el in page.locator(".stat [data-stat]").element_handles()}
-    assert nums["moves"] == str(agg["n_moves"])
-    claimants_coded = sum(1 for c, v in agg["by_claimant"].items() if sum(y["total"] for y in v["years"].values()))
-    assert nums["claimants"] == str(claimants_coded)
-    assert nums["years"] == f"{agg['years'][0]}–{agg['years'][-1]}"
-    # the map is on the home page and draws offline, and takes most of the first viewport (the maintainer's
-    # ask): at least half of the viewport height is map canvas, at a tall and at a short desktop window
-    assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
-    for vh, share in ((900, 0.5), (720, 0.4)):   # a short laptop window keeps the lede and numbers, so the map gets a little less
-        page.set_viewport_size({"width": 1280, "height": vh})
-        page.wait_for_timeout(200)
-        visible = page.evaluate("(vh) => { const r = document.getElementById('map').getBoundingClientRect(); return Math.min(r.bottom, vh) - Math.max(r.top, 0); }", vh)
-        assert visible >= share * vh, f"{visible}px of map visible in a {vh}px viewport"
-    page.set_viewport_size({"width": 1280, "height": 900})
-    # latest developments: the newest accepted events of accepted moves, newest first, one row per move,
-    # MATS-era seed dates outside their move's year (known MAVD typos) left out, each linking to its move
     moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
-    events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and e["date_start"]
-              and moves[e["move_id"]]["status"] == "accepted" and (e["extractor"] or e["date_start"][:4] == moves[e["move_id"]]["year"])]
-    events.sort(key=lambda e: (e["date_start"], e["event_id"]), reverse=True)
-    expected, seen = [], set()
-    for e in events:
-        if e["move_id"] not in seen:
-            seen.add(e["move_id"]); expected.append(e)
-    rows = page.locator("#latest .latest-row")
-    assert rows.count() == min(8, len(expected))
-    for i in range(rows.count()):
-        row = rows.nth(i)
-        assert row.get_attribute("data-event") == expected[i]["event_id"]
-        assert row.locator("a[href^='cases/']").first.get_attribute("href") == f"cases/{expected[i]['move_id']}.html"
-        dt_attr = row.locator("time").get_attribute("datetime")
-        assert dt_attr == {"year": expected[i]["date_start"][:4], "month": expected[i]["date_start"][:7]}.get(expected[i]["date_precision"], expected[i]["date_start"])
+    events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and moves[e["move_id"]]["status"] == "accepted"]
+    events.sort(key=lambda e: e["date_start"] or f"{moves[e['move_id']]['year']}-01-01", reverse=True)
+    rows = page.locator("#event-list .event-row")
+    assert rows.count() == min(400, len(events)) and page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(events)} events")
+    assert rows.first.get_attribute("data-event") == events[0]["event_id"]
+    assert rows.first.locator("a.case-id").get_attribute("href") == f"cases/{events[0]['move_id']}.html"
+    dates = [page.evaluate("(r) => r.querySelector('.event-date').textContent", r) for r in rows.element_handles()[:5]]
+    assert dates == [page.evaluate("(r) => r.querySelector('.event-date').textContent", r) for r in rows.element_handles()[:5]]   # stable
+    # the map fills the viewport beside the sidebar
+    assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
+    page.evaluate("document.querySelector('.tracker').scrollIntoView()")
+    page.wait_for_timeout(200)
+    visible = page.evaluate("(() => { const r = document.getElementById('map').getBoundingClientRect(); return Math.min(r.bottom, innerHeight) - Math.max(r.top, 0); })()")
+    assert visible >= 0.5 * 900, f"{visible}px of map visible"
+    # search narrows the list and the count
+    page.fill("#search", "scarborough")
+    page.wait_for_timeout(300)
+    hits = [e for e in events if "scarborough" in (e["summary"] + " " + e["location_name"] + " " + moves[e["move_id"]]["description"][:0]).lower()]
+    assert page.locator("#event-list .event-row").count() == len(hits) and page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(hits)} event")
+    page.click("#reset")
+    page.wait_for_timeout(300)
+    assert page.locator("#event-list .event-row").count() == min(400, len(events))
     page.close()
 
 
-@pytest.mark.parametrize("viewport,scheme", [((390, 800), "light"), ((1280, 900), "dark")])
-def test_home_map_draws_at_phone_width_and_in_dark_mode(browser, dist, viewport, scheme):
-    page, problems = _open(browser, dist, "index.html", viewport, scheme)
+def test_tracker_draws_at_phone_width(browser, dist):
+    page, problems = _open(browser, dist, "index.html", (390, 800))
     assert problems == []
     assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
+    # the map comes first and the sidebar follows it
+    assert page.evaluate("document.querySelector('.map-stage').getBoundingClientRect().top") < page.evaluate("document.querySelector('.side').getBoundingClientRect().top")
     page.close()
 
 
@@ -152,41 +144,42 @@ def _luma(css_rgb):
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
-def test_visual_identity_follows_the_references(browser, dist):
-    """Ticket 16: the home page opens on a dark sea band with the title in the light display face in
-    white over it and a short rule under it, drawn (an inline SVG), not photographed; the map sits in a
-    dark panel with light labels; inner pages are white article pages with a kicker over the title;
-    the display face is the vendored geometric sans; and no page or asset carries the institution's
-    name or mark (its visual language is adopted; its identity is not)."""
+def test_public_face(browser, dist):
+    """Ticket 17: the programme banner heads every page; the tracker is a dark sidebar beside a dark map;
+    inner pages are white with a kicker over the title; there is one colour scheme; and nothing on the
+    site talks about the project's own progress — no pending move, no "pending", no "confirmation",
+    no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "index.html")
     assert problems == []
-    assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')"), "the display face is Outfit, loaded from the bundle"
-    title_rgb, band_rgb = page.evaluate("[getComputedStyle(document.querySelector('.hero h1')).color, getComputedStyle(document.querySelector('.sea')).backgroundColor]")
-    assert _luma(title_rgb) > 230 and _luma(band_rgb) < 60, (title_rgb, band_rgb)
-    assert "Outfit" in page.evaluate("getComputedStyle(document.querySelector('.hero h1')).fontFamily")
-    assert int(page.evaluate("getComputedStyle(document.querySelector('.hero h1')).fontWeight")) <= 400, "light, as in the banner"
-    rule = page.evaluate("(() => { const s = getComputedStyle(document.querySelector('.hero h1'), '::after'); return [s.content, parseFloat(s.width), s.backgroundColor]; })()")
-    assert rule[0] != "none" and 40 <= rule[1] <= 160 and _luma(rule[2]) > 200, rule
-    assert page.locator(".sea > svg.sea-art").count() == 1 and page.locator(".sea img").count() == 0
-    assert "url(" not in page.evaluate("getComputedStyle(document.querySelector('.sea')).backgroundImage")
-    panel_rgb, chip_rgb = page.evaluate("[getComputedStyle(document.querySelector('.map-section')).backgroundColor, getComputedStyle(document.querySelector('#map-claimant-filter .chip span:last-child')).color]")
-    assert _luma(panel_rgb) < 60 and _luma(chip_rgb) > 180, (panel_rgb, chip_rgb)
+    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 710
+    assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
+    side_rgb, map_rgb, nav_rgb = page.evaluate("[getComputedStyle(document.querySelector('.side')).backgroundColor, getComputedStyle(document.getElementById('map')).backgroundColor, getComputedStyle(document.querySelector('.navband')).backgroundColor]")
+    assert _luma(side_rgb) < 60 and _luma(map_rgb) < 60 and _luma(nav_rgb) < 80, (side_rgb, map_rgb, nav_rgb)
+    assert nav_rgb == "rgb(5, 44, 89)", "the logo's navy"
+    assert _luma(page.evaluate("getComputedStyle(document.querySelector('.side h1')).color")) > 230
+    label = page.locator("#map-claimant-filter .check").first
+    assert page.evaluate("(l) => [getComputedStyle(l.querySelector('.check-label')).color, getComputedStyle(l.querySelector('.dot')).backgroundColor]", label.element_handle())[0].startswith("rgb(244")
     page.close()
     page, problems = _open(browser, dist, "methodology.html")
     assert problems == []
+    assert page.locator(".site-head .banner-img").count() == 1
     assert _luma(page.evaluate("getComputedStyle(document.body).backgroundColor")) > 250, "white article paper"
-    kicker = page.locator("main .kicker").first
-    assert page.evaluate("(k) => [getComputedStyle(k).textTransform, parseFloat(getComputedStyle(k).letterSpacing) > 0.5]", kicker.element_handle()) == ["uppercase", True]
-    assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING"), "the kicker precedes the title"
+    assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING")
     page.close()
-    # the site's chrome — templates, styles, scripts, assets — carries no institution's name or mark; the data
-    # pages (cases, their index, the latest list) and the project documents under downloads/ are data and may
-    forbidden = re.compile(r"asia\s*society|\bASPI\b|leogryph|asiasociety", re.I)
-    chrome = [p for d in (Path("web/templates"), Path("web/static"), dist / "assets") for p in d.rglob("*") if p.is_file() and p.suffix in (".html", ".css", ".js", ".svg", ".json", ".txt")]
-    assert len(chrome) > 10
-    for path in chrome:
-        assert not forbidden.search(path.read_text(encoding="utf-8", errors="ignore")), path
-    assert not [p for p in (dist / "assets").rglob("*") if p.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif")], "no photographs in the bundle"
+    css = (dist / "assets/style.css").read_text(encoding="utf-8")
+    assert "prefers-color-scheme" not in css and "data-theme" not in css, "one colour scheme"
+    forbidden = re.compile(r"pending the author|author.s confirmation|awaits the author|more pending|and \d+ pending|claimants coded|moves coded|coding (for this claimant )?is in progress|project-coded event has been accepted", re.I)
+    pending = [m["move_id"] for m in read_csv(DATA_DIR / "moves.csv") if m["status"] != "accepted"]
+    assert pending, "the fixture data has a pending move to keep off the site"
+    for path in dist.rglob("*.html"):   # the visible text; the inline data blocks carry the aggregates as data
+        visible = re.sub(r"<script[^>]*>.*?</script>", "", path.read_text(encoding="utf-8"), flags=re.S)
+        assert not forbidden.search(visible), path.relative_to(dist)
+    for path in (dist / "assets").glob("*.js"):
+        assert "pending" not in path.read_text(encoding="utf-8").lower(), path.name
+    for move_id in pending:
+        assert not (dist / "cases" / f"{move_id}.html").exists()
+        assert move_id not in (dist / "cases.html").read_text(encoding="utf-8")
+        assert move_id not in (dist / "index.html").read_text(encoding="utf-8")
 
 
 def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
@@ -212,11 +205,13 @@ def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
 
 
 def test_overview_charts_and_controls(browser, dist):
-    page, problems = _open(browser, dist, "index.html")
+    page, problems = _open(browser, dist, "trends.html")
     # one stacked chart for all claimants plus one per claimant with data
     assert page.locator('[data-chart="all-claimants"] svg').count() == 1
     assert page.locator('[data-chart="by-type"] svg').count() == 3
-    assert page.locator('[data-chart="by-type"] .empty').count() == 3
+    # a claimant with no moves in the data has no panel and no chip (the page shows what is recorded, not the coding's state)
+    assert page.locator('.figure.small[hidden]').count() == 3 and page.locator('#claimant-filter .chip[hidden]').count() == 3
+    assert page.locator('[data-chart="by-type"] .empty').count() == 0
     # 357 columns worth of segments: China+Vietnam+Philippines across the years
     assert page.locator('[data-chart="all-claimants"] .seg').count() > 100
     # stack the main chart by type: four series, same totals as MAVD's all-countries chart
@@ -229,7 +224,7 @@ def test_overview_charts_and_controls(browser, dist):
     # filter: drop China and the legend and note follow (the overview's own chips, not the map's)
     page.locator('#claimant-filter .chip[data-code="CN"] input').uncheck(force=True)
     page.wait_for_timeout(100)
-    assert "213 moves across 5 of 6 claimants" in page.locator("#filters-note").inner_text()
+    assert page.locator("#filters-note").inner_text() == "5 of 6 claimants"
     assert page.locator("#fig-CN").is_hidden()
     assert page.locator('#fig-all .legend .key').count() == 5
     # table view twin
@@ -248,6 +243,8 @@ def test_overview_charts_and_controls(browser, dist):
     assert page.locator('#fig-MY [data-toggle-table]').is_hidden()
     # hover tooltip appears on a column
     page.locator('[data-toggle-table="fig-all"]').click()
+    page.locator('[data-chart="all-claimants"] .hit >> nth=41').scroll_into_view_if_needed()
+    page.wait_for_timeout(100)   # a scroll hides the tooltip, so settle first
     page.hover('[data-chart="all-claimants"] .hit >> nth=41')
     page.wait_for_timeout(50)
     assert page.locator(".tooltip").is_visible()
@@ -263,7 +260,7 @@ def _moves():
 
 
 def test_every_move_has_a_stable_page(dist):
-    moves = _moves()
+    moves = [m for m in _moves() if m["status"] == "accepted"]   # a pending move has no page until it is accepted
     pages = sorted(p.stem for p in (dist / "cases").glob("*.html"))
     assert pages == sorted(m["move_id"] for m in moves)
     html = (dist / "cases/CN201105.html").read_text(encoding="utf-8")
@@ -280,15 +277,14 @@ def test_case_page_content_matches_the_files(dist):
     assert 'href="#description"' in html                                            # seed sources link to the description
     assert 'class="sr is-on" data-loc="2"' in html and 'class="sr is-on" data-loc="5"' in html  # Paracels, Spratly NW
     assert html.count('class="sr is-on"') == 2
-    pending = (dist / "cases/VN197304.html").read_text(encoding="utf-8")
-    assert "awaits the author" in pending and "not counted" in pending
+    assert not (dist / "cases/VN197304.html").exists()   # pending: not published (ticket 17)
 
 
 def test_case_index_matches_the_files(dist):
     page = (dist / "cases.html").read_text(encoding="utf-8")
     inline = re.search(r'<script id="cases" type="application/json">(.*?)</script>', page, re.S)
     index = json.loads(inline.group(1))["cases"]
-    moves = {m["move_id"]: m for m in _moves()}
+    moves = {m["move_id"]: m for m in _moves() if m["status"] == "accepted"}
     assert {c["id"] for c in index} == set(moves)
     c = next(c for c in index if c["id"] == "CN197401")
     assert c["t"] == ["force"] and 2 in c["s"] and "V" in c["g"] and c["y"] == 1974
@@ -296,10 +292,9 @@ def test_case_index_matches_the_files(dist):
 
 def test_case_browser_filters(browser, dist):
     page, problems = _open(browser, dist, "cases.html")
-    moves = _moves()
+    moves = [m for m in _moves() if m["status"] == "accepted"]   # the site publishes accepted moves only
     n_all = len(moves)
-    n_acc = sum(1 for m in moves if m["status"] == "accepted")
-    assert page.locator("#count").inner_text() == f"{n_acc} moves and {n_all - n_acc} pending"
+    assert page.locator("#count").inner_text() == f"{n_all} moves"
     assert page.locator("#case-list li").count() == n_all
     # free-text search
     expect = sum(1 for m in moves if "scarborough" in m["description"].lower())
@@ -336,7 +331,7 @@ def test_case_browser_filters(browser, dist):
     page.close()
 
 
-@pytest.mark.parametrize("move_id", ["CN197001", "CN197401", "PH199501", "VN201104", "VN197304", "CN201504", "PH201404"])
+@pytest.mark.parametrize("move_id", ["CN197001", "CN197401", "PH199501", "VN201104", "VN197301", "CN201504", "PH201404"])
 def test_case_pages_render_without_errors(browser, dist, move_id):
     page, problems = _open(browser, dist, f"cases/{move_id}.html", viewport=(390, 800))
     assert problems == []
@@ -450,10 +445,10 @@ PNG_1x1 = bytes.fromhex("89504e470d0a1a0a0000000d4948445200000001000000010806000
 
 
 
-def _open_map(browser, dist, viewport=(1280, 900), color_scheme="light"):
+def _open_map(browser, dist, viewport=(1280, 900), ):
     """The map page with the basemap answered locally: the TileJSON names a stub tile URL that
     returns no content, as do fonts and sprites. The test is offline except for those stubs."""
-    ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]}, color_scheme=color_scheme)
+    ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
     page = ctx.new_page()
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
@@ -483,15 +478,15 @@ def test_map_data_matches_the_validator(dist):
     assert [f["properties"]["n"] for f in data["subregions"]["features"]] == list(range(1, 11))
 
 
-@pytest.mark.parametrize("viewport,scheme", [((1280, 900), "light"), ((390, 800), "light"), ((1280, 900), "dark")])
-def test_map_renders_offline_without_errors(browser, dist, viewport, scheme):
+@pytest.mark.parametrize("viewport", [(1280, 900), (390, 800)])
+def test_map_renders_offline_without_errors(browser, dist, viewport):
     from pipeline.validate import event_aggregates
-    page, problems, tiles = _open_map(browser, dist, viewport, scheme)
+    page, problems, tiles = _open_map(browser, dist, viewport)
     expected = event_aggregates(read_csv(DATA_DIR / "events.csv"), read_csv(DATA_DIR / "moves.csv"))
     assert page.locator("canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
     assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
     assert "OpenFreeMap" in page.inner_text(".maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text(".maplibregl-ctrl-attrib")
-    text = page.inner_text("#map-count")
+    text = page.evaluate("document.getElementById('map-count').textContent")
     assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text
     # the sub-region counts on the map are the validator's, summed over claimants
     shown = {}
@@ -540,7 +535,7 @@ def dist_placed(tmp_path_factory):
 
 def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     page, problems, _ = _open_map(browser, dist_placed)
-    assert "3 placed" in page.inner_text("#map-count")
+    assert "3 placed" in page.evaluate("document.getElementById('map-count').textContent")
     # two events at one feature stack into one hollow marker carrying their count; the point event is filled
     evts = page.locator(".evt")
     assert evts.count() == 2
@@ -561,7 +556,7 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
         page.fill("#month", str((year - 1970) * 12 + month_no - 1))
         page.dispatch_event("#month", "input")
         page.wait_for_timeout(250)
-        text = page.inner_text("#map-count")
+        text = page.evaluate("document.getElementById('map-count').textContent")
         return int(re.search(r"(\d+) placed", text).group(1)), int(re.search(r"(\d+) by sub-region", text).group(1))
     assert counts_at(2014, 5)[0] == 1 and counts_at(2014, 5 + 1)[0] == 0          # the rig, dated to May 2014
     assert counts_at(2013, 11)[1] >= 1 and counts_at(2013, 1)[1] >= 1            # the filing, dated to 2013
@@ -596,19 +591,17 @@ def test_map_time_window_and_filters(browser, dist):
     page.dispatch_event("#month", "input")
     page.wait_for_timeout(300)
     in_2014 = [e for e in shown if e["date_start"][:4] <= "2014" and (e["date_end"] or e["date_start"])[:4] >= "2014"]
-    assert page.inner_text("#map-count").startswith(f"{len(in_2014)} events Jan 2014 – Dec 2014")
+    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events Jan 2014 – Dec 2014")
     # unchecking a claimant removes its events; a type filter keeps only moves of that type
-    page.uncheck('input[name="claimant"][value="VN"]')
+    page.uncheck('input[name="claimant"][value="VN"]', force=True)
     page.wait_for_timeout(300)
-    assert page.inner_text("#map-count").startswith(f"{len([e for e in in_2014 if e['claimant'] != 'VN'])} events")
+    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len([e for e in in_2014 if e['claimant'] != 'VN'])} events")
     page.click("#reset")
-    page.check('input[name="t"][value="coercive"]')
+    page.check('input[name="t"][value="coercive"]', force=True)
     page.wait_for_timeout(300)
     coercive = [e for e in shown if moves[e["move_id"]]["coercive"] == "1"]
-    assert page.inner_text("#map-count").startswith(f"{len(coercive)} events through")
-    # the list twin names every event in view with a link to its move
-    page.click("#list-toggle")
-    page.wait_for_timeout(300)
+    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(coercive)} events through")
+    # the sidebar names every event in view with a link to its move
     rows = page.locator("#event-list .event-row")
     assert rows.count() == min(len(coercive), 400)
     href = rows.first.locator("a.case-id").get_attribute("href")
@@ -668,6 +661,6 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
     events = json.loads((out / "data/events.json").read_text(encoding="utf-8"))
     assert {e["c"] for e in events["events"]} >= {"MY", "ID", "TW"}
     # the overview's chart data carries the new claimants' columns and the extended year axis
-    agg_html = (out / "index.html").read_text(encoding="utf-8")
+    agg_html = (out / "trends.html").read_text(encoding="utf-8")
     inline = json.loads(re.search(r'<script id="agg"[^>]*>(.*?)</script>', agg_html, re.S).group(1).replace("<\\/", "</"))
     assert inline["by_claimant"]["MY"]["years"]["2021"]["coercive"] == 1 and inline["years"][-1] == 2021

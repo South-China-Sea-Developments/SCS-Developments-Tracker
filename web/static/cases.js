@@ -8,8 +8,7 @@
   var NAMES = INDEX.names;
   var TYPE_LABELS = INDEX.type_labels;
   CASES.forEach(function (c) { c.lx = c.x.toLowerCase(); c.lid = c.id.toLowerCase(); });
-  var N_ACCEPTED = CASES.filter(function (c) { return c.st === "accepted"; }).length;
-  var N_PENDING = CASES.length - N_ACCEPTED;
+  var N_ALL = CASES.length;   // the build publishes accepted moves only
 
   var list = document.getElementById("case-list");
   var count = document.getElementById("count");
@@ -71,7 +70,7 @@
     var hits = CASES.filter(function (c) { return matches(c, f); });
     list.textContent = "";
     hits.forEach(function (c) {
-      var li = el("li", "case-row" + (c.st !== "accepted" ? " is-pending" : ""), undefined, list);
+      var li = el("li", "case-row", undefined, list);
       var head = el("div", "case-row-head", undefined, li);
       var a = el("a", "case-link", undefined, head);
       a.href = "cases/" + c.id + ".html";
@@ -79,14 +78,12 @@
       el("span", "case-year", String(c.y), a);
       var pills = el("span", "case-types", undefined, head);
       c.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
-      if (c.st !== "accepted") el("span", "pending-pill", "pending", pills);
-      if (c.cb !== "chubb") el("span", "pending-pill project-pill", "project coding", pills).title = "Coded by this project, not part of MATS 1.02";
+      if (c.cb !== "chubb") el("span", "prov-pill project-pill", "project coding", pills).title = "Coded by this project, not part of MATS 1.02";
       el("span", "case-id", c.id, head);
       el("p", "case-excerpt", excerpt(c.x, f.q), li);
     });
     noMatch.hidden = hits.length > 0;
-    var all = N_ACCEPTED + " moves" + (N_PENDING ? " and " + N_PENDING + " pending" : "");
-    count.textContent = hits.length === CASES.length ? all : hits.length + " of " + CASES.length + " (" + all + ")";
+    count.textContent = hits.length === N_ALL ? N_ALL + " moves" : hits.length + " of " + N_ALL + " moves";
   }
 
   var timer = null;

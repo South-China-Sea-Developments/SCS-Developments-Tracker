@@ -50,6 +50,13 @@
     width: window.innerWidth
   };
   CLAIMANTS.forEach(function (c) { state.selected[c] = true; });
+  // a claimant with no moves in the data has no chip and no small multiple: the pages show what is
+  // recorded, not the state of the coding (ticket 17)
+  function hasMoves(c) { return AGG.by_claimant[c] && AGG.by_claimant[c].totals.total > 0; }
+  CLAIMANTS.forEach(function (c) {
+    if (hasMoves(c)) return;
+    Array.prototype.forEach.call(document.querySelectorAll('#claimant-filter .chip[data-code="' + c + '"], .figure.small[data-claimant="' + c + '"]'), function (n) { n.hidden = true; });
+  });
 
   var BINS = AGG.periods || [{ key: "all", label: "All years", years: YEARS.slice() }];
 
@@ -90,15 +97,15 @@
     var avail = container.clientWidth;
     if (!avail) return null;                         // hidden: render when revealed
     var small = !!opts.small;
-    var height = small ? 180 : 300;
-    var m = { top: 12, right: 8, bottom: 26, left: 30 };
+    var height = small ? 200 : 340;
+    var m = { top: 16, right: 8, bottom: 28, left: 34 };
     var n = categories.length;
     var minBand = opts.yearAxis ? 5 : 28;
     var width = Math.max(avail, n * minBand + m.left + m.right);
     var pw = width - m.left - m.right, ph = height - m.top - m.bottom;
     var band = pw / n;
     var gap = band >= 12 ? 2 : 1;                     // the surface gap between segments and neighbours
-    var bar = Math.min(opts.yearAxis ? 24 : 40, Math.max(3, band - gap));
+    var bar = Math.min(opts.yearAxis ? 18 : 40, Math.max(3, band * (opts.yearAxis ? 0.72 : 0.8)));
 
     var totals = categories.map(function (c) { return sum(series.map(function (sr) { return sr.values[c.key] || 0; })); });
     var maxV = Math.max(1, Math.max.apply(null, totals));
@@ -135,7 +142,7 @@
       var g = el("g", { "class": "col" }, svg);
       segs.forEach(function (s, k) {
         var last = k === segs.length - 1;
-        var r = last ? Math.min(4, bar / 2, s.h / 2) : 0;
+        var r = last ? Math.min(3, bar / 2, s.h / 2) : 0;
         el("path", { d: roundedTop(x, s.y, bar, s.h, r), fill: s.sr.color, "class": "seg", "stroke-width": gap }, g);
       });
       // one pointer hit target per category covering the whole band; the table view is the keyboard route
@@ -265,11 +272,11 @@
     var codes = scope === "map" ? mapClaimants() : code ? [code] : shownClaimants();
     var who = scope === "map" ? (state.mapClaimant === "ALL" ? "all claimants" : NAMES[state.mapClaimant]) : code ? NAMES[code] : "shown claimants";
     var small = fig.classList.contains("small");
-    if (code && !state.selected[code] && scope !== "map") { fig.hidden = true; return; }
+    if (code && (!state.selected[code] || !hasMoves(code)) && scope !== "map") { fig.hidden = true; return; }
     fig.hidden = false;
     var total = sum(codes.map(function (c) { return AGG.by_claimant[c].totals.total; }));
     var empty = !codes.length ? "No claimants selected. Pick at least one above."
-              : !total ? "No coded moves yet for " + who + "." + (codes.length === 1 ? " Coding for this claimant is in progress." : "") : null;
+              : !total ? "No moves recorded for " + who + "." : null;
 
     if (kind === "all-claimants") {
       var series = state.stackBy === "type"
@@ -416,10 +423,7 @@
     var note = document.getElementById("filters-note");
     if (note) {
       var sel = shownClaimants();
-      var s = sum(sel.map(function (c) { return AGG.by_claimant[c].totals.total; }));
-      note.textContent = sel.length === CLAIMANTS.length
-        ? s + " moves across all claimants"
-        : s + " moves across " + sel.length + " of " + CLAIMANTS.length + " claimants";
+      note.textContent = sel.length === CLAIMANTS.length ? "All claimants" : sel.length + " of " + CLAIMANTS.length + " claimants";
     }
   }
 

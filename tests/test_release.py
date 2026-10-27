@@ -160,7 +160,7 @@ def test_site_serves_the_tagged_files_and_says_so(tagged_repo, tmp_path):
     assert f'href="downloads/{m["zip"]["name"]}"' in html and m["zip"]["sha256"] in html
     assert (out / "downloads" / m["zip"]["name"]).exists()
     assert b"changed after the tag" not in (out / "downloads/moves.csv").read_bytes()
-    assert "What changed in v2.0.0-dev" in html and "<li>" in html
+    assert "What changed in v2.0.0-dev" not in html and "CHANGELOG.md" in html   # the notes are linked, not rendered (ticket 17): they describe review state
     assert "@misc{scs_developments_tracker_2_0_0_dev," in html and "{{South-China-Sea-Developments project} and M., Angelo}" in html
     assert "Dataset version 2.0.0-dev (released 2026-10-16)" in html and "Chubb, A. (2021)" in html
     assert 'href="downloads.html#cite"' in (out / "methodology.html").read_text(encoding="utf-8")
