@@ -157,7 +157,7 @@ def _luma(css_rgb):
 
 
 def test_public_face(browser, dist):
-    """Ticket 17: the programme banner heads every page; the tracker is a dark sidebar beside a dark map;
+    """Tickets 17–18: the programme banner heads every page; the tracker is a sidebar beside a full-height map on the site's white paper;
     inner pages are white with a kicker over the title; there is one colour scheme; and nothing on the
     site talks about the project's own progress — no pending move, no "pending", no "confirmation",
     no count of claimants or moves coded."""
@@ -174,6 +174,8 @@ def test_public_face(browser, dist):
     label = page.locator("#map-claimant-filter .check").first
     assert _luma(page.evaluate("(l) => getComputedStyle(l.querySelector('.check-label')).color", label.element_handle())) < 80
     assert "dark-en" not in page.content() and "positron" in page.content().lower(), "the light basemap"
+    page.focus("#search")
+    assert page.evaluate("getComputedStyle(document.getElementById('search')).outlineStyle") == "solid", "keyboard focus is visible inside the tracker"
     page.close()
     page, problems = _open(browser, dist, "methodology.html")
     assert problems == []

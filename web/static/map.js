@@ -69,8 +69,8 @@
   }
   // the polygons are context, not controls. Their colours are the stylesheet's --map-zone tokens.
   var rootStyle = getComputedStyle(document.documentElement);
-  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#7fa6c8").trim();
-  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#9fb0bf").trim();
+  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#1a5e78").trim();
+  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#5d6b76").trim();
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
     map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.1 } });

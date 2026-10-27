@@ -2,8 +2,8 @@
    Design tokens first (tickets 15–17): the faces, the colours and the spacing scale drive every page,
    so the hosting institution's own values slot in here and nowhere else. The values come from the
    programme banner the maintainer supplied (the logo's navy, the sea's teals) and from the manner of
-   CFR's Global Conflict Tracker (a dark sidebar beside a dark map, small letter-spaced capitals as
-   labels, coloured dots as the legend). One colour scheme (ticket 17): no dark mode. The claimant and
+   CFR's Global Conflict Tracker (a sidebar beside a full-height map, small letter-spaced capitals as
+   labels, coloured dots as the legend) — on the site's white paper since ticket 18. One colour scheme (ticket 17): no dark mode. The claimant and
    type palettes below the block are the dataviz palette (validated) and do not change with the brand. */
 
 @font-face {
@@ -96,7 +96,7 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 .site-head { background: var(--band); color: var(--band-ink); --focus: var(--focus-dark); }
 .banner { background: linear-gradient(90deg, var(--sea) 0, var(--sea) 50%, var(--sea-mid) 72%, var(--sea) 100%); }
 .banner-link { display: block; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-/* the image (2219px wide) at the wrap width, cropped from the top on wide screens so the logo, the title and its
+/* the image (2219px wide) at the wrap width (1140px at most, so never above its own size), cropped from the top on wide screens so the logo, the title and its
    rule stay in view; the band around it is the sea's own colour */
 .banner-img { display: block; width: 100%; height: auto; max-height: 360px; object-fit: cover; object-position: left top;
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
@@ -133,8 +133,7 @@ h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin
 dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 
 /* ---- the tracker: sidebar beside the map, filling the viewport under the header; white like the rest of the site (ticket 18) ---- */
-.is-tracker { background: var(--paper); }
-.tracker { display: grid; grid-template-columns: var(--side) minmax(0, 1fr); height: max(calc(100vh - var(--head-h, 52px)), 640px); background: var(--paper); color: var(--ink); --focus: var(--focus); }
+.tracker { display: grid; grid-template-columns: var(--side) minmax(0, 1fr); height: max(calc(100vh - var(--head-h, 52px)), 640px); }
 .side { display: flex; flex-direction: column; min-height: 0; overflow-y: auto; border-right: 1px solid var(--rule); background: var(--surface); scrollbar-width: thin; scrollbar-color: var(--rule-strong) transparent; }
 .side-head { padding: var(--s5) var(--s5) var(--s4); }
 .side-head h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 var(--s2); line-height: 1.15; }
@@ -312,11 +311,9 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 @media print {
   .navband, .toggle, .filters, .side-filters, .side-count { display: none; }
   .banner { background: none; }
-  .is-tracker, .tracker, .side { background: none; color: var(--ink); height: auto; overflow: visible; }
+  .tracker, .side { height: auto; overflow: visible; }
   .tracker { display: block; }
   .tracker .map-stage { height: 480px; }
-  .side-head h1, .side-head .byline, .side-list .event-summary, .side-list .case-claimant, .side-list-head { color: var(--ink); }
-  .side-list .event-date, .side-list .event-meta, .side-list .case-id { color: var(--muted); }
   .table-view[hidden] { display: block; }
 }
 
@@ -411,9 +408,9 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .legend.seq .seq-end { padding: 0 6px; font-variant-numeric: tabular-nums; }
 .legend.seq .seq-caption { margin-left: 8px; color: var(--muted); }
 
-/* ---- event map: lives only inside the tracker, so its rules are stated for the dark plane -------- */
+/* ---- event map: lives only inside the tracker ------------------------------------------------- */
 .map-stage { position: relative; min-height: 0; }
-.map-canvas { height: 100%; background: var(--map-plane); font: inherit; overflow: hidden; border-left: 0; }
+.map-canvas { height: 100%; background: var(--map-plane); font: inherit; overflow: hidden; }
 /* the MapLibre stylesheet loads after this one, so these carry one more class to win */
 .maplibregl-map { font-family: inherit; }
 .map-stage .maplibregl-map a { color: var(--ink); }
@@ -433,7 +430,7 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .evt:hover { transform: scale(1.12); }
 .evt:focus-visible, .sr-count:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .maplibregl-marker { cursor: default; }
-.sr-label { display: block; text-align: center; font-size: 11px; letter-spacing: 0.02em; color: var(--muted); white-space: nowrap; pointer-events: none; text-shadow: 0 0 3px var(--map-plane), 0 0 3px var(--map-plane); }
+.sr-label { display: block; text-align: center; font-size: 11px; letter-spacing: 0.02em; color: var(--ink-2); white-space: nowrap; pointer-events: none; text-shadow: 0 0 3px #fff, 0 0 3px #fff; }
 .sr-count { display: flex; align-items: center; justify-content: center; min-width: 30px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 999px;
   background: var(--surface-2); color: var(--ink); border: 1px solid var(--rule); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer; }
 .map-legend { position: absolute; left: 12px; bottom: 12px; margin: 0; padding: 8px 12px; display: flex; flex-wrap: wrap; gap: 4px 12px; background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--rule); border-radius: var(--radius); color: var(--muted); font-size: 0.75rem; backdrop-filter: blur(4px); }
