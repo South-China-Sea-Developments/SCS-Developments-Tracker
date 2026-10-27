@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}SCS Developments Tracker{% endblock %}
+{% block body_class %}is-tracker{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="mapdata" type="application/json">{{ map_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+{# The tracker (ticket 17), in the manner of CFR's Global Conflict Tracker: a sidebar with the title,
+   the count of events in view, a search box, the filters (the claimant dots double as the legend),
+   the time controls and the events in view newest first, beside the event map on a dark basemap.
+   map.js finds its controls by id. #}
+<main id="main" class="tracker">
+  <aside class="side" aria-label="Filters and events in view">
+    <div class="side-head">
+      <h1>SCS Developments Tracker</h1>
+      <p class="byline">Assertive moves by the claimant states in the South China Sea since 1970 — statements, patrols, construction, interference, force — on the coding rules of the <em>Maritime Assertiveness Time Series</em>. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
+    </div>
+    <div class="side-count">
+      <p class="count" id="map-count" aria-live="polite"></p>
+      <button type="button" class="reset" id="reset">Reset</button>
+    </div>
+    <form class="side-filters" id="map-filters" aria-label="Filter events">
+      <label class="search"><span class="sr-only">Find an event</span><input type="search" id="search" placeholder="Find an event" autocomplete="off"></label>
+      <fieldset class="fgroup"><legend>Claimant</legend>
+        <div class="checks" id="map-claimant-filter">
+          {% for c in claimants %}
+          <label class="check" data-code="{{ c.code }}"><input type="checkbox" name="claimant" value="{{ c.code }}" checked><span class="box" aria-hidden="true"></span><span class="check-label">{{ c.name }}</span><span class="dot" aria-hidden="true"></span></label>
+          {% endfor %}
+        </div>
+      </fieldset>
+      <fieldset class="fgroup"><legend>Type of move</legend>
+        <div class="checks">
+          {% for key, label, blurb in types %}<label class="check"><input type="checkbox" name="t" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}
+        </div>
+      </fieldset>
+      <details class="fgroup more">
+        <summary>More filters</summary>
+        <fieldset><legend>Domain</legend>
+          <div class="checks">{% for key, label in domain_labels.items() %}<label class="check"><input type="checkbox" name="d" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}</div>
+        </fieldset>
+        <fieldset><legend>Issue</legend>
+          <div class="checks">{% for key, label in issue_labels.items() %}<label class="check"><input type="checkbox" name="i" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}</div>
+        </fieldset>
+        <fieldset><legend>Directed at</legend>
+          <select id="target" aria-label="Directed at">
+            <option value="">any counterpart</option>
+            {% for code, name in dyad_targets.items() %}<option value="{{ code }}">{{ name }}</option>{% endfor %}
+          </select>
+        </fieldset>
+      </details>
+      <fieldset class="fgroup time"><legend>Time</legend>
+        <div class="time-row">
+          <button type="button" class="play" id="play" aria-pressed="false" aria-label="Play through time">Play</button>
+          <label class="time-window"><span class="sr-only">Show</span>
+            <select id="window" aria-label="Time window">
+              <option value="1">the month</option>
+              <option value="12">the year</option>
+              <option value="60">five years</option>
+              <option value="0" selected>everything up to</option>
+            </select>
+          </label>
+          <output class="time-label" id="time-label" for="month"></output>
+        </div>
+        <label class="time-slider"><span class="sr-only">Month</span>
+          <input type="range" id="month" min="0" max="0" step="1" value="0"></label>
+      </fieldset>
+    </form>
+    <h2 class="side-list-head">Events in view</h2>
+    <ol class="event-list side-list" id="event-list" aria-label="Events in the current view"></ol>
+  </aside>
+  <div class="map-stage">
+    <div id="map" class="map-canvas" role="region" aria-label="Map of the South China Sea with event locations"></div>
+    <div class="map-legend" aria-hidden="true">
+      <span class="legend-point"><i class="dot"></i> event at a known position</span>
+      <span class="legend-point"><i class="dot feature"></i> at a named feature</span>
+      <span class="legend-point"><i class="count-swatch">n</i> known only to the sub-region</span>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/map.js"></script>{% endblock %}

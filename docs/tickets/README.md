@@ -20,3 +20,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 14 | [Extraction without an API key](14-extraction-on-the-subscription.md) | 07 | done; the weekly run is a scheduled task on the maintainer's subscription |
 | 15 | [Site restyle](15-site-restyle.md) | 08, 09 | done |
 | 16 | [Visual identity from the three references](16-visual-identity.md) | 15 | done |
+| 17 | [The tracker face](17-tracker-face.md) | 16 | done |

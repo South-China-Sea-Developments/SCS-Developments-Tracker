@@ -17,7 +17,8 @@
   var timeLabel = document.getElementById("time-label");
   var countEl = document.getElementById("map-count");
   var listEl = document.getElementById("event-list");
-  var targetSel = document.getElementById("target");   // absent on the home page's compact filter row
+  var targetSel = document.getElementById("target");
+  var searchEl = document.getElementById("search");
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function monthIndex(iso) { return (parseInt(iso.slice(0, 4), 10) - FIRST) * 12 + parseInt(iso.slice(5, 7), 10) - 1; }
@@ -27,6 +28,12 @@
   slider.max = String(lastMonth);
   slider.value = String(lastMonth);
   windowSel.value = "0";
+
+  // the tracker fills the viewport under the navigation band (the banner scrolls off), whatever the band's height at this width
+  var head = document.querySelector(".navband");
+  function sizeTracker() { if (head) document.documentElement.style.setProperty("--head-h", head.offsetHeight + "px"); }
+  sizeTracker();
+  window.addEventListener("resize", sizeTracker);
 
   // ---- map -------------------------------------------------------------------------------------
   // MapLibre over OpenFreeMap vector tiles with an English-first label style (vendored, inlined by
@@ -60,16 +67,15 @@
     var b = geoBounds({ features: [f] });
     return [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
   }
-  // the polygons are context, not controls. Their colours are the stylesheet's --map-zone tokens,
-  // stated in light-mode terms whatever the scheme: in dark mode the stylesheet inverts the whole
-  // canvas, basemap and polygons together.
+  // the polygons are context, not controls. Their colours are the stylesheet's --map-zone tokens.
   var rootStyle = getComputedStyle(document.documentElement);
-  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#1a4f7e").trim();
-  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#5f6d77").trim();
+  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#7fa6c8").trim();
+  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#9fb0bf").trim();
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
-    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.07 } });
-    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.9 } });
+    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.1 } });
+    // solid outlines: the basemap's boundaries are the dashed ones
+    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.75 } });
   });
 
   var srCenters = {};
@@ -111,12 +117,18 @@
   function readFilters() {
     var w = parseInt(windowSel.value, 10), k = parseInt(slider.value, 10);
     return { claimants: checked("claimant"), types: checked("t"), domains: checked("d"), issues: checked("i"),
-             target: targetSel ? targetSel.value : "", from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w };
+             target: targetSel ? targetSel.value : "", from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w,
+             q: searchEl ? searchEl.value.trim().toLowerCase() : "" };
+  }
+  function haystack(e) {   // what the search box looks through: summary, place, claimant, move id, sub-region names
+    if (!e.hay) e.hay = [(NAMES[e.c] || e.c), e.m, e.n || "", e.s || "", e.sr.map(function (s) { return SR_NAMES[s] || ""; }).join(" ")].join(" ").toLowerCase();
+    return e.hay;
   }
   function matches(e, f) {
     if (f.claimants.indexOf(e.c) < 0) return false;
     if (!anyOf(f.types, e.t) || !anyOf(f.domains, e.d) || !anyOf(f.issues, e.i)) return false;
     if (f.target && e.g.indexOf(f.target) < 0) return false;
+    if (f.q && haystack(e).indexOf(f.q) < 0) return false;
     return e.ms <= f.to && e.me >= f.from;
   }
 
@@ -131,15 +143,18 @@
   function dateLabel(e) {
     if (e.dp === "year") return e.ds.slice(0, 4);
     if (e.dp === "month") return MONTHS[parseInt(e.ds.slice(5, 7), 10) - 1] + " " + e.ds.slice(0, 4);
-    return e.ds + (e.de && e.de !== e.ds ? " to " + e.de : "");
+    function day(iso) { return parseInt(iso.slice(8, 10), 10) + " " + MONTHS[parseInt(iso.slice(5, 7), 10) - 1] + " " + iso.slice(0, 4); }
+    return day(e.ds) + (e.de && e.de !== e.ds ? " to " + day(e.de) : "");
   }
   function eventRow(e, parent) {
     var li = el("li", "event-row", undefined, parent);
+    li.setAttribute("data-event", e.id || "");
     var head = el("div", "event-row-head", undefined, li);
     el("span", "case-claimant", NAMES[e.c] || e.c, head).setAttribute("data-code", e.c);
     el("span", "event-date", dateLabel(e), head);
     var a = el("a", "case-id", e.m, head);
     a.href = "cases/" + e.m + ".html";
+    a.setAttribute("aria-label", "Move " + e.m);
     var pills = el("span", "case-types", undefined, head);
     e.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
     el("p", "event-summary", (e.n ? e.n + ". " : "") + (e.s || "(no summary)"), li);
@@ -197,11 +212,28 @@
     var when = f.w ? (f.w === 1 ? monthName(f.to) : monthName(f.from) + " – " + monthName(f.to)) : "through " + monthName(f.to);
     timeLabel.value = when;
     slider.setAttribute("aria-valuetext", when);
-    countEl.textContent = hits.length + (hits.length === 1 ? " event " : " events ") + when + ": " + placed + " placed, " + (hits.length - placed) + " by sub-region" +
-      (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : "");
+    countEl.textContent = "";
+    el("span", "count-n", hits.length + (hits.length === 1 ? " event" : " events"), countEl);
+    el("span", "count-detail", " " + when + " · " + placed + " placed, " + (hits.length - placed) + " by sub-region" +
+      (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : ""), countEl);
+    renderList(hits);
+  }
+
+  // the sidebar list: newest first, a page at a time so a long list never makes a long page
+  var LIST_PAGE = 60, listShown = LIST_PAGE, listKey = "";
+  function renderList(hits) {
+    var sorted = hits.slice().sort(function (a, b) { return a.ds < b.ds ? 1 : a.ds > b.ds ? -1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+    var key = sorted.map(function (e) { return e.id; }).join(",");
+    if (key !== listKey) { listKey = key; listShown = LIST_PAGE; }   // a new result set starts at the first page
     listEl.textContent = "";
-    if (!listEl.hidden) hits.slice(0, 400).forEach(function (e) { eventRow(e, listEl); });
-    if (!listEl.hidden && hits.length > 400) el("li", "popup-more", "showing the first 400; narrow the filters", listEl);
+    sorted.slice(0, listShown).forEach(function (e) { eventRow(e, listEl); });
+    if (!sorted.length) el("li", "popup-more", "No events match. Widen the time window or clear a filter.", listEl);
+    if (sorted.length > listShown) {
+      var li = el("li", "list-more", undefined, listEl);
+      var b = el("button", "more", "Show " + Math.min(LIST_PAGE, sorted.length - listShown) + " more of " + sorted.length, li);
+      b.type = "button";
+      b.addEventListener("click", function () { listShown += LIST_PAGE; renderList(hits); });
+    }
   }
 
   var timer = null;
@@ -209,21 +241,17 @@
   form.addEventListener("change", schedule);
   slider.addEventListener("input", schedule);
   windowSel.addEventListener("change", schedule);
-  var resetBtn = document.getElementById("reset");   // the home page's compact row has none
+  var resetBtn = document.getElementById("reset");
   if (resetBtn) resetBtn.addEventListener("click", function () {
     form.querySelectorAll('input[type="checkbox"]').forEach(function (i) { i.checked = i.name === "claimant"; });
     if (targetSel) targetSel.value = "";
+    if (searchEl) searchEl.value = "";
     windowSel.value = "0";
     slider.value = slider.max;
     stopPlay();
     render();
   });
-  var listToggle = document.getElementById("list-toggle");
-  listToggle.addEventListener("click", function () {
-    listEl.hidden = !listEl.hidden;
-    listToggle.setAttribute("aria-pressed", String(!listEl.hidden));
-    render();
-  });
+  if (searchEl) searchEl.addEventListener("input", schedule);
 
   // ---- play ------------------------------------------------------------------------------------
   var playBtn = document.getElementById("play"), playTimer = null;

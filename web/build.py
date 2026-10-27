@@ -106,36 +106,6 @@ def event_view(e: dict, move_year: int, sources: list[dict]) -> dict:
     )
 
 
-def latest_developments(events: list[dict], moves: list[dict], names: dict, n: int = 8) -> list[dict]:
-    """The newest accepted events, newest first, one row per move (its newest event), for the home
-    page: date and precision, claimant, the event's own summary when the project coded it, otherwise
-    its move's description (a MATS-era seed event has only a mechanical summary), the move to link to,
-    and whether the coding is the project's."""
-    move_by_id = {m["move_id"]: m for m in moves}
-    rows = []
-    for e in events:
-        m = move_by_id.get(e["move_id"])
-        if e["status"] != "accepted" or not e["date_start"] or not m or m["status"] != "accepted":
-            continue
-        own = bool(e.get("extractor")) or m["coded_by"] != "chubb"
-        if not own and e["date_start"][:4] != m["year"]:
-            continue    # a MATS-era seed date outside its move's year is one of the known MAVD typos; not a "latest development"
-        text = (e["summary"] if own else "") or re.sub(r"^\d{4}[^:]{0,24}:\s*", "", m["description"])   # MATS descriptions open with their own date
-        rows.append({"event_id": e["event_id"], "move_id": m["move_id"], "claimant": e["claimant"], "claimant_name": names.get(e["claimant"], e["claimant"]),
-                     "date": e["date_start"], "date_precision": e["date_precision"], "date_label": date_label(e["date_start"], e["date_start"], e["date_precision"]),
-                     "datetime": {"year": e["date_start"][:4], "month": e["date_start"][:7]}.get(e["date_precision"], e["date_start"]),
-                     "text": text[:280].rsplit(" ", 1)[0] + "…" if len(text) > 280 else text, "location": e["location_name"],
-                     "types": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "project": m["coded_by"] != "chubb"})
-    rows.sort(key=lambda r: (r["date"], r["event_id"]), reverse=True)
-    seen, out = set(), []
-    for r in rows:
-        if r["move_id"] in seen:
-            continue
-        seen.add(r["move_id"])
-        out.append(r)
-    return out[:n]
-
-
 def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
     """Everything a move page or list row needs, with codes expanded to labels."""
     types = [t for t in schema.TYPE_FLAGS if m[t] == "1"]
@@ -225,7 +195,10 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
         cc["years"][y] = cc["years"].get(y, 0) + 1
         rec = {"id": e["event_id"], "m": m["move_id"], "c": e["claimant"], "y": int(m["year"]),
                "ds": e["date_start"] or f"{m['year']}-01-01", "de": date_end_for(e, m["year"]), "dp": e["date_precision"] or "year",
-               "s": e["summary"][:400], "n": e["location_name"], "lp": e["location_precision"] or "unknown",
+               # a MATS-era seed event has only a mechanical summary; the tracker shows its move's description
+               # (minus the date MATS descriptions open with) instead, as the latest-developments list did
+               "s": (re.sub(r"^\d{4}[^:]{0,24}:\s*", "", m["description"]) if e["harvest_run_id"] == SEED_RUN else e["summary"])[:400],
+               "n": e["location_name"], "lp": e["location_precision"] or "unknown",
                "t": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "d": [d for d in schema.DOMAIN_FLAGS if m[d] == "1"],
                "i": [i for i in schema.ISSUE_FLAGS if m[i] == "1"], "g": sorted({d[1] for d in m["dyads"].split() if len(d) == 2}),
                "src": len(sources_by_event.get(e["event_id"], [])), "seed": e["harvest_run_id"] == SEED_RUN}
@@ -274,32 +247,6 @@ def size_label(n: int) -> str:
     return f"{n / 1_000_000:.1f} MB" if n >= 1_000_000 else f"{n / 1000:.0f} KB" if n >= 1000 else f"{n} B"
 
 
-def notes_html(md: str) -> str:
-    """CHANGELOG prose (paragraphs, '- ' bullets, `code`) as HTML; anything else is left as text."""
-    import html as h
-    def inline(t):
-        return re.sub(r"`([^`]+)`", lambda m: "<code>" + m.group(1) + "</code>", h.escape(t))
-    out, para, items = [], [], []
-    def flush():
-        if para:
-            out.append("<p>" + inline(" ".join(para)) + "</p>"); para.clear()
-        if items:
-            out.append("<ul>" + "".join("<li>" + inline(i) + "</li>" for i in items) + "</ul>"); items.clear()
-    for line in md.splitlines():
-        if line.startswith("- "):
-            if para:
-                flush()
-            items.append(line[2:].strip())
-        elif not line.strip():
-            flush()
-        else:
-            if items:
-                flush()
-            para.append(line.strip())
-    flush()
-    return "\n".join(out)
-
-
 def citation(version: str, tag: str, date: str, build_date: str) -> dict:
     year = date[:4]
     accessed = f"accessed {build_date}" if tag == "unreleased" else f"released {date[:10]}"
@@ -320,16 +267,12 @@ def release_context(root: Path, data_dir: Path, out_dir: Path, build_date: str) 
     tag = release.latest_tag(root)
     if tag:
         m = release.build_assets(root, tag, out_dir / "downloads")
-        notes = release.changelog_section(tag, text=release.file_at(root, tag, "CHANGELOG.md").decode("utf-8"))
     else:
         m = release.working_assets(data_dir, out_dir / "downloads", date=build_date + "T00:00:00+00:00", root=root)
-        notes = ""
     for f in m["files"]:
         f["what"] = FILE_WHAT.get(f["name"], "")
         f["size_label"] = size_label(f["bytes"])
     m["zip"]["size_label"] = size_label(m["zip"]["bytes"])
-    m["notes"] = notes
-    m["notes_html"] = notes_html(notes)
     m["prerelease"] = "-" in m["tag"]
     return m
 
@@ -353,7 +296,10 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     for s in read_csv(data_dir / "sources.csv"):
         sources_by_event.setdefault(s["event_id"], []).append(s)
     names = {c["code"]: c["name"] for c in claimants}
-    views = [move_view(m, events_by_move, sources_by_event) for m in sorted(moves, key=lambda m: (m["year"], m["move_id"]))]
+    # the public site publishes accepted moves only (ticket 17): a pending move has no page, no row and no
+    # count until it is accepted; the files and aggregates.json keep it as data
+    published = [m for m in moves if m["status"] == "accepted"]
+    views = [move_view(m, events_by_move, sources_by_event) for m in sorted(published, key=lambda m: (m["year"], m["move_id"]))]
     paths = subregion_paths(data_dir / "reference" / "mavd_subregions.geojson")
     agg = compute_aggregates(moves)
     agg["claimant_names"] = names
@@ -372,11 +318,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "dataset_version": schema.DATASET_VERSION,
         "repo_url": schema.REPO_URL,
         "n_moves": agg["n_moves"],
-        "n_pending": agg["n_pending"],
         "first_year": agg["years"][0],
         "last_year": agg["years"][-1],
         "mats_last_year": schema.MATS_YEARS[-1],
-        "n_claimants_coded": sum(1 for c, v in agg["by_claimant"].items() if sum(y["total"] for y in v["years"].values())),
         "n_claimants": len(claimants),
     }
 
@@ -403,7 +347,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                    "x": v["description"]} for v in views],
     }
     index_json = json.dumps(index, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    mapd = map_data(events, moves, sources_by_event)
+    mapd = map_data(events, published, sources_by_event)
     mapd["subregions"] = slim_geojson(json.loads((data_dir / "reference" / "mavd_subregions.geojson").read_text(encoding="utf-8")))
     mapd["names"] = names
     mapd["type_labels"] = TYPE_LABELS
@@ -411,7 +355,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
+    map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "dark-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
 
     rel = release_context(repo, data_dir, out_dir, meta["build_date"])
     env = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]))
@@ -419,20 +363,21 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         "release": rel,
         "citation": citation(rel["version"], rel["tag"], rel["date"], meta["build_date"]),
         "meta": meta,
-        "agg_json": json.dumps(agg, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>
+        "agg_json": json.dumps({k: v for k, v in agg.items() if k != "n_pending"}, separators=(",", ":")).replace("</", "<\\/"),  # safe inside <script>; the review-state count stays in data/aggregates.json only
         "claimants": claimants,
         "types": [(t, TYPE_LABELS[t], TYPE_BLURBS[t]) for t in schema.TYPE_FLAGS],
         "type_labels": TYPE_LABELS,
         "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
     }
-    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, latest=latest_developments(events, moves, names), agreement=agree, agreement_labels=agreement.LABELS, map_json=map_json, map_style_json=map_style_json,
+    ctx.update(names=names, n_moves_all=len(views), index_json=index_json, agreement=agree, agreement_labels=agreement.LABELS, map_json=map_json, map_style_json=map_style_json,
                n_map_events=mapd["counts"]["n_events"], n_map_points=mapd["counts"]["n_points"],
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
-    pages = {"index.html": "index.html", "methodology.html": "methodology.html", "cases.html": "cases.html",
-             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html", "map.html": "map.html",
+    pages = {"index.html": "tracker.html", "map.html": "tracker.html", "trends.html": "trends.html",
+             "methodology.html": "methodology.html", "cases.html": "cases.html",
+             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html",
              "downloads.html": "downloads.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
