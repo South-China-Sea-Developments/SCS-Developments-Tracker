@@ -41,6 +41,8 @@ python -m pipeline.release latest  # the newest release tag; `assets --out DIR` 
 | `tests/` | Tests at the agreed seams. |
 | `docs/spec.md`, `docs/tickets/` | What is being built and in which slices. |
 | `docs/backfill.md` | How a 1970–2015 chunk for Malaysia, Indonesia or Taiwan is coded and reviewed. |
+| `docs/handoff.md`, `docs/scheduled-task-prompt.md` | How to resume the project from any account or none; the weekly task's prompt, verbatim. |
+| `docs/notes/` | Ideas recorded for later (a de-escalation tracker on the same machinery). |
 | `CHANGELOG.md`, `CITATION.cff`, `docs/releases.md` | What each tagged version holds, how to cite it, how a release is made. |
 | `docs/decisions/`, `docs/adr/` | Why. |
 | `docs/codebook/` | Chubb's methodology appendix (CC0), the coding rules. |

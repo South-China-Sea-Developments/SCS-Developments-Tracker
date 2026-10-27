@@ -62,6 +62,8 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Kicker** — The small bold letter-spaced capitals over a page title, on the navigation, the sidebar's group labels, the brand name and the footer headings; the site's one all-caps style.
 
+**Handoff** — `docs/handoff.md`: what lives in the repository (everything), what is bound to an account (the scheduled task, recreated from `docs/scheduled-task-prompt.md`; the Airtable base; GitHub access), and what the weekly cycle costs on each route.
+
 **Published move** — An accepted move. The site publishes accepted moves only: a pending move has no page, no row and no count anywhere on the site until it is accepted (ticket 17); the files and `aggregates.json` keep it as data.
 
 **Dataset version** — The number this project gives the dataset (`DATASET_VERSION`, `MAJOR.MINOR.PATCH`, a `-dev` suffix while it is being built), written on every project-coded move as `data_version`. Versions 1.x are Chubb's MATS; this project's are 2.x.
