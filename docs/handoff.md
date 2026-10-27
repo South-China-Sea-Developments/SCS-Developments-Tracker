@@ -36,4 +36,4 @@ Hosting: GitHub Pages now, the institute's site later (the bundle is portable, r
 - Review pull requests #17 (24 candidates, ticket 11's baselines) and #24 (3 candidates, the first live harvest).
 - Questions for Andrew Chubb: licence, credit line, the xlsx/online discrepancies, `VN197304`, citation version.
 - Branch protection on `main`; the institute's hosting; aggregator feeds that yield headline-only captures (the fetcher should resolve article links).
-- `docs/notes/de-escalation-tracker.md`: a possible second coding scheme on the same machinery.
+- `docs/notes/de-escalation-tracker.md`: a possible de-escalation tracker — a separate project of Angelo's, outside the ASPI framework, that would copy this code; the two are not to be merged.

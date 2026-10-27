@@ -1,6 +1,8 @@
 # Note: a de-escalation tracker on the same machinery
 
-*Written 2026-10-27 at the maintainer's request, for a possible future project. Nothing here is built or decided; it records the reasoning so it need not be redone.*
+*Written 2026-10-27 at the maintainer's request, for a possible future project. Nothing here is built; it records the reasoning so it need not be redone.*
+
+**Decided (2026-10-27, Angelo M.): the de-escalation tracker is a separate project — its own repository, its own data, its own site — built by Angelo personally, outside the ASPI framework. The two projects are not to be merged: no `valence` field in this dataset, no second direction on this site. What follows describes what the new project could borrow from this one's code and method, not changes to this one.**
 
 ## The question
 
@@ -8,7 +10,7 @@ Could this system and methodology study de-escalation instead of (or alongside) 
 
 ## What carries over unchanged
 
-Everything except the coding scheme and the extraction prompt: the files-are-canonical design (ADR 0004), the harvester and source registry, the relevance filter, the propose/decide review flow (review pull request, review page, Airtable front end), the validator, the site build, the tracker, the scheduled weekly cycle, the release and citation machinery. A de-escalation series is a second coding scheme on the same pipeline, not a second pipeline.
+Everything except the coding scheme and the extraction prompt: the files-are-canonical design (ADR 0004), the harvester and source registry, the relevance filter, the propose/decide review flow (review pull request, review page, Airtable front end), the validator, the site build, the tracker, the scheduled weekly cycle, the release and citation machinery. The new project would start from a copy of this repository (the code is public; the data are Chubb's and stay here) and replace the coding scheme and prompts.
 
 ## Where de-escalation already sits in MATS
 
@@ -34,19 +36,19 @@ The move logic stays symmetrical: a *cooperative move* is a step up in cooperati
 1. **Valence per dyad, not per act.** Many acts cut both ways: a China–Vietnam joint patrol in the Gulf of Tonkin is cooperative within that dyad and can be assertive toward a third party. Code the direction on the dyad, so the same act can be a cooperative move in one dyad and context for an assertive one in another.
 2. **The intensification criterion applies.** Routine friendly communiqués are not moves; only a step up in cooperation is. This is what keeps the series from counting every meeting.
 
-## One database, both directions
+## Its own database
 
-The cleaner design is one database with a `valence` field (escalatory / de-escalatory) and the cooperative type set added to the schema, rather than a second project: no double counting, one tracker with a direction filter, and a net-balance view (escalatory moves above the axis, de-escalatory below) that is the single most telling chart. The site changes are modest: a filter, a chart, a colour for the second direction.
+A separate database of cooperative moves, with its own schema (the cooperative types; direction coded per dyad), its own baselines and its own site. A net-balance view against assertive moves — cooperative moves above the axis, assertive below — remains the most telling chart, and the new site can draw it by reading this project's published `moves.csv` at a release tag (it is downloadable with checksums and a citation), without either dataset depending on the other.
 
 ## Build, as tickets
 
-1. Schema and validator: the `valence` field, the cooperative types, the dyad-level direction; fixtures.
+1. A copy of this repository with the dataset removed; schema and validator for the cooperative types and the dyad-level direction; fixtures.
 2. A second extraction prompt (keep two narrow prompts rather than one broad one — the "conservative, literal" instruction works better with a narrow target) and a widened relevance filter (agreement, hotline, joint, release, withdraw, consultation, code of conduct, in the six languages the gazetteer already covers).
 3. Baselines of cooperative practice per claimant — the largest human cost, with no MATS to seed it. Event datasets with a cooperation–conflict scale (ICEWS, GDELT's CAMEO codes) can supply *candidates* for a backfill, exactly as the news feeds do now; they do not supply coding.
-4. Site: direction filter on the tracker, the net-balance chart on Trends, a colour token for the second direction.
+4. Site: the tracker and Trends pages as they are here, under the new project's own identity; the net-balance chart reading this project's released `moves.csv`.
 
 Each is ticket-sized; the backfill is the long pole.
 
 ## Running costs
 
-The same as this tracker's (`docs/handoff.md`): nothing for the site, the data and the review flow; the weekly extraction needs a model or a person to answer the prompt files, interchangeably. A cheap API key is the natural steady-state choice if the cycle should run without anyone's personal account in the loop.
+The same as this tracker's (`docs/handoff.md`): nothing for the site, the data and the review flow; the weekly extraction needs a model or a person to answer the prompt files, interchangeably. A cheap API key is the natural steady-state choice if the cycle should run without anyone's personal account in the loop. Being a personal project, it would use Angelo's own GitHub account and hosting, not the institute's.
