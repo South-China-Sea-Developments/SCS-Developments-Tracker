@@ -2,8 +2,6 @@
 
 *Written 2026-10-27 at the maintainer's request, for a possible future project. Nothing here is built; it records the reasoning so it need not be redone.*
 
-**Decided (2026-10-27, Angelo M.): the de-escalation tracker is a separate project — its own repository, its own data, its own site — built by Angelo personally, outside the ASPI framework. The two projects are not to be merged: no `valence` field in this dataset, no second direction on this site. What follows describes what the new project could borrow from this one's code and method, not changes to this one.**
-
 ## The question
 
 Could this system and methodology study de-escalation instead of (or alongside) escalation, and what would it take to build?
