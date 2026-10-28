@@ -94,12 +94,12 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 
 /* ---- site header: the programme banner, then the navigation band ----------------------------- */
 .site-head { background: var(--band); color: var(--band-ink); --focus: var(--focus-dark); }
-.banner { background: linear-gradient(90deg, var(--sea) 0, var(--sea) 50%, var(--sea-mid) 72%, var(--sea) 100%); }
-.banner-link { display: block; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-/* the image (2219px wide) at the wrap width (1140px at most, so never above its own size), cropped from the top on wide screens so the logo, the title and its
-   rule stay in view; the band around it is the sea's own colour */
-.banner-img { display: block; width: 100%; height: auto; max-height: 360px; object-fit: cover; object-position: left top;
-  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.banner { background: var(--sea); }
+.banner-link { display: block; }   /* edge to edge (the maintainer, 2026-10-28) */
+/* the image edge to edge; on wide screens the height is capped at 32 % of the width, which keeps the logo, the title
+   and its rule (the top two thirds of the artwork) in view; under 700px the whole image shows */
+.banner-img { display: block; width: 100%; height: auto; max-height: 32vw; object-fit: cover; object-position: center top; }
+@media (max-width: 700px) { .banner-img { max-height: none; } }
 .banner-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .navband { background: var(--navy); border-top: 1px solid var(--band-rule); }
 .navband-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 52px; }
