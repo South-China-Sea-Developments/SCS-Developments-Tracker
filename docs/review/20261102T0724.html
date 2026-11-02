@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review queue — harvest 20261102T0724</title>
+<style>
+  :root { color-scheme: light dark; --ink: #12222c; --ink-2: #46555e; --muted: #5e6b73; --grid: #dfe6ea; --surface: #fbfdfd; --paper: #f1f5f7; --accent: #0e5a86; --warn: #b45309; --ok: #1f7a3a; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #88949c; --grid: #273440; --surface: #16212a; --paper: #0f171c; --accent: #7fc0ea; --warn: #f0a35b; --ok: #6fcf8a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.05rem; margin: 0; }
+  .lede { color: var(--ink-2); margin: 0 0 16px; }
+  .bar { position: sticky; top: 0; z-index: 3; background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 16px; }
+  .bar label { display: inline-flex; align-items: center; gap: 6px; font-size: .9375rem; }
+  input[type=text], input[type=date], select, textarea { font: inherit; padding: 4px 8px; border: 1px solid var(--grid); border-radius: 6px; background: var(--surface); color: var(--ink); }
+  textarea { width: 100%; min-height: 56px; }
+  button { font: inherit; padding: 6px 12px; border: 1px solid var(--grid); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .cand { background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .cand.decided { border-left: 4px solid var(--ok); } .cand.decided.is-reject { border-left-color: var(--warn); }
+  .head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 6px; }
+  .head b { font-size: 1.05rem; } .id { color: var(--muted); font-size: .85rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .pill { font-size: .8125rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--grid); color: var(--ink-2); }
+  .pill.dup { border-color: var(--warn); color: var(--warn); }
+  .cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 18px; }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+  .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
+  blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
+  .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
+  .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
+  .choices label { display: inline-flex; gap: 6px; align-items: center; }
+  .panel { display: none; margin: 8px 0; padding: 10px; border: 1px dashed var(--grid); border-radius: 6px; }
+  .panel.on { display: block; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 14px; }
+  .grid2 label { display: block; font-size: .9rem; } .grid2 label > span { display: block; color: var(--muted); font-size: .8rem; }
+  .grid2 select { max-width: 100%; }
+  .checks label { display: inline-flex; gap: 4px; margin-right: 10px; font-size: .9rem; }
+  .muted { color: var(--muted); font-size: .85rem; }
+  .req { color: var(--warn); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review queue — harvest 20261102T0724</h1>
+  <p class="lede">14 candidate events, generated 2026-11-02. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-20261102T0724.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.</p>
+
+  <div class="bar">
+    <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
+    <span class="muted" id="progress"></span>
+    <button type="button" id="export" class="primary">Export decisions.json</button>
+    <button type="button" id="clear">Clear draft</button>
+  </div>
+
+  
+  <section class="cand" id="c-ev-882ee918e9" data-event="ev-882ee918e9" aria-labelledby="h-ev-882ee918e9">
+    <div class="head">
+      <h2 id="h-ev-882ee918e9" style="font-size:1.05rem;margin:0">Philippines</h2>
+      <span>1999-01-01 – 1999-12-31 (year)</span>
+      <span>Second Thomas Shoal, sub-region 6 — placed at 9.65000, 115.85000 = Second Thomas Shoal (feature)</span>
+      <span class="pill">suggested: force</span>
+      
+      <span class="id">ev-882ee918e9</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Second Thomas Shoal, establishing an occupied outpost on the disputed feature.</p>
+        <p class="muted">Actors: Philippine Navy BRP Sierra Madre</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://amti.csis.org/divergence-and-tacit-understanding-in-the-china-philippines-provisional-arrangement-at-second-thomas-shoal/" target="_blank" rel="noopener">Divergence and Tacit Understanding in the China–Philippines Provisional Arrangement at Second Thomas Shoal</a> — Asia Maritime Transparency Initiative (CSIS), 2026-03-23</p>
+        <blockquote>Since 1999, when the Philippines deliberately grounded the warship BRP Sierra Madre on the shoal, the feature has steadily evolved into a key front line in the broader maritime contest between the two sides.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type force · domains physical · issues military administrative · dyads PC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Deliberately grounding a naval vessel to occupy a disputed feature is a direct seizure/occupation of a disputed possession, which falls under Chubb&#39;s &#39;force&#39; category. This is historical background in an analytical article, dated only to the year, and is almost certainly already in the MATS dataset, so confidence is low. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Philippines's moves in 1998</p>
+        
+        <ul class="moves"><li><code>PH199801</code> (declarative) 1998: Manila&#39;s multilateral and internationalizing diplomacy intensifies, as Manila begins a concerted push for an official code of conduct at the Second Meeting of the Technical Working Group on Legal Matters, and pushes for international law being used in the dispute (Wiegand and Beuck, Strategic …</li><li><code>PH199802</code> (demonstrative) 1998 August: Shell Philippines Exploration BV awarded Brown &amp; Root a $432m design, procurement, fabrication, installation and commissioning contract for the Malampaya gas field, straddling the 9-dash line. Drilling and construction proceeded, and production began in December 2001 (Offshore Technolog…</li><li><code>PH199803</code> (demonstrative) 1998, August 5 the  US and Philippines stage 18-hour live-fire air and sea drills near the disputed area. On August 7 President Estrada flags &#34;six more exercises of that kind&#34; without stating when or where (Dow Jones &amp; AFP via Taffer dataset). Visiting Forces Agreement (VFA) had been signed between …</li><li><code>PH199804</code> (coercive) 1998, October: PRC  complains about the low-flying PHL surveillance flights around Mischief Reef (PHL Memorial Annex 34-35).  PHL reportedly also instructs its navy to fire warning shots if PRC ships come too close (Taffer dataset). PHL allegedly discontinued the flights in November (PHL Memorial An…</li><li><code>PH199805</code> (declarative) 1998 October: Philippine government publishes images of Chinese vessels unloading construction materials at Mischief Reef. (Storey, Creeping Assertiveness, 98). This arguably constitutes a constant line of behaviour running through to 2015, in response to major PRC provocations. Issues in play are a…</li></ul>
+        
+        <p class="k">Philippines's moves already in 1999</p>
+        
+        <ul class="moves"><li><code>PH199901</code> (coercive) 1999 May-July: Three sinkings of PRC trawlers in as many months. In May Philippine warship sank a Chinese fishing boat in collision off Scarborough Shoal. (Van Pham, The Use or Threat of Force, 527; Zhang Jie, Huangyan Island Model). In June another Chinese fishing boat sinks after a collision with …</li><li><code>PH199902</code> (force) 1999, May 7: Occupation of Second Thomas Shoal via grounding of BRP Sierra Madre (Philippines vs. China Award, p. 438). Scarborough Shoal is also briefly occupied in the same manner but the ship was removed prior to a November visit to Manila by PRC Premier Zhu Rongji. (CND, &#34;ASEAN Summit to face Sp…</li><li><code>PH199903</code> (coercive) 1999 October: “According to Philippine defense sources, two Malaysian fighter planes and two Philippine air force surveillance planes nearly engaged over a Malaysian-occupied reef in the Spratlys.” (Van Pham, The Use or Threat of Force, 528; EIA, “South China Sea Backgrounder.”)</li></ul>
+        
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-882ee918e9" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-882ee918e9" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-882ee918e9" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-882ee918e9" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-882ee918e9" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1999</span><select class="f-move_id"><option value="">—</option><option value="PH199901">PH199901 — 1999 May-July: Three sinkings of PRC trawlers in as many months. In May Philippine warship</option><option value="PH199902">PH199902 — 1999, May 7: Occupation of Second Thomas Shoal via grounding of BRP Sierra Madre (Philippi</option><option value="PH199903">PH199903 — 1999 October: “According to Philippine defense sources, two Malaysian fighter planes and t</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-8a10d31f4a">ev-8a10d31f4a — During President Marcos Jr.&#39;s state visit to Japan, the Philippines and Japan is</option><option value="ev-19175b3b10">ev-19175b3b10 — The Philippine Department of Foreign Affairs announced it would lodge a diplomat</option><option value="ev-ca2baf0411">ev-ca2baf0411 — The Philippine government provided fuel aid to Filipino fishermen operating at B</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force" selected>Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1999" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1999" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="PC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6" checked>6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Second Thomas Shoal, establishing an occupied outpost on the disputed feature.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1999-01-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1999-12-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month">month</option><option value="year" selected>year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Second Thomas Shoal"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="6" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="9.65000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="115.85000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Philippine Navy BRP Sierra Madre"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Second Thomas Shoal, establishing an occupied outpost on the disputed feature.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-8a10d31f4a" data-event="ev-8a10d31f4a" aria-labelledby="h-ev-8a10d31f4a">
+    <div class="head">
+      <h2 id="h-ev-8a10d31f4a" style="font-size:1.05rem;margin:0">Philippines</h2>
+      <span>2026-05-26 – 2026-05-29 (day)</span>
+      
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-8a10d31f4a</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">During President Marcos Jr.&#39;s state visit to Japan, the Philippines and Japan issued a Comprehensive Strategic Partnership Declaration that expressed serious concern over developments in the South China Sea, opposed unilateral attempts to change the status quo through force or coercion, and reaffirmed the 2016 South China Sea Arbitral Award.</p>
+        <p class="muted">Actors: President Ferdinand R. Marcos Jr.; Prime Minister Takaichi Sanae</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://amti.csis.org/deepening-strategic-partnerships-the-philippines-relations-with-japan-and-vietnam/" target="_blank" rel="noopener">Deepening Strategic Partnerships: The Philippines’ Relations with Japan and Vietnam</a> — Asia Maritime Transparency Initiative (CSIS), 2026-08-06</p>
+        <blockquote>It likewise expressed serious concern over developments in the East China Sea and the South China Sea and opposed unilateral attempts to change the status quo through force or coercion. Similarly, both the Philippines-Japan and Philippines-Vietnam declarations reaffirmed the importance of the 1982 United Nations Convention on the Law of the Sea and the 2016 South China Sea Arbitral Award.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues politics · dyads PC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A joint declaration with a non-claimant reaffirming the 2016 arbitral award and opposing coercion is a verbal assertion of the Philippine position directed at China, hence declarative; but the document is an analytical piece about partnership upgrades and the SCS language is a secondary element, so this is a marginal candidate. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Philippines's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Philippines's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-8a10d31f4a" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-8a10d31f4a" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-8a10d31f4a" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-8a10d31f4a" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-8a10d31f4a" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-882ee918e9">ev-882ee918e9 — In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Se</option><option value="ev-19175b3b10">ev-19175b3b10 — The Philippine Department of Foreign Affairs announced it would lodge a diplomat</option><option value="ev-ca2baf0411">ev-ca2baf0411 — The Philippine government provided fuel aid to Filipino fishermen operating at B</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="PC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">During President Marcos Jr.&#39;s state visit to Japan, the Philippines and Japan issued a Comprehensive Strategic Partnership Declaration that expressed serious concern over developments in the South China Sea, opposed unilateral attempts to change the status quo through force or coercion, and reaffirmed the 2016 South China Sea Arbitral Award.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-05-26"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-05-29"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value=""></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="President Ferdinand R. Marcos Jr.; Prime Minister Takaichi Sanae"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">During President Marcos Jr.&#39;s state visit to Japan, the Philippines and Japan issued a Comprehensive Strategic Partnership Declaration that expressed serious concern over developments in the South China Sea, opposed unilateral attempts to change the status quo through force or coercion, and reaffirmed the 2016 South China Sea Arbitral Award.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-a6cf48d0c6" data-event="ev-a6cf48d0c6" aria-labelledby="h-ev-a6cf48d0c6">
+    <div class="head">
+      <h2 id="h-ev-a6cf48d0c6" style="font-size:1.05rem;margin:0">China</h2>
+      <span>2025-09-10 (day)</span>
+      <span>Scarborough Shoal, sub-region 4 — placed at 15.18333, 117.76667 = Scarborough Shoal (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-a6cf48d0c6</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">China approved the establishment of a national nature reserve at Scarborough Shoal, covering the fringing reef on the northeastern side of the shoal and an experimental zone in the surrounding waters, citing the State Council&#39;s 1994 Regulations on Nature Reserves.</p>
+        <p class="muted">Actors: Chinese State Council</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://amti.csis.org/scarborough-peace-park-the-road-to-peace-and-sustainability-in-the-south-china-sea/" target="_blank" rel="noopener">Scarborough Peace Park: The Road to Peace and Sustainability in the South China Sea</a> — Asia Maritime Transparency Initiative (CSIS), 2025-11-21</p>
+        <blockquote>On September 10, China approved the establishment of a nature reserve at Scarborough Shoal, also known as Bajo de Masinloc in Tagalog or Huangyan Dao in Chinese, a coral atoll whose sovereignty is under dispute between China and the Philippines.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains domestic · issues administrative · dyads CP</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A unilateral administrative act establishing a protected area over a disputed feature is demonstrative administration without direct confrontation. The document gives only &#39;September 10&#39;; the year 2025 is inferred from the commentary&#39;s November 2025 publication date. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">China's moves in 2024</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">China's moves already in 2025</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-a6cf48d0c6" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-a6cf48d0c6" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-a6cf48d0c6" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-a6cf48d0c6" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-a6cf48d0c6" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2025</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-39c8780a10">ev-39c8780a10 — A 12,000-ton Chinese vessel, described as a &#39;Monster&#39;, operated in the South Chi</option><option value="ev-848d969c25">ev-848d969c25 — China conducted combat readiness patrols around a disputed shoal in the South Ch</option><option value="ev-9692a591d1">ev-9692a591d1 — China carried out reclamation and construction activities at Hải Sâm reef and Ba</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2025" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2025" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="CP"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4" checked>4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">China approved the establishment of a national nature reserve at Scarborough Shoal, covering the fringing reef on the northeastern side of the shoal and an experimental zone in the surrounding waters, citing the State Council&#39;s 1994 Regulations on Nature Reserves.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2025-09-10"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2025-09-10"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Scarborough Shoal"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="4" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="15.18333" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="117.76667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Chinese State Council"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">China approved the establishment of a national nature reserve at Scarborough Shoal, covering the fringing reef on the northeastern side of the shoal and an experimental zone in the surrounding waters, citing the State Council&#39;s 1994 Regulations on Nature Reserves.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-19175b3b10" data-event="ev-19175b3b10" aria-labelledby="h-ev-19175b3b10">
+    <div class="head">
+      <h2 id="h-ev-19175b3b10" style="font-size:1.05rem;margin:0">Philippines</h2>
+      <span>2025-09-01 – 2025-09-30 (month)</span>
+      <span>Scarborough Shoal, sub-region 4 — placed at 15.18333, 117.76667 = Scarborough Shoal (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-19175b3b10</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The Philippine Department of Foreign Affairs announced it would lodge a diplomatic protest against China&#39;s establishment of a nature reserve at Scarborough Shoal, calling it a pretext to eventual occupation and urging Beijing to withdraw it.</p>
+        <p class="muted">Actors: Philippine Department of Foreign Affairs</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://amti.csis.org/scarborough-peace-park-the-road-to-peace-and-sustainability-in-the-south-china-sea/" target="_blank" rel="noopener">Scarborough Peace Park: The Road to Peace and Sustainability in the South China Sea</a> — Asia Maritime Transparency Initiative (CSIS), 2025-11-21</p>
+        <blockquote>The Department of Foreign Affairs in Manila announced that a diplomatic protest would be lodged against what it termed an unlawful and illegitimate act violating the Philippines’ sovereign rights under international law.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues administrative politics · dyads PC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A diplomatic protest is a declarative assertion. The document does not date the protest; September 2025 is inferred only from its proximity to the 10 September Chinese announcement, so the coder should verify the date. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Philippines's moves in 2024</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Philippines's moves already in 2025</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-19175b3b10" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-19175b3b10" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-19175b3b10" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-19175b3b10" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-19175b3b10" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2025</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-882ee918e9">ev-882ee918e9 — In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Se</option><option value="ev-8a10d31f4a">ev-8a10d31f4a — During President Marcos Jr.&#39;s state visit to Japan, the Philippines and Japan is</option><option value="ev-ca2baf0411">ev-ca2baf0411 — The Philippine government provided fuel aid to Filipino fishermen operating at B</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2025" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2025" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="PC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4" checked>4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The Philippine Department of Foreign Affairs announced it would lodge a diplomatic protest against China&#39;s establishment of a nature reserve at Scarborough Shoal, calling it a pretext to eventual occupation and urging Beijing to withdraw it.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2025-09-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2025-09-30"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Scarborough Shoal"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="4" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="15.18333" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="117.76667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Philippine Department of Foreign Affairs"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The Philippine Department of Foreign Affairs announced it would lodge a diplomatic protest against China&#39;s establishment of a nature reserve at Scarborough Shoal, calling it a pretext to eventual occupation and urging Beijing to withdraw it.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-a2bab04f8c" data-event="ev-a2bab04f8c" aria-labelledby="h-ev-a2bab04f8c">
+    <div class="head">
+      <h2 id="h-ev-a2bab04f8c" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>2026-07-01 – 2026-07-31 (month)</span>
+      
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-a2bab04f8c</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Indonesia restarted a gas project in the South China Sea that Beijing had opposed, according to a South China Morning Post headline.</p>
+        
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNWGozd1pKMVFIYWNoMDM4QlRlbWEzbVVYN3V5eTZxLXhlV1F3STdic2JLWTZkLVprOHBWbVZIcDEzVVlvY3NjYWIyelF1aE5RbE5GRndLbjhhVUZ5Z1BNSXoxbXhDbWdWWUdrSEJQUFBxbU1tOVZlRzlJbjlNOWFuN0t2STk4cm1QZU1OWXRFRHh3blA5ZzRCTy03blNyQk93VXpWNWh1Mm9IY2ZmMHpPMkFIdXFpbVpqSGfSAboBQVVfeXFMT2h4MGJYUDdyOGU4SkNFOUJ0UkF5SHZ3SlBfclBPaW11MnNiVWRyUWhDMUgzRThHNkFLU2lhbW82eEs1U0dPZkYyNWgzd2FNbEh0aF9EU3FQWUxmc1dlN1VGbUdWbjBWT3JXRDJiUzNqNWozUGp6d0NJR3hfeFc5SzNKNFlacmU1TGJhNzA3NjZQc1JnWExOdW02RmtzQmxyNm5GNHh5RDNkNzRidEVjZUhBTjU1S1A0Q0Jn?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Indonesia restarts South China Sea gas project Beijing opposed - South China Morning Post</a> — News search: Indonesia Natuna, 2026-07-22</p>
+        <blockquote>Indonesia restarts South China Sea gas project Beijing opposed</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues energy · dyads IC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Unilateral resource development in a disputed area despite Chinese objection is demonstrative; however the document is a headline only, with no body text, named block or date beyond the 2026-07-22 publication date, so the coder must verify the details. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-a2bab04f8c" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-a2bab04f8c" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-a2bab04f8c" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-a2bab04f8c" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-a2bab04f8c" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Indonesia restarted a gas project in the South China Sea that Beijing had opposed, according to a South China Morning Post headline.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-07-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-07-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value=""></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value=""></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Indonesia restarted a gas project in the South China Sea that Beijing had opposed, according to a South China Morning Post headline.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-39c8780a10" data-event="ev-39c8780a10" aria-labelledby="h-ev-39c8780a10">
+    <div class="head">
+      <h2 id="h-ev-39c8780a10" style="font-size:1.05rem;margin:0">China</h2>
+      <span>2026-08-01 – 2026-08-31 (month)</span>
+      
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-39c8780a10</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">A 12,000-ton Chinese vessel, described as a &#39;Monster&#39;, operated in the South China Sea in a manner reported as testing Malaysia, according to a Defence Security Asia headline.</p>
+        
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQVHZsazVISmcwZGdNOHl2RlJTNnk2M0E5X2tLYWdTTzdPZG1BVlJ5dDcybm4xeF9JSzBETktyVlNRbnA5dVVNbGdCazZQNWVJelB1RVBQd3dVdW9qY0xTVFZBazl1SGVuWURQV3pWTnhBSnFQZEhjZkktMkpBVFFickJha29OYnVFYTZWMmwybTUwRXlNM0VDYzBPbw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">China’s 12,000-Ton ‘Monster’ Tests Malaysia in South China Sea - Defence Security Asia</a> — News search: Malaysia South China Sea, 2026-08-22</p>
+        <blockquote>China’s 12,000-Ton ‘Monster’ Tests Malaysia in South China Sea</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues administrative · dyads CM</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A Chinese government vessel&#39;s presence in waters claimed by Malaysia would be a demonstrative patrol, but the document is a headline only with no body text, location, vessel identity or date beyond the 2026-08-22 publication date, so the coder must verify whether any dated incident occurred. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">China's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">China's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-39c8780a10" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-39c8780a10" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-39c8780a10" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-39c8780a10" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-39c8780a10" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-a6cf48d0c6">ev-a6cf48d0c6 — China approved the establishment of a national nature reserve at Scarborough Sho</option><option value="ev-848d969c25">ev-848d969c25 — China conducted combat readiness patrols around a disputed shoal in the South Ch</option><option value="ev-9692a591d1">ev-9692a591d1 — China carried out reclamation and construction activities at Hải Sâm reef and Ba</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="CM"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">A 12,000-ton Chinese vessel, described as a &#39;Monster&#39;, operated in the South China Sea in a manner reported as testing Malaysia, according to a Defence Security Asia headline.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-08-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-08-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value=""></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value=""></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">A 12,000-ton Chinese vessel, described as a &#39;Monster&#39;, operated in the South China Sea in a manner reported as testing Malaysia, according to a Defence Security Asia headline.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-41c66632fc" data-event="ev-41c66632fc" aria-labelledby="h-ev-41c66632fc">
+    <div class="head">
+      <h2 id="h-ev-41c66632fc" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>2026-10-01 – 2026-10-31 (month)</span>
+      <span>Pulau Layang-Layang, sub-region 7 — placed at 7.50000, 113.75000 = Swallow Reef (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-41c66632fc</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Malaysian Defence Minister Mohamed Khaled Nordin announced that the Ministry of Defence had decided to install a new air-defence radar system on Pulau Layang-Layang (Swallow Reef) in the Spratlys, alongside other measures to strengthen military deployments in Sabah.</p>
+        <p class="muted">Actors: Malaysian Ministry of Defence; Defence Minister Mohamed Khaled Nordin</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.utusan.com.my/rencana/2026/11/memodenkan-senjata-memperkukuh-kedaulatan/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=memodenkan-senjata-memperkukuh-kedaulatan" target="_blank" rel="noopener">Memodenkan senjata memperkukuh kedaulatan</a> — Utusan Malaysia (Malay), 2026-11-02</p>
+        <blockquote>Kementerian Pertahanan turut memutuskan untuk memasang sistem radar baharu di Pulau Layang-Layang, Sabah bagi memperkukuh keupayaan pemantauan dan amaran awal.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues military · dyads MA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">An official announcement of a decision to install military radar on Malaysia&#39;s occupied Spratly feature is a verbal assertion of administration over a disputed possession; coded declarative because the document reports only the announcement, not the installation (a coder may prefer demonstrative). The exact date is not stated; the photo caption places the minister at Labuan Air Base &#39;last Friday&#39; (30 Oct 2026), so the date is inferred to October 2026 at month precision. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-41c66632fc" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-41c66632fc" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-41c66632fc" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-41c66632fc" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-41c66632fc" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7" checked>7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Malaysian Defence Minister Mohamed Khaled Nordin announced that the Ministry of Defence had decided to install a new air-defence radar system on Pulau Layang-Layang (Swallow Reef) in the Spratlys, alongside other measures to strengthen military deployments in Sabah.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-10-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-10-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Pulau Layang-Layang"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="7" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="7.50000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="113.75000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Malaysian Ministry of Defence; Defence Minister Mohamed Khaled Nordin"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Malaysian Defence Minister Mohamed Khaled Nordin announced that the Ministry of Defence had decided to install a new air-defence radar system on Pulau Layang-Layang (Swallow Reef) in the Spratlys, alongside other measures to strengthen military deployments in Sabah.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-ca2baf0411" data-event="ev-ca2baf0411" aria-labelledby="h-ev-ca2baf0411">
+    <div class="head">
+      <h2 id="h-ev-ca2baf0411" style="font-size:1.05rem;margin:0">Philippines</h2>
+      <span>2026-10-01 – 2026-10-31 (month)</span>
+      <span>Bajo de Masinloc, sub-region 4 — placed at 15.18333, 117.76667 = Scarborough Shoal (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-ca2baf0411</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The Philippine government provided fuel aid to Filipino fishermen operating at Bajo de Masinloc (Scarborough Shoal), according to a Daily Tribune headline.</p>
+        <p class="muted">Actors: Philippine government</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdVo0UEs4d1htV0J0UTRVYXlnLUJBam8zd2JLTGVqZEtLLVhfNDRRUVBvR1loX09uRnlIWUJsM1RIcnZ6ZGt0UU1kS3lwMmJZVWVjQVJDU1RHbHpmSUlmaUU3OTJPVFJEaDQ0cXpkTmFfZWQ2UGVDOTlzWmZiZ0xyZEluaTVTQWJoMS0wWV9Ld0ozeE9iXzBkZ29iTUlob2YtV055Q1U3aFk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Philippine Gov&#39;t Provides Fuel Aid to Fishermen at Bajo de Masinloc Amid Rising Costs - Daily Tribune</a> — News search: Philippine Coast Guard / West Philippine Sea, 2026-10-28</p>
+        <blockquote>Philippine Gov&#39;t Provides Fuel Aid to Fishermen at Bajo de Masinloc Amid Rising Costs</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains domestic physical · issues fisheries administrative · dyads CP</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">State support for national fishing activity at a disputed feature is a unilateral administrative assertion without confrontation, hence demonstrative. The document is a headline only: the date of the act is not stated and is inferred from the article&#39;s publication month, and no agency or vessel is named. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Philippines's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Philippines's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-ca2baf0411" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-ca2baf0411" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-ca2baf0411" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-ca2baf0411" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-ca2baf0411" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-882ee918e9">ev-882ee918e9 — In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Se</option><option value="ev-8a10d31f4a">ev-8a10d31f4a — During President Marcos Jr.&#39;s state visit to Japan, the Philippines and Japan is</option><option value="ev-19175b3b10">ev-19175b3b10 — The Philippine Department of Foreign Affairs announced it would lodge a diplomat</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="CP"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4" checked>4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The Philippine government provided fuel aid to Filipino fishermen operating at Bajo de Masinloc (Scarborough Shoal), according to a Daily Tribune headline.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-10-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-10-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Bajo de Masinloc"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="4" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="15.18333" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="117.76667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Philippine government"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The Philippine government provided fuel aid to Filipino fishermen operating at Bajo de Masinloc (Scarborough Shoal), according to a Daily Tribune headline.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-848d969c25" data-event="ev-848d969c25" aria-labelledby="h-ev-848d969c25">
+    <div class="head">
+      <h2 id="h-ev-848d969c25" style="font-size:1.05rem;margin:0">China</h2>
+      <span>2026-10-01 – 2026-10-31 (month)</span>
+      
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-848d969c25</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">China conducted combat readiness patrols around a disputed shoal in the South China Sea, according to a Devdiscourse headline; the shoal is not named in the available text.</p>
+        
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZDE1OW5jUmowUFVITXBNLUJLTENyWVFlSFZaT2k2a2w5cjFHYzJtSXFBZThER2Y2RU9jeEJHLXVBdkdvWWdOT0NHRTFQMExlU0VCNG9SZW1yYWdwRkk2LXNsbzgxYUR1LTJIcXlfRTV4UG9HQ3ctdlVHcnNaVUpCYnpxTmxjMmhWN2p4dGRoaXZjUEIyS2FGXzdDUFRYNmxfUmRoYUd5eTdCSHUxOEZGNnk3ZXBpMkdqdzlGaDFVRDU2UlFBdVNTQjFmX1V2TDhjUkhrNy1R0gHbAUFVX3lxTFBLMmJPY0g0T0EyazNFZVFoX21CcEVHSGNnV0YzOVlOZTVkdDFiTDJsV29MU1RBMERTTGtjVzRyUXM3UWdVcXJwalF4bGQ3RjAyVmRnWDdsYzAxY2tUcHAyNkd6VWhHaUlzbXpybWEwV2lxcnhheTFOcDQ3NEx5Qm9oNE44QkpsWjJFNTF6a1lXZG8zS20wVDFnZ09MeE1YZ0VCbUxUQUxUclN5dEYtZUpBbklOb1hxbXVEZ1pielNsZjc2Q1BkeE5yOGhFaWlWdk1ueklUVWh6RVJxaw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">China conducts combat readiness patrols around disputed shoal in South China Sea - Devdiscourse</a> — News search: South China Sea, 2026-10-30</p>
+        <blockquote>China conducts combat readiness patrols around disputed shoal in South China Sea</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads CU</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A military patrol around a disputed feature is a unilateral demonstration of administration without reported confrontation, hence demonstrative. The document is a headline only: the shoal, the units involved and the date of the patrol are not given, and the month is inferred from the publication date. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">China's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">China's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-848d969c25" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-848d969c25" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-848d969c25" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-848d969c25" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-848d969c25" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-a6cf48d0c6">ev-a6cf48d0c6 — China approved the establishment of a national nature reserve at Scarborough Sho</option><option value="ev-39c8780a10">ev-39c8780a10 — A 12,000-ton Chinese vessel, described as a &#39;Monster&#39;, operated in the South Chi</option><option value="ev-9692a591d1">ev-9692a591d1 — China carried out reclamation and construction activities at Hải Sâm reef and Ba</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="CU"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">China conducted combat readiness patrols around a disputed shoal in the South China Sea, according to a Devdiscourse headline; the shoal is not named in the available text.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-10-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-10-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value=""></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value=""></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">China conducted combat readiness patrols around a disputed shoal in the South China Sea, according to a Devdiscourse headline; the shoal is not named in the available text.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-0b4811f8e6" data-event="ev-0b4811f8e6" aria-labelledby="h-ev-0b4811f8e6">
+    <div class="head">
+      <h2 id="h-ev-0b4811f8e6" style="font-size:1.05rem;margin:0">Vietnam</h2>
+      <span>2026-08-28 (day)</span>
+      <span>Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands, sub-region 2 — placed at 16.45000, 111.58000 = Antelope Reef (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-0b4811f8e6</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with a statement on China&#39;s illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.</p>
+        <p class="muted">Actors: Vietnam MFA spokesperson Phạm Thu Hằng</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-cuoc-tan-cong-gan-day-nham-vao-cac-co-so-ha-tang-dan-su-tai-vuong-quoc-a-rap-xe-ut-62782-10.html" target="_blank" rel="noopener">Người Phát ngôn Bộ Ngoại giao Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các cuộc tấn công gần đây nhằm vào các cơ sở hạ tầng dân sự tại Vương quốc Ả-rập Xê-út - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud</a> — Vietnam MFA (press)</p>
+        <blockquote>Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues administrative · dyads VC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A dated spokesperson statement asserting Vietnamese sovereignty over the Paracels in response to Chinese construction is a verbal/diplomatic protest, hence declarative. The item appears only as a related-news teaser and the statement text itself is truncated, so the content is known only from the headline; the Chinese construction it responds to is undated in this document and is not extracted separately. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Vietnam's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Vietnam's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-0b4811f8e6" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-0b4811f8e6" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-0b4811f8e6" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-0b4811f8e6" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-0b4811f8e6" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-9fa40707b3">ev-9fa40707b3 — On 28 August 2026 Vietnam&#39;s Ministry of Foreign Affairs spokesperson Phạm Thu Hằ</option><option value="ev-7dc3b8cb21">ev-7dc3b8cb21 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a press </option><option value="ev-f4e795ed57">ev-f4e795ed57 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a report</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="VC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2" checked>2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with a statement on China&#39;s illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-08-28"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-08-28"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="2" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="16.45000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="111.58000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Vietnam MFA spokesperson Phạm Thu Hằng"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with a statement on China&#39;s illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-9fa40707b3" data-event="ev-9fa40707b3" aria-labelledby="h-ev-9fa40707b3">
+    <div class="head">
+      <h2 id="h-ev-9fa40707b3" style="font-size:1.05rem;margin:0">Vietnam</h2>
+      <span>2026-08-28 (day)</span>
+      <span>đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands), sub-region 2 — placed at 16.45000, 111.58000 = Antelope Reef (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      <span class="pill dup">possible duplicate of ev-0b4811f8e6</span>
+      <span class="id">ev-9fa40707b3</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On 28 August 2026 Vietnam&#39;s Ministry of Foreign Affairs spokesperson Phạm Thu Hằng, answering a reporter&#39;s question, reasserted Vietnam&#39;s sovereignty over the Paracels including Hải Sâm reef and Ba Ba island, declared China&#39;s reclamation and construction there illegal and void, and said Vietnam resolutely opposed it, had lodged serious representations and demanded an immediate end and no repetition.</p>
+        <p class="muted">Actors: Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-hoat-dong-ton-tao-xay-dung-trai-phep-cua-trung-quoc-tai-da-hai-sam-va-dao-ba-ba-thuoc-quan-dao-hoang-sa-cua-viet-nam-61820-10.html" target="_blank" rel="noopener">Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam - Cổng thông tin Bộ Ngoại Giaosound-loudsound-lou</a> — Vietnam MFA (press)</p>
+        <blockquote>Việt Nam kiên quyết phản đối, đã giao thiệp nghiêm túc và khẳng định lập trường về vấn đề này, yêu cầu chấm dứt ngay và không tái diễn các hoạt động tương tự</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues administrative politics · dyads VC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A dated official statement and diplomatic representation by Vietnam asserting its Paracels claim against Chinese construction; a verbal protest with no coercive element, hence declarative. [confidence: high]</p>
+        <p class="muted">Note from the extractor: Possible duplicate of ev-0b4811f8e6.</p>
+        
+        <p class="k">The event it may duplicate</p>
+        <p class="muted" style="margin:0">ev-0b4811f8e6 · 2026-08-28 · candidate: On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with a statement on China&#39;s illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.</p>
+        
+      </div>
+      <div>
+        <p class="k">Vietnam's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Vietnam's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-9fa40707b3" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-9fa40707b3" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-9fa40707b3" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-9fa40707b3" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-9fa40707b3" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-0b4811f8e6">ev-0b4811f8e6 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a report</option><option value="ev-7dc3b8cb21">ev-7dc3b8cb21 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a press </option><option value="ev-f4e795ed57">ev-f4e795ed57 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a report</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="ev-0b4811f8e6" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="VC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2" checked>2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On 28 August 2026 Vietnam&#39;s Ministry of Foreign Affairs spokesperson Phạm Thu Hằng, answering a reporter&#39;s question, reasserted Vietnam&#39;s sovereignty over the Paracels including Hải Sâm reef and Ba Ba island, declared China&#39;s reclamation and construction there illegal and void, and said Vietnam resolutely opposed it, had lodged serious representations and demanded an immediate end and no repetition.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-08-28"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-08-28"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="2" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="16.45000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="111.58000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On 28 August 2026 Vietnam&#39;s Ministry of Foreign Affairs spokesperson Phạm Thu Hằng, answering a reporter&#39;s question, reasserted Vietnam&#39;s sovereignty over the Paracels including Hải Sâm reef and Ba Ba island, declared China&#39;s reclamation and construction there illegal and void, and said Vietnam resolutely opposed it, had lodged serious representations and demanded an immediate end and no repetition.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-9692a591d1" data-event="ev-9692a591d1" aria-labelledby="h-ev-9692a591d1">
+    <div class="head">
+      <h2 id="h-ev-9692a591d1" style="font-size:1.05rem;margin:0">China</h2>
+      <span>2026-08-01 – 2026-08-31 (month)</span>
+      <span>đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands), sub-region 2 — placed at 16.45000, 111.58000 = Antelope Reef (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-9692a591d1</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">China carried out reclamation and construction activities at Hải Sâm reef and Ba Ba island in the Paracel Islands, prompting a Vietnamese protest on 28 August 2026.</p>
+        
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-hoat-dong-ton-tao-xay-dung-trai-phep-cua-trung-quoc-tai-da-hai-sam-va-dao-ba-ba-thuoc-quan-dao-hoang-sa-cua-viet-nam-61820-10.html" target="_blank" rel="noopener">Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam - Cổng thông tin Bộ Ngoại Giaosound-loudsound-lou</a> — Vietnam MFA (press)</p>
+        <blockquote>Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues administrative · dyads CV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Unilateral construction on disputed Paracel features is demonstrative administration; however the document only reports Vietnam&#39;s reaction and gives no date or detail for the Chinese activity itself, so the date is inferred from the protest date and precision set to month. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">China's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">China's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-9692a591d1" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-9692a591d1" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-9692a591d1" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-9692a591d1" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-9692a591d1" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-a6cf48d0c6">ev-a6cf48d0c6 — China approved the establishment of a national nature reserve at Scarborough Sho</option><option value="ev-39c8780a10">ev-39c8780a10 — A 12,000-ton Chinese vessel, described as a &#39;Monster&#39;, operated in the South Chi</option><option value="ev-848d969c25">ev-848d969c25 — China conducted combat readiness patrols around a disputed shoal in the South Ch</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="CV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2" checked>2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">China carried out reclamation and construction activities at Hải Sâm reef and Ba Ba island in the Paracel Islands, prompting a Vietnamese protest on 28 August 2026.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-08-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-08-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="2" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="16.45000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="111.58000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value=""></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">China carried out reclamation and construction activities at Hải Sâm reef and Ba Ba island in the Paracel Islands, prompting a Vietnamese protest on 28 August 2026.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-7dc3b8cb21" data-event="ev-7dc3b8cb21" aria-labelledby="h-ev-7dc3b8cb21">
+    <div class="head">
+      <h2 id="h-ev-7dc3b8cb21" style="font-size:1.05rem;margin:0">Vietnam</h2>
+      <span>2026-08-28 (day)</span>
+      <span>Đá Hải Sâm and Đảo Ba Ba, Hoàng Sa (Paracel) Islands, sub-region 2 — placed at 16.45000, 111.58000 = Antelope Reef (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      <span class="pill dup">possible duplicate of ev-0b4811f8e6</span>
+      <span class="id">ev-7dc3b8cb21</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a press question on China&#39;s &#34;illegal&#34; reclamation and construction at Hải Sâm Reef and Ba Ba Island, which the ministry described as part of Vietnam&#39;s Hoàng Sa (Paracel) archipelago.</p>
+        <p class="muted">Actors: Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-doi-voi-bao-cao-nam-2026-ve-tinh-hinh-mua-ban-nguoi-tren-the-gioi-cua-bo-ngoai-giao-hoa-ky-cong-bo-ngay-09102026-62822-10.html" target="_blank" rel="noopener">Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng , trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng đối với Báo cáo năm 2026 về tình hình mua bán người trên thế giới của Bộ Ngoại giao Hoa Kỳ công bố ngày 09/10/2026 - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud</a> — Vietnam MFA (press)</p>
+        <blockquote>Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues administrative politics · dyads VC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A dated MFA spokesperson statement characterising Chinese construction in the Paracels as illegal and the features as Vietnamese is a verbal assertion of claim, hence declarative. The item appears only as a related-news teaser: the body of the statement is cut off, so the exact wording of the protest is not in the document, and the underlying Chinese construction is undated here and not extracted separately. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Possible duplicate of ev-0b4811f8e6.</p>
+        
+        <p class="k">The event it may duplicate</p>
+        <p class="muted" style="margin:0">ev-0b4811f8e6 · 2026-08-28 · candidate: On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with a statement on China&#39;s illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.</p>
+        
+      </div>
+      <div>
+        <p class="k">Vietnam's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Vietnam's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-7dc3b8cb21" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-7dc3b8cb21" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-7dc3b8cb21" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-7dc3b8cb21" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-7dc3b8cb21" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-0b4811f8e6">ev-0b4811f8e6 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a report</option><option value="ev-9fa40707b3">ev-9fa40707b3 — On 28 August 2026 Vietnam&#39;s Ministry of Foreign Affairs spokesperson Phạm Thu Hằ</option><option value="ev-f4e795ed57">ev-f4e795ed57 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a report</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="ev-0b4811f8e6" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="VC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2" checked>2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a press question on China&#39;s &#34;illegal&#34; reclamation and construction at Hải Sâm Reef and Ba Ba Island, which the ministry described as part of Vietnam&#39;s Hoàng Sa (Paracel) archipelago.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-08-28"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-08-28"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Đá Hải Sâm and Đảo Ba Ba, Hoàng Sa (Paracel) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="2" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="16.45000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="111.58000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a press question on China&#39;s &#34;illegal&#34; reclamation and construction at Hải Sâm Reef and Ba Ba Island, which the ministry described as part of Vietnam&#39;s Hoàng Sa (Paracel) archipelago.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-f4e795ed57" data-event="ev-f4e795ed57" aria-labelledby="h-ev-f4e795ed57">
+    <div class="head">
+      <h2 id="h-ev-f4e795ed57" style="font-size:1.05rem;margin:0">Vietnam</h2>
+      <span>2026-08-28 (day)</span>
+      <span>đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Antelope Reef and Duncan Island, Paracels), sub-region 2 — placed at 16.45000, 111.58000 = Antelope Reef (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      <span class="pill dup">possible duplicate of ev-0b4811f8e6</span>
+      <span class="id">ev-f4e795ed57</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with Vietnam&#39;s reaction to China&#39;s &#39;illegal&#39; reclamation and construction activities at Hải Sâm reef and Ba Ba island, which Vietnam described as part of its Hoàng Sa (Paracel) archipelago.</p>
+        <p class="muted">Actors: Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-binh-luan-cua-viet-nam-truoc-viec-lien-minh-chau-au-eu-vua-quyet-dinh-dua-viet-nam-ra-khoi-danh-sach-cac-quoc-gia-khong-hop-tac-ve-thue-62731-10.html" target="_blank" rel="noopener">Người Phát ngôn Bộ Ngoại giao Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết bình luận của Việt Nam trước việc Liên minh châu Âu (EU) vừa quyết định đưa Việt Nam ra khỏi danh sách các quốc gia không hợp tác về thuế - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud</a> — Vietnam MFA (press)</p>
+        <blockquote>Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues administrative politics · dyads VC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A dated MFA spokesperson statement characterising Chinese construction in the Paracels as illegal and asserting Vietnamese sovereignty is a declarative verbal assertion. However, this appears only as a related-article headline in the sidebar of a document about an unrelated EU tax matter, and the body of the statement is truncated, so the coder should verify against the full source. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Possible duplicate of ev-0b4811f8e6.</p>
+        
+        <p class="k">The event it may duplicate</p>
+        <p class="muted" style="margin:0">ev-0b4811f8e6 · 2026-08-28 · candidate: On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with a statement on China&#39;s illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.</p>
+        
+      </div>
+      <div>
+        <p class="k">Vietnam's moves in 2025</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Vietnam's moves already in 2026</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-f4e795ed57" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-f4e795ed57" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-f4e795ed57" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-f4e795ed57" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-f4e795ed57" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 2026</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-0b4811f8e6">ev-0b4811f8e6 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a report</option><option value="ev-9fa40707b3">ev-9fa40707b3 — On 28 August 2026 Vietnam&#39;s Ministry of Foreign Affairs spokesperson Phạm Thu Hằ</option><option value="ev-7dc3b8cb21">ev-7dc3b8cb21 — On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a press </option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="ev-0b4811f8e6" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="2026" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="2026" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="VC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2" checked>2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with Vietnam&#39;s reaction to China&#39;s &#39;illegal&#39; reclamation and construction activities at Hải Sâm reef and Ba Ba island, which Vietnam described as part of its Hoàng Sa (Paracel) archipelago.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="2026-08-28"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="2026-08-28"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Antelope Reef and Duncan Island, Paracels)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="2" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="16.45000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="111.58000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On 28 August 2026 Vietnam&#39;s MFA spokesperson Phạm Thu Hằng responded to a reporter&#39;s question with Vietnam&#39;s reaction to China&#39;s &#39;illegal&#39; reclamation and construction activities at Hải Sâm reef and Ba Ba island, which Vietnam described as part of its Hoàng Sa (Paracel) archipelago.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  
+</div>
+
+<script id="ctx" type="application/json">{"run_id": "20261102T0724", "items": [{"event": {"event_id": "ev-882ee918e9", "move_id": "", "claimant": "PH", "date_start": "1999-01-01", "date_end": "1999-12-31", "date_precision": "year", "lat": "9.65000", "lon": "115.85000", "location_name": "Second Thomas Shoal", "location_precision": "feature", "subregion": "6", "summary": "In 1999 the Philippines deliberately grounded the warship BRP Sierra Madre on Second Thomas Shoal, establishing an occupied outpost on the disputed feature.", "actors": "Philippine Navy BRP Sierra Madre", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "force", "suggested_domains": "physical", "suggested_issues": "military administrative", "suggested_dyads": "PC", "suggestion_reasoning": "Deliberately grounding a naval vessel to occupy a disputed feature is a direct seizure/occupation of a disputed possession, which falls under Chubb's 'force' category. This is historical background in an analytical article, dated only to the year, and is almost certainly already in the MATS dataset, so confidence is low. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Second Thomas Shoal", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-882ee918e9-S01", "event_id": "ev-882ee918e9", "url": "https://amti.csis.org/divergence-and-tacit-understanding-in-the-china-philippines-provisional-arrangement-at-second-thomas-shoal/", "title": "Divergence and Tacit Understanding in the China–Philippines Provisional Arrangement at Second Thomas Shoal", "publisher": "Asia Maritime Transparency Initiative (CSIS)", "pub_date": "2026-03-23", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Since 1999, when the Philippines deliberately grounded the warship BRP Sierra Madre on the shoal, the feature has steadily evolved into a key front line in the broader maritime contest between the two sides."}], "year": 1999, "previous_year_moves": [{"move_id": "PH199801", "year": "1998", "types": ["declarative"], "description": "1998: Manila's multilateral and internationalizing diplomacy intensifies, as Manila begins a concerted push for an official code of conduct at the Second Meeting of the Technical Working Group on Legal Matters, and pushes for international law being used in the dispute (Wiegand and Beuck, Strategic ", "status": "accepted", "coded_by": "chubb"}, {"move_id": "PH199802", "year": "1998", "types": ["demonstrative"], "description": "1998 August: Shell Philippines Exploration BV awarded Brown & Root a $432m design, procurement, fabrication, installation and commissioning contract for the Malampaya gas field, straddling the 9-dash line. Drilling and construction proceeded, and production began in December 2001 (Offshore Technolog", "status": "accepted", "coded_by": "chubb"}, {"move_id": "PH199803", "year": "1998", "types": ["demonstrative"], "description": "1998, August 5 the  US and Philippines stage 18-hour live-fire air and sea drills near the disputed area. On August 7 President Estrada flags \"six more exercises of that kind\" without stating when or where (Dow Jones & AFP via Taffer dataset). Visiting Forces Agreement (VFA) had been signed between ", "status": "accepted", "coded_by": "chubb"}, {"move_id": "PH199804", "year": "1998", "types": ["coercive"], "description": "1998, October: PRC  complains about the low-flying PHL surveillance flights around Mischief Reef (PHL Memorial Annex 34-35).  PHL reportedly also instructs its navy to fire warning shots if PRC ships come too close (Taffer dataset). PHL allegedly discontinued the flights in November (PHL Memorial An", "status": "accepted", "coded_by": "chubb"}, {"move_id": "PH199805", "year": "1998", "types": ["declarative"], "description": "1998 October: Philippine government publishes images of Chinese vessels unloading construction materials at Mischief Reef. (Storey, Creeping Assertiveness, 98). This arguably constitutes a constant line of behaviour running through to 2015, in response to major PRC provocations. Issues in play are a", "status": "accepted", "coded_by": "chubb"}], "same_year_moves": [{"move_id": "PH199901", "year": "1999", "types": ["coercive"], "description": "1999 May-July: Three sinkings of PRC trawlers in as many months. In May Philippine warship sank a Chinese fishing boat in collision off Scarborough Shoal. (Van Pham, The Use or Threat of Force, 527; Zhang Jie, Huangyan Island Model). In June another Chinese fishing boat sinks after a collision with ", "status": "accepted", "coded_by": "chubb"}, {"move_id": "PH199902", "year": "1999", "types": ["force"], "description": "1999, May 7: Occupation of Second Thomas Shoal via grounding of BRP Sierra Madre (Philippines vs. China Award, p. 438). Scarborough Shoal is also briefly occupied in the same manner but the ship was removed prior to a November visit to Manila by PRC Premier Zhu Rongji. (CND, \"ASEAN Summit to face Sp", "status": "accepted", "coded_by": "chubb"}, {"move_id": "PH199903", "year": "1999", "types": ["coercive"], "description": "1999 October: “According to Philippine defense sources, two Malaysian fighter planes and two Philippine air force surveillance planes nearly engaged over a Malaysian-occupied reef in the Spratlys.” (Van Pham, The Use or Threat of Force, 528; EIA, “South China Sea Backgrounder.”)", "status": "accepted", "coded_by": "chubb"}], "duplicate_of": null, "claimant_name": "Philippines"}, {"event": {"event_id": "ev-8a10d31f4a", "move_id": "", "claimant": "PH", "date_start": "2026-05-26", "date_end": "2026-05-29", "date_precision": "day", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "During President Marcos Jr.'s state visit to Japan, the Philippines and Japan issued a Comprehensive Strategic Partnership Declaration that expressed serious concern over developments in the South China Sea, opposed unilateral attempts to change the status quo through force or coercion, and reaffirmed the 2016 South China Sea Arbitral Award.", "actors": "President Ferdinand R. Marcos Jr.; Prime Minister Takaichi Sanae", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "politics", "suggested_dyads": "PC", "suggestion_reasoning": "A joint declaration with a non-claimant reaffirming the 2016 arbitral award and opposing coercion is a verbal assertion of the Philippine position directed at China, hence declarative; but the document is an analytical piece about partnership upgrades and the SCS language is a secondary element, so this is a marginal candidate. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-8a10d31f4a-S01", "event_id": "ev-8a10d31f4a", "url": "https://amti.csis.org/deepening-strategic-partnerships-the-philippines-relations-with-japan-and-vietnam/", "title": "Deepening Strategic Partnerships: The Philippines’ Relations with Japan and Vietnam", "publisher": "Asia Maritime Transparency Initiative (CSIS)", "pub_date": "2026-08-06", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "It likewise expressed serious concern over developments in the East China Sea and the South China Sea and opposed unilateral attempts to change the status quo through force or coercion. Similarly, both the Philippines-Japan and Philippines-Vietnam declarations reaffirmed the importance of the 1982 United Nations Convention on the Law of the Sea and the 2016 South China Sea Arbitral Award."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Philippines"}, {"event": {"event_id": "ev-a6cf48d0c6", "move_id": "", "claimant": "CN", "date_start": "2025-09-10", "date_end": "2025-09-10", "date_precision": "day", "lat": "15.18333", "lon": "117.76667", "location_name": "Scarborough Shoal", "location_precision": "feature", "subregion": "4", "summary": "China approved the establishment of a national nature reserve at Scarborough Shoal, covering the fringing reef on the northeastern side of the shoal and an experimental zone in the surrounding waters, citing the State Council's 1994 Regulations on Nature Reserves.", "actors": "Chinese State Council", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "domestic", "suggested_issues": "administrative", "suggested_dyads": "CP", "suggestion_reasoning": "A unilateral administrative act establishing a protected area over a disputed feature is demonstrative administration without direct confrontation. The document gives only 'September 10'; the year 2025 is inferred from the commentary's November 2025 publication date. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Scarborough Shoal", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-a6cf48d0c6-S01", "event_id": "ev-a6cf48d0c6", "url": "https://amti.csis.org/scarborough-peace-park-the-road-to-peace-and-sustainability-in-the-south-china-sea/", "title": "Scarborough Peace Park: The Road to Peace and Sustainability in the South China Sea", "publisher": "Asia Maritime Transparency Initiative (CSIS)", "pub_date": "2025-11-21", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "On September 10, China approved the establishment of a nature reserve at Scarborough Shoal, also known as Bajo de Masinloc in Tagalog or Huangyan Dao in Chinese, a coral atoll whose sovereignty is under dispute between China and the Philippines."}], "year": 2025, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "China"}, {"event": {"event_id": "ev-19175b3b10", "move_id": "", "claimant": "PH", "date_start": "2025-09-01", "date_end": "2025-09-30", "date_precision": "month", "lat": "15.18333", "lon": "117.76667", "location_name": "Scarborough Shoal", "location_precision": "feature", "subregion": "4", "summary": "The Philippine Department of Foreign Affairs announced it would lodge a diplomatic protest against China's establishment of a nature reserve at Scarborough Shoal, calling it a pretext to eventual occupation and urging Beijing to withdraw it.", "actors": "Philippine Department of Foreign Affairs", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative politics", "suggested_dyads": "PC", "suggestion_reasoning": "A diplomatic protest is a declarative assertion. The document does not date the protest; September 2025 is inferred only from its proximity to the 10 September Chinese announcement, so the coder should verify the date. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Scarborough Shoal", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-19175b3b10-S01", "event_id": "ev-19175b3b10", "url": "https://amti.csis.org/scarborough-peace-park-the-road-to-peace-and-sustainability-in-the-south-china-sea/", "title": "Scarborough Peace Park: The Road to Peace and Sustainability in the South China Sea", "publisher": "Asia Maritime Transparency Initiative (CSIS)", "pub_date": "2025-11-21", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "The Department of Foreign Affairs in Manila announced that a diplomatic protest would be lodged against what it termed an unlawful and illegitimate act violating the Philippines’ sovereign rights under international law."}], "year": 2025, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Philippines"}, {"event": {"event_id": "ev-a2bab04f8c", "move_id": "", "claimant": "ID", "date_start": "2026-07-01", "date_end": "2026-07-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "Indonesia restarted a gas project in the South China Sea that Beijing had opposed, according to a South China Morning Post headline.", "actors": "", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "energy", "suggested_dyads": "IC", "suggestion_reasoning": "Unilateral resource development in a disputed area despite Chinese objection is demonstrative; however the document is a headline only, with no body text, named block or date beyond the 2026-07-22 publication date, so the coder must verify the details. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-a2bab04f8c-S01", "event_id": "ev-a2bab04f8c", "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWGozd1pKMVFIYWNoMDM4QlRlbWEzbVVYN3V5eTZxLXhlV1F3STdic2JLWTZkLVprOHBWbVZIcDEzVVlvY3NjYWIyelF1aE5RbE5GRndLbjhhVUZ5Z1BNSXoxbXhDbWdWWUdrSEJQUFBxbU1tOVZlRzlJbjlNOWFuN0t2STk4cm1QZU1OWXRFRHh3blA5ZzRCTy03blNyQk93VXpWNWh1Mm9IY2ZmMHpPMkFIdXFpbVpqSGfSAboBQVVfeXFMT2h4MGJYUDdyOGU4SkNFOUJ0UkF5SHZ3SlBfclBPaW11MnNiVWRyUWhDMUgzRThHNkFLU2lhbW82eEs1U0dPZkYyNWgzd2FNbEh0aF9EU3FQWUxmc1dlN1VGbUdWbjBWT3JXRDJiUzNqNWozUGp6d0NJR3hfeFc5SzNKNFlacmU1TGJhNzA3NjZQc1JnWExOdW02RmtzQmxyNm5GNHh5RDNkNzRidEVjZUhBTjU1S1A0Q0Jn?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Indonesia restarts South China Sea gas project Beijing opposed - South China Morning Post", "publisher": "News search: Indonesia Natuna", "pub_date": "2026-07-22", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Indonesia restarts South China Sea gas project Beijing opposed"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-39c8780a10", "move_id": "", "claimant": "CN", "date_start": "2026-08-01", "date_end": "2026-08-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "A 12,000-ton Chinese vessel, described as a 'Monster', operated in the South China Sea in a manner reported as testing Malaysia, according to a Defence Security Asia headline.", "actors": "", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "administrative", "suggested_dyads": "CM", "suggestion_reasoning": "A Chinese government vessel's presence in waters claimed by Malaysia would be a demonstrative patrol, but the document is a headline only with no body text, location, vessel identity or date beyond the 2026-08-22 publication date, so the coder must verify whether any dated incident occurred. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-39c8780a10-S01", "event_id": "ev-39c8780a10", "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVHZsazVISmcwZGdNOHl2RlJTNnk2M0E5X2tLYWdTTzdPZG1BVlJ5dDcybm4xeF9JSzBETktyVlNRbnA5dVVNbGdCazZQNWVJelB1RVBQd3dVdW9qY0xTVFZBazl1SGVuWURQV3pWTnhBSnFQZEhjZkktMkpBVFFickJha29OYnVFYTZWMmwybTUwRXlNM0VDYzBPbw?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "China’s 12,000-Ton ‘Monster’ Tests Malaysia in South China Sea - Defence Security Asia", "publisher": "News search: Malaysia South China Sea", "pub_date": "2026-08-22", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "China’s 12,000-Ton ‘Monster’ Tests Malaysia in South China Sea"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "China"}, {"event": {"event_id": "ev-41c66632fc", "move_id": "", "claimant": "MY", "date_start": "2026-10-01", "date_end": "2026-10-31", "date_precision": "month", "lat": "7.50000", "lon": "113.75000", "location_name": "Pulau Layang-Layang", "location_precision": "feature", "subregion": "7", "summary": "Malaysian Defence Minister Mohamed Khaled Nordin announced that the Ministry of Defence had decided to install a new air-defence radar system on Pulau Layang-Layang (Swallow Reef) in the Spratlys, alongside other measures to strengthen military deployments in Sabah.", "actors": "Malaysian Ministry of Defence; Defence Minister Mohamed Khaled Nordin", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "military", "suggested_dyads": "MA", "suggestion_reasoning": "An official announcement of a decision to install military radar on Malaysia's occupied Spratly feature is a verbal assertion of administration over a disputed possession; coded declarative because the document reports only the announcement, not the installation (a coder may prefer demonstrative). The exact date is not stated; the photo caption places the minister at Labuan Air Base 'last Friday' (30 Oct 2026), so the date is inferred to October 2026 at month precision. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Swallow Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-41c66632fc-S01", "event_id": "ev-41c66632fc", "url": "https://www.utusan.com.my/rencana/2026/11/memodenkan-senjata-memperkukuh-kedaulatan/?utm_source=rss&utm_medium=rss&utm_campaign=memodenkan-senjata-memperkukuh-kedaulatan", "title": "Memodenkan senjata memperkukuh kedaulatan", "publisher": "Utusan Malaysia (Malay)", "pub_date": "2026-11-02", "language": "ms", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Kementerian Pertahanan turut memutuskan untuk memasang sistem radar baharu di Pulau Layang-Layang, Sabah bagi memperkukuh keupayaan pemantauan dan amaran awal."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia"}, {"event": {"event_id": "ev-ca2baf0411", "move_id": "", "claimant": "PH", "date_start": "2026-10-01", "date_end": "2026-10-31", "date_precision": "month", "lat": "15.18333", "lon": "117.76667", "location_name": "Bajo de Masinloc", "location_precision": "feature", "subregion": "4", "summary": "The Philippine government provided fuel aid to Filipino fishermen operating at Bajo de Masinloc (Scarborough Shoal), according to a Daily Tribune headline.", "actors": "Philippine government", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "domestic physical", "suggested_issues": "fisheries administrative", "suggested_dyads": "CP", "suggestion_reasoning": "State support for national fishing activity at a disputed feature is a unilateral administrative assertion without confrontation, hence demonstrative. The document is a headline only: the date of the act is not stated and is inferred from the article's publication month, and no agency or vessel is named. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Scarborough Shoal", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-ca2baf0411-S01", "event_id": "ev-ca2baf0411", "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdVo0UEs4d1htV0J0UTRVYXlnLUJBam8zd2JLTGVqZEtLLVhfNDRRUVBvR1loX09uRnlIWUJsM1RIcnZ6ZGt0UU1kS3lwMmJZVWVjQVJDU1RHbHpmSUlmaUU3OTJPVFJEaDQ0cXpkTmFfZWQ2UGVDOTlzWmZiZ0xyZEluaTVTQWJoMS0wWV9Ld0ozeE9iXzBkZ29iTUlob2YtV055Q1U3aFk?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Philippine Gov't Provides Fuel Aid to Fishermen at Bajo de Masinloc Amid Rising Costs - Daily Tribune", "publisher": "News search: Philippine Coast Guard / West Philippine Sea", "pub_date": "2026-10-28", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Philippine Gov't Provides Fuel Aid to Fishermen at Bajo de Masinloc Amid Rising Costs"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Philippines"}, {"event": {"event_id": "ev-848d969c25", "move_id": "", "claimant": "CN", "date_start": "2026-10-01", "date_end": "2026-10-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "China conducted combat readiness patrols around a disputed shoal in the South China Sea, according to a Devdiscourse headline; the shoal is not named in the available text.", "actors": "", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "CU", "suggestion_reasoning": "A military patrol around a disputed feature is a unilateral demonstration of administration without reported confrontation, hence demonstrative. The document is a headline only: the shoal, the units involved and the date of the patrol are not given, and the month is inferred from the publication date. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-848d969c25-S01", "event_id": "ev-848d969c25", "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZDE1OW5jUmowUFVITXBNLUJLTENyWVFlSFZaT2k2a2w5cjFHYzJtSXFBZThER2Y2RU9jeEJHLXVBdkdvWWdOT0NHRTFQMExlU0VCNG9SZW1yYWdwRkk2LXNsbzgxYUR1LTJIcXlfRTV4UG9HQ3ctdlVHcnNaVUpCYnpxTmxjMmhWN2p4dGRoaXZjUEIyS2FGXzdDUFRYNmxfUmRoYUd5eTdCSHUxOEZGNnk3ZXBpMkdqdzlGaDFVRDU2UlFBdVNTQjFmX1V2TDhjUkhrNy1R0gHbAUFVX3lxTFBLMmJPY0g0T0EyazNFZVFoX21CcEVHSGNnV0YzOVlOZTVkdDFiTDJsV29MU1RBMERTTGtjVzRyUXM3UWdVcXJwalF4bGQ3RjAyVmRnWDdsYzAxY2tUcHAyNkd6VWhHaUlzbXpybWEwV2lxcnhheTFOcDQ3NEx5Qm9oNE44QkpsWjJFNTF6a1lXZG8zS20wVDFnZ09MeE1YZ0VCbUxUQUxUclN5dEYtZUpBbklOb1hxbXVEZ1pielNsZjc2Q1BkeE5yOGhFaWlWdk1ueklUVWh6RVJxaw?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "China conducts combat readiness patrols around disputed shoal in South China Sea - Devdiscourse", "publisher": "News search: South China Sea", "pub_date": "2026-10-30", "language": "en", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "China conducts combat readiness patrols around disputed shoal in South China Sea"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "China"}, {"event": {"event_id": "ev-0b4811f8e6", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with a statement on China's illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.", "actors": "Vietnam MFA spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative", "suggested_dyads": "VC", "suggestion_reasoning": "A dated spokesperson statement asserting Vietnamese sovereignty over the Paracels in response to Chinese construction is a verbal/diplomatic protest, hence declarative. The item appears only as a related-news teaser and the statement text itself is truncated, so the content is known only from the headline; the Chinese construction it responds to is undated in this document and is not extracted separately. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Antelope Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-0b4811f8e6-S01", "event_id": "ev-0b4811f8e6", "url": "https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-cuoc-tan-cong-gan-day-nham-vao-cac-co-so-ha-tang-dan-su-tai-vuong-quoc-a-rap-xe-ut-62782-10.html", "title": "Người Phát ngôn Bộ Ngoại giao Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các cuộc tấn công gần đây nhằm vào các cơ sở hạ tầng dân sự tại Vương quốc Ả-rập Xê-út - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud", "publisher": "Vietnam MFA (press)", "pub_date": "", "language": "vi", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Vietnam"}, {"event": {"event_id": "ev-9fa40707b3", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands)", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's Ministry of Foreign Affairs spokesperson Phạm Thu Hằng, answering a reporter's question, reasserted Vietnam's sovereignty over the Paracels including Hải Sâm reef and Ba Ba island, declared China's reclamation and construction there illegal and void, and said Vietnam resolutely opposed it, had lodged serious representations and demanded an immediate end and no repetition.", "actors": "Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative politics", "suggested_dyads": "VC", "suggestion_reasoning": "A dated official statement and diplomatic representation by Vietnam asserting its Paracels claim against Chinese construction; a verbal protest with no coercive element, hence declarative. [confidence: high]", "reviewer": "", "review_date": "", "review_note": "Possible duplicate of ev-0b4811f8e6.", "placed_name": "Antelope Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-9fa40707b3-S01", "event_id": "ev-9fa40707b3", "url": "https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-hoat-dong-ton-tao-xay-dung-trai-phep-cua-trung-quoc-tai-da-hai-sam-va-dao-ba-ba-thuoc-quan-dao-hoang-sa-cua-viet-nam-61820-10.html", "title": "Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam - Cổng thông tin Bộ Ngoại Giaosound-loudsound-lou", "publisher": "Vietnam MFA (press)", "pub_date": "", "language": "vi", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Việt Nam kiên quyết phản đối, đã giao thiệp nghiêm túc và khẳng định lập trường về vấn đề này, yêu cầu chấm dứt ngay và không tái diễn các hoạt động tương tự"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": {"event_id": "ev-0b4811f8e6", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with a statement on China's illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.", "actors": "Vietnam MFA spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative", "suggested_dyads": "VC", "suggestion_reasoning": "A dated spokesperson statement asserting Vietnamese sovereignty over the Paracels in response to Chinese construction is a verbal/diplomatic protest, hence declarative. The item appears only as a related-news teaser and the statement text itself is truncated, so the content is known only from the headline; the Chinese construction it responds to is undated in this document and is not extracted separately. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": ""}, "claimant_name": "Vietnam"}, {"event": {"event_id": "ev-9692a591d1", "move_id": "", "claimant": "CN", "date_start": "2026-08-01", "date_end": "2026-08-31", "date_precision": "month", "lat": "16.45000", "lon": "111.58000", "location_name": "đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands)", "location_precision": "feature", "subregion": "2", "summary": "China carried out reclamation and construction activities at Hải Sâm reef and Ba Ba island in the Paracel Islands, prompting a Vietnamese protest on 28 August 2026.", "actors": "", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "administrative", "suggested_dyads": "CV", "suggestion_reasoning": "Unilateral construction on disputed Paracel features is demonstrative administration; however the document only reports Vietnam's reaction and gives no date or detail for the Chinese activity itself, so the date is inferred from the protest date and precision set to month. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Antelope Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-9692a591d1-S01", "event_id": "ev-9692a591d1", "url": "https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-hoat-dong-ton-tao-xay-dung-trai-phep-cua-trung-quoc-tai-da-hai-sam-va-dao-ba-ba-thuoc-quan-dao-hoang-sa-cua-viet-nam-61820-10.html", "title": "Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam - Cổng thông tin Bộ Ngoại Giaosound-loudsound-lou", "publisher": "Vietnam MFA (press)", "pub_date": "", "language": "vi", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "China"}, {"event": {"event_id": "ev-7dc3b8cb21", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "Đá Hải Sâm and Đảo Ba Ba, Hoàng Sa (Paracel) Islands", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a press question on China's \"illegal\" reclamation and construction at Hải Sâm Reef and Ba Ba Island, which the ministry described as part of Vietnam's Hoàng Sa (Paracel) archipelago.", "actors": "Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative politics", "suggested_dyads": "VC", "suggestion_reasoning": "A dated MFA spokesperson statement characterising Chinese construction in the Paracels as illegal and the features as Vietnamese is a verbal assertion of claim, hence declarative. The item appears only as a related-news teaser: the body of the statement is cut off, so the exact wording of the protest is not in the document, and the underlying Chinese construction is undated here and not extracted separately. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Possible duplicate of ev-0b4811f8e6.", "placed_name": "Antelope Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-7dc3b8cb21-S01", "event_id": "ev-7dc3b8cb21", "url": "https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-doi-voi-bao-cao-nam-2026-ve-tinh-hinh-mua-ban-nguoi-tren-the-gioi-cua-bo-ngoai-giao-hoa-ky-cong-bo-ngay-09102026-62822-10.html", "title": "Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng , trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng đối với Báo cáo năm 2026 về tình hình mua bán người trên thế giới của Bộ Ngoại giao Hoa Kỳ công bố ngày 09/10/2026 - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud", "publisher": "Vietnam MFA (press)", "pub_date": "", "language": "vi", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": {"event_id": "ev-0b4811f8e6", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with a statement on China's illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.", "actors": "Vietnam MFA spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative", "suggested_dyads": "VC", "suggestion_reasoning": "A dated spokesperson statement asserting Vietnamese sovereignty over the Paracels in response to Chinese construction is a verbal/diplomatic protest, hence declarative. The item appears only as a related-news teaser and the statement text itself is truncated, so the content is known only from the headline; the Chinese construction it responds to is undated in this document and is not extracted separately. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": ""}, "claimant_name": "Vietnam"}, {"event": {"event_id": "ev-f4e795ed57", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Antelope Reef and Duncan Island, Paracels)", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with Vietnam's reaction to China's 'illegal' reclamation and construction activities at Hải Sâm reef and Ba Ba island, which Vietnam described as part of its Hoàng Sa (Paracel) archipelago.", "actors": "Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative politics", "suggested_dyads": "VC", "suggestion_reasoning": "A dated MFA spokesperson statement characterising Chinese construction in the Paracels as illegal and asserting Vietnamese sovereignty is a declarative verbal assertion. However, this appears only as a related-article headline in the sidebar of a document about an unrelated EU tax matter, and the body of the statement is truncated, so the coder should verify against the full source. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Possible duplicate of ev-0b4811f8e6.", "placed_name": "Antelope Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-f4e795ed57-S01", "event_id": "ev-f4e795ed57", "url": "https://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-binh-luan-cua-viet-nam-truoc-viec-lien-minh-chau-au-eu-vua-quyet-dinh-dua-viet-nam-ra-khoi-danh-sach-cac-quoc-gia-khong-hop-tac-ve-thue-62731-10.html", "title": "Người Phát ngôn Bộ Ngoại giao Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết bình luận của Việt Nam trước việc Liên minh châu Âu (EU) vừa quyết định đưa Việt Nam ra khỏi danh sách các quốc gia không hợp tác về thuế - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud", "publisher": "Vietnam MFA (press)", "pub_date": "", "language": "vi", "accessed_date": "2026-11-02", "archive_url": "", "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:"}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": {"event_id": "ev-0b4811f8e6", "move_id": "", "claimant": "VN", "date_start": "2026-08-28", "date_end": "2026-08-28", "date_precision": "day", "lat": "16.45000", "lon": "111.58000", "location_name": "Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands", "location_precision": "feature", "subregion": "2", "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with a statement on China's illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.", "actors": "Vietnam MFA spokesperson Phạm Thu Hằng", "status": "candidate", "harvest_run_id": "20261102T0724", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative", "suggested_dyads": "VC", "suggestion_reasoning": "A dated spokesperson statement asserting Vietnamese sovereignty over the Paracels in response to Chinese construction is a verbal/diplomatic protest, hence declarative. The item appears only as a related-news teaser and the statement text itself is truncated, so the content is known only from the headline; the Chinese construction it responds to is undated in this document and is not extracted separately. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": ""}, "claimant_name": "Vietnam"}]}</script>
+<script>
+(function () {
+  "use strict";
+  var CTX = JSON.parse(document.getElementById("ctx").textContent);
+  var KEY = "scs-review-" + CTX.run_id;
+  var draft = {};
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { draft = {}; }
+  var reviewer = document.getElementById("reviewer");
+  reviewer.value = draft._reviewer || "";
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(draft)); } catch (e) {} progress(); }
+  function progress() {
+    var n = CTX.items.length, done = CTX.items.filter(function (it) { return (draft[it.event.event_id] || {}).action; }).length;
+    document.getElementById("progress").textContent = done + " of " + n + " decided";
+  }
+  function orig(id) { for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) return CTX.items[i].event; return {}; }
+
+  function readCard(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    var d = { event_id: id, action: action, note: card.querySelector(".f-note").value.trim() };
+    if (action === "merge") {
+      var of = card.querySelector(".f-move_of").value;
+      if (of) d.move_of_event = of; else d.move_id = card.querySelector(".f-move_id_text").value.trim() || card.querySelector(".f-move_id").value;
+    }
+    if (action === "duplicate") d.duplicate_of = card.querySelector(".f-dup_of").value.trim();
+    if (action === "new_move") {
+      d.new_move = {
+        type: card.querySelector(".f-type").value, intensification_criterion: card.querySelector(".f-crit").value,
+        year: card.querySelector(".f-year").value.trim(), ongoing_through: card.querySelector(".f-ongoing").value.trim(),
+        dyads: card.querySelector(".f-dyads").value.trim().split(/\s+/).filter(Boolean),
+        domains: Array.prototype.map.call(card.querySelectorAll(".f-domain:checked"), function (i) { return i.value; }),
+        issues: Array.prototype.map.call(card.querySelectorAll(".f-issue:checked"), function (i) { return i.value; }),
+        subregions: Array.prototype.map.call(card.querySelectorAll(".f-sub:checked"), function (i) { return i.value; }),
+        description: card.querySelector(".f-desc").value.trim()
+      };
+    }
+    if (action === "merge" || action === "new_move" || action === "duplicate") {
+      var o = orig(id), edits = {};
+      ["date_start", "date_end", "date_precision", "location_name", "subregion", "lat", "lon", "actors", "summary"].forEach(function (f) {
+        var v = card.querySelector(".f-e-" + f).value.trim();
+        if (v && v !== (o[f] || "")) edits[f] = v;     // blank keeps the current value
+      });
+      if (Object.keys(edits).length) d.edits = edits;
+    }
+    return d;
+  }
+  function paint(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    card.querySelector(".p-merge").classList.toggle("on", action === "merge");
+    card.querySelector(".p-new").classList.toggle("on", action === "new_move");
+    card.querySelector(".p-dup").classList.toggle("on", action === "duplicate");
+    card.querySelector(".p-edits").classList.toggle("on", action === "merge" || action === "new_move" || action === "duplicate");
+    card.querySelector(".p-reject-req").hidden = action !== "reject";
+    card.classList.toggle("decided", !!action);
+    card.classList.toggle("is-reject", action === "reject");
+  }
+  function restore(card) {
+    var id = card.getAttribute("data-event"), d = draft[id];
+    if (!d) return;
+    var r = card.querySelector('input[name="a-' + id + '"][value="' + (d.action || "") + '"]'); if (r) r.checked = true;
+    card.querySelector(".f-note").value = d.note || "";
+    if (d.move_id) card.querySelector(".f-move_id_text").value = d.move_id;
+    if (d.move_of_event) card.querySelector(".f-move_of").value = d.move_of_event;
+    if (d.duplicate_of) card.querySelector(".f-dup_of").value = d.duplicate_of;
+    if (d.new_move) {
+      var m = d.new_move;
+      card.querySelector(".f-type").value = m.type || ""; card.querySelector(".f-crit").value = m.intensification_criterion || "";
+      card.querySelector(".f-year").value = m.year || ""; card.querySelector(".f-ongoing").value = m.ongoing_through || "";
+      card.querySelector(".f-dyads").value = (m.dyads || []).join(" "); card.querySelector(".f-desc").value = m.description || "";
+      card.querySelectorAll(".f-domain").forEach(function (i) { i.checked = (m.domains || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-issue").forEach(function (i) { i.checked = (m.issues || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-sub").forEach(function (i) { i.checked = (m.subregions || []).indexOf(i.value) >= 0; });
+    }
+    if (d.edits) Object.keys(d.edits).forEach(function (f) { var el = card.querySelector(".f-e-" + f); if (el) el.value = d.edits[f]; });
+  }
+
+  var cards = document.querySelectorAll(".cand");
+  cards.forEach(function (card) {
+    restore(card); paint(card);
+    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+  });
+  reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
+
+  function validate(decisions) {
+    var problems = [];
+    decisions.forEach(function (d) {
+      if (d.action === "reject" && !d.note) problems.push(d.event_id + ": a rejection needs a note");
+      if (d.action === "merge" && !d.move_id && !d.move_of_event) problems.push(d.event_id + ": choose the move to merge into");
+      if (d.action === "merge" && d.move_id && !/^[A-Z]{2}\d{6}$/.test(d.move_id)) problems.push(d.event_id + ": a move id looks like CN202601");
+      if (d.action === "merge" && d.move_of_event && !(draft[d.move_of_event] || {}).action) problems.push(d.event_id + ": the candidate it merges into has no decision yet");
+      if (d.action === "merge" && d.move_of_event && (draft[d.move_of_event] || {}).action && draft[d.move_of_event].action !== "new_move") problems.push(d.event_id + ": the candidate it merges into does not form a new move");
+      if (d.action === "duplicate" && !d.duplicate_of) problems.push(d.event_id + ": name the event it duplicates");
+      if (d.action === "new_move" && d.new_move.dyads.some(function (x) { return !/^[RCPVMBIAU]{1,2}$/.test(x); })) problems.push(d.event_id + ": dyads are one or two of the letters R C P V M B I A U");
+      if (d.action === "new_move" && d.new_move.year && !/^\d{4}$/.test(d.new_move.year)) problems.push(d.event_id + ": year must be four digits");
+      if (d.action === "new_move") {
+        if (!d.new_move.type) problems.push(d.event_id + ": a new move needs a type");
+        if (!d.new_move.intensification_criterion) problems.push(d.event_id + ": a new move needs its intensification criterion");
+      }
+    });
+    return problems;
+  }
+  document.getElementById("export").addEventListener("click", function () {
+    var decisions = [];
+    cards.forEach(function (card) { var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    var problems = validate(decisions);
+    if (!decisions.length) { alert("No decisions yet."); return; }
+    if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
+    var out = { run_id: CTX.run_id, reviewer: reviewer.value.trim(), exported: new Date().toISOString().slice(0, 10), decisions: decisions };
+    var blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "decisions-" + CTX.run_id + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  document.getElementById("clear").addEventListener("click", function () {
+    if (!confirm("Discard the saved draft for this page?")) return;
+    draft = {}; try { localStorage.removeItem(KEY); } catch (e) {} location.reload();
+  });
+  progress();
+})();
+</script>
+</body>
+</html>
