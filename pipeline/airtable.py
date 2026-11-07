@@ -23,6 +23,16 @@ Usage:
   python -m pipeline.airtable schema                               print the table's fields as Airtable needs them
   python -m pipeline.airtable records --run <run_id> --out f.json  the push as JSON, without calling Airtable
   python -m pipeline.airtable pull --run <run_id> --from records.json --out decisions.json   decisions from exported records
+  python -m pipeline.airtable run-record --run harvest/runs/<run_id> [--pr N] --out run.json   the run's row for the Runs table (ticket 20)
+
+The workbench around the queue (ticket 20, after the maintainer's TPD Updates sheet): besides
+`Candidates`, the base has `Runs` (one row per harvest or backfill run, the run log), `Sources` (a
+read-only mirror of pipeline/sources.json), `Sidelines` (things seen that do not merit a candidate)
+and `Notes` (free text across candidates). Candidates carry `flags` (what the machine noticed; the
+reviewer may edit them, so a refresh leaves them alone), `dataset_status` (where the candidate
+stands after the decision; refreshed by the sync, never typed) and `run` (a link to its Runs row).
+The REST client writes the Candidates table only; the other tables are filled through the
+maintainer's Airtable connector from the JSON these commands emit (docs/airtable-workbench.md).
 """
 from __future__ import annotations
 
@@ -47,6 +57,12 @@ BATCH = 10
 DECISIONS = ["undecided", "merge", "new_move", "duplicate", "reject"]
 CRITERIA = list(schema.INTENSIFICATION_CRITERIA)
 SUBREGION_CHOICES = [f"{i} {n}" for i, n in zip(range(1, 11), schema.SUBREGION_NAMES)]
+FLAGS = ["Excerpt not checked", "Excerpt not found", "Source unreachable", "Possible duplicate", "Date approximate",
+         "Low confidence", "Type uncertain", "Needs a second source"]
+DATASET_STATUSES = ["In review", "Decision recorded", "Pulled into dataset", "Merged", "Published on site", "Closed without change"]
+RUN_TYPES = ["Weekly harvest", "Backfill", "Manual", "Catch-up"]
+RUN_VERDICTS = ["Pass", "Partial", "Failed", "No candidates"]
+REPO_URL = "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
 
 # One Airtable field per thing the review page shows or asks. Order is the column order.
 FIELDS: list[tuple[str, str, dict]] = [
@@ -76,6 +92,10 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("possible_duplicate_of", "singleLineText", {}),
     ("previous_year_moves", "multilineText", {}),
     ("same_year_moves", "multilineText", {}),
+    # the workbench (ticket 20): what the machine noticed, where the candidate stands, which run made it
+    ("flags", "multipleSelects", {"choices": [{"name": c} for c in FLAGS]}),
+    ("dataset_status", "singleSelect", {"choices": [{"name": c} for c in DATASET_STATUSES]}),
+    ("run", "multipleRecordLinks", {}),
     # the decision (the coder's)
     ("decision", "singleSelect", {"choices": [{"name": c} for c in DECISIONS]}),
     ("merge_into_move", "singleLineText", {}),
@@ -224,7 +244,28 @@ def _moves_text(moves: list[dict]) -> str:
     return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}]{' pending' if m['status'] != 'accepted' else ''}: {m['description']}" for m in moves)
 
 
-def records_for_run(data_dir: Path, run_id: str, pr: int | None = None) -> list[dict]:
+def flags_for(e: dict) -> list[str]:
+    """The flags the import's notes and the suggestion imply, in FLAGS order: the machine note says
+    whether the excerpt was checked, found, or the source unreachable, and whether a near match
+    exists; month or year precision is an approximate date; the reasoning's confidence tag."""
+    note = e.get("review_note") or ""
+    found = set()
+    if "could not be fetched" in note:
+        found |= {"Source unreachable", "Excerpt not checked"}
+    elif "not checked" in note:
+        found.add("Excerpt not checked")
+    if "not found verbatim" in note:
+        found.add("Excerpt not found")
+    if "Possible duplicate" in note:
+        found.add("Possible duplicate")
+    if (e.get("date_precision") or "") in ("month", "year"):
+        found.add("Date approximate")
+    if "[confidence: low]" in (e.get("suggestion_reasoning") or ""):
+        found.add("Low confidence")
+    return [f for f in FLAGS if f in found]
+
+
+def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_record: str | None = None) -> list[dict]:
     """One Airtable record per candidate of the run: the review page's context fields, and the coder's
     fields prefilled as the page prefills them (decision undecided; the new move's type, dyads, domains,
     issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag).
@@ -247,6 +288,7 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None) -> list[
             "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"], "suggested_issues": e["suggested_issues"],
             "suggested_dyads": e["suggested_dyads"], "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
             "possible_duplicate_of": dup,
+            "flags": flags_for(e) or None, "dataset_status": "In review", "run": [run_record] if run_record else None,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
             "decision": "undecided", "duplicate_of": dup,
             "new_type": e["suggested_type"] or None, "new_dyads": e["suggested_dyads"],
@@ -257,7 +299,70 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None) -> list[
     return out
 
 
-CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS]
+# A refresh rewrites the context columns, except the reviewer's flags and the run link (set once, by id).
+CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS and n not in ("flags", "run")]
+
+
+# ---------------------------------------------------------------------------
+# the run log (ticket 20): one row per run, from harvest/runs/<run_id>/run.json and the candidates
+
+def run_type(run_id: str) -> str:
+    """Weekly harvests are named by their timestamp, backfill chunks by claimant and period;
+    anything else was compiled by hand."""
+    import re
+    if re.fullmatch(r"\d{8}T\d{4}", run_id):
+        return "Weekly harvest"
+    if re.fullmatch(r"[A-Z]{2}-\d{4}(-\d{4}|s|-[A-Za-z]+\d{4})?", run_id):
+        return "Backfill"
+    return "Manual"
+
+
+def run_date(run_id: str, fallback: str = "") -> str:
+    """The run's date: from a timestamp id, else the date given (the import's), else today."""
+    if len(run_id) >= 8 and run_id[:8].isdigit():
+        return f"{run_id[:4]}-{run_id[4:6]}-{run_id[6:8]}"
+    return fallback[:10] if fallback else dt.date.today().isoformat()
+
+
+def run_record(run_dir: Path, data_dir: Path, pr: int | None = None, notes: str = "") -> dict:
+    """The Runs row: counts from run.json, the excerpt checks and duplicate flags from the run's
+    candidates, the sources that failed, the review PR. `notes` is what the compiler or the run
+    wants the reviewer to look at."""
+    report = json.loads((run_dir / "run.json").read_text(encoding="utf-8"))
+    run_id = report["run_id"]
+    ctx = review_context(data_dir, run_id=run_id)
+    events = [it["event"] for it in ctx["items"]]
+    notes_ = [e.get("review_note") or "" for e in events]
+    not_found = sum("not found verbatim" in n for n in notes_)
+    unchecked = sum(("not checked" in n or "could not be fetched" in n) and "not found verbatim" not in n for n in notes_)
+    verified = len(events) - not_found - unchecked
+    failures = report.get("failures") or []
+    if isinstance(failures, list):
+        failed_sources = sorted({f.get("source_id") or f.get("source") or "?" for f in failures if "deferred" not in (f.get("error") or "")})
+        n_fail = len([f for f in failures if "deferred" not in (f.get("error") or "")])
+    else:
+        failed_sources, n_fail = [], int(failures)
+    dates = sorted(e["date_start"] for e in events if e.get("date_start"))
+    claimants = sorted({e["claimant"] for e in events})
+    scope = ", ".join(ctx["claimants"].get(c, c) for c in claimants)
+    if dates:
+        scope += f" {dates[0][:4]}" + (f"–{dates[-1][:4]}" if dates[-1][:4] != dates[0][:4] else "")
+    if not events:
+        verdict = "No candidates"
+    elif n_fail:
+        verdict = "Partial"
+    else:
+        verdict = "Pass"
+    rec = {
+        "run_id": run_id, "date": run_date(run_id, report.get("finished_at", "")), "type": run_type(run_id), "scope": scope,
+        "verdict": verdict, "documents": report.get("documents"), "candidates": len(events),
+        "possible_duplicates": sum("Possible duplicate" in n for n in notes_), "failures": n_fail,
+        "excerpts_verified": verified, "excerpts_unchecked": unchecked, "excerpts_not_found": not_found,
+        "review_pr": pr, "review_pr_url": f"{REPO_URL}/pull/{pr}" if pr else None,
+        "extractor": report.get("extractor", ""), "unreachable_sources": "\n".join(failed_sources) or None,
+        "what_to_look_at": notes or None,
+    }
+    return {k: v for k, v in rec.items() if v not in (None, "")}
 
 
 # ---------------------------------------------------------------------------
@@ -400,19 +505,31 @@ def main(argv=None) -> int:
             s.add_argument("--max-calls", type=int, default=200)
         if name in ("push", "records"):
             s.add_argument("--pr", type=int, default=None)
+            s.add_argument("--run-record", default=None, help="the Runs table record id to link the candidates to (rec...)")
         if name in ("pull", "records"):
             s.add_argument("--out", type=Path, required=True)
         if name == "pull":
             s.add_argument("--reviewer", default="")
             s.add_argument("--from", dest="from_file", type=Path, default=None, help="records exported from Airtable as JSON, instead of calling it")
     sub.add_parser("schema")
+    rr = sub.add_parser("run-record")
+    rr.add_argument("--run", required=True, type=Path, help="the run folder, harvest/runs/<run_id>")
+    rr.add_argument("--data", type=Path, default=None)
+    rr.add_argument("--pr", type=int, default=None)
+    rr.add_argument("--notes", default="", help="what the reviewer should look at")
+    rr.add_argument("--out", type=Path, required=True)
     a = p.parse_args(argv)
+    if a.cmd == "run-record":
+        rec = run_record(a.run, a.data or repo_root() / "data", a.pr, a.notes)
+        a.out.write_text(json.dumps(rec, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"run record for {rec['run_id']} -> {a.out} (nothing sent)")
+        return 0
     if a.cmd == "schema":
         print(json.dumps(table_schema(), indent=1))
         return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
-        recs = records_for_run(data_dir, a.run, a.pr)
+        recs = records_for_run(data_dir, a.run, a.pr, a.run_record)
         a.out.write_text(json.dumps(recs, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(recs)} record(s) -> {a.out} (nothing sent)")
         return 0

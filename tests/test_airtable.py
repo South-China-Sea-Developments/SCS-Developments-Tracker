@@ -296,3 +296,44 @@ def test_nothing_that_builds_the_dataset_or_the_site_knows_airtable_exists():
     # and a clean subprocess that loads, validates and builds never imports the module
     code = "import sys; from pipeline import validate, queue, load_mats; import web.build; print('pipeline.airtable' in sys.modules)"
     assert subprocess.run([sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip() == "False"
+
+
+# ---------------------------------------------------------------------------
+# ticket 20: the workbench around the queue (flags, the dataset status, the run log)
+
+def test_records_carry_flags_and_an_in_review_status(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    assert all(r["dataset_status"] == "In review" for r in recs)
+    flagged = next(r for r in recs if r.get("possible_duplicate_of"))
+    assert "Possible duplicate" in flagged["flags"]
+    # a month-precision event is flagged as approximate; a day-precision one without notes carries no flags key
+    assert all(("Date approximate" in r.get("flags", [])) == (r.get("date_precision") in ("month", "year")) for r in recs)
+    assert airtable.flags_for({"review_note": "Source page could not be fetched (HTTP 403); excerpt not checked.",
+                               "date_precision": "day", "suggestion_reasoning": "x [confidence: low]"}) == \
+        ["Excerpt not checked", "Source unreachable", "Low confidence"]
+    assert airtable.flags_for({"review_note": "Excerpt not found verbatim in the captured text.", "date_precision": "day",
+                               "suggestion_reasoning": ""}) == ["Excerpt not found"]
+    # the run link is only set when a Runs record id is given, and the refresh never touches the reviewer's flags
+    assert "run" not in recs[0]
+    linked = airtable.records_for_run(d, "fixture", pr=17, run_record="recRUN")
+    assert linked[0]["run"] == ["recRUN"]
+    assert "flags" not in airtable.CONTEXT_FIELDS and "dataset_status" in airtable.CONTEXT_FIELDS and "run" not in airtable.CONTEXT_FIELDS
+
+
+def test_the_run_record_summarises_the_run_for_the_run_log(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    run = tmp_path / "run-d"
+    rec = airtable.run_record(run, d, pr=17)
+    assert rec["run_id"] == "fixture" and rec["review_pr"] == 17 and rec["review_pr_url"].endswith("/pull/17")
+    assert rec["type"] == "Manual" and rec["candidates"] == 5 and rec["verdict"] in ("Pass", "Partial")
+    assert rec["excerpts_verified"] + rec["excerpts_unchecked"] + rec["excerpts_not_found"] == 5
+    assert rec["possible_duplicates"] == 1
+    assert rec["scope"] == "China, Vietnam 2026"
+    assert airtable.run_type("20261102T0724") == "Weekly harvest"
+    assert airtable.run_type("PH-2016-2020") == "Backfill"
+    assert airtable.run_date("20261102T0724") == "2026-11-02"
+    # the command writes it as JSON without calling Airtable
+    out = tmp_path / "run.json"
+    assert airtable.main(["run-record", "--run", str(run), "--data", str(d), "--pr", "17", "--out", str(out)]) == 0
+    assert json.loads(out.read_text(encoding="utf-8"))["run_id"] == "fixture"
