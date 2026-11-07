@@ -27,8 +27,8 @@ class FakeAirtable(airtable.Client):
     pages of `page` records on reads with an offset to continue. Records come back in reverse order
     of creation, so nothing may rely on table order."""
 
-    def __init__(self, max_calls: int = 200, page: int = 100):
-        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls)
+    def __init__(self, max_calls: int = 200, page: int = 100, field_ids: dict | None = None):
+        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls, field_ids)
         self.rows: dict[str, dict] = {}
         self.n = 0
         self.page = page
@@ -39,7 +39,8 @@ class FakeAirtable(airtable.Client):
         if method == "GET":
             formula = (params or {}).get("filterByFormula", "")
             run = formula.split("'")[1] if "'" in formula else None
-            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get("run_id") == run]
+            key = self.wire("run_id")
+            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get(key) == run]
             start = int((params or {}).get("offset") or 0)
             page = recs[start:start + self.page]
             return {"records": page, **({"offset": str(start + self.page)} if start + self.page < len(recs) else {})}
@@ -67,8 +68,8 @@ class FakeAirtable(airtable.Client):
 
     def decide(self, event_id: str, **coder_fields):
         """What the coder does in the Airtable grid: fill the decision columns of one row."""
-        rid = next(i for i, f in self.rows.items() if f["event_id"] == event_id)
-        self.rows[rid].update(coder_fields)
+        rid = next(i for i, f in self.rows.items() if f[self.wire("event_id")] == event_id)
+        self.rows[rid].update({self.wire(k): v for k, v in coder_fields.items()})
 
 
 def opened_copy(tmp_path: Path, name: str) -> Path:
@@ -159,7 +160,7 @@ def test_push_is_idempotent_and_never_touches_the_coders_columns(tmp_path):
     again[0].pop("machine_note", None)
     res = airtable.push(fake, again, "fixture")
     assert res["created"] == 0 and res["updated"] == 5
-    row = next(f for f in fake.rows.values() if f["event_id"] == eid)
+    row = {fake.unwire(k): v for k, v in next(f for f in fake.rows.values() if f[fake.wire("event_id")] == eid).items()}
     assert row["pull_request"] == 18 and row["summary"] == "corrected summary" and row["machine_note"] is None
     assert row["decision"] == "reject" and row["note"] == "keep me" and row["new_type"] == "force"
     assert len(fake.rows) == 5
@@ -168,7 +169,7 @@ def test_push_is_idempotent_and_never_touches_the_coders_columns(tmp_path):
     flagged = next(r for r in recs if r.get("possible_duplicate_of"))           # the fixture run has one flagged duplicate
     assert flagged["duplicate_of"] == flagged["possible_duplicate_of"]
     typed = next(r for r in recs if r.get("suggested_type"))
-    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"].split()
+    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"]
 
 
 def test_push_batches_ten_a_call_and_list_follows_the_pages():
@@ -268,14 +269,15 @@ def test_offline_routes_need_no_token(tmp_path, monkeypatch):
 
 def test_schema_matches_what_the_review_page_offers():
     s = airtable.table_schema()
-    names = [f["name"] for f in s["fields"]]
+    names = [f["internal"] for f in s["fields"]]
+    assert [f["name"] for f in s["fields"]] == [airtable.LABELS[n] for n in names]
     for col in queue.EDITABLE:
         if col != "location_precision":
             assert f"edit_{col}" in names, col
     # the live base recorded in the configuration has every field the code writes or reads
     cfg = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))
     assert set(cfg["field_ids"]) == set(names)
-    dec = next(f for f in s["fields"] if f["name"] == "decision")
+    dec = next(f for f in s["fields"] if f["internal"] == "decision")
     assert [c["name"] for c in dec["options"]["choices"]] == ["undecided", "merge", "new_move", "duplicate", "reject"]
 
 
@@ -323,12 +325,12 @@ def test_records_carry_flags_and_an_in_review_status(tmp_path):
     # a second push leaves a status the maintainer moved on where it is
     fake = FakeAirtable()
     airtable.push(fake, recs, "fixture")
-    rid = next(i for i, f in fake.rows.items() if f["event_id"] == recs[0]["event_id"])
-    fake.rows[rid]["dataset_status"] = "Merged"
+    rid = next(i for i, f in fake.rows.items() if f[fake.wire("event_id")] == recs[0]["event_id"])
+    fake.rows[rid][fake.wire("dataset_status")] = "Merged"
     airtable.push(fake, airtable.records_for_run(d, "fixture", pr=18), "fixture")
-    assert fake.rows[rid]["dataset_status"] == "Merged" and fake.rows[rid]["pull_request"] == 18
+    assert fake.rows[rid][fake.wire("dataset_status")] == "Merged" and fake.rows[rid][fake.wire("pull_request")] == 18
     # the schema names the Runs table the link points to
-    link = next(f for f in airtable.table_schema()["fields"] if f["name"] == "run")
+    link = next(f for f in airtable.table_schema()["fields"] if f["internal"] == "run")
     assert link["options"]["linkedTableId"].startswith("tbl")
 
 
@@ -364,3 +366,49 @@ def test_the_run_record_summarises_the_run_for_the_run_log(tmp_path):
     out = tmp_path / "run.json"
     assert airtable.main(["run-record", "--run", str(run), "--data", str(d), "--pr", "17", "--out", str(out)]) == 0
     assert json.loads(out.read_text(encoding="utf-8"))["run_id"] == "fixture"
+
+
+# ---------------------------------------------------------------------------
+# ticket 21: the base wears readable labels and coloured selects; the client speaks ids
+
+def test_the_client_translates_internal_names_to_field_ids_and_back(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    ids = {n: f"fld{i:014d}" for i, n in enumerate(airtable.FIELD_NAMES)}
+    fake = FakeAirtable(field_ids=ids)
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    airtable.push(fake, recs, "fixture")
+    stored = next(iter(fake.rows.values()))
+    assert set(stored) <= set(ids.values()), "the wire carries field ids, not names"
+    # the base returns ids too (returnFieldsByFieldId); pull reads them as internal names
+    eid = recs[0]["event_id"]
+    rid = next(i for i, f in fake.rows.items() if f[ids["event_id"]] == eid)
+    fake.rows[rid].update({ids["decision"]: "reject", ids["note"]: "no"})
+    out = airtable.pull(fake, "fixture")
+    assert out["decisions"] == [{"event_id": eid, "action": "reject", "note": "no"}]
+    # and a second push still finds the existing rows (idempotent through the translation)
+    assert airtable.push(fake, recs, "fixture")["created"] == 0
+    # the filter formula names the run column by its label in the base
+    assert airtable.run_filter("x").startswith("{" + airtable.LABELS["run_id"] + "}")
+    # without ids the wire speaks labels, and an export keyed by labels or ids reads back as internal names
+    bare = FakeAirtable()
+    assert bare.wire("claimant") == "Claimant" and bare.unwire("New move: type") == "new_type"
+    assert airtable.normalise_record({"fields": {"Event ID": "e1", "Decision": {"name": "reject"}}}) == {"event_id": "e1", "decision": "reject"}
+    assert airtable.normalise_record({"fields": {ids["event_id"]: "e1"}}, ids) == {"event_id": "e1"}
+
+
+def test_labels_and_select_types_match_the_base():
+    assert airtable.LABELS["claimant"] == "Claimant" and airtable.LABELS["new_type"] == "New move: type"
+    assert set(airtable.LABELS) == set(airtable.FIELD_NAMES) and len(set(airtable.LABELS.values())) == len(airtable.FIELD_NAMES)
+    types = {n: t for n, t, _ in airtable.FIELDS}
+    assert types["claimant"] == "singleSelect" and types["suggested_domains"] == types["suggested_issues"] == types["suggested_dyads"] == "multipleSelects"
+    s = airtable.table_schema()
+    typ = next(f for f in s["fields"] if f["internal"] == "suggested_type")
+    assert all(c.get("color") for c in typ["options"]["choices"]), "the chips are coloured"
+
+
+def test_records_send_lists_for_the_multi_selects(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    typed = next(r for r in recs if r.get("suggested_domains"))
+    assert isinstance(typed["suggested_domains"], list) and typed["new_domains"] == typed["suggested_domains"]
+    assert all(isinstance(r.get("suggested_dyads", []), list) for r in recs)
