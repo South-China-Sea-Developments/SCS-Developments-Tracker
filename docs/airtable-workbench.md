@@ -21,7 +21,7 @@ Base `appK9OckCTV15vQwx`, interface "Review queue" `pbdWq70PPQffUrIye`
 ### Candidates: the ticket 20 fields
 
 - `flags` (multiple select, `fldFw0CeUsjumeAWa`): *Excerpt not checked · Excerpt not found · Source unreachable · Possible duplicate · Date approximate · Low confidence · Type uncertain · Needs a second source*. Set at push from the import's machine note, the date precision and the suggestion's confidence (`airtable.flags_for`); the reviewer may add or remove flags, so a refresh never rewrites them.
-- `dataset_status` (single select, `fldjfYq0wvyKBygbl`): *In review → Decision recorded → Pulled into dataset → Merged → Published on site*, or *Closed without change*. Refreshed by the sync, never typed: a push sets *In review*; after `queue decide` the pull sets *Pulled into dataset*; the merge of the review PR and the next site build move it on. Until the sync does this automatically (not built), the maintainer moves them by hand or asks for it.
+- `dataset_status` (single select, `fldjfYq0wvyKBygbl`): *In review → Decision recorded → Pulled into dataset → Merged → Published on site*, or *Closed without change*. Set to *In review* when the record is created and never rewritten by a refresh. The later steps are meant to be set by the workflow (`queue decide` → *Pulled into dataset*; the merge of the review PR → *Merged*; the next site build → *Published on site*), but no sync runs with a token today, so the maintainer moves them by hand or asks for it.
 - `run` (link to Runs, `fldM9UtjkkVkSlAFN`): the run that produced the candidate. The REST client cannot know the Runs record id, so the link is set by the push procedure below.
 - `added_on` (created time), `decided_on` (last modified time of `decision`).
 
@@ -56,7 +56,8 @@ python -m pipeline.airtable records --run <run_id> --pr N --run-record <recXXXXX
 
 1. Create the `Runs` row from `run.json` (`create_records_for_table`, table `tblLK3YqY7mDL2QqW`); note the record id it returns.
 2. Generate the candidate records with that id as `--run-record`, map field names to ids with
-   `pipeline/airtable.json` `field_ids`, and create them in batches of at most 20 (the connector's
+   `pipeline/airtable.json` `field_ids` (the Candidates table only; the `Runs` row is sent by field name, its
+   table id is `runs_table_id` in the same file), and create them in batches of at most 20 (the connector's
    comfortable size; the REST API's is 10).
 3. Pull is the reverse: export the run's records (`list_records_for_table` filtered on `run_id`) to a
    file and run `python -m pipeline.airtable pull --run <run_id> --from export.json --out decisions.json`,

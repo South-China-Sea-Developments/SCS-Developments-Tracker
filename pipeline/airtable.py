@@ -40,6 +40,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -95,7 +96,7 @@ FIELDS: list[tuple[str, str, dict]] = [
     # the workbench (ticket 20): what the machine noticed, where the candidate stands, which run made it
     ("flags", "multipleSelects", {"choices": [{"name": c} for c in FLAGS]}),
     ("dataset_status", "singleSelect", {"choices": [{"name": c} for c in DATASET_STATUSES]}),
-    ("run", "multipleRecordLinks", {}),
+    ("run", "multipleRecordLinks", {"linkedTableId": "RUNS_TABLE"}),   # resolved from the configuration in table_schema()
     # the decision (the coder's)
     ("decision", "singleSelect", {"choices": [{"name": c} for c in DECISIONS]}),
     ("merge_into_move", "singleLineText", {}),
@@ -299,8 +300,11 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_reco
     return out
 
 
-# A refresh rewrites the context columns, except the reviewer's flags and the run link (set once, by id).
-CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS and n not in ("flags", "run")]
+# A refresh rewrites the context columns, except what is set once at creation and then owned by the
+# reviewer or the workflow: the flags, the run link, and the dataset status (which moves on by hand
+# until a sync with a token moves it).
+SET_ONCE = ("flags", "run", "dataset_status")
+CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS and n not in SET_ONCE]
 
 
 # ---------------------------------------------------------------------------
@@ -308,8 +312,7 @@ CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS and n not in (
 
 def run_type(run_id: str) -> str:
     """Weekly harvests are named by their timestamp, backfill chunks by claimant and period;
-    anything else was compiled by hand."""
-    import re
+    anything else was compiled by hand. "Catch-up" is chosen by the reviewer, never derived."""
     if re.fullmatch(r"\d{8}T\d{4}", run_id):
         return "Weekly harvest"
     if re.fullmatch(r"[A-Z]{2}-\d{4}(-\d{4}|s|-[A-Za-z]+\d{4})?", run_id):
@@ -318,9 +321,11 @@ def run_type(run_id: str) -> str:
 
 
 def run_date(run_id: str, fallback: str = "") -> str:
-    """The run's date: from a timestamp id, else the date given (the import's), else today."""
-    if len(run_id) >= 8 and run_id[:8].isdigit():
-        return f"{run_id[:4]}-{run_id[4:6]}-{run_id[6:8]}"
+    """The run's date: the YYYYMMDD in the id (20261102T0724, manual-20261018-…), else the date given
+    (the run.json's finished_at), else today (a backfill chunk is dated by its import)."""
+    m = re.search(r"(?<!\d)(\d{4})(\d{2})(\d{2})(?!\d)", run_id)
+    if m:
+        return "-".join(m.groups())
     return fallback[:10] if fallback else dt.date.today().isoformat()
 
 
@@ -347,7 +352,9 @@ def run_record(run_dir: Path, data_dir: Path, pr: int | None = None, notes: str 
     scope = ", ".join(ctx["claimants"].get(c, c) for c in claimants)
     if dates:
         scope += f" {dates[0][:4]}" + (f"–{dates[-1][:4]}" if dates[-1][:4] != dates[0][:4] else "")
-    if not events:
+    if not events and n_fail:
+        verdict = "Failed"
+    elif not events:
         verdict = "No candidates"
     elif n_fail:
         verdict = "Partial"
@@ -491,7 +498,13 @@ def clear(client: Client, run_id: str) -> int:
 
 def table_schema() -> dict:
     """The Candidates table as Airtable's schema API wants it; the live base was created from it."""
-    return {"name": load_config().get("table", "Candidates"), "fields": [{"name": n, "type": t, **({"options": o} if o else {})} for n, t, o in FIELDS]}
+    cfg = load_config()
+    fields = []
+    for n, t, o in FIELDS:
+        if n == "run":
+            o = {"linkedTableId": cfg.get("runs_table_id", "")}
+        fields.append({"name": n, "type": t, **({"options": o} if o else {})})
+    return {"name": cfg.get("table", "Candidates"), "fields": fields}
 
 
 def main(argv=None) -> int:
@@ -549,7 +562,7 @@ def main(argv=None) -> int:
         return 0
     client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls)
     if a.cmd == "push":
-        res = push(client, records_for_run(data_dir, a.run, a.pr), a.run)
+        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")
     elif a.cmd == "pull":
         d = pull(client, a.run, a.reviewer)

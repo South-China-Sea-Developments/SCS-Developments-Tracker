@@ -3,6 +3,8 @@
  "base_id": "appK9OckCTV15vQwx",
  "table": "Candidates",
  "table_id": "tbl1jZACWLq6FXPOq",
+ "runs_table_id": "tblLK3YqY7mDL2QqW",
+ "other_tables": {"Sources": "tblRxHeawvsBiAUfC", "Sidelines": "tblUs0ZmP4x8ShWKZ", "Notes": "tblis1hiTU3E4hwPx"},
  "interface": "https://airtable.com/appK9OckCTV15vQwx/pbdWq70PPQffUrIye",
  "field_ids": {
   "event_id": "fldYslClcFl43XHsR", "run_id": "fldZINTpPC0Ic2DSG", "pull_request": "fldQU03I9eAjADbPE", "claimant": "fldRex95IyKecX3ec",
