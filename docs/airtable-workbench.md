@@ -31,7 +31,7 @@ coloured by actor), plus two columns that are the reviewer's alone and that the 
 (group by claimant, by type, Selected only) — the connector cannot create views.
 
 The code keeps its internal names; `pipeline/airtable.py` translates at the wire by field id (`field_ids`
-in `pipeline/airtable.json`), so a column may be renamed in the base without breaking the sync. The old
+in `pipeline/airtable.json`), so a column may be renamed in the base without breaking the sync — except `Run ID`, which the filter formula selecting a run's records names. The old
 text and grey-select columns were renamed `zz old …` and can be deleted in Airtable (the connector cannot
 delete fields).
 

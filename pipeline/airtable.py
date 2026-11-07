@@ -6,8 +6,9 @@ the site build, and this module is the only one that knows it exists.
 
 Configuration: pipeline/airtable.json  {"enabled": true|false, "base_id": "app...", "table": "Candidates",
 "table_id": "tbl...", "interface": "<url of the review interface, for people>", "field_ids": {name: "fld..."}};
-the field ids are only needed to read an export made with another Airtable client (pull --from), the
-REST client works by field name and addresses the table by its id.
+the REST client translates the code's internal field names to these ids at the wire (ticket 21: the
+base's columns carry readable labels, `LABELS`), falls back to the labels when no ids are configured,
+and addresses the table by its id.
 The access token is the environment variable AIRTABLE_TOKEN only (a repository secret if a workflow
 ever runs the sync; none does today); it never appears in a file. With enabled = false, no base_id or
 no token, every command that would call Airtable says so and does nothing; schema, records and
@@ -71,7 +72,7 @@ SUBREGION_COLOURS = ["grayLight2", "redLight2", "orangeLight2", "yellowLight2", 
 DOMAIN_COLOURS = {"domestic": "purpleLight2", "diplomatic": "blueLight2", "physical": "orangeLight2"}
 ISSUE_COLOURS = {"military": "redLight2", "administrative": "blueLight2", "energy": "yellowLight2", "fisheries": "tealLight2", "politics": "purpleLight2"}
 DYAD_ACTOR_COLOURS = {"C": "redLight2", "V": "yellowLight2", "P": "blueLight2", "M": "greenLight2", "I": "orangeLight2", "R": "purpleLight2"}
-DYADS = [a + b for a in "CVPMIR" for b in "CVPMBIRAU" if a != b]
+DYADS = [a + b for a in "CVPMBIR" for b in "CVPMBIRAU" if a != b]   # actor first; a dyad not listed is typecast into a grey option
 
 
 def _choices(names, colours=None) -> dict:
@@ -163,6 +164,7 @@ LABELS = {
     "edit_location_name": "Edit: location", "edit_subregion": "Edit: sub-region", "edit_lat": "Edit: lat", "edit_lon": "Edit: lon",
     "edit_actors": "Edit: actors", "edit_summary": "Edit: summary", "note": "Note", "reviewer": "Reviewer",
 }
+LABEL_TO_NAME = {v: k for k, v in LABELS.items()}
 CODER_FIELDS = FIELD_NAMES[FIELD_NAMES.index("decision"):]
 
 
@@ -210,10 +212,10 @@ class Client:
 
     # the wire speaks field ids (or, without them, the internal names); the code speaks internal names
     def wire(self, name: str) -> str:
-        return self.field_ids.get(name, name)
+        return self.field_ids.get(name) or LABELS.get(name, name)
 
     def unwire(self, key: str) -> str:
-        return self._names.get(key, key)
+        return self._names.get(key) or LABEL_TO_NAME.get(key, key)
 
     def _out(self, fields: dict) -> dict:
         return {self.wire(k): v for k, v in fields.items()}
@@ -266,7 +268,8 @@ class Client:
         self._check(self.batches(len(records)))
         out = []
         for i in range(0, len(records), BATCH):
-            page = self._request("POST", body={"records": [{"fields": self._out(r)} for r in records[i:i + BATCH]], "typecast": True})
+            page = self._request("POST", body={"records": [{"fields": self._out(r)} for r in records[i:i + BATCH]], "typecast": True,
+                                               **({"returnFieldsByFieldId": True} if self.field_ids else {})})
             out += [self._in(r) for r in page.get("records", [])]
         return out
 
@@ -452,12 +455,10 @@ def normalise_record(r: dict, field_ids: dict[str, str] | None = None) -> dict:
     """One record's fields keyed by field name, with plain values, whatever the export shape:
     {"fields": {name: value}} (REST), {"cellValuesByFieldId": {id: value}} (other clients, needs
     the name->id map from the configuration), or a bare {name: value} dict."""
-    if "cellValuesByFieldId" in r:
-        names = {v: k for k, v in (field_ids or {}).items()}
-        raw = {names.get(k, k): v for k, v in r["cellValuesByFieldId"].items()}
-    else:
-        raw = r.get("fields", r)
-    return {k: _plain(v) for k, v in raw.items()}
+    names = {v: k for k, v in (field_ids or {}).items()}
+    raw = r["cellValuesByFieldId"] if "cellValuesByFieldId" in r else r.get("fields", r)
+    # keys may be field ids, the base's labels or the internal names, depending on the export
+    return {names.get(k) or LABEL_TO_NAME.get(k, k): _plain(v) for k, v in raw.items()}
 
 
 def _same(col: str, edited, shown) -> bool:
@@ -555,13 +556,14 @@ def clear(client: Client, run_id: str) -> int:
 
 
 def table_schema() -> dict:
-    """The Candidates table as Airtable's schema API wants it; the live base was created from it."""
+    """The Candidates table as Airtable's schema API wants it (`name` is the base's label; `internal`
+    the code's name); the live base was created from an earlier version of it and updated by hand since."""
     cfg = load_config()
     fields = []
     for n, t, o in FIELDS:
         if n == "run":
             o = {"linkedTableId": cfg.get("runs_table_id", "")}
-        fields.append({"name": n, "label": LABELS[n], "type": t, **({"options": o} if o else {})})
+        fields.append({"name": LABELS[n], "internal": n, "type": t, **({"options": o} if o else {})})
     return {"name": cfg.get("table", "Candidates"), "fields": fields}
 
 
