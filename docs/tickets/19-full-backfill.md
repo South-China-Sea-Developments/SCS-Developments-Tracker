@@ -8,10 +8,11 @@
 
 **Method:** one research agent per chunk, briefed by `harvest/manual/BRIEF.md`, writes `harvest/manual/<date>-<claimant>-<period>.json`; `python -m pipeline.harvest import <file> --run-id <claimant>-<period> --extractor "research agent (claude-fable-5-1) for ticket 19"` re-fetches each first source and checks the excerpt, flags duplicates against the dataset and the earlier candidates of the set; `python -m pipeline.queue open --run harvest/runs/<run-id>` opens the review pull request; `python -m pipeline.airtable push` mirrors it to the review board. The maintainer decides on the board or the review page; nothing is merged by the machine. Review PR #17 (24 candidates for MY/ID/TW 2016+) is superseded by the fuller MY/ID/TW 2016–2020 and 2021–2026 sets, which fold its 24 in; it is closed with a comment when those open.
 
-- [ ] Pilot: PH 2016–2020 compiled, imported, queued; the routine's problems (excerpt checks, fetch failures, duplicate flags, volume) fixed before the rest.
+- [x] Pilot: PH 2016–2020 compiled, imported, queued; the routine's problems (excerpt checks, fetch failures, duplicate flags, volume) fixed before the rest. *80 candidates (47 declarative, 26 demonstrative, 6 coercive, 1 force), 74 excerpts verified against the re-fetched first source, 5 unchecked (PDF or unfetchable), 1 not found, 6 possible-duplicate flags; review PR #33. Cost of the compile: about 410k tokens and 48 minutes for one claimant-period — the whole run is of the order of 11 million tokens.*
 - [ ] 2016–2020 and 2021–Oct 2026 for CN, VN, PH, MY, ID, TW: twelve chunks queued.
 - [ ] 1970s, 1980s, 1990s, 2000s, 2010–2015 for MY, ID, TW: fifteen chunks queued, in decade order per claimant.
 - [ ] Ticket 12's progress table and this one's record each chunk's PR number and candidate count; `docs/sources/baselines-and-manual-candidates.md` and `harvest/manual/README.md` list every file.
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| PH 2016–2020 | 80 | #33 | pilot; 74/80 excerpts verified |
