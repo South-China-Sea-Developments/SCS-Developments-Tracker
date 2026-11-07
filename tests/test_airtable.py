@@ -296,3 +296,71 @@ def test_nothing_that_builds_the_dataset_or_the_site_knows_airtable_exists():
     # and a clean subprocess that loads, validates and builds never imports the module
     code = "import sys; from pipeline import validate, queue, load_mats; import web.build; print('pipeline.airtable' in sys.modules)"
     assert subprocess.run([sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip() == "False"
+
+
+# ---------------------------------------------------------------------------
+# ticket 20: the workbench around the queue (flags, the dataset status, the run log)
+
+def test_records_carry_flags_and_an_in_review_status(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    assert all(r["dataset_status"] == "In review" for r in recs)
+    flagged = next(r for r in recs if r.get("possible_duplicate_of"))
+    assert "Possible duplicate" in flagged["flags"]
+    # a month-precision event is flagged as approximate; a day-precision one without notes carries no flags key
+    assert all(("Date approximate" in r.get("flags", [])) == (r.get("date_precision") in ("month", "year")) for r in recs)
+    assert airtable.flags_for({"review_note": "Source page could not be fetched (HTTP 403); excerpt not checked.",
+                               "date_precision": "day", "suggestion_reasoning": "x [confidence: low]"}) == \
+        ["Excerpt not checked", "Source unreachable", "Low confidence"]
+    assert airtable.flags_for({"review_note": "Excerpt not found verbatim in the captured text.", "date_precision": "day",
+                               "suggestion_reasoning": ""}) == ["Excerpt not found"]
+    # the run link is only set when a Runs record id is given, and the refresh never touches the reviewer's flags
+    assert "run" not in recs[0]
+    linked = airtable.records_for_run(d, "fixture", pr=17, run_record="recRUN")
+    assert linked[0]["run"] == ["recRUN"]
+    assert not {"flags", "run", "dataset_status"} & set(airtable.CONTEXT_FIELDS)
+    assert airtable.flags_for({"review_note": "", "date_precision": "month", "suggestion_reasoning": ""}) == ["Date approximate"]
+    # a second push leaves a status the maintainer moved on where it is
+    fake = FakeAirtable()
+    airtable.push(fake, recs, "fixture")
+    rid = next(i for i, f in fake.rows.items() if f["event_id"] == recs[0]["event_id"])
+    fake.rows[rid]["dataset_status"] = "Merged"
+    airtable.push(fake, airtable.records_for_run(d, "fixture", pr=18), "fixture")
+    assert fake.rows[rid]["dataset_status"] == "Merged" and fake.rows[rid]["pull_request"] == 18
+    # the schema names the Runs table the link points to
+    link = next(f for f in airtable.table_schema()["fields"] if f["name"] == "run")
+    assert link["options"]["linkedTableId"].startswith("tbl")
+
+
+def test_the_run_record_summarises_the_run_for_the_run_log(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    run = tmp_path / "run-d"
+    rec = airtable.run_record(run, d, pr=17)
+    assert rec["run_id"] == "fixture" and rec["review_pr"] == 17 and rec["review_pr_url"].endswith("/pull/17")
+    assert rec["type"] == "Manual" and rec["candidates"] == 5 and rec["verdict"] in ("Pass", "Partial")
+    assert rec["excerpts_verified"] + rec["excerpts_unchecked"] + rec["excerpts_not_found"] == 5
+    assert rec["possible_duplicates"] == 1
+    assert rec["scope"] == "China, Vietnam 2026"
+    assert airtable.run_type("20261102T0724") == "Weekly harvest"
+    assert airtable.run_type("PH-2016-2020") == "Backfill" and airtable.run_type("MY-1970s") == "Backfill"
+    assert airtable.run_type("manual-20261018-new-claimants") == "Manual"
+    assert airtable.run_date("20261102T0724") == "2026-11-02"
+    assert airtable.run_date("manual-20261018-new-claimants") == "2026-10-18"
+    assert airtable.run_date("PH-2016-2020", "2026-11-07T16:00:00+00:00") == "2026-11-07"
+    # a run whose candidates carry import notes counts them; a run with failures and nothing else failed
+    (run / "run.json").write_text(json.dumps({"run_id": "fixture", "documents": 7, "candidates": 5, "failures": [
+        {"source_id": "amti", "error": "HTTP 403"}, {"source_id": "amti", "error": "deferred: over this run's document cap"}]}), encoding="utf-8")
+    import csv as _csv
+    rows = list(_csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    cand = [r for r in rows if r["status"] == "candidate" and r["harvest_run_id"] == "fixture"]
+    cand[0]["review_note"] = "Source page could not be fetched (HTTP 403); excerpt not checked."
+    cand[1]["review_note"] = "Excerpt not found verbatim in the captured text."
+    with open(d / "events.csv", "w", newline="", encoding="utf-8") as f:
+        w = _csv.DictWriter(f, fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
+    rec = airtable.run_record(run, d, pr=17)
+    assert (rec["excerpts_unchecked"], rec["excerpts_not_found"], rec["excerpts_verified"]) == (1, 1, 3)
+    assert rec["failures"] == 1 and rec["unreachable_sources"] == "amti" and rec["verdict"] == "Partial"
+    # the command writes it as JSON without calling Airtable
+    out = tmp_path / "run.json"
+    assert airtable.main(["run-record", "--run", str(run), "--data", str(d), "--pr", "17", "--out", str(out)]) == 0
+    assert json.loads(out.read_text(encoding="utf-8"))["run_id"] == "fixture"
