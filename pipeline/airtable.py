@@ -64,6 +64,23 @@ DATASET_STATUSES = ["In review", "Decision recorded", "Pulled into dataset", "Me
 RUN_TYPES = ["Weekly harvest", "Backfill", "Manual", "Catch-up"]
 RUN_VERDICTS = ["Pass", "Partial", "Failed", "No candidates"]
 REPO_URL = "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
+CLAIMANT_COLOURS = {"CN": "redLight2", "VN": "yellowLight2", "PH": "blueLight2", "MY": "greenLight2", "ID": "orangeLight2", "TW": "purpleLight2"}
+TYPE_COLOURS = {"declarative": "blueLight2", "demonstrative": "tealLight2", "coercive": "orangeLight2", "force": "redLight2"}
+PRECISION_COLOURS = {"day": "greenLight2", "month": "yellowLight2", "year": "orangeLight2"}
+SUBREGION_COLOURS = ["grayLight2", "redLight2", "orangeLight2", "yellowLight2", "greenLight2", "tealLight2", "cyanLight2", "blueLight2", "purpleLight2", "pinkLight2"]
+DOMAIN_COLOURS = {"domestic": "purpleLight2", "diplomatic": "blueLight2", "physical": "orangeLight2"}
+ISSUE_COLOURS = {"military": "redLight2", "administrative": "blueLight2", "energy": "yellowLight2", "fisheries": "tealLight2", "politics": "purpleLight2"}
+DYAD_ACTOR_COLOURS = {"C": "redLight2", "V": "yellowLight2", "P": "blueLight2", "M": "greenLight2", "I": "orangeLight2", "R": "purpleLight2"}
+DYADS = [a + b for a in "CVPMIR" for b in "CVPMBIRAU" if a != b]
+
+
+def _choices(names, colours=None) -> dict:
+    """Select options, coloured when a colour map is given (the base's chips, ticket 21)."""
+    if colours is None:
+        return {"choices": [{"name": n} for n in names]}
+    if isinstance(colours, list):
+        return {"choices": [{"name": n, "color": c} for n, c in zip(names, colours)]}
+    return {"choices": [{"name": n, "color": colours[n] if n in colours else colours.get(n[0], "grayLight2")} for n in names]}
 
 # One Airtable field per thing the review page shows or asks. Order is the column order.
 FIELDS: list[tuple[str, str, dict]] = [
@@ -71,23 +88,23 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("event_id", "singleLineText", {}),
     ("run_id", "singleLineText", {}),
     ("pull_request", "number", {"precision": 0}),
-    ("claimant", "singleLineText", {}),
+    ("claimant", "singleSelect", _choices(list(CLAIMANT_COLOURS), CLAIMANT_COLOURS)),
     ("date_start", "date", {"dateFormat": {"name": "iso"}}),
     ("date_end", "date", {"dateFormat": {"name": "iso"}}),
-    ("date_precision", "singleSelect", {"choices": [{"name": c} for c in schema.DATE_PRECISION]}),
+    ("date_precision", "singleSelect", _choices(schema.DATE_PRECISION, PRECISION_COLOURS)),
     ("location_name", "singleLineText", {}),
     ("location_precision", "singleSelect", {"choices": [{"name": c} for c in schema.LOCATION_PRECISION]}),
-    ("subregion", "singleSelect", {"choices": [{"name": c} for c in SUBREGION_CHOICES]}),
+    ("subregion", "singleSelect", _choices(SUBREGION_CHOICES, SUBREGION_COLOURS)),
     ("lat", "number", {"precision": 5}),
     ("lon", "number", {"precision": 5}),
     ("summary", "multilineText", {}),
     ("actors", "singleLineText", {}),
     ("sources", "multilineText", {}),
     ("excerpt", "multilineText", {}),
-    ("suggested_type", "singleSelect", {"choices": [{"name": c} for c in schema.TYPE_FLAGS]}),
-    ("suggested_domains", "singleLineText", {}),
-    ("suggested_issues", "singleLineText", {}),
-    ("suggested_dyads", "singleLineText", {}),
+    ("suggested_type", "singleSelect", _choices(schema.TYPE_FLAGS, TYPE_COLOURS)),
+    ("suggested_domains", "multipleSelects", _choices(schema.DOMAIN_FLAGS, DOMAIN_COLOURS)),
+    ("suggested_issues", "multipleSelects", _choices(schema.ISSUE_FLAGS, ISSUE_COLOURS)),
+    ("suggested_dyads", "multipleSelects", _choices(DYADS, DYAD_ACTOR_COLOURS)),
     ("suggestion_reasoning", "multilineText", {}),
     ("machine_note", "multilineText", {}),
     ("possible_duplicate_of", "singleLineText", {}),
@@ -102,7 +119,7 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("merge_into_move", "singleLineText", {}),
     ("merge_into_candidate", "singleLineText", {}),
     ("duplicate_of", "singleLineText", {}),
-    ("new_type", "singleSelect", {"choices": [{"name": c} for c in schema.TYPE_FLAGS]}),
+    ("new_type", "singleSelect", _choices(schema.TYPE_FLAGS, TYPE_COLOURS)),
     ("new_criterion", "singleSelect", {"choices": [{"name": c} for c in CRITERIA]}),
     ("new_year", "singleLineText", {}),
     ("new_ongoing_through", "singleLineText", {}),
@@ -125,6 +142,27 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("reviewer", "singleLineText", {}),
 ]
 FIELD_NAMES = [f[0] for f in FIELDS]
+
+# What the columns are called in the base (ticket 21: readable names, as in the maintainer's other
+# bases). The code uses the internal names everywhere; the client translates at the wire, by field id
+# when the configuration has them (a rename in the base then changes nothing), else by these labels.
+LABELS = {
+    "event_id": "Event ID", "run_id": "Run ID", "pull_request": "Pull request", "claimant": "Claimant",
+    "date_start": "Start date", "date_end": "End date", "date_precision": "Date precision", "location_name": "Location",
+    "location_precision": "Location precision", "subregion": "Sub-region", "lat": "Lat", "lon": "Lon", "summary": "Summary",
+    "actors": "Actors", "sources": "Sources", "excerpt": "Excerpt", "suggested_type": "Suggested type",
+    "suggested_domains": "Suggested domains", "suggested_issues": "Suggested issues", "suggested_dyads": "Suggested dyads",
+    "suggestion_reasoning": "Suggestion reasoning", "machine_note": "Machine note", "possible_duplicate_of": "Possible duplicate of",
+    "previous_year_moves": "Previous year's moves", "same_year_moves": "Same year's moves",
+    "flags": "Flags", "dataset_status": "Dataset status", "run": "Run",
+    "decision": "Decision", "merge_into_move": "Merge into move", "merge_into_candidate": "Merge into candidate", "duplicate_of": "Duplicate of",
+    "new_type": "New move: type", "new_criterion": "New move: criterion", "new_year": "New move: year",
+    "new_ongoing_through": "New move: ongoing through", "new_dyads": "New move: dyads", "new_domains": "New move: domains",
+    "new_issues": "New move: issues", "new_subregions": "New move: sub-regions", "new_description": "New move: description",
+    "edit_date_start": "Edit: start date", "edit_date_end": "Edit: end date", "edit_date_precision": "Edit: date precision",
+    "edit_location_name": "Edit: location", "edit_subregion": "Edit: sub-region", "edit_lat": "Edit: lat", "edit_lon": "Edit: lon",
+    "edit_actors": "Edit: actors", "edit_summary": "Edit: summary", "note": "Note", "reviewer": "Reviewer",
+}
 CODER_FIELDS = FIELD_NAMES[FIELD_NAMES.index("decision"):]
 
 
@@ -155,17 +193,33 @@ def why_disabled(cfg: dict, token: str | None) -> str:
 # the client and its counted calls
 
 def run_filter(run_id: str) -> str:
-    """The Airtable formula selecting one run's records; a quote in the id is escaped, not a break-out."""
-    return "{run_id} = '" + run_id.replace("\\", "\\\\").replace("'", "\\'") + "'"
+    """The Airtable formula selecting one run's records, by the column's label in the base; a quote in
+    the id is escaped, not a break-out."""
+    return "{" + LABELS["run_id"] + "} = '" + run_id.replace("\\", "\\\\").replace("'", "\\'") + "'"
 
 
 class Client:
     """Airtable REST, ten records a call, every call counted. Raises RuntimeError on HTTP and network
     errors. `table` may be the table's id (preferred: survives a rename) or its name."""
 
-    def __init__(self, token: str, base_id: str, table: str, max_calls: int = 200):
+    def __init__(self, token: str, base_id: str, table: str, max_calls: int = 200, field_ids: dict[str, str] | None = None):
         self.token, self.base_id, self.table, self.max_calls = token, base_id, table, max_calls
         self.calls = 0
+        self.field_ids = dict(field_ids or {})
+        self._names = {v: k for k, v in self.field_ids.items()}
+
+    # the wire speaks field ids (or, without them, the internal names); the code speaks internal names
+    def wire(self, name: str) -> str:
+        return self.field_ids.get(name, name)
+
+    def unwire(self, key: str) -> str:
+        return self._names.get(key, key)
+
+    def _out(self, fields: dict) -> dict:
+        return {self.wire(k): v for k, v in fields.items()}
+
+    def _in(self, record: dict) -> dict:
+        return dict(record, fields={self.unwire(k): v for k, v in record.get("fields", {}).items()})
 
     def _check(self, n: int = 1) -> None:
         if self.calls + n > self.max_calls:
@@ -192,12 +246,14 @@ class Client:
         out, offset = [], None
         while True:
             params: dict = {"pageSize": 100}
+            if self.field_ids:
+                params["returnFieldsByFieldId"] = "true"
             if filter_formula:
                 params["filterByFormula"] = filter_formula
             if offset:
                 params["offset"] = offset
             page = self._request("GET", params=params)
-            out += page.get("records", [])
+            out += [self._in(r) for r in page.get("records", [])]
             offset = page.get("offset")
             if not offset:
                 return out
@@ -210,13 +266,14 @@ class Client:
         self._check(self.batches(len(records)))
         out = []
         for i in range(0, len(records), BATCH):
-            out += self._request("POST", body={"records": [{"fields": r} for r in records[i:i + BATCH]], "typecast": True}).get("records", [])
+            page = self._request("POST", body={"records": [{"fields": self._out(r)} for r in records[i:i + BATCH]], "typecast": True})
+            out += [self._in(r) for r in page.get("records", [])]
         return out
 
     def update(self, records: list[tuple[str, dict]]) -> None:
         self._check(self.batches(len(records)))
         for i in range(0, len(records), BATCH):
-            self._request("PATCH", body={"records": [{"id": rid, "fields": f} for rid, f in records[i:i + BATCH]], "typecast": True})
+            self._request("PATCH", body={"records": [{"id": rid, "fields": self._out(f)} for rid, f in records[i:i + BATCH]], "typecast": True})
 
     def delete(self, ids: list[str]) -> None:
         self._check(self.batches(len(ids)))
@@ -286,8 +343,9 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_reco
             "summary": e["summary"], "actors": e["actors"],
             "sources": "\n".join(" ".join(x for x in (s["title"] or s["url"], "—", s["publisher"], s["pub_date"]) if x) + "\n" + s["url"] for s in srcs),
             "excerpt": "\n\n".join(s["excerpt"] for s in srcs if s["excerpt"]),
-            "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"], "suggested_issues": e["suggested_issues"],
-            "suggested_dyads": e["suggested_dyads"], "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
+            "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"].split() or None,
+            "suggested_issues": e["suggested_issues"].split() or None, "suggested_dyads": e["suggested_dyads"].split() or None,
+            "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
             "possible_duplicate_of": dup,
             "flags": flags_for(e) or None, "dataset_status": "In review", "run": [run_record] if run_record else None,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
@@ -503,7 +561,7 @@ def table_schema() -> dict:
     for n, t, o in FIELDS:
         if n == "run":
             o = {"linkedTableId": cfg.get("runs_table_id", "")}
-        fields.append({"name": n, "type": t, **({"options": o} if o else {})})
+        fields.append({"name": n, "label": LABELS[n], "type": t, **({"options": o} if o else {})})
     return {"name": cfg.get("table", "Candidates"), "fields": fields}
 
 
@@ -560,7 +618,7 @@ def main(argv=None) -> int:
     if reason:
         print(f"nothing done: {reason}")
         return 0
-    client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls)
+    client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls, cfg.get("field_ids"))
     if a.cmd == "push":
         res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")

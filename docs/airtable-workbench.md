@@ -18,6 +18,23 @@ Base `appK9OckCTV15vQwx`, interface "Review queue" `pbdWq70PPQffUrIye`
 | `Sidelines` | `tblUs0ZmP4x8ShWKZ` | Informal | Things seen while harvesting that do not merit a candidate (remarks, routine repeats, acts by non-claimants, cooperative steps). Tick `promote` to have the next import draft a candidate from the row. |
 | `Notes` | `tblis1hiTU3E4hwPx` | Narratives | Free text across candidates: themes, precedents, cross-references to moves in the dataset, questions for Andrew Chubb; linked to candidates. |
 
+### Candidates: the face of the table (ticket 21)
+
+The table is laid out like the maintainer's other bases (his PLA Daily base was the reference): readable
+column names (`Event ID`, `Claimant`, `Start date`, `Suggested type`, `New move: type`, `Edit: location`…
+— the full map is `airtable.LABELS`), coloured select chips for the claimant (CN red · VN yellow · PH blue ·
+MY green · ID orange · TW purple), the move type (declarative blue · demonstrative teal · coercive orange ·
+force red), the date precision, the sub-region, the suggested domains, issues and dyads (multi-selects,
+coloured by actor), plus two columns that are the reviewer's alone and that the sync never writes:
+`Priority` (one to three stars) and `Selected` (a tick for the day's shortlist). The table's grid view
+"Time-sorted" shows these first, newest first; the maintainer duplicates it in Airtable for other slices
+(group by claimant, by type, Selected only) — the connector cannot create views.
+
+The code keeps its internal names; `pipeline/airtable.py` translates at the wire by field id (`field_ids`
+in `pipeline/airtable.json`), so a column may be renamed in the base without breaking the sync. The old
+text and grey-select columns were renamed `zz old …` and can be deleted in Airtable (the connector cannot
+delete fields).
+
 ### Candidates: the ticket 20 fields
 
 - `flags` (multiple select, `fldFw0CeUsjumeAWa`): *Excerpt not checked · Excerpt not found · Source unreachable · Possible duplicate · Date approximate · Low confidence · Type uncertain · Needs a second source*. Set at push from the import's machine note, the date precision and the suggestion's confidence (`airtable.flags_for`); the reviewer may add or remove flags, so a refresh never rewrites them.
@@ -32,7 +49,7 @@ Base `appK9OckCTV15vQwx`, interface "Review queue" `pbdWq70PPQffUrIye`
 | Overview | `pagAWLTLoyKhRv2Sp` | — | Numbers (to decide, decided, by decision, flagged, decided-but-not-pulled, in all), charts by claimant, type, sub-region, run and decision, the oldest undecided events; a *Runs* section (runs, still open, with problems, latest runs). |
 | Queue | `pagzfbBYQDORsMZiT` | Working | Grid grouped by run; tabs *To decide · Flagged · Possible duplicates · Decided · Needs a note · Added this month*. |
 | Board | `pagsOwyf3mnYRnPSz` | — | Kanban by decision. |
-| Review one by one | `pag2P7Or0IlDcHTI7` | — | Record review, one candidate at a time. |
+| Review one by one | `pagMBrGwofJENJ3o6` | — | Record review, one candidate at a time; tabs *To decide · Flagged · Possible duplicates · Selected · Decided* (rebuilt for ticket 21; the connector cannot edit a record-review page). |
 | By claimant | `pagmaJzyIH92lp7nU` | Section tabs | Tabs China · Vietnam · Philippines · Malaysia · Indonesia · Taiwan, grouped by suggested type, oldest first. |
 | Hand-off | `pag9pJv7XMw68WrlV` | Hand-off | Decided candidates only; tabs *Waiting to be pulled · New moves · Merges · Duplicates and rejects · In the dataset*. The maintainer runs `pull` + `queue decide` for a run when its "Waiting to be pulled" tab is complete. |
 | Run log | `pagshxM5iwYzEXtyp` | Run Log | Runs, newest first; tabs *Still open · Weekly harvests · Backfill chunks · Problems*. |

@@ -27,8 +27,8 @@ class FakeAirtable(airtable.Client):
     pages of `page` records on reads with an offset to continue. Records come back in reverse order
     of creation, so nothing may rely on table order."""
 
-    def __init__(self, max_calls: int = 200, page: int = 100):
-        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls)
+    def __init__(self, max_calls: int = 200, page: int = 100, field_ids: dict | None = None):
+        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls, field_ids)
         self.rows: dict[str, dict] = {}
         self.n = 0
         self.page = page
@@ -39,7 +39,8 @@ class FakeAirtable(airtable.Client):
         if method == "GET":
             formula = (params or {}).get("filterByFormula", "")
             run = formula.split("'")[1] if "'" in formula else None
-            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get("run_id") == run]
+            key = self.wire("run_id")
+            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get(key) == run]
             start = int((params or {}).get("offset") or 0)
             page = recs[start:start + self.page]
             return {"records": page, **({"offset": str(start + self.page)} if start + self.page < len(recs) else {})}
@@ -67,8 +68,8 @@ class FakeAirtable(airtable.Client):
 
     def decide(self, event_id: str, **coder_fields):
         """What the coder does in the Airtable grid: fill the decision columns of one row."""
-        rid = next(i for i, f in self.rows.items() if f["event_id"] == event_id)
-        self.rows[rid].update(coder_fields)
+        rid = next(i for i, f in self.rows.items() if f[self.wire("event_id")] == event_id)
+        self.rows[rid].update({self.wire(k): v for k, v in coder_fields.items()})
 
 
 def opened_copy(tmp_path: Path, name: str) -> Path:
@@ -168,7 +169,7 @@ def test_push_is_idempotent_and_never_touches_the_coders_columns(tmp_path):
     flagged = next(r for r in recs if r.get("possible_duplicate_of"))           # the fixture run has one flagged duplicate
     assert flagged["duplicate_of"] == flagged["possible_duplicate_of"]
     typed = next(r for r in recs if r.get("suggested_type"))
-    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"].split()
+    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"]
 
 
 def test_push_batches_ten_a_call_and_list_follows_the_pages():
@@ -364,3 +365,44 @@ def test_the_run_record_summarises_the_run_for_the_run_log(tmp_path):
     out = tmp_path / "run.json"
     assert airtable.main(["run-record", "--run", str(run), "--data", str(d), "--pr", "17", "--out", str(out)]) == 0
     assert json.loads(out.read_text(encoding="utf-8"))["run_id"] == "fixture"
+
+
+# ---------------------------------------------------------------------------
+# ticket 21: the base wears readable labels and coloured selects; the client speaks ids
+
+def test_the_client_translates_internal_names_to_field_ids_and_back(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    ids = {n: f"fld{i:014d}" for i, n in enumerate(airtable.FIELD_NAMES)}
+    fake = FakeAirtable(field_ids=ids)
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    airtable.push(fake, recs, "fixture")
+    stored = next(iter(fake.rows.values()))
+    assert set(stored) <= set(ids.values()), "the wire carries field ids, not names"
+    # the base returns ids too (returnFieldsByFieldId); pull reads them as internal names
+    eid = recs[0]["event_id"]
+    rid = next(i for i, f in fake.rows.items() if f[ids["event_id"]] == eid)
+    fake.rows[rid].update({ids["decision"]: "reject", ids["note"]: "no"})
+    out = airtable.pull(fake, "fixture")
+    assert out["decisions"] == [{"event_id": eid, "action": "reject", "note": "no"}]
+    # and a second push still finds the existing rows (idempotent through the translation)
+    assert airtable.push(fake, recs, "fixture")["created"] == 0
+    # the filter formula names the run column by its label in the base
+    assert airtable.run_filter("x").startswith("{" + airtable.LABELS["run_id"] + "}")
+
+
+def test_labels_and_select_types_match_the_base():
+    assert airtable.LABELS["claimant"] == "Claimant" and airtable.LABELS["new_type"] == "New move: type"
+    assert set(airtable.LABELS) == set(airtable.FIELD_NAMES) and len(set(airtable.LABELS.values())) == len(airtable.FIELD_NAMES)
+    types = {n: t for n, t, _ in airtable.FIELDS}
+    assert types["claimant"] == "singleSelect" and types["suggested_domains"] == types["suggested_issues"] == types["suggested_dyads"] == "multipleSelects"
+    s = airtable.table_schema()
+    typ = next(f for f in s["fields"] if f["name"] == "suggested_type")
+    assert all(c.get("color") for c in typ["options"]["choices"]), "the chips are coloured"
+
+
+def test_records_send_lists_for_the_multi_selects(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    typed = next(r for r in recs if r.get("suggested_domains"))
+    assert isinstance(typed["suggested_domains"], list) and typed["new_domains"] == typed["suggested_domains"]
+    assert all(isinstance(r.get("suggested_dyads", []), list) for r in recs)
