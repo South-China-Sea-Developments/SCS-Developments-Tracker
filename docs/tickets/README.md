@@ -22,5 +22,6 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 16 | [Visual identity from the three references](16-visual-identity.md) | 15 | done |
 | 17 | [The tracker face](17-tracker-face.md) | 16 | done |
 | 18 | [Light tracker and a sharper banner](18-light-tracker.md) | 17 | done |
+| 19 | [The full backfill](19-full-backfill.md) | 12 | in progress |
 | 20 | [The Airtable workbench](20-airtable-workbench.md) | 13 | built |
 | 21 | [The face of the base](21-base-face.md) | 20 | built |
