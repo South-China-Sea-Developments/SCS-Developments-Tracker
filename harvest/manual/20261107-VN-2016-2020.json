@@ -1,0 +1,2872 @@
+[
+ {
+  "claimant": "VN",
+  "date_start": "2016-01-02",
+  "date_end": "2016-01-02",
+  "date_precision": "day",
+  "location_name": "Chu Thap (Fiery Cross) Reef, Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "Foreign Ministry spokesman Le Hai Binh protested China's first test flight to the newly built airfield on Fiery Cross Reef, saying it seriously violated Vietnam's sovereignty over the Truong Sa archipelago, and the same day a Foreign Ministry representative handed a diplomatic note of protest to the Chinese embassy in Hanoi.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A formal diplomatic protest note and public statement asserting Vietnamese sovereignty over a Chinese-held Spratly feature is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-handed-a-diplomatic-note-to-protest-chinas-pilot-flight-in-truong-sa-13379.html",
+    "title": "Vietnam handed a diplomatic note to protest China's pilot flight in Truong Sa",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-01-02",
+    "language": "en",
+    "excerpt": "presented a diplomatic note to Chinese embassy counterpart in Hanoi opposing China's action."
+   },
+   {
+    "url": "https://hanoitimes.vn/vietnam-handed-a-diplomatic-note-to-protest-chinas-pilot-flight-in-truong-sa-13379.html",
+    "title": "Vietnam handed a diplomatic note to protest China's pilot flight in Truong Sa",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-01-02",
+    "language": "en",
+    "excerpt": "China's above-mentioned action seriously violated Vietnam's sovereignty over Truong Sa archipelago"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-01-07",
+  "date_end": "2016-01-07",
+  "date_precision": "day",
+  "location_name": "Chu Thap (Fiery Cross) Reef, Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "Foreign Ministry spokesman Le Hai Binh again protested after two Chinese civilian passenger jets landed on the Fiery Cross Reef airstrip on 6 January, saying the action seriously violated Vietnam's sovereignty and threatened regional peace, and that Vietnam would firmly safeguard its sovereignty and jurisdiction in the East Sea by peaceful means.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A repeated public protest asserting sovereignty over the Spratlys against Chinese flights is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-resolutely-protect-its-sovereignty-in-the-east-sea-13314.html",
+    "title": "Vietnam resolutely protect its sovereignty in the East Sea",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-01-07",
+    "language": "en",
+    "excerpt": "Vietnam will firmly safeguard its sovereignty, sovereign and jurisdictional rights in the East Sea by peaceful means"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-01-08",
+  "date_end": "2016-01-08",
+  "date_precision": "day",
+  "location_name": "Ho Chi Minh Flight Information Region, over the Truong Sa (Spratly) area",
+  "subregion": "",
+  "summary": "The Civil Aviation Authority of Vietnam (CAAV) sent a second document to the International Civil Aviation Organisation on 8 January reporting that 46 Chinese flights had crossed the Ho Chi Minh Flight Information Region since 1 January without filing flight plans or contacting Vietnamese air traffic control, asking ICAO to act and saying it would notify neighbouring countries.",
+  "actors": "Civil Aviation Authority of Vietnam (CAAV); Director Lai Xuan Thanh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A formal complaint to an international organisation asserting Vietnam's jurisdiction over airspace management in the disputed area is a verbal/diplomatic assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.nhandan.vn/chinese-planes-unannounced-operations-break-intl-regulations-post38492.html",
+    "title": "Chinese planes' unannounced operations break int'l regulations",
+    "publisher": "Nhan Dan Online",
+    "pub_date": "2016-01-09",
+    "language": "en",
+    "excerpt": "submitted a document to the ICAO to report some planes operating in the Ho Chi Minh FIR"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-01-12",
+  "date_end": "2016-01-12",
+  "date_precision": "day",
+  "location_name": "Chu Thap (Fiery Cross) Reef, Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "Foreign Ministry spokesman Le Hai Binh rejected the Chinese Foreign Ministry's 11 January account of its flights to Fiery Cross Reef, saying the Ho Chi Minh FIR agency had received no flight plans, that Vietnam had objected to and demanded cancellation of the flights when the Chinese embassy announced them on 30 December 2015, and that calling them 'national aviation activities' infringed Vietnam's sovereignty and breached the Chicago Convention.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public rebuttal reasserting Vietnamese sovereignty and FIR jurisdiction is a verbal assertion; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-asked-china-to-stop-its-flights-to-fiery-cross-reef-13239.html",
+    "title": "Vietnam asked China to stop its flights to Fiery Cross Reef",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-01-13",
+    "language": "en",
+    "excerpt": "Vietnam resolutely rejects the viewpoints in the Chinese foreign ministry spokesman's statement on January 11"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-01-18",
+  "date_end": "2016-01-19",
+  "date_precision": "day",
+  "location_name": "Mouth of the Gulf of Tonkin (undelimited area)",
+  "subregion": "1",
+  "summary": "After China moved the oil rig Hai Duong (Haiyang Shiyou) 981 on about 16 January to a position about 21.4 nautical miles east of the suggested equidistant line in the undelimited area off the mouth of the Gulf of Tonkin, a Foreign Ministry representative raised Vietnam's concern with the Chinese embassy on 18 January and spokesman Le Hai Binh on 19 January demanded that China stop the rig's operation and withdraw it, reserving all Vietnam's legal rights over the area.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A diplomatic demand that China withdraw a rig from an area Vietnam claims is a verbal assertion of its maritime rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-demands-china-to-withdraw-oil-rig-981-from-the-mouth-of-gulf-of-tonkin-13188.html",
+    "title": "Vietnam demands China to withdraw oil rig 981 from the mouth of Gulf of Tonkin",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-01-19",
+    "language": "en",
+    "excerpt": "Viet Nam demanded China stop the operation of the oil rig there and withdraw the oil rig away from this area."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-01-28",
+  "date_end": "2016-01-28",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Foreign Ministry spokesman Le Hai Binh declared that Vietnam resolutely opposed Taiwanese leader Ma Ying-jeou's visit to Ba Binh (Itu Aba) Island, calling it a serious violation of Vietnamese sovereignty over the Truong Sa archipelago and asking Taiwan to stop such acts.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest asserting Vietnamese sovereignty over a Taiwan-held Spratly feature is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-requires-taiwan-to-terminate-sovereignty-violation-13123.html",
+    "title": "Vietnam requires Taiwan to terminate sovereignty violation",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-01-29",
+    "language": "en",
+    "excerpt": "Vietnam resolutely opposes the visit and asks Taiwan to stop violating Vietnam's sovereignty"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-02-19",
+  "date_end": "2016-02-19",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island and Quang Hoa (Duncan) Island, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Foreign Ministry spokesman Le Hai Binh demanded that China immediately end its deployment of HQ-9 surface-to-air missiles on Phu Lam (Woody) Island and construction of a military helicopter base on Quang Hoa (Duncan) Island; the same day the Foreign Ministry sent a diplomatic note to the Chinese embassy and Vietnam's UN mission asked the UN Secretary-General to circulate the note officially.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh; Permanent Mission of Viet Nam to the United Nations",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A diplomatic protest note, circulated through the UN, asserting sovereignty over the Paracels is a verbal/diplomatic assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-protests-against-chinas-infringements-on-hoang-sa-archipelago-13077.html",
+    "title": "Vietnam protests against China's infringements on Hoang Sa Archipelago",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-02-20",
+    "language": "en",
+    "excerpt": "Vietnam demands China immediately end these wrongdoings."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-02-25",
+  "date_end": "2016-02-25",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago; Truong Sa features",
+  "subregion": "2",
+  "summary": "At a regular press briefing in Hanoi, spokesman Le Hai Binh said China's deployment of weapons and warplanes to Phu Lam (Woody) Island and its plans to install radar systems on other features seriously encroached on Vietnam's sovereignty, reaffirmed Vietnam's claim to the Hoang Sa and Truong Sa archipelagos and asked China to act responsibly.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest reasserting sovereignty against Chinese militarisation is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-resolutely-opposes-chinas-activities-in-phu-lam-island-13012.html",
+    "title": "Vietnam resolutely opposes China's activities in Phu Lam island",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-02-26",
+    "language": "en",
+    "excerpt": "We absolutely oppose these activities and ask China to have responsible words and acts"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-03-14",
+  "date_end": "2016-03-31",
+  "date_precision": "day",
+  "location_name": "Gulf of Tonkin, southwest of Bach Long Vi Island (Vietnam-China Common Fishery Zone)",
+  "subregion": "1",
+  "summary": "During a 17-day patrol of the Common Fishery Zone from 14 March, Squadron 2 of Hai Phong's Border Defence Force drove away 112 Chinese fishing boats, warned 22 others, and on 31 March chased and seized Chinese vessel No. 13056, a tanker carrying about 100,000 litres of fuel to Chinese fishing boats in Vietnamese waters, towing it to Hai Phong for investigation.",
+  "actors": "Hai Phong Border Defence Force (Squadron 2, Flotilla 1)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Expelling Chinese boats and seizing a Chinese vessel is physical interference imposing punishment in waters Vietnam claims; coercive. The seizure is rare, as Vietnamese authorities usually drive vessels away.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-stops-illegal-chinese-fishing-activities-during-17-day-patrol-3380948.html",
+    "title": "Vietnam stops illegal Chinese fishing activities during 17-day patrol",
+    "publisher": "VnExpress International",
+    "pub_date": "2016-04-04",
+    "language": "en",
+    "excerpt": "quickly assessed it was a Chinese vessel disguised as a fishing boat infringing on Vietnam’s sovereignty."
+   },
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-seizes-trespassing-chinese-vessel-near-tonkin-gulf-3380601.html",
+    "title": "Vietnam seizes trespassing Chinese vessel near Tonkin Gulf",
+    "publisher": "VnExpress International",
+    "pub_date": "2016-04-03",
+    "language": "en",
+    "excerpt": "After seizing the oil tanker, the force towed it to the city."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-03-17",
+  "date_end": "2016-03-17",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Foreign Ministry spokesman Le Hai Binh said China's continuous reclamation and construction activities altered the status quo in the Hoang Sa archipelago and requested that China immediately stop and not repeat them and respect Vietnam's sovereignty.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official protest against Chinese construction in the Paracels, asserting Vietnamese sovereignty, is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://mofa.gov.vn/en/tt_baochi/pbnfn/ns160318232341",
+    "title": "Remarks By MOFA Spokesperson Le Hai Binh On China's Recent Activities In Hoang Sa Archipelago",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2016-03-17",
+    "language": "en",
+    "excerpt": "China's continuous reclamation and construction activities alter the status quo in the Hoang Sa Archipelago."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-03-17",
+  "date_end": "2016-03-17",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "At a regular press conference, spokesman Le Hai Binh protested the conduct of Chinese vessel 46101 toward the Quang Nam fishing boat QNA 91939TS and its ten crew in the Hoang Sa islands, demanding that China investigate and punish those responsible, compensate the fishermen and prevent a repetition.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A demand for compensation and punishment over Chinese enforcement against Vietnamese fishermen in the Paracels is a verbal assertion of Vietnam's fishing rights there; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-asked-china-to-compensate-the-victims-of-fishermen-12758.html",
+    "title": "Vietnam asked China to compensate the victims of fishermen",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-03-18",
+    "language": "en",
+    "excerpt": "Vietnam firmly objects to inhuman behaviours, the use of force or threat to use force against Vietnamese fishermen"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-04-05",
+  "date_end": "2016-04-07",
+  "date_precision": "day",
+  "location_name": "Mouth of the Gulf of Tonkin; Xu Bi (Subi) Reef, Truong Sa (Spratly) archipelago",
+  "subregion": "1",
+  "summary": "The Foreign Ministry handed diplomatic notes to the Chinese embassy on 5 and 7 April protesting the return of the Haiyang Shiyou 981 rig to the undelimited waters off the mouth of the Gulf of Tonkin on 3 April and China's switching on of a lighthouse on Subi Reef; spokesman Le Hai Binh requested that China cancel the drilling plan and remove the rig and not repeat such unilateral actions.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Diplomatic notes demanding withdrawal of a rig and protesting a lighthouse are verbal assertions of Vietnam's claims; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-asks-china-to-stop-actions-complicating-east-sea-situation-12587.html",
+    "title": "Vietnam asks China to stop actions complicating East Sea situation",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-04-08",
+    "language": "en",
+    "excerpt": "Vietnam requested China to cancel its oil drilling plan and promptly remove its Haiyang Shiyou 981 drilling rig"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-04-14",
+  "date_end": "2016-04-14",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "At a regular press briefing, spokesman Le Hai Binh protested China's deployment of 16 fighter jets to the Hoang Sa archipelago, demanding that China immediately end its encroachment on Vietnam's sovereignty, withdraw the aircraft and not repeat similar acts.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public demand that China withdraw aircraft from the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-demands-china-to-terminate-jet-fighters-to-the-paracel-12507.html",
+    "title": "Vietnam demands China to terminate jet fighters to the Paracel",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-04-15",
+    "language": "en",
+    "excerpt": "withdraw its jet fighters from this area and not to repeat similar acts"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-05-12",
+  "date_end": "2016-05-12",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Spokesman Le Hai Binh protested Taiwan's arrangement of visits by former senior officials to Ba Binh (Itu Aba) Island and its issue of postage stamps depicting Ba Binh and other East Sea archipelagos, saying the acts violated Vietnam's sovereignty and demanding that Taiwan end and not repeat them.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against Taiwanese administrative acts on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-resolutely-protests-taiwans-sovereignty-violation-12213.html",
+    "title": "Vietnam resolutely protests Taiwan's sovereignty violation",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-05-13",
+    "language": "en",
+    "excerpt": "Vietnam resolutely protests and demands Taiwan to end and prevent the repetition of similar actions"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-05-17",
+  "date_end": "2016-05-17",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago and surrounding waters",
+  "subregion": "2",
+  "summary": "Spokesman Le Hai Binh rejected as void China's annual summer fishing moratorium (16 May to 1 August 2016) announced by Hainan's Haikou city administration, which covered waters including the Hoang Sa archipelago, saying Vietnam had sufficient legal and historical grounds for its sovereignty there (Vietnam issued a similar rejection of the Chinese fishing ban every year of the period).",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public rejection of a Chinese administrative measure over waters Vietnam claims is a verbal assertion; declarative. Annual routine repeat.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-resolutely-opposes-chinas-fishing-moratorium-in-east-sea-12157.html",
+    "title": "Vietnam resolutely opposes China's fishing moratorium in East Sea",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-05-18",
+    "language": "en",
+    "excerpt": "Vietnam determinedly objects to and refutes this void decision"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-06-24",
+  "date_end": "2016-06-24",
+  "date_precision": "day",
+  "location_name": "Chu Thap (Fiery Cross) Reef and Xu Bi (Subi) Reef, Truong Sa; Hoang Sa (Paracel) archipelago",
+  "subregion": "8",
+  "summary": "Spokesman Le Hai Binh strongly objected to China's construction and operation of facilities in the Spratlys, including a hospital on Fiery Cross Reef and a farm on Subi Reef, and to state shipping company COSCO's plan to run tourist cruises to the Paracels, requesting that China respect Vietnam's sovereignty over both archipelagos and comply with the DOC.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against Chinese civil administration and tourism on disputed features is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.qdnd.vn/vietnam-s-seas-and-islands/china-s-illegal-activities-in-east-sea-must-be-ended-fm-spokesman-471055",
+    "title": "China's illegal activities in East Sea must be ended: FM spokesman",
+    "publisher": "People's Army Newspaper (QDND) Online",
+    "pub_date": "2016-06-25",
+    "language": "en",
+    "excerpt": "Vietnam requests China to respect the country’s sovereignty over the two archipelagoes"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-07-04",
+  "date_end": "2016-07-04",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesman Le Hai Binh strongly objected to the Chinese military exercise announced by China's Maritime Safety Administration for 5-11 July 2016 in an area covering the Hoang Sa archipelago, saying it violated Vietnam's sovereignty, UNCLOS and the DOC, and demanding that China respect Vietnam's sovereignty and not take actions threatening maritime security in the East Sea.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official protest against Chinese military drills around the Paracels asserts Vietnamese sovereignty verbally; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://mofa.gov.vn/en/tt_baochi/pbnfn/ns160706145155",
+    "title": "Remarks by MOFA Spokesperson Le Hai Binh on Viet Nam's reaction to China's announcing of military exercise from 5th to 11th July 2016 within area that covers Viet Nam's Hoang Sa Archipelago",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2016-07-04",
+    "language": "en",
+    "excerpt": "strongly opposes the above-said action."
+   },
+   {
+    "url": "https://baodanang.vn/english/politics/201607/viet-nam-opposes-chinas-military-drill-in-east-sea-2496780",
+    "title": "Viet Nam opposes China's military drill in East Sea",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2016-07-05",
+    "language": "en",
+    "excerpt": "Viet Nam strongly objects to the exercises and demands that China respect Viet Nam’s sovereignty"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-07-11",
+  "date_end": "2016-07-12",
+  "date_precision": "day",
+  "location_name": "About 34 nautical miles east-southeast of Bong Bay (Bombay) Reef, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "After Chinese coast guard vessels 46102 and 56103 pursued and sank the Quang Ngai fishing boat QNg 90479TS near Bombay Reef on 9 July, the Foreign Ministry handed a diplomatic protest note to the Chinese embassy on 11 July and spokesman Le Hai Binh condemned the use of force against Vietnamese fishermen, demanding that China investigate and prosecute the personnel involved and compensate the fishermen.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A protest note and demand for compensation over Chinese enforcement against Vietnamese fishermen in the Paracels is a verbal assertion of fishing rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://baonghean.vn/en/print/10103931.html",
+    "title": "Vietnam demands China compensate for sunken fishing boat in Quang Ngai",
+    "publisher": "Nghe An Newspaper (English)",
+    "pub_date": "2016-07-13",
+    "language": "en",
+    "excerpt": "demands that China investigate and prosecute the personnel on the two coast guard vessels"
+   },
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-slams-china-for-sinking-fishing-boat-demands-compensation-3435672.html",
+    "title": "Vietnam slams China for sinking fishing boat, demands compensation",
+    "publisher": "VnExpress International",
+    "pub_date": "2016-07-12",
+    "language": "en",
+    "excerpt": "delivered a diplomatic note to the Chinese Embassy in Hanoi protesting the harassment of its fishermen"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-07-12",
+  "date_end": "2016-07-12",
+  "date_precision": "day",
+  "location_name": "South China Sea (Hoang Sa and Truong Sa archipelagos)",
+  "subregion": "",
+  "summary": "Foreign Ministry spokesman Le Hai Binh welcomed the issuance of the Annex VII tribunal's Award in the Philippines v. China arbitration, restated Vietnam's 5 December 2014 position, and once again affirmed Vietnam's sovereignty over the Hoang Sa and Truong Sa archipelagos and its sovereign rights and jurisdiction over its EEZ and continental shelf under UNCLOS.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official statement endorsing the award that rejected China's nine-dash line while reaffirming Vietnam's own claims is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.vn/en/tt_baochi/pbnfn/ns160712211059",
+    "title": "Remarks of the Spokesperson of the Ministry of Foreign Affairs of Viet Nam on Viet Nam's reaction to the issuance of the Award by the Tribunal constituted under Annex VII to the United Nations Convention on the Law of the Sea in the arbitration between the Philippines and China",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2016-07-12",
+    "language": "en",
+    "excerpt": "Viet Nam, once again, affirms its sovereignty over Hoang Sa (Paracel) and Truong Sa (Spratly) Archipelagoes,"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-08-01",
+  "date_end": "2016-08-10",
+  "date_precision": "month",
+  "location_name": "Five Vietnamese-held bases in the Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "Reuters reported on 10 August 2016, citing Western officials, that Vietnam had over the preceding months discreetly shipped new mobile rocket launchers (EXTRA systems) into position on five of its bases in the Spratly Islands, capable of being made operational within days; Vietnam's Foreign Ministry called the report 'inaccurate'.",
+  "actors": "Vietnam People's Army (per Reuters sources)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Fortifying occupied features with new weapons is unilateral military administration without confrontation; demonstrative. Date is the report date; the deployment occurred over preceding months and was denied by Hanoi.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.thestar.com.my/news/world/2016/08/11/exclusive--vietnam-moves-new-rocket-launchers-into-disputed-south-china-sea--sources",
+    "title": "Exclusive - Vietnam moves new rocket launchers into disputed South China Sea - sources",
+    "publisher": "The Star (Malaysia) / Reuters",
+    "pub_date": "2016-08-11",
+    "language": "en",
+    "excerpt": "Vietnam has discreetly fortified several of its islands in the disputed South China Sea with new mobile rocket launchers"
+   },
+   {
+    "url": "https://www.globalsecurity.org/military/library/news/2016/08/mil-160810-rt01.htm",
+    "title": "Vietnam moves rocket launchers to Spratlys (RT, citing Reuters)",
+    "publisher": "GlobalSecurity.org (RT)",
+    "pub_date": "2016-08-10",
+    "language": "en",
+    "excerpt": "The missile launchers have been moved to five bases on the Spratly Islands over the last few months."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-08-04",
+  "date_end": "2016-08-04",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) and Truong Sa (Spratly) archipelagos",
+  "subregion": "",
+  "summary": "At a press conference, spokesman Le Hai Binh responded to Chinese Defence Minister Chang Wanquan's call to prepare for a 'people's war at sea', rejected China's new East Sea website using the names Xisha and Nansha for Vietnam's archipelagos, said Vietnam reserved the necessary measures to protect its fishermen after China's Supreme People's Court announced jail for illegal fishing, and reaffirmed sovereignty over Hoang Sa in response to Chinese cemetery construction there.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A set of public rebuttals and reservations of rights against Chinese legal and administrative measures is a verbal assertion; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-protests-chinese-defense-ministers-peoples-war-at-sea-call-11485.html",
+    "title": "Vietnam protests Chinese defense minister's 'people's war at sea' call",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-08-05",
+    "language": "en",
+    "excerpt": "Vietnam reserves the necessary measures for protecting its fishermen’s legitimate interests"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-09-22",
+  "date_end": "2016-09-22",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Spokesman Le Hai Binh, asked about reports that Taiwan had quietly built new facilities on Ba Binh (Itu Aba) Island, said Vietnamese agencies were verifying the information and that Taiwan's occupation and operations there were illegal and seriously violated Vietnam's sovereignty over the Truong Sa archipelago.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public statement declaring Taiwan's occupation of Itu Aba illegal is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-calls-for-all-nations-maintaining-peace-in-east-sea-11031.html",
+    "title": "Vietnam calls for all nations maintaining peace in East Sea",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-09-23",
+    "language": "en",
+    "excerpt": "Taiwan’s occupation and operations in the area are illegal and seriously violate Vietnam’s sovereignty."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-10-03",
+  "date_end": "2016-10-03",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago ('Sansha city')",
+  "subregion": "2",
+  "summary": "Spokesman Le Hai Binh declared that Vietnam resolutely protested China's second 'Sansha' municipal people's congress election and Chinese patrols in the waters around the Hoang Sa islands, saying both violated Vietnam's sovereignty over the Hoang Sa and Truong Sa archipelagos and could not change it.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official protest against Chinese administrative acts and patrols in the Paracels is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://mofa.gov.vn/en/tt_baochi/pbnfn/ns161004083852",
+    "title": "Remarks by MOFA's Spokesperson Le Hai Binh regarding Viet Nam's reaction to the 2nd 'Sansha' municipal people's congress election and the Chinese patrolling of the waters around Hoang Sa islands",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2016-10-03",
+    "language": "en",
+    "excerpt": "Viet Nam resolutely protests those actions"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-11-01",
+  "date_end": "2016-11-30",
+  "date_precision": "month",
+  "location_name": "Spratly Island (Truong Sa Lon), Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "Satellite imagery analysed by CSIS AMTI (published 15 November, updated 1 December 2016) showed Vietnam had lengthened the runway on Spratly Island from under 2,500 feet toward about 4,000 feet, reclaimed about 57 acres of land and was building four large hangars suited to maritime surveillance and transport aircraft.",
+  "actors": "Vietnam People's Navy / Vietnamese government (construction)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Runway extension, reclamation and hangar construction on an occupied feature is unilateral administration without confrontation; demonstrative. Dated to the month of the imagery and report; work was under way for some months.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/vietnam-responds/",
+    "title": "Vietnam Responds with Spratly Air Upgrades",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2016-11-15",
+    "language": "en",
+    "excerpt": "Vietnam has lengthened the runway at Spratly Island from less than 2,500 feet"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-11-29",
+  "date_end": "2016-11-29",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Spokesman Le Hai Binh declared that Vietnam resolutely opposed Taiwan's drill of 28 November 2016 in the Ba Binh (Itu Aba) area of the Truong Sa archipelago, calling it a serious violation of Vietnam's sovereignty that threatened peace, security and navigation safety, and demanded that Taiwan not repeat it.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against a Taiwanese exercise on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://baodanang.vn/english/politics/201611/viet-nam-opposes-taiwans-drill-in-truong-sa-archipelago-2526232",
+    "title": "Viet Nam opposes Taiwan's drill in Truong Sa archipelago",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2016-11-30",
+    "language": "en",
+    "excerpt": "Viet Nam resolutely opposes Taiwan deploying a drill on November 28 in Ba Binh area"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-11-30",
+  "date_end": "2016-11-30",
+  "date_precision": "day",
+  "location_name": "Ladd Reef (Da Lat), Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "Planet Labs satellite imagery of 30 November 2016, reported by Reuters on 8 December, showed Vietnam had begun dredging at Ladd Reef in the Spratlys, with several vessels in a newly dug channel between the reef's lagoon and the open sea.",
+  "actors": "Vietnamese government (dredging vessels)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Dredging a channel at an occupied reef is unilateral construction without confrontation; demonstrative. Dated to the satellite image; the work began at an unknown earlier date.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://gcaptain.com/risking-beijings-ire-vietnam-begins-dredging-on-south-china-sea-reef",
+    "title": "Risking Beijing's Ire, Vietnam Begins Dredging on South China Sea Reef",
+    "publisher": "gCaptain (Reuters)",
+    "pub_date": "2016-12-08",
+    "language": "en",
+    "excerpt": "several vessels can be seen in a newly dug channel between the lagoon and open sea."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-12-12",
+  "date_end": "2016-12-12",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) and Truong Sa (Spratly) archipelagos",
+  "subregion": "",
+  "summary": "Spokesman Le Hai Binh declared that Vietnam resolutely opposed the Chinese Navy's 8 December commemoration of the 'so-called 70 years' since China's recovery of the Paracel and Spratly Islands, saying Vietnam had sufficient historical evidence and legal foundation for its sovereignty and the Chinese activity could not change it.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest reasserting sovereignty against a Chinese commemorative act is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/opposing-chinas-celebration-of-70-year-recovery-of-paracel-and-spratly-10083.html",
+    "title": "Opposing China's celebration of 70-year recovery of Paracel and Spratly",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-12-13",
+    "language": "en",
+    "excerpt": "Vietnam has sufficient historical evidence and legal foundation to affirm its sovereignty"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2016-12-23",
+  "date_end": "2016-12-23",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesman Le Hai Binh protested China's launch on 22 December of a regular civilian air route to the airport on Phu Lam (Woody) Island, saying it seriously infringed Vietnam's sovereignty over the Hoang Sa archipelago and demanding that China immediately end such actions.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against a Chinese civil-administrative measure in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.qdnd.vn/vietnam-s-seas-and-islands/china-s-air-route-to-hoang-sa-violates-vietnam-s-sovereignty-476678",
+    "title": "China's air route to Hoang Sa violates Vietnam's sovereignty",
+    "publisher": "People's Army Newspaper (QDND) Online",
+    "pub_date": "2016-12-25",
+    "language": "en",
+    "excerpt": "demands that China immediately end actions violating Vietnam's sovereignty over Hoang Sa archipelago"
+   },
+   {
+    "url": "https://hanoitimes.vn/vietnam-asked-china-to-terminate-the-infringement-of-sovereignty-9944.html",
+    "title": "Vietnam asked China to terminate the infringement of sovereignty",
+    "publisher": "Hanoi Times",
+    "pub_date": "2016-12-26",
+    "language": "en",
+    "excerpt": "demands China stop all acts of violating the Southeast Asian country’s sovereignty over the two archipelagoes"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-01-13",
+  "date_end": "2017-01-13",
+  "date_precision": "day",
+  "location_name": "Ca Voi Xanh (Blue Whale) gas field, about 80 km off Quang Nam province (Block 118)",
+  "subregion": "3",
+  "summary": "PetroVietnam Exploration Production Company signed two heads of agreement (project framework and gas sales) with Exxon Mobil Vietnam on 13 January 2017, during US Secretary of State Kerry's visit to Hanoi, to develop the Blue Whale (Ca Voi Xanh) gas field about 80 km off central Vietnam, Vietnam's largest gas project.",
+  "actors": "PetroVietnam Exploration Production Company (PVEP); ExxonMobil Vietnam",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "State-company licensing/development of an offshore gas field is unilateral resource development; demonstrative. The source does not state that the field lies inside China's nine-dash line, so relevance to the dispute is for the coder to judge.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.c3sindia.org/post/vietnam-exxon-mobil-signs-agreements-to-develop-vietnam-s-largest-gas-project-by-carlyle-a-tha",
+    "title": "Vietnam: Exxon Mobil Signs Agreements to Develop Vietnam's Largest Gas Project; By Carlyle A. Thayer",
+    "publisher": "C3S India (Thayer Consultancy Background Brief)",
+    "pub_date": "2017-01-17",
+    "language": "en",
+    "excerpt": "On 13 January, PetroVietnam Exploration Production Company signed two agreements with Exxon Mobil Vietnam"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-02-09",
+  "date_end": "2017-02-09",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago ('Sansha city')",
+  "subregion": "2",
+  "summary": "At a regular press conference, Foreign Ministry spokesman Le Hai Binh said the opening of Chinese bank branches in 'Sansha city' on Phu Lam (Woody) Island was illegal, reaffirming that Vietnam has sovereignty over the Hoang Sa and Truong Sa archipelagos and that any foreign activity there without Vietnam's permission is illegal.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public declaration that Chinese administrative acts in the Paracels are illegal is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-protests-chinese-banks-to-open-branches-in-the-so-called-tam-sa-9439.html",
+    "title": "Vietnam protests Chinese banks to open branches in the so-called 'Tam Sa'",
+    "publisher": "Hanoi Times",
+    "pub_date": "2017-02-10",
+    "language": "en",
+    "excerpt": "every activity carried out by foreign countries in this area, if there is, without Vietnam’s permission is illegal"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-03-02",
+  "date_end": "2017-03-02",
+  "date_precision": "day",
+  "location_name": "About 40 km off Quang Binh province, Gulf of Tonkin",
+  "subregion": "1",
+  "summary": "Quang Binh province border guards sent 16 officers to intercept three Chinese fishing boats fishing about 40 km offshore, beyond the Vietnam-China common fishing zone; two boats and their nine Chinese crew were detained and the crew made to sign penalty documents before release, while the third boat fled.",
+  "actors": "Quang Binh Border Guard",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Detaining Chinese fishing boats and imposing penalties is physical enforcement of Vietnam's maritime jurisdiction; coercive. One example of recurrent Gulf of Tonkin fisheries enforcement.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-snares-chinese-boats-for-illegal-fishing-3549818.html",
+    "title": "Vietnam snares Chinese boats for illegal fishing",
+    "publisher": "VnExpress International",
+    "pub_date": "2017-03-03",
+    "language": "en",
+    "excerpt": "The nine Chinese fishermen had to sign penalty documents before they were released."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-03-13",
+  "date_end": "2017-03-13",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago; Bach Quy (Passu Keah) Island",
+  "subregion": "2",
+  "summary": "Spokesman Le Hai Binh objected to China's organisation of a tourism route to the Hoang Sa archipelago and to a Chinese coast guard vessel's chasing of the Vietnamese fishing boat QNg 95215 TS near Bach Quy (Passu Keah) Island, demanding that China immediately stop and not repeat those activities and respect Vietnam's sovereignty.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against Chinese tourism and fisheries enforcement in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-requests-china-to-respect-sovereignty-international-law-9021.html",
+    "title": "Vietnam requests China to respect sovereignty, international law",
+    "publisher": "Hanoi Times",
+    "pub_date": "2017-03-14",
+    "language": "en",
+    "excerpt": "China must immediately stop and not repeat those activities"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-03-30",
+  "date_end": "2017-03-30",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Spokesman Le Hai Binh protested Taiwan's live-fire drill in waters around Ba Binh (Itu Aba) Island, saying it seriously violated Vietnam's sovereignty over the Truong Sa archipelago and threatened peace, stability and maritime safety in the East Sea, and demanded that Taiwan not repeat it.",
+  "actors": "Ministry of Foreign Affairs; spokesman Le Hai Binh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against a Taiwanese exercise on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-frustrates-taiwans-live-fire-drill-in-vietnams-waters-9015.html",
+    "title": "Vietnam frustrates Taiwan's live-fire drill in Vietnam's waters",
+    "publisher": "Hanoi Times",
+    "pub_date": "2017-03-31",
+    "language": "en",
+    "excerpt": "seriously violates Vietnam’s sovereignty over Truong Sa archipelago"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-04-29",
+  "date_end": "2017-04-29",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang declared that Vietnam resolutely protested China's hosting of the 5th Sinan yacht race in the Hoang Sa archipelago and the opening of a Hainan entry-exit inspection and quarantine office on Phu Lam (Woody) Island, demanding that China not repeat such moves.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against Chinese administrative and sporting activity in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.qdnd.vn/vietnam-s-seas-and-islands/vietnam-vehemently-protests-violations-of-its-sovereignty-over-hoang-sa-480446",
+    "title": "Vietnam vehemently protests violations of its sovereignty over Hoang Sa",
+    "publisher": "People's Army Newspaper (QDND) Online",
+    "pub_date": "2017-04-29",
+    "language": "en",
+    "excerpt": "Vietnam resolutely protests against China's recent moves in Hoang Sa (Paracel) archipelago"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-05-04",
+  "date_end": "2017-05-04",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago and surrounding waters",
+  "subregion": "2",
+  "summary": "At a regular press conference, spokesperson Le Thi Thu Hang rejected China's unilateral fishing ban in the East Sea from 1 May to 16 August 2017, saying it violated Vietnam's sovereignty over the Hoang Sa archipelago and its rights in its sea areas, UNCLOS and the DOC (annual repeat of Vietnam's rejection of the Chinese moratorium).",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public rejection of a Chinese administrative measure over waters Vietnam claims is a verbal assertion; declarative. Annual routine repeat.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://vietnamnews.vn/politics-laws/375852/vn-objects-to-chinas-east-sea-ban.html",
+    "title": "VN objects to China's East Sea ban",
+    "publisher": "Viet Nam News",
+    "pub_date": "2017-05-05",
+    "language": "en",
+    "excerpt": "Việt Nam adamantly opposes and rejects China’s unilateral ban on fishing in the East Sea from May 1 to August 16"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-05-21",
+  "date_end": "2017-05-21",
+  "date_precision": "day",
+  "location_name": "Waters near Natuna Islands (overlapping Indonesia-Vietnam EEZ claims)",
+  "subregion": "10",
+  "summary": "Two Vietnamese coast guard vessels obstructed the Indonesian fisheries patrol boat KM Hiu Macan 001 as it escorted five seized Vietnamese fishing boats toward Batam on 21 May 2017; one Vietnamese vessel reportedly rammed a seized boat, Indonesian officers who had boarded the boats were held (one taken to Vietnam), and the Indonesians released the 55 arrested crew and returned without the boats.",
+  "actors": "Vietnam Coast Guard",
+  "suggested_type": "force",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VI"
+  ],
+  "reasoning": "Physical interference by armed state vessels with another claimant's enforcement operation, ramming and seizing an officer, in waters Vietnam treats as its EEZ; coded force/coercive (coder to judge). Indonesia is treated as a claimant in this dataset.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/news/2017/05/23/ri-vietnam-vessels-clash-natuna.html",
+    "title": "RI, Vietnam vessels clash in Natuna",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2017-05-23",
+    "language": "en",
+    "excerpt": "One of the Vietnamese vessels reportedly rammed into one of the arrested boats at 3 p.m."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-05-26",
+  "date_end": "2017-05-26",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Spokesperson Le Thi Thu Hang declared that Vietnam resolutely opposed Taiwan's conduct of a number of live-fire exercises in the waters around Ba Binh (Itu Aba) Island, saying they violated Vietnam's sovereignty, threatened peace, security and navigation and raised tensions, and demanded that Taiwan not repeat them.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against Taiwanese exercises on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-asked-taiwan-not-to-practice-live-fire-exercises-in-spratlys-7993.html",
+    "title": "Vietnam asked Taiwan not to practice live-fire exercises in Spratlys",
+    "publisher": "Hanoi Times",
+    "pub_date": "2017-05-27",
+    "language": "en",
+    "excerpt": "Once again, Vietnam resolutely opposes and demands Taiwan to not repeat similar activities"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-06-01",
+  "date_end": "2017-07-31",
+  "date_precision": "month",
+  "location_name": "Block 136/03 (Vanguard Bank area, Nam Con Son basin)",
+  "subregion": "9",
+  "summary": "Drilling by the Deepsea Metro I drillship began in mid-June 2017 in Block 136/03, licensed by PetroVietnam to Repsol and Mubadala, in an area overlapping China's nine-dash line; after Chinese pressure Repsol suspended the work in late July 2017, a decision a diplomatic source said followed a Vietnamese delegation's visit to Beijing.",
+  "actors": "PetroVietnam; Repsol (Talisman Vietnam); Mubadala Development",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Authorising and commencing exploratory drilling in a contested block is unilateral resource development; demonstrative. The later suspension under Chinese pressure is not itself an assertive act.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.voanews.com/a/repsol-drilling-suspended-vietnam-oil-block-disputed-south-china-sea/3970412.html",
+    "title": "Repsol Drilling Suspended in Vietnam Oil Block in Disputed South China Sea",
+    "publisher": "Voice of America (Reuters)",
+    "pub_date": "2017-08-02",
+    "language": "en",
+    "excerpt": "Drilling began in mid-June in Vietnam's Block 136/3"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-06-01",
+  "date_end": "2017-12-31",
+  "date_precision": "year",
+  "location_name": "Spratly Island, Pearson Reef, Petley Reef, South Reef, Prince of Wales and Grainger Banks (DK1 platforms), Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "According to CSIS AMTI's review of satellite imagery, in 2017 Vietnam completed four hangars and runway ends on Spratly Island (mid-2017), installed a large radome at Pearson Reef, began adding a second pillbox-type structure at Petley and South Reefs, and expanded four DK1 platforms on Prince of Wales and Grainger Banks with second multi-storey structures and larger helipads (eight others having been expanded in 2016-17).",
+  "actors": "Vietnam People's Navy / Vietnamese government (construction)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Incremental fortification and facility construction on occupied features is unilateral administration without confrontation; demonstrative. AMTI dates the work only to 'mid-2017' onward, so year precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/slow-and-steady-vietnams-spratly-upgrades/",
+    "title": "Slow and Steady: Vietnam's Spratly Upgrades",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2019-04-08",
+    "language": "en",
+    "excerpt": "Since mid-2017, four of the DK1 platforms on Prince of Wales and Grainger Banks have been expanded"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-07-01",
+  "date_end": "2017-07-08",
+  "date_precision": "month",
+  "location_name": "Block 128, off central Vietnam (partly inside China's nine-dash line)",
+  "subregion": "3",
+  "summary": "Vietnam granted India's state-run ONGC Videsh a two-year extension to explore oil Block 128, part of which lies inside China's nine-dash line; the extension letter was received in the first week of July 2017, shortly after the previous licence expired in mid-June.",
+  "actors": "Government of Vietnam; PetroVietnam; ONGC Videsh",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Renewing a foreign exploration licence in a block overlapping China's claim is unilateral administration of resources without confrontation; demonstrative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.thedailystar.net/business/global-business/vietnam-renews-india-oil-deal-tense-south-china-sea-1430221",
+    "title": "Vietnam renews India oil deal in tense South China Sea",
+    "publisher": "The Daily Star (Bangladesh) / Reuters",
+    "pub_date": "2017-07-08",
+    "language": "en",
+    "excerpt": "Vietnam granted Indian oil firm ONGC Videsh a two-year extension to explore oil block 128"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-07-28",
+  "date_end": "2017-07-28",
+  "date_precision": "day",
+  "location_name": "Vietnam's continental shelf and EEZ (Block 136/03 area)",
+  "subregion": "9",
+  "summary": "Asked about reports of Chinese pressure over Repsol's drilling, spokesperson Le Thi Thu Hang said Vietnam's oil and gas activities took place in sea areas completely under the country's sovereign rights and jurisdiction, and that other parties should respect Vietnam's legitimate rights.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public defence of Vietnam's right to drill in waters China contests is a verbal assertion of sovereign rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.qdnd.vn/politics/news/vn-s-oil-gas-activities-in-waters-completely-under-its-sovereignty-spokesperson-483217",
+    "title": "VN's oil, gas activities in waters completely under its sovereignty: spokesperson",
+    "publisher": "People's Army Newspaper (QDND) Online",
+    "pub_date": "2017-07-29",
+    "language": "en",
+    "excerpt": "the sea areas that are completely under the country’s sovereign rights and jurisdiction"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-08-01",
+  "date_end": "2017-08-01",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang said Vietnam objected to China's building and opening of a cinema on Phu Lam (Woody) Island as an infringement of Vietnam's sovereignty over the Hoang Sa archipelago and requested that China not repeat similar actions.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against a Chinese civil facility in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://baodanang.vn/english/politics/201708/viet-nam-objects-to-chinas-opening-of-cinema-on-phu-lam-island-2564702",
+    "title": "Viet Nam objects to China's opening of cinema on Phu Lam island",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2017-08-02",
+    "language": "en",
+    "excerpt": "Viet Nam objects to China's building and opening of the cinema and requests the country not to repeat similar actions"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-08-05",
+  "date_end": "2017-08-06",
+  "date_precision": "day",
+  "location_name": "South China Sea (ASEAN Foreign Ministers' Meeting, Manila)",
+  "subregion": "",
+  "summary": "At the 50th ASEAN Foreign Ministers' Meeting in Manila, Vietnam was among the members that pushed for a joint communique retaining contentious wording on China's island-building and militarisation, delaying the statement by a day; the communique issued on 6 August called for non-militarisation and noted concern about reclamation.",
+  "actors": "Ministry of Foreign Affairs; Deputy PM and Foreign Minister Pham Binh Minh (delegation)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Pressing for critical language in a multilateral statement is a diplomatic verbal assertion against China's conduct; declarative. Attribution rests on diplomats' accounts reported by Reuters.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://interaksyon.philstar.com/breaking-news/2017/08/06/89259/asean-overcomes-communique-impasse-urges-non-militarization-in-south-china-sea/",
+    "title": "ASEAN overcomes communique impasse, urges non-militarization in South China Sea",
+    "publisher": "Interaksyon (Philstar.com) / Reuters",
+    "pub_date": "2017-08-06",
+    "language": "en",
+    "excerpt": "among the members who pushed for a communique that retained the more contentious elements was Vietnam"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-08-24",
+  "date_end": "2017-08-24",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "At a press briefing, spokesperson Le Thi Thu Hang said Vietnam resolutely opposed Taiwan's repeated live-fire drills around Ba Binh (Itu Aba) Island, calling them serious violations of Vietnam's sovereignty, and demanded that Taiwan not repeat them (the third such protest in 2017).",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against Taiwanese drills on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-demands-taiwan-cease-live-fire-drills-in-disputed-waters-3632156.html",
+    "title": "Vietnam demands Taiwan cease live-fire drills in disputed waters",
+    "publisher": "VnExpress International",
+    "pub_date": "2017-08-24",
+    "language": "en",
+    "excerpt": "resolutely opposes” Taiwan’s repeated drills around Ba Binh Island, which is known internationally as Itu Aba"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-08-31",
+  "date_end": "2017-08-31",
+  "date_precision": "day",
+  "location_name": "Waters off the mouth of the Gulf of Tonkin",
+  "subregion": "1",
+  "summary": "Spokesperson Le Thi Thu Hang said Vietnam was deeply concerned by China's announcement of a military exercise in waters off the mouth of the Gulf of Tonkin, requested that China stop and take no further action complicating the situation, and the same day a Foreign Ministry representative met the Chinese embassy in Hanoi to state Vietnam's position.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A diplomatic demarche and public demand that China halt drills in waters Vietnam claims is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://mofa.gov.vn/en/tt_baochi/pbnfn/ns170901162829",
+    "title": "Remarks by MOFA Spokesperson Le Thi Thu Hang regarding the Chinese announcement of an upcoming military exercise in the waters off the mouth of the Gulf of Tonkin",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2017-08-31",
+    "language": "en",
+    "excerpt": "Viet Nam is deeply concerned about the announcement by China"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2017-09-05",
+  "date_end": "2017-09-05",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang responded to China's announcement of a live-fire exercise in the Hoang Sa archipelago, calling it a serious violation of Vietnam's sovereignty over the islands and solemnly urging China to respect Vietnam's sovereignty over Hoang Sa.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official protest against Chinese drills in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://mofa.gov.vn/en/tt_baochi/pbnfn/ns170906183523",
+    "title": "Remarks by MOFA Spokesperson Le Thi Thu Hang in response to China's announcement of a live-fire exercise in Hoang Sa (Paracel) Archipelago of Viet Nam",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2017-09-05",
+    "language": "en",
+    "excerpt": "a serious violation of Viet Nam's sovereignty over the islands"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-01-01",
+  "date_end": "2018-12-31",
+  "date_precision": "year",
+  "location_name": "Spratly Island, Petley Reef, South Reef, Truong Sa (Spratly) archipelago",
+  "subregion": "8",
+  "summary": "CSIS AMTI imagery showed Vietnam continuing to upgrade its Spratly outposts through 2018: a radome was added to a signals/communications facility on the northeast of Spratly Island in 2018, the second pillbox-type structure at Petley Reef was completed by late 2018, and construction of a similar structure at South Reef was still under way in imagery of 20 December 2018.",
+  "actors": "Vietnam People's Navy / Vietnamese government (construction)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Continued fortification of occupied features is unilateral administration without confrontation; demonstrative. AMTI gives only the year for most work, so year precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/slow-and-steady-vietnams-spratly-upgrades/",
+    "title": "Slow and Steady: Vietnam's Spratly Upgrades",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2019-04-08",
+    "language": "en",
+    "excerpt": "Since mid-2017, two of these—on Petley and South Reefs—have been expanded with the addition of a second structure."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-03-22",
+  "date_end": "2018-03-22",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Spokesperson Le Thi Thu Hang issued a statement objecting to Taiwan's live-fire drill of 21-23 March 2018 around Ba Binh (Itu Aba) Island, calling it a serious violation of Vietnam's sovereignty that threatened regional peace and maritime safety, and demanded that Taiwan not repeat such exercises.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against a Taiwanese exercise on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-protests-over-taiwan-s-live-fire-drill-in-spratlys-3726680.html",
+    "title": "Vietnam protests over Taiwan's live-fire drill in Spratlys",
+    "publisher": "VnExpress International",
+    "pub_date": "2018-03-22",
+    "language": "en",
+    "excerpt": "demands Taiwan not to repeat any such exercises"
+   },
+   {
+    "url": "https://english.vtv.vn/news/vietnam-opposes-taiwan-china-s-live-fire-drill-on-ba-binh-island-2018032316403393.htm",
+    "title": "Vietnam opposes Taiwan (China)'s live-fire drill on Ba Binh Island",
+    "publisher": "VTV News",
+    "pub_date": "2018-03-23",
+    "language": "en",
+    "excerpt": "Vietnam objects and requests Taiwan China not to repeat similar actions."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-03-22",
+  "date_end": "2018-03-22",
+  "date_precision": "day",
+  "location_name": "East Sea waters covered by China's fishing moratorium (incl. Hoang Sa)",
+  "subregion": "2",
+  "summary": "In the same 22 March 2018 statement, spokesperson Le Thi Thu Hang said Vietnam objected to and resolutely rejected China's unilateral decision to adjust its regulations on the summer fishing moratorium at sea, which covered waters Vietnam claims (the year's instance of Vietnam's annual rejection of the Chinese fishing ban).",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public rejection of a Chinese fisheries regulation over waters Vietnam claims is a verbal assertion; declarative. Annual routine repeat.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://english.vtv.vn/news/vietnam-opposes-taiwan-china-s-live-fire-drill-on-ba-binh-island-2018032316403393.htm",
+    "title": "Vietnam opposes Taiwan (China)'s live-fire drill on Ba Binh Island",
+    "publisher": "VTV News",
+    "pub_date": "2018-03-23",
+    "language": "en",
+    "excerpt": "Vietnam objects and resolutely rejects China's unilateral decision to adjust regulations on a fishing break at sea."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-03-28",
+  "date_end": "2018-03-28",
+  "date_precision": "day",
+  "location_name": "Da Nang (Hoang Sa district administration); Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "The Da Nang city government inaugurated the Hoang Sa Exhibition House, a four-storey, VND40 billion building displaying documents and artefacts on Vietnam's sovereignty over the Hoang Sa (Paracel) archipelago; People's Committee chairman Huynh Duc Tho said it would educate the young in the struggle to protect Vietnam's sovereignty over its sea and islands.",
+  "actors": "Da Nang People's Committee; Hoang Sa District People's Committee",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A state-built public institution dedicated to asserting sovereignty over the Chinese-occupied Paracels is a domestic administrative assertion without confrontation; demonstrative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/hoang-sa-exhibition-house-inaugurated-in-da-nang-11131977.htm",
+    "title": "Hoang Sa Exhibition House inaugurated in Da Nang",
+    "publisher": "Viet Nam Government Portal (baochinhphu.vn)",
+    "pub_date": "2018-03-28",
+    "language": "en",
+    "excerpt": "raise their sense of responsibility in the struggle to protect Viet Nam’s sovereignty over its sea and islands"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-04-19",
+  "date_end": "2018-04-19",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) and Truong Sa (Spratly) archipelagos",
+  "subregion": "",
+  "summary": "At a regular press conference, spokesperson Le Thi Thu Hang responded to reports of Chinese military exercises in the East Sea by declaring that any unilateral actions by any other country in Vietnam's two archipelagos without Vietnam's consent were invalid and illegal, reaffirming Vietnam's sovereignty and jurisdiction under UNCLOS.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public declaration that foreign (Chinese) military activity in the archipelagos is invalid is a verbal assertion of sovereignty; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://baodanang.vn/english/politics/201804/unilateral-actions-in-viet-nams-sea-territories-are-invalid-and-illegal-foreign-ministry-2595644",
+    "title": "Unilateral actions in Viet Nam's sea territories are invalid and illegal: Foreign Ministry",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2018-04-20",
+    "language": "en",
+    "excerpt": "without the consent of Viet Nam are invalid and illegal"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-05-08",
+  "date_end": "2018-05-08",
+  "date_precision": "day",
+  "location_name": "Chinese-built structures in the Truong Sa (Spratly) archipelago (Fiery Cross, Subi, Mischief)",
+  "subregion": "8",
+  "summary": "Spokesperson Le Thi Thu Hang said Vietnam was deeply concerned by reports that China had installed missiles on structures it built illegally in the Truong Sa archipelago, called it a serious violation of Vietnam's sovereignty, and asked China not to conduct militarised activities, to withdraw all military equipment it had illegally deployed and to respect Vietnam's sovereignty.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public demand that China remove weapons from Spratly features is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/vn-asks-china-to-maintain-peace-in-east-sea-11132272.htm",
+    "title": "VN asks China to maintain peace in East Sea",
+    "publisher": "Viet Nam Government Portal (baochinhphu.vn)",
+    "pub_date": "2018-05-09",
+    "language": "en",
+    "excerpt": "withdraw all military equipment that it has illegally deployed"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-05-15",
+  "date_end": "2018-05-15",
+  "date_precision": "day",
+  "location_name": "Block 06.1, Lan Do (Red Orchid) gas field, LD-3P well, Nam Con Son basin (about 370 km southeast of Vietnam)",
+  "subregion": "9",
+  "summary": "Rosneft Vietnam BV, operator of PetroVietnam-licensed Block 06.1, announced on 15 May 2018 that it had started drilling the LD-3P production well in the Lan Do gas field, a block that Wood Mackenzie placed inside China's nine-dash line; China's foreign ministry warned against drilling in waters it claims.",
+  "actors": "Rosneft Vietnam BV; PetroVietnam (licensor)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Drilling under a Vietnamese state licence in a block overlapping China's claim is unilateral resource development without confrontation; demonstrative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.cnbc.com/amp/2018/05/17/reuters-america-exclusive-as-rosnefts-vietnam-unit-drills-in-disputed-area-of-south-china-sea-beijing-issues-warning.html",
+    "title": "EXCLUSIVE-As Rosneft's Vietnam unit drills in disputed area of South China Sea, Beijing issues warning",
+    "publisher": "CNBC (Reuters)",
+    "pub_date": "2018-05-17",
+    "language": "en",
+    "excerpt": "Rosneft said on Tuesday its Vietnamese unit had started drilling at the LD-3P well"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-05-21",
+  "date_end": "2018-05-21",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang requested that China immediately stop sending H-6K bombers to conduct take-off and landing drills in the Hoang Sa archipelago, saying the drills seriously violated Vietnam's sovereignty, and urged China to refrain from militarisation and respect Vietnam's sovereignty over Hoang Sa and Truong Sa.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public demand that China halt bomber operations in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://baodanang.vn/english/politics/201805/viet-nam-asks-china-to-stop-bomber-drills-in-hoang-sa-2598095",
+    "title": "Viet Nam asks China to stop bomber drills in Hoang Sa",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2018-05-22",
+    "language": "en",
+    "excerpt": "Viet Nam requests China to immediately stop sending bombers to conduct drills"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-05-31",
+  "date_end": "2018-05-31",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "At a press briefing, spokesperson Le Thi Thu Hang strongly condemned China's live-fire military drills around the Paracel Islands announced by the Hainan Maritime Safety Administration for 9-12 May, saying they violated Vietnam's sovereignty and demanding that China end such activities immediately.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against Chinese drills in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-condemns-china-for-live-fire-drills-in-paracels-3757324.html",
+    "title": "Vietnam condemns China for live-fire drills in Paracels",
+    "publisher": "VnExpress International",
+    "pub_date": "2018-05-31",
+    "language": "en",
+    "excerpt": "Vietnam demands that China put an end to these activities immediately, and seriously respect"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-05-31",
+  "date_end": "2018-05-31",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "At the same 31 May 2018 press conference, spokesperson Le Thi Thu Hang said Vietnam resolutely protested Taiwan's live-fire drill on Ba Binh (Itu Aba) Island from 23 to 25 May as a violation of its sovereignty over the Truong Sa archipelago and requested that Taiwan not repeat such acts.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against a Taiwanese exercise on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/vn-condemns-chinas-violations-of-national-sovereignty-at-sea-11132441.htm",
+    "title": "VN condemns China's violations of national sovereignty at sea",
+    "publisher": "Viet Nam Government Portal (baochinhphu.vn)",
+    "pub_date": "2018-05-31",
+    "language": "en",
+    "excerpt": "Viet Nam resolutely protests the activities and requests Taiwan not to repeat such acts again."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-08-01",
+  "date_end": "2018-08-31",
+  "date_precision": "month",
+  "location_name": "South China Sea (ASEAN-China Code of Conduct negotiations)",
+  "subregion": "",
+  "summary": "In the Single Draft Negotiating Text for the ASEAN-China Code of Conduct, endorsed by foreign ministers in August 2018 and reviewed by Reuters, Vietnam proposed outlawing many of China's actions in the South China Sea, including artificial island-building, blockades, deployment of offensive weapons such as missiles and any new Air Defence Identification Zone, and requiring states to clarify their maritime claims under international law.",
+  "actors": "Ministry of Foreign Affairs (COC negotiating delegation)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Negotiating proposals targeting China's conduct and nine-dash line are verbal/diplomatic assertions; declarative. Dated to the August 2018 endorsement of the draft text; reported by Reuters on 31 December 2018.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cnbc.com/2018/12/31/tough-south-china-sea-talks-ahead-as-vietnam-seeks-to-curb-sino-power.html",
+    "title": "Tough South China Sea talks ahead as Vietnam seeks to curb China's actions",
+    "publisher": "CNBC (Reuters)",
+    "pub_date": "2018-12-31",
+    "language": "en",
+    "excerpt": "Hanoi wants the pact to outlaw many of the actions China has carried out"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-08-10",
+  "date_end": "2018-08-10",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody) Island, Hoang Sa (Paracel) archipelago ('Sansha city')",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang protested China's activities marking the sixth anniversary of 'Sansha city', the installation of wave-observation equipment on Phu Lam (Woody) Island, a CCTV children's reality show filmed in the Paracels and Sun Yat-sen University research projects there, demanding that China stop; a Foreign Ministry representative also met the Chinese embassy to raise the matter.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest and demarche against Chinese administrative and civil activities in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-demands-china-stop-establishment-anniversary-of-so-called-sansha-city-2674.html",
+    "title": "Vietnam demands China stop establishment anniversary of so-called Sansha city",
+    "publisher": "Hanoi Times",
+    "pub_date": "2018-08-10",
+    "language": "en",
+    "excerpt": "Vietnam requests that China immediately put an end to these wrongful activities,"
+   },
+   {
+    "url": "https://m.vovworld.vn/en-US/news/vietnam-protests-chinas-celebrations-of-socalled-sansha-citys-6th-anniversary-669369.vov",
+    "title": "Vietnam protests China's celebrations of so-called Sansha city's 6th anniversary",
+    "publisher": "VOV World",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "A representative of the Vietnamese Foreign Ministry has met a representative from the Chinese Embassy in Vietnam"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-08-23",
+  "date_end": "2018-08-23",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "Deputy spokesperson Nguyen Phuong Tra protested Taiwan's live-fire drills on Ba Binh (Itu Aba) Island, saying they seriously violated Vietnam's sovereignty and endangered navigation and aviation safety, and requested that Taiwan immediately cease all live-fire exercises on the island and not repeat them.",
+  "actors": "Ministry of Foreign Affairs; deputy spokesperson Nguyen Phuong Tra",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against Taiwanese drills on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-opposes-taiwans-live-fire-exercises-in-spratly-archipelago-2649.html",
+    "title": "Vietnam opposes Taiwan's live-fire exercises in Spratly archipelago",
+    "publisher": "Hanoi Times",
+    "pub_date": "2018-08-24",
+    "language": "en",
+    "excerpt": "The move seriously violates Vietnam’s sovereignty over the islands"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-11-08",
+  "date_end": "2018-11-08",
+  "date_precision": "day",
+  "location_name": "Chinese-built structures in the Truong Sa (Spratly) archipelago (Fiery Cross, Subi, Mischief)",
+  "subregion": "8",
+  "summary": "At a press conference, spokesperson Le Thi Thu Hang said China's operation of weather-observation systems on its structures in the Truong Sa archipelago violated Vietnam's sovereignty, demanded that China stop immediately and avoid activities harming stability in the East Sea, and said Vietnamese agencies were handling the matter.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against Chinese civil installations on Spratly features is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/china-observatory-systems-in-truong-sa-archipelago-violate-vietnam-sovereignty-mofa-46.html",
+    "title": "China observatory systems in Truong Sa archipelago violate Vietnam sovereignty: MOFA",
+    "publisher": "Hanoi Times",
+    "pub_date": "2018-11-09",
+    "language": "en",
+    "excerpt": "China violates the Vietnamese sovereignty when operating observatory systems in Truong Sa archipelago"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-11-19",
+  "date_end": "2018-11-19",
+  "date_precision": "day",
+  "location_name": "Vietnam (National Assembly); Vietnamese maritime zones",
+  "subregion": "",
+  "summary": "The National Assembly adopted the Law on Vietnam Coast Guard (Law No. 33/2018/QH14) with 96.29 percent approval, an eight-chapter, 41-article statute defining the Coast Guard's position, functions, duties, powers and operations as a maritime law-enforcement force in Vietnam's claimed waters.",
+  "actors": "National Assembly of Viet Nam",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "VA"
+  ],
+  "reasoning": "Domestic legislation establishing the legal basis for maritime enforcement in claimed waters is a legislative assertion; declarative. Not directed at a single state.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://en.vietnamplus.vn/national-assembly-adopts-five-laws-post142134.vnp",
+    "title": "National Assembly adopts five laws",
+    "publisher": "VietnamPlus (VNA)",
+    "pub_date": "2018-11-19",
+    "language": "en",
+    "excerpt": "The law, with eight chapters and 41 articles, regulates the position, function,"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-11-22",
+  "date_end": "2018-11-22",
+  "date_precision": "day",
+  "location_name": "Bombay (Bong Bay) Reef, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Deputy spokesperson Nguyen Phuong Tra vehemently objected to China's construction of a new platform on Bombay Reef in the Paracels, revealed by CSIS satellite imagery, calling it a serious violation of Vietnam's sovereignty and demanding that China stop immediately, not repeat similar activities and respect Vietnam's sovereignty.",
+  "actors": "Ministry of Foreign Affairs; deputy spokesperson Nguyen Phuong Tra",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public protest against Chinese construction in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-demands-china-to-stop-construction-in-paracels-spokesperson-41.html",
+    "title": "Vietnam demands China to stop construction in Paracels: spokesperson",
+    "publisher": "Hanoi Times",
+    "pub_date": "2018-11-23",
+    "language": "en",
+    "excerpt": "We vehemently object to this action by China and demand that China stop immediately"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2018-11-22",
+  "date_end": "2018-11-22",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "At a regular press conference, deputy spokesperson Nguyen Phuong Tra said Vietnam once again resolutely opposed Taiwan's live-fire drills around Ba Binh (Itu Aba) Island, calling them a serious violation of Vietnam's territorial sovereignty, and demanded that Taiwan refrain from such actions in future (the fourth protest of Taiwanese drills in 2018).",
+  "actors": "Ministry of Foreign Affairs; deputy spokesperson Nguyen Phuong Tra",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against Taiwanese drills on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://vietnamnet.vn/en/vietnam-demands-taiwan-to-cease-live-fire-drills-around-ba-binh-island-E213382.html",
+    "title": "Vietnam demands Taiwan to cease live-fire drills around Ba Binh Island",
+    "publisher": "VietNamNet (VNA)",
+    "pub_date": "2018-11-23",
+    "language": "en",
+    "excerpt": "Vietnam once again resolutely opposes Taiwan (China)’s live-fire drills around Ba Binh (Itu Aba) island"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-02-24",
+  "date_end": "2019-02-24",
+  "date_precision": "day",
+  "location_name": "Northern Natuna waters (overlapping Indonesia-Vietnam EEZ claims)",
+  "subregion": "10",
+  "summary": "Two Vietnam Fisheries Resources Surveillance vessels, Kiem Ngu 214214 and Kiem Ngu 214263, manoeuvred to intercept the Indonesian Navy ship KRI Tom-357 as it arrested four Vietnamese fishing boats in northern Natuna waters; the Indonesian captain fired a 76 mm cannon to drive the Vietnamese vessels off and completed the seizure.",
+  "actors": "Vietnam Fisheries Resources Surveillance (Kiem Ngu 214214, Kiem Ngu 214263)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VI"
+  ],
+  "reasoning": "State enforcement vessels physically interfering with another claimant's arrest operation in overlapping waters is physical interference; coercive. Date inferred from the report's 'Sunday' (24 February) before publication on 27 February.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/seasia/2019/02/27/ri-slams-vietnam-for-disrupting-arrests.html",
+    "title": "RI slams Vietnam for disrupting arrests",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2019-02-27",
+    "language": "en",
+    "excerpt": "two VFRS patrol vessels — Kiem Ngu 214214 and Kiem Ngu 214263 — allegedly \"prompted dangerous maneuvers\" to intercept"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-03-20",
+  "date_end": "2019-03-20",
+  "date_precision": "day",
+  "location_name": "Da Loi (Discovery) Reef, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "The Foreign Ministry's consular department handed a diplomatic note to the Chinese embassy in Hanoi protesting the ramming and sinking on 6 March 2019 of a Quang Ngai fishing boat by Chinese vessel 44101 near Discovery Reef, demanding strict action against the vessel, an assurance of non-repetition and compensation for the five fishermen.",
+  "actors": "Ministry of Foreign Affairs (Consular Department)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A protest note demanding compensation for Chinese enforcement against Vietnamese fishermen in the Paracels is a verbal assertion of fishing rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-demands-compensation-from-china-for-sinking-fishing-boat-3898266.html",
+    "title": "Vietnam demands compensation from China for sinking fishing boat",
+    "publisher": "VnExpress International",
+    "pub_date": "2019-03-21",
+    "language": "en",
+    "excerpt": "the embassy should inform China’s Foreign Ministry and other relevant authorities so that they take"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-03-21",
+  "date_end": "2019-03-21",
+  "date_precision": "day",
+  "location_name": "Ba Binh (Itu Aba / Taiping) Island, Truong Sa (Spratly) archipelago",
+  "subregion": "5",
+  "summary": "At a press briefing, spokesperson Le Thi Thu Hang denounced Taiwan's live-fire drills of 20-21 March 2019 around Ba Binh (Itu Aba) Island, announced by Taiwan's coast guard on 12 March, as a serious violation of Vietnam's sovereignty, and asked Taiwan not to perform similar actions.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "VR"
+  ],
+  "reasoning": "A public protest against Taiwanese drills on a Spratly feature is a verbal assertion of Vietnam's claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-denounces-taiwan-s-live-fire-drill-in-south-china-sea-3898274.html",
+    "title": "Vietnam denounces Taiwan's live-fire drill in South China Sea",
+    "publisher": "VnExpress International",
+    "pub_date": "2019-03-21",
+    "language": "en",
+    "excerpt": "Once again, Vietnam vehemently protests and asks that Taiwan not perform similar actions."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-03-28",
+  "date_end": "2019-03-28",
+  "date_precision": "day",
+  "location_name": "Phu Lam (Woody), Cay (Tree) and Duy Mong (Drummond) Islands, Hoang Sa (Paracel) archipelago",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang protested China's live-fire drills of 22-24 March in the Paracels and its plans to turn Phu Lam, Cay and Duy Mong islands into cities and strategic logistics bases, demanding that China stop and not repeat such activities; the Foreign Ministry also handed China a diplomatic note opposing them.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A diplomatic note and public protest against Chinese military and administrative acts in the Paracels is a verbal assertion of sovereignty; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://baodanang.vn/english/politics/201903/chinas-recent-activities-in-hoang-sa-violate-viet-nams-sovereignty-spokeswoman-3172146",
+    "title": "China's recent activities in Hoang Sa violate Viet Nam's sovereignty: spokeswoman",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2019-03-29",
+    "language": "en",
+    "excerpt": "Vietnamese Ministry of Foreign Affairs had handed over a diplomatic note opposing these activities by China"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-04-27",
+  "date_end": "2019-04-27",
+  "date_precision": "day",
+  "location_name": "North Natuna Sea (overlapping Indonesia-Vietnam EEZ claims)",
+  "subregion": "10",
+  "summary": "Two Vietnam Coast Guard ships tried to prevent the Indonesian Navy corvette KRI Tjiptadi-381 from apprehending a Vietnamese fishing boat in waters both states claim, one Vietnamese patrol boat ramming the Indonesian vessel's port side; the fishing boat sank, 12 fishermen were detained by Indonesia and two were picked up by the Vietnamese coast guard.",
+  "actors": "Vietnam Coast Guard",
+  "suggested_type": "force",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VI"
+  ],
+  "reasoning": "Ramming another claimant's warship to obstruct an arrest in disputed waters is physical interference by armed state vessels; coded force (coercive is the alternative) for the coder to judge.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://asiatimes.com/2019/04/jakarta-fired-up-over-clash-with-vietnam-vessels/",
+    "title": "Jakarta fired up over clash with Vietnam vessels",
+    "publisher": "Asia Times",
+    "pub_date": "2019-04-29",
+    "language": "en",
+    "excerpt": "a Vietnamese patrol boat ramming the left side of the Indonesian vessel"
+   },
+   {
+    "url": "https://hanoitimes.vn/indonesia-stirs-up-south-china-sea-by-arresting-vietnam-fishermen-ramming-boat-623.html",
+    "title": "Indonesia stirs up South China Sea by arresting Vietnam fishermen, ramming boat",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-05-02",
+    "language": "en",
+    "excerpt": "they were fishing within the Vietnamese waters and in the sea of delimitation"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-05-02",
+  "date_end": "2019-05-02",
+  "date_precision": "day",
+  "location_name": "Overlapping Indonesia-Vietnam EEZ claims, North Natuna Sea",
+  "subregion": "10",
+  "summary": "The Foreign Ministry sent a diplomatic note to the Indonesian embassy in Hanoi over the 27 April incident, asserting that the Vietnamese fishermen had been fishing in Vietnamese waters in the undelimited area, and spokesperson Le Thi Thu Hang demanded that Indonesia treat the 12 detained fishermen well, release them immediately and compensate them.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VI"
+  ],
+  "reasoning": "A diplomatic note asserting that the waters were Vietnamese and demanding release and compensation is a verbal assertion of Vietnam's EEZ claim against Indonesia; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/indonesia-stirs-up-south-china-sea-by-arresting-vietnam-fishermen-ramming-boat-623.html",
+    "title": "Indonesia stirs up South China Sea by arresting Vietnam fishermen, ramming boat",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-05-02",
+    "language": "en",
+    "excerpt": "Vietnam demanded Jakarta to treat the fishermen well, immediately release the fishermen, and compensate them"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-05-04",
+  "date_end": "2019-05-04",
+  "date_precision": "day",
+  "location_name": "Hoang Sa (Paracel) archipelago and surrounding waters",
+  "subregion": "2",
+  "summary": "Spokesperson Le Thi Thu Hang said Vietnam resolutely opposed and flatly rejected China's unilateral fishing ban in the East Sea from 1 May to 16 August 2019, which infringed Vietnam's sovereignty over the Hoang Sa islands and its rights in its waters and breached UNCLOS (annual repeat).",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public rejection of a Chinese administrative measure over waters Vietnam claims is a verbal assertion; declarative. Annual routine repeat.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.qdnd.vn/vietnam-s-seas-and-islands/vietnam-objects-to-china-s-fishing-ban-in-east-sea-505370",
+    "title": "Vietnam objects to China's fishing ban in East Sea",
+    "publisher": "People's Army Newspaper (QDND) Online",
+    "pub_date": "2019-05-05",
+    "language": "en",
+    "excerpt": "Vietnam resolutely opposes and flatly rejects China’s unilateral ban on fishing in the East Sea"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-05-09",
+  "date_end": "2019-05-09",
+  "date_precision": "day",
+  "location_name": "Indonesia (Natuna-area fisheries enforcement)",
+  "subregion": "10",
+  "summary": "At a press briefing, spokesperson Le Thi Thu Hang said Hanoi was deeply concerned about Indonesia's sinking of at least 13 seized Vietnamese fishing boats the previous weekend, saying the action undermined bilateral ties and was inconsistent with UNCLOS.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "VI"
+  ],
+  "reasoning": "A public objection to Indonesia's enforcement against Vietnamese fishing in contested waters is a verbal assertion; declarative. Marginal: the boats were seized in waters Indonesia treats as its EEZ.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnam-protests-indonesias-sinking-of-13-vietnamese-fishing-boats-619.html",
+    "title": "Vietnam protests Indonesia's sinking of 13 Vietnamese fishing boats",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-05-10",
+    "language": "en",
+    "excerpt": "has expressed concern after Indonesian authorities last weekend sank at least 13 Vietnamese fishing boats"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-05-18",
+  "date_end": "2019-10-22",
+  "date_precision": "day",
+  "location_name": "Block 06-01, Nam Con Son basin (Vanguard Bank area)",
+  "subregion": "9",
+  "summary": "Rosneft Vietnam contracted the Hakuryu-5 semi-submersible rig, on site in Block 06-01 by 18 May 2019, to drill a new well on Vietnam's continental shelf inside China's nine-dash line; a Chinese coast guard standoff around the rig began on 16 June, Vietnamese supply vessels Sea Meadow 29 and Crest Argus 5 kept servicing it, and the rig completed its work and left on 22 October 2019.",
+  "actors": "Rosneft Vietnam BV; PetroVietnam; Vietnam Fisheries Resources Surveillance (escort)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Continuing state-licensed drilling in a block China contests, despite coast guard harassment, is unilateral resource development; demonstrative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/china-risks-flare-up-over-malaysian-vietnamese-gas-resources/",
+    "title": "China Risks Flare-Up Over Malaysian, Vietnamese Gas Resources",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2019-07-16",
+    "language": "en",
+    "excerpt": "Vietnam has responded to the survey by sending its own law enforcement vessels to shadow the Haiyang Dizhi 8."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-07-04",
+  "date_end": "2019-10-24",
+  "date_precision": "day",
+  "location_name": "Vanguard Bank (Bai Tu Chinh) area, Vietnam's EEZ and continental shelf",
+  "subregion": "9",
+  "summary": "From 4 July 2019 Vietnamese law-enforcement vessels, including the fisheries surveillance ships KN 468 and KN 472 out of Cam Ranh Bay, shadowed the Chinese survey ship Haiyang Dizhi 8 and its coast guard escorts during their survey of Vietnam's continental shelf near Vanguard Bank, while other Vietnamese vessels positioned themselves between the Hakuryu-5 rig and Chinese coast guard ship 5303; a Vietnamese general later said about 50 Vietnamese vessels took part before the Chinese group left on 24 October.",
+  "actors": "Vietnam Fisheries Resources Surveillance (KN 468, KN 472); Vietnam Coast Guard",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy",
+   "military"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Deploying state vessels to shadow and screen Chinese ships operating in Vietnam's claimed EEZ is physical confrontation short of force; coercive (a coder may prefer demonstrative, as no interference is documented).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/china-risks-flare-up-over-malaysian-vietnamese-gas-resources/",
+    "title": "China Risks Flare-Up Over Malaysian, Vietnamese Gas Resources",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2019-07-16",
+    "language": "en",
+    "excerpt": "At least two, KN 468 and KN 472, left Cam Ranh Bay and have been following the survey ship since July 4."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-07-18",
+  "date_end": "2019-07-18",
+  "date_precision": "day",
+  "location_name": "Block 06-01, Nam Con Son basin",
+  "subregion": "9",
+  "summary": "Vietnam's Southern Maritime Safety Assurance Corporation announced that the Hakuryu-5 rig would remain drilling in Block 06-01 until 15 September 2019, extending the campaign despite the Chinese coast guard presence, and called on other vessels to stay clear of the rig.",
+  "actors": "Southern Vietnam Maritime Safety Corporation (Ministry of Transport); Rosneft Vietnam",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official extension of drilling in a contested block is unilateral resource administration; demonstrative. Date is the report date of the Tuoi Tre item cited (Reuters reported the extension on 18 July).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://maritime-executive.com/article/ignoring-china-vietnam-extends-offshore-drilling-campaign",
+    "title": "Ignoring China, Vietnam Extends Offshore Drilling Campaign",
+    "publisher": "The Maritime Executive",
+    "pub_date": "2019-07-26",
+    "language": "en",
+    "excerpt": "The rig will now stay in the region until September 15"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-07-19",
+  "date_end": "2019-07-19",
+  "date_precision": "day",
+  "location_name": "Vanguard Bank area, southern East Sea (Vietnam's EEZ and continental shelf)",
+  "subregion": "9",
+  "summary": "Spokesperson Le Thi Thu Hang said China's survey vessel group Haiyang Dizhi 8 had violated Vietnam's EEZ and continental shelf in the southern East Sea, demanded that China end the violations and withdraw all vessels from Vietnamese waters, and said Vietnam had repeatedly contacted China through several channels and delivered diplomatic notes of protest while its forces at sea continued to enforce its rights (first statement naming the vessel; a generic statement had been issued on 16 July).",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Diplomatic notes and a public demand for withdrawal are verbal assertions of Vietnam's EEZ rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.vietnamplus.vn/vietnam-demands-china-to-end-violations-in-waters-post156432.vnp",
+    "title": "Vietnam demands China to end violations in waters",
+    "publisher": "VietnamPlus (VNA)",
+    "pub_date": "2019-07-19",
+    "language": "en",
+    "excerpt": "withdraw all vessels from her waters"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-07-21",
+  "date_end": "2019-07-21",
+  "date_precision": "day",
+  "location_name": "Vanguard Bank area (raised in Guiyang, China)",
+  "subregion": "9",
+  "summary": "Vo Van Thuong, head of the Communist Party of Vietnam Central Committee's Communication and Education Commission, demanded at a joint meeting with Politburo Standing Committee member Zhao Leji in Guiyang that Beijing respect Vietnam's sovereignty and legitimate rights in the South China Sea, following the Haiyang Dizhi 8 incursion near Vanguard Bank.",
+  "actors": "Communist Party of Vietnam Central Committee (Vo Van Thuong)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A party-to-party demand that China respect Vietnam's maritime rights is a verbal assertion; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/in-china-hanoi-demands-beijing-to-respect-vietnamese-sovereignty-in-south-china-sea-46255.html",
+    "title": "In China, Hanoi demands Beijing to respect Vietnamese sovereignty in South China Sea",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-07-22",
+    "language": "en",
+    "excerpt": "Thuong made the demand at a joint meeting in China’s Guizhou Province with Zhao Leji"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-07-31",
+  "date_end": "2019-07-31",
+  "date_precision": "day",
+  "location_name": "Vietnam's EEZ and continental shelf (raised at ASEAN meetings, Bangkok)",
+  "subregion": "9",
+  "summary": "At the ASEAN-China ministerial meeting during the 52nd ASEAN Foreign Ministers' Meeting in Bangkok, Deputy Prime Minister and Foreign Minister Pham Binh Minh expressed grave concern over the activities of China's survey group Haiyang Dizhi 8 within Vietnam's EEZ and continental shelf, saying they seriously threatened coastal states' legitimate rights, eroded trust and raised tensions.",
+  "actors": "Deputy Prime Minister and Foreign Minister Pham Binh Minh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Publicly raising China's incursion at a multilateral meeting is a verbal assertion of Vietnam's EEZ rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/vn-expresses-grave-concerns-over-recent-developments-in-east-sea-11135789.htm",
+    "title": "VN expresses grave concerns over recent developments in East Sea",
+    "publisher": "Viet Nam Government Portal (baochinhphu.vn)",
+    "pub_date": "2019-08-01",
+    "language": "en",
+    "excerpt": "Such activities seriously threaten the legitimate rights and benefits of coastal countries"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-08-22",
+  "date_end": "2019-08-22",
+  "date_precision": "day",
+  "location_name": "Vanguard Bank area, Vietnam's EEZ and continental shelf",
+  "subregion": "9",
+  "summary": "After the Haiyang Dizhi 8 group returned to Vietnam's EEZ and continental shelf on 13 August, spokesperson Le Thi Thu Hang called it a serious violation of Vietnam's maritime zones under UNCLOS, said Vietnam had repeatedly raised the matter with China, demanded that China immediately stop and withdraw all vessels, and said Vietnam's competent forces would keep taking measures to protect its rights (a similar demand had been issued on 16 August).",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public demand for withdrawal backed by diplomatic contacts is a verbal assertion of EEZ rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/vn-demands-china-immediately-withdraw-vessels-from-eez-11135963.htm",
+    "title": "VN demands China immediately withdraw vessels from EEZ",
+    "publisher": "Viet Nam Government Portal (baochinhphu.vn)",
+    "pub_date": "2019-08-22",
+    "language": "en",
+    "excerpt": "Viet Nam demands China immediately stop violations and withdraw all vessels"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-09-12",
+  "date_end": "2019-09-12",
+  "date_precision": "day",
+  "location_name": "Vanguard Bank area, Vietnam's EEZ and continental shelf",
+  "subregion": "9",
+  "summary": "At a press conference, spokesperson Le Thi Thu Hang said Vietnam resolutely opposed the Haiyang Dizhi 8 group's continued serious violations of its EEZ and continental shelf and the transit of the CNOOC crane vessel Lan Jing through its EEZ, demanded that China withdraw all vessels, and said Vietnam's oil and gas activities were lawful under UNCLOS and Chinese claims obstructing them had no legal basis.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public demand for withdrawal and defence of Vietnam's drilling rights is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://baodanang.vn/english/politics/201909/viet-nam-demands-china-to-withdraw-ships-from-its-territorial-waters-3253368",
+    "title": "Viet Nam demands China to withdraw ships from its territorial waters",
+    "publisher": "Da Nang Newspaper (VNA)",
+    "pub_date": "2019-09-13",
+    "language": "en",
+    "excerpt": "Viet Nam resolutely opposes Chinese survey vessel group Haiyang Dizhi 8’s continued serious violations"
+   },
+   {
+    "url": "https://hanoitimes.vn/china-must-withdraw-all-ships-out-of-vietnam-waters-spokeswoman-45214.html",
+    "title": "China must withdraw all ships out of Vietnam waters: Spokeswoman",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-09-12",
+    "language": "en",
+    "excerpt": "Vietnam strongly denounced the continuing serious violation of Vietnam’s sovereignty and jurisdiction"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-09-28",
+  "date_end": "2019-09-28",
+  "date_precision": "day",
+  "location_name": "South China Sea (UN General Assembly, New York)",
+  "subregion": "",
+  "summary": "In the General Debate of the 74th UN General Assembly, Deputy Prime Minister and Foreign Minister Pham Binh Minh said Vietnam had repeatedly voiced concern over serious incidents that infringed its sovereignty and sovereign rights in the South China Sea, and called on relevant states to exercise restraint and refrain from unilateral acts that complicate the situation.",
+  "actors": "Deputy Prime Minister and Foreign Minister Pham Binh Minh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Raising China's incursion before the UN General Assembly, without naming China, is a verbal assertion of Vietnam's rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/unilateral-actions-risk-escalating-tensions-in-south-china-sea-vietnam-fm-says-at-unga-45210.html",
+    "title": "Unilateral actions risk escalating tensions in South China Sea: Vietnam FM says at UNGA",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-09-29",
+    "language": "en",
+    "excerpt": "Relevant states should exercise restraint and refrain from conducting unilateral acts"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-10-03",
+  "date_end": "2019-10-03",
+  "date_precision": "day",
+  "location_name": "Vietnam's EEZ and continental shelf (Vanguard Bank area and northward)",
+  "subregion": "9",
+  "summary": "The Foreign Ministry spokesperson issued a statement that the Haiyang Dizhi 8 and its escorts had continued and expanded their operations in Vietnam's EEZ and continental shelf in serious violation of UNCLOS, said Vietnam strongly objected and had made representations to China, demanded that China immediately cease the violations, and said Vietnam would defend its rights by all lawful means.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official statement and representations demanding China cease survey operations are verbal assertions of EEZ rights; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.vn/en/tt_baochi/pbnfn/ns191003214402",
+    "title": "Statement of the MOFA Spokesperson on the violations of Viet Nam's EEZ and Continental shelf by the Chinese survey ship, Haiyang Dizhi 8, and its escort vessels",
+    "publisher": "Ministry of Foreign Affairs of Viet Nam",
+    "pub_date": "2019-10-03",
+    "language": "en",
+    "excerpt": "Viet Nam demands that China immediately cease its serious violations"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-10-13",
+  "date_end": "2019-10-14",
+  "date_precision": "day",
+  "location_name": "Vietnam (domestic); nine-dash line",
+  "subregion": "",
+  "summary": "The Ministry of Culture, Sports and Tourism ordered all cinemas to stop showing the DreamWorks animated film 'Abominable' because a scene showed a map with China's nine-dash line, pulling it from screens on 13 October; Deputy Minister Ta Quang Dong said the film's licence would be revoked.",
+  "actors": "Ministry of Culture, Sports and Tourism; Deputy Minister Ta Quang Dong",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A domestic administrative act rejecting depictions of China's claim is a declarative/administrative assertion of Vietnam's position; declarative (coder may treat as demonstrative domestic administration).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/life/2019/10/15/vietnam-pulls-dreamworks-abominable-film-over-south-china-sea-map.html",
+    "title": "Vietnam pulls DreamWorks' 'Abominable' film over South China Sea map",
+    "publisher": "The Jakarta Post (Reuters)",
+    "pub_date": "2019-10-15",
+    "language": "en",
+    "excerpt": "the culture ministry had issued an order requiring all cinemas to stop showing the film because of the map scene."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-11-04",
+  "date_end": "2019-11-04",
+  "date_precision": "day",
+  "location_name": "Vietnam (domestic); nine-dash line",
+  "subregion": "",
+  "summary": "The General Department of Vietnam Customs confiscated a Chinese-made Volkswagen Touareg displayed at the 2019 Vietnam Motor Show whose navigation app showed the nine-dash line, ordered the app removed, fined the importer and Volkswagen Vietnam, and recommended that the Ministry of Transport inspect navigation software in imported cars.",
+  "actors": "General Department of Vietnam Customs",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Confiscation and fines imposed over a depiction of China's claim are domestic punishment asserting Vietnam's position; coercive in the domestic domain (coder may prefer declarative).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hanoitimes.vn/vietnams-customs-confiscates-chinese-imported-volkswagen-suv-using-nine-dash-map-300053.html",
+    "title": "Vietnam's customs confiscates Chinese imported Volkswagen SUV using nine-dash map",
+    "publisher": "Hanoi Times",
+    "pub_date": "2019-11-05",
+    "language": "en",
+    "excerpt": "The navigation app that wrongly demonstrates Vietnam’s sovereignty in the South China Sea"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-11-06",
+  "date_end": "2019-11-06",
+  "date_precision": "day",
+  "location_name": "South China Sea (Hanoi conference)",
+  "subregion": "",
+  "summary": "Deputy Foreign Minister Le Hoai Trung told a government-organised international conference in Hanoi that while Vietnam preferred negotiation, it had other options against China including fact-finding, mediation, conciliation, arbitration and litigation, for which the UN Charter and UNCLOS provided sufficient mechanisms.",
+  "actors": "Ministry of Foreign Affairs; Deputy Foreign Minister Le Hoai Trung",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Publicly raising the option of legal action against China is a verbal assertion of Vietnam's legal position; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://interaksyon.philstar.com/politics-issues/2019/11/07/157208/vietnam-mulls-legal-action-south-china-sea-dispute",
+    "title": "Vietnam mulls legal action over South China Sea dispute",
+    "publisher": "Interaksyon (Philstar.com) / Reuters",
+    "pub_date": "2019-11-07",
+    "language": "en",
+    "excerpt": "The UN Charter and UNCLOS 1982 have sufficient mechanisms for us to apply those measures,"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-11-13",
+  "date_end": "2019-11-13",
+  "date_precision": "day",
+  "location_name": "Truong Sa (Spratly) archipelago",
+  "subregion": "",
+  "summary": "Spokesperson Le Thi Thu Hang rejected all contents concerning Vietnam in the Chinese Foreign Ministry spokesperson's 8 November statement asserting Chinese sovereignty over the Spratly Islands, saying Vietnam had sufficient historical and legal evidence of its sovereignty over the Hoang Sa and Truong Sa archipelagos.",
+  "actors": "Ministry of Foreign Affairs; spokesperson Le Thi Thu Hang",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A public rebuttal of China's sovereignty claim is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.qdnd.vn/vietnam-s-seas-and-islands/vietnam-rejects-china-s-statement-on-sovereignty-over-truong-sa-511365",
+    "title": "Vietnam rejects China's statement on sovereignty over Truong Sa",
+    "publisher": "People's Army Newspaper (QDND) Online",
+    "pub_date": "2019-11-13",
+    "language": "en",
+    "excerpt": "Vietnam rejects all the contents regarding Vietnam of the Chinese Foreign Ministry spokesperson's statement"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2019-11-25",
+  "date_end": "2019-11-25",
+  "date_precision": "day",
+  "location_name": "Vietnam (Hanoi); East Sea",
+  "subregion": "",
+  "summary": "The Ministry of National Defence released the 2019 Viet Nam National Defence White Paper, presented by Deputy Minister Nguyen Chi Vinh, which reaffirmed the 'four no's' policy and stated that Vietnam would settle disputes peacefully under international law while carrying out necessary defence measures when its sovereignty, territory and national interests were threatened.",
+  "actors": "Ministry of National Defence; Deputy Minister Sen. Lt. Gen. Nguyen Chi Vinh",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "An official policy document restating Vietnam's maritime sovereignty position is a verbal assertion; declarative. The cited source does not itself mention the East Sea, so relevance rests on the White Paper's East Sea section (not checked).",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/print/white-paper-on-national-defence-released-11136749.htm",
+    "title": "White Paper on National Defence released",
+    "publisher": "Viet Nam Government Portal (baochinhphu.vn)",
+    "pub_date": "2019-11-26",
+    "language": "en",
+    "excerpt": "carrying out necessary defence measures when its sovereignty, territory and national benefits are threatened"
+   }
+  ]
+ }
+]

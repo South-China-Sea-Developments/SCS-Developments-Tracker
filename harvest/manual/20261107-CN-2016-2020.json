@@ -1,0 +1,2164 @@
+[
+  {
+    "claimant": "CN",
+    "date_start": "2016-01-02",
+    "date_end": "2016-01-06",
+    "date_precision": "day",
+    "location_name": "Yongshu Jiao (Fiery Cross Reef)",
+    "subregion": "8",
+    "summary": "The Chinese government flew a civil aircraft to the newly completed airport on Fiery Cross Reef on 2 January 2016 for a test flight, followed by two further civilian test flights on 6 January; the Foreign Ministry said the flights fell completely within China's sovereignty and rejected Vietnamese and Philippine protests.",
+    "actors": "Chinese government (civil aviation); Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV",
+      "CP"
+    ],
+    "reasoning": "First use of the new Spratly runway is unilateral administration of an occupied feature without confrontation; demonstrative, and new for China in 2016.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mfa.gov.cn/eng/xw/fyrbt/fyrbt/202405/t20240530_11349433.html",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Remarks on Test Flight to Newly-Built Airport on Yongshu Jiao of China's Nansha Islands",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-01-02",
+        "language": "en",
+        "excerpt": "China has finished building a new airport on Yongshu Jiao of China's Nansha Islands. The Chinese government conducted a test flight to the airport with a civil aircraft in order to test whether or not the facilities on it meet the standards for civil aviation. Relevant activity falls completely within China's sovereignty."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201601/t20160111_8524985.htm",
+        "title": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on January 11, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-01-11",
+        "language": "en",
+        "excerpt": "The Chinese side independently, safely and successfully completed inspection and test flights to the newly-built airport on Yongshu Jiao."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-01-19",
+    "date_end": "2016-01-20",
+    "date_precision": "day",
+    "location_name": "waters outside the mouth of the Gulf of Tonkin (Beibu Gulf), overlapping continental shelf area",
+    "subregion": "1",
+    "summary": "China moved the CNOOC drilling rig Haiyang Shiyou 981 into the undelimited area outside the mouth of the Gulf of Tonkin where Chinese and Vietnamese continental shelf claims overlap; Vietnam demanded its withdrawal on 19 January, and Foreign Ministry spokesman Hong Lei said on 20 January the rig was operating in waters under China's jurisdiction. Vietnam protested again in April 2016 when the rig returned.",
+    "actors": "CNOOC (HYSY 981 rig); Foreign Ministry spokesperson Hong Lei",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "energy"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Deploying a state oil rig into a disputed, undelimited zone is unilateral resource activity without direct confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://philstar.com/world/2016/01/20/1544610/vietnam-demands-china-remove-oil-rig",
+        "title": "Vietnam demands that China remove oil rig",
+        "publisher": "Philstar.com (Associated Press)",
+        "pub_date": "2016-01-20",
+        "language": "en",
+        "excerpt": "\"As far as I know, the operation of the HYSY 981 oil rig is being carried out in completely uncontested waters under China's jurisdiction,\" he said."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-01-30",
+    "date_end": "2016-12-31",
+    "date_precision": "year",
+    "location_name": "Xisha (Paracel) and Nansha (Spratly) Islands",
+    "subregion": "",
+    "summary": "Throughout 2016 Chinese forces responded to US Navy freedom-of-navigation operations by identifying, warning and shadowing the US ships (USS Curtis Wilbur at Triton Island on 30 January, USS William P. Lawrence at Fiery Cross on 10 May, USS Decatur near the Paracels on 21 October) and the Foreign Ministry protested each as an illegal entry into Chinese territorial waters.",
+    "actors": "People's Liberation Army Navy; island garrisons; Foreign Ministry spokesperson Lu Kang",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CU"
+    ],
+    "reasoning": "Warning off foreign warships is an imposition backed by force posture; coercive. Recorded as one summary event per year because the target is a non-claimant and the practice was established before 2016.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201602/t20160201_8525058.htm",
+        "title": "Foreign Ministry Spokesperson Lu Kang's Regular Press Conference on February 1, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-02-01",
+        "language": "en",
+        "excerpt": "On January 30, the guided-missile destroyer USS Curtis Wilbur violated the Chinese law and entered territorial waters of China's Xisha Islands without authorization."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-02-01",
+    "date_end": "2016-03-03",
+    "date_precision": "month",
+    "location_name": "Quirino (Jackson) Atoll, Spratlys",
+    "subregion": "6",
+    "summary": "From about February 2016 China stationed four to five coast guard and other vessels inside the lagoons of Jackson (Quirino) Atoll and chased away Filipino fishermen who tried to enter their traditional fishing ground, until the ships left in early March; Beijing said China Rescue and Salvage of the Ministry of Transport had sent ships to tow away a grounded foreign fishing vessel and had advised nearby fishing boats to leave.",
+    "actors": "China Coast Guard; China Rescue and Salvage (Ministry of Transport)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Physically excluding another claimant's fishermen from a disputed feature is physical interference; coercive, and a new location for China.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/03/02/1558682/china-takes-philippine-atoll",
+        "title": "China takes Philippine atoll",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-03-02",
+        "language": "en",
+        "excerpt": "Philippine air patrol has confirmed the presence of at least four Chinese coast guard ships in the Jackson lagoons."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201603/t20160302_8525143.htm",
+        "title": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on March 2, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-03-02",
+        "language": "en",
+        "excerpt": "China Rescue and Salvage of Ministry of Transport recently sent salvage ships to tug the grounded vessel out of the shallow water for proper disposal."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-02-14",
+    "date_end": "2016-02-17",
+    "date_precision": "day",
+    "location_name": "Yongxing Dao (Woody Island), Paracels",
+    "subregion": "2",
+    "summary": "China deployed HQ-9 surface-to-air missile batteries on Woody Island in the Paracels, first seen in satellite imagery of 14 February and confirmed by US and Taiwanese officials on 16-17 February 2016; Foreign Minister Wang Yi described them as limited and necessary defence facilities and the Foreign Ministry said defence deployments on the Xisha Islands were nothing new. Fighter aircraft were also reported on the island on 23 February.",
+    "actors": "People's Liberation Army; Foreign Minister Wang Yi; Foreign Ministry spokesperson Hong Lei",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Stationing an advanced air-defence system on a disputed island is unilateral militarisation without direct confrontation; demonstrative, and a new capability for 2016.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.npr.org/sections/thetwo-way/2016/02/17/467044299/china-has-deployed-missiles-on-disputed-island-u-s-and-taiwan-say",
+        "title": "China Has Deployed Missiles On Disputed Island, U.S. And Taiwan Say",
+        "publisher": "NPR",
+        "pub_date": "2016-02-17",
+        "language": "en",
+        "excerpt": "\"We have seen evidence of surface-to-air missile deployments to Woody Island,\" a U.S. defense official says, in the first official public comments about China placing a weapons system on a disputed island in the South China Sea."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201602/t20160218_8525099.htm",
+        "title": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on February 18, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-02-18",
+        "language": "en",
+        "excerpt": "I want to stress that the Xisha Islands are China's inherent territory. China has been deploying various kinds of national defense facilities on the Xisha Islands for several decades."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-02-22",
+    "date_end": "2016-02-22",
+    "date_precision": "day",
+    "location_name": "Huayang Jiao (Cuarteron Reef), also Gaven, Hughes and Johnson South Reefs",
+    "subregion": "8",
+    "summary": "Satellite imagery published by CSIS AMTI on 22 February 2016 showed China had built two probable radar towers and a field of 20-metre poles forming a probable high-frequency radar installation on its artificial island at Cuarteron Reef, with further radar facilities on Gaven, Hughes and Johnson South Reefs; the Foreign Ministry was asked about it on 23 February.",
+    "actors": "People's Republic of China (construction on occupied Spratly features)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Construction of surveillance infrastructure on an occupied feature is unilateral administration without confrontation; demonstrative. Dated by the imagery publication; the construction itself occurred over preceding months.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/another-piece-of-the-puzzle/",
+        "title": "Another Piece of the Puzzle",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2016-02-22",
+        "language": "en",
+        "excerpt": "Two probable radar towers have been built on the northern portion of the feature, and a number of 65-foot (20-meter) poles have been erected across a large section of the southern portion. These poles appear to be a high-frequency radar installation"
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-03-06",
+    "date_end": "2016-03-18",
+    "date_precision": "day",
+    "location_name": "waters around the Paracel (Hoang Sa) Islands",
+    "subregion": "2",
+    "summary": "Chinese marine surveillance ship 46101 attacked and robbed two Vietnamese fishing boats operating around the Paracel Islands on 6 and 18 March 2016, and fishermen reported at least three more Vietnamese boats attacked in March, according to Vietnamese reports.",
+    "actors": "Chinese maritime law-enforcement vessel 46101",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Boarding and seizing equipment from another claimant's fishermen is physical interference; coercive. Vietnamese-sourced account only.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/chinese-vessels-sink-vietnamese-fishing-boat-near-paracel-islands-3433910.html",
+        "title": "Chinese vessels sink Vietnamese fishing boat near Paracel Islands",
+        "publisher": "VnExpress International",
+        "pub_date": "2016-07-10",
+        "language": "en",
+        "excerpt": "On March 6 and 18, two Vietnamese fishing boats operating around the waters were attacked and robbed by Chinese marine surveillance ship 46101. At least three more Vietnamese fishing boats were also attacked in March, according to fishermen."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-03-13",
+    "date_end": "2016-03-13",
+    "date_precision": "day",
+    "location_name": "",
+    "subregion": "",
+    "summary": "Supreme People's Court President Zhou Qiang told the National People's Congress on 13 March 2016 that China would improve its maritime courts and build an international maritime judicial centre to safeguard national sovereignty and maritime rights, a move widely read as a response to the Philippine arbitration case.",
+    "actors": "Supreme People's Court; Chief Justice Zhou Qiang",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "A domestic judicial policy announcement asserting jurisdiction over maritime claims is a verbal/legislative assertion; declarative. Source opened through a fetch tool, so the exact wording could not be re-checked locally.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://tribune.com.pk/story/1064870/amid-sea-disputes-china-to-set-up-maritime-judicial-centre",
+        "title": "Amid sea disputes, China to set up maritime 'judicial centre'",
+        "publisher": "The Express Tribune (Reuters)",
+        "pub_date": "2016-03-13",
+        "language": "en",
+        "excerpt": "(We) must improve the work of maritime courts and build an international maritime judicial centre."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-03-19",
+    "date_end": "2016-03-21",
+    "date_precision": "day",
+    "location_name": "waters off the Natuna Islands",
+    "subregion": "10",
+    "summary": "On 19 March 2016 a China Coast Guard vessel rammed the detained Chinese trawler Kway Fey 10078 while an Indonesian fisheries patrol ship was towing it off the Natuna Islands, freeing the boat; after Indonesia summoned a Chinese diplomat on 21 March, the Foreign Ministry said the incident took place in traditional Chinese fishing grounds and demanded the release of the eight detained crew.",
+    "actors": "China Coast Guard; Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CI"
+    ],
+    "reasoning": "Using a coast guard ship to free a detained vessel from another state's law enforcement is physical interference; coercive, and the first such clash with Indonesia in 2016.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/world/2016/03/23/1566223/indonesia-rebuffs-chinas-demand-fishermen-be-released",
+        "title": "Indonesia rebuffs China's demand that fishermen be released",
+        "publisher": "Philstar.com (Associated Press)",
+        "pub_date": "2016-03-23",
+        "language": "en",
+        "excerpt": "A Chinese coast guard vessel collided with the fishing boat, the Kway Fey, as it was being towed, allowing it to escape."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201603/t20160321_8525192.htm",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Regular Press Conference on March 21, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-03-21",
+        "language": "en",
+        "excerpt": "On March 19, after the relevant fishing vessel was attacked and harassed by an armed Indonesian ship, a Chinese coast guard ship went to assist and did not enter the Indonesian territorial waters."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-03-30",
+    "date_end": "2016-03-30",
+    "date_precision": "day",
+    "location_name": "Xisha (Paracel) Islands, Woody Island",
+    "subregion": "2",
+    "summary": "Following reports that China had deployed YJ-62 anti-ship cruise missiles on Woody Island, Foreign Ministry spokesman Hong Lei said on 30 March 2016 that the Xisha Islands were China's inherent territory and that deploying national defence facilities there was reasonable and justified.",
+    "actors": "People's Liberation Army; Foreign Ministry spokesperson Hong Lei",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Deployment of anti-ship missiles to a disputed island is unilateral militarisation; demonstrative. Dated by the Foreign Ministry response to the reports; the deployment date is not given.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201603/t20160330_8525222.htm",
+        "title": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on March 30, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-03-30",
+        "language": "en",
+        "excerpt": "China’s deployment of national defense facilities on its own territory is reasonable and justified."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-04-05",
+    "date_end": "2016-04-05",
+    "date_precision": "day",
+    "location_name": "Zhubi Jiao (Subi Reef)",
+    "subregion": "5",
+    "summary": "China's Ministry of Transport held a completion ceremony on 5 April 2016 marking the start of operations of a 55-metre lighthouse on Subi Reef, construction of which began in October 2015; Vietnam protested and the Foreign Ministry said operating the lighthouse was within China's sovereignty.",
+    "actors": "Ministry of Transport; Foreign Ministry spokesperson Hong Lei",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Commissioning civil infrastructure on an occupied artificial island is unilateral administration without confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/world/china-begins-operation-of-lighthouse-on-artificial-island-in-east-sea-3382069.html",
+        "title": "China begins operation of lighthouse on artificial island in East Sea",
+        "publisher": "VnExpress International (Reuters)",
+        "pub_date": "2016-04-05",
+        "language": "en",
+        "excerpt": "China's transport ministry held a \"completion ceremony\", marking the start of operations at the 55-metre (180-ft) high lighthouse on Subi Reef, where construction began in October, state news agency Xinhua said late on Tuesday."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201604/t20160408_8525252.htm",
+        "title": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on April 8, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-04-08",
+        "language": "en",
+        "excerpt": "it is within China's sovereignty and justifiable for China to fully operate the lighthouse on Zhubi Jiao."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-04-15",
+    "date_end": "2016-04-15",
+    "date_precision": "day",
+    "location_name": "Nansha (Spratly) Islands",
+    "subregion": "",
+    "summary": "China's Defence Ministry announced on 15 April 2016 that General Fan Changlong, vice-chairman of the Central Military Commission, had led a group of commanders to the Spratly Islands to visit troops and observe construction work, the most senior known military visit to the artificial islands; the date and location of the visit were not disclosed.",
+    "actors": "Central Military Commission vice-chairman Fan Changlong; Ministry of National Defense",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "A publicised high-level inspection of occupied features is a unilateral display of administration without confrontation; demonstrative. Source opened via a fetch tool; the exact wording could not be re-checked locally.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.hurriyetdailynews.com/china-lands-first-military-plane-on-disputed-reef-state-media--97959",
+        "title": "China lands first military plane on disputed reef: state media",
+        "publisher": "Hurriyet Daily News (AFP)",
+        "pub_date": "2016-04-18",
+        "language": "en",
+        "excerpt": "On the day of Carter's trip, Beijing said that one of its top military officials had visited a South China Sea island."
+      },
+      {
+        "url": "https://www.washingtontimes.com/news/2016/apr/15/china-2nd-ranking-general-visits-disputed-islands/",
+        "title": "China's 2nd-ranking general visits disputed islands",
+        "publisher": "The Washington Times (Associated Press)",
+        "pub_date": "2016-04-15",
+        "language": "en",
+        "excerpt": "According to the brief statement, Gen. Fan Changlong led a group of military commanders to the Spratly island group"
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-04-17",
+    "date_end": "2016-04-17",
+    "date_precision": "day",
+    "location_name": "Fiery Cross Reef",
+    "subregion": "8",
+    "summary": "A People's Liberation Army air force patrol aircraft landed on Fiery Cross Reef on 17 April 2016 to evacuate three sick construction workers, the first publicly confirmed landing of a Chinese military aircraft on the new Spratly airstrip; the Defence Ministry published the account and the Foreign Ministry said such a thing on Chinese territory was not surprising.",
+    "actors": "People's Liberation Army Air Force; Ministry of National Defense; Foreign Ministry spokesperson Lu Kang",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "First military use of the runway is a unilateral demonstration of control without confrontation; demonstrative, new in 2016.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.hurriyetdailynews.com/china-lands-first-military-plane-on-disputed-reef-state-media--97959",
+        "title": "China lands first military plane on disputed reef: state media",
+        "publisher": "Hurriyet Daily News (AFP)",
+        "pub_date": "2016-04-18",
+        "language": "en",
+        "excerpt": "An air force plane landed on Fiery Cross reef in the Spratlys archipelago on April 17 to evacuate sick workers, a news report posted online by China's defence ministry said."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-05-16",
+    "date_end": "2016-08-01",
+    "date_precision": "day",
+    "location_name": "South China Sea north of 12 degrees N, including the Paracels and Scarborough Shoal",
+    "subregion": "",
+    "summary": "China's Ministry of Agriculture imposed its annual summer fishing moratorium in the South China Sea from 16 May to 1 August 2016, covering waters claimed by Vietnam and the Philippines, and said it would stop vessels fishing in the area; Vietnamese fishery representatives condemned the ban as invalid in Vietnamese waters.",
+    "actors": "Ministry of Agriculture; China Coast Guard; fisheries law enforcement",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "domestic",
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV",
+      "CP"
+    ],
+    "reasoning": "Applying domestic fisheries regulation to disputed waters is unilateral administration; demonstrative. Annual practice since 1999, recorded once for the year.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.rfa.org/english/news/vietnam/chinas-fishing-ban-05162016170509.html",
+        "title": "China's Fishing Ban Adds an Entanglement for Vietnam in the South China Sea",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2016-05-16",
+        "language": "en",
+        "excerpt": "Beijing injected an extra irritant into its long-running dispute with its neighbors with the South China Sea as it announced its annual ban on fishing in the area and vowed to stop vessels that drop a line into the contested waters."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-05-20",
+    "date_end": "2016-05-20",
+    "date_precision": "day",
+    "location_name": "waters off the Xisha (Paracel) Islands",
+    "subregion": "2",
+    "summary": "Asked on 20 May 2016 about Vietnamese fishermen's accounts of being threatened, beaten and robbed by Chinese vessels near the Paracels, Foreign Ministry spokeswoman Hua Chunying said the Xisha Islands belong to China and Chinese law-enforcement vessels have the right to lawfully manage waters within China's sovereignty or jurisdiction.",
+    "actors": "Foreign Ministry spokesperson Hua Chunying; Chinese law-enforcement vessels",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "An official assertion of the right to enforce Chinese law against Vietnamese fishermen in the Paracels is a verbal assertion of claim; declarative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201605/t20160520_8525401.htm",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Regular Press Conference on May 20, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-05-20",
+        "language": "en",
+        "excerpt": "Chinese law enforcement vessels have the right to lawfully manage waters within China's sovereignty or under China's jurisdiction."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-05-30",
+    "date_end": "2016-05-30",
+    "date_precision": "day",
+    "location_name": "waters off the Natuna Islands",
+    "subregion": "10",
+    "summary": "After the Indonesian navy detained the Chinese trawler Gui Bei Yu 27088 off the Natuna Islands on 27 May 2016, the Foreign Ministry said on 30 May that China and Indonesia had different opinions on the waters concerned, that the boat had been operating normally, and that China had lodged solemn representations with Indonesia.",
+    "actors": "Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CI"
+    ],
+    "reasoning": "A formal protest asserting Chinese fishing rights in Indonesia's claimed EEZ is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201605/t20160530_8525430.htm",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Regular Press Conference on May 30, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-05-30",
+        "language": "en",
+        "excerpt": "The Chinese fishing boat was conducting normal production operation in the waters. The Chinese side has lodged solemn representations with the Indonesian side."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-06-17",
+    "date_end": "2016-06-19",
+    "date_precision": "day",
+    "location_name": "waters off the Natuna Islands, southwest South China Sea",
+    "subregion": "10",
+    "summary": "After Indonesian navy vessels fired on Chinese fishing boats off the Natuna Islands on 17 June 2016, wounding one fisherman and detaining a boat and seven crew, China sent coast guard vessels to the scene, lodged a strong protest, and on 19 June the Foreign Ministry declared the area to be traditional Chinese fishing grounds where China and Indonesia have overlapping claims to maritime rights and interests.",
+    "actors": "China Coast Guard; Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CI"
+    ],
+    "reasoning": "The protest and the first explicit official claim of overlapping maritime rights in Natuna waters is a verbal assertion of a new scope; declarative (coast guard dispatch noted but no confrontation reported).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mfa.gov.cn/eng/xw/fyrbt/fyrbt/202405/t20240530_11349463.html",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Remarks on Indonesian Navy Vessels Harassing and Shooting Chinese Fishing Boats and Fishermen",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-06-19",
+        "language": "en",
+        "excerpt": "This incident took place in waters that are Chinese fishermen's traditional fishing grounds and where China and Indonesia have overlapping claims for maritime rights and interests."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201606/t20160624_8525522.htm",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Regular Press Conference on June 23, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-06-23",
+        "language": "en",
+        "excerpt": "But it is also true that the two countries have overlapping claims for maritime rights and interests over some waters of the South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-07-05",
+    "date_end": "2016-07-11",
+    "date_precision": "day",
+    "location_name": "waters around the Xisha (Paracel) Islands",
+    "subregion": "2",
+    "summary": "The People's Liberation Army Navy held a large exercise in waters around the Paracel Islands from 5 to 11 July 2016, closing the area to shipping, in the week before the arbitral award; Vietnam protested on 4 July and the Foreign Ministry called it a routine exercise under the navy's annual plan within China's sovereignty.",
+    "actors": "People's Liberation Army Navy; Maritime Safety Administration; Foreign Ministry spokesperson Hong Lei",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "A naval exercise with an area closure in disputed waters is a unilateral military demonstration without direct confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201607/t20160706_8525573.htm",
+        "title": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on July 6, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-07-06",
+        "language": "en",
+        "excerpt": "The relevant military drill is a routine exercise under the annual plan of the Chinese navy."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-07-09",
+    "date_end": "2016-07-09",
+    "date_precision": "day",
+    "location_name": "near the Paracel Islands, about 55 nautical miles southeast of Woody Island",
+    "subregion": "2",
+    "summary": "Two Chinese vessels (numbers 46102 and 56103) rammed and sank the Quang Ngai fishing boat QNg 90479 near the Paracel Islands on 9 July 2016, and Chinese ships stopped another Vietnamese boat from rescuing the five crew, according to Vietnamese rescue officials; China said its coast guard and rescue vessels were sent after Vietnam notified it of a boat sunk 55 nautical miles southeast of Yongxing Dao.",
+    "actors": "Chinese vessels 46102 and 56103 (China Coast Guard)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Ramming and sinking a Vietnamese fishing boat is physical interference imposing harm; coercive.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/chinese-vessels-sink-vietnamese-fishing-boat-near-paracel-islands-3433910.html",
+        "title": "Chinese vessels sink Vietnamese fishing boat near Paracel Islands",
+        "publisher": "VnExpress International",
+        "pub_date": "2016-07-10",
+        "language": "en",
+        "excerpt": "“A boat with five people on board was sunk by Chinese vessels at 11:00 a.m. on July 9. They survived by hanging onto the sunken vessel and were finally rescued by another Quang Ngai fishing boat,” the official said"
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201607/t20160713_8525595.htm",
+        "title": "Foreign Ministry Spokesperson Lu Kang's Regular Press Conference on July 12, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-07-12",
+        "language": "en",
+        "excerpt": "At around 7 p.m., July 9, China Maritime Search and Rescue Center was notified by its Vietnamese counterpart, saying that a Vietnamese fishing boat sunk 55 nautical miles to the southeast of Yongxing Dao in the South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-07-12",
+    "date_end": "2016-07-12",
+    "date_precision": "day",
+    "location_name": "South China Sea (Nanhai Zhudao)",
+    "subregion": "",
+    "summary": "On the day the Annex VII tribunal issued its award in Philippines v. China, the Chinese government issued a Statement on China's Territorial Sovereignty and Maritime Rights and Interests in the South China Sea reasserting sovereignty over Nanhai Zhudao, internal waters, territorial sea, EEZ, continental shelf and historic rights, and the Foreign Ministry declared the award null and void with no binding force.",
+    "actors": "Government of the People's Republic of China; Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Formal government statements rejecting the award and restating the full extent of the claim are verbal assertions; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/snhwtlcwj_1/201607/t20160712_8527294.htm",
+        "title": "Statement of the Ministry of Foreign Affairs of the People's Republic of China on the Award of 12 July 2016 of the Arbitral Tribunal in the South China Sea Arbitration Established at the Request of the Republic of the Philippines",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-07-12",
+        "language": "en",
+        "excerpt": "the Ministry of Foreign Affairs of the People's Republic of China solemnly declares that the award is null and void and has no binding force. China neither accepts nor recognizes it."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/snhwtlcwj_1/201607/t20160712_8527297.htm",
+        "title": "Statement of the Government of the People's Republic of China on China's Territorial Sovereignty and Maritime Rights and Interests in the South China Sea",
+        "publisher": "Government of the People's Republic of China (MFA website)",
+        "pub_date": "2016-07-12",
+        "language": "en",
+        "excerpt": "China is the first to have discovered, named, and explored and exploited Nanhai Zhudao and relevant waters, and the first to have exercised sovereignty and jurisdiction over them continuously, peacefully and effectively, thus establishing territorial sovereignty and relevant rights and interests in the South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-07-13",
+    "date_end": "2016-07-13",
+    "date_precision": "day",
+    "location_name": "South China Sea",
+    "subregion": "",
+    "summary": "The State Council Information Office released a white paper, 'China Adheres to the Position of Settling Through Negotiation the Relevant Disputes Between China and the Philippines in the South China Sea', on 13 July 2016, and Vice Foreign Minister Liu Zhenmin told a press briefing that China had the right to establish an air defence identification zone over the South China Sea depending on the security situation.",
+    "actors": "State Council Information Office; Vice Foreign Minister Liu Zhenmin; Foreign Ministry spokesperson Lu Kang",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "A government white paper and a stated right to declare an ADIZ are verbal assertions of claim and implied threat; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201607/t20160714_8525603.htm",
+        "title": "Foreign Ministry Spokesperson Lu Kang's Regular Press Conference on July 13, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-07-13",
+        "language": "en",
+        "excerpt": "Together with the White Paper published by the Chinese government today, they comprehensively and systematically explained China's position on the relevant issue, which I see no need to repeat."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/snhwtlcwj_1/201607/t20160713_8527301.htm",
+        "title": "China Adheres to the Position of Settling Through Negotiation the Relevant Disputes Between China and the Philippines in the South China Sea",
+        "publisher": "State Council Information Office of the People's Republic of China (MFA website)",
+        "pub_date": "2016-07-13",
+        "language": "en",
+        "excerpt": "ii. China has always been resolute in upholding its territorial sovereignty and maritime rights and interests in the South China Sea"
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-07-13",
+    "date_end": "2016-07-13",
+    "date_precision": "day",
+    "location_name": "Meiji Jiao (Mischief Reef) and Zhubi Jiao (Subi Reef)",
+    "subregion": "6",
+    "summary": "Chinese civilian aircraft flew from Hainan and landed at the two new airports on Mischief Reef and Subi Reef on 13 July 2016, the day after the arbitral award, giving China three operational runways in the Spratlys; AMTI imagery dated the first landings to 12 July.",
+    "actors": "Chinese government (civil aviation test flights); CCTV",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP",
+      "CV"
+    ],
+    "reasoning": "Inaugurating two more runways on occupied features is unilateral administration without confrontation; demonstrative, and a widening of scope from the January Fiery Cross flights.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/topstories/nation/573578/china-makes-civilian-air-landings-at-mischief-reef-subi-reef/story",
+        "title": "China makes civilian air landings at Mischief Reef, Subi Reef",
+        "publisher": "GMA News Online (Reuters)",
+        "pub_date": "2016-07-13",
+        "language": "en",
+        "excerpt": "Chinese civilian aircraft landed at two new airports on reefs controlled by China in the Spratly Islands in the South China Sea on Wednesday (July 13), state broadcaster CCTV reported."
+      },
+      {
+        "url": "https://amti.csis.org/build-it-and-they-will-come/",
+        "title": "Build It and They Will Come",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2016-08-01",
+        "language": "en",
+        "excerpt": "Civilian planes landed on Subi and Mischief reefs for the first time on July 12, giving China three operational runways in the disputed Spratly Islands."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-07-15",
+    "date_end": "2016-07-18",
+    "date_precision": "day",
+    "location_name": "Huangyan Dao (Scarborough Shoal)",
+    "subregion": "4",
+    "summary": "The PLA Air Force flew an H-6K nuclear-capable bomber over Scarborough Shoal in the days after the arbitral award; the State Council Information Office published the photographs on 15 July 2016 and on 18 July the air force announced it had conducted a combat air patrol over the South China Sea including Scarborough and would make such patrols a regular practice.",
+    "actors": "People's Liberation Army Air Force; State Council Information Office",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "A publicised bomber overflight of a disputed feature is a unilateral military demonstration without direct confrontation; demonstrative, and new for Scarborough in 2016.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2016/07/18/1604126/china-flies-bomber-over-scarborough",
+        "title": "China flies bomber over Scarborough",
+        "publisher": "Philstar.com",
+        "pub_date": "2016-07-18",
+        "language": "en",
+        "excerpt": "On July 15, China's State Council Information Office posted photos from the PLA Air Force which shows a nuclear-capable bomber, the H-6K, flying over the Scarborough Shoal."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-08-01",
+    "date_end": "2016-08-01",
+    "date_precision": "day",
+    "location_name": "Fiery Cross, Subi and Mischief Reefs",
+    "subregion": "8",
+    "summary": "CSIS AMTI reported on 1 August 2016 that China was rapidly building reinforced hangars on Fiery Cross, Subi and Mischief Reefs, each outpost to have space for 24 fighter jets plus three or four larger aircraft, indicating planned deployment of military aircraft to the Spratly airstrips.",
+    "actors": "People's Republic of China (construction on occupied Spratly features)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Military infrastructure construction on occupied features is unilateral administration without confrontation; demonstrative. Dated by the imagery report.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/build-it-and-they-will-come/",
+        "title": "Build It and They Will Come",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2016-08-01",
+        "language": "en",
+        "excerpt": "Each of the three islets will soon have hangar space for 24 fighter-jets plus 3-4 larger planes."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-08-02",
+    "date_end": "2016-08-02",
+    "date_precision": "day",
+    "location_name": "",
+    "subregion": "",
+    "summary": "China's Supreme People's Court issued a judicial interpretation on 2 August 2016 declaring that Chinese courts would exercise jurisdiction over all waters under Chinese jurisdiction including the EEZ and continental shelf, and that foreigners caught illegally fishing in Chinese waters who refuse to leave or re-enter could be jailed for up to a year.",
+    "actors": "Supreme People's Court",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "A domestic judicial rule extending criminal jurisdiction over claimed waters is a legislative/judicial assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://m.csmonitor.com/World/Asia-Pacific/2016/0802/China-court-warns-against-illegal-fishing-in-riposte-to-Sth-China-Sea-ruling",
+        "title": "China court warns against illegal fishing in riposte to Sth China Sea ruling",
+        "publisher": "The Christian Science Monitor (Reuters)",
+        "pub_date": "2016-08-02",
+        "language": "en",
+        "excerpt": "China's Supreme Court said on Tuesday that people caught illegally fishing in Chinese waters could be jailed for up to a year, issuing a judicial interpretation defining those waters as including China's exclusive economic zones."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-08-06",
+    "date_end": "2016-08-06",
+    "date_precision": "day",
+    "location_name": "Spratly Islands and Scarborough Shoal",
+    "subregion": "",
+    "summary": "PLA Air Force spokesman Senior Colonel Shen Jinke announced on 6 August 2016 that bombers, fighters, early-warning, reconnaissance and tanker aircraft had conducted a combat air patrol over the Spratly Islands, Scarborough Shoal and surrounding areas to enhance combat capability and safeguard sovereignty and maritime rights, the second such announced patrol since the arbitral award.",
+    "actors": "People's Liberation Army Air Force; spokesman Shen Jinke",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP",
+      "CA"
+    ],
+    "reasoning": "A publicised multi-aircraft combat patrol over disputed features is a unilateral military demonstration; demonstrative, done more often than before.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2016/08/07/1610885/chinas-air-force-flies-combat-patrol-over-disputed-islands",
+        "title": "China's air force flies combat patrol over disputed islands",
+        "publisher": "The Philippine Star (Associated Press)",
+        "pub_date": "2016-08-07",
+        "language": "en",
+        "excerpt": "Shen said bomber and fighter aircraft, early warning aircraft, reconnaissance planes and planes that can refuel in flight patrolled the airspace around the Spratly Islands, Scarborough (Panatag) Shoal and surrounding areas."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-09-03",
+    "date_end": "2016-09-07",
+    "date_precision": "day",
+    "location_name": "Huangyan Dao (Scarborough Shoal)",
+    "subregion": "4",
+    "summary": "In early September 2016 Philippine surveillance photographed an increased number of China Coast Guard ships and barges around Scarborough Shoal; on 7 September the Chinese embassy in Manila confirmed China maintained a number of coast guard vessels there for law enforcement patrols along with fishing boats, while denying any dredging or construction.",
+    "actors": "China Coast Guard; Chinese Embassy in Manila; Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Maintaining a law-enforcement presence at a disputed shoal controlled since 2012 is unilateral administration; demonstrative (the exclusion of Filipino fishermen through October would be coercive but is an established practice).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/09/07/1621416/china-confirms-vessels-scarborough-denies-reclamation",
+        "title": "China confirms vessels on Scarborough, denies reclamation",
+        "publisher": "Philstar.com",
+        "pub_date": "2016-09-07",
+        "language": "en",
+        "excerpt": "The Chinese side has maintained the presence of a number of coast guard vessels for law enforcement patrols."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-09-12",
+    "date_end": "2016-09-19",
+    "date_precision": "day",
+    "location_name": "South China Sea east of Zhanjiang, Guangdong",
+    "subregion": "",
+    "summary": "China and Russia held the Joint Sea 2016 naval exercise in the South China Sea off Zhanjiang from 12 to 19 September 2016, including an 'island seizing' drill, the first joint exercise the two navies held in the South China Sea; the Foreign Ministry said the drill was routine and not aimed at any third party.",
+    "actors": "People's Liberation Army Navy (with the Russian Navy); Ministry of National Defense",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Hosting a large exercise with an island-seizure component in the South China Sea is a military demonstration without confrontation; demonstrative. Held off the Chinese mainland coast rather than in disputed waters, so relevance is as signalling. Source opened through a fetch tool.",
+    "confidence": "low",
+    "sources": [
+      {
+        "url": "https://news.usni.org/2016/09/12/china-russia-start-joint-south-china-sea-naval-exercise-includes-island-seizing-drill",
+        "title": "China, Russia Kick Off Joint South China Sea Naval Exercise; Includes 'Island Seizing' Drill",
+        "publisher": "USNI News",
+        "pub_date": "2016-09-12",
+        "language": "en",
+        "excerpt": "A five-ship Russian Navy flotilla arrived at the port of Zhanjiang in southern China on Monday for Joint Sea 2016"
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-11-18",
+    "date_end": "2016-11-18",
+    "date_precision": "day",
+    "location_name": "Nanwei Dao (Spratly Island)",
+    "subregion": "8",
+    "summary": "Responding to reports that Vietnam was extending its runway on Spratly Island, Foreign Ministry spokesman Geng Shuang said on 18 November 2016 that China firmly opposed the illegal occupation of and construction on islands and reefs of China's Nansha Islands and urged the country concerned to withdraw its personnel and facilities.",
+    "actors": "Foreign Ministry spokesperson Geng Shuang",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "An official demand that Vietnam withdraw from occupied Spratly features is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201611/t20161118_8525926.htm",
+        "title": "Foreign Ministry Spokesperson Geng Shuang's Regular Press Conference on November 18, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-11-18",
+        "language": "en",
+        "excerpt": "With indisputable sovereignty over the Nansha islands and their adjacent waters, China firmly opposes certain country's illegal occupation of and construction of facilities on some of the islands and reefs of China's Nansha islands."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-12-09",
+    "date_end": "2016-12-09",
+    "date_precision": "day",
+    "location_name": "Riji Jiao (Ladd Reef)",
+    "subregion": "8",
+    "summary": "Asked about satellite imagery showing Vietnamese dredging at Ladd Reef, Foreign Ministry spokesman Lu Kang said on 9 December 2016 that China exerts indisputable sovereignty over the Nansha Islands including Riji Jiao and urged the countries concerned to stop illegal occupation and construction.",
+    "actors": "Foreign Ministry spokesperson Lu Kang",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "A sovereignty assertion directed at Vietnamese activity on a Spratly feature is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201612/t20161209_8525996.htm",
+        "title": "Foreign Ministry Spokesperson Lu Kang's Regular Press Conference on December 9, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-12-09",
+        "language": "en",
+        "excerpt": "China exerts indisputable sovereignty over the Nansha Islands, Riji Jiao included, and the adjacent waters."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-12-13",
+    "date_end": "2016-12-15",
+    "date_precision": "day",
+    "location_name": "Fiery Cross, Subi, Mischief, Gaven, Hughes, Johnson South and Cuarteron Reefs",
+    "subregion": "",
+    "summary": "CSIS AMTI published imagery on 13 December 2016 showing China had installed large anti-aircraft guns and probable close-in weapons systems on all seven of its Spratly outposts; on 15 December the Foreign Ministry said the islands were Chinese territory and it was completely normal to deploy necessary defence equipment there.",
+    "actors": "People's Liberation Army; Foreign Ministry spokesperson Geng Shuang",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Emplacing weapons systems on occupied features is unilateral militarisation without confrontation; demonstrative, new in scope (all seven outposts).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/chinas-new-spratly-island-defenses/",
+        "title": "China's New Spratly Island Defenses",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2016-12-13",
+        "language": "en",
+        "excerpt": "China appears to have built significant point-defense capabilities, in the form of large anti-aircraft guns and probable close-in weapons systems (CIWS), at each of its outposts in the Spratly Islands."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201612/t20161215_8526017.htm",
+        "title": "Foreign Ministry Spokesperson Geng Shuang's Regular Press Conference on December 15, 2016",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2016-12-15",
+        "language": "en",
+        "excerpt": "It's completely normal for us to build facilities and deploy necessary defense equipment there, a right of a sovereign state recognized by international law."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-12-15",
+    "date_end": "2016-12-20",
+    "date_precision": "day",
+    "location_name": "about 50 nautical miles northwest of Subic Bay, Philippines",
+    "subregion": "",
+    "summary": "A Chinese navy vessel seized a US Navy unmanned underwater vehicle being recovered by the survey ship USNS Bowditch about 50 nautical miles northwest of Subic Bay on 15 December 2016, ignoring radio requests for its return; China said it had been identified to ensure navigational safety and returned the vehicle on 20 December.",
+    "actors": "People's Liberation Army Navy (Dalang-III class salvage ship); Ministry of National Defense",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CU"
+    ],
+    "reasoning": "Seizing another state's equipment in waters inside the Philippine EEZ is physical interference imposing a cost; coercive. Target is a non-claimant, so dyad is unclear.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.npr.org/sections/thetwo-way/2016/12/16/505850933/china-seizes-unmanned-u-s-underwater-vehicle-in-international-waters",
+        "title": "China Seizes U.S. Underwater Drone From International Waters, Pentagon Says",
+        "publisher": "NPR",
+        "pub_date": "2016-12-16",
+        "language": "en",
+        "excerpt": "The seizure of the underwater vehicle took place Thursday, about 50 nautical miles northwest of Subic Bay in the Philippines, Pentagon Press Secretary Peter Cook said in a statement Friday."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2016-12-21",
+    "date_end": "2016-12-21",
+    "date_precision": "day",
+    "location_name": "Yongxing Dao (Woody Island), Paracels",
+    "subregion": "2",
+    "summary": "China began daily civilian charter flights between Haikou and Woody Island on 21 December 2016 after approving the island's military-civilian airport for civil operations, with the maiden flight carrying passengers to the seat of Sansha city.",
+    "actors": "Sansha city government; Hainan Airlines; Civil Aviation Administration of China",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Opening scheduled civil air service to a disputed island is unilateral administration without confrontation; demonstrative, new in 2016.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/world/china-launches-daily-flights-to-flashpoint-island-3517760.html",
+        "title": "China launches daily flights to flashpoint island",
+        "publisher": "VnExpress International (Reuters)",
+        "pub_date": "2016-12-22",
+        "language": "en",
+        "excerpt": "The maiden flight took off on Wednesday from Haikou, the provincial capital of Hainan Island."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-01-02",
+    "date_end": "2017-01-02",
+    "date_precision": "day",
+    "location_name": "South China Sea (carrier training area; group later docked at Hainan)",
+    "subregion": "",
+    "summary": "The PLA Navy announced on 2 January 2017 that the aircraft carrier Liaoning and its escort group had carried out drills in the South China Sea, with J-15 fighters conducting take-off and landing exercises in complex sea conditions, the carrier's first exercise in the South China Sea after transiting south of Taiwan.",
+    "actors": "People's Liberation Army Navy (Liaoning carrier group); Foreign Ministry spokesperson Geng Shuang",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "A publicised carrier exercise in the South China Sea is a unilateral military demonstration without confrontation; demonstrative, new in kind for China.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.ibtimes.co.uk/chinese-navy-confirms-sole-aircraft-carrier-liaoning-carried-out-drills-south-china-sea-1599010",
+        "title": "Chinese navy confirms sole aircraft carrier Liaoning carried out drills in South China Sea",
+        "publisher": "International Business Times UK",
+        "pub_date": "2017-01-02",
+        "language": "en",
+        "excerpt": "China said on Monday, (2 January) that the country's sole aircraft carrier, Liaoning, carried out drills in South China Sea."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201701/t20170104_8526080.htm",
+        "title": "Foreign Ministry Spokesperson Geng Shuang's Regular Press Conference on January 4, 2017",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2017-01-04",
+        "language": "en",
+        "excerpt": "What I can tell you is that the carrier and accompanying ships are testing weapons and equipment and running exercises in the relevant waters of the South China Sea in accordance with their plan."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-01-17",
+    "date_end": "2017-01-17",
+    "date_precision": "day",
+    "location_name": "Nansha (Spratly) Islands",
+    "subregion": "",
+    "summary": "After Philippine Foreign Secretary Yasay disclosed that Manila had sent a diplomatic note over China's deployment of air- and missile-defence weapons on its Spratly outposts, Foreign Ministry spokeswoman Hua Chunying said on 17 January 2017 that the Nansha Islands were China's inherent territory and China had the right to deploy necessary and proper national defence facilities there.",
+    "actors": "Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "An official rejection of a protest and assertion of the right to arm occupied features is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201701/t20170117_8526122.htm",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Regular Press Conference on January 17, 2017",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2017-01-17",
+        "language": "en",
+        "excerpt": "China has the right to deploy necessary and proper national defense facilities on its own territory."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-02-14",
+    "date_end": "2017-02-17",
+    "date_precision": "day",
+    "location_name": "",
+    "subregion": "",
+    "summary": "China's State Council Legislative Affairs Office published for comment in mid-February 2017 a draft revision of the 1984 Maritime Traffic Safety Law that would empower maritime authorities to bar foreign ships from Chinese territorial waters and require foreign submersibles to transit on the surface, display their flag and report to the maritime administration, measures applicable to the waters China claims in the South China Sea.",
+    "actors": "State Council Legislative Affairs Office; Ministry of Transport",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Draft domestic legislation extending regulatory control over claimed waters is a legislative assertion; declarative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/china-plans-to-block-foreign-ships-from-waters-it-claims-as-its-own-3543087.html",
+        "title": "China plans to block foreign ships from waters it claims as its own",
+        "publisher": "VnExpress International",
+        "pub_date": "2017-02-17",
+        "language": "en",
+        "excerpt": "China has announced plans to revise a 34-year-old maritime safety law and start banning some foreign ships from its territorial waters in 2020."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-02-27",
+    "date_end": "2017-02-27",
+    "date_precision": "day",
+    "location_name": "South China Sea including the Gulf of Tonkin and waters north of 12 degrees N",
+    "subregion": "",
+    "summary": "China's Ministry of Agriculture announced on 27 February 2017 that the annual summer fishing moratorium would run from 1 May to 16 August, starting two weeks earlier and lasting a month longer than in previous years, covering disputed waters including the Gulf of Tonkin and the Paracels; Vietnam rejected the ban.",
+    "actors": "Ministry of Agriculture",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV",
+      "CP"
+    ],
+    "reasoning": "Extending domestic fisheries regulation over disputed waters is unilateral administration; demonstrative, and a step up in scope (longer ban) from previous years.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/vietnam-opposes-chinese-fishing-ban-in-troubled-waters-3548310.html",
+        "title": "Vietnam opposes Chinese fishing ban in troubled waters",
+        "publisher": "VnExpress International",
+        "pub_date": "2017-02-28",
+        "language": "en",
+        "excerpt": "China’s Ministry of Agriculture on Monday  issued a ban on fishing in a number of sea waters from May 1 to August 16, which includes the waters in the Gulf of Tonkin in the East Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-03-02",
+    "date_end": "2017-03-02",
+    "date_precision": "day",
+    "location_name": "Paracel Islands (Crescent Group)",
+    "subregion": "2",
+    "summary": "The new 499-passenger cruise ship Changle Gongzhu (Changle Princess) sailed from Sanya on 2 March 2017 on its maiden voyage to the Paracel Islands with 308 passengers, expanding the state-backed tourism route to the disputed islands that had begun in 2013.",
+    "actors": "Hainan Strait Shipping Co. (Changle Gongzhu); Sansha city; Hainan provincial government",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "State-sanctioned tourism to disputed islands is unilateral administration without confrontation; demonstrative, with a second ship widening capacity.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.maritime-executive.com/article/new-chinese-cruise-ship-sails-to-disputed-islands",
+        "title": "New Chinese Cruise Ship Sails to Disputed Islands",
+        "publisher": "The Maritime Executive",
+        "pub_date": "2017-03-02",
+        "language": "en",
+        "excerpt": "A new Chinese cruise ship began its maiden voyage to the disputed Paracel Islands in the South China Sea on Thursday."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-03-15",
+    "date_end": "2017-03-22",
+    "date_precision": "day",
+    "location_name": "Huangyan Dao (Scarborough Shoal)",
+    "subregion": "4",
+    "summary": "Sansha city mayor Xiao Jie told the Hainan Daily in mid-March 2017 that preparatory work would begin that year on environmental monitoring stations on several features including Scarborough Shoal; after the Philippines sought clarification, the Foreign Ministry said on 22 March the reports were false, while stating on 10 March that it was China's sovereign right to decide what to do on the shoal.",
+    "actors": "Sansha city government (mayor Xiao Jie); Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "A local-government announcement of planned construction on a disputed feature is an administrative/verbal assertion; declarative, and later disavowed by Beijing.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.voanews.com/a/china-build-disputed-shoal-south-china-sea/3771209.html",
+        "title": "China to Build on Disputed Shoal in South China Sea",
+        "publisher": "Voice of America (Reuters)",
+        "pub_date": "2017-03-17",
+        "language": "en",
+        "excerpt": "This week, Xiao Jie, the mayor of what Beijing calls Sansha City, an administrative base for disputed South China Sea islands and reefs it controls, said China planned preparatory work this year to build environmental monitoring stations on a number of islands, including Scarborough Shoal."
+      },
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201703/t20170310_8526283.htm",
+        "title": "Foreign Ministry Spokesperson Geng Shuang's Regular Press Conference on March 10, 2017",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2017-03-10",
+        "language": "en",
+        "excerpt": "It is China's sovereignty to decide what to do or not to do on Huangyan Dao."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-03-27",
+    "date_end": "2017-03-27",
+    "date_precision": "day",
+    "location_name": "Subi, Mischief and Fiery Cross Reefs",
+    "subregion": "8",
+    "summary": "CSIS AMTI reported on 27 March 2017 that major construction of military and dual-use infrastructure on China's three largest Spratly artificial islands was wrapping up, with hangars for 24 combat aircraft each, radar arrays and hardened shelters with retractable roofs for mobile missile launchers largely complete, leaving Beijing able to deploy aircraft and missiles at any time.",
+    "actors": "People's Republic of China (construction on occupied Spratly features)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Completion of military infrastructure on occupied features is unilateral administration; demonstrative. Dated by the imagery report.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/chinas-big-three-near-completion/",
+        "title": "China's Big Three Near Completion",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2017-03-27",
+        "language": "en",
+        "excerpt": "Major construction of military and dual-use infrastructure on the “Big 3”—Subi, Mischief, and Fiery Cross Reefs—is wrapping up, with the naval, air , radar , and defensive facilities that AMTI has tracked for nearly two years largely complete."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-03-29",
+    "date_end": "2017-04-06",
+    "date_precision": "day",
+    "location_name": "Yongxing Dao (Woody Island), Paracels",
+    "subregion": "2",
+    "summary": "Satellite imagery of 29 March 2017 published by AMTI on 6 April showed a J-11 fighter on Woody Island, the first fighter deployment seen there in a year; in December 2017 Chinese state television for the first time confirmed that J-11B fighters had been sent to the island.",
+    "actors": "People's Liberation Army Air Force / Naval Aviation",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Rotating combat aircraft to a disputed island is unilateral militarisation without confrontation; demonstrative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://voanews.com/a/china-fighter-plane-spotted-south-china-sea-island/3800195.html",
+        "title": "China Fighter Plane Spotted on South China Sea Island, Think Tank Reports",
+        "publisher": "Voice of America",
+        "pub_date": "2017-04-06",
+        "language": "en",
+        "excerpt": "A U.S. official, who spoke on condition of anonymity, said the presence of a fighter aircraft on Woody Island was not something unexpected."
+      },
+      {
+        "url": "https://imoa.ph/?p=11165",
+        "title": "China confirms deployment of fighters to South China Sea island for first time",
+        "publisher": "IMOA (reprinting The Japan Times, 2 December 2017)",
+        "pub_date": "2017-12-07",
+        "language": "en",
+        "excerpt": "Citing footage aired by the official state broadcaster, the Global Times reported late Friday that China had sent J-11B fighters to the island in the contested Paracel chain."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-04-10",
+    "date_end": "2017-04-10",
+    "date_precision": "day",
+    "location_name": "Huangyan Dao (Scarborough Shoal)",
+    "subregion": "4",
+    "summary": "Foreign Ministry spokeswoman Hua Chunying said on 10 April 2017 that China Coast Guard vessels were stationed at Scarborough Shoal to administer the fishing activities China had arranged to allow Philippine fishermen and to preserve order there, describing the shoal as an inherent part of Chinese territory; the coast guard maintained this presence throughout 2017.",
+    "actors": "China Coast Guard; Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Stationing law-enforcement ships to regulate another claimant's fishermen at a disputed shoal is unilateral administration; demonstrative. Recorded as the year's representative statement of an established practice.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201704/t20170410_8526382.htm",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Regular Press Conference on April 10, 2017",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2017-04-10",
+        "language": "en",
+        "excerpt": "Chinese Coast Guard vessels are stationed there to administrate relevant fishing activities and preserve peace, tranquility and order of the area."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-06-18",
+    "date_end": "2017-07-24",
+    "date_precision": "day",
+    "location_name": "Block 136-03 (Wanan Bei-21), Vanguard Bank area",
+    "subregion": "9",
+    "summary": "Days before Repsol's Talisman-Vietnam unit began drilling in Vietnam's Block 136-03 near Vanguard Bank in June 2017, Central Military Commission vice-chairman Fan Changlong abruptly ended a visit to Hanoi on 18 June and a border friendship meeting was cancelled; Beijing then reportedly threatened to attack Vietnamese bases in the Spratlys if drilling continued, and Vietnam ordered Repsol to halt the drilling in late July 2017.",
+    "actors": "Central Military Commission vice-chairman Fan Changlong; Chinese government",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "energy",
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "A threat of force and diplomatic punishment to stop another claimant's hydrocarbon exploration is coercive; the threat itself is reported second-hand (BBC) but the cancelled visit and the halt are documented.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.rfa.org/english/news/vietnam/threat-07242017130900.html",
+        "title": "Vietnam Quits South China Sea Drilling After China Threat",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2017-07-24",
+        "language": "en",
+        "excerpt": "Days before the company began drilling last month, Fan Changlong, vice chair of China’s Central Military Commission, abruptly ended an official visit to Vietnam and a friendship meeting at the China-Vietnam border was canceled."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-06-29",
+    "date_end": "2017-06-29",
+    "date_precision": "day",
+    "location_name": "Fiery Cross, Mischief and Subi Reefs",
+    "subregion": "8",
+    "summary": "CSIS AMTI reported on 29 June 2017 that China was installing new missile shelters, radar and communications facilities, a large antenna array and large underground storage structures on Fiery Cross, Mischief and Subi Reefs, with four additional hardened shelters at Fiery Cross beyond the eight identified in February.",
+    "actors": "People's Republic of China (construction on occupied Spratly features)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Continued military construction on occupied features is unilateral administration without confrontation; demonstrative. Dated by the imagery report.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/chinas-big-three-near-completion/",
+        "title": "China's Big Three Near Completion (updated June 29, 2017)",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2017-06-29",
+        "language": "en",
+        "excerpt": "New missile shelters, radar/communications facilities, and other infrastructure are going in on Fiery Cross, Mischief, and Subi Reefs, suggesting that while the region is engaged in peaceful discussion, China remains committed to developing its power projection capabilities."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-07-01",
+    "date_end": "2018-07-30",
+    "date_precision": "month",
+    "location_name": "Spratly Islands (airspace near Chinese artificial islands)",
+    "subregion": "",
+    "summary": "Chinese military radio operators on the Spratly artificial islands repeatedly warned Philippine military patrol aircraft to leave the area, at least 46 times in the second half of 2017 according to a Philippine government report seen by AP, prompting Manila to raise concern through diplomatic channels in 2018.",
+    "actors": "People's Liberation Army (island garrisons)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Radio warnings ordering another claimant's aircraft out of airspace over occupied features are threats backed by military presence; coercive. Dated by the period the report covers and the 2018 disclosure.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.voanews.com/a/philippines-raises-concern-over-chinese-radio-warnings/4506235.html",
+        "title": "Philippines Raises Concern Over Chinese Radio Warnings",
+        "publisher": "Voice of America (Associated Press)",
+        "pub_date": "2018-07-30",
+        "language": "en",
+        "excerpt": "A Philippine government report seen by The Associated Press showed that in the second half of last year alone, Philippine military aircraft received such Chinese radio warnings at least 46 times while patrolling near artificial islands built by China in the South China Sea's Spratly archipelago."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-08-09",
+    "date_end": "2017-08-09",
+    "date_precision": "day",
+    "location_name": "North Island, Tree Island and Drummond Island, Paracels",
+    "subregion": "2",
+    "summary": "CSIS AMTI reported on 9 August 2017 that China had reclaimed new land at the southern end of North Island in the Paracels and begun building facilities on it, was dredging a new harbour at Drummond Island, and had added facilities on Tree Island, continuing reclamation in the Paracels after the Spratly islands were complete.",
+    "actors": "People's Republic of China (reclamation and construction in the Paracels)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "New reclamation on disputed Paracel features is unilateral construction without confrontation; demonstrative, extending construction to new features.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/paracels-beijings-other-buildup/",
+        "title": "Paracels: Beijing's Other Buildup",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2017-08-09",
+        "language": "en",
+        "excerpt": "China has reclaimed new land at the southern end of North Island and has begun to construct new facilities on it."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-08-10",
+    "date_end": "2017-08-11",
+    "date_precision": "day",
+    "location_name": "Meiji Jiao (Mischief Reef), Nansha Qundao",
+    "subregion": "6",
+    "summary": "After USS John S. McCain conducted a freedom-of-navigation operation near Mischief Reef on 10 August 2017, Chinese naval ships identified the destroyer and warned it to leave, and the Foreign Ministry lodged representations; China responded in the same way to US operations near Mischief Reef (24 May) and Triton Island (2 July) earlier in 2017.",
+    "actors": "People's Liberation Army Navy; Foreign Ministry spokesperson Geng Shuang",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CU"
+    ],
+    "reasoning": "Warning off foreign warships near occupied features is an imposition backed by force posture; coercive. One summary event for the year because the target is a non-claimant.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.mfa.gov.cn/eng/xw/fyrbt/fyrbt/202405/t20240530_11349548.html",
+        "title": "Foreign Ministry Spokesperson Geng Shuang's Remarks on the US Warship's Unauthorized Entry into the Neighboring Waters of Relevant Islands and Reefs of China's Nansha Qundao",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2017-08-11",
+        "language": "en",
+        "excerpt": "The Chinese armed forces immediately sent naval ships to identify and verify the US warship according to law and warn it to leave."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-08-12",
+    "date_end": "2017-08-16",
+    "date_precision": "day",
+    "location_name": "Thitu (Pag-asa) Island and Sandy Cay sandbars",
+    "subregion": "5",
+    "summary": "From about 12 August 2017 a Chinese flotilla of at least two navy frigates, a coast guard ship and large fishing vessels carrying maritime militia operated one to three nautical miles from Philippine-occupied Thitu Island; on 13 August the fishing vessels prevented a Philippine Bureau of Fisheries ship from approaching the sandbars west of Thitu, and a Chinese naval helicopter overflew the sandbars on 15 August.",
+    "actors": "People's Liberation Army Navy; China Coast Guard; Chinese fishing vessels / maritime militia",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Blocking a Philippine government vessel and massing warships close to a Philippine-held island is physical interference and intimidation; coercive, and new in location for 2017.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/confirming-chinese-flotilla-near-thitu-island/",
+        "title": "Confirming the Chinese Flotilla Near Thitu Island",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2017-08-17",
+        "language": "en",
+        "excerpt": "On August 15, Philippine Congressman Gary Alejano released photographs of Chinese vessels, including fishing, coast guard, and navy ships, that he claimed had been operating within 1 to 3 nautical miles of Philippine-occupied Thitu, or Pag-asa, Island."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2017/08/15/1729620/china-ships-massing-near-pag-asa-sandbars",
+        "title": "China ships massing near Pag-asa sandbars?",
+        "publisher": "The Philippine Star",
+        "pub_date": "2017-08-15",
+        "language": "en",
+        "excerpt": "“Further, two days ago, a Philippine government ship from the Bureau of Fisheries and Aquatic Resources was prevented by Chinese fishing vessels from going near our sandbars located generally west of Pag-asa, around two to seven miles away,” he said."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2017-12-14",
+    "date_end": "2017-12-14",
+    "date_precision": "day",
+    "location_name": "Spratly and Paracel Islands (Fiery Cross, Subi, Mischief; North, Tree and Triton Islands)",
+    "subregion": "",
+    "summary": "CSIS AMTI's year-end review published 14 December 2017 found that China had built about 290,000 square metres of new facilities on its Spratly and Paracel outposts during 2017, including hangars, underground storage, missile shelters, radar and communications arrays and a high-frequency radar at Fiery Cross, while reclamation continued at North, Tree and Triton Islands.",
+    "actors": "People's Republic of China (construction on occupied features)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "A year of continued construction on occupied features is unilateral administration; demonstrative. Year-summary entry dated by the report.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/constructive-year-chinese-building/",
+        "title": "A Constructive Year for Chinese Base Building",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2017-12-14",
+        "language": "en",
+        "excerpt": "While pursuing diplomatic outreach toward its Southeast Asian neighbors, Beijing continued substantial construction activities on its dual-use outposts in the Spratly and Paracel Islands."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-01-06",
+    "date_end": "2018-04-28",
+    "date_precision": "day",
+    "location_name": "Mischief Reef and Subi Reef",
+    "subregion": "6",
+    "summary": "Chinese military aircraft began landing on China's Spratly runways in 2018: two Xian Y-7 transports were photographed on Mischief Reef on 6 January, Chinese media reported a Y-8 landing on Subi Reef in March to evacuate a fisherman, and imagery of 28 April showed a Y-8 at Subi, so that military aircraft had verifiably used all three Spratly airstrips.",
+    "actors": "People's Liberation Army (air transport / patrol aircraft)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP",
+      "CA"
+    ],
+    "reasoning": "Military use of runways on occupied features is unilateral administration without confrontation; demonstrative, extending military flights to Mischief and Subi for the first time.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/accounting-chinas-deployments-spratly-islands/",
+        "title": "An Accounting of China's Deployments to the Spratly Islands",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2018-05-09",
+        "language": "en",
+        "excerpt": "With these deployments, military aircraft have now verifiably landed on all three of China’s airstrips in the Spratly Islands."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-03-01",
+    "date_end": "2018-03-23",
+    "date_precision": "month",
+    "location_name": "Block 07/03 (Ca Rong Do / Red Emperor field), Nam Con Son basin",
+    "subregion": "9",
+    "summary": "Under continued Chinese pressure, Vietnam's state oil company asked Repsol in March 2018 to suspend the Ca Rong Do (Red Emperor) development in Block 07/03 off its southeast coast, within the area enclosed by China's nine-dash line, days before drilling was to begin; it was the second Repsol project halted at Beijing's demand within a year.",
+    "actors": "Chinese government (diplomatic pressure on Vietnam)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "energy"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Diplomatic pressure that forces another claimant to abandon hydrocarbon development in its claimed EEZ is coercive. The Chinese demand itself is reported indirectly, hence medium confidence and month precision. Source opened via a fetch tool; wording could not be re-checked locally.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://thediplomat.com/2018/03/vietnam-requests-spains-repsol-suspend-work-in-disputed-south-china-sea-oil-block",
+        "title": "Vietnam Requests Spain's Repsol Suspend Work in Disputed South China Sea Oil Block",
+        "publisher": "The Diplomat",
+        "pub_date": "",
+        "language": "en",
+        "excerpt": "The decision follows Chinese pressure on Vietnam that has been ongoing since the summer of 2017"
+      },
+      {
+        "url": "https://www.naturalgasworld.com/vietnam-suspends-repsols-south-china-sea-project-59826",
+        "title": "Vietnam Suspends Repsol's S China Sea Project: Report",
+        "publisher": "Natural Gas World",
+        "pub_date": "2018-03-23",
+        "language": "en",
+        "excerpt": "Vietnam has reportedly cancelled a major oil and gas project in South China Sea due to Chinese pressure."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-04-02",
+    "date_end": "2018-05-03",
+    "date_precision": "month",
+    "location_name": "Fiery Cross, Subi and Mischief Reefs",
+    "subregion": "8",
+    "summary": "According to US intelligence reported by CNBC on 2 May 2018, China moved YJ-12B anti-ship cruise missiles and HQ-9B long-range surface-to-air missiles onto Fiery Cross, Subi and Mischief Reefs during the preceding 30 days, the first missile deployment to the Spratly outposts; the Foreign Ministry said on 3 May the defence facilities targeted no one and were meant to safeguard China's sovereignty and security.",
+    "actors": "People's Liberation Army; Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Deploying offensive and air-defence missiles to occupied Spratly features is unilateral militarisation without confrontation; demonstrative, new in scope. Month precision: the deployment window is April 2018.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/china-installs-cruise-missiles-on-outposts-in-troubled-waters-cnbc-report-3744217.html",
+        "title": "China installs cruise missiles on outposts in troubled waters: CNBC report",
+        "publisher": "VnExpress International (Reuters)",
+        "pub_date": "2018-05-02",
+        "language": "en",
+        "excerpt": "CNBC quoted unnamed sources as saying that according to U.S. intelligence assessments, the missiles were moved to Fiery Cross Reef, Subi Reef and Mischief Reef within the past 30 days."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/04/1812114/headlines",
+        "title": "China: Missiles in Spratlys target no one",
+        "publisher": "Philstar.com",
+        "pub_date": "2018-05-04",
+        "language": "en",
+        "excerpt": "Insisting indisputable sovereignty over the Spratly Islands in the contested waters, Beijing reiterated that the defense facilities were meant to \"safeguard China's sovereignty and security.\""
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-04-09",
+    "date_end": "2018-04-10",
+    "date_precision": "day",
+    "location_name": "Meiji Jiao (Mischief Reef) and Yongshu Jiao (Fiery Cross Reef)",
+    "subregion": "6",
+    "summary": "US officials said on 9-10 April 2018 that China had installed military jamming equipment capable of disrupting communications and radar on two of its Spratly outposts, with commercial imagery showing a suspected jammer with its antenna extended on Mischief Reef.",
+    "actors": "People's Liberation Army",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Emplacing electronic-warfare equipment on occupied features is unilateral militarisation without confrontation; demonstrative, a new capability. Dated by the US disclosure.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/china-set-up-military-jamming-equipment-on-spratly-islands-us-says-3735066.html",
+        "title": "China set up military jamming equipment on Spratly Islands, US says",
+        "publisher": "VnExpress International (Reuters)",
+        "pub_date": "2018-04-10",
+        "language": "en",
+        "excerpt": "Satellite imagery taken by commercial satellite company DigitalGlobe shows a suspected jammer system with its antenna extended on Mischief Reef, one of China's seven artificial islands, the Wall Street Journal reported."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-04-12",
+    "date_end": "2018-04-12",
+    "date_precision": "day",
+    "location_name": "South China Sea off Hainan",
+    "subregion": "",
+    "summary": "President Xi Jinping, aboard the destroyer Changsha, presided over the PLA Navy's largest-ever fleet review in the South China Sea on 12 April 2018, involving 48 warships and submarines including the carrier Liaoning, 76 aircraft and over 10,000 personnel, at the close of a multi-week naval exercise in the area; Xi said the need for a strong navy had never been more pressing.",
+    "actors": "President Xi Jinping; People's Liberation Army Navy",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "A publicised large-scale naval display in the South China Sea is a military demonstration without confrontation; demonstrative, unprecedented in scale.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://gcaptain.com/xi-presides-over-chinas-largest-ever-naval-operation/",
+        "title": "Xi Presides Over China's Largest-Ever Naval Operation",
+        "publisher": "gCaptain (Reuters)",
+        "pub_date": "2018-04-14",
+        "language": "en",
+        "excerpt": "In full military uniform President Xi Jinping presided over the Chinese Navy’s largest-ever military display on Thursday, state media reported, the country’s latest show of force in the disputed South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-05-11",
+    "date_end": "2018-05-11",
+    "date_precision": "day",
+    "location_name": "Ayungin (Second Thomas) Shoal",
+    "subregion": "6",
+    "summary": "On 11 May 2018 Chinese navy and coast guard vessels challenged the Philippine Navy ship LS507 during a resupply mission to the BRP Sierra Madre at Second Thomas Shoal, and a Chinese naval helicopter hovered at a close and dangerous distance over the Philippine rubber boat; the Philippine military lodged a complaint through the Department of Foreign Affairs.",
+    "actors": "People's Liberation Army Navy (ship and helicopter); China Coast Guard",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Physical harassment of a Philippine resupply mission at a Philippine-held feature is physical interference; coercive, a new kind of act (naval helicopter) at this location.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/30/1820063/headlines",
+        "title": "China's navy, coast guard 'harassed' Filipino troops on resupply mission on Ayungin - Alejano",
+        "publisher": "Philstar.com",
+        "pub_date": "2018-05-30",
+        "language": "en",
+        "excerpt": "He said that when the Philippine Navy launched a rubber boat to a chopper of China’s navy, it hovered from a close and dangerous distance."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-05-18",
+    "date_end": "2018-05-18",
+    "date_precision": "day",
+    "location_name": "Yongxing Dao (Woody Island), Paracels",
+    "subregion": "2",
+    "summary": "The PLA Air Force announced on 18 May 2018 that bombers including the H-6K had for the first time conducted take-off and landing training on an island in the South China Sea, identified from the published footage as Woody Island in the Paracels; Vietnam and the Philippines protested and the United States criticised the militarisation.",
+    "actors": "People's Liberation Army Air Force",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CV",
+      "CA"
+    ],
+    "reasoning": "First landing of strategic bombers on a disputed island is a unilateral military demonstration without confrontation; demonstrative, new in kind.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/china-lands-first-bomber-south-china-sea-island/",
+        "title": "China Lands First Bomber on South China Sea Island",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2018-05-18",
+        "language": "en",
+        "excerpt": "The People’s Liberation Army Air Force (PLAAF) announced on May 18 that it had landed bombers, including the top-of-the-line H-6K, on an outpost in the South China Sea for the first time."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-05-20",
+    "date_end": "2018-06-08",
+    "date_precision": "day",
+    "location_name": "Huangyan Dao (Scarborough Shoal)",
+    "subregion": "4",
+    "summary": "Video aired by GMA-7 on 7-8 June 2018 showed China Coast Guard personnel boarding Filipino fishing boats at Scarborough Shoal and taking their best catch; the fishermen said the incident, filmed on 20 May 2018, was a routine practice, and Manila asked Beijing to stop it while China promised to investigate.",
+    "actors": "China Coast Guard",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Boarding another claimant's fishing boats and confiscating catch at a disputed shoal is physical interference imposing a cost; coercive.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.benarnews.org/english/news/philippine/fish-dispute-06082018115427.html",
+        "title": "Philippines Plays Down Report about Chinese Harassment of Fishermen",
+        "publisher": "BenarNews",
+        "pub_date": "2018-06-08",
+        "language": "en",
+        "excerpt": "GMA-7 television aired a video showing the Chinese officials boarding Filipino fishing boats and confiscating their best catch. The station said the incident, which was filmed on a mobile phone, took place May 20."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-07-01",
+    "date_end": "2018-11-20",
+    "date_precision": "month",
+    "location_name": "Bombay Reef, Paracel Islands",
+    "subregion": "2",
+    "summary": "Satellite imagery published by CSIS AMTI on 20 November 2018 showed that since mid-2018 China had anchored a new platform topped by a radome and solar panels, later identified as a CETC 'Ocean E-Station', on previously untouched Bombay Reef at the southeastern edge of the Paracels, a feature also claimed by Vietnam and Taiwan.",
+    "actors": "People's Republic of China; China Electronics Technology Group Corporation",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CV"
+    ],
+    "reasoning": "Installing a surveillance platform on a new, previously undeveloped disputed reef is unilateral construction; demonstrative, new in location. Month precision: installed between summer and November 2018.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/china-quietly-upgrades-bombay-reef/",
+        "title": "China Quietly Upgrades a Remote Reef",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2018-11-20",
+        "language": "en",
+        "excerpt": "Recent satellite imagery of Bombay Reef in the Paracel Islands shows that China has installed a new platform at the largely untouched South China Sea feature, which is also claimed by Taiwan and Vietnam."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-09-30",
+    "date_end": "2018-10-02",
+    "date_precision": "day",
+    "location_name": "Gaven Reef, Spratly Islands",
+    "subregion": "5",
+    "summary": "During USS Decatur's freedom-of-navigation operation past Gaven and Johnson Reefs on 30 September 2018, the Chinese destroyer Lanzhou conducted increasingly aggressive manoeuvres, warned the US ship to leave and approached within 45 yards of its bow, forcing the Decatur to alter course to avoid collision; the Foreign Ministry said on 2 October the navy had identified and warned the ship to leave in accordance with law. China responded similarly to other US operations in 2018 (Scarborough in January, the Paracels in May).",
+    "actors": "People's Liberation Army Navy (destroyer Lanzhou); Foreign Ministry spokesperson Hua Chunying",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "CU"
+    ],
+    "reasoning": "Physically forcing a foreign warship off course near an occupied feature is physical interference; coercive, the most dangerous of the year's responses to US operations. Target is a non-claimant.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2018/10/02/1856617/chinese-destroyer-extremely-close-us-warship-us",
+        "title": "Chinese destroyer extremely close to US warship: US",
+        "publisher": "Philstar.com (Agence France-Presse)",
+        "pub_date": "2018-10-02",
+        "language": "en",
+        "excerpt": "The Chinese \"destroyer approached within 45 yards (meters) of Decatur's bow, after which Decatur maneuvered to prevent a collision.\""
+      },
+      {
+        "url": "https://www.mfa.gov.cn/eng/xw/fyrbt/fyrbt/202405/t20240530_11349594.html",
+        "title": "Foreign Ministry Spokesperson Hua Chunying's Remarks on US Warship's Illegal Entry into Waters Close to Nansha Islands",
+        "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+        "pub_date": "2018-10-02",
+        "language": "en",
+        "excerpt": "In response, the Chinese Navy identified and warned the ship to leave in accordance with laws."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-10-31",
+    "date_end": "2018-10-31",
+    "date_precision": "day",
+    "location_name": "Yongshu (Fiery Cross), Zhubi (Subi) and Meiji (Mischief) Reefs",
+    "subregion": "8",
+    "summary": "The China Meteorological Administration announced that three new weather observation stations with weather radar on Fiery Cross, Subi and Mischief Reefs began operating on 31 October 2018, and the Ministry of Ecology and Environment said an atmospheric environmental observation station in the Nansha Islands had been completed; Vietnam and the Philippines objected.",
+    "actors": "China Meteorological Administration; Ministry of Ecology and Environment",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CA"
+    ],
+    "reasoning": "Commissioning civil-administrative facilities on occupied features is unilateral administration without confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.chinadaily.com.cn/a/201810/31/WS5bd9263aa310eff303285ac0.html",
+        "title": "New weather stations start operating in South China Sea",
+        "publisher": "China Daily",
+        "pub_date": "2018-10-31",
+        "language": "en",
+        "excerpt": "Three new weather stations in China's Nansha Islands began operating on Wednesday and will bring more accurate weather reports and warnings to fishermen and ships, according to the China Meteorological Administration."
+      },
+      {
+        "url": "https://e.vnexpress.net/news/news/china-opens-weather-stations-on-artificial-islands-in-vietnamese-territory-3833452.html",
+        "title": "China opens weather stations on artificial islands in Vietnamese territory",
+        "publisher": "VnExpress International",
+        "pub_date": "2018-11-02",
+        "language": "en",
+        "excerpt": "The stations have been placed on Fiery Cross, Subi and Mischief reefs of the Spratly (Truong Sa) Islands."
+      }
+    ]
+  },
+  {
+    "claimant": "CN",
+    "date_start": "2018-12-01",
+    "date_end": "2019-01-26",
+    "date_precision": "month",
+    "location_name": "waters between Subi Reef and Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "After the Philippines began reclamation for a beaching ramp on Thitu Island in early December 2018, China deployed a flotilla of maritime militia fishing vessels and government ships between Subi Reef and Thitu, numbering as many as 95 vessels on 20 December 2018 and 42 by 26 January 2019, in what AMTI assessed as an effort to dissuade Manila from continuing construction.",
+    "actors": "Chinese maritime militia; China Coast Guard; People's Liberation Army Navy",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "CP"
+    ],
+    "reasoning": "Massing dozens of state-directed vessels at a Philippine-held island to intimidate is coercive pressure, more intense than the 2017 flotilla. Month precision: the deployment began in early-to-mid December 2018.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "In five subsequent satellite images captured from mid-December to late January, their numbers fluctuate, reaching a high of 95 on December 20 before dropping to 42 by January 26."
+      }
+    ]
+  }
+]

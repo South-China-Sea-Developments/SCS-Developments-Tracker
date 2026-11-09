@@ -16,3 +16,4 @@
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
 | PH 2016–2020 | 80 | #33 | pilot; 74/80 excerpts verified |
+| MY 2016–2020 | 40 | #38 | 27/40 excerpts verified, 12 unchecked (scans, PDFs); overlaps #17 (West Capella, CLCS submission, Jul 2020 note) |
