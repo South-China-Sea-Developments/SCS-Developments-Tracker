@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| MY 2021–Oct 2026 | 43 | #62 | 28/43 excerpts verified, 13 unchecked (Malaysian sites block the fetcher; UN scans; Janes); overlaps #17 on five events; completes Malaysia 1970–2026; compiled on Opus |
 | MY 2010–2015 | 31 | #60 | 31/31 excerpts verified; 6 possible duplicates (yearly fisheries and Luconia statements); 2010–12 thin; completes Malaysia 1970–2020; compiled on Opus |
 | MY 2000s | 28 | #58 | 23/28 excerpts verified; nothing for 2001–02; Hansard the main source; register updated; compiled on Opus |
 | MY 1990s | 29 | #55 | 18/29 excerpts verified, 11 PDFs unchecked; 1999 occupations typed force with conflicting dates; nothing for 1997; gaps file and register section; compiled on Opus |

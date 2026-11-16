@@ -344,8 +344,50 @@ Only stray weekly-harvest candidates.
   21 and 23 Oct 2017.
 - **Opposition and NGO statements** ○ excluded.
 
-### 2021–Oct 2026 — not yet compiled
-Eight hand-compiled candidates in #17 (2021, 2023, 2024) and five from weekly harvests.
+### 2021–Oct 2026 (#62)
+- **19 May, 31 May, 4 Oct 2021, 4 Apr 2023, 5 Sep 2024** ▲ overlap the earlier hand-compiled set (#17); dedupe.
+- **31 May or 1 Jun 2021 — PLAAF approach and RMAF intercept** ▲ Malaysian sources 31 May, AMTI 1 Jun; split
+  into the intercept (coercive) and the 1–3 Jun protest and summons (declarative).
+- **4–8 Jun 2021 — MMEA Miri confirms a CCG vessel near Beting Patinggi Ali** ○ no Malaysian response
+  described beyond confirming the report (The Star, DayakDaily 8 Jun 2021).
+- **4–5 Oct 2021 — Mindef: Mawilla 4 base at Bintulu developed for SCS operations** ○ folded into the 11 Dec
+  2023 approval (Hansard dn 4 Oct, dr 5 Oct 2021).
+- **2022 — no dated protest note or summons to China found** ◆ later replies say protests are routine; Hansard
+  dr 7 Mar 2022 covers 2021 only.
+- **2021–2025 — per-year counts of foreign boats detained** ○ none found; aggregates only (265 Vietnamese boats
+  2020–23, The Star 17 Jul 2024; 598 under Op Naga May 2019–Sep 2024, Bernama 17 Oct 2024; 478 vessels
+  2020–25, The Star 22 Jan 2026 — compiled as one event dated to its disclosure, to be spread over the years).
+  One representative MMEA incident a year; several are off the peninsula, arguably outside the disputed area.
+- **27 Jun 2023 — Mohamad Hasan: many notes sent, assets at Kasawari and Beting Patinggi Ali** ○ folded into
+  the 16 Mar 2023 event as a repeat.
+- **2023–2024 — first gas at Kasawari and Jerun** ◆ no dated source opened (AMTI 16 Nov 2026 mentions
+  production without dates); energy events are monthly/yearly AMTI summaries; Jun 2025 farm-ins low confidence.
+- **after 18 Feb 2024 — reply to China's note demanding a halt to work near Luconia** ◆ undated (Anwar said only
+  that Beijing had been informed; RFA 5 Sep 2024, AMTI 1 Oct 2024).
+- **26 Mar 2024 — Mohamad Hasan "protest after protest"** ○ routine (Hansard dn 26 Mar 2024).
+- **22 Apr 2024 — KM Arau collision near Investigator Shoal** ▲ in the set; excerpt not machine-checkable
+  (Janes, WebFetch only); what KM Arau was doing is not stated.
+- **27 Jun 2024, 24 Jul 2026 — notes HA 37/2024 and HA 49/2026 against the Philippine West Palawan
+  submission** ▲ in the set; UN scans read by OCR, not checkable. The 19 Jul 2026 note names no country; the
+  28 Mar 2026 Sabah announcement low confidence (land sovereignty).
+- **28 Jul 2024 — Khaled Nordin: Mindef to investigate CCG presence at Beting Patinggi Ali** ○ investigation
+  announcement (FMT).
+- **early Oct 2024 — complaint to Vietnam** ▲ month precision.
+- **17 Nov 2024 — Khaled Nordin: no need for a new maritime map after the Philippine laws** ○ non-assertion
+  (theSun, WebFetch only).
+- **2025 (undated) — notes protesting Chinese and Vietnamese artificial-island building** ◆ mentioned in the
+  19 Nov 2025 written reply (The Star/ANN 20 Nov 2025); undated.
+- **2025 — Shell/Petronas Rosmari-Marjoram construction near Luconia** ◆ no dated source (Hansard dr 26 Feb
+  2025 mention only).
+- **1 Jan 2026 — protest note to China over the CCG vessel at South Luconia announced** ◆ dispatch not
+  confirmed or dated (FMT 1 Jan 2026).
+- **26 Jan 2026 — Zahid Hamidi written reply on keeping a presence at Luconia** ○ folded into 5 Feb 2026.
+- **4 Mar 2026 — Lukanisman: notes would follow a renewed Philippine Sabah claim** ○ folded into 28 Mar 2026.
+- **29 Sep 2026 — West Capella event** ▲ end date is simply the end of the period.
+- **Unreachable** — kln.gov.my (TLS chain failure; paraphrase only — Foreign Ministry statements taken from
+  press reports); malaymail.com, bharian.com.my, utusan.com.my, theborneopost.com, dailyexpress.com.my (403);
+  parlimen.gov.my, mmea.gov.my, navy.mil.my, mod.gov.my (no connection; the Hansard CSV download host works);
+  janes.com and theSun bodies (WebFetch only).
 
 ---
 
