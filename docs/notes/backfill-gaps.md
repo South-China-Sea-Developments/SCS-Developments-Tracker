@@ -398,7 +398,56 @@ Only stray weekly-harvest candidates.
 unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
 unknown — read this set with that in mind.
 
-### 1970s–2015, 2021–Oct 2026 — not yet compiled
+### 1970s (#64)
+Almost every event rests on US embassy cables (WikiLeaks PlusD, from 1973), so many acts were private at the
+time; the targets are South Vietnam's 1971 Natuna-area concessions (dyad IV). Nothing found for 1970–71 and 1976.
+- **1971 — Presidential Decree No. 68 of 1971 confirming Agip's SCS contract area** ◆ date garbled in the cable
+  ("October 1, 1974"); decree text not found (1974JAKART08624).
+- **1971 — any protest at South Vietnam's 9/19 Jun 1971 concession decree** ◆ undocumented; the first protest
+  found is at the 22 Jun 1972 talks (1974JAKART05102).
+- **1972–73 (undated) — Pertamina warning to Jenney about Saigon's concession offerings** ◆ no date
+  (1974JAKART08624).
+- **17 Nov 1973 — presidential decree confirming Agip's contract area** ▲ known only from a 1974 Pertamina
+  letter quoted in a cable; no separate "1973 Agip award" exists (contract signed Dec 1968, discovery early 1974).
+- **Jan–May 1974 — Agip's drilling and gas find; before 7 Jul 1978 — Marathon's oil find** ▲ year precision.
+- **early 1974 — Indonesian–Malaysian joint naval exercises described as a deterrent to Saigon** ○ cooperative
+  (1974JAKART04655).
+- **15–16 Feb 1974 — Malik denies a reported Malaysian protest over the waters south of Natuna** ○ conciliatory
+  (1974JAKART02138).
+- **Apr 1974 — air force build-up on Natuna** ▲ month only.
+- **18 Apr 1974 — Sadli's letter to Suharto proposing a protest to Saigon** ○ a proposal; delivery not found (the
+  30 Apr 1974 letter to contractors is compiled) (1974JAKART05102).
+- **Jun–Jul 1974 — Pertamina presses oil companies to leave Saigon's concessions** ▲ the decade's one coercive
+  event, aimed at companies not Vietnam.
+- **Jul–Aug 1974 — Soedarmono declines to meet Saigon at the Caracas conference** ○ refusal of talks, unclear as
+  an assertion (1974JAKART11270, 11610).
+- **10–12 Sep 1974 — Malik tells Bui Diem Indonesia asked companies to refrain from drilling** ○ conciliatory;
+  contradicts other reporting (1974JAKART11333).
+- **Jul 1975 — Agip drilling approval** ▲ month only.
+- **Dec 1975 — anti-infiltration measures and US aid requests for the "Natuna triangle"** ○ aimed at subversion
+  (1975JAKART15655).
+- **15 Aug 1976 — Pertamina status map showing the Agip area over Saigon's 1971 claim** ◆ no publication act or
+  protest documented (Usman, *Analisa* CSIS, fig. 2, citing *Tempo* 11 Sep 1976).
+- **1976 — nothing else found** (only the Jul 1976 SRV oil delegation visit and Mochtar's 30 Jul remark).
+- **Aug 1977 — Pertamina–Agip talks on a work programme "close to, if not in" the disputed area** ○ no act or
+  date (1977JAKART10635).
+- **Dec 1977 — Trinh visit; the moratorium outcome** ▲ month only; Jakarta cable says Indonesia refused
+  Vietnam's exploration moratorium, a May 1978 Vientiane cable says both agreed not to exploit the area.
+- **6 Feb 1978 — Panggabean asks the US for two Natuna surveillance radars** ○ procurement (1978JAKART01874).
+- **Jun–Aug 1978 — talks; rejection of Vietnam's boundary line** ▲ sits inside cooperative negotiations.
+- **Sep 1978, 11–15 Jan 1979 — Pham Van Dong visit; third talks round** ○ cooperative (1978JAKART13169; Usman).
+- **Dec 1978 — Pertamina makes Agip give up its large SCS block (the 1979 Natuna blocs)** ○ administrative
+  (1979JAKART14422).
+- **1979 — Natuna Bloc D-Alpha joint contract with Esso** ◆ no signing date found (1979JAKART14422).
+- **1970s — no fishing-boat detentions or Natuna naval patrols found** ◆ only refugee-boat cables 1975–79.
+- **21 Dec 1979 → 1980 — protest of Malaysia's Peta Baru** → in the 1980s (Haller-Trost, IBRU).
+- **Unreachable** — UN DOALOS Indonesia file; NewspaperSG; Trove (API key); CIA Reading Room; peraturan.go.id
+  and the BPK legal database; the embassy airgram A-52 (Jun 1972 talks) and the 1974 memcon cited by the
+  cables (not on PlusD); Keesing's, FBIS, FEER, Southeast Asian Affairs, Asian Survey, Dzurek 1996, Djalal.
+
+### 1980s–2015 — not yet compiled
+
+### 2021–Oct 2026 — not yet compiled
 Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
 
 ---
