@@ -19,3 +19,4 @@ A set's companion `<set>.gaps.md`, when present, lists what its compiler could n
 | `20261107-TW-2016-2020.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 58 candidate events, TW 2016–2020 |
 | `20261107-MY-1970s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 8 candidate events, MY 1970s |
 | `20261107-MY-1980s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 32 candidate events, MY 1980s |
+| `20261107-MY-1990s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 29 candidate events, MY 1990s |
