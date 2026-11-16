@@ -16,3 +16,4 @@ coder decides on the review page). Each file's provenance is in `docs/sources/ba
 | `20261107-ID-2016-2020.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 41 candidate events, ID 2016–2020 |
 | `20261107-TW-2016-2020.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 58 candidate events, TW 2016–2020 |
 | `20261107-MY-1970s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 8 candidate events, MY 1970s |
+| `20261107-MY-1980s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 32 candidate events, MY 1980s |
