@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review queue — harvest ID-1980s</title>
+<style>
+  :root { color-scheme: light dark; --ink: #12222c; --ink-2: #46555e; --muted: #5e6b73; --grid: #dfe6ea; --surface: #fbfdfd; --paper: #f1f5f7; --accent: #0e5a86; --warn: #b45309; --ok: #1f7a3a; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #88949c; --grid: #273440; --surface: #16212a; --paper: #0f171c; --accent: #7fc0ea; --warn: #f0a35b; --ok: #6fcf8a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.05rem; margin: 0; }
+  .lede { color: var(--ink-2); margin: 0 0 16px; }
+  .bar { position: sticky; top: 0; z-index: 3; background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 16px; }
+  .bar label { display: inline-flex; align-items: center; gap: 6px; font-size: .9375rem; }
+  input[type=text], input[type=date], select, textarea { font: inherit; padding: 4px 8px; border: 1px solid var(--grid); border-radius: 6px; background: var(--surface); color: var(--ink); }
+  textarea { width: 100%; min-height: 56px; }
+  button { font: inherit; padding: 6px 12px; border: 1px solid var(--grid); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .cand { background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .cand.decided { border-left: 4px solid var(--ok); } .cand.decided.is-reject { border-left-color: var(--warn); }
+  .head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 6px; }
+  .head b { font-size: 1.05rem; } .id { color: var(--muted); font-size: .85rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .pill { font-size: .8125rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--grid); color: var(--ink-2); }
+  .pill.dup { border-color: var(--warn); color: var(--warn); }
+  .cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 18px; }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+  .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
+  blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
+  .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
+  .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
+  .choices label { display: inline-flex; gap: 6px; align-items: center; }
+  .panel { display: none; margin: 8px 0; padding: 10px; border: 1px dashed var(--grid); border-radius: 6px; }
+  .panel.on { display: block; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 14px; }
+  .grid2 label { display: block; font-size: .9rem; } .grid2 label > span { display: block; color: var(--muted); font-size: .8rem; }
+  .grid2 select { max-width: 100%; }
+  .checks label { display: inline-flex; gap: 4px; margin-right: 10px; font-size: .9rem; }
+  .muted { color: var(--muted); font-size: .85rem; }
+  .req { color: var(--warn); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review queue — harvest ID-1980s</h1>
+  <p class="lede">12 candidate events, generated 2026-11-16. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-ID-1980s.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.</p>
+
+  <div class="bar">
+    <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
+    <span class="muted" id="progress"></span>
+    <button type="button" id="export" class="primary">Export decisions.json</button>
+    <button type="button" id="clear">Clear draft</button>
+  </div>
+
+  
+  <section class="cand" id="c-ev-4227e29b69" data-event="ev-4227e29b69" aria-labelledby="h-ev-4227e29b69">
+    <div class="head">
+      <h2 id="h-ev-4227e29b69" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1980-01-08 (day)</span>
+      <span>Natuna D-Alpha block (East Natuna), South China Sea, sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-4227e29b69</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Alpha block with Esso Natuna on 8 January 1980, with Pertamina and Esso each holding a 50% participating interest, opening the development of the giant gas structure north-east of the Natuna Islands.</p>
+        <p class="muted">Actors: Pertamina; Esso Natuna (Exxon)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://esdm.go.id/id/media-center/arsip-berita/penjelasan-pemerintah-mengenai-status-kks-natuna-d-alpha" target="_blank" rel="noopener">Penjelasan Pemerintah Mengenai Status KKS Natuna D-Alpha (Siaran Pers No. 04/HUMAS DESDM/2009)</a> — Kementerian Energi dan Sumber Daya Mineral (ESDM), 2009-01-16</p>
+        <blockquote>KKS Blok Natuna D-Alpha ditandatangani antara Pertamina (sekarang BPMIGAS) dengan Esso Natuna pada tanggal 8 Januari 1980 untuk jangka waktu 30 tahun.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://migas.esdm.go.id/post/Kontrak-Exxon-di-Natuna-D-Alpha-Berakhir-2005" target="_blank" rel="noopener">Kontrak Exxon di Natuna D Alpha Berakhir 2005</a> — Ditjen Migas, Kementerian ESDM</p>
+        <blockquote>KKS Blok Natuna D Alpha ditandatangani antara Pertamina (sekarang BPMIGAS) dengan Esso Natuna pada tanggal 8 Januari 1980 untuk jangka waktu 30 tahun.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains domestic · issues energy · dyads IC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A state oil company licensing exploitation of a seabed block in Indonesia&#39;s claimed Natuna shelf is unilateral resource administration; demonstrative. The D-Alpha block lies in waters later shown inside China&#39;s dashed line; no contemporary protest is recorded, so the dyad is a coder&#39;s call (the 1970s set coded the Natuna bloc contracts against Vietnam). The date comes from a 2009 Energy Ministry release. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1979</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1980</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-4227e29b69" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-4227e29b69" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-4227e29b69" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-4227e29b69" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-4227e29b69" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1980</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1980" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1980" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Alpha block with Esso Natuna on 8 January 1980, with Pertamina and Esso each holding a 50% participating interest, opening the development of the giant gas structure north-east of the Natuna Islands.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1980-01-08"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1980-01-08"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Natuna D-Alpha block (East Natuna), South China Sea"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Pertamina; Esso Natuna (Exxon)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Alpha block with Esso Natuna on 8 January 1980, with Pertamina and Esso each holding a 50% participating interest, opening the development of the giant gas structure north-east of the Natuna Islands.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-4d61328818" data-event="ev-4d61328818" aria-labelledby="h-ev-4d61328818">
+    <div class="head">
+      <h2 id="h-ev-4d61328818" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1980-02-01 – 1980-02-29 (month)</span>
+      <span>Natuna Islands, sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-4d61328818</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, the area where Vietnam claimed large stretches of sea and seabed, shortly after Indonesian officials had spoken of improving relations with China.</p>
+        <p class="muted">Actors: Indonesian Navy (TNI-AL)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.csmonitor.com/1980/0229/022941.html" target="_blank" rel="noopener">Vietnam&#39;s claim to islands keeps neighbors wary</a> — The Christian Science Monitor (Frederic A. Moritz), 1980-02-29</p>
+        <blockquote>These were followed by an announcement of Indonesian naval maneuvers near the disputed islands.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads IV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Naval manoeuvres announced for the waters around the Natunas, which Vietnam&#39;s shelf claim overlapped, are a show of presence without confrontation; demonstrative. Known only from one contemporary report (&#39;earlier this month&#39;), so the month is the report&#39;s and the exercise&#39;s dates and units are not given. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1979</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1980</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-4d61328818" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-4d61328818" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-4d61328818" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-4d61328818" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-4d61328818" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1980</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1980" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1980" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, the area where Vietnam claimed large stretches of sea and seabed, shortly after Indonesian officials had spoken of improving relations with China.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1980-02-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1980-02-29"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Natuna Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Indonesian Navy (TNI-AL)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, the area where Vietnam claimed large stretches of sea and seabed, shortly after Indonesian officials had spoken of improving relations with China.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-0c7eb0639a" data-event="ev-0c7eb0639a" aria-labelledby="h-ev-0c7eb0639a">
+    <div class="head">
+      <h2 id="h-ev-0c7eb0639a" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1980-02-08 (day)</span>
+      <span>Malaysian map of territorial waters and continental shelf boundaries (21 December 1979); Sipadan and Ligitan — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-0c7eb0639a</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters and continental shelf boundaries (the &#39;Peta Baru&#39;) by a note verbale of 8 February 1980 to the Malaysian Embassy in Jakarta, rejecting Malaysia&#39;s claimed boundary lines and its claim to Sipadan and Ligitan; Malaysia&#39;s Foreign Ministry confirmed in Parliament in June 1980 that Indonesia&#39;s protest concerned the new map.</p>
+        <p class="muted">Actors: Department of Foreign Affairs (Deplu)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-09" target="_blank" rel="noopener">Dewan Rakyat, Penyata Rasmi, 9 Jun 1980 (Zon Ekonomi Eksklusif; Pulau-pulau yang menjadi pertikaian)</a> — Parliament of Malaysia (Digital Hansard), 1980-06-09</p>
+        <blockquote>Bantahan itu ialah berkenaan dengan peta baru (the new map) yang diisytiharkan oleh Malaysia baru-baru ini.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://api.icj-cij.org/sites/default/files/case-related/102/8558.pdf" target="_blank" rel="noopener">Sovereignty over Pulau Ligitan and Pulau Sipadan (Indonesia/Malaysia), Memorial of the Republic of Indonesia</a> — International Court of Justice, 1999-11-02</p>
+        <blockquote>It must be underlined that Indonesia immediately protested against this map by a note verbale on 8 February 1980.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/boundary-amp-territory-briefings/btb_2-2.pdf" target="_blank" rel="noopener">The Territorial Dispute between Indonesia and Malaysia over Pulau Sipadan and Pulau Ligitan in the Celebes Sea (Boundary &amp; Territory Briefing 2(2))</a> — IBRU, University of Durham (R. Haller-Trost), 1995-01-01</p>
+        <blockquote>except in the protest note of 1980 issued as a response to the publication of the Malaysian Map</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues administrative politics · dyads IM</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A formal protest note rejecting another claimant&#39;s published boundary map is a verbal assertion; declarative. The note&#39;s best-documented target is Sipadan and Ligitan in the Celebes Sea, outside the South China Sea; whether it also objected to the map&#39;s South China Sea shelf lines near Natuna is not stated in the sources opened, so a coder may treat it as out of area. The day comes from Indonesia&#39;s ICJ memorial (a PDF that blocks scripted fetching, read through a summarising fetch); the Hansard reply gives no date; the IBRU briefing returned 404 to scripted fetching and was also read through a summarising fetch, so the second and third excerpts are unverified. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1979</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1980</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-0c7eb0639a" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-0c7eb0639a" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-0c7eb0639a" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-0c7eb0639a" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-0c7eb0639a" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1980</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1980" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1980" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IM"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters and continental shelf boundaries (the &#39;Peta Baru&#39;) by a note verbale of 8 February 1980 to the Malaysian Embassy in Jakarta, rejecting Malaysia&#39;s claimed boundary lines and its claim to Sipadan and Ligitan; Malaysia&#39;s Foreign Ministry confirmed in Parliament in June 1980 that Indonesia&#39;s protest concerned the new map.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1980-02-08"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1980-02-08"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Malaysian map of territorial waters and continental shelf boundaries (21 December 1979); Sipadan and Ligitan"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Department of Foreign Affairs (Deplu)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters and continental shelf boundaries (the &#39;Peta Baru&#39;) by a note verbale of 8 February 1980 to the Malaysian Embassy in Jakarta, rejecting Malaysia&#39;s claimed boundary lines and its claim to Sipadan and Ligitan; Malaysia&#39;s Foreign Ministry confirmed in Parliament in June 1980 that Indonesia&#39;s protest concerned the new map.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-442456fb9f" data-event="ev-442456fb9f" aria-labelledby="h-ev-442456fb9f">
+    <div class="head">
+      <h2 id="h-ev-442456fb9f" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1980-03-21 (day)</span>
+      <span>Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands), sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-442456fb9f</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone measured from the baselines of its 1960 archipelagic waters law, asserting sovereign rights over living and non-living resources and jurisdiction over installations, research and the marine environment, and offering to negotiate where the zone overlapped neighbours&#39; claims.</p>
+        <p class="muted">Actors: Government of Indonesia (President Soeharto)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://static.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm" target="_blank" rel="noopener">Indonesia - Maritime Space: Maritime Zones and Maritime Delimitation</a> — UN Division for Ocean Affairs and the Law of the Sea (DOALOS)</p>
+        <blockquote>Declaration by the Government of Indonesia concerning the Exclusive Economic Zone of Indonesia, 21 March 1980</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://static.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/IDN_1980_DeclarationEEZ.pdf" target="_blank" rel="noopener">Declaration by the Government of Indonesia concerning the Exclusive Economic Zone of Indonesia, 21 March 1980</a> — UN DOALOS (national legislation), 1980-03-21</p>
+        <blockquote>the breadth of which extends to 200 nautical miles from the baselines from which the breadth of the Indonesian Territorial Sea is measured.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://jdih.kemenkeu.go.id/api/download/fulltext/1983/5TAHUN~1983UU.htm" target="_blank" rel="noopener">Undang-Undang Republik Indonesia Nomor 5 Tahun 1983 tentang Zona Ekonomi Eksklusif Indonesia</a> — JDIH Kementerian Keuangan, 1983-10-18</p>
+        <blockquote>bahwa pada tanggal 21 Maret 1980 telah dikeluarkan Pengumuman Pemerintah Republik Indonesia tentang Zona Ekonomi Eksklusif Indonesia</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic diplomatic · issues administrative fisheries energy · dyads IV IC IM</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A unilateral proclamation of a 200-mile zone from archipelagic baselines that include the Natunas is a legal assertion over waters overlapping Vietnam&#39;s shelf claim and the area of China&#39;s dashed line; declarative. Primary text deposited with UN DOALOS. [confidence: high]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1979</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1980</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-442456fb9f" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-442456fb9f" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-442456fb9f" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-442456fb9f" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-442456fb9f" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1980</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1980" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1980" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV IC IM"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone measured from the baselines of its 1960 archipelagic waters law, asserting sovereign rights over living and non-living resources and jurisdiction over installations, research and the marine environment, and offering to negotiate where the zone overlapped neighbours&#39; claims.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1980-03-21"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1980-03-21"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Government of Indonesia (President Soeharto)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone measured from the baselines of its 1960 archipelagic waters law, asserting sovereign rights over living and non-living resources and jurisdiction over installations, research and the marine environment, and offering to negotiate where the zone overlapped neighbours&#39; claims.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-63e93dcef8" data-event="ev-63e93dcef8" aria-labelledby="h-ev-63e93dcef8">
+    <div class="head">
+      <h2 id="h-ev-63e93dcef8" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1981-01-01 – 1981-01-31 (month)</span>
+      <span>Shelf area north of Pulau Natuna Besar disputed with Vietnam (about 12,000 sq nm), sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-63e93dcef8</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">A CIA intelligence memorandum of January 1981 reported that Jakarta had granted foreign oil companies exploration concessions covering the entire area of shelf north of Natuna Besar disputed with Vietnam, that seismic surveys there had been completed, and that drilling was due to begin within months under the protection of Indonesian naval patrol ships; plans to upgrade the Natuna airfield for jet fighters and heavy transports were also under consideration.</p>
+        <p class="muted">Actors: Government of Indonesia; Pertamina contractors; Indonesian Navy (TNI-AL)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/cia-readingroom-document-cia-rdp08c01297r000300180004-8/cia-rdp08c01297r000300180004-8_djvu.txt" target="_blank" rel="noopener">The South China Sea: The Soviet Factor (CIA Intelligence Memorandum GS 81-10007), OCR text of CIA-RDP08C01297R000300180004-8</a> — Central Intelligence Agency, National Foreign Assessment Center (via Internet Archive CIA Reading Room mirror), 1981-01-01</p>
+        <blockquote>companies exploration concessions encompassing the entire disputed area, and seismic surveys have already been completed. Drilling is due to start within the next few months with protection provided by Indonesian naval patrol ships.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues energy military · dyads IV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Completing seismic surveys across the whole disputed block and preparing drilling under naval escort is unilateral resource activity in contested waters; demonstrative. Dated only by the memorandum (GS 81-10007, January 1981), so the surveys themselves fall in 1980 or earlier and the drilling was still prospective; the 1979 Natuna bloc contracts are in the 1970s set. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1980</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1981</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-63e93dcef8" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-63e93dcef8" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-63e93dcef8" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-63e93dcef8" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-63e93dcef8" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1981</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1981" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1981" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">A CIA intelligence memorandum of January 1981 reported that Jakarta had granted foreign oil companies exploration concessions covering the entire area of shelf north of Natuna Besar disputed with Vietnam, that seismic surveys there had been completed, and that drilling was due to begin within months under the protection of Indonesian naval patrol ships; plans to upgrade the Natuna airfield for jet fighters and heavy transports were also under consideration.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1981-01-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1981-01-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Shelf area north of Pulau Natuna Besar disputed with Vietnam (about 12,000 sq nm)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Government of Indonesia; Pertamina contractors; Indonesian Navy (TNI-AL)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">A CIA intelligence memorandum of January 1981 reported that Jakarta had granted foreign oil companies exploration concessions covering the entire area of shelf north of Natuna Besar disputed with Vietnam, that seismic surveys there had been completed, and that drilling was due to begin within months under the protection of Indonesian naval patrol ships; plans to upgrade the Natuna airfield for jet fighters and heavy transports were also under consideration.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-d32802dc73" data-event="ev-d32802dc73" aria-labelledby="h-ev-d32802dc73">
+    <div class="head">
+      <h2 id="h-ev-d32802dc73" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1981-05-01 – 1981-05-31 (month)</span>
+      <span>Natuna Islands (air base, Natuna Besar), sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-d32802dc73</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The Indonesian Air Force completed construction of an air base in the Natuna Islands in May 1981, intended to host fighters and bombers from Indonesia and also from Singapore and Malaysia, amid Indonesia&#39;s seabed dispute with Vietnam north of the islands.</p>
+        <p class="muted">Actors: Indonesian Air Force (TNI-AU)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.csmonitor.com/1981/0709/070968.html" target="_blank" rel="noopener">Vietnam pressures Indonesia with territorial claims</a> — The Christian Science Monitor (Arnold C. Brackman), 1981-07-09</p>
+        <blockquote>The Indonesian Air Force completed construction in May of an air base in the Natunas.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt" target="_blank" rel="noopener">Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982)</a> — Central Intelligence Agency (via Internet Archive CIA Reading Room mirror), 1982-09-01</p>
+        <blockquote>French- made Thomson radar is being installed near a new extended runway</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads IV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Building a military air base on the islands from which the disputed shelf claim is measured strengthens physical presence without confrontation; demonstrative. One contemporary report gives only the month; a coder may see the construction as defence posture rather than claim assertion. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1980</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1981</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-d32802dc73" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-d32802dc73" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-d32802dc73" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-d32802dc73" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-d32802dc73" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1981</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1981" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1981" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The Indonesian Air Force completed construction of an air base in the Natuna Islands in May 1981, intended to host fighters and bombers from Indonesia and also from Singapore and Malaysia, amid Indonesia&#39;s seabed dispute with Vietnam north of the islands.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1981-05-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1981-05-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Natuna Islands (air base, Natuna Besar)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Indonesian Air Force (TNI-AU)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The Indonesian Air Force completed construction of an air base in the Natuna Islands in May 1981, intended to host fighters and bombers from Indonesia and also from Singapore and Malaysia, amid Indonesia&#39;s seabed dispute with Vietnam north of the islands.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-a1b708ffde" data-event="ev-a1b708ffde" aria-labelledby="h-ev-a1b708ffde">
+    <div class="head">
+      <h2 id="h-ev-a1b708ffde" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1981-07-01 – 1981-07-09 (month)</span>
+      <span>Natuna Islands and surrounding waters, sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-a1b708ffde</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">By early July 1981 the Indonesian Navy was conducting round-the-clock patrols from the Natuna Islands and the Army had recently staged manoeuvres there; a CIA assessment of 1982 records that Indonesia staged a major joint-service exercise in 1981 to test the reaction time of units moved from Sumatra to Natuna.</p>
+        <p class="muted">Actors: Indonesian Navy (TNI-AL); Indonesian Army (TNI-AD); Indonesian Armed Forces (ABRI)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.csmonitor.com/1981/0709/070968.html" target="_blank" rel="noopener">Vietnam pressures Indonesia with territorial claims</a> — The Christian Science Monitor (Arnold C. Brackman), 1981-07-09</p>
+        <blockquote>The Indonesian Navy is conducting round-the-clock patrols from the Natunas, and the Army has recently staged maneuvers there.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt" target="_blank" rel="noopener">Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982)</a> — Central Intelligence Agency (via Internet Archive CIA Reading Room mirror), 1982-09-01</p>
+        <blockquote>staged one major Jjoint-service exercise (in 1981) to test unit reaction time from Sumatra to Natuna</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads IV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Continuous naval patrols from the Natunas and a joint-service reinforcement exercise in the area of the shelf dispute are shows of presence without confrontation; demonstrative. The month is that of the press report; the CIA gives the exercise only the year 1981, and it may be the same manoeuvre the Monitor mentions. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1980</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1981</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-a1b708ffde" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-a1b708ffde" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-a1b708ffde" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-a1b708ffde" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-a1b708ffde" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1981</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1981" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1981" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">By early July 1981 the Indonesian Navy was conducting round-the-clock patrols from the Natuna Islands and the Army had recently staged manoeuvres there; a CIA assessment of 1982 records that Indonesia staged a major joint-service exercise in 1981 to test the reaction time of units moved from Sumatra to Natuna.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1981-07-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1981-07-09"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Natuna Islands and surrounding waters"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Indonesian Navy (TNI-AL); Indonesian Army (TNI-AD); Indonesian Armed Forces (ABRI)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">By early July 1981 the Indonesian Navy was conducting round-the-clock patrols from the Natuna Islands and the Army had recently staged manoeuvres there; a CIA assessment of 1982 records that Indonesia staged a major joint-service exercise in 1981 to test the reaction time of units moved from Sumatra to Natuna.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-797f4b0432" data-event="ev-797f4b0432" aria-labelledby="h-ev-797f4b0432">
+    <div class="head">
+      <h2 id="h-ev-797f4b0432" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1982-08-01 – 1982-08-15 (month)</span>
+      <span>Natuna Island (Natuna Besar), sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="id">ev-797f4b0432</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forward military base: a French Thomson radar was being installed by a new extended runway, troop facilities were enlarged and a fuel depot built, a submarine and a patrol boat from the Navy&#39;s new purchases had been deployed at Natuna, a new minehunter was to patrol from the island, and a battalion-strength airborne exercise to the island was planned for 1982 (CIA assessment, information as of 15 August 1982).</p>
+        <p class="muted">Actors: Department of Defence and Security (Hankam), Defence Minister Gen. M. Jusuf; Indonesian Navy (TNI-AL); Indonesian Air Force (TNI-AU)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt" target="_blank" rel="noopener">Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982), OCR text of CIA-RDP03T02547R000100930001-9</a> — Central Intelligence Agency, Directorate of Intelligence (via Internet Archive CIA Reading Room mirror), 1982-09-01</p>
+        <blockquote>On Defense Minister Jusuf’s orders, Natuna Island is being upgraded as a forward military base.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads IV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Turning the Natunas into a forward base with radar, a submarine and patrol craft adds a standing military presence over waters disputed with Vietnam, without confrontation; demonstrative. The CIA ties it to the sea boundary dispute and the Natuna gas reserves; dated only by the report&#39;s information cut-off (15 August 1982), so the deployments fall in the months before. [confidence: medium]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1981</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1982</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-797f4b0432" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-797f4b0432" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-797f4b0432" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-797f4b0432" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-797f4b0432" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1982</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1982" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1982" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forward military base: a French Thomson radar was being installed by a new extended runway, troop facilities were enlarged and a fuel depot built, a submarine and a patrol boat from the Navy&#39;s new purchases had been deployed at Natuna, a new minehunter was to patrol from the island, and a battalion-strength airborne exercise to the island was planned for 1982 (CIA assessment, information as of 15 August 1982).</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1982-08-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1982-08-15"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Natuna Island (Natuna Besar)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Department of Defence and Security (Hankam), Defence Minister Gen. M. Jusuf; Indonesian Navy (TNI-AL); Indonesian Air Force (TNI-AU)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forward military base: a French Thomson radar was being installed by a new extended runway, troop facilities were enlarged and a fuel depot built, a submarine and a patrol boat from the Navy&#39;s new purchases had been deployed at Natuna, a new minehunter was to patrol from the island, and a battalion-strength airborne exercise to the island was planned for 1982 (CIA assessment, information as of 15 August 1982).</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-7453dbabf6" data-event="ev-7453dbabf6" aria-labelledby="h-ev-7453dbabf6">
+    <div class="head">
+      <h2 id="h-ev-7453dbabf6" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1983-10-18 (day)</span>
+      <span>Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands), sub-region 10 — an area (Natuna Islands), sub-region only</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-7453dbabf6</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Exclusive Economic Zone, giving statutory force to the 1980 declaration: a 200-nautical-mile zone measured from Indonesia&#39;s territorial-sea baselines, sovereign rights over its resources, delimitation by agreement where it overlaps neighbours&#39; zones (with the median line applying until then), and criminal penalties of up to Rp 225 million for violations.</p>
+        <p class="muted">Actors: President Soeharto; Dewan Perwakilan Rakyat (DPR); State Secretary Sudharmono</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://jdih.kemenkeu.go.id/api/download/fulltext/1983/5TAHUN~1983UU.htm" target="_blank" rel="noopener">Undang-Undang Republik Indonesia Nomor 5 Tahun 1983 tentang Zona Ekonomi Eksklusif Indonesia</a> — JDIH Kementerian Keuangan, 1983-10-18</p>
+        <blockquote>dengan batas terluar 200 (dua ratus) mil laut diukur dari garis pangkal laut wilayah Indonesia</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://static.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm" target="_blank" rel="noopener">Indonesia - Maritime Space: Maritime Zones and Maritime Delimitation</a> — UN Division for Ocean Affairs and the Law of the Sea (DOALOS)</p>
+        <blockquote>Act No. 5 of 1983 on the Indonesian exclusive economic zone, 18 October 1983</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues administrative fisheries energy · dyads IV IC IM</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Legislation establishing and penalising violations of a 200-mile zone that includes waters claimed by Vietnam and within China&#39;s dashed line is a legal assertion; declarative. Primary text (Kemenkeu JDIH) and UN DOALOS listing both give 18 October 1983. [confidence: high]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1982</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1983</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-7453dbabf6" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-7453dbabf6" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-7453dbabf6" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-7453dbabf6" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-7453dbabf6" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1983</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1983" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1983" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IV IC IM"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10" checked>10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Exclusive Economic Zone, giving statutory force to the 1980 declaration: a 200-nautical-mile zone measured from Indonesia&#39;s territorial-sea baselines, sovereign rights over its resources, delimitation by agreement where it overlaps neighbours&#39; zones (with the median line applying until then), and criminal penalties of up to Rp 225 million for violations.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1983-10-18"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1983-10-18"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="10" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="President Soeharto; Dewan Perwakilan Rakyat (DPR); State Secretary Sudharmono"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Exclusive Economic Zone, giving statutory force to the 1980 declaration: a 200-nautical-mile zone measured from Indonesia&#39;s territorial-sea baselines, sovereign rights over its resources, delimitation by agreement where it overlaps neighbours&#39; zones (with the median line applying until then), and criminal penalties of up to Rp 225 million for violations.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-9299417f47" data-event="ev-9299417f47" aria-labelledby="h-ev-9299417f47">
+    <div class="head">
+      <h2 id="h-ev-9299417f47" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1984-06-29 (day)</span>
+      <span>Exclusive Economic Zone of Indonesia — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-9299417f47</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The Indonesian government issued Government Regulation No. 15 of 1984 on the management of living resources in the Indonesian EEZ, setting allowable catches, banning destructive fishing and requiring foreign persons or companies to obtain licences, granted only after a government-to-government agreement, to fish in the zone, with penalties and licence revocation for violations.</p>
+        <p class="muted">Actors: President Soeharto; Ministry of Agriculture (Directorate General of Fisheries)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://pasal.id/peraturan/pp/pp-no-15-tahun-1984" target="_blank" rel="noopener">Peraturan Pemerintah Nomor 15 Tahun 1984 tentang Pengelolaan Sumber Daya Alam Hayati di Zona Ekonomi Eksklusif Indonesia</a> — Pasal.id (text from peraturan.go.id), 1984-06-29</p>
+        <blockquote>Pemberian izin kepada orang atau badan hukum asing untuk menangkap ikan di Zona Ekonomi Eksklusif Indonesia sebagaimana dimaksud dalam Pasal 3 dapat diberikan setelah diadakan persetujuan antara Pemerintah Republik Indonesia dengan Pemerintah Negara Asing</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues fisheries administrative · dyads IA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">An implementing regulation that subjects foreign fishing anywhere in the EEZ, including the Natuna waters, to Indonesian licensing is an administrative legal assertion; declarative. It is nationwide and names no claimant, so a coder may treat it as routine EEZ administration rather than a South China Sea move. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1983</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1984</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-9299417f47" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-9299417f47" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-9299417f47" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-9299417f47" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-9299417f47" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1984</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1984" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1984" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The Indonesian government issued Government Regulation No. 15 of 1984 on the management of living resources in the Indonesian EEZ, setting allowable catches, banning destructive fishing and requiring foreign persons or companies to obtain licences, granted only after a government-to-government agreement, to fish in the zone, with penalties and licence revocation for violations.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1984-06-29"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1984-06-29"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Exclusive Economic Zone of Indonesia"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="President Soeharto; Ministry of Agriculture (Directorate General of Fisheries)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The Indonesian government issued Government Regulation No. 15 of 1984 on the management of living resources in the Indonesian EEZ, setting allowable catches, banning destructive fishing and requiring foreign persons or companies to obtain licences, granted only after a government-to-government agreement, to fish in the zone, with penalties and licence revocation for violations.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-0d7b8eed93" data-event="ev-0d7b8eed93" aria-labelledby="h-ev-0d7b8eed93">
+    <div class="head">
+      <h2 id="h-ev-0d7b8eed93" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1985-07-01 (day)</span>
+      <span>Exclusive Economic Zone of Indonesia — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-0d7b8eed93</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">From 1 July 1985 Indonesia imposed levies and prior-permit requirements on foreign ships fishing in its EEZ under Ministry of Agriculture decrees (No. 473 of 1985 setting an annual allowable catch for the zone and No. 477 of 1985 setting a registration fee for every vessel), as reported by the ANTARA News Bulletin on 15 July 1985.</p>
+        <p class="muted">Actors: Ministry of Agriculture</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://apps.dtic.mil/sti/pdfs/ADA350279.pdf" target="_blank" rel="noopener">JPRS-SEA-85-131, Southeast Asia Report, 28 August 1985: &#39;Fees for Foreign Ships Fishing in EEZ&#39; (ANTARA News Bulletin, 15 Jul 85, p. A8)</a> — Joint Publications Research Service (via DTIC), 1985-08-28</p>
+        <blockquote>every ship wishing to catch fish in the EEZ has to pay a registration fee of US$ 3</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues fisheries administrative · dyads IA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Charging and licensing foreign fishing across the EEZ, which includes the Natuna waters, is administrative assertion of zone jurisdiction; declarative. Nationwide and not aimed at a named claimant. Only source is a JPRS translation in a DTIC PDF that blocks scripted fetching, read through a summarising fetch, so the excerpt needs checking by hand. [confidence: low]</p>
+        <p class="muted">Note from the extractor: Source page could not be fetched (HTTP 403); excerpt not checked.</p>
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1984</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1985</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-0d7b8eed93" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-0d7b8eed93" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-0d7b8eed93" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-0d7b8eed93" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-0d7b8eed93" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1985</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-6821facc66">ev-6821facc66 — Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1985" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1985" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">From 1 July 1985 Indonesia imposed levies and prior-permit requirements on foreign ships fishing in its EEZ under Ministry of Agriculture decrees (No. 473 of 1985 setting an annual allowable catch for the zone and No. 477 of 1985 setting a registration fee for every vessel), as reported by the ANTARA News Bulletin on 15 July 1985.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1985-07-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1985-07-01"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Exclusive Economic Zone of Indonesia"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Ministry of Agriculture"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">From 1 July 1985 Indonesia imposed levies and prior-permit requirements on foreign ships fishing in its EEZ under Ministry of Agriculture decrees (No. 473 of 1985 setting an annual allowable catch for the zone and No. 477 of 1985 setting a registration fee for every vessel), as reported by the ANTARA News Bulletin on 15 July 1985.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-6821facc66" data-event="ev-6821facc66" aria-labelledby="h-ev-6821facc66">
+    <div class="head">
+      <h2 id="h-ev-6821facc66" style="font-size:1.05rem;margin:0">Indonesia</h2>
+      <span>1985-12-31 – 1986-02-03 (day)</span>
+      <span>Indonesian archipelagic waters and EEZ — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="id">ev-6821facc66</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law of the Sea on 31 December 1985, stating that the archipelagic-state regime consolidated Indonesia&#39;s position as an archipelagic state under the Wawasan Nusantara and that waters formerly high seas had become Indonesian archipelagic waters; Indonesia deposited its ratification with the UN on 3 February 1986.</p>
+        <p class="muted">Actors: President Soeharto; Dewan Perwakilan Rakyat (DPR); Department of Foreign Affairs</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://jdih.kemenkeu.go.id/api/download/fulltext/1985/17TAHUN~1985UU.htm" target="_blank" rel="noopener">Undang-Undang Republik Indonesia Nomor 17 Tahun 1985 tentang Pengesahan United Nations Convention on the Law of the Sea</a> — JDIH Kementerian Keuangan, 1985-12-31</p>
+        <blockquote>rejim hukum Negara Kepulauan mempunyai arti dan peranan penting untuk memantapkan kedudukan Indonesia sebagai Negara Kepulauan dalam rangka implementasi Wawasan Nusantara</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.un.org/depts/los/reference_files/chronological_lists_of_ratifications.htm" target="_blank" rel="noopener">Chronological lists of ratifications of, accessions and successions to the Convention and the related Agreements</a> — UN DOALOS</p>
+        <blockquote>26. Indonesia (3 February 1986)</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic diplomatic · issues administrative politics · dyads IA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">The ratifying law presents the Convention as international recognition of Indonesia&#39;s archipelagic baselines and enclosed waters, including the Natuna group; as a legal assertion of the archipelagic claim it is declarative. Ratifying a multilateral treaty can also be read as cooperative, so a coder may drop it. [confidence: low]</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Indonesia's moves in 1984</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Indonesia's moves already in 1985</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision</legend>
+        <label><input type="radio" name="a-ev-6821facc66" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-6821facc66" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-6821facc66" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-6821facc66" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-6821facc66" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1985</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-4227e29b69">ev-4227e29b69 — Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Al</option><option value="ev-4d61328818">ev-4d61328818 — In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, t</option><option value="ev-0c7eb0639a">ev-0c7eb0639a — Indonesia protested Malaysia&#39;s 21 December 1979 map of its territorial waters an</option><option value="ev-442456fb9f">ev-442456fb9f — The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone</option><option value="ev-63e93dcef8">ev-63e93dcef8 — A CIA intelligence memorandum of January 1981 reported that Jakarta had granted </option><option value="ev-d32802dc73">ev-d32802dc73 — The Indonesian Air Force completed construction of an air base in the Natuna Isl</option><option value="ev-a1b708ffde">ev-a1b708ffde — By early July 1981 the Indonesian Navy was conducting round-the-clock patrols fr</option><option value="ev-797f4b0432">ev-797f4b0432 — On Defence Minister M. Jusuf&#39;s orders Natuna Island was being upgraded as a forw</option><option value="ev-7453dbabf6">ev-7453dbabf6 — President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Ex</option><option value="ev-9299417f47">ev-9299417f47 — The Indonesian government issued Government Regulation No. 15 of 1984 on the man</option><option value="ev-0d7b8eed93">ev-0d7b8eed93 — From 1 July 1985 Indonesia imposed levies and prior-permit requirements on forei</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1985" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1985" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="IA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law of the Sea on 31 December 1985, stating that the archipelagic-state regime consolidated Indonesia&#39;s position as an archipelagic state under the Wawasan Nusantara and that waters formerly high seas had become Indonesian archipelagic waters; Indonesia deposited its ratification with the UN on 3 February 1986.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1985-12-31"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1986-02-03"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Indonesian archipelagic waters and EEZ"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="President Soeharto; Dewan Perwakilan Rakyat (DPR); Department of Foreign Affairs"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law of the Sea on 31 December 1985, stating that the archipelagic-state regime consolidated Indonesia&#39;s position as an archipelagic state under the Wawasan Nusantara and that waters formerly high seas had become Indonesian archipelagic waters; Indonesia deposited its ratification with the UN on 3 February 1986.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  
+</div>
+
+<script id="ctx" type="application/json">{"run_id": "ID-1980s", "items": [{"event": {"event_id": "ev-4227e29b69", "move_id": "", "claimant": "ID", "date_start": "1980-01-08", "date_end": "1980-01-08", "date_precision": "day", "lat": "", "lon": "", "location_name": "Natuna D-Alpha block (East Natuna), South China Sea", "location_precision": "subregion", "subregion": "10", "summary": "Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Alpha block with Esso Natuna on 8 January 1980, with Pertamina and Esso each holding a 50% participating interest, opening the development of the giant gas structure north-east of the Natuna Islands.", "actors": "Pertamina; Esso Natuna (Exxon)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "domestic", "suggested_issues": "energy", "suggested_dyads": "IC", "suggestion_reasoning": "A state oil company licensing exploitation of a seabed block in Indonesia's claimed Natuna shelf is unilateral resource administration; demonstrative. The D-Alpha block lies in waters later shown inside China's dashed line; no contemporary protest is recorded, so the dyad is a coder's call (the 1970s set coded the Natuna bloc contracts against Vietnam). The date comes from a 2009 Energy Ministry release. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-4227e29b69-S01", "event_id": "ev-4227e29b69", "url": "https://esdm.go.id/id/media-center/arsip-berita/penjelasan-pemerintah-mengenai-status-kks-natuna-d-alpha", "title": "Penjelasan Pemerintah Mengenai Status KKS Natuna D-Alpha (Siaran Pers No. 04/HUMAS DESDM/2009)", "publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)", "pub_date": "2009-01-16", "language": "id", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "KKS Blok Natuna D-Alpha ditandatangani antara Pertamina (sekarang BPMIGAS) dengan Esso Natuna pada tanggal 8 Januari 1980 untuk jangka waktu 30 tahun."}, {"source_id": "ev-4227e29b69-S02", "event_id": "ev-4227e29b69", "url": "https://migas.esdm.go.id/post/Kontrak-Exxon-di-Natuna-D-Alpha-Berakhir-2005", "title": "Kontrak Exxon di Natuna D Alpha Berakhir 2005", "publisher": "Ditjen Migas, Kementerian ESDM", "pub_date": "", "language": "id", "accessed_date": "", "archive_url": "", "excerpt": "KKS Blok Natuna D Alpha ditandatangani antara Pertamina (sekarang BPMIGAS) dengan Esso Natuna pada tanggal 8 Januari 1980 untuk jangka waktu 30 tahun."}], "year": 1980, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-4d61328818", "move_id": "", "claimant": "ID", "date_start": "1980-02-01", "date_end": "1980-02-29", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna Islands", "location_precision": "subregion", "subregion": "10", "summary": "In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, the area where Vietnam claimed large stretches of sea and seabed, shortly after Indonesian officials had spoken of improving relations with China.", "actors": "Indonesian Navy (TNI-AL)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "IV", "suggestion_reasoning": "Naval manoeuvres announced for the waters around the Natunas, which Vietnam's shelf claim overlapped, are a show of presence without confrontation; demonstrative. Known only from one contemporary report ('earlier this month'), so the month is the report's and the exercise's dates and units are not given. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-4d61328818-S01", "event_id": "ev-4d61328818", "url": "https://www.csmonitor.com/1980/0229/022941.html", "title": "Vietnam's claim to islands keeps neighbors wary", "publisher": "The Christian Science Monitor (Frederic A. Moritz)", "pub_date": "1980-02-29", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "These were followed by an announcement of Indonesian naval maneuvers near the disputed islands."}], "year": 1980, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-0c7eb0639a", "move_id": "", "claimant": "ID", "date_start": "1980-02-08", "date_end": "1980-02-08", "date_precision": "day", "lat": "", "lon": "", "location_name": "Malaysian map of territorial waters and continental shelf boundaries (21 December 1979); Sipadan and Ligitan", "location_precision": "feature", "subregion": "", "summary": "Indonesia protested Malaysia's 21 December 1979 map of its territorial waters and continental shelf boundaries (the 'Peta Baru') by a note verbale of 8 February 1980 to the Malaysian Embassy in Jakarta, rejecting Malaysia's claimed boundary lines and its claim to Sipadan and Ligitan; Malaysia's Foreign Ministry confirmed in Parliament in June 1980 that Indonesia's protest concerned the new map.", "actors": "Department of Foreign Affairs (Deplu)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "administrative politics", "suggested_dyads": "IM", "suggestion_reasoning": "A formal protest note rejecting another claimant's published boundary map is a verbal assertion; declarative. The note's best-documented target is Sipadan and Ligitan in the Celebes Sea, outside the South China Sea; whether it also objected to the map's South China Sea shelf lines near Natuna is not stated in the sources opened, so a coder may treat it as out of area. The day comes from Indonesia's ICJ memorial (a PDF that blocks scripted fetching, read through a summarising fetch); the Hansard reply gives no date; the IBRU briefing returned 404 to scripted fetching and was also read through a summarising fetch, so the second and third excerpts are unverified. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-0c7eb0639a-S01", "event_id": "ev-0c7eb0639a", "url": "https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-09", "title": "Dewan Rakyat, Penyata Rasmi, 9 Jun 1980 (Zon Ekonomi Eksklusif; Pulau-pulau yang menjadi pertikaian)", "publisher": "Parliament of Malaysia (Digital Hansard)", "pub_date": "1980-06-09", "language": "ms", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Bantahan itu ialah berkenaan dengan peta baru (the new map) yang diisytiharkan oleh Malaysia baru-baru ini."}, {"source_id": "ev-0c7eb0639a-S02", "event_id": "ev-0c7eb0639a", "url": "https://api.icj-cij.org/sites/default/files/case-related/102/8558.pdf", "title": "Sovereignty over Pulau Ligitan and Pulau Sipadan (Indonesia/Malaysia), Memorial of the Republic of Indonesia", "publisher": "International Court of Justice", "pub_date": "1999-11-02", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "It must be underlined that Indonesia immediately protested against this map by a note verbale on 8 February 1980."}, {"source_id": "ev-0c7eb0639a-S03", "event_id": "ev-0c7eb0639a", "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/boundary-amp-territory-briefings/btb_2-2.pdf", "title": "The Territorial Dispute between Indonesia and Malaysia over Pulau Sipadan and Pulau Ligitan in the Celebes Sea (Boundary & Territory Briefing 2(2))", "publisher": "IBRU, University of Durham (R. Haller-Trost)", "pub_date": "1995-01-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "except in the protest note of 1980 issued as a response to the publication of the Malaysian Map"}], "year": 1980, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-442456fb9f", "move_id": "", "claimant": "ID", "date_start": "1980-03-21", "date_end": "1980-03-21", "date_precision": "day", "lat": "", "lon": "", "location_name": "Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands)", "location_precision": "subregion", "subregion": "10", "summary": "The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone measured from the baselines of its 1960 archipelagic waters law, asserting sovereign rights over living and non-living resources and jurisdiction over installations, research and the marine environment, and offering to negotiate where the zone overlapped neighbours' claims.", "actors": "Government of Indonesia (President Soeharto)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic diplomatic", "suggested_issues": "administrative fisheries energy", "suggested_dyads": "IV IC IM", "suggestion_reasoning": "A unilateral proclamation of a 200-mile zone from archipelagic baselines that include the Natunas is a legal assertion over waters overlapping Vietnam's shelf claim and the area of China's dashed line; declarative. Primary text deposited with UN DOALOS. [confidence: high]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-442456fb9f-S01", "event_id": "ev-442456fb9f", "url": "https://static.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm", "title": "Indonesia - Maritime Space: Maritime Zones and Maritime Delimitation", "publisher": "UN Division for Ocean Affairs and the Law of the Sea (DOALOS)", "pub_date": "", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Declaration by the Government of Indonesia concerning the Exclusive Economic Zone of Indonesia, 21 March 1980"}, {"source_id": "ev-442456fb9f-S02", "event_id": "ev-442456fb9f", "url": "https://static.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/IDN_1980_DeclarationEEZ.pdf", "title": "Declaration by the Government of Indonesia concerning the Exclusive Economic Zone of Indonesia, 21 March 1980", "publisher": "UN DOALOS (national legislation)", "pub_date": "1980-03-21", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "the breadth of which extends to 200 nautical miles from the baselines from which the breadth of the Indonesian Territorial Sea is measured."}, {"source_id": "ev-442456fb9f-S03", "event_id": "ev-442456fb9f", "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/1983/5TAHUN~1983UU.htm", "title": "Undang-Undang Republik Indonesia Nomor 5 Tahun 1983 tentang Zona Ekonomi Eksklusif Indonesia", "publisher": "JDIH Kementerian Keuangan", "pub_date": "1983-10-18", "language": "id", "accessed_date": "", "archive_url": "", "excerpt": "bahwa pada tanggal 21 Maret 1980 telah dikeluarkan Pengumuman Pemerintah Republik Indonesia tentang Zona Ekonomi Eksklusif Indonesia"}], "year": 1980, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-63e93dcef8", "move_id": "", "claimant": "ID", "date_start": "1981-01-01", "date_end": "1981-01-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "Shelf area north of Pulau Natuna Besar disputed with Vietnam (about 12,000 sq nm)", "location_precision": "subregion", "subregion": "10", "summary": "A CIA intelligence memorandum of January 1981 reported that Jakarta had granted foreign oil companies exploration concessions covering the entire area of shelf north of Natuna Besar disputed with Vietnam, that seismic surveys there had been completed, and that drilling was due to begin within months under the protection of Indonesian naval patrol ships; plans to upgrade the Natuna airfield for jet fighters and heavy transports were also under consideration.", "actors": "Government of Indonesia; Pertamina contractors; Indonesian Navy (TNI-AL)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "energy military", "suggested_dyads": "IV", "suggestion_reasoning": "Completing seismic surveys across the whole disputed block and preparing drilling under naval escort is unilateral resource activity in contested waters; demonstrative. Dated only by the memorandum (GS 81-10007, January 1981), so the surveys themselves fall in 1980 or earlier and the drilling was still prospective; the 1979 Natuna bloc contracts are in the 1970s set. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-63e93dcef8-S01", "event_id": "ev-63e93dcef8", "url": "https://archive.org/download/cia-readingroom-document-cia-rdp08c01297r000300180004-8/cia-rdp08c01297r000300180004-8_djvu.txt", "title": "The South China Sea: The Soviet Factor (CIA Intelligence Memorandum GS 81-10007), OCR text of CIA-RDP08C01297R000300180004-8", "publisher": "Central Intelligence Agency, National Foreign Assessment Center (via Internet Archive CIA Reading Room mirror)", "pub_date": "1981-01-01", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "companies exploration concessions encompassing the entire disputed area, and seismic surveys have already been completed. Drilling is due to start within the next few months with protection provided by Indonesian naval patrol ships."}], "year": 1981, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-d32802dc73", "move_id": "", "claimant": "ID", "date_start": "1981-05-01", "date_end": "1981-05-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna Islands (air base, Natuna Besar)", "location_precision": "subregion", "subregion": "10", "summary": "The Indonesian Air Force completed construction of an air base in the Natuna Islands in May 1981, intended to host fighters and bombers from Indonesia and also from Singapore and Malaysia, amid Indonesia's seabed dispute with Vietnam north of the islands.", "actors": "Indonesian Air Force (TNI-AU)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "IV", "suggestion_reasoning": "Building a military air base on the islands from which the disputed shelf claim is measured strengthens physical presence without confrontation; demonstrative. One contemporary report gives only the month; a coder may see the construction as defence posture rather than claim assertion. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-d32802dc73-S01", "event_id": "ev-d32802dc73", "url": "https://www.csmonitor.com/1981/0709/070968.html", "title": "Vietnam pressures Indonesia with territorial claims", "publisher": "The Christian Science Monitor (Arnold C. Brackman)", "pub_date": "1981-07-09", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "The Indonesian Air Force completed construction in May of an air base in the Natunas."}, {"source_id": "ev-d32802dc73-S02", "event_id": "ev-d32802dc73", "url": "https://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt", "title": "Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982)", "publisher": "Central Intelligence Agency (via Internet Archive CIA Reading Room mirror)", "pub_date": "1982-09-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "French- made Thomson radar is being installed near a new extended runway"}], "year": 1981, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-a1b708ffde", "move_id": "", "claimant": "ID", "date_start": "1981-07-01", "date_end": "1981-07-09", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna Islands and surrounding waters", "location_precision": "subregion", "subregion": "10", "summary": "By early July 1981 the Indonesian Navy was conducting round-the-clock patrols from the Natuna Islands and the Army had recently staged manoeuvres there; a CIA assessment of 1982 records that Indonesia staged a major joint-service exercise in 1981 to test the reaction time of units moved from Sumatra to Natuna.", "actors": "Indonesian Navy (TNI-AL); Indonesian Army (TNI-AD); Indonesian Armed Forces (ABRI)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "IV", "suggestion_reasoning": "Continuous naval patrols from the Natunas and a joint-service reinforcement exercise in the area of the shelf dispute are shows of presence without confrontation; demonstrative. The month is that of the press report; the CIA gives the exercise only the year 1981, and it may be the same manoeuvre the Monitor mentions. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-a1b708ffde-S01", "event_id": "ev-a1b708ffde", "url": "https://www.csmonitor.com/1981/0709/070968.html", "title": "Vietnam pressures Indonesia with territorial claims", "publisher": "The Christian Science Monitor (Arnold C. Brackman)", "pub_date": "1981-07-09", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "The Indonesian Navy is conducting round-the-clock patrols from the Natunas, and the Army has recently staged maneuvers there."}, {"source_id": "ev-a1b708ffde-S02", "event_id": "ev-a1b708ffde", "url": "https://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt", "title": "Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982)", "publisher": "Central Intelligence Agency (via Internet Archive CIA Reading Room mirror)", "pub_date": "1982-09-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "staged one major Jjoint-service exercise (in 1981) to test unit reaction time from Sumatra to Natuna"}], "year": 1981, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-797f4b0432", "move_id": "", "claimant": "ID", "date_start": "1982-08-01", "date_end": "1982-08-15", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna Island (Natuna Besar)", "location_precision": "subregion", "subregion": "10", "summary": "On Defence Minister M. Jusuf's orders Natuna Island was being upgraded as a forward military base: a French Thomson radar was being installed by a new extended runway, troop facilities were enlarged and a fuel depot built, a submarine and a patrol boat from the Navy's new purchases had been deployed at Natuna, a new minehunter was to patrol from the island, and a battalion-strength airborne exercise to the island was planned for 1982 (CIA assessment, information as of 15 August 1982).", "actors": "Department of Defence and Security (Hankam), Defence Minister Gen. M. Jusuf; Indonesian Navy (TNI-AL); Indonesian Air Force (TNI-AU)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "IV", "suggestion_reasoning": "Turning the Natunas into a forward base with radar, a submarine and patrol craft adds a standing military presence over waters disputed with Vietnam, without confrontation; demonstrative. The CIA ties it to the sea boundary dispute and the Natuna gas reserves; dated only by the report's information cut-off (15 August 1982), so the deployments fall in the months before. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-797f4b0432-S01", "event_id": "ev-797f4b0432", "url": "https://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt", "title": "Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982), OCR text of CIA-RDP03T02547R000100930001-9", "publisher": "Central Intelligence Agency, Directorate of Intelligence (via Internet Archive CIA Reading Room mirror)", "pub_date": "1982-09-01", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "On Defense Minister Jusuf’s orders, Natuna Island is being upgraded as a forward military base."}], "year": 1982, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-7453dbabf6", "move_id": "", "claimant": "ID", "date_start": "1983-10-18", "date_end": "1983-10-18", "date_precision": "day", "lat": "", "lon": "", "location_name": "Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands)", "location_precision": "subregion", "subregion": "10", "summary": "President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Exclusive Economic Zone, giving statutory force to the 1980 declaration: a 200-nautical-mile zone measured from Indonesia's territorial-sea baselines, sovereign rights over its resources, delimitation by agreement where it overlaps neighbours' zones (with the median line applying until then), and criminal penalties of up to Rp 225 million for violations.", "actors": "President Soeharto; Dewan Perwakilan Rakyat (DPR); State Secretary Sudharmono", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "administrative fisheries energy", "suggested_dyads": "IV IC IM", "suggestion_reasoning": "Legislation establishing and penalising violations of a 200-mile zone that includes waters claimed by Vietnam and within China's dashed line is a legal assertion; declarative. Primary text (Kemenkeu JDIH) and UN DOALOS listing both give 18 October 1983. [confidence: high]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-7453dbabf6-S01", "event_id": "ev-7453dbabf6", "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/1983/5TAHUN~1983UU.htm", "title": "Undang-Undang Republik Indonesia Nomor 5 Tahun 1983 tentang Zona Ekonomi Eksklusif Indonesia", "publisher": "JDIH Kementerian Keuangan", "pub_date": "1983-10-18", "language": "id", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "dengan batas terluar 200 (dua ratus) mil laut diukur dari garis pangkal laut wilayah Indonesia"}, {"source_id": "ev-7453dbabf6-S02", "event_id": "ev-7453dbabf6", "url": "https://static.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm", "title": "Indonesia - Maritime Space: Maritime Zones and Maritime Delimitation", "publisher": "UN Division for Ocean Affairs and the Law of the Sea (DOALOS)", "pub_date": "", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "Act No. 5 of 1983 on the Indonesian exclusive economic zone, 18 October 1983"}], "year": 1983, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-9299417f47", "move_id": "", "claimant": "ID", "date_start": "1984-06-29", "date_end": "1984-06-29", "date_precision": "day", "lat": "", "lon": "", "location_name": "Exclusive Economic Zone of Indonesia", "location_precision": "feature", "subregion": "", "summary": "The Indonesian government issued Government Regulation No. 15 of 1984 on the management of living resources in the Indonesian EEZ, setting allowable catches, banning destructive fishing and requiring foreign persons or companies to obtain licences, granted only after a government-to-government agreement, to fish in the zone, with penalties and licence revocation for violations.", "actors": "President Soeharto; Ministry of Agriculture (Directorate General of Fisheries)", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "fisheries administrative", "suggested_dyads": "IA", "suggestion_reasoning": "An implementing regulation that subjects foreign fishing anywhere in the EEZ, including the Natuna waters, to Indonesian licensing is an administrative legal assertion; declarative. It is nationwide and names no claimant, so a coder may treat it as routine EEZ administration rather than a South China Sea move. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-9299417f47-S01", "event_id": "ev-9299417f47", "url": "https://pasal.id/peraturan/pp/pp-no-15-tahun-1984", "title": "Peraturan Pemerintah Nomor 15 Tahun 1984 tentang Pengelolaan Sumber Daya Alam Hayati di Zona Ekonomi Eksklusif Indonesia", "publisher": "Pasal.id (text from peraturan.go.id)", "pub_date": "1984-06-29", "language": "id", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Pemberian izin kepada orang atau badan hukum asing untuk menangkap ikan di Zona Ekonomi Eksklusif Indonesia sebagaimana dimaksud dalam Pasal 3 dapat diberikan setelah diadakan persetujuan antara Pemerintah Republik Indonesia dengan Pemerintah Negara Asing"}], "year": 1984, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-0d7b8eed93", "move_id": "", "claimant": "ID", "date_start": "1985-07-01", "date_end": "1985-07-01", "date_precision": "day", "lat": "", "lon": "", "location_name": "Exclusive Economic Zone of Indonesia", "location_precision": "feature", "subregion": "", "summary": "From 1 July 1985 Indonesia imposed levies and prior-permit requirements on foreign ships fishing in its EEZ under Ministry of Agriculture decrees (No. 473 of 1985 setting an annual allowable catch for the zone and No. 477 of 1985 setting a registration fee for every vessel), as reported by the ANTARA News Bulletin on 15 July 1985.", "actors": "Ministry of Agriculture", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "fisheries administrative", "suggested_dyads": "IA", "suggestion_reasoning": "Charging and licensing foreign fishing across the EEZ, which includes the Natuna waters, is administrative assertion of zone jurisdiction; declarative. Nationwide and not aimed at a named claimant. Only source is a JPRS translation in a DTIC PDF that blocks scripted fetching, read through a summarising fetch, so the excerpt needs checking by hand. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "Source page could not be fetched (HTTP 403); excerpt not checked.", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-0d7b8eed93-S01", "event_id": "ev-0d7b8eed93", "url": "https://apps.dtic.mil/sti/pdfs/ADA350279.pdf", "title": "JPRS-SEA-85-131, Southeast Asia Report, 28 August 1985: 'Fees for Foreign Ships Fishing in EEZ' (ANTARA News Bulletin, 15 Jul 85, p. A8)", "publisher": "Joint Publications Research Service (via DTIC)", "pub_date": "1985-08-28", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "every ship wishing to catch fish in the EEZ has to pay a registration fee of US$ 3"}], "year": 1985, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-6821facc66", "move_id": "", "claimant": "ID", "date_start": "1985-12-31", "date_end": "1986-02-03", "date_precision": "day", "lat": "", "lon": "", "location_name": "Indonesian archipelagic waters and EEZ", "location_precision": "feature", "subregion": "", "summary": "Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law of the Sea on 31 December 1985, stating that the archipelagic-state regime consolidated Indonesia's position as an archipelagic state under the Wawasan Nusantara and that waters formerly high seas had become Indonesian archipelagic waters; Indonesia deposited its ratification with the UN on 3 February 1986.", "actors": "President Soeharto; Dewan Perwakilan Rakyat (DPR); Department of Foreign Affairs", "status": "candidate", "harvest_run_id": "ID-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic diplomatic", "suggested_issues": "administrative politics", "suggested_dyads": "IA", "suggestion_reasoning": "The ratifying law presents the Convention as international recognition of Indonesia's archipelagic baselines and enclosed waters, including the Natuna group; as a legal assertion of the archipelagic claim it is declarative. Ratifying a multilateral treaty can also be read as cooperative, so a coder may drop it. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-6821facc66-S01", "event_id": "ev-6821facc66", "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/1985/17TAHUN~1985UU.htm", "title": "Undang-Undang Republik Indonesia Nomor 17 Tahun 1985 tentang Pengesahan United Nations Convention on the Law of the Sea", "publisher": "JDIH Kementerian Keuangan", "pub_date": "1985-12-31", "language": "id", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "rejim hukum Negara Kepulauan mempunyai arti dan peranan penting untuk memantapkan kedudukan Indonesia sebagai Negara Kepulauan dalam rangka implementasi Wawasan Nusantara"}, {"source_id": "ev-6821facc66-S02", "event_id": "ev-6821facc66", "url": "https://www.un.org/depts/los/reference_files/chronological_lists_of_ratifications.htm", "title": "Chronological lists of ratifications of, accessions and successions to the Convention and the related Agreements", "publisher": "UN DOALOS", "pub_date": "", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "26. Indonesia (3 February 1986)"}], "year": 1985, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}]}</script>
+<script>
+(function () {
+  "use strict";
+  var CTX = JSON.parse(document.getElementById("ctx").textContent);
+  var KEY = "scs-review-" + CTX.run_id;
+  var draft = {};
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { draft = {}; }
+  var reviewer = document.getElementById("reviewer");
+  reviewer.value = draft._reviewer || "";
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(draft)); } catch (e) {} progress(); }
+  function progress() {
+    var n = CTX.items.length, done = CTX.items.filter(function (it) { return (draft[it.event.event_id] || {}).action; }).length;
+    document.getElementById("progress").textContent = done + " of " + n + " decided";
+  }
+  function orig(id) { for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) return CTX.items[i].event; return {}; }
+
+  function readCard(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    var d = { event_id: id, action: action, note: card.querySelector(".f-note").value.trim() };
+    if (action === "merge") {
+      var of = card.querySelector(".f-move_of").value;
+      if (of) d.move_of_event = of; else d.move_id = card.querySelector(".f-move_id_text").value.trim() || card.querySelector(".f-move_id").value;
+    }
+    if (action === "duplicate") d.duplicate_of = card.querySelector(".f-dup_of").value.trim();
+    if (action === "new_move") {
+      d.new_move = {
+        type: card.querySelector(".f-type").value, intensification_criterion: card.querySelector(".f-crit").value,
+        year: card.querySelector(".f-year").value.trim(), ongoing_through: card.querySelector(".f-ongoing").value.trim(),
+        dyads: card.querySelector(".f-dyads").value.trim().split(/\s+/).filter(Boolean),
+        domains: Array.prototype.map.call(card.querySelectorAll(".f-domain:checked"), function (i) { return i.value; }),
+        issues: Array.prototype.map.call(card.querySelectorAll(".f-issue:checked"), function (i) { return i.value; }),
+        subregions: Array.prototype.map.call(card.querySelectorAll(".f-sub:checked"), function (i) { return i.value; }),
+        description: card.querySelector(".f-desc").value.trim()
+      };
+    }
+    if (action === "merge" || action === "new_move" || action === "duplicate") {
+      var o = orig(id), edits = {};
+      ["date_start", "date_end", "date_precision", "location_name", "subregion", "lat", "lon", "actors", "summary"].forEach(function (f) {
+        var v = card.querySelector(".f-e-" + f).value.trim();
+        if (v && v !== (o[f] || "")) edits[f] = v;     // blank keeps the current value
+      });
+      if (Object.keys(edits).length) d.edits = edits;
+    }
+    return d;
+  }
+  function paint(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    card.querySelector(".p-merge").classList.toggle("on", action === "merge");
+    card.querySelector(".p-new").classList.toggle("on", action === "new_move");
+    card.querySelector(".p-dup").classList.toggle("on", action === "duplicate");
+    card.querySelector(".p-edits").classList.toggle("on", action === "merge" || action === "new_move" || action === "duplicate");
+    card.querySelector(".p-reject-req").hidden = action !== "reject";
+    card.classList.toggle("decided", !!action);
+    card.classList.toggle("is-reject", action === "reject");
+  }
+  function restore(card) {
+    var id = card.getAttribute("data-event"), d = draft[id];
+    if (!d) return;
+    var r = card.querySelector('input[name="a-' + id + '"][value="' + (d.action || "") + '"]'); if (r) r.checked = true;
+    card.querySelector(".f-note").value = d.note || "";
+    if (d.move_id) card.querySelector(".f-move_id_text").value = d.move_id;
+    if (d.move_of_event) card.querySelector(".f-move_of").value = d.move_of_event;
+    if (d.duplicate_of) card.querySelector(".f-dup_of").value = d.duplicate_of;
+    if (d.new_move) {
+      var m = d.new_move;
+      card.querySelector(".f-type").value = m.type || ""; card.querySelector(".f-crit").value = m.intensification_criterion || "";
+      card.querySelector(".f-year").value = m.year || ""; card.querySelector(".f-ongoing").value = m.ongoing_through || "";
+      card.querySelector(".f-dyads").value = (m.dyads || []).join(" "); card.querySelector(".f-desc").value = m.description || "";
+      card.querySelectorAll(".f-domain").forEach(function (i) { i.checked = (m.domains || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-issue").forEach(function (i) { i.checked = (m.issues || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-sub").forEach(function (i) { i.checked = (m.subregions || []).indexOf(i.value) >= 0; });
+    }
+    if (d.edits) Object.keys(d.edits).forEach(function (f) { var el = card.querySelector(".f-e-" + f); if (el) el.value = d.edits[f]; });
+  }
+
+  var cards = document.querySelectorAll(".cand");
+  cards.forEach(function (card) {
+    restore(card); paint(card);
+    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+  });
+  reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
+
+  function validate(decisions) {
+    var problems = [];
+    decisions.forEach(function (d) {
+      if (d.action === "reject" && !d.note) problems.push(d.event_id + ": a rejection needs a note");
+      if (d.action === "merge" && !d.move_id && !d.move_of_event) problems.push(d.event_id + ": choose the move to merge into");
+      if (d.action === "merge" && d.move_id && !/^[A-Z]{2}\d{6}$/.test(d.move_id)) problems.push(d.event_id + ": a move id looks like CN202601");
+      if (d.action === "merge" && d.move_of_event && !(draft[d.move_of_event] || {}).action) problems.push(d.event_id + ": the candidate it merges into has no decision yet");
+      if (d.action === "merge" && d.move_of_event && (draft[d.move_of_event] || {}).action && draft[d.move_of_event].action !== "new_move") problems.push(d.event_id + ": the candidate it merges into does not form a new move");
+      if (d.action === "duplicate" && !d.duplicate_of) problems.push(d.event_id + ": name the event it duplicates");
+      if (d.action === "new_move" && d.new_move.dyads.some(function (x) { return !/^[RCPVMBIAU]{1,2}$/.test(x); })) problems.push(d.event_id + ": dyads are one or two of the letters R C P V M B I A U");
+      if (d.action === "new_move" && d.new_move.year && !/^\d{4}$/.test(d.new_move.year)) problems.push(d.event_id + ": year must be four digits");
+      if (d.action === "new_move") {
+        if (!d.new_move.type) problems.push(d.event_id + ": a new move needs a type");
+        if (!d.new_move.intensification_criterion) problems.push(d.event_id + ": a new move needs its intensification criterion");
+      }
+    });
+    return problems;
+  }
+  document.getElementById("export").addEventListener("click", function () {
+    var decisions = [];
+    cards.forEach(function (card) { var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    var problems = validate(decisions);
+    if (!decisions.length) { alert("No decisions yet."); return; }
+    if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
+    var out = { run_id: CTX.run_id, reviewer: reviewer.value.trim(), exported: new Date().toISOString().slice(0, 10), decisions: decisions };
+    var blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "decisions-" + CTX.run_id + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  document.getElementById("clear").addEventListener("click", function () {
+    if (!confirm("Discard the saved draft for this page?")) return;
+    draft = {}; try { localStorage.removeItem(KEY); } catch (e) {} location.reload();
+  });
+  progress();
+})();
+</script>
+</body>
+</html>
