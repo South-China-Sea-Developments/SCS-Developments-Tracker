@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| ID 1990s | 27 | #68 | 27/27 excerpts verified; FBIS Daily Reports 1991–Aug 1996 via the Internet Archive the key source; 1995 the busy year (11); compiled on Opus |
 | ID 1980s | 12 | #66 | 11/12 excerpts verified; nothing for 1986–89 (coverage gap); laws, decrees and CIA-reported Natuna build-up; compiled on Opus |
 | ID 1970s | 18 | #64 | 18/18 excerpts verified; US embassy cables the sole source for most events, aimed at South Vietnam's 1971 concessions; nothing for 1970–71, 1976; compiled on Opus |
 | MY 2021–Oct 2026 | 43 | #62 | 28/43 excerpts verified, 13 unchecked (Malaysian sites block the fetcher; UN scans; Janes); overlaps #17 on five events; completes Malaysia 1970–2026; compiled on Opus |
