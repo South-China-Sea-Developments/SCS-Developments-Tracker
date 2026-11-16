@@ -268,7 +268,57 @@ Only stray weekly-harvest candidates.
   2009)** ○ not broken down by year or sea; only the Sarawak 2008 and 2009 figures compiled.
 - **2004, 2006, 2008, 2009 — fisheries tallies** ○ one event a year.
 
-### 2010–2015 — not yet compiled
+### 2010–2015 (#60)
+- **Apr 2010 — reported standoff between the Navy and Chinese fisheries patrol ships (Yuzheng 311/202) near
+  Swallow Reef** ◆ Chinese-media accounts only; no source dating it or describing Malaysia's act.
+- **6 May 2010 — Dewan Negara reply to Senator Tunku Abdul Aziz** ◆ cited by Dzirhan Mahadzir (ISEAS 2014);
+  not found in the sitting's text (possibly a written answer); only the 28 Jul 2010 reply is compiled.
+- **2010–2012 — individual detentions of Vietnamese boats** ○ only yearly totals and one Aug 2010 example
+  (no per-incident sources; Bernama/The Star archives not searched page by page).
+- **2010–2015 — fisheries events** ▲ one a year from national arrest totals (103, 70, 57, 61, 47 or 74),
+  covering all Malaysian waters; no 2015 total found — a single dated example (27 Aug 2015, four Vietnamese
+  trawlers off Kuala Terengganu) stands in.
+- **2010–2015 — Petronas production-sharing contracts in deepwater Sarawak/Sabah blocks inside the
+  nine-dash line (e.g. Pexco Central Luconia, raised in the Dewan Rakyat 4 Jul 2013)** ◆ award dates and
+  areas not sourced; whether they count is a coder's call.
+- **2012 — Territorial Sea Act** ▲ low confidence (the minister said it had nothing to do with the Spratlys).
+- **Aug 2012, Jan 2013 — Petronas/Shell seismic surveys off Sarawak harassed by Chinese ships** ◆ Malaysian
+  survey activity; no dated primary source (Scott Bentley, Asan Forum, 31 Jul 2015).
+- **Nov 2012 — China's e-passport map** ○ no Malaysian protest found (PH, VN and TW protested).
+- **Mar 2013 — private protest to China over the James Shoal visit** ▲ month only (Reuters diplomatic sources).
+- **26 Mar 2013 — KD Perak warns Chinese ships at James Shoal** ▲ one ASPI source; low confidence.
+- **28 Aug 2013 — Hishammuddin "not worried", open to joint development** ○ conciliatory (Bloomberg).
+- **5 Sep 2013 — KD Serang sent to Luconia; 2014 (269) and 2015 (345) ship-day totals** ▲ all from the
+  14 Dec 2015 Dewan Negara answer.
+- **Sep 2013 — Najib in New York: China sending "mixed signals"** ○ criticism, not a claim act; weighable.
+- **10 Oct 2013 — Bintulu base and marine corps; 2014–15 Sepanggar plan** ▲ marked demonstrative though
+  announced plans; Sepanggar air-defence statement dated 25–26 Jan 2015 (sources disagree on the day).
+- **26 Jan–20 Feb 2014 — Navy denies the PLAN oath-taking at James Shoal; Armed Forces chief: "just passing
+  through"** ○ no protest; not an assertive act (Astro Awani 21 Feb 2014, Malaysiakini 300677).
+- **18 Feb, 25 Mar 2014 — ASEAN claimants' working-group meetings rejecting the nine-dash line** ○ consultation.
+- **2014 (start unknown) — "special integrated operation" of continuous patrols off Sarawak** ▲ compiled only
+  at its 4 Nov 2014 statement date.
+- **12 Sep 2014 — offer to host US Navy P-8 flights** ○ cooperation with a non-claimant.
+- **31 Oct 2014 — Black Shark torpedo live fire; Budget 2015 Hawk squadron move to Labuan** ▲ low-confidence
+  links to the SCS.
+- **12 Mar, 15 Jun, 30 Jun 2015 — "nine-dash line not recognised" statements** ○ one event (15 Jun) noting
+  the repeats; Shahidan's 30 Jun 2015 round-the-clock Navy presence remark folded into the patrol-days event.
+- **26 Mar 2015 — Shahidan: foreign fishermen at Luconia will be arrested** ▲ marked declarative, could be
+  coercive.
+- **27 Apr, 22 Nov 2015 — Najib's ASEAN-chair summit remarks, the Chairman's statement on reclamation, the
+  "five firm statements" at the EAS (Dewan Negara 8 Dec 2015)** ○ collective/chair statements; texts on
+  asean.org not opened.
+- **2–9 Jun 2015 — Luconia protest and the remark that Najib would raise it with Xi (withdrawn 9 Jun)** ▲
+  date range.
+- **Jul, Nov 2015 — observer at the Philippines v. China hearings** ○ observing is not an assertion.
+- **3–5 Nov 2015 — Hishammuddin welcomes the US FONOP and tours USS Theodore Roosevelt** ○ tied to a
+  non-claimant; ambiguous.
+- **2013–2015 (undated) — removal of a foreign wooden structure at Beting Patinggi Ali; an earlier Survey
+  Department marker there now missing** ◆ no date (Dewan Negara 14 Dec 2015); folded into that day's event.
+- **2010–2015 — no new CLCS submission or note verbale by Malaysia found.**
+- **Unreachable** — Borneo Post 3 Jun 2015 (Cloudflare); Straits Times 16 Aug 2015; RSIS CO15142 (403);
+  WSJ 8 Jun 2015; Jane's originals; SPF/OPRI digests 2013 onward (404); PCA attachments (406); CIL SCS News
+  Update PDFs (not matchable); Dzirhan's ISEAS chapter (library).
 
 ### 2016–2020 (#38)
 - **Feb–Mar 2016 — Hishammuddin's "under control"/no-encroachment denials; Jan 2017 MMEA denial that flags
