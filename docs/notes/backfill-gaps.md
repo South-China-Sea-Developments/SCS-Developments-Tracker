@@ -160,6 +160,35 @@ listed once at the end.
 - Unreachable: UPNM/CDiSS PDF; UN DOALOS (CloudFront); NewspaperSG; GlobalSecurity, DTIC; the UKM
   journal article (read only through a summarising fetch — its Malay excerpts should be checked by hand).
 
+## Malaysia 1990s (#55)
+
+Full detail in `harvest/manual/20261107-MY-1990s.gaps.md` (the first set with its own gaps file).
+
+- **add by hand?** Malaysia's 1992 request to China for clarification of its Territorial Sea Law (no date;
+  after 25 Feb 1992 — look in FBIS East Asia Mar–Apr 1992 and *Foreign Affairs Malaysia*). The Philippine
+  military's reported discovery in Mar 1998 of Malaysian building work on Investigator Shoal and Erica Reef
+  (Jusoff et al. citing Chung 2004; unconfirmed). Mahathir's Jun 1999 statement that the new structures were
+  for research and navigation, and Malaysia's replies to Manila's Jun–Jul 1999 protests (no reachable dated
+  source). *Utusan Malaysia* 15–16 Jul 1995 items on the Spratlys (FBIS East Asia 18 Jul 1995, pp. 43–44).
+  The 19 Jun 1995 Foreign Ministry answer on the Spratlys, missing from the digital Hansard scan.
+- Low-confidence items in the set to confirm: Mar 1995 navy fire on a Chinese fishing boat (Novicio 2003,
+  one line); 31 May–2 Jun 1995 "claim indisputable" statements (Dzurek citing FBIS; *Berita Harian* 1 and
+  2 Jun 1995); May 1995 Mahathir visit and exercise (month only); the 18 May 1994 Mariveles protected-zone
+  declaration (CDiSS only; confirm in the *Warta Kerajaan*); the Layang-Layang resort opening (15 Jan 1990
+  per Lai/CDiSS vs 1993 per the *Christian Science Monitor*).
+- Date conflicts: the 1999 occupations (24 Apr per Lai; 10 and 12 May per CDiSS/NST — the set uses May);
+  UNCLOS ratification 14 Oct (UN) vs 16 Oct 1996 (CDiSS).
+- Excluded as positioning or conciliatory, but weighable: Malaysia's Jul 1999 refusal to have the Spratlys
+  discussed at the ARF and its opposition to the PH–VN code-of-conduct draft (Dewan Negara 26 and 29 Jul
+  1999); the late-Oct 1999 Defence Ministry "not a stand-off" line after the 28 Oct air incident; the Jul
+  1991 FEER ban linked to a report of Chinese troops on Swallow Reef; Najib's 1 Jun 1992 contingency-plans
+  remark (folded into the 28 Apr 1992 event).
+- Nothing found for 1997.
+- Unreachable: NewspaperSG (WAF challenge); UPI Archives (403); NSTP KLIK, FBIS, FEER, Keesing's,
+  Southeast Asian Affairs, Stratfor (paywall/library); the CDiSS volume (404 direct; read through
+  summaries — its six quotes, four sole-source, need a hand check); IBRU Boundary and Security Bulletin
+  news sections; Wayback Machine (blocked here).
+
 ## Sources no agent can reach (for the maintainer's own pass)
 
 Australian Parliamentary Library SCS chronology (aph.gov.au) · UPNM/CDiSS "Malaysia and the South China
