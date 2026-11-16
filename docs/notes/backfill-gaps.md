@@ -225,7 +225,50 @@ Only stray weekly-harvest candidates.
 - **CDiSS volume quotations** ▲ six short quotes, four sole-source, read through summaries; check against
   the book.
 
-### 2000s, 2010–2015 — not yet compiled
+### 2000s (#58)
+- **1999–2000 — replies to the Philippine and Vietnamese protests over the Erica Reef and Investigator Shoal
+  structures** ◆ Nazri told the Dewan Rakyat on 12 Apr 2000 they were handled through the Foreign Minister's
+  statements; no dated statement found (NewspaperSG, Straits Times 2000 returned nothing).
+- **13 Apr 2000 — arrest figures given in Parliament** ○ they cover 1999.
+- **2001–2002 — nothing found** ◆ Hansard (whose search ranks by relevance and caps results, so sittings may
+  be missed), CRS RL31183 and press searches turned up no dated act; FEER, Asian Survey, Southeast Asian
+  Affairs and Keesing's unreachable.
+- **4 Nov 2002 — DOC signing; 16 Mar 2009 — Malaysia–Brunei Exchange of Letters** ○ cooperative.
+- **Jan 2003 — Murphy contracts for Blocks L/M; Mar 2003 — navy chases Total's vessels off Block J** ▲ month
+  precision; the Total chase rests on Malaysiakini/AFP (16 Jun 2003) quoting International Oil Daily and an
+  unnamed Brunei paper; dyad MB (Brunei is a claimant but the area is not a Spratly feature).
+- **20 Jul 2003 — Swallow Reef runway** ▲ day from a blog only.
+- **Jul 2004 — MARSAL station** ▲ low confidence; Lai et al. date MARSAL to 1987; first source a PDF.
+- **Feb 2005 — MMEA established; Sepanggar naval base** ○ not specific to the South China Sea.
+- **21 Jun 2005 — event dated from a backbencher's "semalam"** ▲ day inferred.
+- **21 or 24 Aug 2006 — Dewan Rakyat passes the Baselines of Maritime Zones Bill** ▲ the portal shows identical
+  text under both dates; Lai et al. give May 2007 for the Act; the set uses the Dewan Negara passage of
+  6 Dec 2006.
+- **2006 — tsunami buoy at Swallow Reef** ▲ low confidence.
+- **2007 — eight intrusion cases off Sarawak, mostly Vietnamese** ○ no month (Mustapa, Dewan Negara 29 May
+  2008); folded into that statement.
+- **2 Dec 2007 — Navy hosts journalists at Station Lima** ◆ The Star "Well primed to repel attacks" (404; only a
+  blog reprint survives).
+- **17 Jul 2008 — Maritime and Law of the Sea division set up; Spratlys named the only disputed islands**
+  ○ weak administrative act (Abdul Rahim Bakri, Dewan Negara).
+- **12 Aug 2008 — Najib's Swallow Reef visit** ▲ day rests on the OPRF (Japanese) digest; the Bernama story and
+  Taiwan MOFA's 15 Aug 2008 rebuttal not reached.
+- **24 Nov 2008 — plan to lengthen the runway to 1,637 m** ▲ low confidence; the Hansard answer is garbled.
+- **early Mar 2009 (probably 5 Mar) — Abdullah's Layang-Layang visit** ▲ month precision; *Utusan Malaysia*
+  6 Mar 2009 p. 2 "Abdullah harap pulihara Pulau Layang-Layang" could not be opened (old Utusan host gone;
+  Wayback blocked).
+- **Mar 2009 — reaction to China's fisheries patrol vessel in the Spratlys (raised by an MP 19 Mar 2009) and to
+  the Philippine baselines law RA 9522 (10 Mar 2009)** ◆ nothing found.
+- **6 May 2009 — joint CLCS submission with Vietnam; 21 Aug 2009 — note HA 41/09** ▲ first sources a WebFetch-only
+  page (NUS CIL) and an OCR'd scan.
+- **Jun 2009 — "Malaysia will shadow away Chinese fishery vessel if spotted encroaching"** ◆ KL Security Review
+  report cited in the CDiSS volume (fn. 76); original not found, no date or wording.
+- **17 Sep 2009 — submarine event** ▲ first source an OPRF PDF.
+- **2006–2009 — national arrest totals for foreign boats (Vietnam 143 cases, China 4; Dewan Negara 16 Dec
+  2009)** ○ not broken down by year or sea; only the Sarawak 2008 and 2009 figures compiled.
+- **2004, 2006, 2008, 2009 — fisheries tallies** ○ one event a year.
+
+### 2010–2015 — not yet compiled
 
 ### 2016–2020 (#38)
 - **Feb–Mar 2016 — Hishammuddin's "under control"/no-encroachment denials; Jan 2017 MMEA denial that flags
