@@ -15,6 +15,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| MY 1980s | 32 | #52 | 21/32 excerpts verified, 11 PDFs unchecked; the three occupations (1983, 1986) suggested as force; the 1985 Cabinet decision and 1987 Semarang Peninjau command missing (source unreachable); compiled on Opus |
 | MY 1970s | 8 | #50 | thin decade (nothing 1970–74, 1976); 5/8 excerpts verified, 3 PDFs unchecked; Hansard and US cables the main sources; the 1975 markers at year precision; compiled on Opus |
 | TW 2016–2020 | 58 | #48 | 55/58 excerpts verified, 3 unchecked (Taipei Times blocks the fetcher); 3 possible duplicates; each Taiping drill its own event; overlaps #17 on five events; compiled on Opus |
 | ID 2016–2020 | 41 | #45 | 29/41 excerpts verified, 7 not found verbatim, 3 possible duplicates; compiler's report lost to a session restart |
