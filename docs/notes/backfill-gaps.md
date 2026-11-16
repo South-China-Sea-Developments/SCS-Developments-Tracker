@@ -485,7 +485,56 @@ Internet Archive mirror of the CIA Reading Room (a route worth reusing).
   *Analisa* 1983–86 (server limit); Google Books (quota); FEER, Keesing's, ISEAS, Asian Survey, Tempo,
   Kompas, Djalal 1995.
 
-### 1990s–2015 — not yet compiled
+### 1990s (#68)
+Source find for other chunks: the FBIS Daily Report East Asia is full-text searchable on the Internet Archive
+from 1990 to 30 Aug 1996 (collection items `micro_IA1176901_*`); nothing of it is there after that date.
+- **Nov 1990–Apr 1994 — Indonesia–Vietnam shelf talks (Alatas–Thach Nov 1990; Vo Van Kiet Oct 1991, Jul 1992;
+  Le Duc Anh Apr 1994)** ○ cooperative; no Indonesian rejection of a Vietnamese line found.
+- **20 Jun 1991 — Maj. Gen. Pramono: the SCS could become turbulent over Natuna and the Spratlys** ○ threat
+  perception, not an assertion (FBIS-EAS-91-125, *Merdeka*).
+- **1992 — stepped-up Natuna patrols** ▲ dated by inference from a Reuters "1 August" footnote whose year is
+  lost in the scan; low confidence.
+- **29 Jul 1992 — Alatas urges claimants to defer implementing Spratly maritime laws** ○ mediator's stance.
+- **late 1992, Jun 1993 — 39 ex-East German warships; 24 Hawks later linked to Natuna** ○ procurement
+  (Storey 2000; Reuters 9 Feb and 10 Jun 1993 unreachable).
+- **after Aug 1993 — the note on the Surabaya workshop map that China never answered** ▲ year precision; AFP
+  (7 Apr 1995) mentions a note "a few weeks ago", possibly a second note, folded into the 10 Apr 1995 event.
+- **29 Aug 1994 — Natuna as a defence-policy resettlement area** ○ folded into the Feb 1995 event; Reuters
+  unreachable.
+- **1993, 1995 — transmigration-for-defence items** ▲ low confidence.
+- **c. 22–26 Jun 1995 — Alatas rejects China's call for bilateral sea-border talks ("China is far away at
+  north")** ◆ the scan is garbled and the day unclear; Reuters 26 Jun 1995 unreachable (Storey 2000).
+- **19–21 Jul 1995 — Alatas obtains Qian Qichen's assurance that Natuna is Indonesia's** ○ outcome of diplomacy
+  (FBIS-EAS-95-141/146).
+- **26 Jul 1995 — Suharto chairs the first Natuna gas project plenary** ○ routine development step.
+- **18 Dec 1995 — Indonesia–Australia security agreement, read as aimed at China** ○ non-claimant.
+- **15 Mar 1996 — "RI set to start development of Natuna project" (Jakarta Post)** ◆ unreachable (cited in Storey;
+  CSEA 1998).
+- **1996 — Keppres 71/1996 making Natuna a KAPET zone** ◆ no date; peraturan.go.id and BPK unreachable.
+- **1996 — "the 1996 Indonesian map" of Natuna waters** ◆ no source found.
+- **Jun–Jul 1996 — Bukittinggi objection and aide-memoire on China's Paracel baselines** ▲ in the set; tied to
+  Natuna only by the warning against similar Spratly baselines — a coder may drop them.
+- **Sep 1996 — Natuna joint exercise** ▲ month precision (announced for 9 Sep, reported 2–3 Sep); AFP "Veiled
+  warning to China", Straits Times 3 Sep 1996 and FEER 19 Sep 1996 p. 17 (McBeth) unreachable.
+- **Nov 1996 — "exercises around the Natuna Islands"** ◆ possibly a misdating of September (Storey 2000, ~p. 170).
+- **Dec 1996 — statements on Natuna** ◆ not found (FBIS on the Archive ends 30 Aug 1996; Jakarta Post and
+  Kompas archives unreachable).
+- **1997 — Hawk and Su-30 statements; the Natuna defence plan drawn up with Australia (disclosed Aug 1997)** ▲
+  low confidence; the Australian disclosure itself is a non-claimant's act.
+- **22 Sep 1997 — Kompas: China has not answered Indonesia's memo on SCS borders** ◆ known only from a BBC
+  Monitoring footnote (Storey); no text of the Indonesian act.
+- **1997–1999 — detentions of Vietnamese, Chinese or Taiwanese boats in Natuna waters** ◆ no dated open source
+  (Jakarta Post, Kompas, ANTARA 1997–99 unreachable).
+- **Feb–Mar 1998 — warning shots and seizure of Thai trawlers, Karimata Strait** ○ non-claimant.
+- **1999 — Natuna Regency law** ▲ low confidence; **Jan/Sep 1999 — Su-30 order and the Australia agreement
+  cancelled** ○ not assertive.
+- **1990 — nothing found.** Only one act against Vietnam in the decade (1991 fishermen jailed).
+- **Unreachable** — Wayback Machine (Jakarta Post, Kompas 1990s); NewspaperSG; Trove (down/API key);
+  Südostasien aktuell (Heidelberg, bot wall); peraturan.bpk.go.id, peraturan.go.id; DTIC; Lowy Connelly PDF;
+  Ohio indopubs (503); Southeast Asian Affairs (Archive, lending only); Asian Survey, JSTOR; Tempo, Kompas;
+  Reuters/AFP/Jakarta Post 1992–99 originals cited in Storey.
+
+### 2000s, 2010–2015 — not yet compiled
 
 ### 2021–Oct 2026 — not yet compiled
 Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
