@@ -13,6 +13,8 @@
 - [ ] 1970s, 1980s, 1990s, 2000s, 2010–2015 for MY, ID, TW: fifteen chunks queued, in decade order per claimant.
 - [ ] Ticket 12's progress table and this one's record each chunk's PR number and candidate count; `docs/sources/baselines-and-manual-candidates.md` and `harvest/manual/README.md` list every file.
 
+**Gaps register:** `docs/notes/backfill-gaps.md` — what each compiler could not compile, for the maintainer's own pass afterwards (asked for 2026-11-16).
+
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
 | MY 1980s | 32 | #52 | 21/32 excerpts verified, 11 PDFs unchecked; the three occupations (1983, 1986) suggested as force; the 1985 Cabinet decision and 1987 Semarang Peninjau command missing (source unreachable); compiled on Opus |
