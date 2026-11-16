@@ -445,7 +445,47 @@ time; the targets are South Vietnam's 1971 Natuna-area concessions (dyad IV). No
   and the BPK legal database; the embassy airgram A-52 (Jun 1972 talks) and the 1974 memcon cited by the
   cables (not on PlusD); Keesing's, FBIS, FEER, Southeast Asian Affairs, Asian Survey, Dzurek 1996, Djalal.
 
-### 1980s–2015 — not yet compiled
+### 1980s (#66)
+Twelve events, none after 1985; the 1981–82 Natuna build-up comes from CIA assessments read through the
+Internet Archive mirror of the CIA Reading Room (a route worth reusing).
+- **late 1978–1980 — 4th/5th Indonesia–Vietnam shelf rounds; Indonesia rejects Vietnam's thalweg line** ◆ no
+  round dates; the rejection stated but undated (Usman, *Analisa* 1981 no. 8; CSM 9 Jul 1981; FEER 12 Dec 1980
+  "Smoothing Troubled Waters" unreachable).
+- **8 Jan 1980 — Natuna D-Alpha contract with Esso** ▲ tagged IC; China raised no objection then and the 1970s
+  set coded Natuna contracts against Vietnam.
+- **8 Feb 1980 — protest of Malaysia's Peta Baru** ▲ sources describe it as about Sipadan/Ligitan (Celebes
+  Sea) — possibly outside the area; day from the ICJ memorial.
+- **Feb 1980 — naval manoeuvres** ▲ single article ("earlier this month"); month precision.
+- **1980–83 — Esso's four-well appraisal drilling at D-Alpha** ◆ no dates (CIA Int'l Economic & Energy Weekly
+  23 Sep 1983).
+- **26 Mar 1980 — Soeharto–Hussein Onn talks at Kuantan on the protest** ○ conciliatory.
+- **Oct 1980 — reaction to the Vietnam–Soviet offshore oil agreement covering Natuna waters** ◆ headline only
+  (*Sinar Harapan* 1 Oct 1980 via Usman); CIA (Jan 1981) says Jakarta showed little concern.
+- **Jan, May, Jul 1981; Aug 1982 — Natuna build-up items** ▲ month precision (dated by report; Aug 1982 is the
+  intelligence cut-off).
+- **11–16 May 1981 — 6th shelf round, Jakarta** ○ Vietnam dropped the thalweg line; cooperative.
+- **25–27 Feb, 2 Jul 1981 — Indonesia–Malaysia talks on Malaysia's rights in archipelagic waters; 25 Feb 1982
+  treaty recognising the archipelagic regime** ○ cooperative, though it secured the claim; treaty text not opened.
+- **late 1981 — Jusuf: Singapore and Malaysia may use Natuna's facilities** ○ cooperative (CIA EA 82-10092).
+- **1982 — planned battalion-strength airborne exercise to Natuna** ◆ planned only; not confirmed held.
+- **10 Dec 1982 — UNCLOS signature at Montego Bay** ○ multilateral signature.
+- **1980–84 — navy "show of force" patrols near Natuna** ◆ undated (Harris, US Army War College, 7 May 1984,
+  DTIC ADA148950); no fishing-boat detentions in Natuna waters found for the decade.
+- **mid-1984 — Pertamina "stops the clock" on Exxon's Natuna contract** ○ commercial.
+- **1984 regulation on foreign fishing; 1985 fishing decrees; 1985 UNCLOS ratification** ▲ nationwide, tagged IA
+  at low confidence; the 1 Jul 1985 decrees are dated by effective date and their excerpt is unverifiable (DTIC
+  JPRS-SEA-85-131, summarising fetch).
+- **19 Jun 1985 — Law 9/1985 on Fisheries** ◆ not opened (nationwide).
+- **1986–1989 — nothing found** ◆ a coverage gap, not evidence of quiet: no open dated source for Natuna patrols,
+  exercises, detentions, shelf rounds or any reaction to the 1988 Spratly clash. Likely homes: Kompas/Tempo,
+  FBIS/JPRS Southeast Asia (DTIC), ISEAS Southeast Asian Affairs, Asian Survey "Indonesia in 198x".
+- **Unreachable** — Trove/Canberra Times (bot check); NewspaperSG (issue pages only); Papers Past (Incapsula;
+  hits CHP19810602.2.99, CHP19840227.2.103, CHP19880318.2.77.14 unread); CIA Reading Room direct; DTIC JPRS PDFs
+  (summaries only); DIA FOIA FileId 237908; ICJ Sipadan/Ligitan memorial (403); IBRU BTB 2(2) (404);
+  *Analisa* 1983–86 (server limit); Google Books (quota); FEER, Keesing's, ISEAS, Asian Survey, Tempo,
+  Kompas, Djalal 1995.
+
+### 1990s–2015 — not yet compiled
 
 ### 2021–Oct 2026 — not yet compiled
 Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
