@@ -1,200 +1,316 @@
-# Backfill gaps: what the compilers could not compile
+# Backfill gaps register
 
-A running register for the maintainer's own pass after the backfill (ticket 19): developments the
-research agents knew of but could not turn into candidates — the source was unreachable, the date was
-missing, the excerpt could not be verified, or a coding rule excluded something a human may still want.
-One section per chunk, appended as each chunk lands; the agent's own words are condensed, nothing is
-added. Items marked **add by hand?** are the ones to look at first. Sources that no agent can reach are
-listed once at the end.
+The single running list of developments the research agents knew of but could not turn into candidates
+(ticket 19): the source was unreachable, the date was missing, the excerpt could not be verified, or a
+coding rule excluded something a human may still want. The maintainer works through it by hand after the
+backfill. Organised **per claimant, chronologically**; each entry gives the date or period, the development,
+why it was not compiled, and where it is documented. The chunk a gap came from is in brackets (review PR).
 
-## Philippines 2016–2020 (#33)
+Conventions: **◆ add by hand?** — a development that probably belongs in the dataset and only needs a
+source or a date; **▲ in the set, confirm** — compiled, but at low confidence or with a date conflict;
+**○ excluded by rule** — left out deliberately (conciliatory, not the claimant's act, undisputed waters,
+procurement, positioning), listed so the maintainer can overrule. One entry per development; when a later
+chunk adds to the same gap, the entry is updated, not duplicated.
 
-- Reviewer's own report lost to compaction; what is known: 5 excerpts unchecked (PDF or unfetchable
-  first source), 1 excerpt not found verbatim, 6 possible duplicates flagged.
-- Several 2016 entries are separate statements on the arbitral award; the reviewer may merge them into
-  one move.
-- Duterte-era conciliatory statements were left out as not assertive.
-- Routine Kalayaan resupply runs recorded as one event per year.
-- Unreachable: Australian Parliamentary Library chronology; Reuters, AP, Inquirer and Rappler direct
-  (reached only through reprints); The Diplomat; the ICAS tracker; UN notes verbales (scanned PDFs).
+Two chunks' detailed reports were lost (Philippines 2016–2020 to a context compaction; Indonesia
+2016–2020 to a session restart): their sections hold only what survives, and those two candidate sets
+deserve a closer read in review.
 
-## Malaysia 2016–2020 (#38)
+---
 
-- **add by hand?** The 2017 protest note over China's Luconia presence is year-only (from the
-  Auditor-General's report tabled 14 Jul 2020, which records 89 Chinese intrusions 2016–19 and six
-  protest notes, the other five undated).
-- Month-only dates: Bintulu naval-base announcement (Sep 2016); MMEA 2017 detention total (Oct 2017);
-  RMN patrols near Haijing 3306 (Sep–Oct 2018); Sapura Esperanza drilling (May 2019). Bunga Mas Lima's
-  arrival (≈10 Nov 2020) inferred from AMTI's "hours later".
-- Reuters' April 2016 deputy-FM nine-dash-line statement folded into the 17 Mar 2016 written reply.
-- Left out deliberately: Hishammuddin's Feb/Mar 2016 "under control" denials; MMEA's Jan 2017 denial
-  that flags were removed at Luconia; Mahathir's and Mohamad Sabu's 2018 "no warships / neutral sea"
-  statements; Hishammuddin's 15 Jul 2020 "no more China ships" remarks; the Sep 2019 Malaysia–China
-  consultation mechanism; the 2019 Malaysia–Vietnam fisheries MoU; LMS purchases; Najib's 2016 China
-  visit; opposition and NGO statements.
-- Low-confidence inclusions to weigh: the 14 Jun 2016 Kunming statement (released then retracted); the
-  yearly parliamentary non-recognition formula (one instance per year 2016–18); fisheries detentions off
-  Terengganu/Kelantan/Johor and the 16 Aug 2020 fatal shooting, in Malaysia's undisputed EEZ.
-- Not checkable: two UN note verbale PDFs (29 Jul, 27 Aug 2020); four Sinar Project scanned Dewan Rakyat
-  replies (14 and 17 Mar 2016, 20 Mar 2017, 12 Mar 2018); three PressReader scans of The Borneo Post
-  (21 Dec 2016, 21 Oct 2017, 23 Oct 2017).
-- Unreachable: Australian Parliamentary Library chronology; Parliament of Malaysia Hansard portal (the
-  Sinar Project mirror and the digital Hansard worked later); thediplomat.com; freemalaysiatoday.com;
-  www.nst.com.my (the `nst.com.my/amp` mirror worked); AMTI "China Risks Flare-Up Over Malaysian,
-  Vietnamese Gas Resources"; NUS CIL "SCS News Update" index (only Jul 2018 reachable); theborneopost.com
-  `?p=` links; bdnews24; the CDiSS Hamzah et al. book PDF (not opened).
+## China
 
-## China 2016–2020 (#41)
+### 2016–2020 (#41)
 
-- US-directed acts kept as one summary event per year (dyad CU) plus the Dec 2016 UUV seizure and the
-  Sep 2018 Lanzhou–Decatur near-collision; drop if MATS excludes the US dyad.
-- Routine annual practices once a year: the summer fishing moratorium (2016, 2017, 2019, 2020 — **2018
-  omitted for lack of a dated source**), the CCG presence at Scarborough (2016, 2017), construction and
-  imagery reports dated by AMTI publication.
-- Date discrepancies: civilian landings at Mischief/Subi 13 Jul 2016 (Reuters/CCTV) vs 12 Jul (AMTI);
-  Gem-Ver sinking 9 Jun 2019 (Philippine sources) vs "early morning of June 10" (MFA); Fan Changlong's
-  Spratly visit announced 15 Apr 2016 with no visit date.
-- Month-precision: missile deployment Apr 2018, Jackson Atoll Feb 2016, Bombay Reef platform, Red
-  Emperor, Ayungin block May 2019, payao seizures May 2020.
-- Attribution caveats: Gem-Ver is a Chinese fishing vessel's act (included, low confidence, because the
-  embassy defended it); the Repsol halts (2017, 2018) rest on BBC-sourced reports of Chinese threats.
-- **add by hand?** Left out: Chinese survey ships at Benham Rise 2017 and warship transits of Sibutu
-  Strait 2019 (Pacific/Sulu side); Chinese protests of UK, Japanese and Korean warships (no MATS dyad);
-  Xi's 19th Congress line on island construction (no reachable primary text); 2017 incidents with
-  Vietnamese fishermen (Vietnamnet pages unreadable); six yearly Hainan/Sansha domestic acts (cinema,
-  schools, satellite TV) skipped as minor.
-- Three events' first source is a site the importer cannot fetch (The Diplomat, USNI): Mar 2016 maritime
-  judicial centre, Sep 2016 Joint Sea, Mar 2018 Repsol Red Emperor.
-- Unreachable: Australian Parliamentary Library chronology; IISS; Reuters.com, WSJ, NYT, CNBC, Japan
-  Times, SCMP, Washington Times, The Diplomat, USNI News article pages (403 to curl); China Daily 2016–17
-  and Xinhua 2016–18 article URLs dead; Vietnamnet empty bodies; UN notes verbales CML/14/2019,
-  CML/11/2020, CML/42/2020 scanned (excerpts transcribed from the image).
+- **Feb 2016 — Jackson Atoll presence** ▲ month precision only.
+- **Mar 2016 — maritime judicial centre announced** ▲ first source is The Diplomat, which the importer
+  cannot fetch (excerpt unverified).
+- **15 Apr 2016 — Fan Changlong's Spratly visit announced** ▲ no visit date given in any source.
+- **12 or 13 Jul 2016 — civilian flights land at Mischief and Subi** ▲ 13 Jul per Reuters/CCTV, 12 Jul per
+  AMTI; both quoted.
+- **Sep 2016 — Joint Sea 2016 exercise** ▲ first source USNI News, unverifiable by the importer.
+- **Oct 2017 — Xi Jinping's 19th Congress report line on island construction** ◆ no reachable primary
+  text (gov.cn/Xinhua 2017 pages dead).
+- **2017 — incidents with Vietnamese fishermen (CCG seizures, Paracels)** ◆ Vietnamnet pages return empty
+  bodies; not compiled at all.
+- **2017 — Chinese survey ships at Benham Rise** ○ Pacific side, not an SCS claim assertion.
+- **Mar 2018 — Repsol Red Emperor halted under Chinese pressure** ▲ rests on BBC-sourced reports of threats;
+  first source The Diplomat (unverified); month precision.
+- **Apr 2018 — missile and jamming deployments on the Spratly bases** ▲ month precision.
+- **May 2018 — summer fishing moratorium** ◆ the only year 2016–2020 without a dated source; omitted.
+- **Jul 2017 (disclosed Aug 2018) — radio warnings to Philippine aircraft** ▲ dated to the period the AP-seen
+  report covers.
+- **Dec 2018–Jan 2019 — maritime-militia swarm at Thitu** ▲ split into a Dec 2018 start and a Jan–Apr 2019
+  phase; the second-phase start is 26 Jan 2019.
+- **May 2019 — Ayungin block; May 2020 — payao seizures; Bombay Reef platform** ▲ month precision each.
+- **9 or 10 Jun 2019 — Gem-Ver sinking at Reed Bank** ▲ 9 Jun per Philippine sources, "early morning of
+  June 10" per the MFA; included at low confidence as a fishing vessel's act the embassy defended.
+- **2019 — warship transits of Sibutu Strait** ○ Sulu side; not compiled.
+- **19 Dec 2019–10 Jan 2020 — Natuna incursion** ▲ split at the year boundary.
+- **2016–2020 — CCG responses to US FONOPs** ○ kept as one summary event a year (dyad CU) plus the Dec 2016
+  UUV seizure and the 30 Sep 2018 Lanzhou–Decatur near-collision; drop if MATS excludes the US dyad.
+- **2016–2020 — protests of UK, Japanese and Korean warship passages** ○ no MATS dyad.
+- **2016–2020 — six yearly Hainan/Sansha domestic acts (cinema, school, satellite TV)** ○ skipped as minor.
+- **2016–2020 — routine practices once a year** ○ fishing moratorium (2016, 2017, 2019, 2020), CCG presence
+  at Scarborough (2016, 2017), construction imagery dated by AMTI publication.
+- **UN notes verbales CML/14/2019, CML/11/2020, CML/42/2020** ▲ scanned PDFs; excerpts transcribed from
+  the image, unverifiable (CML/63/2020 is text).
 
-## Vietnam 2016–2020 (#43)
+### 2021–Oct 2026 — not yet compiled
+Only stray weekly-harvest candidates (#24, #31, #37, #46).
 
-- **add by hand?** No dated Vietnamese assertive acts found for Nov 2017–Feb 2018 in English-language
-  sources; the gap may be real or a coverage limit.
-- Month- or year-precision: Reuters rocket-launcher report (Aug 2016, denied by Hanoi); Spratly Island
-  runway extension (Nov 2016); Repsol Block 136/03 drilling (Jun–Jul 2017); ONGC Block 128 renewal
-  (first week Jul 2017); COC draft proposals (Aug 2018, reported 31 Dec 2018); three AMTI construction
-  events at year precision (2017, 2018, 2019–20); Ladd Reef dated to the 30 Nov 2016 imagery.
-- Left out deliberately: Vietnam's suspensions of Repsol drilling (Jul 2017, Mar 2018) and the Jul 2020
-  Noble rig cancellation (capitulations); the Aug 2020 demand that Malaysia investigate a fisherman's
-  shooting; the Sep 2017 PH navy killing of Vietnamese fishermen (consular matter); reactions to US
-  FONOPs and the Jul 2020 US position statement; Vietnam's 2020 ASEAN-chair statements; generic "defend
-  sovereignty by peaceful means" remarks (3 Mar 2016, 15 Jun 2017); the 2017 Fisheries Law; routine Gulf
-  of Tonkin fisheries enforcement represented by single instances (Mar 2016, Jul 2016, Mar 2017).
-- Low-confidence inclusions: Blue Whale/ExxonMobil agreements (13 Jan 2017); 2019 Defence White Paper;
-  9 May 2019 protest at Indonesia's boat-sinking.
-- Not checkable by the importer (opened only in a browser): Hanoi Times, mofa.gov.vn, baochinhphu, QDND,
-  CNBC, Asia Times, GlobalSecurity, VOV World — 50 of 107 excerpts "unchecked" for this reason though
-  the agent verified 62 itself. baodanang.vn serves a 404 to non-browser clients.
-- Unreachable: UN DOALOS PDFs on static.un.org (the 30 Mar and 10 Apr 2020 notes verbales cited via
-  AMTI, the UN listing page and Hanoi Times); tuoitrenews.vn, vov.vn and yahoo redirects; english.vtv.vn
-  (404).
+---
 
-## Indonesia 2016–2020 (#45)
+## Vietnam
 
-- **The compiler's final report was lost to a session restart**; the file is complete (41 events,
-  2016: 12, 2017: 7, 2018: 3, 2019: 7, 2020: 12) and validated, but its list of exclusions and
-  unreachable sources is not recorded. 7 excerpts not found verbatim, 5 unchecked, 3 possible duplicates
-  — the reviewer should read the Indonesia candidates with that in mind. 2018 is thin (3 events).
+### 2016–2020 (#43)
 
-## Taiwan 2016–2020 (#48)
+- **Mar 2016, Jul 2016, Mar 2017 — Gulf of Tonkin fisheries enforcement** ○ represented by single instances,
+  not every case.
+- **3 Mar 2016, 15 Jun 2017 — generic "defend sovereignty by peaceful means" remarks** ○ excluded.
+- **Aug 2016 — rocket launchers reportedly deployed on Spratly features** ▲ Reuters report, denied by Hanoi;
+  month precision.
+- **Nov 2016 — Spratly Island runway extension** ▲ month precision (dated to the 30 Nov imagery, as is the
+  2016 Ladd Reef work).
+- **13 Jan 2017 — Blue Whale/ExxonMobil agreements** ▲ low confidence; the source does not tie the field to
+  China's claim.
+- **Jun–Jul 2017 — Repsol Block 136/03 drilling; first week Jul 2017 — ONGC Block 128 renewal** ▲ month
+  precision.
+- **Jul 2017, Mar 2018 — suspensions of Repsol drilling; Jul 2020 — Noble rig cancellation** ○ capitulations,
+  not assertions.
+- **Sep 2017 — Philippine navy kills Vietnamese fishermen** ○ consular matter.
+- **2017 — Fisheries Law** ○ excluded.
+- **Nov 2017–Feb 2018 — no dated Vietnamese assertive acts found** ◆ possibly a coverage gap of the
+  English-language sources used; check Vietnamese-language press and MOFA archives.
+- **Aug 2018 (reported 31 Dec 2018) — COC draft proposals endorsed** ▲ month precision.
+- **2017, 2018, 2019–20 — AMTI construction and fortification reports** ▲ year precision.
+- **9 May 2019 — protest at Indonesia's boat-sinking** ▲ low confidence.
+- **2019 — Vanguard Bank shadowing by KN 468/472** ▲ coded coercive; could be demonstrative.
+- **2019 — Defence White Paper** ▲ low confidence (the source does not mention the sea).
+- **30 Mar and 10 Apr 2020 — notes verbales** ▲ UN DOALOS PDFs unreachable (static.un.org 403); cited via
+  AMTI, the UN listing page and Hanoi Times.
+- **2020 — ASEAN-chair statements; reactions to US FONOPs and the Jul 2020 US position statement** ○ not
+  unilateral claim acts.
+- **Aug 2020 — demand that Malaysia investigate a fisherman's shooting off Kelantan** ○ consular.
+- **2016–2020 — yearly rejection of China's fishing moratorium** ○ one event a year, flagged as routine.
+- **Excerpt verification** — 50 of 107 first sources open only in a browser (Hanoi Times, mofa.gov.vn,
+  baochinhphu, QDND, CNBC, Asia Times, GlobalSecurity, VOV World; baodanang.vn serves a 404 to fetchers), so
+  the importer marks them unchecked though the compiler verified 62 itself.
 
-- **add by hand?** MOFA's 3 Aug 2018 statement (no source could be opened); the 2016 Taiwanese stamps of
-  Taiping (no issue date found; the Nov 2020 lighthouse stamps are included); the 2013–2017 Economics
-  Ministry geological survey around Taiping (disclosed Oct 2019, no month dates); a 20 Aug 2020
-  legislators' trip to Pratas (cancelled by MND).
-- The May and Aug 2019 Taiping drills rest on the coast guard's advance notices only (planned dates); no
-  notices found for Q2–Q3 2020. Pratas drills summarised one event a year (2019, 2020).
-- Uncertain dates: 29 Nov 2016 rescue drill (28 Nov per Vietnam); month-only Mar 2017 Pratas seizure,
-  May 2016 warship docking, Jul–Aug 2020 marine reinforcement (unnamed sources, MND declined to
-  confirm); RV Legend cruise (Mar 2019) dates inferred, may not be an assertion.
-- Left out: May 2017 detention of Chinese fishermen off Penghu (Taiwan Strait); purely reactive or
-  cooperative statements. 2018 is thin (four drills and a flag-raising).
-- Unreachable or not checkable: Taipei Times (403; first source of the May 2016 docking); globalsecurity
-  (paywall); ocacnews (bot wall); Focus Taiwan shows only the first sentence pre-2019; mofa.gov.tw
-  answers fetchers with 307 at times; the 21 Mar 2016 Position Paper PDF and the coast guard firing
-  notices (PDF/scan). No UN DOALOS material exists for Taiwan.
+### 2021–Oct 2026 — not yet compiled
+Only stray weekly-harvest candidates.
 
-## Malaysia 1970s (#50)
+---
 
-- Nothing found for 1970–74 and 1976.
-- **add by hand?** The 1974 navy directive on the Spratlys (internal, year only) and the Oct 1977
-  Foreign Ministry review (internal) were left out as internal acts; Malaysia's reaction to Vietnam's
-  Jun 1978 occupation of Amboyna is only the Oct 1978 Hussein Onn–Pham Van Dong exchange.
-- The 1975 first markers are at year precision ("early 1975"). The Amboyna sign-restoration date
-  conflicts: 11 Oct 1977 (academic source, US cable of 19 Oct 1977) vs 1978 (navy veteran in NST 2019;
-  Dzurek 1996). The Oct 1978 day range (12–16) comes from a cable that does not mention Amboyna.
-- EEZ: DOALOS lists a "Proclamation of the Economic Zone of 25 April 1978" whose file is empty; Hansard
-  and Lim Kit Siang (1984) give 25 Apr 1980 (in the 1980s set); a "20 Sep 1979" declaration appears only
-  in blog-derived sources and was excluded.
-- Left out: arrests of Thai trawlers (not a claimant); Taiwanese fishing off Terengganu in 1972 (complaint
-  to the consul only, no dated arrest); undisputed-shelf oil activity (PDA 1974, 1976 PSCs); the Malacca
-  Strait agreements and the 1979 Thai shelf agreement (cooperative).
-- Unreachable: the UPNM/CDiSS chronology PDF (404; Wayback copy cut off); CIA reading room; DTIC; Papers
-  Past; the US National Archives cable database; UMS and UKM journal PDFs; Lam 2022 (paywall); the
-  Parliament document repository; NewspaperSG (search blocked); NSTP KLIK, FEER, Keesing's, FBIS, ISEAS
-  Southeast Asian Affairs and Asian Survey (library or subscription). WikiLeaks PlusD has 1977–78
-  Kuala Lumpur cables but nothing for the 1980s.
+## Philippines
 
-## Malaysia 1980s (#52)
+### 2016–2020 (#33) — detailed report lost
+- **2016 — several separate statements on the arbitral award** ▲ the reviewer may merge them into one move.
+- **2016–2020 — Duterte-era conciliatory statements** ○ excluded as not assertive.
+- **2016–2020 — Kalayaan resupply runs** ○ one event a year.
+- **Excerpt verification** — 5 unchecked (PDF or unfetchable first source), 1 not found verbatim; 6
+  possible duplicates flagged. Unreachable: APL chronology; Reuters, AP, Inquirer, Rappler direct; The
+  Diplomat; the ICAS tracker; UN notes verbales (scans).
 
-- **add by hand?** The 25 Sep 1985 Cabinet decision and the Jun 1987 Semarang Peninjau command: their
-  only known source is the UPNM/CDiSS chronology PDF, unreachable. Malaysia's removal of a Chinese marker
-  at Louisa Reef in 1988 (no month). The end-1983 start of base construction at Swallow Reef (no month;
-  folded into the Station Lima event).
-- Conflicting dates: Station Lima 17 Apr 1984 (Lai et al.) vs Apr 1986 (NST 2019); Ardasier 16 Apr 1986
-  (NST, Lai) vs "since November 1986" (Hansard, 27 Jun 1988); Swallow Reef landing party 11 men (Lai) vs
-  18 (NST). The 4 Apr 1988 fishermen seizure date is from Lim (2000), Dzurek gives April only; the Feb
-  1988 statement is month-only; 16 Sep 1983 is the report date.
-- The three occupations (1983, 1986 ×2) are suggested as force; demonstrative is defensible since none
-  displaced another state.
-- Yearly foreign-boat detention totals 1986–88 (Taiwan 3/1/7, Vietnam 5/5/0, Philippines 3/0/3) are in
-  the summary of the 20 Aug 1988 event, not separate events (no months).
-- Left out: the Royal Charlotte Reef monument found missing in 1985 and the Philippines destroying the
-  Commodore Reef monument in Jun 1980 (not Malaysian acts); arrests of Thai, Indonesian and Singaporean
-  boats and patrols against Vietnamese boat people; conciliatory items (offers of talks, the Oct 1983
-  New York meeting).
-- Unreachable: UPNM/CDiSS PDF; UN DOALOS (CloudFront); NewspaperSG; GlobalSecurity, DTIC; the UKM
-  journal article (read only through a summarising fetch — its Malay excerpts should be checked by hand).
+### 2021–Oct 2026 — not yet compiled
+Only stray weekly-harvest candidates.
 
-## Malaysia 1990s (#55)
+---
 
-Full detail in `harvest/manual/20261107-MY-1990s.gaps.md` (the first set with its own gaps file).
+## Malaysia
 
-- **add by hand?** Malaysia's 1992 request to China for clarification of its Territorial Sea Law (no date;
-  after 25 Feb 1992 — look in FBIS East Asia Mar–Apr 1992 and *Foreign Affairs Malaysia*). The Philippine
-  military's reported discovery in Mar 1998 of Malaysian building work on Investigator Shoal and Erica Reef
-  (Jusoff et al. citing Chung 2004; unconfirmed). Mahathir's Jun 1999 statement that the new structures were
-  for research and navigation, and Malaysia's replies to Manila's Jun–Jul 1999 protests (no reachable dated
-  source). *Utusan Malaysia* 15–16 Jul 1995 items on the Spratlys (FBIS East Asia 18 Jul 1995, pp. 43–44).
-  The 19 Jun 1995 Foreign Ministry answer on the Spratlys, missing from the digital Hansard scan.
-- Low-confidence items in the set to confirm: Mar 1995 navy fire on a Chinese fishing boat (Novicio 2003,
-  one line); 31 May–2 Jun 1995 "claim indisputable" statements (Dzurek citing FBIS; *Berita Harian* 1 and
-  2 Jun 1995); May 1995 Mahathir visit and exercise (month only); the 18 May 1994 Mariveles protected-zone
-  declaration (CDiSS only; confirm in the *Warta Kerajaan*); the Layang-Layang resort opening (15 Jan 1990
-  per Lai/CDiSS vs 1993 per the *Christian Science Monitor*).
-- Date conflicts: the 1999 occupations (24 Apr per Lai; 10 and 12 May per CDiSS/NST — the set uses May);
-  UNCLOS ratification 14 Oct (UN) vs 16 Oct 1996 (CDiSS).
-- Excluded as positioning or conciliatory, but weighable: Malaysia's Jul 1999 refusal to have the Spratlys
-  discussed at the ARF and its opposition to the PH–VN code-of-conduct draft (Dewan Negara 26 and 29 Jul
-  1999); the late-Oct 1999 Defence Ministry "not a stand-off" line after the 28 Oct air incident; the Jul
-  1991 FEER ban linked to a report of Chinese troops on Swallow Reef; Najib's 1 Jun 1992 contingency-plans
-  remark (folded into the 28 Apr 1992 event).
-- Nothing found for 1997.
-- Unreachable: NewspaperSG (WAF challenge); UPI Archives (403); NSTP KLIK, FBIS, FEER, Keesing's,
-  Southeast Asian Affairs, Stratfor (paywall/library); the CDiSS volume (404 direct; read through
-  summaries — its six quotes, four sole-source, need a hand check); IBRU Boundary and Security Bulletin
-  news sections; Wayback Machine (blocked here).
+### 1970s (#50)
+- **1970–1974, 1976 — nothing found** ◆ the archives that would cover these years (NewspaperSG, NSTP KLIK,
+  FEER, Keesing's, FBIS) are unreachable or library-only.
+- **1972 — Taiwanese fishing off Terengganu** ○ only a complaint to Taiwan's consul; no dated arrest.
+- **1974 — Navy directive on the Spratlys** ○ internal act, year only.
+- **1974, 1976 — Petroleum Development Act; Petronas production-sharing contracts** ○ undisputed shelf.
+- **"early 1975" — first markers laid on claimed features incl. Amboyna Cay** ▲ in the set at year precision;
+  drop if the month rule is strict.
+- **1970, 1971, 1979 — Malacca Strait agreements; Thai continental-shelf agreement** ○ cooperative.
+- **Oct 1977 — Foreign Ministry review of the claim** ○ internal.
+- **11 Oct 1977 or 1978 — "Pulau Kecil Amboyna" sign put back on Amboyna** ▲ 1977 per an academic source
+  and a US cable of 19 Oct 1977; 1978 per a navy veteran (NST 2019) and Dzurek 1996.
+- **25 Apr 1978 — "Proclamation of the Economic Zone"** ○ DOALOS lists it but its file is empty; Hansard
+  and Lim Kit Siang give 25 Apr 1980 (in the 1980s set).
+- **Jun 1978 — Vietnam occupies Amboyna** ○ Vietnam's act; Malaysia's only recorded reaction is the Oct
+  1978 Hussein Onn–Pham Van Dong exchange, whose 12–16 Oct day range comes from a cable that does not
+  mention Amboyna.
+- **20 Sep 1979 — "EEZ declaration"** ○ appears only in blog-derived sources and contradicts Hansard;
+  excluded.
+- **1970s — arrests of Thai trawlers off Kelantan/Terengganu** ○ Thailand is not a claimant.
 
-## Sources no agent can reach (for the maintainer's own pass)
+### 1980s (#52)
+- **Jun 1980 — Philippines destroys the Commodore Reef monument; 1985 — Royal Charlotte Reef monument found
+  missing** ○ not Malaysian acts.
+- **1980s — arrests of Thai, Indonesian and Singaporean boats; patrols against Vietnamese boat people** ○ not
+  claim assertions.
+- **1983 — offers of talks; Oct 1983 New York meeting** ○ conciliatory.
+- **5 May 1983 — Swallow Reef landing party** ▲ 11 men (Lai) or 18 (NST).
+- **16 Sep 1983 — "will not withdraw" statement** ▲ dated to the newspaper report, not the statement.
+- **end-1983 — start of base construction at Swallow Reef** ◆ no month; folded into the Station Lima event.
+- **17 Apr 1984 — Station Lima and Mahathir's visit** ▲ Apr 1984 (Lai et al.) vs Apr 1986 (NST 2019).
+- **25 Sep 1985 — Cabinet decision on the Spratlys** ◆ known only from the UPNM/CDiSS chronology PDF,
+  unreachable to every agent.
+- **16 Apr 1986 — Ardasier Reef (Station Uniform)** ▲ 16 Apr (NST, Lai) vs "since November 1986" (Hansard,
+  27 Jun 1988).
+- **1983, 1986, 1986 — the three occupations** ▲ suggested as force; none displaced another state, so
+  demonstrative is defensible.
+- **Jun 1987 — Semarang Peninjau command** ◆ same unreachable CDiSS source.
+- **Feb 1988 — sovereignty statement** ▲ month only (Dzurek quoting NST 25 Feb).
+- **4 Apr 1988 — seizure of 49 Filipino fishermen near Commodore Reef** ▲ 4 Apr per Lim (2000), "April" per
+  Dzurek, no date in Hansard.
+- **1988 — removal of a Chinese marker at Louisa Reef** ◆ no month found.
+- **1986–1988 — yearly foreign-boat detention totals (Taiwan 3/1/7, Vietnam 5/5/0, Philippines 3/0/3)** ○ no
+  months; put in the summary of the 20 Aug 1988 event rather than separate events.
+- **UKM journal article (Malay excerpts)** ▲ read only through a summarising fetch; check by hand.
 
-Australian Parliamentary Library SCS chronology (aph.gov.au) · UPNM/CDiSS "Malaysia and the South China
-Sea" chronology PDF · UN DOALOS deposit pages and scanned notes verbales (static.un.org) · NewspaperSG
-beyond pages found by web search · NSTP KLIK, FEER, Keesing's, FBIS, ISEAS Southeast Asian Affairs, Asian
-Survey (library or subscription) · The Diplomat, USNI News, Taipei Times, Reuters.com, WSJ, NYT, CNBC,
-SCMP article pages (403 to the fetcher; WebFetch gives ≤125-character quotes) · Hanoi Times, mofa.gov.vn
-and most Vietnamese outlets (browser only) · CIA reading room, DTIC, US National Archives cables ·
-GlobalSecurity (paywall) · ocacnews (bot wall).
+### 1990s (#55)
+- **15 Jan 1990 or 1993 — Layang-Layang resort opens** ▲ 1990 per Lai/CDiSS, "this year" per the *Christian
+  Science Monitor* of 1 Dec 1993; check in the NST archive.
+- **Jun 1990 — *Sin Matu* dive boat and PASKAL rescue at Swallow Reef** ○ search and rescue.
+- **10 Jan 1991 — $27m allocation for the Swallow Reef commando base mentioned by a backbencher** ○ no
+  government confirmation.
+- **early Jul 1991 — FEER 4 Jul issue banned, linked to a report of Chinese troops on Swallow Reef**
+  ○ domestic censorship; ban date unconfirmed (Hansard 19 Jul 1991).
+- **1991 — airstrip protests by Vietnam, China and others** ○ other states' acts.
+- **after 25 Feb 1992 — request to China for clarification of its Territorial Sea Law** ◆ Lai et al. 2021
+  p. 206; no date or text found — FBIS East Asia Mar–Apr 1992, *Foreign Affairs Malaysia*.
+- **11 May, 1–2 Jun, 1 Dec 1992 — repeated rejections of China's claim; Najib's contingency-plans remark**
+  ○ folded into the 28 Apr 1992 event.
+- **5 Jun 1992, 4 Jun 1993 — Malaysia–Vietnam provisional arrangement and joint development notes** ○
+  cooperative.
+- **1992 renaming; 18 May 1994 Mariveles protected zone** ▲ typed declarative, could be demonstrative; the
+  protected-zone declaration rests on the CDiSS PDF only — confirm in the *Warta Kerajaan*.
+- **12 May 1993 — Mahathir to Vietnam's deputy PM on historical arguments** ○ procedural.
+- **1992–1994 — fisheries enforcement summaries** ▲ mostly Thai boats, probably undisputed waters; 1993
+  figures not broken down by nationality (Department of Fisheries annual reports).
+- **1994 — TNB chairman inspects works at Swallow Reef** ○ minor infrastructure, no day.
+- **Feb–Mar 1995 — Malaysia's own statement on China's Mischief Reef structures** ◆ not found (the 18 Mar
+  1995 ASEAN statement is collective).
+- **Mar 1995 — navy fires on a Chinese fishing boat** ▲ one line in Novicio 2003; no day, place, casualties
+  or protest found — FBIS, Reuters/UPI late Mar 1995.
+- **May 1995 — Mahathir's Swallow Reef visit, "large-scale exercise", increased patrols** ▲ month only.
+- **31 May–2 Jun 1995 — unnamed minister: Swallow Reef claim "indisputable"; "China is aggravating the
+  situation"** ▲ via Dzurek citing *Berita Harian* 1 and 2 Jun 1995 (FBIS East Asia 1–2 Jun 1995).
+- **19 Jun 1995 — Foreign Ministry answer on the Spratlys** ◆ referred to on 29 Jun 1995 but missing from
+  the digital Hansard scan.
+- **15–16 Jul 1995 — *Utusan Malaysia*: foreign minister and military-intelligence chief on the Spratlys**
+  ◆ FBIS East Asia 18 Jul 1995 pp. 43–44; content unknown.
+- **16 Jun 1995 — call for formal talks; 1996 Syed Hamid "sober and responsible" interview; Nov 1998
+  commendation of China's restraint** ○ conciliatory.
+- **9 Apr 1996 — generic patrol statement** ○ mostly about piracy.
+- **14 or 16 Oct 1996 — UNCLOS ratification with declarations** ▲ 14 Oct (UN) vs 16 Oct (CDiSS); typed
+  declarative only for the declarations.
+- **1997 — nothing found** ◆ Hansard has sittings but no government answer on the claim; Li Peng's Aug 1997
+  joint-development proposal is China's act.
+- **Mar 1998 (or late 1998) — Philippine military finds Malaysian building work on Investigator Shoal and
+  Erica Reef; Abdullah Badawi says it was unauthorised** ◆ Jusoff et al. citing Chung 2004; unconfirmed —
+  would be an earlier construction event.
+- **20 Oct 1998 — new patrol vessels to cover the EEZ** ○ procurement.
+- **24 Apr or 10/12 May 1999 — occupation of Investigator Shoal and Erica Reef** ▲ 24 Apr per Lai; module
+  arrivals 10 and 12 May per CDiSS and NST; the set uses May and types both force; the two entries and the
+  Jun 1999 construction event flag each other as possible duplicates but are separate acts.
+- **Jun 1999 — Mahathir: structures are for climate research, marine studies and navigation** ◆ Jusoff et
+  al. citing Chung 2004 and Emmers; no dated primary source reachable — Straits Times/Business Times
+  (NewspaperSG), Inquirer/Philstar Jun–Jul 1999.
+- **Jun–Jul 1999 — replies to the Philippine protest notes; statement that the works lie in Malaysia's EEZ**
+  ◆ not found.
+- **23–26 Jul 1999 — refusal to have the Spratlys discussed at the ARF; opposition to the PH–VN code-of-conduct
+  draft** ○ positioning; Dewan Negara 26 and 29 Jul 1999 record the government line.
+- **late Oct 1999 — Defence Ministry: the 28 Oct air incident "was not a stand-off"** ◆ exact date and wording
+  not found (US EIA 2003 cites it).
+- **9 Nov 1999 — Budget 2000 allocation for Layang-Layang** ▲ reported by a backbencher; tabling date and
+  line item unchecked.
+- **CDiSS volume quotations** ▲ six short quotes, four sole-source, read through summaries; check against
+  the book.
+
+### 2000s, 2010–2015 — not yet compiled
+
+### 2016–2020 (#38)
+- **Feb–Mar 2016 — Hishammuddin's "under control"/no-encroachment denials; Jan 2017 MMEA denial that flags
+  were removed at Luconia; 2018 Mahathir and Mohamad Sabu "no warships / neutral sea"; 15 Jul 2020
+  Hishammuddin "no more China ships"** ○ conciliatory or denials.
+- **17 Mar 2016 — written reply incl. Reuters' April 2016 deputy-FM nine-dash-line statement** ▲ folded in.
+- **14 Jun 2016 — Kunming statement** ▲ an ASEAN text released then retracted; low confidence.
+- **2016–2018 — yearly parliamentary non-recognition formula** ▲ one instance a year, low confidence.
+- **Sep 2016 — Bintulu naval-base announcement; Oct 2017 — MMEA detention total; Sep–Oct 2018 — RMN patrols
+  near Haijing 3306; May 2019 — Sapura Esperanza drilling** ▲ month precision.
+- **2016 — Najib's China visit; LMS purchases; Sep 2019 — Malaysia–China consultation mechanism; 2019 —
+  Malaysia–Vietnam fisheries MoU** ○ cooperative.
+- **2017 — protest note over China's Luconia presence** ◆ year only, from the Auditor-General's report tabled
+  14 Jul 2020 (89 intrusions 2016–19, six protest notes, five undated).
+- **2016–2020 — fisheries detentions off Terengganu/Kelantan/Johor; 16 Aug 2020 fatal shooting** ▲ in
+  Malaysia's undisputed EEZ; the shooting could be coded force.
+- **Dec 2019–May 2020 — West Capella** ▲ three events (21 Dec 2019 move; Jan–Feb 2020 escorts; 16 Apr–12 May
+  2020 drilling with RMN patrols) against one in the earlier set (#17); Bunga Mas Lima's arrival (≈10 Nov
+  2020) inferred from AMTI's "hours later". Dedupe with #17 along with the 12 Dec 2019 CLCS submission and
+  the 29 Jul 2020 note.
+- **Not checkable** — UN notes verbales 29 Jul and 27 Aug 2020 (PDF); Sinar Project scanned Dewan Rakyat
+  replies 14 and 17 Mar 2016, 20 Mar 2017, 12 Mar 2018; PressReader scans of The Borneo Post 21 Dec 2016,
+  21 and 23 Oct 2017.
+- **Opposition and NGO statements** ○ excluded.
+
+### 2021–Oct 2026 — not yet compiled
+Eight hand-compiled candidates in #17 (2021, 2023, 2024) and five from weekly harvests.
+
+---
+
+## Indonesia
+
+### 2016–2020 (#45) — detailed report lost
+41 events (2016: 12, 2017: 7, 2018: 3, 2019: 7, 2020: 12), validated; 7 excerpts not found verbatim, 5
+unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
+unknown — read this set with that in mind.
+
+### 1970s–2015, 2021–Oct 2026 — not yet compiled
+Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
+
+---
+
+## Taiwan
+
+### 2016–2020 (#48)
+- **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
+  dedupe.
+- **May 2016 — warship docking at Taiping** ▲ month only; first source Taipei Times (403 to the fetcher).
+- **2016 — stamps of Taiping** ◆ no issue date found (the Nov 2020 lighthouse stamps are in the set).
+- **29 or 28 Nov 2016 — rescue drill at Taiping** ▲ 29 Nov per Taiwan, 28 Nov per Vietnam.
+- **Mar 2017 — Pratas seizure** ▲ month only.
+- **2017–2020 — quarterly Taiping live-fire drills** ▲ each listed separately (Mar/May/Aug 2017; Mar/May/Aug/
+  Nov 2018; Mar/May/Aug 2019; Mar/Nov 2020); the May and Aug 2019 drills rest on advance notices only; no
+  notices found for Q2–Q3 2020. Pratas drills one event a year (2019, 2020).
+- **2013–2017 (disclosed Oct 2019) — Economics Ministry geological survey around Taiping** ◆ no month dates.
+- **2018 — thin year (four drills and a flag-raising)** ◆ a real lull or a coverage gap.
+- **3 Aug 2018 — MOFA statement** ◆ no source could be opened.
+- **May 2017 — detention of Chinese fishermen off Penghu** ○ Taiwan Strait.
+- **Mar 2019 — RV Legend research cruise** ▲ dates inferred from its stated length; may not be an assertion.
+- **Jul–Aug 2020 — marine reinforcement of Pratas** ▲ unnamed sources; MND declined to confirm; month only.
+- **20 Aug 2020 — legislators' trip to Pratas** ○ cancelled by MND.
+- **Not checkable** — the 21 Mar 2016 Position Paper (PDF, matched against extracted text); coast guard
+  firing notices (PDF/scan, one read by OCR). Focus Taiwan shows only the first sentence pre-2019;
+  mofa.gov.tw answers fetchers with 307 at times (the 22–23 Jan 2016 event failed its final check).
+- **Purely reactive or cooperative statements** ○ excluded. No UN DOALOS material exists for Taiwan.
+
+### 1970s–2015, 2021–Oct 2026 — not yet compiled
+Four hand-compiled candidates in #17 (2022, 2024, 2026) and one from weekly harvests.
+
+---
+
+## Sources no agent can reach
+
+Where the maintainer's own access adds most:
+- **Press archives**: NewspaperSG (AWS WAF challenge; only pages found by web search open) · NSTP KLIK (NST,
+  Berita Harian) · FEER Archive (ProQuest) · FBIS Daily Reports (Readex) · Keesing's · UPI Archives (403) ·
+  Reuters.com, WSJ, NYT, CNBC, SCMP, Japan Times, Washington Times article pages (403; WebFetch gives
+  ≤125-character quotes) · The Diplomat, USNI News, Taipei Times (403) · Hanoi Times, mofa.gov.vn and most
+  Vietnamese outlets (browser only) · China Daily 2016–17 and Xinhua 2016–18 article URLs (dead).
+- **Chronologies and scholarship**: Australian Parliamentary Library SCS chronology (aph.gov.au; summaries
+  only) · UPNM/CDiSS *Malaysia and the South China Sea* (404; Wayback blocked) · ISEAS Southeast Asian
+  Affairs, Asian Survey, Contemporary Southeast Asia (library) · IBRU Boundary and Security Bulletin news
+  sections · Lam 2022 (Cambridge, paywall) · UMS/UKM journal PDFs (reset) · Stratfor (paywall).
+- **Official records**: UN DOALOS deposit pages and scanned notes verbales (static.un.org 403/CloudFront) ·
+  Parliament of Malaysia document repository (the digital Hansard itself works) · *Warta Kerajaan* gazettes ·
+  CIA reading room, DTIC, US National Archives cable database (WikiLeaks PlusD has 1977–78 Kuala Lumpur
+  cables, nothing later) · ICAS tracker · NUS CIL SCS News Update index.
+- **Other**: GlobalSecurity (paywall) · ocacnews (bot wall) · the Wayback Machine (blocked by egress policy).

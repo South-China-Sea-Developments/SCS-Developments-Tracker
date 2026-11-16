@@ -6,7 +6,7 @@ They enter the review queue with `python -m pipeline.harvest import <file> --run
 followed by `python -m pipeline.queue open --run harvest/runs/<id>` (ADR 0003: proposals only; a
 coder decides on the review page). Each file's provenance is in `docs/sources/baselines-and-manual-candidates.md`.
 
-A set's companion `<set>.gaps.md`, when present, lists what its compiler could not compile; `docs/notes/backfill-gaps.md` is the register across all sets.
+What a set's compiler could not compile is recorded in the single register `docs/notes/backfill-gaps.md` (per claimant, chronological).
 
 | File | Compiled | By | Contents |
 |---|---|---|---|
