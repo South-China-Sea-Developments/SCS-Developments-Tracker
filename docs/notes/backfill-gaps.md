@@ -534,7 +534,60 @@ from 1990 to 30 Aug 1996 (collection items `micro_IA1176901_*`); nothing of it i
   Ohio indopubs (503); Southeast Asian Affairs (Archive, lending only); Asian Survey, JSTOR; Tempo, Kompas;
   Reuters/AFP/Jakarta Post 1992–99 originals cited in Storey.
 
-### 2000s, 2010–2015 — not yet compiled
+### 2000s (#70)
+Source finds: Liputan6's article ids 2001–2006 resolve through the site's id→URL redirects (the compiler
+enumerated them and filtered titles; ~21,000 ids did not resolve); ANTARA's web archive starts in 2007.
+Vietnamese detentions before 2007 are usually reported together with Thai crews and without a capture date
+("baru-baru ini"), so those entries carry month precision from the 1st to the publication date and the real
+seizure may fall in the previous month.
+- **2000 — nothing found** ◆ no 2000 source opened (Liputan6 starts c. 2001, ANTARA 2007, Jakarta Post/Kompas
+  only via the Wayback Machine, which reset).
+- **23 Feb 2001, Sep 2001, Mar 2002, 24 Oct 2003, Jan/Jun 2004, Sep 2005 — Thai (and Myanmar, Cambodian) boats
+  seized or sunk off Karimata, Natuna, Tambelan, Gelasa Strait** ○ non-claimants (Liputan6 8535, 20421, 30900,
+  65230, 69886, 79731, 108480); the 24 Oct 2003 sinking prompted the 26 Oct warning that is in the set.
+- **15 May 2001 — Sarwono's plan to license 250 Chinese boats in the EEZ; 24 May 2007 — Chinese licences to lapse
+  in July 2007, g-to-g scheme** ○ licensing (Liputan6 12980; ANTARA 63958 — no Chinese licences after 2007).
+- **28 Jun 2002 — PP 37/2002 archipelagic sea lanes (lane I through the Natuna Sea); 24 Sep 2002 — Law 25/2002
+  Riau Islands province** ○ transit regime / decentralisation.
+- **4 Nov 2002 — DOC; 26 Jun 2003 — Indonesia–Vietnam shelf agreement (Law 18/2007)** ○ cooperative; no
+  Indonesian rejection of a Vietnamese line found before 2003.
+- **28 Jan 2003 — four Philippine boats sunk in the Aru Sea; Sep 2005, Mar/Oct 2006 — Chinese and Taiwanese boats
+  fired on in the Arafura Sea and off Papua; Apr/Nov 2008 — Merauke and Malacca Strait seizures** ○ outside the SCS.
+- **2003 — Bakorkamla revived; 29 Dec 2005 — Perpres 81/2005 re-establishing it** ◆ national, not SCS-specific;
+  the 2005 text could not be opened (jdih.kemenkeu 404, peraturan.go.id reset).
+- **2003 — fleet commander's general warning to fire on violators; 2004 — 16 seized boats handed to local
+  fishermen; 2006 — Vietnamese sugar-smuggling ship; 2006 — Yudhoyono's Natuna visit** ▲ in the set, low confidence.
+- **6 Oct 2004 — Fisheries Law 31/2004 (armed patrol officers, sinking powers)** ◆ national law; text not opened.
+- **12 Dec 2004 — plan to bar foreign-flagged fishing from 2005** ○ national licensing policy (Liputan6 91735).
+- **2005–06 — 104 Vietnamese crew still held (Mar 2007 report)** ▲ in the set as a year-level stand-in.
+- **29 Dec 2005 — Perpres 78/2005 on the outermost small islands (Natuna)** ◆ text opened but the island annex
+  not seen; low priority.
+- **25 Apr 2006 — two Taiwanese warships refuelling at Surabaya ordered out** ○ Java, courtesy-port issue
+  (Liputan6 121748).
+- **by Feb 2007 — Marine task force on Pulau Laut, facing Vietnam** ◆ start date unknown (ANTARA 52911).
+- **13 May 2007 — Western Fleet turns away seven warships (US, Japan, Malaysia, India, Singapore) from the Natuna
+  "Alpha 2" area** ○ chiefly non-claimants, tied to the Indonesia–Singapore DCA; Malaysia was among them, so a
+  coder may want it (ANTARA 67569, 69200).
+- **2 Aug 2007 — two unidentified foreign frigates detected off Natuna** ○ monitoring only (ANTARA 72557).
+- **Feb 2007–Sep 2009 — Natuna D-Alpha milestones (Natuna team set up 17 Sep 2009)** ▲ folded into the 16 Jan 2009
+  ExxonMobil termination entry, itself low confidence (commercial dispute with a US company).
+- **19 May 2008 — PP 37/2008 amending the baseline list** ▲ folded into the 25 Mar 2009 UN deposit; Natuna content
+  not checked. **Law 43/2008 on State Territory** ▲ in the set, low confidence.
+- **2–3 Sep 2008 — seizure dated 2 Sep in one ANTARA report and 3 Sep in another** ▲ spanned.
+- **15 Jun 2009 — 17 Vietnamese caught in the Karimata Strait (Bangka), charged 14 Oct 2009** ▲ left out: unclear
+  whether the Karimata Strait counts as the SCS (ANTARA 157744).
+- **2009 — Indonesia asks China for the coordinates of the nine-dash line after China's 7 May 2009 CLCS note** ◆
+  undated in Syailendra (*Asian Security*, ~p. 241); nothing in ANTARA; the 8 Jul 2010 note is the next chunk's.
+- **2009 — Vietnamese coral divers caught off Tambelan by a district team** ▲ in the set, low confidence (not Navy
+  or fisheries ministry).
+- **11 Nov 2009 — Hiu 06 fires on a Thai boat off Natuna, three dead** ○ non-claimant, but the first lethal
+  fisheries enforcement in Natuna waters found for the decade (ANTARA 162135).
+- **Unreachable** — Tempo (Cloudflare); Wayback Machine (reset: Kompas, Jakarta Post 1997–2009); Jakarta Post
+  (no date index); Detik date index (empty); peraturan.go.id (reset), peraturan.bpk.go.id (403); China Daily June
+  2009 (404); Rappler Natuna timeline; Suryadinata & Izzuddin, *The Natunas* (De Gruyter PDF empty); Asian Survey
+  "Indonesia in 200x", Southeast Asian Affairs, Keesing's (paywalled); NewspaperSG after 2001 not tried.
+
+### 2010–2015 — not yet compiled
 
 ### 2021–Oct 2026 — not yet compiled
 Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
