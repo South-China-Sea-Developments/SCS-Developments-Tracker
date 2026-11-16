@@ -15,3 +15,4 @@ coder decides on the review page). Each file's provenance is in `docs/sources/ba
 | `20261107-VN-2016-2020.json` | 2026-11-09 | a research agent run by Claude Fable 5.1 for ticket 19, briefed by `BRIEF.md` | 107 candidate events, VN 2016–2020 |
 | `20261107-ID-2016-2020.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 41 candidate events, ID 2016–2020 |
 | `20261107-TW-2016-2020.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 58 candidate events, TW 2016–2020 |
+| `20261107-MY-1970s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 8 candidate events, MY 1970s |
