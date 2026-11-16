@@ -6,6 +6,8 @@ They enter the review queue with `python -m pipeline.harvest import <file> --run
 followed by `python -m pipeline.queue open --run harvest/runs/<id>` (ADR 0003: proposals only; a
 coder decides on the review page). Each file's provenance is in `docs/sources/baselines-and-manual-candidates.md`.
 
+A set's companion `<set>.gaps.md`, when present, lists what its compiler could not compile; `docs/notes/backfill-gaps.md` is the register across all sets.
+
 | File | Compiled | By | Contents |
 |---|---|---|---|
 | `20261018-new-claimants-2016plus.json` | 2026-10-18 | research agents run by Claude Fable 5.1 for ticket 11 | 24 candidate events, 8 each for Malaysia, Indonesia and Taiwan, 2016–2026, each with one or two fetched sources and a verbatim excerpt |
