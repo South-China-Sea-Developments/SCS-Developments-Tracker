@@ -15,6 +15,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| ID 2016–2020 | 41 | #45 | 29/41 excerpts verified, 7 not found verbatim, 3 possible duplicates; compiler's report lost to a session restart |
 | VN 2016–2020 | 107 | #43 | 52/107 excerpts verified, 50 unchecked (Vietnamese sites block the importer's fetcher; the agent verified 62 itself); 4 possible duplicates; yearly moratorium rejections one event a year |
 | PH 2016–2020 | 80 | #33 | pilot; 74/80 excerpts verified |
 | CN 2016–2020 | 93 | #41 | 88/93 excerpts verified; 3 possible duplicates; US-directed acts kept as one event a year (dyad CU) for the coder to keep or drop |
