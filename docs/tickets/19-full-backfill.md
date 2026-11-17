@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| ID 2010–2015 | 55 | #72 | 55 candidates, all excerpts verified (DOALOS 2010 note by OCR); ANTARA the key source, 2012–13 thin; Yuzheng forced releases (2010, 2013) rest on ASPI/NIDS, Indonesia made no statement; 2014–15 the dense years (Bakamla, sinkings, nine-dash-line statements); compiled on Opus |
 | ID 2000s | 27 | #70 | 27/27 excerpts verified; Liputan6 (2001–06) and ANTARA (2007–) the key sources; nothing for 2000; mostly fisheries enforcement against Vietnamese crews until the 2008–09 step-up (notes to China/Vietnam/Taiwan, Natuna exercise, 8 Chinese trawlers seized Jun 2009); compiled on Opus |
 | ID 1990s | 27 | #68 | 27/27 excerpts verified; FBIS Daily Reports 1991–Aug 1996 via the Internet Archive the key source; 1995 the busy year (11); compiled on Opus |
 | ID 1980s | 12 | #66 | 11/12 excerpts verified; nothing for 1986–89 (coverage gap); laws, decrees and CIA-reported Natuna build-up; compiled on Opus |

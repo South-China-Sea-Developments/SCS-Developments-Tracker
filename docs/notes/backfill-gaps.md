@@ -393,11 +393,6 @@ Only stray weekly-harvest candidates.
 
 ## Indonesia
 
-### 2016–2020 (#45) — detailed report lost
-41 events (2016: 12, 2017: 7, 2018: 3, 2019: 7, 2020: 12), validated; 7 excerpts not found verbatim, 5
-unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
-unknown — read this set with that in mind.
-
 ### 1970s (#64)
 Almost every event rests on US embassy cables (WikiLeaks PlusD, from 1973), so many acts were private at the
 time; the targets are South Vietnam's 1971 Natuna-area concessions (dyad IV). Nothing found for 1970–71 and 1976.
@@ -587,7 +582,72 @@ seizure may fall in the previous month.
   2009 (404); Rappler Natuna timeline; Suryadinata & Izzuddin, *The Natunas* (De Gruyter PDF empty); Asian Survey
   "Indonesia in 200x", Southeast Asian Affairs, Keesing's (paywalled); NewspaperSG after 2001 not tried.
 
-### 2010–2015 — not yet compiled
+### 2010–2015 (#72)
+Source notes: ANTARA's Indonesian search is capped at ~50 pages per query and holds few 2012–13 articles (2012 is
+thin — Republika, English ANTARA, Jakarta Post and ICSF filled it); English ANTARA shows one page per query;
+NIDS resolves at `www.nids.mod.go.jp`, not `www.nids.go.jp`. Kompas, Detik, Liputan6, Syailendra, Suryadinata &
+Izzuddin, Connelly and the yearly reviews were not searched for this chunk — a second pass over 2012–13 may pay.
+- **May 2010 — a second forced release of a detained Chinese boat by Yuzheng 311** ▲ second-hand only (ASPI/Bentley
+  29 Oct 2013 citing a Weekly Standard blog), month only; folded into the Jun 2010 entry.
+- **Jun 2010 and 26 Mar 2013 — the Yuzheng forced releases** ▲ in the set, but the first sources are ASPI, NIDS and
+  a military blog carrying the captain's report; Indonesia made no public statement, and the Defence Ministry
+  denied the 2013 incident (Jakarta Post 17 Feb 2014).
+- **17 Aug 2010 — KAL Belinyu (Lanal Babel) seizes the Vietnamese boat Than Chong off Bangka** ◆ unclear whether
+  Bangka waters count as the SCS (ANTARA 216595). **13 and 18 Aug 2010 — Tanjung Berakit events** ▲ in the set;
+  east of Horsburgh Light, at the SCS southern edge. **18 Aug 2010 protest note** ▲ may be 17 Aug (The Star says
+  "Wednesday").
+- **27 Aug 2010 — DPR member Ramadhan Pohan urges sinking foreign intruders** ○ individual legislator (ANTARA 218037).
+- **26 Feb 2011 — Fadel cancels 300 Vietnamese and Thai fishing licences; Nov 2014 moratorium on ex-foreign vessels
+  (extended Apr 2015)** ○ national licensing policy (ANTARA 247798, 496808).
+- **29 Mar, 7 Apr, 22 Apr 2011; 29 Mar 2012; 16 May 2013; 13 Dec 2015 — Malaysian and Thai boats seized near
+  Batam, in the Malacca Strait and off Pulau Jemur** ○ outside the SCS (ANTARA 251903, 253679, 253839, 253940,
+  255654, 375676, 535458; en.antaranews 81011).
+- **2011 — six Taiwanese boats among 73 caught; 2012 — 112 boats caught, 70 foreign** ◆ no place, date or
+  nationality breakdown (ANTARA 272577, 375676).
+- **28–29 Apr 2012, 11 May 2013, 22 Mar 2015 — dates worked out** ▲ from "akhir pekan ini", "Saturday" and the
+  Japanese publication date respectively. **2013-03-29** ▲ year taken from the weekday (ICSF reproduction of a
+  Jakarta Post story). **14 Apr 2013 seizure** ▲ ministry says 14 Apr, Jakarta Post "Tuesday" (23 Apr).
+- **8 Feb 2013 — 17 Vietnamese divers on Indonesian-flagged boats detained by the Berakit post, Bintan** ◆ SCS edge;
+  reads as an immigration case (ANTARA 357367).
+- **Aug 2013 / Mar–Apr 2014 — Komodo 2014 multilateral exercise, Natuna/Anambas** ○ cooperative (ANTARA 391830, 425789).
+- **12 Mar and 24 Apr 2014 — Moeldoko statements** ▲ in the set, quoted from a blog reproducing an Asia Sentinel
+  column; the WSJ op-ed itself is not on the fetch allowlist.
+- **25 Jun 2014 — Taiwanese Kuo Rong-333 seized off Lombok; 21 Dec 2014 Ambon, 20 May 2015 Bitung/Belawan/Aceh,
+  18 Aug 2015 Belawan, 22 Oct 2015 Tarakan sinkings** ○ outside the SCS.
+- **17 Oct 2014 — Law 32/2014 on Marine Affairs (Bakamla's legal basis)** ◆ national law; text not opened.
+  **15 Dec 2014 — Bakamla established** ▲ in the set, national rather than SCS-specific, low confidence.
+- **30 Oct 2014 — Hiu 009 seizes KM Laut Natuna 28 (Thai crew) off Tambelan, sunk 9 Feb 2015 off Batam; 11 Dec 2014
+  KRI Sultan Hasanuddin seizes Thai-crewed boats west of Jemaja; c. 29–30 Apr 2015 KRI Kapitan Patimura seizes five
+  Thai boats off Pulau Pejantan** ○ non-claimant (ANTARA 462237, 478964, 468956, 493850).
+- **4 Nov 2014 — Susi meets the ambassadors of Thailand, Malaysia, Vietnam, the Philippines, Australia and China on
+  illegal fishing** ◆ pressure or consultation? (ANTARA 462347).
+- **4 Dec 2014 — police chief inspects Natuna and Pulau Laut** ◆ low weight (ANTARA 467584).
+- **7 and 10 Mar 2015 — Thai and Vietnamese boats seized** ◆ no location (ANTARA 485750). **c. Apr 2015 — a KRI
+  seizes a Vietnamese boat in Natuna's territorial sea, to be sunk at Natuna** ◆ no capture date (ANTARA 491814).
+- **27 May 2015 — Bakamla plans a Natuna maritime zone and Operasi Nusantara patrols** ◆ plans only (ANTARA 498455).
+- **31 May and 29 Jul 2015 — Tedjo: Indonesia neutral, promotes dialogue** ○ conciliatory (ANTARA 499066, 509443).
+- **Jun 2015 — seven protest notes to Malaysia (airspace, Ambalat)** ○ not SCS (CNN Indonesia 17 Jun 2015).
+- **Jul–Sep 2015 — grouped seizures (26 Jul–1 Aug, 12–22 Sep)** ▲ several dated seizures in one entry each; some
+  2015 sinkings were off Batam; subregion left blank where unsure.
+- **before 12 Nov 2015 — Indonesia's diplomatic request to China to clarify the nine-dash line** ◆ the spokesman
+  could not say when it was made (Asia Times/Reuters 12 Nov 2015); pairs with the undated 2009 request above.
+- **20 Nov 2015 — Retno: "Natuna is Indonesian territory. Full stop"; no overlapping claims** ○ mainly
+  de-escalatory, though a coder could read it as declarative (ANTARA 530634).
+- **24–27 Nov 2015 — Indonesian delegation observes the PCA hearing; Havas: no Chinese claim to Natuna** ○ observer
+  role; no Indonesian filing found (ANTARA 531918).
+- **9 Dec 2015 — 14 warships on routine ALKI I patrol, partly anticipating SCS conflict** ◆ routine (ANTARA 534169).
+- **31 Dec 2015 — ten boats sunk at four sites, one at Tarempa** ◆ nationality not given (ANTARA 537614).
+- **12 Jan 2016 Lanud Ranai type-B upgrade; 31 Mar 2016 F-16s to Natuna** ○ next chunk; within 2014–15 only
+  Moeldoko's promise of fighters (24 Apr 2014 entry).
+- **Unreachable** — Tempo (not tried); The Diplomat (Cloudflare on curl, not retried via WebFetch); WSJ (not on the
+  allowlist); ANTARA's capped search and thin 2012–13 index; English ANTARA (no pagination); DOALOS 2010 note
+  (scanned, read by OCR).
+
+
+### 2016–2020 (#45) — detailed report lost
+41 events (2016: 12, 2017: 7, 2018: 3, 2019: 7, 2020: 12), validated; 7 excerpts not found verbatim, 5
+unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
+unknown — read this set with that in mind.
 
 ### 2021–Oct 2026 — not yet compiled
 Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
