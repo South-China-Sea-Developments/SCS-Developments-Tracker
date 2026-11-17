@@ -28,3 +28,4 @@ What a set's compiler could not compile is recorded in the single register `docs
 | `20261107-ID-1990s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 27 candidate events, ID 1990s |
 | `20261107-ID-2000s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 27 candidate events, ID 2000s |
 | `20261107-ID-2010-2015.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 55 candidate events, ID 2010–2015 |
+| `20261107-ID-2021-2026.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 30 candidate events, ID 2021–Oct 2026 |
