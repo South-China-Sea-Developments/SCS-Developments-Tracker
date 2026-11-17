@@ -919,7 +919,50 @@ scripts, so its excerpts came through WebFetch at ≤125 characters — confirm 
   throttled); National Land Management Agency annals PDFs. Not searched: Executive Yuan Gazette, Legislative
   Yuan gazette, national defence reports.
 
-### 2010–2015 — not yet compiled
+### 2010–2015 (#84)
+Source notes: the MOFA Chinese archive carries most of the set (新聞稿 list n=96, 聲明 list n=97 — the 7 Jul 2015
+statement is s=75162; `PageSize=400` returns the whole list); the English archive has almost nothing before
+2016. The taiwantt.org.tw Taipei Times mirror covers 2010–13 only; 2014–15 Taipei Times, GlobalSecurity, The
+Peninsula, Macau Daily Times and Hanoi Times excerpts came through WebFetch in short segments — re-check them.
+2010, 2014 and 2015 are thin for access reasons, not because the period was quiet; the CGA, MND, Legislative
+Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — the obvious second pass.
+- **27 Jul 2010 — Dongsha station** ▲ Control Yuan gives both 21 and 27 Jul.
+- **1 Sep 2010 — Executive Yuan spokesman restates the SCS sovereignty position** ◆ Control Yuan 38766 only.
+- **2010–2012 — Vietnamese intrusions near Taiping (42 in 2010, 106 in 2011, 41 in Jan–Apr 2012 per legislator Lin
+  Yu-fang, Taipei Times 3 May 2012)** ○ Vietnamese acts; no CGA expulsion count found.
+- **27 Dec 2010 Dongsha and 3 Aug 2011 Taiping — Control Yuan inspection visits** ◆ oversight visits (Control Yuan).
+- **2011 — MOEA mining areas designated around Dongsha and Taiping; first-phase solar system on Taiping** ◆ year only
+  (MOFA 7 Jul 2015). **2011 onward — MND "Nansha study camp" and CGA "Dongsha experience camp"** ◆ undated (MOFA
+  7 Jul 2015; 20 Jul 2012 release mentions a student visit).
+- **22 Mar 2012 — Vietnamese boat fires a blank round at a CGA vessel off Taiping; protest to Hanoi** ◆ protest day
+  unknown (Taipei Times mirror 20120503-01).
+- **Aug 2012 — shipment of the 40 mm guns and 120 mm mortars to Taiping (CNA 4 Sep 2012)** ▲ folded into the 24 Jul
+  2012 event.
+- **Nov 2012 — protest at China's e-passport map** ○ cross-strait. **Dec 2012 — oil-exploration plan** ▲ month
+  precision.
+- **Apr 2013 — live-fire drill** ▲ month precision. **Sep 2013; May/Sep 2015 — further CGA Taiping drills, said to
+  be twice a year** ◆ undated; the Navy denied a reported Jun 2015 drill (Focus Taiwan 7 Jun 2015).
+- **9–15 May 2013 — Guang Da Xing No. 28 protest, ultimatum and sanctions** ▲ in the set as coercive (threat and
+  punishment); the shooting was off the Luzon Strait, and the acts are tied to the SCS only by MOFA's overlapping-
+  waters framing — a coder may retype or drop them. **13–16 May 2013 — Navy–CGA patrols and exercise in the Bashi
+  Channel** ○ outside the SCS.
+- **c. 20 May 2013 — Ma: frigate pier and runway extension on Taiping are "must-dos"** ◆ no primary text (Taipei
+  Times mirror 20130528-04).
+- **Nov 2013 — wharf and runway works begin** ▲ month only (MOFA 7 Jul 2015). **Dec 2013 — MOTC communications
+  network on Taiping** ◆ low salience.
+- **2014 — port construction in progress (Reuters via Taipei Times 27 May 2014); Vietnamese protests and ROC replies**
+  ◆ not compiled separately.
+- **12 Jun 2015 — Ma's open letter on the Peace Initiative (president.gov.tw NEWS/4709)** ◆. **Nov 2015 — Peace
+  Initiative "road map"** ◆ not found.
+- **Sep or 25 Nov 2015 — Taiping runway renovation completed** ◆ SCMP 1868130 says September, the Presidential
+  Office timeline 25 Nov; unresolved, not compiled.
+- **May 2015 — consular help for Sheng Feng No. 12; 5 and 19 Nov 2015 — Taiwan–Philippines fisheries agreement** ○.
+- **13–14 Dec 2015 — MOFA reply to Vietnam on the wharf opening** ▲ day range.
+- **Not machine-checkable** — Control Yuan 38766 (平 renders as 帄).
+- **Unreachable** — GlobalSecurity directories (402); Focus Taiwan old addresses (403/redirect); taipeitimes.com by
+  curl; Presidential Office English news (redirect loop after ~900 pages).
+- **Airtable** — not mirrored: the base reached the free-tier record cap; batch files kept for a later push.
+
 
 ### 2016–2020 (#48)
 - **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
