@@ -40,8 +40,8 @@ Every other rule in this guide follows from that one.
 
 ### 2. What "assertiveness" means here
 
-"Statements and behaviors that strengthen the state's position in the dispute" [IS, *Defining
-assertiveness*; SR99, p. 4]. A state's *position* has three components [IS]:
+"Statements and behaviors that strengthen the state's position in the dispute" [IS, *Assertiveness as a
+variable*; SR99, p. 4]. A state's *position* has three components [IS]:
 
 1. its **overall administrative presence** in the disputed area — not only land occupied, but "all state
    assets within the disputed area — from mobile units like vehicles, ships and aircraft, to fixed
@@ -51,8 +51,8 @@ assertiveness*; SR99, p. 4]. A state's *position* has three components [IS]:
 3. its **ability to sustain the claim in international law** — hence the "sensitivity of states to
    potentially legally significant, but otherwise relatively innocuous, actions".
 
-The test is observable: does the act strengthen the actor's position on one of these three? It needs
-"no strong subjective judgements about the state of mind of the actor" [IS]. Motive, provocation and
+The test is observable: does the act strengthen the actor's position on one of these three? It can be applied "without
+the need for strong subjective judgements about the state of mind of the actor" [IS]. Motive, provocation and
 blame are not part of the test. "Merely maintaining a disputed claim involves some level of assertiveness"
 [IS] — which is why *maintenance* is the baseline and only *change* is a case.
 
@@ -94,8 +94,10 @@ administrative presence (demonstrative), threats of punishment (coercive), and v
 - **Use of force** — "the application of military violence or direct seizure of the disputed
   possession"; "the use of force does not necessarily involve military units, since civilian actors can be
   deployed to seize disputed possessions, as in the case of the PRC's occupation of Mischief Reef in 1994"
-  [IS]. In the data, China's 2012 establishment of "constant presence" at Scarborough is coded force
-  (`CN201205`), not coercive, because the status quo of the possession changed [MATS].
+  [IS]. In the data, the 2012 Scarborough case (`CN201205`, "coercion against Philippine boats at
+Scarborough Shoal, establishing constant presence") is coded force because China "seized Scarborough
+Shoal" [SR99, p. 21] — control of the possession changed — whereas the 2013 "constant presence at Second
+Thomas Shoal" (`CN201303`), where nothing changed hands, is demonstrative [MATS].
 
 ### 4. What is deliberately left out — and what is *not* left out
 
@@ -119,8 +121,8 @@ administrative presence (demonstrative), threats of punishment (coercive), and v
   the claimant was "only responding".
 - **Significance is not weighted.** "The quantitative assertiveness framework implicitly gives equal
   weight to actions of varying significance" — the 2005 Tonkin shooting that killed nine Vietnamese and
-  a 2011 increase in detentions each count once; the 2013–15 island-building "is also not weighted for
-  its significance, except insofar as it enables further assertive actions in the future" [App, *Unit of
+  a 2011 increase in detentions each count once; the 2013–15 "massive land reclamation works … are also not weighted for
+  their significance, except insofar as they enable further assertive actions in the future" [App, *Unit of
   analysis*]. Do not inflate an important year by splitting one intensification into several moves, and
   do not deflate a quiet one by merging distinct intensifications.
 
@@ -143,7 +145,7 @@ Two further caveats Chubb insists on: the data are "inevitably incomplete, for a
 adversaries may both have incentives to keep such events secret" [App]; and "there may be a lag between
 important political decisions that set in motion a policy change, and the observable manifestations"
 [App; SR99, p. 8], so the series dates *behaviour*, never *decisions*, and must be "complemented by close
-analysis of speech and text" before any causal claim [9DL].
+analysis of speech and text" before any causal claim [App, *Limitations*; 9DL].
 
 ---
 
@@ -212,7 +214,7 @@ activism and resource exploitation" [IS])? (2) Does the act strengthen the actor
 administrative presence, military ability or legal viability (§I.2)? (3) Is it non-cooperative? (4) Does
 it concern the South China Sea claim (not the Taiwan Strait, not the East China Sea, not the Bashi
 Channel, not the Sulu or Arafura Seas)?
-**Why.** The definition is the filter [IS, *Defining assertiveness*]; the exclusions are deliberate
+**Why.** The definition is the filter [IS, *Assertiveness as a variable*]; the exclusions are deliberate
 (§I.4).
 **Here.** The brief's "What counts as an event" paragraph is this test in compiler form. The sub-region
 field (ten polygons, `data/reference/mavd_subregions.geojson`) is the geographic test; the Natuna waters
@@ -222,7 +224,7 @@ and still counts.
 state unless the state sanctioned the act. Don't code a non-claimant's act (a US transit, an Australian
 flight) — but do code the claimant's *statement* about it if the statement asserts the claim (China's
 "intruded into Chinese territorial waters" over USS Benfold at the Paracels is a PRC declarative act,
-dyad U/A; the transit is not an event). Don't code a mere "we urge restraint" or "all parties should
+dyads `CU` and `CV` since the Paracels are Vietnam's claim too; the transit is not an event). Don't code a mere "we urge restraint" or "all parties should
 comply with international law" — it asserts nothing.
 
 ### E. The intensification test — the heart of the method
@@ -234,8 +236,8 @@ increase in patrol activity or resource exploration and exploitation"; **(c) sco
 broader geographic area than in previous time periods" [IS; SR99, p. 6]. Name which one.
 **Why.** This is what makes the count a measure of escalation rather than of activity (§I.1). The
 previous *calendar year* is the reference because it "served this project's requirement for fairly precise
-indications of the timing of policy change" and "seems a less arbitrary choice than wider units of time"
-[App, *Unit of analysis*].
+indications of the timing of policy change" [App, *Stage 2*] and "seems a less arbitrary choice than wider
+units of time" [App, *Unit of analysis*].
 **The counterfactual.** Chubb's own worked case: "PRC on-water enforcement actions against foreign fishing
 increased in 2007, but this could not automatically be considered a case of intensified assertiveness.
 The number of Vietnamese fishers operating in the Paracel Islands had increased sharply, and if this had
@@ -243,13 +245,14 @@ occurred in previous years it is quite likely that PRC enforcement would also ha
 increased. The case's eventual inclusion in the dataset was on the qualitative basis that China's
 enforcement methods shifted from the previous practice of harassment and warnings, towards confiscation
 of property and detention of Vietnamese personnel" [App, *Verification*]. So: more of the same because
-there was more to react to is not a frequency move; a *change of method* is a novelty move. Ask "how
-would this state have responded if the same circumstances had arisen in the past?"
+there was more to react to is not a frequency move; a *change of method* is a novelty move. Ask, in Chubb's words, "how
+the state would have responded if the same circumstances had arisen in the past".
 **Know the artefact.** The year-on-year unit has a known consequence: PRC survey activity "observed in
 similar geographical areas in 2010 and 2007" and again in 2014 is "three separate cases of
 intensification of assertive activity, followed by its diminishment the following year", where a longer
 unit would see one [App, *Unit of analysis*]. That is the rule, not a bug; apply it consistently, and let
-*Ongoing through* and diminishment carry the rest.
+*Ongoing through* and diminishment carry the rest. Its corollary cuts both ways: a method last seen years
+ago but absent in the previous year is *new again* when it reappears.
 **Here.** The review page and the Airtable Candidate Detail show the claimant's previous-year moves and
 same-year moves beside every candidate (`previous_year_moves`, `same_year_moves`); forming a new move
 requires `intensification_criterion` ∈ {novelty, frequency, scope} and the validator refuses a
@@ -263,8 +266,8 @@ against "two in all of last year"). Don't code a continuation as a move: it belo
 
 ### F. Group events into the move
 
-**Do.** One move per intensification. A move "may be a single action or a closely linked series of
-actions" [Project, CONTEXT, after MATS]. Several distinct intensifications in one year are several moves
+**Do.** One move per intensification. A move may be a single action or a closely linked series of actions
+[Project, CONTEXT — the project's gloss; Chubb's cases run from one dated act to a year-long pattern]. Several distinct intensifications in one year are several moves
 (China 2012: Scarborough seizure, economic sanctions on Philippine fruit, Sansha City — separate moves
 [SR99, p. 21]); one intensification shown by many incidents is one move with many events (China 2007:
 "Regular rights protection patrols begin, and then expand in scope" — one move, `CN200701`, carrying every
@@ -277,8 +280,9 @@ another candidate in the same batch via `move_of_event`), *new move*, *duplicate
 accepted event — status `merged`), or *reject*. Merge checks claimant and year.
 **Don't.** Don't merge a 2024 event into a 2023 move: a move is a year's intensification, and the
 validator binds an event to a move of its own claimant and year. If the behaviour continued into 2024 at
-the same level, the 2023 move's *Ongoing through* becomes 2024 and the 2024 event is decided *reject* with
-the note "continuation of <move_id>". That the continuation evidence then leaves the map is a known
+the same level, the 2024 event is decided *reject* with the note "continuation of <move_id>", and the 2023
+move's *Ongoing through* is moved to 2024 by a separate edit to `moves.csv` (§K). That the continuation
+evidence then leaves the map is a known
 limitation of the current schema; a `continuation` status attached to the earlier move would be an
 additive change (ADR 0001) and is the natural next ticket once the first real reviews show how often it
 arises. Don't form two moves for the same intensification because two agencies were involved.
@@ -290,18 +294,20 @@ arises. Don't form two moves for the same intensification because two agencies w
 narratives matched him on 92.4% and 87.1% of cases [App, *Coding checks*] — a coder who never hesitates is
 not reading closely.
 **The hard boundaries.**
-- *Demonstrative vs coercive*: a patrol is demonstrative; a patrol that "conveys a clear threat or warning
+- *Demonstrative vs coercive*: a patrol is demonstrative; a patrol "conveying a clear threat or warning
   to others" (radio warnings to leave, shadowing with intent, blocking) is coercive [IS, n. 24]. A law is
-  declarative; a law that "upgrades disputed waters to sovereign territorial seas" or an ADIZ is coercive
+  declarative; baselines "that upgrade disputed waters to sovereign territorial seas" or an ADIZ are coercive
   [IS]. A fishing ban *announced* is declarative; *enforced* against foreign boats it is coercive.
 - *Coercive vs force*: physical interference, seizure of boats, detention of crews, water cannon, ramming
-  are coercive; a change in control of a *feature*, or military violence, is force. Chubb coded the 2012
-  Scarborough stand-off as force because it "establish[ed] constant presence" [MATS, `CN201205`]; the
-  Philippines' 1970 occupation of Nanshan is force (`PH197001`).
-- *Declarative vs demonstrative*: a statement is declarative; an administrative act that manifests
-  jurisdiction (naming features, zoning, a court case, a post office, household registration) is
-  demonstrative; a change in "domestic administrative arrangements governing the disputed area" with no
-  presence attached stays declarative [IS].
+  are coercive; a change in control of a *feature*, or military violence, is force. Scarborough 2012 is
+  force because the shoal was seized (`CN201205`); the Philippines' 1970 occupation of Nanshan is force
+  (`PH197001`); "constant presence" at Second Thomas in 2013 without a change of control is demonstrative
+  (`CN201303`) [MATS].
+- *Declarative vs demonstrative*: a statement is declarative, and so is an administrative act with no
+  presence attached — "changes in domestic administrative arrangements governing the disputed area" [IS];
+  Chubb coded the 1983 naming of 287 features declarative (`CN198302`) [MATS]. An administrative act that
+  *manifests* jurisdiction on the ground — a court case over the area, a post office, household
+  registration, a weather station, resettlement — is demonstrative (`VN200901`) [IS; MATS].
 **Here.** `suggested_type` from the compiler is a suggestion; the coder's type is the move's. The
 agreement report compares the two.
 **Don't.** Don't type by actor ("coast guard ⇒ coercive", "ministry ⇒ declarative"). Don't type by
@@ -331,18 +337,24 @@ for a coast-guard patrol unless it bears on a military advantage. Don't leave a 
 [App, *Dyadic and issue analysis*]: a feature-specific act implicates the claimants to that feature
 (Paracels → V; Scarborough → P); an act in the Spratly outposts → P and V, "except where they had clear
 strategic implications for other states, such as the large-scale island-building campaign"; a claim to
-the Spratlys as a whole → M, P, V (and, in this six-claimant tracker, R); an act over the whole
-nine-dash-line area → add B for energy and I for fisheries; "implications for states at large — such as
-introduction of civil airspace regulations, or military exercises taking place in unspecified waters" →
-A; US surveillance and legal disputes → U.
+the Spratlys as a whole → M, P, V; an act over the whole nine-dash-line area → add B for energy and I for
+fisheries; "implications for states at large — such as introduction of civil airspace regulations, or
+military exercises taking place in unspecified waters" → A; and U, which the appendix uses for the PRC–US
+dyad ("disputes over surveillance activities and interpretations of international law between the PRC
+and the US") while the dataset's own legend reads "U = Unclear" [MATS, Information sheet] — in practice
+Chubb's U cases are the US-related ones. Taiwan is R, and Chubb used it where an act touched the ROC's
+holdings or claim concretely (`PR` 45 times, `VR` 34) but added it to a Chinese Spratly-wide statement
+only once (`CN198801`).
 **Why.** Dyads are how the action–reaction dynamics are read later ("each advance impinging on the
 interests of a broadening array of states" [SR99, ch. 1]); they are not a judgement of blame.
 **Here.** `dyads`, space-separated, actor first (`CV`, `PC`); for the three new claimants the actor codes
-are M, I, R. A six-claimant dataset means a Taiwanese act regarding Itu Aba implicates C, P and V, and a
-Chinese act regarding the Spratlys as a whole now also implicates R.
+are M, I, R. Follow Chubb's practice for R: a Taiwanese act regarding Itu Aba implicates C, P and V; a
+Chinese, Vietnamese or Philippine act implicates R when it concretely touches Taiping, the Pratas or the
+ROC's claim, not automatically for every Spratly-wide statement — adding R across Chubb's own rows would
+be a re-coding, which ADR 0001 forbids.
 **Don't.** Don't write the target first. Don't code only the state named in the headline when the act
-touches several claims. Don't use U for "unknown target" — U is the US/unclear code in MATS; an act with
-no particular target is A.
+touches several claims. Don't use U for "no particular target" — that is A; reserve U for the US (and, if
+you must, the unclear), and say which in the note.
 
 ### J. Sub-regions
 
@@ -351,7 +363,7 @@ general may have none.
 **Why.** "Pinning assertive state activities to specific geographic coordinates is a challenge … many
 real-world assertive behaviors … take place over an expanse of sea rather than at a single point. In
 addition, many assertive behaviors in the declarative type pertain to the state's claims in general"
-[SR99, p. 32]. The ten zones are defined by "environment, resources, the presence of disputed islands,
+[SR99, p. 31]. The ten zones are defined by "environment, resources, the presence of disputed islands,
 and state claims".
 **Here.** Sub-region at move level is a coding; at event level, placement is a *lookup* — coordinates
 over a feature name over an extractor's guess (gazetteer, spec amendment ticket 08) — and the validator
@@ -367,14 +379,21 @@ diminishment in words.
 consider whether, in subsequent time periods, it intensified further, continued or diminished" [IS]. The
 default: "an absence of evidence of equivalent actions in the following year was treated as a
 diminishment of that particular aspect" — with the caution for sparse data: PRC fishing rose in 1994 and
-again in 2001 with nothing known in between, so it was "regarded as having intensified in 1994, and
-continued over the following seven years, before intensifying again in 2001 — a more cautious conclusion
-than to assume either further increases or diminishment" [App, *Verification*]. Chubb's own diminished
+again in 2001 with nothing known in between, so "the assumption was made that Chinese fishing had been occurring at approximately the
+same level across that time period – a more cautious conclusion than to assume either further increases
+or diminishment. PRC fishing was therefore regarded as having intensified in 1994, and continued over the
+following seven years, before intensifying again in 2001" [App, *Verification*]. Chubb's own diminished
 notes are terse and specific: "No known detentions of VN personnel in Paracels" (1980); "Fewer People's
 Daily island sovereignty assertions" (1993) [MATS, MAVD column]. This is the only way the series records
 moderation (§I.4).
 **Here.** `ongoing_through`, `ongoing_through_notes`, `diminished_notes` on the move. A continuation
-candidate is rejected with a note naming the move it continues; the move's `ongoing_through` is extended.
+candidate is rejected with a note naming the move it continues. `queue decide` writes only event fields
+and new moves; extending a move's `ongoing_through` or adding a diminished note is an edit to
+`data/moves.csv` in its own pull request, checked by the validator — and for a `coded_by = chubb` row it
+needs a documented line in `data/corrections.csv`, because every MATS field of those rows is guarded.
+Chubb's MAVD diminished column also records a few *conciliatory* acts for the Philippines and Vietnam
+(1988, 1996); here those stay out of the moves and go in `diminished_notes` only where they mark the end
+of an assertive practice.
 **Don't.** Don't leave `ongoing_through` at the move's year for a law, a structure or an administrative
 arrangement that is plainly still in force — those "remain in place until abolished or abandoned" [IS,
 *Layers*]. Don't infer diminishment across a decade of missing sources; say the level is unknown.
@@ -398,10 +417,14 @@ write it from the sources.
 
 **Do.** Decide every candidate yourself on the review page or in Airtable; export; apply with
 `pipeline.queue decide`; let the validator run; merge the pull request.
-**Why.** "Machines propose, humans decide" [Project, ADR 0003]; decision 07: no project-coded entry enters
+**Why.** "machines harvest and propose, humans decide" [Project, ADR 0003]; decision 07: no project-coded entry enters
 the dataset until the maintainer has reviewed it himself. The validator is the merge gate — schema,
 integrity, and the comparability rule that the 1970–2015 counts for CN, VN and PH equal MATS 1.02
-exactly [Project, spec].
+exactly [Project, spec]. That rule counts *every* accepted move of those claimants in those years, so no
+project-coded move may be added to China, Vietnam or the Philippines before 2016: a gap found in a
+MATS-era year goes to the author as a proposed correction, and backfilled events for those years attach to
+Chubb's existing moves. A move formed by `decide` is `accepted` at once; merging the pull request is the
+acceptance; `pending` exists only for `VN197304`, awaiting the author.
 **Here.** The review PR is the queue; the decisions file is the same whichever front end produced it;
 with Airtable, archive first (`pipeline.airtable archive`, ADR 0005), then apply, then clear.
 **Don't.** Don't edit `coded_by = chubb` rows except by a documented correction. Don't bypass the PR.
@@ -421,9 +444,11 @@ project's own progress [Project, decision 06 as amended].
 
 **Do.** Before closing a claimant-year, list its moves together and ask: do they describe distinct
 intensifications? Is anything a continuation in disguise? Does the count fit what the method expects?
-**Why.** Chubb's reference rates for the PRC: about 1.8 moves a year outside surges, 3.0–5.1 in the four
-surge periods, 2012 the peak at nine [IS, *Increasing assertiveness as a constant*; App, Table A2]; for
-2016 onward he expected "five to seven likely cases of new assertive activity … each year since 2015, with
+**Why.** Chubb's reference rates for the PRC, from the 132-case series analysed in the article: about
+1.8 moves a year outside the surges, 3.0–5.1 inside them, 2012 the peak at nine [IS, *Increasing
+assertiveness as a constant*, *Breakpoint 2007*; App, Table A2]. MATS 1.02, the version the validator
+enforces, has 144 PRC cases (111 Vietnam, 102 Philippines), ten in 2012, about 2.0 a year outside the
+surges and 5.7 for 2007–15. For 2016 onward he expected "five to seven likely cases of new assertive activity … each year since 2015, with
 two to three of these cases falling within the coercive category" [SR99, p. 39]. A claimant-year with 25
 moves has almost certainly counted events; a year with none for China since 1990 would be the first.
 Vietnam and the Philippines run lower, and Malaysia, Indonesia and Taiwan lower still.
@@ -453,20 +478,29 @@ suggestions. Don't change a rule to fit a hard case without recording the rule c
 
 1. **An event that is not a move.** *Indonesia 2023: KKP seizes Vietnamese fishing boats in the North
    Natuna Sea (several reports).* Indonesia has seized Vietnamese boats in Natuna waters every year for two
-   decades. Unless 2023 shows more seizures than 2022 (frequency, with numbers), a new method (sinking at sea
-   rather than detention; a new agency), or a new area, it is a continuation. Record the events; reject
-   them as continuation with a note naming the standing move; extend that move's `ongoing_through`.
+   decades. More seizures than in 2022 is not yet a frequency move: apply the counterfactual (§E) — if more
+   Vietnamese boats came, more seizures is what Jakarta would have done in any earlier year. It becomes a
+   move if the *method* changed (sinking at sea where boats were previously escorted to port; firing where
+   there had been boarding), the *area* widened, or the rate rose with the same inflow. Otherwise record
+   the events, reject them as continuation naming the standing move, and extend that move's
+   `ongoing_through` in `moves.csv`.
 
-2. **A reaction that is a move.** *Philippines, Feb 2023: the Coast Guard begins publishing imagery and
-   accounts of Chinese actions (the "transparency initiative").* It answers Chinese acts, but publicising
-   is a new method of advancing the claim for Manila — Chubb coded the 1995 Mischief Reef publicity drive
-   the same way (`PH199501`, declarative) [MATS]. Novelty → new move, declarative, domains diplomatic +
-   domestic, issue politics, dyad PC.
+2. **A reaction that is a move — judged against last year, not against history.** *Philippines, Feb
+   2023: the Coast Guard begins publishing imagery and accounts of Chinese actions (the "transparency
+   initiative").* It answers Chinese acts; that does not disqualify it. Nor does the fact that Manila
+   publicised Chinese acts in 1995 (`PH199501`, whose description notes publicity "has been a regular
+   practice of the Philippines … since") — the comparison is with 2022, and a method absent in 2022 is new
+   again in 2023 [App, *Unit of analysis*]. So the question is whether the systematic, near-daily release
+   of imagery is a new method or a sharp rise in frequency compared with 2022's occasional statements. If
+   yes → new move, declarative, domains diplomatic + domestic, issue politics, dyad PC, with the criterion
+   named.
 
 3. **The counterfactual.** *China 2024: more Second Thomas resupply missions blocked than in 2023.* The
    Philippines also ran more missions. Ask what China would have done in 2023 with the same number of
-   missions. The 17 June 2024 armed boarding is a change of method — novelty — and a candidate for force;
-   the extra water-cannon episodes alone are not a frequency move if the rate per mission is unchanged.
+   missions. The 17 June 2024 boarding with bladed weapons is a change of method — novelty — and coercive
+   (physical interference and punishment by a coast guard; no feature changed hands and no military
+   violence was applied, so not force, whatever the injuries — §G, "don't type by severity"); the extra
+   water-cannon episodes alone are not a frequency move if the rate per mission is unchanged.
 
 4. **The coercive/demonstrative line.** *Taiwan, Jul 2012: the coast guard moves 40 mm guns and mortars
    to Taiping; Sep 2012: a live-fire drill with legislators present.* Arming an outpost and drilling on
@@ -477,14 +511,17 @@ suggestions. Don't change a rule to fit a hard case without recording the rule c
 5. **The declarative threshold.** *Vietnam, Jul 2022: the spokesperson "reaffirms sovereignty" over the
    Paracels after a Chinese drill.* Vietnam says this every year. A declarative move needs *more*
    statements, a *new* kind (a note verbale to the UN where there were only press lines; a law), or a
-   *wider* claim — Chubb's People's Daily rule was an increase of a third over the previous year, to a
-   minimum of five articles [App, Figure A1]. One more reaffirmation is continuation.
+   *wider* claim. For the PRC Chubb used a proxy — People's Daily articles up by a third on the previous
+   year, to a minimum of five [App, Figure A1]; no equivalent is defined for the other claimants, so a
+   frequency move on statements needs the two counts written down, and a standing proxy for Vietnam or the
+   Philippines would be a project decision to record. One more reaffirmation is continuation.
 
 6. **Force, not coercion.** *China, Apr 2025: coast guard officers land on Sandy Cay and raise the
    flag; the Philippines denies a seizure and lands its own party days later.* If presence was not
    established, this is demonstrative (a landing) or coercive (if it blocked others); it becomes force only
    where control of the feature changed, as at Scarborough in 2012. The Philippine counter-landing is a
-   Philippine demonstrative move if landing on Sandy Cay was new for Manila that year.
+   Philippine demonstrative move if landing on Sandy Cay was new for Manila compared with 2024 — a landing
+   years earlier does not make it old.
 
 ---
 
@@ -493,7 +530,7 @@ suggestions. Don't change a rule to fit a hard case without recording the rule c
 1. Is the actor the claimant state (or state-sanctioned)? Is the act non-cooperative, in the South China
    Sea, about the claim?
 2. Have I read the claimant's **previous calendar year** — all its moves, their `ongoing_through` — and
-   the baseline if this is the first decade?
+   the baseline if this is the first decade? (Earlier years do not count against novelty; last year does.)
 3. Which of **novelty / frequency / scope** applies, in one sentence? If frequency, what are the two
    numbers?
 4. Would the state have acted the same way last year in the same circumstances? If yes, it is not a move
@@ -517,7 +554,7 @@ If an answer is "I don't know", the candidate stays a candidate, and the gap goe
 
 | Rule | Source |
 |---|---|
-| Assertiveness = statements and behaviours that strengthen the position; three components | IS, *Defining assertiveness*; SR99 pp. 4–5 |
+| Assertiveness = statements and behaviours that strengthen the position; three components | IS, *Assertiveness as a variable*; SR99 pp. 4–5 |
 | Four ordinal types; highest category met | IS, *Four types*, Table 1; SR99 pp. 5–6 |
 | Coercive includes deterrent threats; "clear threat or warning" boundary | IS nn. 24, 27 |
 | Force includes civilian seizure | IS, *Use of force* |
@@ -536,4 +573,4 @@ If an answer is "I don't know", the candidate stays a candidate, and the gap goe
 | Re-coding check, 92%/87% | App, *Coding checks* |
 | Expected rates (1.8; 3–5; 5–7 post-2015) | IS; App Table A2; SR99 p. 39 |
 | Reactions count; dyads carry the dynamics | MATS `PH201101`, `VN201402`; SR99 ch. 1 |
-| Machines propose, humans decide; files canonical; additive scheme | Project ADR 0001–0004, decision 07 |
+| Machines harvest and propose, humans decide; files canonical; additive scheme | Project ADR 0001–0004, decision 07 |
