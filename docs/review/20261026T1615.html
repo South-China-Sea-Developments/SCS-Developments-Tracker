@@ -29,6 +29,9 @@
   .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
   blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
   .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .pill.pre { background: #e8f1ec; color: #1f4d33; }
+  .cand[data-presorted="1"] .decision { background: #f3f8f5; outline: 1px dashed #8fb79d; outline-offset: 4px; }
+  .confirm-pre { font-size: .875rem; margin-left: 8px; }
   .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
   .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
   .choices label { display: inline-flex; gap: 6px; align-items: center; }
@@ -46,7 +49,7 @@
 <body>
 <div class="wrap">
   <h1>Review queue — harvest 20261026T1615</h1>
-  <p class="lede">3 candidate events, generated 2026-10-26. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-20261026T1615.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.</p>
+  <p class="lede">3 candidate events, generated 2026-11-17. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-20261026T1615.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to. Each card carries a <em>pre-sort</em> (presorted by claude-code/opus): a suggested decision with its reason, prefilled in the form where no draft exists; it is a suggestion, and the decision is yours.</p>
 
   <div class="bar">
     <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
@@ -63,6 +66,7 @@
       <span>Pratas (Dongsha Islands) and waters around Taiwan&#39;s main island — not placed (no feature in the gazetteer by that name)</span>
       <span class="pill">suggested: coercive</span>
       
+      <span class="pill pre">pre-sort: continuation of ev-85fc7d190b (a candidate, provisional)</span>
       <span class="id">ev-a9b45d0dac</span>
     </div>
     <div class="cols">
@@ -79,6 +83,10 @@
         <p style="margin:2px 0 0; font-size:.9375rem">Taiwan physically expelled Chinese state and civilian vessels from waters it administers, including Pratas in the South China Sea, which is physical interference with another claimant&#39;s activities. The date given is that of Taiwan&#39;s announcement (the day before the 19 October press conference); the operations themselves are not dated and part of them took place around Taiwan&#39;s main island, outside the South China Sea. [confidence: medium]</p>
         
         
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>continuation of ev-85fc7d190b (a candidate, provisional)</strong> — Same act/practice already in run TW-2021-2026 as ev-85fc7d190b, which already lists the coordinated drive-off of 16 Chinese coast guard, research and fishing vessels around Pratas about 18 October 2026; provisional until that candidate is decided.</p>
+        
+        
       </div>
       <div>
         <p class="k">Taiwan's moves in 2025</p>
@@ -90,7 +98,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
         <label><input type="radio" name="a-ev-a9b45d0dac" value=""> undecided</label>
         <label><input type="radio" name="a-ev-a9b45d0dac" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-ev-a9b45d0dac" value="new_move"> form a new move</label>
@@ -146,6 +154,7 @@
       <span>Pratas (Dongsha Islands) — not placed (no feature in the gazetteer by that name)</span>
       <span class="pill">suggested: demonstrative</span>
       
+      <span class="pill pre">pre-sort: continuation of ev-0d5d9e0be5 (a candidate, provisional)</span>
       <span class="id">ev-314e2d1cf4</span>
     </div>
     <div class="cols">
@@ -162,6 +171,10 @@
         <p style="margin:2px 0 0; font-size:.9375rem">Chinese Coast Guard presence around Taiwan-held Pratas is a unilateral patrol in a disputed area, but the document reports it only second-hand through Taiwan&#39;s statement, gives no dates for the Chinese activity, and does not separate the Pratas vessels from those near Taiwan&#39;s main island. [confidence: low]</p>
         
         
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>continuation of ev-0d5d9e0be5 (a candidate, provisional)</strong> — Same act/practice already in run CN-2021-2026 as ev-0d5d9e0be5: CCG patrols and incursions around Pratas through 2026 (also the 18 October episode inside TW&#39;s ev-85fc7d190b); second-hand, undated report adds no new method or area.</p>
+        
+        
       </div>
       <div>
         <p class="k">China's moves in 2025</p>
@@ -173,7 +186,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
         <label><input type="radio" name="a-ev-314e2d1cf4" value=""> undecided</label>
         <label><input type="radio" name="a-ev-314e2d1cf4" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-ev-314e2d1cf4" value="new_move"> form a new move</label>
@@ -229,6 +242,7 @@
       
       <span class="pill">suggested: declarative</span>
       
+      <span class="pill pre">pre-sort: continuation of ev-0d01631843 (a candidate, provisional)</span>
       <span class="id">ev-4c891be1f5</span>
     </div>
     <div class="cols">
@@ -245,6 +259,10 @@
         <p style="margin:2px 0 0; font-size:.9375rem">Summoning the ambassador is a diplomatic protest by the Philippines directed at China, but the document does not say the ambassador&#39;s remarks concerned the South China Sea, so the link to a maritime claim is not established in the text. [confidence: low]</p>
         
         
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>continuation of ev-0d01631843 (a candidate, provisional)</strong> — Same act/practice already in run PH-2021-2026 as ev-0d01631843 (representations to the Chinese ambassador, January 2026) amid 39 protests so far in 2026 (ev-ba0a5066de); the source does not tie the ambassador&#39;s remarks to the South China Sea, so the coder may instead reject it as off-claim.</p>
+        
+        
       </div>
       <div>
         <p class="k">Philippines's moves in 2025</p>
@@ -256,7 +274,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
         <label><input type="radio" name="a-ev-4c891be1f5" value=""> undecided</label>
         <label><input type="radio" name="a-ev-4c891be1f5" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-ev-4c891be1f5" value="new_move"> form a new move</label>
@@ -308,7 +326,7 @@
   
 </div>
 
-<script id="ctx" type="application/json">{"run_id": "20261026T1615", "items": [{"event": {"event_id": "ev-a9b45d0dac", "move_id": "", "claimant": "TW", "date_start": "2026-10-18", "date_end": "2026-10-18", "date_precision": "day", "lat": "", "lon": "", "location_name": "Pratas (Dongsha Islands) and waters around Taiwan's main island", "location_precision": "unknown", "subregion": "", "summary": "Taiwanese authorities announced on 18 October 2026 that they had driven away 16 mainland Chinese Coast Guard, research and fishing vessels in coordinated operations around Taiwan's main island and Pratas (Dongsha Islands).", "actors": "Taiwan authorities (unspecified); China Coast Guard, research and fishing vessels", "status": "candidate", "harvest_run_id": "20261026T1615", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "coercive", "suggested_domains": "physical", "suggested_issues": "military administrative fisheries", "suggested_dyads": "RC", "suggestion_reasoning": "Taiwan physically expelled Chinese state and civilian vessels from waters it administers, including Pratas in the South China Sea, which is physical interference with another claimant's activities. The date given is that of Taiwan's announcement (the day before the 19 October press conference); the operations themselves are not dated and part of them took place around Taiwan's main island, outside the South China Sea. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-a9b45d0dac-S01", "event_id": "ev-a9b45d0dac", "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202610/t20261019_12042922.html", "title": "Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on October 19, 2026_Ministry of Foreign Affairs of the People's Republic of China", "publisher": "China MFA spokesperson regular press conferences", "pub_date": "", "language": "en", "accessed_date": "2026-10-26", "archive_url": "", "excerpt": "Authorities in Taiwan said yesterday that they had driven away 16 mainland Chinese Coast Guard, research and fishing vessels in coordinated operations around Taiwan’s main island and Pratas, also known as the Dongsha Islands."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan"}, {"event": {"event_id": "ev-314e2d1cf4", "move_id": "", "claimant": "CN", "date_start": "2026-10-01", "date_end": "2026-10-18", "date_precision": "month", "lat": "", "lon": "", "location_name": "Pratas (Dongsha Islands)", "location_precision": "unknown", "subregion": "", "summary": "According to Taiwanese authorities, China Coast Guard, research and fishing vessels operated around Pratas (Dongsha Islands) and Taiwan's main island before being driven away in Taiwanese operations announced on 18 October 2026.", "actors": "China Coast Guard; mainland Chinese research and fishing vessels", "status": "candidate", "harvest_run_id": "20261026T1615", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "administrative fisheries", "suggested_dyads": "CR", "suggestion_reasoning": "Chinese Coast Guard presence around Taiwan-held Pratas is a unilateral patrol in a disputed area, but the document reports it only second-hand through Taiwan's statement, gives no dates for the Chinese activity, and does not separate the Pratas vessels from those near Taiwan's main island. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-314e2d1cf4-S01", "event_id": "ev-314e2d1cf4", "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202610/t20261019_12042922.html", "title": "Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on October 19, 2026_Ministry of Foreign Affairs of the People's Republic of China", "publisher": "China MFA spokesperson regular press conferences", "pub_date": "", "language": "en", "accessed_date": "2026-10-26", "archive_url": "", "excerpt": "Authorities in Taiwan said yesterday that they had driven away 16 mainland Chinese Coast Guard, research and fishing vessels in coordinated operations around Taiwan’s main island and Pratas, also known as the Dongsha Islands."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "China"}, {"event": {"event_id": "ev-4c891be1f5", "move_id": "", "claimant": "PH", "date_start": "2026-10-19", "date_end": "2026-10-19", "date_precision": "day", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "The Philippine foreign ministry announced on 19 October 2026 that it had summoned the Chinese ambassador over his remarks the previous week that China could easily win a conflict with the Philippines.", "actors": "Philippine Department of Foreign Affairs; Chinese ambassador to the Philippines", "status": "candidate", "harvest_run_id": "20261026T1615", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "politics military", "suggested_dyads": "PC", "suggestion_reasoning": "Summoning the ambassador is a diplomatic protest by the Philippines directed at China, but the document does not say the ambassador's remarks concerned the South China Sea, so the link to a maritime claim is not established in the text. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-4c891be1f5-S01", "event_id": "ev-4c891be1f5", "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202610/t20261019_12042922.html", "title": "Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on October 19, 2026_Ministry of Foreign Affairs of the People's Republic of China", "publisher": "China MFA spokesperson regular press conferences", "pub_date": "", "language": "en", "accessed_date": "2026-10-26", "archive_url": "", "excerpt": "The foreign ministry of the Philippines said today that it has summoned the Chinese ambassador for remarks last week when he said that China could easily win a conflict with the Philippines."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Philippines"}]}</script>
+<script id="ctx" type="application/json">{"run_id": "20261026T1615", "items": [{"event": {"event_id": "ev-a9b45d0dac", "move_id": "", "claimant": "TW", "date_start": "2026-10-18", "date_end": "2026-10-18", "date_precision": "day", "lat": "", "lon": "", "location_name": "Pratas (Dongsha Islands) and waters around Taiwan's main island", "location_precision": "unknown", "subregion": "", "summary": "Taiwanese authorities announced on 18 October 2026 that they had driven away 16 mainland Chinese Coast Guard, research and fishing vessels in coordinated operations around Taiwan's main island and Pratas (Dongsha Islands).", "actors": "Taiwan authorities (unspecified); China Coast Guard, research and fishing vessels", "status": "candidate", "harvest_run_id": "20261026T1615", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "coercive", "suggested_domains": "physical", "suggested_issues": "military administrative fisheries", "suggested_dyads": "RC", "suggestion_reasoning": "Taiwan physically expelled Chinese state and civilian vessels from waters it administers, including Pratas in the South China Sea, which is physical interference with another claimant's activities. The date given is that of Taiwan's announcement (the day before the 19 October press conference); the operations themselves are not dated and part of them took place around Taiwan's main island, outside the South China Sea. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-a9b45d0dac-S01", "event_id": "ev-a9b45d0dac", "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202610/t20261019_12042922.html", "title": "Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on October 19, 2026_Ministry of Foreign Affairs of the People's Republic of China", "publisher": "China MFA spokesperson regular press conferences", "pub_date": "", "language": "en", "accessed_date": "2026-10-26", "archive_url": "", "excerpt": "Authorities in Taiwan said yesterday that they had driven away 16 mainland Chinese Coast Guard, research and fishing vessels in coordinated operations around Taiwan’s main island and Pratas, also known as the Dongsha Islands."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-a9b45d0dac", "disposition": "continuation", "of": "ev-85fc7d190b", "criterion": null, "group": null, "reason": "Same act/practice already in run TW-2021-2026 as ev-85fc7d190b, which already lists the coordinated drive-off of 16 Chinese coast guard, research and fishing vessels around Pratas about 18 October 2026; provisional until that candidate is decided.", "label": "continuation of ev-85fc7d190b (a candidate, provisional)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-314e2d1cf4", "move_id": "", "claimant": "CN", "date_start": "2026-10-01", "date_end": "2026-10-18", "date_precision": "month", "lat": "", "lon": "", "location_name": "Pratas (Dongsha Islands)", "location_precision": "unknown", "subregion": "", "summary": "According to Taiwanese authorities, China Coast Guard, research and fishing vessels operated around Pratas (Dongsha Islands) and Taiwan's main island before being driven away in Taiwanese operations announced on 18 October 2026.", "actors": "China Coast Guard; mainland Chinese research and fishing vessels", "status": "candidate", "harvest_run_id": "20261026T1615", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "administrative fisheries", "suggested_dyads": "CR", "suggestion_reasoning": "Chinese Coast Guard presence around Taiwan-held Pratas is a unilateral patrol in a disputed area, but the document reports it only second-hand through Taiwan's statement, gives no dates for the Chinese activity, and does not separate the Pratas vessels from those near Taiwan's main island. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-314e2d1cf4-S01", "event_id": "ev-314e2d1cf4", "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202610/t20261019_12042922.html", "title": "Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on October 19, 2026_Ministry of Foreign Affairs of the People's Republic of China", "publisher": "China MFA spokesperson regular press conferences", "pub_date": "", "language": "en", "accessed_date": "2026-10-26", "archive_url": "", "excerpt": "Authorities in Taiwan said yesterday that they had driven away 16 mainland Chinese Coast Guard, research and fishing vessels in coordinated operations around Taiwan’s main island and Pratas, also known as the Dongsha Islands."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "China", "presort": {"event_id": "ev-314e2d1cf4", "disposition": "continuation", "of": "ev-0d5d9e0be5", "criterion": null, "group": null, "reason": "Same act/practice already in run CN-2021-2026 as ev-0d5d9e0be5: CCG patrols and incursions around Pratas through 2026 (also the 18 October episode inside TW's ev-85fc7d190b); second-hand, undated report adds no new method or area.", "label": "continuation of ev-0d5d9e0be5 (a candidate, provisional)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-4c891be1f5", "move_id": "", "claimant": "PH", "date_start": "2026-10-19", "date_end": "2026-10-19", "date_precision": "day", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "The Philippine foreign ministry announced on 19 October 2026 that it had summoned the Chinese ambassador over his remarks the previous week that China could easily win a conflict with the Philippines.", "actors": "Philippine Department of Foreign Affairs; Chinese ambassador to the Philippines", "status": "candidate", "harvest_run_id": "20261026T1615", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "politics military", "suggested_dyads": "PC", "suggestion_reasoning": "Summoning the ambassador is a diplomatic protest by the Philippines directed at China, but the document does not say the ambassador's remarks concerned the South China Sea, so the link to a maritime claim is not established in the text. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-4c891be1f5-S01", "event_id": "ev-4c891be1f5", "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202610/t20261019_12042922.html", "title": "Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on October 19, 2026_Ministry of Foreign Affairs of the People's Republic of China", "publisher": "China MFA spokesperson regular press conferences", "pub_date": "", "language": "en", "accessed_date": "2026-10-26", "archive_url": "", "excerpt": "The foreign ministry of the Philippines said today that it has summoned the Chinese ambassador for remarks last week when he said that China could easily win a conflict with the Philippines."}], "year": 2026, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Philippines", "presort": {"event_id": "ev-4c891be1f5", "disposition": "continuation", "of": "ev-0d01631843", "criterion": null, "group": null, "reason": "Same act/practice already in run PH-2021-2026 as ev-0d01631843 (representations to the Chinese ambassador, January 2026) amid 39 protests so far in 2026 (ev-ba0a5066de); the source does not tie the ambassador's remarks to the South China Sea, so the coder may instead reject it as off-claim.", "label": "continuation of ev-0d01631843 (a candidate, provisional)", "presorted_by": "claude-code/opus"}}]}</script>
 <script>
 (function () {
   "use strict";
@@ -388,10 +406,25 @@
   }
 
   var cards = document.querySelectorAll(".cand");
+  function prefill(card) {
+    var it = null, id = card.getAttribute("data-event");
+    for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) it = CTX.items[i];
+    if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
+    card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
+    var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
+    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of + (/^ev-/.test(p.of) ? " (last year's candidate; provisional until that year is decided)" : ""); }
+    else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
+    else if (p.disposition === "new_move") { radio("new_move"); var c = card.querySelector(".f-crit"); if (c) c.value = p.criterion || ""; }
+    else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
+    paint(card);
+  }
+  function adopt(card) { card.removeAttribute("data-presorted"); draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); }
   cards.forEach(function (card) {
-    restore(card); paint(card);
-    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
-    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    restore(card); prefill(card); paint(card);
+    var btn = card.querySelector(".confirm-pre");
+    if (btn) btn.addEventListener("click", function () { adopt(card); });
+    card.addEventListener("input", function () { adopt(card); });
+    card.addEventListener("change", function () { adopt(card); });
   });
   reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
 
@@ -415,7 +448,7 @@
   }
   document.getElementById("export").addEventListener("click", function () {
     var decisions = [];
-    cards.forEach(function (card) { var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
     var problems = validate(decisions);
     if (!decisions.length) { alert("No decisions yet."); return; }
     if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
