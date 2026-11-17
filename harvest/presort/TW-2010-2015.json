@@ -1,0 +1,258 @@
+{
+ "run_id": "TW-2010-2015",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-00d3ae4eac",
+   "disposition": "continuation",
+   "of": "ev-9ec3c74d35",
+   "reason": "Provisional continuation of ev-9ec3c74d35 (2009, undecided TW-2000s candidate): the Nansha Command building on Taiping was already given a house-number plate when the CGA moved in, so the plate is the same administrative practice."
+  },
+  {
+   "event_id": "ev-eb81a454a3",
+   "disposition": "unclear",
+   "reason": "Opens the management station of the Dongsha park created in 2007 (ev-0f7c4ec784); the 2009 record (TW-2000s) has no Pratas act. Settle by whether the coder treats it as part of the 2007 park move still ongoing (then likely reject) or as new administration on the island."
+  },
+  {
+   "event_id": "ev-8e3fb7bfff",
+   "disposition": "continuation",
+   "of": "ev-a0fbce106d",
+   "reason": "Provisional continuation of ev-a0fbce106d (2009 MOFA reassertion with non-recognition, undecided TW-2000s candidate): the same press-release method, now prompted by Clinton's ARF remarks."
+  },
+  {
+   "event_id": "ev-5b788e86c3",
+   "disposition": "continuation",
+   "of": "ev-8e3fb7bfff",
+   "reason": "Provisional continuation of ev-8e3fb7bfff (2010 MOFA reassertion, undecided): the same formal non-recognition statement. Several releases in 2011 respond to more rival acts, which is not a frequency move under Chubb's counterfactual."
+  },
+  {
+   "event_id": "ev-c654b3584b",
+   "disposition": "continuation",
+   "of": "ev-8e3fb7bfff",
+   "reason": "Provisional continuation of ev-8e3fb7bfff: summoning the Philippine envoys is a firmer form of the same declarative protest. Summonses were used in 2009 (ev-4bd978830b) but not in 2010, so a coder may treat it as new again."
+  },
+  {
+   "event_id": "ev-0f2946457c",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2011-marines",
+   "reason": "Marines return to garrison Pratas and Taiping after eleven years, replacing seconded army soldiers. That is a change of method (military rather than coast-guard garrison), with nothing comparable in the 2010 record (ev-00d3ae4eac, ev-eb81a454a3)."
+  },
+  {
+   "event_id": "ev-a9d197499b",
+   "disposition": "unclear",
+   "reason": "The annual midshipmen fleet's call at Taiping is a routine yearly voyage, but there is no 2010 candidate for it. Settle by whether the 2010 fleet called at Taiping (then continuation, likely reject); it falls on the same day as the marines' return (ev-0f2946457c)."
+  },
+  {
+   "event_id": "ev-4865771a27",
+   "disposition": "continuation",
+   "of": "ev-8e3fb7bfff",
+   "reason": "Provisional continuation of ev-8e3fb7bfff: the same reassertion method, rebutting Vietnam's UN note."
+  },
+  {
+   "event_id": "ev-ad09884963",
+   "disposition": "continuation",
+   "of": "ev-8e3fb7bfff",
+   "reason": "Provisional continuation of ev-8e3fb7bfff: the same statement method. Naming Reed Bank answers a new rival claim rather than changing the method, though a coder might read the feature-specific claim as new."
+  },
+  {
+   "event_id": "ev-f36a46585d",
+   "disposition": "continuation",
+   "of": "ev-8e3fb7bfff",
+   "reason": "Provisional continuation of ev-8e3fb7bfff: another reassertion of the four-group claim, prompted by the June 2011 incidents; the same method."
+  },
+  {
+   "event_id": "ev-10ee4f603d",
+   "disposition": "continuation",
+   "of": "ev-8e3fb7bfff",
+   "reason": "Provisional continuation of ev-8e3fb7bfff: a reassertion plus non-recognition of the DOC guidelines without the ROC. Asking for DOC inclusion goes back to 2006 (ev-34efe69b3e), so the method is not new."
+  },
+  {
+   "event_id": "ev-c672b8e297",
+   "disposition": "continuation",
+   "of": "ev-ad09884963",
+   "reason": "Provisional continuation of ev-ad09884963 (2011 statement naming Reed Bank, undecided): the same declarative claim to Reed Bank, now calling Philippine licensing void."
+  },
+  {
+   "event_id": "ev-7f8d618049",
+   "disposition": "continuation",
+   "of": "ev-c654b3584b",
+   "reason": "Provisional continuation of ev-c654b3584b (2011 protest to Manila, undecided): the same non-recognition protest of a Philippine act, at Thitu."
+  },
+  {
+   "event_id": "ev-e83bb31c2c",
+   "disposition": "continuation",
+   "of": "ev-f36a46585d",
+   "reason": "Provisional continuation of ev-f36a46585d (2011 reassertion amid China-Philippine incidents, undecided): the same statement method, prompted by the Scarborough standoff."
+  },
+  {
+   "event_id": "ev-6d00c3c9a7",
+   "disposition": "same_move",
+   "of": "ev-854e396905",
+   "group": "TW2012-visits",
+   "reason": "The KMT legislators' sovereignty visit to Taiping opens the 2012 run of official visits that peaks with the NSC and Interior flag-raising (ev-854e396905); 2011 had no official visit. Alone it would be low salience."
+  },
+  {
+   "event_id": "ev-982261d4f9",
+   "disposition": "same_move",
+   "of": "ev-854e396905",
+   "group": "TW2012-visits",
+   "reason": "MOFA's rebuttal of Vietnam's protest of the April Taiping visit (ev-6d00c3c9a7) goes with that visit's move. Alone it would be a continuation of ev-4865771a27."
+  },
+  {
+   "event_id": "ev-ec9049d621",
+   "disposition": "same_move",
+   "of": "ev-854e396905",
+   "group": "TW2012-visits",
+   "reason": "The cross-party legislators' sovereignty visit to Dongsha belongs to the same 2012 run of official visits as ev-854e396905; Pratas alone would be low salience."
+  },
+  {
+   "event_id": "ev-b6f5fd32e7",
+   "disposition": "continuation",
+   "of": "ev-4865771a27",
+   "reason": "Provisional continuation of ev-4865771a27 (2011 rebuttal of Vietnam's UN note, undecided): the same protest at rival legislation, now Vietnam's Law of the Sea and Sansha."
+  },
+  {
+   "event_id": "ev-03d94220f2",
+   "disposition": "continuation",
+   "of": "ev-4865771a27",
+   "reason": "Provisional continuation of ev-4865771a27: the same rebuttal of Vietnamese objections, here over the airstrip and a student visit."
+  },
+  {
+   "event_id": "ev-98e9928fc9",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2012-weapons",
+   "reason": "Deploying 120mm mortars and 40mm AA guns to Taiping is heavier armament than the garrison had held; against the 2011 marine rotation (ev-0f2946457c), this is a new capability rather than more of the same."
+  },
+  {
+   "event_id": "ev-955a59ae22",
+   "disposition": "same_move",
+   "of": "ev-98e9928fc9",
+   "group": "TW2012-weapons",
+   "reason": "MOFA's defence of the strengthened deployment against Vietnam's protest goes with the weapons move ev-98e9928fc9."
+  },
+  {
+   "event_id": "ev-854e396905",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "TW2012-visits",
+   "reason": "Senior officials landing on Zhongzhou Reef to raise the flag extends presence beyond Taiping. The 2011 record has no official visit and nothing at Zhongzhou; the last flag-raising there was 2003 (ev-e479824bd4), so it is new again."
+  },
+  {
+   "event_id": "ev-2e0be83229",
+   "disposition": "same_move",
+   "of": "ev-98e9928fc9",
+   "group": "TW2012-weapons",
+   "reason": "The annual drill is routine, but this one first fires the newly delivered guns and mortars, with prior notice to neighbours, so it shows the same intensification as ev-98e9928fc9. There is no 2011 drill candidate."
+  },
+  {
+   "event_id": "ev-99ce375ffd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The first official announcement of state oil and gas exploration around Taiping is a new energy-rights method, with nothing comparable in 2011. It is only a plan, carried out in Oct 2013 (ev-6a967f69cc), so a coder may reject it and code the survey instead."
+  },
+  {
+   "event_id": "ev-75ac7d755d",
+   "disposition": "continuation",
+   "of": "ev-b6f5fd32e7",
+   "reason": "Provisional continuation of ev-b6f5fd32e7 (2012 protest at Vietnam's Law of the Sea, undecided): the same protest of the same law as it entered into force."
+  },
+  {
+   "event_id": "ev-7aea854a45",
+   "disposition": "continuation",
+   "of": "ev-2e0be83229",
+   "reason": "Provisional continuation of ev-2e0be83229 (Sept 2012 drill with the new weapons, undecided): the routine semi-annual live-fire drill with the same weapons."
+  },
+  {
+   "event_id": "ev-c438679bee",
+   "disposition": "unclear",
+   "reason": "The shooting site, 164 nm SE of Eluanbi near the Balintang Channel, is likely outside the South China Sea (coding guide D(4)), which settles it as a reject. If the coder holds the overlapping waters in scope, it goes with the sanctions ev-6d3714edcb as one coercive move."
+  },
+  {
+   "event_id": "ev-687544455e",
+   "disposition": "unclear",
+   "reason": "The 72-hour ultimatum is coercive in kind, but it concerns the Balintang Channel incident, likely outside the SCS (D(4)). If held in scope, it is the same move as the sanctions ev-6d3714edcb."
+  },
+  {
+   "event_id": "ev-6d3714edcb",
+   "disposition": "unclear",
+   "reason": "Eleven sanctions on the Philippines would be a coercive novelty (nothing like it in 2012), but the incident site off the Luzon Strait is likely outside the SCS (D(4)). Settle on location; if in scope, this leads a move with ev-c438679bee and ev-687544455e."
+  },
+  {
+   "event_id": "ev-857caefe60",
+   "disposition": "continuation",
+   "of": "ev-7f8d618049",
+   "reason": "Provisional continuation of ev-7f8d618049 (2012 protest of a Philippine act at Thitu, undecided): the same non-recognition protest, at Second Thomas Shoal."
+  },
+  {
+   "event_id": "ev-6a967f69cc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The first state-company hydrocarbon survey in Taiping's waters is unilateral resource activity; in 2012 it was only announced (ev-99ce375ffd)."
+  },
+  {
+   "event_id": "ev-0679358160",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Starts a major port and runway upgrade on Taiping (wharf for 3,000-tonne ships). The 2012 record has weapons and visits but no construction, and the last comparable works were the 2005-07 airstrip (ev-cdb51ba2b7)."
+  },
+  {
+   "event_id": "ev-6298a5a055",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A navy-escorted amphibious marine landing with assault vehicles on Taiping is a new kind of military exercise there; the 2013 record has only the CGA's routine live-fire drills (ev-7aea854a45)."
+  },
+  {
+   "event_id": "ev-2a461639dd",
+   "disposition": "continuation",
+   "of": "ev-857caefe60",
+   "reason": "Provisional continuation of ev-857caefe60 (2013 MOFA non-recognition statement, undecided): the same statement method, prompted by HYSY 981."
+  },
+  {
+   "event_id": "ev-41069ac246",
+   "disposition": "continuation",
+   "of": "ev-7aea854a45",
+   "reason": "Provisional continuation of ev-7aea854a45 (2013 semi-annual live-fire drill, undecided): a routine repeat that the CGA itself calls annual."
+  },
+  {
+   "event_id": "ev-e3d82ff463",
+   "disposition": "continuation",
+   "of": "ev-0679358160",
+   "reason": "Provisional continuation of ev-0679358160 (2013 start of Taiping infrastructure works, undecided): phase 2 of a 2011 solar plant is civil infrastructure at the same level."
+  },
+  {
+   "event_id": "ev-83465fba0d",
+   "disposition": "continuation",
+   "of": "ev-2a461639dd",
+   "reason": "Provisional continuation of ev-2a461639dd (2014 reassertion, undecided): the same four-group restatement, delivered by the president with a largely conciliatory peace initiative."
+  },
+  {
+   "event_id": "ev-3b554e2e9b",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2015-arbitration",
+   "reason": "A formal legal claim that Taiping is an island under UNCLOS Art. 121, with non-recognition of any arrangement made without the ROC, is new content; the 2014 record has only generic reassertions (ev-2a461639dd)."
+  },
+  {
+   "event_id": "ev-f25e15d566",
+   "disposition": "same_move",
+   "of": "ev-3b554e2e9b",
+   "group": "TW2015-arbitration",
+   "reason": "The rejection of the tribunal's jurisdiction award is the same arbitration-focused legal assertion as ev-3b554e2e9b."
+  },
+  {
+   "event_id": "ev-a72d90aae9",
+   "disposition": "continuation",
+   "of": "ev-0679358160",
+   "reason": "Provisional continuation of ev-0679358160 (2013 start of the wharf works, undecided): the ministerial opening completes that project. A coder may count the new lighthouse, or the 3,000-tonne berth coming into use, as a novelty."
+  },
+  {
+   "event_id": "ev-32601234e7",
+   "disposition": "continuation",
+   "of": "ev-2a461639dd",
+   "reason": "Provisional continuation of ev-2a461639dd (2014 MOFA statement, undecided): a rebuttal of Vietnam's protest of the wharf opening, the same declarative method. It follows ev-a72d90aae9 if that becomes a move."
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "run_id": "TW-1980s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-47e02afb2f",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1980-civil-residents",
+   "reason": "First civilian household registrations on Taiping plus a state fisheries survey of Tizard Bank: a new method of manifesting jurisdiction, against 1979's Pratas transfer to Kaohsiung and EEZ decree (ev-4b2e001dec, ev-ea7a173eee, the previous run's undecided candidates), neither of which put civilians on a Spratly feature."
+  },
+  {
+   "event_id": "ev-c52f629b41",
+   "disposition": "same_move",
+   "of": "ev-47e02afb2f",
+   "group": "TW1980-civil-residents",
+   "reason": "The first townhall meeting for Nansha residents follows directly from the September domicile registrations; the same 1980 civil-administration intensification led by ev-47e02afb2f."
+  },
+  {
+   "event_id": "ev-0129e2fab8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "CPC's exploratory well on Taiping is the first ROC hydrocarbon drilling in the Spratlys, a new method against 1980's civil registrations and fisheries survey (ev-47e02afb2f group); year-only date."
+  },
+  {
+   "event_id": "ev-fd03bb7e94",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Expanded state services to fishermen from Taiping, against nothing comparable in 1986 (no candidates) or in the run since 1981. Weak: the source gives only the year and not what the expansion was, so a coder may treat it as maintenance of an existing station and reject."
+  },
+  {
+   "event_id": "ev-d59f49c55e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1988-public-reassertion",
+   "reason": "Public reassertion of Spratly sovereignty after Johnson South Reef with a pledge to defend Taiping 'to the last man', against no ROC statement in 1987 (only the fishermen station ev-fd03bb7e94); lead of the 1988 declarative reassertions. A coder may weigh the pledge as a coercive threat."
+  },
+  {
+   "event_id": "ev-64905309eb",
+   "disposition": "same_move",
+   "of": "ev-d59f49c55e",
+   "group": "TW1988-public-reassertion",
+   "reason": "The MND refutation of Malaysia's claim is one of the 1988 public reassertions led by ev-d59f49c55e (new dyad RM); a coder may keep it separate as the first statement aimed at Malaysia. Single-line source, no date."
+  },
+  {
+   "event_id": "ev-796225e21a",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1988-itu-aba-buildup",
+   "reason": "Reinforcing the Itu Aba garrison is a step-up in military presence with nothing comparable in 1987 (ev-fd03bb7e94 is a fishermen service); a change in level, not more routine resupply. Lead of the 1988 garrison build-up; single thesis source."
+  },
+  {
+   "event_id": "ev-7d30c44a35",
+   "disposition": "same_move",
+   "of": "ev-796225e21a",
+   "group": "TW1988-itu-aba-buildup",
+   "reason": "The out-of-schedule emergency resupply after the 14 March clash is the first step of the 1988 Itu Aba build-up led by ev-796225e21a (it probably carried the reinforcement)."
+  },
+  {
+   "event_id": "ev-82a9f45ac0",
+   "disposition": "same_move",
+   "of": "ev-796225e21a",
+   "group": "TW1988-itu-aba-buildup",
+   "reason": "The August supply run with naval exercises en route continues the 1988 build-up led by ev-796225e21a; a coder may split the exercises off as a separate novelty."
+  },
+  {
+   "event_id": "ev-7ac9737971",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Rebuilding the Taiping sovereignty monument is a symbolic act of possession with nothing comparable in 1987 (ev-fd03bb7e94); distinct from the crisis-driven build-up (ev-796225e21a group). Low salience."
+  },
+  {
+   "event_id": "ev-3c246a4303",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "A new national sovereignty monument on Pratas extends to another island group the marker practice seen in 1988 only on Taiping (ev-7ac9737971); scope. If the coder reads markers as one practice regardless of feature, it is a continuation of ev-7ac9737971."
+  }
+ ]
+}

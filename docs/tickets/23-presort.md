@@ -9,7 +9,7 @@ candidates.
 
 **Blocked by:** 06, 19
 
-**Status:** built 2026-11-17; the pre-sorts of the open runs follow in their own pull request.
+**Status:** built 2026-11-17; the 31 open runs (1,333 candidates) pre-sorted the same day.
 
 - [x] `pipeline/presort.py`: the file shape (`harvest/presort/<run_id>.json`), `context` (the candidates with
   source titles, the claimant's accepted moves of the previous and same year and those ongoing into the
@@ -27,9 +27,14 @@ candidates.
   candidate of the same year whose own disposition is new_move (the lead); a duplicate must name an accepted
   event of the claimant with a move — two candidates for one incident are a same_move pair.
 - [x] Airtable: `Pre-sort` (`fldlmfWHAwc09itis`) on `Candidates`; `records`/`push` take `--presort` and fill it.
-- [ ] The pre-sorts themselves: agents working run by run with the previous period's candidate set as "last
-  year's record" where no moves are coded yet; `presorted_by` names the model. Files committed on main;
-  each run's review page regenerated on its branch.
+- [x] A continuation may name last year's *candidate* where that year is not yet coded (an event of this run
+  from an earlier year, or of the previous run — `check --prev` takes that run's candidates); the label and
+  the prefilled note say the call is provisional. Without this, every repeat after a run's first year fell
+  into `unclear`.
+- [x] The pre-sorts themselves, `harvest/presort/*.json`: 17 Opus agents working run by run, each judged against
+  the previous year's accepted moves (Chubb's 2015 for CN/VN/PH 2016) or the previous period's candidates;
+  every file passes `check --prev`. Across the 31 runs: 607 continuation, 314 new move, 226 same move, 186
+  unclear. Each run's review page regenerated on its branch with the pre-sort shown and prefilled.
 
 **Not done.** The pre-sort is not compared with the decisions in the agreement report (the report's unit is
 the move's coding, not the disposition); a `disposition` row in that report would be a small addition once

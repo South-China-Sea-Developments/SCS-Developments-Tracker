@@ -1,0 +1,184 @@
+{
+ "run_id": "MY-1990s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-966de97b8a",
+   "disposition": "continuation",
+   "of": "ev-50de0edf83",
+   "reason": "The resort's first visitors are the opening of the Layang-Layang resort whose completion is 1989's ev-50de0edf83 (MY-1980s undecided, prev file); same practice at the same level. Provisional on 1989 being decided."
+  },
+  {
+   "event_id": "ev-adbe75b4ab",
+   "disposition": "unclear",
+   "reason": "A description of standing patrols, garrisons and air reconnaissance at the three reefs; 1989's record (prev file: ev-50de0edf83, ev-c268da3204) has no patrol candidate, though 1988's ev-5df85f5fed (MY-1980s) described the same practice. Likely a continuation of an undocumented practice (reject); settled by a 1989 patrol source."
+  },
+  {
+   "event_id": "ev-f0b2e35258",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1991-airstrip",
+   "reason": "Novelty: building a 1,067 m runway on Swallow Reef adds air access, a new method against 1990's record (resort opening ev-966de97b8a, patrols ev-adbe75b4ab); lead of the 1991 airstrip move. The sources differ on whether December 1991 was the decision or the extension."
+  },
+  {
+   "event_id": "ev-d8796cd77e",
+   "disposition": "same_move",
+   "of": "ev-f0b2e35258",
+   "group": "MY1991-airstrip",
+   "reason": "The $18 million 1992 allocation for Pulau Layang-Layang, debated amid neighbours' protests at the airstrip plan, funds the airstrip move ev-f0b2e35258."
+  },
+  {
+   "event_id": "ev-d61240caad",
+   "disposition": "same_move",
+   "of": "ev-f0b2e35258",
+   "group": "MY1991-airstrip",
+   "reason": "Najib's statement that the airstrip will go ahead despite objections is the verbal side of the airstrip move ev-f0b2e35258."
+  },
+  {
+   "event_id": "ev-5e3a768fdc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: officially renaming Terumbu Layang-Layang as Pulau Layang-Layang, recasting a reef as an island, is an administrative status change with nothing comparable in 1991's record (airstrip group ev-f0b2e35258)."
+  },
+  {
+   "event_id": "ev-5308c6f3a6",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1992-rejection",
+   "reason": "Novelty: a formal rejection aimed at China's 1992 territorial-sea law, with a conditional pledge to take steps to defend sovereignty; 1991's verbal record (ev-d61240caad) only brushed off protests over the airstrip. Lead of the 1992 rejection move."
+  },
+  {
+   "event_id": "ev-d9859516e1",
+   "disposition": "same_move",
+   "of": "ev-5308c6f3a6",
+   "group": "MY1992-rejection",
+   "reason": "The July written answers repeat the 1992 rejection of all rival claims led by ev-5308c6f3a6 and add an intent to develop Mariveles and Ardasier; same declarative move, with the intent to be watched for the year it is carried out."
+  },
+  {
+   "event_id": "ev-bf3d440b45",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the first visit by the head of state to Layang-Layang, a symbolic display of sovereignty absent from 1991's record (ev-f0b2e35258 group); the last leader's visit was Mahathir's in 1984. A coder may join it with the renaming ev-5e3a768fdc as one Layang-Layang upgrade."
+  },
+  {
+   "event_id": "ev-2b3578f9ed",
+   "disposition": "unclear",
+   "reason": "A national EEZ-enforcement summary (384 intrusions, detentions and fines) with no breakdown by nationality or area, mostly Thai boats probably in undisputed waters. Settled by a breakdown showing detentions of claimants' boats in the disputed Spratly area; 1991's record has no enforcement candidate."
+  },
+  {
+   "event_id": "ev-edd8bdf590",
+   "disposition": "continuation",
+   "of": "ev-d9859516e1",
+   "reason": "RM60.4 million spent developing Layang-Layang for presence and tourism continues the development 1992's ev-d9859516e1 said would go on, with no new method named. Provisional; the CSM's 1993 dating of the resort opening should be checked against ev-966de97b8a."
+  },
+  {
+   "event_id": "ev-d7595bdd7f",
+   "disposition": "continuation",
+   "of": "ev-2b3578f9ed",
+   "reason": "The same national fisheries-arrest practice as 1992's ev-2b3578f9ed at a lower level (606 fishermen/85 vessels to July 1993 against 680/96 in 1992), with no area breakdown. Not an intensification, and possibly not in disputed waters."
+  },
+  {
+   "event_id": "ev-f0f953f8bd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: legally declaring Station Mike on Mariveles Reef a protected zone is a new jurisdictional designation; 1993's record (spending ev-edd8bdf590, arrests ev-d7595bdd7f) has nothing comparable."
+  },
+  {
+   "event_id": "ev-8d7c5c5c73",
+   "disposition": "continuation",
+   "of": "ev-d7595bdd7f",
+   "reason": "The same national fisheries-arrest practice as 1993's ev-d7595bdd7f (74 cases to June 1994, 19 of them Vietnamese) with no locations; no change of method. Same caveat: possibly undisputed waters."
+  },
+  {
+   "event_id": "ev-fe5ee018ef",
+   "disposition": "unclear",
+   "reason": "A restatement defining the claim as lying outside the Spratlys proper, under UNCLOS, with an offer to negotiate; 1993's record has no comparable declarative candidate. Likely a routine restatement (reject) unless the coder reads the reframing of the legal basis as a new position (novelty)."
+  },
+  {
+   "event_id": "ev-807681cb63",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: naval gunfire at a Chinese fishing boat is a change of method from 1994's arrests (ev-8d7c5c5c73), described as the first violent China-ASEAN incident. Rests on one secondary source with no day or place, so it needs corroboration."
+  },
+  {
+   "event_id": "ev-83f809b7bf",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1995-layang",
+   "reason": "Novelty: Mahathir's overnight visit to Layang-Layang with stepped-up patrols and a large-scale exercise during the Mischief Reef crisis (reactions count); 1994's record has no visit, patrol or exercise. Lead of the 1995 Layang-Layang show-of-presence move."
+  },
+  {
+   "event_id": "ev-5b6d377144",
+   "disposition": "same_move",
+   "of": "ev-83f809b7bf",
+   "group": "MY1995-layang",
+   "reason": "The minister's 'indisputable' Swallow Reef claim at the end of May is the verbal side of the same May 1995 response led by ev-83f809b7bf."
+  },
+  {
+   "event_id": "ev-7fba0019c5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the UNCLOS ratification declarations reject other states' inconsistent maritime claims and require consent for foreign military exercises in the EEZ; 1995's record has no legal instrument. Ratification itself is cooperative, so the call rests on the declarations alone."
+  },
+  {
+   "event_id": "ev-c828f52ff7",
+   "disposition": "unclear",
+   "reason": "An unpublicised Cabinet decision to occupy Investigator Shoal and Erica Reef. The series dates behaviour, not decisions, so it is evidence for the 1999 occupation move ev-bc804621b3 rather than a 1996 move (same treatment as the 1979 and 1981 cabinet orders). Settled if it was made public in 1996."
+  },
+  {
+   "event_id": "ev-3f66f992cc",
+   "disposition": "unclear",
+   "reason": "A new station module commissioned on Ardasier Reef (Station Uniform, garrisoned since 1986). Settled by whether it enlarges the station (then a novelty/scope move against 1995, which has nothing comparable) or replaces the 1986 outpost at the same level (maintenance, likely reject)."
+  },
+  {
+   "event_id": "ev-2bcc8f7768",
+   "disposition": "unclear",
+   "reason": "A pledge that the Swallow Reef garrison will stay: maintenance of the 1983 occupation. 1997 has no candidates at all, so strictly it is new again, but that looks like a source gap (§K). Likely reject, unless the coder applies new-again to the blank 1997."
+  },
+  {
+   "event_id": "ev-cb3415c14d",
+   "disposition": "unclear",
+   "reason": "Routine naval and air watch over Swallow and nearby reefs, the practice 1990's ev-adbe75b4ab described; 1997 has no candidates to compare. The warships deterred are unidentified (dyad MU, a non-claimant). Likely a continuation of an undocumented practice (reject)."
+  },
+  {
+   "event_id": "ev-bc804621b3",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "MY1999-occupations",
+   "reason": "Scope: occupying Investigator Shoal (and Erica Reef, ev-0f1a31059d) extends Malaysia's garrisons to two more features, against 1998's record showing only the existing garrisons maintained (ev-2bcc8f7768, ev-cb3415c14d); lead of the 1999 occupations move."
+  },
+  {
+   "event_id": "ev-0f1a31059d",
+   "disposition": "same_move",
+   "of": "ev-bc804621b3",
+   "group": "MY1999-occupations",
+   "reason": "Station Sierra on Erica Reef is the second occupation of the same April-May 1999 operation led by ev-bc804621b3."
+  },
+  {
+   "event_id": "ev-37ed8dd8cc",
+   "disposition": "same_move",
+   "of": "ev-bc804621b3",
+   "group": "MY1999-occupations",
+   "reason": "The concrete building and helipad completed by June on the two newly occupied features consolidate the occupation move ev-bc804621b3."
+  },
+  {
+   "event_id": "ev-e08811c3b7",
+   "disposition": "same_move",
+   "of": "ev-bc804621b3",
+   "group": "MY1999-occupations",
+   "reason": "The Dewan Negara defence of the Erica and Investigator presence against the protests is the verbal side of the occupation move ev-bc804621b3."
+  },
+  {
+   "event_id": "ev-d5b797f2d8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: RMAF Hawks driving off Philippine OV-10s over Investigator Shoal is the first Malaysian air interception found, a coercive method absent from 1998's record (ev-cb3415c14d: foreign warships leaving after detection, with no interference)."
+  },
+  {
+   "event_id": "ev-763eaa18b5",
+   "disposition": "unclear",
+   "reason": "An RM10 million Layang-Layang development line in the 2000 Budget, reported by a backbencher; 1998's record has no development candidate to continue. Likely a routine allocation (reject); settled by whether it funds a new facility."
+  }
+ ]
+}
