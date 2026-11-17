@@ -393,11 +393,6 @@ Only stray weekly-harvest candidates.
 
 ## Indonesia
 
-### 2016–2020 (#45) — detailed report lost
-41 events (2016: 12, 2017: 7, 2018: 3, 2019: 7, 2020: 12), validated; 7 excerpts not found verbatim, 5
-unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
-unknown — read this set with that in mind.
-
 ### 1970s (#64)
 Almost every event rests on US embassy cables (WikiLeaks PlusD, from 1973), so many acts were private at the
 time; the targets are South Vietnam's 1971 Natuna-area concessions (dyad IV). Nothing found for 1970–71 and 1976.
@@ -648,6 +643,11 @@ Izzuddin, Connelly and the yearly reviews were not searched for this chunk — a
   allowlist); ANTARA's capped search and thin 2012–13 index; English ANTARA (no pagination); DOALOS 2010 note
   (scanned, read by OCR).
 
+
+### 2016–2020 (#45) — detailed report lost
+41 events (2016: 12, 2017: 7, 2018: 3, 2019: 7, 2020: 12), validated; 7 excerpts not found verbatim, 5
+unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
+unknown — read this set with that in mind.
 
 ### 2021–Oct 2026 — not yet compiled
 Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
