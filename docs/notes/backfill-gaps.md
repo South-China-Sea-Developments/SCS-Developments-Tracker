@@ -764,7 +764,55 @@ searched in this pass — the obvious second pass for 1972, 1977 and the PD 1596
   Fordham repository PDFs (Cloudflare); UMD digital archive (CloudFront 403); China aktuell PDFs on Heidelberg
   (served as HTML); the Coast Guard Nansha chronology text.
 
-### 1980s–2015 — not yet compiled
+### 1980s (#78)
+Source notes: WikiLeaks PlusD stops at 1979, so the decade rests on the MOFA Position Paper, the CGA Nansha PDF /
+PCA Annex 910, Hung (NPF 6120) and, for 1988, three US military theses read through Internet Archive full text —
+Smith 1994 (DTIC AD-A280214; its chronology appendix is the best open 1980s chronology), Hurwitt 1993 (AD-A272828)
+and Dzurek 1996 (also PCA Annex 445). FBIS China on the Archive has only scattered 1982/84/86 issues. The Free
+China Review index lists "On Guard in the South China Sea", Nov 1987, pp. 56–59 — not opened. Nothing found for
+1982–1986; the recurring gap is any ROC protest against other claimants' 1980s occupations.
+- **Apr 1980, Jan 1981 — Christchurch Press items ("Joint hunt for oil", "Taiwan … Spratly drilling?")** ◆ Papers
+  Past (CHP19800410.2.137, CHP19810120.2.87) blocks automated access.
+- **Aug 1980 — Philippines occupies another Spratly islet (Commodore Reef)** ○ no ROC response found (Hung NPF 6121).
+- **1981 — CPC exploration well on Taiping** ▲ year only (CNA 2019); June 1981 per Chinese Wikipedia's dead CNA link.
+- **1980–1990 — Fisheries Research Institute experimental fishing and surveys around the Spratlys** ◆ year range
+  only (PCA Memorial Vol. IX annex); no dated cruises.
+- **Nov 1982 — ROC reaction to Vietnam's 12 Nov 1982 baselines; May–Sep 1983 — to Malaysia's Swallow Reef landing;
+  1983/84 — to the PRC's feature names and Hainan moves; Nov 1986 — to Malaysia's Mariveles and Ardasier
+  occupations** ◆ none found (Hurwitt and Smith record only Chinese and Vietnamese protests).
+- **"18 January 1984" ROC protest (Dzurek 1996 n.111, citing Chang 1991:407)** ○ almost certainly a misprint for
+  18 Jan 1974, already in the 1970s set.
+- **1987 — Taiping fishermen service station** ▲ year only (Annex 910); Wikipedia (citing NTHU) also gives a 1987
+  Pratas service station — parallel act or confusion.
+- **Feb 1988 — MND refutation of Malaysia** ▲ Smith one-liner; probably 26–29 Feb after the NST report of 25 Feb;
+  text not found (Central Daily News 26 Feb 1988 a lead).
+- **Mar 1988 — emergency resupply and the "fight to the last man" pledge** ▲ month only (Smith's 17 Mar entry
+  bundles several events); speaker unclear — Smith's "Defense Minister Hao" vs Cheng Wei-yuan as minister and
+  Hau Pei-tsun as Chief of the General Staff.
+- **1988 (Mar–May?) — defence minister: Taipei would help Beijing defend the islands** ○ cooperative toward the PRC;
+  undated (Sun 1996 citing The Economist 21 May 1988 p. 36, paywalled).
+- **1988 — reports that Taiwan let PRC ships shelter or resupply at Taiping** ○ not found in any source opened; Sun
+  1996 says ROC troops "passively observed".
+- **Apr 1988 reinforcement; Aug 1988 supply run with exercises** ▲ single source (Hurwitt, citing Chang Pao-min,
+  CSEA 12(1) 1990 pp. 28–29, paywalled). Johnson South Reef reactions coded RV/RC — a coder may prefer RA.
+- **20 Aug 1988 — Malaysia seizes four Taiwanese boats; Aug/Oct 1988 — the Philippine navy seizes four in Kalayaan**
+  ○ Dzurek: "Taiwanese authorities did little to protest"; no ROC act found.
+- **Mar/Aug/Sep 1989 — ROC reaction to the PRC's North Danger occupation, markers and demand that Vietnam withdraw**
+  ◆ none found.
+- **30 Jun 1989 — Pratas monument** ▲ date from Hung; identity as the MOI "南海屏障" stele rests on a Wikipedia
+  citation of an unopenable NTHU page.
+- **1989 — planning for the 12 Jan 1990 "南疆鎖鑰" stele and 16 Feb 1990 Kaohsiung administration** ◆ nothing dated;
+  both 1990 acts belong to the 1990s chunk.
+- **1980s — routine quarterly Taiping resupply; Pratas incorporation into Kaohsiung's Qijin district, airstrip and
+  garrison changes** ◆ nothing dated outside 1988.
+- **Not machine-checkable** — PDF-first excerpts (1980 domiciles and town hall — MOFA PDF; 1987 service station —
+  PCA PDF; 1988 stele — CGA PDF).
+- **Unreachable** — NewspaperSG; Papers Past (Incapsula); Wayback Machine (proxy reset); GlobalSecurity (402);
+  Taiwan Today / Free China Review archive (404; only indexes on the Archive); DTIC direct PDFs (Archive copies
+  used); NCCU repository (intermittent); Google Books (quota); Keesing's 1980s, Asian Survey "Taiwan in 198x",
+  Lin Cheng-yi 1997, Chang Pao-min 1990 (paywalled); udndata; NTHU "Discovering the South China Sea" (dead).
+
+### 1990s–2015 — not yet compiled
 
 ### 2016–2020 (#48)
 - **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
