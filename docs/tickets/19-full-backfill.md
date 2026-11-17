@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| TW 2010–2015 | 41 | #84 | 41 candidates, 47 sources; MOFA Chinese archive the key source; 2012–13 dense (Taiping guns, drills, Guang Da Xing sanctions), 2014–15 thin for access reasons; Airtable: pending (base at free-tier cap); compiled on Opus |
 | TW 2000s | 38 | #82 | 38 candidates, 59 sources; MOFA Chinese press-release archive (back to 1985) a new primary source; 2000 Coast Guard takeover, 2005–08 airstrip (dates conflict), Chen's Feb 2008 visit, 2009 RA 9522 and CLCS statements; Taipei Times excerpts via WebFetch (short); compiled on Opus |
 | TW 1990s | 32 | #80 | 32 candidates, 53 sources; Control Yuan report and Dzurek 1996 the key sources; good 1990–95, thin 1996–99, nothing for 1997; 25 Mar 1995 artillery fire at Bien Dong 80 the one coercive act; most first sources PDFs (excerpts unchecked); compiled on Opus |
 | TW 1980s | 11 | #78 | 11 candidates, 17 sources; nothing for 1982–86; 1988 (Johnson South Reef reactions, resupply, stele) month-precision from US military theses via the Internet Archive; PDF-first excerpts unchecked; compiled on Opus |
