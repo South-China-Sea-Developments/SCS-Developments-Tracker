@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review queue — harvest TW-1980s</title>
+<style>
+  :root { color-scheme: light dark; --ink: #12222c; --ink-2: #46555e; --muted: #5e6b73; --grid: #dfe6ea; --surface: #fbfdfd; --paper: #f1f5f7; --accent: #0e5a86; --warn: #b45309; --ok: #1f7a3a; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #88949c; --grid: #273440; --surface: #16212a; --paper: #0f171c; --accent: #7fc0ea; --warn: #f0a35b; --ok: #6fcf8a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.05rem; margin: 0; }
+  .lede { color: var(--ink-2); margin: 0 0 16px; }
+  .bar { position: sticky; top: 0; z-index: 3; background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 16px; }
+  .bar label { display: inline-flex; align-items: center; gap: 6px; font-size: .9375rem; }
+  input[type=text], input[type=date], select, textarea { font: inherit; padding: 4px 8px; border: 1px solid var(--grid); border-radius: 6px; background: var(--surface); color: var(--ink); }
+  textarea { width: 100%; min-height: 56px; }
+  button { font: inherit; padding: 6px 12px; border: 1px solid var(--grid); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .cand { background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .cand.decided { border-left: 4px solid var(--ok); } .cand.decided.is-reject { border-left-color: var(--warn); }
+  .head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 6px; }
+  .head b { font-size: 1.05rem; } .id { color: var(--muted); font-size: .85rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .pill { font-size: .8125rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--grid); color: var(--ink-2); }
+  .pill.dup { border-color: var(--warn); color: var(--warn); }
+  .cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 18px; }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+  .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
+  blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
+  .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .pill.pre { background: #e8f1ec; color: #1f4d33; }
+  .cand[data-presorted="1"] .decision { background: #f3f8f5; outline: 1px dashed #8fb79d; outline-offset: 4px; }
+  .confirm-pre { font-size: .875rem; margin-left: 8px; }
+  .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
+  .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
+  .choices label { display: inline-flex; gap: 6px; align-items: center; }
+  .panel { display: none; margin: 8px 0; padding: 10px; border: 1px dashed var(--grid); border-radius: 6px; }
+  .panel.on { display: block; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 14px; }
+  .grid2 label { display: block; font-size: .9rem; } .grid2 label > span { display: block; color: var(--muted); font-size: .8rem; }
+  .grid2 select { max-width: 100%; }
+  .checks label { display: inline-flex; gap: 4px; margin-right: 10px; font-size: .9rem; }
+  .muted { color: var(--muted); font-size: .85rem; }
+  .req { color: var(--warn); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review queue — harvest TW-1980s</h1>
+  <p class="lede">11 candidate events, generated 2026-11-17. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-TW-1980s.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to. Each card carries a <em>pre-sort</em> (presorted by claude-code/opus): a suggested decision with its reason, prefilled in the form where no draft exists; it is a suggestion, and the decision is yours.</p>
+
+  <div class="bar">
+    <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
+    <span class="muted" id="progress"></span>
+    <button type="button" id="export" class="primary">Export decisions.json</button>
+    <button type="button" id="clear">Clear draft</button>
+  </div>
+
+  
+  <section class="cand" id="c-ev-47e02afb2f" data-event="ev-47e02afb2f" aria-labelledby="h-ev-47e02afb2f">
+    <div class="head">
+      <h2 id="h-ev-47e02afb2f" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1980-09-25 (day)</span>
+      <span>Taiping Island (Itu Aba), Tizard Bank, Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-47e02afb2f</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries Research Institute went to Taiping Island to conduct research, and on 25 September they officially registered their domiciles (household registration) on the island, the first civilian residents recorded there; the Institute&#39;s ship surveyed the waters around Tizard Bank as a fishing ground.</p>
+        <p class="muted">Actors: Taiwan Provincial Fisheries Research Institute; ROC household-registration authorities (Kaohsiung)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf" target="_blank" rel="noopener">Position Paper on ROC South China Sea Policy</a> — Ministry of Foreign Affairs, Republic of China (Taiwan), 2016-03-21</p>
+        <blockquote>officially registering their domiciles there September 25</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt" target="_blank" rel="noopener">China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix</a> — Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive), 1994-03-01</p>
+        <blockquote>Ship from Taiwan Fisheries Research Institute studies area around Tizard Bank in Spratlys as fishing ground</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains domestic physical · issues administrative fisheries · dyads RA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Registering civilian residents on a held feature and sending a state research ship to survey its waters are unilateral administration without confrontation; demonstrative, and new in kind (first civilian domiciles on Taiping, which the MOFA cites as evidence of habitation). The MOFA source is a PDF, so the excerpt cannot be machine-checked; the second source (Smith 1994, Internet Archive text) dates the survey to September 1980 and judges the area uneconomical for Taiwan&#39;s fishing. [confidence: high]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> · group TW1980-civil-residents — First civilian household registrations on Taiping plus a state fisheries survey of Tizard Bank: a new method of manifesting jurisdiction, against 1979&#39;s Pratas transfer to Kaohsiung and EEZ decree (ev-4b2e001dec, ev-ea7a173eee, the previous run&#39;s undecided candidates), neither of which put civilians on a Spratly feature.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1979</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1980</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-47e02afb2f" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-47e02afb2f" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-47e02afb2f" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-47e02afb2f" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-47e02afb2f" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1980</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1980" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1980" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries Research Institute went to Taiping Island to conduct research, and on 25 September they officially registered their domiciles (household registration) on the island, the first civilian residents recorded there; the Institute&#39;s ship surveyed the waters around Tizard Bank as a fishing ground.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1980-09-25"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1980-09-25"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Taiping Island (Itu Aba), Tizard Bank, Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Taiwan Provincial Fisheries Research Institute; ROC household-registration authorities (Kaohsiung)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries Research Institute went to Taiping Island to conduct research, and on 25 September they officially registered their domiciles (household registration) on the island, the first civilian residents recorded there; the Institute&#39;s ship surveyed the waters around Tizard Bank as a fishing ground.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-c52f629b41" data-event="ev-c52f629b41" aria-labelledby="h-ev-c52f629b41">
+    <div class="head">
+      <h2 id="h-ev-c52f629b41" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1980-11-16 (day)</span>
+      <span>Taiping Island (Itu Aba), Nansha Region, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: same move as ev-47e02afb2f</span>
+      <span class="id">ev-c52f629b41</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Region was held on Taiping Island on 16 November 1980, following the registration of civilian domiciles there in September.</p>
+        <p class="muted">Actors: ROC local administration for the Nansha Region; civilian residents of Taiping Island (Fisheries Research Institute staff)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf" target="_blank" rel="noopener">Position Paper on ROC South China Sea Policy</a> — Ministry of Foreign Affairs, Republic of China (Taiwan), 2016-03-21</p>
+        <blockquote>holding the first Townhall Meeting for citizens in the Nansha Region November 16</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains domestic · issues administrative politics · dyads RA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Holding a local civic assembly for registered residents of a disputed feature is a unilateral act of civil administration; demonstrative, low salience, and a coder may fold it into the 25 September domicile event. The source is a PDF, so the excerpt cannot be machine-checked; no second source was found. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>same move as ev-47e02afb2f</strong> · group TW1980-civil-residents — The first townhall meeting for Nansha residents follows directly from the September domicile registrations; the same 1980 civil-administration intensification led by ev-47e02afb2f.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1979</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1980</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-c52f629b41" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-c52f629b41" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-c52f629b41" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-c52f629b41" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-c52f629b41" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1980</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1980" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1980" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Region was held on Taiping Island on 16 November 1980, following the registration of civilian domiciles there in September.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1980-11-16"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1980-11-16"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Taiping Island (Itu Aba), Nansha Region"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC local administration for the Nansha Region; civilian residents of Taiping Island (Fisheries Research Institute staff)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Region was held on Taiping Island on 16 November 1980, following the registration of civilian domiciles there in September.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-0129e2fab8" data-event="ev-0129e2fab8" aria-labelledby="h-ev-0129e2fab8">
+    <div class="head">
+      <h2 id="h-ev-0129e2fab8" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1981-01-01 – 1981-12-31 (year)</span>
+      <span>Taiping Island (Itu Aba), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-0129e2fab8</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Island and drilled a geological exploration well to a depth of 523 metres; it encountered only coral-reef strata and did not establish the presence of oil or gas.</p>
+        <p class="muted">Actors: Chinese Petroleum Corporation (CPC, state-owned)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.cna.com.tw/news/afe/201910020065.aspx" target="_blank" rel="noopener">太平島2次探勘油氣 沈榮津：若有開發商會搶著來</a> — Central News Agency (中央社), 2019-10-02</p>
+        <blockquote>中油曾在民國70年到太平島鑽一口地質探勘井</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues energy · dyads RA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Exploratory drilling by a state company on a disputed feature is unilateral resource activity; demonstrative, and new in kind for Taiwan (no earlier ROC hydrocarbon drilling in the Spratlys is recorded). The source, a 2019 ministerial report to the Legislative Yuan reported by CNA, gives only ROC year 70 (1981); Chinese Wikipedia dates the team to June 1981 citing a 2013 CNA story that is no longer online, so the month is unverified. [confidence: medium]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — CPC&#39;s exploratory well on Taiping is the first ROC hydrocarbon drilling in the Spratlys, a new method against 1980&#39;s civil registrations and fisheries survey (ev-47e02afb2f group); year-only date.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1980</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1981</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-0129e2fab8" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-0129e2fab8" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-0129e2fab8" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-0129e2fab8" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-0129e2fab8" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1981</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1981" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1981" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Island and drilled a geological exploration well to a depth of 523 metres; it encountered only coral-reef strata and did not establish the presence of oil or gas.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1981-01-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1981-12-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month">month</option><option value="year" selected>year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Taiping Island (Itu Aba), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Chinese Petroleum Corporation (CPC, state-owned)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Island and drilled a geological exploration well to a depth of 523 metres; it encountered only coral-reef strata and did not establish the presence of oil or gas.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-fd03bb7e94" data-event="ev-fd03bb7e94" aria-labelledby="h-ev-fd03bb7e94">
+    <div class="head">
+      <h2 id="h-ev-fd03bb7e94" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1987-01-01 – 1987-12-31 (year)</span>
+      <span>Taiping Island (Itu Aba), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-fd03bb7e94</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expanded the services it offered to fishermen operating in the area.</p>
+        <p class="muted">Actors: ROC government (fishermen service station on Taiping Island; garrison)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://files.pca-cpa.org/pcadocs/The%20Philippines&#39;%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf" target="_blank" rel="noopener">Executive Yuan Directorate of the Coast Guard, &#39;Historical Background&#39; (Taiping Island), English translation, Annex 910 to the Philippines&#39; Written Responses on Itu Aba (25 April 2016)</a> — Permanent Court of Arbitration (Philippines v. China), 2016-04-25</p>
+        <blockquote>In 1987, the “Taipeng Regional Fisherman Service Station” expanded various kinds of services to the local fishermen.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical domestic · issues fisheries administrative · dyads RA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Providing state services to fishermen from a held feature is unilateral administration supporting the claimant&#39;s fishing presence; demonstrative, low salience. The Coast Guard&#39;s &#39;Historical Background&#39; gives only the year; the source is the English translation filed as Annex 910 in a PCA PDF, so the excerpt cannot be machine-checked. Wikipedia (citing a National Tsing Hua University page, unreachable) dates a &#39;Pratas Fishermen&#39;s Service Station&#39; to 1987 as well; the two may be confused or parallel. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — Expanded state services to fishermen from Taiping, against nothing comparable in 1986 (no candidates) or in the run since 1981. Weak: the source gives only the year and not what the expansion was, so a coder may treat it as maintenance of an existing station and reject.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1986</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1987</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-fd03bb7e94" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-fd03bb7e94" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-fd03bb7e94" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-fd03bb7e94" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-fd03bb7e94" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1987</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1987" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1987" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expanded the services it offered to fishermen operating in the area.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1987-01-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1987-12-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month">month</option><option value="year" selected>year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Taiping Island (Itu Aba), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC government (fishermen service station on Taiping Island; garrison)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expanded the services it offered to fishermen operating in the area.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-64905309eb" data-event="ev-64905309eb" aria-labelledby="h-ev-64905309eb">
+    <div class="head">
+      <h2 id="h-ev-64905309eb" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1988-02-01 – 1988-02-29 (month)</span>
+      <span>Spratly (Nansha) Islands — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: same move as ev-d59f49c55e</span>
+      <span class="id">ev-64905309eb</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the Spratly Islands, after Malaysia&#39;s Deputy Foreign Minister had declared that the islands and atolls within Malaysia&#39;s continental shelf were under Malaysian sovereignty.</p>
+        <p class="muted">Actors: ROC Ministry of National Defense (Minister of National Defense)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt" target="_blank" rel="noopener">China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix</a> — Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive), 1994-03-01</p>
+        <blockquote>February 1988 - ROC Minister of National Defense refutes</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues politics · dyads RM</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A minister&#39;s public rejection of a rival claim is a verbal assertion; declarative, and the first ROC statement aimed at Malaysia found for the decade. Known only from a one-line entry in Smith&#39;s 1994 chronology (no date within the month, no text); the Malaysian statement it answered was reported by the New Straits Times on 25 February 1988 (Dzurek 1996), so the refutation probably fell in the last days of February. [confidence: low]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>same move as ev-d59f49c55e</strong> · group TW1988-public-reassertion — The MND refutation of Malaysia&#39;s claim is one of the 1988 public reassertions led by ev-d59f49c55e (new dyad RM); a coder may keep it separate as the first statement aimed at Malaysia. Single-line source, no date.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1987</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1988</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-64905309eb" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-64905309eb" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-64905309eb" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-64905309eb" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-64905309eb" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1988</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1988" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1988" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RM"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the Spratly Islands, after Malaysia&#39;s Deputy Foreign Minister had declared that the islands and atolls within Malaysia&#39;s continental shelf were under Malaysian sovereignty.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1988-02-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1988-02-29"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC Ministry of National Defense (Minister of National Defense)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the Spratly Islands, after Malaysia&#39;s Deputy Foreign Minister had declared that the islands and atolls within Malaysia&#39;s continental shelf were under Malaysian sovereignty.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-7d30c44a35" data-event="ev-7d30c44a35" aria-labelledby="h-ev-7d30c44a35">
+    <div class="head">
+      <h2 id="h-ev-7d30c44a35" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1988-03-01 – 1988-03-31 (month)</span>
+      <span>Itu Aba (Taiping Island), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: same move as ev-796225e21a</span>
+      <span class="id">ev-7d30c44a35</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).</p>
+        <p class="muted">Actors: ROC Navy; Itu Aba (Taiping) garrison</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt" target="_blank" rel="noopener">China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix</a> — Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive), 1994-03-01</p>
+        <blockquote>ROC conducts emergency supply mission to its garrison on Itu Aba Island</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt" target="_blank" rel="noopener">U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)</a> — Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive), 1993-06-04</p>
+        <blockquote>The Taiwanese Navy conducted an emergency resupply of the Itu Aba forces in mid-March</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/volume-vi-supplemental-written-submission-of-the-philippines-16-mar-2015/The%20Philippines%27%20Supplemental%20Written%20Submission%20-%20Volume%20V%20%28Annexes%20443-465%29_djvu.txt" target="_blank" rel="noopener">D. J. Dzurek, &#39;The Spratly Islands Dispute: Who&#39;s on First?&#39;, IBRU Maritime Briefing 2(1) (1996), Annex 445 to the Philippines&#39; Supplemental Written Submission, Vol. V</a> — IBRU, Durham University (via PCA filing, Internet Archive), 1996-01-01</p>
+        <blockquote>Taiwan reacted, in March, by reasserting its sovereignty and resupplying its garrison on Itu Aba.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads RV RC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">An out-of-schedule naval resupply of a garrisoned feature during a crisis is a show of presence without confrontation; demonstrative, and more than the routine quarterly runs because it was an emergency mission. The day is uncertain (Smith&#39;s 17 March entry bundles several events), so month precision. Vietnam and China were the parties to the clash; no ROC action toward either is recorded. Reports that Taiwan let PRC ships shelter or resupply at Taiping were not found in any source opened. [confidence: medium]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>same move as ev-796225e21a</strong> · group TW1988-itu-aba-buildup — The out-of-schedule emergency resupply after the 14 March clash is the first step of the 1988 Itu Aba build-up led by ev-796225e21a (it probably carried the reinforcement).</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1987</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1988</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-7d30c44a35" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-7d30c44a35" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-7d30c44a35" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-7d30c44a35" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-7d30c44a35" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1988</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1988" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1988" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RV RC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1988-03-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1988-03-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Itu Aba (Taiping Island), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC Navy; Itu Aba (Taiping) garrison"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-d59f49c55e" data-event="ev-d59f49c55e" aria-labelledby="h-ev-d59f49c55e">
+    <div class="head">
+      <h2 id="h-ev-d59f49c55e" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1988-03-01 – 1988-03-31 (month)</span>
+      <span>Taiping Island (Itu Aba), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-d59f49c55e</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the Spratlys, and the defence leadership told the Legislative Yuan that Taiwan would fight to the last man to defend Taiping Island against any aggressor.</p>
+        <p class="muted">Actors: ROC Ministry of National Defense (Smith names &#39;Defense Minister Hao&#39;; the minister in March 1988 was Cheng Wei-yuan and Hau Pei-tsun was Chief of the General Staff); Legislative Yuan</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt" target="_blank" rel="noopener">China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix</a> — Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive), 1994-03-01</p>
+        <blockquote>tells Taiwan parliament that Taiwan would fight to the last man to defend Taiping island against any aggressor</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/volume-vi-supplemental-written-submission-of-the-philippines-16-mar-2015/The%20Philippines%27%20Supplemental%20Written%20Submission%20-%20Volume%20V%20%28Annexes%20443-465%29_djvu.txt" target="_blank" rel="noopener">D. J. Dzurek, &#39;The Spratly Islands Dispute: Who&#39;s on First?&#39;, IBRU Maritime Briefing 2(1) (1996), Annex 445 to the Philippines&#39; Supplemental Written Submission, Vol. V</a> — IBRU, Durham University (via PCA filing, Internet Archive), 1996-01-01</p>
+        <blockquote>Taiwan reacted, in March, by reasserting its sovereignty and resupplying its garrison on Itu Aba.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf" target="_blank" rel="noopener">Kuan-Ming Sun, &#39;The Republic of China&#39;s Policy toward the South China Sea: A Review&#39;, Issues &amp; Studies 32(3): 40-54</a> — Institute of International Relations, National Chengchi University, 1996-03-01</p>
+        <blockquote>the ROC defense minister indicated that Taipei would, if necessary, help Beijing defend its position on the islands</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues military politics · dyads RV RC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A public reassertion of sovereignty and a pledge to defend the feature by force are verbal assertions; declarative (a coder may weigh the &#39;fight to the last man&#39; line as an implicit threat). The speaker is misidentified or ambiguous in the only source naming him, and no date within March is given. Sun (1996) adds that the ROC defence minister indicated Taipei would, if necessary, help Beijing defend its position on the islands (citing The Economist, 21 May 1988); that remark is aimed at Vietnam and cooperative toward the PRC, and its date is unknown. [confidence: low]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> · group TW1988-public-reassertion — Public reassertion of Spratly sovereignty after Johnson South Reef with a pledge to defend Taiping &#39;to the last man&#39;, against no ROC statement in 1987 (only the fishermen station ev-fd03bb7e94); lead of the 1988 declarative reassertions. A coder may weigh the pledge as a coercive threat.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1987</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1988</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-d59f49c55e" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-d59f49c55e" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-d59f49c55e" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-d59f49c55e" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-d59f49c55e" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1988</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1988" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1988" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RV RC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the Spratlys, and the defence leadership told the Legislative Yuan that Taiwan would fight to the last man to defend Taiping Island against any aggressor.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1988-03-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1988-03-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Taiping Island (Itu Aba), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC Ministry of National Defense (Smith names &#39;Defense Minister Hao&#39;; the minister in March 1988 was Cheng Wei-yuan and Hau Pei-tsun was Chief of the General Staff); Legislative Yuan"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the Spratlys, and the defence leadership told the Legislative Yuan that Taiwan would fight to the last man to defend Taiping Island against any aggressor.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-796225e21a" data-event="ev-796225e21a" aria-labelledby="h-ev-796225e21a">
+    <div class="head">
+      <h2 id="h-ev-796225e21a" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1988-04-01 – 1988-04-30 (month)</span>
+      <span>Itu Aba (Taiping Island), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      <span class="pill dup">possible duplicate of ev-7d30c44a35</span>
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-796225e21a</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In April 1988, as China and Vietnam occupied further Spratly reefs after the March clash, Taipei reinforced its garrison on Itu Aba.</p>
+        <p class="muted">Actors: ROC Ministry of National Defense; Itu Aba (Taiping) garrison</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt" target="_blank" rel="noopener">U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)</a> — Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive), 1993-06-04</p>
+        <blockquote>In April Taipei reinforced its garrison on Itu Aba.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads RV RC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Adding troops to a held feature is a unilateral military build-up without confrontation; demonstrative, and the first reinforcement recorded since 1974. Known from one thesis (Hurwitt 1993, citing Chang Pao-min, Contemporary Southeast Asia 12(1), June 1990, pp. 28-29); size and units are not given. [confidence: low]</p>
+        <p class="muted">Note from the extractor: Possible duplicate of ev-7d30c44a35.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> · group TW1988-itu-aba-buildup — Reinforcing the Itu Aba garrison is a step-up in military presence with nothing comparable in 1987 (ev-fd03bb7e94 is a fishermen service); a change in level, not more routine resupply. Lead of the 1988 garrison build-up; single thesis source.</p>
+        
+        
+        <p class="k">The event it may duplicate</p>
+        <p class="muted" style="margin:0">ev-7d30c44a35 · 1988-03-01 · candidate: In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).</p>
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1987</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1988</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-796225e21a" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-796225e21a" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-796225e21a" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-796225e21a" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-796225e21a" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1988</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="ev-7d30c44a35" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1988" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1988" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RV RC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In April 1988, as China and Vietnam occupied further Spratly reefs after the March clash, Taipei reinforced its garrison on Itu Aba.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1988-04-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1988-04-30"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Itu Aba (Taiping Island), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC Ministry of National Defense; Itu Aba (Taiping) garrison"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In April 1988, as China and Vietnam occupied further Spratly reefs after the March clash, Taipei reinforced its garrison on Itu Aba.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-82a9f45ac0" data-event="ev-82a9f45ac0" aria-labelledby="h-ev-82a9f45ac0">
+    <div class="head">
+      <h2 id="h-ev-82a9f45ac0" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1988-08-01 – 1988-08-31 (month)</span>
+      <span>Itu Aba (Taiping Island), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: same move as ev-796225e21a</span>
+      <span class="id">ev-82a9f45ac0</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted naval exercises en route.</p>
+        <p class="muted">Actors: ROC Navy</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt" target="_blank" rel="noopener">U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)</a> — Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive), 1993-06-04</p>
+        <blockquote>another supply mission in August, when it conducted naval exercises en route</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military · dyads RA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A resupply run combined with naval exercises in the Spratly area is a display of presence and capability without confrontation; demonstrative. Resupply was routine, but exercises en route are not otherwise recorded for the decade. Single source (Hurwitt 1993, citing Chang 1990); no day given. [confidence: low]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>same move as ev-796225e21a</strong> · group TW1988-itu-aba-buildup — The August supply run with naval exercises en route continues the 1988 build-up led by ev-796225e21a; a coder may split the exercises off as a separate novelty.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1987</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1988</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-82a9f45ac0" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-82a9f45ac0" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-82a9f45ac0" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-82a9f45ac0" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-82a9f45ac0" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1988</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1988" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1988" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted naval exercises en route.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1988-08-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1988-08-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month" selected>month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Itu Aba (Taiping Island), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC Navy"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted naval exercises en route.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-7ac9737971" data-event="ev-7ac9737971" aria-labelledby="h-ev-7ac9737971">
+    <div class="head">
+      <h2 id="h-ev-7ac9737971" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1988-12-12 (day)</span>
+      <span>Taiping Island (Itu Aba), Spratly (Nansha) Islands, sub-region 5 — placed at 10.37500, 114.36667 = Taiping Island (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-7ac9737971</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereignty monument on Taiping Island (front inscription &#39;Nansha Islands Taiping Island&#39;, erected 12 December 1946) was rebuilt, its side carrying the inscription &#39;Rebuilt 12 December, 77th year of the Republic of China&#39;.</p>
+        <p class="muted">Actors: ROC government / Taiping Island garrison (agency not named)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf" target="_blank" rel="noopener">轄區特色-南沙 (Nansha: features of the jurisdiction), 南沙史要紀念碑</a> — Coast Guard Administration, Republic of China (海巡署)</p>
+        <blockquote>右側刻「中華民國 77 年 12 月 12 日修建」</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues administrative · dyads RA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Rebuilding a sovereignty marker on a held feature is a unilateral symbolic act of possession; demonstrative, low salience. The date comes from the stele&#39;s own inscription as transcribed by the Coast Guard; the source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — Rebuilding the Taiping sovereignty monument is a symbolic act of possession with nothing comparable in 1987 (ev-fd03bb7e94); distinct from the crisis-driven build-up (ev-796225e21a group). Low salience.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1987</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1988</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-7ac9737971" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-7ac9737971" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-7ac9737971" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-7ac9737971" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-7ac9737971" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1988</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-3c246a4303">ev-3c246a4303 — A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 Ju</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1988" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1988" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5" checked>5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereignty monument on Taiping Island (front inscription &#39;Nansha Islands Taiping Island&#39;, erected 12 December 1946) was rebuilt, its side carrying the inscription &#39;Rebuilt 12 December, 77th year of the Republic of China&#39;.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1988-12-12"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1988-12-12"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Taiping Island (Itu Aba), Spratly (Nansha) Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="5" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="10.37500" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="114.36667" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC government / Taiping Island garrison (agency not named)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereignty monument on Taiping Island (front inscription &#39;Nansha Islands Taiping Island&#39;, erected 12 December 1946) was rebuilt, its side carrying the inscription &#39;Rebuilt 12 December, 77th year of the Republic of China&#39;.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-3c246a4303" data-event="ev-3c246a4303" aria-labelledby="h-ev-3c246a4303">
+    <div class="head">
+      <h2 id="h-ev-3c246a4303" style="font-size:1.05rem;margin:0">Taiwan</h2>
+      <span>1989-06-30 (day)</span>
+      <span>Dongsha (Pratas) Island — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (scope)</span>
+      <span class="id">ev-3c246a4303</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 June 1989 to assert ROC sovereignty over the whole Pratas archipelago; Wikipedia, citing National Tsing Hua University, attributes to the Minister of the Interior a 1989 &#39;South China Sea Defense&#39; (南海屏障) national stele on the island.</p>
+        <p class="muted">Actors: ROC Ministry of the Interior (per NTHU via Wikipedia); Pratas garrison</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.npf.org.tw/3/6120" target="_blank" rel="noopener">Sovereignty over the Spratly Islands (Hung Chien-chao)</a> — National Policy Foundation (orig. The China Post, 23 Jun 2009), 2009-07-10</p>
+        <blockquote>A national monument and a corridor were set up on the main island on June 30, 1989 and May 19, 1992 respectively, to assert sovereignty over the entire archipelago.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835858418.pdf" target="_blank" rel="noopener">轄區特色-東沙 (Dongsha: features of the jurisdiction), 國碑-南海屏障</a> — Coast Guard Administration, Republic of China (海巡署)</p>
+        <blockquote>【國碑-南海屏障】</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues administrative · dyads RC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Erecting a national sovereignty monument on a held feature is a unilateral symbolic act of possession; demonstrative. It is new for the Pratas in the decade and precedes the January 1990 &#39;Lock and Key to the Southern Territory&#39; stele on Taiping. The MOI attribution and the identity with the 南海屏障 stele rest on an unreachable NTHU page; the Coast Guard&#39;s Dongsha PDF reproduces the 南海屏障 text without a date. The PRC is the only other claimant to the Pratas, hence RC. [confidence: medium]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (scope)</strong> — A new national sovereignty monument on Pratas extends to another island group the marker practice seen in 1988 only on Taiping (ev-7ac9737971); scope. If the coder reads markers as one practice regardless of feature, it is a continuation of ev-7ac9737971.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Taiwan's moves in 1988</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Taiwan's moves already in 1989</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-3c246a4303" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-3c246a4303" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-3c246a4303" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-3c246a4303" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-3c246a4303" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1989</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-47e02afb2f">ev-47e02afb2f — In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries </option><option value="ev-c52f629b41">ev-c52f629b41 — The first Townhall Meeting (citizens&#39; assembly) for residents of the Nansha Regi</option><option value="ev-0129e2fab8">ev-0129e2fab8 — The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Islan</option><option value="ev-fd03bb7e94">ev-fd03bb7e94 — In 1987 the &#39;Taiping Regional Fishermen Service Station&#39; on Taiping Island expan</option><option value="ev-64905309eb">ev-64905309eb — The ROC Minister of National Defense publicly refuted Malaysia&#39;s claims in the S</option><option value="ev-7d30c44a35">ev-7d30c44a35 — In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, t</option><option value="ev-d59f49c55e">ev-d59f49c55e — After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the S</option><option value="ev-796225e21a">ev-796225e21a — In April 1988, as China and Vietnam occupied further Spratly reefs after the Mar</option><option value="ev-82a9f45ac0">ev-82a9f45ac0 — In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted</option><option value="ev-7ac9737971">ev-7ac9737971 — On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereig</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1989" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1989" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="RC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 June 1989 to assert ROC sovereignty over the whole Pratas archipelago; Wikipedia, citing National Tsing Hua University, attributes to the Minister of the Interior a 1989 &#39;South China Sea Defense&#39; (南海屏障) national stele on the island.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1989-06-30"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1989-06-30"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Dongsha (Pratas) Island"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="ROC Ministry of the Interior (per NTHU via Wikipedia); Pratas garrison"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 June 1989 to assert ROC sovereignty over the whole Pratas archipelago; Wikipedia, citing National Tsing Hua University, attributes to the Minister of the Interior a 1989 &#39;South China Sea Defense&#39; (南海屏障) national stele on the island.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  
+</div>
+
+<script id="ctx" type="application/json">{"run_id": "TW-1980s", "items": [{"event": {"event_id": "ev-47e02afb2f", "move_id": "", "claimant": "TW", "date_start": "1980-09-25", "date_end": "1980-09-25", "date_precision": "day", "lat": "10.37500", "lon": "114.36667", "location_name": "Taiping Island (Itu Aba), Tizard Bank, Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries Research Institute went to Taiping Island to conduct research, and on 25 September they officially registered their domiciles (household registration) on the island, the first civilian residents recorded there; the Institute's ship surveyed the waters around Tizard Bank as a fishing ground.", "actors": "Taiwan Provincial Fisheries Research Institute; ROC household-registration authorities (Kaohsiung)", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "domestic physical", "suggested_issues": "administrative fisheries", "suggested_dyads": "RA", "suggestion_reasoning": "Registering civilian residents on a held feature and sending a state research ship to survey its waters are unilateral administration without confrontation; demonstrative, and new in kind (first civilian domiciles on Taiping, which the MOFA cites as evidence of habitation). The MOFA source is a PDF, so the excerpt cannot be machine-checked; the second source (Smith 1994, Internet Archive text) dates the survey to September 1980 and judges the area uneconomical for Taiwan's fishing. [confidence: high]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-47e02afb2f-S01", "event_id": "ev-47e02afb2f", "url": "https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf", "title": "Position Paper on ROC South China Sea Policy", "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)", "pub_date": "2016-03-21", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "officially registering their domiciles there September 25"}, {"source_id": "ev-47e02afb2f-S02", "event_id": "ev-47e02afb2f", "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt", "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix", "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)", "pub_date": "1994-03-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "Ship from Taiwan Fisheries Research Institute studies area around Tizard Bank in Spratlys as fishing ground"}], "year": 1980, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-47e02afb2f", "disposition": "new_move", "criterion": "novelty", "group": "TW1980-civil-residents", "reason": "First civilian household registrations on Taiping plus a state fisheries survey of Tizard Bank: a new method of manifesting jurisdiction, against 1979's Pratas transfer to Kaohsiung and EEZ decree (ev-4b2e001dec, ev-ea7a173eee, the previous run's undecided candidates), neither of which put civilians on a Spratly feature.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-c52f629b41", "move_id": "", "claimant": "TW", "date_start": "1980-11-16", "date_end": "1980-11-16", "date_precision": "day", "lat": "10.37500", "lon": "114.36667", "location_name": "Taiping Island (Itu Aba), Nansha Region", "location_precision": "feature", "subregion": "5", "summary": "The first Townhall Meeting (citizens' assembly) for residents of the Nansha Region was held on Taiping Island on 16 November 1980, following the registration of civilian domiciles there in September.", "actors": "ROC local administration for the Nansha Region; civilian residents of Taiping Island (Fisheries Research Institute staff)", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "domestic", "suggested_issues": "administrative politics", "suggested_dyads": "RA", "suggestion_reasoning": "Holding a local civic assembly for registered residents of a disputed feature is a unilateral act of civil administration; demonstrative, low salience, and a coder may fold it into the 25 September domicile event. The source is a PDF, so the excerpt cannot be machine-checked; no second source was found. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-c52f629b41-S01", "event_id": "ev-c52f629b41", "url": "https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf", "title": "Position Paper on ROC South China Sea Policy", "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)", "pub_date": "2016-03-21", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "holding the first Townhall Meeting for citizens in the Nansha Region November 16"}], "year": 1980, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-c52f629b41", "disposition": "same_move", "of": "ev-47e02afb2f", "group": "TW1980-civil-residents", "reason": "The first townhall meeting for Nansha residents follows directly from the September domicile registrations; the same 1980 civil-administration intensification led by ev-47e02afb2f.", "label": "same move as ev-47e02afb2f", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-0129e2fab8", "move_id": "", "claimant": "TW", "date_start": "1981-01-01", "date_end": "1981-12-31", "date_precision": "year", "lat": "10.37500", "lon": "114.36667", "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Island and drilled a geological exploration well to a depth of 523 metres; it encountered only coral-reef strata and did not establish the presence of oil or gas.", "actors": "Chinese Petroleum Corporation (CPC, state-owned)", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "energy", "suggested_dyads": "RA", "suggestion_reasoning": "Exploratory drilling by a state company on a disputed feature is unilateral resource activity; demonstrative, and new in kind for Taiwan (no earlier ROC hydrocarbon drilling in the Spratlys is recorded). The source, a 2019 ministerial report to the Legislative Yuan reported by CNA, gives only ROC year 70 (1981); Chinese Wikipedia dates the team to June 1981 citing a 2013 CNA story that is no longer online, so the month is unverified. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-0129e2fab8-S01", "event_id": "ev-0129e2fab8", "url": "https://www.cna.com.tw/news/afe/201910020065.aspx", "title": "太平島2次探勘油氣 沈榮津：若有開發商會搶著來", "publisher": "Central News Agency (中央社)", "pub_date": "2019-10-02", "language": "zh-TW", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "中油曾在民國70年到太平島鑽一口地質探勘井"}], "year": 1981, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-0129e2fab8", "disposition": "new_move", "criterion": "novelty", "reason": "CPC's exploratory well on Taiping is the first ROC hydrocarbon drilling in the Spratlys, a new method against 1980's civil registrations and fisheries survey (ev-47e02afb2f group); year-only date.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-fd03bb7e94", "move_id": "", "claimant": "TW", "date_start": "1987-01-01", "date_end": "1987-12-31", "date_precision": "year", "lat": "10.37500", "lon": "114.36667", "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "In 1987 the 'Taiping Regional Fishermen Service Station' on Taiping Island expanded the services it offered to fishermen operating in the area.", "actors": "ROC government (fishermen service station on Taiping Island; garrison)", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical domestic", "suggested_issues": "fisheries administrative", "suggested_dyads": "RA", "suggestion_reasoning": "Providing state services to fishermen from a held feature is unilateral administration supporting the claimant's fishing presence; demonstrative, low salience. The Coast Guard's 'Historical Background' gives only the year; the source is the English translation filed as Annex 910 in a PCA PDF, so the excerpt cannot be machine-checked. Wikipedia (citing a National Tsing Hua University page, unreachable) dates a 'Pratas Fishermen's Service Station' to 1987 as well; the two may be confused or parallel. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-fd03bb7e94-S01", "event_id": "ev-fd03bb7e94", "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf", "title": "Executive Yuan Directorate of the Coast Guard, 'Historical Background' (Taiping Island), English translation, Annex 910 to the Philippines' Written Responses on Itu Aba (25 April 2016)", "publisher": "Permanent Court of Arbitration (Philippines v. China)", "pub_date": "2016-04-25", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "In 1987, the “Taipeng Regional Fisherman Service Station” expanded various kinds of services to the local fishermen."}], "year": 1987, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-fd03bb7e94", "disposition": "new_move", "criterion": "novelty", "reason": "Expanded state services to fishermen from Taiping, against nothing comparable in 1986 (no candidates) or in the run since 1981. Weak: the source gives only the year and not what the expansion was, so a coder may treat it as maintenance of an existing station and reject.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-64905309eb", "move_id": "", "claimant": "TW", "date_start": "1988-02-01", "date_end": "1988-02-29", "date_precision": "month", "lat": "", "lon": "", "location_name": "Spratly (Nansha) Islands", "location_precision": "unknown", "subregion": "", "summary": "The ROC Minister of National Defense publicly refuted Malaysia's claims in the Spratly Islands, after Malaysia's Deputy Foreign Minister had declared that the islands and atolls within Malaysia's continental shelf were under Malaysian sovereignty.", "actors": "ROC Ministry of National Defense (Minister of National Defense)", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "politics", "suggested_dyads": "RM", "suggestion_reasoning": "A minister's public rejection of a rival claim is a verbal assertion; declarative, and the first ROC statement aimed at Malaysia found for the decade. Known only from a one-line entry in Smith's 1994 chronology (no date within the month, no text); the Malaysian statement it answered was reported by the New Straits Times on 25 February 1988 (Dzurek 1996), so the refutation probably fell in the last days of February. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-64905309eb-S01", "event_id": "ev-64905309eb", "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt", "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix", "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)", "pub_date": "1994-03-01", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "February 1988 - ROC Minister of National Defense refutes"}], "year": 1988, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-64905309eb", "disposition": "same_move", "of": "ev-d59f49c55e", "group": "TW1988-public-reassertion", "reason": "The MND refutation of Malaysia's claim is one of the 1988 public reassertions led by ev-d59f49c55e (new dyad RM); a coder may keep it separate as the first statement aimed at Malaysia. Single-line source, no date.", "label": "same move as ev-d59f49c55e", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-7d30c44a35", "move_id": "", "claimant": "TW", "date_start": "1988-03-01", "date_end": "1988-03-31", "date_precision": "month", "lat": "10.37500", "lon": "114.36667", "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).", "actors": "ROC Navy; Itu Aba (Taiping) garrison", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "RV RC", "suggestion_reasoning": "An out-of-schedule naval resupply of a garrisoned feature during a crisis is a show of presence without confrontation; demonstrative, and more than the routine quarterly runs because it was an emergency mission. The day is uncertain (Smith's 17 March entry bundles several events), so month precision. Vietnam and China were the parties to the clash; no ROC action toward either is recorded. Reports that Taiwan let PRC ships shelter or resupply at Taiping were not found in any source opened. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-7d30c44a35-S01", "event_id": "ev-7d30c44a35", "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt", "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix", "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)", "pub_date": "1994-03-01", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "ROC conducts emergency supply mission to its garrison on Itu Aba Island"}, {"source_id": "ev-7d30c44a35-S02", "event_id": "ev-7d30c44a35", "url": "https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt", "title": "U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)", "publisher": "Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive)", "pub_date": "1993-06-04", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "The Taiwanese Navy conducted an emergency resupply of the Itu Aba forces in mid-March"}, {"source_id": "ev-7d30c44a35-S03", "event_id": "ev-7d30c44a35", "url": "https://archive.org/download/volume-vi-supplemental-written-submission-of-the-philippines-16-mar-2015/The%20Philippines%27%20Supplemental%20Written%20Submission%20-%20Volume%20V%20%28Annexes%20443-465%29_djvu.txt", "title": "D. J. Dzurek, 'The Spratly Islands Dispute: Who's on First?', IBRU Maritime Briefing 2(1) (1996), Annex 445 to the Philippines' Supplemental Written Submission, Vol. V", "publisher": "IBRU, Durham University (via PCA filing, Internet Archive)", "pub_date": "1996-01-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "Taiwan reacted, in March, by reasserting its sovereignty and resupplying its garrison on Itu Aba."}], "year": 1988, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-7d30c44a35", "disposition": "same_move", "of": "ev-796225e21a", "group": "TW1988-itu-aba-buildup", "reason": "The out-of-schedule emergency resupply after the 14 March clash is the first step of the 1988 Itu Aba build-up led by ev-796225e21a (it probably carried the reinforcement).", "label": "same move as ev-796225e21a", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-d59f49c55e", "move_id": "", "claimant": "TW", "date_start": "1988-03-01", "date_end": "1988-03-31", "date_precision": "month", "lat": "10.37500", "lon": "114.36667", "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the Spratlys, and the defence leadership told the Legislative Yuan that Taiwan would fight to the last man to defend Taiping Island against any aggressor.", "actors": "ROC Ministry of National Defense (Smith names 'Defense Minister Hao'; the minister in March 1988 was Cheng Wei-yuan and Hau Pei-tsun was Chief of the General Staff); Legislative Yuan", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "military politics", "suggested_dyads": "RV RC", "suggestion_reasoning": "A public reassertion of sovereignty and a pledge to defend the feature by force are verbal assertions; declarative (a coder may weigh the 'fight to the last man' line as an implicit threat). The speaker is misidentified or ambiguous in the only source naming him, and no date within March is given. Sun (1996) adds that the ROC defence minister indicated Taipei would, if necessary, help Beijing defend its position on the islands (citing The Economist, 21 May 1988); that remark is aimed at Vietnam and cooperative toward the PRC, and its date is unknown. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-d59f49c55e-S01", "event_id": "ev-d59f49c55e", "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt", "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix", "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)", "pub_date": "1994-03-01", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "tells Taiwan parliament that Taiwan would fight to the last man to defend Taiping island against any aggressor"}, {"source_id": "ev-d59f49c55e-S02", "event_id": "ev-d59f49c55e", "url": "https://archive.org/download/volume-vi-supplemental-written-submission-of-the-philippines-16-mar-2015/The%20Philippines%27%20Supplemental%20Written%20Submission%20-%20Volume%20V%20%28Annexes%20443-465%29_djvu.txt", "title": "D. J. Dzurek, 'The Spratly Islands Dispute: Who's on First?', IBRU Maritime Briefing 2(1) (1996), Annex 445 to the Philippines' Supplemental Written Submission, Vol. V", "publisher": "IBRU, Durham University (via PCA filing, Internet Archive)", "pub_date": "1996-01-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "Taiwan reacted, in March, by reasserting its sovereignty and resupplying its garrison on Itu Aba."}, {"source_id": "ev-d59f49c55e-S03", "event_id": "ev-d59f49c55e", "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf", "title": "Kuan-Ming Sun, 'The Republic of China's Policy toward the South China Sea: A Review', Issues & Studies 32(3): 40-54", "publisher": "Institute of International Relations, National Chengchi University", "pub_date": "1996-03-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "the ROC defense minister indicated that Taipei would, if necessary, help Beijing defend its position on the islands"}], "year": 1988, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-d59f49c55e", "disposition": "new_move", "criterion": "novelty", "group": "TW1988-public-reassertion", "reason": "Public reassertion of Spratly sovereignty after Johnson South Reef with a pledge to defend Taiping 'to the last man', against no ROC statement in 1987 (only the fishermen station ev-fd03bb7e94); lead of the 1988 declarative reassertions. A coder may weigh the pledge as a coercive threat.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-796225e21a", "move_id": "", "claimant": "TW", "date_start": "1988-04-01", "date_end": "1988-04-30", "date_precision": "month", "lat": "10.37500", "lon": "114.36667", "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "In April 1988, as China and Vietnam occupied further Spratly reefs after the March clash, Taipei reinforced its garrison on Itu Aba.", "actors": "ROC Ministry of National Defense; Itu Aba (Taiping) garrison", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "RV RC", "suggestion_reasoning": "Adding troops to a held feature is a unilateral military build-up without confrontation; demonstrative, and the first reinforcement recorded since 1974. Known from one thesis (Hurwitt 1993, citing Chang Pao-min, Contemporary Southeast Asia 12(1), June 1990, pp. 28-29); size and units are not given. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "Possible duplicate of ev-7d30c44a35.", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-796225e21a-S01", "event_id": "ev-796225e21a", "url": "https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt", "title": "U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)", "publisher": "Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive)", "pub_date": "1993-06-04", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "In April Taipei reinforced its garrison on Itu Aba."}], "year": 1988, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": {"event_id": "ev-7d30c44a35", "move_id": "", "claimant": "TW", "date_start": "1988-03-01", "date_end": "1988-03-31", "date_precision": "month", "lat": "10.37500", "lon": "114.36667", "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).", "actors": "ROC Navy; Itu Aba (Taiping) garrison", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "RV RC", "suggestion_reasoning": "An out-of-schedule naval resupply of a garrisoned feature during a crisis is a show of presence without confrontation; demonstrative, and more than the routine quarterly runs because it was an emergency mission. The day is uncertain (Smith's 17 March entry bundles several events), so month precision. Vietnam and China were the parties to the clash; no ROC action toward either is recorded. Reports that Taiwan let PRC ships shelter or resupply at Taiping were not found in any source opened. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": ""}, "claimant_name": "Taiwan", "presort": {"event_id": "ev-796225e21a", "disposition": "new_move", "criterion": "novelty", "group": "TW1988-itu-aba-buildup", "reason": "Reinforcing the Itu Aba garrison is a step-up in military presence with nothing comparable in 1987 (ev-fd03bb7e94 is a fishermen service); a change in level, not more routine resupply. Lead of the 1988 garrison build-up; single thesis source.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-82a9f45ac0", "move_id": "", "claimant": "TW", "date_start": "1988-08-01", "date_end": "1988-08-31", "date_precision": "month", "lat": "10.37500", "lon": "114.36667", "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted naval exercises en route.", "actors": "ROC Navy", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military", "suggested_dyads": "RA", "suggestion_reasoning": "A resupply run combined with naval exercises in the Spratly area is a display of presence and capability without confrontation; demonstrative. Resupply was routine, but exercises en route are not otherwise recorded for the decade. Single source (Hurwitt 1993, citing Chang 1990); no day given. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-82a9f45ac0-S01", "event_id": "ev-82a9f45ac0", "url": "https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt", "title": "U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)", "publisher": "Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive)", "pub_date": "1993-06-04", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "another supply mission in August, when it conducted naval exercises en route"}], "year": 1988, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-82a9f45ac0", "disposition": "same_move", "of": "ev-796225e21a", "group": "TW1988-itu-aba-buildup", "reason": "The August supply run with naval exercises en route continues the 1988 build-up led by ev-796225e21a; a coder may split the exercises off as a separate novelty.", "label": "same move as ev-796225e21a", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-7ac9737971", "move_id": "", "claimant": "TW", "date_start": "1988-12-12", "date_end": "1988-12-12", "date_precision": "day", "lat": "10.37500", "lon": "114.36667", "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands", "location_precision": "feature", "subregion": "5", "summary": "On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereignty monument on Taiping Island (front inscription 'Nansha Islands Taiping Island', erected 12 December 1946) was rebuilt, its side carrying the inscription 'Rebuilt 12 December, 77th year of the Republic of China'.", "actors": "ROC government / Taiping Island garrison (agency not named)", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "administrative", "suggested_dyads": "RA", "suggestion_reasoning": "Rebuilding a sovereignty marker on a held feature is a unilateral symbolic act of possession; demonstrative, low salience. The date comes from the stele's own inscription as transcribed by the Coast Guard; the source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Taiping Island", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-7ac9737971-S01", "event_id": "ev-7ac9737971", "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf", "title": "轄區特色-南沙 (Nansha: features of the jurisdiction), 南沙史要紀念碑", "publisher": "Coast Guard Administration, Republic of China (海巡署)", "pub_date": "", "language": "zh-TW", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "右側刻「中華民國 77 年 12 月 12 日修建」"}], "year": 1988, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-7ac9737971", "disposition": "new_move", "criterion": "novelty", "reason": "Rebuilding the Taiping sovereignty monument is a symbolic act of possession with nothing comparable in 1987 (ev-fd03bb7e94); distinct from the crisis-driven build-up (ev-796225e21a group). Low salience.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-3c246a4303", "move_id": "", "claimant": "TW", "date_start": "1989-06-30", "date_end": "1989-06-30", "date_precision": "day", "lat": "", "lon": "", "location_name": "Dongsha (Pratas) Island", "location_precision": "unknown", "subregion": "", "summary": "A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 June 1989 to assert ROC sovereignty over the whole Pratas archipelago; Wikipedia, citing National Tsing Hua University, attributes to the Minister of the Interior a 1989 'South China Sea Defense' (南海屏障) national stele on the island.", "actors": "ROC Ministry of the Interior (per NTHU via Wikipedia); Pratas garrison", "status": "candidate", "harvest_run_id": "TW-1980s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "administrative", "suggested_dyads": "RC", "suggestion_reasoning": "Erecting a national sovereignty monument on a held feature is a unilateral symbolic act of possession; demonstrative. It is new for the Pratas in the decade and precedes the January 1990 'Lock and Key to the Southern Territory' stele on Taiping. The MOI attribution and the identity with the 南海屏障 stele rest on an unreachable NTHU page; the Coast Guard's Dongsha PDF reproduces the 南海屏障 text without a date. The PRC is the only other claimant to the Pratas, hence RC. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-3c246a4303-S01", "event_id": "ev-3c246a4303", "url": "https://www.npf.org.tw/3/6120", "title": "Sovereignty over the Spratly Islands (Hung Chien-chao)", "publisher": "National Policy Foundation (orig. The China Post, 23 Jun 2009)", "pub_date": "2009-07-10", "language": "en", "accessed_date": "2026-11-17", "archive_url": "", "excerpt": "A national monument and a corridor were set up on the main island on June 30, 1989 and May 19, 1992 respectively, to assert sovereignty over the entire archipelago."}, {"source_id": "ev-3c246a4303-S02", "event_id": "ev-3c246a4303", "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835858418.pdf", "title": "轄區特色-東沙 (Dongsha: features of the jurisdiction), 國碑-南海屏障", "publisher": "Coast Guard Administration, Republic of China (海巡署)", "pub_date": "", "language": "zh-TW", "accessed_date": "", "archive_url": "", "excerpt": "【國碑-南海屏障】"}], "year": 1989, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Taiwan", "presort": {"event_id": "ev-3c246a4303", "disposition": "new_move", "criterion": "scope", "reason": "A new national sovereignty monument on Pratas extends to another island group the marker practice seen in 1988 only on Taiping (ev-7ac9737971); scope. If the coder reads markers as one practice regardless of feature, it is a continuation of ev-7ac9737971.", "label": "new move (scope)", "presorted_by": "claude-code/opus"}}]}</script>
+<script>
+(function () {
+  "use strict";
+  var CTX = JSON.parse(document.getElementById("ctx").textContent);
+  var KEY = "scs-review-" + CTX.run_id;
+  var draft = {};
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { draft = {}; }
+  var reviewer = document.getElementById("reviewer");
+  reviewer.value = draft._reviewer || "";
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(draft)); } catch (e) {} progress(); }
+  function progress() {
+    var n = CTX.items.length, done = CTX.items.filter(function (it) { return (draft[it.event.event_id] || {}).action; }).length;
+    document.getElementById("progress").textContent = done + " of " + n + " decided";
+  }
+  function orig(id) { for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) return CTX.items[i].event; return {}; }
+
+  function readCard(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    var d = { event_id: id, action: action, note: card.querySelector(".f-note").value.trim() };
+    if (action === "merge") {
+      var of = card.querySelector(".f-move_of").value;
+      if (of) d.move_of_event = of; else d.move_id = card.querySelector(".f-move_id_text").value.trim() || card.querySelector(".f-move_id").value;
+    }
+    if (action === "duplicate") d.duplicate_of = card.querySelector(".f-dup_of").value.trim();
+    if (action === "new_move") {
+      d.new_move = {
+        type: card.querySelector(".f-type").value, intensification_criterion: card.querySelector(".f-crit").value,
+        year: card.querySelector(".f-year").value.trim(), ongoing_through: card.querySelector(".f-ongoing").value.trim(),
+        dyads: card.querySelector(".f-dyads").value.trim().split(/\s+/).filter(Boolean),
+        domains: Array.prototype.map.call(card.querySelectorAll(".f-domain:checked"), function (i) { return i.value; }),
+        issues: Array.prototype.map.call(card.querySelectorAll(".f-issue:checked"), function (i) { return i.value; }),
+        subregions: Array.prototype.map.call(card.querySelectorAll(".f-sub:checked"), function (i) { return i.value; }),
+        description: card.querySelector(".f-desc").value.trim()
+      };
+    }
+    if (action === "merge" || action === "new_move" || action === "duplicate") {
+      var o = orig(id), edits = {};
+      ["date_start", "date_end", "date_precision", "location_name", "subregion", "lat", "lon", "actors", "summary"].forEach(function (f) {
+        var v = card.querySelector(".f-e-" + f).value.trim();
+        if (v && v !== (o[f] || "")) edits[f] = v;     // blank keeps the current value
+      });
+      if (Object.keys(edits).length) d.edits = edits;
+    }
+    return d;
+  }
+  function paint(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    card.querySelector(".p-merge").classList.toggle("on", action === "merge");
+    card.querySelector(".p-new").classList.toggle("on", action === "new_move");
+    card.querySelector(".p-dup").classList.toggle("on", action === "duplicate");
+    card.querySelector(".p-edits").classList.toggle("on", action === "merge" || action === "new_move" || action === "duplicate");
+    card.querySelector(".p-reject-req").hidden = action !== "reject";
+    card.classList.toggle("decided", !!action);
+    card.classList.toggle("is-reject", action === "reject");
+  }
+  function restore(card) {
+    var id = card.getAttribute("data-event"), d = draft[id];
+    if (!d) return;
+    var r = card.querySelector('input[name="a-' + id + '"][value="' + (d.action || "") + '"]'); if (r) r.checked = true;
+    card.querySelector(".f-note").value = d.note || "";
+    if (d.move_id) card.querySelector(".f-move_id_text").value = d.move_id;
+    if (d.move_of_event) card.querySelector(".f-move_of").value = d.move_of_event;
+    if (d.duplicate_of) card.querySelector(".f-dup_of").value = d.duplicate_of;
+    if (d.new_move) {
+      var m = d.new_move;
+      card.querySelector(".f-type").value = m.type || ""; card.querySelector(".f-crit").value = m.intensification_criterion || "";
+      card.querySelector(".f-year").value = m.year || ""; card.querySelector(".f-ongoing").value = m.ongoing_through || "";
+      card.querySelector(".f-dyads").value = (m.dyads || []).join(" "); card.querySelector(".f-desc").value = m.description || "";
+      card.querySelectorAll(".f-domain").forEach(function (i) { i.checked = (m.domains || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-issue").forEach(function (i) { i.checked = (m.issues || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-sub").forEach(function (i) { i.checked = (m.subregions || []).indexOf(i.value) >= 0; });
+    }
+    if (d.edits) Object.keys(d.edits).forEach(function (f) { var el = card.querySelector(".f-e-" + f); if (el) el.value = d.edits[f]; });
+  }
+
+  var cards = document.querySelectorAll(".cand");
+  function prefill(card) {
+    var it = null, id = card.getAttribute("data-event");
+    for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) it = CTX.items[i];
+    if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
+    card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
+    var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
+    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of + (/^ev-/.test(p.of) ? " (last year's candidate; provisional until that year is decided)" : ""); }
+    else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
+    else if (p.disposition === "new_move") { radio("new_move"); var c = card.querySelector(".f-crit"); if (c) c.value = p.criterion || ""; }
+    else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
+    paint(card);
+  }
+  function adopt(card) { card.removeAttribute("data-presorted"); draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); }
+  cards.forEach(function (card) {
+    restore(card); prefill(card); paint(card);
+    var btn = card.querySelector(".confirm-pre");
+    if (btn) btn.addEventListener("click", function () { adopt(card); });
+    card.addEventListener("input", function () { adopt(card); });
+    card.addEventListener("change", function () { adopt(card); });
+  });
+  reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
+
+  function validate(decisions) {
+    var problems = [];
+    decisions.forEach(function (d) {
+      if (d.action === "reject" && !d.note) problems.push(d.event_id + ": a rejection needs a note");
+      if (d.action === "merge" && !d.move_id && !d.move_of_event) problems.push(d.event_id + ": choose the move to merge into");
+      if (d.action === "merge" && d.move_id && !/^[A-Z]{2}\d{6}$/.test(d.move_id)) problems.push(d.event_id + ": a move id looks like CN202601");
+      if (d.action === "merge" && d.move_of_event && !(draft[d.move_of_event] || {}).action) problems.push(d.event_id + ": the candidate it merges into has no decision yet");
+      if (d.action === "merge" && d.move_of_event && (draft[d.move_of_event] || {}).action && draft[d.move_of_event].action !== "new_move") problems.push(d.event_id + ": the candidate it merges into does not form a new move");
+      if (d.action === "duplicate" && !d.duplicate_of) problems.push(d.event_id + ": name the event it duplicates");
+      if (d.action === "new_move" && d.new_move.dyads.some(function (x) { return !/^[RCPVMBIAU]{1,2}$/.test(x); })) problems.push(d.event_id + ": dyads are one or two of the letters R C P V M B I A U");
+      if (d.action === "new_move" && d.new_move.year && !/^\d{4}$/.test(d.new_move.year)) problems.push(d.event_id + ": year must be four digits");
+      if (d.action === "new_move") {
+        if (!d.new_move.type) problems.push(d.event_id + ": a new move needs a type");
+        if (!d.new_move.intensification_criterion) problems.push(d.event_id + ": a new move needs its intensification criterion");
+      }
+    });
+    return problems;
+  }
+  document.getElementById("export").addEventListener("click", function () {
+    var decisions = [];
+    cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    var problems = validate(decisions);
+    if (!decisions.length) { alert("No decisions yet."); return; }
+    if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
+    var out = { run_id: CTX.run_id, reviewer: reviewer.value.trim(), exported: new Date().toISOString().slice(0, 10), decisions: decisions };
+    var blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "decisions-" + CTX.run_id + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  document.getElementById("clear").addEventListener("click", function () {
+    if (!confirm("Discard the saved draft for this page?")) return;
+    draft = {}; try { localStorage.removeItem(KEY); } catch (e) {} location.reload();
+  });
+  progress();
+})();
+</script>
+</body>
+</html>
