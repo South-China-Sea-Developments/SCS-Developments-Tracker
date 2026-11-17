@@ -13,7 +13,7 @@ Base `appK9OckCTV15vQwx`, interface "Review queue" `pbdWq70PPQffUrIye`
 | Table | id | TPD Updates equivalent | What it holds |
 |---|---|---|---|
 | `Candidates` | `tbl1jZACWLq6FXPOq` | Timeline / Working | One record per candidate event of a review pull request: the review page's context, the coder's decision columns, and (ticket 20) `flags`, `dataset_status`, `run`, `added_on`, `decided_on`. `pipeline/airtable.py` owns its schema. |
-| `Runs` | `tblLK3YqY7mDL2QqW` | Run Log | One row per harvest or backfill run: date, type (Weekly harvest / Backfill / Manual / Catch-up), scope, verdict, documents, candidates, possible duplicates, failures, excerpts verified / unchecked / not found, review PR, extractor, unreachable sources, what to look at. `to_decide`, `decided` and `progress` are counted from the linked candidates. |
+| `Runs` | `tblLK3YqY7mDL2QqW` | Run Log | One row per harvest or backfill run: date, type (Weekly harvest / Backfill / Manual / Catch-up), scope, verdict, documents, candidates, possible duplicates, failures, excerpts verified / unchecked / not found, review PR, extractor, unreachable sources, what to look at. `to_decide`, `decided` and `progress` are counted from the linked candidates; `archived_on` and `archive` (ticket 22) say when the run's reviewed rows left the base and where their record is. |
 | `Sources` | `tblRxHeawvsBiAUfC` | Sources | A read-only mirror of `pipeline/sources.json`: feeds and lists the weekly harvest reads, archives the backfill agents are pointed to; access, status, reachability, how to use, quirks. Edit the file, not the table. |
 | `Sidelines` | `tblUs0ZmP4x8ShWKZ` | Informal | Things seen while harvesting that do not merit a candidate (remarks, routine repeats, acts by non-claimants, cooperative steps). Tick `promote` to have the next import draft a candidate from the row. |
 | `Notes` | `tblis1hiTU3E4hwPx` | Narratives | Free text across candidates: themes, precedents, cross-references to moves in the dataset, questions for Andrew Chubb; linked to candidates. |
@@ -81,6 +81,28 @@ python -m pipeline.airtable records --run <run_id> --pr N --run-record <recXXXXX
    then `python -m pipeline.queue decide decisions.json` on the run's branch.
 
 Both directions are idempotent by `event_id`. `docs/backfill.md` has the whole chunk routine.
+
+## After review: archive and clear (ticket 22, ADR 0005)
+
+An Airtable row is transient: it leaves the base once its decision is applied to the files, and what the
+coder typed is filed in the repository first, so the free plan's cap of 1,000 records per base stops
+mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
+
+1. **Export** the run's rows: `list_records_for_table` on `Candidates` filtered on the run (`{Run ID} = '<run_id>'`),
+   all fields, saved as JSON (`{"records": [...]}` or a bare list; labels, field ids or internal names all work).
+2. **Archive:** `python -m pipeline.airtable archive --run <run_id> --from export.json` writes
+   `harvest/airtable/<run_id>/records.json` (every exported row, merged by event id with earlier sittings),
+   `decisions.json` (the decided rows, in the shape `queue decide` reads) and `clear.json` (their Airtable ids).
+3. **Apply:** `python -m pipeline.queue decide harvest/airtable/<run_id>/decisions.json`; commit the three
+   archive files with the decisions on the run's branch; the review pull request carries both.
+4. **Clear:** `delete_records_for_table` on `Candidates` with the `record_ids` of `clear.json`, in batches of ten,
+   only after the decisions are committed and pushed. Then set `archived_on` (today) and `archive`
+   (`https://github.com/<org>/<repo>/tree/main/harvest/airtable/<run_id>`) on the run's `Runs` row
+   (fields `Archived on` `fldQhcqhMo8wh3vRE`, `Archive` `fldTQRu3M4aA8fT5W`).
+5. A run reviewed in several sittings repeats 1–4; `records.json` accumulates, `decisions.json` and `clear.json`
+   describe the latest sitting only.
+
+With a token, `clear --run <run_id>` deletes a whole run's rows but archives nothing: run `archive` first.
 
 ## Not done
 

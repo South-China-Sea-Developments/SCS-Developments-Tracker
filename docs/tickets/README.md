@@ -25,3 +25,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 19 | [The full backfill](19-full-backfill.md) | 12 | in progress |
 | 20 | [The Airtable workbench](20-airtable-workbench.md) | 13 | built |
 | 21 | [The face of the base](21-base-face.md) | 20 | built |
+| 22 | [The review archive](22-review-archive.md) | 20, 21 | built |

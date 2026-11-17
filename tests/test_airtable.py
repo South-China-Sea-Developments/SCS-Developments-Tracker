@@ -412,3 +412,76 @@ def test_records_send_lists_for_the_multi_selects(tmp_path):
     typed = next(r for r in recs if r.get("suggested_domains"))
     assert isinstance(typed["suggested_domains"], list) and typed["new_domains"] == typed["suggested_domains"]
     assert all(isinstance(r.get("suggested_dyads", []), list) for r in recs)
+
+
+# ---------------------------------------------------------------------------
+# ticket 22: the review archive — reviewed rows leave Airtable, the record stays in the repository
+
+def _exported(run_id: str, rows: list[dict]) -> list[dict]:
+    """What the connector's list_records_for_table hands back: records keyed by the base's labels."""
+    out = []
+    for i, r in enumerate(rows, 1):
+        fields = {airtable.LABELS.get(k, k): v for k, v in r.items()}
+        fields[airtable.LABELS["run_id"]] = run_id
+        out.append({"id": f"rec{i:05d}", "fields": fields})
+    return out
+
+
+def test_archive_keeps_every_exported_row_and_names_only_the_decided_ones_for_deletion(tmp_path):
+    rows = [
+        {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "not an act", "reviewer": "Angelo",
+         "priority": 2, "selected": True},
+        {"event_id": "E2", "claimant": "MY", "summary": "b", "decision": "undecided"},
+        {"event_id": "E3", "claimant": "MY", "summary": "c"},                     # never touched: no decision field at all
+        {"event_id": "E4", "claimant": "ID", "summary": "other run"},
+    ]
+    exported = _exported("MY-1970s", rows[:3]) + _exported("ID-1970s", rows[3:])
+    out = tmp_path / "harvest" / "airtable" / "MY-1970s"
+    res = airtable.archive_run(exported, "MY-1970s", out, today="2026-11-17")
+    archive = json.loads((out / "records.json").read_text(encoding="utf-8"))
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
+    # every row of the run is kept, with its Airtable id and the coder's own columns, under the code's names
+    assert [r["event_id"] for r in archive["records"]] == ["E1", "E2", "E3"]
+    e1 = archive["records"][0]
+    assert e1["airtable_id"] == "rec00001" and e1["priority"] == 2 and e1["selected"] is True and e1["decision"] == "reject"
+    assert archive["run_id"] == "MY-1970s" and archive["exported_on"] == "2026-11-17"
+    assert "E4" not in json.dumps(archive)                                       # the other run's row is not ours
+    # the decisions file is the one queue decide reads, decided rows only
+    assert decisions == {"reviewer": "Angelo", "decisions": [{"event_id": "E1", "action": "reject", "note": "not an act"}]}
+    # and only the decided rows are listed for deletion; undecided rows stay in the base
+    assert clear == {"run_id": "MY-1970s", "table": "Candidates", "record_ids": ["rec00001"], "event_ids": ["E1"]}
+    assert res == {"kept": 3, "decided": 1, "to_clear": 1}
+
+
+def test_archive_merges_a_later_export_by_event_id_so_partial_reviews_accumulate(tmp_path):
+    out = tmp_path / "MY-1970s"
+    first = _exported("MY-1970s", [{"event_id": "E1", "summary": "a", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2", "summary": "b"}])
+    airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
+    # E1 has since been cleared from the base; E2 is now decided and re-exported alone
+    second = _exported("MY-1970s", [{"event_id": "E2", "summary": "b", "decision": "new_move", "new_type": "declarative",
+                                     "new_criterion": "novelty", "new_year": "1979", "reviewer": "A"}])
+    second[0]["id"] = "rec00002"
+    res = airtable.archive_run(second, "MY-1970s", out, today="2026-11-18")
+    archive = json.loads((out / "records.json").read_text(encoding="utf-8"))
+    assert [(r["event_id"], r.get("decision")) for r in archive["records"]] == [("E1", "reject"), ("E2", "new_move")]
+    assert archive["exported_on"] == "2026-11-18" and archive["records"][0]["archived_on"] == "2026-11-17"
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # this export's decisions only
+    assert json.loads((out / "clear.json").read_text(encoding="utf-8"))["record_ids"] == ["rec00002"]
+    assert res == {"kept": 2, "decided": 1, "to_clear": 1}
+
+
+def test_archive_command_runs_offline_and_its_decisions_apply(tmp_path, monkeypatch):
+    monkeypatch.delenv("AIRTABLE_TOKEN", raising=False)
+    d = opened_copy(tmp_path, "archive")
+    cands = candidates(d)
+    eid = next(iter(cands.values()))["event_id"]
+    export = tmp_path / "export.json"
+    export.write_text(json.dumps({"records": _exported("fixture", [{"event_id": eid, "decision": "reject", "note": "fixture", "reviewer": "A"}])}), encoding="utf-8")
+    out = tmp_path / "harvest" / "airtable" / "fixture"
+    assert airtable.main(["archive", "--run", "fixture", "--from", str(export), "--out-dir", str(out)]) == 0
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    counts = queue.apply_decisions(decisions["decisions"], decisions["reviewer"], "2026-11-17", d)
+    assert counts["rejected"] == 1
