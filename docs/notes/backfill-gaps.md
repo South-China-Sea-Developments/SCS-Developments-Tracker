@@ -864,6 +864,8 @@ CNA/udndata archives should fill 1996–99.
 - **1998 — Interior Minister Huang Chu-wen visits; ROC reactions to the PRC EEZ Law (Jun 1998) and Mischief Reef II
   (Nov 1998)** ◆ none found. **1999 — ROC positions on the Philippine–PRC Scarborough incidents** ◆ none found.
 - **Oct 1999 — Pratas press tour** ▲ excerpt read only through a web fetch (Taipei Times blocks scripts).
+- **May 1999 — Dongsha house-number entry** ▲ the set names the Kaohsiung mayor as Wu Den-yih; the CGA Dongsha PDF
+  names Frank Hsieh (謝長廷), mayor at the time — correct at review.
 - **18–20 Nov 1999 — Tang Fei announces the marines' withdrawal from the Pratas and Spratlys in favour of the Coast
   Guard** ○ de-militarisation, carried out in 2000 (next chunk) (China Times 19 Nov 1999; Taipei Times 28 Nov 1999).
 - **1990s — CPC exploration** ◆ none found.
@@ -874,7 +876,50 @@ CNA/udndata archives should fill 1996–99.
   East and Australasia (lending only); Lin 1997, Hsiao & Lin 2016 (paywalled). Not attempted: Trove, Papers Past,
   Keesing's, the Executive Yuan / Presidential Office / Legislative Yuan gazettes.
 
-### 2000s, 2010–2015 — not yet compiled
+### 2000s (#82)
+Source finds: the MOFA Chinese press-release archive (`mofa.gov.tw/News_Content.aspx?n=96&s=…`) goes back to
+1985, curls, and gave five primary statements with checkable excerpts (3 Jan 2006, 20 Nov 2007, 13 Aug 2008,
+6 and 13 Mar 2009) — worth a pass over the 1990s gaps too; the MOFA English archive starts only in 2012 and the
+Chinese 聲明 section has nothing for 2004–2014. The 2005 Taipei cable on Pratas (05TAIPEI2655, mirror at
+wikileaks.jcvignoli.com), Control Yuan report 38766 (day dates for 2000s visits), Presidential Office Gazette
+6822, and the Taipei Times mirror at taiwantt.org.tw (curls; Big5) also worked. Taipei Times itself 403s to
+scripts, so its excerpts came through WebFetch at ≤125 characters — confirm them. 2001, 2002 and 2006 are thin.
+- **19–20 Mar 2000 — ~1,000 PRC fishing boats converge on Pratas; the military only monitors** ○ no assertive act
+  (CNA via GlobalSecurity e-03-20-00-16).
+- **1 Feb 2000 vs "by 2002" — Pratas handover to the Coast Guard** ▲ CGA date vs the cable's completed turnover.
+- **2000–2009 — routine Coast Guard expulsions of PRC and Vietnamese boats near Pratas and Taiping** ◆ no yearly
+  counts or dated cases (Control Yuan 38753 gives only the rules; CGA news archive ctNode=10545, Liberty Times and
+  UDN not reached). **碧海專案 patrol/supply missions and regular Navy patrols** ◆ undated (CGA Taiping PDF).
+- **Nov 2002 — MOFA response to the DOC and Taiwan's exclusion** ◆ none found.
+- **2003 — MOI proposal to upgrade Pratas's port** ◆ year only (cable). **20 Oct 2003 — seventh SCS task-force
+  meeting (marine protected area urged)** ○ internal (CGA spratly_islands.pdf).
+- **Nov 2004 — Pratas service-station upgrade and planned marine park** ◆ no dated act (Taipei Times 2004/11/08).
+- **Nov 2004 / mid-Dec 2005 / mid-2006 — Taiping airstrip construction start; 12 Dec 2007 (Control Yuan, used) /
+  17 Dec 2007 (MND journal) / late Jan 2008 (Taipei Times) — completion** ▲ medium confidence.
+- **2005 — Kaohsiung City declares fishing prohibited at Dongsha** ◆ mentioned in Chen's 28 Jul 2005 speech
+  (president.gov.tw NEWS/2009); no date.
+- **27 May 2005 — boarding threat to a PRC research ship** ▲ cable places it off Pratas, CNA off the south-west
+  coast — may be outside the SCS. **Jun 2005 — NSC Pratas policy review** ○ internal.
+- **15 Dec 2005 — SCS Policy Guidelines suspended** ○ not assertive. **5 Jan 2006 — Deputy Minister Tsai admits
+  strategic motives for the airstrip** ○ folded into the airstrip events. **Jul 2006 — airstrip work halted** ○.
+- **17 vs 19 Jan 2007 — Dongsha Atoll National Park** ▲ Control Yuan gives both; 17 used. **4 Oct 2007 — Marine
+  National Park HQ** ▲ folded into it.
+- **Dec 2007 / Jan 2008 — MOFA replies to Vietnam's second airstrip protest** ▲ not found; only the 20 Nov 2007 reply
+  is in the set.
+- **4 Feb 2008 — willingness to talk on the Spratly Initiative** ○ conciliatory. **5 May 2008 — Defence Minister's
+  Taiping visit cancelled** ○.
+- **May 2009 — Paracel sovereignty reiterated after Vietnam's local government for the Paracels (Hung NPF 6121)** ▲
+  may equal the 9 May 2009 statement in the set; date unverified. **12 May 2009 — continental-shelf outer-limits
+  statement** ▲ in the set from the Control Yuan PDF only; MOFA text not online.
+- **19–20 Aug 2009 — MOI international SCS conference** ○ academic.
+- **2000s — EEZ enforcement against Philippine boats in the Bashi Channel** ○ none found; outside the SCS.
+- **Not machine-checkable** — ~12 events rest on PDFs (Control Yuan, CGA, PCA, MND journal).
+- **Unreachable** — Taipei Times (403; WebFetch only); Wayback Machine (reset); GlobalSecurity (402); Jamestown
+  (403 to curl); MOFA English archive before 2012; Presidential Office English news (≈1,780 of 3,200 ids
+  throttled); National Land Management Agency annals PDFs. Not searched: Executive Yuan Gazette, Legislative
+  Yuan gazette, national defence reports.
+
+### 2010–2015 — not yet compiled
 
 ### 2016–2020 (#48)
 - **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
