@@ -812,7 +812,69 @@ China Review index lists "On Guard in the South China Sea", Nov 1987, pp. 56–5
   used); NCCU repository (intermittent); Google Books (quota); Keesing's 1980s, Asian Survey "Taiwan in 198x",
   Lin Cheng-yi 1997, Chang Pao-min 1990 (paywalled); udndata; NTHU "Discovering the South China Sea" (dead).
 
-### 1990s–2015 — not yet compiled
+### 1990s (#80)
+Source finds: the Control Yuan investigation report (cybsbox.cy.gov.tw/…/download/38766) has a dated chronology
+and a table of ministerial visits for 1990–99 — the best open Taiwanese chronology of the decade (its PDF renders
+平 as 帄); Dzurek 1996 (IBRU Maritime Briefing 2(1), text PDF) gives most 1990–96 items; FBIS East Asia on the
+Internet Archive carries the Vietnamese and Philippine reactions; FBIS China 1990–May 1996 is not on the Archive.
+Coverage is good for 1990–95, thin for 1996–99, and 1997 is empty — a second pass through the Executive Yuan,
+Presidential Office and Legislative Yuan gazettes, Trove, Papers Past and Keesing's (none attempted) and the
+CNA/udndata archives should fill 1996–99.
+- **1990 — Pratas incorporation step** ◆ none found (the Pratas went under Kaohsiung in 1979 per Hung).
+- **Jan 1991 — ministry-hosted conference; a retired admiral's hawkish remark** ▲ marginal.
+- **Jul 1991 — "Taiwan restated its sovereignty claim" (Dzurek citing McDorman 1993)** ▲ folded into the 18 Jul
+  1991 Bandung event; speaker and quotation from Dzurek.
+- **Feb–Mar 1992 — ROC reaction to the PRC Territorial Sea Law (25 Feb 1992)** ◆ none found.
+- **Mar 1992 — Philippine coast guard arrests five Taiwanese fishermen (FBIS EAS 27 Mar 1992)** ◆ no ROC protest
+  found — true of Philippine seizures for the whole decade, so there is no yearly fisheries-protest entry.
+- **May 1992 — reports that Taiwan was fortifying Itu Aba (FBIS EAS 4 Jun 1992)** ▲ mentioned in the May 1992
+  draft-law event, not separate.
+- **12 Jun vs 5 Aug 1992 — South China Sea Task Force** ▲ Annex 910 vs Control Yuan (used); Dzurek also has a Nov
+  1992 announcement. **19 vs 30 May 1992 — Dongsha monument corridor** ▲ Hung vs Control Yuan (used).
+- **14 Oct 1992 patrol-rights statement; 1993 airstrip plan; Feb 1994 airport/port/lighthouse plan; late Mar 1995
+  construction on Zhongzhou (Ban Than) Reef** ▲ in the set, but known only from Vietnamese or Philippine reactions.
+- **10 Mar vs 13 Apr 1993 — South China Sea Policy Guidelines** ▲ Sun (cabinet draft) vs Control Yuan (formal
+  approval, used); the full text on cga.gov.tw (f1259488571867.pdf) uses an unextractable font.
+- **6–7 Sep 1993 — government SCS conference** ▲ Control Yuan; Annex 900 says 1994, contradicting its own Apr 1994
+  survey.
+- **1993–2005 — the Task Force's seven meetings and the commissioned studies of 1994, 1996, 1997, 1998** ○ undated
+  or academic (Control Yuan).
+- **28–29 Jun 1994 — cross-strait and overseas-Chinese SCS seminar** ○ conference; the minister's historic-waters
+  remark from that month is compiled.
+- **26–28 Oct 1994 — at the Bukittinggi workshop Taiwan objects to discussing only the Spratlys and Paracels** ◆
+  procedural stance (Dzurek citing Reuters 27 Oct 1994).
+- **1994 vs 6 Apr 1995 — recovery mural** ▲ commissioned 1994 (CGA), accepted on Taiping 6 Apr 1995 (used).
+- **Feb–May 1995 — ROC statement on Mischief Reef** ◆ none found (FBIS China 1995 not on the Archive; CNA or udndata
+  the likely source).
+- **25 Mar 1995 — artillery fire at the Vietnamese ship Bien Dong 80** ▲ the decade's one coercive event; a 2016 ROC
+  Navy journal article records MOFA calling it warning fire.
+- **c. 10 Apr 1995 — Defence Minister: no more forces to the Spratlys** ○ de-escalatory (Dzurek, Reuters).
+- **May–Jun 1995 — ROC statement rejecting exclusion from the Spratly talks** ◆ none found (FBIS EAS 30 May 1995:
+  "Spratlys Talks To Exclude Taiwan, SRV").
+- **12 and 17 Jul 1995 — PRC patrols board Taiwanese fishing boats in the Spratlys** ○ PRC act; no ROC response found.
+- **Sep and 5 Oct 1995 — Taipei praises the Philippines–PRC code of conduct; Jakarta meeting agrees navigation
+  cooperation** ○ cooperative.
+- **Oct 1995 — Sun's "The ROC Tightens Its Grip on the Spratlys" (Honolulu newsletter)** ◆ not found. **1995 — Pratas
+  and Taiping expansion and the Legislative Yuan debates** ◆ not found (Legislative Yuan Gazette, udndata).
+- **Jan 1996 — Itu Aba airstrip plan postponed (CNA 16 Jan 1996)** ○ not assertive.
+- **15–17 May 1996 — Taiwan objects to the PRC's baselines and EEZ declaration (Dzurek n. 280, Reuters)** ◆ SCS
+  content unclear; may concern the "Taiwan" wording.
+- **18 Jun 1996 — unnamed Manila-office official: Taiwan "may" extend its maritime claims** ▲ marginal.
+- **1997 — nothing found** ◆ ROC position on the Apr–May 1997 Philippine actions at Scarborough unverified.
+- **1998 — Interior Minister Huang Chu-wen visits; ROC reactions to the PRC EEZ Law (Jun 1998) and Mischief Reef II
+  (Nov 1998)** ◆ none found. **1999 — ROC positions on the Philippine–PRC Scarborough incidents** ◆ none found.
+- **Oct 1999 — Pratas press tour** ▲ excerpt read only through a web fetch (Taipei Times blocks scripts).
+- **18–20 Nov 1999 — Tang Fei announces the marines' withdrawal from the Pratas and Spratlys in favour of the Coast
+  Guard** ○ de-militarisation, carried out in 2000 (next chunk) (China Times 19 Nov 1999; Taipei Times 28 Nov 1999).
+- **1990s — CPC exploration** ◆ none found.
+- **Not machine-checkable** — most first sources are PDFs (Control Yuan, Dzurek, Sun OCR, PCA annexes, ICAS
+  baselines text, CGA PDFs). Dyads: RA for Spratly-wide acts, RC for Pratas-only acts.
+- **Unreachable** — NewspaperSG (bot challenge); Taipei Times (403 to scripts); NCCU irtest repository; IBRU
+  Boundary & Security Bulletin PDFs on dur.ac.uk (403/404); FBIS China 1990–May 1996 (not on the Archive); Far
+  East and Australasia (lending only); Lin 1997, Hsiao & Lin 2016 (paywalled). Not attempted: Trove, Papers Past,
+  Keesing's, the Executive Yuan / Presidential Office / Legislative Yuan gazettes.
+
+### 2000s, 2010–2015 — not yet compiled
 
 ### 2016–2020 (#48)
 - **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
