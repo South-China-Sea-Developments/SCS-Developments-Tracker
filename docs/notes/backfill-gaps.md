@@ -56,8 +56,63 @@ deserve a closer read in review.
 - **UN notes verbales CML/14/2019, CML/11/2020, CML/42/2020** ▲ scanned PDFs; excerpts transcribed from
   the image, unverifiable (CML/63/2020 is text).
 
-### 2021–Oct 2026 — not yet compiled
-Only stray weekly-harvest candidates (#24, #31, #37, #46).
+### 2021–Oct 2026 (#88)
+Compiled by two agents (2021–23 and 2024–Oct 2026) and merged; four possible duplicates flagged against the
+weekly-harvest candidates (#24, #31, #37, #46). Sources that replaced the blocked ones: the Chinese MFA South
+China Sea portal (fmprc.gov.cn/nanhai/eng, spokesperson transcripts from Aug 2021), China Daily's SCS portal,
+AMTI, RFA/BenarNews, Philstar, GMA, Daily Tribune, Al Jazeera, Asia News Network, en.baochinhphu.vn, and Reuters
+copies in Kontan, The Star and The Kathmandu Post. Routine CCG presence is one year-level event each (AMTI 2024,
+2025, Pratas 2025; Jan–Jun 2026 Scarborough); the fishing ban one event per year. The weak spot is coverage of
+Chinese acts against Vietnam, Malaysia and Indonesia in 2025–26 — Malaysia and Indonesia appear only through the
+AMTI 2025 summary and not at all for 2026; Vietnamese MOFA, Hanoi Times, MMEA and Bakamla are the places to look.
+- **Apr 2021 — Shandong carrier group trains in the SCS (Xinhua 2 May 2021: "recently")** ◆ no usable date.
+- **8 Apr 2021 TV-crew chase; 16 Sep 2021 Y-20 flights; 28 Mar 2022 Wang Wenbin on Scarborough** ▲ days counted back
+  from weekdays.
+- **Jun–Dec 2021 — militia remain at Union Banks after Whitsun** ○ routine presence (AMTI).
+- **Jul–Nov 2021 — Tuna-block CCG patrol** ▲ end date is AMTI's publication date. **Jul–Nov 2021 — letter telling
+  Indonesia to stop drilling; protest at Garuda Shield** ◆ no month (Reuters 1 Dec 2021 via Kontan).
+- **12 Jul 2021, 13 Jul 2022 — PLA statements on USS Benfold near the Paracels** ▲ included as territorial-waters
+  assertions (CV/CA); a coder may drop statements aimed at the US.
+- **2021 — drones and activity near Pratas** ◆ not searched here; the Taiwan 2021–26 set documents the responses.
+- **29 Jan–1 Feb 2022 — PLAN 792 in the Sulu Sea** ○ outside the SCS (BenarNews 14 Mar 2022).
+- **1–2 Jun 2022 — MFA rejects the Philippine protest at the fishing ban** ◆ not compiled (Philstar 2 Jun 2022).
+- **Jul 2022 — Paracel drills** ▲ month only, from Vietnam's 21 Jul protest; navigation warnings not found. **Aug 2022
+  — obstruction of the Teresa Magbanua resupply** ▲ month from a Feb 2023 PCG statement. **9–11 Aug 2022 — PLA live
+  fire under a Guangdong MSA warning** ○ location may not be disputed.
+- **Oct–Dec 2022 — reported reclamation at Eldad, Lankiam, Whitsun, Sandy Cay** ◆ no verified date; China denied it
+  (Bloomberg 20 Dec, Philstar 21 Dec 2022). **2022 — Luconia Shoals patrols** ◆ no dated incident.
+- **20 Nov 2022 rocket-debris seizure; 22 Oct and 10 Dec 2023 rammings** ▲ typed coercive; could be force.
+- **Dec 2022–Jan 2023 — CCG 5901 at Natuna; May–Jun 2023 — Xiang Yang Hong 10; Jul–Aug 2023 — Triton airstrip** ▲
+  ranges from imagery or report dates; end dates approximate.
+- **Mar 2023 — militia swarming at the Pag-asa sandbars** ◆ not searched. **Apr 2023 — China raises Petronas activity
+  with Anwar** ◆ Malaysian Hansard 4 Apr 2023 only. **2023 — Paracel drills, harassment of Vietnamese fishermen,
+  Sabina and Iroquois incidents** ◆ not searched.
+- **1 May 2023 — fishing ban** ▲ documented through Vietnam's protest; Chinese notice not opened. **10 Nov 2023 — MFA
+  rejects the G7's endorsement of the award** ○ aimed at non-claimants. **Dec 2023 — Whitsun massing** ▲ month
+  precision; Philippine count and first sighting not opened.
+- **18 Feb 2024 — note to Malaysia** ▲ RFA/Inquirer date vs MalaysiaNow's "last week" (late Aug 2024).
+- **Mar–Apr 2024 and later — PLA "combat readiness patrols" answering Philippine joint sails** ◆ collapsed into the
+  13 Nov 2024 and Oct 2025 events (Global Times, China Military). **May 2024 — CCG shadowing of the Atin Ito
+  convoy** ◆ not searched.
+- **17 Jun 2024 boarding; 29 Sep 2024 beating of Vietnamese fishermen; 20 Jul 2026 baton assault** ▲ typed force;
+  each could be coercive. **Jul 2024 — provisional arrangement on Second Thomas** ○ cooperative.
+- **31 Aug 2024 — ramming ship 5202 (Tribune) vs 5205 (summary)** ▲ confirm the hull number.
+- **Nov–Dec 2024 — Huangyan Dao baselines deposited with the UN** ◆ deposit date unknown (GMA 928917, 3 Dec 2024;
+  DOALOS records).
+- **Feb and Dec 2025 — PLA "expels" Philippine aircraft over Huangyan Dao; May 2025 — PLA blocks a Philippine
+  corvette** ◆ not compiled (Global Times 1328661, 1350402, 1333576). **Apr 2025 — Sandy Cay flag landing** ▲ typed
+  demonstrative (seizure denied by Manila and Washington).
+- **Aug 2025 — two Chinese research ships at Bajo de Masinloc (GMA 956531)** ◆ not opened. **Aug 2026 — China
+  confirms deaths in the Aug 2025 CCG–PLAN collision** ○ not assertive.
+- **Oct 2025 — Antelope Reef dredging** ▲ month precision (AMTI, Defense News).
+- **Feb 2026 — jamming patrol** ▲ dated to the month of the 23 Feb report. **Apr–May 2026 — 40+ militia around the
+  Kalayaan group during Balikatan (GMA 986761)** ◆ only the 6 May research-ship event compiled.
+- **Jun 2026 — CCG/MSA operations east of Taiwan against the Japan–Philippines talks** ○ outside the SCS.
+- **Unreachable** — Reuters (allowlist; copies used), AP, ABS-CBN, dfa.gov.ph, pcg.gov.ph, npc.gov.cn, ccg.gov.cn,
+  mod.gov.cn (403/none); hanoitimes.vn (401); mofa.gov.vn, malaymail, rappler, USNI News, theprint.in,
+  globalnation.inquirer, vietnamnews.vn (empty); Manila Bulletin, some AP/Inquirer pages (Cloudflare); pna.gov.ph
+  (JavaScript only).
+- **Airtable** — not mirrored: the base reached the free-tier record cap; batch files kept for a later push.
 
 ---
 
