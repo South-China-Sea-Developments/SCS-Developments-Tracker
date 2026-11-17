@@ -1,0 +1,411 @@
+[
+ {
+  "claimant": "TW",
+  "date_start": "1980-09-25",
+  "date_end": "1980-09-25",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Tizard Bank, Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "In September 1980 eight civilian researchers of the Taiwan Provincial Fisheries Research Institute went to Taiping Island to conduct research, and on 25 September they officially registered their domiciles (household registration) on the island, the first civilian residents recorded there; the Institute's ship surveyed the waters around Tizard Bank as a fishing ground.",
+  "actors": "Taiwan Provincial Fisheries Research Institute; ROC household-registration authorities (Kaohsiung)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Registering civilian residents on a held feature and sending a state research ship to survey its waters are unilateral administration without confrontation; demonstrative, and new in kind (first civilian domiciles on Taiping, which the MOFA cites as evidence of habitation). The MOFA source is a PDF, so the excerpt cannot be machine-checked; the second source (Smith 1994, Internet Archive text) dates the survey to September 1980 and judges the area uneconomical for Taiwan's fishing.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf",
+    "title": "Position Paper on ROC South China Sea Policy",
+    "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+    "pub_date": "2016-03-21",
+    "language": "en",
+    "excerpt": "officially registering their domiciles there September 25"
+   },
+   {
+    "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt",
+    "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix",
+    "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)",
+    "pub_date": "1994-03-01",
+    "language": "en",
+    "excerpt": "Ship from Taiwan Fisheries Research Institute studies area around Tizard Bank in Spratlys as fishing ground"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1980-11-16",
+  "date_end": "1980-11-16",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Nansha Region",
+  "subregion": "5",
+  "summary": "The first Townhall Meeting (citizens' assembly) for residents of the Nansha Region was held on Taiping Island on 16 November 1980, following the registration of civilian domiciles there in September.",
+  "actors": "ROC local administration for the Nansha Region; civilian residents of Taiping Island (Fisheries Research Institute staff)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Holding a local civic assembly for registered residents of a disputed feature is a unilateral act of civil administration; demonstrative, low salience, and a coder may fold it into the 25 September domicile event. The source is a PDF, so the excerpt cannot be machine-checked; no second source was found.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf",
+    "title": "Position Paper on ROC South China Sea Policy",
+    "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+    "pub_date": "2016-03-21",
+    "language": "en",
+    "excerpt": "holding the first Townhall Meeting for citizens in the Nansha Region November 16"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1981-01-01",
+  "date_end": "1981-12-31",
+  "date_precision": "year",
+  "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "The state-owned Chinese Petroleum Corporation (CPC) sent a team to Taiping Island and drilled a geological exploration well to a depth of 523 metres; it encountered only coral-reef strata and did not establish the presence of oil or gas.",
+  "actors": "Chinese Petroleum Corporation (CPC, state-owned)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Exploratory drilling by a state company on a disputed feature is unilateral resource activity; demonstrative, and new in kind for Taiwan (no earlier ROC hydrocarbon drilling in the Spratlys is recorded). The source, a 2019 ministerial report to the Legislative Yuan reported by CNA, gives only ROC year 70 (1981); Chinese Wikipedia dates the team to June 1981 citing a 2013 CNA story that is no longer online, so the month is unverified.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cna.com.tw/news/afe/201910020065.aspx",
+    "title": "太平島2次探勘油氣 沈榮津：若有開發商會搶著來",
+    "publisher": "Central News Agency (中央社)",
+    "pub_date": "2019-10-02",
+    "language": "zh-TW",
+    "excerpt": "中油曾在民國70年到太平島鑽一口地質探勘井"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1987-01-01",
+  "date_end": "1987-12-31",
+  "date_precision": "year",
+  "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "In 1987 the 'Taiping Regional Fishermen Service Station' on Taiping Island expanded the services it offered to fishermen operating in the area.",
+  "actors": "ROC government (fishermen service station on Taiping Island; garrison)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Providing state services to fishermen from a held feature is unilateral administration supporting the claimant's fishing presence; demonstrative, low salience. The Coast Guard's 'Historical Background' gives only the year; the source is the English translation filed as Annex 910 in a PCA PDF, so the excerpt cannot be machine-checked. Wikipedia (citing a National Tsing Hua University page, unreachable) dates a 'Pratas Fishermen's Service Station' to 1987 as well; the two may be confused or parallel.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Executive Yuan Directorate of the Coast Guard, 'Historical Background' (Taiping Island), English translation, Annex 910 to the Philippines' Written Responses on Itu Aba (25 April 2016)",
+    "publisher": "Permanent Court of Arbitration (Philippines v. China)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "In 1987, the “Taipeng Regional Fisherman Service Station” expanded various kinds of services to the local fishermen."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1988-02-01",
+  "date_end": "1988-02-29",
+  "date_precision": "month",
+  "location_name": "Spratly (Nansha) Islands",
+  "subregion": "",
+  "summary": "The ROC Minister of National Defense publicly refuted Malaysia's claims in the Spratly Islands, after Malaysia's Deputy Foreign Minister had declared that the islands and atolls within Malaysia's continental shelf were under Malaysian sovereignty.",
+  "actors": "ROC Ministry of National Defense (Minister of National Defense)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RM"
+  ],
+  "reasoning": "A minister's public rejection of a rival claim is a verbal assertion; declarative, and the first ROC statement aimed at Malaysia found for the decade. Known only from a one-line entry in Smith's 1994 chronology (no date within the month, no text); the Malaysian statement it answered was reported by the New Straits Times on 25 February 1988 (Dzurek 1996), so the refutation probably fell in the last days of February.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt",
+    "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix",
+    "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)",
+    "pub_date": "1994-03-01",
+    "language": "en",
+    "excerpt": "February 1988 - ROC Minister of National Defense refutes"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1988-03-01",
+  "date_end": "1988-03-31",
+  "date_precision": "month",
+  "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "In the days after the 14 March 1988 China-Vietnam clash at Johnson South Reef, the ROC Navy carried out an emergency resupply mission to its garrison on Itu Aba (Smith dates it to 17 March; Hurwitt to mid-March).",
+  "actors": "ROC Navy; Itu Aba (Taiping) garrison",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RC"
+  ],
+  "reasoning": "An out-of-schedule naval resupply of a garrisoned feature during a crisis is a show of presence without confrontation; demonstrative, and more than the routine quarterly runs because it was an emergency mission. The day is uncertain (Smith's 17 March entry bundles several events), so month precision. Vietnam and China were the parties to the clash; no ROC action toward either is recorded. Reports that Taiwan let PRC ships shelter or resupply at Taiping were not found in any source opened.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt",
+    "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix",
+    "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)",
+    "pub_date": "1994-03-01",
+    "language": "en",
+    "excerpt": "ROC conducts emergency supply mission to its garrison on Itu Aba Island"
+   },
+   {
+    "url": "https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt",
+    "title": "U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)",
+    "publisher": "Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive)",
+    "pub_date": "1993-06-04",
+    "language": "en",
+    "excerpt": "The Taiwanese Navy conducted an emergency resupply of the Itu Aba forces in mid-March"
+   },
+   {
+    "url": "https://archive.org/download/volume-vi-supplemental-written-submission-of-the-philippines-16-mar-2015/The%20Philippines%27%20Supplemental%20Written%20Submission%20-%20Volume%20V%20%28Annexes%20443-465%29_djvu.txt",
+    "title": "D. J. Dzurek, 'The Spratly Islands Dispute: Who's on First?', IBRU Maritime Briefing 2(1) (1996), Annex 445 to the Philippines' Supplemental Written Submission, Vol. V",
+    "publisher": "IBRU, Durham University (via PCA filing, Internet Archive)",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "Taiwan reacted, in March, by reasserting its sovereignty and resupplying its garrison on Itu Aba."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1988-03-01",
+  "date_end": "1988-03-31",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "After the Johnson South Reef clash, Taiwan reasserted its sovereignty over the Spratlys, and the defence leadership told the Legislative Yuan that Taiwan would fight to the last man to defend Taiping Island against any aggressor.",
+  "actors": "ROC Ministry of National Defense (Smith names 'Defense Minister Hao'; the minister in March 1988 was Cheng Wei-yuan and Hau Pei-tsun was Chief of the General Staff); Legislative Yuan",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RC"
+  ],
+  "reasoning": "A public reassertion of sovereignty and a pledge to defend the feature by force are verbal assertions; declarative (a coder may weigh the 'fight to the last man' line as an implicit threat). The speaker is misidentified or ambiguous in the only source naming him, and no date within March is given. Sun (1996) adds that the ROC defence minister indicated Taipei would, if necessary, help Beijing defend its position on the islands (citing The Economist, 21 May 1988); that remark is aimed at Vietnam and cooperative toward the PRC, and its date is unknown.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt",
+    "title": "China, Technology and the Spratly Islands: The Geopolitical Impact of New Technology (PhD dissertation, Salve Regina University; DTIC AD-A280 214), chronology appendix",
+    "publisher": "Esmond D. Smith Jr. / Naval War College (via DTIC, Internet Archive)",
+    "pub_date": "1994-03-01",
+    "language": "en",
+    "excerpt": "tells Taiwan parliament that Taiwan would fight to the last man to defend Taiping island against any aggressor"
+   },
+   {
+    "url": "https://archive.org/download/volume-vi-supplemental-written-submission-of-the-philippines-16-mar-2015/The%20Philippines%27%20Supplemental%20Written%20Submission%20-%20Volume%20V%20%28Annexes%20443-465%29_djvu.txt",
+    "title": "D. J. Dzurek, 'The Spratly Islands Dispute: Who's on First?', IBRU Maritime Briefing 2(1) (1996), Annex 445 to the Philippines' Supplemental Written Submission, Vol. V",
+    "publisher": "IBRU, Durham University (via PCA filing, Internet Archive)",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "Taiwan reacted, in March, by reasserting its sovereignty and resupplying its garrison on Itu Aba."
+   },
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy toward the South China Sea: A Review', Issues & Studies 32(3): 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "the ROC defense minister indicated that Taipei would, if necessary, help Beijing defend its position on the islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1988-04-01",
+  "date_end": "1988-04-30",
+  "date_precision": "month",
+  "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "In April 1988, as China and Vietnam occupied further Spratly reefs after the March clash, Taipei reinforced its garrison on Itu Aba.",
+  "actors": "ROC Ministry of National Defense; Itu Aba (Taiping) garrison",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RC"
+  ],
+  "reasoning": "Adding troops to a held feature is a unilateral military build-up without confrontation; demonstrative, and the first reinforcement recorded since 1974. Known from one thesis (Hurwitt 1993, citing Chang Pao-min, Contemporary Southeast Asia 12(1), June 1990, pp. 28-29); size and units are not given.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt",
+    "title": "U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)",
+    "publisher": "Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive)",
+    "pub_date": "1993-06-04",
+    "language": "en",
+    "excerpt": "In April Taipei reinforced its garrison on Itu Aba."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1988-08-01",
+  "date_end": "1988-08-31",
+  "date_precision": "month",
+  "location_name": "Itu Aba (Taiping Island), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "In August 1988 the ROC Navy made another supply mission to Itu Aba and conducted naval exercises en route.",
+  "actors": "ROC Navy",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A resupply run combined with naval exercises in the Spratly area is a display of presence and capability without confrontation; demonstrative. Resupply was routine, but exercises en route are not otherwise recorded for the decade. Single source (Hurwitt 1993, citing Chang 1990); no day given.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://archive.org/download/DTIC_ADA272828/DTIC_ADA272828_djvu.txt",
+    "title": "U.S. Strategy in Southeast Asia: The Spratly Islands (MMAS thesis, U.S. Army Command and General Staff College; DTIC AD-A272 828)",
+    "publisher": "Mara C. Hurwitt / U.S. Army Command and General Staff College (via DTIC, Internet Archive)",
+    "pub_date": "1993-06-04",
+    "language": "en",
+    "excerpt": "another supply mission in August, when it conducted naval exercises en route"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1988-12-12",
+  "date_end": "1988-12-12",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "On 12 December 1988, the 42nd anniversary of the 1946 recovery, the ROC sovereignty monument on Taiping Island (front inscription 'Nansha Islands Taiping Island', erected 12 December 1946) was rebuilt, its side carrying the inscription 'Rebuilt 12 December, 77th year of the Republic of China'.",
+  "actors": "ROC government / Taiping Island garrison (agency not named)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Rebuilding a sovereignty marker on a held feature is a unilateral symbolic act of possession; demonstrative, low salience. The date comes from the stele's own inscription as transcribed by the Coast Guard; the source is a PDF, so the excerpt cannot be machine-checked.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "轄區特色-南沙 (Nansha: features of the jurisdiction), 南沙史要紀念碑",
+    "publisher": "Coast Guard Administration, Republic of China (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "右側刻「中華民國 77 年 12 月 12 日修建」"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1989-06-30",
+  "date_end": "1989-06-30",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "A national (sovereignty) monument was set up on Dongsha (Pratas) Island on 30 June 1989 to assert ROC sovereignty over the whole Pratas archipelago; Wikipedia, citing National Tsing Hua University, attributes to the Minister of the Interior a 1989 'South China Sea Defense' (南海屏障) national stele on the island.",
+  "actors": "ROC Ministry of the Interior (per NTHU via Wikipedia); Pratas garrison",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Erecting a national sovereignty monument on a held feature is a unilateral symbolic act of possession; demonstrative. It is new for the Pratas in the decade and precedes the January 1990 'Lock and Key to the Southern Territory' stele on Taiping. The MOI attribution and the identity with the 南海屏障 stele rest on an unreachable NTHU page; the Coast Guard's Dongsha PDF reproduces the 南海屏障 text without a date. The PRC is the only other claimant to the Pratas, hence RC.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.npf.org.tw/3/6120",
+    "title": "Sovereignty over the Spratly Islands (Hung Chien-chao)",
+    "publisher": "National Policy Foundation (orig. The China Post, 23 Jun 2009)",
+    "pub_date": "2009-07-10",
+    "language": "en",
+    "excerpt": "A national monument and a corridor were set up on the main island on June 30, 1989 and May 19, 1992 respectively, to assert sovereignty over the entire archipelago."
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835858418.pdf",
+    "title": "轄區特色-東沙 (Dongsha: features of the jurisdiction), 國碑-南海屏障",
+    "publisher": "Coast Guard Administration, Republic of China (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "【國碑-南海屏障】"
+   }
+  ]
+ }
+]
