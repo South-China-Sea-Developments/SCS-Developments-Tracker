@@ -30,6 +30,8 @@
   blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
   .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
   .pill.pre { background: #e8f1ec; color: #1f4d33; }
+  .cand[data-presorted="1"] .decision { background: #f3f8f5; outline: 1px dashed #8fb79d; outline-offset: 4px; }
+  .confirm-pre { font-size: .875rem; margin-left: 8px; }
   .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
   .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
   .choices label { display: inline-flex; gap: 6px; align-items: center; }
@@ -103,7 +105,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision{% if it.presort %} <button type="button" class="confirm-pre">Confirm the pre-sort</button>{% endif %}</legend>
         <label><input type="radio" name="a-{{ e.event_id }}" value=""> undecided</label>
         <label><input type="radio" name="a-{{ e.event_id }}" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-{{ e.event_id }}" value="new_move"> form a new move</label>
@@ -238,7 +240,8 @@
   function prefill(card) {
     var it = null, id = card.getAttribute("data-event");
     for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) it = CTX.items[i];
-    if (!it || !it.presort || (draft[id] || {}).action) return;        // a saved draft wins over the pre-sort
+    if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
+    card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
     var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
     if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of; }
     else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
@@ -246,10 +249,13 @@
     else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
     paint(card);
   }
+  function adopt(card) { card.removeAttribute("data-presorted"); draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); }
   cards.forEach(function (card) {
     restore(card); prefill(card); paint(card);
-    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
-    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    var btn = card.querySelector(".confirm-pre");
+    if (btn) btn.addEventListener("click", function () { adopt(card); });
+    card.addEventListener("input", function () { adopt(card); });
+    card.addEventListener("change", function () { adopt(card); });
   });
   reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
 
@@ -273,7 +279,7 @@
   }
   document.getElementById("export").addEventListener("click", function () {
     var decisions = [];
-    cards.forEach(function (card) { var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
     var problems = validate(decisions);
     if (!decisions.length) { alert("No decisions yet."); return; }
     if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }

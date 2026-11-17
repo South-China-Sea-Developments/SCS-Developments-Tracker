@@ -343,7 +343,7 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_reco
         dup = it["duplicate_of"]["event_id"] if it.get("duplicate_of") else ""
         ps = it.get("presort")
         presort = (f"{ps['label']} — {ps['reason']}" + (f" (group {ps['group']})" if ps.get("group") else "")
-                   + f" [{ps['presorted_by']}]") if ps else "(no pre-sort)"
+                   + f" [{ps['presorted_by']}]") if ps else None
         rec = {
             "event_id": e["event_id"], "run_id": run_id, "pull_request": pr, "claimant": e["claimant"],
             "date_start": e["date_start"] or None, "date_end": e["date_end"] or None, "date_precision": e["date_precision"] or None,
@@ -539,7 +539,9 @@ def push(client: Client, records: list[dict], run_id: str) -> dict:
     push is checked against the budget before anything is sent."""
     existing = {r["fields"].get("event_id"): r["id"] for r in client.list(run_filter(run_id))}
     new = [r for r in records if r["event_id"] not in existing]
-    upd = [(existing[r["event_id"]], {k: r.get(k) for k in CONTEXT_FIELDS}) for r in records if r["event_id"] in existing]
+    # a refresh without a pre-sort file must not blank a pre-sort the base already holds
+    upd = [(existing[r["event_id"]], {k: r.get(k) for k in CONTEXT_FIELDS if k != "presort" or r.get("presort")})
+           for r in records if r["event_id"] in existing]
     client._check(client.batches(len(new)) + client.batches(len(upd)))
     if new:
         client.create(new)

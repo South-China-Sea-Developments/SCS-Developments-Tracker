@@ -12,13 +12,15 @@ A pre-sort lives in `harvest/presort/<run_id>.json`:
 
 Dispositions:
   continuation  the act continues a move of the previous year (or an earlier move still ongoing) at the
-                same level: `of` names that move; the likely decision is reject with the note
-                "continuation of <move_id>" and an extension of that move's ongoing_through
+                same level: `of` names that accepted move; the likely decision is reject with the note
+                "continuation of <move_id>" (the coder then extends that move's ongoing_through by hand,
+                docs/coding-guide.md step K — `decide` does not)
   same_move     the act belongs with another candidate of the same run and claimant-year that would form
                 the move: `of` names that candidate (the one proposed as the move's lead)
   new_move      the act is an intensification against the previous year: `criterion` says which kind
-  duplicate     another report of the same incident: `of` names the event (a candidate of the run, or
-                an accepted event)
+  duplicate     another report of an incident already accepted into the dataset: `of` names that accepted
+                event (which has a move). Two candidates of one run for the same incident are not a
+                duplicate but a `same_move` pair
   unclear       the pre-sorter could not tell; the coder starts from nothing
 
 Usage:
@@ -45,8 +47,11 @@ DISPOSITIONS = ["continuation", "same_move", "new_move", "duplicate", "unclear"]
 NEEDS_OF = {"continuation", "same_move", "duplicate"}
 
 
-def default_path(run_id: str, root: Path | None = None) -> Path:
-    return (root or repo_root()) / "harvest" / "presort" / f"{run_id}.json"
+def default_path(run_id: str, root: Path | None = None, data_dir: Path | None = None) -> Path:
+    """harvest/presort/<run_id>.json beside the data directory (so a copy of the data looks beside itself),
+    else in the repository."""
+    base = data_dir.parent if data_dir is not None else (root or repo_root())
+    return base / "harvest" / "presort" / f"{run_id}.json"
 
 
 def load(path: Path) -> dict:
@@ -109,8 +114,10 @@ def check(doc: dict, data_dir: Path, run_id: str) -> list[str]:
     cands = {e["event_id"]: e for e in _candidates(data_dir, run_id)}
     events = {e["event_id"]: e for e in read_table("events", data_dir)}
     moves = {m["move_id"]: m for m in read_table("moves", data_dir)}
+    items = doc.get("items", [])
+    disp = {it.get("event_id"): it.get("disposition") for it in items}
     seen: set[str] = set()
-    for i, it in enumerate(doc.get("items", [])):
+    for i, it in enumerate(items):
         eid = it.get("event_id", "")
         where = f"item {i} ({eid or '?'})"
         if eid not in cands:
@@ -128,14 +135,31 @@ def check(doc: dict, data_dir: Path, run_id: str) -> list[str]:
         of = (it.get("of") or "").strip()
         if d in NEEDS_OF and not of:
             errs.append(f"{where}: {d} needs 'of'")
-        if d == "continuation" and of and of not in moves:
-            errs.append(f"{where}: continuation of unknown move {of}")
-        if d == "continuation" and of in moves and moves[of]["claimant"] != cands[eid]["claimant"]:
-            errs.append(f"{where}: {of} is a {moves[of]['claimant']} move")
-        if d == "same_move" and of and (of not in cands or of == eid):
-            errs.append(f"{where}: same_move must name another candidate of the run, not {of}")
-        if d == "duplicate" and of and of not in events:
-            errs.append(f"{where}: duplicate of unknown event {of}")
+        year = cands[eid]["date_start"][:4]
+        if d == "continuation" and of:
+            m = moves.get(of)
+            if not m:
+                errs.append(f"{where}: continuation of unknown move {of}")
+            elif m["claimant"] != cands[eid]["claimant"] or m["status"] != "accepted":
+                errs.append(f"{where}: {of} is not an accepted {cands[eid]['claimant']} move")
+            elif not (m["year"].isdigit() and year.isdigit() and int(m["year"]) < int(year)):
+                errs.append(f"{where}: {of} is a {m['year']} move; a continuation names a move of an earlier year than {year}")
+            elif m["ongoing_through"].isdigit() and int(m["ongoing_through"]) < int(year) - 1:
+                errs.append(f"{where}: {of} ended in {m['ongoing_through']}, before {int(year) - 1}; a reappearance is new again, not a continuation")
+        if d == "same_move" and of:
+            t = cands.get(of)
+            if not t or of == eid:
+                errs.append(f"{where}: same_move must name another candidate of the run, not {of}")
+            elif t["claimant"] != cands[eid]["claimant"] or t["date_start"][:4] != year:
+                errs.append(f"{where}: same_move target {of} is not a {cands[eid]['claimant']} candidate of {year}")
+            elif disp.get(of) != "new_move":
+                errs.append(f"{where}: same_move target {of} must itself be the lead (disposition new_move), not {disp.get(of)}")
+        if d == "duplicate" and of:
+            t = events.get(of)
+            if not t:
+                errs.append(f"{where}: duplicate of unknown event {of}")
+            elif t["status"] != "accepted" or not t["move_id"] or t["claimant"] != cands[eid]["claimant"]:
+                errs.append(f"{where}: duplicate_of must name an accepted {cands[eid]['claimant']} event with a move (a second candidate for the same incident is same_move)")
         if d == "new_move" and it.get("criterion") not in schema.INTENSIFICATION_CRITERIA:
             errs.append(f"{where}: new_move needs a criterion in {schema.INTENSIFICATION_CRITERIA}")
     for eid in sorted(set(cands) - seen):

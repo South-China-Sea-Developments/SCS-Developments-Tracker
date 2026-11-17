@@ -156,9 +156,14 @@ def cmd_open(args) -> int:
 def review_context(data_dir: Path, run_id: str | None = None, presort_path: Path | None = None) -> dict:
     from pipeline import presort as _presort
     if presort_path is None and run_id:
-        cand = _presort.default_path(run_id)
+        cand = _presort.default_path(run_id, data_dir=data_dir)
         presort_path = cand if cand.exists() else None
-    pre = _presort.by_event(_presort.load(presort_path)) if presort_path else {}
+    pre = {}
+    if presort_path:
+        doc = _presort.load(presort_path)
+        if doc.get("run_id") != run_id:
+            raise ValueError(f"{presort_path} is the pre-sort of run {doc.get('run_id')!r}, not {run_id!r}")
+        pre = _presort.by_event(doc)
     events = read_table("events", data_dir)
     sources = read_table("sources", data_dir)
     moves = read_table("moves", data_dir)
