@@ -89,7 +89,9 @@ coder typed is filed in the repository first, so the free plan's cap of 1,000 re
 mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
 
 1. **Export** the run's rows: `list_records_for_table` on `Candidates` filtered on the run (`{Run ID} = '<run_id>'`),
-   all fields, saved as JSON (`{"records": [...]}` or a bare list; labels, field ids or internal names all work).
+   all fields, saved as JSON (`{"records": [...]}` or a bare list; labels, field ids or internal names all work —
+   the coder's `Priority` and `Selected` columns are read by label, or by the ids under `triage_field_ids` in
+   `pipeline/airtable.json`).
 2. **Archive:** `python -m pipeline.airtable archive --run <run_id> --from export.json` writes
    `harvest/airtable/<run_id>/records.json` (every exported row, merged by event id with earlier sittings),
    `decisions.json` (the decided rows, in the shape `queue decide` reads) and `clear.json` (their Airtable ids).
@@ -97,10 +99,11 @@ mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
    archive files with the decisions on the run's branch; the review pull request carries both.
 4. **Clear:** `delete_records_for_table` on `Candidates` with the `record_ids` of `clear.json`, in batches of ten,
    only after the decisions are committed and pushed. Then set `archived_on` (today) and `archive`
-   (`https://github.com/<org>/<repo>/tree/main/harvest/airtable/<run_id>`) on the run's `Runs` row
+   (`https://github.com/<org>/<repo>/tree/main/harvest/airtable/<run_id>`, live once the pull request merges) on the run's `Runs` row
    (fields `Archived on` `fldQhcqhMo8wh3vRE`, `Archive` `fldTQRu3M4aA8fT5W`).
 5. A run reviewed in several sittings repeats 1–4; `records.json` accumulates, `decisions.json` and `clear.json`
-   describe the latest sitting only.
+   describe the latest sitting only, and a row whose decision was archived in an earlier sitting (a failed or
+   partial clear) is left out of `decisions.json`, so `decide` is never asked to re-apply it.
 
 With a token, `clear --run <run_id>` deletes a whole run's rows but archives nothing: run `archive` first.
 

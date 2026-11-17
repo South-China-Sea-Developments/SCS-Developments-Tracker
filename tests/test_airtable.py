@@ -485,3 +485,41 @@ def test_archive_command_runs_offline_and_its_decisions_apply(tmp_path, monkeypa
     decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
     counts = queue.apply_decisions(decisions["decisions"], decisions["reviewer"], "2026-11-17", d)
     assert counts["rejected"] == 1
+
+
+def test_archive_leaves_out_decisions_already_applied_in_an_earlier_sitting_and_refuses_duplicate_rows(tmp_path):
+    out = tmp_path / "MY-1970s"
+    first = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2"}])
+    airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
+    # the clear failed: E1 is still in the base and comes back in the next export, now beside a decided E2
+    again = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2", "decision": "reject", "note": "y", "reviewer": "A", "selected": True, "priority": 0}])
+    res = airtable.archive_run(again, "MY-1970s", out, today="2026-11-18")
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # E1 was applied last time; decide would refuse it
+    clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
+    assert clear["record_ids"] == ["rec00002"] and res == {"kept": 2, "decided": 1, "to_clear": 1}
+    e2 = next(r for r in json.loads((out / "records.json").read_text(encoding="utf-8"))["records"] if r["event_id"] == "E2")
+    assert e2["priority"] == 0 and e2["selected"] is True                     # a typed 0 is kept; only None, "" and [] are dropped
+    dup = _exported("MY-1970s", [{"event_id": "E3"}, {"event_id": "E3"}])
+    with pytest.raises(ValueError, match="two rows for event E3"):
+        airtable.archive_run(dup, "MY-1970s", tmp_path / "dup")
+
+
+def test_archive_reads_the_triage_columns_from_an_export_keyed_by_field_id(tmp_path):
+    cfg = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))
+    ids = {**cfg["field_ids"], **cfg["triage_field_ids"]}
+    rec = {"id": "recAAAAAAAAAAAAAA", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["run_id"]: "TW-2000s", ids["priority"]: 3,
+                                                               ids["selected"]: True, ids["decision"]: {"name": "undecided"}}}
+    out = tmp_path / "TW-2000s"
+    assert airtable.archive_run([rec], "TW-2000s", out, today="2026-11-17") == {"kept": 1, "decided": 0, "to_clear": 0}
+    row = json.loads((out / "records.json").read_text(encoding="utf-8"))["records"][0]
+    assert row["priority"] == 3 and row["selected"] is True and "fld" not in json.dumps(row)
+
+
+def test_archive_command_refuses_an_export_with_no_row_of_the_run(tmp_path, capsys):
+    export = tmp_path / "export.json"
+    export.write_text(json.dumps(_exported("ID-1970s", [{"event_id": "E1"}])), encoding="utf-8")
+    assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(export), "--out-dir", str(tmp_path / "out")]) == 1
+    assert "no exported row belongs to run MY-1970s" in capsys.readouterr().err
