@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| VN 2021–Oct 2026 | 103 | #90 | 103 candidates, 119 sources, excerpts verified except three UN PDFs, 7 possible duplicates; two agents (2021–23, 2024–26) merged; all declarative/demonstrative — no coercive acts found; thin from 2025, nothing after Aug 2026; Airtable: pending (base at free-tier cap); compiled on Opus |
 | CN 2021–Oct 2026 | 118 | #88 | 118 candidates, 149 sources, all excerpts verified, 4 possible duplicates; two agents (2021–23, 2024–26) merged; 3 force events; 2025–26 thin on Vietnam, Malaysia and Indonesia; Airtable: pending (base at free-tier cap); compiled on Opus |
 | TW 2021–Oct 2026 | 57 | #86 | 57 candidates, 121 sources, 90 excerpts verified, 13 possible duplicates (against #17 and weekly harvests); Taiping drills one per drill, Pratas CCG expulsions summarised yearly from 2025 with incidents separate; Taiwan complete 1970–Oct 2026; Airtable: pending (base at free-tier cap); compiled on Opus |
 | TW 2010–2015 | 41 | #84 | 41 candidates, 47 sources; MOFA Chinese archive the key source; 2012–13 dense (Taiping guns, drills, Guang Da Xing sanctions), 2014–15 thin for access reasons; Airtable: pending (base at free-tier cap); compiled on Opus |
