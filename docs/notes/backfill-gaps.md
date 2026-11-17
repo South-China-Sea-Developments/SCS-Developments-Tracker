@@ -219,8 +219,69 @@ spokesperson list is sparse for 2025 — the Vietnamese-language briefings are t
   possible duplicates flagged. Unreachable: APL chronology; Reuters, AP, Inquirer, Rappler direct; The
   Diplomat; the ICAS tracker; UN notes verbales (scans).
 
-### 2021–Oct 2026 — not yet compiled
-Only stray weekly-harvest candidates.
+### 2021–Oct 2026 (#93)
+Compiled by two agents (2021–23 and 2024–Oct 2026) and merged; six possible duplicates flagged against the weekly
+harvests. Philippine protests are merged with the Chinese acts they answer (one Philippine event each; the Chinese
+acts are in the China set), and the DFA tallies are one event per year. Note for the step-up judgement: formal
+protests fell in 2023 (202 in 2021, 195 in 2022, 43 by 12 Sep 2023 — no year-end 2023 figure found; 60 in 2024,
+47 by Oct 2025, 39 by Sep 2026) while publicity, buoy-laying, contested resupply and the barrier cutting rose.
+2022 is a real lull (13 events). dfa.gov.ph, pbbm.com.ph, Manila Bulletin and Malaya (Cloudflare), ABS-CBN and
+BusinessMirror (403), PNA (no connection / JavaScript) and BFAR (reset) were unreachable throughout.
+- **2021 — Pag-asa runway and port works** ◆ no dated 2021 milestone (check AMTI's Thitu pages). **Thitu runway
+  extension (RFA: "underway since early last year")** ▲ year precision.
+- **3 May 2021 — Locsin apologises to China for the "get out" tweet** ○ conciliatory (PTV). **26 Jul 2021 — Duterte's
+  last SONA** ○ no assertive WPS line. **23 Jun 2021 — Locsin's award-anniversary statement** ▲ dated 23 Jun, not 12 Jul.
+- **2021 — Duterte's UN speech (Rappler); May 2022 — PCG buoys and observation posts (two Inquirer articles)** ▲
+  excerpts came through WebFetch in fragments — re-check.
+- **Mar 2022 — Philippine-authorised survey by the Taiwanese RV Legend, shadowed by the CCG** ◆ only the DFA protest
+  is in; the survey itself may be demonstrative (AMTI; Philstar 31 May 2022).
+- **2 Aug 2022 — Teresa Magbanua resupply** ▲ Western Command 2 Aug vs China's set 1 Aug.
+- **8 Sep 2022 — Manalo: 388 protests in total** ◆ overlaps the year-end tally (Manila Bulletin). **20 Sep 2022 —
+  Marcos's first UNGA speech (UNCLOS, no award mention)** ◆ weak claim content.
+- **Feb 2023 — Marcos: military shifting to external defence (AP, in passing)** ◆ not compiled.
+- **Mar 2023 — NAMRIA charts** ◆ no 2023 source found. **23 Mar 2023 — PCG sightings around the Kalayaan group** ◆
+  repeats the transparency approach (Manila Times). **18 Apr 2023 — PCG patrol start** ▲ approximate. **May 2023 —
+  buoys** ▲ "last week" before 14 May.
+- **Apr 2023 Balikatan WPS components; Nov 2023 and Aug 2024 joint sails / "maritime cooperative activities"; Apr 2025
+  Balikatan sinking exercise** ○ joint acts with non-claimants.
+- **30 Jun 2023 — PCG patrol near Ayungin blocked** ○ in the China set; no separate protest found. **24 Jul 2023 —
+  Marcos's second SONA ("tight-lipped")** ○.
+- **22 and 29 Sep 2023 — the patrol that found the Scarborough barrier; the PCG vow to remove future barriers** ◆
+  folded into the 25 Sep cutting; could stand alone.
+- **13 Oct 2023 — BRP Benguet resupply of Pag-asa shadowed by the PLAN** ◆ in the China set; no Philippine source
+  opened.
+- **10 Dec 2023 — contested Ayungin resupply with AFP chief Brawner aboard** ▲ inside the 10–11 Dec Marcos/DFA
+  statement event; a coder may want it separate. **10 Dec 2023, 14–17 May 2024 — Atin Ito civilian convoys** ○
+  civilian; only the May 2024 PCG escort is in.
+- **Dec 2023 — year-end protest tally** ◆ none found (Manila Bulletin 10 Nov: "58th" protest of 2023, unopened).
+- **2024 — the other DFA protests (60 in total)** ◆ only the tally and the main protests are in.
+- **c. 15 Apr 2024 — Teresa Magbanua arrives at Escoda** ▲ counted back from "26 days" on 11 May. **15 Sep 2024 —
+  her withdrawal** ▲ entered as the National Maritime Council's statement; confirm whether the withdrawal itself
+  should be recorded. **26 Jun 2024 — note verbale** ▲ dated to disclosure ("sent last week").
+- **31 Aug 2024 — DFA protest at the ramming of Teresa Magbanua** ◆ no curl-able page (Manila Bulletin).
+- **Dec 2024 — BFAR Christmas mission / convoy** ◆ not searched. **30 Dec 2024 — 2025 appropriation for the Pag-asa
+  airport and Pag-asa/Lawak ports** ▲ typed demonstrative; could be declarative.
+- **6 Jan 2025 — Zambales stand-off start** ▲ counted back from "eighth day" on 13 Jan; the PCG pushing CCG ships off
+  Zambales typed coercive (could be demonstrative), as is the May 2026 radio warning to Xiang Yang Hong 33.
+- **26–28 Apr 2025 — National Maritime Council and Palace statements rejecting China's Sandy Cay claim** ◆ only the
+  27 Apr landing is in (Philstar 28 Apr). **21 May 2025 — Sandy Cay research mission** ▲ Tribune date; China's set
+  has the water cannon on 22 May.
+- **c. 1 Aug 2025 — Marcos: "no shift" in asserting sovereignty after the SONA** ◆ interview date not given (GMA
+  955262). **2025 — contested Ayungin missions, if any, and PCG/BFAR Kadiwa missions beyond 11 Aug and 16 Sep** ◆
+  not compiled (PTV).
+- **Jan–Feb 2026 — "word war": PCG spokesman's Xi cartoon post; DFA statement on Chinese bans of 16 Filipinos; AFP
+  vow to continue the transparency initiative** ◆ only the 26 Jan DFA representation is in (Philstar 17 Jan; Tribune
+  11 Feb; MB 10 Feb unreachable).
+- **Feb 2026 — PCG overflight of Scarborough** ▲ month precision. **1 Mar 2026 — PCG ships deployed to protect
+  fishermen at Scarborough and Escoda (mb.com.ph)** ◆ unreachable. **23 Mar 2026 — DFA maritime-affairs spokesperson
+  statement** ◆ the DFA "notoneinch" page not opened.
+- **31 Jul–Aug 2026 — Palace response to China's objections to the Scarborough baselines and reserve rules** ◆ Atin
+  Ito News page not opened. **4 Aug 2026 — "15 incident-free missions" statement** ▲ day from "Tuesday".
+- **9–31 Oct 2026 — protests or missions** ◆ none surfaced; coverage may be incomplete.
+- **Unreachable** — dfa.gov.ph, pbbm.com.ph, mb.com.ph, malaya.com.ph (Cloudflare); ABS-CBN, BusinessMirror (403);
+  alpha.pna.gov.ph (no connection); mirror.pia.gov.ph (reset); bfar.da.gov.ph (reset); GlobalSecurity (paywall);
+  manilatimes.net (paywall; opening paragraphs only).
+- **Airtable** — not mirrored: the base reached the free-tier record cap; batch files kept for a later push.
 
 ---
 
