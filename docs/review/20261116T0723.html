@@ -29,6 +29,9 @@
   .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
   blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
   .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .pill.pre { background: #e8f1ec; color: #1f4d33; }
+  .cand[data-presorted="1"] .decision { background: #f3f8f5; outline: 1px dashed #8fb79d; outline-offset: 4px; }
+  .confirm-pre { font-size: .875rem; margin-left: 8px; }
   .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
   .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
   .choices label { display: inline-flex; gap: 6px; align-items: center; }
@@ -46,7 +49,7 @@
 <body>
 <div class="wrap">
   <h1>Review queue — harvest 20261116T0723</h1>
-  <p class="lede">3 candidate events, generated 2026-11-16. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-20261116T0723.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.</p>
+  <p class="lede">3 candidate events, generated 2026-11-17. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-20261116T0723.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to. Each card carries a <em>pre-sort</em> (presorted by claude-code/opus): a suggested decision with its reason, prefilled in the form where no draft exists; it is a suggestion, and the decision is yours.</p>
 
   <div class="bar">
     <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
@@ -63,6 +66,7 @@
       <span>Natuna, sub-region 10 — an area (Natuna Islands), sub-region only</span>
       <span class="pill">suggested: declarative</span>
       
+      <span class="pill pre">pre-sort: unclear</span>
       <span class="id">ev-29ff83c313</span>
     </div>
     <div class="cols">
@@ -79,6 +83,10 @@
         <p style="margin:2px 0 0; font-size:.9375rem">A diplomatic protest by Indonesia to China over fishing incursions in Natuna waters is a declarative assertion. The document is a headline only; the protest carries no explicit date, so the month is inferred from the 2019-12-30 publication date together with the headline&#39;s present-tense news framing, hence low confidence. [confidence: low]</p>
         
         
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>unclear</strong> — Same act/practice already in run ID-2016-2020 as ev-c750c4bf67 (30 December 2019 summoning of China&#39;s ambassador with a protest note over Natuna, presorted there as same_move of ev-03fee649f2); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as a second report of ev-c750c4bf67, or merge with it if that becomes a move.</p>
+        
+        
       </div>
       <div>
         <p class="k">Indonesia's moves in 2018</p>
@@ -90,7 +98,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
         <label><input type="radio" name="a-ev-29ff83c313" value=""> undecided</label>
         <label><input type="radio" name="a-ev-29ff83c313" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-ev-29ff83c313" value="new_move"> form a new move</label>
@@ -146,6 +154,7 @@
       <span>Natuna, sub-region 10 — an area (Natuna Islands), sub-region only</span>
       <span class="pill">suggested: coercive</span>
       
+      <span class="pill pre">pre-sort: unclear</span>
       <span class="id">ev-1e0efdfa96</span>
     </div>
     <div class="cols">
@@ -162,6 +171,10 @@
         <p style="margin:2px 0 0; font-size:.9375rem">Detention of a foreign fishing vessel is physical interference, coded coercive. The headline says the Vietnamese vessel was &#39;baru saja ditangkap&#39; (just arrested), a relative date resolved to December 2019 via the publication date; the headline gives no agency or exact day, so confidence is low. [confidence: low]</p>
         
         
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>unclear</strong> — Headline-only arrest of a Vietnamese boat off Natuna in late 2019; plain seizures of Vietnamese boats are the routine practice already in run ID-2016-2020 for 2018 (ev-1a41921e8b) and 2019 (ev-1936193d8d group), and that id cannot be named as `of` (prev file covers 2024 onward). Likely reject as continuation unless the full article shows a confrontation with Vietnamese escorts, which would put it with ev-1936193d8d.</p>
+        
+        
       </div>
       <div>
         <p class="k">Indonesia's moves in 2018</p>
@@ -173,7 +186,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
         <label><input type="radio" name="a-ev-1e0efdfa96" value=""> undecided</label>
         <label><input type="radio" name="a-ev-1e0efdfa96" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-ev-1e0efdfa96" value="new_move"> form a new move</label>
@@ -229,6 +242,7 @@
       <span>South China Sea — not placed (no feature in the gazetteer by that name)</span>
       <span class="pill">suggested: declarative</span>
       
+      <span class="pill pre">pre-sort: unclear</span>
       <span class="id">ev-907d7f761a</span>
     </div>
     <div class="cols">
@@ -245,6 +259,10 @@
         <p style="margin:2px 0 0; font-size:.9375rem">A verbal rejection of another claimant&#39;s map is a non-coercive diplomatic protest, hence declarative. The document is a headline only; the date is inferred from the present-tense headline and the 2023-08-31 publication date, so precision is set to month and confidence is low. [confidence: low]</p>
         
         
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>unclear</strong> — Same act/practice already in run MY-2021-2026 as ev-775a76a73e (30 August 2023 MFA statement rejecting China&#39;s 2023 standard map; protest note followed as ev-d8267714f5); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as a second report of ev-775a76a73e.</p>
+        
+        
       </div>
       <div>
         <p class="k">Malaysia's moves in 2022</p>
@@ -256,7 +274,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
         <label><input type="radio" name="a-ev-907d7f761a" value=""> undecided</label>
         <label><input type="radio" name="a-ev-907d7f761a" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-ev-907d7f761a" value="new_move"> form a new move</label>
@@ -308,7 +326,7 @@
   
 </div>
 
-<script id="ctx" type="application/json">{"run_id": "20261116T0723", "items": [{"event": {"event_id": "ev-29ff83c313", "move_id": "", "claimant": "ID", "date_start": "2019-12-01", "date_end": "2019-12-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna", "location_precision": "subregion", "subregion": "10", "summary": "Indonesia lodged a strong protest with Beijing over foreign (Chinese) fishing vessels entering the waters off Natuna.", "actors": "", "status": "candidate", "harvest_run_id": "20261116T0723", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "fisheries", "suggested_dyads": "IC", "suggestion_reasoning": "A diplomatic protest by Indonesia to China over fishing incursions in Natuna waters is a declarative assertion. The document is a headline only; the protest carries no explicit date, so the month is inferred from the 2019-12-30 publication date together with the headline's present-tense news framing, hence low confidence. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-29ff83c313-S01", "event_id": "ev-29ff83c313", "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kVlJ3YWJPZEh3YlR6VUpMMktvT0FGdkthTlgxWHc3WjVpYUZLRzFnN1FocWpRZkVmdW12RHJGaFlIM0wzU0JSb3FhT1poNmpueVAyTHlSRVN5ZTh30gFiQVVfeXFMTldwS3ZZZlRqcXFRbUxCbTkwWTV1VWpSRDQwOHBMUVhadVlqRFV6eTJlcTdwYjZKeVBISll3VkoxSU9tZWcwVHZhVk94QjF0UUxsWVNhV3RnQzdraXBCQno1V0E?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap - BBC", "publisher": "News search: Indonesia Natuna", "pub_date": "2019-12-30", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap"}], "year": 2019, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-1e0efdfa96", "move_id": "", "claimant": "ID", "date_start": "2019-12-01", "date_end": "2019-12-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna", "location_precision": "subregion", "subregion": "10", "summary": "Indonesian authorities detained a Vietnamese fishing vessel in the Natuna area shortly before the report.", "actors": "", "status": "candidate", "harvest_run_id": "20261116T0723", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "coercive", "suggested_domains": "physical", "suggested_issues": "fisheries", "suggested_dyads": "IV", "suggestion_reasoning": "Detention of a foreign fishing vessel is physical interference, coded coercive. The headline says the Vietnamese vessel was 'baru saja ditangkap' (just arrested), a relative date resolved to December 2019 via the publication date; the headline gives no agency or exact day, so confidence is low. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-1e0efdfa96-S01", "event_id": "ev-1e0efdfa96", "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kVlJ3YWJPZEh3YlR6VUpMMktvT0FGdkthTlgxWHc3WjVpYUZLRzFnN1FocWpRZkVmdW12RHJGaFlIM0wzU0JSb3FhT1poNmpueVAyTHlSRVN5ZTh30gFiQVVfeXFMTldwS3ZZZlRqcXFRbUxCbTkwWTV1VWpSRDQwOHBMUVhadVlqRFV6eTJlcTdwYjZKeVBISll3VkoxSU9tZWcwVHZhVk94QjF0UUxsWVNhV3RnQzdraXBCQno1V0E?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap - BBC", "publisher": "News search: Indonesia Natuna", "pub_date": "2019-12-30", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap"}], "year": 2019, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia"}, {"event": {"event_id": "ev-907d7f761a", "move_id": "", "claimant": "MY", "date_start": "2023-08-01", "date_end": "2023-08-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "South China Sea", "location_precision": "feature", "subregion": "", "summary": "Malaysia rejected a newly released Chinese map that depicted China's claim over the entire South China Sea.", "actors": "", "status": "candidate", "harvest_run_id": "20261116T0723", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "politics", "suggested_dyads": "MC", "suggestion_reasoning": "A verbal rejection of another claimant's map is a non-coercive diplomatic protest, hence declarative. The document is a headline only; the date is inferred from the present-tense headline and the 2023-08-31 publication date, so precision is set to month and confidence is low. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-907d7f761a-S01", "event_id": "ev-907d7f761a", "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdzVZMTFpYmdzSmREZy03YzhuclRiNkNlY0VXd0c1WmwtU3Z4a1FrN3BFTGx2N21SN0xmRlg1RVJZMVA0Tjd3OUhJUldaVG41T3gyYWxITHgweUQtU0xfSFdDTjZQZF9Nb3FkeV90QjdCMjlCTkNZWno0UE9Qd3ZoMEpZczB4ZlRiWmZFc1RIZlpmVl90aFhNSmw3NFUybnlHZGtyeFhn0gGrAUFVX3lxTE12eUVwcTFNVU54dDVSUHZHd25CYzhUMm13b0N1YWs5UGRuTENaVUNoaHQwUmtraUJ3NG1jX0FhbGktekdkUTVfSHFjY0xIa3FzSFNUVVNSakdoazBaTC1OTFdsUlZZTnJlLUpBcnJFZXgwSE56YUdHVm9mMEQ5b0lMVnpuRmJMb1Y1ZVFPT1NTVjduVHJKRXd4dEJxNWhFd1hxSFotU3JqSURfSQ?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Malaysia rejects new China map claiming entire South China Sea - Al Jazeera", "publisher": "News search: Malaysia South China Sea", "pub_date": "2023-08-31", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Malaysia rejects new China map claiming entire South China Sea"}], "year": 2023, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia"}]}</script>
+<script id="ctx" type="application/json">{"run_id": "20261116T0723", "items": [{"event": {"event_id": "ev-29ff83c313", "move_id": "", "claimant": "ID", "date_start": "2019-12-01", "date_end": "2019-12-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna", "location_precision": "subregion", "subregion": "10", "summary": "Indonesia lodged a strong protest with Beijing over foreign (Chinese) fishing vessels entering the waters off Natuna.", "actors": "", "status": "candidate", "harvest_run_id": "20261116T0723", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "fisheries", "suggested_dyads": "IC", "suggestion_reasoning": "A diplomatic protest by Indonesia to China over fishing incursions in Natuna waters is a declarative assertion. The document is a headline only; the protest carries no explicit date, so the month is inferred from the 2019-12-30 publication date together with the headline's present-tense news framing, hence low confidence. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-29ff83c313-S01", "event_id": "ev-29ff83c313", "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kVlJ3YWJPZEh3YlR6VUpMMktvT0FGdkthTlgxWHc3WjVpYUZLRzFnN1FocWpRZkVmdW12RHJGaFlIM0wzU0JSb3FhT1poNmpueVAyTHlSRVN5ZTh30gFiQVVfeXFMTldwS3ZZZlRqcXFRbUxCbTkwWTV1VWpSRDQwOHBMUVhadVlqRFV6eTJlcTdwYjZKeVBISll3VkoxSU9tZWcwVHZhVk94QjF0UUxsWVNhV3RnQzdraXBCQno1V0E?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap - BBC", "publisher": "News search: Indonesia Natuna", "pub_date": "2019-12-30", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap"}], "year": 2019, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia", "presort": {"event_id": "ev-29ff83c313", "disposition": "unclear", "of": null, "criterion": null, "group": null, "reason": "Same act/practice already in run ID-2016-2020 as ev-c750c4bf67 (30 December 2019 summoning of China's ambassador with a protest note over Natuna, presorted there as same_move of ev-03fee649f2); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as a second report of ev-c750c4bf67, or merge with it if that becomes a move.", "label": "unclear", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-1e0efdfa96", "move_id": "", "claimant": "ID", "date_start": "2019-12-01", "date_end": "2019-12-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "Natuna", "location_precision": "subregion", "subregion": "10", "summary": "Indonesian authorities detained a Vietnamese fishing vessel in the Natuna area shortly before the report.", "actors": "", "status": "candidate", "harvest_run_id": "20261116T0723", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "coercive", "suggested_domains": "physical", "suggested_issues": "fisheries", "suggested_dyads": "IV", "suggestion_reasoning": "Detention of a foreign fishing vessel is physical interference, coded coercive. The headline says the Vietnamese vessel was 'baru saja ditangkap' (just arrested), a relative date resolved to December 2019 via the publication date; the headline gives no agency or exact day, so confidence is low. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "Natuna Islands", "ambiguous": ""}, "sources": [{"source_id": "ev-1e0efdfa96-S01", "event_id": "ev-1e0efdfa96", "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kVlJ3YWJPZEh3YlR6VUpMMktvT0FGdkthTlgxWHc3WjVpYUZLRzFnN1FocWpRZkVmdW12RHJGaFlIM0wzU0JSb3FhT1poNmpueVAyTHlSRVN5ZTh30gFiQVVfeXFMTldwS3ZZZlRqcXFRbUxCbTkwWTV1VWpSRDQwOHBMUVhadVlqRFV6eTJlcTdwYjZKeVBISll3VkoxSU9tZWcwVHZhVk94QjF0UUxsWVNhV3RnQzdraXBCQno1V0E?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap - BBC", "publisher": "News search: Indonesia Natuna", "pub_date": "2019-12-30", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Kapal ikan asing masuk Natuna: Indonesia protes keras ke Beijing dan kapal Vietnam baru saja ditangkap"}], "year": 2019, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Indonesia", "presort": {"event_id": "ev-1e0efdfa96", "disposition": "unclear", "of": null, "criterion": null, "group": null, "reason": "Headline-only arrest of a Vietnamese boat off Natuna in late 2019; plain seizures of Vietnamese boats are the routine practice already in run ID-2016-2020 for 2018 (ev-1a41921e8b) and 2019 (ev-1936193d8d group), and that id cannot be named as `of` (prev file covers 2024 onward). Likely reject as continuation unless the full article shows a confrontation with Vietnamese escorts, which would put it with ev-1936193d8d.", "label": "unclear", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-907d7f761a", "move_id": "", "claimant": "MY", "date_start": "2023-08-01", "date_end": "2023-08-31", "date_precision": "month", "lat": "", "lon": "", "location_name": "South China Sea", "location_precision": "feature", "subregion": "", "summary": "Malaysia rejected a newly released Chinese map that depicted China's claim over the entire South China Sea.", "actors": "", "status": "candidate", "harvest_run_id": "20261116T0723", "extractor": "claude-session/claude-fable-5-1@prompt-d72539b21c11", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "politics", "suggested_dyads": "MC", "suggestion_reasoning": "A verbal rejection of another claimant's map is a non-coercive diplomatic protest, hence declarative. The document is a headline only; the date is inferred from the present-tense headline and the 2023-08-31 publication date, so precision is set to month and confidence is low. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-907d7f761a-S01", "event_id": "ev-907d7f761a", "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdzVZMTFpYmdzSmREZy03YzhuclRiNkNlY0VXd0c1WmwtU3Z4a1FrN3BFTGx2N21SN0xmRlg1RVJZMVA0Tjd3OUhJUldaVG41T3gyYWxITHgweUQtU0xfSFdDTjZQZF9Nb3FkeV90QjdCMjlCTkNZWno0UE9Qd3ZoMEpZczB4ZlRiWmZFc1RIZlpmVl90aFhNSmw3NFUybnlHZGtyeFhn0gGrAUFVX3lxTE12eUVwcTFNVU54dDVSUHZHd25CYzhUMm13b0N1YWs5UGRuTENaVUNoaHQwUmtraUJ3NG1jX0FhbGktekdkUTVfSHFjY0xIa3FzSFNUVVNSakdoazBaTC1OTFdsUlZZTnJlLUpBcnJFZXgwSE56YUdHVm9mMEQ5b0lMVnpuRmJMb1Y1ZVFPT1NTVjduVHJKRXd4dEJxNWhFd1hxSFotU3JqSURfSQ?oc=5&hl=en-US&gl=US&ceid=US:en", "title": "Malaysia rejects new China map claiming entire South China Sea - Al Jazeera", "publisher": "News search: Malaysia South China Sea", "pub_date": "2023-08-31", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Malaysia rejects new China map claiming entire South China Sea"}], "year": 2023, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-907d7f761a", "disposition": "unclear", "of": null, "criterion": null, "group": null, "reason": "Same act/practice already in run MY-2021-2026 as ev-775a76a73e (30 August 2023 MFA statement rejecting China's 2023 standard map; protest note followed as ev-d8267714f5); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as a second report of ev-775a76a73e.", "label": "unclear", "presorted_by": "claude-code/opus"}}]}</script>
 <script>
 (function () {
   "use strict";
@@ -388,10 +406,25 @@
   }
 
   var cards = document.querySelectorAll(".cand");
+  function prefill(card) {
+    var it = null, id = card.getAttribute("data-event");
+    for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) it = CTX.items[i];
+    if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
+    card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
+    var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
+    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of + (/^ev-/.test(p.of) ? " (last year's candidate; provisional until that year is decided)" : ""); }
+    else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
+    else if (p.disposition === "new_move") { radio("new_move"); var c = card.querySelector(".f-crit"); if (c) c.value = p.criterion || ""; }
+    else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
+    paint(card);
+  }
+  function adopt(card) { card.removeAttribute("data-presorted"); draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); }
   cards.forEach(function (card) {
-    restore(card); paint(card);
-    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
-    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    restore(card); prefill(card); paint(card);
+    var btn = card.querySelector(".confirm-pre");
+    if (btn) btn.addEventListener("click", function () { adopt(card); });
+    card.addEventListener("input", function () { adopt(card); });
+    card.addEventListener("change", function () { adopt(card); });
   });
   reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
 
@@ -415,7 +448,7 @@
   }
   document.getElementById("export").addEventListener("click", function () {
     var decisions = [];
-    cards.forEach(function (card) { var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
     var problems = validate(decisions);
     if (!decisions.length) { alert("No decisions yet."); return; }
     if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
