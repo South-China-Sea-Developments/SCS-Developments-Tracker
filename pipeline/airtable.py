@@ -25,6 +25,7 @@ Usage:
   python -m pipeline.airtable records --run <run_id> --out f.json  the push as JSON, without calling Airtable
   python -m pipeline.airtable pull --run <run_id> --from records.json --out decisions.json   decisions from exported records
   python -m pipeline.airtable run-record --run harvest/runs/<run_id> [--pr N] --out run.json   the run's row for the Runs table (ticket 20)
+  python -m pipeline.airtable archive --run <run_id> --from export.json   file the review in harvest/airtable/<run_id>/ (ticket 22)
 
 The workbench around the queue (ticket 20, after the maintainer's TPD Updates sheet): besides
 `Candidates`, the base has `Runs` (one row per harvest or backfill run, the run log), `Sources` (a
@@ -555,6 +556,65 @@ def clear(client: Client, run_id: str) -> int:
     return len(ids)
 
 
+TRIAGE_FIELDS = {"Priority": "priority", "Selected": "selected"}   # the coder's own columns (ticket 21); the sync never writes
+# them, so they are not in FIELDS; their ids live under "triage_field_ids" in the configuration for exports keyed by id
+
+
+def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "",
+                reviewer: str = "", field_ids: dict[str, str] | None = None) -> dict:
+    """Ticket 22: the review archive. From the run's rows as exported from the base (any export shape
+    `normalise_record` accepts), write three files into out_dir — the repository's record of the review,
+    so the rows can leave Airtable without anything being lost (the free plan caps a base at 1,000 rows):
+
+      records.json    every row of the run, under the code's field names, with its Airtable id and the
+                      coder's own columns (decision, note, priority, selected, edits …); merged by event_id
+                      with an earlier records.json, so a run reviewed in several sittings accumulates, and
+                      rows already cleared from the base keep their last exported state;
+      decisions.json  the rows decided in THIS sitting, as `pipeline.queue decide` reads them — a row whose
+                      earlier archived state already carried a decision was applied then and is left out,
+                      so a failed or partial clear does not make `decide` refuse the whole file;
+      clear.json      the Airtable record ids of the decided rows of this export, for the connector's
+                      delete call — undecided rows stay in the base.
+
+    Returns {"kept", "decided", "to_clear"}. Nothing is sent anywhere. Raises ValueError when the export
+    holds two rows for one event (the base should never, and the archive would keep only one)."""
+    today = today or dt.date.today().isoformat()
+    cfg = load_config()
+    field_ids = {**(field_ids if field_ids is not None else cfg.get("field_ids") or {}), **cfg.get("triage_field_ids", {})}
+    out_dir.mkdir(parents=True, exist_ok=True)
+    rec_path = out_dir / "records.json"
+    earlier: dict[str, dict] = {}
+    if rec_path.exists():
+        for old in json.loads(rec_path.read_text(encoding="utf-8")).get("records", []):
+            earlier[old["event_id"]] = old
+    rows: dict[str, dict] = {}
+    ours: list[dict] = []
+    for r in exported:
+        f = {TRIAGE_FIELDS.get(k, k): v for k, v in normalise_record(r, field_ids).items()}
+        if f.get("run_id") != run_id or not f.get("event_id"):
+            continue
+        if f["event_id"] in rows:
+            raise ValueError(f"the export holds two rows for event {f['event_id']} ({rows[f['event_id']]['airtable_id']} and {r.get('id', '?')})")
+        row = {"airtable_id": r.get("id", ""), "archived_on": today}
+        row.update({k: v for k, v in f.items() if v is not None and v != "" and v != [] and not str(k).startswith("zz old")})
+        rows[f["event_id"]] = row
+        ours.append(r)
+    kept = {**earlier, **rows}                           # this export is the newer state of the rows it holds
+    archive = {"run_id": run_id, "exported_on": today,
+               "records": sorted(kept.values(), key=lambda x: x["event_id"])}
+    rec_path.write_text(json.dumps(archive, indent=1, ensure_ascii=False), encoding="utf-8")
+    already = {eid for eid, old in earlier.items() if (old.get("decision") or "undecided") != "undecided"}
+    decisions = decisions_from_records(ours, reviewer, field_ids, run_id=run_id)
+    decisions["decisions"] = [d for d in decisions["decisions"] if d["event_id"] not in already]
+    (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=1, ensure_ascii=False), encoding="utf-8")
+    decided = {d["event_id"] for d in decisions["decisions"]}
+    clear_ids = [rows[eid]["airtable_id"] for eid in sorted(decided) if rows[eid]["airtable_id"]]
+    clear_spec = {"run_id": run_id, "table": cfg.get("table", "Candidates"),
+                  "record_ids": clear_ids, "event_ids": sorted(decided)}
+    (out_dir / "clear.json").write_text(json.dumps(clear_spec, indent=1, ensure_ascii=False), encoding="utf-8")
+    return {"kept": len(archive["records"]), "decided": len(decided), "to_clear": len(clear_ids)}
+
+
 def table_schema() -> dict:
     """The Candidates table as Airtable's schema API wants it (`name` is the base's label; `internal`
     the code's name); the live base was created from an earlier version of it and updated by hand since."""
@@ -585,6 +645,12 @@ def main(argv=None) -> int:
             s.add_argument("--reviewer", default="")
             s.add_argument("--from", dest="from_file", type=Path, default=None, help="records exported from Airtable as JSON, instead of calling it")
     sub.add_parser("schema")
+    ar = sub.add_parser("archive", help="ticket 22: file the run's exported rows in the repository and name the decided ones for deletion")
+    ar.add_argument("--run", required=True)
+    ar.add_argument("--from", dest="from_file", type=Path, required=True, help="the run's records exported from Airtable as JSON")
+    ar.add_argument("--out-dir", type=Path, default=None, help="default harvest/airtable/<run_id>")
+    ar.add_argument("--reviewer", default="")
+    ar.add_argument("--date", default="")
     rr = sub.add_parser("run-record")
     rr.add_argument("--run", required=True, type=Path, help="the run folder, harvest/runs/<run_id>")
     rr.add_argument("--data", type=Path, default=None)
@@ -599,6 +665,18 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "schema":
         print(json.dumps(table_schema(), indent=1))
+        return 0
+    if a.cmd == "archive":
+        exported = json.loads(a.from_file.read_text(encoding="utf-8"))
+        if isinstance(exported, dict):
+            exported = exported.get("records", [])
+        out_dir = a.out_dir or repo_root() / "harvest" / "airtable" / a.run
+        res = archive_run(exported, a.run, out_dir, a.date, a.reviewer)
+        if not res["kept"]:
+            print(f"nothing archived: no exported row belongs to run {a.run} (wrong run id, or an export keyed by field ids without field_ids in pipeline/airtable.json)", file=sys.stderr)
+            return 1
+        print(f"archived run {a.run} -> {out_dir}: {res['kept']} row(s) kept, {res['decided']} decided, "
+              f"{res['to_clear']} to clear from the base (clear.json). Apply with: python -m pipeline.queue decide {out_dir / 'decisions.json'}")
         return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
