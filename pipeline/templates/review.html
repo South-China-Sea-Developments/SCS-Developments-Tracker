@@ -29,6 +29,9 @@
   .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
   blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
   .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .pill.pre { background: #e8f1ec; color: #1f4d33; }
+  .cand[data-presorted="1"] .decision { background: #f3f8f5; outline: 1px dashed #8fb79d; outline-offset: 4px; }
+  .confirm-pre { font-size: .875rem; margin-left: 8px; }
   .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
   .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
   .choices label { display: inline-flex; gap: 6px; align-items: center; }
@@ -46,7 +49,7 @@
 <body>
 <div class="wrap">
   <h1>Review queue — harvest {{ run_id }}</h1>
-  <p class="lede">{{ items|length }} candidate event{{ 's' if items|length != 1 else '' }}, generated {{ generated }}. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-{{ run_id }}.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.</p>
+  <p class="lede">{{ items|length }} candidate event{{ 's' if items|length != 1 else '' }}, generated {{ generated }}. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-{{ run_id }}.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to.{% if presorted_by %} Each card carries a <em>pre-sort</em> (presorted by {{ presorted_by }}): a suggested decision with its reason, prefilled in the form where no draft exists; it is a suggestion, and the decision is yours.{% endif %}</p>
 
   <div class="bar">
     <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
@@ -63,6 +66,7 @@
       {% if e.location_name %}<span>{{ e.location_name }}{% if e.subregion %}, sub-region {{ e.subregion }}{% endif %}{% if e.lat %} — placed at {{ e.lat }}, {{ e.lon }}{% if e.placed_name %} = {{ e.placed_name }}{% endif %} ({{ e.location_precision }}){% elif e.placed_area %} — an area ({{ e.placed_area }}), sub-region only{% elif e.ambiguous %} — not placed: the name could mean {{ e.ambiguous }}; set the coordinates or sub-region in the edits{% else %} — not placed (no feature in the gazetteer by that name){% endif %}</span>{% endif %}
       {% if e.suggested_type %}<span class="pill">suggested: {{ e.suggested_type }}</span>{% endif %}
       {% if it.duplicate_of %}<span class="pill dup">possible duplicate of {{ it.duplicate_of.event_id }}</span>{% endif %}
+      {% if it.presort %}<span class="pill pre">pre-sort: {{ it.presort.label }}</span>{% endif %}
       <span class="id">{{ e.event_id }}</span>
     </div>
     <div class="cols">
@@ -78,6 +82,10 @@
         <p class="muted" style="margin:0">Type {{ e.suggested_type or '—' }} · domains {{ e.suggested_domains or '—' }} · issues {{ e.suggested_issues or '—' }} · dyads {{ e.suggested_dyads or '—' }}</p>
         <p style="margin:2px 0 0; font-size:.9375rem">{{ e.suggestion_reasoning }}</p>
         {% if e.review_note %}<p class="muted">Note from the extractor: {{ e.review_note }}</p>{% endif %}
+        {% if it.presort %}
+        <p class="k">Pre-sort ({{ it.presort.presorted_by }})</p>
+        <p style="margin:0; font-size:.9375rem"><strong>{{ it.presort.label }}</strong>{% if it.presort.group %} · group {{ it.presort.group }}{% endif %} — {{ it.presort.reason }}</p>
+        {% endif %}
         {% if it.duplicate_of %}
         <p class="k">The event it may duplicate</p>
         <p class="muted" style="margin:0">{{ it.duplicate_of.event_id }} · {{ it.duplicate_of.date_start }} · {{ it.duplicate_of.status }}{% if it.duplicate_of.move_id %} · move {{ it.duplicate_of.move_id }}{% endif %}: {{ it.duplicate_of.summary }}</p>
@@ -97,7 +105,7 @@
 
     <div class="decision">
       <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
-        <legend class="muted" style="padding:0">Decision</legend>
+        <legend class="muted" style="padding:0">Decision{% if it.presort %} <button type="button" class="confirm-pre">Confirm the pre-sort</button>{% endif %}</legend>
         <label><input type="radio" name="a-{{ e.event_id }}" value=""> undecided</label>
         <label><input type="radio" name="a-{{ e.event_id }}" value="merge"> merge into a move</label>
         <label><input type="radio" name="a-{{ e.event_id }}" value="new_move"> form a new move</label>
@@ -229,10 +237,25 @@
   }
 
   var cards = document.querySelectorAll(".cand");
+  function prefill(card) {
+    var it = null, id = card.getAttribute("data-event");
+    for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) it = CTX.items[i];
+    if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
+    card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
+    var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
+    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of; }
+    else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
+    else if (p.disposition === "new_move") { radio("new_move"); var c = card.querySelector(".f-crit"); if (c) c.value = p.criterion || ""; }
+    else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
+    paint(card);
+  }
+  function adopt(card) { card.removeAttribute("data-presorted"); draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); }
   cards.forEach(function (card) {
-    restore(card); paint(card);
-    card.addEventListener("input", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
-    card.addEventListener("change", function () { draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); });
+    restore(card); prefill(card); paint(card);
+    var btn = card.querySelector(".confirm-pre");
+    if (btn) btn.addEventListener("click", function () { adopt(card); });
+    card.addEventListener("input", function () { adopt(card); });
+    card.addEventListener("change", function () { adopt(card); });
   });
   reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
 
@@ -256,7 +279,7 @@
   }
   document.getElementById("export").addEventListener("click", function () {
     var decisions = [];
-    cards.forEach(function (card) { var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
     var problems = validate(decisions);
     if (!decisions.length) { alert("No decisions yet."); return; }
     if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }

@@ -42,6 +42,10 @@ delete fields).
 - `run` (link to Runs, `fldM9UtjkkVkSlAFN`): the run that produced the candidate. The REST client cannot know the Runs record id, so the link is set by the push procedure below.
 - `added_on` (created time), `decided_on` (last modified time of `decision`).
 
+### Candidates: the ticket 23 field
+
+`Pre-sort` (`fldlmfWHAwc09itis`): the suggested decision with its reason, filled from `harvest/presort/<run_id>.json` when `records`/`push` run with `--presort` (or the file exists beside the data); a suggestion only, and a refresh without the file leaves it as it is.
+
 ## Interface pages
 
 | Page | id | TPD Updates equivalent | What it shows |
