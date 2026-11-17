@@ -152,8 +152,60 @@ AMTI 2025 summary and not at all for 2026; Vietnamese MOFA, Hanoi Times, MMEA an
   baochinhphu, QDND, CNBC, Asia Times, GlobalSecurity, VOV World; baodanang.vn serves a 404 to fetchers), so
   the importer marks them unchecked though the compiler verified 62 itself.
 
-### 2021–Oct 2026 — not yet compiled
-Only stray weekly-harvest candidates.
+### 2021–Oct 2026 (#90)
+Compiled by two agents (2021–23 and 2024–Oct 2026) and merged; seven possible duplicates flagged against the
+weekly harvests. No Vietnamese detentions, expulsions or physical confrontations were found for the whole period
+— the set is 73 declarative and 30 demonstrative. Construction follows AMTI's dated imagery: each new Spratly site
+is its own event at its reported start, with period summaries that overlap (Jan–Apr 2023 RFA vs Jan–Oct 2023 AMTI;
+the 7 Jun 2024 report partly covers Nov–Dec 2023 work). Vietnam's public protests thin out from 2025 as relations
+with China warmed (12 in 2025, 13 to Aug 2026), and nothing was found after 28 Aug 2026. Hanoi Times (401),
+vietnamnews.vn (403), vov.vn and the old mofa.gov.vn press-briefing archive were unreachable; the new MOFA English
+spokesperson list is sparse for 2025 — the Vietnamese-language briefings are the place for a second pass.
+- **18 Mar 2021 — Vietnam asks Indonesia to release two seized boats** ○ a release request (VietnamNet 722509).
+- **1 Apr 2021 — MOFA briefing on Whitsun ("army gets ready to defend sovereignty")** ◆ Hanoi Times only (316965).
+- **Apr 2021 — frigate 016 Quang Trung drill near the Spratlys** ▲ month only (VnExpress 5 Apr 2021).
+- **11 Jun 2021, 2 Jul 2022, 2 Jun 2023 — Taiwan protests and the survey-ship demand** ▲ report dates used; statement
+  days not given. **8 Jun 2023 Taiwan protest** ▲ misdated "July 8" in its source.
+- **4 Nov 2021 — Whitsun withdrawal demand** ▲ VTV only; wording repeats March — confirm in a second source.
+- **11 Mar 2022, 28 Aug 2023, 6 Jun 2024** ▲ days from weekdays. **Mar 2022 — PM's remarks on developing the Spratly
+  district** ▲ domestic, low salience.
+- **Jul 2022 — 6th award-anniversary statement** ◆ not located.
+- **17–24 Sep 2022, 9–19 Sep 2025 — Coast Guard Region 4 live-fire (Gulf of Thailand)** ○ outside the area.
+- **2021–2023 — other spring Spratly/DK1 delegation voyages** ○ one per year entered. **2021–2026 — Hoang Sa
+  exhibitions, Gac Ma commemorations, Truong Sa pagoda events** ○ ceremonies, not acts at sea.
+- **2022–2023 — Coast Guard / Fisheries Surveillance shadowing of CCG at Vanguard Bank and Nam Con Son** ◆ not
+  compiled (SeaLight/AMTI). **May 2023 — KN 414 shadows Xiang Yang Hong 10** ▲ demonstrative; could be coercive.
+- **2021–2026 — PetroVietnam moves (Block 06-1, Ca Voi Xanh, Nam Con Son 2)** ◆ not researched / no claim-relevant
+  dated act found. **2021–2026 — Fisheries Surveillance vs Indonesian or Malaysian enforcement** ◆ none verified.
+- **2021–2023 — UN notes verbales** ◆ none located (the 2024–25 notes are in the set: 136/CH-2024 and 85/CH-2025
+  text PDFs; 174/CH-2024 a scan read by OCR — not machine-checkable).
+- **24 Apr 2023 — Vietnam Fisheries Society objects to the fishing ban** ○ non-state body.
+- **Jun 2023 — AMTI June imagery report** ◆ not found; the Nov 2023 report covers the year. **3 vs 4 Jul 2023 —
+  Barbie ban** ▲ RFA "Tuesday" vs Vietnamese/US outlets; BlackPink promoter inspection folded in.
+- **17 Aug 2023 — Triton airstrip: Vietnam "verifying"** ○ no separate protest. **Oct–Dec 2023 — statements on the
+  China–Philippines incidents** ◆ none found; check the MOFA archive.
+- **Jan 2024 — "Vietnam steps up island-building" (Manila Times/AMTI)** ○ covers 2023 work, in the 2023 entries.
+- **14 Mar 2024, 21 Feb 2025, Mar 2025 — Gulf of Tonkin baselines statements and UN registration** ○ Tonkin Gulf,
+  outside the claim area.
+- **Apr 2024, 21 Jun 2024, Jul 2026 — "comply with international law" / "maximum restraint" statements** ○ not
+  assertive. **19 May 2024 — Yadea Vietnam map** ○ company act.
+- **31 Oct / 1 Nov 2024 — fishermen-release demand** ▲ VGP 1 Nov repeats the 31 Oct statement; 31 Oct is two events
+  (fishermen; Triton equipment).
+- **19 Feb and 25 Aug 2025 — China protests Barque Canada and the island-building** ○ no public Vietnamese reply
+  found. **Sep 2025 — Scarborough nature reserve** ○ no Vietnamese response found.
+- **9 Jun 2025 — BBNJ accession with a reservation and declaration** ○ content not examined.
+- **2025, 2026 — nine-dash-line product/media crackdowns; 2026 elections on the Spratlys** ▲ typed demonstrative.
+  **2025 — Truong Sa / Hoang Sa special zones (đặc khu)** ▲ declarative. **Dec 2025 — SEA Games map protest** ▲
+  aimed at Thailand (VA). **4 Jun 2026 — Dutch-frigate response** ▲ weak.
+- **11 Dec 2025 — UPI: accelerated reclamation at South Reef** ◆ imagery source not opened; probably in the AMTI
+  entries. **Feb 2026 — HCMC coast guard patrols in Truong Sa waters (vietnamnews 1765565)** ◆ possibly a duplicate
+  of the Feb 2026 Region 3 entry.
+- **Sep–Oct 2026 — nothing found** ◆ the government East Sea page and the MOFA spokesperson list have no maritime
+  items after Aug 2026; check the Vietnamese-language briefings.
+- **Unreachable** — Hanoi Times (401; items undatable), vietnamnews.vn (403), qdnd.vn (search broken, redirect
+  loops), english.vov.vn (403), old mofa.gov.vn archive (404), news.usni.org and thenewdaily (Cloudflare); The
+  Diplomat via WebFetch only.
+- **Airtable** — not mirrored: the base reached the free-tier record cap; batch files kept for a later push.
 
 ---
 
