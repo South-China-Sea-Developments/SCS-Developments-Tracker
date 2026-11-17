@@ -153,7 +153,12 @@ def cmd_open(args) -> int:
 # ---------------------------------------------------------------------------
 # the review page
 
-def review_context(data_dir: Path, run_id: str | None = None) -> dict:
+def review_context(data_dir: Path, run_id: str | None = None, presort_path: Path | None = None) -> dict:
+    from pipeline import presort as _presort
+    if presort_path is None and run_id:
+        cand = _presort.default_path(run_id)
+        presort_path = cand if cand.exists() else None
+    pre = _presort.by_event(_presort.load(presort_path)) if presort_path else {}
     events = read_table("events", data_dir)
     sources = read_table("sources", data_dir)
     moves = read_table("moves", data_dir)
@@ -182,18 +187,19 @@ def review_context(data_dir: Path, run_id: str | None = None) -> dict:
             dup = e["review_note"].split("Possible duplicate of ", 1)[1].rstrip(".")
         dup_event = next((x for x in events if x["event_id"] == dup), None)
         items.append({"event": e, "sources": by_event.get(e["event_id"], []), "year": year, "previous_year_moves": prev,
-                      "same_year_moves": same, "duplicate_of": dup_event, "claimant_name": claimants.get(e["claimant"], e["claimant"])})
+                      "same_year_moves": same, "duplicate_of": dup_event, "claimant_name": claimants.get(e["claimant"], e["claimant"]),
+                      "presort": pre.get(e["event_id"])})
     return {"run_id": run_id or "all", "items": items, "claimants": claimants,
             "types": [(t, schema.TYPE_LABELS[t]) for t in schema.TYPE_FLAGS],
             "domains": [(d, schema.DOMAIN_LABELS[d]) for d in schema.DOMAIN_FLAGS],
             "issues": [(i, schema.ISSUE_LABELS[i]) for i in schema.ISSUE_FLAGS],
             "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
             "criteria": schema.INTENSIFICATION_CRITERIA, "generated": dt.date.today().isoformat(),
-            "move_index": move_index}
+            "move_index": move_index, "presorted_by": next((v["presorted_by"] for v in pre.values()), "")}
 
 
-def write_review_page(path: Path, data_dir: Path, run_id: str | None = None) -> int:
-    ctx = review_context(data_dir, run_id)
+def write_review_page(path: Path, data_dir: Path, run_id: str | None = None, presort_path: Path | None = None) -> int:
+    ctx = review_context(data_dir, run_id, presort_path)
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=select_autoescape(["html"]))
     ctx_json = json.dumps({"run_id": ctx["run_id"], "items": ctx["items"]}, ensure_ascii=False).replace("</", "<\\/")
     html = env.get_template("review.html").render(ctx_json=ctx_json, **ctx)
@@ -205,7 +211,7 @@ def write_review_page(path: Path, data_dir: Path, run_id: str | None = None) -> 
 def cmd_page(args) -> int:
     root = repo_root()
     out = Path(args.out) if args.out else root / "docs" / "review" / f"{args.run_id or 'all'}.html"
-    n = write_review_page(out, root / "data", run_id=args.run_id or None)
+    n = write_review_page(out, root / "data", run_id=args.run_id or None, presort_path=Path(args.presort) if args.presort else None)
     print(f"{n} candidates -> {out}")
     return 0
 
@@ -480,7 +486,8 @@ def main(argv=None) -> int:
     sub = p.add_subparsers(dest="cmd", required=True)
     so = sub.add_parser("open"); so.add_argument("--run", required=True); so.add_argument("--no-push", action="store_true")
     so.add_argument("--base", default="main"); so.set_defaults(fn=cmd_open)
-    sp = sub.add_parser("page"); sp.add_argument("--out", default=""); sp.add_argument("--run-id", default=""); sp.set_defaults(fn=cmd_page)
+    sp = sub.add_parser("page"); sp.add_argument("--out", default=""); sp.add_argument("--run-id", default="")
+    sp.add_argument("--presort", default="", help="a pre-sort file (default harvest/presort/<run_id>.json when it exists)"); sp.set_defaults(fn=cmd_page)
     sd = sub.add_parser("decide"); sd.add_argument("decisions"); sd.add_argument("--reviewer", default="")
     sd.add_argument("--date", default=""); sd.add_argument("--no-commit", action="store_true"); sd.set_defaults(fn=cmd_decide)
     a = p.parse_args(argv)

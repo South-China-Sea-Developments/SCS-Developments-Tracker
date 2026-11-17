@@ -23,6 +23,7 @@ python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review pa
 python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
 python -m pipeline.airtable push --run <run_id> --pr N   # mirror a run's candidates into the Airtable review table (needs AIRTABLE_TOKEN)
 python -m pipeline.airtable archive --run <run_id> --from export.json   # file a reviewed run's Airtable rows in harvest/airtable/<run_id>/ before they are cleared (ticket 22)
+python -m pipeline.presort context --run <run_id> --out ctx.json   # what a pre-sorter needs; `check --run <run_id>` validates harvest/presort/<run_id>.json (ticket 23)
 python -m pipeline.airtable pull --run <run_id> --out decisions.json   # the decisions made there, as the file `queue decide` reads
 python -m pipeline.airtable run-record --run harvest/runs/<run_id> --pr N --out run.json   # the run's row for the Runs table (docs/airtable-workbench.md)
 python -m pipeline.ops --help      # what the scheduled run does around a harvest: state branch, failure issue, reminders

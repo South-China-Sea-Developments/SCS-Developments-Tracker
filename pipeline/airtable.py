@@ -110,6 +110,7 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("suggestion_reasoning", "multilineText", {}),
     ("machine_note", "multilineText", {}),
     ("possible_duplicate_of", "singleLineText", {}),
+    ("presort", "multilineText", {}),
     ("previous_year_moves", "multilineText", {}),
     ("same_year_moves", "multilineText", {}),
     # the workbench (ticket 20): what the machine noticed, where the candidate stands, which run made it
@@ -154,7 +155,7 @@ LABELS = {
     "location_precision": "Location precision", "subregion": "Sub-region", "lat": "Lat", "lon": "Lon", "summary": "Summary",
     "actors": "Actors", "sources": "Sources", "excerpt": "Excerpt", "suggested_type": "Suggested type",
     "suggested_domains": "Suggested domains", "suggested_issues": "Suggested issues", "suggested_dyads": "Suggested dyads",
-    "suggestion_reasoning": "Suggestion reasoning", "machine_note": "Machine note", "possible_duplicate_of": "Possible duplicate of",
+    "suggestion_reasoning": "Suggestion reasoning", "machine_note": "Machine note", "possible_duplicate_of": "Possible duplicate of", "presort": "Pre-sort",
     "previous_year_moves": "Previous year's moves", "same_year_moves": "Same year's moves",
     "flags": "Flags", "dataset_status": "Dataset status", "run": "Run",
     "decision": "Decision", "merge_into_move": "Merge into move", "merge_into_candidate": "Merge into candidate", "duplicate_of": "Duplicate of",
@@ -327,18 +328,22 @@ def flags_for(e: dict) -> list[str]:
     return [f for f in FLAGS if f in found]
 
 
-def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_record: str | None = None) -> list[dict]:
+def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_record: str | None = None,
+                    presort_path: Path | None = None) -> list[dict]:
     """One Airtable record per candidate of the run: the review page's context fields, and the coder's
     fields prefilled as the page prefills them (decision undecided; the new move's type, dyads, domains,
     issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag).
     Year and description are left blank: `decide` defaults them to the event's year and summary, as the
     page does. Only `push` on a new record writes the coder's fields; a refresh never touches them."""
-    ctx = review_context(data_dir, run_id=run_id)
+    ctx = review_context(data_dir, run_id=run_id, presort_path=presort_path)
     out = []
     for it in ctx["items"]:
         e = it["event"]
         srcs = it["sources"]
         dup = it["duplicate_of"]["event_id"] if it.get("duplicate_of") else ""
+        ps = it.get("presort")
+        presort = (f"{ps['label']} — {ps['reason']}" + (f" (group {ps['group']})" if ps.get("group") else "")
+                   + f" [{ps['presorted_by']}]") if ps else "(no pre-sort)"
         rec = {
             "event_id": e["event_id"], "run_id": run_id, "pull_request": pr, "claimant": e["claimant"],
             "date_start": e["date_start"] or None, "date_end": e["date_end"] or None, "date_precision": e["date_precision"] or None,
@@ -350,7 +355,7 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_reco
             "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"].split() or None,
             "suggested_issues": e["suggested_issues"].split() or None, "suggested_dyads": e["suggested_dyads"].split() or None,
             "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
-            "possible_duplicate_of": dup,
+            "possible_duplicate_of": dup, "presort": presort,
             "flags": flags_for(e) or None, "dataset_status": "In review", "run": [run_record] if run_record else None,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
             "decision": "undecided", "duplicate_of": dup,
@@ -638,6 +643,7 @@ def main(argv=None) -> int:
             s.add_argument("--max-calls", type=int, default=200)
         if name in ("push", "records"):
             s.add_argument("--pr", type=int, default=None)
+            s.add_argument("--presort", type=Path, default=None, help="a pre-sort file (default harvest/presort/<run_id>.json when it exists)")
             s.add_argument("--run-record", default=None, help="the Runs table record id to link the candidates to (rec...)")
         if name in ("pull", "records"):
             s.add_argument("--out", type=Path, required=True)
@@ -680,7 +686,7 @@ def main(argv=None) -> int:
         return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
-        recs = records_for_run(data_dir, a.run, a.pr, a.run_record)
+        recs = records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort)
         a.out.write_text(json.dumps(recs, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(recs)} record(s) -> {a.out} (nothing sent)")
         return 0
@@ -700,7 +706,7 @@ def main(argv=None) -> int:
         return 0
     client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls, cfg.get("field_ids"))
     if a.cmd == "push":
-        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record), a.run)
+        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")
     elif a.cmd == "pull":
         d = pull(client, a.run, a.reviewer)

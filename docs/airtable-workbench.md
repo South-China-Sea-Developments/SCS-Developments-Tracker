@@ -37,6 +37,8 @@ delete fields).
 
 ### Candidates: the ticket 20 fields
 
+`Pre-sort` (`fldlmfWHAwc09itis`, ticket 23): the suggested decision with its reason, filled from `harvest/presort/<run_id>.json` when `records`/`push` run with `--presort` (or the file exists); a suggestion only.
+
 - `flags` (multiple select, `fldFw0CeUsjumeAWa`): *Excerpt not checked · Excerpt not found · Source unreachable · Possible duplicate · Date approximate · Low confidence · Type uncertain · Needs a second source*. Set at push from the import's machine note, the date precision and the suggestion's confidence (`airtable.flags_for`); the reviewer may add or remove flags, so a refresh never rewrites them.
 - `dataset_status` (single select, `fldjfYq0wvyKBygbl`): *In review → Decision recorded → Pulled into dataset → Merged → Published on site*, or *Closed without change*. Set to *In review* when the record is created and never rewritten by a refresh. The later steps are meant to be set by the workflow (`queue decide` → *Pulled into dataset*; the merge of the review PR → *Merged*; the next site build → *Published on site*), but no sync runs with a token today, so the maintainer moves them by hand or asks for it.
 - `run` (link to Runs, `fldM9UtjkkVkSlAFN`): the run that produced the candidate. The REST client cannot know the Runs record id, so the link is set by the push procedure below.

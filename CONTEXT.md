@@ -50,6 +50,8 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Review archive** — `harvest/airtable/<run_id>/` (ticket 22, ADR 0005): `records.json`, every row of a run as exported from the Airtable base with the coder's own columns, merged across sittings; `decisions.json`, the decided rows as `queue decide` reads them; `clear.json`, the Airtable ids of those rows, deleted through the connector once the decisions are committed. Rows in the base are transient; this folder is the record of what the coder saw and typed. The base's `Runs` row says `archived_on` and links here.
 
+**Pre-sort** — `harvest/presort/<run_id>.json` (ticket 23): for every candidate of a run, a suggested disposition — continuation of a named move, same move as another candidate, new move with its intensification criterion, duplicate of an event, or unclear — with a reason and the name of who sorted it. Shown and prefilled on the review page and in the Airtable `Pre-sort` field; a suggestion the coder confirms or overrides, never applied by itself (ADR 0003).
+
 **Extraction route** — Who answers the harvester's extraction prompts: the API (`ANTHROPIC_API_KEY`), the Claude Code GitHub Action on the maintainer's subscription (`CLAUDE_CODE_OAUTH_TOKEN`), or a person or assistant in a session. The prompt and the checks are the same on every route; the subscription route is named in the event's `extractor` (`claude-code/<model>`), the API route by the bare model id.
 
 **Prompt files** — A run's extraction prompts written to disk (`harvest/prompts/<run_id>/`: `system.md`, one user prompt per document, `index.json`) and their answers (`harvest/recordings/<run_id>/<key>.json`, the recorded-response format). The contract between the pipeline and whatever answers.

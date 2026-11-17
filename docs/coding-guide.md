@@ -256,7 +256,10 @@ ago but absent in the previous year is *new again* when it reappears.
 **Here.** The review page and the Airtable Candidate Detail show the claimant's previous-year moves and
 same-year moves beside every candidate (`previous_year_moves`, `same_year_moves`); forming a new move
 requires `intensification_criterion` ∈ {novelty, frequency, scope} and the validator refuses a
-project-coded move without one. The 2016–2020 sets were compiled so that 2016 is judged against Chubb's
+project-coded move without one. Since ticket 23 each card also carries a *pre-sort* — a suggested
+disposition (continuation of a named move, same move as another candidate, new move with its criterion,
+duplicate, unclear) with a reason, prefilled in the form; it is a suggestion to confirm or override, and
+its "continuation" calls are provisional where the previous year is itself still undecided. The 2016–2020 sets were compiled so that 2016 is judged against Chubb's
 2015 moves; each backfill decade is judged against the one before.
 **Don't.** Don't form a move because an incident was dramatic, widely reported, or condemned. Don't form a
 move because it is the first such act *you have seen* — check the previous year and the baseline. Don't
