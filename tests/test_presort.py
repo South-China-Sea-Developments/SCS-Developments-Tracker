@@ -87,6 +87,14 @@ def test_check_refuses_a_file_that_does_not_fit_the_run(opened, tmp_path):
     assert any("must itself be the lead" in e for e in presort.check(chain, opened, "fixture"))
     other = json.loads(json.dumps(good)); other["items"][2]["of"] = "VN201501"
     assert any("not an accepted CN move" in e for e in presort.check(other, opened, "fixture"))
+    # where last year is undecided, a continuation may name last year's candidate: of this run (earlier year,
+    # same claimant) or of the previous run (ids passed in); the label says it is provisional
+    prevc = json.loads(json.dumps(good)); prevc["items"][2].update({"of": "ev-prev2025", "reason": "the same practice last year"})
+    assert any("ev-prev2025" in e for e in presort.check(prevc, opened, "fixture"))
+    assert presort.check(prevc, opened, "fixture", previous_ids={"ev-prev2025"}) == []
+    assert presort.label(prevc["items"][2]) == "continuation of ev-prev2025 (a candidate, provisional)"
+    samey = json.loads(json.dumps(good)); samey["items"][2].update({"of": ids[0]})          # same year: not earlier
+    assert any("earlier year" in e for e in presort.check(samey, opened, "fixture"))
 
 
 def test_the_review_page_shows_the_presort_and_prefills_the_form(opened, tmp_path):
