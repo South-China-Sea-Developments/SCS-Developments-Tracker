@@ -649,8 +649,63 @@ Izzuddin, Connelly and the yearly reviews were not searched for this chunk — a
 unchecked, 3 possible duplicates. 2018 is thin. The compiler's exclusions and unreachable sources are
 unknown — read this set with that in mind.
 
-### 2021–Oct 2026 — not yet compiled
-Two hand-compiled candidates in #17 (2021, 2024) and four from weekly harvests.
+### 2021–Oct 2026 (#74)
+Six possible duplicates flagged at import against the two hand-compiled candidates in #17 (2021, 2024) and the
+weekly harvests. Routine seizures of Vietnamese boats are one event per year (2021–25). Antara, Mongabay, AMTI
+and RFA carry most events; Kemlu, Bakamla and KKP sites load but offered no dated releases to cite.
+- **24 Jan 2021 — Bakamla/Navy seize tankers MT Horse (Iran) and MT Freya (Panama) off West Kalimantan** ○
+  non-claimant targets.
+- **Apr and Aug 2021 — KKP seizes five Vietnamese boats after a chase (Mongabay 29 Apr); Aug incident in which a
+  boat burned (Mongabay 28 Aug)** ▲ folded into the 2021 annual summary; 2021 count is an NGO tally (DFW: 39).
+- **Jul–Nov 2021 — Indonesia's "very firm" reply to China's letter demanding a halt to Tuna-block drilling** ▲ in
+  the set at month precision; both letters undated, disclosed by Reuters 1 Dec 2021.
+- **Aug 2021 — Garuda Shield with the US, protested by China** ○ Sumatra, Kalimantan, Sulawesi — outside the SCS.
+- **Feb 2022 — PP 13/2022 on maritime security and law enforcement (basis for joint patrols)** ◆ national; date not
+  verified (Mongabay 31 Dec 2022). **Mar 2022 — Natuna zoning regulation "signed in March"** ▲ in the set, no
+  number or day. **Jun 2022 — corvette deployment** ▲ low confidence.
+- **8 Sep 2022 — CCG 5403 confronts a Natuna fisherman; PSDKP and Bakamla only "checking"** ◆ no dated Indonesian
+  act (Mongabay 14 Sep 2022).
+- **Dec 2022 / 2025 — Indonesia–Vietnam EEZ delimitation concluded and later ratified** ○ cooperative.
+- **2 Jan 2023 — Tuna development plan approval** ▲ dated to the SKK Migas announcement.
+- **Mar 2023 — PP 11/2023 quota-based "measured fishing", zones covering WPP 711 (Natuna)** ◆ not opened or verified.
+- **Apr–May 2023 — Chinese research vessels Nan Feng and Jia Geng in the North Natuna Sea (IOJI via Mongabay 19 Mar
+  2024)** ◆ no Indonesian response found. **2023 counts** ▲ PSDKP six Vietnamese boats vs KKP data one.
+- **Sep 2023 — ASEAN Solidarity Exercise, South Natuna Sea** ○ multilateral, cooperative.
+- **Jul 2024 — KKP seizes two Vietnamese boats (Mongabay 4 Jul)** ▲ folded into the 2024 summary; the 17 Aug 2024
+  seizure stands alone because a Vietnamese state vessel tried to obstruct it.
+- **9 Nov 2024 — Prabowo–Xi joint statement on "overlapping claims"** ○ conciliatory; only the Kemlu (11 Nov) and
+  Sugiono (2 Dec) clarifications are in the set.
+- **13 Nov 2024 — Prabowo in Washington: "we will always safeguard our sovereignty"** ◆ weak, close to the Kemlu
+  clarification (The Diplomat, Nov 2024).
+- **18 Nov 2024 — Bakamla head Irvansyah: one ship patrols the North Natuna Sea daily** ◆ general statement (Antara
+  English 334881).
+- **Mar 2025, May/Jun/Sep 2026 — Natuna licensing and drilling items** ▲ month precision, from AMTI 16 Nov 2026;
+  the Jun 2026 Tuna resumption is low confidence (actor is the Russian contractor).
+- **Apr 2025 — Indonesia–China 2+2 dialogue institutionalised** ○ cooperative (9DashLine).
+- **May 2025 — Prabowo inaugurates first production at South Natuna Block B (Forel/Terubuk)** ◆ the block appears to
+  lie outside the nine-dash line (AMTI 16 Nov 2026; Republika 21 May 2025).
+- **May–Sep 2025 — IOJI documents repeated Nan Feng and CCG operations; 9DashLine mentions Indonesian patrols and
+  "formal diplomatic protests"** ◆ no dates given.
+- **Aug 2025 — Kodam XIX/Tuanku Tambusai created, covering the Riau Islands (TNI 2025 expansion)** ◆ inauguration
+  date not verified (Katadata; Antara).
+- **6 Nov 2025 — KKP seizes the Vietnamese boat HP 9213 TS** ▲ inside the 2025 summary.
+- **Mar 2026 — Navy anti-access/area-denial drills, location unspecified** ◆ (Antara English 408618, 16 Mar 2026).
+- **23 Apr 2026 — Bakamla statement on routine patrols** ○ general. **16 May 2026 — Prabowo: the "good neighbor
+  policy" prevents conflict in Natuna** ○ conciliatory (Antara English 413396, 415953).
+- **2 Jul 2026 — Coordinating Minister Djamari Chaniago urges troops in Natuna to safeguard sovereignty** ◆ framed
+  around transnational crime (Antara English 421348). **10 Jul 2026 — KKP patrol-fleet statement** ▲ day inferred
+  from a Saturday 11 Jul report.
+- **14 Jul 2026 — Indonesia–Vietnam talks on the EEZ and maritime security** ○ cooperative.
+- **Aug–Sep 2026 — CCG and research-vessel presence around Natuna (Energy Intelligence 9 Nov 2026, paywalled;
+  Jakarta Post opinion 13 Nov 2026)** ◆ no dated Indonesian response found.
+- **27–29 Oct 2026 — Raden Sadjad air base defence exercise (Hanlan 2026)** ◆ routine base drill (Antara English
+  439227; Bursa Kota).
+- **Jan–Oct 2026 — no individual seizure of a Vietnamese boat in the North Natuna Sea found** ◆ check KKP/PSDKP
+  releases (kkp.go.id/djpsdkp).
+- **Unreachable** — en.tempo.co (403), tempo.co (robots-blocked); kabar24.bisnis.com (403); batamnewsasia.com
+  (403); indonesiasentinel.com (suspended); kompas.id, Jakarta Post premium bodies, Energy Intelligence
+  (paywalled); sealight.live search (JavaScript-rendered); BenarNews Indonesia page stops in 2025; Janes Natuna
+  deployment page (undated; turned out to be Jan 2020).
 
 ---
 
