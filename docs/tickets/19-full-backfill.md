@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| TW 1990s | 32 | #80 | 32 candidates, 53 sources; Control Yuan report and Dzurek 1996 the key sources; good 1990–95, thin 1996–99, nothing for 1997; 25 Mar 1995 artillery fire at Bien Dong 80 the one coercive act; most first sources PDFs (excerpts unchecked); compiled on Opus |
 | TW 1980s | 11 | #78 | 11 candidates, 17 sources; nothing for 1982–86; 1988 (Johnson South Reef reactions, resupply, stele) month-precision from US military theses via the Internet Archive; PDF-first excerpts unchecked; compiled on Opus |
 | TW 1970s | 22 | #76 | 22 candidates, 29 sources; US embassy cables 1973–76 (WikiLeaks PlusD) the key source; nothing for 1972 or 1977; the 1973 protests known only by date from MOFA's 18 Jan 1974 statement; PDF excerpts not machine-checkable; compiled on Opus |
 | ID 2021–Oct 2026 | 30 | #74 | 30 candidates, 45/45 excerpts verified, 6 possible duplicates (against #17 and weekly harvests); Vietnamese-boat seizures one event per year; 2021 Tuna-block episode and the Nov–Dec 2024 nine-dash-line clarifications the key items; Indonesia now compiled 1970–Oct 2026; compiled on Opus |
