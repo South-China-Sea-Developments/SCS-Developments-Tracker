@@ -986,8 +986,59 @@ Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — 
   mofa.gov.tw answers fetchers with 307 at times (the 22–23 Jan 2016 event failed its final check).
 - **Purely reactive or cooperative statements** ○ excluded. No UN DOALOS material exists for Taiwan.
 
-### 2021–Oct 2026 — not yet compiled
-Four hand-compiled candidates in #17 (2022, 2024, 2026) and one from weekly harvests.
+### 2021–Oct 2026 (#86)
+Thirteen possible duplicates flagged at import against the four hand-compiled candidates in #17 (2022, 2024,
+2026) and the weekly harvests. Taiping live-fire drills are one event per drill (CGA notice page first, PDF
+second; planned dates); Pratas drills one summary per year; CGA expulsions of CCG ships near Pratas (new from
+Feb 2025) one summary per year with the sharper incidents separate. Taiwan made almost no SCS statements in
+2021–22 — the MOFA English archive has no SCS item between Apr 2020 and Aug 2024, and FM Lin said on 22 Jul 2026
+that Taipei keeps its claims low-profile. The Presidential Office, Ocean Affairs Council, Legislative Yuan budget
+records, MND archives, Liberty Times and UDN were not searched directly, so 2021–23 may be thin.
+- **2021 Q1–Q3 — Taiping live-fire** ◆ notices absent from the CGA firing-notice list (ctNode=1279); only June is
+  known, from Vietnam's 11 Jun protest. **Jun 2021 drill** ▲ day unknown (VnExpress's "June 11" coincides with
+  the protest date).
+- **Mar 2022 — Vietnam protest (dtinews 12 Mar 2022), presumably of the 25–26 Feb drill** ◆ not opened.
+- **Apr 2022 — Taiping airstrip extension (UDN, unnamed source; unconfirmed by the air force)** ○ only MOFA's 28 Apr
+  rebuttal is listed (RFA 18 and 28 Apr 2022). **29 Jun 2022 — rebuff of the Philippines** ▲ merged into that drill.
+- **2023 Q1 and 2026 Q1 — Dongsha quarterly firing notices** ◆ not in the CGA list.
+- **Nov 2023 "larger vessels" statement; Jan 2024 acceptance** ▲ merged into the 18 Mar 2024 wharf ceremony.
+- **Mar 2024 — "Pratas live-fire"** ◆ nothing beyond the Q1 notice for 24 Feb (reserve 2 Mar), in the 2024 summary.
+- **14 Jun 2024 — MOFA on CCG Order No. 3; 19 Jun, 20 Aug, 27 Aug, 1 Sep 2024 — MOFA on the Second Thomas and Sabina
+  collisions** ○ condemn China without restating sovereignty (mofa n=97 s=117557, 117580, 117900, 117940, 117968).
+- **6 Aug 2024 — OAC minister Kuan's Taiping visit, cancelled for rain** ○ (Taiwan News 5914861).
+- **Aug/Nov/Dec 2024 — legislators' or officials' Taiping trips** ◆ none found in English or Chinese; may not have
+  happened.
+- **2024 — responses to CCG ships near Pratas (AMTI: 25 patrol days, incl. CCG 3102 during Joint Sword 2024A)** ◆ no
+  dated CGA response found.
+- **2025 Q1 — Taiping live-fire notice (113)署巡勤射字第250號 (xItem=163084)** ◆ its PDF returns 404, so no date.
+- **Feb–Mar 2025 — 12 Mar 2025 CCG attempt to board a fishing boat under Taiwanese inspection near Dongsha (Taiwan
+  News 6373923)** ◆ only partly covered by the Feb–Mar 2025 event. **2025 — full-year Pratas fisheries counts** ◆
+  only year-to-date figures to May found.
+- **16–17 Apr 2025, 17 Apr 2026, 18 Aug 2026 — MOFA rebuttals of the China–Vietnam and China–Malaysia joint
+  statements and of Anwar's remarks** ○ about Taiwan's status, not the SCS.
+- **14 Aug 2025 — MOFA on the BRP Suluan collision at Scarborough** ○ no sovereignty claim (s=120502).
+- **Sep 2025 — Panshi berthing** ▲ month precision; the ship may have arrived in late August.
+- **9 Nov 2025 — CGA assessment on Chinese "manufactured law enforcement" at Pratas (cited by Jamestown 10 Jul 2026)**
+  ◆ not opened.
+- **Feb 2026 — first CCG incident of the year** ▲ the 2026 summary starts 6 Feb 2026, the first dated report.
+- **Apr 2026 — Dongsha defence-plan announcement** ▲ merged into the Jul–Sep 2026 pier/basing event (month precision).
+  **Apr 2026 — Vietnam's reaction to Kuan's Taiping visit (Baird Maritime, 403)** ◆ not opened.
+- **3–5 Jun 2026 — MOFA on the Japan–Philippines EEZ talks** ○ east of Taiwan. **18 Jun 2026 — Lai calls on China to
+  halt military expansion in the SCS** ○ not a claim assertion (Taiwan News 6385600).
+- **27 Jun 2026 — CGA ship Taichung intercepts CCG 3101 inside Pratas restricted waters (Jamestown)** ▲ counted in the
+  2026 summary but not cited there.
+- **2 Sep 2026 — MOFA condemns the PLA "combat-readiness patrol" at Scarborough without restating sovereignty
+  (s=122999)** ○ a human may want to weigh it.
+- **18–21 Oct 2026 — 16-vessel "hybrid" operation and two CCG approaches near Pratas** ▲ in the 2026 summary; partly
+  concern waters off Taiwan's main island.
+- **Annual — MND Nansha study camp (南沙研習營); An-lung-class 3,000-ton cutter programme (keel laid 28 Mar 2025)** ◆
+  routine or not SCS-specific; not compiled.
+- **7 Nov 2026 — Taiping Q4 2026 drill notice (xItem=169014/169054)** ○ after 31 Oct, out of period.
+- **Unreachable** — Taipei Times (403 to curl; WebFetch partial, Oct 2026 pages failed); Liberty Times (403);
+  GlobalSecurity (paywall); Baird Maritime, Rappler, The Print, Deccan Herald (403); AsiaNews, VOV, SCMP, Jamestown
+  (bot checks / summary only); Hanoi Times (401); Focus Taiwan older stories show only the lead; CGA attachment
+  f1735615992453.pdf (404); MOFA s=122451 (504).
+- **Airtable** — not mirrored: the base reached the free-tier record cap; batch files kept for a later push.
 
 ---
 
