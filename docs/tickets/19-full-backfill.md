@@ -17,6 +17,7 @@
 
 | Chunk | Candidates | Review PR | Notes |
 |---|---|---|---|
+| TW 1970s | 22 | #76 | 22 candidates, 29 sources; US embassy cables 1973–76 (WikiLeaks PlusD) the key source; nothing for 1972 or 1977; the 1973 protests known only by date from MOFA's 18 Jan 1974 statement; PDF excerpts not machine-checkable; compiled on Opus |
 | ID 2021–Oct 2026 | 30 | #74 | 30 candidates, 45/45 excerpts verified, 6 possible duplicates (against #17 and weekly harvests); Vietnamese-boat seizures one event per year; 2021 Tuna-block episode and the Nov–Dec 2024 nine-dash-line clarifications the key items; Indonesia now compiled 1970–Oct 2026; compiled on Opus |
 | ID 2010–2015 | 55 | #72 | 55 candidates, all excerpts verified (DOALOS 2010 note by OCR); ANTARA the key source, 2012–13 thin; Yuzheng forced releases (2010, 2013) rest on ASPI/NIDS, Indonesia made no statement; 2014–15 the dense years (Bakamla, sinkings, nine-dash-line statements); compiled on Opus |
 | ID 2000s | 27 | #70 | 27/27 excerpts verified; Liputan6 (2001–06) and ANTARA (2007–) the key sources; nothing for 2000; mostly fisheries enforcement against Vietnamese crews until the 2008–09 step-up (notes to China/Vietnam/Taiwan, Natuna exercise, 8 Chinese trawlers seized Jun 2009); compiled on Opus |

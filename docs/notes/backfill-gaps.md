@@ -711,6 +711,61 @@ and RFA carry most events; Kemlu, Bakamla and KKP sites load but offered no date
 
 ## Taiwan
 
+### 1970s (#76)
+Source notes: US embassy cables 1973–76 on WikiLeaks PlusD carry most of the decade (search Spratly / Itu Aba /
+Pratas with GRC/ROC/Taipei); the 1978–79 cables are thin. The MOFA 2016 Position Paper has no dated 1970s
+entries, only a "since 1970" paragraph; the Coast Guard Nansha chronology page shows climate text and photos
+only — its "Historical Background" translation is PCA Annex 910. Kuan-Ming Sun 1996 has no 1970s content.
+Gazette Online, Academia Historica, the National Archives catalogue and HathiTrust Free China Review were not
+searched in this pass — the obvious second pass for 1972, 1977 and the PD 1596 / Malaysian-map responses.
+- **1970–71 — Philippine occupations (Pagasa, Lawak, Patag) and marines raising the flag "on Itu Aba"** ○ no ROC
+  response found; Hung (NPF 6121): "Taipei took no action" (UK FCO paper, hkintexts p. 1387937).
+- **3 Sep 1970 — offshore petroleum statute** ▲ in the set; aimed mainly at the East China Sea shelf.
+- **Jul 1971 — ROC plan for a radar station on Itu Aba (seven-nation typhoon-warning system)** ○ plan only (UK FCO
+  paper, para 32).
+- **Jul 1971 — warning shots at a Philippine plane near Itu Aba** ▲ the set's only coercive event, on Philippine
+  sources alone (Marcos 10 Jul; Yorac 1983). **Any ROC denial or formal reply to the Philippine withdrawal
+  note** ◆ not found; Samuels 1982 and Chiu & Park 1975 not open (Google Books quota exhausted).
+- **12 Jul 1971 — FM Chow Shu-kai statement** ▲ from a UK FCO paper on hkintexts.histsyn.com, which blocks scripted
+  fetches; excerpt read through a summarising fetcher, may not be character-exact.
+- **1972 and 1977 — nothing found** ◆.
+- **25 Jan, 9 Aug, 27 Aug, 26 Oct 1973 — four protests** ▲ known only from the dates in MOFA's 18 Jan 1974
+  statement; recipients not stated, dyads RV/RP guessed.
+- **19–20 Jan 1974 — ROC position on the Paracels battle** ○ only the 18 Jan statement exists; MOFA and the media
+  downplayed the battle and a Pratas "comfort mission" was reportedly cancelled (Taipei 602, 30 Jan 1974).
+- **5–8 Feb 1974 — ROC reply to Manila** ▲ date range inferred.
+- **1974–75 — reinforcement of the Taiping garrison** ◆ no dated source; Taipei 827 (8 Feb 1974) says "not been
+  withdrawn or strengthened", Taipei 508 gives 200–300 men.
+- **Jul–Aug 1974 — Navy-run Pratas weather station seeking NOAA supplies** ○ pre-1970 station, cooperative with the
+  US (Taipei 4527, 4850).
+- **Feb 1975 — resupply run** ▲ dated only by its 15 Feb return. **1975 — "one and only valid legal warning"
+  (PCA Annex 910)** ▲ year only; may be the same act as the 15 Feb 1975 reiteration.
+- **17–19 Apr 1975 — garrison ordered to watch Vietnamese-held Sand Cay and Namyit** ○ monitoring; inside the
+  6 May 1975 event (Taipei 2087).
+- **Sep–Nov 1975 — ROC request for a US medevac from Itu Aba** ○ non-claimant (Taipei 7195, Manila 15330).
+- **19 Mar 1976 ("GROC reiterates its claim…") and Jun 1976 ("ROC statements concerning the Spratlys…")** ▲ in the
+  set on cable titles alone; WikiLeaks has no text; the 19 Mar date also matches Hung's undated "March 19".
+- **Jun 1976 — Lai Ming-tang visit to Pratas** ▲ "Dragon Boat Festival" set to June.
+- **12 May (1976 or 1977?) — reiteration that the Paracels and Spratlys are "traditional" ROC territory** ◆ Hung
+  (NPF 6121) gives no year; may answer Vietnam's 12 May 1977 maritime-zone statement.
+- **30 Jun 1976 — "USN midshipmen aboard ROC naval vessel to Spratly Islands"; 1 Jul 1976 — "ROC attitude toward
+  Spratly Islands"** ◆ cable text unavailable (Taipei 4436, 4476; State 161732, 161116).
+- **1971–73, 1976–79 — quarterly resupply runs** ◆ undocumented in open sources; only Feb 1974 and Feb 1975 compiled.
+- **1978 — WMO winter-monsoon station on Taiping** ▲ year only.
+- **Jun 1978 — ROC response to Philippine PD 1596 (Kalayaan)** ◆ none found.
+- **6 Sep 1979 — territorial-sea/EEZ decree** ▲ in the set; names no SCS feature; the Presidential Office text not
+  found. **1979 — Pratas placed under Kaohsiung** ▲ Hung only; date and instrument unverified; the Coast Guard
+  history implies a later step.
+- **Dec 1979 — ROC response to Malaysia's 21 Dec 1979 map** ◆ none found.
+- **Not machine-checkable** — PDF excerpts (Yorac, PCA Annex 910, CGA Dongsha, Presidential Office Gazette 2198 —
+  CJK compatibility characters normalised, Keesing's, Fordham via CORE).
+- **Unreachable** — CIA Reading Room (home page only; no Archive mirror of "East Asian Contested Islands" or the
+  1974 Spratly papers); NewspaperSG search (empty 202); Trove API (410); Google Books (quota); core.ac.uk and
+  Fordham repository PDFs (Cloudflare); UMD digital archive (CloudFront 403); China aktuell PDFs on Heidelberg
+  (served as HTML); the Coast Guard Nansha chronology text.
+
+### 1980s–2015 — not yet compiled
+
 ### 2016–2020 (#48)
 - **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
   dedupe.
@@ -733,7 +788,7 @@ and RFA carry most events; Kemlu, Bakamla and KKP sites load but offered no date
   mofa.gov.tw answers fetchers with 307 at times (the 22–23 Jan 2016 event failed its final check).
 - **Purely reactive or cooperative statements** ○ excluded. No UN DOALOS material exists for Taiwan.
 
-### 1970s–2015, 2021–Oct 2026 — not yet compiled
+### 2021–Oct 2026 — not yet compiled
 Four hand-compiled candidates in #17 (2022, 2024, 2026) and one from weekly harvests.
 
 ---
