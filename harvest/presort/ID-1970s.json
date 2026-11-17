@@ -1,0 +1,119 @@
+{
+ "run_id": "ID-1970s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-9c94582a2a",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Indonesia's first recorded protest at a rival's shelf claim north of Natuna (South Vietnam's 1971 concession decree), with the outermost-islands equidistance line insisted on; nothing comparable in 1971 (no candidates, no moves) or in the baseline, which has unilateral announcements but no protest. Known only from 1974 US cables quoting a Mining Ministry letter, so the coder may want it confirmed."
+  },
+  {
+   "event_id": "ev-934fda52f2",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Statutory enactment of the shelf claim (Law 1/1973) is a new method against 1972, whose record shows only a negotiating-table protest (ev-9c94582a2a); declarative. Doubt: it is archipelago-wide and codifies the 1969 announcement in the baseline, so the coder may judge it maintenance rather than an SCS intensification."
+  },
+  {
+   "event_id": "ev-1005203f02",
+   "disposition": "unclear",
+   "reason": "Presidential ratification of Agip's contract area reaching into the disputed shelf could be a demonstrative novelty against 1972 (nothing comparable after ev-9c94582a2a), but the Agip contract dates from 1968 and was already ratified by Decree 68/1971, so it may only maintain an existing concession. Settle by finding Keppres 39/1973 and what it changed (the decree is known only from a 1974 Pertamina letter)."
+  },
+  {
+   "event_id": "ev-ad1b102653",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Drilling and a large gas discovery inside the shelf area South Vietnam claims is unilateral resource exploitation not shown in the 1973 record (law ev-934fda52f2 and contract-area decree ev-1005203f02 only); demonstrative. Doubt: secondary sources date Agip's D-Alpha discovery to 1973, so drilling may already have been under way in 1973, which would make this a continuation."
+  },
+  {
+   "event_id": "ev-b3b40540a4",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Air-force buildup on Natuna to deter South Vietnamese interference with drilling is the first military presence used for the claim in the record; nothing comparable in 1973 (ev-934fda52f2, ev-1005203f02) or the baseline; demonstrative."
+  },
+  {
+   "event_id": "ev-902f2ee3f3",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "ID1974-oil-company-pressure",
+   "reason": "Lead of the 1974 pressure on foreign oil companies: summoning Bow Valley, Shell and Santa Fe to quit South Vietnamese concessions, with a hint their Indonesian business would suffer, is a new method against 1973 (law and decree only, ev-934fda52f2, ev-1005203f02); coercive as the highest type of the group."
+  },
+  {
+   "event_id": "ev-bd430aa894",
+   "disposition": "same_move",
+   "of": "ev-902f2ee3f3",
+   "group": "ID1974-oil-company-pressure",
+   "reason": "Pertamina's 30 April/12 June letter advising all contractors not to take South Vietnamese concessions is the opening step of the same pressure campaign as ev-902f2ee3f3 (same companies' question, same weeks); one move."
+  },
+  {
+   "event_id": "ev-6fb60e7a2b",
+   "disposition": "unclear",
+   "reason": "An internal presidential decision not to go beyond the June 1972 compromise is a decision, not observable behaviour (the series dates behaviour), and it holds rather than hardens the position shown in ev-9c94582a2a; likely reject or context. Settle by whether the decision was conveyed to South Vietnam in 1974."
+  },
+  {
+   "event_id": "ev-b060198587",
+   "disposition": "unclear",
+   "reason": "An internal Mining Ministry note asking Hankam to protect Agip and to hold the 'Agip line' is a decision document, not public; if the coder counts it, it belongs as evidence with the military-protection move ev-b3b40540a4 rather than as a move of its own. Settle by whether any protective deployment followed beyond the Natuna buildup."
+  },
+  {
+   "event_id": "ev-02305f8eb4",
+   "disposition": "continuation",
+   "of": "ev-ad1b102653",
+   "reason": "Licensing a further exploratory well in the disputed shelf continues the 1974 practice of drilling there (ev-ad1b102653) at the same level, without the military escort that would mark an escalation; continuation, provisional until 1974 is decided."
+  },
+  {
+   "event_id": "ev-0245dbdd94",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Refusing Vietnam's demanded moratorium and threatening to scrap the communiqué rather than stop exploration is a diplomatic assertion with nothing comparable in 1976 (no candidates), so it is new again; declarative. Doubt: a May 1978 Vientiane cable says the two sides agreed not to exploit unresolved areas, so the coder may want the outcome settled first."
+  },
+  {
+   "event_id": "ev-fe81521c5a",
+   "disposition": "continuation",
+   "of": "ev-0245dbdd94",
+   "reason": "The 1977 record (ev-0245dbdd94) shows Indonesian oil exploration already under way in the disputed shelf and defended against a moratorium; Marathon's 1978 find continues that exploration at the same level. Doubt: it is in a different contract area (northwest of Natuna), so a coder who reads it as new acreage could call it scope."
+  },
+  {
+   "event_id": "ev-28e2c68f85",
+   "disposition": "continuation",
+   "of": "ev-0245dbdd94",
+   "reason": "Rejecting Vietnam's thalweg line in the 1978 talks repeats the 1977 refusal of Vietnam's positions in bilateral diplomacy (ev-0245dbdd94) at the same level, inside a cooperative negotiation; continuation, likely reject."
+  },
+  {
+   "event_id": "ev-bbef893415",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "ID1979-natuna-blocs",
+   "reason": "Lead of the 1979 Natuna bloc round: tendering ten new blocs, three partly in the area disputed with Vietnam, is a new method against 1978, whose record shows exploration only in an existing contract (ev-fe81521c5a) and talks (ev-28e2c68f85); demonstrative."
+  },
+  {
+   "event_id": "ev-6855d9320a",
+   "disposition": "same_move",
+   "of": "ev-bbef893415",
+   "group": "ID1979-natuna-blocs",
+   "reason": "The Gulf contract for Bloc A is one of the awards of the bloc round led by ev-bbef893415; one move."
+  },
+  {
+   "event_id": "ev-339a3ca551",
+   "disposition": "same_move",
+   "of": "ev-bbef893415",
+   "group": "ID1979-natuna-blocs",
+   "reason": "The Marathon contract for Bloc B, signed despite Vietnam's protest, is an award of the bloc round led by ev-bbef893415; one move."
+  },
+  {
+   "event_id": "ev-a4530c96dd",
+   "disposition": "same_move",
+   "of": "ev-bbef893415",
+   "group": "ID1979-natuna-blocs",
+   "reason": "The Mobil and Amoseas contracts (Bloc C partly disputed) and Subroto's pledge to continue are the last awards of the bloc round led by ev-bbef893415; one move."
+  },
+  {
+   "event_id": "ev-26d27c646d",
+   "disposition": "same_move",
+   "of": "ev-bbef893415",
+   "group": "ID1979-natuna-blocs",
+   "reason": "Mochtar's statement to parliament dismissing Vietnam's protest at the awards is the declarative side of the bloc round led by ev-bbef893415; alternatively a continuation of the 1978 rejection of Vietnam's positions (ev-28e2c68f85)."
+  }
+ ]
+}

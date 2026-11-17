@@ -11,10 +11,13 @@ A pre-sort lives in `harvest/presort/<run_id>.json`:
               "reason": "<one or two sentences>"}, ...]}
 
 Dispositions:
-  continuation  the act continues a move of the previous year (or an earlier move still ongoing) at the
-                same level: `of` names that accepted move; the likely decision is reject with the note
+  continuation  the act continues, at the same level, a move of the previous year (or an earlier move still
+                ongoing into it): `of` names that accepted move; the likely decision is reject with the note
                 "continuation of <move_id>" (the coder then extends that move's ongoing_through by hand,
-                docs/coding-guide.md step K — `decide` does not)
+                docs/coding-guide.md step K — `decide` does not). Where the previous year is not yet coded,
+                `of` may instead name the previous year's *candidate* that shows the same practice (an
+                event id of this run, or of the previous run listed under `previous_run`): the call is
+                provisional until that year is decided, and the note reads "continuation of <event_id>"
   same_move     the act belongs with another candidate of the same run and claimant-year that would form
                 the move: `of` names that candidate (the one proposed as the move's lead)
   new_move      the act is an intensification against the previous year: `criterion` says which kind
@@ -104,8 +107,9 @@ def context(data_dir: Path, run_id: str, root: Path | None = None) -> dict:
             "dispositions": DISPOSITIONS, "criteria": schema.INTENSIFICATION_CRITERIA}
 
 
-def check(doc: dict, data_dir: Path, run_id: str) -> list[str]:
-    """Errors that make a pre-sort unusable for the run; [] when it fits."""
+def check(doc: dict, data_dir: Path, run_id: str, previous_ids: set[str] | None = None) -> list[str]:
+    """Errors that make a pre-sort unusable for the run; [] when it fits. `previous_ids` are the candidate
+    ids of the previous run (another branch, so not in data_dir) that a continuation may name."""
     errs: list[str] = []
     if doc.get("run_id") != run_id:
         errs.append(f"run_id {doc.get('run_id')!r} is not {run_id!r}")
@@ -136,7 +140,14 @@ def check(doc: dict, data_dir: Path, run_id: str) -> list[str]:
         if d in NEEDS_OF and not of:
             errs.append(f"{where}: {d} needs 'of'")
         year = cands[eid]["date_start"][:4]
-        if d == "continuation" and of:
+        if d == "continuation" and of.startswith("ev-"):
+            t = events.get(of)
+            if t is not None:
+                if t["claimant"] != cands[eid]["claimant"] or not (t["date_start"][:4] < year):
+                    errs.append(f"{where}: continuation of candidate {of} must name a {cands[eid]['claimant']} candidate of an earlier year than {year}")
+            elif of not in (previous_ids or set()):
+                errs.append(f"{where}: continuation of {of}: not a candidate of this run nor of the previous run")
+        elif d == "continuation" and of:
             m = moves.get(of)
             if not m:
                 errs.append(f"{where}: continuation of unknown move {of}")
@@ -172,7 +183,7 @@ def label(it: dict) -> str:
     d = it.get("disposition", "")
     of = it.get("of", "")
     if d == "continuation":
-        return f"continuation of {of}"
+        return f"continuation of {of}" + (" (a candidate, provisional)" if of.startswith("ev-") else "")
     if d == "same_move":
         return f"same move as {of}"
     if d == "new_move":
@@ -196,6 +207,7 @@ def main(argv=None) -> int:
     c.add_argument("--data", type=Path, default=None)
     k = sub.add_parser("check"); k.add_argument("--run", required=True); k.add_argument("--file", type=Path, default=None)
     k.add_argument("--data", type=Path, default=None)
+    k.add_argument("--prev", type=Path, default=None, help="the previous run's candidates (JSON with event_id fields, any nesting), which a continuation may name")
     a = p.parse_args(argv)
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "context":
@@ -204,7 +216,19 @@ def main(argv=None) -> int:
         print(f"{len(ctx['candidates'])} candidate(s) of {a.run} -> {a.out}")
         return 0
     path = a.file or default_path(a.run)
-    errs = check(load(path), data_dir, a.run)
+    prev_ids: set[str] = set()
+    if a.prev and a.prev.exists():
+        def ids(o):
+            if isinstance(o, dict):
+                if "event_id" in o:
+                    prev_ids.add(o["event_id"])
+                for v in o.values():
+                    ids(v)
+            elif isinstance(o, list):
+                for v in o:
+                    ids(v)
+        ids(load(a.prev))
+    errs = check(load(path), data_dir, a.run, prev_ids)
     if errs:
         print(f"{path}: {len(errs)} problem(s)", file=sys.stderr)
         for e in errs[:40]:

@@ -243,7 +243,7 @@
     if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
     card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
     var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
-    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of; }
+    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of + (/^ev-/.test(p.of) ? " (last year's candidate; provisional until that year is decided)" : ""); }
     else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
     else if (p.disposition === "new_move") { radio("new_move"); var c = card.querySelector(".f-crit"); if (c) c.value = p.criterion || ""; }
     else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
