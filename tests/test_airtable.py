@@ -523,3 +523,25 @@ def test_archive_command_refuses_an_export_with_no_row_of_the_run(tmp_path, caps
     export.write_text(json.dumps(_exported("ID-1970s", [{"event_id": "E1"}])), encoding="utf-8")
     assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(export), "--out-dir", str(tmp_path / "out")]) == 1
     assert "no exported row belongs to run MY-1970s" in capsys.readouterr().err
+
+
+# ---------------------------------------------------------------------------
+# the reviewer's name: set on every pushed row, and the fallback when no row names one
+
+def test_records_carry_the_configured_reviewer_so_the_coder_never_types_it(tmp_path):
+    recs = airtable.records_for_run(opened_copy(tmp_path, "d"), "fixture", pr=17, reviewer="Angelo")
+    assert all(r["reviewer"] == "Angelo" for r in recs)
+    # without a name the column is left for the coder, as before
+    assert all("reviewer" not in r for r in airtable.records_for_run(opened_copy(tmp_path, "e"), "fixture", pr=17))
+
+
+def test_the_configured_reviewer_is_the_default_name_on_the_command_line(tmp_path):
+    cfg = tmp_path / "airtable.json"
+    cfg.write_text(json.dumps({"reviewer": "Angelo"}), encoding="utf-8")
+    assert airtable.default_reviewer(cfg) == "Angelo"
+    assert airtable.default_reviewer(tmp_path / "missing.json") == ""
+    # an archive of rows that name nobody is signed by the configured name
+    exported = _exported("MY-1970s", [{"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "x"}])
+    out = tmp_path / "out"
+    airtable.archive_run(exported, "MY-1970s", out, today="2026-11-19", reviewer=airtable.default_reviewer(cfg))
+    assert json.loads((out / "decisions.json").read_text(encoding="utf-8"))["reviewer"] == "Angelo"

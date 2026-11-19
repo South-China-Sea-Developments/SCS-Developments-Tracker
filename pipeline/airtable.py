@@ -182,6 +182,12 @@ def load_config(path: Path | None = None) -> dict:
     return cfg
 
 
+def default_reviewer(path: Path | None = None) -> str:
+    """The `reviewer` of the configuration file: the name pushed into every new row's Reviewer column
+    and the name a decisions file is signed with when no row names one (one coder, decision 07)."""
+    return (load_config(path).get("reviewer") or "").strip()
+
+
 def why_disabled(cfg: dict, token: str | None) -> str:
     """'' when the sync may run; otherwise the reason, for the command to print and exit 0."""
     if not cfg.get("enabled"):
@@ -329,12 +335,13 @@ def flags_for(e: dict) -> list[str]:
 
 
 def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_record: str | None = None,
-                    presort_path: Path | None = None) -> list[dict]:
+                    presort_path: Path | None = None, reviewer: str = "") -> list[dict]:
     """One Airtable record per candidate of the run: the review page's context fields, and the coder's
     fields prefilled as the page prefills them (decision undecided; the new move's type, dyads, domains,
-    issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag).
-    Year and description are left blank: `decide` defaults them to the event's year and summary, as the
-    page does. Only `push` on a new record writes the coder's fields; a refresh never touches them."""
+    issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag;
+    `reviewer` when a name is given, so a single coder never types it). Year and description are left
+    blank: `decide` defaults them to the event's year and summary, as the page does. Only `push` on a
+    new record writes the coder's fields; a refresh never touches them."""
     ctx = review_context(data_dir, run_id=run_id, presort_path=presort_path)
     out = []
     for it in ctx["items"]:
@@ -358,7 +365,7 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_reco
             "possible_duplicate_of": dup, "presort": presort,
             "flags": flags_for(e) or None, "dataset_status": "In review", "run": [run_record] if run_record else None,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
-            "decision": "undecided", "duplicate_of": dup,
+            "decision": "undecided", "duplicate_of": dup, "reviewer": reviewer or None,
             "new_type": e["suggested_type"] or None, "new_dyads": e["suggested_dyads"],
             "new_domains": e["suggested_domains"].split() or None, "new_issues": e["suggested_issues"].split() or None,
             "new_subregions": [_subregion_choice(e["subregion"])] if _subregion_choice(e["subregion"]) else None,
@@ -649,15 +656,15 @@ def main(argv=None) -> int:
             s.add_argument("--run-record", default=None, help="the Runs table record id to link the candidates to (rec...)")
         if name in ("pull", "records"):
             s.add_argument("--out", type=Path, required=True)
+        s.add_argument("--reviewer", default=None, help="the coder's name (default: `reviewer` in pipeline/airtable.json)")
         if name == "pull":
-            s.add_argument("--reviewer", default="")
             s.add_argument("--from", dest="from_file", type=Path, default=None, help="records exported from Airtable as JSON, instead of calling it")
     sub.add_parser("schema")
     ar = sub.add_parser("archive", help="ticket 22: file the run's exported rows in the repository and name the decided ones for deletion")
     ar.add_argument("--run", required=True)
     ar.add_argument("--from", dest="from_file", type=Path, required=True, help="the run's records exported from Airtable as JSON")
     ar.add_argument("--out-dir", type=Path, default=None, help="default harvest/airtable/<run_id>")
-    ar.add_argument("--reviewer", default="")
+    ar.add_argument("--reviewer", default=None, help="the coder's name (default: `reviewer` in pipeline/airtable.json)")
     ar.add_argument("--date", default="")
     rr = sub.add_parser("run-record")
     rr.add_argument("--run", required=True, type=Path, help="the run folder, harvest/runs/<run_id>")
@@ -666,6 +673,8 @@ def main(argv=None) -> int:
     rr.add_argument("--notes", default="", help="what the reviewer should look at")
     rr.add_argument("--out", type=Path, required=True)
     a = p.parse_args(argv)
+    if getattr(a, "reviewer", None) is None:
+        a.reviewer = default_reviewer()
     if a.cmd == "run-record":
         rec = run_record(a.run, a.data or repo_root() / "data", a.pr, a.notes)
         a.out.write_text(json.dumps(rec, indent=1, ensure_ascii=False), encoding="utf-8")
@@ -688,7 +697,7 @@ def main(argv=None) -> int:
         return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
-        recs = records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort)
+        recs = records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, a.reviewer)
         a.out.write_text(json.dumps(recs, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(recs)} record(s) -> {a.out} (nothing sent)")
         return 0
@@ -708,7 +717,7 @@ def main(argv=None) -> int:
         return 0
     client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls, cfg.get("field_ids"))
     if a.cmd == "push":
-        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort), a.run)
+        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, a.reviewer), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")
     elif a.cmd == "pull":
         d = pull(client, a.run, a.reviewer)
