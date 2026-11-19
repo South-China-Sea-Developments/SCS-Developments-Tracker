@@ -571,8 +571,6 @@ def clear(client: Client, run_id: str) -> int:
     return len(ids)
 
 
-TRIAGE_FIELDS = {"Priority": "priority", "Selected": "selected"}   # the coder's own columns (ticket 21); the sync never writes
-# them, so they are not in FIELDS; their ids live under "triage_field_ids" in the configuration for exports keyed by id
 
 
 def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "",
@@ -595,7 +593,7 @@ def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "
     holds two rows for one event (the base should never, and the archive would keep only one)."""
     today = today or dt.date.today().isoformat()
     cfg = load_config()
-    field_ids = {**(field_ids if field_ids is not None else cfg.get("field_ids") or {}), **cfg.get("triage_field_ids", {})}
+    field_ids = field_ids if field_ids is not None else cfg.get("field_ids") or {}
     out_dir.mkdir(parents=True, exist_ok=True)
     rec_path = out_dir / "records.json"
     earlier: dict[str, dict] = {}
@@ -605,7 +603,7 @@ def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "
     rows: dict[str, dict] = {}
     ours: list[dict] = []
     for r in exported:
-        f = {TRIAGE_FIELDS.get(k, k): v for k, v in normalise_record(r, field_ids).items()}
+        f = normalise_record(r, field_ids)
         if f.get("run_id") != run_id or not f.get("event_id"):
             continue
         if f["event_id"] in rows:
