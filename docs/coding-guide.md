@@ -283,7 +283,8 @@ another candidate in the same batch via `move_of_event`), *new move*, *duplicate
 accepted event — status `merged`), or *reject*. Merge checks claimant and year.
 **Don't.** Don't merge a 2024 event into a 2023 move: a move is a year's intensification, and the
 validator binds an event to a move of its own claimant and year. If the behaviour continued into 2024 at
-the same level, the 2024 event is decided *reject* with the note "continuation of <move_id>", and the 2023
+the same level, the 2024 event is decided *reject* with the note "continuation of <move_id>" (in Airtable, a
+blank note on such a reject confirms the pre-sort's continuation target, which becomes the note), and the 2023
 move's *Ongoing through* is moved to 2024 by a separate edit to `moves.csv` (§K). That the continuation
 evidence then leaves the map is a known
 limitation of the current schema; a `continuation` status attached to the earlier move would be an

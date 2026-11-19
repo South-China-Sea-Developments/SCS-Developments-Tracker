@@ -47,10 +47,15 @@ delete fields).
 
 `Pre-sort` (`fldlmfWHAwc09itis`): the suggested decision with its reason, filled from `harvest/presort/<run_id>.json` when `records`/`push` run with `--presort` (or the file exists beside the data); a suggestion only, and a refresh without the file leaves it as it is.
 
+A reject with a blank `Note` on a row whose `Pre-sort` begins "continuation of X" is read by the archive as the
+coder confirming the pre-sort: the decision carries the note `continuation of X (pre-sort confirmed)`
+(`decisions_from_records`, 2026-11-19). A note the coder typed always wins; a blank note on any other reject
+still fails `decide`.
+
 ### Candidates: the `Complete` column
 
 `Complete` (`fldxtFtzSLOFoALEB`, formula, 2026-11-19): blank while undecided; ✓ when the row has what its
-decision needs; ✗ naming what is missing (`✗ note` on a reject, `✗ merge target`, `✗ duplicate of`,
+decision needs; ✗ naming what is missing (`✗ note` on a reject whose pre-sort is not a continuation, `✗ merge target`, `✗ duplicate of`,
 `✗ type criterion` on a new move missing those; a new move's year is not demanded, since `decide` defaults it to
 the event's). It mirrors what `queue decide` refuses, so a sitting can be
 exported once the `Incomplete` tab of the Queue page is empty. A formula costs no record and is never
