@@ -275,7 +275,7 @@ def test_a_continuation_note_extends_the_named_moves_ongoing_through(opened):
     counts = queue.apply_decisions([
         {"event_id": scar["event_id"], "action": "reject", "note": "continuation of CN201504 (pre-sort confirmed)"},
         {"event_id": thitu["event_id"], "action": "reject", "note": "continuation of CN201504 — same practice"},
-        {"event_id": headline["event_id"], "action": "reject", "note": "continuation of CN201501"},   # already through 2026? no: 2016 → extended too
+        {"event_id": headline["event_id"], "action": "reject", "note": "Continuation of CN201501."},   # through 2016: extended too; case and stop tolerated
     ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
     assert counts["rejected"] == 3 and counts["extended"] == 2
     after = {m["move_id"]: m for m in rows(opened, "moves")}
@@ -299,12 +299,32 @@ def test_a_continuation_note_may_name_a_candidate_whose_move_exists(opened):
     counts = queue.apply_decisions([{"event_id": thitu["event_id"], "action": "reject", "note": f"continuation of {scar['event_id']} (pre-sort confirmed)"}],
                                    REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
     assert counts["rejected"] == 1 and counts["extended"] == 0
+    # a year no later than the move's extends nothing, and a second sitting adds no second corrections row
+    assert queue.apply_decisions([{"event_id": next(x for x in cands if x["claimant"] == "VN")["event_id"], "action": "reject",
+                                   "note": "continuation of VN201501 (pre-sort confirmed)"}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)["extended"] == 1
+    assert len([c for c in rows(opened, "corrections") if c["move_id"] == "VN201501"]) == 1
     # a note naming a move that does not exist is a mistake the batch must not swallow
     headline = next(x for x in cands if not x["location_name"])
     with pytest.raises(ValueError, match="continuation of CN199999"):
         queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of CN199999"}],
                               REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    with pytest.raises(ValueError, match="not an event"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of ev-doesnotexist"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
     # and a move of another claimant cannot be the continuation target
     with pytest.raises(ValueError, match="VN"):
         queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of VN201501"}],
                               REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+
+
+def test_a_follower_of_a_lead_decided_in_the_same_batch_resolves_through_it(opened):
+    cands = candidates(opened)
+    scar = next(x for x in cands if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cands if x["location_name"].startswith("Thitu"))
+    counts = queue.apply_decisions([
+        {"event_id": scar["event_id"], "action": "new_move",
+         "new_move": {"type": "coercive", "intensification_criterion": "novelty", "domains": ["physical"], "issues": ["military"], "dyads": ["CP"], "subregions": ["4"]}},
+        {"event_id": thitu["event_id"], "action": "reject", "note": f"continuation of {scar['event_id']}"},
+    ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["new_moves"] == 1 and counts["rejected"] == 1 and counts["extended"] == 0   # same year: nothing to extend, no error
+

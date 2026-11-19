@@ -13,9 +13,9 @@ each of the ~600 continuations in the backfill would otherwise need its own edit
 **Rules.** The note form is `continuation of <id>` at the start of the note (the form the pre-sort writes and
 the Airtable archive confirms); anything after the id is free text. A note naming a move that does not
 exist, or a move of another claimant, fails the batch (all-or-nothing, like every other invalid decision).
-A note naming a candidate whose lead has no move yet is left alone — the extension happens when a later
-sitting rejects nothing and the lead is in, which `decide` cannot know; the coder's note stays and the
-move's duration is checked again when the year's open moves are re-read (guide §K). Several continuations
+A note naming a candidate whose lead has no move yet is left alone and not revisited later; the coder's
+note stays, and the move's duration is checked again when the year's open moves are re-read (guide §K). The
+note's case and a closing stop or bracket do not matter; a note naming no known move or event fails the batch. Several continuations
 of one move in a batch extend it once, to the latest year. `decide` prints and commits the count as
 `extended`; the nightly apply task needs no change (its commit adds `data/`).
 

@@ -353,7 +353,7 @@ def _build_move(eid: str, e: dict, spec: dict, reviewer: str, date: str, moves: 
     return m
 
 
-CONTINUATION = re.compile(r"^continuation of (\S+)")   # the note form of a rejected continuation (coding guide §K)
+CONTINUATION = re.compile(r"^continuation of\s+\(?([A-Za-z0-9-]+)", re.I)   # the note form of a rejected continuation (guide §K)
 
 
 def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: Path,
@@ -454,10 +454,12 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         m = CONTINUATION.match((d.get("note") or "").strip())
         if not m:
             continue
-        eid, e, target = d["event_id"], by_id[d["event_id"]], m.group(1).rstrip(".,;:")
+        eid, e, target = d["event_id"], by_id[d["event_id"]], m.group(1)
         if target.startswith("ev-"):
             lead = by_id.get(target)
-            if not lead or not lead.get("move_id"):
+            if lead is None:
+                raise ValueError(f"{eid}: the note says continuation of {target}, which is not an event")
+            if not lead.get("move_id"):
                 continue                                   # the lead is not decided yet: nothing to extend
             target = lead["move_id"]
         mv = all_moves.get(target)
