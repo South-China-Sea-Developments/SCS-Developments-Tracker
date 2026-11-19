@@ -24,6 +24,7 @@ import csv
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -352,12 +353,16 @@ def _build_move(eid: str, e: dict, spec: dict, reviewer: str, date: str, moves: 
     return m
 
 
+CONTINUATION = re.compile(r"^continuation of\s+\(?([A-Za-z0-9-]+)", re.I)   # the note form of a rejected continuation (guide §K)
+
+
 def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: Path,
                     xlsx_path: Path | None = None, mavd_path: Path | None = None) -> dict:
     """Apply a batch of decisions to the canonical files. All-or-nothing: an invalid decision, or a result
     the validator rejects, raises ValueError and writes nothing.
 
-    Actions: reject (note required); merge (into an existing move, or into the move formed from another
+    Actions: reject (note required; "continuation of X" also extends X's ongoing_through to the event's
+    year, with a corrections.csv line when X is Chubb's); merge (into an existing move, or into the move formed from another
     candidate in this batch via move_of_event); new_move; duplicate (of an accepted event: status merged).
 
     The order of the decisions in the batch does not matter: they are applied in the order of their
@@ -367,7 +372,7 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
     moves = read_table("moves", data_dir)
     by_id = {e["event_id"]: e for e in events}
     move_by_id = {m["move_id"]: m for m in moves}
-    counts = {"rejected": 0, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0}
+    counts = {"rejected": 0, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0, "extended": 0}
     new_moves: list[dict] = []
     move_of_event: dict[str, str] = {}
 
@@ -437,13 +442,50 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         e.update(edits); e["move_id"] = target; e["status"] = "accepted"
         counts["merged"] += 1; counts["accepted_events"] += 1; finish(e, d, note)
 
+    # pass 3: a rejection noted "continuation of X" keeps X running through the event's year (ticket 24).
+    # X is a move id, or a candidate's event id once that candidate has a move. Chubb's rows are guarded,
+    # so each extension of one is documented in corrections.csv as the validator requires.
+    corrections = read_table("corrections", data_dir)
+    new_corrections: list[dict] = []
+    extend: dict[str, tuple[int, str]] = {}            # move_id -> (year, the event that reached it)
+    for d in decisions:
+        if d.get("action") != "reject":
+            continue
+        m = CONTINUATION.match((d.get("note") or "").strip())
+        if not m:
+            continue
+        eid, e, target = d["event_id"], by_id[d["event_id"]], m.group(1)
+        if target.startswith("ev-"):
+            lead = by_id.get(target)
+            if lead is None:
+                raise ValueError(f"{eid}: the note says continuation of {target}, which is not an event")
+            if not lead.get("move_id"):
+                continue                                   # the lead is not decided yet: nothing to extend
+            target = lead["move_id"]
+        mv = all_moves.get(target)
+        if mv is None:
+            raise ValueError(f"{eid}: the note says continuation of {target}, which is not a move")
+        if mv["claimant"] != e["claimant"]:
+            raise ValueError(f"{eid}: continuation of {target}, a {mv['claimant']} move, for a {e['claimant']} event")
+        year = int(e["date_start"][:4])
+        if year > int(mv["ongoing_through"] or mv["year"]) and year > extend.get(target, (0, ""))[0]:
+            extend[target] = (year, eid)
+    for target, (year, eid) in sorted(extend.items()):
+        mv = all_moves[target]
+        mv["ongoing_through"] = str(year)
+        counts["extended"] += 1
+        if mv.get("coded_by") == "chubb":
+            new_corrections.append({"move_id": target, "field": "ongoing_through", "new_value": str(year), "date": date,
+                                    "by": reviewer, "reason": f"continuation: {eid} ({by_id[eid]['date_start']})"})
+
     # the merge gate, before anything is written
     import tempfile
     from pipeline.validate import validate
     with tempfile.TemporaryDirectory() as tmp:
         td = Path(tmp)
-        for name in ("claimants", "sources", "corrections"):
+        for name in ("claimants", "sources"):
             (td / f"{name}.csv").write_bytes((data_dir / f"{name}.csv").read_bytes())
+        write_table("corrections", corrections + new_corrections, td)
         write_table("events", events, td)
         write_table("moves", moves + new_moves, td)
         xlsx = xlsx_path or data_dir / "raw/mats-1.02/MATS_1-02_all_cases.xlsx"
@@ -453,8 +495,10 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         raise ValueError("the result would not pass the validator:\n  " + "\n  ".join(errors[:10]))
 
     write_table("events", events, data_dir)
-    if new_moves:
+    if new_moves or extend:
         write_table("moves", moves + new_moves, data_dir)
+    if new_corrections:
+        write_table("corrections", corrections + new_corrections, data_dir)
     return counts
 
 
@@ -479,9 +523,10 @@ def cmd_decide(args) -> int:
     print(f"applied {len(decisions)} decisions: {counts}")
     if args.no_commit:
         return 0
-    git("add", "data/events.csv", "data/moves.csv", cwd=root)
+    git("add", "data/events.csv", "data/moves.csv", "data/corrections.csv", cwd=root)
     git("commit", "-q", "-m", f"Review by {reviewer}: {counts['rejected']} rejected, {counts['merged']} merged, "
-        f"{counts['new_moves']} new moves, {counts['duplicates']} duplicates\n\nEvents: {ids}\nApplied with pipeline.queue decide on {date}.", cwd=root)
+        f"{counts['new_moves']} new moves, {counts['duplicates']} duplicates, {counts['extended']} moves extended"
+        f"\n\nEvents: {ids}\nApplied with pipeline.queue decide on {date}.", cwd=root)
     print("committed; push and let the validator run")
     return 0
 

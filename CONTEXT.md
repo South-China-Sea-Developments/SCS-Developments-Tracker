@@ -12,7 +12,7 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Scheduled run** — The weekly, unattended execution of the harvester on the repository's CI that opens the review queue for its candidates. Its memory between runs (which items each source has already yielded, and a log of each run's cost and yield) is the **harvest state**.
 
-**Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note. Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
+**Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note — a note beginning *continuation of X* also keeps move X running through the event's year (ticket 24). Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
 
 **Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`); this project adds Malaysia (`MY`), Indonesia (`ID`) and Taiwan (`TW`) (decision 03).
 

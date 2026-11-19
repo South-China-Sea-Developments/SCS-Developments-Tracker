@@ -119,7 +119,7 @@ def test_every_decision_type_yields_the_expected_files(opened):
                       "year": "2026"}},
     ]
     counts = queue.apply_decisions(decisions, REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
-    assert counts == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4}
+    assert counts == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4, "extended": 0}
 
     ev = {e["event_id"]: e for e in rows(opened, "events")}
     mv = {m["move_id"]: m for m in rows(opened, "moves")}
@@ -259,3 +259,72 @@ def test_open_and_decide_end_to_end_in_a_git_checkout(tmp_path):
     r = subprocess.run([sys.executable, "-m", "pipeline.queue", "decide", "bad.json", "--reviewer", "T"], cwd=clone, capture_output=True, text=True, env=env)
     assert r.returncode == 1 and "nothing applied" in r.stderr
     assert validate(clone / "data", RAW_XLSX, RAW_MAVD) == []
+
+
+# ---------------------------------------------------------------------------
+# ticket 24: a continuation note extends the move it names
+
+def test_a_continuation_note_extends_the_named_moves_ongoing_through(opened):
+    cands = candidates(opened)
+    cn = [x for x in cands if x["claimant"] == "CN"]
+    scar = next(x for x in cn if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cn if x["location_name"].startswith("Thitu"))
+    headline = next(x for x in cn if not x["location_name"])
+    before = {m["move_id"]: m for m in rows(opened, "moves")}
+    assert before["CN201504"]["ongoing_through"] == "2018" and before["CN201504"]["coded_by"] == "chubb"
+    counts = queue.apply_decisions([
+        {"event_id": scar["event_id"], "action": "reject", "note": "continuation of CN201504 (pre-sort confirmed)"},
+        {"event_id": thitu["event_id"], "action": "reject", "note": "continuation of CN201504 — same practice"},
+        {"event_id": headline["event_id"], "action": "reject", "note": "Continuation of CN201501."},   # through 2016: extended too; case and stop tolerated
+    ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 3 and counts["extended"] == 2
+    after = {m["move_id"]: m for m in rows(opened, "moves")}
+    assert after["CN201504"]["ongoing_through"] == "2026" and after["CN201501"]["ongoing_through"] == "2026"
+    corr = [c for c in rows(opened, "corrections") if c["field"] == "ongoing_through"]
+    assert {(c["move_id"], c["new_value"], c["by"], c["date"]) for c in corr} == {("CN201504", "2026", REVIEWER, DATE), ("CN201501", "2026", REVIEWER, DATE)}
+    assert all(c["reason"].startswith("continuation: ev-") for c in corr)
+    assert validate(opened, RAW_XLSX, RAW_MAVD) == []          # the guarded change is documented
+    # the events keep the note; nothing else about them changed
+    assert all(x["status"] == "rejected" for x in rows(opened, "events") if x["event_id"] in (scar["event_id"], thitu["event_id"]))
+
+
+def test_a_continuation_note_may_name_a_candidate_whose_move_exists(opened):
+    cands = candidates(opened)
+    scar = next(x for x in cands if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cands if x["location_name"].startswith("Thitu"))
+    queue.apply_decisions([{"event_id": scar["event_id"], "action": "new_move",
+                            "new_move": {"type": "coercive", "intensification_criterion": "novelty", "domains": ["physical"],
+                                         "issues": ["military"], "dyads": ["CP"], "subregions": ["4"]}}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    # a later sitting: the follower is a continuation of the lead candidate, same year → nothing to extend
+    counts = queue.apply_decisions([{"event_id": thitu["event_id"], "action": "reject", "note": f"continuation of {scar['event_id']} (pre-sort confirmed)"}],
+                                   REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 1 and counts["extended"] == 0
+    # a year no later than the move's extends nothing, and a second sitting adds no second corrections row
+    assert queue.apply_decisions([{"event_id": next(x for x in cands if x["claimant"] == "VN")["event_id"], "action": "reject",
+                                   "note": "continuation of VN201501 (pre-sort confirmed)"}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)["extended"] == 1
+    assert len([c for c in rows(opened, "corrections") if c["move_id"] == "VN201501"]) == 1
+    # a note naming a move that does not exist is a mistake the batch must not swallow
+    headline = next(x for x in cands if not x["location_name"])
+    with pytest.raises(ValueError, match="continuation of CN199999"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of CN199999"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    with pytest.raises(ValueError, match="not an event"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of ev-doesnotexist"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    # and a move of another claimant cannot be the continuation target
+    with pytest.raises(ValueError, match="VN"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of VN201501"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+
+
+def test_a_follower_of_a_lead_decided_in_the_same_batch_resolves_through_it(opened):
+    cands = candidates(opened)
+    scar = next(x for x in cands if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cands if x["location_name"].startswith("Thitu"))
+    counts = queue.apply_decisions([
+        {"event_id": scar["event_id"], "action": "new_move",
+         "new_move": {"type": "coercive", "intensification_criterion": "novelty", "domains": ["physical"], "issues": ["military"], "dyads": ["CP"], "subregions": ["4"]}},
+        {"event_id": thitu["event_id"], "action": "reject", "note": f"continuation of {scar['event_id']}"},
+    ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["new_moves"] == 1 and counts["rejected"] == 1 and counts["extended"] == 0   # same year: nothing to extend, no error
+

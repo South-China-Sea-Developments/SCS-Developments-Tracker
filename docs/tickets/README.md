@@ -27,3 +27,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 21 | [The face of the base](21-base-face.md) | 20 | built |
 | 22 | [The review archive](22-review-archive.md) | 20, 21 | built |
 | 23 | [The pre-sort](23-presort.md) | 06, 19 | built |
+| 24 | [A continuation note extends the move it names](24-continuation-extends.md) | 22 | built |
