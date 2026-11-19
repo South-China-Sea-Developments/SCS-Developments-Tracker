@@ -31,7 +31,7 @@ request; the rows named in `clear.json` are then deleted through the connector, 
   action on the free plan, no scripting action, and an archive table counts against the same cap.
 - **A paid plan.** Rejected while the project is unfunded; the files already hold the record.
 - **Delete without archiving** (the existing `clear` command). Rejected: the coder's triage columns
-  (`Priority`, `Selected`, `note`) would be lost, and the review could not be audited later.
+  (`note`, `reviewer`, the edits; at the time also `Priority` and `Selected`) would be lost, and the review could not be audited later.
 
 ## Consequences
 

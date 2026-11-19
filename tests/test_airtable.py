@@ -430,7 +430,7 @@ def _exported(run_id: str, rows: list[dict]) -> list[dict]:
 def test_archive_keeps_every_exported_row_and_names_only_the_decided_ones_for_deletion(tmp_path):
     rows = [
         {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "not an act", "reviewer": "Angelo",
-         "priority": 2, "selected": True},
+         "new_year": "1971"},
         {"event_id": "E2", "claimant": "MY", "summary": "b", "decision": "undecided"},
         {"event_id": "E3", "claimant": "MY", "summary": "c"},                     # never touched: no decision field at all
         {"event_id": "E4", "claimant": "ID", "summary": "other run"},
@@ -444,7 +444,7 @@ def test_archive_keeps_every_exported_row_and_names_only_the_decided_ones_for_de
     # every row of the run is kept, with its Airtable id and the coder's own columns, under the code's names
     assert [r["event_id"] for r in archive["records"]] == ["E1", "E2", "E3"]
     e1 = archive["records"][0]
-    assert e1["airtable_id"] == "rec00001" and e1["priority"] == 2 and e1["selected"] is True and e1["decision"] == "reject"
+    assert e1["airtable_id"] == "rec00001" and e1["new_year"] == "1971" and e1["decision"] == "reject"
     assert archive["run_id"] == "MY-1970s" and archive["exported_on"] == "2026-11-17"
     assert "E4" not in json.dumps(archive)                                       # the other run's row is not ours
     # the decisions file is the one queue decide reads, decided rows only
@@ -494,28 +494,27 @@ def test_archive_leaves_out_decisions_already_applied_in_an_earlier_sitting_and_
     airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
     # the clear failed: E1 is still in the base and comes back in the next export, now beside a decided E2
     again = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
-                                   {"event_id": "E2", "decision": "reject", "note": "y", "reviewer": "A", "selected": True, "priority": 0}])
+                                   {"event_id": "E2", "decision": "reject", "note": "y", "reviewer": "A", "lat": 0, "edit_lat": False}])
     res = airtable.archive_run(again, "MY-1970s", out, today="2026-11-18")
     decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
     assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # E1 was applied last time; decide would refuse it
     clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
     assert clear["record_ids"] == ["rec00002"] and res == {"kept": 2, "decided": 1, "to_clear": 1}
     e2 = next(r for r in json.loads((out / "records.json").read_text(encoding="utf-8"))["records"] if r["event_id"] == "E2")
-    assert e2["priority"] == 0 and e2["selected"] is True                     # a typed 0 is kept; only None, "" and [] are dropped
+    assert e2["lat"] == 0 and e2["edit_lat"] is False                        # a typed 0 or False is kept; only None, "" and [] are dropped
     dup = _exported("MY-1970s", [{"event_id": "E3"}, {"event_id": "E3"}])
     with pytest.raises(ValueError, match="two rows for event E3"):
         airtable.archive_run(dup, "MY-1970s", tmp_path / "dup")
 
 
-def test_archive_reads_the_triage_columns_from_an_export_keyed_by_field_id(tmp_path):
-    cfg = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))
-    ids = {**cfg["field_ids"], **cfg["triage_field_ids"]}
-    rec = {"id": "recAAAAAAAAAAAAAA", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["run_id"]: "TW-2000s", ids["priority"]: 3,
-                                                               ids["selected"]: True, ids["decision"]: {"name": "undecided"}}}
+def test_archive_reads_an_export_keyed_by_field_id(tmp_path):
+    ids = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))["field_ids"]
+    rec = {"id": "recAAAAAAAAAAAAAA", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["run_id"]: "TW-2000s", ids["note"]: "later",
+                                                               ids["decision"]: {"name": "undecided"}}}
     out = tmp_path / "TW-2000s"
     assert airtable.archive_run([rec], "TW-2000s", out, today="2026-11-17") == {"kept": 1, "decided": 0, "to_clear": 0}
     row = json.loads((out / "records.json").read_text(encoding="utf-8"))["records"][0]
-    assert row["priority"] == 3 and row["selected"] is True and "fld" not in json.dumps(row)
+    assert row["note"] == "later" and row["decision"] == "undecided" and "fld" not in json.dumps(row)
 
 
 def test_archive_command_refuses_an_export_with_no_row_of_the_run(tmp_path, capsys):

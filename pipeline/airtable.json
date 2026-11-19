@@ -7,7 +7,6 @@
  "runs_table_id": "tblLK3YqY7mDL2QqW",
  "other_tables": {"Sources": "tblRxHeawvsBiAUfC", "Sidelines": "tblUs0ZmP4x8ShWKZ", "Notes": "tblis1hiTU3E4hwPx"},
  "interface": "https://airtable.com/appK9OckCTV15vQwx/pbdWq70PPQffUrIye",
- "triage_field_ids": {"priority": "fldfWn1FM3u1pUa1o", "selected": "fldfoD6leOqgqvzMK"},
  "field_ids": {
   "event_id": "fldYslClcFl43XHsR", "run_id": "fldZINTpPC0Ic2DSG", "pull_request": "fldQU03I9eAjADbPE", "claimant": "fldz1OyCg5tZHtMm7",
   "date_start": "fldlIzt0pknkSneHM", "date_end": "fld4Zu1vOOvJBEfCK", "date_precision": "fldjt4e22v8ap779i", "location_name": "fldJS4KlLazxVn3D6",

@@ -25,10 +25,11 @@ column names (`Event ID`, `Claimant`, `Start date`, `Suggested type`, `New move:
 — the full map is `airtable.LABELS`), coloured select chips for the claimant (CN red · VN yellow · PH blue ·
 MY green · ID orange · TW purple), the move type (declarative blue · demonstrative teal · coercive orange ·
 force red), the date precision, the sub-region, the suggested domains, issues and dyads (multi-selects,
-coloured by actor), plus two columns that are the reviewer's alone and that the sync never writes:
-`Priority` (one to three stars) and `Selected` (a tick for the day's shortlist). The table's grid view
-"Time-sorted" shows these first, newest first; the maintainer duplicates it in Airtable for other slices
-(group by claimant, by type, Selected only) — the connector cannot create views.
+coloured by actor). The table's grid view "Time-sorted" shows these first, newest first; the maintainer
+duplicates it in Airtable for other slices (group by claimant, by type) — the connector cannot create views.
+Two triage columns of ticket 21, `Priority` (stars) and `Selected` (a tick), were retired on 2026-11-19:
+the pre-sort, the grouping by run and the `Complete` column made them redundant. They were taken off every
+page and out of `pipeline/airtable.json`; the maintainer deletes the fields in Airtable (the connector cannot).
 
 The code keeps its internal names; `pipeline/airtable.py` translates at the wire by field id (`field_ids`
 in `pipeline/airtable.json`), so a column may be renamed in the base without breaking the sync — except `Run ID`, which the filter formula selecting a run's records names. The old
@@ -62,7 +63,7 @@ group of the record page.
 | Overview | `pagAWLTLoyKhRv2Sp` | — | Numbers (to decide, decided, by decision, flagged, decided-but-not-pulled, in all), charts by claimant, type, sub-region, run and decision, the oldest undecided events; a *Runs* section (runs, still open, with problems, latest runs). |
 | Queue | `pagzfbBYQDORsMZiT` | Working | Grid grouped by run; tabs *To decide · Flagged · Possible duplicates · Decided · Needs a note · Added this month*. |
 | Board | `pagsOwyf3mnYRnPSz` | — | Kanban by decision. |
-| Review one by one | `pagMBrGwofJENJ3o6` | — | Record review, one candidate at a time; tabs *To decide · Flagged · Possible duplicates · Selected · Decided* (rebuilt for ticket 21; the connector cannot edit a record-review page). |
+| Review one by one | `pagMBrGwofJENJ3o6` | — | Record review, one candidate at a time; tabs *To decide · Flagged · Possible duplicates · Selected · Decided* (rebuilt for ticket 21; the connector cannot edit a record-review page, so its *Selected* tab and the two retired columns in its detail list are the maintainer's to remove). |
 | By claimant | `pagmaJzyIH92lp7nU` | Section tabs | Tabs China · Vietnam · Philippines · Malaysia · Indonesia · Taiwan, grouped by suggested type, oldest first. |
 | Hand-off | `pag9pJv7XMw68WrlV` | Hand-off | Decided candidates only; tabs *Waiting to be pulled · New moves · Merges · Duplicates and rejects · In the dataset*. The maintainer runs `pull` + `queue decide` for a run when its "Waiting to be pulled" tab is complete. |
 | Run log | `pagshxM5iwYzEXtyp` | Run Log | Runs, newest first; tabs *Still open · Weekly harvests · Backfill chunks · Problems*. |
@@ -108,9 +109,7 @@ coder typed is filed in the repository first, so the free plan's cap of 1,000 re
 mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
 
 1. **Export** the run's rows: `list_records_for_table` on `Candidates` filtered on the run (`{Run ID} = '<run_id>'`),
-   all fields, saved as JSON (`{"records": [...]}` or a bare list; labels, field ids or internal names all work —
-   the coder's `Priority` and `Selected` columns are read by label, or by the ids under `triage_field_ids` in
-   `pipeline/airtable.json`).
+   all fields, saved as JSON (`{"records": [...]}` or a bare list; labels, field ids or internal names all work).
 2. **Archive:** `python -m pipeline.airtable archive --run <run_id> --from export.json` (signed by `--reviewer`,
    else the one name the rows carry, else the configured `reviewer`) writes
    `harvest/airtable/<run_id>/records.json` (every exported row, merged by event id with earlier sittings),
