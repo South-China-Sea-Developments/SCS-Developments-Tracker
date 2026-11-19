@@ -563,3 +563,21 @@ def test_the_configured_reviewer_is_the_default_name_on_the_command_line(tmp_pat
     assert signed([dict(rejected, reviewer="Bea")], "--reviewer", "Cy") == "Cy"
     # subcommands without the option are untouched by the configuration
     assert airtable.main(["schema"]) == 0
+
+
+def test_a_blank_note_on_a_reject_takes_the_presorts_continuation_as_confirmed():
+    rows = [
+        {"event_id": "E1", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "continuation of CN198201 — rig back where it was in 2015 [claude-code/opus]"},
+        {"event_id": "E2", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "continuation of ev-1234567890 (a candidate, provisional) — follows the June patrol [claude-code/opus]"},
+        {"event_id": "E3", "decision": "reject", "note": "statement to a non-claimant", "run_id": "R",
+         "presort": "continuation of CN201501 — ... [claude-code/opus]"},        # the coder's own note wins
+        {"event_id": "E4", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "new move (scope) — ... [claude-code/opus]"},                 # not a continuation: still needs a note
+    ]
+    d = {x["event_id"]: x for x in airtable.decisions_from_records(rows, run_id="R")["decisions"]}
+    assert d["E1"]["note"] == "continuation of CN198201 (pre-sort confirmed)"
+    assert d["E2"]["note"] == "continuation of ev-1234567890 (pre-sort confirmed)"
+    assert d["E3"]["note"] == "statement to a non-claimant"
+    assert d["E4"]["note"] == ""

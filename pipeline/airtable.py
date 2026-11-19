@@ -483,6 +483,17 @@ def _same(col: str, edited, shown) -> bool:
     return str(edited).strip() == str(shown or "").strip()
 
 
+_CONTINUATION = re.compile(r"^\s*continuation of (\S+)")
+
+
+def confirmed_continuation(presort: str) -> str:
+    """The note a rejection gets when the coder left it blank: the pre-sort's continuation target, marked
+    as confirmed ("continuation of CN198201 (pre-sort confirmed)"), or "" when the pre-sort said anything
+    else — a blank note then still fails `decide`, as it should."""
+    m = _CONTINUATION.match(presort or "")
+    return f"continuation of {m.group(1)} (pre-sort confirmed)" if m else ""
+
+
 def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: dict[str, str] | None = None,
                            run_id: str | None = None, default: str = "") -> dict:
     """The decisions file `pipeline.queue decide` reads, from the coder's fields. Records left
@@ -501,6 +512,8 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
         if not f.get("event_id"):
             raise ValueError(f"record {r.get('id', '?')} has a decision ({action}) but no event_id; only rows the sync created can be decided")
         d: dict[str, Any] = {"event_id": f["event_id"], "action": action, "note": (f.get("note") or "").strip()}
+        if action == "reject" and not d["note"]:
+            d["note"] = confirmed_continuation(f.get("presort") or "")
         if f.get("reviewer"):
             reviewers.add(f["reviewer"].strip())
         if action == "merge":
