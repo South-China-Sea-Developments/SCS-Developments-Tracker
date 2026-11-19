@@ -78,7 +78,8 @@ python -m pipeline.airtable records --run <run_id> --pr N --run-record <recXXXXX
 Every new row goes out with `Reviewer` already set to the `reviewer` of `pipeline/airtable.json`
 ("Angelo": one coder, decision 07), so the coder never types the name; `--reviewer` overrides it for a
 sitting by someone else, and `--reviewer ""` leaves the column blank. A refresh never touches it, like the
-other coder fields. On 2026-11-19 the column was filled on the 862 rows already in the base.
+other coder fields, so a name retyped on a row stands. On 2026-11-19 the column was filled on the 862 rows
+already in the base.
 
 1. Create the `Runs` row from `run.json` (`create_records_for_table`, table `tblLK3YqY7mDL2QqW`); note the record id it returns.
 2. Generate the candidate records with that id as `--run-record`, map field names to ids with
@@ -101,8 +102,8 @@ mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
    all fields, saved as JSON (`{"records": [...]}` or a bare list; labels, field ids or internal names all work —
    the coder's `Priority` and `Selected` columns are read by label, or by the ids under `triage_field_ids` in
    `pipeline/airtable.json`).
-2. **Archive:** `python -m pipeline.airtable archive --run <run_id> --from export.json` (signed with the
-   configured `reviewer` unless `--reviewer` says otherwise or exactly one name is on the rows) writes
+2. **Archive:** `python -m pipeline.airtable archive --run <run_id> --from export.json` (signed by `--reviewer`,
+   else the one name the rows carry, else the configured `reviewer`) writes
    `harvest/airtable/<run_id>/records.json` (every exported row, merged by event id with earlier sittings),
    `decisions.json` (the decided rows, in the shape `queue decide` reads) and `clear.json` (their Airtable ids).
 3. **Apply:** `python -m pipeline.queue decide harvest/airtable/<run_id>/decisions.json`; commit the three

@@ -535,13 +535,32 @@ def test_records_carry_the_configured_reviewer_so_the_coder_never_types_it(tmp_p
     assert all("reviewer" not in r for r in airtable.records_for_run(opened_copy(tmp_path, "e"), "fixture", pr=17))
 
 
-def test_the_configured_reviewer_is_the_default_name_on_the_command_line(tmp_path):
+def test_the_configured_reviewer_is_the_default_name_on_the_command_line(tmp_path, monkeypatch):
     cfg = tmp_path / "airtable.json"
     cfg.write_text(json.dumps({"reviewer": "Angelo"}), encoding="utf-8")
     assert airtable.default_reviewer(cfg) == "Angelo"
     assert airtable.default_reviewer(tmp_path / "missing.json") == ""
-    # an archive of rows that name nobody is signed by the configured name
-    exported = _exported("MY-1970s", [{"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "x"}])
-    out = tmp_path / "out"
-    airtable.archive_run(exported, "MY-1970s", out, today="2026-11-19", reviewer=airtable.default_reviewer(cfg))
-    assert json.loads((out / "decisions.json").read_text(encoding="utf-8"))["reviewer"] == "Angelo"
+    monkeypatch.setattr(airtable, "CONFIG", cfg)
+    d = opened_copy(tmp_path, "d")
+    # records: the configured name unless --reviewer says otherwise; an empty --reviewer leaves the column blank
+    def names(*extra):
+        out = tmp_path / "r.json"
+        assert airtable.main(["records", "--run", "fixture", "--data", str(d), "--out", str(out), *extra]) == 0
+        return {r.get("reviewer") for r in json.loads(out.read_text(encoding="utf-8"))}
+    assert names() == {"Angelo"}
+    assert names("--reviewer", "Bea") == {"Bea"}
+    assert names("--reviewer", "") == {None}
+    # archive: the flag, else the one name the rows carry, else the configured name
+    def signed(rows, *extra):
+        exp = tmp_path / "export.json"
+        exp.write_text(json.dumps(_exported("MY-1970s", rows)), encoding="utf-8")
+        out = tmp_path / "arch"
+        shutil.rmtree(out, ignore_errors=True)
+        assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(exp), "--out-dir", str(out), *extra]) == 0
+        return json.loads((out / "decisions.json").read_text(encoding="utf-8")).get("reviewer")
+    rejected = {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "x"}
+    assert signed([rejected]) == "Angelo"
+    assert signed([dict(rejected, reviewer="Bea")]) == "Bea"
+    assert signed([dict(rejected, reviewer="Bea")], "--reviewer", "Cy") == "Cy"
+    # subcommands without the option are untouched by the configuration
+    assert airtable.main(["schema"]) == 0

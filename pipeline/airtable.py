@@ -484,7 +484,7 @@ def _same(col: str, edited, shown) -> bool:
 
 
 def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: dict[str, str] | None = None,
-                           run_id: str | None = None) -> dict:
+                           run_id: str | None = None, default: str = "") -> dict:
     """The decisions file `pipeline.queue decide` reads, from the coder's fields. Records left
     'undecided', and records of other runs when run_id is given, are skipped; a blank edit field, or
     one repeating the value shown, keeps the event's value, as on the page. Decisions come out in
@@ -531,7 +531,8 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
         decisions.append(d)
     decisions.sort(key=lambda d: d["event_id"])          # table order is not meaningful; the file is deterministic
     out = {"decisions": decisions}
-    name = reviewer or (reviewers.pop() if len(reviewers) == 1 else "")
+    # signed by the name given, else the one name the rows carry, else the configured default
+    name = reviewer or (reviewers.pop() if len(reviewers) == 1 else "") or default
     if name:
         out["reviewer"] = name
     return out
@@ -557,9 +558,9 @@ def push(client: Client, records: list[dict], run_id: str) -> dict:
     return {"created": len(new), "updated": len(upd), "calls": client.calls}
 
 
-def pull(client: Client, run_id: str, reviewer: str = "") -> dict:
+def pull(client: Client, run_id: str, reviewer: str = "", default: str = "") -> dict:
     """The run's decisions as the file `queue decide` reads (see decisions_from_records)."""
-    return decisions_from_records(client.list(run_filter(run_id)), reviewer, run_id=run_id)
+    return decisions_from_records(client.list(run_filter(run_id)), reviewer, run_id=run_id, default=default)
 
 
 def clear(client: Client, run_id: str) -> int:
@@ -575,7 +576,7 @@ TRIAGE_FIELDS = {"Priority": "priority", "Selected": "selected"}   # the coder's
 
 
 def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "",
-                reviewer: str = "", field_ids: dict[str, str] | None = None) -> dict:
+                reviewer: str = "", field_ids: dict[str, str] | None = None, default: str = "") -> dict:
     """Ticket 22: the review archive. From the run's rows as exported from the base (any export shape
     `normalise_record` accepts), write three files into out_dir — the repository's record of the review,
     so the rows can leave Airtable without anything being lost (the free plan caps a base at 1,000 rows):
@@ -618,7 +619,7 @@ def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "
                "records": sorted(kept.values(), key=lambda x: x["event_id"])}
     rec_path.write_text(json.dumps(archive, indent=1, ensure_ascii=False), encoding="utf-8")
     already = {eid for eid, old in earlier.items() if (old.get("decision") or "undecided") != "undecided"}
-    decisions = decisions_from_records(ours, reviewer, field_ids, run_id=run_id)
+    decisions = decisions_from_records(ours, reviewer, field_ids, run_id=run_id, default=default)
     decisions["decisions"] = [d for d in decisions["decisions"] if d["event_id"] not in already]
     (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=1, ensure_ascii=False), encoding="utf-8")
     decided = {d["event_id"] for d in decisions["decisions"]}
@@ -673,8 +674,6 @@ def main(argv=None) -> int:
     rr.add_argument("--notes", default="", help="what the reviewer should look at")
     rr.add_argument("--out", type=Path, required=True)
     a = p.parse_args(argv)
-    if getattr(a, "reviewer", None) is None:
-        a.reviewer = default_reviewer()
     if a.cmd == "run-record":
         rec = run_record(a.run, a.data or repo_root() / "data", a.pr, a.notes)
         a.out.write_text(json.dumps(rec, indent=1, ensure_ascii=False), encoding="utf-8")
@@ -688,7 +687,7 @@ def main(argv=None) -> int:
         if isinstance(exported, dict):
             exported = exported.get("records", [])
         out_dir = a.out_dir or repo_root() / "harvest" / "airtable" / a.run
-        res = archive_run(exported, a.run, out_dir, a.date, a.reviewer)
+        res = archive_run(exported, a.run, out_dir, a.date, a.reviewer or "", default=default_reviewer())
         if not res["kept"]:
             print(f"nothing archived: no exported row belongs to run {a.run} (wrong run id, or an export keyed by field ids without field_ids in pipeline/airtable.json)", file=sys.stderr)
             return 1
@@ -697,7 +696,7 @@ def main(argv=None) -> int:
         return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
-        recs = records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, a.reviewer)
+        recs = records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, default_reviewer() if a.reviewer is None else a.reviewer)
         a.out.write_text(json.dumps(recs, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(recs)} record(s) -> {a.out} (nothing sent)")
         return 0
@@ -705,7 +704,7 @@ def main(argv=None) -> int:
         exported = json.loads(a.from_file.read_text(encoding="utf-8"))
         if isinstance(exported, dict):
             exported = exported.get("records", [])
-        d = decisions_from_records(exported, a.reviewer, load_config().get("field_ids"), run_id=a.run)
+        d = decisions_from_records(exported, a.reviewer or "", load_config().get("field_ids"), run_id=a.run, default=default_reviewer())
         a.out.write_text(json.dumps(d, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(d['decisions'])} decision(s) -> {a.out}")
         return 0
@@ -717,10 +716,10 @@ def main(argv=None) -> int:
         return 0
     client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls, cfg.get("field_ids"))
     if a.cmd == "push":
-        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, a.reviewer), a.run)
+        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, default_reviewer() if a.reviewer is None else a.reviewer), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")
     elif a.cmd == "pull":
-        d = pull(client, a.run, a.reviewer)
+        d = pull(client, a.run, a.reviewer or "", default_reviewer())
         a.out.write_text(json.dumps(d, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(d['decisions'])} decision(s) -> {a.out}; {client.calls} API call(s). Apply with: python -m pipeline.queue decide {a.out}")
     elif a.cmd == "clear":
