@@ -51,7 +51,8 @@ delete fields).
 
 `Complete` (`fldxtFtzSLOFoALEB`, formula, 2026-11-19): blank while undecided; ✓ when the row has what its
 decision needs; ✗ naming what is missing (`✗ note` on a reject, `✗ merge target`, `✗ duplicate of`,
-`✗ type criterion` on a new move missing those). It mirrors what `queue decide` refuses, so a sitting can be
+`✗ type criterion` on a new move missing those; a new move's year is not demanded, since `decide` defaults it to
+the event's). It mirrors what `queue decide` refuses, so a sitting can be
 exported once the `Incomplete` tab of the Queue page is empty. A formula costs no record and is never
 synced; the pipeline does not read it. Shown second on the Queue grid and first in the "Your decision"
 group of the record page.
