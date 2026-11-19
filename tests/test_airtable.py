@@ -140,7 +140,7 @@ def test_same_decisions_through_airtable_and_through_the_review_page_yield_ident
 
     ca = queue.apply_decisions(pulled["decisions"], pulled["reviewer"], DATE, a, RAW_XLSX, RAW_MAVD)
     cb = queue.apply_decisions(page_decisions["decisions"], page_decisions["reviewer"], DATE, b, RAW_XLSX, RAW_MAVD)
-    assert ca == cb == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4}
+    assert ca == cb == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4, "extended": 0}
     for f in ("claimants", "moves", "events", "sources", "corrections"):
         assert filecmp.cmp(a / f"{f}.csv", b / f"{f}.csv", shallow=False), f
 

@@ -391,10 +391,11 @@ notes are terse and specific: "No known detentions of VN personnel in Paracels" 
 Daily island sovereignty assertions" (1993) [MATS, MAVD column]. This is the only way the series records
 moderation (§I.4).
 **Here.** `ongoing_through`, `ongoing_through_notes`, `diminished_notes` on the move. A continuation
-candidate is rejected with a note naming the move it continues. `queue decide` writes only event fields
-and new moves; extending a move's `ongoing_through` or adding a diminished note is an edit to
-`data/moves.csv` in its own pull request, checked by the validator — and for a `coded_by = chubb` row it
-needs a documented line in `data/corrections.csv`, because every MATS field of those rows is guarded.
+candidate is rejected with a note naming the move it continues — `continuation of CN200802` — and that note
+is the act: `queue decide` moves the named move's `ongoing_through` forward to the event's year (ticket 24),
+writing the `data/corrections.csv` line itself when the move is Chubb's, since every MATS field of those
+rows is guarded. Shortening a duration, or adding a diminished note, is still an edit to `data/moves.csv`
+in its own pull request, checked by the validator (with its `corrections.csv` line for a `coded_by = chubb` row).
 Chubb's MAVD diminished column also records a few *conciliatory* acts for the Philippines and Vietnam
 (1988, 1996); here those stay out of the moves and go in `diminished_notes` only where they mark the end
 of an assertive practice.
