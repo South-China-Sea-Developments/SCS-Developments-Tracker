@@ -124,6 +124,10 @@ mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
    describe the latest sitting only, and a row whose decision was archived in an earlier sitting (a failed or
    partial clear) is left out of `decisions.json`, so `decide` is never asked to re-apply it.
 
+Since 2026-11-19 the nightly scheduled task runs steps 1–4 for every run with rows marked ✓ in `Complete` and
+merges the review pull request (decision 07 as amended; prompt in `docs/apply-task-prompt.md`). A row marked ✗,
+and a merge whose lead is not yet decided, wait for the next night.
+
 With a token, `clear --run <run_id>` deletes a whole run's rows but archives nothing: run `archive` first.
 
 ## Not done
