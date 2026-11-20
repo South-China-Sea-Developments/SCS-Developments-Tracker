@@ -92,9 +92,9 @@
         {% endif %}
       </div>
       <div>
-        <p class="k">{{ it.claimant_name }}'s moves in {{ it.year - 1 if it.year else 'the previous year' }}</p>
+        <p class="k">{{ it.claimant_name }}'s moves open through {{ it.year - 1 if it.year else 'the previous year' }} <span class="muted">(newest first; a continuation must name one of these)</span></p>
         {% if it.previous_year_moves %}
-        <ul class="moves">{% for m in it.previous_year_moves %}<li><code>{{ m.move_id }}</code> ({{ m.types|join(', ') }}) {{ m.description }}{% if m.description|length >= 300 %}…{% endif %}</li>{% endfor %}</ul>
+        <ul class="moves">{% for m in it.previous_year_moves %}<li><code>{{ m.move_id }}</code> ({{ m.types|join(', ') }}, through {{ m.ongoing_through }}) {{ m.description }}{% if m.description|length >= 300 %}…{% endif %}</li>{% endfor %}</ul>
         {% else %}<p class="muted">None recorded.</p>{% endif %}
         <p class="k">{{ it.claimant_name }}'s moves already in {{ it.year or 'this year' }}</p>
         {% if it.same_year_moves %}

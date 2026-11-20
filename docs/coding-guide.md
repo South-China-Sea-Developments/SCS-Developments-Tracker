@@ -254,7 +254,9 @@ unit would see one [App, *Unit of analysis*]. That is the rule, not a bug; apply
 *Ongoing through* and diminishment carry the rest. Its corollary cuts both ways: a method last seen years
 ago but absent in the previous year is *new again* when it reappears.
 **Here.** The review page and the Airtable Candidate Detail show the claimant's previous-year moves and
-same-year moves beside every candidate (`previous_year_moves`, `same_year_moves`); forming a new move
+same-year moves beside every candidate (`previous_year_moves` — since 2026-11-20 every move of the claimant
+*open through* the previous year, newest first, since a continuation's target is more often an old move still
+running than one coded last year — and `same_year_moves`); forming a new move
 requires `intensification_criterion` ∈ {novelty, frequency, scope} and the validator refuses a
 project-coded move without one. Since ticket 23 each card also carries a *pre-sort* — a suggested
 disposition (continuation of a named move, same move as another candidate, new move with its criterion,

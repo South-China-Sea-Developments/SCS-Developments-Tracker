@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from pipeline import harvest, queue, schema
+from pipeline import airtable, harvest, queue, schema
 from pipeline.validate import validate
 from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
 
@@ -88,8 +88,8 @@ def test_review_page_shows_what_the_coder_needs(opened, tmp_path):
     html = page.read_text(encoding="utf-8")
     assert html.count('class="cand"') == 5
     assert "Second Thomas Shoal" in html and "possible duplicate of" in html
-    assert "China's moves in 2025" in html and "None recorded." in html     # previous-year moves (none coded yet)
-    assert "Vietnam's moves in 2025" in html
+    assert "China's moves open through 2025" in html and "None recorded." in html     # no CN move runs that late yet
+    assert "Vietnam's moves open through 2025" in html
     assert "form a new move" in html and "Intensification criterion" in html
     assert "fmprc.gov.cn" in html                                          # source link and excerpt
     assert "Physical interference" in html                                  # the extractor's reasoning
@@ -328,3 +328,18 @@ def test_a_follower_of_a_lead_decided_in_the_same_batch_resolves_through_it(open
     ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
     assert counts["new_moves"] == 1 and counts["rejected"] == 1 and counts["extended"] == 0   # same year: nothing to extend, no error
 
+
+
+def test_the_previous_year_list_holds_every_move_open_through_that_year(opened):
+    """A continuation target is usually an older move still running (CN200802, 2008, open through 2015),
+    not a move coded in the previous year; the list shows all of them, newest first, with their reach."""
+    moves = rows(opened, "moves")
+    for m in moves:                                   # let two old moves run into the fixture's year (2026)
+        if m["move_id"] in ("CN201403", "CN201504"):
+            m["ongoing_through"] = "2025"
+    queue.write_table("moves", moves, opened)
+    ctx = queue.review_context(opened, "fixture")
+    cn = next(it for it in ctx["items"] if it["event"]["claimant"] == "CN")
+    ids = [m["move_id"] for m in cn["previous_year_moves"]]
+    assert ids == ["CN201504", "CN201403"]            # open through 2025; CN201501 (through 2016) is not
+    assert "through 2025" in airtable._moves_text(cn["previous_year_moves"])
