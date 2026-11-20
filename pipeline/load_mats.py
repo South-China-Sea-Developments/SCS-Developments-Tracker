@@ -250,7 +250,8 @@ def check_mats_rows(data_dir: Path, tables: dict) -> list[str]:
     """The MATS-era rows in the canonical files equal what the loader produces from the raw inputs:
     every move the loader makes (chubb-coded, plus the pending one), the seed events, their sources
     and the claimants, field for field. Project-coded rows and harvested events are not the
-    loader's and are ignored, so a review branch or an accepted harvest passes."""
+    loader's and are ignored, so a review branch or an accepted harvest passes; a field changed by a
+    documented correction is compared with the corrected value."""
     import csv
 
     def rows(name):
@@ -258,7 +259,13 @@ def check_mats_rows(data_dir: Path, tables: dict) -> list[str]:
             return list(csv.DictReader(f))
 
     errors = []
-    expect_moves = {m["move_id"]: m for m in tables["moves"]}
+    expect_moves = {m["move_id"]: dict(m) for m in tables["moves"]}
+    # a documented correction (data/corrections.csv) is the one way a MATS-era field may differ from the
+    # raw inputs; the last line for a (move, field) wins, as in the validator's comparability guard
+    if (data_dir / "corrections.csv").exists():
+        for c in rows("corrections"):
+            if c["move_id"] in expect_moves and c["field"] in expect_moves[c["move_id"]]:
+                expect_moves[c["move_id"]][c["field"]] = c["new_value"]
     have_moves = {m["move_id"]: m for m in rows("moves") if m["move_id"] in expect_moves}
     for mid, m in expect_moves.items():
         if mid not in have_moves:

@@ -1,0 +1,31 @@
+{
+ "run_id": "20261026T1615",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-314e2d1cf4",
+   "disposition": "continuation",
+   "of": "ev-0d5d9e0be5",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run CN-2021-2026 as ev-0d5d9e0be5: CCG patrols and incursions around Pratas through 2026 (also the 18 October episode inside TW's ev-85fc7d190b); second-hand, undated report adds no new method or area."
+  },
+  {
+   "event_id": "ev-a9b45d0dac",
+   "disposition": "continuation",
+   "of": "ev-85fc7d190b",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run TW-2021-2026 as ev-85fc7d190b, which already lists the coordinated drive-off of 16 Chinese coast guard, research and fishing vessels around Pratas about 18 October 2026; provisional until that candidate is decided."
+  },
+  {
+   "event_id": "ev-4c891be1f5",
+   "disposition": "continuation",
+   "of": "ev-0d01631843",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run PH-2021-2026 as ev-0d01631843 (representations to the Chinese ambassador, January 2026) amid 39 protests so far in 2026 (ev-ba0a5066de); the source does not tie the ambassador's remarks to the South China Sea, so the coder may instead reject it as off-claim."
+  }
+ ]
+}

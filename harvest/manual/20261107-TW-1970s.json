@@ -1,0 +1,777 @@
+[
+ {
+  "claimant": "TW",
+  "date_start": "1970-09-03",
+  "date_end": "1970-09-03",
+  "date_precision": "day",
+  "location_name": "Territorial sea and adjacent continental shelf of the Republic of China",
+  "subregion": "",
+  "summary": "President Chiang Kai-shek promulgated the Statute for the Exploration and Exploitation of Petroleum in Offshore Areas, which asserted ROC authority to explore and exploit petroleum and natural gas in the ROC territorial sea and the continental shelf adjacent to it, through state-owned petroleum enterprises alone or with foreign partners.",
+  "actors": "President Chiang Kai-shek; Executive Yuan (Premier Yen Chia-kan); Ministry of Economic Affairs (Sun Yun-suan); Chinese Petroleum Corporation (state petroleum enterprise)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Legislation asserting continental-shelf resource jurisdiction is declarative. It was passed mainly with the East China Sea and Taiwan Strait shelf in mind and names no South China Sea feature, so a coder may judge it outside the SCS series. The source is a PDF of the Presidential Office Gazette no. 2198 that uses CJK compatibility code points, so the excerpt (given in normal characters) cannot be machine-checked.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.president.gov.tw/Portals/0/Bulletins/paper/pdf/2198-2.pdf",
+    "title": "總統令：茲制定海域石油礦探採條例 (Presidential Office Gazette no. 2198)",
+    "publisher": "Office of the President, ROC (總統府公報)",
+    "pub_date": "1970-09-03",
+    "language": "zh-TW",
+    "excerpt": "為探勘及開採中華民國領海及連接領海外大陸礁層"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1971-07-01",
+  "date_end": "1971-07-10",
+  "date_precision": "month",
+  "location_name": "Itu Aba (Taiping Island; Ligaw)",
+  "subregion": "5",
+  "summary": "According to the Philippine government, the Nationalist Chinese garrison on Itu Aba, which had fortified the island with gun emplacements, fired warning shots on a number of occasions at reconnaissance aircraft and vessels; in the incident that prompted Manila's demand of July 1971, ROC artillerymen fired on a boat carrying Palawan congressman Ramon Mitra Jr. on an inspection tour of the islands.",
+  "actors": "ROC garrison on Itu Aba (Taiping Island)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "Firing warning shots at a claimant's aircraft and boats near a held feature is coercive (physical interference short of force). The account is Philippine (Marcos's 10 July 1971 statement, reproduced verbatim in a US cable of 1973, and Philippine scholarship); no ROC confirmation or denial was found, and no source gives the day, so the window is the first ten days of July 1971 (UK FCO research note: 'early July'). The first source is a PDF, so its excerpt cannot be machine-checked.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://philippinelawjournal.org/wp-content/uploads/2025/03/58PLJ042_YORAC.pdf",
+    "title": "Philippine Claim to the Spratly Islands Group (Philippine Law Journal 58)",
+    "publisher": "Philippine Law Journal (Haydee B. Yorac)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "by the firing by Chinese artillerymen on a boat which carried former Senator"
+   },
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1973MANILA00858_b.html",
+    "title": "Spratley Islands (Manila 858; text of Marcos statement of 10 July 1971)",
+    "publisher": "US Embassy Manila / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1973-01-23",
+    "language": "en",
+    "excerpt": "OF OCCASIONS, FIRED WARNING SHOTS ON RECONNAISSANCE AIR-"
+   },
+   {
+    "url": "https://www.quezon.ph/2026/03/11/the-long-view-when-did-it-all-begin-4/",
+    "title": "The Long View: When did it all begin? (4)",
+    "publisher": "Manuel L. Quezon III (quezon.ph; Philippine Daily Inquirer column)",
+    "pub_date": "2026-03-11",
+    "language": "en",
+    "excerpt": "Taiwanese on Ligaw Island (which they call Itu Aba Island and occupied) fired on a Philippine fishing vessel carrying Rep. Ramon Mitra Jr."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1971-07-12",
+  "date_end": "1971-07-12",
+  "date_precision": "day",
+  "location_name": "Spratly Islands (Nansha)",
+  "subregion": "",
+  "summary": "Attending the ASPAC ministerial conference in Manila two days after President Marcos demanded the withdrawal of the ROC garrison from Itu Aba, the ROC Foreign Minister (Chow Shu-kai) told the press that the Spratlys had been Chinese 'since time immemorial' and had been garrisoned by Nationalist Chinese forces since 1946; Taipei did not withdraw the garrison.",
+  "actors": "ROC Foreign Minister (Chow Shu-kai); Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A foreign minister's public rejection, in the claimant's capital, of a demand to withdraw is a verbal assertion of the claim; declarative. The only source found is a UK FCO research paper hosted behind a Cloudflare challenge, read through a summarising fetcher, so the excerpt may not be character-exact and cannot be machine-checked; Hung (NPF 2009) confirms the July 1971 Philippine protest and that 'Taipei took no action'.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://hkintexts.histsyn.com/page/1387929",
+    "title": "[UK FCO research paper on the Paracel and Spratly Islands claims, c. 1971-72], p. 2",
+    "publisher": "UK Foreign and Commonwealth Office (via hkintexts.histsyn.com)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "told the press on 12 July that the Spratlys had been Chinese \"since time immemorial\"."
+   },
+   {
+    "url": "https://www.npf.org.tw/3/6121",
+    "title": "Sovereignty over the Spratlys II",
+    "publisher": "National Policy Foundation (Hung Chien-chao)",
+    "pub_date": "2009-07-10",
+    "language": "en",
+    "excerpt": "In July 1971, the Filipino Ministry of Foreign Affairs lodged protests with Taipei against the deployment of marines on Taiping Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1973-01-25",
+  "date_end": "1973-01-25",
+  "date_precision": "day",
+  "location_name": "Nansha (Spratly) and Hsisha (Paracel) islands",
+  "subregion": "",
+  "summary": "The ROC government lodged a written and/or verbal protest with one or more of the governments claiming the South China Sea islands, reaffirming that only the ROC has sovereignty over them; it was the first of four such protests in 1973 listed in the MOFA statement of 18 January 1974.",
+  "actors": "ROC Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "A diplomatic protest asserting sovereignty is declarative. The MOFA statement gives only the dates and not the recipient or the trigger; South Vietnam (garrison on Namyit and oil concessions in mid-1973; the September 1973 decree attaching the Spratlys to Phuoc Tuy province) and the Philippines (January 1973 constitution and aide-memoire) are the likely addressees, so the dyads are a guess a coder should check.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00427_b.html",
+    "title": "Conflicting claims to South China Sea islands (Taipei 427; text of MOFA statement of 18 Jan 1974)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-01-19",
+    "language": "en",
+    "excerpt": "PROTESTS, ON JANUARY 25, AUGUST 9, AUGUST 27, AND"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1973-08-09",
+  "date_end": "1973-08-09",
+  "date_precision": "day",
+  "location_name": "Nansha (Spratly) and Hsisha (Paracel) islands",
+  "subregion": "",
+  "summary": "The ROC government lodged a written and/or verbal protest with one or more of the governments claiming the South China Sea islands, reaffirming that only the ROC has sovereignty over them; it was the second of four such protests in 1973 listed in the MOFA statement of 18 January 1974.",
+  "actors": "ROC Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "A diplomatic protest asserting sovereignty is declarative. The MOFA statement gives only the dates and not the recipient or the trigger; South Vietnam (garrison on Namyit and oil concessions in mid-1973; the September 1973 decree attaching the Spratlys to Phuoc Tuy province) and the Philippines (January 1973 constitution and aide-memoire) are the likely addressees, so the dyads are a guess a coder should check.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00427_b.html",
+    "title": "Conflicting claims to South China Sea islands (Taipei 427; text of MOFA statement of 18 Jan 1974)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-01-19",
+    "language": "en",
+    "excerpt": "PROTESTS, ON JANUARY 25, AUGUST 9, AUGUST 27, AND"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1973-08-27",
+  "date_end": "1973-08-27",
+  "date_precision": "day",
+  "location_name": "Nansha (Spratly) and Hsisha (Paracel) islands",
+  "subregion": "",
+  "summary": "The ROC government lodged a written and/or verbal protest with one or more of the governments claiming the South China Sea islands, reaffirming that only the ROC has sovereignty over them; it was the third of four such protests in 1973 listed in the MOFA statement of 18 January 1974.",
+  "actors": "ROC Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "A diplomatic protest asserting sovereignty is declarative. The MOFA statement gives only the dates and not the recipient or the trigger; South Vietnam (garrison on Namyit and oil concessions in mid-1973; the September 1973 decree attaching the Spratlys to Phuoc Tuy province) and the Philippines (January 1973 constitution and aide-memoire) are the likely addressees, so the dyads are a guess a coder should check.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00427_b.html",
+    "title": "Conflicting claims to South China Sea islands (Taipei 427; text of MOFA statement of 18 Jan 1974)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-01-19",
+    "language": "en",
+    "excerpt": "PROTESTS, ON JANUARY 25, AUGUST 9, AUGUST 27, AND"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1973-10-26",
+  "date_end": "1973-10-26",
+  "date_precision": "day",
+  "location_name": "Nansha (Spratly) and Hsisha (Paracel) islands",
+  "subregion": "",
+  "summary": "The ROC government lodged a written and/or verbal protest with one or more of the governments claiming the South China Sea islands, reaffirming that only the ROC has sovereignty over them; it was the fourth of four such protests in 1973 listed in the MOFA statement of 18 January 1974.",
+  "actors": "ROC Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "A diplomatic protest asserting sovereignty is declarative. The MOFA statement gives only the dates and not the recipient or the trigger; South Vietnam (garrison on Namyit and oil concessions in mid-1973; the September 1973 decree attaching the Spratlys to Phuoc Tuy province) and the Philippines (January 1973 constitution and aide-memoire) are the likely addressees, so the dyads are a guess a coder should check.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00427_b.html",
+    "title": "Conflicting claims to South China Sea islands (Taipei 427; text of MOFA statement of 18 Jan 1974)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-01-19",
+    "language": "en",
+    "excerpt": "PROTESTS, ON JANUARY 25, AUGUST 9, AUGUST 27, AND"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1974-01-18",
+  "date_end": "1974-01-18",
+  "date_precision": "day",
+  "location_name": "Tungsha (Pratas), Hsisha (Paracel), Chungsha (Macclesfield Bank) and Nansha (Spratly) islands",
+  "subregion": "",
+  "summary": "In connection with foreign wire reports on the status of the Spratly and Paracel islands (after the PRC's 11 January statement and South Vietnam's counter-claim), the ROC Ministry of Foreign Affairs issued a statement reiterating ROC sovereignty over the Pratas, Paracel, Macclesfield Bank and Spratly islands, citing the 1946 naval takeover, the garrisons and the 1947 standard names, and disclosing four protests lodged with rival claimants in 1973.",
+  "actors": "ROC Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "An official statement reasserting sovereignty over all four archipelagos is declarative; it came the day before the PRC-South Vietnam battle in the Paracels and is the ROC's only public statement found for that crisis (the ROC otherwise downplayed the battle, Taipei 602).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00427_b.html",
+    "title": "Conflicting claims to South China Sea islands (Taipei 427)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-01-19",
+    "language": "en",
+    "excerpt": "1. ON JAN 18 THE ROC CHIMED IN ON THE DISPUTE ABOUT"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1974-02-01",
+  "date_end": "1974-02-01",
+  "date_precision": "day",
+  "location_name": "Spratly Islands (Nansha)",
+  "subregion": "",
+  "summary": "As a South Vietnamese naval force headed for the Spratlys, ROC 'government sources' told UPI in Taipei that the ROC would under no circumstances renounce its territorial claim to the Spratlys and would maintain garrison forces on the major islets, while trying to avoid any military engagement with South Vietnamese forces.",
+  "actors": "ROC government (unnamed sources, via UPI Taipei)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A public (if unattributed) statement that the claim will not be renounced and the garrison kept is a verbal assertion; declarative. The US embassy judged the UPI office a channel the ROC used to put its views abroad; unattributed, hence low confidence, and a coder may fold it into the 7 February protest.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00682_b.html",
+    "title": "ROC concern for Spratleys situation (Taipei 682)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-02-01",
+    "language": "en",
+    "excerpt": "TERRITORIAL CLAIM OVER SPRATLEYS AND WOULD MAINTAIN GARRISON"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1974-02-01",
+  "date_end": "1974-02-08",
+  "date_precision": "month",
+  "location_name": "Spratly Islands (Kalayaan)",
+  "subregion": "",
+  "summary": "In reply to the Philippine protest note of 5 February 1974 against the ROC and South Vietnamese presence in the Spratlys, the ROC reiterated its claim to the islands, an exchange MOFA said was handled in Manila with an understanding between the two sides to minimise conflict.",
+  "actors": "ROC Ministry of Foreign Affairs; ROC Embassy in Manila",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A diplomatic reply restating sovereignty is declarative. The cable (8 February) gives no date for the reply, which falls between 5 and 8 February 1974; month precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00827_b.html",
+    "title": "ROC claim to Spratleys (Taipei 827)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-02-08",
+    "language": "en",
+    "excerpt": "5. FILIPINO CLAIMS: WHILE ROC REITERATED ITS CLAIM"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1974-02-04",
+  "date_end": "1974-02-09",
+  "date_precision": "day",
+  "location_name": "Spratly Islands; ROC garrison on Itu Aba (Taiping Island)",
+  "subregion": "5",
+  "summary": "Two ROC Navy destroyer escorts and one LST sailed from Tsoying on 4 February bound for the Spratlys (ETA 9 February) on what the Navy called a normal resupply mission, delayed from mid-January by the Paracels clash; the Philippine protest note of 5 February to the ROC cited the presence of two ROC warships in the Spratlys during South Vietnam's landing operation.",
+  "actors": "ROC Navy (two destroyer escorts, one LST)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "A naval resupply run to a garrisoned feature is unilateral presence without confrontation; demonstrative. The ROC described it as routine (the garrison was resupplied quarterly), but it coincided with South Vietnam's occupation operation and Manila treated it as a show of force. MOFA told the US embassy on 8 February that the garrison had been neither withdrawn nor strengthened.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00751_b.html",
+    "title": "ROC Navy resupply mission to Spratlys (Taipei 751)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-02-05",
+    "language": "en",
+    "excerpt": "ONE LST LEFT TSOYING FEB 4 BOUND FOR SPRATLY ETA"
+   },
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974MANILA01389_b.html",
+    "title": "GOP protests ROC and RVN show of force in Spratleys (Manila 1389)",
+    "publisher": "US Embassy Manila / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-02-06",
+    "language": "en",
+    "excerpt": "PRESENCE OF TWO ROC WARSHIPS DURING VIETNAMESE OPERATION"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1974-02-07",
+  "date_end": "1974-02-07",
+  "date_precision": "day",
+  "location_name": "Nansha (Spratly) archipelago",
+  "subregion": "",
+  "summary": "Foreign Minister Shen Chang-huan called in the South Vietnamese chargé d'affaires, Nguyen Van Kieu, and delivered a strong protest against Vietnam's claim to the Spratlys, reaffirming that the Nansha archipelago is inherently ROC territory and that this position 'is not subject to change by whatever measures taken by any country'; MOFA said privately it had protested with great reluctance and asked Saigon to show restraint.",
+  "actors": "ROC Foreign Minister Shen Chang-huan; Ministry of Foreign Affairs (East Asia and Pacific Director Chou Tung-hua)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A formal protest delivered to the rival claimant's envoy is declarative. Keesing's reports that an official spokesman in Taiwan had already said on 4 February that the government had protested, so the protest may have been lodged by 4 February and formalised on 7 February.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00807_b.html",
+    "title": "ROC reiterates claim to Spratlys (Taipei 807)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-02-07",
+    "language": "en",
+    "excerpt": "CHARGE' NGUYEN VAN KIEU FEB 7 TO DELIVER PROTEST"
+   },
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1974TAIPEI00827_b.html",
+    "title": "ROC claim to Spratleys (Taipei 827)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1974-02-08",
+    "language": "en",
+    "excerpt": "TOLD EMBOFF THAT FEB 7 PROTEST TO SOUTH VIETNAM"
+   },
+   {
+    "url": "https://web.stanford.edu/group/tomzgroup/pmwiki/uploads/3217-1974-03-KS-a-EYJ.pdf",
+    "title": "Dispute over Paracel and Spratly Islands (Keesing's Contemporary Archives vol. 20, p. 26388)",
+    "publisher": "Keesing's Contemporary Archives (via Stanford Tomz group)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "an official spokesman in Taiwan said on the same day that the Nationalist Government had also protested"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1975-01-01",
+  "date_end": "1975-02-15",
+  "date_precision": "month",
+  "location_name": "Spratly Islands; ROC garrison on Itu Aba (Taiping Island)",
+  "subregion": "5",
+  "summary": "Two ROC Navy LSTs, a patrol frigate and a destroyer escort made a resupply and troop-rotation run to the Spratlys, returning to Taiwan on 15 February 1975; ROC Navy ships deployed to the Spratlys only for such missions, every three months, and none were stationed there.",
+  "actors": "ROC Navy (two LSTs, one PF, one DE)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "Routine resupply and rotation of an island garrison is unilateral presence; demonstrative. This is the established quarterly practice (about four runs a year), summarised here as one event for 1975; the departure date is not given, so the window is set to the weeks before the 15 February return.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1975TAIPEI02087_b.html",
+    "title": "ROC military presence in the Spratleys (Taipei 2087)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1975-04-19",
+    "language": "en",
+    "excerpt": "TO TAIWAN FROM A SPRATLEY RESUPPLY MISSION ON"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1975-01-01",
+  "date_end": "1975-12-31",
+  "date_precision": "year",
+  "location_name": "Nansha (Spratly) Islands",
+  "subregion": "",
+  "summary": "The ROC government issued what its Coast Guard Administration's official history calls 'the one and only valid legal warning' regarding the Nansha Islands, in response to incursions by the Philippines, Vietnam and Malaysia.",
+  "actors": "Government of the Republic of China",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RV",
+   "RM"
+  ],
+  "reasoning": "An official warning against other claimants' incursions is a verbal assertion; declarative (a coder may read 'warning' as a threat and weigh coercive). The source gives only the year and no text; it may be the same act as the 15 February 1975 reiteration below. The source is the English translation of the CGA 'Historical Background' filed as PCA Annex 910, a PDF, so the excerpt cannot be machine-checked.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (Taiping Island), in The Philippines' Written Responses on Itu Aba (Annexes 893-913)",
+    "publisher": "Permanent Court of Arbitration (PCA Case 2013-19)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "issued the one and only valid legal warning regarding the Nansha Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1975-02-15",
+  "date_end": "1975-02-15",
+  "date_precision": "day",
+  "location_name": "Paracel (Hsisha) and Spratly (Nansha) islands",
+  "subregion": "",
+  "summary": "The day after South Vietnam issued a white paper on its claim to the Paracel and Spratly islands (14 February 1975), the ROC government officially reiterated its own claim to both archipelagos in a statement reported by UPI from Taipei.",
+  "actors": "ROC government (statement reported by UPI Taipei)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A government statement reasserting sovereignty in answer to a rival's white paper is declarative. Known only from a US consulate cable quoting the UPI despatch; the ROC text was not found.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1975HONGK01646_b.html",
+    "title": "UPI cites 'Government of Taiwan' on island claims (Hong Kong 1646)",
+    "publisher": "US Consulate General Hong Kong / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1975-02-18",
+    "language": "en",
+    "excerpt": "REITERATION OF ITS CLAIM TO PARACEL AND SPRATLEY ISLANDS"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1975-05-06",
+  "date_end": "1975-05-06",
+  "date_precision": "day",
+  "location_name": "Itu Aba (Taiping Island)",
+  "subregion": "5",
+  "summary": "After the new Vietnamese government's forces took over the South Vietnamese-held Spratly features, an ROC Ministry of National Defense spokesman said that ROC troops still occupied Itu Aba and that all was quiet there.",
+  "actors": "ROC Ministry of National Defense spokesman",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A public statement affirming continued occupation of a feature is a mild verbal assertion; declarative and low salience. In April 1975 the Itu Aba garrison had been ordered to keep close watch on the Vietnamese-held Sand Cay and Namyit (Taipei 2087), without other action.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1975MANILA06055_b.html",
+    "title": "Spratly Islands (Manila 6055)",
+    "publisher": "US Embassy Manila / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1975-05-07",
+    "language": "en",
+    "excerpt": "ROC DEFENSE SPOKESMAN CLAIMED MAY 6 THAT ROC TROOPS STILL OCCUPY"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1976-03-19",
+  "date_end": "1976-03-19",
+  "date_precision": "day",
+  "location_name": "Spratly (Nansha) and Paracel (Hsisha) islands",
+  "subregion": "",
+  "summary": "The ROC government publicly reiterated its claim to the Spratly and Paracel islands as part of the 'traditional' territory of the Republic of China.",
+  "actors": "ROC government (Ministry of Foreign Affairs)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A public reassertion of sovereignty is declarative. The US cable (20 March 1976) survives only as a title, its text being unavailable; Hung (NPF 2009) dates a reiteration to 'March 19' without giving the year, and the match with the cable makes 1976 likely. The trigger is not stated (the newly published Vietnamese maps of the islands, reported from Manila on 26 March, are a candidate), so the dyad is set to all states.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1976TAIPEI01821_b.html",
+    "title": "GROC reiterates its claim to Spratlys and Paracels (Taipei 1821; text unavailable)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1976-03-20",
+    "language": "en",
+    "excerpt": "GROC REITERATES ITS CLAIM TO SPRATLYS AND PARACELS"
+   },
+   {
+    "url": "https://www.npf.org.tw/3/6121",
+    "title": "Sovereignty over the Spratlys II",
+    "publisher": "National Policy Foundation (Hung Chien-chao)",
+    "pub_date": "2009-07-10",
+    "language": "en",
+    "excerpt": "Taipei reiterated on March 19 and May 12 that the Paracels and the Spratlys are part of the \"traditional\" territory of the Republic of China."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1976-06-01",
+  "date_end": "1976-06-28",
+  "date_precision": "month",
+  "location_name": "Spratly Islands and other South China Sea islands",
+  "subregion": "",
+  "summary": "The ROC government made statements concerning the Spratlys and the other South China Sea islands in June 1976, when Philippine-licensed drilling had begun at Reed Bank (spudded 29 April) and the PRC had issued its 14 June statement on the islands.",
+  "actors": "ROC government",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "Government statements on the islands are declarative. Only the US cable's title survives (its text is unavailable) and no other record of the statements was found, so their content, date and addressee are unknown; the Reed Bank drilling is the likely trigger, hence RP, but a coder should treat both the dyad and the content as unverified.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://search.wikileaks.org/plusd/cables/1976TAIPEI04360_b.html",
+    "title": "ROC statements concerning the Spratlys and other islands (Taipei 4360; text unavailable)",
+    "publisher": "US Embassy Taipei / Department of State telegram (WikiLeaks PlusD)",
+    "pub_date": "1976-06-28",
+    "language": "en",
+    "excerpt": "ROC STATEMENTS CONCERNING THE SPRATLYS AND OTHER ISLANDS"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1976-06-01",
+  "date_end": "1976-06-30",
+  "date_precision": "month",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "ROC Chief of the General Staff General Lai Ming-tang visited Dongsha (Pratas) Island and spent the Dragon Boat Festival with the garrison, inscribing the motto 'the island is far but hearts are close' (島遠心近), which was erected there as a stele.",
+  "actors": "ROC Chief of the General Staff Gen. Lai Ming-tang; Marine Corps Dongsha garrison",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A visit by the armed forces' chief of staff to a garrisoned island is a display of presence without confrontation; demonstrative, low salience. The source gives only ROC year 65 (1976) and the Dragon Boat Festival, which fell on 2 June 1976; month precision. The source is a Coast Guard PDF, so the excerpt cannot be machine-checked.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835858418.pdf",
+    "title": "轄區特色-東沙 (Dongsha jurisdiction features)",
+    "publisher": "ROC Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "參謀總長上將賴名湯蒞臨東沙島"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1978-01-01",
+  "date_end": "1978-12-31",
+  "date_precision": "year",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "A station was set up on Taiping Island in 1978 to monitor the winter monsoon as part of a large-scale global World Meteorological Organization project.",
+  "actors": "ROC government (weather service on Taiping Island)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Installing a scientific station on a held feature as part of an international programme is unilateral administration without confrontation; demonstrative, and new in kind for the decade. The source gives only the year; the WMO winter monsoon experiment (Winter MONEX) ran from December 1978 to March 1979.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4832",
+    "title": "Remarks by President Ma on Taiping Island",
+    "publisher": "Office of the President, ROC",
+    "pub_date": "2016-01-28",
+    "language": "en",
+    "excerpt": "back in 1978, a station was set up on Taiping Island to monitor the winter monsoon as part of a large-scale global project conducted by the World Meteorological Organization (WMO)"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1979-01-01",
+  "date_end": "1979-12-31",
+  "date_precision": "year",
+  "location_name": "Pratas (Tungsha) Islands",
+  "subregion": "",
+  "summary": "The ROC government placed the Pratas group under the jurisdiction of Kaohsiung, which became a special municipality in 1979.",
+  "actors": "ROC government (Executive Yuan); Kaohsiung municipal government",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Assigning an island group to a municipality is an administrative act of jurisdiction; demonstrative (unilateral administration). The source gives only the year, and the Coast Guard's own history says only that Kaohsiung later brought Dongsha into its Qijin district; date and instrument are unverified.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.npf.org.tw/3/6120",
+    "title": "Sovereignty over the Spratly Islands",
+    "publisher": "National Policy Foundation (Hung Chien-chao)",
+    "pub_date": "2009-07-10",
+    "language": "en",
+    "excerpt": "placed the Pratas group under the jurisdiction of the special municipality of Kaohsiung in 1979"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1979-09-06",
+  "date_end": "1979-09-06",
+  "date_precision": "day",
+  "location_name": "Waters of the Republic of China, including the South China Sea islands",
+  "subregion": "",
+  "summary": "The Executive Yuan adopted a decree extending the ROC territorial sea from three to twelve nautical miles and establishing a 200-nautical-mile exclusive economic zone.",
+  "actors": "Executive Yuan",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A decree proclaiming new maritime zones is legislation; declarative, and a step up on the three-mile limit the ROC had kept. It covered all ROC-claimed territory, including the South China Sea islands, but names none, so a coder may judge its SCS salience low. The source is a law-journal PDF read through a fetcher (curl was blocked), so the excerpt cannot be machine-checked; the Presidential Office proclamation text was not found.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://core.ac.uk/download/144226024.pdf",
+    "title": "A Proposed Fishery Conservation and Management Act for the Republic of China (Fordham International Law Journal 5(1))",
+    "publisher": "Fordham International Law Journal (Joseph W. Dellapenna and Ar-Young Wang), via CORE",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "on September 6, 1979, adopted a decree incorporating these recommendations"
+   }
+  ]
+ }
+]

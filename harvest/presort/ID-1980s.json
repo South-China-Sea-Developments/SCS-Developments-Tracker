@@ -1,0 +1,79 @@
+{
+ "run_id": "ID-1980s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-4227e29b69",
+   "disposition": "continuation",
+   "of": "ev-bbef893415",
+   "reason": "The Esso D-Alpha contract is the award of a bloc already named in the 1979 Natuna bloc round (ev-bbef893415, prev file: 'D-Alpha Esso'), at the same level; continuation, provisional until 1979 is decided."
+  },
+  {
+   "event_id": "ev-4d61328818",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Announced naval manoeuvres near Natuna are a military show of presence with nothing comparable in the 1979 record (prev file: bloc tender, contracts and Mochtar's statement, ev-bbef893415, ev-26d27c646d), so new again against last year; demonstrative. Single contemporary report with no dates or units, so weak evidence."
+  },
+  {
+   "event_id": "ev-0c7eb0639a",
+   "disposition": "unclear",
+   "reason": "The 8 February 1980 note protesting Malaysia's Peta Baru is documented as aimed at Sipadan and Ligitan (Celebes Sea, outside the SCS); nothing comparable in 1979 (prev file). Settle by whether the note also objected to the map's South China Sea shelf lines near Natuna: if yes, a declarative novelty; if not, out of area."
+  },
+  {
+   "event_id": "ev-442456fb9f",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Proclaiming a 200-nm EEZ from the archipelagic baselines, covering the waters north of Natuna, is a new legal claim with nothing comparable in the 1979 record (prev file: oil-bloc awards, ev-bbef893415) or the baseline (shelf only); declarative."
+  },
+  {
+   "event_id": "ev-63e93dcef8",
+   "disposition": "continuation",
+   "of": "ev-4227e29b69",
+   "reason": "Concessions over the whole disputed shelf and completed seismic work continue the oil licensing shown in 1980 (ev-4227e29b69) at the same level; the naval-escorted drilling it reports was still prospective in January 1981. If escorted drilling is later confirmed, that would be a separate novelty."
+  },
+  {
+   "event_id": "ev-d32802dc73",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "ID1981-natuna-military",
+   "reason": "Lead of the 1981 military reinforcement of Natuna: completing an air base for fighters and bombers is new construction against 1980, whose record shows only an announced naval manoeuvre (ev-4d61328818); demonstrative. A coder may read it as defence posture (it was to host Singaporean and Malaysian aircraft too) rather than claim assertion."
+  },
+  {
+   "event_id": "ev-a1b708ffde",
+   "disposition": "same_move",
+   "of": "ev-d32802dc73",
+   "group": "ID1981-natuna-military",
+   "reason": "Round-the-clock naval patrols from Natuna and the joint reinforcement exercise are the same 1981 military build-up as the air base (ev-d32802dc73); against the single announced manoeuvre of 1980 (ev-4d61328818) they also raise frequency, but they belong in one move."
+  },
+  {
+   "event_id": "ev-797f4b0432",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Installing radar, a fuel depot and stationing a submarine, a patrol boat and a minehunter at Natuna adds standing military assets the 1981 record does not show (air base and patrols only, ev-d32802dc73, ev-a1b708ffde): a further intensification, not a continuation; demonstrative."
+  },
+  {
+   "event_id": "ev-7453dbabf6",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Law 5/1983 gives statutory force and criminal penalties to the 1980 EEZ proclamation (ev-442456fb9f); nothing comparable in 1982 (military only, ev-797f4b0432), so the legal assertion is new again; declarative. Doubt: a coder may see it as codifying the same claim rather than intensifying it."
+  },
+  {
+   "event_id": "ev-9299417f47",
+   "disposition": "continuation",
+   "of": "ev-7453dbabf6",
+   "reason": "PP 15/1984 implements the 1983 EEZ law (ev-7453dbabf6) for fisheries: nationwide, naming no claimant, the same legal-administrative assertion at the same level; continuation, likely reject. A coder who counts foreign-fishing licensing as a new method could call it novelty."
+  },
+  {
+   "event_id": "ev-0d7b8eed93",
+   "disposition": "continuation",
+   "of": "ev-9299417f47",
+   "reason": "The 1985 levies and permits on foreign fishing vessels are implementing decrees under PP 15/1984 (ev-9299417f47), nationwide and at the same level; continuation, likely reject. Single summarised JPRS source needs checking."
+  },
+  {
+   "event_id": "ev-6821facc66",
+   "disposition": "unclear",
+   "reason": "Not an assertive act of the claimant — likely reject: ratifying UNCLOS is a multilateral, cooperative act, though its law presents the Convention as recognition of the archipelagic waters around Natuna. Settle by whether the coder counts the ratifying law's claims as a declarative assertion."
+  }
+ ]
+}

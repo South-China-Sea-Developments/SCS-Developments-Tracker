@@ -2,6 +2,14 @@
 
 One section per release tag, newest first. The section's body becomes the GitHub release notes and the "What changed" text on the Downloads page, which renders only paragraphs, flat `- ` bullets and `code` spans; keep to those. Dataset versions follow `MAJOR.MINOR.PATCH`: MAJOR for a change to the coding scheme or the unit of analysis (none planned: ADR 0001, 0002), MINOR for new coverage (years, claimants), PATCH for corrections. The `-dev` suffix marks a dataset still being built.
 
+## Unreleased
+
+- First project-coded moves: `CN201601`–`CN201605` (China, 2016), decided by the maintainer; `CN198201` and `CN200802` extended through 2016 (documented in `data/corrections.csv`).
+- Correction: `CN201605` given sub-region 8 (Spratly SW, Fiery Cross Reef), which its decision left blank; the validator now refuses a project move without a sub-region.
+- The map counts every event on its sub-region; events with coordinates are drawn at them as well.
+- `CN2016xx`–`CN2020xx`: 32 project-coded China moves for 2016–2020 in all, decided by the maintainer; 20 earlier moves extended by continuation notes.
+- Retraction: `CN201702` (the 2017 *draft* revision of the Maritime Traffic Safety Law) withdrawn by the maintainer — legislation is coded at enactment (April 2021). The id is retired (`data/reference/retired_moves.csv`) and will not be reused.
+
 ## v2.0.0-dev — 2026-10-16
 
 First tagged state of the continuation. Not a release for citation in published work: the suffix says the dataset is still being built.

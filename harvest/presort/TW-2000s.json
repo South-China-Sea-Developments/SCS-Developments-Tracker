@@ -1,0 +1,247 @@
+{
+ "run_id": "TW-2000s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-3a2b87b7bd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2000-CGA",
+   "reason": "Change of method: a new civilian Coast Guard command takes over and administers Pratas and starts driving off illegal fishing boats, against a 1999 record (TW-1990s candidates ev-b5af29b0b4, ev-df7250f50c, undecided) of a marine garrison and symbolic visits only. A coder may instead read the troop withdrawal as maintenance or de-escalation."
+  },
+  {
+   "event_id": "ev-17f5914086",
+   "disposition": "same_move",
+   "of": "ev-3a2b87b7bd",
+   "group": "TW2000-CGA",
+   "reason": "The same day's CGA takeover of the Taiping garrison is the same intensification as the Pratas handover ev-3a2b87b7bd (one reorganisation, two features)."
+  },
+  {
+   "event_id": "ev-e3c58ff17b",
+   "disposition": "unclear",
+   "reason": "A tourism plan is a plan, not behaviour, and the Chaparral deployment is undated ('recently'), so it may fall in 1999, when the military was already showing off the Pratas defences (ev-df7250f50c, TW-1990s). Settle by the missile deployment date and whether tourism actually began."
+  },
+  {
+   "event_id": "ev-e24c6cc6a3",
+   "disposition": "continuation",
+   "of": "ev-b5af29b0b4",
+   "reason": "Provisional continuation of ev-b5af29b0b4 (1999, undecided TW-1990s candidate): official sovereignty visits to Pratas were already in the 1999 record; a higher-ranking visitor is the same method. A coder may count the order to expel foreign boats as part of the CGA move ev-3a2b87b7bd instead."
+  },
+  {
+   "event_id": "ev-dddf0cf2ec",
+   "disposition": "unclear",
+   "reason": "A backup solar plant for the existing Taiping garrison; 2000 shows the CGA takeover (ev-17f5914086) but no construction. Settle by whether a utility upgrade to a held garrison counts as new presence or as maintenance (likely reject)."
+  },
+  {
+   "event_id": "ev-25e092e50c",
+   "disposition": "continuation",
+   "of": "ev-e24c6cc6a3",
+   "reason": "Provisional continuation of ev-e24c6cc6a3 (2000 presidential Pratas visit, undecided): 2001's record holds a single act, so by the sparse-data rule official Pratas visits are taken as continuing; a ministerial visit is no step up."
+  },
+  {
+   "event_id": "ev-0c66e9740c",
+   "disposition": "continuation",
+   "of": "ev-25e092e50c",
+   "reason": "Provisional continuation of ev-25e092e50c (2002 Interior Minister's Pratas visit, undecided): another official sovereignty visit to Pratas, the same practice at a similar level."
+  },
+  {
+   "event_id": "ev-e479824bd4",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "TW2003-MOI-Taiping",
+   "reason": "Landing and planting the flag on unoccupied Zhongzhou Reef extends ROC presence beyond Itu Aba, and the satellite control point is a new survey installation; nothing comparable in the 2002 record (ev-25e092e50c, a Pratas visit)."
+  },
+  {
+   "event_id": "ev-e4e4d9c83f",
+   "disposition": "same_move",
+   "of": "ev-e479824bd4",
+   "group": "TW2003-MOI-Taiping",
+   "reason": "The 2003 cadastral survey of Taiping is part of the same Interior Ministry survey-and-registration push as the August trip ev-e479824bd4; if dated independently, it is a novelty in its own right (no 2002 equivalent)."
+  },
+  {
+   "event_id": "ev-ad0e2ec86f",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2004-Zhongzhou",
+   "reason": "A permanent structure on Zhongzhou Reef is a new method there: in 2003 the reef got only a flag (ev-e479824bd4). Demonstrative; it drew a Vietnamese protest."
+  },
+  {
+   "event_id": "ev-11528739e7",
+   "disposition": "same_move",
+   "of": "ev-ad0e2ec86f",
+   "group": "TW2004-Zhongzhou",
+   "reason": "The Interior Minister's reaffirmation answers Vietnam's protest of the Zhongzhou pavilion, so it belongs with ev-ad0e2ec86f, not as a separate declarative move."
+  },
+  {
+   "event_id": "ev-4b1f445596",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Twice summoning Vietnam's representative, and the MND's talk of a contingency plan, are a diplomatic-protest method absent from the 2003 record (visits and a survey only, ev-0c66e9740c, ev-e479824bd4). A coder could instead fold it with the April statement ev-11528739e7 into one move on Vietnam."
+  },
+  {
+   "event_id": "ev-2370bbf5af",
+   "disposition": "unclear",
+   "reason": "The order revises existing prohibited and restricted waters off Dongsha; 2003 shows nothing comparable, but a revision is only a move if it widens or tightens the zones. Settle by comparing the 2004 limits (12/24 nm) with the earlier ones."
+  },
+  {
+   "event_id": "ev-5983888b99",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2005-Pratas-enforcement",
+   "reason": "Ordering a PRC state survey ship out of the Pratas waters and sending a CGA ship to chase it is coercion against a state vessel, a method absent from the 2004 record, which has zones declared (ev-2370bbf5af) but no enforcement."
+  },
+  {
+   "event_id": "ev-bd245f9ba6",
+   "disposition": "same_move",
+   "of": "ev-5983888b99",
+   "group": "TW2005-Pratas-enforcement",
+   "reason": "The threat to board the Fen Dou No. 4 is the second expulsion of the same May campaign as ev-5983888b99. Check the location: CNA puts the ship off south-western Taiwan, possibly outside the SCS."
+  },
+  {
+   "event_id": "ev-5058d48b9b",
+   "disposition": "same_move",
+   "of": "ev-5983888b99",
+   "group": "TW2005-Pratas-enforcement",
+   "reason": "The CGA's physical denial of a PRC fishermen's landing on Pratas is the same 2005 enforcement at Pratas as ev-5983888b99. Alone, Chubb's counterfactual (more PRC boats to react to) would make it a doubtful move."
+  },
+  {
+   "event_id": "ev-bc20dbd663",
+   "disposition": "same_move",
+   "of": "ev-5983888b99",
+   "group": "TW2005-Pratas-enforcement",
+   "reason": "Chen inaugurated a new CGA patrol squad for Pratas and pledged more patrol capacity, the capacity side of the 2005 enforcement step-up ev-5983888b99. A coder may treat it as a separate presence move, since 2004 had no visits."
+  },
+  {
+   "event_id": "ev-1526955fc1",
+   "disposition": "unclear",
+   "reason": "The Taiping satellite tracking station may complete the control point broken ground in 2003 (ev-e479824bd4), with nothing in 2004. Settle by whether it is that project's completion (part of the 2003 move) or a new installation (a novelty against 2004)."
+  },
+  {
+   "event_id": "ev-cdb51ba2b7",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2005-airstrip",
+   "reason": "Starting military construction of the first runway on Taiping is a new method, with nothing comparable in the 2004 record (the Zhongzhou pavilion ev-ad0e2ec86f was a small structure). Date caveat: the MND journal says Nov 2004."
+  },
+  {
+   "event_id": "ev-4735accd22",
+   "disposition": "continuation",
+   "of": "ev-4b1f445596",
+   "reason": "Provisional continuation of ev-4b1f445596 (2004 summons of Vietnam's representative, undecided): a summons of the Vietnamese envoy again, now over the airstrip and the JMSU. A coder may see the first protest against the JMSU as new in target."
+  },
+  {
+   "event_id": "ev-34efe69b3e",
+   "disposition": "continuation",
+   "of": "ev-4735accd22",
+   "reason": "Provisional continuation of ev-4735accd22 (Dec 2005 protest to Vietnam over the airstrip, undecided): the public follow-up rebuttal of the same Vietnamese protest, the same method."
+  },
+  {
+   "event_id": "ev-620ab0ae56",
+   "disposition": "continuation",
+   "of": "ev-cdb51ba2b7",
+   "reason": "Provisional continuation of ev-cdb51ba2b7 (2005 airstrip start, undecided): a resupply wharf beside the broken pier continues Taiping construction at the same level and is not a new kind of facility."
+  },
+  {
+   "event_id": "ev-0f7c4ec784",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2007-parks",
+   "reason": "The first national park regime over a disputed SCS atoll and its 12-nm sea is a new administrative method; nothing comparable in the 2006 record (ev-34efe69b3e, ev-620ab0ae56)."
+  },
+  {
+   "event_id": "ev-201ba334c7",
+   "disposition": "same_move",
+   "of": "ev-0f7c4ec784",
+   "group": "TW2007-parks",
+   "reason": "A 12-nm conservation zone at Taiping applies the same new method (environmental zoning over a disputed feature's sea) as the Dongsha park ev-0f7c4ec784 in the same year. A coder may keep it separate because the feature and authority differ."
+  },
+  {
+   "event_id": "ev-e3717bc2bf",
+   "disposition": "continuation",
+   "of": "ev-cdb51ba2b7",
+   "reason": "Provisional continuation of ev-cdb51ba2b7: a ministerial inspection of the airstrip works begun in 2005 and pursued into mid-2006. Only the 2008 first use (ev-19f6af2eae) changes the level."
+  },
+  {
+   "event_id": "ev-399b5ee74c",
+   "disposition": "continuation",
+   "of": "ev-34efe69b3e",
+   "reason": "Provisional continuation of ev-34efe69b3e (Jan 2006 MOFA rebuttal of Vietnam over the airstrip, undecided): the same rebuttal of a renewed Vietnamese protest, the same method."
+  },
+  {
+   "event_id": "ev-6ca149a394",
+   "disposition": "continuation",
+   "of": "ev-cdb51ba2b7",
+   "reason": "Provisional continuation of ev-cdb51ba2b7: completing the runway begun in Dec 2005 is the same project. 2006 had work until the July freeze, so it is not new again. The date (Dec 2007 or Jan 2008) is disputed."
+  },
+  {
+   "event_id": "ev-19f6af2eae",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2008-Taiping-air",
+   "reason": "The first military aircraft landing on Taiping and a stationed air force detachment are a new kind of presence; in 2007 the runway was only being built (ev-6ca149a394, ev-e3717bc2bf)."
+  },
+  {
+   "event_id": "ev-46a693d690",
+   "disposition": "same_move",
+   "of": "ev-19f6af2eae",
+   "group": "TW2008-Taiping-air",
+   "reason": "Chen's landing by C-130 to open the airstrip, under a naval escort, is the same Taiping air-link intensification as ev-19f6af2eae. A coder may also count the first presidential Spratly visit as a novelty of its own."
+  },
+  {
+   "event_id": "ev-d74a55eb3a",
+   "disposition": "same_move",
+   "of": "ev-19f6af2eae",
+   "group": "TW2008-Taiping-air",
+   "reason": "Chen's Pratas stop eight days later repeats the Spratly Initiative from the same tour (ev-46a693d690). There was no Pratas visit in 2007, but alone it adds little, so it goes with the tour's move."
+  },
+  {
+   "event_id": "ev-623ecf13e7",
+   "disposition": "continuation",
+   "of": "ev-399b5ee74c",
+   "reason": "Provisional continuation of ev-399b5ee74c (Nov 2007 MOFA rebuttal of Vietnam, undecided): the same method of a press-release rebuttal of a rival's sovereignty act, now aimed at Malaysia. More to react to is not a move."
+  },
+  {
+   "event_id": "ev-3597e7e14b",
+   "disposition": "unclear",
+   "reason": "Ma's Pratas garrison visit made no sovereignty statement. The 2007 record has no Pratas visit, but Chen's was earlier in 2008 (ev-d74a55eb3a). Settle by whether the coder counts it with the Feb 2008 tour or as routine; likely reject."
+  },
+  {
+   "event_id": "ev-9ec3c74d35",
+   "disposition": "unclear",
+   "reason": "A replacement administrative building for the Taiping CGA command, broken ground in 2007. 2008 shows air presence (ev-19f6af2eae) but no comparable building. Settle by whether garrison housing counts as new presence or maintenance; likely reject."
+  },
+  {
+   "event_id": "ev-3fc38a46fe",
+   "disposition": "continuation",
+   "of": "ev-623ecf13e7",
+   "reason": "Provisional continuation of ev-623ecf13e7 (Aug 2008 MOFA rebuttal, undecided): the same rebuttal method, now of the Philippine baselines bill."
+  },
+  {
+   "event_id": "ev-2fe1cabac4",
+   "disposition": "continuation",
+   "of": "ev-623ecf13e7",
+   "reason": "Provisional continuation of ev-623ecf13e7: rebuts another Malaysian leader's Swallow Reef visit exactly as in Aug 2008, the same target and method."
+  },
+  {
+   "event_id": "ev-4bd978830b",
+   "disposition": "continuation",
+   "of": "ev-623ecf13e7",
+   "reason": "Provisional continuation of ev-623ecf13e7: a protest to the Philippine envoy over RA 9522. A summons is a firmer form than the 2008 press release, and a coder could read the first protest to Manila as new."
+  },
+  {
+   "event_id": "ev-aecd64893a",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW2009-CLCS",
+   "reason": "The ROC's first formal claim to continental-shelf outer limits in the SCS is a new legal method; nothing comparable in the 2008 record (rebuttals such as ev-623ecf13e7)."
+  },
+  {
+   "event_id": "ev-a0fbce106d",
+   "disposition": "same_move",
+   "of": "ev-aecd64893a",
+   "group": "TW2009-CLCS",
+   "reason": "The rebuttal of the Malaysia-Vietnam CLCS submission three days earlier belongs to the same CLCS-deadline episode as ev-aecd64893a. Alone it would be a continuation of ev-623ecf13e7."
+  }
+ ]
+}
