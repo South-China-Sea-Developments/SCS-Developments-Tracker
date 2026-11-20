@@ -1,7 +1,36 @@
 {
  "decisions": [
   {
-   "event_id": "ev-0ce3112282",
+   "event_id": "ev-007a4bbf47",
+   "action": "reject",
+   "note": "continuation of ev-d73044394d"
+  },
+  {
+   "event_id": "ev-050fffbf7e",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CU"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "4"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-059eac796e",
    "action": "new_move",
    "note": "",
    "new_move": {
@@ -13,22 +42,23 @@
      "CA"
     ],
     "domains": [
-     "physical",
-     "domestic"
+     "physical"
     ],
     "issues": [
      "military"
     ],
-    "subregions": [],
+    "subregions": [
+     "3"
+    ],
     "description": ""
    }
   },
   {
-   "event_id": "ev-13ddf85191",
+   "event_id": "ev-0934929e97",
    "action": "new_move",
    "note": "",
    "new_move": {
-    "type": "demonstrative",
+    "type": "coercive",
     "intensification_criterion": "novelty",
     "year": "",
     "ongoing_through": "",
@@ -36,30 +66,25 @@
      "CV"
     ],
     "domains": [
-     "physical",
      "diplomatic"
     ],
     "issues": [
+     "energy",
      "military"
     ],
     "subregions": [
-     "2"
+     "9"
     ],
     "description": ""
    }
   },
   {
-   "event_id": "ev-3a64632f5a",
-   "action": "reject",
-   "note": "continuation of CN200802 (ongoing through 2015)"
-  },
-  {
-   "event_id": "ev-5ba80d68d3",
+   "event_id": "ev-0c6bdb5f9b",
    "action": "new_move",
-   "note": "",
+   "note": "What is new is not the opposition per se, but the fact that a helicopter was used.",
    "new_move": {
     "type": "coercive",
-    "intensification_criterion": "scope",
+    "intensification_criterion": "novelty",
     "year": "",
     "ongoing_through": "",
     "dyads": [
@@ -69,7 +94,7 @@
      "physical"
     ],
     "issues": [
-     "fisheries"
+     "military"
     ],
     "subregions": [
      "6"
@@ -78,13 +103,61 @@
    }
   },
   {
-   "event_id": "ev-66585c9b2f",
+   "event_id": "ev-11cedb20da",
    "action": "merge",
    "note": "",
-   "move_of_event": "ev-9c7790c4a9"
+   "move_id": "CN201601"
   },
   {
-   "event_id": "ev-7ad6eeb7b5",
+   "event_id": "ev-11e6c8d7a8",
+   "action": "new_move",
+   "note": "While there have been other such deployments before, none reached this extent and level of sophistication either.",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CA"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "5",
+     "6",
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-218aa0e9a4",
+   "action": "reject",
+   "note": "continuation of ev-c2627ecb81 (via ev-c22227b9dd, a continuation)"
+  },
+  {
+   "event_id": "ev-21d0f5dbec",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-625213d311"
+  },
+  {
+   "event_id": "ev-2318cd96ea",
+   "action": "reject",
+   "note": "continuation of CN201504 — hardened hangars on Fiery Cross, Subi and Mischief (AMTI, 1 Aug 2016): Spratly outpost building, open through 2018"
+  },
+  {
+   "event_id": "ev-2a77d78488",
+   "action": "reject",
+   "note": "continuation of CN201504 (via ev-ed82a89831, a continuation)"
+  },
+  {
+   "event_id": "ev-2b5458f8ed",
    "action": "new_move",
    "note": "",
    "new_move": {
@@ -109,39 +182,199 @@
    }
   },
   {
-   "event_id": "ev-7cd6864e49",
+   "event_id": "ev-2d721ef662",
    "action": "reject",
-   "note": "continuation of CN201501"
+   "note": "continuation of CN201205"
   },
   {
-   "event_id": "ev-7d70f0f685",
+   "event_id": "ev-2de6fa208c",
    "action": "reject",
-   "note": "continuation of CN198201"
+   "note": "continuation of ev-62ee135542 (via ev-38f5466276, a continuation)"
   },
   {
-   "event_id": "ev-8894d63346",
+   "event_id": "ev-3252bb0728",
    "action": "reject",
-   "note": "continuation of CN201504"
+   "note": "continuation of ev-2b5458f8ed"
   },
   {
-   "event_id": "ev-9c7790c4a9",
+   "event_id": "ev-32d0b4c61f",
+   "action": "reject",
+   "note": "continuation of CN201002"
+  },
+  {
+   "event_id": "ev-3416105bdb",
+   "action": "reject",
+   "note": "continuation of CN201205 — CCG boarding Filipino boats and taking catch at Scarborough (GMA video of 20 May 2018); fishermen call it routine"
+  },
+  {
+   "event_id": "ev-3560ee4bd1",
+   "action": "reject",
+   "note": "continuation of CN201603"
+  },
+  {
+   "event_id": "ev-3756193d89",
+   "action": "new_move",
+   "note": "Such mechanisms already existed (1984 Maritime Traffic Safety Law), but this revision expanded the scope (geographical and intervention empowerment) of legal provisions.",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "military"
+    ],
+    "subregions": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-38f5466276",
+   "action": "reject",
+   "note": "Continuation of ev-62ee135542. A yearly exercise, so it most likely happened in 2018 as well. No intensification of assertiveness either way."
+  },
+  {
+   "event_id": "ev-401cf15a99",
    "action": "new_move",
    "note": "",
    "new_move": {
     "type": "demonstrative",
     "intensification_criterion": "novelty",
-    "year": "2016",
+    "year": "",
     "ongoing_through": "",
     "dyads": [
      "CV",
      "CP"
     ],
     "domains": [
-     "physical",
+     "domestic",
      "diplomatic"
     ],
     "issues": [
      "administrative",
+     "politics"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-436bf217f8",
+   "action": "reject",
+   "note": "continuation of CN201002"
+  },
+  {
+   "event_id": "ev-4574ae4c43",
+   "action": "reject",
+   "note": "Not an assertive act: Sansha officials’ announced monitoring station at Scarborough was disavowed by the MFA as false within days, and nothing followed. Presence at Scarborough remains under CN201205."
+  },
+  {
+   "event_id": "ev-4876258964",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-7f733197fe"
+  },
+  {
+   "event_id": "ev-5166e52f1d",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV",
+     "CA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-5246e8120b",
+   "action": "reject",
+   "note": "continuation of CN201306 — second, larger ship (Changle Gongzhu) joins the Coconut Princess on the Paracels route; cruises ran through 2016 (no 2016 candidate, but [source]); no sailings count for 2016 vs 2017, so not a frequency move on the evidence"
+  },
+  {
+   "event_id": "ev-5a17d118f5",
+   "action": "reject",
+   "note": "continuation of CN198705"
+  },
+  {
+   "event_id": "ev-5b8b6b6bd4",
+   "action": "merge",
+   "note": "",
+   "move_id": "CN201604"
+  },
+  {
+   "event_id": "ev-60f35ac039",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-625213d311",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CA"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
      "military"
     ],
     "subregions": [
@@ -151,15 +384,607 @@
    }
   },
   {
-   "event_id": "ev-be22ccbe21",
+   "event_id": "ev-62ee135542",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "frequency",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV",
+     "CP"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "fisheries",
+     "administrative"
+    ],
+    "subregions": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-63d26d0b1b",
+   "action": "reject",
+   "note": "continuation of CN201205 — CCG confiscated Filipino payaos at Scarborough (May 2020), as it took catch in 2018 (ev-3416105bdb); presence continuous 2019 (PH protest ev-9d75afef41). Radio challenges to PH aircraft also continue CN201501 (PH reports 2018 ev-e1cca6ca7b, 2020)"
+  },
+  {
+   "event_id": "ev-694aeef72a",
+   "action": "reject",
+   "note": "Continuation of CN200802 — Paracels enforcement against Vietnamese fishers; sinking is not new: [boat/date] sunk in 2015 (https://news.tuoitre.vn/chinese-ships-sink-vietnams-fishing-boat-off-hoang-sa-paracels-10328524.htm), not separately coded by Chubb, consistent with his folding the 2014 sinking into CN201405"
+  },
+  {
+   "event_id": "ev-6a8e6ed27e",
+   "action": "reject",
+   "note": "continuation of ev-d73044394d"
+  },
+  {
+   "event_id": "ev-7141b5a4c0",
+   "action": "merge",
+   "note": "",
+   "move_id": "CN201604"
+  },
+  {
+   "event_id": "ev-71c4cfd8e3",
+   "action": "reject",
+   "note": "continuation of CN198705 (pre-sort confirmed)"
+  },
+  {
+   "event_id": "ev-7297605ce2",
+   "action": "reject",
+   "note": "continuation of ev-11e6c8d7a8"
+  },
+  {
+   "event_id": "ev-7364114379",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-73c18aadce",
    "action": "reject",
    "note": "continuation of CN201504"
   },
   {
-   "event_id": "ev-c9aac89a9d",
+   "event_id": "ev-73c8829d40",
+   "action": "reject",
+   "note": "continuation of CN200802 — QNg 90819 sunk at Discovery Reef, Paracels (VnExpress, 6–7 Mar 2019); sinkings of Vietnamese boats in the Paracels recur 2014–16 (Woody, Lincoln); a new reef in the same waters, not a broader area. A hard choice."
+  },
+  {
+   "event_id": "ev-73d063b5b1",
+   "action": "reject",
+   "note": "Not enough information suggesting that it was anything more than an accident."
+  },
+  {
+   "event_id": "ev-76c553751b",
+   "action": "reject",
+   "note": "continuation of ev-ae29ec2d36"
+  },
+  {
+   "event_id": "ev-7cbb37617c",
+   "action": "reject",
+   "note": "continuation of ev-d73044394d"
+  },
+  {
+   "event_id": "ev-7f733197fe",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-832c64dcf0",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CP"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "politics",
+     "administrative"
+    ],
+    "subregions": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-85fce8ad11",
+   "action": "reject",
+   "note": "continuation of CN200202"
+  },
+  {
+   "event_id": "ev-8c1dd52d0b",
+   "action": "reject",
+   "note": "Draft only: the Coast Guard Law is coded at enactment (NPCSC, 22 January 2021; in force 1 February 2021), in CN-2021-2026; the draft’s publication and the MFA defence are part of that move’s story"
+  },
+  {
+   "event_id": "ev-8c3dff1b5b",
+   "action": "reject",
+   "note": "By the coasts of Hainan, outside of the South China Sea."
+  },
+  {
+   "event_id": "ev-8cf559f861",
+   "action": "reject",
+   "note": "Routine rejection of adverse narratives to Chinese claims. It was most likely already identified in other events or moves."
+  },
+  {
+   "event_id": "ev-96b902d9ec",
    "action": "merge",
    "note": "",
-   "move_of_event": "ev-13ddf85191"
+   "move_of_event": "ev-832c64dcf0"
+  },
+  {
+   "event_id": "ev-9c6d62057b",
+   "action": "reject",
+   "note": "same move as ev-7364114379"
+  },
+  {
+   "event_id": "ev-9f5b352480",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CP"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "7"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-a31de4d44e",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CP"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "4"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-acb12cf567",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-ae29ec2d36",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CU"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "5"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b0585d4e3a",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b3a00a44aa",
+   "action": "reject",
+   "note": "continuation of CN201504"
+  },
+  {
+   "event_id": "ev-b73209ee3a",
+   "action": "reject",
+   "note": "continuation of ev-0934929e97 — Chinese pressure halts Repsol's Red Emperor project (March 2018), as it halted Block 136-03 drilling in 2017; a 2018 event cannot merge into the 2017 move"
+  },
+  {
+   "event_id": "ev-c22227b9dd",
+   "action": "reject",
+   "note": "continuation of ev-c2627ecb81"
+  },
+  {
+   "event_id": "ev-c2627ecb81",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CP"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "5"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-c4bb3394b5",
+   "action": "reject",
+   "note": "continuation of CN201504"
+  },
+  {
+   "event_id": "ev-c7f033d95a",
+   "action": "reject",
+   "note": "continuation of CN201205 — CCG stationed at Scarborough throughout 2017 (MFA, 10 April 2017), as in 2016 (ev-2d721ef662)"
+  },
+  {
+   "event_id": "ev-c966892c8f",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CM"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-c995d82196",
+   "action": "reject",
+   "note": "continuation of CN201501"
+  },
+  {
+   "event_id": "ev-c9ac9147a6",
+   "action": "reject",
+   "note": "continuation of CN200802 — CCG 4301 sank QNg 90617 near Woody, April 2020, as in 2019 (via ev-73c8829d40, a continuation)"
+  },
+  {
+   "event_id": "ev-ca24d171e0",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CP",
+     "CA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "6"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-caeb6e9933",
+   "action": "reject",
+   "note": "continuation of CN201501"
+  },
+  {
+   "event_id": "ev-cf957696c3",
+   "action": "reject",
+   "note": "continuation of CN201209"
+  },
+  {
+   "event_id": "ev-d73044394d",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CM"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "politics"
+    ],
+    "subregions": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-d9c1d4c518",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CM"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-dda1031e6d",
+   "action": "reject",
+   "note": "continuation of ev-059eac796e"
+  },
+  {
+   "event_id": "ev-df2ff8fda9",
+   "action": "reject",
+   "note": "continuation of ev-625213d311"
+  },
+  {
+   "event_id": "ev-e30c993d81",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "fisheries"
+    ],
+    "subregions": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-e502919087",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-a31de4d44e"
+  },
+  {
+   "event_id": "ev-e5d4e47643",
+   "action": "reject",
+   "note": "continuation of ev-625213d311 (via ev-df2ff8fda9, a continuation)"
+  },
+  {
+   "event_id": "ev-ed82a89831",
+   "action": "reject",
+   "note": "continuation of CN201504"
+  },
+  {
+   "event_id": "ev-f0ce0e38a0",
+   "action": "reject",
+   "note": "continuation of ev-0c6bdb5f9b"
+  },
+  {
+   "event_id": "ev-f89607f096",
+   "action": "reject",
+   "note": "continuation of ev-ae29ec2d36 (via ev-76c553751b, a continuation)"
+  },
+  {
+   "event_id": "ev-f9e3216299",
+   "action": "merge",
+   "note": "same move as ev-e30c993d81",
+   "move_of_event": "ev-e30c993d81"
+  },
+  {
+   "event_id": "ev-fdf2c4c55e",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV"
+    ],
+    "domains": [
+     "physical",
+     "domestic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-fdfd60d45e",
+   "action": "reject",
+   "note": "Not an assertive act: bilateral exercise with Russia (a non-claimant) off Zhanjiang, outside disputed waters, no claimant dyad; CN201002 covers exercises in the disputed SCS and is not continued by this"
   }
  ],
  "reviewer": "Angelo"

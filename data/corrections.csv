@@ -1,3 +1,12 @@
 move_id,field,new_value,date,by,reason
 CN198201,ongoing_through,2016,2026-11-20,Angelo,continuation: ev-7d70f0f685 (2016-01-19)
 CN200802,ongoing_through,2016,2026-11-20,Angelo,continuation: ev-3a64632f5a (2016-03-06)
+CN198705,ongoing_through,2016,2026-11-20,Angelo,continuation: ev-71c4cfd8e3 (2016-11-18)
+CN200202,ongoing_through,2016,2026-11-20,Angelo,continuation: ev-85fce8ad11 (2016-05-16)
+CN200802,ongoing_through,2020,2026-11-20,Angelo,continuation: ev-c9ac9147a6 (2020-04-02)
+CN201002,ongoing_through,2020,2026-11-20,Angelo,continuation: ev-32d0b4c61f (2020-07-01)
+CN201205,ongoing_through,2020,2026-11-20,Angelo,continuation: ev-63d26d0b1b (2020-05-01)
+CN201209,ongoing_through,2016,2026-11-20,Angelo,continuation: ev-cf957696c3 (2016-05-20)
+CN201306,ongoing_through,2017,2026-11-20,Angelo,continuation: ev-5246e8120b (2017-03-02)
+CN201501,ongoing_through,2017,2026-11-20,Angelo,continuation: ev-c995d82196 (2017-07-01)
+CN201504,ongoing_through,2020,2026-11-20,Angelo,continuation: ev-2a77d78488 (2020-03-20)
