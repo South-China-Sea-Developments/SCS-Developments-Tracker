@@ -328,9 +328,9 @@ def aggregates(moves: list[dict]) -> dict:
 
 def event_aggregates(events: list[dict], moves: list[dict]) -> dict:
     """The map's numbers, computed a different way from web.build.map_data (seam 3 holds the two to
-    one answer): accepted events of accepted moves; "points" have both coordinates; the rest count
-    once on their own sub-region or, having none, once on each sub-region of their move, read off
-    the flag names (loc05_... -> "5")."""
+    one answer): accepted events of accepted moves; every one counts once on its own sub-region or,
+    having none, once on each sub-region of its move, read off the flag names (loc05_... -> "5");
+    "points" are those that also have both coordinates."""
     accepted_moves = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
     flag_number = {f: str(int(f[3:5])) for f in schema.SUBREGION_FLAGS}
     shown = [e for e in events if e["status"] == "accepted" and e["move_id"] in accepted_moves]
@@ -338,8 +338,6 @@ def event_aggregates(events: list[dict], moves: list[dict]) -> dict:
     points = Counter(e["claimant"] for e in shown if e["lat"] and e["lon"])
     subregions: Counter = Counter()
     for e in shown:
-        if e["lat"] and e["lon"]:
-            continue
         where = [e["subregion"]] if e["subregion"] else [n for f, n in flag_number.items() if accepted_moves[e["move_id"]][f] == "1"]
         subregions.update((e["claimant"], sr) for sr in where)
     n_events = Counter(e["claimant"] for e in shown)
