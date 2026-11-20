@@ -150,7 +150,7 @@ def test_every_decision_type_yields_the_expected_files(opened):
     assert sum(1 for x in mv.values() if x["coded_by"] == "chubb") == 358
 
 
-NEW = {"type": "coercive", "intensification_criterion": "novelty"}
+NEW = {"type": "coercive", "intensification_criterion": "novelty", "subregions": ["4"]}
 
 
 @pytest.mark.parametrize("bad, message", [
@@ -217,7 +217,7 @@ def test_decided_events_cannot_be_decided_twice(opened):
 def test_validator_requires_a_criterion_on_project_moves(opened):
     eid = candidates(opened)[0]["event_id"]
     queue.apply_decisions([{"event_id": eid, "action": "new_move",
-                            "new_move": {"type": "coercive", "intensification_criterion": "scope"}}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+                            "new_move": {"type": "coercive", "intensification_criterion": "scope", "subregions": ["4"]}}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
     mrows = rows(opened, "moves")
     for m in mrows:
         if m["coded_by"] == "project":

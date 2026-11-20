@@ -137,6 +137,8 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"CODE: moves {mid} coded_by {m['coded_by']!r}")
         if m["coded_by"] == "project" and not m["intensification_criterion"]:
             errors.append(f"CODE: moves {mid} is project-coded without an intensification_criterion")
+        if m["coded_by"] == "project" and m["status"] == "accepted" and not any(m[f] == "1" for f in schema.SUBREGION_FLAGS):
+            errors.append(f"CODE: moves {mid} is project-coded without a sub-region (it could not be counted on the map)")
         if m["intensification_criterion"] and m["intensification_criterion"] not in schema.INTENSIFICATION_CRITERIA:
             errors.append(f"CODE: moves {mid} intensification_criterion {m['intensification_criterion']!r}")
         for f in schema.FLAG_COLUMNS:
