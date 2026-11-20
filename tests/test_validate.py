@@ -238,6 +238,14 @@ def test_comparability_ignores_project_coded_moves_for_the_new_claimants(good):
         w.writeheader()
         w.writerows(rows)
     assert validate(good, RAW_XLSX, RAW_MAVD) == []
+    # a project move must name at least one sub-region, or the map cannot count it
+    rows[-1]["loc07_spratly_se"] = "0"
+    with open(good / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    assert any("MY198501 is project-coded without a sub-region" in e for e in validate(good, RAW_XLSX, RAW_MAVD))
+    rows[-1]["loc07_spratly_se"] = "1"
     # ... whereas a project-coded Chinese 1985 move would shift the MATS counts and is refused
     rows[-1].update(move_id="CN198599", claimant="CN", dyads="CV")
     with open(good / "moves.csv", "w", newline="", encoding="utf-8") as f:
