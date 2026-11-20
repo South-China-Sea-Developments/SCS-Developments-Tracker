@@ -270,8 +270,15 @@ def test_a_continuation_note_extends_the_named_moves_ongoing_through(opened):
     scar = next(x for x in cn if x["location_name"].startswith("Scarb"))
     thitu = next(x for x in cn if x["location_name"].startswith("Thitu"))
     headline = next(x for x in cn if not x["location_name"])
+    moves = rows(opened, "moves")            # fix the reach of the two moves, whatever later decisions did to the live file
+    for m in moves:
+        if m["move_id"] in ("CN201504", "CN201501"):
+            m["ongoing_through"] = {"CN201504": "2018", "CN201501": "2016"}[m["move_id"]]
+    queue.write_table("moves", moves, opened)
+    corr = [c for c in rows(opened, "corrections") if c["move_id"] not in ("CN201504", "CN201501") or c["field"] != "ongoing_through"]
+    queue.write_table("corrections", corr, opened)
     before = {m["move_id"]: m for m in rows(opened, "moves")}
-    assert before["CN201504"]["ongoing_through"] == "2018" and before["CN201504"]["coded_by"] == "chubb"
+    assert before["CN201504"]["coded_by"] == "chubb"
     counts = queue.apply_decisions([
         {"event_id": scar["event_id"], "action": "reject", "note": "continuation of CN201504 (pre-sort confirmed)"},
         {"event_id": thitu["event_id"], "action": "reject", "note": "continuation of CN201504 — same practice"},
@@ -343,3 +350,15 @@ def test_the_previous_year_list_holds_every_move_open_through_that_year(opened):
     ids = [m["move_id"] for m in cn["previous_year_moves"]]
     assert ids == ["CN201504", "CN201403"]            # open through 2025; CN201501 (through 2016) is not
     assert "through 2025" in airtable._moves_text(cn["previous_year_moves"])
+
+
+def test_sync_data_keeps_mains_version_of_shared_rows_and_the_branchs_own(tmp_path):
+    """Ticket 26: after a union merge, a row both sides hold appears twice; main's version wins."""
+    from pipeline import sync_data
+    main_rows = [{"move_id": "CN201605", "loc08_spratly_sw": "1"}, {"move_id": "CN201504", "loc08_spratly_sw": "1"}]
+    working = [{"move_id": "CN201605", "loc08_spratly_sw": "1"}, {"move_id": "CN201605", "loc08_spratly_sw": "0"},
+               {"move_id": "CN201504", "loc08_spratly_sw": "1"}, {"move_id": "CN201701", "loc08_spratly_sw": "0"},
+               {"move_id": "CN201701", "loc08_spratly_sw": "0"}]
+    out = sync_data.merged(main_rows, working, ("move_id",))
+    assert out == main_rows + [{"move_id": "CN201701", "loc08_spratly_sw": "0"}]
+
