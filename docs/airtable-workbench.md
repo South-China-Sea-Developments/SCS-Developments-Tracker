@@ -96,7 +96,9 @@ it, ongoing through it or later), newest first, each with `through <year>` and i
 characters (2026-11-20; the review page shows the same list in full). Generate records only from a run branch
 with `main` merged in, so the lists reflect the moves accepted since the branch was cut (`.gitattributes` gives
 `data/*.csv` the union merge rule, since the branch and `main` both append rows; a clone whose branch predates the
-rule gets it from `.git/info/attributes`, as the apply task does).
+rule gets it from `.git/info/attributes`, as the apply task does). Union keeps *both* versions of a row that
+changed on both sides, so after the merge run `python -m pipeline.sync_data`, which keeps main's version of
+every shared row and the branch's own new rows (ticket 26).
 
 The weekly apply task refreshes both move lists on the rows still in the base (`context-diff` builds the connector
 updates for the rows whose lists differ from today's `records`; `context-check` verifies afterwards), so a
