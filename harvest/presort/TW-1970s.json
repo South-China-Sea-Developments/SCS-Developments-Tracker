@@ -1,0 +1,142 @@
+{
+ "run_id": "TW-1970s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-9aac2dceda",
+   "disposition": "unclear",
+   "reason": "The 1970 offshore petroleum statute has nothing comparable in the Taiwan baseline (no resource legislation before 1970, only the 1963/1968 Nansha guano office), so if it covers the SCS islands' shelf it would be a novelty move; but it names no SCS feature and was drafted for the East China Sea/Taiwan Strait shelf. Settled by whether the statute or its implementing concessions reach Pratas or Spratly waters; otherwise likely reject as outside the SCS."
+  },
+  {
+   "event_id": "ev-fd8b5b448d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Warning shots by the Itu Aba garrison at Philippine aircraft and boats (incl. Rep. Mitra's) are a coercive method with nothing comparable in 1970 (only the petroleum statute ev-9aac2dceda); the 1956 boardings in the baseline do not count against novelty. Rests on Philippine accounts alone (Marcos statement), so a coder may want ROC corroboration."
+  },
+  {
+   "event_id": "ev-06c5a9367e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The Foreign Minister's public rejection in Manila of Marcos's withdrawal demand is the first verbal assertion of the Spratly claim in the run, nothing comparable in 1970 (ev-9aac2dceda is a shelf statute naming no feature); a declarative reaction distinct from the garrison's warning shots ev-fd8b5b448d."
+  },
+  {
+   "event_id": "ev-fc74ad4d38",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1973-protests",
+   "reason": "Lead of the 1973 protest series (four protests listed by MOFA on 18 Jan 1974): diplomatic protests to rival claimants, against nothing comparable in 1972 (no candidates); the 1971 public statement ev-06c5a9367e was absent in 1972, so the practice is new again."
+  },
+  {
+   "event_id": "ev-f8087d66e1",
+   "disposition": "same_move",
+   "of": "ev-fc74ad4d38",
+   "group": "TW1973-protests",
+   "reason": "Second of the four 1973 protests from the same MOFA list; part of the protest series led by ev-fc74ad4d38."
+  },
+  {
+   "event_id": "ev-5b6570a550",
+   "disposition": "same_move",
+   "of": "ev-fc74ad4d38",
+   "group": "TW1973-protests",
+   "reason": "Third of the four 1973 protests from the same MOFA list; part of the protest series led by ev-fc74ad4d38."
+  },
+  {
+   "event_id": "ev-c4a06ec943",
+   "disposition": "same_move",
+   "of": "ev-fc74ad4d38",
+   "group": "TW1973-protests",
+   "reason": "Fourth of the four 1973 protests (probably answering South Vietnam's September 1973 Phuoc Tuy decree); part of the protest series led by ev-fc74ad4d38."
+  },
+  {
+   "event_id": "ev-a3b1a78dee",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "TW1974-public-claim",
+   "reason": "Against 1973's protests (ev-fc74ad4d38 and three others), which were private and named only the Nansha and Hsisha, the 18 Jan 1974 MOFA statement is a public reassertion extending to all four groups (Pratas and Macclesfield added); scope, arguably novelty of method (public statement vs. protest). A coder applying the counterfactual may see it as reaction to the PRC-SVN crisis at the same level."
+  },
+  {
+   "event_id": "ev-907159dbc4",
+   "disposition": "same_move",
+   "of": "ev-a3b1a78dee",
+   "group": "TW1974-public-claim",
+   "reason": "Unattributed government statement via UPI that the Spratly claim will not be renounced and the garrison kept; part of the same 1974 public reassertion led by ev-a3b1a78dee, not a separate intensification."
+  },
+  {
+   "event_id": "ev-5e304e4673",
+   "disposition": "continuation",
+   "of": "ev-fc74ad4d38",
+   "reason": "A diplomatic reply restating the claim to the Philippines continues the 1973 practice of protests to rival claimants (ev-fc74ad4d38 series) at the same level; provisional until 1973 is decided."
+  },
+  {
+   "event_id": "ev-42a9f03f0f",
+   "disposition": "continuation",
+   "of": "ev-fc74ad4d38",
+   "reason": "Formal protest to South Vietnam over the Spratlys continues the 1973 protest practice (ev-fc74ad4d38 series, probably also addressed to Saigon) at the same level; if 1973's protests were not delivered by summoning the envoy, a coder may read the call-in of the chargé as a novelty of method."
+  },
+  {
+   "event_id": "ev-21e8304a9d",
+   "disposition": "unclear",
+   "reason": "Quarterly resupply of the Itu Aba garrison held since 1956 (baseline) is maintenance, and MOFA said the garrison was neither withdrawn nor strengthened; no 1973 candidate records the resupply runs to name as continued. Not an intensification on the sources — likely reject as maintenance unless the escort's role during the RVN landing is judged a show of force."
+  },
+  {
+   "event_id": "ev-9a9ad21bd5",
+   "disposition": "continuation",
+   "of": "ev-21e8304a9d",
+   "reason": "The 1975 resupply and troop-rotation run is the same quarterly practice as the February 1974 run ev-21e8304a9d, with no change in ships or stationing; provisional until 1974 is decided."
+  },
+  {
+   "event_id": "ev-d55ce9b4cc",
+   "disposition": "continuation",
+   "of": "ev-a3b1a78dee",
+   "reason": "Public government reiteration of the Paracel and Spratly claim, answering South Vietnam's white paper, continues the 1974 public reassertion ev-a3b1a78dee at the same level; provisional until 1974 is decided."
+  },
+  {
+   "event_id": "ev-7ab7550369",
+   "disposition": "unclear",
+   "reason": "The CGA history's 1975 'one and only valid legal warning' has no date or text and may be the 15 Feb reiteration ev-d55ce9b4cc (then a continuation of 1974's ev-a3b1a78dee); if it was a distinct warning conveying a threat, or the first addressed to Malaysia, it could be a novelty or scope move. Settled by finding the warning's text and date."
+  },
+  {
+   "event_id": "ev-6fb31e7f6a",
+   "disposition": "continuation",
+   "of": "ev-907159dbc4",
+   "reason": "MND statement that the troops still hold Itu Aba repeats the 1974 public line that the garrison would be maintained (ev-907159dbc4, in the group led by ev-a3b1a78dee), with no change on the ground; provisional until 1974 is decided."
+  },
+  {
+   "event_id": "ev-9e60a35763",
+   "disposition": "continuation",
+   "of": "ev-d55ce9b4cc",
+   "reason": "Public reiteration of the Spratly and Paracel claim, the same practice as the 15 Feb 1975 reiteration ev-d55ce9b4cc; provisional until 1975 is decided."
+  },
+  {
+   "event_id": "ev-8b2b5389fd",
+   "disposition": "continuation",
+   "of": "ev-d55ce9b4cc",
+   "reason": "June 1976 government statements on the islands, known only from a cable title, are on the record a further reiteration of the kind seen in 1975 (ev-d55ce9b4cc); provisional, and their unknown content (a protest of the Reed Bank drilling?) could change the call."
+  },
+  {
+   "event_id": "ev-ae2fb3fb40",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A visit by the Chief of the General Staff to the Pratas garrison, with a stele erected, is a top-level display of presence with nothing comparable in 1975 (only Spratly resupply ev-9a9ad21bd5 and statements); low salience, and a coder may judge such inspection visits routine and unreported in other years."
+  },
+  {
+   "event_id": "ev-b6606d2062",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A new monsoon-monitoring station on Taiping Island adds scientific equipment to the held feature, nothing comparable in 1977 (no candidates); the existing weather office (baseline 1960) does not count against novelty. A coder may read the WMO programme as cooperative and reject."
+  },
+  {
+   "event_id": "ev-ea7a173eee",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First 12-nm territorial sea and 200-nm EEZ, replacing the three-mile limit; a new legal method against 1978's station ev-b6606d2062. Covers the SCS islands only implicitly (names none), and a coder may type it coercive under the baselines rule."
+  },
+  {
+   "event_id": "ev-4b2e001dec",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Placing Pratas under the new Kaohsiung special municipality is a new administrative arrangement, nothing comparable in 1978 (ev-b6606d2062 is a Spratly station); separate from the EEZ decree ev-ea7a173eee. Date and instrument unverified (year only)."
+  }
+ ]
+}

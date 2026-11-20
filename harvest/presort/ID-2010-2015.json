@@ -1,0 +1,447 @@
+{
+ "run_id": "ID-2010-2015",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-fb5b1ef1f4",
+   "disposition": "continuation",
+   "of": "ev-da4d8bf65e",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing nine Vietnamese boats in the EEZ off West Kalimantan/Natuna continues the 2009 seizures of Vietnamese boats shown by prev-run candidate ev-da4d8bf65e; provisional until 2009 is decided."
+  },
+  {
+   "event_id": "ev-eb9137141e",
+   "disposition": "continuation",
+   "of": "ev-868363285a",
+   "criterion": null,
+   "group": null,
+   "reason": "Navy warships already patrolled and made seizures off Ranai in 2009 (prev-run candidate ev-868363285a, KRI Imam Bonjol); a two-week 'combat-alert' patrol by four fast patrol boats is the same anti-poaching presence, unless the coder finds it larger than 2009's patrols."
+  },
+  {
+   "event_id": "ev-5c94654b46",
+   "disposition": "continuation",
+   "of": "ev-76df87e6ee",
+   "criterion": null,
+   "group": null,
+   "reason": "Arresting a Chinese boat near Natuna repeats the 2009 seizure of Chinese trawlers (prev-run candidate ev-76df87e6ee); Indonesia's own act did not change, and this time the boat was released under Yuzheng 311's guns. Provisional."
+  },
+  {
+   "event_id": "ev-8f0fcd63d9",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "The UN note verbale denying the nine-dotted line any legal basis is Indonesia's first formal written legal challenge to China's line. The 2009 record shows only rejections of China's protest over one seizure (prev-run candidates ev-8356b4f7df, ev-2d42351825), not a challenge to the claim itself."
+  },
+  {
+   "event_id": "ev-ab81cc727a",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2010-MY",
+   "reason": "Seizing a Malaysian boat in Natuna waters resumes enforcement against Malaysian vessels, which is absent from the 2009 record (prev-run candidates show Vietnamese, Taiwanese and Chinese seizures only) and last seen in 2008. Chosen as lead because it is clearly inside the area."
+  },
+  {
+   "event_id": "ev-a7a3a38eaa",
+   "disposition": "same_move",
+   "of": "ev-ab81cc727a",
+   "criterion": null,
+   "group": "ID2010-MY",
+   "reason": "Seizing five Malaysian boats off Tanjung Berakit (Bintan) is the same 2010 resumption of enforcement against Malaysian vessels as ev-ab81cc727a. Only if the coder accepts that location as the southern South China Sea; otherwise reject it as outside the area."
+  },
+  {
+   "event_id": "ev-5a04af152f",
+   "disposition": "same_move",
+   "of": "ev-ab81cc727a",
+   "criterion": null,
+   "group": "ID2010-MY",
+   "reason": "The protest note to Malaysia over the arrest of Indonesian officers follows directly from the Bintan seizure (ev-a7a3a38eaa), so it belongs to the 2010 assertion of jurisdiction against Malaysia led by ev-ab81cc727a. A coder may prefer to make it a separate declarative move, with nothing comparable in 2009."
+  },
+  {
+   "event_id": "ev-f0c68a475a",
+   "disposition": "continuation",
+   "of": "ev-da4d8bf65e",
+   "criterion": null,
+   "group": null,
+   "reason": "A warship's seizure of two Vietnamese boats near Natuna continues the 2009 practice shown by prev-run candidate ev-da4d8bf65e; provisional."
+  },
+  {
+   "event_id": "ev-8b71ba1ad7",
+   "disposition": "continuation",
+   "of": "ev-da4d8bf65e",
+   "criterion": null,
+   "group": null,
+   "reason": "Operasi Jaring took 20+ Vietnamese boats in two weeks, more than any single 2009 seizure (ev-da4d8bf65e), but there is no 2009 annual figure to compare, and the rise tracks more Vietnamese boats rather than a new method (Chubb's counterfactual). Kept as a continuation; a coder with 2009 totals may see a frequency move."
+  },
+  {
+   "event_id": "ev-97c5aada95",
+   "disposition": "continuation",
+   "of": "ev-da4d8bf65e",
+   "criterion": null,
+   "group": null,
+   "reason": "A frigate's seizure of Vietnamese-crewed boats in the Natuna EEZ continues the 2009 practice of ev-da4d8bf65e; provisional."
+  },
+  {
+   "event_id": "ev-4a18c7fc41",
+   "disposition": "continuation",
+   "of": "ev-fb5b1ef1f4",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing Vietnamese-crewed pair trawlers in the Indonesian EEZ continues the 2010 practice of ev-fb5b1ef1f4 at the same level; provisional."
+  },
+  {
+   "event_id": "ev-bb419fa28f",
+   "disposition": "continuation",
+   "of": "ev-f0c68a475a",
+   "criterion": null,
+   "group": null,
+   "reason": "A corvette's seizure of a Vietnamese boat taken to Ranai continues the 2010 naval seizures of ev-f0c68a475a; provisional."
+  },
+  {
+   "event_id": "ev-86a4b2bec4",
+   "disposition": "continuation",
+   "of": "ev-fb5b1ef1f4",
+   "criterion": null,
+   "group": null,
+   "reason": "The Hiu patrol vessels' seizure of five Vietnamese trawlers in the Natuna EEZ continues the 2010 practice of ev-fb5b1ef1f4; provisional."
+  },
+  {
+   "event_id": "ev-a2b3df6ddf",
+   "disposition": "continuation",
+   "of": "ev-fb5b1ef1f4",
+   "criterion": null,
+   "group": null,
+   "reason": "Six Vietnamese trawlers seized at about 05°55'N 108°03'E fall within the area of the 2010 seizures (ev-fb5b1ef1f4, ev-f0c68a475a near 5°N), so there is no change of method or area; provisional."
+  },
+  {
+   "event_id": "ev-e48b5a82b4",
+   "disposition": "continuation",
+   "of": "ev-f0c68a475a",
+   "criterion": null,
+   "group": null,
+   "reason": "A warship's seizure of a Vietnamese boat north-east of Pulau Laut continues the 2010 naval seizures of ev-f0c68a475a; provisional."
+  },
+  {
+   "event_id": "ev-e0e95d419d",
+   "disposition": "continuation",
+   "of": "ev-fb5b1ef1f4",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizures of Vietnamese and Malaysian boats continue the 2010 practice: ev-fb5b1ef1f4 (about 40 boats seized nationwide by April 2010), and ev-ab81cc727a for the Malaysian boats. The 2011 tally of 73 boats by August has no full-year 2010 figure to compare. Provisional."
+  },
+  {
+   "event_id": "ev-3b721ec4ae",
+   "disposition": "continuation",
+   "of": "ev-8b71ba1ad7",
+   "criterion": null,
+   "group": null,
+   "reason": "A five-day police operation seizing ten Vietnamese boats in Natuna waters repeats the 2010 police Operasi Jaring (ev-8b71ba1ad7) at a lower level; provisional."
+  },
+  {
+   "event_id": "ev-f37f9b3333",
+   "disposition": "continuation",
+   "of": "ev-86a4b2bec4",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing three Vietnamese trawlers in the Natuna EEZ continues the 2011 Hiu-vessel seizures of ev-86a4b2bec4; provisional."
+  },
+  {
+   "event_id": "ev-f3324a9adb",
+   "disposition": "continuation",
+   "of": "ev-4a18c7fc41",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing a Vietnamese boat off Bintan on a routine EEZ patrol continues the 2011 practice of ev-4a18c7fc41; provisional."
+  },
+  {
+   "event_id": "ev-d2d02adea6",
+   "disposition": "continuation",
+   "of": "ev-86a4b2bec4",
+   "criterion": null,
+   "group": null,
+   "reason": "The 'again' seizure of nine Vietnamese boats in the Natuna EEZ continues the 2011 practice of ev-86a4b2bec4 (and ev-a2b3df6ddf, six boats); no change of method. Provisional."
+  },
+  {
+   "event_id": "ev-b21314c08f",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "The Foreign Minister's public refusal to recognise China's claim map in its new passports has nothing comparable in the 2011 record, which holds only fisheries seizures; the 2010 note verbale (ev-8f0fcd63d9) was absent in 2011, so a verbal challenge to China's line is new again."
+  },
+  {
+   "event_id": "ev-6423cf1f68",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing Malaysian boats in the Natuna EEZ was seen in 2010 (ev-ab81cc727a) and 2011 (ev-e0e95d419d, 7 Malaysian), but no 2012 candidate shows it, so it is new again only if 2012 truly had none. Settled by KKP's 2012 seizure tally by flag; if Malaysian boats were taken in 2012 it is a continuation."
+  },
+  {
+   "event_id": "ev-9d10de4cf6",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Arresting a Chinese trawler 200 km north-east of Natuna resumes enforcement against Chinese boats, absent from the 2011 and 2012 records and last seen in 2010 (ev-5c94654b46), so it is new again. The evidence is a captain's report published later; Indonesia made no statement."
+  },
+  {
+   "event_id": "ev-85d055c138",
+   "disposition": "continuation",
+   "of": "ev-d2d02adea6",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing two Vietnamese trawlers in Natuna waters continues the 2012 practice of ev-d2d02adea6; provisional."
+  },
+  {
+   "event_id": "ev-b33eba6af8",
+   "disposition": "continuation",
+   "of": "ev-d2d02adea6",
+   "criterion": null,
+   "group": null,
+   "reason": "Hiu Macan 01's seizure of three Vietnamese boats in Natuna waters repeats its 2012 seizures (ev-d2d02adea6, ev-f37f9b3333); provisional."
+  },
+  {
+   "event_id": "ev-6f261ed319",
+   "disposition": "continuation",
+   "of": "ev-d2d02adea6",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing two Vietnamese trawlers in Natuna waters continues the 2012 practice of ev-d2d02adea6. The ministry's seven Vietnamese boats in two months gives no step up against 2012. Provisional."
+  },
+  {
+   "event_id": "ev-90f5dfda84",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Staging the culminating phase of the Air Force's Angkasa Yudha exercise at Natuna, with 21 combat aircraft, has nothing comparable in the 2012 record; the 2008 Natuna joint exercise (ev-7887a06047, other run) is long past. Less certain if the coder treats Angkasa Yudha as an annual exercise also held near Natuna in 2012."
+  },
+  {
+   "event_id": "ev-4c7703f020",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Joint aerial surveillance over Natuna waters, after making Natuna a priority surveillance area in July 2013, is a new method (air surveillance cueing patrol vessels). The 2012 record shows only ship patrols and seizures (ev-d2d02adea6)."
+  },
+  {
+   "event_id": "ev-91faec81a8",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2014-9DL-Natuna",
+   "reason": "The first public statement by an Indonesian official that China's nine-dash line takes in Natuna waters, made while reviewing defences there, has nothing comparable in the 2013 record, which holds no declarative candidates; the 2012 passport rejection (ev-b21314c08f) did not name Natuna."
+  },
+  {
+   "event_id": "ev-1b7562aeac",
+   "disposition": "same_move",
+   "of": "ev-91faec81a8",
+   "criterion": null,
+   "group": "ID2014-9DL-Natuna",
+   "reason": "The Foreign Minister's restatement a week later that Indonesia rejects the nine-dash line belongs with ev-91faec81a8, the same 2014 public stand on the line. Its denial of any dispute over Natuna is conciliatory, which a coder may weigh against including it."
+  },
+  {
+   "event_id": "ev-5578705f35",
+   "disposition": "same_move",
+   "of": "ev-91faec81a8",
+   "criterion": null,
+   "group": "ID2014-9DL-Natuna",
+   "reason": "Moeldoko's WSJ op-ed expressing dismay that China's line takes in parts of Natuna is the same 2014 public naming of the overlap as ev-91faec81a8. Its announced reinforcement could instead go with the build-up group led by ev-2a1f165417."
+  },
+  {
+   "event_id": "ev-2a1f165417",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2014-buildup",
+   "reason": "The armed forces chief announcing added land, sea and air forces at Natuna and a main naval base, framed by South China Sea instability, is a new declared military build-up; nothing comparable appears in the 2013 record (only the exercise ev-90f5dfda84)."
+  },
+  {
+   "event_id": "ev-4eff246f50",
+   "disposition": "same_move",
+   "of": "ev-2a1f165417",
+   "criterion": null,
+   "group": "ID2014-buildup",
+   "reason": "The plan to evaluate the West Kalimantan and Riau naval bases for main-base status is part of the same announced build-up as ev-2a1f165417 (same commander, same rationale)."
+  },
+  {
+   "event_id": "ev-2558ab896f",
+   "disposition": "continuation",
+   "of": "ev-6f261ed319",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing five Vietnamese pair trawlers in the Natuna Sea continues the 2013 practice of ev-6f261ed319; 8 Vietnamese boats in Jan-Apr gives no step up. Provisional."
+  },
+  {
+   "event_id": "ev-561125aa98",
+   "disposition": "continuation",
+   "of": "ev-6f261ed319",
+   "criterion": null,
+   "group": null,
+   "reason": "The November seizure of three Vietnamese boats off Tarempa is the same practice as 2013 (ev-6f261ed319). Their later destruction is a separate act, covered by the sinking move led by ev-499f08d5bc. Provisional."
+  },
+  {
+   "event_id": "ev-00d31aba18",
+   "disposition": "continuation",
+   "of": "ev-6423cf1f68",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing a Malaysian-flagged boat in border waters off Tarempa continues the 2013 seizures of Malaysian boats (ev-6423cf1f68, itself undecided); provisional."
+  },
+  {
+   "event_id": "ev-98c124ce40",
+   "disposition": "same_move",
+   "of": "ev-499f08d5bc",
+   "criterion": null,
+   "group": "ID2014-sinking",
+   "reason": "The President's order to sink rather than arrest foreign poaching boats launched the sinking policy, and is the same 2014 intensification as the first sinking, ev-499f08d5bc."
+  },
+  {
+   "event_id": "ev-499f08d5bc",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2014-sinking",
+   "reason": "Blowing up seized Vietnamese boats off Anambas is a change of method from arrest and prosecution to destruction. The 2013 record shows seizures only (ev-6f261ed319, ev-b33eba6af8); the 2004 confiscation (ev-cdd40a3eca) was a lesser step."
+  },
+  {
+   "event_id": "ev-e1c4590f45",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Creating Bakamla to patrol Indonesian waters and jurisdiction zones is a new administrative arrangement, with nothing comparable in 2013. Low confidence: it is national, not specific to the South China Sea, and a coder may reject it under D(4)."
+  },
+  {
+   "event_id": "ev-7d261f9658",
+   "disposition": "continuation",
+   "of": "ev-2558ab896f",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing four Vietnamese pair trawlers off Serasan continues the 2014 practice of ev-2558ab896f; provisional."
+  },
+  {
+   "event_id": "ev-c60cba9dbf",
+   "disposition": "continuation",
+   "of": "ev-1b7562aeac",
+   "criterion": null,
+   "group": null,
+   "reason": "The President's statement that the nine-dash line has no basis in international law repeats the 2014 stand (ev-1b7562aeac, ev-91faec81a8) at a higher level of office but with the same method. A coder who counts the first presidential statement as novelty would make it a new move."
+  },
+  {
+   "event_id": "ev-a4f944dc5e",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "frequency",
+   "group": "ID2015-sinking",
+   "reason": "The sinking policy grew from one sinking of three boats in December 2014 (ev-499f08d5bc) to repeated mass sinkings in 2015 (6 boats off Pontianak here, then ev-169a8b7241, ev-acee3a30bb, ev-872229c888), including the first Chinese boat. A coder may instead read 2015 as the 2014 policy simply running for a full year."
+  },
+  {
+   "event_id": "ev-2bd4d6e45b",
+   "disposition": "continuation",
+   "of": "ev-2a1f165417",
+   "criterion": null,
+   "group": null,
+   "reason": "Announcing a planned military base facing the South China Sea repeats the 2014 announced build-up (ev-2a1f165417, ev-4eff246f50); it is a statement of intent, not yet construction. Provisional."
+  },
+  {
+   "event_id": "ev-e29ae434b2",
+   "disposition": "continuation",
+   "of": "ev-2558ab896f",
+   "criterion": null,
+   "group": null,
+   "reason": "Fourteen Vietnamese boats seized in a week around Natuna and Anambas is a concentrated burst of the 2014 practice (ev-2558ab896f). The Navy's national total (6 Vietnamese by August) shows no rise in frequency. Provisional."
+  },
+  {
+   "event_id": "ev-cbc293875b",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2015-buildup",
+   "reason": "Inaugurating Lantamal XII Pontianak with committed warships, aircraft and 1,300 personnel turns the 2014 announcements (ev-2a1f165417, ev-4eff246f50) into physical military development, a new demonstrative method against a declarative-only 2014."
+  },
+  {
+   "event_id": "ev-169a8b7241",
+   "disposition": "same_move",
+   "of": "ev-a4f944dc5e",
+   "criterion": null,
+   "group": "ID2015-sinking",
+   "reason": "The Independence Day mass sinking of 24 Navy-held and 15 KKP-held boats, largely Vietnamese, at Tarempa, Ranai, Pontianak and Lemukutan belongs to the 2015 escalation of sinkings led by ev-a4f944dc5e."
+  },
+  {
+   "event_id": "ev-0fa264bbc6",
+   "disposition": "continuation",
+   "of": "ev-2558ab896f",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizures of two Vietnamese boats near Natuna in September continue the 2014 practice of ev-2558ab896f; provisional."
+  },
+  {
+   "event_id": "ev-011cac594b",
+   "disposition": "same_move",
+   "of": "ev-cbc293875b",
+   "criterion": null,
+   "group": "ID2015-buildup",
+   "reason": "Stationing a drone and building barracks at the Pulau Sekatung border post is part of the same 2015 physical military build-up on the South China Sea front as ev-cbc293875b."
+  },
+  {
+   "event_id": "ev-35e97bc7d1",
+   "disposition": "same_move",
+   "of": "ev-cbc293875b",
+   "criterion": null,
+   "group": "ID2015-buildup",
+   "reason": "Parliament funding Rp450 billion of base facilities on Natuna, tied to South China Sea tension, is part of the same 2015 build-up as ev-cbc293875b."
+  },
+  {
+   "event_id": "ev-40c365221e",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Expelling an unidentified aircraft from airspace over the Natuna Islands is a new method, but the islands are not disputed and the intruder's nationality is unknown. Settled by whether the aircraft belonged to a rival claimant and was in airspace bearing on the South China Sea claim; otherwise likely reject."
+  },
+  {
+   "event_id": "ev-acee3a30bb",
+   "disposition": "same_move",
+   "of": "ev-a4f944dc5e",
+   "criterion": null,
+   "group": "ID2015-sinking",
+   "reason": "The October sinkings of Vietnamese boats off Pontianak and Batam belong to the 2015 escalation of sinkings led by ev-a4f944dc5e."
+  },
+  {
+   "event_id": "ev-872229c888",
+   "disposition": "same_move",
+   "of": "ev-a4f944dc5e",
+   "criterion": null,
+   "group": "ID2015-sinking",
+   "reason": "Sinking six Vietnamese boats seized in the Anambas EEZ belongs to the 2015 escalation of sinkings led by ev-a4f944dc5e; the boats are those of the 1 August seizure in ev-e29ae434b2."
+  },
+  {
+   "event_id": "ev-4ecf271bd5",
+   "disposition": "continuation",
+   "of": "ev-00d31aba18",
+   "criterion": null,
+   "group": null,
+   "reason": "Warships already patrolled Natuna/Anambas waters in 2014 (ev-00d31aba18, Operation Rakata Jaya; ev-561125aa98), and the Navy calls the seven-ship deployment a routine anti-poaching patrol. A coder with 2014 ship numbers may instead see a frequency move."
+  },
+  {
+   "event_id": "ev-e8207c1d96",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A coordinating minister's threat to take China to an international court over its nine-dash line is a new method (threatened legal proceedings) beyond the 2014 statements of non-acceptance (ev-91faec81a8, ev-1b7562aeac)."
+  },
+  {
+   "event_id": "ev-47783c4ac1",
+   "disposition": "continuation",
+   "of": "ev-1b7562aeac",
+   "criterion": null,
+   "group": null,
+   "reason": "The Foreign Ministry's statement that Indonesia does not recognise the nine-dash line and has asked China for clarification repeats the Foreign Minister's 2014 position (ev-1b7562aeac); provisional."
+  }
+ ]
+}

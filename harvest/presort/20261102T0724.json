@@ -1,0 +1,119 @@
+{
+ "run_id": "20261102T0724",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-882ee918e9",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "The grounding of BRP Sierra Madre is already the accepted Chubb move PH199902 (1999), which has no accepted event to mark this as a duplicate of; likely decision is to merge it into PH199902 as its event (or reject as already coded), not to form a new move."
+  },
+  {
+   "event_id": "ev-19175b3b10",
+   "disposition": "continuation",
+   "of": "ev-25a89360c0",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run PH-2021-2026 as ev-25a89360c0 (the DFA's September 2025 protest against the Bajo de Masinloc nature reserve); this undated secondary report adds nothing."
+  },
+  {
+   "event_id": "ev-a6cf48d0c6",
+   "disposition": "continuation",
+   "of": "ev-77b669121f",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run CN-2021-2026 as ev-77b669121f (State Council approval of the Huangyan Dao national nature reserve, 10 September 2025)."
+  },
+  {
+   "event_id": "ev-8a10d31f4a",
+   "disposition": "continuation",
+   "of": "ev-091fd39816",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run PH-2021-2026 as ev-091fd39816 (2026 joint statements with partner governments reaffirming the arbitral award), and reaffirming the award was already present in 2025 (ev-a035dadcbc); a joint declaration with Japan is no new method."
+  },
+  {
+   "event_id": "ev-a2bab04f8c",
+   "disposition": "continuation",
+   "of": "ev-fc5872ffac",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run ID-2021-2026 as ev-fc5872ffac (resumption of Tuna gas field development in June 2026); the SCMP headline appears to report that same restart."
+  },
+  {
+   "event_id": "ev-39c8780a10",
+   "disposition": "continuation",
+   "of": "ev-f2a7a0758f",
+   "criterion": null,
+   "group": null,
+   "reason": "Headline-only report of a large CCG cutter in Malaysian-claimed waters continues the 2025 practice of near-constant CCG patrols in Malaysia's EEZ (prev-run candidate ev-f2a7a0758f, 261 days in 2025); provisional, and the coder should check whether CCG 5901 itself was new there."
+  },
+  {
+   "event_id": "ev-9692a591d1",
+   "disposition": "continuation",
+   "of": "ev-662ba989f5",
+   "criterion": null,
+   "group": null,
+   "reason": "Reclamation at Antelope Reef continues the work begun in October 2025 (prev-run candidate ev-662ba989f5); only the Duncan Island mention could suggest scope, and the source is Vietnam's protest with no detail on the Chinese work."
+  },
+  {
+   "event_id": "ev-0b4811f8e6",
+   "disposition": "continuation",
+   "of": "ev-cfb8519228",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-cfb8519228 (Pham Thu Hang's 28 August 2026 statement on Hai Sam and Ba Ba); a teaser copy of the same statement."
+  },
+  {
+   "event_id": "ev-9fa40707b3",
+   "disposition": "continuation",
+   "of": "ev-cfb8519228",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-cfb8519228: the same 28 August 2026 spokesperson statement and representation on Chinese reclamation at Hai Sam and Ba Ba."
+  },
+  {
+   "event_id": "ev-7dc3b8cb21",
+   "disposition": "continuation",
+   "of": "ev-cfb8519228",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-cfb8519228 (28 August 2026 statement on Hai Sam and Ba Ba); a truncated teaser copy."
+  },
+  {
+   "event_id": "ev-f4e795ed57",
+   "disposition": "continuation",
+   "of": "ev-cfb8519228",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-cfb8519228 (28 August 2026 statement on Hai Sam and Ba Ba); a sidebar teaser copy."
+  },
+  {
+   "event_id": "ev-848d969c25",
+   "disposition": "continuation",
+   "of": "ev-1647520548",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run CN-2021-2026 as ev-1647520548 (PLA naval-air operations at Huangyan Dao, August 2026), itself continuing the combat-readiness patrols there since October 2025 (ev-9a8ff07998); headline-only, shoal not named."
+  },
+  {
+   "event_id": "ev-41c66632fc",
+   "disposition": "continuation",
+   "of": "ev-1a79a51ff2",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run MY-2021-2026 as ev-1a79a51ff2 (Khaled Nordin's 16 June 2026 announcement of an air-defence radar on Pulau Layang-Layang); a restatement of the same decision."
+  },
+  {
+   "event_id": "ev-ca2baf0411",
+   "disposition": "continuation",
+   "of": "ev-521fa9ae15",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run PH-2021-2026 as ev-521fa9ae15 (2026 BFAR fuel deliveries to fishermen at Bajo de Masinloc under the KBBM programme, begun in 2025 as ev-82422dd7c4); headline-only."
+  }
+ ]
+}

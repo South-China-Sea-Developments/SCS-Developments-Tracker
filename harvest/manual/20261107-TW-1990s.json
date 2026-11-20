@@ -1,0 +1,1229 @@
+[
+ {
+  "claimant": "TW",
+  "date_start": "1990-01-01",
+  "date_end": "1990-12-31",
+  "date_precision": "year",
+  "location_name": "South China Sea (U-shaped line)",
+  "subregion": "",
+  "summary": "In 1990 the Ministry of the Interior set up an ad hoc committee to determine the basepoints and baselines for the ROC's territorial sea and another to draft laws on the territorial sea and the exclusive economic zone; in these committees the waters inside the U-shaped line were first argued to be ROC 'historic waters', a position the committees adopted.",
+  "actors": "Ministry of the Interior (ad hoc baseline and maritime-law drafting committees)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Starting work on baselines and maritime-zone legislation, and adopting a 'historic waters' reading of the U-line, is the preparatory stage of a legislative claim; declarative, low salience and internal. Only source is Sun (1996), a scanned PDF read by OCR, so the excerpt cannot be machine-checked; no month is given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy Toward the South China Sea: A Review', Issues & Studies 32(3), March 1996, pp. 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University (NCCU repository)",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "established an ad hoc committee to help determine the basepoints and baselines to be used for measuring the breadth of the ROC’s territorial waters"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1990-01-12",
+  "date_end": "1990-01-12",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 12 January 1990 the Director of the Ministry of the Interior's Department of Land Administration, Wang Hsing-chuan, standing in for Interior Minister Hsu Shui-teh, landed on Taiping Island, erected the national stele 'Lock and Key to the Southern Territory' (南疆鎖鑰) and reiterated the ROC's sovereignty over the South China Sea; the ministry also led a troop-comforting delegation to the garrison.",
+  "actors": "Ministry of the Interior (Department of Land Administration; Minister Hsu Shui-teh, represented by Wang Hsing-chuan)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A ministerial landing to erect a sovereignty stele and restate the claim is a unilateral symbolic act of possession; demonstrative (with a declarative element). Both sources are PDFs (a Control Yuan report and the Coast Guard history filed as PCA Annex 910), so the excerpts cannot be machine-checked; the Control Yuan report's table of official visits gives the same date (79.1.12). Taiping is held against Vietnamese, Philippine and PRC claims, hence RA.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "79 年 1 月 12 日，內政部地政司司長代表部長， 登島設立「南疆鎖鑰」石碑乙座，並重申我國對 南海之主權"
+   },
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (English translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration, South China Sea Arbitration (PCA Case 2013-19)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "On 12 January 1990, Ministry of the Interior department head Wang Xingquan represented Minister Xu Shuide in erecting a monument inscribed with the words “Lock and Key to the Southern Territory,” and reiterated the Republic of China’s claim to the sovereignty of the South China Sea"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1990-02-16",
+  "date_end": "1990-02-16",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 16 February 1990 the Executive Yuan approved the establishment by Kaohsiung City of an administrative committee to take over the administration of Taiping Island as part of Kaohsiung's Qijin District, and the setting up of a fishery station there.",
+  "actors": "Executive Yuan; Kaohsiung City Government",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Placing a disputed feature under a named municipal body is unilateral civil administration; demonstrative. The Pratas and Spratlys had been assigned to Kaohsiung in 1979, so this is a deepening rather than a first assignment. Sources are PDFs (Control Yuan report; PCA Annex 910), excerpts not machine-checkable.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "2 月 16 日，行政院核定高雄市成立 管理委員會，接管太帄島，隸屬高雄市旗津區"
+   },
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (English translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration, South China Sea Arbitration (PCA Case 2013-19)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "in the same year on February 16, the Executive Yuan ratified the establishment of an administrative committee from Kaohsiung City to accept jurisdiction over Taiping Island, as part of the Kaohsiung City Qijin District"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1990-12-29",
+  "date_end": "1990-12-29",
+  "date_precision": "day",
+  "location_name": "Spratly Islands",
+  "subregion": "",
+  "summary": "On 29 December 1990 the ROC Foreign Minister reaffirmed the Republic of China's claim to the Spratly Islands.",
+  "actors": "Ministry of Foreign Affairs (Foreign Minister)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A ministerial reaffirmation of sovereignty is a verbal assertion; declarative. Known from Dzurek's 1996 chronology (citing Chang Pao-min 1991); the occasion and wording are not given. Source is a PDF, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "On 29 December 1990 the ROC Foreign Minister reaffirmed its claim to the Spratly islands."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1991-01-01",
+  "date_end": "1991-01-31",
+  "date_precision": "month",
+  "location_name": "Spratly Islands",
+  "subregion": "",
+  "summary": "In January 1991 the ROC Ministry of the Interior hosted a conference on the Spratly Islands, at which retired Admiral Liu Ta-tsai said it was time for China to 'drive foreign troops' out of the Spratlys.",
+  "actors": "Ministry of the Interior; Adm. (ret.) Liu Ta-tsai",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A government-hosted sovereignty conference is a low-level domestic assertion; declarative. The hawkish remark came from a retired officer, not an official, so a coder may judge the event marginal. Known only from a one-line entry in Smith's 1994 chronology.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt",
+    "title": "Edward D. Smith Jr., The Spratly Islands Dispute (thesis), DTIC ADA280214, appendix chronology",
+    "publisher": "Defense Technical Information Center (via Internet Archive)",
+    "pub_date": "1994-01-01",
+    "language": "en",
+    "excerpt": "January 1991 - Taiwan (ROC) Interior ministry hosts conference on Spratlys; Admiral Liu Ta-Tsai says it is time for China to \"drive foreign troops\" out of the Spratlys."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1991-07-18",
+  "date_end": "1991-07-18",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "On 18 July 1991, at the Second Workshop on Managing Potential Conflicts in the South China Sea in Bandung (the first the ROC attended), Tzen Wen-hua, Representative of the Taipei Economic and Trade Office in Jakarta, stated that the South China Sea was a body of water under ROC jurisdiction in which the ROC had rights and privileges and that any activities there required the approval of the ROC government; Malaysia and Indonesia objected to this historic-waters claim.",
+  "actors": "Taipei Economic and Trade Office in Jakarta (Representative Tzen Wen-hua), ROC delegation to the Indonesian-hosted SCS workshop",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Attending the workshop is cooperative, but claiming jurisdiction over the whole sea and a right of approval over others' activities is a verbal assertion of wider scope than the ROC's earlier island claims; declarative. Dzurek gives the day and the quotation; Sun says this was the first ROC statement of the historic-waters claim and that Malaysia and Indonesia immediately objected. Dzurek's text and Sun (scanned, OCR) are PDFs, excerpts not machine-checkable.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "On 18 July 1991 at the Second Workshop on Managing Potential Conflicts in the South China Sea (Bandung, Indonesia), Tzen Wen-hua, Representative of the Taipei Economic and Trade Office in Jakarta, stated:"
+   },
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy Toward the South China Sea: A Review', Issues & Studies 32(3), March 1996, pp. 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University (NCCU repository)",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "when the ROC government first introduced the claim of historic waters in 1991, Malaysia, together with Indonesia, immediately aired its opposition."
+   },
+   {
+    "url": "https://archive.org/download/DTIC_ADA280214/DTIC_ADA280214_djvu.txt",
+    "title": "Edward D. Smith Jr., The Spratly Islands Dispute (thesis), DTIC ADA280214, appendix chronology",
+    "publisher": "Defense Technical Information Center (via Internet Archive)",
+    "pub_date": "1994-01-01",
+    "language": "en",
+    "excerpt": "July 1991 - Indonesia hosts 2nd Workshop on Managing Potential Conflicts in the South China Sea in Bandung; attended by ASEAN members as well as PRC and ROC (but not Vietnam)"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1991-11-01",
+  "date_end": "1991-11-30",
+  "date_precision": "month",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "In November 1991 the Combined Logistics Command under its commander General Lo set up a geodetic datum point on Dongsha (Pratas) Island, using satellite positioning and gravity surveys, as the reference for military and economic construction surveys on the island.",
+  "actors": "Combined Logistics Command (聯勤總司令部), ROC armed forces",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A state survey establishing a geodetic control point on a held feature is unilateral administration supporting construction; demonstrative, low salience. The Coast Guard's description of the monument is the only source; it is a PDF, so the excerpt cannot be machine-checked. The PRC is the only other claimant to the Pratas.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835858418.pdf",
+    "title": "轄區特色-東沙 (Dongsha: features of the jurisdiction), 東沙基準點",
+    "publisher": "Coast Guard Administration, Republic of China (海巡署東南沙分署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "此碑為聯勤總司令羅上將於民國 80 年 11 月進行整建美化工 程，利用衛星定位測量與重力測量之技術，設置基準點"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1992-01-01",
+  "date_end": "1992-12-31",
+  "date_precision": "year",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "In 1992 rainwater catchment aprons and reservoirs were built on Taiping Island to supply the garrison.",
+  "actors": "ROC armed forces (Taiping garrison)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Building permanent water infrastructure on a held feature is unilateral construction; demonstrative, low salience. Year only; source is a Control Yuan report PDF, excerpt not machine-checkable.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "81 年，興建集水坪、蓄水池等設 施"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1992-05-01",
+  "date_end": "1992-05-31",
+  "date_precision": "month",
+  "location_name": "Spratly Islands; Itu Aba",
+  "subregion": "",
+  "summary": "In late May 1992 the Taipei government approved a bill declaring a 12-nautical-mile territorial sea and a 200-nautical-mile exclusive economic zone that would include waters in the Spratlys; Vietnam protested and the Philippine foreign office, reacting also to reports that Taiwan was fortifying its defences on Itu Aba, asked its Taipei office to raise the matter.",
+  "actors": "Executive Yuan (draft Territorial Sea and EEZ bills)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "Cabinet approval of draft maritime-zone legislation covering the Spratlys is a legislative assertion; declarative, and it drew Vietnamese and Philippine reactions. The report (Philippine Daily Inquirer, 4 June 1992) says 'last week', so the day is not known. The reported fortification of Itu Aba is not otherwise confirmed.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_0682/micro_IA1176901_0682_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 108, 4 June 1992 ('Indonesia To Host Spratly Islands Talks in Jul', Philippine Daily Inquirer 4 Jun 92)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1992-06-04",
+    "language": "en",
+    "excerpt": "Last week, the Taipei government approved a bill declaring a 200-nautical-mile economic zone by another 12 nautical miles its territorial waters, including those in the Spratlys."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1992-05-30",
+  "date_end": "1992-05-30",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "On 30 May 1992 Interior Minister Wu Poh-hsiung visited Dongsha (Pratas) Island to inaugurate a corridor built around the 'South China Sea Barrier' (南海屏障) national stele and led a troop-comforting delegation; Hung Chien-chao dates the corridor to 19 May 1992.",
+  "actors": "Ministry of the Interior (Minister Wu Poh-hsiung)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A ministerial visit to inaugurate a sovereignty monument on a held feature is a unilateral symbolic act; demonstrative. The two sources disagree on the day (30 May in the Control Yuan's table of official visits, 19 May in Hung); the Control Yuan date is used. First source is a PDF, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "主持「南海屏障」國碑迴廊落 成，率勞軍團勞軍"
+   },
+   {
+    "url": "https://www.npf.org.tw/3/6120",
+    "title": "Sovereignty over the Spratly Islands (Hung Chien-chao)",
+    "publisher": "National Policy Foundation (orig. The China Post)",
+    "pub_date": "2009-07-10",
+    "language": "en",
+    "excerpt": "A national monument and a corridor were set up on the main island on June 30, 1989 and May 19, 1992 respectively, to assert sovereignty over the entire archipelago."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1992-08-05",
+  "date_end": "1992-08-05",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "On 5 August 1992 the Executive Yuan approved the creation within the Ministry of the Interior of an inter-ministerial South China Sea Task Force (南海小組), chaired by the Interior Minister with vice-ministers of foreign affairs, defence and other ministries and the Mayor of Kaohsiung, to study the internal, diplomatic, security, resource and other aspects of the South China Sea islands and waters and propose policy.",
+  "actors": "Executive Yuan; Ministry of the Interior (South China Sea Task Force)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Creating a standing cabinet body to manage the claim is an institutional (administrative) step; coded declarative as a policy act without physical action. PCA Annex 910 instead records a reorganisation of the 'Nansha Group' by the Ministry of the Interior on 12 June 1992; the Control Yuan date of Executive Yuan approval is used; Dzurek (citing the Straits Times, 30 Nov 1992) records a public announcement of the task force in November 1992. Sources are PDFs, excerpts not machine-checkable.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "行政院為維護我國南海諸島、南海水域之權益 及和帄開發、管理，81 年 8 月 5 日核定於內政 部設置跨部會之「南海小組」"
+   },
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (English translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration, South China Sea Arbitration (PCA Case 2013-19)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "On 12 June 1992, the Ministry of the Interior undertook the reorganization of the Nansha Group."
+   },
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "In November Taiwanese officials said that Taiwan would set up a task force to deal with the Spratly dispute."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1992-10-14",
+  "date_end": "1992-10-14",
+  "date_precision": "day",
+  "location_name": "Itu Aba (Ba Binh / Taiping Island)",
+  "subregion": "5",
+  "summary": "On 14 October 1992 the Taiwan authorities reportedly stated that they had the right to conduct sea and air patrols around Taiwan and other islands including Itu Aba in the Spratlys; Vietnam's Foreign Ministry protested on 18 October.",
+  "actors": "ROC government (agency not named in the source)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A public claim of a right to patrol the waters and airspace around a disputed feature is a verbal assertion; declarative. Known only from Vietnam's protest as carried by VNA; the issuing ROC agency and the exact wording are not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_0788/micro_IA1176901_0788_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 202, 19 October 1992 ('Sovereignty Over Spratlys, Paracels Reiterated', Hanoi VNA 18 Oct 92)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1992-10-19",
+    "language": "en",
+    "excerpt": "a reported statement of October 14, 1992 by the Taiwan authorities on their right to conduct sea and air patrols"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1993-01-01",
+  "date_end": "1993-12-31",
+  "date_precision": "year",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "In 1993 two seawater desalination units were installed on Taiping Island, enough to meet the daily needs of the personnel stationed there.",
+  "actors": "ROC armed forces (Taiping garrison)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Installing permanent utilities on a held feature is unilateral construction; demonstrative, low salience. Year only; source is a Control Yuan report PDF, excerpt not machine-checkable.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "82 年，設置完成 2 部海水淡化機，足供駐島 人員日常生活所需"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1993-04-13",
+  "date_end": "1993-04-13",
+  "date_precision": "day",
+  "location_name": "South China Sea (Pratas, Paracels, Macclesfield Bank, Spratlys)",
+  "subregion": "",
+  "summary": "On 13 April 1993 the Executive Yuan approved the South China Sea Policy Guidelines (南海政策綱領), which declared that the Pratas, Macclesfield Bank, Paracel and Spratly islands are ROC territory and that the sea area within the South China Sea historic-waters line is under ROC jurisdiction with all rights and interests, set five goals beginning with firmly safeguarding sovereignty, and were accompanied by an implementation plan assigning tasks to ministries (the cabinet had passed the draft in March 1993).",
+  "actors": "Executive Yuan; Ministry of the Interior (South China Sea Task Force)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics",
+   "energy",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A cabinet policy instrument claiming sovereignty over all four archipelagos and jurisdiction over 'historic waters' is a formal verbal and administrative assertion of wider scope than before; declarative. Sun dates adoption to 10 March 1993 (the cabinet's passage of the draft, reported 12 March); the Control Yuan gives 13 April as the date of approval, used here. Sources are PDFs (Sun scanned, read by OCR), excerpts not machine-checkable; the full text on cga.gov.tw (f1259488571867.pdf) has an unextractable font.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "行政院 82 年 4 月 13 日核定「南海政策綱領」 ，明示東沙群島、中沙群島、西沙群島及南沙 群島無論尌歷史、地理、國際法及事實，向為 我國固有領土之一部分，其主權屬於我國；南 海歷史性水域界線內之海域為我國管轄之海 域，我國擁有一切權益"
+   },
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy Toward the South China Sea: A Review', Issues & Studies 32(3), March 1996, pp. 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University (NCCU repository)",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "The Executive Yuan Passes the ‘Policy Guidelines for the South China Sea’ Draft, Reaffirming the ROC’s Sovereignty over the Macclesfield Bank"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1993-07-01",
+  "date_end": "1993-08-31",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba / Thai Binh)",
+  "subregion": "5",
+  "summary": "In July 1993 reports from Taipei said Taiwan was considering building an airbase in the Spratlys, and by mid-August AFP and BBC reported that Taiwan had completed a draft plan for a two-kilometre runway on Taiping Island, costing US$139 million, usable by military aircraft and upgradeable to a full air base; Vietnam's Foreign Ministry said on 15 July and 19 August that such activities only raised tension.",
+  "actors": "ROC government (agency not named; plan reported by AFP/BBC)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RA"
+  ],
+  "reasoning": "Drafting a military-capable airstrip plan for a disputed feature is a step toward construction; demonstrative (a coder may treat a plan without works as declarative). Known only through Vietnamese reactions as reported by AFP and the Voice of Vietnam; the plan was not executed in the 1990s (an airbase scheme was reported postponed in January 1996).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_0998/micro_IA1176901_0998_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 160, 20 August 1993 ('Ministry Spokesman on Cambodia, Spratlys', Voice of Vietnam 19 Aug 93)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1993-08-20",
+    "language": "en",
+    "excerpt": "Taiwan has completed a draft plan to build a tarmac two km long in on Thai Binh Island of the Truong Sa [Spratly Islands] archipelago at a total cost of $139 million"
+   },
+   {
+    "url": "https://archive.org/download/micro_IA1176901_0973/micro_IA1176901_0973_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 134, 15 July 1993 ('Government Reasserts Sovereignty Over Spratlys', AFP 15 Jul 93)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1993-07-15",
+    "language": "en",
+    "excerpt": "A separate report from Taipei said Taiwan was considering building an airbase in the Spratlys."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1993-08-01",
+  "date_end": "1993-08-31",
+  "date_precision": "month",
+  "location_name": "South China Sea (U-shaped line)",
+  "subregion": "",
+  "summary": "At a press conference in August 1993 the chairman of the Executive Yuan's Research, Development and Evaluation Commission explained that, on the basis of the 1948 map's U-shaped line, the waters inside the line were ROC historic waters, analogous to archipelagic waters, in which the ROC had preferential maritime rights in addition to sovereignty over the islands.",
+  "actors": "Executive Yuan Research, Development and Evaluation Commission (chairman)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "An official public interpretation of the U-line as a historic-waters boundary is a verbal assertion of maritime scope; declarative. Sun (citing Central Daily News, 9 Aug 1993) gives the month only; scanned PDF read by OCR, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy Toward the South China Sea: A Review', Issues & Studies 32(3), March 1996, pp. 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University (NCCU repository)",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "During an August 1993 press conference, the chairman of the Research, Development, and Evaluation Commission of the Executive Yuan further explained the ROC’s position in this regard."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1993-09-06",
+  "date_end": "1993-09-07",
+  "date_precision": "day",
+  "location_name": "South China Sea; Spratly Islands",
+  "subregion": "",
+  "summary": "On 6-7 September 1993, under the South China Sea Policy Guidelines' implementation plan, the government held a South China Sea issues conference in Taipei at which a proposal to enhance the ROC's military and civilian presence in the region was submitted, after which preparations began to increase sea patrols in the Spratlys.",
+  "actors": "Ministry of the Interior / Executive Yuan (government-sponsored conference)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "The conference itself is low-salience, but it launched preparations for more frequent Spratly patrols; coded declarative (policy decision). Sun calls it a government-sponsored seminar in September 1993; the Control Yuan dates the 'international conference on South China Sea issues' to 6-7 September 1993 (PCA Annex 900 gives 6-7 September 1994, which conflicts with its own April 1994 survey that the meeting had commissioned). Sources are PDFs, excerpts not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy Toward the South China Sea: A Review', Issues & Studies 32(3), March 1996, pp. 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University (NCCU repository)",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "At a government-sponsored seminar on the South China Sea held in Taipei in September 1993, a proposal to enhance the ROC’s"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "82 年 9 月 6、7 日召 開「南海問題國際研討會」"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1994-01-01",
+  "date_end": "1994-02-03",
+  "date_precision": "month",
+  "location_name": "Itu Aba (Taiping Island)",
+  "subregion": "5",
+  "summary": "By early February 1994 Taiwan was reported to be planning to build an airport, a seaport and a lighthouse on or around Itu Aba; on 3 February Vietnam's Foreign Ministry said the plans, and reported China-Taiwan cooperation in exploring the area, violated Vietnamese sovereignty.",
+  "actors": "ROC government (agency not named)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Planning port, airfield and navigation-aid construction on a disputed feature extends the 1993 airstrip plan to a wider set of works; demonstrative (plans without works; a coder may treat it as declarative). Known only through Vietnam's reaction; the date of the Taiwanese report is not given, so the range ends on the day of the Vietnamese statement.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_1112/micro_IA1176901_1112_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 023, 3 February 1994 (Vietnamese Foreign Ministry press conference)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1994-02-03",
+    "language": "en",
+    "excerpt": "and that Taiwan has planned to build an airport, a seaport, and a lighthouse in area of these islands"
+   },
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "On 3 February a Vietnam Foreign Ministry spokeswoman accused Taiwan of violating Vietnamese sovereignty by considering building an airport, port, and lighthouse on Itu Aba."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1994-01-01",
+  "date_end": "1994-12-31",
+  "date_precision": "year",
+  "location_name": "Dongsha (Pratas) Island; Taiping Island",
+  "subregion": "",
+  "summary": "In 1994, under the South China Sea Policy Guidelines' implementation plan, the government completed land surveys and land registration of Dongsha (Pratas) Island and Taiping Island.",
+  "actors": "Ministry of the Interior; Kaohsiung City Government (land administration)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Cadastral survey and registration of held features is unilateral civil administration; demonstrative, and new in kind (earlier administration had not extended to land registration). Year only; source is a Control Yuan report PDF, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "83 年辦竣東沙島及太 帄島之土地測量與登記"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1994-04-15",
+  "date_end": "1994-04-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island and Nansha / Dongsha sea areas",
+  "subregion": "5",
+  "summary": "From 15 April 1994 the Council of Agriculture sent the training vessel 'Fishery Training No. 2' to the waters of Taiping Island to survey water quality, plankton and fish under the South China Sea Policy Guidelines, sampling around Taiping on 21-23 April and at eight stations en route; in May Vietnam accused the PRC and Taiwan of coordinating surveys in the Spratlys.",
+  "actors": "Council of Agriculture, Executive Yuan; Fishery Sailor Training Center vessel 'Fishery Training No. 2'",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A state scientific survey of a disputed feature's waters, carried out under the 1993 guidelines, is unilateral resource and environmental activity; demonstrative, and new in kind for the decade. Source is the COA report filed as PCA Annex 900 (PDF), excerpt not machine-checkable; Dzurek records the Vietnamese accusation.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 900: Chen I-Ming, 'Water Quality Survey in South China Sea and Taiping Island Sea Region' (Council of Agriculture, 1994), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration, South China Sea Arbitration (PCA Case 2013-19)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "departing on April 15, Year 83 of the Republic [1994] to Taiping Island sea region in the Nansha Islands"
+   },
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "In May Vietnam accused the PRC and Taiwan of coordinating surveys in the Spratly islands."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1994-06-01",
+  "date_end": "1994-06-30",
+  "date_precision": "month",
+  "location_name": "South China Sea (U-shaped line)",
+  "subregion": "",
+  "summary": "In June 1994 Chang King-yu, Minister without Portfolio of the Executive Yuan, said at a conference of the Chinese Society of International Law in Taipei that the waters enclosed by the U-shaped line were ROC historic waters and that the ROC was entitled to all rights therein.",
+  "actors": "Chang King-yu, Minister without Portfolio, Executive Yuan",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A cabinet minister's public restatement of the historic-waters claim is a verbal assertion; declarative. Dzurek cites the United Daily News of 29 June 1994 (the conference was probably the 28-29 June cross-strait and overseas Chinese seminar, but this is not stated). PDF source, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "In June 1994 Chang King-yu, Minister without Portfolio of the Executive Yuan, said that “the waters enclosed by the ‘U’-shaped line in the South China Sea are our historic waters and the ROC is entitled to all the rights therein.”"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1994-10-17",
+  "date_end": "1994-10-17",
+  "date_precision": "day",
+  "location_name": "Itu Aba (Taiping Island)",
+  "subregion": "5",
+  "summary": "Around 17 October 1994 Taiwan's Ministry of Transportation and Communications announced that it would equip (build up) the weather station on Itu Aba, saying Taiwan would never renounce its sovereignty claim though it was willing to shelve the dispute to cooperate in economic development.",
+  "actors": "Ministry of Transportation and Communications (Central Weather Bureau)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Upgrading a state facility on a disputed feature, announced with a sovereignty statement, is unilateral administration; demonstrative with a declarative element. The date is that of the Reuters report Dzurek cites ('Taiwan to Build Up Weather Station in Spratlys', 17 Oct 1994). PDF source, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "Taiwan’s Ministry of Transportation and Communication announced that it would equip a weather station on Itu Aba."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1995-03-01",
+  "date_end": "1995-04-04",
+  "date_precision": "month",
+  "location_name": "Ban Than Reef (Zhongzhou Reef, 中洲礁), Tizard Bank",
+  "subregion": "5",
+  "summary": "From late March 1995 Taiwan began a construction project on Ban Than reef (10°23'N, 114°24.5'E, the ROC-held Zhongzhou Reef next to Itu Aba); Vietnam demanded on 4 April that Taiwan withdraw its forces, facilities and equipment from the reef.",
+  "actors": "ROC armed forces (Taiping garrison)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Building a structure on a second, unoccupied feature extends the ROC's physical presence beyond Itu Aba; demonstrative, and of wider scope than before. Known only from Vietnamese statements; the nature of the structure is not given, and the start date is 'late March', so month precision is used.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_1427/micro_IA1176901_1427_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 065, 5 April 1995 ('Ministry Spokesman on Taiwan Action in Spratlys', Voice of Vietnam 4 Apr 95)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1995-04-05",
+    "language": "en",
+    "excerpt": "Since late March 1995, the Taiwanese side has started a construction project on this coral reef."
+   },
+   {
+    "url": "https://archive.org/download/micro_IA1176901_1431/micro_IA1176901_1431_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 069, 11 April 1995 (Voice of Vietnam commentary)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1995-04-11",
+    "language": "en",
+    "excerpt": "Meanwhile, Taiwan is building a structure at Banchan"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1995-03-25",
+  "date_end": "1995-03-25",
+  "date_precision": "day",
+  "location_name": "Itu Aba (Ba Binh / Taiping Island); Ban Than (Zhongzhou) Reef",
+  "subregion": "5",
+  "summary": "At 15:00 on 25 March 1995 ROC troops on Itu Aba fired 25-37 mm artillery shells at the Vietnamese cargo ship Bien Dong 80 as it passed about 800 metres south-southwest of Ban Than reef en route from Discovery Great Reef to Sand Cay; the shells fell 3-15 metres from the ship and no damage was reported. Vietnam protested to Taiwan on 4 April; the ROC Ministry of Foreign Affairs described the firing as warning fire to safeguard sovereignty and restated that sovereignty belonged to the ROC.",
+  "actors": "ROC Marine Corps garrison on Itu Aba (Taiping)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Artillery fire landing metres from another claimant's vessel near a held feature is a threat of force short of a hit; coercive (warning fire), and a coder may weigh it as force. It is the first ROC firing incident of the decade found. The detailed account is Vietnam's (Voice of Vietnam via FBIS; Dzurek); a 2016 ROC Navy journal article (PDF, columns interleaved in extraction) records the MOFA's characterisation as warning fire, without giving the date of the MOFA statement.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_1427/micro_IA1176901_1427_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 065, 5 April 1995 ('Ministry Spokesman on Taiwan Action in Spratlys', Voice of Vietnam 4 Apr 95)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1995-04-05",
+    "language": "en",
+    "excerpt": "Taiwanese troops firing on a Vietnamese cargo ship in the area"
+   },
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "Vietnam reported that Taiwanese forces on Itu Aba (Dao Ba Binh in Vietnamese) shelled one of its cargo ships, which was sailing from Discovery Great Reef to Sand Cay."
+   },
+   {
+    "url": "https://www.mnd.gov.tw/File/23411",
+    "title": "劉世緯，〈南沙群島領海基線試繪之研究〉，《海軍學術雙月刊》(2016年4月)",
+    "publisher": "Ministry of National Defense, ROC (Navy Professional Journal)",
+    "pub_date": "2016-04-01",
+    "language": "zh-TW",
+    "excerpt": "的越南貨船施以警告性射擊，越南方面隨即"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1995-03-30",
+  "date_end": "1995-04-02",
+  "date_precision": "day",
+  "location_name": "Spratly Islands; Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "On 30 March 1995 Taiwan announced that armed patrol boats of the Seventh Peace Preservation Police Corps would leave Kaohsiung on 31 March to patrol the Spratly and Pratas islands held by ROC marines; after Philippine and Vietnamese objections the Spratly leg was cancelled and the boats landed on the Pratas instead (reported 2 April), and on about 10 April the Defence Minister said Taiwan would not send more forces to the Spratlys.",
+  "actors": "National Police Administration, Seventh Peace Preservation Police Corps; Ministry of National Defense",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RV"
+  ],
+  "reasoning": "Announcing and dispatching an armed police patrol into the Spratlys during the Mischief Reef crisis is a show of presence; demonstrative. The patrol was recalled before reaching the Spratlys, so its physical reach was the Pratas only; a coder may weigh the announcement as the main act. Philippine Defense Secretary de Villa said the move would worsen tension.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://archive.org/download/micro_IA1176901_1423/micro_IA1176901_1423_djvu.txt",
+    "title": "FBIS Daily Report: East Asia, No. 062, 31 March 1995 ('Defense Head: Taiwan Fueling Tension', GMA-7 Radio-Television 30 Mar 95)",
+    "publisher": "Foreign Broadcast Information Service (via Internet Archive)",
+    "pub_date": "1995-03-31",
+    "language": "en",
+    "excerpt": "Taiwan has confirmed that it is sending armed patrol boats to the Spratlys today."
+   },
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "Five days later the Nationalists on Taiwan said that they would send patrol boats to the Spratlys. The Philippines and Vietnam objected. Taiwan recalled the patrol."
+   },
+   {
+    "url": "https://ah.lib.nccu.edu.tw/bitstream/140.119/102097/1/32(3)-40-54.pdf",
+    "title": "Kuan-Ming Sun, 'The Republic of China's Policy Toward the South China Sea: A Review', Issues & Studies 32(3), March 1996, pp. 40-54",
+    "publisher": "Institute of International Relations, National Chengchi University (NCCU repository)",
+    "pub_date": "1996-03-01",
+    "language": "en",
+    "excerpt": "Canceling the Patrol Mission to the Spratlys, the Patrol Boats of the Seventh Peace Preservation Police Corps Land on the Pratas"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1995-04-01",
+  "date_end": "1995-04-06",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "A memorial wall depicting the 1946 recovery of the Spratlys, commissioned in 1994 by Interior Minister Wu Poh-hsiung, was completed on Taiping Island; the commander of the Seventh Peace Preservation Police Corps, sent on 1 April 1995 to accept it, could not proceed because of the PRC-Philippine dispute, and on 6 April Professor Chen Chung-yu of Academia Sinica, commissioned by the Ministry of the Interior for archaeological work in the South China Sea, accepted it on the ministry's behalf.",
+  "actors": "Ministry of the Interior (Minister Wu Poh-hsiung); Seventh Peace Preservation Police Corps; Academia Sinica Institute of History and Philology (Chen Chung-yu)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Installing a state commemorative mural and conducting ministry-commissioned archaeology on a disputed feature are unilateral symbolic and administrative acts; demonstrative, low salience. The Coast Guard dates the mural to 1994 (when it was commissioned); the Control Yuan's table dates the acceptance. Sources are PDFs, excerpts not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "理南海考古工作之中研院歷 史所陳教授仲玉於4月6日代 為驗收"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "轄區特色-南沙 (Nansha: features of the jurisdiction), 收復南沙太平島紀念史畫",
+    "publisher": "Coast Guard Administration, Republic of China (海巡署東南沙分署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "民國 83 年時任內政部長吳伯雄先生所設立，繪述太平及中 業二艦接收南沙群島情形"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1996-06-18",
+  "date_end": "1996-06-18",
+  "date_precision": "day",
+  "location_name": "Spratly Islands",
+  "subregion": "",
+  "summary": "On 18 June 1996, after the PRC's May 1996 baselines and EEZ declaration, the Information Director of Taiwan's office in Manila said that the ROC might follow Beijing in claiming extended maritime jurisdiction in the Spratlys.",
+  "actors": "Taipei Economic and Cultural Office in Manila (Information Director)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "A diplomatic official's public signal that the ROC may extend its maritime claims is a (conditional) verbal assertion; declarative, low salience. Known from Dzurek (citing a PNA report transcribed in FBIS East Asia, 21 June 1996); the official is not named. PDF source, excerpt not machine-checkable.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+    "title": "Daniel J. Dzurek, 'The Spratly Islands Dispute: Who's On First?', IBRU Maritime Briefing 2(1), 1996",
+    "publisher": "International Boundaries Research Unit, Durham University",
+    "pub_date": "1996-01-01",
+    "language": "en",
+    "excerpt": "On 18 June the Information Director of Taiwan’s office in Manila said that the ROC may follow Beijing in claiming extended maritime jurisdiction."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1998-01-21",
+  "date_end": "1998-01-21",
+  "date_precision": "day",
+  "location_name": "ROC maritime zones (incl. Pratas and Spratly waters)",
+  "subregion": "",
+  "summary": "On 21 January 1998 President Lee Teng-hui promulgated the Law on the Territorial Sea and the Contiguous Zone (12-nm territorial sea, baselines to be set by the Executive Yuan and announced in batches) and the Law on the Exclusive Economic Zone and the Continental Shelf (200-nm EEZ in which the ROC claims sovereign rights over resources and jurisdiction over artificial islands, marine research and the environment, with fines and confiscation for unpermitted fishing or research), the legal basis for the ROC's maritime claims around the Pratas and Spratlys.",
+  "actors": "President of the ROC; Legislative Yuan; Ministry of the Interior (competent authority)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Enacting maritime-zone legislation with enforcement penalties is a legislative assertion; declarative, and new for the ROC (its first statutory territorial sea and EEZ). The laws do not name the South China Sea islands; their SCS reach comes through the baselines announced in February 1999. The draft 'historic waters' language debated since 1992 does not appear in the enacted text.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=A0000009",
+    "title": "中華民國領海及鄰接區法 沿革 (Law on the Territorial Sea and the Contiguous Zone: legislative history)",
+    "publisher": "Laws & Regulations Database of the ROC, Ministry of Justice",
+    "pub_date": "1998-01-21",
+    "language": "zh-TW",
+    "excerpt": "中華民國八十七年一月二十一日總統（87）華總（一）義字第 8700010"
+   },
+   {
+    "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=A0000010",
+    "title": "Law on the Exclusive Economic Zone and the Continental Shelf of the Republic of China",
+    "publisher": "Laws & Regulations Database of the ROC, Ministry of Justice",
+    "pub_date": "1998-01-21",
+    "language": "en",
+    "excerpt": "The exclusive economic zone of the Republic of China denotes the sea area contiguous to the outer limits of the territorial sea and to a distance measuring outwardly 200 nautical miles from the baseline of the territorial sea."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1998-07-12",
+  "date_end": "1998-07-12",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 12 July 1998 Chief of the General Staff Tang Fei landed on Taiping Island from the Navy ship ROCS Cheng Ho (鄭和艦), the highest-ranking officer ever to visit the island; a 'Pillar of the Maritime Frontier' (海疆砥柱) monument was erected to mark the visit.",
+  "actors": "Chief of the General Staff Gen. Tang Fei; ROC Navy (ROCS Cheng Ho)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A visit by the armed forces' top officer to a disputed garrison, commemorated by a monument, is a unilateral show of military presence; demonstrative, and higher in rank than any previous visit. Source is a Coast Guard PDF, excerpt not machine-checkable.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "轄區特色-南沙 (Nansha: features of the jurisdiction), 『海疆砥柱』紀念碑",
+    "publisher": "Coast Guard Administration, Republic of China (海巡署東南沙分署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "民國 87 年 7 月 12 日唐飛先生搭乘鄭和艦登島紀念所豎立。 當時唐飛為參謀總長，也是第一位最高階長官登臨本島。"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1999-02-10",
+  "date_end": "1999-02-10",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Islands; Scarborough Shoal (Huangyan Dao); Spratly Islands",
+  "subregion": "",
+  "summary": "On 10 February 1999 the Executive Yuan, by order Tai-88-Nei No. 06161, announced the ROC's first batch of territorial-sea baselines and outer limits of the territorial sea and contiguous zone: straight and normal baselines around the Pratas (basepoints D1-D4), a normal baseline for Scarborough Shoal (Huangyan Dao) in the Macclesfield group, and a statement that all the Spratly features within the traditional U-shaped line are ROC territory, with Spratly basepoints, coordinates and charts to be announced separately.",
+  "actors": "Executive Yuan; Ministry of the Interior",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP"
+  ],
+  "reasoning": "Publishing baselines for disputed features and declaring all Spratly features inside the U-line ROC territory is a formal legal assertion; declarative, and new in kind (the first ROC baselines in the South China Sea, including Scarborough Shoal, claimed also by the Philippines). The text used is the 2009 amended table, which reproduces the 1999 order's number and date; the Paracels are omitted. Both sources are PDFs, excerpts not machine-checkable.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://chinaus-icas.org/wp-content/uploads/2019/08/Taiwans-Straight-Baseline-Claim.pdf",
+    "title": "中華民國第一批領海基線、領海及鄰接區外界線 (ROC First Batch of Territorial Sea Baselines; text of the 1999 order as amended 2009)",
+    "publisher": "Institute for China-America Studies (reproducing the Executive Yuan announcement)",
+    "pub_date": "2019-08-01",
+    "language": "zh-TW",
+    "excerpt": "中華民國 88 年 2 月 10 日行政院台 88 內字第 06161 號令公告"
+   },
+   {
+    "url": "https://chinaus-icas.org/wp-content/uploads/2019/08/Taiwans-Straight-Baseline-Claim.pdf",
+    "title": "中華民國第一批領海基線、領海及鄰接區外界線 (ROC First Batch of Territorial Sea Baselines; text of the 1999 order as amended 2009)",
+    "publisher": "Institute for China-America Studies (reproducing the Executive Yuan announcement)",
+    "pub_date": "2019-08-01",
+    "language": "zh-TW",
+    "excerpt": "在我國傳統 U 形線內之南沙群島全部島礁均為我國領土，其領海基線採直線基線及正常基 線混合基線法劃定，有關基點名稱、地理坐標及海圖另案公告。"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "88 年 2 月公告 我國第一批領海基線（含東沙群島、中沙黃岩 島及南沙群島）"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1999-05-01",
+  "date_end": "1999-05-31",
+  "date_precision": "month",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "In May 1999 the Mayor of Kaohsiung went to Dongsha (Pratas) Island and hung a house-number plate, 'No. 31 Dongsha, Neighbourhood 18, Zhongxing Village, Qijin District', on the island's fishermen's service station to assert sovereignty.",
+  "actors": "Kaohsiung City Government (Mayor)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A mayoral visit to fix a municipal address on a disputed feature, explicitly 'to declare sovereignty', is a unilateral symbolic act of civil administration; demonstrative. The mayor is not named in the source (Wu Den-yih held the office then). Control Yuan report PDF, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權競合與太平島護土任務 (Control Yuan investigation report on South China Sea sovereignty and Taiping Island defence)",
+    "publisher": "Control Yuan, Republic of China (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "88 年 5 月，高雄市長至島上漁民服務站掛上「旗 津區中興里 18 鄰東沙 31 號」門牌，以宣示主權"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "1999-10-01",
+  "date_end": "1999-10-21",
+  "date_precision": "month",
+  "location_name": "Dongsha (Pratas) Islands",
+  "subregion": "",
+  "summary": "In October 1999 the ROC military took a small group of reporters on a rare visit to the Pratas, where commanders briefed them on the marines' heavy presence and the archipelago's role as a South China Sea base against Chinese attack, while declining to give troop numbers.",
+  "actors": "ROC Ministry of National Defense; Marine Corps Pratas garrison (Gen. Chang Cheng-chung quoted)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A military-organised press visit to publicise the garrison of a disputed feature is a show of presence; demonstrative, low salience. The Taipei Times report is dated 21 October 1999; the visit's day is not given, so the range runs from the start of the month to the report date. Taipei Times returns 403 to scripts; the excerpt was read through a web fetch and may need confirmation.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/local/archives/1999/10/21/0000007573",
+    "title": "(Taipei Times, local news, 21 Oct 1999) Marines keep heavy presence on Pratas",
+    "publisher": "Taipei Times",
+    "pub_date": "1999-10-21",
+    "language": "en",
+    "excerpt": "A small group of reporters was briefed by the military during a rare visit to the horseshoe-shaped coral reef archipelago"
+   }
+  ]
+ }
+]
