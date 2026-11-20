@@ -266,7 +266,9 @@ its "continuation" calls are provisional where the previous year is itself still
 **Don't.** Don't form a move because an incident was dramatic, widely reported, or condemned. Don't form a
 move because it is the first such act *you have seen* — check the previous year and the baseline. Don't
 call a frequency increase a move without a number or a stated comparison ("fifth such patrol of the year"
-against "two in all of last year"). Don't code a continuation as a move: it belongs to the earlier move's
+against "two in all of last year") — `docs/notes/frequency-sources.md` indexes the series that count, per
+claimant and practice, and `docs/reports/candidate-tallies.md` shows where the harvest *looks* denser (a
+pointer, never a figure to cite). Don't code a continuation as a move: it belongs to the earlier move's
 *Ongoing through*.
 
 ### F. Group events into the move
