@@ -310,7 +310,8 @@ def _subregion_choice(n: str) -> str:
 
 def _moves_text(moves: list[dict]) -> str:
     """The claimant's moves of a year as the review page lists them, one per line."""
-    return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}]{' pending' if m['status'] != 'accepted' else ''}: {m['description']}" for m in moves)
+    return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}{', through ' + m['ongoing_through'] if m.get('ongoing_through') else ''}]"
+                     f"{' pending' if m['status'] != 'accepted' else ''}: {m['description']}" for m in moves)
 
 
 def flags_for(e: dict) -> list[str]:
