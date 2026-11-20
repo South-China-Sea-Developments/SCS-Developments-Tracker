@@ -1,0 +1,635 @@
+{
+ "run_id": "VN-2021-2026",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-1e70a2b404",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-8fa9597832 (previous year undecided). Spokesperson rejoinder to a new Chinese maritime law, the same method as the 2020 protests of Chinese administrative acts (ev-8fa9597832 Sansha districts, ev-6f26f471d1 feature naming) (2020 is undecided candidates of VN-2016-2020); more to react to, not a new method - likely reject as continuation once 2020 is decided.",
+   "of": "ev-8fa9597832"
+  },
+  {
+   "event_id": "ev-af4203e8fc",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-16792ff0cc (previous year undecided). Press-briefing protest at Chinese vessels at Whitsun Reef, the same method as the 2020 protest of Haiyang Dizhi 8 in the EEZ (ev-16792ff0cc) (2020 is undecided candidates of VN-2016-2020); a bigger Chinese presence to react to is not a frequency move - likely continuation.",
+   "of": "ev-16792ff0cc"
+  },
+  {
+   "event_id": "ev-fd8ccd2362",
+   "disposition": "unclear",
+   "reason": "Navy frigate drill near the Spratlys; the 2020 record (all declarative candidates of VN-2016-2020) shows no Vietnamese naval exercise, but such drills are routine - settle by whether VPN exercises in Spratly waters were held in 2020; if so maintenance, likely reject."
+  },
+  {
+   "event_id": "ev-6dba2d546e",
+   "disposition": "unclear",
+   "reason": "Annual spring General Staff delegation to Truong Sa and DK1, a routine yearly practice; the 2020 candidates of VN-2016-2020 contain no delegation voyage (possibly curtailed by COVID) - settle by whether 2020 voyages took place; if so a continuation, likely reject."
+  },
+  {
+   "event_id": "ev-7549b98a31",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a77db96971 (previous year undecided). Second Whitsun statement (after ev-af4203e8fc) plus dismissal of brand maps with the nine-dash line, like the 2020 rejection of the nine-dash map ev-a77db96971 (2020 is undecided candidates of VN-2016-2020); same method, likely continuation.",
+   "of": "ev-a77db96971"
+  },
+  {
+   "event_id": "ev-d2ae644149",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-d5623f325a (previous year undecided). Annual protest of China's summer fishing ban, present last year as ev-d5623f325a (undecided 2020 candidate of VN-2016-2020); a routine yearly repeat - likely continuation.",
+   "of": "ev-d5623f325a"
+  },
+  {
+   "event_id": "ev-cfb1d766b6",
+   "disposition": "unclear",
+   "reason": "A 'shared responsibility for peace and stability' remark on a Chinese live-fire drill asserts no claim (guide step D, 'we urge restraint'); likely reject as not assertive."
+  },
+  {
+   "event_id": "ev-a8ea3fffc4",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-376d9688bb (previous year undecided). Press-briefing protests of a Chinese presence at Triton and a Philippine official visit to Thitu, the same method as the 2020 protests (ev-376d9688bb Paracels, ev-48a8a0440b Itu Aba) (2020 is undecided candidates of VN-2016-2020); likely continuation.",
+   "of": "ev-376d9688bb"
+  },
+  {
+   "event_id": "ev-e817ad5eb5",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-dc1d1de5df (previous year undecided). Protest of Taiwan's Itu Aba live-fire drill, a repeat of the 2020 protests ev-48a8a0440b and ev-dc1d1de5df (undecided candidates of VN-2016-2020); routine - likely continuation. Not a duplicate of ev-a8ea3fffc4 (different act protested).",
+   "of": "ev-dc1d1de5df"
+  },
+  {
+   "event_id": "ev-88b49524b4",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-039e33b731 (previous year undecided). Statement declaring Chinese reconnaissance at Fiery Cross and a Paracel plant-tagging project void, like 2020's ev-039e33b731 and ev-ab86e8b3dc (2020 is undecided candidates of VN-2016-2020); same method, likely continuation.",
+   "of": "ev-039e33b731"
+  },
+  {
+   "event_id": "ev-4558b610b8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Regulatory enforcement (Netflix made to remove Pine Gap) against the nine-dash line; nothing comparable among the 2020 candidates of VN-2016-2020 (last seen 2019, Abominable / ev-53301c1243), so new again against the previous year - a coder may judge it a source gap."
+  },
+  {
+   "event_id": "ev-6b3a0b0fd7",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-16792ff0cc (previous year undecided). Pre-emptive protest against a Chinese research survey in the Paracels, the same method as the 2020 Haiyang Dizhi 8 statement ev-16792ff0cc (2020 is undecided candidates of VN-2016-2020); likely continuation.",
+   "of": "ev-16792ff0cc"
+  },
+  {
+   "event_id": "ev-ca9d122aa9",
+   "disposition": "unclear",
+   "reason": "General anniversary reaffirmation of sovereignty naming no state; the 2020 candidates of VN-2016-2020 hold no such statement, but it adds no new method - settle by whether a 2020 anniversary line existed; likely reject as maintenance."
+  },
+  {
+   "event_id": "ev-c40458e043",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a878b8c8e1 (previous year undecided). Protest of a Chinese Paracel drill, as in 2020 (ev-376d9688bb, ev-a878b8c8e1, undecided candidates of VN-2016-2020); routine annual pattern - likely continuation.",
+   "of": "ev-a878b8c8e1"
+  },
+  {
+   "event_id": "ev-541b6f4bcf",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-8fa9597832 (previous year undecided). Rejoinder to China's revised Maritime Traffic Safety Law, same method as ev-1e70a2b404 and the 2020 protests of Chinese administrative acts (ev-8fa9597832) (2020 is undecided candidates of VN-2016-2020); likely continuation.",
+   "of": "ev-8fa9597832"
+  },
+  {
+   "event_id": "ev-245150ee24",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-039e33b731 (previous year undecided). Statement on Chinese Y-20 flights to Spratly outposts, like 2020's ev-039e33b731 (jets at Subi) and ev-4e26373bce (bomber at Woody) (2020 is undecided candidates of VN-2016-2020); same method, likely continuation.",
+   "of": "ev-039e33b731"
+  },
+  {
+   "event_id": "ev-8529060eb8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2021-reclamation",
+   "reason": "Start of new land creation (about 50 acres each at Pearson and Namyit, harbours dredged); the 2020 candidates of VN-2016-2020 show no Vietnamese construction at all, and the scale exceeds the 2016-2018 Ladd/Spratly Island work, so new again against the previous year. Lead of the 2021 reclamation group."
+  },
+  {
+   "event_id": "ev-0ad7a0a152",
+   "disposition": "same_move",
+   "group": "VN2021-reclamation",
+   "of": "ev-8529060eb8",
+   "reason": "Channel dredging at Barque Canada Reef, part of the same reclamation campaign begun in October 2021 (lead ev-8529060eb8)."
+  },
+  {
+   "event_id": "ev-5f496e3adf",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-16792ff0cc (previous year undecided). Renewed Whitsun protest with a withdrawal demand, a repeat of ev-af4203e8fc this year and of the 2020 method (ev-16792ff0cc) (2020 is undecided candidates of VN-2016-2020); likely continuation.",
+   "of": "ev-16792ff0cc"
+  },
+  {
+   "event_id": "ev-3f12614670",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-dc1d1de5df (previous year undecided). Second 2021 protest of Taiwanese military activity at Itu Aba; 2020 also had two (ev-48a8a0440b, ev-dc1d1de5df, undecided candidates of VN-2016-2020) - same level, likely continuation.",
+   "of": "ev-dc1d1de5df"
+  },
+  {
+   "event_id": "ev-10e94cf67d",
+   "disposition": "same_move",
+   "group": "VN2021-reclamation",
+   "of": "ev-8529060eb8",
+   "reason": "Dredging and new land at Tennent Reef, part of the 2021 reclamation campaign (lead ev-8529060eb8); the extension to a fourth feature is within the same intensification."
+  },
+  {
+   "event_id": "ev-035205c738",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-c40458e043 (previous year undecided). Demand that China respect the EEZ over a Hainan drill area, the same method as the 2021 drill protest ev-c40458e043 (2021 candidate of this run, undecided); likely continuation.",
+   "of": "ev-c40458e043"
+  },
+  {
+   "event_id": "ev-368243ae20",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-e817ad5eb5 (previous year undecided). Protest of Taiwan's Itu Aba live-fire drill, a routine repeat of 2021's ev-e817ad5eb5 and ev-3f12614670 (2021 candidate of this run, undecided); likely continuation.",
+   "of": "ev-e817ad5eb5"
+  },
+  {
+   "event_id": "ev-af124cec8f",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-4558b610b8 (previous year undecided). Ban of the film Uncharted over the nine-dash line, the same method as the 2021 Pine Gap removal ev-4558b610b8 (2021 candidate of this run, undecided); at the same level - continuation if that becomes a move.",
+   "of": "ev-4558b610b8"
+  },
+  {
+   "event_id": "ev-a77a910f57",
+   "disposition": "unclear",
+   "reason": "Prime Minister's policy remark on developing the Truong Sa district; a statement of intent with no administrative act, nothing comparable in 2021 but no new method - settle by whether a concrete measure followed in 2022; otherwise likely reject."
+  },
+  {
+   "event_id": "ev-f1df6bb833",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-6dba2d546e (previous year undecided). Annual spring MND inspection voyage to Truong Sa and DK1, a routine yearly repeat of 2021's ev-6dba2d546e (2021 candidate of this run, undecided); likely continuation.",
+   "of": "ev-6dba2d546e"
+  },
+  {
+   "event_id": "ev-a13937b5b7",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-245150ee24 (previous year undecided). Protest at Chinese militarisation of Spratly features, the same method as 2021's ev-245150ee24 (2021 candidate of this run, undecided); likely continuation.",
+   "of": "ev-245150ee24"
+  },
+  {
+   "event_id": "ev-fd7e158577",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-d2ae644149 (previous year undecided). Annual protest of China's fishing ban, a repeat of 2021's ev-d2ae644149 (2021 candidate of this run, undecided); likely continuation.",
+   "of": "ev-d2ae644149"
+  },
+  {
+   "event_id": "ev-ef55bcc6ff",
+   "disposition": "same_move",
+   "group": "VN2022-reclamation",
+   "of": "ev-3b1c74a5c2",
+   "reason": "Landfill at Barque Canada Reef (58 acres by December), part of the 2022 reclamation step-up led by ev-3b1c74a5c2."
+  },
+  {
+   "event_id": "ev-d929900f84",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-c40458e043 (previous year undecided). Protest of a Chinese drill near Woody Island, the same method as 2021's ev-c40458e043 (2021 candidate of this run, undecided); more drills to react to is not a move - likely continuation.",
+   "of": "ev-c40458e043"
+  },
+  {
+   "event_id": "ev-3b1c74a5c2",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "VN2022-reclamation",
+   "reason": "About 420 acres created in 2022 and dredging spread to Discovery Great, Cornwallis South, Ladd and Alison Reefs, against the 2021 campaign at Pearson, Namyit, Sand Cay, Barque Canada and Tennent (lead ev-8529060eb8, undecided); wider area and far larger volume. Lead of the 2022 reclamation group."
+  },
+  {
+   "event_id": "ev-2c64f53449",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-e817ad5eb5 (previous year undecided). Protest of Taiwan's June Itu Aba drill, routine repeat of 2021's ev-e817ad5eb5 (2021 candidate of this run, undecided); likely continuation.",
+   "of": "ev-e817ad5eb5"
+  },
+  {
+   "event_id": "ev-51ad85757e",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-c40458e043 (previous year undecided). Second 2022 protest of Chinese Paracel manoeuvres; same method as 2021's ev-c40458e043 (2021 candidate of this run, undecided), the extra protest follows an extra drill - likely continuation.",
+   "of": "ev-c40458e043"
+  },
+  {
+   "event_id": "ev-0d72eec94f",
+   "disposition": "unclear",
+   "reason": "Demarche through the Geneva mission asking the WMO to remove a nine-dash map; 2021 had only a press dismissal of brand maps (ev-7549b98a31) - if a demarche to an international organisation was not used in 2021 it could be a novelty move; settle by checking 2021 practice."
+  },
+  {
+   "event_id": "ev-f6b48b3f69",
+   "disposition": "same_move",
+   "group": "VN2022-reclamation",
+   "of": "ev-3b1c74a5c2",
+   "reason": "Dredging begun at Discovery Great Reef, one of the new features that make the 2022 reclamation a scope move (lead ev-3b1c74a5c2); not a duplicate - a separate act within it."
+  },
+  {
+   "event_id": "ev-5a58916c07",
+   "disposition": "same_move",
+   "group": "VN2022-reclamation",
+   "of": "ev-3b1c74a5c2",
+   "reason": "Dredging begun at Cornwallis South and Ladd Reefs, part of the 2022 extension of reclamation (lead ev-3b1c74a5c2)."
+  },
+  {
+   "event_id": "ev-63abb5d67e",
+   "disposition": "same_move",
+   "group": "VN2022-reclamation",
+   "of": "ev-3b1c74a5c2",
+   "reason": "Dredging begun at Alison Reef, part of the 2022 extension of reclamation (lead ev-3b1c74a5c2)."
+  },
+  {
+   "event_id": "ev-852fb8a906",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-3f12614670 (previous year undecided). Third 2022 Taiwan protest (2021 had two, ev-e817ad5eb5 and ev-3f12614670); the extra protest answers an extra Taiwanese drill (Chubb's counterfactual) - likely continuation.",
+   "of": "ev-3f12614670"
+  },
+  {
+   "event_id": "ev-4bbbd60711",
+   "disposition": "same_move",
+   "group": "VN2023-reclamation",
+   "of": "ev-fa1f65f942",
+   "reason": "RFA imagery to April 2023: Barque Canada growth and new harbours at Tennent, Barque Canada and Sand Cay; part of the 2023 reclamation move led by ev-fa1f65f942 (overlaps ev-4c57ab1b2e's period, not an accepted duplicate)."
+  },
+  {
+   "event_id": "ev-4c57ab1b2e",
+   "disposition": "same_move",
+   "group": "VN2023-reclamation",
+   "of": "ev-fa1f65f942",
+   "reason": "AMTI's 2023 total (330 acres) is below 2022's ~420 (ev-3b1c74a5c2), so the volume alone is not a frequency move; it belongs with the 2023 extension to new features led by ev-fa1f65f942 - if the coder rejects that lead, this is a continuation of ev-3b1c74a5c2."
+  },
+  {
+   "event_id": "ev-2f08ce9d8e",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-368243ae20 (previous year undecided). Protest of a Taiwanese Itu Aba drill, a routine repeat of 2022's ev-368243ae20 (2022 candidate of this run, undecided); likely continuation.",
+   "of": "ev-368243ae20"
+  },
+  {
+   "event_id": "ev-f2e7d4e869",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-f1df6bb833 (previous year undecided). Annual spring delegation voyage to Truong Sa and DK1, a routine repeat of 2022's ev-f1df6bb833 (2022 candidate of this run, undecided); likely continuation.",
+   "of": "ev-f1df6bb833"
+  },
+  {
+   "event_id": "ev-83f06a9726",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-fd7e158577 (previous year undecided). Annual protest of China's fishing ban, a repeat of 2022's ev-fd7e158577 (2022 candidate of this run, undecided); likely continuation.",
+   "of": "ev-fd7e158577"
+  },
+  {
+   "event_id": "ev-73c2ddaf62",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2023-XYH10",
+   "reason": "Fisheries Surveillance ships KN 414 and KN 475 shadowing the Xiang Yang Hong 10 survey group in the EEZ; the 2022 candidates show no at-sea response to a foreign survey (last seen 2019, ev-fb28aaa9a2), so new again. Type may be coercive if shadowing is read as a warning. Lead of the XYH10 group."
+  },
+  {
+   "event_id": "ev-ee89708464",
+   "disposition": "unclear",
+   "reason": "Mixed briefing: protests of a Woody Island restaurant and Philippine buoys (routine, like 2022's ev-a13937b5b7 (2022 candidate of this run, undecided)) plus a first reference to measures on the Chinese survey ship; could join group VN2023-XYH10 (lead ev-73c2ddaf62) if the coder reads it as part of that response."
+  },
+  {
+   "event_id": "ev-acaf7258f5",
+   "disposition": "same_move",
+   "group": "VN2023-XYH10",
+   "of": "ev-73c2ddaf62",
+   "reason": "Withdrawal demand against Xiang Yang Hong 10 and escorts, the declarative side of the same 2023 response led by ev-73c2ddaf62."
+  },
+  {
+   "event_id": "ev-61d7c957cf",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a13937b5b7 (previous year undecided). Protest of China's light buoys at Spratly features, the same method as 2022's ev-a13937b5b7 (2022 candidate of this run, undecided); likely continuation.",
+   "of": "ev-a13937b5b7"
+  },
+  {
+   "event_id": "ev-1e821d32ea",
+   "disposition": "same_move",
+   "group": "VN2023-XYH10",
+   "of": "ev-73c2ddaf62",
+   "reason": "Repeated withdrawal demand with mention of at-sea monitoring of Xiang Yang Hong 10; part of the XYH10 response led by ev-73c2ddaf62."
+  },
+  {
+   "event_id": "ev-ab73782a35",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-2c64f53449 (previous year undecided). Second 2023 Taiwan protest, routine repeat (2022 had three, ev-368243ae20, ev-2c64f53449, ev-852fb8a906 (2022 candidate of this run, undecided)); likely continuation.",
+   "of": "ev-2c64f53449"
+  },
+  {
+   "event_id": "ev-4205d0a740",
+   "disposition": "same_move",
+   "group": "VN2023-XYH10",
+   "of": "ev-73c2ddaf62",
+   "reason": "Rebuttal of China's claim that Xiang Yang Hong 10 operated legally; part of the XYH10 response led by ev-73c2ddaf62."
+  },
+  {
+   "event_id": "ev-ca44a759a5",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-af124cec8f (previous year undecided). Barbie release cancelled over the nine-dash map, the same method as 2022's Uncharted ban ev-af124cec8f (2022 candidate of this run, undecided); more products to react to is not a frequency move - likely continuation.",
+   "of": "ev-af124cec8f"
+  },
+  {
+   "event_id": "ev-33e46e587f",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-af124cec8f (previous year undecided). Order to remove the series Flight to You over the nine-dash line, same method as 2022's ev-af124cec8f (2022 candidate of this run, undecided); the 2023 rise (three acts vs one) follows more offending products - likely continuation.",
+   "of": "ev-af124cec8f"
+  },
+  {
+   "event_id": "ev-c1d97bf08f",
+   "disposition": "unclear",
+   "reason": "General arbitral-award anniversary reaffirmation; none among the 2022 candidates (last 2021, ev-ca9d122aa9) but it adds no new method - settle by whether a 2022 anniversary line existed; likely reject as maintenance."
+  },
+  {
+   "event_id": "ev-a4855f8769",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-d929900f84 (previous year undecided). Protest of a Chinese Paracel drill, the same method as 2022's ev-d929900f84 and ev-51ad85757e (2022 candidate of this run, undecided); likely continuation.",
+   "of": "ev-d929900f84"
+  },
+  {
+   "event_id": "ev-28a5995044",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a13937b5b7 (previous year undecided). Mild 'verifying reports' statement on a Chinese runway at Triton, same method as 2022's ev-a13937b5b7 (2022 candidate of this run, undecided); likely continuation.",
+   "of": "ev-a13937b5b7"
+  },
+  {
+   "event_id": "ev-59b05b7997",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-852fb8a906 (previous year undecided). Third 2023 Taiwan protest, as in 2022 (three: ev-368243ae20, ev-2c64f53449, ev-852fb8a906 (2022 candidate of this run, undecided)); same level - likely continuation.",
+   "of": "ev-852fb8a906"
+  },
+  {
+   "event_id": "ev-fa6898e122",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-0d72eec94f (previous year undecided). Rejection of China's 2023 standard map and the nine-dash line, the same method as 2022's WMO-map rejection ev-0d72eec94f (2022 candidate of this run, undecided); likely continuation. Not a duplicate of ev-59b05b7997 (different act).",
+   "of": "ev-0d72eec94f"
+  },
+  {
+   "event_id": "ev-fa1f65f942",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "VN2023-reclamation",
+   "reason": "Dredging extended to South Reef and Central Reef, features untouched in 2022, with new harbours at Tennent, Barque Canada and Sand Cay (ev-4bbbd60711), against the 2022 campaign (lead ev-3b1c74a5c2, undecided); wider area, though acreage fell. Lead of the 2023 reclamation group."
+  },
+  {
+   "event_id": "ev-164fb6e148",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a4855f8769 (previous year undecided). Reassertion of Paracel sovereignty on the 50th anniversary of the 1974 seizure; sharper but the same method as 2023's routine Paracel protests (ev-a4855f8769) - likely continuation; an anniversary is not an intensification.",
+   "of": "ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-4630800bf3",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-acaf7258f5 (previous year undecided). Protest at Chinese coast guard ships at Vanguard Bank, the same method as the 2023 Xiang Yang Hong 10 statements (ev-acaf7258f5) (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-acaf7258f5"
+  },
+  {
+   "event_id": "ev-efc9a54e4a",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-ee89708464 (previous year undecided). Rejection of Chinese and Philippine claims, same method as 2023's ev-ee89708464 (which also answered both) (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-ee89708464"
+  },
+  {
+   "event_id": "ev-2777b78ee9",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-ee89708464 (previous year undecided). Press-briefing protest at Chinese and Philippine landings at Sandy Cay, same method as 2023's ev-ee89708464 (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-ee89708464"
+  },
+  {
+   "event_id": "ev-041b339f80",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-f2e7d4e869 (previous year undecided). Annual spring delegation voyages to Truong Sa and DK1, routine repeat of 2023's ev-f2e7d4e869 (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-f2e7d4e869"
+  },
+  {
+   "event_id": "ev-58c6e500d3",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-83f06a9726 (previous year undecided). Annual protest of China's fishing ban, repeat of 2023's ev-83f06a9726 (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-83f06a9726"
+  },
+  {
+   "event_id": "ev-0cababeac5",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a4855f8769 (previous year undecided). Protest of a PLA hospital-ship voyage to the Paracels and China's new coast guard detention rules, same method as 2023's Paracel protests (ev-a4855f8769) (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-db430aff42",
+   "disposition": "same_move",
+   "group": "VN2024-reclamation",
+   "of": "ev-217cb2b82a",
+   "reason": "AMTI's record-year total (641 more acres after June 2024) completes the 2024 reclamation surge led by ev-217cb2b82a; overlapping report, not an accepted duplicate."
+  },
+  {
+   "event_id": "ev-fdf8ca8919",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-acaf7258f5 (previous year undecided). Withdrawal demand against the Chinese naval survey ship Hai Yang 26, the same method as 2023's ev-acaf7258f5 (2023 candidate of this run, undecided), with no at-sea shadowing reported this time - likely continuation (or diminishment of the 2023 at-sea response).",
+   "of": "ev-acaf7258f5"
+  },
+  {
+   "event_id": "ev-217cb2b82a",
+   "disposition": "new_move",
+   "criterion": "frequency",
+   "group": "VN2024-reclamation",
+   "reason": "692 acres created from November 2023 to May 2024 across 10 features, more than all of 2023's 330 (ev-4c57ab1b2e, undecided), heading for a record year - a numbered frequency increase. Lead of the 2024 reclamation group."
+  },
+  {
+   "event_id": "ev-c463d22d3c",
+   "disposition": "same_move",
+   "group": "VN2024-CLCS",
+   "of": "ev-5f77c68ada",
+   "reason": "Press-line reservation of rights against the Philippines' June CLCS submission, the first step of the 2024 continental-shelf exchange led by ev-5f77c68ada (conciliatory tone; could be rejected on its own)."
+  },
+  {
+   "event_id": "ev-5f77c68ada",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2024-CLCS",
+   "reason": "Vietnam's own extended-continental-shelf submission for the central East Sea, its first CLCS submission since 2009; nothing comparable among the 2023 candidates. Lead of the 2024 CLCS group."
+  },
+  {
+   "event_id": "ev-a158e22b05",
+   "disposition": "same_move",
+   "group": "VN2024-CLCS",
+   "of": "ev-5f77c68ada",
+   "reason": "Note verbale asking the CLCS not to consider the Philippine West Palawan submission; same legal campaign as ev-5f77c68ada (2023 shows no UN notes). The coder may split it as a separate VP move."
+  },
+  {
+   "event_id": "ev-83dfd5ce00",
+   "disposition": "unclear",
+   "reason": "Publicised coast guard live-fire exercise rehearsing action against foreign ships; nothing comparable in 2023, but it was held off Binh Thuan rather than at a disputed feature - settle by whether the area lies in disputed waters (step D(4)); if so a novelty move."
+  },
+  {
+   "event_id": "ev-af5f71757f",
+   "disposition": "same_move",
+   "group": "VN2024-CLCS",
+   "of": "ev-5f77c68ada",
+   "reason": "Note verbale rejecting China's objection to the central-area submission; defends ev-5f77c68ada and belongs to the same 2024 CLCS move."
+  },
+  {
+   "event_id": "ev-78db19e7fc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A runway of up to about 8,000 ft on Barque Canada Reef, Vietnam's second and much longer Spratly airstrip, plus berms on six features; no runway building among the 2023 candidates (only reclamation, ev-fa1f65f942) - a new kind of facility, kept apart from the reclamation move."
+  },
+  {
+   "event_id": "ev-ec3475d64a",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a4855f8769 (previous year undecided). Sharp protest and representations over the beating of Quang Ngai fishermen in the Paracels; 2023's candidates hold no fishermen protest, but the method matches 2020's ev-271eff5888 and the protest answers a new incident (Chubb's counterfactual) - likely continuation of standing practice. Named against 2023's standing Paracel protest ev-a4855f8769.",
+   "of": "ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-b9fdb10e4b",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-a4855f8769 (previous year undecided). Demand for release and compensation over Chinese detentions in the Paracels; same method as ev-ec3475d64a, answering more incidents - likely not a move. Named against 2023's standing Paracel protest ev-a4855f8769.",
+   "of": "ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-242fa7d953",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-28a5995044 (previous year undecided). Protest of Chinese military equipment on Triton, same method as 2023's ev-28a5995044 (2023 candidate of this run, undecided); likely continuation. Not a duplicate of ev-b9fdb10e4b (different act protested).",
+   "of": "ev-28a5995044"
+  },
+  {
+   "event_id": "ev-62168e8294",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-fa6898e122 (previous year undecided). Reassertion against the Philippine Maritime Zones Act and China's naming of 64 features, same method as 2023's ev-fa6898e122 and ev-ee89708464 (2023 candidate of this run, undecided); likely continuation.",
+   "of": "ev-fa6898e122"
+  },
+  {
+   "event_id": "ev-782295e0f1",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "VN2025-reclamation",
+   "reason": "Reclamation extended to eight more features (Alison, Collins, East, Landsdowne, Petley, Amboyna Cay, Grierson, West), so all 21 outposts now carry artificial land, plus munitions depots; wider than the 2024 surge across 10 features (lead ev-217cb2b82a, undecided). Lead of the 2025 reclamation group."
+  },
+  {
+   "event_id": "ev-3b571300e7",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Market-management inspections, penalties and a police investigation against consumer goods (Baby Three dolls, Chagee) showing the nine-dash line; no such enforcement among the 2024 candidates (last in 2023, ev-ca44a759a5), and it widens from films to consumer products."
+  },
+  {
+   "event_id": "ev-200b863687",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-041b339f80 (previous year undecided). Annual spring delegation voyages to Truong Sa and DK1 (27 trips planned), routine repeat of 2024's ev-041b339f80 (2024 candidate of this run, undecided); likely continuation unless the trip count is shown to exceed 2024's.",
+   "of": "ev-041b339f80"
+  },
+  {
+   "event_id": "ev-18ab46cfcf",
+   "disposition": "unclear",
+   "reason": "Protest notes to China and the Philippines over landings at Sandy Cay features; 2024 had a press-briefing line only (ev-2777b78ee9) - if protest notes to these states were not used in 2024 the coder may treat it as a novelty step; otherwise continuation."
+  },
+  {
+   "event_id": "ev-584741fc09",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-af5f71757f (previous year undecided). Note verbale rejecting China's notes against Vietnam's CLCS submission, continuing the 2024 exchange (ev-af5f71757f, group VN2024-CLCS) (2024 candidate of this run, undecided); firmer wording but the same method - likely continuation.",
+   "of": "ev-af5f71757f"
+  },
+  {
+   "event_id": "ev-9ea73dd699",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-58c6e500d3 (previous year undecided). Annual protest of China's fishing ban (now with a diplomatic note), repeat of 2024's ev-58c6e500d3 (2024 candidate of this run, undecided); likely continuation.",
+   "of": "ev-58c6e500d3"
+  },
+  {
+   "event_id": "ev-f315fe6d0f",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Hoang Sa and Truong Sa island districts re-designated as 'special zones' from 1 July 2025, a change in the domestic administrative arrangement for the archipelagos (declarative per guide step G); nothing comparable among the 2024 candidates. Part of a nationwide reform, which the coder should weigh."
+  },
+  {
+   "event_id": "ev-70fba6e8e6",
+   "disposition": "same_move",
+   "group": "VN2025-reclamation",
+   "of": "ev-782295e0f1",
+   "reason": "New dredging at smaller features in the second half of 2025 and a DVOR beacon on Barque Canada belong to the 2025 reclamation extension led by ev-782295e0f1; the beacon also continues the 2024 runway work (ev-78db19e7fc)."
+  },
+  {
+   "event_id": "ev-f9e3d1f43d",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-fdf8ca8919 (previous year undecided). Muted objection to a Chinese survey in the EEZ, same method as 2024's ev-fdf8ca8919 (2024 candidate of this run, undecided); likely continuation.",
+   "of": "ev-fdf8ca8919"
+  },
+  {
+   "event_id": "ev-deedc91ea6",
+   "disposition": "unclear",
+   "reason": "General arbitral-award anniversary statement; none among the 2024 candidates (last 2023, ev-c1d97bf08f) but it adds no new method - likely reject as maintenance."
+  },
+  {
+   "event_id": "ev-ba679583a3",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-2777b78ee9 (previous year undecided). Reassertion over Thitu after a China-Philippines incident, same method as 2024's ev-2777b78ee9 (2024 candidate of this run, undecided); likely continuation.",
+   "of": "ev-2777b78ee9"
+  },
+  {
+   "event_id": "ev-c18edaa0e3",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-62168e8294 (previous year undecided). Sovereignty reaffirmation answering a SEA Games map that omitted the archipelagos (a non-claimant organiser); same declarative method as earlier map rejections (2023 ev-fa6898e122) - likely continuation or reject as low weight. Named against 2024's reassertion ev-62168e8294.",
+   "of": "ev-62168e8294"
+  },
+  {
+   "event_id": "ev-27513c4def",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-9ea73dd699 (previous year undecided). Protest of a Chinese commercial centre on Woody Island, the standing method of Paracel protests (2025's ev-9ea73dd699, 2024's ev-0cababeac5; undecided) - likely continuation. Named against 2025's ev-9ea73dd699.",
+   "of": "ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-8192c223f9",
+   "disposition": "unclear",
+   "reason": "Coast Guard command inspection of the standing coast guard, militia and fisheries-surveillance deployment in Truong Sa special-zone waters; nothing comparable among the 2025 candidates, but the deployment looks long-standing - settle by whether it is new in 2026; otherwise maintenance, likely reject."
+  },
+  {
+   "event_id": "ev-256e4939ea",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-3b571300e7 (previous year undecided). Third Chinese series flagged in three months and a formal inspection of foreign films online, continuing 2025's enforcement ev-3b571300e7 (2025 candidate of this run, undecided); the inspection campaign may be a step up - settle by its scope; otherwise continuation.",
+   "of": "ev-3b571300e7"
+  },
+  {
+   "event_id": "ev-df935af356",
+   "disposition": "unclear",
+   "reason": "National election held at 20 polling stations in the Truong Sa special zone; a five-yearly routine (last 2021, no candidate then), first under the special zone - likely maintenance; it may be read as an expression of 2025's ev-f315fe6d0f."
+  },
+  {
+   "event_id": "ev-49df757118",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-9ea73dd699 (previous year undecided). Protest with representations against Chinese reclamation at Antelope Reef; same method as earlier Paracel protests (2025's ev-9ea73dd699), answering a new Chinese act (Chubb's counterfactual) - likely continuation. Named against 2025's ev-9ea73dd699.",
+   "of": "ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-5b43100745",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-782295e0f1 (previous year undecided). Three new harbours (15 in all) and continued landfill through May 2026, continuing the 2025 reclamation (lead ev-782295e0f1) (2025 candidate of this run, undecided); no new features or numbers above 2025 yet - likely continuation; settle when a full-year total exists.",
+   "of": "ev-782295e0f1"
+  },
+  {
+   "event_id": "ev-215337fdcf",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-200b863687 (previous year undecided). Annual spring delegation voyage to Truong Sa and DK1, routine repeat of 2025's ev-200b863687 (2025 candidate of this run, undecided); likely continuation.",
+   "of": "ev-200b863687"
+  },
+  {
+   "event_id": "ev-0193a85f28",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Protest of Taiwan's coast guard exercises and chief's visit at Itu Aba; no Taiwan protest among the 2024 or 2025 candidates (last 2023, ev-59b05b7997), so new again against the previous year - unless the gap is in the sources."
+  },
+  {
+   "event_id": "ev-3860d38b36",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-9ea73dd699 (previous year undecided). Annual protest of China's fishing ban, repeat of 2025's ev-9ea73dd699 (2025 candidate of this run, undecided); likely continuation.",
+   "of": "ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-dd1f82e1fd",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-18ab46cfcf (previous year undecided). Protest of Chinese and Philippine flag-planting at Sandy Cay, repeat of 2025's ev-18ab46cfcf (2025 candidate of this run, undecided) (without a protest note this time); likely continuation.",
+   "of": "ev-18ab46cfcf"
+  },
+  {
+   "event_id": "ev-0c22e5bf75",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-9ea73dd699 (previous year undecided). Reassertion over the Paracels after China claimed to expel a Dutch frigate; low-weight declarative of the standing kind (2025's ev-9ea73dd699) - likely continuation.",
+   "of": "ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-1dd5c3c2e0",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-deedc91ea6 (previous year undecided). Arbitral-award anniversary statement, a repeat of 2025's ev-deedc91ea6 (2025 candidate of this run, undecided) with firmer wording ('sole legal basis'); same method - likely continuation.",
+   "of": "ev-deedc91ea6"
+  },
+  {
+   "event_id": "ev-cfb8519228",
+   "disposition": "continuation",
+   "reason": "Provisional continuation of ev-9ea73dd699 (previous year undecided). Second Antelope Reef protest, wider (adds Ba Ba island) with a demand for cessation; same method as ev-49df757118, answering continuing Chinese construction - likely not a move. Named against 2025's Paracel protest ev-9ea73dd699.",
+   "of": "ev-9ea73dd699"
+  }
+ ]
+}

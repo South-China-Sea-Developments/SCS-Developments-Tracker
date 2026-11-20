@@ -35,3 +35,6 @@ What a set's compiler could not compile is recorded in the single register `docs
 | `20261107-TW-2000s.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 38 candidate events, TW 2000s |
 | `20261107-TW-2010-2015.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 41 candidate events, TW 2010–2015 |
 | `20261107-TW-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 57 candidate events, TW 2021–Oct 2026 |
+| `20261107-CN-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 118 candidate events, CN 2021–Oct 2026 |
+| `20261107-VN-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 103 candidate events, VN 2021–Oct 2026 |
+| `20261107-PH-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 119 candidate events, PH 2021–Oct 2026 |

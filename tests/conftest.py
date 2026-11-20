@@ -9,6 +9,34 @@ DATA_DIR = ROOT / "data"
 
 
 @pytest.fixture(scope="session")
+def mats_data(tmp_path_factory):
+    """A copy of data/ holding only what the loader made from MATS 1.02 and the MAVD table: Chubb's moves,
+    the seed events and their sources. The project's own decisions (moves coded_by=project, harvested
+    events and their sources) are stripped, so tests of the loader and the site against Chubb's known
+    counts keep passing as the dataset grows. Corrections stay: they document the chubb rows as they are."""
+    import csv
+    import shutil
+
+    d = tmp_path_factory.mktemp("mats") / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+
+    def filter_csv(name, keep):
+        with open(d / f"{name}.csv", newline="", encoding="utf-8") as f:
+            r = csv.DictReader(f)
+            fields, rows = r.fieldnames, [x for x in r if keep(x)]
+        with open(d / f"{name}.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        return rows
+
+    filter_csv("moves", lambda m: m["coded_by"] == "chubb")
+    kept = {e["event_id"] for e in filter_csv("events", lambda e: e["harvest_run_id"].startswith("seed"))}
+    filter_csv("sources", lambda s_: s_["event_id"] in kept)
+    return d
+
+
+@pytest.fixture(scope="session")
 def loaded():
     """Canonical tables built in memory from the raw inputs (never touches data/*.csv)."""
     from pipeline.load_mats import load_tables
