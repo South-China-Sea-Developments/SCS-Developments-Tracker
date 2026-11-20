@@ -96,11 +96,11 @@ it, ongoing through it or later), newest first, each with `through <year>` and i
 characters (2026-11-20; the review page shows the same list in full). Generate records only from a run branch
 with `main` merged in, so the lists reflect the moves accepted since the branch was cut (`.gitattributes` gives
 `data/*.csv` the union merge rule, since the branch and `main` both append rows; a clone whose branch predates the
-rule gets it from `.git/info/attributes`, as the nightly task does).
+rule gets it from `.git/info/attributes`, as the apply task does).
 
-The nightly task refreshes both move lists on the rows still in the base (`context-diff` builds the connector
+The weekly apply task refreshes both move lists on the rows still in the base (`context-diff` builds the connector
 updates for the rows whose lists differ from today's `records`; `context-check` verifies afterwards), so a
-move accepted or extended in one sitting is on the cards the next morning. No other context column is rewritten.
+move accepted or extended in one sitting is on the cards after the next run. No other context column is rewritten.
 
 Every new row goes out with `Reviewer` already set to the `reviewer` of `pipeline/airtable.json`
 ("Angelo": one coder, decision 07), so the coder never types the name; `--reviewer` overrides it for a
@@ -141,9 +141,9 @@ mattering. Undecided rows stay. From the run's branch (`harvest/<run_id>`):
    describe the latest sitting only, and a row whose decision was archived in an earlier sitting (a failed or
    partial clear) is left out of `decisions.json`, so `decide` is never asked to re-apply it.
 
-Since 2026-11-19 the nightly scheduled task runs steps 1–4 for every run with rows marked ✓ in `Complete` and
+Since 2026-11-19 the scheduled apply task (weekly, Mondays 01:35, since 2026-11-20; *Run now* in the app for a sitting that should go out sooner) runs steps 1–4 for every run with rows marked ✓ in `Complete` and
 merges the review pull request (decision 07 as amended; prompt in `docs/apply-task-prompt.md`). A row marked ✗,
-and a merge whose lead is not yet decided, wait for the next night.
+and a merge whose lead is not yet decided, wait for the next run.
 
 With a token, `clear --run <run_id>` deletes a whole run's rows but archives nothing: run `archive` first.
 
