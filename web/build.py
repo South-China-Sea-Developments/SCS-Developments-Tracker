@@ -202,14 +202,15 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
                "t": [t for t in schema.TYPE_FLAGS if m[t] == "1"], "d": [d for d in schema.DOMAIN_FLAGS if m[d] == "1"],
                "i": [i for i in schema.ISSUE_FLAGS if m[i] == "1"], "g": sorted({d[1] for d in m["dyads"].split() if len(d) == 2}),
                "src": len(sources_by_event.get(e["event_id"], [])), "seed": e["harvest_run_id"] == SEED_RUN}
+        # every event counts on its sub-region (its own, else its move's), so the ten polygons hold the
+        # whole dataset whatever the sources could place; an event with coordinates is drawn at them too
+        rec["sr"] = map_subregions(e, m)
+        for sr in rec["sr"]:
+            cc["subregions"][sr] += 1
         if e["lat"] and e["lon"]:
             rec["lat"], rec["lon"] = round(float(e["lat"]), 4), round(float(e["lon"]), 4)
             cc["points"] += 1
             counts["n_points"] += 1
-        else:
-            rec["sr"] = map_subregions(e, m)
-            for sr in rec["sr"]:
-                cc["subregions"][sr] += 1
         out.append(rec)
     return {"events": out, "counts": counts}
 

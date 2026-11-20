@@ -1,0 +1,359 @@
+{
+ "run_id": "TW-2016-2020",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-ba481f4ff5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW16-taiping-island-visits",
+   "reason": "Novelty: a head-of-state visit to Taiping framed as proof of island status under UNCLOS Art. 121, the centre of a 2016 campaign of state-organised visits (surveyors, journalists, foreign scholars, ex-premiers, legislators); 2015's record shows one ministerial wharf-opening visit (ev-a72d90aae9) and nothing comparable in method (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-0304343be9",
+   "disposition": "same_move",
+   "of": "ev-ba481f4ff5",
+   "group": "TW16-taiping-island-visits",
+   "reason": "COA scientific survey and FM-led delegation of foreign scholars to Taiping (22-23 Jan) to show it is an island: the opening act of the island-status visit campaign led by ev-ba481f4ff5."
+  },
+  {
+   "event_id": "ev-d1eedbbd8d",
+   "disposition": "same_move",
+   "of": "ev-ba481f4ff5",
+   "group": "TW16-taiping-island-visits",
+   "reason": "Government-flown media tour of Taiping with Ma's press conference inviting the tribunal to visit: same island-status campaign as ev-ba481f4ff5."
+  },
+  {
+   "event_id": "ev-7fa83b52b7",
+   "disposition": "same_move",
+   "of": "ev-ba481f4ff5",
+   "group": "TW16-taiping-island-visits",
+   "reason": "Government-flown visit of foreign international-law scholars to Taiping (15 Apr): same island-status campaign as ev-ba481f4ff5."
+  },
+  {
+   "event_id": "ev-2deaea07da",
+   "disposition": "same_move",
+   "of": "ev-ba481f4ff5",
+   "group": "TW16-taiping-island-visits",
+   "reason": "CGA-organised visit of ex-premiers and ex-NSC chiefs to Taiping to underscore sovereignty (5 May): another visit of the 2016 campaign led by ev-ba481f4ff5."
+  },
+  {
+   "event_id": "ev-2e3e4cefea",
+   "disposition": "same_move",
+   "of": "ev-ba481f4ff5",
+   "group": "TW16-taiping-island-visits",
+   "reason": "Cross-party legislative delegation flown to Taiping after the award (20 Jul): same pattern of state-organised sovereignty visits as ev-ba481f4ff5; a coder could instead treat the post-award visits as a separate reaction, but the method is unchanged."
+  },
+  {
+   "event_id": "ev-2a94a9d2e3",
+   "disposition": "continuation",
+   "of": "ev-a72d90aae9",
+   "reason": "Interior Minister's inspection visit framed as administering the island repeats the Interior Minister's December 2015 Taiping visit ev-a72d90aae9 at the same level (rests on TW-2010-2015's undecided 2015 candidates in the prev file); could equally be folded into the 2016 visit campaign ev-ba481f4ff5."
+  },
+  {
+   "event_id": "ev-acf304a500",
+   "disposition": "continuation",
+   "of": "ev-f25e15d566",
+   "reason": "Routine MOFA reiteration of the claim, the same line as MOFA's 2015 statements ev-f25e15d566 / ev-3b554e2e9b (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-9ca9695db5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: a formal government Position Paper on ROC South China Sea policy, with its legal argument for Taiping's island status, is a new kind of declarative act against 2015's press statements and speeches (ev-3b554e2e9b, ev-83465fba0d) (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-6210ef1384",
+   "disposition": "continuation",
+   "of": "ev-83465fba0d",
+   "reason": "Ma's conference speech restating the historical and legal basis of the claim repeats his 2015 forum speech ev-83465fba0d at the same level (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-18a92b559f",
+   "disposition": "continuation",
+   "of": "ev-f25e15d566",
+   "reason": "Rejecting the arbitral award and its finding on Taiping repeats, at higher volume, MOFA's October 2015 non-recognition of the tribunal's rulings ev-f25e15d566 — the same method of non-recognition; Taipei would have said the same of any award (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-1f32ab4b0c",
+   "disposition": "continuation",
+   "of": "ev-f25e15d566",
+   "reason": "Legislative joint statement and Premier's rejection of the award: further statements of the non-recognition line of ev-f25e15d566 (Oct 2015); also overlaps ev-18a92b559f (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-edf7e4f82d",
+   "disposition": "continuation",
+   "of": "ev-f25e15d566",
+   "reason": "Tsai's NSC declaration rejecting the award restates the non-recognition line of ev-f25e15d566 (rests on TW-2010-2015's undecided 2015 candidates in the prev file); its announced actions (patrols, Taiping as aid/research base) are judged where carried out (ev-c7151410a8, ev-22cb942a65)."
+  },
+  {
+   "event_id": "ev-7ff9759a91",
+   "disposition": "continuation",
+   "of": "ev-83465fba0d",
+   "reason": "Presidential sovereignty reaffirmation at a 70th-anniversary exhibition; same level as Ma's 2015 restatement ev-83465fba0d (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-8666c321f6",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: detaining 41 Chinese crew and their vessel off Pratas, the CGA's largest anti-poaching mission there; nothing comparable among the 2015 candidates (ev-83465fba0d .. ev-32601234e7 are statements and the wharf opening) (rests on TW-2010-2015's undecided 2015 candidates in the prev file) — provisional, as the thin 2015 record may simply miss routine Pratas arrests."
+  },
+  {
+   "event_id": "ev-c7151410a8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW16-naval-patrols",
+   "reason": "Novelty: a navy frigate patrol to the Taiping area dispatched by the president after the award; no naval patrol or warship presence appears in the 2015 record (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-9ea126bc40",
+   "disposition": "same_move",
+   "of": "ev-c7151410a8",
+   "group": "TW16-naval-patrols",
+   "reason": "Warships (frigate, LST-232) berthing at the new Taiping pier for transport and resupply in May: the same new naval presence as ev-c7151410a8, made possible by the 2015 pier."
+  },
+  {
+   "event_id": "ev-e9dcab9527",
+   "disposition": "same_move",
+   "of": "ev-c7151410a8",
+   "group": "TW16-naval-patrols",
+   "reason": "Announced step-up of CGA and Navy patrols near Taiping (Wei-hsing, Taitung, Di Hua) to protect fishermen: part of the July 2016 patrol move led by ev-c7151410a8; deployments not separately confirmed."
+  },
+  {
+   "event_id": "ev-88ca18d348",
+   "disposition": "unclear",
+   "reason": "Civilian-initiated Pingtung fishing flotilla to Taiping, escorted by the CGA and allowed to dock; settles on whether the escort makes it state-sanctioned activism — if so same move as ev-c7151410a8, otherwise likely reject (the cabinet said it added nothing to sovereignty)."
+  },
+  {
+   "event_id": "ev-b9da9c63ff",
+   "disposition": "continuation",
+   "of": "ev-a72d90aae9",
+   "reason": "Small classified structures on Taiping's shoreline (imagery-dated) continue the 2015 construction on the island (wharf and lighthouse, ev-a72d90aae9) at a lower level (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-22cb942a65",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: a cross-agency SAR exercise off Taiping (8 vessels, 3 aircraft, 336 personnel), the first enactment of Tsai's 'humanitarian base' plan; no exercise at Taiping appears in the 2015 record (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-444e55bbd8",
+   "disposition": "continuation",
+   "of": "ev-32601234e7",
+   "reason": "Rejecting Vietnam's protest of the SAR exercise repeats MOFA's December 2015 rejection of Vietnam's protest over the wharf opening, ev-32601234e7 (rests on TW-2010-2015's undecided 2015 candidates in the prev file)."
+  },
+  {
+   "event_id": "ev-0416376333",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: first Taiping live-fire drill in the record and the first firing of a 120mm mortar on the island; no drill appears among the 2015 candidates (rests on TW-2010-2015's undecided 2015 candidates in the prev file). Lead of the Taiping live-fire series that later years continue."
+  },
+  {
+   "event_id": "ev-a9be367970",
+   "disposition": "continuation",
+   "of": "ev-8666c321f6",
+   "reason": "Seizure of a Chinese fishing boat and crew near Pratas repeats the March 2016 Pratas detention ev-8666c321f6 by the same method, at a smaller scale."
+  },
+  {
+   "event_id": "ev-90a5fcc550",
+   "disposition": "continuation",
+   "of": "ev-18a92b559f",
+   "reason": "Advance non-recognition of a code of conduct negotiated without Taiwan is the same non-recognition line as the 2016 award rejection ev-18a92b559f."
+  },
+  {
+   "event_id": "ev-e190172118",
+   "disposition": "continuation",
+   "of": "ev-0416376333",
+   "reason": "First Taiping live-fire drill of 2017, which officials called quarterly routine: continues the 2016 Taiping live-fire practice ev-0416376333 with no change of weapons or method. Four protested drills against one recorded in 2016 could be read as a frequency move, but the officials' own 'routine, every three months' suggests the 2016 record is incomplete."
+  },
+  {
+   "event_id": "ev-673a086d86",
+   "disposition": "continuation",
+   "of": "ev-0416376333",
+   "reason": "Second 2017 Taiping live-fire drill; same quarterly practice as ev-e190172118, which continues 2016's ev-0416376333 — no 2017 move to join, so a continuation."
+  },
+  {
+   "event_id": "ev-c3c9f27d63",
+   "disposition": "continuation",
+   "of": "ev-0416376333",
+   "reason": "Third 2017 Taiping live-fire drill ('routine drill held every three months'); same practice as ev-e190172118, continuing 2016's ev-0416376333."
+  },
+  {
+   "event_id": "ev-ccf7384990",
+   "disposition": "continuation",
+   "of": "ev-9ea126bc40",
+   "reason": "Students carried to Taiping by a navy frigate on patrol for an MND seminar repeats 2016's frigate transport of students to the island (ev-9ea126bc40) and the naval patrol pattern of ev-c7151410a8."
+  },
+  {
+   "event_id": "ev-3b251e2761",
+   "disposition": "unclear",
+   "reason": "Opening Dongsha National Park to three environmental-education tours: nothing comparable in 2016, but it is unclear whether eco-tourism on an island disputed only with the PRC is an assertion; settles on whether the coder counts it as state-sanctioned tourism (then new_move, novelty), otherwise likely reject."
+  },
+  {
+   "event_id": "ev-9178112e72",
+   "disposition": "unclear",
+   "reason": "Six 155mm howitzers allocated for Itu Aba but held on Taiwan, per one unnamed official: not yet an act in the disputed area; settles on evidence the guns were deployed (then novelty against 2016's 120mm mortar, ev-0416376333), otherwise likely reject."
+  },
+  {
+   "event_id": "ev-5ef408812c",
+   "disposition": "continuation",
+   "of": "ev-acf304a500",
+   "reason": "MOFA reaffirmation and demand for inclusion after the COC framework; same routine line as MOFA's 2016 statement ev-acf304a500."
+  },
+  {
+   "event_id": "ev-def810822f",
+   "disposition": "continuation",
+   "of": "ev-444e55bbd8",
+   "reason": "MOFA rebuttal of Vietnam's protest over the August drill repeats 2016's rebuttal of Vietnam's protest over the Taiping exercise, ev-444e55bbd8."
+  },
+  {
+   "event_id": "ev-2b84d7da0c",
+   "disposition": "continuation",
+   "of": "ev-7fa83b52b7",
+   "reason": "MOST-hosted visit of an international science group to Taiping continues 2016's state-arranged visits of foreign scholars (ev-7fa83b52b7) at the same level."
+  },
+  {
+   "event_id": "ev-4598fcf4bc",
+   "disposition": "continuation",
+   "of": "ev-acf304a500",
+   "reason": "Foreign Minister's routine reiteration after the COC talks announcement; same line as ev-acf304a500 (2016)."
+  },
+  {
+   "event_id": "ev-cec90ece50",
+   "disposition": "unclear",
+   "reason": "New Year flag-raising on Taiping by the resident CGA: no 2017 ceremony is in the record, but such a ceremony is likely annual; settles on whether a 2017 one is on record (then continuation) — at most a low-level presence act, unlikely a move."
+  },
+  {
+   "event_id": "ev-e63b523f75",
+   "disposition": "continuation",
+   "of": "ev-e190172118",
+   "reason": "First Taiping live-fire drill of 2018: same quarterly practice as 2017's first drill ev-e190172118 (four protested drills each year, same garrison and weapons)."
+  },
+  {
+   "event_id": "ev-97072a47bc",
+   "disposition": "continuation",
+   "of": "ev-e190172118",
+   "reason": "Second 2018 Taiping drill; continues the quarterly practice of 2017's ev-e190172118."
+  },
+  {
+   "event_id": "ev-91e09de539",
+   "disposition": "continuation",
+   "of": "ev-e190172118",
+   "reason": "Third 2018 Taiping drill with the CGA's rebuttal; continues the quarterly practice of 2017's ev-e190172118."
+  },
+  {
+   "event_id": "ev-f92e588e29",
+   "disposition": "continuation",
+   "of": "ev-e190172118",
+   "reason": "Fourth 2018 Taiping drill (more press because of the elections, not a change of practice); continues 2017's ev-e190172118."
+  },
+  {
+   "event_id": "ev-03169672f5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: a public demand that the Philippines halt construction on a named feature (Thitu) is a new kind of declarative act against the 2018 record, which has no statement at all (only ev-cec90ece50); provisional on the thin 2018 record — earlier MOFA lines (ev-5ef408812c, 2017) were general."
+  },
+  {
+   "event_id": "ev-7ea1b1a5e7",
+   "disposition": "unclear",
+   "reason": "Quarterly Dongsha live-fire training (year summary from CGA notices): no Dongsha drill is in the 2018 record, but the notices appear only from 2019, so this may be a source artefact; settles on 2018 Dongsha notices (then continuation) — otherwise a scope move against the Taiping-only drills of 2018 (ev-e63b523f75)."
+  },
+  {
+   "event_id": "ev-11fe47614c",
+   "disposition": "unclear",
+   "reason": "RV Legend's first research cruise in the SCS basin: the source does not say it entered claimed waters or was framed as a claim; settles on that — otherwise likely reject."
+  },
+  {
+   "event_id": "ev-ef871483a6",
+   "disposition": "continuation",
+   "of": "ev-cec90ece50",
+   "reason": "Seizure and prosecution of a Chinese trawler off Dongsha continues the crackdown on trespassing foreign boats the CGA said was ongoing in January 2018 (ev-cec90ece50); same method as the 2016-17 Pratas seizures."
+  },
+  {
+   "event_id": "ev-43db79fbcc",
+   "disposition": "continuation",
+   "of": "ev-e63b523f75",
+   "reason": "First Taiping live-fire drill of 2019 (120mm mortars, 40mm guns, AT4s): same quarterly practice and weapons as 2018's first drill ev-e63b523f75."
+  },
+  {
+   "event_id": "ev-89114d8716",
+   "disposition": "unclear",
+   "reason": "'Nanyuan No. 4' humanitarian exercise off Taiping: no 2018 exercise is in the record, but the numbering implies yearly exercises since 2016's ev-22cb942a65; settles on a 2018 exercise (then continuation) — the first C-130 ambulance evacuation is a detail, not a change of method."
+  },
+  {
+   "event_id": "ev-07acac4e8e",
+   "disposition": "continuation",
+   "of": "ev-e63b523f75",
+   "reason": "Second-quarter 2019 Taiping firing notice; same quarterly practice as 2018's ev-e63b523f75."
+  },
+  {
+   "event_id": "ev-06d0d57e98",
+   "disposition": "continuation",
+   "of": "ev-e63b523f75",
+   "reason": "Third-quarter 2019 Taiping firing notice; same quarterly practice as 2018's ev-e63b523f75."
+  },
+  {
+   "event_id": "ev-8649852916",
+   "disposition": "continuation",
+   "of": "ev-7ea1b1a5e7",
+   "reason": "Dongsha garrison's routine live-fire training in 2020 continues the 2019 quarterly Dongsha firing ev-7ea1b1a5e7; the pointedly timed June announcement does not change the practice (the marine deployments are judged under ev-a831186d56)."
+  },
+  {
+   "event_id": "ev-f41ed3da70",
+   "disposition": "continuation",
+   "of": "ev-43db79fbcc",
+   "reason": "First Taiping live-fire drill of 2020: same quarterly practice as 2019's first drill ev-43db79fbcc."
+  },
+  {
+   "event_id": "ev-3c8b98780d",
+   "disposition": "continuation",
+   "of": "ev-03169672f5",
+   "reason": "MOFA protest of rivals' measures (China's new districts and names) with a sovereignty reiteration: same kind of act as the 2019 protest over Thitu, ev-03169672f5."
+  },
+  {
+   "event_id": "ev-a831186d56",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW20-pratas-reinforcement",
+   "reason": "Novelty: marines deployed to Pratas, a feature garrisoned only by the coast guard since 2000; nothing comparable in 2019 (only routine Dongsha firing, ev-7ea1b1a5e7). Lead of the 2020 Pratas military-reinforcement move."
+  },
+  {
+   "event_id": "ev-5a445d0ffa",
+   "disposition": "continuation",
+   "of": "ev-03169672f5",
+   "reason": "MOFA reaffirmation after the US declaration, opposing coercion by any claimant: same routine line as the 2019 statement ev-03169672f5."
+  },
+  {
+   "event_id": "ev-3931cebc72",
+   "disposition": "continuation",
+   "of": "ev-ef871483a6",
+   "reason": "Detention, fine and deportation of a Chinese crew off Pratas: same method as the March 2019 Dongsha seizure ev-ef871483a6; the 'crackdown' is not shown to raise the rate."
+  },
+  {
+   "event_id": "ev-2d967b5f45",
+   "disposition": "same_move",
+   "of": "ev-a831186d56",
+   "group": "TW20-pratas-reinforcement",
+   "reason": "A company of ~200 marines sent to reinforce Pratas (anonymous sources): the same reinforcement as ev-a831186d56, enlarged."
+  },
+  {
+   "event_id": "ev-4ec529f469",
+   "disposition": "same_move",
+   "of": "ev-a831186d56",
+   "group": "TW20-pratas-reinforcement",
+   "reason": "Deputy Chief of General Staff's flight to Dongsha ordering joint ISR and combat-readiness missions: part of the 2020 military reinforcement of Pratas led by ev-a831186d56."
+  },
+  {
+   "event_id": "ev-5b0dc3e2b3",
+   "disposition": "unclear",
+   "reason": "Chunghwa Post lighthouse stamps including Taiping: low-intensity symbolic act by a state company, reported only by Vietnamese sources; stamps were last seen in 2016 (ev-2deaea07da) and not in 2019, so settles on whether stamps count as assertive at all — otherwise likely reject."
+  },
+  {
+   "event_id": "ev-0a6205cda1",
+   "disposition": "continuation",
+   "of": "ev-43db79fbcc",
+   "reason": "Fourth-quarter 2020 Taiping drill; continues the quarterly practice of 2019's ev-43db79fbcc."
+  }
+ ]
+}
