@@ -1,6 +1,6 @@
-# The nightly apply task's prompt
+# The weekly apply task's prompt
 
-The Claude-app scheduled task "SCS Tracker nightly apply" (created 2026-11-19, prompt revised 2026-11-20 twice; `CRON_TZ=America/New_York 35 1 * * *`,
+The Claude-app scheduled task "SCS Tracker weekly apply" (created 2026-11-19 as a nightly task, prompt revised 2026-11-20 twice, made weekly the same day at the maintainer's request to save usage; `CRON_TZ=America/New_York 35 1 * * 1`, Mondays 01:35, and on demand with *Run now* in the app's Scheduled tasks list or by asking Claude;
 push notifications on) sends the text below at every firing. It carries the maintainer's Airtable decisions into
 the dataset and merges them (decision 07, amendment of 2026-11-19). Recorded here verbatim so the task can be
 recreated on any account (`docs/handoff.md`). Keep this file and the live task in step: when one changes, change
