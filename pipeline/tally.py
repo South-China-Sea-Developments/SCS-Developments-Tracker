@@ -9,8 +9,9 @@ counts them, so that a coder deciding a 2016 China row can see at a glance that 
 five sinkings against 2015's one — and then go to `docs/notes/frequency-sources.md` for the series that
 can carry the claim.
 
-    python -m pipeline.tally                      # writes docs/reports/candidate-tallies.md
-    python -m pipeline.tally --chubb-increases    # prints Chubb's moves worded as increases, with the sources cited
+    python -m pipeline.tally [--root DIR] [--out FILE] [--date YYYY-MM-DD]   # writes docs/reports/candidate-tallies.md
+    python -m pipeline.tally --chubb-increases   # refreshes the generated section of docs/notes/frequency-sources.md
+                                                 # (Chubb's moves worded as increases, with the sources cited)
 """
 from __future__ import annotations
 
@@ -20,6 +21,7 @@ import datetime as dt
 import glob
 import json
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -29,15 +31,15 @@ ROOT = Path(__file__).resolve().parents[1]
 # so the more specific practices come first. A candidate matching none is "other".
 PRACTICES: list[tuple[str, str]] = [
     ("sinking/ramming", r"\b(sank|sunk|sink|sinking|ramm(ed|ing)|collid(ed|ing|sion))\b"),
-    ("fisher enforcement", r"\b(fisher|fishing boat|fishing vessel|trawler)s?\b.*\b(expel|chase|drove|driven|harass|detain|arrest|seiz|confiscat|water cannon|board)|\b(expel|chased|detain|arrest|seiz|harass)\w*\b.*\b(fisher|fishing)"),
+    ("fisher enforcement", r"\b(fisher|fishing boat|fishing vessel|trawler)s?\b.*\b(expel|chase|drove|driven|harass|detain|arrest|seiz|confiscat|water cannon|boarded)|\b(expel|chased|detain|arrest|seiz|harass)\w*\b.*\b(fisher|fishing)"),
     ("detention/arrest", r"\b(detain|arrest|held|seized|captur)\w*\b.*\b(crew|vessel|boat|ship|national)s?\b"),
-    ("interception (air/sea)", r"\b(intercept|shadow|challeng|warn(ed|ing)? off|unsafe|blocked|blocking|blockade|boarded|resupply|water cannon|laser)\w*\b|\b(aircraft|plane|warship|destroyer|navy ship)\b.*\b(intercept|shadow|challeng|expel)"),
+    ("interception (air/sea)", r"\b(intercept|shadow(ed|ing)|challenged (an? |the )?(ship|vessel|aircraft|plane|boat|patrol)|warn(ed|ing)? off|unsafe|blocked|blocking|blockade|boarded|resupply|water cannon|laser)\w*\b|\b(aircraft|plane|warship|destroyer|navy ship)\b.*\b(intercept|shadow|challeng|expel)"),
     ("exercise/drill", r"\b(exercise|drill|live[- ]fire|war ?game)s?\b"),
+    ("energy/survey", r"\b(oil|gas\b|natural gas|drill(ing)? rig|rig\b|survey|seismic|exploration|blocks?\b|cnooc|petro|hydrocarbon|pipeline)\w*\b"),
     ("patrol/presence", r"\b(patrol|presence|deploy|station|anchor|loiter|swarm|flotilla|militia)\w*\b"),
     ("diplomatic statement", r"\b(protest|spokes|note verbale|summon|démarche|demarche|condemn|rejected|reiterat|urged|lodged|statement)\w*\b"),
-    ("energy/survey", r"\b(oil|gas|drill(ing)? rig|rig\b|survey|seismic|exploration|block|cnooc|petro|hydrocarbon|pipeline)\w*\b"),
     ("legislation/administration", r"\b(laws?\b(?!-enforcement)|regulation|decree|ordinance|baseline|named|names|administrative|jurisdiction|\bban\b|moratorium|licen[cs]e|permit|map\b|passport|county|city established|census)"),
-    ("occupation/landing", r"\b(occup|landed|landing|garrison|marker|flag|visit(ed|s)?\b|flew to|inspection tour)\w*\b"),
+    ("occupation/landing", r"\b(occup|landed|landing|garrison|marker|flags?\b|flag-raising|visit(ed|s)?\b|flew to|inspection tour)\w*\b"),
     ("construction/reclamation", r"\b(reclamation|reclaim|dredg|construct|build|runway|airstrip|hangar|radar|lighthouse|facilit|installation|outpost|harbou?r|wharf|pier)\w*\b"),
 ]
 _COMPILED = [(name, re.compile(p, re.I)) for name, p in PRACTICES]
@@ -60,7 +62,7 @@ def load_candidates(root: Path = ROOT) -> list[dict]:
     out: dict[str, dict] = {}
 
     def key(e: dict) -> str:
-        return f"{e['claimant']}|{e['date_start']}|{(e['summary'] or '')[:60]}"
+        return f"{e['claimant']}|{e['date_start']}|{e['summary'] or ''}"
 
     for f in sorted(glob.glob(str(root / "harvest" / "manual" / "*.json"))):
         for e in json.loads(Path(f).read_text(encoding="utf-8")):
@@ -119,7 +121,25 @@ def report(rows: list[dict], today: str = "") -> str:
     return "\n".join(lines)
 
 
-_CITE = re.compile(r"\(([^()]*?(?:“|\"|,)[^()]*?)\)")
+_AMOUNT = re.compile(r"^[A-Z$€£¥]*\$?\s?[\d.,]+\s*(m|bn|million|billion)?$", re.I)
+
+
+def _citations(text: str) -> list[str]:
+    """The parenthesised citations of a description: balanced parentheses (nesting allowed), minus
+    bare amounts such as "(S$3,400)" and bare years."""
+    out, depth, start = [], 0, -1
+    for i, ch in enumerate(text):
+        if ch == "(":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == ")" and depth:
+            depth -= 1
+            if depth == 0:
+                inner = text[start + 1:i].strip()
+                if inner and not _AMOUNT.match(inner) and not re.fullmatch(r"\d{4}(-\d{2,4})?", inner):
+                    out.append(inner)
+    return out
 _INCREASE = re.compile(r"\b(increas\w*|more frequent|intensif\w*|stepped up|doubl\w*|from \d[\d,+]* .{0,40}? to \d[\d,+]*|at least \d+|expan\w*|accelerat\w*|ninefold|surge\w*)", re.I)
 
 
@@ -134,7 +154,7 @@ def chubb_increases(moves: list[dict]) -> list[dict]:
         hit = _INCREASE.search(d)
         if not hit:
             continue
-        cites = [c.strip() for c in _CITE.findall(d)]
+        cites = _citations(d)
         out.append({"move_id": m["move_id"], "claimant": m["claimant"], "year": m["year"], "practice": practice(d),
                     "wording": hit.group(0), "sources": cites, "description": d})
     return out
@@ -151,10 +171,30 @@ def increases_markdown(items: list[dict]) -> str:
         lines.append(f"### {cl} — {pr}")
         lines.append("")
         for it in sorted(by[(cl, pr)], key=lambda x: x["move_id"]):
-            src = "; ".join(it["sources"]) if it["sources"] else "no source in parentheses"
+            src = "; ".join(it["sources"]) if it["sources"] else "no parenthesised citation parsed; see the description"
             lines.append(f"- `{it['move_id']}` ({it['year']}, \"{it['wording']}\"): {src}")
         lines.append("")
     return "\n".join(lines)
+
+
+START, END = "<!-- generated: start -->", "<!-- generated: end -->"
+
+
+def refresh_generated(note: Path, md: str) -> int:
+    """Replace the text between the markers of the note with `md`; print it instead when the note or a
+    marker is missing or the markers are out of order (exit 2), so a broken note is never rewritten."""
+    if not note.exists():
+        print(md)
+        return 0
+    s = note.read_text(encoding="utf-8")
+    i, j = s.find(START), s.rfind(END)
+    if i < 0 or j < 0 or j < i:
+        print(f"{note}: generated-section markers missing or out of order; nothing written", file=sys.stderr)
+        print(md)
+        return 2
+    note.write_text(f"{s[:i]}{START}\n{md.replace(END, '')}\n{s[j:]}", encoding="utf-8")
+    print(f"generated section refreshed in {note}")
+    return 0
 
 
 def main(argv=None) -> int:
@@ -167,16 +207,7 @@ def main(argv=None) -> int:
     if a.chubb_increases:
         with open(a.root / "data" / "moves.csv", newline="", encoding="utf-8") as fh:
             md = increases_markdown(chubb_increases(list(csv.DictReader(fh))))
-        note = a.root / "docs" / "notes" / "frequency-sources.md"
-        if note.exists() and "<!-- generated: start -->" in note.read_text(encoding="utf-8"):
-            s = note.read_text(encoding="utf-8")
-            head, rest = s.split("<!-- generated: start -->", 1)
-            tail = rest.split("<!-- generated: end -->", 1)[1]
-            note.write_text(f"{head}<!-- generated: start -->\n{md}\n<!-- generated: end -->{tail}", encoding="utf-8")
-            print(f"generated section refreshed in {note}")
-        else:
-            print(md)
-        return 0
+        return refresh_generated(a.root / "docs" / "notes" / "frequency-sources.md", md)
     rows = load_candidates(a.root)
     out = a.out or a.root / "docs" / "reports" / "candidate-tallies.md"
     out.write_text(report(rows, a.date) + "\n", encoding="utf-8")

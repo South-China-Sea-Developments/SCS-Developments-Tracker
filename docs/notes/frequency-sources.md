@@ -21,7 +21,7 @@ not make a pair.
 
 ## Across claimants
 
-- **AMTI (CSIS Asia Maritime Transparency Initiative)** — satellite-based counts since 2016: vessels present
+- **AMTI (CSIS Asia Maritime Transparency Initiative)** — satellite-based counts from 2015: vessels present
   at named features by day (Scarborough, Second Thomas, Thitu, Whitsun/Julian Felipe, Luconia), CCG and
   militia deployment tallies, island-building footprints, and periodic "year in review" pieces. The best
   single source for *presence* and *deployment* frequency 2016–. **(verify** the feature and the years: coverage
@@ -37,8 +37,9 @@ not make a pair.
   summaries with counts of Chinese construction and deployments. **(verify)**
 - **IISS Military Balance / Strategic Survey**; **ONI "PLA Navy" reports** — force structure counts (hulls,
   coast guard tonnage), useful for the scale of a practice rather than its incidents. **(verify)**
-- **Chubb's own sources for 1970–2015** (Appendix II of *Chinese Expansion and the SCS* and the IS 2021
-  codebook): *Zhongguo haiyang nianjian* (ZGHYNJ, SOA yearbook) for rights-defence patrol counts;
+- **Chubb's own sources for 1970–2015** ("PRC Assertiveness in the South China Sea: Measuring Continuity
+  and Change, 1970–2015", *International Security* 45:3, 2021, and its online appendix — the codebook and
+  Appendix II case list in `docs/codebook/`): *Zhongguo haiyang nianjian* (ZGHYNJ, SOA yearbook) for rights-defence patrol counts;
   *Zhongguo yuye nianjian* (ZGYYNJ, fisheries yearbook) for expulsions and seizures; CCTV *Lan jiang weishi*;
   NISCSS annual assessments; *People's Daily* article counts (CN199901 "ninefold"). Several run past 2015
   and remain the natural comparator for a China frequency claim. See the generated section below.
@@ -119,8 +120,8 @@ not make a pair.
 ## Chubb's increase-worded moves and the sources he cited (generated)
 
 Regenerate with `python -m pipeline.tally --chubb-increases`; practices are read off the wording and can
-misfile a move. "No source in parentheses" means the description cites none inline (the row's `sources`
-column may still name one).
+misfile a move. "No parenthesised citation parsed" means the description cites none inline in parentheses
+(the move's events and their sources are on its case page).
 
 <!-- generated: start -->
 ### CN — construction/reclamation
@@ -137,11 +138,12 @@ column may still name one).
 ### CN — energy/survey
 
 - `CN200102` (2001, "increases"): Gomez, “Philippine military report”; Kyodo, "China continues"
+- `CN201208` (2012, "increases"): Permal, “The rising turbulence”; Clad and Manning, “Commentary: China's bad diplomacy”
 
 ### CN — exercise/drill
 
-- `CN201002` (2010, "At least 3"): no source in parentheses
-- `CN201302` (2013, "increase"): no source in parentheses
+- `CN201002` (2010, "At least 3"): no parenthesised citation parsed; see the description
+- `CN201302` (2013, "increase"): no parenthesised citation parsed; see the description
 
 ### CN — fisher enforcement
 
@@ -150,19 +152,19 @@ column may still name one).
 
 ### CN — legislation/administration
 
-- `CN199602` (1996, "expanse"): no source in parentheses
+- `CN199602` (1996, "expanse"): no parenthesised citation parsed; see the description
 
 ### CN — other
 
-- `CN197403` (1974, "Increased"): no source in parentheses
-- `CN198601` (1986, "increases"): CQCB, “Chuanzhang cheng”; Martinson, "Sovereignty fish," 6; SOA, ZGHYNJ 1994-1996, 45
-- `CN199101` (1991, "increased"): no source in parentheses
-- `CN199901` (1999, "increases"): no source in parentheses
+- `CN197403` (1974, "Increased"): no parenthesised citation parsed; see the description
+- `CN198601` (1986, "increases"): CQCB, “Chuanzhang cheng”; Martinson, "Sovereignty fish," 6; 关于放宽政策，加速发展水产业的指示; 潜水采捕渔船; SOA, ZGHYNJ 1994-1996, 45
+- `CN199101` (1991, "increased"): no parenthesised citation parsed; see the description
+- `CN199901` (1999, "increases"): no parenthesised citation parsed; see the description
 - `CN200002` (2000, "increases"): GXRB, “Guangxi fishermen receive state subsidies”; SOA, ZGYYNJ 2002, 119
 - `CN200402` (2004, "Expansion"): Martinson, "Sovereignty fish," 4
-- `CN200901` (2009, "increase"): no source in parentheses
-- `CN201101` (2011, "increase"): no source in parentheses
-- `CN201401` (2014, "increase"): no source in parentheses
+- `CN200901` (2009, "increase"): no parenthesised citation parsed; see the description
+- `CN201101` (2011, "increase"): no parenthesised citation parsed; see the description
+- `CN201401` (2014, "increase"): no parenthesised citation parsed; see the description
 
 ### CN — patrol/presence
 
@@ -173,7 +175,6 @@ column may still name one).
 - `CN201001` (2010, "increase"): CCTV, “Lan jiang weishi”; SOA, ZGHYNJ 2011, 148
 - `CN201102` (2011, "increase"): CCTV, “Lan jiang weishi”
 - `CN201202` (2012, "increase"): CCTV, “Lan jiang weishi”
-- `CN201208` (2012, "increases"): Permal, “The rising turbulence”; Clad and Manning, “Commentary: China's bad diplomacy”
 
 ### CN — sinking/ramming
 
@@ -185,13 +186,13 @@ column may still name one).
 
 ### PH — exercise/drill
 
-- `PH197602` (1976, "increases"): NSQDDSJ 50-55; NSZGSZHS 35; Dzurek, The Spratly Islands Dispute, 20; PXP, "SC 72 Recto Bank"
+- `PH197602` (1976, "increases"): Anbo; NSQDDSJ 50-55; NSZGSZHS 35; Dzurek, The Spratly Islands Dispute, 20; 蒙大拿矿物资源公司; NSQDDSJ 105-106; PXP, "SC 72 Recto Bank"
 - `PH199003` (1990, "expansion"): Nansha, "Nanhai Zhudao dashi nianbiao"
 
 ### PH — fisher enforcement
 
 - `PH199202` (1992, "intensify"): Dzurek, The Spratly Islands Dispute, 25; NSQDDSJ 217-218; NSQDDSJ 232; Nansha, "Nanhai Zhudao dashi nianbiao
-- `PH199702` (1997, "at least 2000"): PHL Memorial, Annex 28-29; Van Pham, The Use or Threat of Force, 527; Deutsche Presse-Agentur; PHL Memorial Annex 37; Storey, Creeping Assertiveness, 98; PHL Memorial, Annex 41-42
+- `PH199702` (1997, "at least 2000"): MID 3.0 Narratives #4028; MID 3.0 Narratives #4028; PHL Memorial, Annex 28-29; Van Pham, The Use or Threat of Force, 527; Deutsche Presse-Agentur; PHL Memorial Annex 37; Storey, Creeping Assertiveness, 98; PHL Memorial, Annex 41-42
 - `PH200002` (2000, "intensification"): Van Pham, The Use or Threat of Force, 528; China Makes Representations to the Philippines on Killing of Fisherman,” Xinhua News Agency, June 2, 2000
 - `PH200101` (2001, "expands"): Van Pham, "The Use or Threat of Force," 528; AFP, "China Summons Philippine Official Over Sea Dispute"; CNN, “Row Grows Over Disputed Spratly Island."; PCA, "Award," 323-325
 
@@ -201,12 +202,12 @@ column may still name one).
 
 ### PH — occupation/landing
 
-- `PH197701` (1977, "expansion"): AMTI, "Island Features"; Vuving, "Who Occupies What"
+- `PH197701` (1977, "expansion"): Patag/费信岛; AMTI, "Island Features"; Vuving, "Who Occupies What"
 - `PH199502` (1995, "increases"): Dzurek, "China Occupies Mischief Reef," p. 67
 
 ### PH — patrol/presence
 
-- `PH198501` (1985, "increased"): no source in parentheses
+- `PH198501` (1985, "increased"): Fravel 2008 p.290
 - `PH201103` (2011, "increased"): Thayer, Chinese Assertiveness, 80
 
 ### VN — construction/reclamation
@@ -216,18 +217,18 @@ column may still name one).
 
 ### VN — diplomatic statement
 
-- `VN198702` (1987, "expansive"): VN MOFA spokesman statement, April 20, 1994, reprinted in Zhang Liangfu NSQDDSJ 253
-- `VN200903` (2009, "intensifies"): Do Thanh Hai, Vietnam and the South China Sea, 174-5
+- `VN200903` (2009, "intensifies"): onward; Do Thanh Hai, Vietnam and the South China Sea, 174-5
 
 ### VN — energy/survey
 
-- `VN198002` (1980, "expand"): NSZGSZHS 40; Zhang Liangfu NSQDDSJ, 88; Dzurek, The Spratly Islands Disupute, 18
+- `VN198002` (1980, "expand"): NSZGSZHS 40; Zhang Liangfu NSQDDSJ, 88; Dzurek, The Spratly Islands Disupute, 18; NSZGSHS 352-355
 - `VN198101` (1981, "intensifies"): Lien, "The Economics of Petroleum," 6.28
-- `VN199002` (1990, "increases"): Lien, "The Economics of Petroleum," 6.12; Lien, "The Economics of Petroleum," 6.20
-- `VN199205` (1992, "Increased"): Zhang, "Appendix II"; Zhang, "Appendix II"
-- `VN199305` (1993, "Expanded"): no source in parentheses
-- `VN199503` (1995, "Expansion"): no source in parentheses
-- `VN201302` (2013, "intensifies"): no source in parentheses
+- `VN198702` (1987, "expansive"): onward; VN MOFA spokesman statement, April 20, 1994, reprinted in Zhang Liangfu NSQDDSJ 253
+- `VN199002` (1990, "increases"): onward; wildcat wells; Lien, "The Economics of Petroleum," 6.12; Lien, "The Economics of Petroleum," 6.20
+- `VN199205` (1992, "Increased"): Taffer dataset; Taffer dataset; Zhang, "Appendix II"; Zhang, "Appendix II"
+- `VN199305` (1993, "Expanded"): SCMP via Taffer dataset
+- `VN199503` (1995, "Expansion"): Japan Economic Newswire via Taffer dataset
+- `VN201302` (2013, "intensifies"): Flights bring Truong Sa closer to the mainland - Nhan Dan Online
 
 ### VN — exercise/drill
 
@@ -235,7 +236,7 @@ column may still name one).
 
 ### VN — fisher enforcement
 
-- `VN200102` (2001, "Intensified"): S$3,400; Chubb, "Adventure, regret, anger"; NISCSS, Nanhai Xingshi 2006 and 2008-09; Chubb, "Relax, wife"; Chubb, "A certain neighbouring country"
+- `VN200102` (2001, "Intensified"): Straits Times via Taffer dataset; AFP; AFP via Taffer dataset; Reuters via Taffer dataset; Chubb, "Adventure, regret, anger"; NISCSS, Nanhai Xingshi 2006 and 2008-09; Chubb, "Relax, wife"; Chubb, "A certain neighbouring country"
 
 ### VN — legislation/administration
 
@@ -243,13 +244,13 @@ column may still name one).
 
 ### VN — occupation/landing
 
-- `VN201104` (2011, "stepped up"): Zhang, "Appendix II"; Zhang, "Appendix II"; CSIS 2017, 237
+- `VN201104` (2011, "stepped up"): Zhang, "Appendix II"; 'Vietnam beefs up..; Zhang, "Appendix II"; CSIS 2017, 237
 
 ### VN — patrol/presence
 
-- `VN197402` (1974, "at least 5"): NSZGSZHS 20, 119-120, 222-224; Chen Jie PhD, p.151; AMTI
-- `VN199802` (1998, "Expansion"): Chen Qi, "Expansion and Military Deployment; Fravel, Strong Borders, 298; Do Thanh Hai, Vietnam and the South China Sea, 101
+- `VN197402` (1974, "at least 5"): NSZGSZHS 20, 119-120, 222-224; Chen Jie PhD, p.151; AMTI; or at least 5 new ones?; 南威岛; 判敦谦沙洲; 南子岛; 景宏; 鸿庥岛; NSZGSZHS 115-124
+- `VN199802` (1998, "Expansion"): Aonan; Jindun; Chen Qi, "Expansion and Military Deployment; Fravel, Strong Borders, 298; Ba Ke reefs; Do Thanh Hai, Vietnam and the South China Sea, 101
 - `VN200402` (2004, "Increased"): Do Thanh Hai, Vietnam and the South China Sea, 137
-- `VN200804` (2008, "stepped up"): Do Thanh Hai, Vietnam and the South China Sea, 158-160
+- `VN200804` (2008, "stepped up"): Vietnam News Brief Service via Taffer dataset; Do Thanh Hai, Vietnam and the South China Sea, 158-160
 
 <!-- generated: end -->
