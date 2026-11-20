@@ -304,8 +304,20 @@ def _check_edits(eid: str, e: dict, edits: dict) -> dict:
     return out
 
 
+RETIRED = Path(__file__).resolve().parents[1] / "data" / "reference" / "retired_moves.csv"
+
+
+def retired_move_ids(path: Path = RETIRED) -> set[str]:
+    """Ids of retracted moves: never reused, so a citation of one finds a gap, not another move."""
+    if not path.exists():
+        return set()
+    with open(path, newline="", encoding="utf-8") as f:
+        return {r["move_id"] for r in csv.DictReader(f)}
+
+
 def next_move_id(claimant: str, year: int, moves: list[dict]) -> str:
-    used = {int(m["move_id"][-2:]) for m in moves if m["move_id"].startswith(f"{claimant}{year}") and m["move_id"][-2:].isdigit()}
+    ids = {m["move_id"] for m in moves} | retired_move_ids()
+    used = {int(i[-2:]) for i in ids if i.startswith(f"{claimant}{year}") and i[-2:].isdigit()}
     n = 1
     while n in used:
         n += 1
