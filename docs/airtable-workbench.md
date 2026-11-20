@@ -91,6 +91,11 @@ python -m pipeline.airtable run-record --run harvest/runs/<run_id> --pr N --note
 python -m pipeline.airtable records --run <run_id> --pr N --run-record <recXXXXXXXXXXXXXX> --out records.json
 ```
 
+`Previous year's moves` lists every move of the claimant open through the previous year (coded in or before
+it, ongoing through it or later), newest first, each with `through <year>` and its description cut to 160
+characters (2026-11-20; the review page shows the same list in full). Generate records only from a run branch
+with `main` merged in, so the lists reflect the moves accepted since the branch was cut.
+
 Every new row goes out with `Reviewer` already set to the `reviewer` of `pipeline/airtable.json`
 ("Angelo": one coder, decision 07), so the coder never types the name; `--reviewer` overrides it for a
 sitting by someone else, and `--reviewer ""` leaves the column blank. A refresh never touches it, like the

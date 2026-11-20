@@ -581,3 +581,11 @@ def test_a_blank_note_on_a_reject_takes_the_presorts_continuation_as_confirmed()
     assert d["E2"]["note"] == "continuation of ev-1234567890 (pre-sort confirmed)"
     assert d["E3"]["note"] == "statement to a non-claimant"
     assert d["E4"]["note"] == ""
+
+
+def test_the_airtable_move_lists_cut_long_descriptions_at_a_word():
+    long = "word " * 80
+    text = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": long}])
+    assert text.startswith("CN200802 [coercive, through 2016]: word word") and text.endswith("…") and len(text) < 200
+    short = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": "short"}])
+    assert short == "CN200802 [coercive, through 2016]: short"

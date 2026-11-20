@@ -308,10 +308,17 @@ def _subregion_choice(n: str) -> str:
     return SUBREGION_CHOICES[int(n) - 1] if n and n.isdigit() and 1 <= int(n) <= 10 else ""
 
 
+MOVE_TEXT_CHARS = 160   # of a move's description in the Airtable lists: orientation, not reading; the review page shows 300
+
+
 def _moves_text(moves: list[dict]) -> str:
-    """The claimant's moves of a year as the review page lists them, one per line."""
+    """The claimant's moves as the review page lists them, one per line, the description cut to
+    MOVE_TEXT_CHARS (a 2016 China event lists some fifty open moves; the column is for finding the
+    one to name, and the case page has the rest)."""
+    def cut(d: str) -> str:
+        return d if len(d) <= MOVE_TEXT_CHARS else d[:MOVE_TEXT_CHARS].rsplit(" ", 1)[0] + "…"
     return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}{', through ' + m['ongoing_through'] if m.get('ongoing_through') else ''}]"
-                     f"{' pending' if m['status'] != 'accepted' else ''}: {m['description']}" for m in moves)
+                     f"{' pending' if m['status'] != 'accepted' else ''}: {cut(m['description'])}" for m in moves)
 
 
 def flags_for(e: dict) -> list[str]:
