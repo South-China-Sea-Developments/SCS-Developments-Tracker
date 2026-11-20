@@ -1,0 +1,166 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-0ce3112282",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CA"
+    ],
+    "domains": [
+     "physical",
+     "domestic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-13ddf85191",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CV"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-3a64632f5a",
+   "action": "reject",
+   "note": "continuation of CN200802 (ongoing through 2015)"
+  },
+  {
+   "event_id": "ev-5ba80d68d3",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CP"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "6"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-66585c9b2f",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-9c7790c4a9"
+  },
+  {
+   "event_id": "ev-7ad6eeb7b5",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "CI"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-7cd6864e49",
+   "action": "reject",
+   "note": "continuation of CN201501"
+  },
+  {
+   "event_id": "ev-7d70f0f685",
+   "action": "reject",
+   "note": "continuation of CN198201"
+  },
+  {
+   "event_id": "ev-8894d63346",
+   "action": "reject",
+   "note": "continuation of CN201504"
+  },
+  {
+   "event_id": "ev-9c7790c4a9",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "2016",
+    "ongoing_through": "",
+    "dyads": [
+     "CV",
+     "CP"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "military"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-be22ccbe21",
+   "action": "reject",
+   "note": "continuation of CN201504"
+  },
+  {
+   "event_id": "ev-c9aac89a9d",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-13ddf85191"
+  }
+ ],
+ "reviewer": "Angelo"
+}

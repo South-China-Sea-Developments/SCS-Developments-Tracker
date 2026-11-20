@@ -1,0 +1,32 @@
+{
+ "run_id": "CN-2016-2020",
+ "table": "Candidates",
+ "record_ids": [
+  "recJkqwwiuJklJuBM",
+  "recKrSRDPYqMaWI3C",
+  "recZRFR0y1uf0PB1K",
+  "recKWWfgtkINj9ylq",
+  "recZUvLMylwkf1wri",
+  "rec08mOES1A8nZyyF",
+  "recphMvWOLRuwsPaP",
+  "recCFwNi4SGU5le9U",
+  "recgRsGJ03wwVucgR",
+  "recpesfFcIIYgyt7m",
+  "recK9R2draluLWXcb",
+  "rectf3t5vYQcBo4yd"
+ ],
+ "event_ids": [
+  "ev-0ce3112282",
+  "ev-13ddf85191",
+  "ev-3a64632f5a",
+  "ev-5ba80d68d3",
+  "ev-66585c9b2f",
+  "ev-7ad6eeb7b5",
+  "ev-7cd6864e49",
+  "ev-7d70f0f685",
+  "ev-8894d63346",
+  "ev-9c7790c4a9",
+  "ev-be22ccbe21",
+  "ev-c9aac89a9d"
+ ]
+}
