@@ -1,6 +1,6 @@
 # The nightly apply task's prompt
 
-The Claude-app scheduled task "SCS Tracker nightly apply" (created 2026-11-19, prompt revised 2026-11-20; `CRON_TZ=America/New_York 35 1 * * *`,
+The Claude-app scheduled task "SCS Tracker nightly apply" (created 2026-11-19, prompt revised 2026-11-20 twice; `CRON_TZ=America/New_York 35 1 * * *`,
 push notifications on) sends the text below at every firing. It carries the maintainer's Airtable decisions into
 the dataset and merges them (decision 07, amendment of 2026-11-19). Recorded here verbatim so the task can be
 recreated on any account (`docs/handoff.md`). Keep this file and the live task in step: when one changes, change
@@ -38,5 +38,13 @@ never `git add -A`. Read `docs/airtable-workbench.md` ("After review: archive an
 9. **Clear**, only after the merge succeeded: `delete_records_for_table` on Candidates with the `record_ids` of `harvest/airtable/R/clear.json`, at most 10 ids per call. Then on the Runs row whose run_id is R (`list_records_for_table` on Runs, filter run_id `=` R): `update_records_for_table` setting Archived on = `$TODAY`, Archive = `https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker/tree/main/harvest/airtable/R`. If the Runs row does not exist, say so in the report and go on.
 10. `git checkout main && git pull --ff-only origin main` before the next run.
 
-## 3. Report
-Send one message with SendUserMessage (load it with ToolSearch): per run, the counts (new moves, merges, duplicates, rejects), the pull request merged, the rows cleared, the held-back merges and the `✗` rows left for the maintainer; any run skipped and why, with the error text. Then the one-line reminder that the site rebuilds from `main` within minutes. No other output is needed.
+## 3. Refresh the move lists on the rows still in the base
+The columns `Previous year's moves` (`fldm9TF1AHrNhVyew`) and `Same year's moves` (`fldaTja3pKY7Hq1lX`) go stale as sittings accept and extend moves. Do this every night, after step 2, whether or not anything was applied.
+1. `mkdir -p /tmp/context`; `list_records_for_table` on Candidates, `fieldIds` [event_id, run_id, `fldm9TF1AHrNhVyew`, `fldaTja3pKY7Hq1lX`], `pageSize` 1000. The result is large and is saved to a file: copy that file to `/tmp/context/current.json` with `cp` (never retype it). Read the distinct run_ids from it with python.
+2. For each run R in that list: check out and merge as in step 2.1 (skip R if the branch is missing or the merge conflicts); `python -m pipeline.airtable records --run R --out /tmp/context/R.records.json`; `python -m pipeline.airtable context-diff --current /tmp/context/current.json --records /tmp/context/R.records.json --out /tmp/context/R.updates.json` (prints how many rows differ; `--batch 4` is the default).
+3. For each batch in `/tmp/context/R.updates.json` (a JSON array of arrays): `update_records_for_table` with `records` = that batch exactly as printed by `python3 -c "import json; print(json.dumps(json.load(open('/tmp/context/R.updates.json'))[N], ensure_ascii=False))"`, plus `fieldIds: ["fldYslClcFl43XHsR"]`. Copy the text character for character — never shorten, paraphrase or retype it; if a call errors, retry once, then send that batch's records one at a time and report any that still fails.
+4. When every run is done, list the rows again as in 3.1 into `/tmp/context/after.json` and run `python -m pipeline.airtable context-check --current /tmp/context/after.json --records /tmp/context/R.records.json` for each R; a non-zero exit names the rows that still differ: send those rows once more from a fresh `context-diff` against `after.json`, then report them either way.
+5. `git checkout main` when done.
+
+## 4. Report
+Send one message with SendUserMessage (load it with ToolSearch): per run, the counts (new moves, merges, duplicates, rejects), the pull request merged, the rows cleared, the held-back merges and the `✗` rows left for the maintainer; any run skipped and why, with the error text; then the number of rows whose move lists were refreshed and any that still differ. Then the one-line reminder that the site rebuilds from `main` within minutes. No other output is needed.

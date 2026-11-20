@@ -98,6 +98,10 @@ with `main` merged in, so the lists reflect the moves accepted since the branch 
 `data/*.csv` the union merge rule, since the branch and `main` both append rows; a clone whose branch predates the
 rule gets it from `.git/info/attributes`, as the nightly task does).
 
+The nightly task refreshes both move lists on the rows still in the base (`context-diff` builds the connector
+updates for the rows whose lists differ from today's `records`; `context-check` verifies afterwards), so a
+move accepted or extended in one sitting is on the cards the next morning. No other context column is rewritten.
+
 Every new row goes out with `Reviewer` already set to the `reviewer` of `pipeline/airtable.json`
 ("Angelo": one coder, decision 07), so the coder never types the name; `--reviewer` overrides it for a
 sitting by someone else, and `--reviewer ""` leaves the column blank. A refresh never touches it, like the
