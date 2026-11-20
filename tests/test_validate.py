@@ -253,3 +253,10 @@ def test_comparability_ignores_project_coded_moves_for_the_new_claimants(good):
         w.writeheader()
         w.writerows(rows)
     assert any(e.startswith("COMPARABILITY") for e in validate(good, RAW_XLSX, RAW_MAVD))
+
+
+def test_a_move_with_a_retired_id_is_refused(good):
+    (good / "reference").mkdir(exist_ok=True)
+    (good / "reference" / "retired_moves.csv").write_text("move_id,date,by,reason\nCN201101,2026-11-20,T,test\n", encoding="utf-8")
+    assert any("CN201101 uses a retired move id" in e for e in validate(good, RAW_XLSX, RAW_MAVD))
+

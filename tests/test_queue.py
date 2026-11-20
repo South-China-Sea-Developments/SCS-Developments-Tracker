@@ -362,3 +362,14 @@ def test_sync_data_keeps_mains_version_of_shared_rows_and_the_branchs_own(tmp_pa
     out = sync_data.merged(main_rows, working, ("move_id",))
     assert out == main_rows + [{"move_id": "CN201701", "loc08_spratly_sw": "0"}]
 
+
+def test_a_retired_move_id_is_never_reused(tmp_path, monkeypatch):
+    """A retracted move's id stays a gap: the next 2017 China move skips it, and the validator refuses it."""
+    retired = tmp_path / "retired.csv"
+    retired.write_text("move_id,date,by,reason\nCN201702,2026-11-20,T,test\n", encoding="utf-8")
+    monkeypatch.setattr(queue, "RETIRED", retired)
+    monkeypatch.setattr(queue.retired_move_ids, "__defaults__", (retired,))
+    moves = [{"move_id": "CN201701"}, {"move_id": "CN201703"}]
+    assert queue.next_move_id("CN", 2017, moves) == "CN201704"
+    assert queue.next_move_id("CN", 2018, moves) == "CN201801"
+

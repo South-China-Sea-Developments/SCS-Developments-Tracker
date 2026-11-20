@@ -127,6 +127,8 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
         errors.append(f"CODE: claimants.code {c} not in {schema.CLAIMANT_CODES}")
 
     moves = tables["moves"]
+    retired_path = data_dir / "reference" / "retired_moves.csv"
+    retired = {r["move_id"] for r in csv.DictReader(open(retired_path, newline="", encoding="utf-8"))} if retired_path.exists() else set()
     for m in moves:
         mid = m["move_id"]
         if m["claimant"] not in claimants:
@@ -137,6 +139,8 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"CODE: moves {mid} coded_by {m['coded_by']!r}")
         if m["coded_by"] == "project" and not m["intensification_criterion"]:
             errors.append(f"CODE: moves {mid} is project-coded without an intensification_criterion")
+        if mid in retired:
+            errors.append(f"CODE: moves {mid} uses a retired move id (data/reference/retired_moves.csv)")
         if m["coded_by"] == "project" and m["status"] == "accepted" and not any(m[f] == "1" for f in schema.SUBREGION_FLAGS):
             errors.append(f"CODE: moves {mid} is project-coded without a sub-region (it could not be counted on the map)")
         if m["intensification_criterion"] and m["intensification_criterion"] not in schema.INTENSIFICATION_CRITERIA:
