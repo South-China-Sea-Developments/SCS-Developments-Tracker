@@ -1,6 +1,6 @@
 # The nightly apply task's prompt
 
-The Claude-app scheduled task "SCS Tracker nightly apply" (created 2026-11-19; `CRON_TZ=America/New_York 35 1 * * *`,
+The Claude-app scheduled task "SCS Tracker nightly apply" (created 2026-11-19, prompt revised 2026-11-20; `CRON_TZ=America/New_York 35 1 * * *`,
 push notifications on) sends the text below at every firing. It carries the maintainer's Airtable decisions into
 the dataset and merges them (decision 07, amendment of 2026-11-19). Recorded here verbatim so the task can be
 recreated on any account (`docs/handoff.md`). Keep this file and the live task in step: when one changes, change
@@ -27,10 +27,10 @@ never `git add -A`. Read `docs/airtable-workbench.md` ("After review: archive an
 `list_records_for_table` on Candidates, `fieldIds` [run_id, event_id, Decision, Complete], filter: Decision `!=` `selUlBV77rBPmsbZn` AND Complete `=` `✓`, `pageSize` 1000. Group the result by run_id. Rows with Complete `✗` are the maintainer's to fix: leave them, list them in the report. If nothing is ready, report "nothing to apply" and stop.
 
 ## 2. For each run R with ready rows, in turn
-1. **Branch:** `git checkout -B harvest/R origin/harvest/R` (if the branch does not exist on the remote, skip the run and report it).
+1. **Branch:** `git checkout -B harvest/R origin/harvest/R` (if the branch does not exist on the remote, skip the run and report it), then `git merge --no-edit origin/main` so the branch carries the current pipeline (run branches are cut weeks before they are applied; on 2026-11-20 the first run failed at step 4 for want of this). If the merge conflicts, `git merge --abort`, skip the run and report it.
 2. **Export** the ready rows: `list_records_for_table` on Candidates, all fields (no `fieldIds`), filter run_id `=` R AND Decision `!=` undecided AND Complete `=` `✓`, `pageSize` 50, following `nextCursor` until exhausted. Save every page's `records` array to `harvest/airtable/R/export-page-N.json` with the Write tool (when a tool result was saved to a file because it was large, copy that file instead of retyping it; never retype record contents by hand). Then merge: `python - <<'EOF'` → read all `export-page-*.json`, concatenate the `records` arrays, write `harvest/airtable/R/export.json` as `{"records": [...]}`, delete the page files.
 3. **Hold back merges whose lead is not in this export** (a merge into a candidate needs its lead decided `new_move` in the same batch): with `pipeline.airtable.normalise_record(r, load_config()["field_ids"])` on each record, drop any record whose `decision` is `merge` and whose `merge_into_candidate` is set but is not the `event_id` of an exported record decided `new_move`; write the rest back to `export.json`; list the held-back event ids for the report.
-4. **Archive:** `python -m pipeline.airtable archive --run R --from harvest/airtable/R/export.json --date $TODAY` (exit 1 with "no row" means nothing left after step 3: skip the run).
+4. **Archive:** `python -m pipeline.airtable archive --run R --from harvest/airtable/R/export.json --date $TODAY` (exit 1 with "no row" means nothing left after step 3: skip the run; any other failure is reported verbatim, never as "nothing to apply").
 5. **Apply:** `python -m pipeline.queue decide harvest/airtable/R/decisions.json --no-commit --date $TODAY`. If it exits non-zero: `git checkout -- data harvest/airtable/R`, `rm -f harvest/airtable/R/decisions.json harvest/airtable/R/clear.json`, record the error verbatim, and go to the next run. Nothing of this run is cleared from Airtable.
 6. **Validate:** `python -m pipeline.validate` must pass; otherwise treat as step 5's failure.
 7. **Commit and push:** `git add data harvest/airtable/R` (named paths only); commit with the message `Apply the maintainer's decisions for R (sitting of $TODAY)` and a body giving the counts `decide` printed; end the message with the attribution lines the system gave you; `git push origin harvest/R`.
