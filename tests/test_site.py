@@ -7,7 +7,15 @@ from pathlib import Path
 import pytest
 
 from pipeline.validate import aggregates
-from tests.conftest import DATA_DIR
+from tests.conftest import DATA_DIR as LIVE_DATA_DIR
+
+DATA_DIR = LIVE_DATA_DIR   # rebound to the MATS-only copy below: these tests check the site against Chubb's known counts
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _mats_only(mats_data):
+    global DATA_DIR
+    DATA_DIR = mats_data
 from web.build import build, read_csv
 
 
@@ -16,9 +24,9 @@ HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
 
 
 @pytest.fixture(scope="module")
-def dist(tmp_path_factory):
+def dist(tmp_path_factory, mats_data):
     out = tmp_path_factory.mktemp("dist")
-    build(DATA_DIR, out, build_date="2026-01-01")
+    build(mats_data, out, build_date="2026-01-01")
     return out
 
 

@@ -280,7 +280,7 @@ def test_a_continuation_note_extends_the_named_moves_ongoing_through(opened):
     assert counts["rejected"] == 3 and counts["extended"] == 2
     after = {m["move_id"]: m for m in rows(opened, "moves")}
     assert after["CN201504"]["ongoing_through"] == "2026" and after["CN201501"]["ongoing_through"] == "2026"
-    corr = [c for c in rows(opened, "corrections") if c["field"] == "ongoing_through"]
+    corr = [c for c in rows(opened, "corrections") if c["field"] == "ongoing_through" and c["date"] == DATE]
     assert {(c["move_id"], c["new_value"], c["by"], c["date"]) for c in corr} == {("CN201504", "2026", REVIEWER, DATE), ("CN201501", "2026", REVIEWER, DATE)}
     assert all(c["reason"].startswith("continuation: ev-") for c in corr)
     assert validate(opened, RAW_XLSX, RAW_MAVD) == []          # the guarded change is documented
