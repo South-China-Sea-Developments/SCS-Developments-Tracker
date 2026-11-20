@@ -1,4 +1,4 @@
-/* Event map: dated events as points (or as counts on their sub-region when unplaced), a time
+/* Event map: every dated event counted on its sub-region, those with coordinates drawn as points too, a time
    window scrubbed by month, and the same filter semantics as the case browser. MapLibre draws the
    map; the data is inline (data/events.json has the same content for reuse). */
 (function () {
@@ -159,7 +159,7 @@
     e.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
     el("p", "event-summary", (e.n ? e.n + ". " : "") + (e.s || "(no summary)"), li);
     var meta = el("p", "event-meta", undefined, li);
-    meta.textContent = (e.lat !== undefined ? (e.lp === "feature" ? "At a named feature" : "Position known") : "Sub-region " + e.sr.map(function (s) { return s + " " + SR_NAMES[s]; }).join(", ")) +
+    meta.textContent = "Sub-region " + e.sr.map(function (s) { return s + " " + SR_NAMES[s]; }).join(", ") + (e.lat !== undefined ? (e.lp === "feature" ? " · at a named feature" : " · position known") : "") +
       (e.src ? " · " + e.src + (e.src === 1 ? " source" : " sources") : "") + (e.seed ? " · from MATS" : "");
     return li;
   }
@@ -178,13 +178,12 @@
     var stacks = {}, order = [];
     var srCounts = {}, placed = 0;
     hits.forEach(function (e) {
-      if (e.lat !== undefined) {
+      e.sr.forEach(function (s) { srCounts[s] = (srCounts[s] || 0) + 1; });   // every event counts on its sub-region
+      if (e.lat !== undefined) {                                                 // and those with coordinates are drawn there too
         placed++;
         var key = e.lat + "," + e.lon;
         if (!stacks[key]) { stacks[key] = []; order.push(key); }
         stacks[key].push(e);
-      } else {
-        e.sr.forEach(function (s) { srCounts[s] = (srCounts[s] || 0) + 1; });
       }
     });
     order.forEach(function (key) {
@@ -205,8 +204,8 @@
       var el = document.createElement("span");
       el.className = "sr-count";
       el.textContent = String(n);
-      var title = n + (n === 1 ? " event" : " events") + " in sub-region " + s + " " + SR_NAMES[s] + " without a point";
-      var inSr = hits.filter(function (e) { return e.lat === undefined && e.sr.indexOf(s) >= 0; });
+      var title = n + (n === 1 ? " event" : " events") + " in sub-region " + s + " " + SR_NAMES[s];
+      var inSr = hits.filter(function (e) { return e.sr.indexOf(s) >= 0; });
       addMarker(srCenters[s], el, title, function () { return popupFor(inSr); });
     });
     var when = f.w ? (f.w === 1 ? monthName(f.to) : monthName(f.from) + " – " + monthName(f.to)) : "through " + monthName(f.to);
@@ -214,7 +213,7 @@
     slider.setAttribute("aria-valuetext", when);
     countEl.textContent = "";
     el("span", "count-n", hits.length + (hits.length === 1 ? " event" : " events"), countEl);
-    el("span", "count-detail", " " + when + " · " + placed + " placed, " + (hits.length - placed) + " by sub-region" +
+    el("span", "count-detail", " " + when + " · " + hits.length + " by sub-region, " + placed + " placed at a point" +
       (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : ""), countEl);
     renderList(hits);
   }

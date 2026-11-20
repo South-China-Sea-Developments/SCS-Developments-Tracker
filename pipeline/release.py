@@ -33,6 +33,7 @@ RELEASE_FILES = {"data/claimants.csv": "claimants.csv", "data/moves.csv": "moves
                  "data/sources.csv": "sources.csv", "data/corrections.csv": "corrections.csv",
                  "data/reference/mavd_subregions.geojson": "mavd_subregions.geojson",
                  "data/reference/gazetteer.csv": "gazetteer.csv", "data/reference/gazetteer_extra.csv": "gazetteer_extra.csv",
+                 "data/reference/retired_moves.csv": "retired_moves.csv",
                  **{f"data/baselines/{c}.md": f"BASELINE-{c}.md" for c in ("CN", "VN", "PH", "MY", "ID", "TW")},
                  "data/README.md": "COLUMNS.md", "docs/spec.md": "SPEC.md", "docs/codebook/chubb-2021-appendix.txt": "CODEBOOK-chubb-2021-appendix.txt",
                  "CHANGELOG.md": "CHANGELOG.md", "CITATION.cff": "CITATION.cff"}

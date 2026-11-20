@@ -7,7 +7,15 @@ from pathlib import Path
 import pytest
 
 from pipeline.validate import aggregates
-from tests.conftest import DATA_DIR
+from tests.conftest import DATA_DIR as LIVE_DATA_DIR
+
+DATA_DIR = LIVE_DATA_DIR   # rebound to the MATS-only copy below: these tests check the site against Chubb's known counts
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _mats_only(mats_data):
+    global DATA_DIR
+    DATA_DIR = mats_data
 from web.build import build, read_csv
 
 
@@ -16,9 +24,9 @@ HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
 
 
 @pytest.fixture(scope="module")
-def dist(tmp_path_factory):
+def dist(tmp_path_factory, mats_data):
     out = tmp_path_factory.mktemp("dist")
-    build(DATA_DIR, out, build_date="2026-01-01")
+    build(mats_data, out, build_date="2026-01-01")
     return out
 
 
@@ -494,9 +502,7 @@ def test_map_data_matches_the_validator(dist):
     moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
     for e in data["events"]:
         assert moves[e["m"]]["status"] == "accepted"
-        assert ("lat" in e) != ("sr" in e)
-        if "sr" in e:
-            assert e["sr"] and all(s in {str(i) for i in range(1, 11)} for s in e["sr"])
+        assert e["sr"] and all(s in {str(i) for i in range(1, 11)} for s in e["sr"])    # every event sits on a sub-region
     assert [f["properties"]["n"] for f in data["subregions"]["features"]] == list(range(1, 11))
 
 
@@ -509,12 +515,12 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
     assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
     assert "OpenFreeMap" in page.inner_text(".maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text(".maplibregl-ctrl-attrib")
     text = page.evaluate("document.getElementById('map-count').textContent")
-    assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text
+    assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text and f"{expected['n_events']} by sub-region" in text
     # the sub-region counts on the map are the validator's, summed over claimants
     shown = {}
     for el in page.locator("[role='button'][tabindex='0']").element_handles():
         title = el.get_attribute("title") or ""
-        mm = re.search(r"^(\d+) events? in sub-region (\d+) .* without a point$", title)
+        mm = re.search(r"^(\d+) events? in sub-region (\d+) ", title)
         if mm:
             shown[mm.group(2)] = int(mm.group(1))
     want = {}
