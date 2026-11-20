@@ -11,7 +11,7 @@
 **Added 2026-10-19 (maintainer's instruction):** No project-coded entry is merged into the dataset until the maintainer has reviewed it himself on its review page; no further candidate sets are compiled or queued until he asks for them. Review PR #17 stays open for his decisions.
 
 **Amended 2026-11-19 (maintainer's instruction):** a decision the maintainer records in Airtable is his review. The
-nightly scheduled task ("SCS Tracker nightly apply", `docs/apply-task-prompt.md`) files each run's complete
+scheduled task ("SCS Tracker weekly apply", Mondays, or on demand; `docs/apply-task-prompt.md`) files each run's complete
 decisions (ticket 22), applies them with `queue decide`, and squash-merges the run's review pull request once
 the validator and CI pass; rows the pipeline refuses, and merges whose lead is not yet decided, are left in the
 base for him. Review pull requests remain the record of what entered and when, not a second gate. The

@@ -581,3 +581,52 @@ def test_a_blank_note_on_a_reject_takes_the_presorts_continuation_as_confirmed()
     assert d["E2"]["note"] == "continuation of ev-1234567890 (pre-sort confirmed)"
     assert d["E3"]["note"] == "statement to a non-claimant"
     assert d["E4"]["note"] == ""
+
+
+def test_the_airtable_move_lists_cut_long_descriptions_at_a_word():
+    long = "word " * 80
+    text = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": long}])
+    assert text.startswith("CN200802 [coercive, through 2016]: word word") and text.endswith("…") and len(text) < 200
+    short = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": "short"}])
+    assert short == "CN200802 [coercive, through 2016]: short"
+
+
+# ---------------------------------------------------------------------------
+# the nightly refresh of the context columns on rows already in the base
+
+def test_context_updates_name_only_the_rows_whose_lists_changed(tmp_path):
+    ids = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))["field_ids"]
+    current = [  # as the connector lists them: keyed by field id
+        {"id": "rec1", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["previous_year_moves"]: "old list", ids["same_year_moves"]: ""}},
+        {"id": "rec2", "cellValuesByFieldId": {ids["event_id"]: "E2", ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x", ids["same_year_moves"]: "CN201601 [demonstrative]: y"}},
+        {"id": "rec3", "cellValuesByFieldId": {ids["event_id"]: "E3"}},
+    ]
+    records = [  # as `records` generates them today
+        {"event_id": "E1", "previous_year_moves": "CN200802 [coercive, through 2016]: x", "same_year_moves": None},
+        {"event_id": "E2", "previous_year_moves": "CN200802 [coercive, through 2016]: x", "same_year_moves": "CN201601 [demonstrative]: y"},
+        {"event_id": "E3", "previous_year_moves": None, "same_year_moves": None},
+        {"event_id": "E9", "previous_year_moves": "not in the base", "same_year_moves": None},
+    ]
+    ups = airtable.context_updates(current, records, ids)
+    assert ups == [{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]
+    # a row whose list emptied is cleared, not skipped
+    records[1]["same_year_moves"] = None
+    ups = airtable.context_updates(current, records, ids)
+    assert {ids["same_year_moves"]: ""} == ups[1]["fields"] and ups[1]["id"] == "rec2"
+    # the check names mismatches by event id and is quiet when all agree
+    assert airtable.context_mismatches(current, records, ids) == ["E1", "E2"]
+    current[0]["cellValuesByFieldId"][ids["previous_year_moves"]] = "CN200802 [coercive, through 2016]: x"
+    current[1]["cellValuesByFieldId"][ids["same_year_moves"]] = ""
+    assert airtable.context_mismatches(current, records, ids) == []
+    # the command line: diff writes the update batches, check exits 1 on a mismatch
+    cur, rec = tmp_path / "current.json", tmp_path / "records.json"
+    cur.write_text(json.dumps({"records": current}), encoding="utf-8"); rec.write_text(json.dumps(records), encoding="utf-8")
+    out = tmp_path / "updates.json"
+    assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out)]) == 0
+    assert json.loads(out.read_text(encoding="utf-8")) == []
+    assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 0
+    current[0]["cellValuesByFieldId"][ids["previous_year_moves"]] = "stale"
+    cur.write_text(json.dumps({"records": current}), encoding="utf-8")
+    assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out), "--batch", "1"]) == 0
+    assert json.loads(out.read_text(encoding="utf-8")) == [[{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]]
+    assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 1

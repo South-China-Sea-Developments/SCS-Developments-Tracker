@@ -177,7 +177,12 @@ def review_context(data_dir: Path, run_id: str | None = None, presort_path: Path
 
     def brief(m: dict) -> dict:
         return {"move_id": m["move_id"], "year": m["year"], "types": [t for t in schema.TYPE_FLAGS if m[t] == "1"],
-                "description": m["description"][:300], "status": m["status"], "coded_by": m["coded_by"]}
+                "description": m["description"][:300], "status": m["status"], "coded_by": m["coded_by"],
+                "ongoing_through": m["ongoing_through"] or m["year"]}
+
+    def open_through(m: dict, y: int) -> bool:
+        """The move was running in year y: coded in or before it and ongoing through it or later."""
+        return m["year"].isdigit() and int(m["year"]) <= y and int(m["ongoing_through"] or m["year"]) >= y
 
     items = []
     for e in cands:
@@ -186,7 +191,10 @@ def review_context(data_dir: Path, run_id: str | None = None, presort_path: Path
                  placed_area=feat["name_en"] if feat and not e["lat"] and e["subregion"] else "",
                  ambiguous=", ".join(f"{a['name_en']} (sub-region {a['subregion']})" for a in gazetteer.ambiguous(e["location_name"])) if e["location_name"] and not feat else "")
         year = int(e["date_start"][:4]) if e["date_start"][:4].isdigit() else None
-        prev = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year - 1]
+        # every move of the claimant open through the previous year, newest first: the continuation target
+        # is more often an old move still running (CN200802, 2008, through 2015) than a move coded last year
+        prev = sorted((brief(m) for m in moves if m["claimant"] == e["claimant"] and year and open_through(m, year - 1)),
+                      key=lambda b: (-int(b["year"]), b["move_id"]))
         same = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year]
         dup = ""
         if e["review_note"].startswith("Possible duplicate of "):
