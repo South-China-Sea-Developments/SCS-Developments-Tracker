@@ -1,0 +1,662 @@
+{
+ "run_id": "CN-2016-2020",
+ "exported_on": "2026-11-20",
+ "records": [
+  {
+   "airtable_id": "recJkqwwiuJklJuBM",
+   "archived_on": "2026-11-20",
+   "actors": "Central Military Commission vice-chairman Fan Changlong; Ministry of National Defense",
+   "suggestion_reasoning": "A publicised high-level inspection of occupied features is a unilateral display of administration without confrontation; demonstrative. Source opened via a fetch tool; the exact wording could not be re-checked locally. [confidence: medium]",
+   "date_end": "2016-04-15",
+   "new_dyads": "CA",
+   "excerpt": "On the day of Carter's trip, Beijing said that one of its top military officials had visited a South China Sea island.\n\nAccording to the brief statement, Gen. Fan Changlong led a group of military commanders to the Spratly island group",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Nansha (Spratly) Islands",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China lands first military plane on disputed reef: state media — Hurriyet Daily News (AFP) 2016-04-18\nhttps://www.hurriyetdailynews.com/china-lands-first-military-plane-on-disputed-reef-state-media--97959\nChina's 2nd-ranking general visits disputed islands — The Washington Times (Associated Press) 2016-04-15\nhttps://www.washingtontimes.com/news/2016/apr/15/china-2nd-ranking-general-visits-disputed-islands/",
+   "pull_request": 41,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-20T15:03:19.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-0ce3112282",
+   "run_id": "CN-2016-2020",
+   "suggested_dyads": [
+    "CA"
+   ],
+   "summary": "China's Defence Ministry announced on 15 April 2016 that General Fan Changlong, vice-chairman of the Central Military Commission, had led a group of commanders to the Spratly Islands to visit troops and observe construction work, the most senior known military visit to the artificial islands; the date and location of the visit were not disclosed.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-04-15",
+   "presort": "unclear — A CMC vice-chairman's inspection of the Spratly outposts is demonstrative, but whether senior inspections were absent in 2015 is not shown; settle by checking 2015 PLA leadership visits to the Spratlys (if none, novelty; otherwise continuation of CN201504). [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recKrSRDPYqMaWI3C",
+   "archived_on": "2026-11-20",
+   "actors": "People's Liberation Army; Foreign Minister Wang Yi; Foreign Ministry spokesperson Hong Lei",
+   "lat": 16.83417,
+   "suggestion_reasoning": "Stationing an advanced air-defence system on a disputed island is unilateral militarisation without direct confrontation; demonstrative, and a new capability for 2016. [confidence: high]",
+   "date_end": "2016-02-17",
+   "new_dyads": "CV",
+   "excerpt": "\"We have seen evidence of surface-to-air missile deployments to Woody Island,\" a U.S. defense official says, in the first official public comments about China placing a weapons system on a disputed island in the South China Sea.\n\nI want to stress that the Xisha Islands are China's inherent territory. China has been deploying various kinds of national defense facilities on the Xisha Islands for several decades.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Yongxing Dao (Woody Island), Paracels",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China Has Deployed Missiles On Disputed Island, U.S. And Taiwan Say — NPR 2016-02-17\nhttps://www.npr.org/sections/thetwo-way/2016/02/17/467044299/china-has-deployed-missiles-on-disputed-island-u-s-and-taiwan-say\nForeign Ministry Spokesperson Hong Lei's Regular Press Conference on February 18, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-02-18\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201602/t20160218_8525099.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T21:13:19.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-13ddf85191",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "suggested_dyads": [
+    "CV"
+   ],
+   "summary": "China deployed HQ-9 surface-to-air missile batteries on Woody Island in the Paracels, first seen in satellite imagery of 14 February and confirmed by US and Taiwanese officials on 16-17 February 2016; Foreign Minister Wang Yi described them as limited and necessary defence facilities and the Foreign Ministry said defence deployments on the Xisha Islands were nothing new. Fighter aircraft were also reported on the island on 23 February.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-02-14",
+   "presort": "new move (novelty) — HQ-9 surface-to-air missiles on Woody Island are a new capability in the Paracels; the 2015 record (CN197102, CN201002) has no missile deployment. (group CN16-woody-missiles) [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.3375,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recZRFR0y1uf0PB1K",
+   "archived_on": "2026-11-20",
+   "actors": "Chinese maritime law-enforcement vessel 46101",
+   "lat": 16.53389,
+   "suggestion_reasoning": "Boarding and seizing equipment from another claimant's fishermen is physical interference; coercive. Vietnamese-sourced account only. [confidence: medium]",
+   "date_end": "2016-03-18",
+   "new_dyads": "CV",
+   "excerpt": "On March 6 and 18, two Vietnamese fishing boats operating around the waters were attacked and robbed by Chinese marine surveillance ship 46101. At least three more Vietnamese fishing boats were also attacked in March, according to fishermen.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "waters around the Paracel (Hoang Sa) Islands",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Chinese vessels sink Vietnamese fishing boat near Paracel Islands — VnExpress International 2016-07-10\nhttps://e.vnexpress.net/news/news/chinese-vessels-sink-vietnamese-fishing-boat-near-paracel-islands-3433910.html",
+   "pull_request": 41,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T21:20:31.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-3a64632f5a",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "continuation of CN200802 (ongoing through 2015)",
+   "suggested_dyads": [
+    "CV"
+   ],
+   "summary": "Chinese marine surveillance ship 46101 attacked and robbed two Vietnamese fishing boats operating around the Paracel Islands on 6 and 18 March 2016, and fishermen reported at least three more Vietnamese boats attacked in March, according to Vietnamese reports.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-06",
+   "presort": "continuation of CN200802 — Boarding and robbing Vietnamese fishing boats around the Paracels continues the standing expulsion practice of CN200802 (ongoing through 2015); no change of method reported, and the account is Vietnamese-only. [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "reject",
+   "lon": 111.60833,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recKWWfgtkINj9ylq",
+   "archived_on": "2026-11-20",
+   "actors": "China Coast Guard; China Rescue and Salvage (Ministry of Transport)",
+   "suggestion_reasoning": "Physically excluding another claimant's fishermen from a disputed feature is physical interference; coercive, and a new location for China. [confidence: medium]",
+   "date_end": "2016-03-03",
+   "new_dyads": "CP",
+   "excerpt": "Philippine air patrol has confirmed the presence of at least four Chinese coast guard ships in the Jackson lagoons.\n\nChina Rescue and Salvage of Ministry of Transport recently sent salvage ships to tug the grounded vessel out of the shallow water for proper disposal.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Quirino (Jackson) Atoll, Spratlys",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China takes Philippine atoll — The Philippine Star 2016-03-02\nhttps://www.philstar.com/headlines/2016/03/02/1558682/china-takes-philippine-atoll\nForeign Ministry Spokesperson Hong Lei's Regular Press Conference on March 2, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-03-02\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201603/t20160302_8525143.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "6 Spratly NE",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T20:48:16.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-5ba80d68d3",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "6 Spratly NE"
+   ],
+   "suggested_dyads": [
+    "CP"
+   ],
+   "summary": "From about February 2016 China stationed four to five coast guard and other vessels inside the lagoons of Jackson (Quirino) Atoll and chased away Filipino fishermen who tried to enter their traditional fishing ground, until the ships left in early March; Beijing said China Rescue and Salvage of the Ministry of Transport had sent ships to tow away a grounded foreign fishing vessel and had advised nearby fishing boats to leave.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2016-02-01",
+   "presort": "new move (scope) — Excluding Filipino fishermen from Jackson (Quirino) Atoll extends the coercion of CN201402, which in 2015 was confined to Scarborough Shoal, to a new feature. [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recZUvLMylwkf1wri",
+   "archived_on": "2026-11-20",
+   "actors": "People's Liberation Army Air Force; Ministry of National Defense; Foreign Ministry spokesperson Lu Kang",
+   "lat": 9.61667,
+   "suggestion_reasoning": "First military use of the runway is a unilateral demonstration of control without confrontation; demonstrative, new in 2016. [confidence: high]",
+   "date_end": "2016-04-17",
+   "new_dyads": "CA",
+   "excerpt": "An air force plane landed on Fiery Cross reef in the Spratlys archipelago on April 17 to evacuate sick workers, a news report posted online by China's defence ministry said.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Fiery Cross Reef",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China lands first military plane on disputed reef: state media — Hurriyet Daily News (AFP) 2016-04-18\nhttps://www.hurriyetdailynews.com/china-lands-first-military-plane-on-disputed-reef-state-media--97959",
+   "pull_request": 41,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-20T15:04:06.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-66585c9b2f",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "CA"
+   ],
+   "summary": "A People's Liberation Army air force patrol aircraft landed on Fiery Cross Reef on 17 April 2016 to evacuate three sick construction workers, the first publicly confirmed landing of a Chinese military aircraft on the new Spratly airstrip; the Defence Ministry published the account and the Foreign Ministry said such a thing on Chinese territory was not surprising.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-04-17",
+   "merge_into_candidate": "ev-9c7790c4a9",
+   "presort": "same move as ev-9c7790c4a9 — First military landing on the Fiery Cross strip (17 Apr) is part of the 2016 start of Spratly air operations led by ev-9c7790c4a9; the coder may split military use into its own move. (group CN16-spratly-runways) [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "merge",
+   "lon": 112.96667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec08mOES1A8nZyyF",
+   "archived_on": "2026-11-20",
+   "actors": "China Coast Guard; Foreign Ministry spokesperson Hua Chunying",
+   "suggestion_reasoning": "Using a coast guard ship to free a detained vessel from another state's law enforcement is physical interference; coercive, and the first such clash with Indonesia in 2016. [confidence: high]",
+   "date_end": "2016-03-21",
+   "new_dyads": "CI",
+   "excerpt": "A Chinese coast guard vessel collided with the fishing boat, the Kway Fey, as it was being towed, allowing it to escape.\n\nOn March 19, after the relevant fishing vessel was attacked and harassed by an armed Indonesian ship, a Chinese coast guard ship went to assist and did not enter the Indonesian territorial waters.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "waters off the Natuna Islands",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia rebuffs China's demand that fishermen be released — Philstar.com (Associated Press) 2016-03-23\nhttps://www.philstar.com/world/2016/03/23/1566223/indonesia-rebuffs-chinas-demand-fishermen-be-released\nForeign Ministry Spokesperson Hua Chunying's Regular Press Conference on March 21, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-03-21\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201603/t20160321_8525192.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T21:42:39.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-7ad6eeb7b5",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "CI"
+   ],
+   "summary": "On 19 March 2016 a China Coast Guard vessel rammed the detained Chinese trawler Kway Fey 10078 while an Indonesian fisheries patrol ship was towing it off the Natuna Islands, freeing the boat; after Indonesia summoned a Chinese diplomat on 21 March, the Foreign Ministry said the incident took place in traditional Chinese fishing grounds and demanded the release of the eight detained crew.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-19",
+   "presort": "new move (novelty) — CCG ramming a detained trawler free from an Indonesian patrol off Natuna is physical interference against Indonesia with nothing comparable in China's 2015 moves (none has dyad CI). (group CN16-natuna) [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recphMvWOLRuwsPaP",
+   "archived_on": "2026-11-20",
+   "actors": "People's Liberation Army Navy; island garrisons; Foreign Ministry spokesperson Lu Kang",
+   "suggestion_reasoning": "Warning off foreign warships is an imposition backed by force posture; coercive. Recorded as one summary event per year because the target is a non-claimant and the practice was established before 2016. [confidence: medium]",
+   "date_end": "2016-12-31",
+   "new_dyads": "CU",
+   "excerpt": "On January 30, the guided-missile destroyer USS Curtis Wilbur violated the Chinese law and entered territorial waters of China's Xisha Islands without authorization.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Xisha (Paracel) and Nansha (Spratly) Islands",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Foreign Ministry Spokesperson Lu Kang's Regular Press Conference on February 1, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-02-01\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201602/t20160201_8525058.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T20:37:38.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-7cd6864e49",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "continuation of CN201501",
+   "suggested_dyads": [
+    "CU"
+   ],
+   "summary": "Throughout 2016 Chinese forces responded to US Navy freedom-of-navigation operations by identifying, warning, and shadowing the US ships (USS Curtis Wilbur at Triton Island on 30 January, USS William P. Lawrence at Fiery Cross on 10 May, USS Decatur near the Paracels on 21 October) and the Foreign Ministry protested each as an illegal entry into Chinese territorial waters.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2016-01-30",
+   "presort": "continuation of CN201501 — Warning, shadowing and protesting US FONOPs continues the 2015 practice of challenging foreign military units near Chinese-held features (CN201501, ongoing through 2016; the Lassen FONOP drew the same response in Oct 2015); more FONOPs to react to is not a frequency move. [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recCFwNi4SGU5le9U",
+   "archived_on": "2026-11-20",
+   "actors": "CNOOC (HYSY 981 rig); Foreign Ministry spokesperson Hong Lei",
+   "suggestion_reasoning": "Deploying a state oil rig into a disputed, undelimited zone is unilateral resource activity without direct confrontation; demonstrative. [confidence: high]",
+   "date_end": "2016-01-20",
+   "new_dyads": "CV",
+   "excerpt": "\"As far as I know, the operation of the HYSY 981 oil rig is being carried out in completely uncontested waters under China's jurisdiction,\" he said.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "waters outside the mouth of the Gulf of Tonkin (Beibu Gulf), overlapping continental shelf area",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam demands that China remove oil rig — Philstar.com (Associated Press) 2016-01-20\nhttps://philstar.com/world/2016/01/20/1544610/vietnam-demands-china-remove-oil-rig",
+   "pull_request": 41,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "1 Tonkin",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T20:33:45.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7d70f0f685",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "1 Tonkin"
+   ],
+   "note": "continuation of CN198201",
+   "suggested_dyads": [
+    "CV"
+   ],
+   "summary": "China moved the CNOOC drilling rig Haiyang Shiyou 981 into the undelimited area outside the mouth of the Gulf of Tonkin where Chinese and Vietnamese continental shelf claims overlap; Vietnam demanded its withdrawal on 19 January, and Foreign Ministry spokesman Hong Lei said on 20 January the rig was operating in waters under China's jurisdiction. Vietnam protested again in April 2016 when the rig returned.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-01-19",
+   "presort": "continuation of CN198201 — HYSY 981 operating again in the overlapping shelf off the Gulf of Tonkin mouth, as it did there in mid-2015; same-level continuation of state oil activity in the Tonkin/Yinggehai area (CN198201, ongoing through 2015). [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recgRsGJ03wwVucgR",
+   "archived_on": "2026-11-20",
+   "actors": "Ministry of Transport; Foreign Ministry spokesperson Hong Lei",
+   "lat": 10.9133,
+   "suggestion_reasoning": "Commissioning civil infrastructure on an occupied artificial island is unilateral administration without confrontation; demonstrative. [confidence: high]",
+   "date_end": "2016-04-05",
+   "new_dyads": "CA",
+   "excerpt": "China's transport ministry held a \"completion ceremony\", marking the start of operations at the 55-metre (180-ft) high lighthouse on Subi Reef, where construction began in October, state news agency Xinhua said late on Tuesday.\n\nit is within China's sovereignty and justifiable for China to fully operate the lighthouse on Zhubi Jiao.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Zhubi Jiao (Subi Reef)",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China begins operation of lighthouse on artificial island in East Sea — VnExpress International (Reuters) 2016-04-05\nhttps://e.vnexpress.net/news/world/china-begins-operation-of-lighthouse-on-artificial-island-in-east-sea-3382069.html\nForeign Ministry Spokesperson Hong Lei's Regular Press Conference on April 8, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-04-08\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201604/t20160408_8525252.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "5 Spratly NW",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T21:51:12.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-8894d63346",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "5 Spratly NW"
+   ],
+   "note": "continuation of CN201504",
+   "suggested_dyads": [
+    "CA"
+   ],
+   "summary": "China's Ministry of Transport held a completion ceremony on 5 April 2016 marking the start of operations of a 55-metre lighthouse on Subi Reef, construction of which began in October 2015; Vietnam protested and the Foreign Ministry said operating the lighthouse was within China's sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-04-05",
+   "presort": "continuation of CN201504 — Commissioning the Subi lighthouse repeats the 2015 commissioning of lighthouses on Cuarteron and Johnson South; civil infrastructure on the outposts built under CN201504 (ongoing through 2018). [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "reject",
+   "lon": 114.062,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recpesfFcIIYgyt7m",
+   "archived_on": "2026-11-20",
+   "actors": "Chinese government (civil aviation); Foreign Ministry spokesperson Hua Chunying",
+   "lat": 9.61667,
+   "suggestion_reasoning": "First use of the new Spratly runway is unilateral administration of an occupied feature without confrontation; demonstrative, and new for China in 2016. [confidence: high]",
+   "date_end": "2016-01-06",
+   "new_dyads": "CV CP",
+   "excerpt": "China has finished building a new airport on Yongshu Jiao of China's Nansha Islands. The Chinese government conducted a test flight to the airport with a civil aircraft in order to test whether or not the facilities on it meet the standards for civil aviation. Relevant activity falls completely within China's sovereignty.\n\nThe Chinese side independently, safely and successfully completed inspection and test flights to the newly-built airport on Yongshu Jiao.",
+   "new_year": "2016",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Yongshu Jiao (Fiery Cross Reef)",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Foreign Ministry Spokesperson Hua Chunying's Remarks on Test Flight to Newly-Built Airport on Yongshu Jiao of China's Nansha Islands — Ministry of Foreign Affairs of the People's Republic of China 2016-01-02\nhttps://www.mfa.gov.cn/eng/xw/fyrbt/fyrbt/202405/t20240530_11349433.html\nForeign Ministry Spokesperson Hong Lei's Regular Press Conference on January 11, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-01-11\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201601/t20160111_8524985.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T15:54:34.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9c7790c4a9",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "CV",
+    "CP"
+   ],
+   "summary": "The Chinese government flew a civil aircraft to the newly completed airport on Fiery Cross Reef on 2 January 2016 for a test flight, followed by two further civilian test flights on 6 January; the Foreign Ministry said the flights fell completely within China's sovereignty and rejected Vietnamese and Philippine protests.",
+   "dataset_status": "Decision recorded",
+   "date_precision": "day",
+   "date_start": "2016-01-02",
+   "presort": "new move (novelty) — First flights to a Spratly artificial-island runway (Fiery Cross, Jan 2016): operating the airfields is a new method; CN201504/CN201403 covered building them, nothing comparable was flown in 2015. (group CN16-spratly-runways) [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.96667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recK9R2draluLWXcb",
+   "archived_on": "2026-11-20",
+   "actors": "People's Republic of China (construction on occupied Spratly features)",
+   "lat": 8.88333,
+   "suggestion_reasoning": "Construction of surveillance infrastructure on an occupied feature is unilateral administration without confrontation; demonstrative. Dated by the imagery publication; the construction itself occurred over preceding months. [confidence: medium]",
+   "date_end": "2016-02-22",
+   "new_dyads": "CA",
+   "excerpt": "Two probable radar towers have been built on the northern portion of the feature, and a number of 65-foot (20-meter) poles have been erected across a large section of the southern portion. These poles appear to be a high-frequency radar installation",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Huayang Jiao (Cuarteron Reef), also Gaven, Hughes and Johnson South Reefs",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Another Piece of the Puzzle — CSIS Asia Maritime Transparency Initiative 2016-02-22\nhttps://amti.csis.org/another-piece-of-the-puzzle/",
+   "pull_request": 41,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T21:16:44.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-be22ccbe21",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "note": "continuation of CN201504",
+   "suggested_dyads": [
+    "CA"
+   ],
+   "summary": "Satellite imagery published by CSIS AMTI on 22 February 2016 showed China had built two probable radar towers and a field of 20-metre poles forming a probable high-frequency radar installation on its artificial island at Cuarteron Reef, with further radar facilities on Gaven, Hughes and Johnson South Reefs; the Foreign Ministry was asked about it on 23 February.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-02-22",
+   "presort": "continuation of CN201504 — Radar towers on Cuarteron and other reefs were built over the preceding months as part of the island building of CN201504 (ongoing through 2018); dated only by the imagery report. [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "reject",
+   "lon": 112.85139,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rectf3t5vYQcBo4yd",
+   "archived_on": "2026-11-20",
+   "actors": "People's Liberation Army; Foreign Ministry spokesperson Hong Lei",
+   "suggestion_reasoning": "Deployment of anti-ship missiles to a disputed island is unilateral militarisation; demonstrative. Dated by the Foreign Ministry response to the reports; the deployment date is not given. [confidence: medium]",
+   "date_end": "2016-03-30",
+   "new_dyads": "CV",
+   "excerpt": "China’s deployment of national defense facilities on its own territory is reasonable and justified.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:52:04.000Z",
+   "location_name": "Xisha (Paracel) Islands, Woody Island",
+   "run": [
+    "CN-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Foreign Ministry Spokesperson Hong Lei's Regular Press Conference on March 30, 2016 — Ministry of Foreign Affairs of the People's Republic of China 2016-03-30\nhttps://www.fmprc.gov.cn/nanhai/eng/fyrbt_1/201603/t20160330_8525222.htm",
+   "pull_request": 41,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-19T21:48:54.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-c9aac89a9d",
+   "run_id": "CN-2016-2020",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "suggested_dyads": [
+    "CV"
+   ],
+   "summary": "Following reports that China had deployed YJ-62 anti-ship cruise missiles on Woody Island, Foreign Ministry spokesman Hong Lei said on 30 March 2016 that the Xisha Islands were China's inherent territory and that deploying national defence facilities there was reasonable and justified.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-30",
+   "merge_into_candidate": "ev-13ddf85191",
+   "presort": "same move as ev-13ddf85191 — YJ-62 anti-ship missiles on Woody Island a month after the HQ-9s: the same intensification (missile deployment to Woody), lead ev-13ddf85191. (group CN16-woody-missiles) [claude-code/opus]",
+   "previous_year_moves": "CN201501 [demonstrative]: 2015: PRC radio voiceovers challenge US, Philippine and Australian aircraft, demanding they leave airspace near Spratly artificial islands (Tiezzi, “'Nearly all' Australian patrols in South China Sea are challenged”). This practice may have begun earlier.\nCN201502 [coercive]: 2015: Malaysian fishers “chased” from Luconia Shoals by Chinese ships (Borneo Post, “Chinese Navy bar local fishermen from Luconia shoals”).\nCN201503 [coercive]: 2015, July-Nov: three coercive actions against Vietnamese ships around Spratly Islands (Tuoi Tre, “Chinese warship soldiers point guns.”)\nCN201504 [demonstrative]: 2015: PRC's Spratly island building intensifies further (AMTI, \"Island Tracker\").",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  }
+ ]
+}
