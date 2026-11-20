@@ -389,6 +389,35 @@ SET_ONCE = ("flags", "run", "dataset_status")
 CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS and n not in SET_ONCE]
 
 
+# The lists a row carries of the claimant's moves go stale as sittings accept and extend moves; the
+# nightly task rewrites them on the rows still in the base (the only context that changes between pushes).
+REFRESHED_LISTS = ("previous_year_moves", "same_year_moves")
+
+
+def context_updates(current: list[dict], records: list[dict], field_ids: dict[str, str]) -> list[dict]:
+    """The connector updates that bring the rows' move lists in line with `records` (records_for_run's
+    output for the run today): one {"id", "fields"} per row whose lists differ, naming only the
+    differing columns by field id; a list that emptied is written as "" (cleared), and rows the run no
+    longer has are left alone."""
+    by_event = {r["event_id"]: r for r in records}
+    out = []
+    for row in current:
+        f = normalise_record(row, field_ids)
+        want = by_event.get(f.get("event_id"))
+        if want is None:
+            continue
+        fields = {field_ids[k]: (want.get(k) or "") for k in REFRESHED_LISTS if (f.get(k) or "") != (want.get(k) or "")}
+        if fields:
+            out.append({"id": row["id"], "fields": fields})
+    return out
+
+
+def context_mismatches(current: list[dict], records: list[dict], field_ids: dict[str, str]) -> list[str]:
+    """The event ids of rows whose lists still differ from `records`: the check after a refresh."""
+    return sorted(normalise_record(r, field_ids)["event_id"] for r in current
+                  if any(u["id"] == r["id"] for u in context_updates([r], records, field_ids)))
+
+
 # ---------------------------------------------------------------------------
 # the run log (ticket 20): one row per run, from harvest/runs/<run_id>/run.json and the candidates
 
@@ -686,6 +715,14 @@ def main(argv=None) -> int:
     ar.add_argument("--out-dir", type=Path, default=None, help="default harvest/airtable/<run_id>")
     ar.add_argument("--reviewer", default=None, help="the coder's name (default: `reviewer` in pipeline/airtable.json)")
     ar.add_argument("--date", default="")
+    cd = sub.add_parser("context-diff", help="the connector updates that refresh the move lists on rows already in the base")
+    cd.add_argument("--current", type=Path, required=True, help="the rows as the connector lists them (event_id and the two lists)")
+    cd.add_argument("--records", type=Path, required=True, help="the output of `records` for the run today")
+    cd.add_argument("--out", type=Path, required=True, help="batches of updates, as JSON")
+    cd.add_argument("--batch", type=int, default=4, help="updates per batch")
+    cc = sub.add_parser("context-check", help="exit 1 naming the rows whose move lists still differ from `records`")
+    cc.add_argument("--current", type=Path, required=True)
+    cc.add_argument("--records", type=Path, required=True)
     rr = sub.add_parser("run-record")
     rr.add_argument("--run", required=True, type=Path, help="the run folder, harvest/runs/<run_id>")
     rr.add_argument("--data", type=Path, default=None)
@@ -701,6 +738,19 @@ def main(argv=None) -> int:
     if a.cmd == "schema":
         print(json.dumps(table_schema(), indent=1))
         return 0
+    if a.cmd in ("context-diff", "context-check"):
+        cur = json.loads(a.current.read_text(encoding="utf-8"))
+        cur = cur.get("records", []) if isinstance(cur, dict) else cur
+        recs = json.loads(a.records.read_text(encoding="utf-8"))
+        ids = load_config().get("field_ids") or {}
+        if a.cmd == "context-diff":
+            ups = context_updates(cur, recs, ids)
+            a.out.write_text(json.dumps([ups[i:i + a.batch] for i in range(0, len(ups), a.batch)], indent=1, ensure_ascii=False), encoding="utf-8")
+            print(f"{len(ups)} row(s) to refresh in {-(-len(ups) // a.batch) if ups else 0} batch(es) -> {a.out}")
+            return 0
+        bad = context_mismatches(cur, recs, ids)
+        print("all rows carry the current lists" if not bad else f"{len(bad)} row(s) still differ: {', '.join(bad)}")
+        return 1 if bad else 0
     if a.cmd == "archive":
         exported = json.loads(a.from_file.read_text(encoding="utf-8"))
         if isinstance(exported, dict):
