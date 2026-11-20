@@ -150,7 +150,7 @@ def test_every_decision_type_yields_the_expected_files(opened):
     assert sum(1 for x in mv.values() if x["coded_by"] == "chubb") == 358
 
 
-NEW = {"type": "coercive", "intensification_criterion": "novelty"}
+NEW = {"type": "coercive", "intensification_criterion": "novelty", "subregions": ["4"]}
 
 
 @pytest.mark.parametrize("bad, message", [
