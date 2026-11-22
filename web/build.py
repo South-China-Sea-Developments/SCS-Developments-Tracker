@@ -215,6 +215,61 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
     return {"events": out, "counts": counts}
 
 
+TYPE_WEIGHT = {"declarative": 1, "demonstrative": 2, "coercive": 3, "force": 4}
+WINDOW_SPAN = 5
+
+
+def move_weight(m: dict) -> int:
+    """A move's weight on the assertiveness map (ticket 27): its highest type, declarative 1 … force 4."""
+    return max([TYPE_WEIGHT[t] for t in schema.TYPE_FLAGS if m.get(t) == "1"] or [0])
+
+
+def move_subregions(m: dict) -> list[int]:
+    return [i for i, f in enumerate(schema.SUBREGION_FLAGS, 1) if m.get(f) == "1"]
+
+
+def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_SPAN) -> dict:
+    """The assertiveness map's measure (ticket 27): for every window of `span` years ending in first+span-1 …
+    last, the sum of the accepted moves' weights on each of the ten sub-regions, for all claimants (`ALL`)
+    and for each; `max` is each selection's highest score over every window, the map's fixed scale."""
+    keys = ["ALL", *schema.CLAIMANT_CODES]
+    per_year = {k: {} for k in keys}   # key -> year -> ten sums
+    for m in moves:
+        if m["status"] != "accepted":
+            continue
+        y, w = int(m["year"]), move_weight(m)
+        for k in ("ALL", m["claimant"]):
+            row = per_year[k].setdefault(y, [0] * 10)
+            for i in move_subregions(m):
+                row[i - 1] += w
+    ends = list(range(first + span - 1, last + 1))
+    scores, top = {}, {}
+    for k in keys:
+        scores[k] = {}
+        for end in ends:
+            s = [0] * 10
+            for y in range(end - span + 1, end + 1):
+                for i, v in enumerate(per_year[k].get(y, ())):
+                    s[i] += v
+            scores[k][str(end)] = s
+        top[k] = max((max(s) for s in scores[k].values()), default=0)
+    return {"span": span, "ends": ends, "scores": scores, "max": top}
+
+
+def window_moves(moves: list[dict]) -> list[dict]:
+    """The moves behind the map's colour, compact, for its details panel: id, claimant, year, weight, highest
+    type, sub-regions and the description's first 220 characters."""
+    out = []
+    for m in sorted(moves, key=lambda m: (m["year"], m["move_id"])):
+        if m["status"] != "accepted":
+            continue
+        w = move_weight(m)
+        out.append({"m": m["move_id"], "c": m["claimant"], "y": int(m["year"]), "w": w,
+                    "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
+                    "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220]})
+    return out
+
+
 def slim_geojson(gj: dict) -> dict:
     """The ten polygons with only their number and name, coordinates to 4 decimals (~11 m)."""
     def rnd(c):
@@ -354,6 +409,10 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["type_labels"] = TYPE_LABELS
     mapd["subregion_names"] = dict(zip((str(i) for i in range(1, 11)), schema.SUBREGION_NAMES))
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
+    # the assertiveness map (ticket 27): its latest window ends at the build year, reviewed or not
+    latest = max(int(meta["build_date"][:4]), agg["years"][-1])
+    mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "moves": window_moves(published),
+                      "mats_last_year": schema.MATS_YEARS[-1]}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")

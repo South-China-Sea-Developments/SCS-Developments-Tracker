@@ -30,3 +30,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 24 | [A continuation note extends the move it names](24-continuation-extends.md) | 22 | built |
 | 25 | [Frequency sources and candidate tallies](25-frequency-sources.md) | 19 | built |
 | 26 | [Main's version of shared rows after a merge](26-sync-data.md) | 22 | built |
+| 27 | [The assertiveness map, first version](27-map-redesign.md) | 17 | in progress |

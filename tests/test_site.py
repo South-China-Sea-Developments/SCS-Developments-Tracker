@@ -511,9 +511,9 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
     from pipeline.validate import event_aggregates
     page, problems, tiles = _open_map(browser, dist, viewport)
     expected = event_aggregates(read_csv(DATA_DIR / "events.csv"), read_csv(DATA_DIR / "moves.csv"))
-    assert page.locator("canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
+    assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
     assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
-    assert "OpenFreeMap" in page.inner_text(".maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text(".maplibregl-ctrl-attrib")
+    assert "OpenFreeMap" in page.inner_text("#map .maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text("#map .maplibregl-ctrl-attrib")
     text = page.evaluate("document.getElementById('map-count').textContent")
     assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text and f"{expected['n_events']} by sub-region" in text
     # the sub-region counts on the map are the validator's, summed over claimants
@@ -693,3 +693,26 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
     inline = json.loads(re.search(r'<script id="agg"[^>]*>(.*?)</script>', agg_html, re.S).group(1).replace("<\\/", "</"))
     assert inline["by_claimant"]["MY"]["years"]["2021"]["coercive"] == 1 and inline["years"][-1] == 2021
 
+
+
+def test_the_first_screen_is_the_assertiveness_map(browser, dist):
+    """Ticket 27: under the slim banner and the menu, the map of the latest five-year window fills the first
+    screen; the slider, the claimant choice and the details come on scrolling; the event tracker follows."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    assert problems == []
+    assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
+    assert page.evaluate("document.querySelector('.banner-img').getBoundingClientRect().height") <= 140
+    stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
+    assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
+    assert page.locator("#amap-when").inner_text() == "2022–2026" and page.locator("#amap-year").get_attribute("max") == "2026"
+    page.evaluate("(() => { const s = document.getElementById('amap-year'); s.value = '2015'; s.dispatchEvent(new Event('input')); })()")
+    assert page.locator("#amap-when").inner_text() == "2011–2015"
+    assert page.locator("#amap-detail .amap-sum").inner_text().split(" ")[0].isdigit()
+    page.select_option("#amap-claimant", "VN")
+    assert page.locator("#amap-who").inner_text() == "Vietnam"
+    # the stage sticks while the panel scrolls over it
+    page.evaluate("document.getElementById('amap-explore').scrollIntoView()")
+    page.wait_for_timeout(200)
+    assert abs(page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")) < 2
+    assert page.evaluate("document.querySelector('.amap-stage').compareDocumentPosition(document.querySelector('.tracker')) & Node.DOCUMENT_POSITION_FOLLOWING")
+    page.close()

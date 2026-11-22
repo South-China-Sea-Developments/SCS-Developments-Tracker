@@ -493,3 +493,55 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .agreement-table .total th, .agreement-table .total td { border-top: 2px solid var(--baseline); font-weight: 600; }
 .agreement-table td.diag { background: color-mix(in srgb, var(--ink) 6%, transparent); }
 @media (max-width: 640px) { .definitions { grid-template-columns: 1fr; } }
+
+/* ---- the assertiveness map (ticket 27) -------------------------------------------------------
+   The first screen is the slim banner, the menu and the map; on scrolling the map sticks and the panel
+   slides up over its right side (over the whole width at phone size). Stage and panel share one grid
+   cell so the panel can overlap the sticky map. */
+.is-tracker .banner-img { max-height: 140px; object-position: center 35%; }
+@media (max-width: 700px) { .is-tracker .banner-img { max-height: 88px; } }
+.amap { display: grid; position: relative; --stage-h: max(100svh, 480px); --fold: max(calc(100svh - var(--top-h, 192px)), 360px); }
+/* the stage is a full screen tall so it fills the window once it sticks; on the first screen its lower part
+   (the banner's height) is below the fold, and the map is fitted to the part above it */
+.amap-stage { grid-area: 1 / 1; position: sticky; top: 0; height: var(--stage-h); background: var(--map-plane); }
+.amap-canvas { width: 100%; height: 100%; }   /* not absolute: MapLibre sets its container relative */
+.amap-caption { position: absolute; top: var(--s4); left: var(--s4); z-index: 2; max-width: min(26rem, calc(100% - 2 * var(--s4)));
+  background: color-mix(in srgb, var(--surface) 92%, transparent); border-radius: var(--radius); padding: var(--s3) var(--s4);
+  box-shadow: 0 1px 3px rgba(var(--shadow), 0.18); }
+.amap-title { font: var(--display-weight) 1.45rem/1.2 var(--font-display); margin: 0; color: var(--ink); }
+.amap-title span { white-space: nowrap; font-weight: var(--heading-weight); }
+.amap-who { margin: 2px 0 var(--s2); color: var(--ink-2); font-size: 0.9rem; }
+.amap-legend { display: grid; gap: 3px; width: 14rem; max-width: 100%; }
+.amap-ramp { display: block; height: 10px; border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(var(--shadow), 0.12); }
+.amap-ends { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
+.amap-cue { position: absolute; left: 50%; top: calc(var(--fold) - 48px); transform: translateX(-50%); z-index: 2; font-size: 0.85rem; font-weight: 600;
+  color: var(--ink); text-decoration: none; background: var(--surface); padding: 6px 14px; border-radius: 999px; box-shadow: 0 1px 3px rgba(var(--shadow), 0.2); }
+.amap-cue::after { content: " \2193"; }
+.amap-cue:hover { background: var(--surface-2); }
+.amap-panel { grid-area: 1 / 1; align-self: start; justify-self: end; position: relative; z-index: 3; width: 380px;
+  margin: calc(var(--fold) + var(--s4)) var(--s4) calc(100svh - 120px);   /* the map stays put until the panel has scrolled past */ background: var(--surface); border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(var(--shadow), 0.22); padding: var(--s4); }
+.amap-controls { display: grid; gap: var(--s3); }
+.amap-controls .fgroup { border: 0; margin: 0; padding: 0; }
+.amap-controls legend { font: var(--kicker); letter-spacing: var(--kicker-spacing); text-transform: uppercase; color: var(--accent); margin-bottom: var(--s2); }
+.amap-controls .time-row { display: flex; align-items: center; gap: var(--s3); }
+.amap-controls .time-slider input { width: 100%; accent-color: var(--accent); }
+.amap-controls select { width: 100%; font: inherit; padding: 6px 8px; border: 1px solid var(--rule-strong); border-radius: var(--radius); background: var(--surface); color: var(--ink); }
+.amap-note { margin: var(--s2) 0 0; font-size: 0.78rem; color: var(--muted); }
+.amap-points { display: flex; align-items: center; gap: var(--s2); }
+.amap-detail { margin-top: var(--s4); border-top: 1px solid var(--rule); padding-top: var(--s3); }
+.amap-detail-head { font: var(--heading-weight) 1.05rem/1.3 var(--font-display); margin: 0 0 var(--s2); }
+.amap-sum, .amap-top, .amap-hint, .amap-empty { margin: 0 0 var(--s2); font-size: 0.92rem; color: var(--ink-2); }
+.amap-sr { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.amap-moves { margin: 0 0 var(--s3); padding: 0; list-style: none; }
+.amap-move { padding: var(--s2) 0; border-bottom: 1px solid var(--rule); }
+.amap-move .event-summary { margin: 4px 0 0; font-size: 0.88rem; }
+.amap-how { margin: var(--s3) 0 0; font-size: 0.85rem; }
+.amap-tip .maplibregl-popup-content { font-size: 0.82rem; padding: 6px 9px; color: var(--ink); }
+.amap .maplibregl-ctrl-attrib { font-size: 11px; }
+@media (max-width: 700px) {
+  .amap-panel { justify-self: stretch; width: auto; margin-left: var(--s2); margin-right: var(--s2); }
+  .amap-title { font-size: 1.15rem; }
+  .amap-caption { padding: var(--s2) var(--s3); }
+}
+@media print { .amap-stage { position: static; height: 480px; } .amap-panel { margin-top: var(--s4); width: auto; justify-self: stretch; } .amap-cue { display: none; } }
