@@ -702,10 +702,12 @@ def test_the_first_screen_is_the_assertiveness_map(browser, dist):
     assert problems == []
     assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
     assert page.locator(".site-head .banner-img").count() == 0 and page.locator(".site-head .brand-logo").count() == 1, "the banner follows the map"
-    assert page.locator(".home-banner-img").count() == 1 and page.locator("#map").count() == 0, "one map on the home page"
+    assert page.locator(".banner-img").count() == 0 and page.locator("#map").count() == 0, "no banner and one map on the home page"
     stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
     assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
-    assert page.locator("#amap-when").inner_text() == "2022–2026" and page.locator("#amap-year").get_attribute("max") == "2026"
+    # it opens on the latest five years with moves (the fixture's data ends in 2015); the slider reaches the build year
+    assert page.locator("#amap-when").inner_text() == "2011–2015" and page.locator("#amap-year").get_attribute("max") == "2026"
+    assert "Degree of assertiveness" in page.locator(".amap-legend").inner_text()
     page.evaluate("(() => { const s = document.getElementById('amap-year'); s.value = '2015'; s.dispatchEvent(new Event('input')); })()")
     assert page.locator("#amap-when").inner_text() == "2011–2015"
     assert page.locator("#amap-detail .amap-sum").inner_text().split(" ")[0].isdigit()

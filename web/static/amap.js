@@ -26,9 +26,13 @@
   var detail = document.getElementById("amap-detail");
   var playBtn = document.getElementById("amap-play");
   var canvasBox = document.getElementById("amap");
+  // the map opens on the latest five years with moves in them, so it moves forward as review fills the
+  // recent years; the slider still reaches the build year
+  var LAST_WITH_MOVES = Math.max.apply(null, A.moves.map(function (m) { return m.y; }).concat([ENDS[0]]));
+  var START = Math.min(Math.max(LAST_WITH_MOVES, ENDS[0]), ENDS[ENDS.length - 1]);
   slider.min = String(ENDS[0]);
   slider.max = String(ENDS[ENDS.length - 1]);
-  slider.value = slider.max;
+  slider.value = String(START);
 
   var rampEl = document.querySelector(".amap-ramp");
   if (rampEl) rampEl.style.background = "linear-gradient(to right, " + RAMP.join(", ") + ")";
@@ -70,7 +74,7 @@
   });
 
   // ---- state -----------------------------------------------------------------------------------
-  var state = { end: ENDS[ENDS.length - 1], who: "ALL", sel: null, feat: null };
+  var state = { end: START, who: "ALL", sel: null, feat: null };
   function windowLabel(end) { return (end - SPAN + 1) + "–" + end; }
   function scores() { return A.scores[state.who][String(state.end)]; }
   function scaleMax() { return A.max[state.who] || 0; }

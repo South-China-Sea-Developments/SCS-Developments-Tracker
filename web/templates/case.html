@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — SCS Developments Tracker{% endblock %}
+{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — South China Sea Developments Tracker{% endblock %}
 {% block description %}{{ move.description[:160] }}{% endblock %}
 {% block head_data %}{% endblock %}
 {% block content %}
@@ -71,7 +71,7 @@
       </figure>
       <h2>Provenance</h2>
       <dl class="coding">
-        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'project' }}, SCS Developments Tracker {{ move.data_version }}{% endif %}</dd>
+        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'project' }}, South China Sea Developments Tracker {{ move.data_version }}{% endif %}</dd>
       </dl>
     </aside>
   </div>

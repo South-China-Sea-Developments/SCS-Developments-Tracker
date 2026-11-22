@@ -46,6 +46,15 @@ then several rounds of tuning over the following weeks.
   keep the banner on top.
 - **Phone:** the map sticks to the top half and the panel scrolls beneath it instead of over it.
 
+## Round 3 (maintainer, 2026-11-22)
+
+- No banner on the home page at all (every other page keeps it on top); the site is named "South China
+  Sea Developments Tracker" wherever it showed "SCS Developments Tracker".
+- The map opens on the latest five years that have moves in them (2016–2020 today), so it advances by
+  itself as the recent years are reviewed; the slider still reaches the build year. This replaces the
+  first round's opening on 2022–2026.
+- The legend reads "Degree of assertiveness", Low to High.
+
 ## Later rounds (not in this ticket)
 
 Small multiples by decade; a per-claimant timeline; a fuller marking of the coding-source change; the

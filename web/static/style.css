@@ -111,7 +111,7 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 .nav a[aria-current="page"] { color: var(--band-ink); border-bottom-color: var(--band-ink); }
 .nav a:hover { color: var(--band-ink); }
 .nav a:focus-visible { outline-color: var(--focus-dark); outline-offset: -3px; }   /* inside the scroll box, so the ring is never clipped */
-@media (max-width: 1100px) {
+@media all {   /* the brand on its own row above the links at every width since the longer name and the Events link (ticket 27); originally below 1100px */
   /* the links no longer fit beside the brand: the nav takes its own row, scrolls, and fades at the edge it can scroll to */
   .navband-row { flex-wrap: wrap; min-height: 0; padding-top: 10px; row-gap: 0; }
   .brand { padding-bottom: 4px; }
@@ -498,11 +498,9 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
    The first screen is the slim banner, the menu and the map; on scrolling the map sticks and the panel
    slides up over its right side (over the whole width at phone size). Stage and panel share one grid
    cell so the panel can overlap the sticky map. */
-/* home (a proposal, 2026-11-22): no banner above; the institute's logo in the menu band, the banner after the map */
+/* home: no banner (every other page keeps it); the institute's logo in the menu band */
 .brand-logo { height: 34px; width: auto; border-radius: 2px; margin-right: var(--s3); vertical-align: middle; }
 .brand { display: inline-flex; align-items: center; }
-.home-banner { background: var(--sea); }
-.home-banner-img { display: block; width: 100%; height: auto; max-height: 32vw; object-fit: cover; object-position: center top; }
 .amap { display: grid; position: relative; --stage-h: max(100svh, 480px); --fold: max(calc(100svh - var(--top-h, 192px)), 360px); }
 /* the stage is a full screen tall so it fills the window once it sticks; on the first screen its lower part
    (the banner's height) is below the fold, and the map is fitted to the part above it */
@@ -515,6 +513,7 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .amap-title span { white-space: nowrap; font-weight: var(--heading-weight); }
 .amap-who { margin: 2px 0 var(--s2); color: var(--ink-2); font-size: 0.9rem; }
 .amap-legend { display: grid; gap: 3px; width: 14rem; max-width: 100%; }
+.amap-legend-title { font-size: 0.8rem; font-weight: 600; color: var(--ink-2); }
 .amap-ramp { display: block; height: 10px; border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(var(--shadow), 0.12); }
 .amap-ends { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
 .amap-cue { position: absolute; left: 50%; top: calc(var(--fold) - 48px); transform: translateX(-50%); z-index: 2; font-size: 0.85rem; font-weight: 600;
@@ -566,3 +565,5 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .amap-canvas.zoomed .amap-count { display: none; }
 .amap-canvas:not(.zoomed) .amap-feat { display: none; }
 .amap-where { margin: 0 0 var(--s2); font-size: 0.88rem; color: var(--muted); }
+@media (max-width: 700px) { .brand { flex: 1 1 auto; min-width: 0; max-width: 100%; } .brand-name { white-space: normal; line-height: 1.25; } .brand-logo { height: 28px; } }
+@media (min-width: 1101px) { .nav { mask-image: none; -webkit-mask-image: none; } }   /* the links fit their row: no fade */

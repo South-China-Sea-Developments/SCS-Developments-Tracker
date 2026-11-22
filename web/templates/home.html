@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}SCS Developments Tracker{% endblock %}
+{% block title %}South China Sea Developments Tracker{% endblock %}
 {% block body_class %}is-home{% endblock %}
 {% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
 <script id="mapdata" type="application/json">{{ map_json|safe }}</script>
@@ -9,15 +9,14 @@
 {# The assertiveness map (ticket 27): the first screen is the menu and this map, the ten sub-regions shaded
    by the type-weighted moves of the latest five-year window, each with its count of moves; zoomed in, the
    reefs, shoals and islands the moves name. On scrolling, the map stays and a panel slides up over it with
-   the year slider, the claimant choice and the details. The programme banner follows the map (a proposal,
-   2026-11-22). amap.js finds its controls by id. #}
+   the year slider, the claimant choice and the details. amap.js finds its controls by id. #}
 <section class="amap" aria-labelledby="amap-title">
   <div class="amap-stage">
     <div id="amap" class="amap-canvas" role="region" aria-label="Map of the South China Sea: the ten sub-regions shaded by assertive moves in the selected five years"></div>
     <div class="amap-caption">
       <h1 id="amap-title" class="amap-title">Assertive moves, <span id="amap-when"></span></h1>
       <p class="amap-who" id="amap-who">All claimants</p>
-      <div class="amap-legend" aria-hidden="true"><span class="amap-ramp"></span><span class="amap-ends"><span>less</span><span>more and harsher</span></span></div>
+      <div class="amap-legend"><span class="amap-legend-title">Degree of assertiveness</span><span class="amap-ramp" aria-hidden="true"></span><span class="amap-ends" aria-hidden="true"><span>Low</span><span>High</span></span></div>
     </div>
     <a class="amap-cue" href="#amap-explore">Explore the map</a>
   </div>
@@ -43,7 +42,6 @@
     <p class="amap-how"><a href="{{ root }}methodology.html#map">How the shading is worked out</a> · <a href="{{ root }}map.html">Every event, with filters</a></p>
   </div>
 </section>
-<div class="home-banner"><img class="home-banner-img" src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950" loading="lazy"></div>
 </main>
 {% endblock %}
 {% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/amap.js"></script>{% endblock %}
