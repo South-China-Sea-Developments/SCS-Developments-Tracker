@@ -55,6 +55,25 @@ then several rounds of tuning over the following weeks.
   first round's opening on 2022–2026.
 - The legend reads "Degree of assertiveness", Low to High.
 
+## Round 4 (maintainer, 2026-11-22: "do all of them to try"; colour more discreet)
+
+- **Change:** ▲/▼ beside a sub-region's number when its score rose or fell by a fifth or more (and by at
+  least one point) against the five years before; "Rising since …" in the details.
+- **Features:** spot check of 12 matches: 10 right, 2 passing mentions (a commemoration naming Taiping
+  Island, a PR campaign about Johnson South Reef). Five spelling variants added to the gazetteer (143
+  moves now place, from 140); the larger extension needs Wikidata, next session.
+- **Key moments** on the slider (1974, 1988, 1995, 2012, 2014, 2016; each opens the window ending two
+  years after) and a tick where Chubb's coding ends.
+- **Address:** `#y2015-cn-s6-f-scarborough-shoal` (window end, claimant, sub-region, feature), kept up to
+  date as the view changes, read on load; "Copy a link to this view".
+- **By decade:** six small maps (1970s–2020s, decade sums on their own fixed scale); a click opens the
+  decade's last window.
+- **Weighting:** a switch, on by default, shares each move's weight among the sub-regions it covers
+  (`window_scores(shared=True)`); off counts it in full on each.
+- **Finishing:** fills at 55 % far out (22 % zoomed in or with a sub-region chosen), white hairline seams,
+  lighter count pills; feature names from zoom 7 or on hover; visible keyboard focus on every marker.
+  An official ASPI logo file would replace the crop.
+
 ## Later rounds (not in this ticket)
 
 Small multiples by decade; a per-claimant timeline; a fuller marking of the coding-source change; the

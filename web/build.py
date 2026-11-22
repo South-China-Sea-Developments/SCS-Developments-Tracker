@@ -228,19 +228,23 @@ def move_subregions(m: dict) -> list[int]:
     return [i for i, f in enumerate(schema.SUBREGION_FLAGS, 1) if m.get(f) == "1"]
 
 
-def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_SPAN) -> dict:
+def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_SPAN, shared: bool = False) -> dict:
     """The assertiveness map's measure (ticket 27): for every window of `span` years ending in first+span-1 …
     last, the sum of the accepted moves' weights on each of the ten sub-regions, for all claimants (`ALL`)
-    and for each; `max` is each selection's highest score over every window, the map's fixed scale."""
+    and for each; `max` is each selection's highest score over every window, the map's fixed scale.
+    With `shared`, a move's weight is shared among the sub-regions it covers (a sea-wide claim on nine of
+    them adds a ninth to each) instead of counted in full on every one; scores keep two decimals."""
     keys = ["ALL", *schema.CLAIMANT_CODES]
     per_year = {k: {} for k in keys}   # key -> year -> ten sums
     for m in moves:
         if m["status"] != "accepted":
             continue
-        y, w = int(m["year"]), move_weight(m)
+        y, w, srs = int(m["year"]), move_weight(m), move_subregions(m)
+        if shared and srs:
+            w = w / len(srs)
         for k in ("ALL", m["claimant"]):
             row = per_year[k].setdefault(y, [0] * 10)
-            for i in move_subregions(m):
+            for i in srs:
                 row[i - 1] += w
     ends = list(range(first + span - 1, last + 1))
     scores, top = {}, {}
@@ -251,9 +255,33 @@ def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_S
             for y in range(end - span + 1, end + 1):
                 for i, v in enumerate(per_year[k].get(y, ())):
                     s[i] += v
-            scores[k][str(end)] = s
+            scores[k][str(end)] = [round(v, 2) for v in s] if shared else s
         top[k] = max((max(s) for s in scores[k].values()), default=0)
     return {"span": span, "ends": ends, "scores": scores, "max": top}
+
+
+def decade_scores(moves: list[dict], first: int, last: int, shared: bool = False) -> dict:
+    """The same measure by decade (the small maps under the slider, ticket 27): for each decade from first's
+    to last's, the ten sub-region sums of every accepted move in it, for `ALL` and each claimant, with
+    each selection's maximum over the decades."""
+    keys = ["ALL", *schema.CLAIMANT_CODES]
+    decades = list(range(first // 10 * 10, last // 10 * 10 + 1, 10))
+    out = {k: {str(d): [0] * 10 for d in decades} for k in keys}
+    for m in moves:
+        y = int(m["year"])
+        if m["status"] != "accepted" or not first <= y <= last:
+            continue
+        w, srs = move_weight(m), move_subregions(m)
+        if shared and srs:
+            w = w / len(srs)
+        for k in ("ALL", m["claimant"]):
+            row = out[k][str(y // 10 * 10)]
+            for i in srs:
+                row[i - 1] += w
+    for k in keys:
+        for d in out[k]:
+            out[k][d] = [round(v, 2) for v in out[k][d]]
+    return {"decades": decades, "scores": out, "max": {k: max((max(v) for v in out[k].values()), default=0) for k in keys}}
 
 
 def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
@@ -460,7 +488,10 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     # the assertiveness map (ticket 27): its latest window ends at the build year, reviewed or not
     latest = max(int(meta["build_date"][:4]), agg["years"][-1])
     features: dict = {}
-    mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "moves": window_moves(published, features),
+    sh = window_scores(published, agg["years"][0], latest, shared=True)
+    decades = {"full": decade_scores(published, agg["years"][0], latest), "shared": decade_scores(published, agg["years"][0], latest, shared=True)}
+    mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "shared": {"scores": sh["scores"], "max": sh["max"]},
+                      "decades": decades, "moves": window_moves(published, features),
                       "features": features, "mats_last_year": schema.MATS_YEARS[-1]}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")

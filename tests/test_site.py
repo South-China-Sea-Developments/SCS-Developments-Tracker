@@ -724,3 +724,19 @@ def test_the_first_screen_is_the_assertiveness_map(browser, dist):
     page.wait_for_timeout(200)
     assert abs(page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")) < 2
     page.close()
+
+
+def test_a_view_of_the_map_has_its_own_address(browser, dist):
+    """Ticket 27: the window, the claimant and the sub-region are in the address, so a view can be sent."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-vn-s4")
+    page.reload()   # read on load as well as on a change of address
+    page.wait_for_timeout(1200)
+    assert problems == []
+    assert page.locator("#amap-when").inner_text() == "2010–2014" and page.locator("#amap-who").inner_text() == "Vietnam"
+    assert page.locator("#amap-detail .amap-detail-head").inner_text().startswith("4 ")
+    assert page.locator(".amap-decade").count() >= 5 and page.locator(".amap-moment").count() >= 4
+    page.select_option("#amap-claimant", "ALL")
+    assert page.evaluate("location.hash") == "#y2014-s4"
+    page.close()
+

@@ -65,3 +65,19 @@ def test_every_subregion_label_sits_inside_its_polygon():
     for f in gj["features"]:
         lon, lat = f["properties"]["lab"]
         assert subregion_of(lat, lon) == f["properties"]["n"], f["properties"]["name"]
+
+
+def test_shared_weights_split_a_move_among_its_subregions():
+    w = window_scores(MOVES, first=1995, last=2004, shared=True)
+    s = w["scores"]["ALL"]["2004"]
+    # CN200001 (1, one sub-region) + CN200301 (3 over two) on 2; CN200301's half + VN200401 (4, one) on 5
+    assert s[1] == 1 + 1.5 and s[4] == 1.5 + 4
+    assert w["max"]["ALL"] == 5.5
+
+
+def test_decade_scores_sum_each_decade():
+    from web.build import decade_scores
+    d = decade_scores(MOVES, first=1990, last=2004)
+    assert d["decades"] == [1990, 2000]
+    assert d["scores"]["ALL"]["1990"][5] == 3 and d["scores"]["ALL"]["2000"][1] == 1 + 3 and d["scores"]["ALL"]["2000"][4] == 3 + 4
+    assert d["max"]["ALL"] == 7 and d["max"]["PH"] == 3

@@ -1,8 +1,10 @@
 /* The assertiveness map (ticket 27): the ten sub-regions shaded on one ramp by the type-weighted moves of a
    five-year window (declarative 1, demonstrative 2, coercive 3, force 4; web.build.window_scores), each
-   with its number of moves, the latest window first. The scale is fixed across every window for the
-   claimant chosen, so a darker shade always means more, or harsher, moves. Zoomed in (or a sub-region
-   clicked), the reefs, shoals and islands the moves name appear, each with its own moves. */
+   with its number of moves and an arrow when its score rose or fell against the five years before. The
+   scale is fixed across every window for the claimant chosen, so a darker shade always means more, or
+   harsher, moves. Zoomed in (or a sub-region chosen) the reefs, shoals and islands the moves name appear.
+   Below: the slider with key moments, small maps by decade, the claimant, the weighting, a link to the
+   view (#y2015-cn-s6-f-scarborough-shoal). */
 (function () {
   "use strict";
   var src = document.getElementById("mapdata");
@@ -11,38 +13,36 @@
   var A = DATA.assert;
   if (!A) return;
   var NAMES = DATA.names, SR_NAMES = DATA.subregion_names, TYPE_LABELS = DATA.type_labels, FEATS = A.features || {};
-  var SPAN = A.span, ENDS = A.ends;
-  var ZOOM_FEATURES = 5.8;   // from here in, features instead of sub-region counts
+  var SPAN = A.span, ENDS = A.ends, FIRST = ENDS[0], LAST = ENDS[ENDS.length - 1];
+  var ZOOM_FEATURES = 5.8, ZOOM_NAMES = 7;   // features from here in; their names from further in
+  var CHANGE = 0.2;                          // an arrow when the score moved by a fifth or more
+  // key moments on the slider: the year and a short name; a click shows the window ending two years after
+  var MOMENTS = [[1974, "Battle of the Paracels"], [1988, "Johnson South Reef"], [1995, "Mischief Reef"],
+                 [2012, "Scarborough Shoal standoff"], [2014, "Island building"], [2016, "Arbitral award"]];
   var root = getComputedStyle(document.documentElement);
   var RAMP = (root.getPropertyValue("--seq") || "#cde2fb, #9ec5f4, #6da7ec, #3987e5, #256abf, #184f95, #0d366b").split(",").map(function (s) { return s.trim(); });
-  var LINE = (root.getPropertyValue("--map-zone-line") || "#5d6b76").trim();
   var INK = (root.getPropertyValue("--ink") || "#0c1a2a").trim();
 
-  var slider = document.getElementById("amap-year");
-  var label = document.getElementById("amap-label");
-  var whenEl = document.getElementById("amap-when");
-  var whoEl = document.getElementById("amap-who");
-  var claimSel = document.getElementById("amap-claimant");
-  var detail = document.getElementById("amap-detail");
-  var playBtn = document.getElementById("amap-play");
-  var canvasBox = document.getElementById("amap");
-  // the map opens on the latest five years with moves in them, so it moves forward as review fills the
+  function $(id) { return document.getElementById(id); }
+  var slider = $("amap-year"), label = $("amap-label"), whenEl = $("amap-when"), whoEl = $("amap-who");
+  var claimSel = $("amap-claimant"), sharedBox = $("amap-shared"), detail = $("amap-detail"), playBtn = $("amap-play");
+  var canvasBox = $("amap"), decadesBox = $("amap-decades");
+
+  // the map opens on the latest five years with moves in them and moves forward as review fills the
   // recent years; the slider still reaches the build year
-  var LAST_WITH_MOVES = Math.max.apply(null, A.moves.map(function (m) { return m.y; }).concat([ENDS[0]]));
-  var START = Math.min(Math.max(LAST_WITH_MOVES, ENDS[0]), ENDS[ENDS.length - 1]);
-  slider.min = String(ENDS[0]);
-  slider.max = String(ENDS[ENDS.length - 1]);
-  slider.value = String(START);
+  var LAST_WITH_MOVES = Math.max.apply(null, A.moves.map(function (m) { return m.y; }).concat([FIRST]));
+  var START = Math.min(Math.max(LAST_WITH_MOVES, FIRST), LAST);
+  slider.min = String(FIRST);
+  slider.max = String(LAST);
 
   var rampEl = document.querySelector(".amap-ramp");
   if (rampEl) rampEl.style.background = "linear-gradient(to right, " + RAMP.join(", ") + ")";
 
-  // the first screen is the menu and the map; the stage keeps its height when it sticks on scrolling
   var top = document.querySelector(".site-head");
   function sizeStage() { if (top) document.documentElement.style.setProperty("--top-h", top.offsetHeight + "px"); }
   sizeStage();
 
-  var styleEl = document.getElementById("mapstyle");
+  var styleEl = $("mapstyle");
   var STYLE = styleEl ? JSON.parse(styleEl.textContent) : { version: 8, sources: {}, layers: [] };
   function geoBounds(features) {
     var w = Infinity, s = Infinity, e = -Infinity, n = -Infinity;
@@ -55,10 +55,11 @@
   }
   var SEA = geoBounds(DATA.subregions.features);
   var phone = window.matchMedia("(max-width: 700px)");
-  function padding() {   // the part of the stage above the fold, clear of the caption and the cue
+  function padding() {
     var below = phone.matches ? 0 : (top ? top.offsetHeight : 0);
     return { top: phone.matches ? 90 : 24, bottom: 56 + below, left: 24, right: 24 };
   }
+  var state = { end: START, who: "ALL", sel: null, feat: null };
   var map = new maplibregl.Map({
     container: "amap", style: STYLE, bounds: SEA, fitBoundsOptions: { padding: padding() },
     minZoom: 3.5, maxZoom: 10, cooperativeGestures: true, attributionControl: false, dragRotate: false, pitchWithRotate: false
@@ -66,24 +67,32 @@
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
   map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-right");
-  function refit() { sizeStage(); map.resize(); map.fitBounds(SEA, { padding: padding(), animate: false }); }
-  window.addEventListener("resize", refit);
+  window.addEventListener("resize", function () { sizeStage(); map.resize(); if (state.sel === null) map.fitBounds(SEA, { padding: padding(), animate: false }); });
   map.on("error", function (e) {
     var msg = e && e.error ? String(e.error.message || e.error) : "";
     if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("amap: " + msg);
   });
 
-  // ---- state -----------------------------------------------------------------------------------
-  var state = { end: START, who: "ALL", sel: null, feat: null };
+  // ---- measure ---------------------------------------------------------------------------------
   function windowLabel(end) { return (end - SPAN + 1) + "–" + end; }
-  function scores() { return A.scores[state.who][String(state.end)]; }
-  function scaleMax() { return A.max[state.who] || 0; }
+  function source() { return sharedBox && sharedBox.checked ? A.shared : A; }
+  function scoresAt(end) { return end >= FIRST ? source().scores[state.who][String(end)] : null; }
+  function scores() { return scoresAt(state.end); }
+  function scaleMax() { return source().max[state.who] || 0; }
+  function fmt(v) { return Math.round(v * 10) / 10; }
   function inWindow() {
     var from = state.end - SPAN + 1;
     return A.moves.filter(function (m) { return m.y >= from && m.y <= state.end && (state.who === "ALL" || m.c === state.who); });
   }
   function byWeight(a, b) { return b.w - a.w || b.y - a.y || (a.m < b.m ? -1 : 1); }
-
+  // the change against the five years before: "up", "down" or "", with the earlier score
+  function change(n) {
+    var now = scores()[n - 1], prevS = scoresAt(state.end - SPAN);
+    if (!prevS) return { dir: "", prev: null };
+    var prev = prevS[n - 1];
+    var dir = now > prev * (1 + CHANGE) && now - prev >= 1 ? "up" : now < prev * (1 - CHANGE) && prev - now >= 1 ? "down" : "";
+    return { dir: dir, prev: prev };
+  }
   function shaded() {
     var s = scores(), top = scaleMax();
     return { type: "FeatureCollection", features: DATA.subregions.features.map(function (f) {
@@ -91,13 +100,14 @@
       return { type: "Feature", id: n, geometry: f.geometry, properties: { n: n, name: f.properties.name, v: v, f: top ? Math.sqrt(v / top) : 0 } };   // square root: the low end stays legible beside the peak windows
     }) };
   }
+  function colourAt(f) { return RAMP[Math.max(0, Math.min(RAMP.length - 1, Math.round(f * (RAMP.length - 1))))]; }
   function rampExpr() {
     var e = ["interpolate", ["linear"], ["get", "f"]];
     RAMP.forEach(function (c, i) { e.push(i / (RAMP.length - 1), c); });
     return ["case", ["==", ["get", "v"], 0], "rgba(0,0,0,0)", e];
   }
 
-  // ---- markers: a count per sub-region; zoomed in, the features ------------------------------------
+  // ---- markers -----------------------------------------------------------------------------------
   function el(tag, cls, text, parent) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -105,23 +115,26 @@
     if (parent) parent.appendChild(n);
     return n;
   }
-  var markers = [];
-  function clearMarkers() { markers.forEach(function (m) { m.remove(); }); markers = []; }
   function button(cls, text, title, onClick) {
     var b = el("button", cls, text);
     b.type = "button";
-    b.title = title;
-    b.setAttribute("aria-label", title);
+    if (title) { b.title = title; b.setAttribute("aria-label", title); }
     b.addEventListener("click", function (ev) { ev.stopPropagation(); onClick(); });
     return b;
   }
+  var markers = [];
+  function clearMarkers() { markers.forEach(function (m) { m.remove(); }); markers = []; }
   function drawMarkers(ms) {
     clearMarkers();
-    var wl = windowLabel(state.end);
+    var wl = windowLabel(state.end), prevWl = windowLabel(state.end - SPAN);
     DATA.subregions.features.forEach(function (f) {
       var n = f.properties.n;
-      var k = ms.filter(function (m) { return m.sr.indexOf(n) >= 0; }).length;
-      var b = button("amap-count" + (k ? "" : " zero"), String(k), n + " " + f.properties.name + ": " + k + (k === 1 ? " move" : " moves") + " in " + wl, function () { select(n); });
+      var k = ms.filter(function (m) { return m.sr.indexOf(n) >= 0; }).length, ch = change(n);
+      var title = n + " " + f.properties.name + ": " + k + (k === 1 ? " move" : " moves") + " in " + wl +
+        (ch.dir ? "; intensity " + ch.dir + " from " + prevWl : "");
+      var b = button("amap-count" + (k ? "" : " zero") + (state.sel === n ? " on" : ""), "", title, function () { select(n); });
+      el("span", "amap-count-n", String(k), b);
+      if (ch.dir) el("span", "amap-arrow " + ch.dir, ch.dir === "up" ? "▲" : "▼", b).setAttribute("aria-hidden", "true");
       markers.push(new maplibregl.Marker({ element: b }).setLngLat(f.properties.lab).addTo(map));
     });
     var atFeature = {};
@@ -129,44 +142,50 @@
     Object.keys(atFeature).forEach(function (fid) {
       var F = FEATS[fid];
       if (!F) return;
-      var list = atFeature[fid], top = Math.max.apply(null, list.map(function (m) { return m.w; }));
-      var wrap = el("span", "amap-feat");
-      var size = Math.min(30, 12 + Math.round(5 * Math.sqrt(list.length - 1)));
+      var list = atFeature[fid], topW = Math.max.apply(null, list.map(function (m) { return m.w; }));
+      var wrap = el("span", "amap-feat" + (state.feat === fid ? " on" : ""));
+      var size = Math.min(28, 11 + Math.round(5 * Math.sqrt(list.length - 1)));
       var dot = button("amap-feat-dot", list.length > 1 ? String(list.length) : "", F.n + ": " + list.length + (list.length === 1 ? " move" : " moves") + " in " + wl, function () { selectFeature(fid); });
       dot.style.width = dot.style.height = size + "px";
-      dot.setAttribute("data-w", String(top));
+      dot.setAttribute("data-w", String(topW));
       wrap.appendChild(dot);
-      el("span", "amap-feat-name", F.n, wrap);
+      el("span", "amap-feat-name", F.n, wrap).setAttribute("aria-hidden", "true");
       markers.push(new maplibregl.Marker({ element: wrap, anchor: "left", offset: [-size / 2, 0] }).setLngLat([F.lon, F.lat]).addTo(map));
     });
   }
-  var FILL_BY_ZOOM = ["interpolate", ["linear"], ["zoom"], ZOOM_FEATURES - 0.5, 0.9, ZOOM_FEATURES + 0.5, 0.35];
-  function zoomClass() {   // features show when zoomed in, or once a sub-region is chosen whatever the zoom (a phone stays far out)
-    var detailed = map.getZoom() >= ZOOM_FEATURES || state.sel !== null;
-    canvasBox.classList.toggle("zoomed", detailed);
-    if (loaded) map.setPaintProperty("asr-fill", "fill-opacity", state.sel !== null ? 0.35 : FILL_BY_ZOOM);
-  }
-  map.on("zoom", zoomClass);
 
   var loaded = false;
+  var FILL_BY_ZOOM = ["interpolate", ["linear"], ["zoom"], ZOOM_FEATURES - 0.5, 0.55, ZOOM_FEATURES + 0.5, 0.22];
+  function zoomClass() {
+    var z = map.getZoom();
+    canvasBox.classList.toggle("zoomed", z >= ZOOM_FEATURES || state.sel !== null);
+    canvasBox.classList.toggle("named", z >= ZOOM_NAMES);
+    if (loaded) map.setPaintProperty("asr-fill", "fill-opacity", state.sel !== null ? 0.22 : FILL_BY_ZOOM);
+  }
+  map.on("zoom", zoomClass);
+  map.on("moveend", zoomClass);
   map.on("load", function () {
     loaded = true;
     map.addSource("asr", { type: "geojson", data: shaded() });
-    map.addLayer({ id: "asr-fill", type: "fill", source: "asr", paint: { "fill-color": rampExpr(),
-      "fill-opacity": FILL_BY_ZOOM } });
-    map.addLayer({ id: "asr-line", type: "line", source: "asr", paint: { "line-color": LINE, "line-width": 1, "line-opacity": 0.7 } });
-    map.addLayer({ id: "asr-sel", type: "line", source: "asr", filter: ["==", ["get", "n"], -1], paint: { "line-color": INK, "line-width": 2.5 } });
+    map.addLayer({ id: "asr-fill", type: "fill", source: "asr", paint: { "fill-color": rampExpr(), "fill-opacity": FILL_BY_ZOOM } });
+    // hairline white seams between the sub-regions read lighter than dark outlines on the grey sea
+    map.addLayer({ id: "asr-line", type: "line", source: "asr", paint: { "line-color": "#ffffff", "line-width": 1.2, "line-opacity": 0.85 } });
+    map.addLayer({ id: "asr-sel", type: "line", source: "asr", filter: ["==", ["get", "n"], -1], paint: { "line-color": INK, "line-width": 1.8 } });
     map.on("mousemove", "asr-fill", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "asr-fill", function () { map.getCanvas().style.cursor = ""; });
     map.on("click", "asr-fill", function (ev) { select(ev.features[0].properties.n); });
-    zoomClass();
     render();
+    if (state.sel !== null) fitTo(state.sel, false);
   });
 
   // ---- selection -------------------------------------------------------------------------------
   function srFeature(n) { return DATA.subregions.features.filter(function (f) { return f.properties.n === n; })[0]; }
+  function fitTo(n, animate) {   // clear of the caption, and of the panel where it sits over the map's right side
+    var side = phone.matches ? 24 : 420;
+    map.fitBounds(geoBounds([srFeature(n)]), { padding: { top: phone.matches ? 90 : 150, bottom: 40, left: 40, right: side }, maxZoom: 7.5, animate: animate !== false });
+  }
   function showPanel() {
-    var panel = document.getElementById("amap-explore");
+    var panel = $("amap-explore");
     if (panel && panel.getBoundingClientRect().top > window.innerHeight * 0.75) panel.scrollIntoView({ behavior: "smooth", block: "start" });
   }
   function select(n) {
@@ -174,7 +193,7 @@
     state.sel = state.sel === n ? null : n;
     render();
     if (state.sel === null) map.fitBounds(SEA, { padding: padding() });
-    else { map.fitBounds(geoBounds([srFeature(n)]), { padding: 40, maxZoom: 7.5 }); showPanel(); }
+    else { fitTo(n); showPanel(); }
   }
   function selectFeature(fid) {
     var F = FEATS[fid];
@@ -200,10 +219,17 @@
     ms.slice(0, 40).forEach(function (m) { moveRow(m, ol); });
     if (ms.length > 40) el("p", "popup-more", "and " + (ms.length - 40) + " more", detail);
   }
-  function back(text, fn) { detail.appendChild(button("amap-sr", text, text, fn)); }
+  function back(text, fn) { detail.appendChild(button("amap-sr", text, "", fn)); }
   function summary(ms, extra) {
     var hard = ms.filter(function (m) { return m.w >= 3; }).length;
     el("p", "amap-sum", ms.length + (ms.length === 1 ? " move" : " moves") + (extra || "") + "; " + hard + " coercive or force.", detail);
+  }
+  function srLinks(prefix, ns) {
+    var p = el("p", "amap-top", prefix, detail);
+    ns.forEach(function (n, i) {
+      p.appendChild(button("amap-sr", n + " " + SR_NAMES[n], "", function () { select(n); }));
+      if (i < ns.length - 1) p.appendChild(document.createTextNode(", "));
+    });
   }
   function renderDetail(all) {
     detail.textContent = "";
@@ -213,18 +239,19 @@
       var fm = all.filter(function (m) { return (m.f || []).indexOf(state.feat) >= 0; }).sort(byWeight);
       el("h3", "amap-detail-head", F.n + ", " + wl, detail);
       if (F.sr) el("p", "amap-where", "In sub-region " + F.sr + " " + SR_NAMES[F.sr], detail);
-      if (!fm.length) { el("p", "amap-empty", "No moves naming it in these five years.", detail); }
+      if (!fm.length) el("p", "amap-empty", "No moves naming it in these five years.", detail);
       else { summary(fm); list(fm); }
       back(state.sel ? "Back to " + state.sel + " " + SR_NAMES[state.sel] : "Back to the whole sea", function () { state.feat = null; render(); });
       return;
     }
     if (state.sel !== null) {
-      var n = state.sel;
+      var n = state.sel, ch = change(n);
       var ms = all.filter(function (m) { return m.sr.indexOf(n) >= 0; }).sort(byWeight);
       el("h3", "amap-detail-head", n + " " + SR_NAMES[n] + ", " + wl, detail);
       if (!ms.length) el("p", "amap-empty", "No moves in this sub-region in these five years.", detail);
       else {
-        summary(ms, ", score " + s[n - 1]);
+        summary(ms, ", score " + fmt(s[n - 1]));
+        if (ch.prev !== null) el("p", "amap-where", (ch.dir ? "Intensity " + ch.dir + " from " : "About as intense as in ") + windowLabel(state.end - SPAN) + " (score " + fmt(ch.prev) + ").", detail);
         var named = ms.filter(function (m) { return (m.f || []).length; }).length;
         el("p", "amap-hint", named ? named + " of them name a reef, shoal or island, shown on the map." : "None of them names a reef, shoal or island.", detail);
         list(ms);
@@ -235,18 +262,111 @@
     el("h3", "amap-detail-head", "Across the sea, " + wl, detail);
     if (!all.length) { el("p", "amap-empty", "No moves in these five years.", detail); return; }
     summary(all);
-    var ranked = s.map(function (v, i) { return { n: i + 1, v: v }; }).filter(function (r) { return r.v > 0; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 3);
-    var p = el("p", "amap-top", "Most intense: ", detail);
-    ranked.forEach(function (r, i) {
-      p.appendChild(button("amap-sr", r.n + " " + SR_NAMES[r.n], r.n + " " + SR_NAMES[r.n], function () { select(r.n); }));
-      if (i < ranked.length - 1) p.appendChild(document.createTextNode(", "));
-    });
-    el("p", "amap-hint", "The number on each sub-region is its moves in these five years. Click one, or zoom in, to see the reefs, shoals and islands the moves name.", detail);
+    srLinks("Most intense: ", s.map(function (v, i) { return { n: i + 1, v: v }; }).filter(function (r) { return r.v > 0; })
+      .sort(function (a, b) { return b.v - a.v; }).slice(0, 3).map(function (r) { return r.n; }));
+    var rising = DATA.subregions.features.map(function (f) { return f.properties.n; }).filter(function (n) { return change(n).dir === "up"; });
+    if (rising.length) srLinks("Rising since " + windowLabel(state.end - SPAN) + ": ", rising);
+    el("p", "amap-hint", "The number on each sub-region is its moves in these five years; ▲ and ▼ mark a rise or fall of a fifth or more in intensity against the five years before. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name.", detail);
   }
+
+  // ---- small maps by decade --------------------------------------------------------------------
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  var PROJ = (function () {   // equirectangular, scaled to a 100-wide box
+    var b = SEA, k = 100 / (b[1][0] - b[0][0]);
+    return { h: (b[1][1] - b[0][1]) * k, x: function (lon) { return (lon - b[0][0]) * k; }, y: function (lat) { return (b[1][1] - lat) * k; } };
+  })();
+  function pathOf(geom) {
+    var polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates, d = "";
+    polys.forEach(function (rings) { rings.forEach(function (r) {
+      d += r.map(function (c, i) { return (i ? "L" : "M") + PROJ.x(c[0]).toFixed(1) + " " + PROJ.y(c[1]).toFixed(1); }).join("") + "Z";
+    }); });
+    return d;
+  }
+  var PATHS = DATA.subregions.features.map(function (f) { return pathOf(f.geometry); });
+  function renderDecades() {
+    if (!decadesBox || !A.decades) return;
+    var D = A.decades[sharedBox && sharedBox.checked ? "shared" : "full"];
+    var topV = D.max[state.who] || 0;
+    decadesBox.textContent = "";
+    D.decades.forEach(function (d) {
+      var vals = D.scores[state.who][String(d)];
+      var end = Math.min(d + 9, LAST), current = state.end >= d && state.end <= d + 9;
+      var b = button("amap-decade" + (current ? " on" : ""), "", "The " + d + "s: show " + windowLabel(end), function () { setEnd(end); });
+      var svg = document.createElementNS(SVG_NS, "svg");
+      svg.setAttribute("viewBox", "0 0 100 " + PROJ.h.toFixed(1));
+      svg.setAttribute("aria-hidden", "true");
+      PATHS.forEach(function (d0, i) {
+        var path = document.createElementNS(SVG_NS, "path"), v = vals[i];
+        path.setAttribute("d", d0);
+        path.setAttribute("fill", v && topV ? colourAt(Math.sqrt(v / topV)) : "none");
+        path.setAttribute("fill-opacity", "0.75");
+        path.setAttribute("stroke", "#a7b1b8");
+        path.setAttribute("stroke-width", "0.5");
+        svg.appendChild(path);
+      });
+      b.appendChild(svg);
+      el("span", "amap-decade-label", d + "s", b);
+      decadesBox.appendChild(b);
+    });
+  }
+
+  // ---- key moments on the slider ---------------------------------------------------------------
+  function clampEnd(y) { return Math.min(LAST, Math.max(FIRST, y)); }
+  function pct(y) { return (100 * (clampEnd(y) - FIRST) / Math.max(1, LAST - FIRST)) + "%"; }
+  (function moments() {
+    var ticks = $("amap-ticks"), row = $("amap-moments");
+    var shown = MOMENTS.filter(function (mo) { return mo[0] >= FIRST - SPAN + 1 && mo[0] <= LAST; });
+    shown.forEach(function (mo, i) {
+      var end = clampEnd(mo[0] + 2);
+      if (ticks) { var t = el("span", "amap-tick", undefined, ticks); t.style.left = pct(end); t.title = mo[0] + " " + mo[1]; }
+      if (row) {
+        row.appendChild(button("amap-sr amap-moment", mo[0] + " " + mo[1], "Show " + windowLabel(end), function () { setEnd(end); }));
+        if (i < shown.length - 1) row.appendChild(document.createTextNode(" · "));
+      }
+    });
+    var mats = A.mats_last_year;
+    if (ticks && mats >= FIRST && mats <= LAST) {
+      var t = el("span", "amap-tick source", undefined, ticks);
+      t.style.left = pct(mats);
+      t.title = "Chubb's coding (MATS) ends with " + mats;
+    }
+  })();
+
+  // ---- the view in the address: #y2015-cn-s6-f-scarborough-shoal ---------------------------------
+  function hashFor() {
+    return "#y" + state.end + (state.who !== "ALL" ? "-" + state.who.toLowerCase() : "") +
+      (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + state.feat : "");
+  }
+  function readHash() {
+    var m = /^#y(\d{4})(?:-([a-z]{2}))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
+    if (!m) return false;
+    var y = parseInt(m[1], 10);
+    if (y >= FIRST && y <= LAST) state.end = y;
+    state.who = m[2] && NAMES[m[2].toUpperCase()] ? m[2].toUpperCase() : "ALL";
+    state.sel = m[3] && SR_NAMES[m[3]] ? parseInt(m[3], 10) : null;
+    state.feat = m[4] && FEATS[m[4]] ? m[4] : null;
+    claimSel.value = state.who;
+    return true;
+  }
+  function writeHash() {
+    if (!history.replaceState) return;
+    var isDefault = state.end === START && state.who === "ALL" && state.sel === null && !state.feat;
+    try { history.replaceState(null, "", isDefault ? location.pathname + location.search : hashFor()); } catch (e) { /* a sandboxed frame */ }
+  }
+  var linkBtn = $("amap-link"), linkDone = $("amap-link-done");
+  if (linkBtn) linkBtn.addEventListener("click", function () {
+    var url = location.href.split("#")[0] + hashFor();
+    function ok() { linkDone.textContent = "Copied"; setTimeout(function () { linkDone.textContent = ""; }, 2000); }
+    try { navigator.clipboard.writeText(url).then(ok, function () { linkDone.textContent = url; }); }
+    catch (e) { linkDone.textContent = url; }
+  });
+
+  // ---- render ----------------------------------------------------------------------------------
   function render() {
     var wl = windowLabel(state.end);
     whenEl.textContent = wl;
     label.value = wl;
+    slider.value = String(state.end);
     slider.setAttribute("aria-valuetext", wl);
     whoEl.textContent = state.who === "ALL" ? "All claimants" : NAMES[state.who] || state.who;
     var all = inWindow();
@@ -257,24 +377,28 @@
       zoomClass();
     }
     renderDetail(all);
+    renderDecades();
+    writeHash();
   }
+  function setEnd(y) { state.end = clampEnd(y); render(); }
 
-  slider.addEventListener("input", function () { state.end = parseInt(slider.value, 10); render(); });
+  slider.addEventListener("input", function () { setEnd(parseInt(slider.value, 10)); });
   claimSel.addEventListener("change", function () { state.who = claimSel.value; render(); });
+  if (sharedBox) sharedBox.addEventListener("change", render);
+  window.addEventListener("hashchange", function () { if (readHash()) { render(); if (state.sel !== null) fitTo(state.sel); } });
 
   var playTimer = null;
   function stopPlay() { clearInterval(playTimer); playTimer = null; playBtn.setAttribute("aria-pressed", "false"); playBtn.textContent = "Play"; }
   playBtn.addEventListener("click", function () {
     if (playTimer) { stopPlay(); return; }
-    if (state.end >= ENDS[ENDS.length - 1]) { state.end = ENDS[0]; slider.value = String(state.end); render(); }
+    if (state.end >= LAST) setEnd(FIRST);
     playBtn.setAttribute("aria-pressed", "true"); playBtn.textContent = "Pause";
     playTimer = setInterval(function () {
-      if (state.end >= ENDS[ENDS.length - 1]) { stopPlay(); return; }
-      state.end += 1;
-      slider.value = String(state.end);
-      render();
+      if (state.end >= LAST) { stopPlay(); return; }
+      setEnd(state.end + 1);
     }, 550);
   });
 
+  readHash();
   render();
 })();

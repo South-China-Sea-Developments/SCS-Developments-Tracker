@@ -27,9 +27,16 @@
           <button type="button" class="play" id="amap-play" aria-pressed="false" aria-label="Play through the years">Play</button>
           <output class="time-label" id="amap-label" for="amap-year"></output>
         </div>
-        <label class="time-slider"><span class="sr-only">Last year of the five</span>
-          <input type="range" id="amap-year" min="0" max="0" step="1" value="0"></label>
+        <div class="amap-slider">
+          <label class="time-slider"><span class="sr-only">Last year of the five</span>
+            <input type="range" id="amap-year" min="0" max="0" step="1" value="0"></label>
+          <div class="amap-ticks" id="amap-ticks" aria-hidden="true"></div>
+        </div>
+        <p class="amap-moments" id="amap-moments"><span class="amap-moments-head">Key moments:</span> </p>
         <p class="amap-note">China, Vietnam and the Philippines to {{ meta.mats_last_year }}: Andrew Chubb's coding (MATS); from {{ meta.mats_last_year + 1 }}, and for Malaysia, Indonesia and Taiwan throughout, the project's, on the same rules.</p>
+      </fieldset>
+      <fieldset class="fgroup"><legend>By decade</legend>
+        <div class="amap-decades" id="amap-decades"></div>
       </fieldset>
       <fieldset class="fgroup"><legend>Claimant</legend>
         <select id="amap-claimant" aria-label="Claimant">
@@ -37,6 +44,8 @@
           {% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}
         </select>
       </fieldset>
+      <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among the sub-regions it covers, so a claim over the whole sea does not count in full everywhere</span></label>
+      <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>
     </form>
     <div class="amap-detail" id="amap-detail" aria-live="polite"></div>
     <p class="amap-how"><a href="{{ root }}methodology.html#map">How the shading is worked out</a> · <a href="{{ root }}map.html">Every event, with filters</a></p>
