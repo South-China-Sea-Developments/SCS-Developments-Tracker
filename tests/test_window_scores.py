@@ -45,3 +45,23 @@ def test_the_scale_is_fixed_across_windows_per_selection():
 def test_the_latest_window_ends_at_the_year_given_even_with_no_moves_in_it():
     w = window_scores(MOVES, first=1995, last=2026)
     assert w["ends"][-1] == 2026 and w["scores"]["ALL"]["2026"] == [0] * 10
+
+
+def test_moves_carry_the_features_they_name_and_the_map_gets_their_positions():
+    from web.build import window_moves
+    m = move("CN201201", "CN", 2012, ["coercive"], [4])
+    m["description"] = "2012: Standoff at Scarborough Shoal; patrols near Mischief Reef."
+    feats = {}
+    [w] = window_moves([m], feats)
+    assert w["f"] == ["scarborough-shoal", "mischief-reef"] and w["w"] == 3
+    assert set(feats) == {"scarborough-shoal", "mischief-reef"} and 14 < feats["scarborough-shoal"]["lat"] < 16
+
+
+def test_every_subregion_label_sits_inside_its_polygon():
+    import json
+    from pipeline.gazetteer import SUBREGIONS, subregion_of
+    from web.build import slim_geojson
+    gj = slim_geojson(json.loads(SUBREGIONS.read_text(encoding="utf-8")))
+    for f in gj["features"]:
+        lon, lat = f["properties"]["lab"]
+        assert subregion_of(lat, lon) == f["properties"]["n"], f["properties"]["name"]

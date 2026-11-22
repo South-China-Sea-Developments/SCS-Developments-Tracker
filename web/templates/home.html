@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}SCS Developments Tracker{% endblock %}
+{% block body_class %}is-home{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="mapdata" type="application/json">{{ map_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+<main id="main">
+{# The assertiveness map (ticket 27): the first screen is the menu and this map, the ten sub-regions shaded
+   by the type-weighted moves of the latest five-year window, each with its count of moves; zoomed in, the
+   reefs, shoals and islands the moves name. On scrolling, the map stays and a panel slides up over it with
+   the year slider, the claimant choice and the details. The programme banner follows the map (a proposal,
+   2026-11-22). amap.js finds its controls by id. #}
+<section class="amap" aria-labelledby="amap-title">
+  <div class="amap-stage">
+    <div id="amap" class="amap-canvas" role="region" aria-label="Map of the South China Sea: the ten sub-regions shaded by assertive moves in the selected five years"></div>
+    <div class="amap-caption">
+      <h1 id="amap-title" class="amap-title">Assertive moves, <span id="amap-when"></span></h1>
+      <p class="amap-who" id="amap-who">All claimants</p>
+      <div class="amap-legend" aria-hidden="true"><span class="amap-ramp"></span><span class="amap-ends"><span>less</span><span>more and harsher</span></span></div>
+    </div>
+    <a class="amap-cue" href="#amap-explore">Explore the map</a>
+  </div>
+  <div class="amap-panel" id="amap-explore">
+    <form class="amap-controls" id="amap-controls" aria-label="Explore the map" onsubmit="return false">
+      <fieldset class="fgroup"><legend>Five years ending</legend>
+        <div class="time-row">
+          <button type="button" class="play" id="amap-play" aria-pressed="false" aria-label="Play through the years">Play</button>
+          <output class="time-label" id="amap-label" for="amap-year"></output>
+        </div>
+        <label class="time-slider"><span class="sr-only">Last year of the five</span>
+          <input type="range" id="amap-year" min="0" max="0" step="1" value="0"></label>
+        <p class="amap-note">China, Vietnam and the Philippines to {{ meta.mats_last_year }}: Andrew Chubb's coding (MATS); from {{ meta.mats_last_year + 1 }}, and for Malaysia, Indonesia and Taiwan throughout, the project's, on the same rules.</p>
+      </fieldset>
+      <fieldset class="fgroup"><legend>Claimant</legend>
+        <select id="amap-claimant" aria-label="Claimant">
+          <option value="ALL">All claimants</option>
+          {% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}
+        </select>
+      </fieldset>
+    </form>
+    <div class="amap-detail" id="amap-detail" aria-live="polite"></div>
+    <p class="amap-how"><a href="{{ root }}methodology.html#map">How the shading is worked out</a> · <a href="{{ root }}map.html">Every event, with filters</a></p>
+  </div>
+</section>
+<div class="home-banner"><img class="home-banner-img" src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950" loading="lazy"></div>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/amap.js"></script>{% endblock %}

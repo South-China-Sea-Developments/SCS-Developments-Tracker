@@ -13,14 +13,15 @@
 <header class="site-head">
   {# The programme banner the maintainer supplied (ticket 17): logo and title as sent, on the sea band,
      cropped from the top on wide screens so the logo and the title stay in view. The file is the institute's own high-resolution artwork. #}
-  <div class="banner">
+  {% if page != 'index.html' %}<div class="banner">
     <a class="banner-link" href="{{ root }}index.html"><img class="banner-img" src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950"></a>
-  </div>
+  </div>{% endif %}
   <div class="navband">
     <div class="wrap navband-row">
-      <a class="brand" href="{{ root }}index.html"><span class="brand-name">SCS Developments Tracker</span></a>
+      <a class="brand" href="{{ root }}index.html">{% if page == 'index.html' %}<img class="brand-logo" src="{{ root }}assets/img/aspi-logo.png" alt="Asia Society Policy Institute" width="268" height="100">{% endif %}<span class="brand-name">SCS Developments Tracker</span></a>
       <nav class="nav" aria-label="Site">
-        <a href="{{ root }}index.html"{% if page in ('index.html', 'map.html') %} aria-current="page"{% endif %}>Tracker</a>
+        <a href="{{ root }}index.html"{% if page == 'index.html' %} aria-current="page"{% endif %}>Tracker</a>
+        <a href="{{ root }}map.html"{% if page == 'map.html' %} aria-current="page"{% endif %}>Events</a>
         <a href="{{ root }}trends.html"{% if page == 'trends.html' %} aria-current="page"{% endif %}>Trends</a>
         <a href="{{ root }}cases.html"{% if page in ('cases.html', 'case') %} aria-current="page"{% endif %}>Cases</a>
         <a href="{{ root }}issues-domains.html"{% if page == 'issues-domains.html' %} aria-current="page"{% endif %}>Issues and domains</a>

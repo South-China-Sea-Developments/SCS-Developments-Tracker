@@ -18,7 +18,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import agreement, release, schema
+from pipeline import agreement, gazetteer, release, schema
 from pipeline.load_mats import SEED_RUN
 from web.geo import VIEW_H, VIEW_W, subregion_paths
 
@@ -256,9 +256,10 @@ def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_S
     return {"span": span, "ends": ends, "scores": scores, "max": top}
 
 
-def window_moves(moves: list[dict]) -> list[dict]:
+def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
     """The moves behind the map's colour, compact, for its details panel: id, claimant, year, weight, highest
-    type, sub-regions and the description's first 220 characters."""
+    type, sub-regions, the features its description names (`f`, ids into `features`, which this fills)
+    and the description's first 220 characters."""
     out = []
     for m in sorted(moves, key=lambda m: (m["year"], m["move_id"])):
         if m["status"] != "accepted":
@@ -266,15 +267,62 @@ def window_moves(moves: list[dict]) -> list[dict]:
         w = move_weight(m)
         out.append({"m": m["move_id"], "c": m["claimant"], "y": int(m["year"]), "w": w,
                     "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
-                    "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220]})
+                    "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220],
+                    "f": move_features(m, features)})
     return out
+
+
+def move_features(m: dict, features: dict | None) -> list[str]:
+    """The point features (reefs, shoals, islands) a move's description names, through the gazetteer; each is
+    added to `features` as {name, lat, lon, sub-region}."""
+    ids = []
+    for f in gazetteer.named_features(m["description"]):
+        fid = f["feature_id"]
+        ids.append(fid)
+        if features is not None and fid not in features:
+            features[fid] = {"n": f["name_en"] or fid, "lat": round(float(f["lat"]), 4), "lon": round(float(f["lon"]), 4),
+                             "sr": int(f["subregion"]) if str(f["subregion"]).isdigit() else None}
+    return ids
+
+
+def label_point(rings: list) -> list[float]:
+    """A point well inside a polygon (its outer ring first) for its label: of a grid over the bounding box,
+    the inside point farthest from every edge. The bounding-box centre can fall outside a bent shape
+    such as the Gulf of Tonkin."""
+    outer = rings[0]
+    xs, ys = [p[0] for p in outer], [p[1] for p in outer]
+    w, e, s_, n = min(xs), max(xs), min(ys), max(ys)
+    edges = [(r[i], r[(i + 1) % len(r)]) for r in rings for i in range(len(r))]
+
+    def inside(x, y):
+        return gazetteer._point_in_ring(x, y, outer) and not any(gazetteer._point_in_ring(x, y, h) for h in rings[1:])
+
+    def dist(x, y):
+        best = float("inf")
+        for (x1, y1), (x2, y2) in edges:
+            dx, dy = x2 - x1, y2 - y1
+            t = 0.0 if dx == dy == 0 else max(0.0, min(1.0, ((x - x1) * dx + (y - y1) * dy) / (dx * dx + dy * dy)))
+            best = min(best, ((x - x1 - t * dx) ** 2 + (y - y1 - t * dy) ** 2) ** 0.5)
+        return best
+
+    steps = 40
+    cands = [(w + (e - w) * (i + 0.5) / steps, s_ + (n - s_) * (j + 0.5) / steps) for i in range(steps) for j in range(steps)]
+    pts = [(dist(x, y), x, y) for x, y in cands if inside(x, y)]
+    if not pts:
+        return [round((w + e) / 2, 4), round((s_ + n) / 2, 4)]
+    _, x, y = max(pts)
+    return [round(x, 4), round(y, 4)]
 
 
 def slim_geojson(gj: dict) -> dict:
     """The ten polygons with only their number and name, coordinates to 4 decimals (~11 m)."""
     def rnd(c):
         return [rnd(x) for x in c] if isinstance(c[0], list) else [round(c[0], 4), round(c[1], 4)]
-    feats = [{"type": "Feature", "properties": {"n": int(f["properties"]["LocationNo"]), "name": f["properties"]["Location_Name"]},
+    def outer_rings(g):   # the largest polygon's rings, for the label
+        polys = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+        return max(polys, key=lambda p: len(p[0]))
+    feats = [{"type": "Feature", "properties": {"n": int(f["properties"]["LocationNo"]), "name": f["properties"]["Location_Name"],
+                                                "lab": label_point(outer_rings(f["geometry"]))},
               "geometry": {"type": f["geometry"]["type"], "coordinates": rnd(f["geometry"]["coordinates"])}} for f in gj["features"]]
     return {"type": "FeatureCollection", "features": sorted(feats, key=lambda f: f["properties"]["n"])}
 
@@ -411,8 +459,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
     # the assertiveness map (ticket 27): its latest window ends at the build year, reviewed or not
     latest = max(int(meta["build_date"][:4]), agg["years"][-1])
-    mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "moves": window_moves(published),
-                      "mats_last_year": schema.MATS_YEARS[-1]}
+    features: dict = {}
+    mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "moves": window_moves(published, features),
+                      "features": features, "mats_last_year": schema.MATS_YEARS[-1]}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
@@ -435,7 +484,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
-    pages = {"index.html": "tracker.html", "map.html": "tracker.html", "trends.html": "trends.html",
+    pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
              "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html",
              "downloads.html": "downloads.html"}

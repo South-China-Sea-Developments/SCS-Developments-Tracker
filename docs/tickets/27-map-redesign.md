@@ -33,6 +33,19 @@ then several rounds of tuning over the following weeks.
 - One sequential ramp (the site's `--seq` blues, which the type pills already use: declarative light,
   force dark); a score of 0 is unfilled. Legend: lighter = less, darker = more and harsher.
 
+## Round 2 (maintainer, 2026-11-22)
+
+- **Precision:** each sub-region carries its number of moves in the window; zoomed in, or with a
+  sub-region chosen, the reefs, shoals and islands the moves' descriptions name appear (gazetteer match,
+  `gazetteer.named_features`; about a third of moves name one), each with its moves. The events layer
+  is gone from this map.
+- **One map on the home page:** the event tracker (filters, event map, events in view) moves to
+  `map.html`, "Events" in the menu.
+- **Banner, a proposal:** no banner above the home map; the institute's logo in the menu band (cropped
+  from the banner; an official logo file would be better), the full banner after the map. Other pages
+  keep the banner on top.
+- **Phone:** the map sticks to the top half and the panel scrolls beneath it instead of over it.
+
 ## Later rounds (not in this ticket)
 
 Small multiples by decade; a per-claimant timeline; a fuller marking of the coding-source change; the

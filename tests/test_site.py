@@ -76,7 +76,7 @@ def _open(browser, dist, page_name, viewport=(1280, 900)):
     page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
     page.route("https://tiles.openfreemap.org/**", _tile_stub([]))
     page.goto((dist / page_name).resolve().as_uri())
-    page.wait_for_timeout(300 if page_name != "index.html" else 1200)
+    page.wait_for_timeout(300 if page_name not in ("index.html", "map.html") else 1200)
     page.on("close", lambda _: ctx.close())
     return page, problems
 
@@ -109,7 +109,7 @@ def test_tracker_is_the_home_page(browser, dist):
     """Ticket 17: the home page is the tracker — the sidebar lists the events in view newest first (all of
     them, by default) with a link to each move, the search box narrows them, and the map takes at least
     half of a desktop viewport once the page is scrolled to it."""
-    page, problems = _open(browser, dist, "index.html")
+    page, problems = _open(browser, dist, "map.html")
     assert problems == []
     moves = {m["move_id"]: m for m in read_csv(DATA_DIR / "moves.csv")}
     events = [e for e in read_csv(DATA_DIR / "events.csv") if e["status"] == "accepted" and moves[e["move_id"]]["status"] == "accepted"]
@@ -150,7 +150,7 @@ def test_tracker_is_the_home_page(browser, dist):
 
 
 def test_tracker_draws_at_phone_width(browser, dist):
-    page, problems = _open(browser, dist, "index.html", (390, 800))
+    page, problems = _open(browser, dist, "map.html", (390, 800))
     assert problems == []
     assert page.locator("#map canvas.maplibregl-canvas").count() == 1 and page.locator(".sr-label").count() == 10
     # the map comes first and the sidebar follows it
@@ -165,11 +165,11 @@ def _luma(css_rgb):
 
 
 def test_public_face(browser, dist):
-    """Tickets 17–18: the programme banner heads every page; the tracker is a sidebar beside a full-height map on the site's white paper;
+    """Ticket 27: the event tracker moved to map.html, the home page is the assertiveness map. Tickets 17–18: the programme banner heads every page; the tracker is a sidebar beside a full-height map on the site's white paper;
     inner pages are white with a kicker over the title; there is one colour scheme; and nothing on the
     site talks about the project's own progress — no pending move, no "pending", no "confirmation",
     no count of claimants or moves coded."""
-    page, problems = _open(browser, dist, "index.html")
+    page, problems = _open(browser, dist, "map.html")
     assert problems == []
     assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 2219
     assert page.evaluate("(() => { const i = document.querySelector('.banner-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
@@ -701,18 +701,24 @@ def test_the_first_screen_is_the_assertiveness_map(browser, dist):
     page, problems = _open(browser, dist, "index.html", (1440, 900))
     assert problems == []
     assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
-    assert page.evaluate("document.querySelector('.banner-img').getBoundingClientRect().height") <= 140
+    assert page.locator(".site-head .banner-img").count() == 0 and page.locator(".site-head .brand-logo").count() == 1, "the banner follows the map"
+    assert page.locator(".home-banner-img").count() == 1 and page.locator("#map").count() == 0, "one map on the home page"
     stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
     assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
     assert page.locator("#amap-when").inner_text() == "2022–2026" and page.locator("#amap-year").get_attribute("max") == "2026"
     page.evaluate("(() => { const s = document.getElementById('amap-year'); s.value = '2015'; s.dispatchEvent(new Event('input')); })()")
     assert page.locator("#amap-when").inner_text() == "2011–2015"
     assert page.locator("#amap-detail .amap-sum").inner_text().split(" ")[0].isdigit()
+    assert page.locator(".amap-count").count() == 10
+    page.locator(".amap-count").nth(5).click()   # 6 Spratly NE: zooms in, the features its moves name appear
+    page.wait_for_timeout(1200)
+    assert page.locator("#amap-detail .amap-detail-head").inner_text().startswith("6 ") and page.locator(".amap-feat-dot:visible").count() >= 1
+    page.locator(".amap-feat-dot:visible").first.click()
+    assert page.locator("#amap-detail .amap-move").count() >= 1
     page.select_option("#amap-claimant", "VN")
     assert page.locator("#amap-who").inner_text() == "Vietnam"
     # the stage sticks while the panel scrolls over it
     page.evaluate("document.getElementById('amap-explore').scrollIntoView()")
     page.wait_for_timeout(200)
     assert abs(page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")) < 2
-    assert page.evaluate("document.querySelector('.amap-stage').compareDocumentPosition(document.querySelector('.tracker')) & Node.DOCUMENT_POSITION_FOLLOWING")
     page.close()

@@ -160,3 +160,13 @@ def _write(path, rows):
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
+
+
+def test_named_features_lists_every_point_feature_in_order_of_first_mention():
+    """Ticket 27: the map places a move at each reef, shoal or island its description names."""
+    from pipeline.gazetteer import named_features
+    text = "Chinese ships blockaded Scarborough Shoal, then Mischief Reef and Scarborough Shoal again"
+    assert [f["feature_id"] for f in named_features(text)] == ["scarborough-shoal", "mischief-reef"]
+    assert named_features("Vietnam garrisons in the Spratly Islands") == []   # a group, and it hides "Spratly Island"
+    assert [f["feature_id"] for f in named_features("Spratly Island airstrip extended")] == ["spratly-island"]
+    assert named_features("") == [] and named_features("no place named") == []
