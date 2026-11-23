@@ -18,9 +18,9 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import agreement, release, schema
+from pipeline import agreement, gazetteer, release, schema
 from pipeline.load_mats import SEED_RUN
-from web.geo import VIEW_H, VIEW_W, subregion_paths
+from web.geo import VIEW_H, VIEW_W, project, subregion_paths
 
 ROOT = Path(__file__).resolve().parents[1]
 HERE = Path(__file__).resolve().parent
@@ -122,6 +122,9 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
         "domains": domains, "domain_labels": [DOMAIN_LABELS[d] for d in domains],
         "issues": issues, "issue_labels": [ISSUE_LABELS[i] for i in issues],
         "subregions": subregions, "subregion_labels": [schema.SUBREGION_NAMES[i - 1] for i in subregions],
+        # the reefs, shoals and islands the description names, placed on the inset (ticket 28)
+        "features": [{"name": f["name_en"] or f["feature_id"], "xy": [round(v, 1) for v in project(float(f["lon"]), float(f["lat"]))]}
+                     for f in gazetteer.named_features(m["description"])],
         "dyads": dyads, "dyad_labels": [dyad_label(d) for d in dyads],
         "targets": sorted({d[1] for d in dyads if len(d) == 2}),
         "description": m["description"],
@@ -215,11 +218,118 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
     return {"events": out, "counts": counts}
 
 
+TYPE_WEIGHT = {"declarative": 1, "demonstrative": 2, "coercive": 3, "force": 4}
+WINDOW_SPAN = 5
+
+
+def move_weight(m: dict) -> int:
+    """A move's weight on the assertiveness map (ticket 27): its highest type, declarative 1 … force 4."""
+    return max([TYPE_WEIGHT[t] for t in schema.TYPE_FLAGS if m.get(t) == "1"] or [0])
+
+
+def move_subregions(m: dict) -> list[int]:
+    return [i for i, f in enumerate(schema.SUBREGION_FLAGS, 1) if m.get(f) == "1"]
+
+
+def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_SPAN, shared: bool = False) -> dict:
+    """The assertiveness map's measure (ticket 27): for every window of `span` years ending in first+span-1 …
+    last, the sum of the accepted moves' weights on each of the ten sub-regions, for all claimants (`ALL`)
+    and for each; `max` is each selection's highest score over every window, the map's fixed scale.
+    With `shared`, a move's weight is shared among the sub-regions it covers (a sea-wide claim on nine of
+    them adds a ninth to each) instead of counted in full on every one; scores keep two decimals."""
+    keys = ["ALL", *schema.CLAIMANT_CODES]
+    per_year = {k: {} for k in keys}   # key -> year -> ten sums
+    for m in moves:
+        if m["status"] != "accepted":
+            continue
+        y, w, srs = int(m["year"]), move_weight(m), move_subregions(m)
+        if shared and srs:
+            w = w / len(srs)
+        for k in ("ALL", m["claimant"]):
+            row = per_year[k].setdefault(y, [0] * 10)
+            for i in srs:
+                row[i - 1] += w
+    ends = list(range(first + span - 1, last + 1))
+    scores, top = {}, {}
+    for k in keys:
+        scores[k] = {}
+        for end in ends:
+            s = [0] * 10
+            for y in range(end - span + 1, end + 1):
+                for i, v in enumerate(per_year[k].get(y, ())):
+                    s[i] += v
+            scores[k][str(end)] = [round(v, 2) for v in s] if shared else s
+        top[k] = max((max(s) for s in scores[k].values()), default=0)
+    return {"span": span, "ends": ends, "scores": scores, "max": top}
+
+
+def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
+    """The moves behind the map's colour, compact, for its details panel: id, claimant, year, weight, highest
+    type, sub-regions, the features its description names (`f`, ids into `features`, which this fills),
+    whom it is directed at (`g`, the dyads' second letters) and the description's first 220 characters."""
+    out = []
+    for m in sorted(moves, key=lambda m: (m["year"], m["move_id"])):
+        if m["status"] != "accepted":
+            continue
+        w = move_weight(m)
+        out.append({"m": m["move_id"], "c": m["claimant"], "y": int(m["year"]), "w": w,
+                    "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
+                    "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220],
+                    "f": move_features(m, features), "g": sorted({d[1] for d in m.get("dyads", "").split() if len(d) == 2})})
+    return out
+
+
+def move_features(m: dict, features: dict | None) -> list[str]:
+    """The point features (reefs, shoals, islands) a move's description names, through the gazetteer; each is
+    added to `features` as {name, lat, lon, sub-region}."""
+    ids = []
+    for f in gazetteer.named_features(m["description"]):
+        fid = f["feature_id"]
+        ids.append(fid)
+        if features is not None and fid not in features:
+            features[fid] = {"n": f["name_en"] or fid, "lat": round(float(f["lat"]), 4), "lon": round(float(f["lon"]), 4),
+                             "sr": int(f["subregion"]) if str(f["subregion"]).isdigit() else None}
+    return ids
+
+
+def label_point(rings: list) -> list[float]:
+    """A point well inside a polygon (its outer ring first) for its label: of a grid over the bounding box,
+    the inside point farthest from every edge. The bounding-box centre can fall outside a bent shape
+    such as the Gulf of Tonkin."""
+    outer = rings[0]
+    xs, ys = [p[0] for p in outer], [p[1] for p in outer]
+    w, e, s_, n = min(xs), max(xs), min(ys), max(ys)
+    edges = [(r[i], r[(i + 1) % len(r)]) for r in rings for i in range(len(r))]
+
+    def inside(x, y):
+        return gazetteer._point_in_ring(x, y, outer) and not any(gazetteer._point_in_ring(x, y, h) for h in rings[1:])
+
+    def dist(x, y):
+        best = float("inf")
+        for (x1, y1), (x2, y2) in edges:
+            dx, dy = x2 - x1, y2 - y1
+            t = 0.0 if dx == dy == 0 else max(0.0, min(1.0, ((x - x1) * dx + (y - y1) * dy) / (dx * dx + dy * dy)))
+            best = min(best, ((x - x1 - t * dx) ** 2 + (y - y1 - t * dy) ** 2) ** 0.5)
+        return best
+
+    steps = 40
+    cands = [(w + (e - w) * (i + 0.5) / steps, s_ + (n - s_) * (j + 0.5) / steps) for i in range(steps) for j in range(steps)]
+    pts = [(dist(x, y), x, y) for x, y in cands if inside(x, y)]
+    if not pts:
+        return [round((w + e) / 2, 4), round((s_ + n) / 2, 4)]
+    _, x, y = max(pts)
+    return [round(x, 4), round(y, 4)]
+
+
 def slim_geojson(gj: dict) -> dict:
     """The ten polygons with only their number and name, coordinates to 4 decimals (~11 m)."""
     def rnd(c):
         return [rnd(x) for x in c] if isinstance(c[0], list) else [round(c[0], 4), round(c[1], 4)]
-    feats = [{"type": "Feature", "properties": {"n": int(f["properties"]["LocationNo"]), "name": f["properties"]["Location_Name"]},
+    def outer_rings(g):   # the largest polygon's rings, for the label
+        polys = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+        return max(polys, key=lambda p: len(p[0]))
+    feats = [{"type": "Feature", "properties": {"n": int(f["properties"]["LocationNo"]), "name": f["properties"]["Location_Name"],
+                                                "lab": label_point(outer_rings(f["geometry"]))},
               "geometry": {"type": f["geometry"]["type"], "coordinates": rnd(f["geometry"]["coordinates"])}} for f in gj["features"]]
     return {"type": "FeatureCollection", "features": sorted(feats, key=lambda f: f["properties"]["n"])}
 
@@ -354,6 +464,16 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["type_labels"] = TYPE_LABELS
     mapd["subregion_names"] = dict(zip((str(i) for i in range(1, 11)), schema.SUBREGION_NAMES))
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
+    # the assertiveness map (ticket 27): its latest window ends at the build year, reviewed or not
+    latest = max(int(meta["build_date"][:4]), agg["years"][-1])
+    # the map computes its scores in the browser from these moves, so its filters (type, directed at) and
+    # its weighting switch can recombine them; window_scores is the reference the tests hold it to
+    features: dict = {}
+    mapd["assert"] = {"span": WINDOW_SPAN, "ends": list(range(agg["years"][0] + WINDOW_SPAN - 1, latest + 1)),
+                      "moves": window_moves(published, features), "features": features,
+                      "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES,
+                      # optional reference lines (Natural Earth, public domain; web/static/geo/README.md)
+                      "lines": {k: json.loads((HERE / "static" / "geo" / f"{k}.geojson").read_text(encoding="utf-8")) for k in ("maritime", "dashline")}}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
@@ -376,13 +496,15 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES)
-    pages = {"index.html": "tracker.html", "map.html": "tracker.html", "trends.html": "trends.html",
+    pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
-             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html",
              "downloads.html": "downloads.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
         (out_dir / out_name).write_text(html, encoding="utf-8")
+    # the pages merged into Trends (ticket 28) keep their addresses, as redirects
+    for old, target in (("issues-domains.html", "trends.html#issues"), ("subregions.html", "trends.html#subregions")):
+        (out_dir / old).write_text(env.get_template("redirect.html").render(target=target), encoding="utf-8")
     case_tmpl = env.get_template("case.html")
     for v in views:
         html = case_tmpl.render(page="case", root="../", move=v, **ctx)

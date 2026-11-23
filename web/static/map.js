@@ -49,6 +49,13 @@
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-left");
   map.addControl(new maplibregl.AttributionControl({ compact: false }));   // the style carries OpenFreeMap, OpenMapTiles and OSM
+  // events at their positions only from this zoom in; further out the sub-region counts carry them all
+  // (the maintainer, 2026-11-22: the dots should not compete with the counts)
+  var ZOOM_POINTS = 6;
+  var mapBox = document.getElementById("map");
+  function zoomClass() { mapBox.classList.toggle("zoomed", map.getZoom() >= ZOOM_POINTS); }
+  map.on("zoom", zoomClass);
+  map.on("load", zoomClass);
   map.on("error", function (e) {   // a missing tile, font or sprite is the offline case, not a fault
     var msg = e && e.error ? String(e.error.message || e.error) : "";
     if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("map: " + msg);

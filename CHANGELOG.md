@@ -9,6 +9,8 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - The map counts every event on its sub-region; events with coordinates are drawn at them as well.
 - `CN2016xx`–`CN2020xx`: 32 project-coded China moves for 2016–2020 in all, decided by the maintainer; 20 earlier moves extended by continuation notes.
 - Retraction: `CN201702` (the 2017 *draft* revision of the Maritime Traffic Safety Law) withdrawn by the maintainer — legislation is coded at enactment (April 2021). The id is retired (`data/reference/retired_moves.csv`) and will not be reused.
+- The home page is the assertiveness map (ticket 27): the ten sub-regions shaded by the type-weighted moves of a five-year window (or the build-up since 1970), counts and change arrows, the reefs, shoals and islands the moves name on zoom, a timeline, type / claimant / directed-at filters, decade maps, optional reference lines (Natural Earth), links to a view.
+- The other pages in the same style (ticket 28): six menu items (Tracker, Events, Trends, Cases, Methodology, Downloads), a slim banner on inner pages, Issues and domains and Sub-regions merged into Trends (old addresses redirect), short openings, toggle filters.
 
 ## v2.0.0-dev — 2026-10-16
 

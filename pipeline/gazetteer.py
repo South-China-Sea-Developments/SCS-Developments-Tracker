@@ -221,3 +221,41 @@ def locate(event: dict, gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXT
     event["subregion"] = str(sr) if sr else event.get("subregion", "")
     event["location_precision"] = "feature"   # the coordinates are the feature's, never the event's own
     return event
+
+
+@lru_cache(maxsize=4)
+def _index_once(gazetteer: Path, extra: Path):
+    return _index(gazetteer, extra), load(gazetteer, extra)
+
+
+def named_features(text: str, gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXTRA) -> list[dict]:
+    """Every feature `text` names that is a point, in order of first mention (ticket 27: a move's reefs,
+    shoals and islands on the map). An island group is an area, not a point, and is left out; a name
+    shared by several features and the primary name of none is skipped; a longer name covers the
+    shorter names inside it, so "Spratly Islands" never yields "Spratly Island"."""
+    if not text or not text.strip():
+        return []
+    index, feats = _index_once(gazetteer, extra)
+    folded = _fold(text)
+    taken: list[tuple[int, int]] = []
+    found: list[tuple[int, str]] = []
+    for name, fids in index:
+        start = 0
+        while True:
+            sub = folded[start:]
+            pos = _find(name, sub)
+            if pos < 0:
+                break
+            pos += start
+            start = pos + len(name)
+            if any(a <= pos < b or a < pos + len(name) <= b for a, b in taken):
+                continue
+            taken.append((pos, pos + len(name)))
+            if len(fids) == 1 and feats[fids[0]]["kind"] != "island group" and feats[fids[0]]["lat"]:
+                found.append((pos, fids[0]))
+    out, seen = [], set()
+    for _, fid in sorted(found):
+        if fid not in seen:
+            seen.add(fid)
+            out.append(feats[fid])
+    return out

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — SCS Developments Tracker{% endblock %}
+{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — South China Sea Developments Tracker{% endblock %}
 {% block description %}{{ move.description[:160] }}{% endblock %}
 {% block head_data %}{% endblock %}
 {% block content %}
@@ -66,12 +66,13 @@
           {% for n, d in subregion_paths.items()|sort %}
           <path d="{{ d }}" class="sr{% if n in move.subregions %} is-on{% endif %}" data-loc="{{ n }}"><title>{{ n }} {{ subregion_names[n] }}</title></path>
           {% endfor %}
+          {% for f in move.features %}<circle class="feat" cx="{{ f.xy[0] }}" cy="{{ f.xy[1] }}" r="3"><title>{{ f.name }}</title></circle>{% endfor %}
         </svg>
-        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}</figcaption>
+        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}{% if move.features %}<br><span class="inset-named">Named: {{ move.features|map(attribute='name')|join(', ') }}</span>{% endif %}</figcaption>
       </figure>
       <h2>Provenance</h2>
       <dl class="coding">
-        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'project' }}, SCS Developments Tracker {{ move.data_version }}{% endif %}</dd>
+        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'project' }}, South China Sea Developments Tracker {{ move.data_version }}{% endif %}</dd>
       </dl>
     </aside>
   </div>
