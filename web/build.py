@@ -495,11 +495,13 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                dyad_targets=DYAD_NAMES)
     pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
-             "issues-domains.html": "issues-domains.html", "subregions.html": "subregions.html",
              "downloads.html": "downloads.html"}
     for out_name, tmpl in pages.items():
         html = env.get_template(tmpl).render(page=out_name, root="", **ctx)
         (out_dir / out_name).write_text(html, encoding="utf-8")
+    # the pages merged into Trends (ticket 28) keep their addresses, as redirects
+    for old, target in (("issues-domains.html", "trends.html#issues"), ("subregions.html", "trends.html#subregions")):
+        (out_dir / old).write_text(env.get_template("redirect.html").render(target=target), encoding="utf-8")
     case_tmpl = env.get_template("case.html")
     for v in views:
         html = case_tmpl.render(page="case", root="../", move=v, **ctx)

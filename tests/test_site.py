@@ -92,7 +92,7 @@ def _tile_stub(tiles):
     return stub
 
 
-@pytest.mark.parametrize("page_name", ["index.html", "trends.html", "methodology.html", "issues-domains.html", "subregions.html", "cases.html", "downloads.html"])
+@pytest.mark.parametrize("page_name", ["index.html", "map.html", "trends.html", "methodology.html", "cases.html", "downloads.html"])
 @pytest.mark.parametrize("viewport", [(1280, 900), (1024, 768), (390, 800)])
 def test_pages_render_without_errors(browser, dist, page_name, viewport):
     page, problems = _open(browser, dist, page_name, viewport)
@@ -222,9 +222,9 @@ def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
     # the last link is reachable: tabbing to it scrolls it into view
     for _ in range(12):
         page.keyboard.press("Tab")
-        if page.evaluate("document.activeElement && document.activeElement.textContent") == "Data and code":
+        if page.evaluate("document.activeElement && document.activeElement.textContent") == "Downloads":
             break
-    assert page.evaluate("document.activeElement.textContent") == "Data and code"
+    assert page.evaluate("document.activeElement.textContent") == "Downloads"
     box = page.evaluate("(() => { const r = document.activeElement.getBoundingClientRect(); return [r.left, r.right]; })()")
     assert 0 <= box[0] and box[1] <= 390, box
     # at a tablet width the nav has moved under the brand rather than hiding links behind the brand
@@ -376,29 +376,21 @@ def _count(moves, **flags):
     return sum(1 for m in moves if all(m[k] == v for k, v in flags.items()))
 
 
-def test_issues_and_domains_pages_match_the_files(browser, dist):
-    page, problems = _open(browser, dist, "issues-domains.html")
+def test_trends_issues_and_domains_match_the_files(browser, dist):
+    """Ticket 28: issues and domains are a section of Trends; the claimant chips scope them too."""
+    page, problems = _open(browser, dist, "trends.html")
     moves = [m for m in _moves() if m["status"] == "accepted"]
-    # issues by year (all claimants): 1988 energy mentions
     page.locator('[data-toggle-table="fig-issues-all"]').click()
     page.wait_for_timeout(100)
     row = page.locator("#fig-issues-all .table-view tbody tr", has_text="1988").first.inner_text().split("\t")
     header = page.locator("#fig-issues-all .table-view thead th").all_inner_texts()
     assert row[header.index("Energy")] == str(_count(moves, year="1988", energy="1"))
     assert row[header.index("Military")] == str(_count(moves, year="1988", military="1"))
-    # issues by sub-region: Paracels x Fisheries, all claimants
-    page.locator('[data-toggle-table="fig-issues-loc"]').click()
+    page.locator('[data-toggle-table="fig-domains-all"]').click()
     page.wait_for_timeout(100)
-    row = page.locator("#fig-issues-loc .table-view tbody tr", has_text="2 Paracels").first.inner_text().split("\t")
-    header = page.locator("#fig-issues-loc .table-view thead th").all_inner_texts()
-    assert row[header.index("Fisheries")] == str(_count(moves, loc02_paracels="1", fisheries="1"))
-    # domains per claimant: Vietnam, diplomatic, 1994
-    page.locator('[data-toggle-table="fig-domains-VN"]').click()
-    page.wait_for_timeout(100)
-    row = page.locator("#fig-domains-VN .table-view tbody tr", has_text="1994").first.inner_text().split("\t")
-    header = page.locator("#fig-domains-VN .table-view thead th").all_inner_texts()
-    assert row[header.index("Diplomatic")] == str(_count(moves, claimant="VN", year="1994", diplomatic="1"))
-    # the filter row scopes everything: drop China and the all-claimants chart's China share disappears
+    row = page.locator("#fig-domains-all .table-view tbody tr", has_text="1994").first.inner_text().split("\t")
+    header = page.locator("#fig-domains-all .table-view thead th").all_inner_texts()
+    assert row[header.index("Diplomatic")] == str(_count(moves, year="1994", diplomatic="1"))
     page.locator('.chip[data-code="CN"] input').uncheck(force=True)
     page.wait_for_timeout(100)
     row = page.locator("#fig-issues-all .table-view tbody tr", has_text="1988").first.inner_text().split("\t")
@@ -408,52 +400,31 @@ def test_issues_and_domains_pages_match_the_files(browser, dist):
     page.close()
 
 
-def test_subregions_page_map_and_bins(browser, dist):
-    page, problems = _open(browser, dist, "subregions.html")
+def test_trends_subregions_section(browser, dist):
+    """Ticket 28: the sub-region charts are a section of Trends, scoped by the same chips."""
+    page, problems = _open(browser, dist, "trends.html")
     moves = [m for m in _moves() if m["status"] == "accepted"]
-    assert page.locator(".choropleth .zone").count() == 10
     assert page.locator('[data-chart="years"][data-dim="subregion"] svg').count() == 10
-    bins = page.locator("#map-bin label span").all_inner_texts()
-    assert bins[:3] == ["All years", "1970", "1971–75"] and bins[-1] == "2011–15"
-    # the small multiples use one colour per selection, never China's on every claimant
-    page.locator('#map-claimant input[value="VN"]').check(force=True)
+    for c in ("CN", "VN"):   # Philippines alone
+        page.locator(f'.chip[data-code="{c}"] input').uncheck(force=True)
     page.wait_for_timeout(150)
     fill = page.locator('[data-chart="years"][data-dim="subregion"] .seg').first.get_attribute("fill")
-    assert fill.lower() == page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--vn').trim()").lower()
-    page.locator('#map-claimant input[value="ALL"]').check(force=True)
-    page.wait_for_timeout(150)
-    # fills change with the period
-    fills = lambda: [z.get_attribute("fill") for z in page.locator(".choropleth .zone").all()]
-    before = fills()
-    page.locator('#map-bin input[value="2011-2015"]').check(force=True)
-    page.wait_for_timeout(150)
-    after = fills()
-    assert before != after
-    # the table twin holds the period counts: Paracels (2), 2011-15, all claimants
-    page.locator('[data-toggle-table="fig-map"]').click()
-    page.wait_for_timeout(100)
-    header = page.locator("#fig-map .table-view thead th").all_inner_texts()
-    row = page.locator("#fig-map .table-view tbody tr", has_text="2011–15").first.inner_text().split("\t")
-    expect = sum(1 for m in moves if m["loc02_paracels"] == "1" and 2011 <= int(m["year"]) <= 2015)
-    assert row[header.index("2 Paracels")] == str(expect)
-    # claimant selector scopes the map, the type chart and the small multiples
-    page.locator('#map-claimant input[value="PH"]').check(force=True)
-    page.wait_for_timeout(150)
-    row = page.locator("#fig-map .table-view tbody tr", has_text="2011–15").first.inner_text().split("\t")
-    expect = sum(1 for m in moves if m["claimant"] == "PH" and m["loc02_paracels"] == "1" and 2011 <= int(m["year"]) <= 2015)
-    assert row[header.index("2 Paracels")] == str(expect)
+    assert fill.lower() == page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--ph').trim()").lower(), "one colour per selection"
     page.locator('[data-toggle-table="fig-loc-type"]').click()
     page.wait_for_timeout(100)
     header = page.locator("#fig-loc-type .table-view thead th").all_inner_texts()
     row = page.locator("#fig-loc-type .table-view tbody tr", has_text="6 Spratly NE").first.inner_text().split("\t")
     assert row[header.index("Total")] == str(sum(1 for m in moves if m["claimant"] == "PH" and m["loc06_spratly_ne"] == "1"))
-    # hovering a zone shows its counts
-    page.locator('[data-toggle-table="fig-map"]').click()
-    page.hover(".choropleth .zone >> nth=5")
-    page.wait_for_timeout(50)
-    assert "Spratly NE" in page.locator(".tooltip").inner_text()
     assert problems == []
     page.close()
+
+
+def test_the_merged_pages_redirect_to_trends(dist):
+    for old, anchor in (("issues-domains.html", "#issues"), ("subregions.html", "#subregions")):
+        html = (dist / old).read_text(encoding="utf-8")
+        assert f'content="0; url=trends.html{anchor}"' in html and f'href="trends.html{anchor}"' in html
+    trends = (dist / "trends.html").read_text(encoding="utf-8")
+    assert 'id="issues"' in trends and 'id="subregions"' in trends
 
 
 def test_periods_extend_with_the_years():

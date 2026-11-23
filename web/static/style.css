@@ -98,8 +98,7 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 .banner-link { display: block; }   /* edge to edge (the maintainer, 2026-10-28) */
 /* the image edge to edge; on wide screens the height is capped at 32 % of the width, which keeps the logo, the title
    and its rule (the top two thirds of the artwork) in view; under 700px the whole image shows */
-.banner-img { display: block; width: 100%; height: auto; max-height: 32vw; object-fit: cover; object-position: center top; }
-@media (max-width: 700px) { .banner-img { max-height: none; } }
+.banner-img { display: block; width: 100%; height: clamp(84px, 11vw, 150px); object-fit: cover; object-position: center 30%; }   /* a slim strip on the title's first line (ticket 28) */
 .banner-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .navband { background: var(--navy); border-top: 1px solid var(--band-rule); }
 .navband-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 52px; }
@@ -623,3 +622,12 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .amap-muted { color: var(--muted); font-weight: 400; }
 .amap-lines { display: grid; gap: 4px; }
 .amap-source { margin: 0; font-size: 0.72rem; }
+/* ---- the other pages in the home page's style (ticket 28) ---- */
+.section-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: var(--s3) 0 var(--s5); font-size: 0.88rem; }
+.section-links a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+.section-links a:hover { color: var(--link); border-bottom-color: currentColor; }
+.trend-section { margin-top: var(--s7); }
+.trend-section > h2 { font: var(--heading-weight) 1.35rem/1.25 var(--font-display); margin: 0 0 var(--s4); }
+.howto { margin-top: var(--s4); border-top: 1px solid var(--rule); padding-top: var(--s3); font-size: 0.92rem; color: var(--ink-2); max-width: var(--measure); }
+.howto > summary { cursor: pointer; font-weight: 600; color: var(--ink); font-size: 0.88rem; }
+.howto[open] > summary { margin-bottom: var(--s2); }

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}South China Sea Developments Tracker{% endblock %}
+{% block title %}Events — South China Sea Developments Tracker{% endblock %}
 {% block body_class %}is-tracker{% endblock %}
 {% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
 <script id="mapdata" type="application/json">{{ map_json|safe }}</script>
@@ -12,8 +12,8 @@
 <main id="main" class="tracker">
   <aside class="side" aria-label="Filters and events in view">
     <div class="side-head">
-      <h1>South China Sea Developments Tracker</h1>
-      <p class="byline">Assertive moves by the claimant states in the South China Sea since 1970 — statements, patrols, construction, interference, force — on the coding rules of the <em>Maritime Assertiveness Time Series</em>. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
+      <h1>Events</h1>
+      <p class="byline">Every dated event behind the moves, on the map and in a list. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
     </div>
     <div class="side-count">
       <p class="count" id="map-count" aria-live="polite"></p>
