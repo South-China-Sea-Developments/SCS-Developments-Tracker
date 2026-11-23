@@ -12,6 +12,7 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - The home page is the assertiveness map (ticket 27): the ten sub-regions shaded by the type-weighted moves of a five-year window (or the build-up since 1970), counts and change arrows, the reefs, shoals and islands the moves name on zoom, a timeline, type / claimant / directed-at filters, decade maps, optional reference lines (Natural Earth), links to a view.
 - The other pages in the same style (ticket 28): six menu items (Tracker, Events, Trends, Cases, Methodology, Downloads), a slim banner on inner pages, Issues and domains and Sub-regions merged into Trends (old addresses redirect), short openings, toggle filters.
 - Official Asia Society Policy Institute logo on every page; EEZ boundaries from Marine Regions (v12, CC BY 4.0) in place of the indicative zones; 37 more features and more names for 52 others from GeoNames (CC BY 4.0) (ticket 31).
+- Every name on the maps in English (ticket 32): 43 features renamed from Chinese, pinyin or Vietnamese, 9 duplicates merged into their English features, event places shown in English (the recorded names are unchanged).
 
 ## v2.0.0-dev — 2026-10-16
 
