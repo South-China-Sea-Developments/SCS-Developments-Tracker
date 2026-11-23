@@ -35,7 +35,9 @@ FEATURE_WORDS = re.compile(r"\b(reefs?|shoals?|banks?|islands?|islets?|rocks?|ca
                            r"bahura|pulo|kapuluan|buhanginan|beting|pulau|terumbu|gosong|kepulauan|"
                            # names that stand alone in prose
                            r"paracels?|spratlys?|xisha|nansha|zhongsha|dongsha|pratas|natuna|luconia|scarborough|ayungin|macclesfield|"
-                           r"hoang sa|truong sa|kalayaan|panatag|masinloc)\b", re.I)
+                           r"hoang sa|truong sa|kalayaan|panatag|masinloc|"
+                           # one-word names of single features, distinctive in this sea (ticket 34)
+                           r"thitu|pag-?asa|triton|panata)\b", re.I)
 MIN_CJK = 3
 
 

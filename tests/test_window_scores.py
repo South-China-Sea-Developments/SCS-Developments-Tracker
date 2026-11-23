@@ -58,6 +58,27 @@ def test_moves_carry_the_features_they_name_and_the_map_gets_their_positions():
     assert set(feats) == {"scarborough-shoal", "mischief-reef"} and 14 < feats["scarborough-shoal"]["lat"] < 16
 
 
+def test_moves_are_also_placed_by_their_events():
+    """Ticket 34: a move whose description names no reef is placed by its accepted events' places and by
+    a position the coder gave the event; a rejected event places nothing."""
+    from web.build import window_moves
+    m = move("CN202101", "CN", 2021, ["demonstrative"], [10])
+    m["description"] = "2021: A Chinese survey ship works off Malaysia."
+    m["dyads"] = "CM"
+    evs = [{"event_id": "ev-a", "status": "accepted", "location_name": "Luconia Breakers", "lat": "", "lon": ""},
+           {"event_id": "ev-b", "status": "accepted", "location_name": "Block K off Sabah", "lat": "6.075", "lon": "114.343"},
+           {"event_id": "ev-c", "status": "rejected", "location_name": "Scarborough Shoal", "lat": "", "lon": ""}]
+    feats = {}
+    [w] = window_moves([m], feats, {"CN202101": evs})
+    assert w["f"] == ["luconia-breakers", "ev:ev-b"]
+    assert feats["ev:ev-b"] == {"n": "Block K off Sabah", "lat": 6.075, "lon": 114.343, "sr": 7}
+
+
+def test_one_word_names_of_single_features():
+    from pipeline.gazetteer import named_features
+    assert [f["name_en"] for f in named_features("2012 June: Philippines opens school on Thitu/Pagasa.")] == ["Thitu Island"]
+
+
 def test_every_subregion_label_sits_inside_its_polygon():
     import json
     from pipeline.gazetteer import SUBREGIONS, subregion_of
