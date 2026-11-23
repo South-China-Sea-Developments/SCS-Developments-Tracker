@@ -123,8 +123,8 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
         "issues": issues, "issue_labels": [ISSUE_LABELS[i] for i in issues],
         "subregions": subregions, "subregion_labels": [schema.SUBREGION_NAMES[i - 1] for i in subregions],
         # the reefs, shoals and islands the description names, placed on the inset (ticket 28)
-        "features": [{"name": f["name_en"] or f["feature_id"], "xy": [round(v, 1) for v in project(float(f["lon"]), float(f["lat"]))]}
-                     for f in gazetteer.named_features(m["description"])],
+        "features": [{"name": p["n"], "xy": [round(v, 1) for v in project(p["lon"], p["lat"])]}
+                     for p in move_places(m, events_by_move.get(m["move_id"], ()))],
         "dyads": dyads, "dyad_labels": [dyad_label(d) for d in dyads],
         "targets": sorted({d[1] for d in dyads if len(d) == 2}),
         "description": m["description"],
@@ -265,7 +265,7 @@ def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_S
     return {"span": span, "ends": ends, "scores": scores, "max": top}
 
 
-def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
+def window_moves(moves: list[dict], features: dict | None = None, events_by_move: dict | None = None) -> list[dict]:
     """The moves behind the map's colour, compact, for its details panel: id, claimant, year, weight, highest
     type, sub-regions, the features its description names (`f`, ids into `features`, which this fills),
     whom it is directed at (`g`, the dyads' second letters) and the description's first 220 characters."""
@@ -277,20 +277,43 @@ def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
         out.append({"m": m["move_id"], "c": m["claimant"], "y": int(m["year"]), "w": w,
                     "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
                     "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220],
-                    "f": move_features(m, features), "g": sorted({d[1] for d in m.get("dyads", "").split() if len(d) == 2})})
+                    "f": move_features(m, features, (events_by_move or {}).get(m["move_id"], ())), "g": sorted({d[1] for d in m.get("dyads", "").split() if len(d) == 2})})
     return out
 
 
-def move_features(m: dict, features: dict | None) -> list[str]:
-    """The point features (reefs, shoals, islands) a move's description names, through the gazetteer; each is
-    added to `features` as {name, lat, lon, sub-region}."""
-    ids = []
+def move_places(m: dict, events=()) -> list[dict]:
+    """The points a move is placed at (ticket 34), first mention first: the features its description names,
+    then those its accepted events' places name, then its events' own coordinates (a position the coder
+    gave, through "Edit: lat/lon"). Each is {id, n (English name), lat, lon, sr}."""
+    out, seen = [], set()
+
+    def add(fid, name, lat, lon, sr):
+        if fid not in seen:
+            seen.add(fid)
+            out.append({"id": fid, "n": name, "lat": round(float(lat), 4), "lon": round(float(lon), 4),
+                        "sr": int(sr) if str(sr).isdigit() else None})
     for f in gazetteer.named_features(m["description"]):
-        fid = f["feature_id"]
-        ids.append(fid)
-        if features is not None and fid not in features:
-            features[fid] = {"n": f["name_en"] or fid, "lat": round(float(f["lat"]), 4), "lon": round(float(f["lon"]), 4),
-                             "sr": int(f["subregion"]) if str(f["subregion"]).isdigit() else None}
+        add(f["feature_id"], f["name_en"] or f["feature_id"], f["lat"], f["lon"], f["subregion"])
+    for e in events:
+        if e.get("status", "accepted") != "accepted":
+            continue
+        for f in gazetteer.named_features(e.get("location_name", "")):
+            add(f["feature_id"], f["name_en"] or f["feature_id"], f["lat"], f["lon"], f["subregion"])
+        if e.get("lat") and e.get("lon"):
+            lat, lon = float(e["lat"]), float(e["lon"])
+            if not any(abs(p["lat"] - lat) < 0.02 and abs(p["lon"] - lon) < 0.02 for p in out):   # not a feature already placed
+                add("ev:" + e["event_id"], gazetteer.english_place(e.get("location_name", "")) or "Reported position",
+                    lat, lon, gazetteer.subregion_of(lat, lon) or "")
+    return out
+
+
+def move_features(m: dict, features: dict | None, events=()) -> list[str]:
+    """The ids of move_places(m, events); each is added to `features` as {n, lat, lon, sr}."""
+    ids = []
+    for p in move_places(m, events):
+        ids.append(p["id"])
+        if features is not None and p["id"] not in features:
+            features[p["id"]] = {k: p[k] for k in ("n", "lat", "lon", "sr")}
     return ids
 
 
@@ -475,7 +498,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     # its weighting switch can recombine them; window_scores is the reference the tests hold it to
     features: dict = {}
     mapd["assert"] = {"span": WINDOW_SPAN, "ends": list(range(agg["years"][0] + WINDOW_SPAN - 1, latest + 1)),
-                      "moves": window_moves(published, features), "features": features,
+                      "moves": window_moves(published, features, events_by_move), "features": features,
                       "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES,
                       # optional reference lines: EEZ boundaries (Marine Regions, CC BY 4.0) and the dashed line (Natural Earth); web/static/geo/README.md
                       "lines": {k: json.loads((HERE / "static" / "geo" / f"{k}.geojson").read_text(encoding="utf-8")) for k in ("eez", "dashline")},

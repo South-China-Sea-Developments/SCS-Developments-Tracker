@@ -14,6 +14,7 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - Official Asia Society Policy Institute logo on every page; EEZ boundaries from Marine Regions (v12, CC BY 4.0) in place of the indicative zones; 37 more features and more names for 52 others from GeoNames (CC BY 4.0) (ticket 31).
 - Every name on the maps in English (ticket 32): 43 features renamed from Chinese, pinyin or Vietnamese, 9 duplicates merged into their English features, event places shown in English (the recorded names are unchanged).
 - Candidates without a sub-region come to review with sub-regions suggested from their place (coasts, EEZs, seas, oil blocks) and the reason (ticket 33); new reference files `areas.csv` and `area_points.csv`.
+- Moves are also placed by their events' places and coordinates, and by four one-word feature names (ticket 34): 158 of 388 placed (was 144). Thitu Island shown under its English name.
 
 ## v2.0.0-dev — 2026-10-16
 
