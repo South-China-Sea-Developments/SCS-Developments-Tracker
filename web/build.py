@@ -123,7 +123,7 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
         "issues": issues, "issue_labels": [ISSUE_LABELS[i] for i in issues],
         "subregions": subregions, "subregion_labels": [schema.SUBREGION_NAMES[i - 1] for i in subregions],
         # the reefs, shoals and islands the description names, placed on the inset (ticket 28)
-        "features": [{"name": p["n"], "xy": [round(v, 1) for v in project(p["lon"], p["lat"])]}
+        "features": [{"id": p["id"], "name": p["n"], "xy": [round(v, 1) for v in project(p["lon"], p["lat"])]}
                      for p in move_places(m, events_by_move.get(m["move_id"], ()))],
         "dyads": dyads, "dyad_labels": [dyad_label(d) for d in dyads],
         "targets": sorted({d[1] for d in dyads if len(d) == 2}),
@@ -317,6 +317,58 @@ def move_features(m: dict, features: dict | None, events=()) -> list[str]:
     return ids
 
 
+def read_holders(data_dir: Path) -> dict[str, dict]:
+    """feature_id -> {holder codes, since, note, source} (ticket 36: data/reference/occupation.csv)."""
+    path = data_dir / "reference" / "occupation.csv"
+    return {r["feature_id"]: {**r, "holders": r["holder"].split()} for r in read_csv(path)} if path.exists() else {}
+
+
+def sr_of(f: dict):
+    return f["subregion"] or gazetteer.subregion_of(f["lat"], f["lon"])
+
+
+def feature_pages(published: list[dict], events_by_move: dict, holders: dict, names: dict) -> list[dict]:
+    """One page per reef, shoal or island that a published move is placed at or a claimant holds (ticket 35):
+    its names in every language the gazetteer has, who holds it, and every move placed there, oldest first.
+    The page's address is its English name as a slug (`slug`), unique, ASCII."""
+    feats = gazetteer.load()
+    moves_at: dict[str, list[dict]] = {}
+    for m in sorted(published, key=lambda m: (m["year"], m["move_id"])):
+        for p in move_places(m, events_by_move.get(m["move_id"], ())):
+            if not p["id"].startswith("ev:"):
+                moves_at.setdefault(p["id"], []).append(m)
+    ids = sorted((set(moves_at) | {k for k in holders if k in feats and feats[k]["kind"] != "island group"}),
+                 key=lambda k: feats[k]["name_en"])
+    taken, out = set(), []
+    for fid in ids:
+        f = feats[fid]
+        slug = gazetteer.slugify(gazetteer._fold(f["name_en"]))
+        if slug in taken:
+            slug = f"{slug}-{len(taken)}"
+        taken.add(slug)
+        own = {f[c] for c in gazetteer.NAME_COLUMNS if f[c]}
+        also = sorted({n for n in f["names"] if n not in own and not gazetteer._is_cjk(n)}, key=str.casefold)
+        h = holders.get(fid)
+        group = holders.get("paracel-islands")
+        if h is None and group and feats.get("paracel-islands") and sr_of(f) == feats["paracel-islands"]["subregion"]:
+            h = {**group, "note": "As part of the Paracels, " + group["note"][0].lower() + group["note"][1:]}   # held whole
+        ms = moves_at.get(fid, [])
+        by = {}
+        for m in ms:
+            by[m["claimant"]] = by.get(m["claimant"], 0) + 1
+        sr = f["subregion"] or gazetteer.subregion_of(f["lat"], f["lon"])
+        out.append({"id": fid, "slug": slug, "name": f["name_en"], "kind": f["kind"], "lat": round(f["lat"], 4), "lon": round(f["lon"], 4),
+                    "subregion": sr, "xy": [round(v, 1) for v in project(f["lon"], f["lat"])],
+                    "names": [(label, f[c]) for c, label in (("name_zh", "Chinese"), ("name_vi", "Vietnamese"), ("name_fil", "Filipino"), ("name_ms", "Malay")) if f[c]],
+                    "also": also[:24], "wikidata": f.get("wikidata", ""),
+                    "held": {"by": [names.get(c, c) for c in h["holders"]], "codes": h["holders"], "since": h["since"], "note": h["note"], "source": h["source"]} if h else None,
+                    "moves": [{"id": m["move_id"], "claimant": m["claimant"], "year": int(m["year"]),
+                               "types": [TYPE_LABELS[t] for t in schema.TYPE_FLAGS if m[t] == "1"],
+                               "text": re.sub(r"\s+", " ", m["description"]).strip()[:240]} for m in ms],
+                    "by_claimant": sorted(by.items(), key=lambda t: -t[1])})
+    return out
+
+
 def label_point(rings: list) -> list[float]:
     """A point well inside a polygon (its outer ring first) for its label: of a grid over the bounding box,
     the inside point farthest from every edge. The bounding-box centre can fall outside a bent shape
@@ -371,6 +423,7 @@ FILE_WHAT = {
     "gazetteer_geonames.csv": "More features and names from GeoNames (CC BY 4.0).",
     "areas.csv": "Named sea areas (coasts, EEZs, seas, oil blocks) with their share of each sub-region, for suggesting sub-regions.",
     "area_points.csv": "Sourced points for the oil and gas blocks in areas.csv.",
+    "occupation.csv": "Who holds each occupied feature, and since when (Wikipedia's list of Spratly features; the Paracels; Scarborough Shoal).",
     **{f"BASELINE-{c}.md": f"{n}: pre-1970 baseline actions, with sources." for c, n in (("CN", "China"), ("VN", "Vietnam"), ("PH", "Philippines"), ("MY", "Malaysia"), ("ID", "Indonesia"), ("TW", "Taiwan"))},
     "COLUMNS.md": "Column definitions of every table (data/README.md at this version).",
     "SPEC.md": "The project specification at this version.",
@@ -497,6 +550,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     # the map computes its scores in the browser from these moves, so its filters (type, directed at) and
     # its weighting switch can recombine them; window_scores is the reference the tests hold it to
     features: dict = {}
+    holders = read_holders(data_dir)
+    fpages = feature_pages(published, events_by_move, holders, names)
+    page_of = {fp["id"]: fp["slug"] for fp in fpages}
     mapd["assert"] = {"span": WINDOW_SPAN, "ends": list(range(agg["years"][0] + WINDOW_SPAN - 1, latest + 1)),
                       "moves": window_moves(published, features, events_by_move), "features": features,
                       "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES,
@@ -508,6 +564,17 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                       "gazetteer": {"type": "FeatureCollection", "features": [
                           {"type": "Feature", "properties": {"n": f["name_en"] or fid}, "geometry": {"type": "Point", "coordinates": [round(float(f["lon"]), 4), round(float(f["lat"]), 4)]}}
                           for fid, f in sorted(gazetteer.load().items()) if f["lat"] and f["lon"] and f["kind"] != "island group"]}}
+    # feature pages (ticket 35) and who holds what (ticket 36): the map links its dots to the pages and can
+    # mark the held features in their holder's colour
+    for fid, F in features.items():
+        if fid in page_of:
+            F["p"] = page_of[fid]
+        if fid in holders:
+            F["h"] = holders[fid]["holders"]
+    gz_feats = gazetteer.load()
+    mapd["assert"]["held"] = [{"n": gz_feats[fid]["name_en"], "lat": round(gz_feats[fid]["lat"], 4), "lon": round(gz_feats[fid]["lon"], 4),
+                               "h": h["holders"], "s": h["since"], "p": page_of.get(fid, ""), "g": int(gz_feats[fid]["kind"] == "island group")}
+                              for fid, h in sorted(holders.items()) if fid in gz_feats]
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")
@@ -541,8 +608,18 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         (out_dir / old).write_text(env.get_template("redirect.html").render(target=target), encoding="utf-8")
     case_tmpl = env.get_template("case.html")
     for v in views:
+        for f in v["features"]:
+            f["page"] = page_of.get(f.get("id", ""), "")
         html = case_tmpl.render(page="case", root="../", move=v, **ctx)
         (out_dir / "cases" / f"{v['id']}.html").write_text(html, encoding="utf-8")
+    (out_dir / "features").mkdir(exist_ok=True)
+    feat_tmpl = env.get_template("feature.html")
+    for fp in fpages:
+        (out_dir / "features" / f"{fp['slug']}.html").write_text(feat_tmpl.render(page="feature", root="../", feature=fp, **ctx), encoding="utf-8")
+    by_sr: dict = {}
+    for fp in fpages:
+        by_sr.setdefault(fp["subregion"] or 0, []).append(fp)
+    (out_dir / "features.html").write_text(env.get_template("features.html").render(page="features.html", root="", groups=sorted(by_sr.items()), n_features=len(fpages), **ctx), encoding="utf-8")
     return agg
 
 

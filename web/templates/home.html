@@ -62,10 +62,11 @@
             </select></label>
         </div>
       </fieldset>
-      <fieldset class="fgroup amap-lines"><legend>Lines on the map</legend>
+      <fieldset class="fgroup amap-lines"><legend>On the map</legend>
         <label class="check amap-opt"><input type="checkbox" id="amap-line-eez"><span class="box" aria-hidden="true"></span><span class="check-label">EEZ boundaries <span class="amap-muted">(where settled or claimed)</span></span></label>
         <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line <span class="amap-muted">(a claim)</span></span></label>
-        <p class="amap-muted amap-source">Lines: <a href="https://www.marineregions.org/">Marine Regions</a> (EEZ, v12, CC BY 4.0); Natural Earth (dashed line).</p>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-held"><span class="box" aria-hidden="true"></span><span class="check-label">Who holds each feature <span class="amap-muted">(outposts, in the holder's colour)</span></span></label>
+        <p class="amap-muted amap-source">Lines: <a href="https://www.marineregions.org/">Marine Regions</a> (EEZ, v12, CC BY 4.0); Natural Earth (dashed line); holders: Wikipedia's list of Spratly features (2026-11-23).</p>
       </fieldset>
       <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among the sub-regions it covers, so a claim over the whole sea does not count in full everywhere</span></label>
       <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>

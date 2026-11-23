@@ -15,6 +15,7 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - Every name on the maps in English (ticket 32): 43 features renamed from Chinese, pinyin or Vietnamese, 9 duplicates merged into their English features, event places shown in English (the recorded names are unchanged).
 - Candidates without a sub-region come to review with sub-regions suggested from their place (coasts, EEZs, seas, oil blocks) and the reason (ticket 33); new reference files `areas.csv` and `area_points.csv`.
 - Moves are also placed by their events' places and coordinates, and by four one-word feature names (ticket 34): 158 of 388 placed (was 144). Thitu Island shown under its English name.
+- A page for each reef, shoal or island with moves or a holder, and a By place index (ticket 35); who holds each feature, on the feature pages and as an optional map layer (ticket 36); new reference file `occupation.csv`; Ladd Reef's position corrected.
 
 ## v2.0.0-dev — 2026-10-16
 
