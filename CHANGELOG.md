@@ -17,6 +17,9 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - Moves are also placed by their events' places and coordinates, and by four one-word feature names (ticket 34): 158 of 388 placed (was 144). Thitu Island shown under its English name.
 - A page for each reef, shoal or island with moves or a holder, and a By place index (ticket 35); who holds each feature, on the feature pages and as an optional map layer (ticket 36); new reference file `occupation.csv`; Ladd Reef's position corrected.
 - A selected sub-region's panel shows its score over every window, with the not-yet-coded years marked (ticket 37).
+- One small map per claimant for the window shown, on one shared scale (ticket 38).
+- Cite, download (PNG) or embed any view of the map (ticket 39).
+- A What's new page and Atom feed of moves added, updated and retracted (ticket 40).
 
 ## v2.0.0-dev — 2026-10-16
 

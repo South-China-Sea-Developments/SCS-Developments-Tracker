@@ -712,3 +712,33 @@ html.curtain-on { overflow: hidden; }
 .amap-history figcaption { font-size: 0.85em; margin-top: 2px; }
 .amap-history .line.uncoded { stroke: #9aa5ae; stroke-dasharray: 3 3; stroke-width: 1.5; }
 .amap-history .tick.mid { text-anchor: middle; }
+
+/* one small map per claimant (ticket 38) */
+.amap-claimant-map .amap-decade-label::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--c, #888); margin-right: 4px; vertical-align: 1px; }
+.amap-claimant-total { display: block; font-size: 0.8em; color: #6b7780; font-variant-numeric: tabular-nums; }
+.amap-claimants { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 8px; }
+.amap-claimants .amap-claimant-map { width: auto; min-width: 0; }
+.amap-claimants .amap-claimant-map svg { width: 100%; height: auto; max-width: 92px; }
+.amap-claimants .amap-decade-label { white-space: nowrap; font-size: 0.82em; }
+.amap-decades.amap-claimants { max-width: 320px; opacity: 1; }
+
+/* cite, download or embed this view (ticket 39) */
+.amap-cite { margin: 6px 0 0; font-size: 0.92em; }
+.amap-cite summary { cursor: pointer; color: var(--link, #1f4e8c); }
+.amap-cite-field { display: grid; gap: 3px; margin: 8px 0 4px; }
+.amap-cite-field span { font-weight: 600; font-size: 0.9em; }
+.amap-cite-field textarea { width: 100%; box-sizing: border-box; font: 0.85em/1.4 var(--font-mono, ui-monospace, monospace); padding: 6px; border: 1px solid #c9cfd4; border-radius: 4px; resize: vertical; background: #fafbfc; }
+.amap-cite-actions { margin: 2px 0 0; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.embed-credit { display: none; }
+/* embedded: the map and its caption only, with a link back */
+html.embed .site-head, html.embed .colophon, html.embed .banner-fold, html.embed .skip, html.embed .amap-panel, html.embed .amap-cue, html.embed .curtain { display: none !important; }
+html.embed body { margin: 0; }
+html.embed .amap-stage { height: 100vh; position: relative; top: 0; }
+html.embed .embed-credit { display: block; position: absolute; left: 10px; bottom: 10px; z-index: 5; background: rgba(255,255,255,0.94); padding: 3px 8px; border-radius: 4px; font-size: 12px; color: var(--ink, #0c1a2a); text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+
+/* what's new (ticket 40) */
+.news { margin: var(--s4, 16px) 0 var(--s6, 40px); max-width: 860px; }
+.news-day h2 { font-size: 1rem; margin: var(--s5, 24px) 0 var(--s2, 6px); }
+.news-n { font-weight: 400; color: var(--muted, #555); font-size: 0.9em; margin-left: 6px; }
+.news-kind { font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted, #555); min-width: 5.5em; }
+.news-retracted p { color: var(--muted, #555); }

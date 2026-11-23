@@ -523,6 +523,60 @@
     });
   }
 
+  // ---- one small map per claimant (ticket 38): the window (or build-up) for each claimant alone, with
+  // the other filters, on one scale shared by all claimants and all windows, so the maps compare --------
+  var claimCache = { key: null };
+  function measureByClaimant() {
+    var shared = !!(sharedBox && sharedBox.checked);
+    var key = [state.target, state.types.join(","), shared].join("|");
+    if (claimCache.key === key) return claimCache;
+    var years = {};
+    A.moves.forEach(function (m) {
+      if (state.types.indexOf(m.t) < 0 || (state.target && (m.g || []).indexOf(state.target) < 0)) return;
+      var w = shared && m.sr.length ? m.w / m.sr.length : m.w;
+      var byY = years[m.c] || (years[m.c] = {}), row = byY[m.y] || (byY[m.y] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+      m.sr.forEach(function (i) { row[i - 1] += w; });
+    });
+    var out = { key: key, win: {}, cum: {}, maxW: 0, maxC: 0 };
+    Object.keys(NAMES).forEach(function (c) {
+      var byY = years[c] || {};
+      out.win[c] = {}; out.cum[c] = {};
+      ENDS.forEach(function (end) {
+        var w = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], k = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        for (var y = FIRST_YEAR; y <= end; y++) {
+          var r = byY[y]; if (!r) continue;
+          for (var i = 0; i < 10; i++) { k[i] += r[i]; if (y > end - SPAN) w[i] += r[i]; }
+        }
+        out.win[c][end] = w; out.cum[c][end] = k;
+        out.maxW = Math.max(out.maxW, Math.max.apply(null, w));
+        out.maxC = Math.max(out.maxC, Math.max.apply(null, k));
+      });
+    });
+    claimCache = out;
+    return out;
+  }
+  var claimantsBox = $("amap-claimants");
+  function renderClaimants() {
+    if (!claimantsBox) return;
+    var M = measureByClaimant(), cum = state.mode === "cumulative", max = cum ? M.maxC : M.maxW;
+    claimantsBox.textContent = "";
+    Object.keys(NAMES).forEach(function (c) {
+      var vals = (cum ? M.cum : M.win)[c][state.end] || [], total = vals.reduce(function (a, v) { return a + v; }, 0);
+      var b = button("amap-decade amap-claimant-map" + (state.who === c ? " on" : ""), "",
+        NAMES[c] + ", " + windowLabel(state.end) + (total ? ": score " + fmt(total) : ": no moves") + (state.who === c ? " (shown on the map; click for all claimants)" : " (show on the map)"),
+        function () { state.who = state.who === c ? "ALL" : c; claimSel.value = state.who; render(); });
+      b.setAttribute("data-code", c);
+      var svg = svgEl("svg", { viewBox: "0 0 100 " + PROJ.h.toFixed(1), "aria-hidden": "true" }, b);
+      PATHS.forEach(function (d0, i) {
+        var v = vals[i];
+        svgEl("path", { d: d0, fill: v && max ? colourAt(Math.sqrt(v / max)) : "none", "fill-opacity": "0.75", stroke: "#a7b1b8", "stroke-width": "0.5" }, svg);
+      });
+      el("span", "amap-decade-label", NAMES[c], b);
+      el("span", "amap-claimant-total", total ? fmt(total) : "no moves yet", b);
+      claimantsBox.appendChild(b);
+    });
+  }
+
   // ---- the tick where Chubb's coding ends --------------------------------------------------------
   function clampEnd(y) { return Math.min(LAST, Math.max(FIRST, y)); }
   (function sourceTick() {
@@ -583,6 +637,77 @@
     catch (e) { linkDone.textContent = url; }
   });
 
+  // ---- cite, download or embed this view (ticket 39) -------------------------------------------------
+  var citeBox = $("amap-cite-box"), citeEl = $("amap-cite"), embedEl = $("amap-embed"), citeDone = $("amap-cite-done");
+  function viewUrl() { return location.href.split("#")[0].split("?")[0] + hashFor(); }
+  function viewTitle() {
+    var parts = ["Assertive moves, " + windowLabel(state.end), whoLine()];
+    if (state.sel !== null) parts.push("sub-region " + state.sel + " " + SR_NAMES[state.sel]);
+    if (state.feat) parts.push(FEATS[state.feat].n);
+    return parts.join("; ");
+  }
+  function citation() {
+    var d = new Date(), day = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+    return "South-China-Sea-Developments project (Angelo M., maintainer) (" + (citeBox.getAttribute("data-year") || d.getFullYear()) +
+      "). SCS Developments Tracker, map view: " + viewTitle() + ". Dataset version " + citeBox.getAttribute("data-version") + ". " +
+      viewUrl() + " (accessed " + day + "). Data to 2015: Chubb, A. (2022), Maritime Assertiveness Time Series (MATS 1.02).";
+  }
+  function embedCode() {
+    var u = location.href.split("#")[0].split("?")[0] + "?embed=1" + hashFor();
+    return '<iframe src="' + u + '" title="' + viewTitle().replace(/"/g, "&quot;") + ' (SCS Developments Tracker)" width="100%" height="560" style="border:0" loading="lazy"></iframe>';
+  }
+  var credit = $("amap-embed-credit");
+  function fillCite() {
+    if (credit) credit.href = viewUrl();
+    if (citeBox && citeBox.open) { citeEl.value = citation(); embedEl.value = embedCode(); }
+  }
+  function copy(text, done) {
+    function ok() { done.textContent = "Copied"; setTimeout(function () { done.textContent = ""; }, 2000); }
+    try { navigator.clipboard.writeText(text).then(ok, function () { done.textContent = "Select the text and copy it"; }); }
+    catch (e) { done.textContent = "Select the text and copy it"; }
+  }
+  if (citeBox) {
+    citeBox.addEventListener("toggle", fillCite);
+    $("amap-cite-copy").addEventListener("click", function () { fillCite(); copy(citeEl.value, citeDone); });
+    $("amap-embed-copy").addEventListener("click", function () { fillCite(); copy(embedEl.value, citeDone); });
+    $("amap-png").addEventListener("click", function () { exportImage(); });
+  }
+  // the map as a PNG: the basemap and shading as drawn, the counts on top, a title and a credit line
+  function exportImage() {
+    map.once("render", function () {
+      var src = map.getCanvas(), r = src.width / src.clientWidth, W = src.width, foot = Math.round(46 * r), head = Math.round(54 * r);
+      var out = document.createElement("canvas");
+      out.width = W; out.height = src.height + head + foot;
+      var g = out.getContext("2d");
+      g.fillStyle = "#ffffff"; g.fillRect(0, 0, out.width, out.height);
+      g.drawImage(src, 0, head);
+      var box = map.getContainer().getBoundingClientRect();
+      Array.prototype.forEach.call(map.getContainer().querySelectorAll(".amap-count"), function (b) {
+        var bb = b.getBoundingClientRect(), x = (bb.left - box.left + bb.width / 2) * r, y = head + (bb.top - box.top + bb.height / 2) * r;
+        var t = (b.querySelector(".amap-count-n") || b).textContent, w = (t.length * 8 + 16) * r, h = 22 * r;
+        g.fillStyle = "rgba(255,255,255,0.95)"; g.strokeStyle = "#c9cfd4"; g.lineWidth = r;
+        g.beginPath(); if (g.roundRect) g.roundRect(x - w / 2, y - h / 2, w, h, h / 2); else g.rect(x - w / 2, y - h / 2, w, h); g.fill(); g.stroke();
+        g.fillStyle = INK; g.font = "600 " + Math.round(13 * r) + "px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+        g.fillText(t, x, y);
+      });
+      g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillStyle = INK;
+      g.font = "600 " + Math.round(20 * r) + "px sans-serif"; g.fillText("Assertive moves, " + windowLabel(state.end), 16 * r, 30 * r);
+      g.font = Math.round(13 * r) + "px sans-serif"; g.fillStyle = "#4a5862"; g.fillText(whoLine() + " · degree of assertiveness, light to dark", 16 * r, 48 * r);
+      g.font = Math.round(11 * r) + "px sans-serif"; g.fillStyle = "#4a5862";
+      g.fillText("SCS Developments Tracker (South-China-Sea-Developments project), dataset " + citeBox.getAttribute("data-version") + "; data to 2015: Chubb, MATS 1.02.", 16 * r, src.height + head + 18 * r);
+      g.fillText("Basemap: OpenFreeMap, OpenMapTiles, © OpenStreetMap contributors. " + viewUrl(), 16 * r, src.height + head + 34 * r);
+      out.toBlob(function (blob) {
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "scs-tracker-" + hashFor().slice(1) + ".png";
+        document.body.appendChild(a); a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+        if (citeDone) citeDone.textContent = "Image saved";
+      }, "image/png");
+    });
+    map.triggerRepaint();
+  }
+
   // ---- render ----------------------------------------------------------------------------------
   function whoLine() {
     var parts = [state.who === "ALL" ? "All claimants" : NAMES[state.who] || state.who];
@@ -610,7 +735,9 @@
     renderDetail(all);
     renderTimeline();
     renderDecades();
+    renderClaimants();
     writeHash();
+    fillCite();
   }
   function setEnd(y) { state.end = clampEnd(y); render(); }
 

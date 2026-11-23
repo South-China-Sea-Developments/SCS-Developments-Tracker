@@ -6,6 +6,8 @@
 <title>{% block title %}South China Sea Developments Tracker{% endblock %}</title>
 <meta name="description" content="{% block description %}Assertive moves by claimant states in the South China Sea from 1970 onward. A continuation of the Maritime Assertiveness Time Series (MATS).{% endblock %}">
 <link rel="stylesheet" href="{{ root }}assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="SCS Developments Tracker: what's new" href="{{ root }}feed.xml">
+<script>/* embedded on another page (ticket 39): the map alone */ if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.className += " embed";</script>
 {% block head_data %}<script id="agg" type="application/json">{{ agg_json|safe }}</script>{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
@@ -50,7 +52,7 @@
     </div>
     <div>
       <p class="colophon-title">Cite</p>
-      <p>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). <a href="{{ root }}downloads.html#cite">How to cite this dataset</a>.</p>
+      <p>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). <a href="{{ root }}downloads.html#cite">How to cite this dataset</a> · <a href="{{ root }}whats-new.html">What's new</a> (<a href="{{ root }}feed.xml">feed</a>).</p>
     </div>
   </div>
 </footer>

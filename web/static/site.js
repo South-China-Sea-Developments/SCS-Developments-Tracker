@@ -5,7 +5,7 @@
 
   // ---- home page: the opening curtain, once per reader ----
   var curtain = document.getElementById("curtain");
-  if (curtain) {
+  if (curtain && !/\bembed\b/.test(document.documentElement.className)) {
     var seen = false;
     try { seen = window.localStorage.getItem("scs-curtain-seen") === "1"; } catch (e) { seen = true; }
     if (!seen && !still) {
