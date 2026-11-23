@@ -18,3 +18,13 @@ public changes until he approves.
 7. **Case pages:** the same frame; content unchanged.
 
 Tests follow the moved pages; the redirects are tested.
+
+## Second pass (2026-11-22)
+
+- Banner strip: the title's first line centred both ways (the artwork shown at 107 % width, cropped at 35 %).
+- Cases and Events: type, domain and issue filters as toggles, as on the map's panel (claimants keep
+  their coloured dots on Events, which double as the legend).
+- Trends: quiet chart frames (a hairline above each figure, no card or shadow), more air between
+  small multiples.
+- Case pages: the inset map in the home map's blue, with the reefs, shoals and islands the
+  description names as dots and listed under it.

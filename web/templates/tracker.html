@@ -29,17 +29,17 @@
         </div>
       </fieldset>
       <fieldset class="fgroup"><legend>Type of move</legend>
-        <div class="checks">
-          {% for key, label, blurb in types %}<label class="check"><input type="checkbox" name="t" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}
+        <div class="pills">
+          {% for key, label, blurb in types %}<label class="pill" data-type="{{ key }}"><input type="checkbox" name="t" value="{{ key }}"><span><i aria-hidden="true"></i>{{ label }}</span></label>{% endfor %}
         </div>
       </fieldset>
       <details class="fgroup more">
         <summary>More filters</summary>
         <fieldset><legend>Domain</legend>
-          <div class="checks">{% for key, label in domain_labels.items() %}<label class="check"><input type="checkbox" name="d" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}</div>
+          <div class="pills">{% for key, label in domain_labels.items() %}<label class="pill"><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}</div>
         </fieldset>
         <fieldset><legend>Issue</legend>
-          <div class="checks">{% for key, label in issue_labels.items() %}<label class="check"><input type="checkbox" name="i" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}</div>
+          <div class="pills">{% for key, label in issue_labels.items() %}<label class="pill"><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}</div>
         </fieldset>
         <fieldset><legend>Directed at</legend>
           <select id="target" aria-label="Directed at">

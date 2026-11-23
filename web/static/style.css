@@ -98,7 +98,8 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 .banner-link { display: block; }   /* edge to edge (the maintainer, 2026-10-28) */
 /* the image edge to edge; on wide screens the height is capped at 32 % of the width, which keeps the logo, the title
    and its rule (the top two thirds of the artwork) in view; under 700px the whole image shows */
-.banner-img { display: block; width: 100%; height: clamp(84px, 11vw, 150px); object-fit: cover; object-position: center 30%; }   /* a slim strip on the title's first line (ticket 28) */
+.banner { overflow: hidden; }
+.banner-img { display: block; width: 107%; max-width: none; height: clamp(84px, 11vw, 150px); object-fit: cover; object-position: center 35%; }   /* a slim strip with the title's first line centred: the title sits at 47 % of the artwork's width, so 107 % puts it mid-page (ticket 28) */
 .banner-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .navband { background: var(--navy); border-top: 1px solid var(--band-rule); }
 .navband-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 52px; }
@@ -217,8 +218,8 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .filters-note { margin: 0; color: var(--muted); font-size: 0.9375rem; }
 
 /* Figures */
-.figure { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: var(--s5) var(--s5) var(--s4); margin: var(--s4) 0; box-shadow: 0 1px 2px rgba(var(--shadow), 0.04), 0 8px 24px rgba(var(--shadow), 0.05); }
-.figure.small { padding: var(--s4) var(--s4) var(--s3); }
+.figure { background: var(--surface); border: 0; border-top: 1px solid var(--rule); border-radius: 0; padding: var(--s4) 0 var(--s3); margin: var(--s4) 0; box-shadow: none; }   /* quiet frames, as on the home page (ticket 28) */
+.figure.small { padding: var(--s3) 0 var(--s2); }
 .figure-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 12px; margin-bottom: 12px; flex-wrap: wrap; }
 .toggle { font: inherit; font-size: 0.875rem; color: var(--ink-2); background: none; border: 1px solid var(--grid); border-radius: 999px; padding: 3px 10px; cursor: pointer; }
 .toggle[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
@@ -237,7 +238,7 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .figure-grid { margin: var(--s6) 0 var(--s2); }
 .figure-grid > h3 { margin-bottom: 4px; }
 .figure-note { margin: 0 0 4px; color: var(--ink-2); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 8px 32px; }
 .grid .figure { margin: 0; }
 .empty { color: var(--muted); font-size: 0.9375rem; margin: 24px 0; }
 
@@ -369,9 +370,11 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .coding dt { color: var(--muted); }
 .coding dd { margin: 0; }
 .inset { margin: 14px 0; }
-.inset svg { width: 100%; max-width: 240px; height: auto; display: block; background: var(--paper); border: 1px solid var(--grid); border-radius: var(--radius); }
+.inset svg { width: 100%; max-width: 240px; height: auto; display: block; background: var(--map-plane); border: 0; border-radius: var(--radius); }
 .inset .sr { fill: var(--surface); stroke: var(--baseline); stroke-width: 1; }
-.inset .sr.is-on { fill: var(--ink); fill-opacity: 0.45; stroke: var(--ink); }
+.inset .sr.is-on { fill: var(--t-demonstrative); fill-opacity: 0.45; stroke: #ffffff; }   /* the home map's blue (ticket 28) */
+.inset .feat { fill: var(--ink); stroke: #ffffff; stroke-width: 1.2; }
+.inset-named { color: var(--muted); }
 .inset figcaption { color: var(--muted); font-size: 0.8125rem; margin-top: 4px; }
 
 /* Issue and domain series: the categorical slots in fixed order, aliased so they follow the mode */
@@ -631,3 +634,16 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .howto { margin-top: var(--s4); border-top: 1px solid var(--rule); padding-top: var(--s3); font-size: 0.92rem; color: var(--ink-2); max-width: var(--measure); }
 .howto > summary { cursor: pointer; font-weight: 600; color: var(--ink); font-size: 0.88rem; }
 .howto[open] > summary { margin-bottom: var(--s2); }
+/* filters as toggles, as on the map's panel: off is quiet, on is outlined in ink (ticket 28) */
+.pill { position: relative; cursor: pointer; display: inline-flex; }
+.pill input { position: absolute; opacity: 0; inset: 0; margin: 0; }
+.pill > span { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border: 1px solid var(--rule-strong); border-radius: 999px; font-size: 0.82rem; color: var(--ink-2); background: var(--surface); }
+.pill > span i { width: 8px; height: 8px; border-radius: 50%; background: var(--rule-strong); }
+.pill input:checked + span { color: var(--ink); border-color: var(--ink); background: var(--surface-2); }
+.pill[data-type="declarative"] > span i { background: var(--t-declarative); }
+.pill[data-type="demonstrative"] > span i { background: var(--t-demonstrative); }
+.pill[data-type="coercive"] > span i { background: var(--t-coercive); }
+.pill[data-type="force"] > span i { background: var(--t-force); }
+.pill input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter-groups .pill { font-size: inherit; }

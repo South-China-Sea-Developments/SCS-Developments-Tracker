@@ -20,7 +20,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from pipeline import agreement, gazetteer, release, schema
 from pipeline.load_mats import SEED_RUN
-from web.geo import VIEW_H, VIEW_W, subregion_paths
+from web.geo import VIEW_H, VIEW_W, project, subregion_paths
 
 ROOT = Path(__file__).resolve().parents[1]
 HERE = Path(__file__).resolve().parent
@@ -122,6 +122,9 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
         "domains": domains, "domain_labels": [DOMAIN_LABELS[d] for d in domains],
         "issues": issues, "issue_labels": [ISSUE_LABELS[i] for i in issues],
         "subregions": subregions, "subregion_labels": [schema.SUBREGION_NAMES[i - 1] for i in subregions],
+        # the reefs, shoals and islands the description names, placed on the inset (ticket 28)
+        "features": [{"name": f["name_en"] or f["feature_id"], "xy": [round(v, 1) for v in project(float(f["lon"]), float(f["lat"]))]}
+                     for f in gazetteer.named_features(m["description"])],
         "dyads": dyads, "dyad_labels": [dyad_label(d) for d in dyads],
         "targets": sorted({d[1] for d in dyads if len(d) == 2}),
         "description": m["description"],

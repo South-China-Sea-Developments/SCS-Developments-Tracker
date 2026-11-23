@@ -66,8 +66,9 @@
           {% for n, d in subregion_paths.items()|sort %}
           <path d="{{ d }}" class="sr{% if n in move.subregions %} is-on{% endif %}" data-loc="{{ n }}"><title>{{ n }} {{ subregion_names[n] }}</title></path>
           {% endfor %}
+          {% for f in move.features %}<circle class="feat" cx="{{ f.xy[0] }}" cy="{{ f.xy[1] }}" r="3"><title>{{ f.name }}</title></circle>{% endfor %}
         </svg>
-        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}</figcaption>
+        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}{% if move.features %}<br><span class="inset-named">Named: {{ move.features|map(attribute='name')|join(', ') }}</span>{% endif %}</figcaption>
       </figure>
       <h2>Provenance</h2>
       <dl class="coding">
