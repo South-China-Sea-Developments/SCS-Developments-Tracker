@@ -68,7 +68,7 @@
           {% endfor %}
           {% for f in move.features %}<circle class="feat" cx="{{ f.xy[0] }}" cy="{{ f.xy[1] }}" r="3"><title>{{ f.name }}</title></circle>{% endfor %}
         </svg>
-        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}{% if move.features %}<br><span class="inset-named">Named: {{ move.features|map(attribute='name')|join(', ') }}</span>{% endif %}</figcaption>
+        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}{% if move.features %}<br><span class="inset-named">Named: {% for f in move.features %}{% if f.page %}<a href="{{ root }}features/{{ f.page }}.html">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</figcaption>
       </figure>
       <h2>Provenance</h2>
       <dl class="coding">

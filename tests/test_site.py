@@ -849,3 +849,39 @@ def test_the_scroll_zoom_carries_on_after_a_manual_zoom(browser, dist):
     assert abs(zoom() - manual) < 0.1, (manual, zoom())
     assert problems == []
     page.close()
+
+
+def test_feature_pages(dist):
+    """Tickets 35 and 36: a page per reef, shoal or island a move is placed at or a claimant holds, linked
+    from the map's data; it lists the moves placed there and who holds it."""
+    data = json.loads((dist / "data/events.json").read_text(encoding="utf-8"))
+    feats = data["assert"]["features"]
+    paged = {k: f["p"] for k, f in feats.items() if not k.startswith("ev:")}
+    assert paged and all((dist / "features" / f"{p}.html").exists() for p in paged.values())
+    assert all(re.fullmatch(r"[a-z0-9-]+", p) for p in paged.values())          # ASCII addresses, also for Chinese ids
+    html = (dist / "features" / "second-thomas-shoal.html").read_text(encoding="utf-8")
+    assert "Philippines</span> holds it since 1999" in html and html.count('href="../cases/') >= 5
+    assert "仁爱礁" in html                                                     # its names in the other languages
+    woody = (dist / "features" / "woody-island.html").read_text(encoding="utf-8")
+    assert "China</span> holds it since 1974" in woody and "As part of the Paracels" in woody
+    index = (dist / "features.html").read_text(encoding="utf-8")
+    assert all(f'href="features/{p}.html"' in index for p in paged.values())
+    held = {h["n"]: h for h in data["assert"]["held"]}
+    assert held["Taiping Island"]["h"] == ["TW"] and held["Paracel Islands"]["g"] == 1 and "Louisa Reef" not in held
+    case = (dist / "cases" / "PH199902.html").read_text(encoding="utf-8")
+    assert 'href="../features/second-thomas-shoal.html"' in case
+
+
+def test_the_map_shows_who_holds_what_and_links_features(browser, dist):
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2020-c-f-second-thomas-shoal")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    detail = page.locator("#amap-detail")
+    assert detail.locator(".amap-detail-head").inner_text().startswith("Second Thomas Shoal")
+    assert "held by Philippines" in detail.inner_text()
+    assert detail.locator(".amap-feature-link a").get_attribute("href") == "features/second-thomas-shoal.html"
+    page.click("label:has(#amap-line-held)")
+    assert page.evaluate("location.hash") == "#y2020-c-l-h-f-second-thomas-shoal"
+    page.close()

@@ -65,8 +65,8 @@
     return { top: phone.matches ? 90 : 24, bottom: 56 + below, left: 24, right: 24 };
   }
   var state = { end: START, who: "ALL", target: "", types: TYPES.slice(), sel: null, feat: null, mode: "window", lines: [] };
-  var LINE_KEY = { eez: "e", dashline: "d" };
-  var lineInputs = ["eez", "dashline"].map(function (k) { return $("amap-line-" + k); }).filter(Boolean);
+  var LINE_KEY = { eez: "e", dashline: "d", held: "h" }, LINES = ["eez", "dashline", "held"];
+  var lineInputs = LINES.map(function (k) { return $("amap-line-" + k); }).filter(Boolean);
   var map = new maplibregl.Map({
     container: "amap", style: STYLE, bounds: SEA, fitBoundsOptions: { padding: padding() },
     minZoom: 3.5, maxZoom: 10, cooperativeGestures: true, attributionControl: false, dragRotate: false, pitchWithRotate: false
@@ -275,6 +275,25 @@
       map.addLayer({ id: "ln-dashline", type: "line", source: "ln-dashline", layout: { visibility: "none" },
                      paint: { "line-color": INK, "line-width": 1.4, "line-opacity": 0.75 } });
     }
+    // who holds what (ticket 36), off by default: each held feature a ring in its holder's colour; the
+    // Paracels, held whole, a label at the group
+    if (A.held && A.held.length) {
+      var css = getComputedStyle(document.documentElement), col = ["match", ["get", "h"]];
+      Object.keys(NAMES).forEach(function (c) { col.push(c, (css.getPropertyValue("--" + c.toLowerCase()) || "#666").trim() || "#666"); });
+      col.push("#666");
+      map.addSource("ln-held", { type: "geojson", data: { type: "FeatureCollection", features: A.held.map(function (f) {
+        return { type: "Feature", properties: { n: f.n, h: f.h[0], g: f.g, lab: f.n + ": " + f.h.map(function (c) { return NAMES[c] || c; }).join(" and ") + (f.s ? " since " + f.s : "") },
+                 geometry: { type: "Point", coordinates: [f.lon, f.lat] } };
+      }) } });
+      map.addLayer({ id: "ln-held", type: "circle", source: "ln-held", filter: ["==", ["get", "g"], 0], layout: { visibility: "none" },
+                     paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3, 8, 6], "circle-color": "rgba(0,0,0,0)",
+                              "circle-stroke-color": col, "circle-stroke-width": 2 } });
+      map.addLayer({ id: "ln-held-label", type: "symbol", source: "ln-held", filter: ["==", ["get", "g"], 1], layout: { visibility: "none",
+                     "text-field": ["get", "lab"], "text-font": ["Noto Sans Regular"], "text-size": 11, "text-offset": [0, 3.2] },
+                     paint: { "text-color": INK, "text-halo-color": "#ffffff", "text-halo-width": 1.6 } });
+      map.on("mousemove", "ln-held", function (ev) { map.getCanvas().title = ev.features[0].properties.lab; });
+      map.on("mouseleave", "ln-held", function () { map.getCanvas().title = ""; });
+    }
     map.on("mousemove", "asr-fill", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "asr-fill", function () { map.getCanvas().style.cursor = ""; });
     map.on("click", "asr-fill", function (ev) { select(ev.features[0].properties.n); });
@@ -343,7 +362,9 @@
       var F = FEATS[state.feat];
       var fm = all.filter(function (m) { return (m.f || []).indexOf(state.feat) >= 0; }).sort(byWeight);
       el("h3", "amap-detail-head", F.n + ", " + wl, detail);
-      if (F.sr) el("p", "amap-where", "In sub-region " + F.sr + " " + SR_NAMES[F.sr], detail);
+      if (F.sr) el("p", "amap-where", "In sub-region " + F.sr + " " + SR_NAMES[F.sr] +
+        (F.h ? "; held by " + F.h.map(function (c) { return NAMES[c] || c; }).join(" and ") : ""), detail);
+      if (F.p) { var fl = el("p", "amap-feature-link", undefined, detail), a = el("a", "", "All moves at " + F.n + " since " + FIRST, fl); a.href = "features/" + F.p + ".html"; }
       if (!fm.length) el("p", "amap-empty", none("moves naming it"), detail);
       else { summary(fm); list(fm); }
       back(state.sel ? "Back to " + state.sel + " " + SR_NAMES[state.sel] : "Back to the whole sea", function () { state.feat = null; render(); });
@@ -464,10 +485,16 @@
     return "#y" + state.end + (state.mode === "cumulative" ? "-c" : "") + (state.who !== "ALL" ? "-" + state.who.toLowerCase() : "") +
       (state.target ? "-at-" + state.target.toLowerCase() : "") + t +
       (state.lines.length ? "-l-" + state.lines.map(function (k) { return LINE_KEY[k]; }).join("") : "") +
-      (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + state.feat : "");
+      (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + (FEATS[state.feat].p || state.feat) : "");
+  }
+  // a feature in the address is its page's slug (ticket 35): ASCII, where some ids are Chinese
+  function featFromSlug(x) {
+    if (FEATS[x]) return x;
+    for (var k in FEATS) if (FEATS[k].p === x) return k;
+    return null;
   }
   function readHash() {
-    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-at-([a-z]))?(?:-t-([dmcf]+))?(?:-l-([ed]+))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
+    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-at-([a-z]))?(?:-t-([dmcf]+))?(?:-l-([edh]+))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
     if (!m) return false;
     var y = parseInt(m[1], 10);
     if (y >= FIRST && y <= LAST) state.end = y;
@@ -476,9 +503,9 @@
     state.target = m[4] && TARGETS[m[4].toUpperCase()] ? m[4].toUpperCase() : "";
     state.types = m[5] ? TYPES.filter(function (t) { return m[5].indexOf(TYPE_KEY[t]) >= 0; }) : TYPES.slice();
     if (!state.types.length) state.types = TYPES.slice();
-    state.lines = m[6] ? ["eez", "dashline"].filter(function (k) { return m[6].indexOf(LINE_KEY[k]) >= 0; }) : [];
+    state.lines = m[6] ? LINES.filter(function (k) { return m[6].indexOf(LINE_KEY[k]) >= 0; }) : [];
     state.sel = m[7] && SR_NAMES[m[7]] ? parseInt(m[7], 10) : null;
-    state.feat = m[8] && FEATS[m[8]] ? m[8] : null;
+    state.feat = m[8] ? featFromSlug(m[8]) : null;
     syncControls();
     return true;
   }
@@ -522,7 +549,9 @@
       map.setFilter("asr-sel", ["==", ["get", "n"], state.sel === null ? -1 : state.sel]);
       drawMarkers(all);
       zoomClass();
-      ["eez", "dashline"].forEach(function (k) { if (map.getLayer("ln-" + k)) map.setLayoutProperty("ln-" + k, "visibility", state.lines.indexOf(k) >= 0 ? "visible" : "none"); });
+      LINES.forEach(function (k) {
+        [k, k + "-label"].forEach(function (id) { if (map.getLayer("ln-" + id)) map.setLayoutProperty("ln-" + id, "visibility", state.lines.indexOf(k) >= 0 ? "visible" : "none"); });
+      });
     }
     renderDetail(all);
     renderTimeline();

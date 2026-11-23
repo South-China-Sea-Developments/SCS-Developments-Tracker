@@ -677,3 +677,25 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .curtain.up { transform: translateY(-100%); pointer-events: none; }
 html.curtain-on { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .curtain { display: none; } }
+
+/* feature pages (ticket 35) and the places index */
+.feature-sub { color: var(--muted, #555); margin: var(--s2, 6px) 0 0; }
+.feature-held .case-claimant { font-weight: 600; }
+.feature-count { margin-top: 0; }
+.feature-moves { list-style: none; padding: 0; margin: 0; }
+.feature-moves li { padding: var(--s3, 10px) 0; border-top: 1px solid var(--rule, #e3e6e8); }
+.feature-moves li > a { text-decoration: none; display: flex; gap: var(--s2, 8px); align-items: baseline; flex-wrap: wrap; }
+.feature-moves .fm-year { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink, #1d2a33); }
+.feature-moves .fm-types { color: var(--muted, #555); font-size: 0.9em; }
+.feature-moves p { margin: 4px 0 0; color: var(--ink-2, #3a4650); }
+.feature-also { font-size: 0.9em; color: var(--muted, #555); }
+.feature-source, .feature-map { font-size: 0.9em; color: var(--muted, #555); }
+.places { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--s4, 16px) var(--s5, 24px); margin: var(--s4, 16px) 0 var(--s6, 40px); }
+.places-group h2 { font-size: 1rem; margin: 0 0 var(--s2, 6px); }
+.places-group ul { list-style: none; margin: 0; padding: 0; }
+.places-group li { padding: 3px 0; display: flex; align-items: baseline; gap: 6px; }
+.places-n { color: var(--muted, #555); font-size: 0.85em; font-variant-numeric: tabular-nums; }
+.places-held .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; border: 2px solid var(--c, #666); box-sizing: border-box; }
+.amap-feature-link { margin: 6px 0 0; font-size: 0.92em; }
+.places-key { color: var(--muted, #555); font-size: 0.92em; }
+.places-key .places-held { white-space: nowrap; }

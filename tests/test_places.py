@@ -31,7 +31,7 @@ def test_agrees_with_the_coded_sub_regions():
     """On the accepted events whose sub-region is known (no coordinates given), the suggestion is never
     wrong: the right sub-region is first in at least 85% and listed or absent otherwise."""
     from pathlib import Path
-    rows = [e for e in csv.DictReader(open(Path(__file__).parents[1] / "data/events.csv", encoding="utf-8")) if e["subregion"]]
+    rows = [e for e in csv.DictReader(open(Path(__file__).parents[1] / "data/events.csv", encoding="utf-8")) if e["subregion"] and e["status"] == "accepted"]
     top = wrong = 0
     for e in rows:
         got = subs(e["location_name"], e["summary"])
