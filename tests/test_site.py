@@ -23,6 +23,12 @@ EMPTY_TILEJSON = json.dumps({"tilejson": "3.0.0", "tiles": ["https://tiles.openf
 HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
 
 
+def _stale_tile(request) -> bool:
+    """A stub tile the map cancelled because the view moved on: MapLibre aborts the tiles of a zoom it
+    has left, which is normal and not a failure of the page."""
+    return "/stub/" in request.url and "abort" in (request.failure or "").lower()
+
+
 @pytest.fixture(scope="module")
 def dist(tmp_path_factory, mats_data):
     out = tmp_path_factory.mktemp("dist")
@@ -75,7 +81,7 @@ def _open(browser, dist, page_name, viewport=(1280, 900), curtain=False):
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
-    page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
+    page.on("requestfailed", lambda r: None if _stale_tile(r) else problems.append(("requestfailed", r.url)))
     page.route("https://tiles.openfreemap.org/**", _tile_stub([]))
     page.goto((dist / page_name).resolve().as_uri())
     page.wait_for_timeout(300 if page_name not in ("index.html", "map.html") else 1200)
@@ -457,7 +463,7 @@ def _open_map(browser, dist, viewport=(1280, 900)):
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
-    page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
+    page.on("requestfailed", lambda r: None if _stale_tile(r) else problems.append(("requestfailed", r.url)))
     tiles = []
     page.route("https://tiles.openfreemap.org/**", _tile_stub(tiles))
     page.goto((dist / "map.html").resolve().as_uri())
@@ -884,4 +890,21 @@ def test_the_map_shows_who_holds_what_and_links_features(browser, dist):
     assert detail.locator(".amap-feature-link a").get_attribute("href") == "features/second-thomas-shoal.html"
     page.click("label:has(#amap-line-held)")
     assert page.evaluate("location.hash") == "#y2020-c-l-h-f-second-thomas-shoal"
+    page.close()
+
+
+def test_the_selected_sub_region_shows_its_history(browser, dist):
+    """Ticket 37: a selected sub-region's panel carries its score over every window, on the map's scale;
+    a click on the chart moves the map to that window."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-s6")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    svg = page.locator("#amap-detail .amap-history svg")
+    assert svg.count() == 1 and "Score of sub-region 6" in svg.get_attribute("aria-label")
+    box = svg.bounding_box()
+    svg.click(position={"x": 4, "y": box["height"] / 2})   # the far left: the first window
+    page.wait_for_timeout(300)
+    assert page.evaluate("location.hash").startswith("#y1974")
     page.close()
