@@ -170,3 +170,24 @@ def test_named_features_lists_every_point_feature_in_order_of_first_mention():
     assert named_features("Vietnam garrisons in the Spratly Islands") == []   # a group, and it hides "Spratly Island"
     assert [f["feature_id"] for f in named_features("Spratly Island airstrip extended")] == ["spratly-island"]
     assert named_features("") == [] and named_features("no place named") == []
+
+
+def test_the_geonames_layer_adds_features_without_clashing_names():
+    """Ticket 31: new GeoNames features lie in the sub-region they state, and no name the layer adds is
+    another feature's too (the matcher would skip both)."""
+    import csv
+    from pipeline import gazetteer as gz
+    rows = list(csv.DictReader(open(gz.GAZETTEER_GEONAMES, encoding="utf-8")))
+    assert rows, "the layer exists"
+    for r in rows:
+        if r["lat"]:
+            assert gz.subregion_of(float(r["lat"]), float(r["lon"])) == int(r["subregion"]), r["feature_id"]
+    feats = gz.load()
+    owners = {}
+    for fid, f in feats.items():
+        for n in f["names"]:
+            owners.setdefault(gz._fold(n), set()).add(fid)
+    added = {gz._fold(a) for r in rows for a in r["aliases"].split("|") if a} | {gz._fold(r["name_en"]) for r in rows if r["name_en"]}
+    clashes = {n: o for n, o in owners.items() if n in added and len(o) > 1}
+    assert not clashes, list(clashes.items())[:5]
+
