@@ -38,10 +38,10 @@
   {
    "event_id": "ev-2c958d1eb0",
    "disposition": "continuation",
-   "of": "ev-2de6fa208c",
+   "of": "CN201703",
    "criterion": null,
    "group": null,
-   "reason": "Routine annual summer fishing moratorium, already present in 2020 (prev-run candidate ev-2de6fa208c); same level."
+   "reason": "Routine annual summer fishing moratorium, already present in 2020 (prev-run candidate ev-2de6fa208c); same level. [Re-pointed 2026-11-20: ev-2de6fa208c has since been decided; its chain ends at CN201703.]"
   },
   {
    "event_id": "ev-df5f769358",
@@ -54,10 +54,10 @@
   {
    "event_id": "ev-37191fb226",
    "disposition": "continuation",
-   "of": "ev-c966892c8f",
+   "of": "CN202002",
    "criterion": null,
    "group": null,
-   "reason": "CCG cutters shadowing Malaysian energy work at Kasawari repeat the 2020 practice at the West Capella (prev-run candidate ev-c966892c8f) at a similar level."
+   "reason": "CCG cutters shadowing Malaysian energy work at Kasawari repeat the 2020 practice at the West Capella (prev-run candidate ev-c966892c8f) at a similar level. [Re-pointed 2026-11-20: ev-c966892c8f has since been decided; its chain ends at CN202002.]"
   },
   {
    "event_id": "ev-1373ca0027",
@@ -70,26 +70,26 @@
   {
    "event_id": "ev-01cc801ab5",
    "disposition": "continuation",
-   "of": "ev-f89607f096",
+   "of": "CN201806",
    "criterion": null,
    "group": null,
-   "reason": "PLA statement on expelling USS Benfold from 'Xisha territorial waters' repeats the 2020 practice of announcing expulsions of US FONOPs (prev-run candidate ev-f89607f096)."
+   "reason": "PLA statement on expelling USS Benfold from 'Xisha territorial waters' repeats the 2020 practice of announcing expulsions of US FONOPs (prev-run candidate ev-f89607f096). [Re-pointed 2026-11-20: ev-f89607f096 has since been decided; its chain ends at CN201806.]"
   },
   {
    "event_id": "ev-6193c612b5",
    "disposition": "continuation",
-   "of": "ev-7cbb37617c",
+   "of": "CN201904",
    "criterion": null,
    "group": null,
-   "reason": "Award-anniversary rejection repeats the 2020 verbal rejections of the award (prev-run candidate ev-7cbb37617c); same level."
+   "reason": "Award-anniversary rejection repeats the 2020 verbal rejections of the award (prev-run candidate ev-7cbb37617c); same level. [Re-pointed 2026-11-20: ev-7cbb37617c has since been decided; its chain ends at CN201904.]"
   },
   {
    "event_id": "ev-54ad34c9bf",
    "disposition": "continuation",
-   "of": "ev-32d0b4c61f",
+   "of": "CN201002",
    "criterion": null,
    "group": null,
-   "reason": "Exercise between Hainan and the Paracels repeats the 2020 Paracel exercises (prev-run candidate ev-32d0b4c61f) at the same level."
+   "reason": "Exercise between Hainan and the Paracels repeats the 2020 Paracel exercises (prev-run candidate ev-32d0b4c61f) at the same level. [Re-pointed 2026-11-20: ev-32d0b4c61f has since been decided; its chain ends at CN201002.]"
   },
   {
    "event_id": "ev-b6b2580afc",

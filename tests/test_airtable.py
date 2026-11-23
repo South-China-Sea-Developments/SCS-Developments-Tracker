@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 from pipeline import airtable, harvest, queue
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REVIEWER, DATE = "Test Coder", "2026-10-15"
@@ -73,13 +73,14 @@ class FakeAirtable(airtable.Client):
 
 
 def opened_copy(tmp_path: Path, name: str) -> Path:
+    base = chubb_data(tmp_path / f"base-{name}")   # the fixture's 2026 events are its own, not the dataset's
     d = tmp_path / name
     d.mkdir()
     for f in ("claimants", "moves", "events", "sources", "corrections"):
-        shutil.copy(DATA_DIR / f"{f}.csv", d / f"{f}.csv")
+        shutil.copy(base / f"{f}.csv", d / f"{f}.csv")
     run = tmp_path / f"run-{name}"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
-                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)]) == 0
     assert queue.append_run(run, d)[0] == 5
     return d
 
