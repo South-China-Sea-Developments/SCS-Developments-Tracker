@@ -281,45 +281,130 @@ def named_features(text: str, gazetteer: Path = GAZETTEER, extra: Path = GAZETTE
     return out
 
 
-# A name the maps can show: Latin letters, no pinyin or Vietnamese feature word (ticket 32).
-NOT_ENGLISH = re.compile(r"\b(jiao|tan|dao|ansha|shazhou|qundao|qunjiao|lianjiao|sha|yu|chiao|tao|da|bai|banc|recif)\b"
-                         r"|[^\x00-\x7f’–—]", re.I)
+# A name the maps can show: Latin letters, no pinyin or Vietnamese feature word (ticket 32). Degrees,
+# minutes and dashes are punctuation, not another script.
+NOT_ENGLISH = re.compile(r"\b(jiao|tan|dao|ansha|shazhou|qundao|qunjiao|lianjiao|sha|yu|chiao|tao|da|bai|banc|recif|zhudao|"
+                         r"xisha|nansha|dongsha|zhongsha|hsisha|tungsha|shisha|chungsha|nan-sha|hsi-sha|truong sa|hoang sa)\b"
+                         r"|[^\x00-\x7f’‘“”–—°′″·]", re.I)
+# collective names that are no single feature
+TERMS = {"Nanhai Zhudao": "South China Sea Islands", "Nanhai Islands": "South China Sea Islands",
+         "Biển Đông": "South China Sea", "Nanhai": "South China Sea", "Laut Natuna Utara": "North Natuna Sea"}
+
+
+# pinyin names that are also the established English ones (English Wikipedia's titles)
+ENGLISH_AS_IS = {"Zhongsha Islands"}
 
 
 def is_english_name(name: str) -> bool:
-    return bool(name and name.strip()) and not NOT_ENGLISH.search(name)
+    return bool(name and name.strip()) and (name.strip() in ENGLISH_AS_IS or not NOT_ENGLISH.search(name))
+
+
+GENERIC = r"(?:Islands?|Islets?|Reefs?|Shoals?|Banks?|Cays?|Atolls?|Patch(?:es)?|Rocks?|archipelagos?|groups?|Island Group)"
+_NOT_A_NAME = re.compile(r"\b(near|off|around|about|north|south|east|west|northern|southern|eastern|western|central|"
+                         r"eez|sea|waters|strait|basin|province|regency|city|district|fir|base|airbase|indonesian|malaysian|"
+                         r"philippine|vietnamese|chinese|taiwanese|bruneian|national|park)\b", re.I)
+
+
+@lru_cache(maxsize=4)
+def _exact(gazetteer: Path, extra: Path) -> dict[str, str]:
+    """folded name -> feature_id, for names that belong to one feature only."""
+    index, _ = _index_once(gazetteer, extra)
+    return {n: fids[0] for n, fids in index if len(fids) == 1}
+
+
+def _feature_of(name: str, gazetteer: Path, extra: Path) -> str | None:
+    name = name.strip().strip("'’\"")
+    return _exact(gazetteer, extra).get(_fold(name)) if name else None
+
+
+# names in brackets that say where, not which feature: never taken for another name of it
+_PLACES_NOT_FEATURES = {_fold(n) for n in ["China", "Vietnam", "Philippines", "Malaysia", "Brunei", "Indonesia", "Taiwan",
+    "PRC", "ROC", "Sabah", "Sarawak", "Palawan", "Zambales", "Hainan", "Borneo", "North Borneo", "Luzon", "Natuna", "Riau",
+    "Sansha", "Kalayaan", "West Philippine Sea", "East Sea", "North Natuna Sea", "South China Sea", "Malaysian EEZ", "EEZ"]}
 
 
 def english_place(text: str, gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXTRA) -> str:
-    """A place as the maps show it, in English (ticket 32): "Huangyan Dao (Scarborough Shoal)" becomes
-    "Scarborough Shoal", "Nansha Qundao" "Spratly Islands"; a name the gazetteer does not know, or text
-    already in English, is left as it is. The recorded place in events.csv is not changed."""
-    if not text or is_english_name(text):
+    """A place as the maps and the review records show it, in English (tickets 32, 41). Two rules, nothing
+    more, so the source's own words stay where they are:
+    1. a name with another name of the same feature in brackets becomes the feature's English name:
+       "Huangyan Dao (Scarborough Shoal)", "Bajo de Masinloc (Scarborough Shoal, Huangyan Dao)" and
+       "Pag-asa (Thitu) Island" -> "Scarborough Shoal", "Scarborough Shoal", "Thitu Island";
+    2. a name in another script or in pinyin or Vietnamese ("Nansha Qundao", "仁爱礁", "Đá Ba Đầu")
+       becomes the English name of the one feature it names.
+    Latin-script local names (Natuna, Kalayaan, Ayungin) are kept as written unless rule 1 applies."""
+    if not text or not text.strip():
         return text
-
-    def paren(m):
-        a, b = m.group(1), m.group(2).strip()
-        if is_english_name(a) != is_english_name(b):
-            return a if is_english_name(a) else b
-        return m.group(0)
-    out = re.sub(r"\b([A-Z][\w'’\-]*(?:\s[A-Z][\w'’\-]*)*)\s*\(([^()]+)\)", paren, text)
     feats = load(gazetteer, extra)
+
+    def fid_of(n, g):
+        """The one feature `n` names (with the generic after the bracket, if that makes a name); after
+        "archipelago" or "group" only an island group counts ("Hoang Sa (Paracel) archipelago")."""
+        group = g.lower() in ("archipelago", "archipelagos", "group", "groups", "island group", "islands")
+        tries = [n + " " + g] if g else []
+        tries += [n + " Islands", n] if group else [n]
+        for t in tries:
+            f = _feature_of(t, gazetteer, extra)
+            if f and (not group or feats[f]["kind"] == "island group"):
+                return f
+        return None
+
+    def name_like(n):   # capitalised words, the shape of a name
+        return bool(re.fullmatch(r"[^\W\d_a-z][\w'’\-]*(?: [^\W\d_a-z][\w'’\-]*){0,3}", n))
+
+    def bare_name(n):   # a proper name that is no feature, country or province ("Da Lat", "Ligaw")
+        return name_like(n) and _fold(n) not in _PLACES_NOT_FEATURES and not _NOT_A_NAME.search(n)
+
+    def same(m):
+        raw, inner, g = m.group(1), m.group(2), m.group(3) or ""
+        pad, words = raw[:len(raw) - len(raw.lstrip())], raw.strip().split(" ")
+        parts = [q.strip() for q in re.split(r"\s*[,/;]\s*", inner) if q.strip()]
+        if parts and all(q.casefold() in raw.casefold() for q in parts):   # "Thitu Island and Sandy Cay (Thitu Island, Sandy Cay)"
+            return raw + (" " + g if g else "")
+        if any(q.casefold() == raw.strip().casefold() for q in parts):   # "X (X, WPP 711)" -> "X (WPP 711)"
+            rest = [q for q in parts if q.casefold() != raw.strip().casefold()]
+            return raw + (" (" + ", ".join(rest) + ")" if rest else "") + (" " + g if g else "")
+        for k in range(len(words)):   # the name is the end of what comes before: "near Woody Island (Yongxing Dao)"
+            if k and not (words[k - 1][:1].islower() or words[k - 1].endswith(":") or
+                          words[k - 1].lower() in ("near", "off", "around", "about", "at", "incl.")):
+                continue   # never inside a run of capitalised words: "Beting Patinggi Ali" stays whole
+            x, lead = " ".join(words[k:]).strip(), pad + " ".join(words[:k]) + (" " if k else "")
+            if not x:
+                continue
+            sides = [x] + parts
+            fids = [fid_of(n, g) for n in sides]
+            found = {f for f in fids if f}
+            if len(found) > 1:
+                break   # two different features: "Luconia Shoals (South Luconia Shoals)" says both
+            ok = lambda f, n, alone: f or (alone and bare_name(n)) or (not is_english_name(n) and (name_like(n) or not re.search(r"[A-Za-z]", n)))
+            if len(found) == 1 and all(ok(f, n, i == 0 or len(parts) == 1) for i, (f, n) in enumerate(zip(fids, sides))):
+                en = feats[next(iter(found))]["name_en"]
+                if not en:
+                    break
+                tail = "" if not g or re.fullmatch(GENERIC, g, re.I) and re.search(GENERIC + r"$", en, re.I) else " " + g
+                return lead + en + tail
+        return m.group(0)
+    bracketed = re.compile(r"([^(),;/]*?[^\s(),;/])\s*\(([^()]+)\)(?:\s+(" + GENERIC + r"))?(?![\w])", re.I)
+    out = text
+    for _ in range(2):
+        out = bracketed.sub(same, out)
+    # rule 2: names not in English, longest first
     names = sorted({(n, f["name_en"]) for f in feats.values() if f["name_en"] for n in f["names"]
-                    if not is_english_name(n) and len(n) >= 4}, key=lambda t: -len(t[0]))
-    owners: dict[str, set] = {}
-    for f in feats.values():
-        for n in f["names"]:
-            owners.setdefault(n.casefold(), set()).add(f["name_en"])
-    replaced = []
-    for n, en in names:
-        if len(owners[n.casefold()]) > 1:
-            continue   # shared by several features: no single English name
-        pat = re.compile(r"(?<![\w'’])" + re.escape(n) + r"(?![\w'’])", re.I)
-        if pat.search(out):
-            out = pat.sub(en, out)
-            replaced.append(en)
-    for en in replaced:   # "Recto (Reed) Bank, Liyue Tan" -> not "..., Reed Bank" twice over
-        rest = out.replace(", " + en, "", 1)
-        if rest != out and all(re.search(r"\b" + re.escape(w) + r"\b", rest) for w in en.split()):
-            out = rest
-    return out
+                    if not is_english_name(n) and len(n) >= 3 and _feature_of(n, gazetteer, extra)} |
+                   {(k, v) for k, v in TERMS.items()}, key=lambda t: -len(t[0]))
+    group_names = {n for n, en in names if any(f["name_en"] == en and f["kind"] == "island group" for f in feats.values())}
+    for n, en in names:   # not when a feature word follows ("Dongsha Island" is not "Pratas Islands Island"),
+        # unless the name is an island group's and the word is "archipelago(s)" or "islands"
+        if n in group_names:
+            out = re.sub(r"(?<![\w'’])" + re.escape(n) + r"(?:\s+(?:archipelagos?|islands|group))?(?![\w'’])(?!\s+" + GENERIC + r"\b)",
+                         en, out, flags=re.I)
+        out = re.sub(r"(?<![\w'’])" + re.escape(n) + r"(?![\w'’])(?!\s+" + GENERIC + r"\b)", en, out, flags=re.I)
+    out = re.sub(r"\b(?:Pulau|Terumbu)/(?=[A-Z])", "", out)   # "Pulau/Terumbu Layang-Layang" written both ways
+    out = bracketed.sub(same, out)   # a bracket the translations made repeat itself
+    kept = []   # a list that names a feature twice keeps it once
+    for seg in re.split(r"(\s*[;/]\s*|,\s+)", out):
+        if seg and kept and not re.fullmatch(r"\s*[;/]\s*|,\s+", seg) and seg.strip().casefold() in {k.strip().casefold() for k in kept[::2]}:
+            if kept and re.fullmatch(r"\s*[;/]\s*|,\s+", kept[-1]):
+                kept.pop()
+            continue
+        kept.append(seg)
+    return re.sub(r"\s{2,}", " ", "".join(kept)).strip()

@@ -530,12 +530,17 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
 @pytest.fixture(scope="module")
 def dist_placed(tmp_path_factory):
     """A build from a data copy with four placed events (two stacked at one feature, one point, one
-    unplaced) so the point-marker code is exercised while the real data has no coordinates yet."""
+    unplaced) so the point-marker code is exercised on a known set: the data's own coordinates (Chubb's
+    dated incidents placed at their move's feature, ticket 41) are cleared in the copy."""
     import csv
     import shutil
     d = tmp_path_factory.mktemp("placed") / "data"
     shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
     rows = list(csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    for r in rows:
+        if r["lat"]:
+            r["lat"] = r["lon"] = ""
+            r["location_precision"] = "subregion" if r["subregion"] else "unknown"
     cols = list(rows[0])
     extra = [("CN201201", "2012-04-10", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Standoff begins at <b>Scarborough</b> Shoal."),
              ("CN201201", "2012-05-15", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Fishing ban extended to the shoal."),

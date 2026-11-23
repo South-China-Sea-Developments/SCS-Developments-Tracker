@@ -20,6 +20,7 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - One small map per claimant for the window shown, on one shared scale (ticket 38).
 - Cite, download (PNG) or embed any view of the map (ticket 39).
 - A What's new page and Atom feed of moves added, updated and retracted (ticket 40).
+- Every candidate to the same place rules (English place, named features placed) at intake and on the runs open; 40 of Chubb's dated incidents given their move's places; 15 Chubb moves naming a feature outside their coded sub-regions listed for review (ticket 41).
 
 ## v2.0.0-dev — 2026-10-16
 
