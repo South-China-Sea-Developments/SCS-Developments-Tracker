@@ -11,10 +11,14 @@
 <body class="{% block body_class %}{% endblock %}">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
-  {# The programme banner the maintainer supplied (ticket 17), on every page but the home page, as a slim
-     strip cropped to its title band (ticket 28); the institute's logo is in the menu band. #}
-  {% if page != 'index.html' %}<div class="banner">
+  {# The programme banner the maintainer supplied (ticket 17). Inner pages (ticket 30): whole on arrival, logo
+     and all, folding into a slim strip on its title as the page scrolls (site.js sets its height; the fold
+     box keeps the banner's full height in the flow so the page does not jump). The home page shows it as
+     an opening curtain instead (home.html). The institute's logo is in the menu band on every page. #}
+  {% if page != 'index.html' %}<div class="banner-fold">
+  <div class="banner">
     <a class="banner-link" href="{{ root }}index.html"><img class="banner-img" src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950"></a>
+  </div>
   </div>{% endif %}
   <div class="navband">
     <div class="wrap navband-row">
@@ -51,6 +55,7 @@
     </div>
   </div>
 </footer>
+<script src="{{ root }}assets/site.js"></script>
 {% block scripts %}<script src="{{ root }}assets/charts.js"></script>{% endblock %}
 </body>
 </html>

@@ -5,6 +5,10 @@
 <script id="mapdata" type="application/json">{{ map_json|safe }}</script>
 <script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
 {% block app %}
+{# The opening curtain (ticket 30): on a reader's first visit the whole banner, logo and all, fills the
+   screen for a moment and lifts to reveal the map; site.js runs it and remembers the visit. A click, a
+   key or a scroll lifts it at once; readers who ask for reduced motion never see it. #}
+<div class="curtain" id="curtain" hidden><img src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950"></div>
 <main id="main">
 {# The assertiveness map (ticket 27): the first screen is the menu and this map, the ten sub-regions shaded
    by the type-weighted moves of the latest five-year window, each with its count of moves; zoomed in, the

@@ -99,7 +99,11 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 /* the image edge to edge; on wide screens the height is capped at 32 % of the width, which keeps the logo, the title
    and its rule (the top two thirds of the artwork) in view; under 700px the whole image shows */
 .banner { overflow: hidden; }
-.banner-img { display: block; width: 107%; max-width: none; height: clamp(84px, 11vw, 150px); object-fit: cover; object-position: center 35%; }   /* a slim strip with the title's first line centred: the title sits at 47 % of the artwork's width, so 107 % puts it mid-page (ticket 28) */
+/* inner pages (ticket 30): the whole banner on arrival, folding into the strip; site.js sets the heights.
+   Without the script it is the strip, as before. */
+.banner-fold { position: relative; height: auto; }
+.banner-fold .banner { position: sticky; top: 0; height: clamp(84px, 11vw, 150px); background: var(--sea); }
+.banner-img { display: block; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: center 35%; }   
 .banner-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .navband { background: var(--navy); border-top: 1px solid var(--band-rule); }
 .navband-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 52px; }
@@ -654,3 +658,10 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .maplibregl-cooperative-gesture-screen { background: none !important; align-items: flex-end !important; padding: 0 0 64px !important; font-size: 0.78rem !important; color: var(--ink) !important; }
 .maplibregl-cooperative-gesture-screen .maplibregl-desktop-message { display: none !important; }
 .maplibregl-cooperative-gesture-screen .maplibregl-mobile-message { background: color-mix(in srgb, var(--surface) 92%, transparent); padding: 4px 12px; border-radius: 999px; box-shadow: 0 1px 3px rgba(var(--shadow), 0.2); }
+/* the home page's opening curtain (ticket 30): the whole banner, logo and title included, on its own sea
+   colour (cropping it to fill a laptop screen would cut the logo or the title) */
+.curtain { position: fixed; inset: 0; z-index: 1000; background: #0b1730; transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1); cursor: pointer; }
+.curtain img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+.curtain.up { transform: translateY(-100%); pointer-events: none; }
+html.curtain-on { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .curtain { display: none; } }
