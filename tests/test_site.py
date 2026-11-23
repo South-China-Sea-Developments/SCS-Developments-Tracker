@@ -65,10 +65,12 @@ def test_bundle_is_self_contained_and_relative(dist):
     assert not re.search(r"https?://", (dist / "assets/charts.js").read_text(encoding="utf-8").replace("http://www.w3.org/2000/svg", ""))
 
 
-def _open(browser, dist, page_name, viewport=(1280, 900)):
+def _open(browser, dist, page_name, viewport=(1280, 900), curtain=False):
     """Any page, offline: the basemap host is answered by the same stubs as on the map page, since
     the home page carries the map too."""
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
+    if not curtain:   # the home page's opening curtain shows once per reader: these tests are returning readers
+        ctx.add_init_script("try { localStorage.setItem('scs-curtain-seen', '1'); } catch (e) {}")
     page = ctx.new_page()
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
@@ -450,6 +452,7 @@ def _open_map(browser, dist, viewport=(1280, 900)):
     """The map page with the basemap answered locally: the TileJSON names a stub tile URL that
     returns no content, as do fonts and sprites. The test is offline except for those stubs."""
     ctx = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
+    ctx.add_init_script("try { localStorage.setItem('scs-curtain-seen', '1'); } catch (e) {}")
     page = ctx.new_page()
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
@@ -779,3 +782,35 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     assert page.evaluate("(() => { const s = document.querySelector('#amap .maplibregl-cooperative-gesture-screen'); return !s || getComputedStyle(s).backgroundColor === 'rgba(0, 0, 0, 0)'; })()")
     assert problems == []
     page.close()
+
+
+def test_inner_pages_open_on_the_whole_banner_and_fold_it(browser, dist):
+    """Ticket 30: an inner page opens on the whole banner (logo included) and folds it into the strip as it scrolls."""
+    page, problems = _open(browser, dist, "trends.html", (1440, 900))
+    h = lambda: page.evaluate("document.querySelector('.banner').getBoundingClientRect().height")
+    full = round(1440 * 950 / 2219)
+    assert abs(h() - full) <= 2, h()
+    page.evaluate("window.scrollTo(0, 300)")
+    page.wait_for_timeout(150)
+    assert 150 <= h() < full - 200
+    # the menu band stays against the banner while it folds
+    gap = page.evaluate("document.querySelector('.navband').getBoundingClientRect().top - document.querySelector('.banner').getBoundingClientRect().bottom")
+    assert abs(gap) <= 2, gap
+    page.evaluate("window.scrollTo(0, 1500)")
+    page.wait_for_timeout(150)
+    assert page.evaluate("document.querySelector('.banner').getBoundingClientRect().bottom") <= 0, "folded, then gone with the page"
+    assert problems == []
+    page.close()
+
+
+def test_the_home_page_opens_with_a_curtain_once(browser, dist):
+    page, problems = _open(browser, dist, "index.html", (1440, 900), curtain=True)
+    assert page.evaluate("!document.getElementById('curtain').hidden")
+    page.wait_for_timeout(2900)
+    assert page.evaluate("document.getElementById('curtain').hidden"), "it lifts by itself"
+    page.reload()
+    page.wait_for_timeout(400)
+    assert page.evaluate("document.getElementById('curtain').hidden"), "and not again for the same reader"
+    assert problems == []
+    page.close()
+
