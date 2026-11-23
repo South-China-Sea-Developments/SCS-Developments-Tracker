@@ -74,6 +74,13 @@ then several rounds of tuning over the following weeks.
   lighter count pills; feature names from zoom 7 or on hover; visible keyboard focus on every marker.
   An official ASPI logo file would replace the crop.
 
+## Round 5 (maintainer, 2026-11-22)
+
+- Key moments removed (the tick where Chubb's coding ends stays).
+- Decade maps made quieter: smaller, paler, an underline for the current decade, a plain label.
+- A switch between the **five-year window** (default) and the **build-up since 1970**, as MAVD's map
+  accumulates (`cumulative_scores`); the build-up has no arrows, since it only grows. In the address as `-c`.
+
 ## Later rounds (not in this ticket)
 
 Small multiples by decade; a per-claimant timeline; a fuller marking of the coding-source change; the

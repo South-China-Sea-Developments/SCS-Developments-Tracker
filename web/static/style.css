@@ -580,17 +580,24 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .amap-ticks { position: relative; height: 8px; margin: -2px 8px 0; }
 .amap-tick { position: absolute; top: 0; width: 1px; height: 7px; background: var(--muted); transform: translateX(-0.5px); }
 .amap-tick.source { width: 2px; height: 9px; background: var(--accent); }
-.amap-moments { margin: var(--s2) 0 0; font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
-.amap-moments-head { color: var(--ink-2); font-weight: 600; }
-.amap-moment { font-size: inherit; }
-.amap-decades { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
-.amap-decade { display: grid; gap: 2px; justify-items: center; padding: 3px 2px 4px; border: 1px solid transparent; border-radius: var(--radius); background: none; cursor: pointer; }
-.amap-decade svg { width: 100%; height: auto; display: block; }
-.amap-decade:hover { background: var(--surface-2); }
-.amap-decade.on { border-color: var(--rule-strong); background: var(--surface-2); }
-.amap-decade-label { font-size: 0.72rem; color: var(--ink-2); }
+/* the decade maps stay quiet: small, pale, no frame until hovered or current */
+.amap-decades { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; max-width: 250px; opacity: 0.8; }
+.amap-decades:hover { opacity: 1; }
+.amap-decade { display: grid; gap: 1px; justify-items: center; padding: 2px 1px 3px; border: 0; border-bottom: 2px solid transparent; background: none; cursor: pointer; }
+.amap-decade svg { width: 100%; max-width: 34px; height: auto; display: block; }
+.amap-decade.on { border-bottom-color: var(--accent); }
+.amap-decade-label { font-size: 0.66rem; color: var(--muted); }
+.amap-decade.on .amap-decade-label { color: var(--ink-2); }
+.amap-controls .amap-decades-group legend { font: 600 0.72rem/1.3 var(--font-body); letter-spacing: 0; text-transform: none; color: var(--muted); margin-bottom: 4px; }
+/* window or build-up: a two-way switch */
+.amap-mode { display: inline-flex; border: 1px solid var(--rule-strong); border-radius: 999px; padding: 2px; margin-bottom: var(--s3); }
+.amap-mode label { position: relative; cursor: pointer; }
+.amap-mode input { position: absolute; opacity: 0; inset: 0; }
+.amap-mode span { display: block; padding: 4px 12px; border-radius: 999px; font-size: 0.82rem; color: var(--ink-2); }
+.amap-mode input:checked + span { background: var(--accent); color: #fff; }
+.amap-mode input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
 .amap-opt { display: flex; align-items: flex-start; gap: var(--s2); font-size: 0.85rem; }
 .amap-opt .check-label { line-height: 1.35; white-space: normal; overflow: visible; text-overflow: clip; }
 .amap-share { margin: 0; font-size: 0.85rem; }
 .amap-done { color: var(--muted); font-size: 0.8rem; overflow-wrap: anywhere; }
-@media (max-width: 700px) { .amap-decades { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+

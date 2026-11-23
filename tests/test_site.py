@@ -735,7 +735,11 @@ def test_a_view_of_the_map_has_its_own_address(browser, dist):
     assert problems == []
     assert page.locator("#amap-when").inner_text() == "2010–2014" and page.locator("#amap-who").inner_text() == "Vietnam"
     assert page.locator("#amap-detail .amap-detail-head").inner_text().startswith("4 ")
-    assert page.locator(".amap-decade").count() >= 5 and page.locator(".amap-moment").count() >= 4
+    assert page.locator(".amap-decade").count() >= 5 and page.locator(".amap-moment").count() == 0
+    page.check("input[name='amap-mode'][value='cumulative']")
+    assert page.locator("#amap-when").inner_text() == "1970–2014" and page.locator(".amap-arrow").count() == 0
+    assert page.evaluate("location.hash") == "#y2014-c-vn-s4"
+    page.check("input[name='amap-mode'][value='window']")
     page.select_option("#amap-claimant", "ALL")
     assert page.evaluate("location.hash") == "#y2014-s4"
     page.close()

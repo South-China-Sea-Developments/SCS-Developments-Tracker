@@ -3,8 +3,8 @@
    with its number of moves and an arrow when its score rose or fell against the five years before. The
    scale is fixed across every window for the claimant chosen, so a darker shade always means more, or
    harsher, moves. Zoomed in (or a sub-region chosen) the reefs, shoals and islands the moves name appear.
-   Below: the slider with key moments, small maps by decade, the claimant, the weighting, a link to the
-   view (#y2015-cn-s6-f-scarborough-shoal). */
+   Below: the slider (five-year window, or the build-up since the first year as on MAVD's map), small
+   maps by decade, the claimant, the weighting, a link to the view (#y2015-c-cn-s6-f-scarborough-shoal). */
 (function () {
   "use strict";
   var src = document.getElementById("mapdata");
@@ -16,9 +16,6 @@
   var SPAN = A.span, ENDS = A.ends, FIRST = ENDS[0], LAST = ENDS[ENDS.length - 1];
   var ZOOM_FEATURES = 5.8, ZOOM_NAMES = 7;   // features from here in; their names from further in
   var CHANGE = 0.2;                          // an arrow when the score moved by a fifth or more
-  // key moments on the slider: the year and a short name; a click shows the window ending two years after
-  var MOMENTS = [[1974, "Battle of the Paracels"], [1988, "Johnson South Reef"], [1995, "Mischief Reef"],
-                 [2012, "Scarborough Shoal standoff"], [2014, "Island building"], [2016, "Arbitral award"]];
   var root = getComputedStyle(document.documentElement);
   var RAMP = (root.getPropertyValue("--seq") || "#cde2fb, #9ec5f4, #6da7ec, #3987e5, #256abf, #184f95, #0d366b").split(",").map(function (s) { return s.trim(); });
   var INK = (root.getPropertyValue("--ink") || "#0c1a2a").trim();
@@ -27,6 +24,7 @@
   var slider = $("amap-year"), label = $("amap-label"), whenEl = $("amap-when"), whoEl = $("amap-who");
   var claimSel = $("amap-claimant"), sharedBox = $("amap-shared"), detail = $("amap-detail"), playBtn = $("amap-play");
   var canvasBox = $("amap"), decadesBox = $("amap-decades");
+  var modeInputs = Array.prototype.slice.call(document.querySelectorAll('input[name="amap-mode"]'));
 
   // the map opens on the latest five years with moves in them and moves forward as review fills the
   // recent years; the slider still reaches the build year
@@ -59,7 +57,8 @@
     var below = phone.matches ? 0 : (top ? top.offsetHeight : 0);
     return { top: phone.matches ? 90 : 24, bottom: 56 + below, left: 24, right: 24 };
   }
-  var state = { end: START, who: "ALL", sel: null, feat: null };
+  var state = { end: START, who: "ALL", sel: null, feat: null, mode: "window" };
+  var FIRST_YEAR = FIRST - SPAN + 1;   // the first year with data: the build-up counts from here
   var map = new maplibregl.Map({
     container: "amap", style: STYLE, bounds: SEA, fitBoundsOptions: { padding: padding() },
     minZoom: 3.5, maxZoom: 10, cooperativeGestures: true, attributionControl: false, dragRotate: false, pitchWithRotate: false
@@ -74,19 +73,25 @@
   });
 
   // ---- measure ---------------------------------------------------------------------------------
-  function windowLabel(end) { return (end - SPAN + 1) + "–" + end; }
-  function source() { return sharedBox && sharedBox.checked ? A.shared : A; }
+  function windowLabel(end) { return (state.mode === "cumulative" ? FIRST_YEAR : end - SPAN + 1) + "–" + end; }
+  function fiveLabel(end) { return (end - SPAN + 1) + "–" + end; }
+  function source() {
+    var shared = sharedBox && sharedBox.checked;
+    if (state.mode === "cumulative") return A.cumulative[shared ? "shared" : "full"];
+    return shared ? A.shared : A;
+  }
   function scoresAt(end) { return end >= FIRST ? source().scores[state.who][String(end)] : null; }
   function scores() { return scoresAt(state.end); }
   function scaleMax() { return source().max[state.who] || 0; }
   function fmt(v) { return Math.round(v * 10) / 10; }
   function inWindow() {
-    var from = state.end - SPAN + 1;
+    var from = state.mode === "cumulative" ? FIRST_YEAR : state.end - SPAN + 1;
     return A.moves.filter(function (m) { return m.y >= from && m.y <= state.end && (state.who === "ALL" || m.c === state.who); });
   }
   function byWeight(a, b) { return b.w - a.w || b.y - a.y || (a.m < b.m ? -1 : 1); }
   // the change against the five years before: "up", "down" or "", with the earlier score
   function change(n) {
+    if (state.mode === "cumulative") return { dir: "", prev: null };   // a build-up only grows: no arrows
     var now = scores()[n - 1], prevS = scoresAt(state.end - SPAN);
     if (!prevS) return { dir: "", prev: null };
     var prev = prevS[n - 1];
@@ -126,7 +131,7 @@
   function clearMarkers() { markers.forEach(function (m) { m.remove(); }); markers = []; }
   function drawMarkers(ms) {
     clearMarkers();
-    var wl = windowLabel(state.end), prevWl = windowLabel(state.end - SPAN);
+    var wl = windowLabel(state.end), prevWl = fiveLabel(state.end - SPAN);
     DATA.subregions.features.forEach(function (f) {
       var n = f.properties.n;
       var k = ms.filter(function (m) { return m.sr.indexOf(n) >= 0; }).length, ch = change(n);
@@ -239,7 +244,7 @@
       var fm = all.filter(function (m) { return (m.f || []).indexOf(state.feat) >= 0; }).sort(byWeight);
       el("h3", "amap-detail-head", F.n + ", " + wl, detail);
       if (F.sr) el("p", "amap-where", "In sub-region " + F.sr + " " + SR_NAMES[F.sr], detail);
-      if (!fm.length) el("p", "amap-empty", "No moves naming it in these five years.", detail);
+      if (!fm.length) el("p", "amap-empty", state.mode === "cumulative" ? "No moves naming it yet." : "No moves naming it in these five years.", detail);
       else { summary(fm); list(fm); }
       back(state.sel ? "Back to " + state.sel + " " + SR_NAMES[state.sel] : "Back to the whole sea", function () { state.feat = null; render(); });
       return;
@@ -248,10 +253,10 @@
       var n = state.sel, ch = change(n);
       var ms = all.filter(function (m) { return m.sr.indexOf(n) >= 0; }).sort(byWeight);
       el("h3", "amap-detail-head", n + " " + SR_NAMES[n] + ", " + wl, detail);
-      if (!ms.length) el("p", "amap-empty", "No moves in this sub-region in these five years.", detail);
+      if (!ms.length) el("p", "amap-empty", state.mode === "cumulative" ? "No moves in this sub-region yet." : "No moves in this sub-region in these five years.", detail);
       else {
         summary(ms, ", score " + fmt(s[n - 1]));
-        if (ch.prev !== null) el("p", "amap-where", (ch.dir ? "Intensity " + ch.dir + " from " : "About as intense as in ") + windowLabel(state.end - SPAN) + " (score " + fmt(ch.prev) + ").", detail);
+        if (ch.prev !== null) el("p", "amap-where", (ch.dir ? "Intensity " + ch.dir + " from " : "About as intense as in ") + fiveLabel(state.end - SPAN) + " (score " + fmt(ch.prev) + ").", detail);
         var named = ms.filter(function (m) { return (m.f || []).length; }).length;
         el("p", "amap-hint", named ? named + " of them name a reef, shoal or island, shown on the map." : "None of them names a reef, shoal or island.", detail);
         list(ms);
@@ -260,13 +265,13 @@
       return;
     }
     el("h3", "amap-detail-head", "Across the sea, " + wl, detail);
-    if (!all.length) { el("p", "amap-empty", "No moves in these five years.", detail); return; }
+    if (!all.length) { el("p", "amap-empty", state.mode === "cumulative" ? "No moves yet." : "No moves in these five years.", detail); return; }
     summary(all);
     srLinks("Most intense: ", s.map(function (v, i) { return { n: i + 1, v: v }; }).filter(function (r) { return r.v > 0; })
       .sort(function (a, b) { return b.v - a.v; }).slice(0, 3).map(function (r) { return r.n; }));
     var rising = DATA.subregions.features.map(function (f) { return f.properties.n; }).filter(function (n) { return change(n).dir === "up"; });
-    if (rising.length) srLinks("Rising since " + windowLabel(state.end - SPAN) + ": ", rising);
-    el("p", "amap-hint", "The number on each sub-region is its moves in these five years; ▲ and ▼ mark a rise or fall of a fifth or more in intensity against the five years before. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name.", detail);
+    if (rising.length) srLinks("Rising since " + fiveLabel(state.end - SPAN) + ": ", rising);
+    el("p", "amap-hint", state.mode === "cumulative" ? "The number on each sub-region is its moves since " + FIRST_YEAR + ", building up year by year. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name." : "The number on each sub-region is its moves in these five years; ▲ and ▼ mark a rise or fall of a fifth or more in intensity against the five years before. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name.", detail);
   }
 
   // ---- small maps by decade --------------------------------------------------------------------
@@ -310,47 +315,37 @@
     });
   }
 
-  // ---- key moments on the slider ---------------------------------------------------------------
+  // ---- the tick where Chubb's coding ends --------------------------------------------------------
   function clampEnd(y) { return Math.min(LAST, Math.max(FIRST, y)); }
-  function pct(y) { return (100 * (clampEnd(y) - FIRST) / Math.max(1, LAST - FIRST)) + "%"; }
-  (function moments() {
-    var ticks = $("amap-ticks"), row = $("amap-moments");
-    var shown = MOMENTS.filter(function (mo) { return mo[0] >= FIRST - SPAN + 1 && mo[0] <= LAST; });
-    shown.forEach(function (mo, i) {
-      var end = clampEnd(mo[0] + 2);
-      if (ticks) { var t = el("span", "amap-tick", undefined, ticks); t.style.left = pct(end); t.title = mo[0] + " " + mo[1]; }
-      if (row) {
-        row.appendChild(button("amap-sr amap-moment", mo[0] + " " + mo[1], "Show " + windowLabel(end), function () { setEnd(end); }));
-        if (i < shown.length - 1) row.appendChild(document.createTextNode(" · "));
-      }
-    });
-    var mats = A.mats_last_year;
-    if (ticks && mats >= FIRST && mats <= LAST) {
-      var t = el("span", "amap-tick source", undefined, ticks);
-      t.style.left = pct(mats);
-      t.title = "Chubb's coding (MATS) ends with " + mats;
-    }
+  (function sourceTick() {
+    var ticks = $("amap-ticks"), mats = A.mats_last_year;
+    if (!ticks || mats < FIRST || mats > LAST) return;
+    var t = el("span", "amap-tick source", undefined, ticks);
+    t.style.left = (100 * (mats - FIRST) / Math.max(1, LAST - FIRST)) + "%";
+    t.title = "Chubb's coding (MATS) ends with " + mats;
   })();
 
   // ---- the view in the address: #y2015-cn-s6-f-scarborough-shoal ---------------------------------
   function hashFor() {
-    return "#y" + state.end + (state.who !== "ALL" ? "-" + state.who.toLowerCase() : "") +
+    return "#y" + state.end + (state.mode === "cumulative" ? "-c" : "") + (state.who !== "ALL" ? "-" + state.who.toLowerCase() : "") +
       (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + state.feat : "");
   }
   function readHash() {
-    var m = /^#y(\d{4})(?:-([a-z]{2}))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
+    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
     if (!m) return false;
     var y = parseInt(m[1], 10);
     if (y >= FIRST && y <= LAST) state.end = y;
-    state.who = m[2] && NAMES[m[2].toUpperCase()] ? m[2].toUpperCase() : "ALL";
-    state.sel = m[3] && SR_NAMES[m[3]] ? parseInt(m[3], 10) : null;
-    state.feat = m[4] && FEATS[m[4]] ? m[4] : null;
+    state.mode = m[2] ? "cumulative" : "window";
+    state.who = m[3] && NAMES[m[3].toUpperCase()] ? m[3].toUpperCase() : "ALL";
+    state.sel = m[4] && SR_NAMES[m[4]] ? parseInt(m[4], 10) : null;
+    state.feat = m[5] && FEATS[m[5]] ? m[5] : null;
     claimSel.value = state.who;
+    modeInputs.forEach(function (i) { i.checked = i.value === state.mode; });
     return true;
   }
   function writeHash() {
     if (!history.replaceState) return;
-    var isDefault = state.end === START && state.who === "ALL" && state.sel === null && !state.feat;
+    var isDefault = state.end === START && state.mode === "window" && state.who === "ALL" && state.sel === null && !state.feat;
     try { history.replaceState(null, "", isDefault ? location.pathname + location.search : hashFor()); } catch (e) { /* a sandboxed frame */ }
   }
   var linkBtn = $("amap-link"), linkDone = $("amap-link-done");
@@ -385,6 +380,7 @@
   slider.addEventListener("input", function () { setEnd(parseInt(slider.value, 10)); });
   claimSel.addEventListener("change", function () { state.who = claimSel.value; render(); });
   if (sharedBox) sharedBox.addEventListener("change", render);
+  modeInputs.forEach(function (i) { i.addEventListener("change", function () { if (i.checked) { state.mode = i.value; render(); } }); });
   window.addEventListener("hashchange", function () { if (readHash()) { render(); if (state.sel !== null) fitTo(state.sel); } });
 
   var playTimer = null;

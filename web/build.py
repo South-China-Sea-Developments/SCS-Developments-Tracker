@@ -260,6 +260,35 @@ def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_S
     return {"span": span, "ends": ends, "scores": scores, "max": top}
 
 
+def cumulative_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_SPAN, shared: bool = False) -> dict:
+    """The build-up view (as MAVD's map): for every year the slider reaches (first+span-1 … last), the sums
+    of every accepted move from `first` up to that year, for `ALL` and each claimant, with each
+    selection's maximum (the last year's, since sums only grow)."""
+    keys = ["ALL", *schema.CLAIMANT_CODES]
+    out = {}
+    for k in keys:
+        run = [0.0] * 10
+        out[k] = {}
+        for end in range(first, last + 1):
+            run = [a + b for a, b in zip(run, _year_sums(moves, k, end, shared))]
+            if end >= first + span - 1:
+                out[k][str(end)] = [round(v, 2) for v in run]
+    return {"scores": out, "max": {k: max((max(v) for v in out[k].values()), default=0) for k in keys}}
+
+
+def _year_sums(moves: list[dict], key: str, year: int, shared: bool) -> list[float]:
+    s = [0.0] * 10
+    for m in moves:
+        if m["status"] != "accepted" or int(m["year"]) != year or (key != "ALL" and m["claimant"] != key):
+            continue
+        w, srs = move_weight(m), move_subregions(m)
+        if shared and srs:
+            w = w / len(srs)
+        for i in srs:
+            s[i - 1] += w
+    return s
+
+
 def decade_scores(moves: list[dict], first: int, last: int, shared: bool = False) -> dict:
     """The same measure by decade (the small maps under the slider, ticket 27): for each decade from first's
     to last's, the ten sub-region sums of every accepted move in it, for `ALL` and each claimant, with
@@ -490,8 +519,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     features: dict = {}
     sh = window_scores(published, agg["years"][0], latest, shared=True)
     decades = {"full": decade_scores(published, agg["years"][0], latest), "shared": decade_scores(published, agg["years"][0], latest, shared=True)}
+    cumulative = {"full": cumulative_scores(published, agg["years"][0], latest), "shared": cumulative_scores(published, agg["years"][0], latest, shared=True)}
     mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "shared": {"scores": sh["scores"], "max": sh["max"]},
-                      "decades": decades, "moves": window_moves(published, features),
+                      "decades": decades, "cumulative": cumulative, "moves": window_moves(published, features),
                       "features": features, "mats_last_year": schema.MATS_YEARS[-1]}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")

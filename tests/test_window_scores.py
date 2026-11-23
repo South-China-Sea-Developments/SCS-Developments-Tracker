@@ -81,3 +81,11 @@ def test_decade_scores_sum_each_decade():
     assert d["decades"] == [1990, 2000]
     assert d["scores"]["ALL"]["1990"][5] == 3 and d["scores"]["ALL"]["2000"][1] == 1 + 3 and d["scores"]["ALL"]["2000"][4] == 3 + 4
     assert d["max"]["ALL"] == 7 and d["max"]["PH"] == 3
+
+
+def test_cumulative_scores_build_up_from_the_first_year():
+    from web.build import cumulative_scores
+    c = cumulative_scores(MOVES, first=1995, last=2004)
+    assert c["scores"]["ALL"]["1999"][5] == 3                      # PH 1999
+    assert c["scores"]["ALL"]["2004"][1] == 1 + 3 and c["scores"]["ALL"]["2004"][5] == 3   # nothing drops out
+    assert c["max"]["ALL"] == 7 and "1998" not in c["scores"]["ALL"]   # the slider starts at first+4
