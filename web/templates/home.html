@@ -27,6 +27,7 @@
           <label><input type="radio" name="amap-mode" value="window" checked><span>Five-year window</span></label>
           <label><input type="radio" name="amap-mode" value="cumulative"><span>Build-up since {{ meta.first_year }}</span></label>
         </div>
+        <div class="amap-timeline" id="amap-timeline"></div>
         <div class="time-row">
           <button type="button" class="play" id="amap-play" aria-pressed="false" aria-label="Play through the years">Play</button>
           <output class="time-label" id="amap-label" for="amap-year"></output>
@@ -41,11 +42,22 @@
       <fieldset class="fgroup amap-decades-group"><legend>By decade</legend>
         <div class="amap-decades" id="amap-decades"></div>
       </fieldset>
-      <fieldset class="fgroup"><legend>Claimant</legend>
-        <select id="amap-claimant" aria-label="Claimant">
-          <option value="ALL">All claimants</option>
-          {% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}
-        </select>
+      <fieldset class="fgroup"><legend>Show</legend>
+        <div class="amap-types" id="amap-types" role="group" aria-label="Types of move">
+          {% for key, label, blurb in types %}<label class="amap-type" data-type="{{ key }}"><input type="checkbox" name="amap-type" value="{{ key }}" checked><span><i aria-hidden="true"></i>{{ label }}</span></label>{% endfor %}
+        </div>
+        <div class="amap-selects">
+          <label><span class="amap-select-label">By</span>
+            <select id="amap-claimant" aria-label="Claimant">
+              <option value="ALL">all claimants</option>
+              {% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}
+            </select></label>
+          <label><span class="amap-select-label">Directed at</span>
+            <select id="amap-target" aria-label="Directed at">
+              <option value="">anyone</option>
+              {% for code, name in dyad_targets.items() %}{% if code not in ('A', 'U') %}<option value="{{ code }}">{{ name }}</option>{% endif %}{% endfor %}
+            </select></label>
+        </div>
       </fieldset>
       <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among the sub-regions it covers, so a claim over the whole sea does not count in full everywhere</span></label>
       <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>

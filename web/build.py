@@ -260,63 +260,10 @@ def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_S
     return {"span": span, "ends": ends, "scores": scores, "max": top}
 
 
-def cumulative_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_SPAN, shared: bool = False) -> dict:
-    """The build-up view (as MAVD's map): for every year the slider reaches (first+span-1 … last), the sums
-    of every accepted move from `first` up to that year, for `ALL` and each claimant, with each
-    selection's maximum (the last year's, since sums only grow)."""
-    keys = ["ALL", *schema.CLAIMANT_CODES]
-    out = {}
-    for k in keys:
-        run = [0.0] * 10
-        out[k] = {}
-        for end in range(first, last + 1):
-            run = [a + b for a, b in zip(run, _year_sums(moves, k, end, shared))]
-            if end >= first + span - 1:
-                out[k][str(end)] = [round(v, 2) for v in run]
-    return {"scores": out, "max": {k: max((max(v) for v in out[k].values()), default=0) for k in keys}}
-
-
-def _year_sums(moves: list[dict], key: str, year: int, shared: bool) -> list[float]:
-    s = [0.0] * 10
-    for m in moves:
-        if m["status"] != "accepted" or int(m["year"]) != year or (key != "ALL" and m["claimant"] != key):
-            continue
-        w, srs = move_weight(m), move_subregions(m)
-        if shared and srs:
-            w = w / len(srs)
-        for i in srs:
-            s[i - 1] += w
-    return s
-
-
-def decade_scores(moves: list[dict], first: int, last: int, shared: bool = False) -> dict:
-    """The same measure by decade (the small maps under the slider, ticket 27): for each decade from first's
-    to last's, the ten sub-region sums of every accepted move in it, for `ALL` and each claimant, with
-    each selection's maximum over the decades."""
-    keys = ["ALL", *schema.CLAIMANT_CODES]
-    decades = list(range(first // 10 * 10, last // 10 * 10 + 1, 10))
-    out = {k: {str(d): [0] * 10 for d in decades} for k in keys}
-    for m in moves:
-        y = int(m["year"])
-        if m["status"] != "accepted" or not first <= y <= last:
-            continue
-        w, srs = move_weight(m), move_subregions(m)
-        if shared and srs:
-            w = w / len(srs)
-        for k in ("ALL", m["claimant"]):
-            row = out[k][str(y // 10 * 10)]
-            for i in srs:
-                row[i - 1] += w
-    for k in keys:
-        for d in out[k]:
-            out[k][d] = [round(v, 2) for v in out[k][d]]
-    return {"decades": decades, "scores": out, "max": {k: max((max(v) for v in out[k].values()), default=0) for k in keys}}
-
-
 def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
     """The moves behind the map's colour, compact, for its details panel: id, claimant, year, weight, highest
-    type, sub-regions, the features its description names (`f`, ids into `features`, which this fills)
-    and the description's first 220 characters."""
+    type, sub-regions, the features its description names (`f`, ids into `features`, which this fills),
+    whom it is directed at (`g`, the dyads' second letters) and the description's first 220 characters."""
     out = []
     for m in sorted(moves, key=lambda m: (m["year"], m["move_id"])):
         if m["status"] != "accepted":
@@ -325,7 +272,7 @@ def window_moves(moves: list[dict], features: dict | None = None) -> list[dict]:
         out.append({"m": m["move_id"], "c": m["claimant"], "y": int(m["year"]), "w": w,
                     "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
                     "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220],
-                    "f": move_features(m, features)})
+                    "f": move_features(m, features), "g": sorted({d[1] for d in m.get("dyads", "").split() if len(d) == 2})})
     return out
 
 
@@ -516,13 +463,12 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["first_year"], mapd["last_year"] = agg["years"][0], agg["years"][-1]
     # the assertiveness map (ticket 27): its latest window ends at the build year, reviewed or not
     latest = max(int(meta["build_date"][:4]), agg["years"][-1])
+    # the map computes its scores in the browser from these moves, so its filters (type, directed at) and
+    # its weighting switch can recombine them; window_scores is the reference the tests hold it to
     features: dict = {}
-    sh = window_scores(published, agg["years"][0], latest, shared=True)
-    decades = {"full": decade_scores(published, agg["years"][0], latest), "shared": decade_scores(published, agg["years"][0], latest, shared=True)}
-    cumulative = {"full": cumulative_scores(published, agg["years"][0], latest), "shared": cumulative_scores(published, agg["years"][0], latest, shared=True)}
-    mapd["assert"] = {**window_scores(published, agg["years"][0], latest), "shared": {"scores": sh["scores"], "max": sh["max"]},
-                      "decades": decades, "cumulative": cumulative, "moves": window_moves(published, features),
-                      "features": features, "mats_last_year": schema.MATS_YEARS[-1]}
+    mapd["assert"] = {"span": WINDOW_SPAN, "ends": list(range(agg["years"][0] + WINDOW_SPAN - 1, latest + 1)),
+                      "moves": window_moves(published, features), "features": features,
+                      "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")

@@ -719,6 +719,12 @@ def test_the_first_screen_is_the_assertiveness_map(browser, dist):
     assert page.locator("#amap-detail .amap-move").count() >= 1
     page.select_option("#amap-claimant", "VN")
     assert page.locator("#amap-who").inner_text() == "Vietnam"
+    # the filters narrow the moves: coercive and force only, directed at China
+    page.uncheck("input[name='amap-type'][value='declarative']")
+    page.uncheck("input[name='amap-type'][value='demonstrative']")
+    page.select_option("#amap-target", "C")
+    assert page.locator("#amap-who").inner_text() == "Vietnam · coercive, use of force only · directed at China (PRC)"
+    assert page.locator("#amap-timeline svg rect").count() > 40
     # the stage sticks while the panel scrolls over it
     page.evaluate("document.getElementById('amap-explore').scrollIntoView()")
     page.wait_for_timeout(200)
@@ -742,5 +748,26 @@ def test_a_view_of_the_map_has_its_own_address(browser, dist):
     page.check("input[name='amap-mode'][value='window']")
     page.select_option("#amap-claimant", "ALL")
     assert page.evaluate("location.hash") == "#y2014-s4"
+    page.close()
+
+
+def test_the_map_scores_match_the_reference(browser, dist):
+    """Ticket 27: the page computes its scores from the moves; with every move counted in full on each of
+    its sub-regions they equal web.build.window_scores."""
+    from web.build import window_scores
+    moves = read_csv(DATA_DIR / "moves.csv")
+    ref = window_scores(moves, 1970, 2026)["scores"]["ALL"]["2014"]
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014")
+    page.reload()
+    page.wait_for_timeout(1200)
+    page.click("label.amap-opt")   # the switch off: every move in full on each of its sub-regions
+    assert not page.is_checked("#amap-shared")
+    for n in (2, 6):
+        page.evaluate(f"location.hash = '#y2014-s{n}'")
+        page.wait_for_timeout(300)
+        text = page.locator("#amap-detail .amap-sum").inner_text()
+        assert f"score {ref[n - 1]};" in text, (n, ref[n - 1], text)
+    assert problems == []
     page.close()
 

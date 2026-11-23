@@ -51,9 +51,10 @@ def test_moves_carry_the_features_they_name_and_the_map_gets_their_positions():
     from web.build import window_moves
     m = move("CN201201", "CN", 2012, ["coercive"], [4])
     m["description"] = "2012: Standoff at Scarborough Shoal; patrols near Mischief Reef."
+    m["dyads"] = "CP CV"
     feats = {}
     [w] = window_moves([m], feats)
-    assert w["f"] == ["scarborough-shoal", "mischief-reef"] and w["w"] == 3
+    assert w["f"] == ["scarborough-shoal", "mischief-reef"] and w["w"] == 3 and w["g"] == ["P", "V"]
     assert set(feats) == {"scarborough-shoal", "mischief-reef"} and 14 < feats["scarborough-shoal"]["lat"] < 16
 
 
@@ -73,19 +74,3 @@ def test_shared_weights_split_a_move_among_its_subregions():
     # CN200001 (1, one sub-region) + CN200301 (3 over two) on 2; CN200301's half + VN200401 (4, one) on 5
     assert s[1] == 1 + 1.5 and s[4] == 1.5 + 4
     assert w["max"]["ALL"] == 5.5
-
-
-def test_decade_scores_sum_each_decade():
-    from web.build import decade_scores
-    d = decade_scores(MOVES, first=1990, last=2004)
-    assert d["decades"] == [1990, 2000]
-    assert d["scores"]["ALL"]["1990"][5] == 3 and d["scores"]["ALL"]["2000"][1] == 1 + 3 and d["scores"]["ALL"]["2000"][4] == 3 + 4
-    assert d["max"]["ALL"] == 7 and d["max"]["PH"] == 3
-
-
-def test_cumulative_scores_build_up_from_the_first_year():
-    from web.build import cumulative_scores
-    c = cumulative_scores(MOVES, first=1995, last=2004)
-    assert c["scores"]["ALL"]["1999"][5] == 3                      # PH 1999
-    assert c["scores"]["ALL"]["2004"][1] == 1 + 3 and c["scores"]["ALL"]["2004"][5] == 3   # nothing drops out
-    assert c["max"]["ALL"] == 7 and "1998" not in c["scores"]["ALL"]   # the slider starts at first+4

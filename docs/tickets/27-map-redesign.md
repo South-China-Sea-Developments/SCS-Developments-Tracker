@@ -81,6 +81,16 @@ then several rounds of tuning over the following weeks.
 - A switch between the **five-year window** (default) and the **build-up since 1970**, as MAVD's map
   accumulates (`cumulative_scores`); the build-up has no arrows, since it only grows. In the address as `-c`.
 
+## Round 6 (maintainer, 2026-11-22: borrowed from MAVD and ACLED's East Asia Maritime Monitor)
+
+- **Timeline** above the slider: moves per year, stacked by type, the years on the map highlighted; a
+  click on a year moves the window there. It follows the filters and the sub-region chosen.
+- **Type filter** (four toggles, at least one stays on) and **directed at** (the dyads' targets) beside
+  the claimant. The page now computes every score from the moves so the filters recombine them;
+  `window_scores` stays as the reference, and a site test holds the page's scores to it. The precomputed
+  score sets (shared, cumulative, decades) left the payload.
+- Not done: EEZ and nine-dash-line layers (data, licence and whether to show them: the maintainer's call).
+
 ## Later rounds (not in this ticket)
 
 Small multiples by decade; a per-claimant timeline; a fuller marking of the coding-source change; the
