@@ -472,8 +472,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     mapd["assert"] = {"span": WINDOW_SPAN, "ends": list(range(agg["years"][0] + WINDOW_SPAN - 1, latest + 1)),
                       "moves": window_moves(published, features), "features": features,
                       "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES,
-                      # optional reference lines (Natural Earth, public domain; web/static/geo/README.md)
-                      "lines": {k: json.loads((HERE / "static" / "geo" / f"{k}.geojson").read_text(encoding="utf-8")) for k in ("maritime", "dashline")},
+                      # optional reference lines: EEZ boundaries (Marine Regions, CC BY 4.0) and the dashed line (Natural Earth); web/static/geo/README.md
+                      "lines": {k: json.loads((HERE / "static" / "geo" / f"{k}.geojson").read_text(encoding="utf-8")) for k in ("eez", "dashline")},
                       # reefs and small islands, drawn faintly when zoomed in (Natural Earth; ticket 29)
                       "shapes": {k: json.loads((HERE / "static" / "geo" / f"{k}.geojson").read_text(encoding="utf-8")) for k in ("reefs", "islands")},
                       # every named feature of the gazetteer, as faint points (and names) when zoomed in

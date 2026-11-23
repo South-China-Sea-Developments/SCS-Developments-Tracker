@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 REFERENCE = ROOT / "data" / "reference"
 GAZETTEER = REFERENCE / "gazetteer.csv"
 GAZETTEER_EXTRA = REFERENCE / "gazetteer_extra.csv"
+GAZETTEER_GEONAMES = GAZETTEER.parent / "gazetteer_geonames.csv"   # ticket 31, made by pipeline.gazetteer_geonames
 SUBREGIONS = REFERENCE / "mavd_subregions.geojson"
 COLUMNS = ["feature_id", "name_en", "name_zh", "name_vi", "name_fil", "name_ms", "aliases", "lat", "lon", "subregion", "kind", "wikidata", "retrieved"]
 NAME_COLUMNS = ["name_en", "name_zh", "name_vi", "name_fil", "name_ms"]
@@ -89,10 +90,14 @@ def _read(path: Path) -> list[dict]:
 
 
 @lru_cache(maxsize=4)
-def load(gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXTRA) -> dict[str, dict]:
-    """feature_id -> row, the extra file replacing or adding rows."""
+def load(gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXTRA, geonames: Path | None = None) -> dict[str, dict]:
+    """feature_id -> row: the GeoNames extension (ticket 31), then the extra file, each replacing or adding
+    rows. The GeoNames file is the one beside `gazetteer` unless another (or None, to leave it out) is given."""
     feats = {r["feature_id"]: r for r in _read(gazetteer)}
-    for r in _read(extra):
+    if geonames is None and gazetteer == GAZETTEER:
+        geonames = GAZETTEER_GEONAMES
+    overlays = [geonames] if geonames is not None and Path(geonames).exists() else []
+    for r in [row for path in overlays for row in _read(path)] + list(_read(extra)):
         base = feats.get(r["feature_id"])
         if base:   # a correction: blank fields keep the generated value, aliases are added
             merged = {k: (r.get(k) or base.get(k, "")) for k in COLUMNS}

@@ -517,7 +517,7 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
    slides up over its right side (over the whole width at phone size). Stage and panel share one grid
    cell so the panel can overlap the sticky map. */
 /* home: no banner (every other page keeps it); the institute's logo in the menu band */
-.brand-logo { height: 34px; width: auto; border-radius: 2px; margin-right: var(--s3); vertical-align: middle; }
+.brand-logo { height: 32px; width: auto; margin-right: var(--s3); padding-right: var(--s3); border-right: 1px solid rgba(255, 255, 255, 0.35); vertical-align: middle; box-sizing: content-box; }   /* the institute's own logo, in white on the band (supplied 2026-11-23) */
 .brand { display: inline-flex; align-items: center; }
 .amap { display: grid; position: relative; --stage-h: max(100svh, 480px); --fold: max(calc(100svh - var(--top-h, 192px)), 360px); }
 /* the stage is a full screen tall so it fills the window once it sticks; on the first screen its lower part
