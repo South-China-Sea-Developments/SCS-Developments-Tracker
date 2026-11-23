@@ -376,6 +376,8 @@ def english_place(text: str, gazetteer: Path = GAZETTEER, extra: Path = GAZETTEE
             if len(found) > 1:
                 break   # two different features: "Luconia Shoals (South Luconia Shoals)" says both
             ok = lambda f, n, alone: f or (alone and bare_name(n)) or (not is_english_name(n) and (name_like(n) or not re.search(r"[A-Za-z]", n)))
+            if not fids[0] and found and feats[next(iter(found))]["kind"] == "island group":
+                break   # "Ranai (Natuna)": a place in the group, not another name for it
             if len(found) == 1 and all(ok(f, n, i == 0 or len(parts) == 1) for i, (f, n) in enumerate(zip(fids, sides))):
                 en = feats[next(iter(found))]["name_en"]
                 if not en:

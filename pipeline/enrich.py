@@ -17,6 +17,7 @@ open up to date:
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -28,12 +29,18 @@ NOTE = "Source's wording for the place: “{}”."
 def enrich(event: dict) -> dict:
     """The candidate in place, brought up to the rules; returns it."""
     name = (event.get("location_name") or "").strip()
+    m = re.search(r"Source's wording for the place: “(.*?)”\.", event.get("review_note") or "")
+    if m:   # already brought up once: start again from the source's words, so a better rule corrects it
+        name = m.group(1)
     english = gazetteer.english_place(name) if name else name
     if english != name and gazetteer.is_english_name(english):
         note = NOTE.format(name)
         if note not in (event.get("review_note") or ""):
             event["review_note"] = " ".join(x for x in ((event.get("review_note") or "").strip(), note) if x)
         event["location_name"] = english
+    elif m:   # the better rule keeps the source's words: put them back and drop the note
+        event["location_name"] = name
+        event["review_note"] = re.sub(r"\s*" + re.escape(m.group(0)), "", event["review_note"]).strip()
     return gazetteer.locate(event)
 
 
