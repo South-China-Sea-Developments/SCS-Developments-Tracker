@@ -699,3 +699,16 @@ html.curtain-on { overflow: hidden; }
 .amap-feature-link { margin: 6px 0 0; font-size: 0.92em; }
 .places-key { color: var(--muted, #555); font-size: 0.92em; }
 .places-key .places-held { white-space: nowrap; }
+
+/* the selected sub-region's score over time (ticket 37) */
+.amap-history { margin: 8px 0 4px; }
+.amap-history svg { width: 100%; max-width: 360px; height: auto; display: block; cursor: pointer; }
+.amap-history .base { stroke: #c9cfd4; stroke-width: 1; }
+.amap-history .line { fill: none; stroke: #1f4e8c; stroke-width: 2; stroke-linejoin: round; }
+.amap-history .now { fill: #1f4e8c; stroke: #fff; stroke-width: 2; }
+.amap-history .tick { font-size: 10px; fill: #6b7780; }
+.amap-history .tick.end { text-anchor: end; }
+.amap-history .hit { fill: transparent; }
+.amap-history figcaption { font-size: 0.85em; margin-top: 2px; }
+.amap-history .line.uncoded { stroke: #9aa5ae; stroke-dasharray: 3 3; stroke-width: 1.5; }
+.amap-history .tick.mid { text-anchor: middle; }

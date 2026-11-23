@@ -885,3 +885,20 @@ def test_the_map_shows_who_holds_what_and_links_features(browser, dist):
     page.click("label:has(#amap-line-held)")
     assert page.evaluate("location.hash") == "#y2020-c-l-h-f-second-thomas-shoal"
     page.close()
+
+
+def test_the_selected_sub_region_shows_its_history(browser, dist):
+    """Ticket 37: a selected sub-region's panel carries its score over every window, on the map's scale;
+    a click on the chart moves the map to that window."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-s6")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    svg = page.locator("#amap-detail .amap-history svg")
+    assert svg.count() == 1 and "Score of sub-region 6" in svg.get_attribute("aria-label")
+    box = svg.bounding_box()
+    svg.click(position={"x": 4, "y": box["height"] / 2})   # the far left: the first window
+    page.wait_for_timeout(300)
+    assert page.evaluate("location.hash").startswith("#y1974")
+    page.close()

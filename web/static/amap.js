@@ -355,6 +355,59 @@
     });
   }
   function none(what) { return state.mode === "cumulative" ? "No " + what + " yet." : "No " + what + " in these five years."; }
+  // the selected sub-region's score at every window end, on the map's fixed scale (ticket 37); the
+  // current window marked, and a click on the chart moves the map to that window
+  function drawHistory(n) {
+    var NS = "http://www.w3.org/2000/svg", W = 300, H = 74, L = 4, R = 4, T = 8, B = 16;
+    var max = scaleMax() || 1, xs = function (e) { return L + (W - L - R) * (e - FIRST) / Math.max(1, LAST - FIRST); };
+    var ys = function (v) { return T + (H - T - B) * (1 - v / max); };
+    var vals = ENDS.map(function (e) { return scoresAt(e)[n - 1]; });
+    var peak = Math.max.apply(null, vals), at = ENDS[vals.indexOf(peak)];
+    var fig = el("figure", "amap-history", undefined, detail);
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Score of sub-region " + n + " for each " + (state.mode === "cumulative" ? "year since " + FIRST_YEAR : "five-year window") +
+      " ending " + FIRST + " to " + LAST + "; highest " + fmt(peak) + " (" + windowLabel(at) + ")");
+    function add(tag, attrs, text) {
+      var x = document.createElementNS(NS, tag);
+      for (var k in attrs) x.setAttribute(k, attrs[k]);
+      if (text !== undefined) x.textContent = text;
+      svg.appendChild(x);
+      return x;
+    }
+    add("line", { x1: L, x2: W - R, y1: ys(0), y2: ys(0), "class": "base" });
+    // windows past the last coded year are still being coded: drawn faint, not read as a fall
+    var CODED = DATA.last_year || LAST;
+    function seg(test) {
+      var pts = ENDS.map(function (e, i) { return test(e) ? xs(e).toFixed(1) + " " + ys(vals[i]).toFixed(1) : null; }).filter(Boolean);
+      return pts.length > 1 ? "M" + pts.join("L") : "";
+    }
+    add("path", { d: seg(function (e) { return e <= CODED; }), "class": "line" });
+    if (CODED < LAST) {
+      add("path", { d: seg(function (e) { return e >= CODED; }), "class": "line uncoded" });
+      add("text", { x: W - R, y: T + 2, "class": "tick end" }, "being coded");
+    }
+    add("circle", { cx: xs(state.end), cy: ys(scoresAt(state.end)[n - 1]), r: 4, "class": "now" });
+    add("text", { x: L, y: H - 3, "class": "tick" }, String(FIRST));
+    add("text", { x: W - R, y: H - 3, "class": "tick end" }, String(LAST));
+    add("rect", { x: 0, y: 0, width: W, height: H, "class": "hit" });
+    svg.addEventListener("click", function (ev) {
+      var box = svg.getBoundingClientRect(), x = (ev.clientX - box.left) * W / box.width;
+      setEnd(Math.round(FIRST + (x - L) / (W - L - R) * (LAST - FIRST)));
+    });
+    svg.addEventListener("mousemove", function (ev) {
+      var box = svg.getBoundingClientRect(), x = (ev.clientX - box.left) * W / box.width;
+      var e = Math.max(FIRST, Math.min(LAST, Math.round(FIRST + (x - L) / (W - L - R) * (LAST - FIRST))));
+      svg.querySelector(".hit").textContent = "";
+      cap.textContent = windowLabel(e) + ": score " + fmt(scoresAt(e)[n - 1]);
+    });
+    svg.addEventListener("mouseleave", function () { cap.textContent = capText; });
+    fig.appendChild(svg);
+    var capText = "Score over time, on the map's scale; highest " + fmt(peak) + " in " + windowLabel(at) + "." +
+      (CODED < LAST ? " Years after " + CODED + " are still being coded." : "");
+    var cap = el("figcaption", "amap-muted", capText, fig);
+  }
   function renderDetail(all) {
     detail.textContent = "";
     var wl = windowLabel(state.end), s = scores();
@@ -377,6 +430,7 @@
       if (!ms.length) el("p", "amap-empty", none("moves in this sub-region"), detail);
       else {
         summary(ms, ", score " + fmt(s[n - 1]));
+        drawHistory(n);
         if (ch.prev !== null) el("p", "amap-where", (ch.dir ? "Intensity " + ch.dir + " from " : "About as intense as in ") + fiveLabel(state.end - SPAN) + " (score " + fmt(ch.prev) + ").", detail);
         var named = ms.filter(function (m) { return (m.f || []).length; }).length;
         el("p", "amap-hint", named ? named + " of them name a reef, shoal or island, shown on the map." : "None of them names a reef, shoal or island.", detail);
