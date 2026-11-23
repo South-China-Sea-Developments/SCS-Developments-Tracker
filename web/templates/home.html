@@ -37,7 +37,6 @@
             <input type="range" id="amap-year" min="0" max="0" step="1" value="0"></label>
           <div class="amap-ticks" id="amap-ticks" aria-hidden="true"></div>
         </div>
-        <p class="amap-note">China, Vietnam and the Philippines to {{ meta.mats_last_year }}: Andrew Chubb's coding (MATS); from {{ meta.mats_last_year + 1 }}, and for Malaysia, Indonesia and Taiwan throughout, the project's, on the same rules.</p>
       </fieldset>
       <fieldset class="fgroup amap-decades-group"><legend>By decade</legend>
         <div class="amap-decades" id="amap-decades"></div>
@@ -58,6 +57,11 @@
               {% for code, name in dyad_targets.items() %}{% if code not in ('A', 'U') %}<option value="{{ code }}">{{ name }}</option>{% endif %}{% endfor %}
             </select></label>
         </div>
+      </fieldset>
+      <fieldset class="fgroup amap-lines"><legend>Lines on the map</legend>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-maritime"><span class="box" aria-hidden="true"></span><span class="check-label">Maritime boundaries <span class="amap-muted">(indicative)</span></span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line <span class="amap-muted">(a claim)</span></span></label>
+        <p class="amap-muted amap-source">Lines: Natural Earth.</p>
       </fieldset>
       <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among the sub-regions it covers, so a claim over the whole sea does not count in full everywhere</span></label>
       <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>

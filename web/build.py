@@ -468,7 +468,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     features: dict = {}
     mapd["assert"] = {"span": WINDOW_SPAN, "ends": list(range(agg["years"][0] + WINDOW_SPAN - 1, latest + 1)),
                       "moves": window_moves(published, features), "features": features,
-                      "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES}
+                      "mats_last_year": schema.MATS_YEARS[-1], "targets": DYAD_NAMES,
+                      # optional reference lines (Natural Earth, public domain; web/static/geo/README.md)
+                      "lines": {k: json.loads((HERE / "static" / "geo" / f"{k}.geojson").read_text(encoding="utf-8")) for k in ("maritime", "dashline")}}
     (out_dir / "data" / "events.json").write_text(json.dumps(mapd, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     map_json = json.dumps(mapd, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
     map_style_json = (HERE / "static" / "vendor" / "openfreemap" / "positron-en.json").read_text(encoding="utf-8").replace("</", "<\\/")

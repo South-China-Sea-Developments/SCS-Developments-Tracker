@@ -6,7 +6,7 @@
    islands the moves name appear. The scores are computed here from the moves, so the filters (types,
    claimant, directed at) and the weighting switch can recombine them; web.build.window_scores is the
    reference the tests hold this to. Below the map: a timeline, the slider, the filters, decade maps, a
-   link to the view (#y2015-c-cn-at-p-t-cf-s6-f-scarborough-shoal). */
+   link to the view (#y2015-c-cn-at-p-t-cf-l-md-s6-f-scarborough-shoal). */
 (function () {
   "use strict";
   var src = document.getElementById("mapdata");
@@ -64,7 +64,9 @@
     var below = phone.matches ? 0 : (top ? top.offsetHeight : 0);
     return { top: phone.matches ? 90 : 24, bottom: 56 + below, left: 24, right: 24 };
   }
-  var state = { end: START, who: "ALL", target: "", types: TYPES.slice(), sel: null, feat: null, mode: "window" };
+  var state = { end: START, who: "ALL", target: "", types: TYPES.slice(), sel: null, feat: null, mode: "window", lines: [] };
+  var LINE_KEY = { maritime: "m", dashline: "d" };
+  var lineInputs = ["maritime", "dashline"].map(function (k) { return $("amap-line-" + k); }).filter(Boolean);
   var map = new maplibregl.Map({
     container: "amap", style: STYLE, bounds: SEA, fitBoundsOptions: { padding: padding() },
     minZoom: 3.5, maxZoom: 10, cooperativeGestures: true, attributionControl: false, dragRotate: false, pitchWithRotate: false
@@ -211,6 +213,15 @@
     // hairline white seams between the sub-regions read lighter than dark outlines on the grey sea
     map.addLayer({ id: "asr-line", type: "line", source: "asr", paint: { "line-color": "#ffffff", "line-width": 1.2, "line-opacity": 0.85 } });
     map.addLayer({ id: "asr-sel", type: "line", source: "asr", filter: ["==", ["get", "n"], -1], paint: { "line-color": INK, "line-width": 1.8 } });
+    // reference lines, off by default: indicative maritime boundaries (dotted grey), China's dashed line (dashed ink)
+    if (A.lines) {
+      map.addSource("ln-maritime", { type: "geojson", data: A.lines.maritime });
+      map.addLayer({ id: "ln-maritime", type: "line", source: "ln-maritime", layout: { visibility: "none", "line-cap": "round" },
+                     paint: { "line-color": "#6b7780", "line-width": 1.1, "line-dasharray": [0.6, 2.2], "line-opacity": 0.9 } });
+      map.addSource("ln-dashline", { type: "geojson", data: A.lines.dashline });
+      map.addLayer({ id: "ln-dashline", type: "line", source: "ln-dashline", layout: { visibility: "none" },
+                     paint: { "line-color": INK, "line-width": 1.4, "line-opacity": 0.75 } });
+    }
     map.on("mousemove", "asr-fill", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "asr-fill", function () { map.getCanvas().style.cursor = ""; });
     map.on("click", "asr-fill", function (ev) { select(ev.features[0].properties.n); });
@@ -303,8 +314,6 @@
     el("h3", "amap-detail-head", "Across the sea, " + wl, detail);
     if (!all.length) { el("p", "amap-empty", none("moves"), detail); return; }
     summary(all);
-    srLinks("Most intense: ", s.map(function (v, i) { return { n: i + 1, v: v }; }).filter(function (r) { return r.v > 0; })
-      .sort(function (a, b) { return b.v - a.v; }).slice(0, 3).map(function (r) { return r.n; }));
     var rising = DATA.subregions.features.map(function (f) { return f.properties.n; }).filter(function (n) { return change(n).dir === "up"; });
     if (rising.length) srLinks("Rising since " + fiveLabel(state.end - SPAN) + ": ", rising);
     el("p", "amap-hint", state.mode === "cumulative"
@@ -401,10 +410,11 @@
     var t = state.types.length === TYPES.length ? "" : "-t-" + state.types.map(function (x) { return TYPE_KEY[x]; }).join("");
     return "#y" + state.end + (state.mode === "cumulative" ? "-c" : "") + (state.who !== "ALL" ? "-" + state.who.toLowerCase() : "") +
       (state.target ? "-at-" + state.target.toLowerCase() : "") + t +
+      (state.lines.length ? "-l-" + state.lines.map(function (k) { return LINE_KEY[k]; }).join("") : "") +
       (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + state.feat : "");
   }
   function readHash() {
-    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-at-([a-z]))?(?:-t-([dmcf]+))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
+    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-at-([a-z]))?(?:-t-([dmcf]+))?(?:-l-([md]+))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
     if (!m) return false;
     var y = parseInt(m[1], 10);
     if (y >= FIRST && y <= LAST) state.end = y;
@@ -413,8 +423,9 @@
     state.target = m[4] && TARGETS[m[4].toUpperCase()] ? m[4].toUpperCase() : "";
     state.types = m[5] ? TYPES.filter(function (t) { return m[5].indexOf(TYPE_KEY[t]) >= 0; }) : TYPES.slice();
     if (!state.types.length) state.types = TYPES.slice();
-    state.sel = m[6] && SR_NAMES[m[6]] ? parseInt(m[6], 10) : null;
-    state.feat = m[7] && FEATS[m[7]] ? m[7] : null;
+    state.lines = m[6] ? ["maritime", "dashline"].filter(function (k) { return m[6].indexOf(LINE_KEY[k]) >= 0; }) : [];
+    state.sel = m[7] && SR_NAMES[m[7]] ? parseInt(m[7], 10) : null;
+    state.feat = m[8] && FEATS[m[8]] ? m[8] : null;
     syncControls();
     return true;
   }
@@ -423,6 +434,7 @@
     if (targetSel) targetSel.value = state.target;
     modeInputs.forEach(function (i) { i.checked = i.value === state.mode; });
     typeInputs.forEach(function (i) { i.checked = state.types.indexOf(i.value) >= 0; });
+    lineInputs.forEach(function (i) { i.checked = state.lines.indexOf(i.id.replace("amap-line-", "")) >= 0; });
   }
   function writeHash() {
     if (!history.replaceState) return;
@@ -457,6 +469,7 @@
       map.setFilter("asr-sel", ["==", ["get", "n"], state.sel === null ? -1 : state.sel]);
       drawMarkers(all);
       zoomClass();
+      ["maritime", "dashline"].forEach(function (k) { if (map.getLayer("ln-" + k)) map.setLayoutProperty("ln-" + k, "visibility", state.lines.indexOf(k) >= 0 ? "visible" : "none"); });
     }
     renderDetail(all);
     renderTimeline();
@@ -469,6 +482,10 @@
   claimSel.addEventListener("change", function () { state.who = claimSel.value; render(); });
   if (targetSel) targetSel.addEventListener("change", function () { state.target = targetSel.value; render(); });
   if (sharedBox) sharedBox.addEventListener("change", render);
+  lineInputs.forEach(function (i) { i.addEventListener("change", function () {
+    state.lines = lineInputs.filter(function (x) { return x.checked; }).map(function (x) { return x.id.replace("amap-line-", ""); });
+    render();
+  }); });
   modeInputs.forEach(function (i) { i.addEventListener("change", function () { if (i.checked) { state.mode = i.value; render(); } }); });
   typeInputs.forEach(function (i) {
     i.addEventListener("change", function () {

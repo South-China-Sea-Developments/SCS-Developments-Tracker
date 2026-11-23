@@ -89,7 +89,13 @@ then several rounds of tuning over the following weeks.
   the claimant. The page now computes every score from the moves so the filters recombine them;
   `window_scores` stays as the reference, and a site test holds the page's scores to it. The precomputed
   score sets (shared, cumulative, decades) left the payload.
-- Not done: EEZ and nine-dash-line layers (data, licence and whether to show them: the maintainer's call).
+- Reference lines (maintainer, round 7): "Maritime boundaries (indicative)" and "China's dashed line (a
+  claim)", both off by default, from Natural Earth (public domain; `web/static/geo/`). Natural Earth's
+  maritime lines are indicative median, treaty and disputed lines between neighbours, sparse inside the
+  sea, not 200-nm EEZ limits; a full EEZ layer needs the Marine Regions data (CC BY), which the
+  maintainer would have to supply.
+- Round 7 also: the coding-source note under the slider removed (the tick's tooltip keeps it); the
+  "Most intense" line removed from the details.
 
 ## Later rounds (not in this ticket)
 

@@ -748,6 +748,11 @@ def test_a_view_of_the_map_has_its_own_address(browser, dist):
     page.check("input[name='amap-mode'][value='window']")
     page.select_option("#amap-claimant", "ALL")
     assert page.evaluate("location.hash") == "#y2014-s4"
+    # the reference lines are off until asked for, and go into the address
+    assert page.evaluate("document.getElementById('amap-line-dashline').checked") is False
+    page.click("label:has(#amap-line-dashline)")
+    assert page.evaluate("location.hash") == "#y2014-l-d-s4"
+    assert "Andrew Chubb's coding (MATS)" not in page.locator("#amap-explore").inner_text()
     page.close()
 
 
@@ -761,7 +766,7 @@ def test_the_map_scores_match_the_reference(browser, dist):
     page.goto((dist / "index.html").resolve().as_uri() + "#y2014")
     page.reload()
     page.wait_for_timeout(1200)
-    page.click("label.amap-opt")   # the switch off: every move in full on each of its sub-regions
+    page.click("label:has(#amap-shared)")   # the switch off: every move in full on each of its sub-regions
     assert not page.is_checked("#amap-shared")
     for n in (2, 6):
         page.evaluate(f"location.hash = '#y2014-s{n}'")
