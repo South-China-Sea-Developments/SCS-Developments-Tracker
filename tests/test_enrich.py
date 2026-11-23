@@ -30,3 +30,18 @@ def test_only_candidates_of_the_run_are_touched():
             cand(event_id="ev-z", harvest_run_id="other", location_name="Huangyan Dao (Scarborough Shoal)")]
     assert enrich.enrich_rows(rows, "R") == 1
     assert [r["location_name"] for r in rows] == ["Scarborough Shoal", "Huangyan Dao (Scarborough Shoal)", "Huangyan Dao (Scarborough Shoal)"]
+
+
+def test_hand_translations_come_first():
+    r = enrich.enrich(cand(location_name="Paracel (Hsisha) and Spratly (Nansha) islands"))
+    assert r["location_name"] == "Paracel Islands and Spratly Islands"
+    assert "Source's wording for the place: “Paracel (Hsisha) and Spratly (Nansha) islands”." in r["review_note"]
+
+
+def test_every_candidate_place_on_record_reads_in_english():
+    """The places of the candidates in the review runs (as recorded on 2026-11-23) all come out in English."""
+    from pipeline import gazetteer
+    for name in ["Huangyan Dao (Scarborough Shoal)", "Đá Hải Sâm and Đảo Ba Ba, Hoàng Sa (Paracel) Islands",
+                 "Truong Sa island district and DK1 platforms", "Waters around Dongsha (Pratas) Island", "Ranai (Natuna)"]:
+        out = enrich.enrich(cand(location_name=name))["location_name"]
+        assert gazetteer.is_english_name(out), (name, out)

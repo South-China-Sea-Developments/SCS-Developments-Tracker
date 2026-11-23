@@ -19,11 +19,25 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 from pipeline import gazetteer
 
 NOTE = "Source's wording for the place: “{}”."
+
+
+TRANSLATIONS = gazetteer.GAZETTEER.parent / "place_translations.csv"
+
+
+@lru_cache(maxsize=1)
+def _translations() -> dict[str, str]:
+    """Places the rules cannot put in English (whole Vietnamese phrases, administrative names), translated
+    by hand: source wording -> English (data/reference/place_translations.csv)."""
+    import csv
+    if not TRANSLATIONS.exists():
+        return {}
+    return {r["source"]: r["english"] for r in csv.DictReader(open(TRANSLATIONS, encoding="utf-8"))}
 
 
 def enrich(event: dict) -> dict:
@@ -32,7 +46,7 @@ def enrich(event: dict) -> dict:
     m = re.search(r"Source's wording for the place: “(.*?)”\.", event.get("review_note") or "")
     if m:   # already brought up once: start again from the source's words, so a better rule corrects it
         name = m.group(1)
-    english = gazetteer.english_place(name) if name else name
+    english = _translations().get(name) or (gazetteer.english_place(name) if name else name)
     if english != name and gazetteer.is_english_name(english):
         note = NOTE.format(name)
         if note not in (event.get("review_note") or ""):

@@ -292,11 +292,17 @@ TERMS = {"Nanhai Zhudao": "South China Sea Islands", "Nanhai Islands": "South Ch
 
 
 # pinyin names that are also the established English ones (English Wikipedia's titles)
-ENGLISH_AS_IS = {"Zhongsha Islands"}
+ENGLISH_AS_IS = {"Zhongsha Islands", "Dongsha Atoll National Park", "Con Dao", "Xisha District", "Nansha District", "Xisha and Nansha districts",
+                 "Hoang Sa District", "Hoang Sa special zone", "Truong Sa special zone", "Truong Sa island district", "Da Nang"}  # administrative names, a city
 
 
 def is_english_name(name: str) -> bool:
-    return bool(name and name.strip()) and (name.strip() in ENGLISH_AS_IS or not NOT_ENGLISH.search(name))
+    if not (name and name.strip()):
+        return False
+    rest = name
+    for n in ENGLISH_AS_IS:   # established English names, whatever their words
+        rest = rest.replace(n, "")
+    return not NOT_ENGLISH.search(rest)
 
 
 GENERIC = r"(?:Islands?|Islets?|Reefs?|Shoals?|Banks?|Cays?|Atolls?|Patch(?:es)?|Rocks?|archipelagos?|groups?|Island Group)"
