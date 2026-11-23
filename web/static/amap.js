@@ -74,7 +74,7 @@
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
   map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-right");
-  window.addEventListener("resize", function () { sizeStage(); map.resize(); if (state.sel === null) { scrollBase = null; map.fitBounds(SEA, { padding: padding(), animate: false }); } });
+  window.addEventListener("resize", function () { sizeStage(); map.resize(); if (state.sel === null) { applied = 0; map.fitBounds(SEA, { padding: padding(), animate: false }); } });
   map.on("error", function (e) {
     var msg = e && e.error ? String(e.error.message || e.error) : "";
     if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("amap: " + msg);
@@ -230,21 +230,26 @@
   map.on("moveend", zoomClass);
 
   // ---- a gentle zoom in and back out as the page scrolls past the map ----------------------------
-  // Only on the whole-sea view the page fitted itself: once the reader zooms, pans or picks a
-  // sub-region, scrolling leaves the map alone. Off for readers who ask for reduced motion.
+  // The scroll adds a small zoom on top of whatever view the reader has: zooming, panning or choosing a
+  // sub-region moves the base the scroll works from, so the effect carries on after a manual zoom
+  // (the maintainer, 2026-11-22). Off for readers who ask for reduced motion.
   var SCROLL_ZOOM = 0.6;   // the most it zooms in, in zoom levels, halfway down the section
   var still = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var scrollBase = null, scrolling = false, readerMoved = false;
-  map.on("movestart", function (e) { if (e.originalEvent && !scrolling) readerMoved = true; });
-  function baseView() { scrollBase = { zoom: map.getZoom(), center: map.getCenter() }; }
+  var scrollBase = null, scrolling = false, applied = 0;
+  function rebase() {   // the reader's own view: the current one minus the scroll's share
+    scrollBase = { zoom: map.getZoom() - applied, center: map.getCenter() };
+  }
+  map.on("moveend", function () { if (!scrolling) rebase(); });
   function onScroll() {
-    if (!loaded || still.matches || readerMoved || state.sel !== null) return;
-    if (!scrollBase) baseView();
+    if (!loaded || still.matches) return;
+    if (!scrollBase) rebase();
     var section = document.querySelector(".amap");
     var r = section.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight);
     var p = Math.min(1, Math.max(0, -r.top / span));
+    if (map.isMoving()) return;   // the reader's own zoom or pan, or a fit, is under way: leave it be
+    applied = SCROLL_ZOOM * Math.sin(Math.PI * p);
     scrolling = true;
-    map.jumpTo({ zoom: scrollBase.zoom + SCROLL_ZOOM * Math.sin(Math.PI * p), center: scrollBase.center });
+    map.jumpTo({ zoom: Math.min(map.getMaxZoom(), scrollBase.zoom + applied), center: scrollBase.center });
     scrolling = false;
   }
   var ticking = false;
@@ -291,7 +296,7 @@
     state.feat = null;
     state.sel = state.sel === n ? null : n;
     render();
-    if (state.sel === null) { readerMoved = false; scrollBase = null; map.fitBounds(SEA, { padding: padding() }); }
+    if (state.sel === null) { applied = 0; map.fitBounds(SEA, { padding: padding() }); }
     else { fitTo(n); showPanel(); }
   }
   function selectFeature(fid) {

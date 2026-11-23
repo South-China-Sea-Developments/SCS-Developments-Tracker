@@ -1,38 +1,7 @@
-/* Every page (ticket 30): the banner's fold on inner pages and the opening curtain on the home page. */
+/* The home page's opening curtain (ticket 30); the inner pages' banner strip is CSS only. */
 (function () {
   "use strict";
   var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // ---- inner pages: the whole banner on arrival, folding into the slim strip as the page scrolls ----
-  // The fold box keeps the banner's full height in the flow; the banner sticks to its top and shrinks from
-  // its own proportions to the strip over the first scroll, so the menu band below rises with the page
-  // and stays against it; once folded, the strip scrolls away with the page.
-  var fold = document.querySelector(".banner-fold"), banner = fold && fold.querySelector(".banner"), img = banner && banner.querySelector("img");
-  if (fold && banner && img) {
-    var full = 0, slim = 0;
-    var measure = function () {
-      var w = fold.clientWidth;
-      full = Math.round(w * 950 / 2219);
-      slim = Math.max(84, Math.min(150, Math.round(w * 0.11)));
-      fold.style.height = full + "px";
-      draw();
-    };
-    var draw = function () {
-      var y = Math.max(0, window.scrollY || window.pageYOffset || 0);
-      var h = Math.max(slim, full - y), f = full > slim ? (full - h) / (full - slim) : 1;
-      banner.style.height = h + "px";
-      img.style.objectPosition = "center " + Math.round(35 * f) + "%";   // whole at the top; the title's first line once folded
-      fold.classList.toggle("folded", f >= 1);
-    };
-    var ticking = false;
-    window.addEventListener("scroll", function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () { ticking = false; draw(); });
-    }, { passive: true });
-    window.addEventListener("resize", measure);
-    measure();
-  }
 
   // ---- home page: the opening curtain, once per reader ----
   var curtain = document.getElementById("curtain");
@@ -42,6 +11,28 @@
     if (!seen && !still) {
       curtain.hidden = false;
       document.documentElement.classList.add("curtain-on");
+      // fill the screen: cover it where the logo (left 1 %) and the title (to 74 % of the artwork's width)
+      // still fit across; otherwise scale to just fit them across and centre the banner on its blue
+      var art = curtain.querySelector("img");
+      var place = function () {
+        var W = window.innerWidth, H = window.innerHeight, AW = 2219, AH = 950;
+        var keepL = 0.008 * AW, keepR = 0.75 * AW;   // the logo's left edge and the title's right end, with a margin
+        var s = Math.max(W / AW, H / AH), left;
+        if ((keepR - keepL) * s <= W) {
+          // cover, shifted so the kept span sits inside, as centred as the crop allows
+          var spare = AW * s - W, mid = ((keepL + keepR) / 2) * s - W / 2;
+          left = -Math.max(0, Math.min(spare, mid));
+          left = Math.min(-0, Math.max(left, W - keepR * s));
+          left = Math.min(left, -keepL * s + 0);
+          art.style.cssText = "width:" + (AW * s) + "px;height:" + (AH * s) + "px;left:" + left + "px;top:" + ((H - AH * s) / 2) + "px;transform:none";
+        } else {
+          s = W / (keepR - keepL + 0.02 * AW);
+          left = -(keepL - 0.01 * AW) * s;
+          art.style.cssText = "width:" + (AW * s) + "px;height:" + (AH * s) + "px;left:" + left + "px;top:" + ((H - AH * s) / 2) + "px;transform:none";
+        }
+      };
+      place();
+      window.addEventListener("resize", place);
       var lift = function () {
         if (curtain.classList.contains("up")) return;
         curtain.classList.add("up");
