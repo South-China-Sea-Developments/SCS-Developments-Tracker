@@ -40,6 +40,21 @@ def _translations() -> dict[str, str]:
     return {r["source"]: r["english"] for r in csv.DictReader(open(TRANSLATIONS, encoding="utf-8"))}
 
 
+def _at_a_named_feature(event: dict, km: float = 2.0) -> bool:
+    """Whether the event's point is (within `km`) one of the features its place names: then it stands,
+    whichever of several the extractor chose ("Thitu Island; Ayungin Shoal vicinity" at Second Thomas)."""
+    import math
+    try:
+        lat, lon = float(event["lat"]), float(event["lon"])
+    except (TypeError, ValueError):
+        return False
+    for f in gazetteer.named_features(event.get("location_name", "")):
+        dx = (f["lon"] - lon) * math.cos(math.radians(lat)) * 111.2
+        if math.hypot(dx, (f["lat"] - lat) * 111.2) <= km:
+            return True
+    return False
+
+
 def enrich(event: dict) -> dict:
     """The candidate in place, brought up to the rules; returns it."""
     name = (event.get("location_name") or "").strip()
@@ -55,6 +70,18 @@ def enrich(event: dict) -> dict:
     elif m:   # the better rule keeps the source's words: put them back and drop the note
         event["location_name"] = name
         event["review_note"] = re.sub(r"\s*" + re.escape(m.group(0)), "", event["review_note"]).strip()
+    if event.get("location_precision") == "feature" and event.get("lat") and not _at_a_named_feature(event):
+        # a point taken from a feature is re-taken from the English place, so a corrected gazetteer (a moved
+        # reef, "Hoang Sa" no longer Pattle Island) corrects it; a group or an unknown place has no point
+        probe = {"location_name": event["location_name"], "lat": "", "lon": "", "subregion": "", "location_precision": "feature"}
+        gazetteer.locate(probe)
+        if probe["lat"]:
+            event["lat"], event["lon"], event["subregion"] = probe["lat"], probe["lon"], probe["subregion"]
+        else:
+            event["lat"] = event["lon"] = ""
+            event["subregion"] = probe["subregion"] or event.get("subregion", "")
+            event["location_precision"] = "subregion" if event["subregion"] else "unknown"
+        return event
     return gazetteer.locate(event)
 
 

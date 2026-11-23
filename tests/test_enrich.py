@@ -45,3 +45,19 @@ def test_every_candidate_place_on_record_reads_in_english():
                  "Truong Sa island district and DK1 platforms", "Waters around Dongsha (Pratas) Island", "Ranai (Natuna)"]:
         out = enrich.enrich(cand(location_name=name))["location_name"]
         assert gazetteer.is_english_name(out), (name, out)
+
+
+def test_a_feature_point_is_retaken_from_the_english_place():
+    """A candidate pinned at intake to Pattle Island because 'Hoang Sa' meant it then is re-placed: the
+    Paracels are a group, so no point, sub-region 2; a moved reef takes its corrected position."""
+    r = enrich.enrich(cand(location_name="Hoang Sa (Paracel) archipelago", lat="16.53389", lon="111.60833", subregion="2"))
+    assert r["location_name"] == "Paracel Islands" and r["lat"] == "" and r["subregion"] == "2" and r["location_precision"] == "subregion"
+    r = enrich.enrich(cand(location_name="Ladd Reef", lat="8.11667", lon="111.00000", subregion="9"))
+    assert r["lat"].startswith("8.66") and r["subregion"] == "3"
+
+
+def test_a_point_at_a_named_feature_stands():
+    r = enrich.enrich(cand(location_name="Pag-asa Cay 2 (Sandy Cay)", lat="11.06167", lon="114.22167", subregion="5"))
+    assert (r["lat"], r["lon"]) == ("11.06167", "114.22167")
+    r = enrich.enrich(cand(location_name="Thitu Island; Ayungin Shoal vicinity", lat="9.65000", lon="115.85000", subregion="6"))
+    assert r["subregion"] == "6" and r["lat"] == "9.65000"
