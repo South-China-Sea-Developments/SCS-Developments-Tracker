@@ -908,3 +908,69 @@ def test_the_selected_sub_region_shows_its_history(browser, dist):
     page.wait_for_timeout(300)
     assert page.evaluate("location.hash").startswith("#y1974")
     page.close()
+
+
+def test_one_small_map_per_claimant(browser, dist):
+    """Ticket 38: a small map per claimant for the window shown, on one scale; a click shows that claimant
+    on the main map, and a second click all claimants again."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    maps = page.locator("#amap-claimants .amap-claimant-map")
+    assert maps.count() == len(read_csv(DATA_DIR / "claimants.csv"))
+    vn = page.locator("#amap-claimants .amap-claimant-map[data-code='VN']")
+    vn.click()
+    assert page.evaluate("location.hash") == "#y2014-vn" and page.locator("#amap-who").inner_text() == "Vietnam"
+    page.locator("#amap-claimants .amap-claimant-map[data-code='VN']").click()
+    assert page.evaluate("location.hash") in ("", "#y2014")
+    page.close()
+
+
+def test_cite_download_and_embed_a_view(browser, dist):
+    """Ticket 39: the view's citation names the window, the claimant and the dataset version and ends
+    with its link; the image downloads as a PNG; the embed code opens the same view in embed mode,
+    which shows the map alone with a link back."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-vn")
+    page.reload()
+    page.wait_for_timeout(1200)
+    page.locator("#amap-cite-box summary").click()
+    page.wait_for_function("document.getElementById('amap-cite').value.length > 0")
+    cite = page.locator("#amap-cite").input_value()
+    assert "map view: Assertive moves, 2010–2014; Vietnam" in cite and "Dataset version " in cite and "#y2014-vn (accessed " in cite
+    embed = page.locator("#amap-embed").input_value()
+    assert embed.startswith('<iframe src="') and "?embed=1#y2014-vn" in embed
+    with page.expect_download() as d:
+        page.click("#amap-png")
+    path = d.value.path()
+    assert d.value.suggested_filename == "scs-tracker-y2014-vn.png" and open(path, "rb").read(8) == b"\x89PNG\r\n\x1a\n"
+    assert problems == []
+    page.goto((dist / "index.html").resolve().as_uri() + "?embed=1#y2014-vn")
+    page.wait_for_timeout(1000)
+    assert page.locator(".site-head").is_hidden() and page.locator("#amap-explore").is_hidden()
+    assert page.locator("#amap-embed-credit").is_visible() and page.locator("#curtain").is_hidden()
+    page.close()
+
+
+def test_whats_new_and_its_feed(tmp_path):
+    """Ticket 40: the project's added moves, corrections and retractions, newest first, as a page and an
+    Atom feed with absolute links; Chubb's own moves are not news. Built from the full data (the MATS-only
+    copy the other site tests use holds no project moves)."""
+    from xml.dom import minidom
+    from web.build import SITE_URL, build as build_site
+    from tests.conftest import DATA_DIR as FULL
+    out = tmp_path / "site"
+    build_site(FULL, out, build_date="2026-11-23")
+    page = (out / "whats-new.html").read_text(encoding="utf-8")
+    project = [m for m in read_csv(FULL / "moves.csv") if m["coded_by"] != "chubb" and m["status"] == "accepted"]
+    assert project and all(f'href="cases/{m["move_id"]}.html"' in page for m in project)
+    assert "CN201702" in page and "Retracted" in page                      # the retraction, without a page link
+    assert 'href="cases/CN201702.html"' not in page
+    doc = minidom.parse(str(out / "feed.xml"))
+    entries = doc.getElementsByTagName("entry")
+    assert 0 < entries.length <= 50
+    links = [e.getElementsByTagName("link")[0].getAttribute("href") for e in entries]
+    assert all(h.startswith(SITE_URL) for h in links)
+    assert 'type="application/atom+xml"' in (out / "index.html").read_text(encoding="utf-8")

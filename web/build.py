@@ -11,6 +11,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -369,6 +370,54 @@ def feature_pages(published: list[dict], events_by_move: dict, holders: dict, na
     return out
 
 
+SITE_URL = os.environ.get("SITE_URL", "https://south-china-sea-developments.github.io/SCS-Developments-Tracker/")
+CORRECTION_LABELS = {"ongoing_through": "now ongoing through {v}", "subregion": "sub-region set to {v}", "description": "description revised"}
+
+
+def whats_new(data_dir: Path, published: list[dict], names: dict) -> list[dict]:
+    """What changed in the dataset, newest first (ticket 40): moves the project added (by the date they were
+    coded), corrections to moves (data/corrections.csv) and retractions (retired_moves.csv). Chubb's own
+    moves are the starting point, not news, and are left out."""
+    by_id = {m["move_id"]: m for m in published}
+    out = []
+    for m in published:
+        if m["coded_by"] != "chubb" and m.get("coding_date"):
+            out.append({"date": m["coding_date"][:10], "kind": "added", "id": m["move_id"], "claimant": m["claimant"], "year": int(m["year"]),
+                        "types": [TYPE_LABELS[t] for t in schema.TYPE_FLAGS if m[t] == "1"],
+                        "text": re.sub(r"\s+", " ", m["description"]).strip()[:280], "page": True})
+    for c in read_csv(data_dir / "corrections.csv") if (data_dir / "corrections.csv").exists() else []:
+        m = by_id.get(c["move_id"])
+        if not m:
+            continue
+        what = CORRECTION_LABELS.get(c["field"], c["field"].replace("_", " ") + " set to {v}").format(v=c["new_value"])
+        out.append({"date": c["date"][:10], "kind": "updated", "id": c["move_id"], "claimant": m["claimant"], "year": int(m["year"]),
+                    "types": [], "text": what[0].upper() + what[1:] + (f" ({c['reason']})" if c.get("reason") else ""), "page": True})
+    retired = data_dir / "reference" / "retired_moves.csv"
+    for r in read_csv(retired) if retired.exists() else []:
+        out.append({"date": r["date"][:10], "kind": "retracted", "id": r["move_id"], "claimant": r["move_id"][:2], "year": int(r["move_id"][2:6]) if r["move_id"][2:6].isdigit() else None,
+                    "types": [], "text": r["reason"], "page": False})
+    order = {"added": 0, "updated": 1, "retracted": 2}
+    return sorted(out, key=lambda e: (e["date"], -order[e["kind"]], e["id"]), reverse=True)
+
+
+def atom_feed(entries: list[dict], names: dict) -> str:
+    """The entries as an Atom feed (the 50 newest), with absolute links to the public site."""
+    from xml.sax.saxutils import escape, quoteattr
+    updated = (entries[0]["date"] if entries else "2026-01-01") + "T00:00:00Z"
+    parts = ['<?xml version="1.0" encoding="utf-8"?>', '<feed xmlns="http://www.w3.org/2005/Atom">',
+             "<title>SCS Developments Tracker: what's new</title>", f"<id>{escape(SITE_URL)}</id>", f"<updated>{updated}</updated>",
+             f'<link rel="self" href={quoteattr(SITE_URL + "feed.xml")}/>', f'<link rel="alternate" href={quoteattr(SITE_URL + "whats-new.html")}/>',
+             "<author><name>South-China-Sea-Developments project</name></author>"]
+    for e in entries[:50]:
+        verb = {"added": "New move", "updated": "Updated", "retracted": "Retracted"}[e["kind"]]
+        title = f"{verb}: {e['id']}, {names.get(e['claimant'], e['claimant'])}" + (f", {e['year']}" if e["year"] else "") + (f" ({', '.join(e['types'])})" if e["types"] else "")
+        link = SITE_URL + (f"cases/{e['id']}.html" if e["page"] else "whats-new.html")
+        parts += ["<entry>", f"<id>{escape(SITE_URL)}#{e['kind']}-{e['id']}-{e['date']}</id>", f"<title>{escape(title)}</title>",
+                  f"<updated>{e['date']}T00:00:00Z</updated>", f"<link href={quoteattr(link)}/>", f"<summary>{escape(e['text'])}</summary>", "</entry>"]
+    parts.append("</feed>")
+    return "\n".join(parts) + "\n"
+
+
 def label_point(rings: list) -> list[float]:
     """A point well inside a polygon (its outer ring first) for its label: of a grid over the bounding box,
     the inside point farthest from every edge. The bounding-box centre can fall outside a bent shape
@@ -619,6 +668,12 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     by_sr: dict = {}
     for fp in fpages:
         by_sr.setdefault(fp["subregion"] or 0, []).append(fp)
+    news = whats_new(data_dir, published, names)
+    groups: dict = {}
+    for e in news:
+        groups.setdefault(e["date"], []).append(e)
+    (out_dir / "whats-new.html").write_text(env.get_template("whats-new.html").render(page="whats-new.html", root="", days=list(groups.items())[:60], **ctx), encoding="utf-8")
+    (out_dir / "feed.xml").write_text(atom_feed(news, names), encoding="utf-8")
     (out_dir / "features.html").write_text(env.get_template("features.html").render(page="features.html", root="", groups=sorted(by_sr.items()), n_features=len(fpages), **ctx), encoding="utf-8")
     return agg
 
