@@ -29,8 +29,8 @@ For each event return an object with:
 - `suggested_type`: one of `declarative`, `demonstrative`, `coercive`, `force`, using Chubb's definitions:
   - declarative — verbal assertions via non-coercive statements, diplomatic protests, legislation;
   - demonstrative — unilateral administration of disputed possessions without confrontation: patrols, surveys, resource development, construction, state-sanctioned tourism or activism, domestic judicial proceedings, cooperative agreements with third parties;
-  - coercive — threat or imposition of punishment: verbal, diplomatic, administrative or economic punishment, warning shots, physical interference with foreign activities;
-  - force — application of military force, or direct seizure and occupation of a disputed possession.
+  - coercive — threat or imposition of punishment: verbal, diplomatic, administrative or economic punishment, warning shots, physical interference with foreign activities. Physical interference, blocking, water cannon, ramming, boarding, seizure of boats and detention of crews are coercive, whatever the damage or injuries, as long as no feature changed hands;
+  - force — a change in control of a disputed feature (seizure or occupation of a reef, shoal or island, by whatever units, civilian included), or military violence (firing on, sinking, killing). Nothing else is force: do not type by the severity of the outcome, the weapons carried or the actor (a coast guard boarding with blades is coercive; a fatal collision is coercive if the possession did not change hands). Suggest `force` only when the text itself reports a feature changing hands or military violence applied, and say which in `reasoning`.
 - `suggested_domains`: subset of `domestic`, `diplomatic`, `physical`.
 - `suggested_issues`: subset of `military`, `administrative`, `energy`, `fisheries`, `politics`.
 - `suggested_dyads`: MATS dyad codes, actor first: letters C (PRC), V (Vietnam), P (Philippines), M (Malaysia), B (Brunei), I (Indonesia), R (Taiwan/ROC), A (all states), U (unclear). E.g. `["CP"]` for China acting toward the Philippines.
