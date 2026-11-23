@@ -61,3 +61,9 @@ def test_a_point_at_a_named_feature_stands():
     assert (r["lat"], r["lon"]) == ("11.06167", "114.22167")
     r = enrich.enrich(cand(location_name="Thitu Island; Ayungin Shoal vicinity", lat="9.65000", lon="115.85000", subregion="6"))
     assert r["subregion"] == "6" and r["lat"] == "9.65000"
+
+
+def test_a_sea_named_after_islands_is_not_the_islands():
+    r = enrich.enrich(cand(location_name="North Natuna Sea (Laut Natuna Utara)"))
+    assert r["location_name"] == "North Natuna Sea"
+    assert not (r["lat"] or r["lon"])
