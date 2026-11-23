@@ -1,0 +1,2036 @@
+[
+ {
+  "claimant": "ID",
+  "date_start": "2010-04-01",
+  "date_end": "2010-04-14",
+  "date_precision": "month",
+  "location_name": "Indonesian EEZ (ZEE) off West Kalimantan / Natuna, South China Sea",
+  "subregion": "10",
+  "summary": "The Ministry of Marine Affairs and Fisheries seized nine Vietnamese fishing vessels for illegal fishing in the Indonesian EEZ and was escorting them to its Pontianak surveillance base, the Pontianak P2SDKP chief said on 14 April 2010; the ministry's director-general said on 23 April that about 40 foreign boats (Vietnamese, Thai, Philippine and Malaysian) had been seized nationwide since January, 18 of them in the previous two weeks.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), P2SDKP Pontianak (Bambang Nugroho); DG P2SDKP Aji Sularso",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of a rival claimant's fishing vessels in Indonesia's claimed EEZ in the southern South China Sea is physical enforcement against Vietnam; coercive. The capture date is not given (the boats were still 100 miles out on 14 April), so month precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/182470/sembilan-kapal-vietnam-ditangkap-di-kawasan-zee",
+    "title": "Sembilan Kapal Vietnam Ditangkap di Kawasan ZEE",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-04-14",
+    "language": "id",
+    "excerpt": "Departemen Kelautan dan Perikanan menangkap sebanyak sembilan kapal asing asal Vietnam saat mencuri ikan di kawasan Zona Ekonomi Ekslusif (ZEE)."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/183906/sudah-40-kapal-asing-pencuri-ikan-ditangkap",
+    "title": "Sudah 40 Kapal Asing Pencuri Ikan Ditangkap",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-04-23",
+    "language": "id",
+    "excerpt": "Dua minggu terakhir ini saja ada sekitar 18 kapal yang ditangkap. Kalau dari awal tahun ada sekitar 40 kapal pencuri yang ditangkap"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-04-01",
+  "date_end": "2010-04-20",
+  "date_precision": "month",
+  "location_name": "Natuna waters and West Kalimantan waters (bordering Malaysia, Singapore, Vietnam and Thailand)",
+  "subregion": "10",
+  "summary": "Four Navy fast patrol boats of the Western Fleet's patrol squadron (KRI Lemadang 804, KRI Kelabang 826, KRI Sibarau 847 and KRI Sikuda 863) conducted a more than two-week 'combat-alert' (siaga tempur) patrol in waters bordering Malaysia, Singapore, Vietnam and Thailand and were to resume combat-alert patrols in Natuna waters after refuelling at Pontianak, the Pontianak naval base commander said on 20 April 2010.",
+  "actors": "Indonesian Navy (TNI AL), Koarmabar patrol squadron (Satrol); Lanal Pontianak (Col. Parno)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV",
+   "IM"
+  ],
+  "reasoning": "A named multi-ship naval patrol on combat alert in the Natuna area to guard Indonesian waters against foreign (chiefly Vietnamese, Thai, Chinese, Malaysian) fishing is unilateral presence without confrontation; demonstrative. Dyads are a guess from the neighbours named; patrol dates given only as 'two weeks ago'.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/183334/empat-kri-berpatroli-siaga-tempur-di-kalbar",
+    "title": "Empat KRI Berpatroli Siaga Tempur di Kalbar",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-04-20",
+    "language": "id",
+    "excerpt": "keempat unit KRI itu akan melakukan patroli siaga tempur di perairan Natuna dalam menjaga keamanan dan keutuhan NKRI."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-06-01",
+  "date_end": "2010-06-30",
+  "date_precision": "month",
+  "location_name": "Near the Natuna Islands, Indonesian EEZ",
+  "subregion": "10",
+  "summary": "An Indonesian patrol vessel captured a Chinese fishing boat near the Natuna Islands in June 2010 and was then compelled to release it after the Chinese Fisheries Law Enforcement vessel Yuzheng 311 reportedly pointed a large-calibre machine gun at it; a similar confrontation involving an Indonesian naval patrol and Yuzheng 311 was reported for May 2010.",
+  "actors": "Indonesian patrol vessel (unnamed in the sources); opposed by China Fisheries Law Enforcement Command vessel Yuzheng 311",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Indonesia's own act is the arrest of a Chinese fishing boat in waters inside China's nine-dash line, which China contested by armed coercion; the arrest is coercive. Indonesia made no public statement; the incident is known only from the Japanese NIDS China Security Report 2011 and secondary accounts, which give month only.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.aspistrategist.org.au/mapping-the-nine-dash-line-recent-incidents-involving-indonesia-in-the-south-china-sea/",
+    "title": "Mapping the nine-dash line: recent incidents involving Indonesia in the South China Sea",
+    "publisher": "ASPI The Strategist (Scott Bentley)",
+    "pub_date": "2013-10-29",
+    "language": "en",
+    "excerpt": "pointed a large calibre machine gun at an Indonesian patrol boat which had captured a Chinese fishing boat near the Indonesian held Natuna islands"
+   },
+   {
+    "url": "https://www.nids.mod.go.jp/publication/chinareport/pdf/china_report_EN_web_2011_A01.pdf",
+    "title": "NIDS China Security Report 2011",
+    "publisher": "National Institute for Defense Studies, Japan",
+    "pub_date": "2012-02-01",
+    "language": "en",
+    "excerpt": "that had captured a Chinese fishing boat near the Indonesian-held Natuna Islands, and compelled it to release the boat."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-07-08",
+  "date_end": "2010-07-08",
+  "date_precision": "day",
+  "location_name": "South China Sea (nine-dotted-lines map)",
+  "subregion": "",
+  "summary": "Indonesia's Permanent Mission to the UN sent note verbale No. 480/POL-703/VII/10 to the UN Secretary-General, responding to China's 7 May 2009 note CML/17/2009 and its map, stating that remote or very small features in the South China Sea do not deserve an EEZ or continental shelf of their own and that the so-called 'nine-dotted-lines map' clearly lacks international legal basis and is tantamount to upsetting UNCLOS 1982, and asked that it be circulated to all UN members.",
+  "actors": "Permanent Mission of the Republic of Indonesia to the United Nations; Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A formal UN note verbale rejecting the legal basis of China's nine-dash line is a verbal/legal assertion of Indonesia's position; declarative. It is Indonesia's first formal written challenge to the line. The DOALOS listing (HTML) gives the date; the note itself is a scanned PDF (text read by OCR, not machine-checkable).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.un.org/depts/los/clcs_new/submissions_files/submission_mysvnm_33_2009.htm",
+    "title": "Submissions to the CLCS: Joint submission by Malaysia and the Socialist Republic of Viet Nam",
+    "publisher": "UN Division for Ocean Affairs and the Law of the Sea",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "Communication dated 8 July 2010"
+   },
+   {
+    "url": "https://www.un.org/depts/los/clcs_new/submissions_files/mysvnm33_09/idn_2010re_mys_vnm_e.pdf",
+    "title": "Note verbale No. 480/POL-703/VII/10 from the Permanent Mission of Indonesia (unofficial translation)",
+    "publisher": "UN DOALOS (scanned PDF)",
+    "pub_date": "2010-07-08",
+    "language": "en",
+    "excerpt": "clearly lacks international legal basis and is tantamount to upset the UNCLOS 1982."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-08-13",
+  "date_end": "2010-08-13",
+  "date_precision": "day",
+  "location_name": "Waters off Tanjung Berakit, north of Bintan Island, Riau Islands (c. 1°20'N 104°28'–104°31'E)",
+  "subregion": "",
+  "summary": "Fisheries officers of the Maritime Affairs and Fisheries Ministry aboard the Riau Islands patrol boat Dolphin 015 seized five Malaysian fishing boats and detained seven Malaysian fishermen for illegal fishing off Tanjung Berakit on the night of 13 August 2010; Malaysian marine police then fired warning shots and arrested three of the Indonesian officers, and both sides released their detainees on 17 August.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP) fisheries supervisors; Riau Islands fisheries service patrol boat Dolphin 015",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IM"
+  ],
+  "reasoning": "Arresting Malaysian fishermen in waters Indonesia regards as its own, on an undelimited boundary, is enforcement against a claimant; coercive. The coordinates lie east of Horsburgh Light at the southern edge of the South China Sea rather than in Natuna waters, so a coder may judge it outside the SCS; the KKP itself said the case could not be prosecuted because the boundary is not agreed.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/216617/insiden-tanjung-berakit-tidak-bisa-diproses-hukum",
+    "title": "Insiden Tanjung Berakit Tidak Bisa Diproses Hukum",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-08-17",
+    "language": "id",
+    "excerpt": "Mereka disangka menculik tujuh nelayan Malaysia yang pada beberapa saat sebelumnya ditangkap dan diangkut diangkut Kapal Patroli Dolphin 015 DKP Kepri karena menurut aparat Pengawas Perikanan KKP, mencuri ikan di perairan Indonesia."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/216586/malaysia-kirim-nota-protes",
+    "title": "Malaysia Kirim Nota Protes",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-08-17",
+    "language": "id",
+    "excerpt": "sedang terjadi pencurian ikan oleh lima kapal Malaysia di perairan dekat Tanjung Berakit Pulau Bintan, Kepulauan Riau."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-08-18",
+  "date_end": "2010-08-18",
+  "date_precision": "day",
+  "location_name": "Jakarta; waters off Bintan",
+  "subregion": "",
+  "summary": "The Foreign Ministry handed Malaysia's ambassador Syed Munshe Afzaruddin a diplomatic note protesting the Malaysian marine police arrest of three Indonesian fisheries officers in what Indonesia said were its waters off Bintan; President Yudhoyono confirmed the protest note in a 1 September 2010 address and also wrote to Prime Minister Najib urging faster maritime boundary talks.",
+  "actors": "Ministry of Foreign Affairs (Marty Natalegawa); President Susilo Bambang Yudhoyono; Minister of Marine Affairs and Fisheries Fadel Muhammad",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IM"
+  ],
+  "reasoning": "A formal protest note to a rival claimant over an enforcement clash in disputed waters is a diplomatic verbal assertion; declarative. The Star (dated 18 Aug) says the note was sent 'on Wednesday', i.e. 18 August; Fadel had announced it on 15 August. Same location caveat as the 13 August seizure.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.thestar.com.my/news/nation/2010/08/18/indonesia-sends-protest-note-over-arrests-in-bintan-waters/",
+    "title": "Indonesia sends protest note over arrests in Bintan waters",
+    "publisher": "The Star (Malaysia)",
+    "pub_date": "2010-08-18",
+    "language": "en",
+    "excerpt": "Indonesia sent a diplomatic note on Wednesday to Malaysia protesting Malaysian marine police arrests of three Indonesian maritime and fisheries officers"
+   },
+   {
+    "url": "https://setneg.go.id/baca/index/pidato_presiden_ri_mengenai_dinamika_hubungan_indonesia_-_malaysia_1_september_2010",
+    "title": "Pidato Presiden RI mengenai Dinamika Hubungan Indonesia - Malaysia, 1 September 2010",
+    "publisher": "Kementerian Sekretariat Negara",
+    "pub_date": "2010-09-01",
+    "language": "id",
+    "excerpt": "memanggil Duta Besar Malaysia di Jakarta untuk menyampaikan nota protes."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-10-01",
+  "date_end": "2010-10-07",
+  "date_precision": "month",
+  "location_name": "Natuna waters; Lanal Ranai",
+  "subregion": "10",
+  "summary": "The Western Fleet warship KRI Sultan Thaha Syaifuddin seized the Malaysian-flagged fishing boat TRF-2403 (10 GT, four crew, about 200 kg of fish) while it was fishing in Natuna waters, together with two Indonesian-flagged boats crewed partly by Thais, and escorted them to the Ranai naval base, Navy headquarters said on 7 October 2010.",
+  "actors": "Indonesian Navy, Western Fleet (Koarmabar), KRI Sultan Thaha Syaifuddin; Lanal Ranai",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IM"
+  ],
+  "reasoning": "Naval seizure of a Malaysian fishing boat in Natuna waters is enforcement against a claimant's vessel; coercive. Capture date not given (announced Thursday 7 October).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/227225/tni-al-tangkap-kapal-ikan-malaysia-di-natuna",
+    "title": "TNI AL Tangkap Kapal Ikan Malaysia di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-10-07",
+    "language": "id",
+    "excerpt": "Kapal ikan berbendera Malaysia TRF-2403 yang dinakhodai warga Malaysia Azmin M. Yusuf ditangkap KRI Sultan Thaha Syaifuddin saat melakukan penangkapan ikan di Perairan Natuna"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-10-01",
+  "date_end": "2010-10-18",
+  "date_precision": "month",
+  "location_name": "Indonesian EEZ in the South China Sea near Natuna (04°57.5'N 109°39.4'E)",
+  "subregion": "10",
+  "summary": "The Eastern Fleet corvette KRI Diponegoro-365, patrolling under Western Fleet control, seized two Vietnamese-flagged fishing boats, BV-99678-TS (130 GT, 23 crew) and KG-15381 (90 GT), fishing without permission in the Indonesian EEZ in the South China Sea near Natuna and took them to the Ranai naval base, the Eastern Fleet said on 18 October 2010.",
+  "actors": "Indonesian Navy, KRI Diponegoro-365 (Koarmatim, under Koarmabar control); Lanal Ranai",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval seizure of Vietnamese boats in Indonesia's EEZ is enforcement against a claimant; coercive. The source explicitly places the boats in the Indonesian EEZ of the South China Sea; capture date not given.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/228904/tni-al-amankan-dua-kapal-vietnam",
+    "title": "TNI-AL Amankan Dua Kapal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-10-18",
+    "language": "id",
+    "excerpt": "Posisi kapal itu berada di ZEEI (Zona Eksklusif Ekonomi Indonesia) Laut China Selatan tanpa mendapatkan izin dari pemerintah RI"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-11-30",
+  "date_end": "2010-12-16",
+  "date_precision": "day",
+  "location_name": "Natuna waters, east of Pulau Matak and Pulau Bunguran; Natuna EEZ",
+  "subregion": "10",
+  "summary": "National Police marine patrol boats (Bisma-520, Jalak-635, Antareja-501) seized Vietnamese fishing boats in Natuna waters during Operasi Jaring 2010: four boats with 33 crew on 30 November, 16 boats with 157 Vietnamese crew (many flying Indonesian flags) at midnight on 12 December east of Matak and Bunguran, and eight 'KM Sejahtera Alam' boats with 109 crew in the Natuna EEZ during 9–16 December.",
+  "actors": "National Police Water Police Directorate (Ditpolair Mabes Polri), Satuan Patroli Nusantara; patrol boats Bisma-520, Jalak-635, Antareja-501; Polda Kalbar",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "A concentrated police operation seizing more than 20 Vietnamese boats and some 250 crew in the Natuna EEZ in two weeks is large-scale enforcement against a claimant's fishermen; coercive. The 8 boats of 9–16 December may partly overlap the 16 of 12 December (both involve Jalak-635).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/238119/polisi-tangkap-16-kapal-pencuri-ikan-asal-vietnam",
+    "title": "Polisi Tangkap 16 Kapal Pencuri Ikan Asal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-12-16",
+    "language": "id",
+    "excerpt": "Kapal-kapal itu kami tangkap pada hari Minggu, 12 Desember 2010 tengah malam, di timur Pulau Matak dan Pulau Bunguran"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/236628/nelayan-asing-curi-ikan-pakai-bendera-indonesia",
+    "title": "Nelayan Asing Curi Ikan Pakai Bendera Indonesia",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-12-06",
+    "language": "id",
+    "excerpt": "Kapal Patroli Bisma-520 dan Jalak-635 pada 30 November 2010 menangkap empat kapal asal Vietnam saat mencurian ikan di perairan Natuna."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/238984/8-kapal-ikan-vietnam-berbendera-indonesia-ditangkap",
+    "title": "8 Kapal Ikan Vietnam Berbendera Indonesia Ditangkap",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-12-22",
+    "language": "id",
+    "excerpt": "delapan kapal motor asal Vietnam itu ditangkap saat Operasi Jaring 2010, 9 - 16 Desember."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2010-12-01",
+  "date_end": "2010-12-17",
+  "date_precision": "month",
+  "location_name": "Natuna waters, Indonesian EEZ; Lanal Ranai",
+  "subregion": "10",
+  "summary": "The frigate KRI Abdul Halim Perdana Kusuma seized a 100 GT Vietnamese-flagged fishing boat with 12 Vietnamese crew and two Indonesian-flagged boats (KM Sejahtera Alam 71 and 72) crewed by Vietnamese that were fishing in the Indonesian EEZ off Natuna, and took them to the Ranai naval base, the Eastern Fleet said on 17 December 2010.",
+  "actors": "Indonesian Navy, KRI Abdul Halim Perdana Kusuma (Koarmatim); Lanal Ranai",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval seizure of Vietnamese-crewed boats in the Natuna EEZ is enforcement against a claimant; coercive. Capture date not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/238318/kapal-vietnam-ditangkap-di-natuna",
+    "title": "Kapal Vietnam Ditangkap di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2010-12-17",
+    "language": "id",
+    "excerpt": "KRI Halim Perdana Kusuma menangkap kapal berbendera Vietnam berbobot mati 100 gross ton itu diawaki 12 orang yang semuanya berkewarnegaraan Vietnam."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-03-08",
+  "date_end": "2011-03-08",
+  "date_precision": "day",
+  "location_name": "Indonesian EEZ in the South China Sea (04°12'N 108°52'E)",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel KP Hiu 009 of the Maritime Affairs and Fisheries Ministry seized the pair trawlers KM Tiara 37 and KM Tiara 38 (about 110 GT each) with 23 Vietnamese crew fishing without licences in the Indonesian EEZ in the South China Sea on 8 March 2011 and took them to Pontianak.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu 009; PSDKP Pontianak (Bambang Nugroho)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese-crewed trawlers in Indonesia's claimed EEZ is enforcement against a claimant's fishermen; coercive. The date is that of the reported incident (Tuesday 8 March).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/249736/petugas-tangkap-dua-kapal-vietnam",
+    "title": "Petugas Tangkap Dua Kapal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2011-03-13",
+    "language": "id",
+    "excerpt": "Lokasi kejadian di kawasan Zona Ekonomi Ekslusif Indonesia di Laut Cina Selatan, tepatnya di 04 derajat 12 menit 00 detik Lintang Utara dan 108 derajat 52 menit 5 detik Bujur Timur."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-04-01",
+  "date_end": "2011-04-06",
+  "date_precision": "month",
+  "location_name": "Natuna waters, Indonesian EEZ; Lanal Ranai",
+  "subregion": "10",
+  "summary": "The corvette KRI Pati Unus-384 stopped, inspected and seized a 44 GT Vietnamese-flagged fishing boat with 11 Vietnamese crew fishing without a licence in the Indonesian EEZ in Natuna waters and escorted it to the Ranai naval base, the Navy spokesman said on 6 April 2011, adding that the Navy would keep deploying warships and maritime patrol aircraft to intensify security operations.",
+  "actors": "Indonesian Navy, KRI Pati Unus-384; Navy spokesman First Admiral Tri Prasodjo; Lanal Ranai",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval seizure of a Vietnamese boat in the Natuna EEZ is enforcement against a claimant; coercive. Capture date not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/253115/tni-al-tangkap-kapal-ikan-vietnam-dan-filipina",
+    "title": "TNI-AL Tangkap Kapal Ikan Vietnam dan Filipina",
+    "publisher": "ANTARA News",
+    "pub_date": "2011-04-06",
+    "language": "id",
+    "excerpt": "Ia menuturkan, kapal ikan itu dihentikan dan diperiksa petugas KRI Pati Unus-384 saat menangkap ikan di perairan Natuna."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-04-19",
+  "date_end": "2011-04-19",
+  "date_precision": "day",
+  "location_name": "Natuna EEZ (Zona Ekonomi Eksklusif Perairan Natuna)",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessels Hiu 004 and Hiu 010 seized five Vietnamese trawlers caught fishing in the Natuna EEZ on 19 April 2011; four boats and their masters were brought to Pontianak for prosecution and the fifth was used to send 45 crew home.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu 004 and Hiu 010; P2SDKP Pontianak",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese boats in the Natuna EEZ is enforcement against a claimant; coercive.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/255610/lima-kapal-vietnam-ditangkap-saat-curi-ikan",
+    "title": "Lima Kapal Vietnam Ditangkap Saat Curi Ikan",
+    "publisher": "ANTARA News",
+    "pub_date": "2011-04-24",
+    "language": "id",
+    "excerpt": "KM Vietnam itu ditangkap pada Selasa (19/4) dan baru hari ini sampai di Pelabuhan P2SDKP Pontianak bersama Kapal Patroli Hiu 004 dan 010."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-05-18",
+  "date_end": "2011-05-18",
+  "date_precision": "day",
+  "location_name": "South China Sea (05°55'N 108°03'E); Tarempa, Anambas",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel Hiu 010 seized six Vietnamese trawlers (KG 1396, KG 1594, KG 1196, KG 91991, BV 5482, BV 5487) with 60 crew fishing without licences in the South China Sea at about 05°55'N 108°03'E on Wednesday 18 May 2011 and held them at the fisheries surveillance post in Tarempa, Anambas.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu 010; PSDKP Belawan station (Mukhtar)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of six Vietnamese trawlers in Indonesia's claimed EEZ north of Natuna is enforcement against a claimant; coercive. Date is the Wednesday named in a report published at 00:25 on 19 May.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/259170/patroli-kkp-tangkap-enam-kapal-ikan-vietnam",
+    "title": "Patroli KKP Tangkap Enam Kapal Ikan Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2011-05-19",
+    "language": "id",
+    "excerpt": "Keenam kapal pukat trawl \"illegal fishing\" Vietnam itu ditangkap di perairan Laut China Selatan pada posisi koordinat sekitar 05`55\"00 N-108`03`00 E."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-07-01",
+  "date_end": "2011-07-15",
+  "date_precision": "month",
+  "location_name": "30 nautical miles north-east of Pulau Laut, Natuna Islands",
+  "subregion": "10",
+  "summary": "The corvette KRI Diponegoro-365, operating in a Western Fleet operation covering the Malacca Strait, Natuna waters and ALKI I, seized the Vietnamese-flagged fishing boat Minh Vhuong (BTAH 9868 ITS, 40 GT, 11 crew, about one tonne of fish) 30 miles north-east of Pulau Laut and took it to the Ranai naval base, the Western Fleet combat group commander said on 15 July 2011.",
+  "actors": "Indonesian Navy, KRI Diponegoro-365; Western Fleet Combat Group commander First Admiral A. Taufiqoerrochman; Lanal Ranai",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval seizure of a Vietnamese boat north-east of Natuna is enforcement against a claimant; coercive. Capture date not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/267461/kapal-vietnam-pencuri-ikan-ditangkap-di-natuna",
+    "title": "Kapal Vietnam Pencuri Ikan Ditangkap di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2011-07-15",
+    "language": "id",
+    "excerpt": "saat ditangkap sedang menangkap ikan di perairan Indonesia pada posisi 30 mil timur laut Pulau Laut di Kepulauan Natuna."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-08-01",
+  "date_end": "2011-08-20",
+  "date_precision": "month",
+  "location_name": "Natuna Sea / South China Sea (about 2°N and 5°N)",
+  "subregion": "10",
+  "summary": "Fisheries ministry patrol vessels seized six fishing boats from Vietnam and Malaysia at two points in the South China Sea (two at about 2°N, four at about 5°N) using banned trawls and purse seines, detaining 31 Vietnamese, the ministry said on 20 August 2011; it added that 73 boats had been caught in 2011 so far, including 34 Vietnamese, 7 Malaysian and 6 Taiwanese.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP) patrol vessels (Hiu class)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV",
+   "IM"
+  ],
+  "reasoning": "Seizures of Vietnamese and Malaysian boats in the Natuna Sea are enforcement against two claimants; coercive. The ministry's year-to-date tally (34 Vietnamese, 7 Malaysian, 6 Taiwanese of 73) gives the frequency of the practice in 2011, though not all were in the SCS.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/272577/hiu-tangkap-enam-kapal-ikan-ilegal",
+    "title": "Hiu Tangkap Enam Kapal Ikan Ilegal",
+    "publisher": "ANTARA News (KKP press release)",
+    "pub_date": "2011-08-20",
+    "language": "id",
+    "excerpt": "Keenam kapal ikan ilegal yang ditangkap berasal dari Vietnam dan sebagian kapal lain berasal Malaysia ditangkap di Perairan Laut Natuna oleh kapal pengawas Kementerian Kelautan dan Perikanan (KKP)."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2011-09-01",
+  "date_end": "2011-09-29",
+  "date_precision": "month",
+  "location_name": "Natuna waters (perairan Kabupaten Natuna)",
+  "subregion": "10",
+  "summary": "A National Police headquarters team using the patrol boats Bisma 520, Antasena 509 and Puyuh 647 seized 10 Vietnamese fishing boats with 79 crew in Natuna waters during a five-day operation (one boat sank on the way to Batam), the operation chief said on 29 September 2011.",
+  "actors": "National Police headquarters (Mabes Polri) team, Kombes Pol Satria F. Maseo; patrol boats Bisma 520, Antasena 509, Puyuh 647",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "A police operation seizing ten Vietnamese boats in Natuna waters is enforcement against a claimant's fishermen; coercive. Dates of the five-day operation not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/277584/mabes-polri-tangkap-10-kapal-asing-di-natuna",
+    "title": "Mabes Polri tangkap 10 kapal asing di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2011-09-29",
+    "language": "id",
+    "excerpt": "Tim Mabes Polri menangkap 10 kapal ikan dengan 79 anak buah kapal warga negara Vietnam saat melakukan pencurian ikan di perairan Kabupaten Natuna, Provinsi Kepulauan Riau."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2012-02-22",
+  "date_end": "2012-02-22",
+  "date_precision": "day",
+  "location_name": "Natuna EEZ",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel Hiu Macan 001 seized three Vietnamese fishing boats using trawls in the Natuna EEZ on 22 February 2012 and took them, their skippers and crews to the ministry's PSDKP station in Pontianak.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu Macan 001; PSDKP Pontianak (Bambang Nugroho)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese boats in the Natuna EEZ is enforcement against a claimant's fishermen; coercive.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.antaranews.com/news/80135/homepage-v2.html",
+    "title": "RI patrol boat arrests foreign poachers",
+    "publisher": "ANTARA News (English)",
+    "pub_date": "2012-02-26",
+    "language": "en",
+    "excerpt": "has apprehended three foreign vessels caught poaching in the Indonesian waters of Natuna on February 22, an official said."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2012-03-29",
+  "date_end": "2012-03-29",
+  "date_precision": "day",
+  "location_name": "Waters of Bintan, South China Sea (01°29'N 104°59'E); Natuna Sea fisheries management area",
+  "subregion": "10",
+  "summary": "During a routine EEZ patrol on 29 March 2012 a fisheries ministry Hiu patrol vessel seized the Vietnamese fishing boat 91375 TS with 13 Vietnamese crew at 01°29'N 104°59'E in the waters of Bintan in the South China Sea (the Natuna Sea fisheries management area) and took it to Tanjung Pinang; five Thai-operated boats were seized the same day in the Malacca Strait.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), Hiu-class patrol vessel; DG PSDKP Syahrin Abdurrahman",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of a Vietnamese boat in Indonesian-claimed waters of the southern South China Sea is enforcement against a claimant; coercive. The Malacca Strait seizures (Thai/Myanmar crews) are outside the SCS and not part of this event.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://en.antaranews.com/news/81011/hiu-intercept-six-illegal-foreign-ship",
+    "title": "HIU Intercept Six Illegal Foreign Ship",
+    "publisher": "ANTARA News (English; KKP press release)",
+    "pub_date": "2012-03-30",
+    "language": "en",
+    "excerpt": "other foreign ships which was came from Vietnam arrested at the position of 01029'505 \"LU-104059'312\" BT in the waters of Bintan, South China Sea."
+   },
+   {
+    "url": "https://en.antaranews.com/news/81022/six-foreign-boats-caught-poaching-fish-in-indonesian-waters",
+    "title": "Six foreign boats caught poaching fish in Indonesian waters",
+    "publisher": "ANTARA News (English)",
+    "pub_date": "2012-03-30",
+    "language": "en",
+    "excerpt": "The Vietnamese boat was taken to Tanung Pinang in the Riau Islands province."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2012-04-28",
+  "date_end": "2012-04-29",
+  "date_precision": "day",
+  "location_name": "Indonesian EEZ, Natuna waters",
+  "subregion": "10",
+  "summary": "The fisheries surveillance vessel Hiu Macan 01 again seized nine Vietnamese-flagged fishing boats operating without valid documents in the Indonesian EEZ in Natuna waters over the weekend of 28–29 April 2012; Minister Sharif C. Sutardjo said the ministry would keep up maximum security of fish resources in Natuna waters, and the crews were to be repatriated quickly.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu Macan 01; Minister Sharif C. Sutardjo; DG PSDKP Syahrin Abdurrahman",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of nine Vietnamese boats in the Natuna EEZ is enforcement against a claimant; coercive. 'Akhir pekan ini' in a Monday 30 April report is read as 28–29 April.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://news.republika.co.id/berita/m38yo2/hiu-macan-sergap-nelayan-vietnam",
+    "title": "'Hiu Macan' Sergap Nelayan Vietnam",
+    "publisher": "Republika (ANTARA)",
+    "pub_date": "2012-04-30",
+    "language": "id",
+    "excerpt": "Kapal Pengawas Kementerian Kelautan dan Perikanan (KKP) Hiu Macan 01 kembali berhasil menangkap sembilan unit kapal berbendera Vietnam saat melakukan kegiatan penangkapan ikan secara ilegal di kawasan Zona Ekonomi Eksklusif (ZEE) Indonesia tepatnya di perairan Natuna, akhir pekan ini."
+   },
+   {
+    "url": "https://en.antaranews.com/news/81739/homepage-v2.html",
+    "title": "Again, Hiu Macan Arrested 9 Fishing Boats from Vietnam",
+    "publisher": "ANTARA News (English)",
+    "pub_date": "2012-04-30",
+    "language": "en",
+    "excerpt": "Hiu Macan 01 has succesfully re-arrested nine Vietnam-flagged boats"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2012-11-28",
+  "date_end": "2012-11-28",
+  "date_precision": "day",
+  "location_name": "South China Sea (map in China's new e-passport)",
+  "subregion": "",
+  "summary": "Foreign Minister Marty Natalegawa said on 28 November 2012 that Indonesia would convey to China that it could not recognise the inclusion of China's South China Sea claim map in its new passports, that accepting the passports did not mean recognising China's claim, and that such unilateral acts were counterproductive.",
+  "actors": "Foreign Minister Marty Natalegawa",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A ministerial statement rejecting China's cartographic assertion of its nine-dash claim is a verbal assertion; declarative. Whether a formal note was then delivered was not found.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.republika.co.id/berita/me912i/indonesia-objects-to-chinas-territory-claims-on-new-passports",
+    "title": "Indonesia objects to China's territory claims on new passports",
+    "publisher": "Republika (English)",
+    "pub_date": "2012-11-29",
+    "language": "en",
+    "excerpt": "Indonesia would protest China since the country included South China Sea on a map printed in its revised passports"
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2012/11/29/ri-concerned-about-map-new-chinese-passports.html",
+    "title": "RI concerned about map in new Chinese passports",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2012-11-29",
+    "language": "en",
+    "excerpt": "The Indonesian government has raised concerns over China’s inclusion of a map of the South China Sea in Chinese passports"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-03-21",
+  "date_end": "2013-03-21",
+  "date_precision": "day",
+  "location_name": "Indonesian EEZ, Natuna waters, Riau Islands",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel KP Hiu 003, operating in a joint operation under Bakorkamla control, seized three Malaysian-flagged fishing boats (KM PAF 4116, KM JHF 5433 T and KM JHF 4888 T) suspected of illegal fishing in the Indonesian EEZ off Natuna on 21 March 2013; a fourth Malaysian boat, KM JHF 1336 T, was seized separately, and all were taken to the PSDKP unit in Batam.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu 003; Bakorkamla (Maritime Security Coordinating Board); DG PSDKP Syahrin Abdurrahman",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IM"
+  ],
+  "reasoning": "Seizure of Malaysian boats in the Natuna EEZ, where the Indonesia–Malaysia EEZ boundary is undelimited, is enforcement against a claimant; coercive.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/365787/diduga-mencuri-ikan-4-kapal-malaysia-ditangkap-kapal-pengawas-kkp",
+    "title": "Diduga Mencuri Ikan, 4 Kapal Malaysia Ditangkap Kapal Pengawas KKP",
+    "publisher": "ANTARA News (KKP press release)",
+    "pub_date": "2013-03-28",
+    "language": "id",
+    "excerpt": "Penangkapan dilakukan oleh Kapal Pengawas (KP) Hiu 003 yang sedang melakukan operasi bersama di bawah kendali operasi Badan Koordinasi Keamanan Laut (BAKORKAMLA) pada tanggal 21 Maret 2013"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-03-26",
+  "date_end": "2013-03-26",
+  "date_precision": "day",
+  "location_name": "Indonesian EEZ in the South China Sea, about 200 km north-east of Natuna Island",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel Hiu Macan 001 stopped the Chinese trawler 58081 (150 GT) fishing without documents in the Indonesian EEZ about 200 km north-east of Natuna on 26 March 2013, transferred its nine crew aboard and, on orders from headquarters, set off to take it to the PSDKP unit in Natuna; after the Chinese research vessel Nan Feng and the armed fisheries law-enforcement vessel Yuzheng 310 shadowed and threatened it, the captain released the fishermen for the safety of his crew.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu Macan 001; opposed by China's Yuzheng 310 and Nan Feng",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Arresting a Chinese trawler and its crew in waters inside China's nine-dash line is enforcement against China; coercive. Indonesia made no public statement; the account comes from the captain's after-action report published on a military blog in September 2013 and summarised by ASPI.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.aspistrategist.org.au/mapping-the-nine-dash-line-recent-incidents-involving-indonesia-in-the-south-china-sea/",
+    "title": "Mapping the nine-dash line: recent incidents involving Indonesia in the South China Sea",
+    "publisher": "ASPI The Strategist (Scott Bentley)",
+    "pub_date": "2013-10-29",
+    "language": "en",
+    "excerpt": "On 26 March 2013, the Indonesian vessel Hiu Macan 001 of the Ministry of Maritime Affairs and Fisheries encountered a Chinese fishing boat operating illegally in the South China Sea"
+   },
+   {
+    "url": "http://garudamiliter.blogspot.com/2013/09/kisah-gesekan-di-laut-natuna.html",
+    "title": "Kisah Gesekan Di Laut Natuna",
+    "publisher": "Garuda Militer (blog; captain's report)",
+    "pub_date": "2013-09-01",
+    "language": "id",
+    "excerpt": "Kapal Pengawas Hiu Macan 001 berhasil memberhentikan Kapal Ikan China 58081 GT.150 jumlah awak kapal 9 (Sembilan) orang dengan alat tangkap TRAWL."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-03-29",
+  "date_end": "2013-03-29",
+  "date_precision": "day",
+  "location_name": "Natuna waters, Riau Islands",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel Hiu 008 seized the Vietnamese trawlers BV 0054 TS and BV 4633 TS and their ten Vietnamese crew fishing illegally in Natuna waters at about 3 p.m. on Friday 29 March 2013 and towed them to Batam.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu 008; PSDKP Batam (Akhmadon)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese trawlers in Natuna waters is enforcement against a claimant; coercive. ICSF reproduces a Jakarta Post report without a year; Friday 29 March fits 2013.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://icsf.net/?p=37672",
+    "title": "Two Vietnamese ships impounded for illegal fishing in Natuna, Indonesia",
+    "publisher": "ICSF (reproducing The Jakarta Post)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "at around 3 p.m. local time on Friday March 29, the patrol ship Hiu 008 spotted two Vietnamese-flagged trawlers fishing illegally in Indonesian waters."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-04-14",
+  "date_end": "2013-04-14",
+  "date_precision": "day",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "The fisheries surveillance vessel Hiu Macan 01 seized three Vietnamese-flagged fishing boats (BD 95594, BV 95227 TS and BV 95467 TS) with 24 crew in Natuna waters on 14 April 2013 and escorted them to Batam; Hiu Macan 004 also seized the Indonesian-named, Vietnamese-crewed KM Citra Mandiri Jaya in Natuna.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu Macan 01 and Hiu Macan 004; Minister Sharif C. Sutardjo; DG PSDKP Syahrin Abdurrahman",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese boats in Natuna waters is enforcement against a claimant; coercive. The ministry release gives 14 April; The Jakarta Post (26 April) says the three were impounded 'on Tuesday', i.e. probably 23 April.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/370394/kkp-tangkap-enam-kapal-asing-pencuri-ikan",
+    "title": "KKP tangkap enam kapal asing pencuri ikan",
+    "publisher": "ANTARA News",
+    "pub_date": "2013-04-21",
+    "language": "id",
+    "excerpt": "Syahrin memaparkan, di operasi di wilayah barat, Kapal Pengawas Macan 01 KKP pada tanggal 14 April 2013 berhasil menangkap tiga kapal ikan asing asal Vietnam."
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2013/04/26/vietnamese-vessels-arrested-illegal-fishing",
+    "title": "Vietnamese vessels arrested for illegal fishing",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2013-04-26",
+    "language": "en",
+    "excerpt": "Hiu Macan 001 patrol boat impounded KM BD 95594 TS, KM BV 95227 TS and KM BV 95467 on Tuesday."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-05-11",
+  "date_end": "2013-05-11",
+  "date_precision": "day",
+  "location_name": "Natuna waters, Riau Islands",
+  "subregion": "10",
+  "summary": "The Batam-based fisheries patrol vessel KP Hiu 009 seized the Vietnamese-flagged trawlers KM KG 90432 TS and KM KG 90616 TS and their 35 Vietnamese crew for illegal fishing in Natuna waters on Saturday 11 May 2013; ministry data showed seven Vietnamese and four Malaysian boats arrested in the previous two months.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu 009; PSDKP Batam (Akhmadon)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese trawlers in Natuna waters is enforcement against a claimant; coercive. 'Saturday' in a 14 May report is read as 11 May.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/news/2013/05/14/two-vietnamese-vessels-arrested-illegal-fishing-natuna",
+    "title": "Two Vietnamese vessels arrested for illegal fishing in Natuna",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2013-05-14",
+    "language": "en",
+    "excerpt": "Ministry data shows that seven Vietnamese-flagged vessels and four fishing ships from Malaysia have been arrested during the last two months."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-10-31",
+  "date_end": "2013-10-31",
+  "date_precision": "day",
+  "location_name": "Natuna Islands and surrounding waters (Pulau Laut, on the South China Sea)",
+  "subregion": "10",
+  "summary": "The Indonesian Air Force held the culminating phase of its annual Angkasa Yudha 2013 exercise in the Natuna Islands on 31 October 2013, with at least 21 combat aircraft (F-16s, Su-27/30s, Hawks and Super Tucanos) rehearsing air defence and strategic strike operations; ANTARA described Natuna as chosen because it lies at the edge of the contested South China Sea.",
+  "actors": "Indonesian Air Force (TNI AU), Chief of Staff Air Marshal I.B. Putu Dunia; Joint Air Task Force commander Air Vice Marshal M. Syaugi",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "A large live combat-air exercise staged at Natuna, framed by the press as readiness for the South China Sea, is a unilateral military display without confrontation; demonstrative. No target state was named by the military, so the dyad is unclear.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/402953/latihan-angkasa-yudha-2013-libatkan-21-pesawat-tempur",
+    "title": "Latihan Angkasa Yudha 2013 libatkan 21 pesawat tempur",
+    "publisher": "ANTARA News",
+    "pub_date": "2013-10-31",
+    "language": "id",
+    "excerpt": "Latihan puncak TNI AU kali ini, Angkasa Yudha 2013 di perairan Kepulauan Natuna, Riau Kepulauan, melibatkan paling tidak 21 pesawat tempur TNI AU"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/402990/emb-314-super-tucano-bahu-membahu-beraksi-di-natuna",
+    "title": "EMB-314 Super Tucano bahu-membahu beraksi di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2013-10-31",
+    "language": "id",
+    "excerpt": "Indonesia ada dalam \"kawasan panas\" sehingga kesiapsiagaan militernya menjadi keharusan."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-11-16",
+  "date_end": "2013-11-16",
+  "date_precision": "day",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "The fisheries ministry and the police conducted a joint aerial surveillance operation over Natuna waters on 16 November 2013, with five fisheries patrol vessels standing by to inspect vessels spotted from the air; the ministry, which in July 2013 had made Natuna one of its three priority surveillance areas, said 58 vessels had been caught by August 2013, including 17 Vietnamese and 11 Malaysian.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), DG PSDKP Syahrin Abdurrahman; National Police",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV",
+   "IM"
+  ],
+  "reasoning": "Aerial and sea surveillance of the Natuna EEZ is unilateral enforcement presence without confrontation; demonstrative. It also records the 2013 frequency of seizures of Vietnamese and Malaysian boats.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/405356/pengawasan-udara-akan-digiatkan-demi-cegah-illegal-fishing",
+    "title": "Pengawasan udara akan digiatkan demi cegah \"illegal fishing\"",
+    "publisher": "ANTARA News",
+    "pub_date": "2013-11-17",
+    "language": "id",
+    "excerpt": "usai operasi gabungan pemantauan udara perairan Natuna bersama Polri, Sabtu (16/11)."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/383204/kkp-tingkatkan-pengawasan-di-3-lokasi-rawan-illegal-fishing",
+    "title": "KKP Tingkatkan Pengawasan di 3 Lokasi Rawan Illegal Fishing",
+    "publisher": "ANTARA News (KKP press release)",
+    "pub_date": "2013-07-02",
+    "language": "id",
+    "excerpt": "Wilayah tersebut adalah perairan Natuna, perairan Sulawesi sebelah Utara dan Laut Arafura."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-02-27",
+  "date_end": "2014-02-27",
+  "date_precision": "day",
+  "location_name": "Natuna; statement made in Beijing",
+  "subregion": "10",
+  "summary": "Armed Forces commander Gen. Moeldoko, during a five-day visit to China, told ANTARA that the TNI planned to add land, sea and air forces around Natuna, including upgrading the naval base to a main naval base, as an early-warning posture and to anticipate 'spillover' from instability in the South China Sea.",
+  "actors": "Indonesian Armed Forces (TNI), Commander Gen. Moeldoko",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "An announcement by the armed forces chief of a military build-up at Natuna framed by South China Sea tensions, made in Beijing, is a verbal assertion of intent to defend the area; declarative (the later build-up steps are separate events). The interview date within the visit is not given; ANTARA published it on 27 February.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/421262/tni-akan-tambah-kekuatan-di-natuna",
+    "title": "TNI akan tambah kekuatan di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-02-27",
+    "language": "id",
+    "excerpt": "Tentara Nasional Indonesia (TNI) berencana menambah kekuatan di sekitar perairan Natuna sebagai salah satu wilayah terdepan Negara Kesatuan Republik Indonesia, sekaligus mengantisipasi instabilitas di Laut China Selatan."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-03-12",
+  "date_end": "2014-03-12",
+  "date_precision": "day",
+  "location_name": "Natuna, Riau Islands",
+  "subregion": "10",
+  "summary": "Air Commodore Fahru Zaini, an assistant deputy at the Coordinating Ministry for Political, Legal and Security Affairs, said on a visit to Natuna on 12 March 2014 that China had included part of Natuna's waters in its nine-dash-line map and its new passports, that this concerned Indonesian territory, and that he had come to review the TNI's capability and force posture there.",
+  "actors": "Coordinating Ministry for Political, Legal and Security Affairs (Kemenko Polhukam), Air Cdre Fahru Zaini",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "The first public statement by an Indonesian official that China's nine-dash line encroaches on Natuna waters, made while reviewing defences there, is a verbal assertion; declarative. Foreign Minister Natalegawa played it down a week later.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/423685/china-klaim-wilayah-natuna",
+    "title": "China klaim wilayah Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-03-12",
+    "language": "id",
+    "excerpt": "China telah mengklaim wilayah perairan Natuna sebagai wilayah laut mereka."
+   },
+   {
+    "url": "https://beritando.blogspot.com/2014/04/batavia-news-indonesia-draws-line-in-sea.html",
+    "title": "Indonesia draws line in sea (reproducing Asia Sentinel)",
+    "publisher": "Beritando (blog)",
+    "pub_date": "2014-04-29",
+    "language": "en",
+    "excerpt": "overshadowed the March 12 announcement from Jakarta that China's nine-dash line covered an area including some of the Natuna Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-03-19",
+  "date_end": "2014-03-19",
+  "date_precision": "day",
+  "location_name": "Jakarta; Natuna",
+  "subregion": "",
+  "summary": "Foreign Minister Marty Natalegawa said on 19 March 2014 that Indonesia had formally objected to China's nine-dash line at the UN in 2010 and rejected it again over China's passports, that it did not accept the line and had asked China for its legal basis without reply, while insisting there was no territorial dispute with China over Natuna.",
+  "actors": "Foreign Minister Marty Natalegawa",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A ministerial restatement that Indonesia does not accept the nine-dash line is a verbal assertion; declarative. Its denial of any dispute is conciliatory in tone, which a coder may weigh.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/424961/indonesia-pernah-sampaikan-keberatan-atas-peta-natuna",
+    "title": "Indonesia pernah sampaikan keberatan atas peta Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-03-19",
+    "language": "id",
+    "excerpt": "Ketiga, adalah masalah nine dash line, memang kita tidak menerima. Karena itu, kita minta penjelasan Tiongkok latar belakang dan dasar hukumnya,"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-04-01",
+  "date_end": "2014-04-11",
+  "date_precision": "month",
+  "location_name": "Natuna Sea, Riau Islands",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessels Hiu Macan Tutul 002 and Hiu Macan 001 seized five Vietnamese pair-trawlers (BV 5038 TS, BV 5021 TS, BV 4857 TS, BV 0936 TS and BTH 96565 TS) fishing without licences in the Natuna Sea in early April 2014 and took them to the PSDKP unit in Natuna; the ministry said 8 of the 16 boats it had seized since January were Vietnamese.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu Macan Tutul 002 and KP Hiu Macan 001; Minister Sharif C. Sutardjo; DG PSDKP Syahrin Abdurrahman",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese boats in the Natuna Sea is enforcement against a claimant; coercive. The release dated 11 April says 'last week', so month precision.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/428868/lagi-kkp-tangkap-5-kapal-ikan-vietnam",
+    "title": "Lagi, KKP Tangkap 5 Kapal Ikan Vietnam",
+    "publisher": "ANTARA News (KKP press release)",
+    "pub_date": "2014-04-11",
+    "language": "id",
+    "excerpt": "kembali menangkap 5 kapal pencuri ikan berbendera Vietnam, di perairan Laut Natuna Kepulauan Riau."
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2014/04/11/five-vietnamese-fishing-boats-arrested-natuna-waters.html",
+    "title": "Five Vietnamese fishing boats arrested in Natuna waters",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2014-04-11",
+    "language": "en",
+    "excerpt": "have arrested five Vietnamese fishing boats for illegallyfishing in Natuna waters, Riau Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-04-24",
+  "date_end": "2014-04-24",
+  "date_precision": "day",
+  "location_name": "Natuna Islands",
+  "subregion": "10",
+  "summary": "In an op-ed in the Wall Street Journal on 24 April 2014, TNI commander Gen. Moeldoko wrote that Indonesia was dismayed that China had included parts of the Natuna Islands within the nine-dash line, that the military had decided to strengthen its forces on Natuna, and that fighter aircraft would be prepared for any eventuality.",
+  "actors": "Indonesian Armed Forces (TNI), Commander Gen. Moeldoko",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A public statement by the military chief in an international newspaper criticising China's claim and announcing reinforcement of Natuna is a verbal assertion; declarative. The WSJ original is paywalled; the excerpt is from a blog reproduction of an Asia Sentinel column quoting it.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://beritando.blogspot.com/2014/04/batavia-news-indonesia-draws-line-in-sea.html",
+    "title": "Indonesia draws line in sea (reproducing Asia Sentinel)",
+    "publisher": "Beritando (blog)",
+    "pub_date": "2014-04-29",
+    "language": "en",
+    "excerpt": "\"Indonesia is dismayed,\" Moeldoko wrote in an opinion piece in the Wall Street Journal on April 24, \"that China has included parts of the Natuna Islands within the nine-dash line"
+   },
+   {
+    "url": "https://imoa.ph/chinas-dismaying-new-claims-south-china-sea/",
+    "title": "China's Dismaying New Claims in the South China Sea",
+    "publisher": "IMOA (excerpt of Wall Street Journal op-ed)",
+    "pub_date": "2014-04-24",
+    "language": "en",
+    "excerpt": "The South China Sea has become the focal point of maritime disputes in Asia."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-05-08",
+  "date_end": "2014-05-08",
+  "date_precision": "day",
+  "location_name": "West Kalimantan and Riau naval bases",
+  "subregion": "",
+  "summary": "TNI commander Gen. Moeldoko said on 8 May 2014 that because the South China Sea security situation would fluctuate, the naval bases in West Kalimantan and Riau needed to be evaluated for promotion to main naval bases.",
+  "actors": "Indonesian Armed Forces (TNI), Commander Gen. Moeldoko",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "An announced plan to upgrade bases facing the South China Sea is a statement of military intent; declarative, low weight. Implemented with the Lantamal XII Pontianak inauguration of 7 August 2015.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://en.antaranews.com/news/93948/w-kalimantan-naval-base-to-be-promoted-to-naval-main-base",
+    "title": "W Kalimantan naval base to be promoted to naval main base",
+    "publisher": "ANTARA News (English)",
+    "pub_date": "2014-05-08",
+    "language": "en",
+    "excerpt": "Moeldoko has forecast that the security situation in the South China Sea will fluctuate."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-11-02",
+  "date_end": "2014-11-02",
+  "date_precision": "day",
+  "location_name": "73 km east of Tarempa, Anambas Islands",
+  "subregion": "10",
+  "summary": "The frigate KRI Imam Bonjol-383 seized three Vietnamese fishing boats (KG 90433 TS, KG 94366 TS and KG 94266 TS) with 33 crew fishing without permits about 73 km east of Tarempa, Anambas, at about 20:00 on 2 November 2014; the Ranai district court on 3 December ordered them confiscated and destroyed.",
+  "actors": "Indonesian Navy, Western Fleet (Koarmabar), KRI Imam Bonjol-383; Ranai District Court",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval seizure of Vietnamese boats in the Anambas/Natuna EEZ is enforcement against a claimant; coercive. These were the first boats sunk under the new policy (5 December).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/467727/pemerintah-tenggelamkan-tiga-kapal-ikan-asing-ilegal",
+    "title": "Pemerintah tenggelamkan tiga kapal ikan asing ilegal",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-12-05",
+    "language": "id",
+    "excerpt": "ketiga kapal ikan asing tersebut ditangkap KRI Imam Bonjol-383 saat melakukan operasi rutin 2 November sekira pukul 20.00 WIB."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-11-14",
+  "date_end": "2014-11-14",
+  "date_precision": "day",
+  "location_name": "Natuna waters, Indonesia–Malaysia border waters about 50 km from Tarempa",
+  "subregion": "10",
+  "summary": "The corvette KRI Sutedi Senaputra-378, on Operation Rakata Jaya, seized the Malaysian-flagged fishing boat MV KNF 7424 (nine Thai and Myanmar crew) and the Thai-flagged MV Kour Son 77 fishing illegally in Indonesia–Malaysia border waters about 50 km from Tarempa on 14 November 2014 and held them at the Tarempa naval base.",
+  "actors": "Indonesian Navy, Western Fleet (Koarmabar), KRI Sutedi Senaputra-378",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IM"
+  ],
+  "reasoning": "Seizure of a Malaysian-flagged boat in undelimited border waters off Natuna/Anambas is enforcement against a claimant's vessel; coercive. The crew were Thai/Myanmar; the Thai-flagged boat is a non-claimant and is not the basis of the event.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/464501/koarmabar-tangkap-dua-kapal-asing-curi-ikan",
+    "title": "Koarmabar tangkap dua kapal asing curi ikan",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-11-15",
+    "language": "id",
+    "excerpt": "Kapal pertama yang berbendera Malaysia bernama MV.KNF 7424 dengan Anak Buah Kapal (ABK) berjumlah sembilan orang"
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2014/11/17/navy-nabs-two-foreign-ships-suspected-illegal-fishing-natuna-waters",
+    "title": "Navy nabs two foreign ships suspected of illegal fishing in Natuna waters",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2014-11-17",
+    "language": "en",
+    "excerpt": "the two vessels were in Indonesia-Malaysia border waters, around 50 kilometers from Tarempa, Natuna."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-11-18",
+  "date_end": "2014-11-18",
+  "date_precision": "day",
+  "location_name": "Jakarta (Istana Negara)",
+  "subregion": "",
+  "summary": "President Joko Widodo told a Lemhannas audience at the palace on 18 November 2014 to sink foreign fishing vessels rather than merely arrest them ('sink 10 to 20... but rescue the crew first'), launching the policy of destroying seized foreign boats.",
+  "actors": "President Joko Widodo",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IA"
+  ],
+  "reasoning": "A presidential directive threatening destruction of foreign poaching vessels is a declared new enforcement policy; declarative (the sinkings themselves are separate coercive events). It applies to all foreign fleets; in the SCS the main targets were Vietnamese, Malaysian and Chinese boats.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://setkab.go.id/timbulkan-efek-jera-presiden-minta-menteri-susi-tenggelamkan-kapal-asing-pencuri-ikan/",
+    "title": "Timbulkan Efek Jera, Presiden Minta Menteri Susi Tenggelamkan Kapal Asing Pencuri Ikan",
+    "publisher": "Sekretariat Kabinet RI",
+    "pub_date": "2014-11-18",
+    "language": "id",
+    "excerpt": "Tenggelamkan saja kapal-kapal asing itu, jangan cuma ditangkap."
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2014/11/18/jokowi-declares-war-illegal-fishing",
+    "title": "Jokowi declares war on illegal fishing",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2014-11-18",
+    "language": "en",
+    "excerpt": "has instructed law enforcers to take stern actions against foreign ships stealing fish from Indonesian waters, including by sinking them on the spot"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-12-05",
+  "date_end": "2014-12-05",
+  "date_precision": "day",
+  "location_name": "Tanjung Pedas, Anambas Islands, Riau Islands",
+  "subregion": "10",
+  "summary": "On 5 December 2014 the Navy, the fisheries ministry and Bakorkamla sank the three seized Vietnamese fishing boats (KG 90433, KG 94366 TS, KG 94266 TS) off Tanjung Pedas, Anambas, by gunfire from government vessels and demolition charges set by Navy frogmen, the first sinking under President Widodo's policy; the Western Fleet said it had seized at least 78 foreign fishing boats in 2014.",
+  "actors": "Indonesian Navy, Western Fleet (Koarmabar, Rear Adm. Widodo), Kopaska frogmen, KRI Sultan Hasanuddin-366; Ministry of Marine Affairs and Fisheries vessels Napoleon and Ketipas; Bakorkamla vessel Bintang Laut; Coordinating Minister Tedjo Edhy Purdijatno",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Publicly destroying a rival claimant's seized fishing boats is a new, punitive form of enforcement; coercive. It marks a qualitative step up on 2013.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/467727/pemerintah-tenggelamkan-tiga-kapal-ikan-asing-ilegal",
+    "title": "Pemerintah tenggelamkan tiga kapal ikan asing ilegal",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-12-05",
+    "language": "id",
+    "excerpt": "Pemerintah melaksanakan operasi penenggelaman tiga kapal ikan asing ilegal di perairan Tanjung Pedas, Kabupaten Kepulauan Anambas, Kepulauan Riau, Jumat."
+   },
+   {
+    "url": "https://setkab.go.id/?p=15578",
+    "title": "3 Kapal Asing Pencuri Ikan Sudah Ditenggelamkan di Perairan Anambas",
+    "publisher": "Sekretariat Kabinet RI",
+    "pub_date": "2014-12-06",
+    "language": "id",
+    "excerpt": "telah ditenggelamkan di perairan Anambas, Kepulauan Riau, oleh TNI AL bersama-sama dengan Kementerian Kelautan dan Perikanan serta Badan Koordinasi Keamanan Laut (Bakorkamla)."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/467735/koarmabar-tangkap-78-kapal-ikan-asing-ilegal-selama-2014",
+    "title": "Koarmabar tangkap 78 kapal ikan asing ilegal selama 2014",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-12-05",
+    "language": "id",
+    "excerpt": "Tahun ini sudah ada 78 kapal yang ditangkap, dan terakhir tiga unit kapal November kemarin"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-12-15",
+  "date_end": "2014-12-15",
+  "date_precision": "day",
+  "location_name": "Kotabaru, South Kalimantan (national)",
+  "subregion": "",
+  "summary": "President Joko Widodo formally announced on Nusantara Day, 15 December 2014, the establishment of the Maritime Security Agency (Bakamla) under Presidential Regulation No. 178 of 2014, replacing Bakorkamla with a body tasked to patrol Indonesian waters and jurisdiction; the Navy said it would transfer ten patrol boats to it.",
+  "actors": "President Joko Widodo; Cabinet Secretary Andi Widjajanto; Bakamla; Navy Chief Adm. Marsetio",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "Creating a coast-guard-like agency to patrol Indonesia's waters and EEZ is a unilateral administrative act; demonstrative. It is national rather than SCS-specific, so its weight is low; Bakamla later became Indonesia's main presence in the Natuna EEZ.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://setkab.go.id/presiden-jokowi-resmi-bentuk-badan-keamanan-laut/",
+    "title": "Presiden Jokowi Resmi Bentuk Badan Keamanan Laut",
+    "publisher": "Sekretariat Kabinet RI",
+    "pub_date": "2014-12-15",
+    "language": "id",
+    "excerpt": "BAKAMLA dibentuk berdasarkan Peraturan Presiden Nomor 178 Tahun 2014 tentang BAKAMLA."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/469474/tni-al-hibahkan-kapal-patroli-ke-bakamla",
+    "title": "TNI AL hibahkan kapal patroli ke Bakamla",
+    "publisher": "ANTARA News",
+    "pub_date": "2014-12-16",
+    "language": "id",
+    "excerpt": "Kita sudah siapkan 10 kapal patroli kita yang nanti akan bergabung dengan Bakamla"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-03-14",
+  "date_end": "2015-03-14",
+  "date_precision": "day",
+  "location_name": "Territorial sea of Pulau Serasan, Natuna Regency",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel Hiu Macan 001 seized four Vietnamese pair-trawlers (KG 90512 TS, KG 91395 TS, KG 94152 TS and KG 91751 TS) with 55 Vietnamese crew fishing in the territorial sea of Pulau Serasan, Natuna, on 14 March 2015 and took them to the PSDKP station in Pontianak.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP), KP Hiu Macan 001; DG PSDKP Asep Burhanudin",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese trawlers inside Indonesia's territorial sea off Natuna is enforcement against a claimant; coercive.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/485750/kkp-tangkap-empat-kapal-ilegal-asal-vietnam",
+    "title": "KKP tangkap empat kapal ilegal asal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-03-17",
+    "language": "id",
+    "excerpt": "Kapal-kapal penangkap ikan ilegal itu ditangkap oleh KP Hiu Macan 001 di perairan teritorial Pulau Serasan, Kabupaten Natuna, Provinsi Kepulauan Riau, pada tanggal 14 Maret 2015."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-03-22",
+  "date_end": "2015-03-23",
+  "date_precision": "day",
+  "location_name": "South China Sea (nine-dash line); interview given ahead of a state visit to Japan",
+  "subregion": "",
+  "summary": "In an interview with Japan's Yomiuri Shimbun published in Japanese on 22 March 2015, President Joko Widodo said that the nine-dashed line China asserts in the South China Sea has no basis in any international law, while adding that Indonesia wanted to remain an honest broker; the English version followed on 23 March.",
+  "actors": "President Joko Widodo",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A head of state's public rejection of the legal basis of China's nine-dash line is a verbal assertion; declarative. It was the first such statement by an Indonesian president; the palace and Foreign Ministry later softened it.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://maritime-executive.com/article/indonesian-president-rejects-chinas-nine-dashed-line",
+    "title": "Indonesian President Rejects China's Nine-Dashed Line",
+    "publisher": "The Maritime Executive (Reuters)",
+    "pub_date": "2015-03-23",
+    "language": "en",
+    "excerpt": "\"The 'nine-dashed line' that China asserts has no basis in any international law,\" said Widodo."
+   },
+   {
+    "url": "https://www.kemhan.go.id/itjen/2015/03/25/jokowi-klaim-cina-di-laut-cina-selatan-tak-berdasar.html",
+    "title": "Jokowi: Klaim Cina di Laut Cina Selatan Tak Berdasar (press digest)",
+    "publisher": "Kementerian Pertahanan, Itjen (reproducing Tempo, Republika)",
+    "pub_date": "2015-03-25",
+    "language": "id",
+    "excerpt": "Presiden Indonesia Joko Widodo mengatakan klaim Cina untuk sebagian besar Laut Cina Selatan tidak memiliki dasar hukum dalam hukum internasional"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-05-20",
+  "date_end": "2015-05-20",
+  "date_precision": "day",
+  "location_name": "Off Pontianak, West Kalimantan (and other sites nationwide)",
+  "subregion": "10",
+  "summary": "On National Awakening Day, 20 May 2015, the government simultaneously sank 41 foreign-built fishing boats, including the 300 GT Chinese trawler Gui Xei Yu 12661 (seized on 20 June 2009 in Indonesia's EEZ in the South China Sea) blown up off Pontianak, and five Vietnamese boats; it was the first Chinese boat sunk under the Widodo policy.",
+  "actors": "Ministry of Marine Affairs and Fisheries (Minister Susi Pudjiastuti); Indonesian Navy; President Joko Widodo (ordered)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IC",
+   "IV"
+  ],
+  "reasoning": "Destroying a seized Chinese trawler caught inside the nine-dash line, with Vietnamese boats, is punitive enforcement and a new target (China) for the sinking policy; coercive. Of the 41, eleven were sunk at Bitung and others in Belawan and Aceh, outside the SCS; only the Pontianak sinkings (six boats) and the Chinese and Vietnamese boats bear on this dataset.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/news/2015/05/21/nation-marks-awakening-day-sinks-big-chinese-boat.html",
+    "title": "Nation marks awakening day, sinks big Chinese boat",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2015-05-21",
+    "language": "en",
+    "excerpt": "which was taken into custody on June 20, 2009, for fishing in Indonesia"
+   },
+   {
+    "url": "https://www.thejakartapost.com/news/2015/05/20/ri-flexes-muscle-sinks-chinese-boat-a-big-one.html",
+    "title": "RI flexes muscle, sinks Chinese boat, a big one",
+    "publisher": "The Jakarta Post",
+    "pub_date": "2015-05-20",
+    "language": "en",
+    "excerpt": "the steel-made Gui Xei Yu 12661 was sunk on Wednesday in Pontianak, West Kalimantan"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-07-10",
+  "date_end": "2015-07-10",
+  "date_precision": "day",
+  "location_name": "Border areas facing the South China Sea (options: Sambas/Tanjung Datuk, Natuna, Tarakan)",
+  "subregion": "",
+  "summary": "Planning Minister Andrinof Chaniago and Defence Minister Ryamizard Ryacudu announced on 10 July 2015 that the government would build a military base to guard border areas facing the South China Sea, with a joint Bappenas–Defence Ministry study of sites at Sambas (Tanjung Datuk), Natuna or Tarakan; Ryamizard said Natuna's resources must be guarded and Sipadan–Ligitan must not be repeated.",
+  "actors": "Minister of National Development Planning (Bappenas) Andrinof Chaniago; Defence Minister Ryamizard Ryacudu",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "An announced plan for a new military base oriented to the South China Sea is a statement of defensive intent; declarative. No target state named.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/506296/andrinof-indonesia-akan-bangun-pangkalan-militer-di-perbatasan",
+    "title": "Andrinof: Indonesia akan bangun pangkalan militer di perbatasan",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-07-10",
+    "language": "id",
+    "excerpt": "Pemerintah Indonesia akan membangun pangkalan militer untuk menjaga wilayah perbatasan khususnya yang berhadapan dengan Laut Tiongkok Selatan"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-07-26",
+  "date_end": "2015-08-01",
+  "date_precision": "day",
+  "location_name": "Natuna and Anambas waters, Indonesian EEZ (incl. 04°59'N 107°59'E)",
+  "subregion": "10",
+  "summary": "In one week Indonesian forces seized 14 Vietnamese fishing boats around Natuna and Anambas: the missile boat KRI Clurit-641 took two near Ranai on 26 July; KP Hiu Macan 001 seized four with 48 crew in the EEZ on 29 July; and on 1 August KRI Sutedi Senaputra-378 (Operation Kretya Baruna 2015) seized two at 04°59'N 107°59'E while KP Hiu Macan 005 seized six with 43 crew in the EEZ off Anambas.",
+  "actors": "Indonesian Navy (KRI Clurit-641, KRI Sutedi Senaputra-378, Koarmabar, Lantamal IV); Ministry of Marine Affairs and Fisheries (KP Hiu Macan 001, KP Hiu Macan 005; DG PSDKP Asep Burhanudin)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "A concentrated series of naval and fisheries seizures of Vietnamese boats in the Natuna/Anambas EEZ is enforcement against a claimant; coercive. Grouped as one event (four dated seizures in a week); the Navy said it had seized 34 foreign boats nationally (6 Vietnamese, 2 Malaysian) by 4 August.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/510491/kkp-tangkap-enam-kapal-ikan-ilegal-vietnam",
+    "title": "KKP tangkap enam kapal ikan ilegal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-08-04",
+    "language": "id",
+    "excerpt": "Penangkapan enam kapal tersebut dilakukan oleh Kapal Pengawas Hiu Macan 005 pada Sabtu (1/8) sekitar pukul 13.00-16.00 WIB"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/508786/kri-clurit-641-tangkap-dua-kapal-ikan-vietnam",
+    "title": "KRI Clurit- 641 tangkap dua kapal ikan Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-07-26",
+    "language": "id",
+    "excerpt": "KRI Clurit-641 menangkap dua kapal ikan milik nelayan Vietnam"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/509814/kkp-tangkap-empat-kapal-ikan-ilegal-vietnam",
+    "title": "KKP tangkap empat kapal ikan ilegal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-07-31",
+    "language": "id",
+    "excerpt": "menangkap empat kapal perikanan asing berbendera Vietnam di perairan Zona Ekonomi Eksklusif Indonesia pada 29 Juli 2015."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/510326/koarmabar-kembali-tangkap-dua-kapal-ikan-asing",
+    "title": "Koarmabar kembali tangkap dua kapal ikan asing",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-08-03",
+    "language": "id",
+    "excerpt": "Kedua kapal itu diperiksa pada posisi 04 derajat 59 menit Lintang Utara dan 107 derajat 59 menit Bujur Timur"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-08-07",
+  "date_end": "2015-08-07",
+  "date_precision": "day",
+  "location_name": "Pontianak, West Kalimantan",
+  "subregion": "",
+  "summary": "Navy Chief of Staff Adm. Ade Supandi inaugurated the upgrade of the Pontianak naval base to Main Naval Base XII (Lantamal XII) on 7 August 2015, to be followed by more warships, aircraft, marines and about 1,300 personnel, citing illegal fishing, tension in the South China Sea and unsettled maritime boundaries.",
+  "actors": "Indonesian Navy, Chief of Staff Adm. Ade Supandi; Lantamal XII Pontianak",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "Upgrading a naval base facing the South China Sea and committing forces to it is unilateral military development without confrontation; demonstrative. Deputy Navy chief Widodo had framed it on 8 July as the gateway to the South China Sea.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/511046/kasal-resmikan-lantamal-xii-pontianak",
+    "title": "Kasal resmikan Lantamal XII Pontianak",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-08-07",
+    "language": "id",
+    "excerpt": "Kepala Staf TNI AL (Kasal) Laksamana TNI Ade Supandi meresmikan peningkatan status Pangkalan TNI Angkatan Laut (Lanal) Pontianak menjadi Pangkalan Utama TNI AL XII Pontianak"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/505960/pangkalan-tni-al-pontianak-segera-ditingkatkan-statusnya",
+    "title": "Pangkalan TNI AL Pontianak segera ditingkatkan statusnya",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-07-08",
+    "language": "id",
+    "excerpt": "Pangkalan TNI AL Pontianak-lah yang menjadi penjuru ke Laut China Selatan dengan Kepulauan Natuna di ujung barat daya-nya."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-08-18",
+  "date_end": "2015-08-18",
+  "date_precision": "day",
+  "location_name": "Tarempa (Anambas, 03°12'N 106°11'E), Ranai (Natuna), Pontianak and Pulau Lemukutan (West Kalimantan)",
+  "subregion": "10",
+  "summary": "On 18 August 2015, marking Independence Day, the Western Fleet sank 24 seized fishing boats at its bases, including the Vietnamese KG 92826 TS and KG 93167 TS at Tarempa, five boats at Ranai and 13 at Pontianak; the fisheries ministry sank another batch of 15 boats from Vietnam and Thailand handed over by prosecutors in West Kalimantan off Pulau Lemukutan.",
+  "actors": "Indonesian Navy, Western Fleet (Koarmabar); Lanal Tarempa, Lanal Ranai, Lantamal XII Pontianak; Ministry of Marine Affairs and Fisheries (DG PSDKP Asep Burhanudin); West Kalimantan prosecutors",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Mass destruction of seized boats, largely Vietnamese, at sites on the South China Sea is punitive enforcement; coercive. Some boats were Thai or Indonesian; the Belawan sinkings (Malacca Strait) are outside the SCS. The 15 Kalbar boats may overlap the 13 the Navy reported at Pontianak.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/513064/24-kapal-ikan-ilegal-ditenggelamkan",
+    "title": "24 kapal ikan ilegal ditenggelamkan",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-08-18",
+    "language": "id",
+    "excerpt": "Itu adalah KM Laut Natuna 15 (Thailand) serta kapal KG 92826 TS dan KG 93167 TS (Viet Nahm)."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/512998/15-kapal-pencuri-ikan-siap-ditenggelamkan",
+    "title": "15 kapal pencuri ikan siap ditenggelamkan",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-08-18",
+    "language": "id",
+    "excerpt": "Negara asal kapal antara lain Vietnam dan Thailand."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-09-12",
+  "date_end": "2015-09-22",
+  "date_precision": "day",
+  "location_name": "Natuna waters",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel Hiu Macan Tutul 002 seized the Vietnamese pair-trawler BV 9980 TS with about 45 tonnes of fish near Natuna on 12 September 2015, and the police patrol boat Antasena-7006 seized the Vietnamese boat BD-95360-TS in Natuna waters on 22 September; the ministry said 36 of the 55 foreign boats it had prosecuted so far in 2015 were Vietnamese and six Malaysian.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KP Hiu Macan Tutul 002; DG PSDKP Asep Burhanudin); West Kalimantan Police water unit (KP Antasena-7006)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Continued seizures of Vietnamese boats in Natuna waters; coercive. Grouped as one event; the ministry tally shows Vietnam as by far the most frequent target in 2015.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/518276/kapal-ikan-ilegal-viet-nahm-ditangkap",
+    "title": "Kapal ikan ilegal Viet Nahm ditangkap",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-09-15",
+    "language": "id",
+    "excerpt": "Dari sejumlah 55 kapal asing itu, sebanyak 36 kapal Viet Nahm, delapan kapal Filipina, enam kapal Malaysia, dan lima kapal Thailand."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/520198/polda-kalbar-tangkap-kapal-vietnam",
+    "title": "Polda Kalbar tangkap kapal Vietnam",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-09-26",
+    "language": "id",
+    "excerpt": "menangkap satu unit kapal motor BD-95360-TS milik nelayan Vietnam yang diduga mencuri ikan di perairan Natuna (Indonesia)."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-09-16",
+  "date_end": "2015-09-16",
+  "date_precision": "day",
+  "location_name": "Pulau Sekatung, Natuna (border with Vietnam)",
+  "subregion": "10",
+  "summary": "Defence Minister Ryamizard Ryacudu visited the border security post on Pulau Sekatung, Natuna, on 16 September 2015 and announced that a drone would be stationed there to extend the garrison's surveillance 40–50 km out, and that barracks and facilities would be built; he had earlier said 2016 arms purchases would be deferred in favour of Natuna infrastructure because of the heated situation in the South China Sea.",
+  "actors": "Defence Minister Ryamizard Ryacudu; TNI border post (Pospamtas) Pulau Sekatung",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "A ministerial visit to the outermost Natuna outpost with a surveillance deployment is a unilateral display of presence; demonstrative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/518467/tni-tempatkan-satu-drone-di-natuna",
+    "title": "TNI tempatkan satu drone di Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-09-16",
+    "language": "id",
+    "excerpt": "Nanti, akan kita tempatkan drone di Pulau Sekatung."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-09-21",
+  "date_end": "2015-09-21",
+  "date_precision": "day",
+  "location_name": "Natuna (military base)",
+  "subregion": "10",
+  "summary": "The House of Representatives' Commission I approved on 21 September 2015 the Defence Ministry's reallocation of about Rp450 billion to strengthen the TNI's base facilities on Natuna (air base runway, naval port) in anticipation of tension in the South China Sea.",
+  "actors": "House of Representatives (DPR) Commission I (chair Mahfudz Siddiq); Ministry of Defence",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Parliamentary funding of a military build-up on Natuna explicitly tied to South China Sea tensions is a unilateral administrative step; demonstrative. China is not named but is the implied concern (Mahfudz cited China–US rivalry).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/519437/dpr-setujui-rp450-miliar-antisipasi-ketegangan-lcs",
+    "title": "DPR setujui Rp450 miliar antisipasi ketegangan LCS",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-09-21",
+    "language": "id",
+    "excerpt": "Tadi kami menyetujui usulan melakukan realokasi anggaran sekitar Rp450 miliar untuk kebutuhan penguatan pangkalan TNI di Natuna"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-09-25",
+  "date_end": "2015-09-25",
+  "date_precision": "day",
+  "location_name": "Airspace over the Natuna Islands",
+  "subregion": "10",
+  "summary": "A flight of Su-27/30 Flankers of the Air Force's 11th Squadron, temporarily based at Hang Nadim, Batam, scrambled on 25 September 2015 and chased an unidentified foreign aircraft flying without clearance through the Natuna air corridor out of Natuna airspace; the squadron commander said such incursions had occurred several times.",
+  "actors": "Indonesian Air Force (TNI AU), 11th Air Squadron (Lt Col Vincentius Endy)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "Intercepting and expelling a foreign aircraft from airspace over Natuna is physical interference; coercive. The aircraft's nationality was not identified.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/520070/tni-au-usir-pesawat-asing-di-kepulauan-natuna",
+    "title": "TNI AU usir pesawat asing di Kepulauan Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-09-25",
+    "language": "id",
+    "excerpt": "Pesawatnya memotong jalur di Natuna. Setelah mengetahui kami mengejar, pesawat tidak dikenal tersebut keluar dari ruang udara Natuna dan menggunakan jalur semestinya"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-10-19",
+  "date_end": "2015-10-20",
+  "date_precision": "day",
+  "location_name": "Pontianak (Sungai Rengas) and Batam waters",
+  "subregion": "10",
+  "summary": "The fisheries ministry sank four Vietnamese-flagged boats off Pontianak on 19 October 2015 and three foreign boats (two Vietnamese, one Thai) in Batam waters on 20 October; ministry officials said 117 boats had been processed in 2015, most caught in the South China Sea around Natuna or in the Arafura Sea, and that the ministry had sunk 54 boats and the Navy 49 that year.",
+  "actors": "Ministry of Marine Affairs and Fisheries (Minister Susi Pudjiastuti; PSDKP secretary Abdur Rouf Sam)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Destruction of seized Vietnamese boats is punitive enforcement; coercive. Batam lies just outside the SCS proper; the boats were caught in or near the Natuna EEZ.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/524435/kkp-tenggelamkan-54-kapal-tni-al-49",
+    "title": "KKP tenggelamkan 54 kapal, TNI AL 49",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-10-19",
+    "language": "id",
+    "excerpt": "Kapal-kapal tersebut sebagian besar ditangkap di perairan Laut Tiongkok Selatan atau sekitar perairan Natuna serta perairan Arafura."
+   },
+   {
+    "url": "https://www.antaranews.com/berita/523654/susi-tenggelamkan-delapan-kapal-pekan-depan",
+    "title": "Susi tenggelamkan delapan kapal pekan depan",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-10-15",
+    "language": "id",
+    "excerpt": "KKP akan menenggelamkan empat kapal berbendera Vietnam di Pontianak pada 19 Oktober 2015"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-10-31",
+  "date_end": "2015-10-31",
+  "date_precision": "day",
+  "location_name": "Waters off Batam; seized in the EEZ off Anambas",
+  "subregion": "",
+  "summary": "The fisheries ministry and the Navy sank six Vietnamese fishing boats off Batam on 31 October 2015 on a Batam court order; the boats and their 43 crew had been seized by Hiu Macan 005 in the Indonesian EEZ off Anambas on 1 August, and six more Vietnamese boats in Batam awaited court orders.",
+  "actors": "Ministry of Marine Affairs and Fisheries (Director Tyas Budiman); Indonesian Navy; Batam District Court",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Sinking a rival claimant's boats seized in the Anambas EEZ is punitive enforcement; coercive. The sinking site (Batam) is at the southern edge of the SCS; subregion left blank.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/526726/enam-kapal-vietnam-ditenggelamkan",
+    "title": "Enam kapal Vietnam ditenggelamkan",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-10-31",
+    "language": "id",
+    "excerpt": "Kementerian Kelautan dan Perikanan dan TNI Angkatan Laut menenggelamkan enam kapal pencuri ikan asal Vietnam di perairan Pulau Batam, Provinsi Kepulauan Riau, Sabtu pagi."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-11-08",
+  "date_end": "2015-11-08",
+  "date_precision": "day",
+  "location_name": "Natuna waters; Tanjung Uban",
+  "subregion": "10",
+  "summary": "The Navy confirmed on 8 November 2015 that it had deployed seven warships to guard Natuna waters, three on station and four rotating from Tanjung Uban; the Navy spokesman called it a routine anti-illegal-fishing patrol and denied it was to anticipate South China Sea tension.",
+  "actors": "Indonesian Navy, spokesman First Adm. M. Zainudin; Chief of Staff Adm. Ade Supandi",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "A reported surge of seven warships to Natuna is a naval presence operation; demonstrative. The Navy's denial of an SCS link should be weighed.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.antaranews.com/berita/528082/tni-al-kerahkan-tujuh-kri-ke-natuna",
+    "title": "TNI AL kerahkan tujuh KRI ke Natuna",
+    "publisher": "ANTARA News",
+    "pub_date": "2015-11-08",
+    "language": "id",
+    "excerpt": "TNI Angkatan Laut mengerahkan tujuh Kapal Perang RI (KRI) untuk menjaga kedaulatan Negara Kesatuan Republik Indonesia di perairan Natuna, Kepulauan Riau."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-11-11",
+  "date_end": "2015-11-11",
+  "date_precision": "day",
+  "location_name": "South China Sea / Natuna",
+  "subregion": "",
+  "summary": "Coordinating Minister for Political, Legal and Security Affairs Luhut Panjaitan said on 11 November 2015 that Indonesia could take China to an international court (he said the 'International Criminal Court') if Beijing's nine-dash-line claim, which overlaps Indonesian waters, could not be resolved through dialogue.",
+  "actors": "Coordinating Minister for Political, Legal and Security Affairs Luhut B. Panjaitan",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A public threat by a senior minister to bring legal proceedings against China over its claim is a verbal assertion with a conditional threat; declarative (a coder might read it as coercive).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.voanews.com/a/indonesia-also-may-challenge-china-south-sea-claims/3053221.html",
+    "title": "Indonesia Also May Challenge China's South Sea Claims",
+    "publisher": "VOA (AP)",
+    "pub_date": "2015-11-11",
+    "language": "en",
+    "excerpt": "\"We would like to see a solution on this in the near future through dialogue, or we could bring it to the International Criminal Court,\" Luhut said."
+   },
+   {
+    "url": "https://imoa.ph/?p=6628",
+    "title": "Indonesia says could also take China to court over South China Sea",
+    "publisher": "IMOA (reproducing AFP/Daily Star)",
+    "pub_date": "2015-11-11",
+    "language": "en",
+    "excerpt": "Indonesia could take China before an international court if Beijing’s claim to the majority of the South China Sea and part of Indonesian territory is not resolved through dialogue"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-11-12",
+  "date_end": "2015-11-12",
+  "date_precision": "day",
+  "location_name": "South China Sea (nine-dash line)",
+  "subregion": "",
+  "summary": "Foreign Ministry spokesman Arrmanatha Nasir said on 12 November 2015 that Indonesia did not recognise the nine-dash line because it was not in line with international law, and that Indonesia had asked China through diplomatic channels to clarify what it meant by the line but had received no answer.",
+  "actors": "Ministry of Foreign Affairs, spokesman Arrmanatha Nasir",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "An official Foreign Ministry statement of non-recognition of China's line, with a reported diplomatic request for clarification, is a verbal assertion; declarative. The date of the request itself was not given.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://asiatimes.com/2015/11/indonesia-asks-china-to-clarify-south-china-sea-claims/",
+    "title": "Indonesia asks China to clarify South China Sea claims",
+    "publisher": "Asia Times (Reuters)",
+    "pub_date": "2015-11-12",
+    "language": "en",
+    "excerpt": "“The position of Indonesia is clear at this stage that we do not recognize the nine-dash line because it is not in line with … international law,” Indonesian Foreign Ministry spokesman Armanatha Nasir told reporters."
+   }
+  ]
+ }
+]

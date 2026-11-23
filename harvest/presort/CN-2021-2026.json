@@ -1,0 +1,951 @@
+{
+ "run_id": "CN-2021-2026",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-f90f3e7db5",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Enactment of the Coast Guard Law authorising use of weapons is a new legal instrument; 2020's record has only its draft (ev-8c1dd52d0b, undecided). If the coder makes the 2020 draft the move, this becomes its continuation instead."
+  },
+  {
+   "event_id": "ev-1276f0fc14",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2021-whitsun",
+   "reason": "Massing about 220 militia-crewed vessels at Whitsun Reef has nothing comparable in the 2020 candidates (judged against undecided CN-2016-2020 candidates); a new method of presence in the Philippine EEZ."
+  },
+  {
+   "event_id": "ev-fbe131ec32",
+   "disposition": "same_move",
+   "of": "ev-1276f0fc14",
+   "criterion": null,
+   "group": "CN2021-whitsun",
+   "reason": "Embassy and spokesman statements defending the Whitsun Reef massing; part of the same intensification as ev-1276f0fc14."
+  },
+  {
+   "event_id": "ev-8015e97f95",
+   "disposition": "same_move",
+   "of": "ev-382f3fde7c",
+   "criterion": null,
+   "group": "CN2021-ayungin",
+   "reason": "CCG and navy craft chasing a Philippine boat off Second Thomas Shoal belongs with the 2021 access-denial move led by ev-382f3fde7c; nothing comparable at Second Thomas in the 2020 candidates. The coder may treat it as separate."
+  },
+  {
+   "event_id": "ev-2c958d1eb0",
+   "disposition": "continuation",
+   "of": "ev-2de6fa208c",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine annual summer fishing moratorium, already present in 2020 (prev-run candidate ev-2de6fa208c); same level."
+  },
+  {
+   "event_id": "ev-df5f769358",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Mass PLAAF transport formation (16 aircraft) into Malaysia's maritime-zone airspace near Luconia Shoals; the 2020 candidates show nothing comparable in the air against Malaysia (2020's Malaysian case ev-c966892c8f was a sea survey)."
+  },
+  {
+   "event_id": "ev-37191fb226",
+   "disposition": "continuation",
+   "of": "ev-c966892c8f",
+   "criterion": null,
+   "group": null,
+   "reason": "CCG cutters shadowing Malaysian energy work at Kasawari repeat the 2020 practice at the West Capella (prev-run candidate ev-c966892c8f) at a similar level."
+  },
+  {
+   "event_id": "ev-1373ca0027",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2021-tuna",
+   "reason": "Months-long CCG patrol at Indonesia's Tuna-block rig with a demand to stop drilling: pressure on Indonesian resource activity, against 2020's Natuna fishing-escort case (ev-3252bb0728) which did not target drilling."
+  },
+  {
+   "event_id": "ev-01cc801ab5",
+   "disposition": "continuation",
+   "of": "ev-f89607f096",
+   "criterion": null,
+   "group": null,
+   "reason": "PLA statement on expelling USS Benfold from 'Xisha territorial waters' repeats the 2020 practice of announcing expulsions of US FONOPs (prev-run candidate ev-f89607f096)."
+  },
+  {
+   "event_id": "ev-6193c612b5",
+   "disposition": "continuation",
+   "of": "ev-7cbb37617c",
+   "criterion": null,
+   "group": null,
+   "reason": "Award-anniversary rejection repeats the 2020 verbal rejections of the award (prev-run candidate ev-7cbb37617c); same level."
+  },
+  {
+   "event_id": "ev-54ad34c9bf",
+   "disposition": "continuation",
+   "of": "ev-32d0b4c61f",
+   "criterion": null,
+   "group": null,
+   "reason": "Exercise between Hainan and the Paracels repeats the 2020 Paracel exercises (prev-run candidate ev-32d0b4c61f) at the same level."
+  },
+  {
+   "event_id": "ev-b6b2580afc",
+   "disposition": "same_move",
+   "of": "ev-1373ca0027",
+   "criterion": null,
+   "group": "CN2021-tuna",
+   "reason": "Haiyang Dizhi 10 survey on Indonesia's shelf, escorted by the same CCG ship (6305) patrolling the Tuna rig; part of the 2021 pressure on Indonesia led by ev-1373ca0027."
+  },
+  {
+   "event_id": "ev-3b250743f3",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "New mandatory reporting rule for foreign vessels entering claimed territorial seas under the revised Maritime Traffic Safety Law; nothing comparable in the 2020 candidates. Coder may instead merge it with the Coast Guard Law move ev-f90f3e7db5 as one legislative step."
+  },
+  {
+   "event_id": "ev-625c8a2ecf",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Y-20 troop-rotation flights at Spratly airfields are garrison logistics; 2020's record has fighters/bombers at Woody Island (ev-60f35ac039) but nothing on Spratly air operations. Settle by whether PLA aircraft already operated from the Spratly bases in 2020; a new aircraft type alone is not a new method."
+  },
+  {
+   "event_id": "ev-7159daf332",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Da Yang Hao survey on Malaysia's shelf near the West Capella repeats the 2020 Haiyang Dizhi 8 survey (undecided ev-c966892c8f); it also entered Bruneian and Philippine EEZs, which could make it a scope move — the coder should weigh that extension."
+  },
+  {
+   "event_id": "ev-382f3fde7c",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2021-ayungin",
+   "reason": "First water-cannoning of a Second Thomas resupply mission: a new method of denying access, with nothing comparable at Second Thomas in the 2020 candidates."
+  },
+  {
+   "event_id": "ev-9ac5f869d2",
+   "disposition": "same_move",
+   "of": "ev-382f3fde7c",
+   "criterion": null,
+   "group": "CN2021-ayungin",
+   "reason": "Foreign Ministry defence of the 16 November water cannoning at Ren'ai Jiao; part of the move led by ev-382f3fde7c."
+  },
+  {
+   "event_id": "ev-d5eaf16937",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Restatement of the 'four sha' claim with maritime zones, answering LIS 150; a verbal maintenance of the standing claim. 2021 candidates have only routine statements (ev-6193c612b5); settle by whether the coder sees the formal zone claim as new — likely reject."
+  },
+  {
+   "event_id": "ev-dec0e0289e",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": "CN2022-scarborough",
+   "reason": "CCG close manoeuvring against a PCG patrol ship at Scarborough: no Scarborough coercion in the 2021 candidates (2021 coercion was at Second Thomas, ev-382f3fde7c), so the coercive practice extends to Scarborough. The PCG's 'fourth such incident' suggests earlier ones not in the record — check."
+  },
+  {
+   "event_id": "ev-9ba26edabf",
+   "disposition": "same_move",
+   "of": "ev-e74eccab57",
+   "criterion": null,
+   "group": "CN2022-surveys",
+   "reason": "CCG 5203 tailing the joint Philippine-Taiwanese survey in the Philippine EEZ; same intensification as ev-e74eccab57 (pressure on surveys in the Philippine EEZ)."
+  },
+  {
+   "event_id": "ev-ec63d75b23",
+   "disposition": "same_move",
+   "of": "ev-dec0e0289e",
+   "criterion": null,
+   "group": "CN2022-scarborough",
+   "reason": "Spokesman's claim to jurisdiction at Huangyan Dao telling Philippine ships not to interfere with CCG enforcement; part of the Scarborough move led by ev-dec0e0289e."
+  },
+  {
+   "event_id": "ev-e74eccab57",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": "CN2022-surveys",
+   "reason": "CCG tailing of a licensed seismic survey in SC 75, which was then suspended: 2021 pressure on resource activity was against Malaysia and Indonesia (ev-37191fb226, ev-1373ca0027) — this extends it to the Philippine EEZ."
+  },
+  {
+   "event_id": "ev-bd42678121",
+   "disposition": "continuation",
+   "of": "ev-382f3fde7c",
+   "criterion": null,
+   "group": null,
+   "reason": "Pursuing and turning back Philippine government vessels at Second Thomas continues 2021's access denial (ev-382f3fde7c) at no higher level (no water cannon)."
+  },
+  {
+   "event_id": "ev-eea42297cc",
+   "disposition": "continuation",
+   "of": "ev-2c958d1eb0",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine annual fishing moratorium, present in 2021 (ev-2c958d1eb0); same level."
+  },
+  {
+   "event_id": "ev-70e325a77e",
+   "disposition": "continuation",
+   "of": "ev-54ad34c9bf",
+   "criterion": null,
+   "group": null,
+   "reason": "Drill near Woody Island repeats 2021's Paracel exercise (ev-54ad34c9bf) at the same level."
+  },
+  {
+   "event_id": "ev-6f5590a8b2",
+   "disposition": "continuation",
+   "of": "ev-382f3fde7c",
+   "criterion": null,
+   "group": null,
+   "reason": "Tailing DA BFAR away from Second Thomas continues 2021's access denial (ev-382f3fde7c) at the same or lower level."
+  },
+  {
+   "event_id": "ev-2607d66a4a",
+   "disposition": "continuation",
+   "of": "ev-54ad34c9bf",
+   "criterion": null,
+   "group": null,
+   "reason": "Undated July drills near the Paracels repeat 2021's practice (ev-54ad34c9bf); low-precision source."
+  },
+  {
+   "event_id": "ev-acc952043f",
+   "disposition": "continuation",
+   "of": "ev-6193c612b5",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine award-anniversary rejection, present in 2021 (ev-6193c612b5)."
+  },
+  {
+   "event_id": "ev-891bea7702",
+   "disposition": "continuation",
+   "of": "ev-01cc801ab5",
+   "criterion": null,
+   "group": null,
+   "reason": "Repeat of the July 2021 USS Benfold expulsion statement (ev-01cc801ab5)."
+  },
+  {
+   "event_id": "ev-63e9e503e9",
+   "disposition": "continuation",
+   "of": "ev-382f3fde7c",
+   "criterion": null,
+   "group": null,
+   "reason": "Obstruction of an August resupply to Second Thomas continues 2021's access denial (ev-382f3fde7c); month-only, single later source."
+  },
+  {
+   "event_id": "ev-b123c9c360",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": null,
+   "reason": "CCG patrols extended through Vietnam's Nam Con Son concessions, which AMTI calls a break from past behaviour; 2021 candidates have no CCG patrols of Vietnamese energy fields."
+  },
+  {
+   "event_id": "ev-9bdb6b30ce",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Blocking a Philippine Navy team and forcibly taking the towed rocket debris off Pag-asa is a new method (forcible seizure from a navy crew); nothing comparable in the 2021 candidates."
+  },
+  {
+   "event_id": "ev-1d347cc326",
+   "disposition": "continuation",
+   "of": "ev-1373ca0027",
+   "criterion": null,
+   "group": null,
+   "reason": "CCG 5901 patrol near the Tuna block continues 2021's CCG presence at Tuna (ev-1373ca0027) at presence level; the coder may weigh the pass by Vietnam's Chim Sao field as scope."
+  },
+  {
+   "event_id": "ev-699350172b",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2023-ayungin",
+   "reason": "Military-grade laser against a PCG ship at Second Thomas is a new method; 2022's Second Thomas record is pursuit and tailing only (ev-bd42678121, ev-6f5590a8b2). Leads the 2023 Second Thomas escalation (laser, water cannon back, first collisions); the coder may split these."
+  },
+  {
+   "event_id": "ev-4a57a94e66",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "CCG 5901 shadowing Kasawari construction at Luconia: no Malaysian case in the 2022 candidates, so the practice last seen in 2021 (ev-37191fb226) is new again."
+  },
+  {
+   "event_id": "ev-ebc738fb35",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "CCG patrol through Nam Con Son continues the 2022 route (ev-b123c9c360, undecided); the dangerous close-range encounter with Kiem Ngu 278 may be a change of method — settle by whether it was deliberate interference or a one-off reaction."
+  },
+  {
+   "event_id": "ev-f37ff16628",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Near-collision interception of PCG boats off Second Thomas; part of the 2023 Second Thomas move led by ev-699350172b (alone it would be 2022-level blocking)."
+  },
+  {
+   "event_id": "ev-3fa9454dd6",
+   "disposition": "continuation",
+   "of": "ev-eea42297cc",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine annual fishing ban, present in 2022 (ev-eea42297cc)."
+  },
+  {
+   "event_id": "ev-83ec9a2151",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Escorted Xiang Yang Hong 10 survey in Vietnam's EEZ near gas blocks; the 2022 candidates have no survey against Vietnam, so the method is new against last year."
+  },
+  {
+   "event_id": "ev-3615b67ffd",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Blocking PCG ships at Second Thomas with an enforcement justification; part of the 2023 Second Thomas move led by ev-699350172b."
+  },
+  {
+   "event_id": "ev-200ad90dcf",
+   "disposition": "continuation",
+   "of": "ev-acc952043f",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine award-anniversary rejection, present in 2022 (ev-acc952043f)."
+  },
+  {
+   "event_id": "ev-bf8e4bb670",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "New ~600 m airstrip on Triton Island: new construction, nothing comparable in the 2022 candidates."
+  },
+  {
+   "event_id": "ev-011e1600f7",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Water cannon at Second Thomas reappears (absent in 2022 candidates); part of the 2023 Second Thomas move led by ev-699350172b."
+  },
+  {
+   "event_id": "ev-fca28af1ee",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Formal remarks demanding the Sierra Madre be towed away; declarative accompaniment of the 2023 Second Thomas move ev-699350172b."
+  },
+  {
+   "event_id": "ev-4c7a10215b",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Annual standard-map edition showing the ten-dash line; not in the 2022 candidates but the line has appeared on official maps since 2013. Settle by whether the 2023 edition changed anything — likely reject as routine."
+  },
+  {
+   "event_id": "ev-465b728e8c",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2023-scarborough",
+   "reason": "Floating barrier across the Scarborough lagoon entrance is a new method of denial; 2022's Scarborough record is close manoeuvring (ev-dec0e0289e)."
+  },
+  {
+   "event_id": "ev-60463fc6e5",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Formal legal statement on Ren'ai Jiao; declarative accompaniment of the 2023 Second Thomas move ev-699350172b. Its archipelagic argument was already in the 2022 'four sha' statement (ev-d5eaf16937)."
+  },
+  {
+   "event_id": "ev-09eae551bb",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A PLAN warship trying to cut across a Philippine Navy resupply ship near Thitu: navy-on-navy interference not seen in the 2022 candidates (2022 Thitu case ev-9bdb6b30ce was the CCG)."
+  },
+  {
+   "event_id": "ev-8ef41aeb60",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "First collisions with a resupply boat and PCG ship at Second Thomas; part of the 2023 Second Thomas move led by ev-699350172b (the coder may make the ramming its own move)."
+  },
+  {
+   "event_id": "ev-b4e8b6849e",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Water cannon on M/L Kalayaan at Second Thomas; part of the 2023 Second Thomas move led by ev-699350172b."
+  },
+  {
+   "event_id": "ev-10e90d7c4e",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Renewed massing at Whitsun Reef; absent from 2022 candidates but seen in 2021 (ev-1276f0fc14). Settle by whether the militia presence at Union Banks continued through 2022 (then continuation) or lapsed (then new again)."
+  },
+  {
+   "event_id": "ev-5989fa2cfd",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Six-point claim statement disclosing ~100 démarches; a verbal restatement like 2022's ev-d5eaf16937. Likely reject as maintenance unless the coder counts the démarches as a frequency increase."
+  },
+  {
+   "event_id": "ev-d6fefaed7b",
+   "disposition": "same_move",
+   "of": "ev-465b728e8c",
+   "criterion": null,
+   "group": "CN2023-scarborough",
+   "reason": "First water cannon at Scarborough, with the barrier again; part of the 2023 Scarborough move led by ev-465b728e8c."
+  },
+  {
+   "event_id": "ev-918b628e59",
+   "disposition": "same_move",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": "CN2023-ayungin",
+   "reason": "Water cannon disabling M/L Kalayaan and ramming at Second Thomas; part of the 2023 Second Thomas move led by ev-699350172b."
+  },
+  {
+   "event_id": "ev-9a3bba41b6",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "frequency",
+   "group": null,
+   "reason": "AMTI: CCG ship-days at key locations rose to 1,939 from 1,652 in 2023, Vanguard Bank days to 354 from 221. The 2023 candidates have no aggregate to compare; the numbers come from the same AMTI series. Check the counterfactual (more Philippine presence to react to)."
+  },
+  {
+   "event_id": "ev-2d06e0bb32",
+   "disposition": "continuation",
+   "of": "ev-465b728e8c",
+   "criterion": null,
+   "group": null,
+   "reason": "Warning Philippine personnel off Scarborough continues 2023's Scarborough denial (ev-465b728e8c) at a lower level."
+  },
+  {
+   "event_id": "ev-476a72c5d5",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Diplomatic note demanding Malaysia stop exploring at Luconia; date uncertain (February or August 2024). Settle by the date and whether similar notes went in 2023 alongside the CCG shadowing (ev-4a57a94e66); possibly a novelty against Malaysia."
+  },
+  {
+   "event_id": "ev-8a49d36ff4",
+   "disposition": "continuation",
+   "of": "ev-465b728e8c",
+   "criterion": null,
+   "group": null,
+   "reason": "Blocking a BFAR ship at Scarborough continues 2023's Scarborough denial (ev-465b728e8c, ev-d6fefaed7b) at the same level."
+  },
+  {
+   "event_id": "ev-d15dc7cc51",
+   "disposition": "continuation",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon and collisions at Second Thomas continue 2023's methods (ev-699350172b group); worse injuries are not a new method."
+  },
+  {
+   "event_id": "ev-38ba80f2aa",
+   "disposition": "continuation",
+   "of": "ev-699350172b",
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon at Second Thomas continues 2023's practice (ev-699350172b group)."
+  },
+  {
+   "event_id": "ev-6f4b956eeb",
+   "disposition": "continuation",
+   "of": "ev-d6fefaed7b",
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon at Scarborough continues 2023's (ev-d6fefaed7b)."
+  },
+  {
+   "event_id": "ev-820f48d4c0",
+   "disposition": "continuation",
+   "of": "ev-3fa9454dd6",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine annual fishing ban, present in 2023 (ev-3fa9454dd6)."
+  },
+  {
+   "event_id": "ev-88a61e1243",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "CCG Order No. 3 lets the CCG detain foreigners up to 60 days in claimed waters, a new legal enforcement power; nothing comparable in the 2023 candidates."
+  },
+  {
+   "event_id": "ev-3edcac60d2",
+   "disposition": "continuation",
+   "of": "ev-8ef41aeb60",
+   "criterion": null,
+   "group": null,
+   "reason": "Ramming a medevac boat at Second Thomas continues 2023's collisions (ev-8ef41aeb60)."
+  },
+  {
+   "event_id": "ev-a620e73798",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Armed CCG boarding of Philippine Navy boats and seizure of rifles at Second Thomas is a new method (force), beyond 2023's water cannon and ramming (ev-699350172b group)."
+  },
+  {
+   "event_id": "ev-1b85632aee",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Rejection of the Philippine CLCS submission is a reactive verbal protest; China would have protested any submission (cf. 2009), so likely reject as maintenance. Nothing comparable in 2023 only because there was nothing to react to."
+  },
+  {
+   "event_id": "ev-40f596df45",
+   "disposition": "continuation",
+   "of": "ev-200ad90dcf",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine award-anniversary rejection, present in 2023 (ev-200ad90dcf)."
+  },
+  {
+   "event_id": "ev-c538ccf584",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Protest at Vietnam's CLCS submission is reactive maintenance, as for ev-1b85632aee; likely reject."
+  },
+  {
+   "event_id": "ev-9909171925",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "PLAAF aircraft dropping flares in front of a Philippine Air Force patrol plane over Scarborough is a new method (air interference); no air interceptions in the 2023 candidates."
+  },
+  {
+   "event_id": "ev-3c31156a99",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": "CN2024-sabina",
+   "reason": "Ramming PCG vessels at Sabina Shoal: 2023 rammings were at Second Thomas (ev-8ef41aeb60), so the practice extends to Sabina. Leads the Sabina 2024 group."
+  },
+  {
+   "event_id": "ev-6567e6e397",
+   "disposition": "same_move",
+   "of": "ev-3c31156a99",
+   "criterion": null,
+   "group": "CN2024-sabina",
+   "reason": "Ramming and water cannon on BRP Datu Sanday at Sabina; part of the Sabina move led by ev-3c31156a99."
+  },
+  {
+   "event_id": "ev-932ccb56fc",
+   "disposition": "same_move",
+   "of": "ev-3c31156a99",
+   "criterion": null,
+   "group": "CN2024-sabina",
+   "reason": "Triple ramming of BRP Teresa Magbanua at Sabina; part of the Sabina move led by ev-3c31156a99."
+  },
+  {
+   "event_id": "ev-bb5ca07b73",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Boarding and beating Vietnamese fishermen with iron bars in the Paracels; the 2023 candidates have no violence against Vietnamese fishers, so the method is new."
+  },
+  {
+   "event_id": "ev-770c9b02a4",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Militia sideswipe near Sandy Cay; 2023's Thitu-area record is a PLAN bow-crossing (ev-09eae551bb) and démarches over Sandy Cay (ev-5989fa2cfd). Settle by whether this was a new location/method or same-level harassment around Pag-asa."
+  },
+  {
+   "event_id": "ev-38f224df40",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "CCG 5402 disrupting Pertamina's seismic survey in the North Natuna Sea: no Indonesian case in the 2023 candidates, and disruption goes beyond the 2021–22 presence at Tuna (ev-1373ca0027)."
+  },
+  {
+   "event_id": "ev-6181c34bfc",
+   "disposition": "same_move",
+   "of": "ev-d3525fac40",
+   "criterion": null,
+   "group": "CN2024-huangyan-baselines",
+   "reason": "Intensified CCG 'management and control' patrols in the claimed territorial waters off Huangyan Dao; enforcement of the baselines move led by ev-d3525fac40."
+  },
+  {
+   "event_id": "ev-c3ca206d21",
+   "disposition": "same_move",
+   "of": "ev-d3525fac40",
+   "criterion": null,
+   "group": "CN2024-huangyan-baselines",
+   "reason": "Statement and summons rejecting the Philippine Maritime Zones Act; part of the November 2024 Huangyan Dao response led by ev-d3525fac40."
+  },
+  {
+   "event_id": "ev-d3525fac40",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2024-huangyan-baselines",
+   "reason": "Territorial-sea baselines around Huangyan Dao are new (Chubb codes such baselines coercive); nothing comparable in the 2023 candidates."
+  },
+  {
+   "event_id": "ev-e42c0f52d1",
+   "disposition": "same_move",
+   "of": "ev-d3525fac40",
+   "criterion": null,
+   "group": "CN2024-huangyan-baselines",
+   "reason": "PLA combat-readiness patrol in Huangyan's claimed territorial sea three days after the baselines; part of the move led by ev-d3525fac40."
+  },
+  {
+   "event_id": "ev-7579c5b956",
+   "disposition": "continuation",
+   "of": "ev-d6fefaed7b",
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon and sideswipe near Scarborough continue 2023's practice (ev-d6fefaed7b)."
+  },
+  {
+   "event_id": "ev-f2a7a0758f",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "frequency",
+   "group": "CN2025-ccg-presence",
+   "reason": "CCG ship-days at six locations rose to 2,183 from 1,939 (2024, ev-9a3bba41b6), with Scarborough more than doubling to 1,099 and Sabina nearly tripling to 405: a stated frequency increase."
+  },
+  {
+   "event_id": "ev-ff965c459e",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "frequency",
+   "group": null,
+   "reason": "CCG/MSA patrols around Pratas on 60 days in 2025 against 25 in 2024, with entry into Pratas's territorial waters; nothing on Pratas in the 2024 candidates."
+  },
+  {
+   "event_id": "ev-c0d57c1d4f",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": null,
+   "reason": "CCG 5901 loitering 54 nm off Zambales inside the Philippine EEZ, closer to Luzon than the 2024 Scarborough patrols (ev-9a3bba41b6): a geographic extension."
+  },
+  {
+   "event_id": "ev-f606c686c3",
+   "disposition": "continuation",
+   "of": "ev-9909171925",
+   "criterion": null,
+   "group": null,
+   "reason": "PLAN helicopter's dangerous manoeuvre against a BFAR aircraft over Scarborough continues 2024's air interference (ev-9909171925)."
+  },
+  {
+   "event_id": "ev-f876a8fea6",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Verbal objection to Vietnam's Barque Canada Reef reclamation; reactive maintenance of the claim with no 2024 equivalent only because there was less to react to. Likely reject."
+  },
+  {
+   "event_id": "ev-68a528aa95",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "CCG personnel landing on Sandy Cay and displaying the flag is a new method; 2024's Sandy Cay record is a militia sideswipe at sea (ev-770c9b02a4)."
+  },
+  {
+   "event_id": "ev-2a9bb65441",
+   "disposition": "continuation",
+   "of": "ev-820f48d4c0",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine annual fishing ban, present in 2024 (ev-820f48d4c0)."
+  },
+  {
+   "event_id": "ev-49abfad6c8",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": "CN2025-pagasa",
+   "reason": "First water cannon at the Pag-asa Cays (Sandy Cay); 2024 water cannon was at Second Thomas, Scarborough and Sabina, so the practice extends to the Pag-asa area."
+  },
+  {
+   "event_id": "ev-0adeee10d3",
+   "disposition": "continuation",
+   "of": "ev-40f596df45",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine award-anniversary rejection, present in 2024 (ev-40f596df45)."
+  },
+  {
+   "event_id": "ev-a02e15898c",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "High-speed pursuit and water cannon at Scarborough continue 2024's practice (ev-7579c5b956, undecided); the joint CCG–PLAN pursuit may be a change of method — the coder should weigh it."
+  },
+  {
+   "event_id": "ev-5ce2202b3f",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Verbal warning of 'necessary measures' against Vietnamese construction; reactive restatement like ev-f876a8fea6. Likely reject unless the warning is read as a new threat."
+  },
+  {
+   "event_id": "ev-77b669121f",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2025-reserve",
+   "reason": "State Council approval of a Huangyan Dao national nature reserve is a new kind of administrative act at Scarborough; nothing comparable in the 2024 candidates (the baselines ev-d3525fac40 are a different instrument)."
+  },
+  {
+   "event_id": "ev-17012136bd",
+   "disposition": "continuation",
+   "of": "ev-6f4b956eeb",
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon with injury at Scarborough continues 2024's practice (ev-6f4b956eeb, ev-7579c5b956)."
+  },
+  {
+   "event_id": "ev-2e16c3a143",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A PLAN radio threat of live fire to clear PCG ships and fishing boats from a declared zone off Zambales; the PCG calls it the first such threat, nothing comparable in 2024."
+  },
+  {
+   "event_id": "ev-9a8ff07998",
+   "disposition": "same_move",
+   "of": "ev-f2a7a0758f",
+   "criterion": null,
+   "group": "CN2025-ccg-presence",
+   "reason": "Strengthened CCG and PLA patrols at Huangyan Dao from October; evidence of the Scarborough presence increase in the move led by ev-f2a7a0758f (2024's equivalent was ev-6181c34bfc)."
+  },
+  {
+   "event_id": "ev-eab244eec8",
+   "disposition": "same_move",
+   "of": "ev-49abfad6c8",
+   "criterion": null,
+   "group": "CN2025-pagasa",
+   "reason": "Water cannon and ramming near Pag-asa Island; part of the Pag-asa-area move led by ev-49abfad6c8."
+  },
+  {
+   "event_id": "ev-943e603d9d",
+   "disposition": "same_move",
+   "of": "ev-77b669121f",
+   "criterion": null,
+   "group": "CN2025-reserve",
+   "reason": "First radio challenge invoking the new Huangyan nature reserve; enforcement of the reserve move led by ev-77b669121f."
+  },
+  {
+   "event_id": "ev-662ba989f5",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Large-scale reclamation at Antelope Reef, the first major Chinese island-building in about a decade; nothing comparable in the 2024 candidates."
+  },
+  {
+   "event_id": "ev-e4449a7b92",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon against Filipino fishing boats at Sabina continues 2024's Sabina coercion (ev-3c31156a99 group, undecided); the turn to civilian fishermen may or may not be a change of method — coder to decide."
+  },
+  {
+   "event_id": "ev-0d5d9e0be5",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Early-2026 CCG incursions and a reported drone entry at Pratas follow 2025's increase (ev-ff965c459e, undecided). Partial-year data; settle by the full-year count and confirmation of the drone airspace entry, which would be a novelty."
+  },
+  {
+   "event_id": "ev-82276620c7",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "frequency",
+   "group": null,
+   "reason": "AMTI: 933 CCG ship-days at Scarborough in January–June 2026 (156 a month) against 90 a month a year earlier and 1,099 for all of 2025 (ev-f2a7a0758f): a stated frequency increase."
+  },
+  {
+   "event_id": "ev-5e57e8d5d1",
+   "disposition": "continuation",
+   "of": "ev-a02e15898c",
+   "criterion": null,
+   "group": null,
+   "reason": "PLAN and CCG blocking a fishing boat at Scarborough continues 2025's joint CCG–PLAN harassment there (ev-a02e15898c)."
+  },
+  {
+   "event_id": "ev-e240303694",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Suspected jamming of a PCG aircraft's Starlink link, which the PCG says is a first; a new method beyond the 2025 air interference (ev-f606c686c3). The radio challenges alone would be continuation."
+  },
+  {
+   "event_id": "ev-1e053ebde5",
+   "disposition": "continuation",
+   "of": "ev-17012136bd",
+   "criterion": null,
+   "group": null,
+   "reason": "Driving Filipino fishermen from Scarborough continues 2025's coercion there (ev-17012136bd)."
+  },
+  {
+   "event_id": "ev-923f7a3f2f",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Verbal defence of the Paracels reclamation; reactive maintenance like 2025's ev-f876a8fea6. Likely reject."
+  },
+  {
+   "event_id": "ev-1577542d82",
+   "disposition": "continuation",
+   "of": "ev-2a9bb65441",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine annual fishing ban, present in 2025 (ev-2a9bb65441)."
+  },
+  {
+   "event_id": "ev-c2b6e63edc",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Unauthorised marine research by Xiang Yang Hong 33 at Iroquois Reef in the Philippine EEZ; the 2025 candidates have no Chinese research survey in another claimant's EEZ."
+  },
+  {
+   "event_id": "ev-2ba9b052ff",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A floating platform with buoys and an antenna emplaced inside the Scarborough lagoon is a new method of presence; nothing comparable in the 2025 candidates."
+  },
+  {
+   "event_id": "ev-1a65358d50",
+   "disposition": "continuation",
+   "of": "ev-0adeee10d3",
+   "criterion": null,
+   "group": null,
+   "reason": "Award-anniversary rejection, present in 2025 (ev-0adeee10d3), this year as a formal statement: a change of form, not of method."
+  },
+  {
+   "event_id": "ev-fbbb9d1be4",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "CN2026-ayungin",
+   "reason": "Assault with a baton during an attempted approach to the Sierra Madre: no Second Thomas coercion in the 2025 candidates, so force there (last seen 2024, ev-a620e73798) is new again. Leads the 2026 Second Thomas group."
+  },
+  {
+   "event_id": "ev-e96c105259",
+   "disposition": "continuation",
+   "of": "ev-17012136bd",
+   "criterion": null,
+   "group": null,
+   "reason": "Water cannon at Scarborough continues 2025's practice (ev-17012136bd)."
+  },
+  {
+   "event_id": "ev-5c9986f9d1",
+   "disposition": "continuation",
+   "of": "ev-17012136bd",
+   "criterion": null,
+   "group": null,
+   "reason": "Second day of water cannon at Scarborough; continues 2025's practice (ev-17012136bd)."
+  },
+  {
+   "event_id": "ev-43520f006f",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Statement rejecting the Philippine baselines around Huangyan Dao; reactive verbal restatement. Likely reject as maintenance unless the coder groups it with a new Scarborough move."
+  },
+  {
+   "event_id": "ev-5139a4a038",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Management measures banning entry and fishing in the Huangyan reserve implement the 2025 reserve (ev-77b669121f, undecided). Settle whether this is the same arrangement still in force (continuation) or a new legal layer (novelty)."
+  },
+  {
+   "event_id": "ev-1647520548",
+   "disposition": "continuation",
+   "of": "ev-9a8ff07998",
+   "criterion": null,
+   "group": null,
+   "reason": "PLA naval-air exercise in Huangyan's claimed territorial sea continues 2025's combat-readiness patrols there (ev-9a8ff07998)."
+  },
+  {
+   "event_id": "ev-7dbe643a87",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": null,
+   "reason": "Ramming a BFAR vessel near Abad Santos Shoal, 54 nm off Palawan: farther than the 2025 flashpoints (Scarborough, Sabina, Pag-asa), a geographic extension."
+  },
+  {
+   "event_id": "ev-e0d74e8f0e",
+   "disposition": "same_move",
+   "of": "ev-fbbb9d1be4",
+   "criterion": null,
+   "group": "CN2026-ayungin",
+   "reason": "PLAN threat of 'compulsory measures' that aborted a Second Thomas resupply; part of the 2026 Second Thomas move led by ev-fbbb9d1be4."
+  },
+  {
+   "event_id": "ev-e732b19ecc",
+   "disposition": "same_move",
+   "of": "ev-fbbb9d1be4",
+   "criterion": null,
+   "group": "CN2026-ayungin",
+   "reason": "Water cannon and obstruction of a medevac at Second Thomas; part of the 2026 Second Thomas move led by ev-fbbb9d1be4."
+  }
+ ]
+}

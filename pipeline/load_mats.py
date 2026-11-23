@@ -250,7 +250,8 @@ def check_mats_rows(data_dir: Path, tables: dict) -> list[str]:
     """The MATS-era rows in the canonical files equal what the loader produces from the raw inputs:
     every move the loader makes (chubb-coded, plus the pending one), the seed events, their sources
     and the claimants, field for field. Project-coded rows and harvested events are not the
-    loader's and are ignored, so a review branch or an accepted harvest passes."""
+    loader's and are ignored, so a review branch or an accepted harvest passes; a field changed by a
+    documented correction is compared with the corrected value."""
     import csv
 
     def rows(name):
@@ -258,7 +259,13 @@ def check_mats_rows(data_dir: Path, tables: dict) -> list[str]:
             return list(csv.DictReader(f))
 
     errors = []
-    expect_moves = {m["move_id"]: m for m in tables["moves"]}
+    expect_moves = {m["move_id"]: dict(m) for m in tables["moves"]}
+    # a documented correction (data/corrections.csv) is the one way a MATS-era field may differ from the
+    # raw inputs; the last line for a (move, field) wins, as in the validator's comparability guard
+    if (data_dir / "corrections.csv").exists():
+        for c in rows("corrections"):
+            if c["move_id"] in expect_moves and c["field"] in expect_moves[c["move_id"]]:
+                expect_moves[c["move_id"]][c["field"]] = c["new_value"]
     have_moves = {m["move_id"]: m for m in rows("moves") if m["move_id"] in expect_moves}
     for mid, m in expect_moves.items():
         if mid not in have_moves:
@@ -267,11 +274,13 @@ def check_mats_rows(data_dir: Path, tables: dict) -> list[str]:
             errors.append(f"move {mid} differs from the raw inputs: " + ", ".join(k for k in m if have_moves[mid].get(k) != m[k]))
     expect_events = {e["event_id"]: e for e in tables["events"]}
     have_events = {e["event_id"]: e for e in rows("events") if e["event_id"] in expect_events}
+    # a seed event's place is the project's addition (ticket 41: its move's named features), not MAVD content
+    placed = ("location_name", "lat", "lon", "location_precision", "subregion", "review_note")
     for eid, e in expect_events.items():
         if eid not in have_events:
             errors.append(f"seed event {eid} is missing")
-        elif have_events[eid] != e:
-            errors.append(f"seed event {eid} differs: " + ", ".join(k for k in e if have_events[eid].get(k) != e[k]))
+        elif any(have_events[eid].get(k) != e[k] for k in e if k not in placed):
+            errors.append(f"seed event {eid} differs: " + ", ".join(k for k in e if k not in placed and have_events[eid].get(k) != e[k]))
     expect_sources = {s["source_id"]: s for s in tables["sources"]}
     have_sources = {s["source_id"]: s for s in rows("sources") if s["source_id"] in expect_sources}
     for sid, s_ in expect_sources.items():

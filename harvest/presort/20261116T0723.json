@@ -1,0 +1,31 @@
+{
+ "run_id": "20261116T0723",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-29ff83c313",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run ID-2016-2020 as ev-c750c4bf67 (30 December 2019 summoning of China's ambassador with a protest note over Natuna, presorted there as same_move of ev-03fee649f2); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as a second report of ev-c750c4bf67, or merge with it if that becomes a move."
+  },
+  {
+   "event_id": "ev-1e0efdfa96",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Headline-only arrest of a Vietnamese boat off Natuna in late 2019; plain seizures of Vietnamese boats are the routine practice already in run ID-2016-2020 for 2018 (ev-1a41921e8b) and 2019 (ev-1936193d8d group), and that id cannot be named as `of` (prev file covers 2024 onward). Likely reject as continuation unless the full article shows a confrontation with Vietnamese escorts, which would put it with ev-1936193d8d."
+  },
+  {
+   "event_id": "ev-907d7f761a",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run MY-2021-2026 as ev-775a76a73e (30 August 2023 MFA statement rejecting China's 2023 standard map; protest note followed as ev-d8267714f5); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as a second report of ev-775a76a73e."
+  }
+ ]
+}

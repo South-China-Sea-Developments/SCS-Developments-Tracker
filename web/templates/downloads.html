@@ -1,15 +1,19 @@
 {% extends "base.html" %}
-{% block title %}Downloads and citation — SCS Developments Tracker{% endblock %}
-{% block description %}Download the SCS Developments Tracker dataset (moves, events, sources, sub-regions, gazetteer) at a tagged version, with checksums, and copy a citation.{% endblock %}
+{% block title %}Downloads and citation — South China Sea Developments Tracker{% endblock %}
+{% block description %}Download the South China Sea Developments Tracker dataset (moves, events, sources, sub-regions, gazetteer) at a tagged version, with checksums, and copy a citation.{% endblock %}
 {% block content %}
 <section class="lede">
-  <p class="kicker">Data and citation</p>
-  <h1>Downloads and citation</h1>
+  <p class="kicker">Downloads</p>
+  <h1>Data and citation</h1>
+  <p class="lede-text">{% if release.tag != 'unreleased' %}Dataset {{ release.version }}: the files, their checksums and how to cite them.{% else %}The working files at build time; for a citable version, use a release.{% endif %}</p>
+  <details class="howto">
+    <summary>About this version</summary>
   {% if release.tag != 'unreleased' %}
-  <p class="lede-text">Dataset version <strong>{{ release.version }}</strong>, tagged <code>{{ release.tag }}</code> on {{ release.date[:10] }}. The files below are exactly what the tag holds, served from this site and mirrored on the <a href="{{ meta.repo_url }}/releases/tag/{{ release.tag }}">GitHub release</a>; the checksums let you verify either copy.{% if release.prerelease %} A <code>-dev</code> version is a development snapshot: cite it with its date.{% endif %}</p>
+  <p>Dataset version <strong>{{ release.version }}</strong>, tagged <code>{{ release.tag }}</code> on {{ release.date[:10] }}. The files below are exactly what the tag holds, served from this site and mirrored on the <a href="{{ meta.repo_url }}/releases/tag/{{ release.tag }}">GitHub release</a>; the checksums let you verify either copy.{% if release.prerelease %} A <code>-dev</code> version is a development snapshot: cite it with its date.{% endif %}</p>
   {% else %}
-  <p class="lede-text">This site was built from an <strong>unreleased working copy</strong> ({{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}): no release tag is reachable from the commit it was built from. The files below are the working files at build time; do not cite them. For a citable version use the <a href="{{ meta.repo_url }}/releases">GitHub releases</a>, once one exists.</p>
+  <p>This site was built from an <strong>unreleased working copy</strong> ({{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}): no release tag is reachable from the commit it was built from. The files below are the working files at build time; do not cite them. For a citable version use the <a href="{{ meta.repo_url }}/releases">GitHub releases</a>, once one exists.</p>
   {% endif %}
+  </details>
 </section>
 
 <section class="prose downloads">

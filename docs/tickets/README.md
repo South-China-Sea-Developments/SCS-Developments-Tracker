@@ -22,3 +22,15 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 16 | [Visual identity from the three references](16-visual-identity.md) | 15 | done |
 | 17 | [The tracker face](17-tracker-face.md) | 16 | done |
 | 18 | [Light tracker and a sharper banner](18-light-tracker.md) | 17 | done |
+| 19 | [The full backfill](19-full-backfill.md) | 12 | in progress |
+| 20 | [The Airtable workbench](20-airtable-workbench.md) | 13 | built |
+| 21 | [The face of the base](21-base-face.md) | 20 | built |
+| 22 | [The review archive](22-review-archive.md) | 20, 21 | built |
+| 23 | [The pre-sort](23-presort.md) | 06, 19 | built |
+| 24 | [A continuation note extends the move it names](24-continuation-extends.md) | 22 | built |
+| 25 | [Frequency sources and candidate tallies](25-frequency-sources.md) | 19 | built |
+| 26 | [Main's version of shared rows after a merge](26-sync-data.md) | 22 | built |
+| 27 | [The assertiveness map, first version](27-map-redesign.md) | 17 | built |
+| 28 | [The other pages in the home page's style](28-site-restyle.md) | 27 | built |
+| 29 | [Map polish after launch](29-map-polish.md) | 27 | built |
+| 30 | [The whole banner: folding and a curtain](30-banner-fold-and-curtain.md) | 28 | built |

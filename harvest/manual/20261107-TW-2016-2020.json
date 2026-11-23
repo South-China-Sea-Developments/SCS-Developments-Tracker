@@ -1,0 +1,2197 @@
+[
+ {
+  "claimant": "TW",
+  "date_start": "2016-01-08",
+  "date_end": "2016-01-08",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Taiwan's Ministry of Foreign Affairs reiterated that Taiwan maintained its sovereignty claim over the South China Sea while seeking peaceful resolution of the disputes, after a letter from US Defense Secretary Ashton Carter listed Taiwan among the claimants.",
+  "actors": "Ministry of Foreign Affairs (MOFA)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A ministry statement reaffirming the claim is a verbal assertion; declarative. It was reactive and routine in wording, so a coder may treat it as low salience.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwan-reiterates-stance-on-south-china-sea",
+    "title": "Taiwan reiterates stance on South China Sea",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2016-01-08",
+    "language": "en",
+    "excerpt": "reiterated Friday that Taiwan has adopted an initiative to resolve the sovereignty disputes in the South China Sea peacefully while maintaining its sovereignty claim over the area"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-01-22",
+  "date_end": "2016-01-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Council of Agriculture sent a team of water, soil, vegetation and legal experts to survey Taiping Island on 22-23 January 2016 to show scientifically that it is an island; on 23 January Foreign Minister David Lin, Mainland Affairs Council Minister Andrew Hsia and the environment minister led a delegation of Taiwanese and foreign scholars and commentators onto the island.",
+  "actors": "Council of Agriculture; Ministry of Foreign Affairs (Minister David Lin); Mainland Affairs Council; Environmental Protection Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "A cabinet-level visit and state scientific survey of a held feature, designed to rebut the Philippines' 'rock' argument, is unilateral administration without confrontation; demonstrative. Source is a MOFA Chinese press release (undated on the page; the dates are those it states). MOFA's site intermittently answers non-browser fetchers with HTTP 307 (CDN bot check); the excerpt matched on a successful fetch.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=73936",
+    "title": "太平島是島不是礁─事實可證：我太平島擁有《聯合國海洋法公約》所賦專屬經濟海域及大陸礁層之完整權利",
+    "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+    "pub_date": "2016-01-23",
+    "language": "zh-TW",
+    "excerpt": "另於1月23日由外交部林部長永樂、行政院大陸委員會夏主任委員立言、行政院環境保護署魏署長國彥"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-01-28",
+  "date_end": "2016-01-28",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "President Ma Ying-jeou led government officials and scholars on a visit to Taiwan-held Taiping Island in the Spratlys, where he asserted that Taiping is an island under UNCLOS Article 121 entitled to an EEZ and continental shelf; Vietnam's foreign ministry protested the visit the same day.",
+  "actors": "Office of the President (President Ma Ying-jeou); Coast Guard Administration; ROC Air Force transport",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP"
+  ],
+  "reasoning": "A head-of-state visit to a held feature is unilateral administration without confrontation (demonstrative), coupled with declarative claims about the island's legal status aimed at the Philippines' arbitration. Also in the 2026-10-18 new-claimants file.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4832",
+    "title": "Remarks by President Ma on Taiping Island",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-01-28",
+    "language": "en",
+    "excerpt": "On January 28, President Ma Ying-jeou led government officials and scholars to visit Taiping Island in the Nansha Islands."
+   },
+   {
+    "url": "https://english.president.gov.tw/NEWS/4832",
+    "title": "Remarks by President Ma on Taiping Island",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-01-28",
+    "language": "en",
+    "excerpt": "Taiping Island is categorically not a rock, but an island, and meets the criteria for an island as specified in Article 121 of UNCLOS."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-03-21",
+  "date_end": "2016-03-21",
+  "date_precision": "day",
+  "location_name": "South China Sea Islands (Nansha, Shisha, Chungsha, Tungsha)",
+  "subregion": "",
+  "summary": "Taiwan's government issued the 'Position Paper on ROC South China Sea Policy', stating that the Spratly, Paracel, Macclesfield Bank and Pratas islands and their surrounding waters are an inherent part of ROC territory, that any other country's claim or occupation is illegal, and arguing that Taiping Island is an island able to sustain human habitation.",
+  "actors": "Ministry of Foreign Affairs; Executive Yuan",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "An official policy paper restating sovereignty and rejecting all other claims is a formal verbal assertion; declarative. Source is a PDF on the MOFA multilingual site, so the importer cannot check the excerpt (text was extracted with pdftotext and matches).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://multilingual.mofa.gov.tw/web/web_UTF-8/South/Position%20Paper%20on%20ROC%20South%20China%20Sea%20Policy.pdf",
+    "title": "Position Paper on ROC South China Sea Policy",
+    "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+    "pub_date": "2016-03-21",
+    "language": "en",
+    "excerpt": "recognizes no such claim or occupation"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-03-22",
+  "date_end": "2016-03-22",
+  "date_precision": "day",
+  "location_name": "Tongsha (Pratas / Dongsha) Island",
+  "subregion": "",
+  "summary": "Taiwan's coast guard detained 41 Chinese fishermen and their 300-tonne vessel, found holding about 15 tonnes of illicit coral and endangered turtles off Pratas (Dongsha) Island, in what it called its largest anti-poaching mission in those waters.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Detaining a rival claimant's fishermen and vessel in waters Taiwan administers is imposition of punishment; coercive. Reported by AFP via The Star; announced on 28 March.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.thestar.com.my/news/environment/2016/03/28/taiwan-arrests-41-chinese-poachers-in-south-china-sea",
+    "title": "Taiwan arrests 41 Chinese poachers in South China Sea",
+    "publisher": "The Star (Malaysia) (AFP)",
+    "pub_date": "2016-03-28",
+    "language": "en",
+    "excerpt": "Taiwanese authorities detained the fishermen on March 22 after their 300-tonne vessel was discovered operating illegally off the shore of Tongsha island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-03-23",
+  "date_end": "2016-03-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan flew international and local journalists to Taiping Island on an air force C-130, led by Deputy Foreign Minister Bruce Linghu, to show it is an island rather than a rock; that evening President Ma held an international press conference reaffirming ROC sovereignty and invited the arbitral tribunal and Philippine officials and lawyers to visit.",
+  "actors": "Ministry of Foreign Affairs (Deputy Minister Bruce Linghu); Office of the President (President Ma Ying-jeou); ROC Air Force; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "A government-organised media tour of a held feature is state-sanctioned public diplomacy on the spot, without confrontation (demonstrative), with declarative statements aimed at the Philippines' case. Vietnam protested the tour.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.philstar.com/world/2016/03/23/1566227/pushing-territorial-claim-taiwan-says-rock-island",
+    "title": "Pushing territorial claim, Taiwan says 'rock' is an island",
+    "publisher": "Philstar.com (Associated Press)",
+    "pub_date": "2016-03-23",
+    "language": "en",
+    "excerpt": "Taiwan flew international media to its largest island holding in the South China Sea on yesterday in a bid to reinforce its territorial claims"
+   },
+   {
+    "url": "https://english.president.gov.tw/NEWS/4851",
+    "title": "President Ma's remarks at international press conference regarding Taiping Island in Nansha Islands",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-03-23",
+    "language": "en",
+    "excerpt": "The ROC government invited domestic and foreign journalists on March 23 to visit Taiping Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-04-14",
+  "date_end": "2016-04-14",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Addressing an international conference on South China Sea disputes at Soochow University, President Ma set out the historical and legal basis of ROC sovereignty over the South China Sea islands and reviewed the government's actions to safeguard Taiping Island.",
+  "actors": "Office of the President (President Ma Ying-jeou)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A presidential speech restating the sovereignty claim is a verbal assertion; declarative. One of several such Ma statements before the arbitral award; a coder may fold it into the January-March statements.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4873",
+    "title": "President Ma's remarks at International Conference on South China Sea Disputes and International Law",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-04-14",
+    "language": "en",
+    "excerpt": "the historical and legal evidence on which the ROC's sovereignty over the islands of the South China Sea is based"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-04-15",
+  "date_end": "2016-04-15",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The ROC government flew foreign and Taiwanese international law scholars who had attended the 14 April Soochow University conference, including Indonesia's Hasjim Djalal and professors from Oxford, Leeds, Vienna, Manchester, Utrecht and Athens, together with seven Taiwanese university presidents, to Taiping Island to inspect its wells, vegetation and facilities.",
+  "actors": "ROC government (Ministry of Foreign Affairs)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "A government-arranged visit of foreign experts to a held feature to support its island status is state-sanctioned public diplomacy on the spot; demonstrative. MOFA Chinese release; the page carries no date, and 15 April is the visit date it states. MOFA's site intermittently answers non-browser fetchers with HTTP 307 (CDN bot check); the excerpt matched on a successful fetch.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=74004",
+    "title": "國際法政學者順利造訪中華民國太平島",
+    "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "以及我7所大專院校校長於本年4月15日組成訪問團，搭機前往太平島實地勘查島上水井"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-05-01",
+  "date_end": "2016-05-14",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba), new pier",
+  "subregion": "5",
+  "summary": "ROC Navy warships docked at the newly completed pier on Taiping Island: a Kang Ding-class frigate carried university students from Zuoying naval base to the island and the 5,000-tonne tank landing ship LST-232 docked to resupply the outpost; military officials confirmed the dockings on 14 May 2016, saying they strengthened Taiwan's sovereignty claim.",
+  "actors": "ROC Navy (Kang Ding-class frigate; LST-232); Ministry of National Defense",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Using a new pier for naval visits and resupply of a held feature is unilateral non-confrontational military presence; demonstrative, and new in that warships could now berth there. The visit dates are not given (the students returned on Friday 13 May); month precision ending on the confirmation date. Taipei Times blocks the importer (HTTP 403), so the excerpt was checked through WebFetch only.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2016/05/15/2003646287",
+    "title": "Office confirms warship docking at Itu Aba Island",
+    "publisher": "Taipei Times",
+    "pub_date": "2016-05-15",
+    "language": "en",
+    "excerpt": "Military officials yesterday confirmed that Republic of China Navy warships have docked"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-05-05",
+  "date_end": "2016-05-05",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration took a delegation of former senior officials, including former premiers Hau Pei-tsun and Mao Chi-kuo and former National Security Council secretaries-general, to Taiping Island to underscore Taiwan's sovereignty claim; Vietnam protested on 12 May, also objecting to Taiwanese stamps depicting the island.",
+  "actors": "Coast Guard Administration; Ministry of National Defense (transport)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "A government-arranged visit to a held feature to underscore sovereignty is unilateral, non-confrontational presence; demonstrative. The first source was written two days before the trip (planned for Thursday 5 May); Xinhua and Vietnam's protest confirm it took place that week.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/ex-premiers-to-visit-taiping-island",
+    "title": "Ex-premiers to visit Taiping Island",
+    "publisher": "Eye on Taiwan (Taiwan News)",
+    "pub_date": "2016-05-03",
+    "language": "en",
+    "excerpt": "Former premiers Hau Pei-tsun and Mao Chi-kuo will visit disputed Taiping Island in the South China Sea on Thursday"
+   },
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-demands-taiwan-stop-sovereignty-violations-in-east-sea-3402145.html",
+    "title": "Vietnam demands Taiwan stop sovereignty violations in East Sea",
+    "publisher": "VnExpress International",
+    "pub_date": "2016-05-12",
+    "language": "en",
+    "excerpt": "a group of former senior government officials from Taiwan last week visited the Ba Binh Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-12",
+  "date_end": "2016-07-12",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); South China Sea Islands",
+  "subregion": "5",
+  "summary": "On the day the Philippines v. China arbitral award was issued, the Presidential Office declared that the ROC did not accept the tribunal's decisions, particularly on the status of Taiping Island, and that they had no legally binding force on the ROC; the Interior Ministry and Defence Ministry issued statements the same day reasserting sovereignty and pledging to defend the territory.",
+  "actors": "Office of the President; Ministry of the Interior (Minister Yeh Jiunn-rong); Ministry of National Defense; Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "Formal government statements rejecting the award and reasserting sovereignty are verbal assertions; declarative, aimed at the Philippines as applicant and at all parties. Also in the 2026-10-18 new-claimants file.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4939",
+    "title": "ROC government position on the South China Sea arbitration",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-07-12",
+    "language": "en",
+    "excerpt": "The ROC government does not accept any decisions that undermine the rights of the ROC, and declares that they have no legally binding force on the ROC."
+   },
+   {
+    "url": "https://taiwantoday.tw/AMP/politics/top-news/3926/%7B%7Burl%7D%7D",
+    "title": "ROC gives strong response over South China Sea award",
+    "publisher": "Taiwan Today (MOFA)",
+    "pub_date": "2016-07-13",
+    "language": "en",
+    "excerpt": "the ROC military will steadfastly safeguard national territory and sovereignty, according to an MND statement released July 12"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-13",
+  "date_end": "2016-07-13",
+  "date_precision": "day",
+  "location_name": "South China Sea patrol from Zuoying (Taiping Island area)",
+  "subregion": "5",
+  "summary": "President Tsai Ing-wen boarded the Kang Ding-class frigate Di Hua at Zuoying naval base and addressed its crew before the ship departed, a day early, on a South China Sea patrol meant to show Taiwan's determination to defend its interests after the arbitral award.",
+  "actors": "Office of the President (President Tsai Ing-wen); ROC Navy Fleet Command; frigate Di Hua",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Dispatching a naval patrol to the disputed area, framed by the president as a show of determination, is unilateral patrolling without confrontation; demonstrative. Also in the 2026-10-18 new-claimants file.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4942",
+    "title": "President Tsai addresses troops at Naval Fleet Command",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-07-13",
+    "language": "en",
+    "excerpt": "While there she boarded the Di Hua Frigate, which was soon to depart to patrol the South China Sea, and delivered an address to the officers and enlisted personnel aboard ship."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-13",
+  "date_end": "2016-07-16",
+  "date_precision": "day",
+  "location_name": "Waters around Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Coast Guard Administration Minister Lee Chung-wei told the Legislative Yuan that patrols would be increased with the Navy to protect Taiwanese fishermen near Taiping Island; the cabinet said the 1,000-ton patrol vessel Taitung would deploy on Saturday 16 July, after the 1,800-ton Wei-hsing and the frigate Di Hua.",
+  "actors": "Coast Guard Administration (Minister Lee Chung-wei); ROC Navy; patrol vessels Wei-hsing and Taitung",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP"
+  ],
+  "reasoning": "Stepped-up coast guard deployments to a disputed area to protect fishing are unilateral patrols without confrontation; demonstrative. Dates are those announced; the deployments themselves are not separately confirmed in this source.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/seasia/2016/07/14/no-contact-between-taipei-beijing-after-south-china-sea-decision",
+    "title": "No contact between Taipei, Beijing after South China Sea decision",
+    "publisher": "The Jakarta Post (The China Post)",
+    "pub_date": "2016-07-14",
+    "language": "en",
+    "excerpt": "Coast Guard Administration Minister Lee Chung-wei said patrols would be increased in conjunction with the Navy to protect Taiwanese fishermen operating near Taiping Island."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-15",
+  "date_end": "2016-07-15",
+  "date_precision": "day",
+  "location_name": "South China Sea Islands",
+  "subregion": "",
+  "summary": "All four Legislative Yuan party caucuses issued a joint statement rejecting the arbitral tribunal's decisions on the ROC's rights over the South China Sea islands and their waters; the previous day Premier Lin Chuan told the cabinet the award was completely unacceptable and had no legally binding force on Taiwan.",
+  "actors": "Legislative Yuan (all party caucuses); Executive Yuan (Premier Lin Chuan)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "A legislative joint statement and a premier's statement rejecting the award are verbal assertions; declarative. The first (Taiwan Today) source covers the Premier's 14 July statement; the Taipei Times page (16 July, 'yesterday') that reports the legislative statement blocks the importer's fetcher (HTTP 403), so its excerpt was checked only through WebFetch.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantoday.tw/AMP/politics/top-news/3927/%7B%7Burl%7D%7D",
+    "title": "Premier Lin responds to South China Sea arbitration",
+    "publisher": "Taiwan Today (MOFA)",
+    "pub_date": "2016-07-15",
+    "language": "en",
+    "excerpt": "The award is therefore completely unacceptable and has no legally binding force on Taiwan."
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2016/07/16/2003651126",
+    "title": "Legislature rejects S China Sea ruling",
+    "publisher": "Taipei Times",
+    "pub_date": "2016-07-16",
+    "language": "en",
+    "excerpt": "The Legislative Yuan yesterday issued a joint statement on the South China Sea ruling"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-19",
+  "date_end": "2016-07-19",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); South China Sea",
+  "subregion": "",
+  "summary": "At her first National Security Council meeting, President Tsai declared the arbitral award totally unacceptable and without binding force on the ROC and announced five actions and four principles, including stepped-up patrols to protect Taiwanese fishermen and making Taiping Island a base for humanitarian aid and scientific research.",
+  "actors": "Office of the President (President Tsai Ing-wen); National Security Council",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "A presidential policy declaration rejecting the award and setting out the claim-maintenance programme is a verbal assertion; declarative. Its listed actions (patrols, Taiping as an aid and research base) are coded separately when carried out.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/tsai-holds-1st-nsc-meeting-unveils-south-china-sea-approach",
+    "title": "Tsai holds 1st NSC meeting, unveils South China Sea approach",
+    "publisher": "Eye on Taiwan (Taiwan Today)",
+    "pub_date": "2016-07-21",
+    "language": "en",
+    "excerpt": "The award is totally unacceptable to the people and has no legally binding force on the ROC, the president added."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-20",
+  "date_end": "2016-07-20",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Eight legislators from the Legislative Yuan's Foreign Affairs and National Defense and Internal Administration committees, from both main parties and led by the KMT's Chiang Chi-chen, flew to Taiping Island on a military transport aircraft to reassert ROC sovereignty after the award; Vietnam protested the visits on 28 July.",
+  "actors": "Legislative Yuan (Foreign Affairs and National Defense Committee; Internal Administration Committee); ROC Air Force transport",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RA"
+  ],
+  "reasoning": "An official legislative delegation flown by the military to a held feature to assert sovereignty is unilateral non-confrontational presence; demonstrative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantoday.tw/AMP/politics/top-news/3933/%7B%7Burl%7D%7D",
+    "title": "Lawmakers visit Taiping Island to reaffirm ROC sovereignty",
+    "publisher": "Taiwan Today (MOFA)",
+    "pub_date": "2016-07-21",
+    "language": "en",
+    "excerpt": "flew from southern Taiwan’s Pingtung Airport to Taiping Island on a military transport aircraft"
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/legislators-visit-taiping-to-assert-claim",
+    "title": "Legislators visit Taiping to assert claim",
+    "publisher": "Eye on Taiwan (The China Post)",
+    "pub_date": "2016-07-20",
+    "language": "en",
+    "excerpt": "The group comprised eight lawmakers from across party lines"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-07-20",
+  "date_end": "2016-07-25",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "A flotilla of Taiwanese fishing boats from Pingtung sailed to Taiping Island to assert ROC sovereignty and fishing rights after the award; the Coast Guard Administration escorted it, its patrol vessel Taoyuan met the boats 67 nautical miles out, and the fishermen were allowed onto the island's pier to resupply on 25 July.",
+  "actors": "Pingtung fishermen; Coast Guard Administration (patrol vessel Taoyuan); Executive Yuan",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP"
+  ],
+  "reasoning": "Civilian activism that the state escorted and allowed to dock is state-sanctioned activism at a held feature; demonstrative. The voyage was civilian-initiated, and the cabinet said it would not add to sovereignty, so a coder may judge state sanction to be partial; low confidence.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/cga-protects-fishing-boats-heading-for-taiping-island",
+    "title": "CGA protects fishing boats heading for Taiping Island",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2016-07-25",
+    "language": "en",
+    "excerpt": "it has been consistently protecting a Taiwanese fishing boat flotilla heading for Taiping Island in the South China Sea to highlight Republic of China sovereignty and fishing rights"
+   },
+   {
+    "url": "https://www.thejakartapost.com/seasia/2016/07/26/taiwan-fishing-vessels-arrive-at-taiping-island.html",
+    "title": "Taiwan fishing vessels arrive at Taiping Island",
+    "publisher": "The Jakarta Post (The China Post)",
+    "pub_date": "2016-07-26",
+    "language": "en",
+    "excerpt": "the four vessels were later met by the coast guard patrol vessel “Taoyuan” at 67 nautical miles outside of the island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-08-16",
+  "date_end": "2016-08-16",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Interior Minister Yeh Jiunn-rong led officials and scholars on a visit to Taiping Island to underscore Taiwan's sovereignty and promote it as a climate change research base, saying household, civil and land administration of the island were part of his duties.",
+  "actors": "Ministry of the Interior (Minister Yeh Jiunn-rong)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A cabinet minister's inspection visit framed as administration of the island is unilateral, non-confrontational administration; demonstrative. First cabinet-level visit after the award.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://focustaiwan.tw/politics/201608160007",
+    "title": "Interior minister arrives on Taiping Island",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2016-08-16",
+    "language": "en",
+    "excerpt": "led officials and scholars on a visit to Taiping Island on Tuesday, hoping to underscore Taiwan's sovereignty over the island and establish it as a climate change research base"
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/interior-minister-says-taiping-visit-unrelated-to-other-issues",
+    "title": "Interior minister says Taiping visit unrelated to other issues",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2016-08-16",
+    "language": "en",
+    "excerpt": "He said he made the visit mainly because household, civil and land administration of the island are parts of his job as minister of the interior."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-09-01",
+  "date_end": "2016-09-30",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba), northwestern shoreline",
+  "subregion": "5",
+  "summary": "Satellite imagery showed four new tetrapod-shaped structures on the northwestern shoreline of Taiping Island; the Coast Guard Administration said on 20 September their function was classified military information and that it had asked Google to blur the imagery.",
+  "actors": "Coast Guard Administration (Minister Lee Chung-wei); Ministry of National Defense",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "New construction on a held feature, apparently military, is unilateral development without confrontation; demonstrative. The construction date is not given; only the September reports and the 20 September statement date it, so month precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwan-asks-google-to-blur-military-structures",
+    "title": "Taiwan asks Google to blur military structures",
+    "publisher": "Eye on Taiwan (The China Post)",
+    "pub_date": "2016-09-20",
+    "language": "en",
+    "excerpt": "The satellite photo shows four giant tetrapod-shaped structures on the northwestern shoreline of the island, which is controlled by Taiwan but claimed by several countries."
+   },
+   {
+    "url": "https://www.voanews.com/a/taiwan-south-china-sea/3531442.html",
+    "title": "Taiwan's South China Sea island",
+    "publisher": "Voice of America",
+    "pub_date": "2016-09-30",
+    "language": "en",
+    "excerpt": "Taiwan's Defense Ministry asked Google to blur satellite images of four three-pronged structures arranged in a semi-circle just off the northwestern shoreline of Itu Aba"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-11-29",
+  "date_end": "2016-11-29",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration staged a cross-agency humanitarian search-and-rescue exercise off Taiping Island with eight vessels, three aircraft and 336 personnel, simulating a fire on a foreign cargo ship; CGA head Lee Chung-wei told journalists on the island that Taiwan's sovereignty was undeniable. Vietnam protested, dating the drill 28 November.",
+  "actors": "Coast Guard Administration (Director-General Lee Chung-wei); Ministry of National Defense; other agencies",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "A multi-agency exercise at a held feature, presented as cementing the claim, is a non-confrontational show of presence; demonstrative. Taiwanese sources date it Tuesday 29 November; Vietnam's 29 November protest names 28 November.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.thejakartapost.com/seasia/2016/11/29/taiwan-holds-rescue-exercise-in-disputed-south-china-sea-.html",
+    "title": "Taiwan holds rescue exercise in disputed South China Sea",
+    "publisher": "The Jakarta Post (Associated Press)",
+    "pub_date": "2016-11-29",
+    "language": "en",
+    "excerpt": "Coast guard head Lee Chung-wei told journalists on Taiping that Taiwan's sovereignty over the island is \"undeniable.\""
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/officials-reject-vietnamese-criticism-of-rescue-exercise",
+    "title": "Officials reject Vietnamese criticism of rescue exercise",
+    "publisher": "Eye on Taiwan (Taipei Times)",
+    "pub_date": "2016-11-30",
+    "language": "en",
+    "excerpt": "Three aircraft, eight naval vessels and 336 personnel took part in the drill"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-11-30",
+  "date_end": "2016-11-30",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); South China Sea islands",
+  "subregion": "5",
+  "summary": "Taiwanese authorities, at an Executive Yuan news conference with the Coast Guard Administration chief, reaffirmed sovereignty over the South China Sea islands including Taiping Island, rejecting Vietnam's claim that the 29 November humanitarian exercise violated Vietnamese sovereignty.",
+  "actors": "Executive Yuan (spokesman Hsu Kuo-yung); Coast Guard Administration",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Publicly rejecting a rival claimant's protest and restating sovereignty is a verbal assertion; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/officials-reject-vietnamese-criticism-of-rescue-exercise",
+    "title": "Officials reject Vietnamese criticism of rescue exercise",
+    "publisher": "Eye on Taiwan (Taipei Times)",
+    "pub_date": "2016-11-30",
+    "language": "en",
+    "excerpt": "after Vietnam said a Coast Guard Administration (CGA) humanitarian exercise on Tuesday violated Vietnamese sovereignty"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-12-09",
+  "date_end": "2016-12-09",
+  "date_precision": "day",
+  "location_name": "South China Sea Islands; Taiping Island; Dongsha (Pratas)",
+  "subregion": "",
+  "summary": "Opening an exhibition marking the 70th anniversary of the ROC's 1946 recovery of the South China Sea islands, organised by the Interior Ministry and Academia Historica, President Tsai reiterated ROC sovereignty over the islands and all rights over their waters, citing stepped-up protection of Taiwanese fishermen at the Pratas and Spratlys and stronger enforcement against foreign boats fishing illegally.",
+  "actors": "Office of the President (President Tsai Ing-wen); Ministry of the Interior; Academia Historica",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A presidential reaffirmation of sovereignty at a state commemoration is a verbal assertion; declarative. The commemoration itself is a domestic administrative act a coder may also weigh.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/5036",
+    "title": "President Tsai attends exhibition commemorating 70th anniversary of recovery of South China Sea Islands",
+    "publisher": "Office of the President, Republic of China (Taiwan)",
+    "pub_date": "2016-12-09",
+    "language": "en",
+    "excerpt": "the president reiterated that the Republic of China (ROC) has sovereignty over the South China Sea Islands and their relevant waters"
+   },
+   {
+    "url": "https://islandtimes.org/roc-marks-70th-anniversary-of-recovery-of-south-china-sea-islands",
+    "title": "ROC marks 70th anniversary of recovery of South China Sea Islands",
+    "publisher": "Island Times (Taiwan Today)",
+    "pub_date": "2016-12-13",
+    "language": "en",
+    "excerpt": "President Tsai Ing-wen reiterated ROC sovereignty over the South China Sea Islands and all rights over their relevant waters at the opening of a special exhibition Dec. 9"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-12-21",
+  "date_end": "2016-12-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration and the Defence Ministry held an artillery firing demonstration on Taiping Island, including the first firing there of the ministry's 120mm mortar alongside 40mm cannon; the display, first planned for October, was scheduled for 21-23 December and reported on 22 December.",
+  "actors": "Coast Guard Administration; Ministry of National Defense",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Live-fire weapons demonstrations on a held feature are unilateral military activity without confrontation; demonstrative. New in that a 120mm mortar was fired on the island for the first time.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/military-blasts-signal-with-taiping-artillery-demo",
+    "title": "Military blasts signal with Taiping artillery demo",
+    "publisher": "Eye on Taiwan (The China Post)",
+    "pub_date": "2016-12-22",
+    "language": "en",
+    "excerpt": "The Defense Ministry’s 120 mm mortar bomb saw its first artillery firing on the island on Thursday, among other military weapons and canons."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-03-01",
+  "date_end": "2017-03-23",
+  "date_precision": "month",
+  "location_name": "Dongsha (Pratas) Islands",
+  "subregion": "",
+  "summary": "Taiwan's coast guard seized a Chinese fishing boat and detained its captain and crew after they were caught fishing earlier in the week of 20 March in waters near the Taiwan-controlled Dongsha (Pratas) Islands; the seizure was announced on 23 March 2017.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Seizing a rival claimant's fishing boat and detaining the crew is imposition of punishment; coercive. The source says only 'earlier in the week' before the 23 March announcement, so no day is given; month precision ending on the announcement date.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://focustaiwan.tw/cross-strait/201703230024",
+    "title": "Taiwan coast guard seizes Chinese fishing boat near Dongsha Islands",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2017-03-23",
+    "language": "en",
+    "excerpt": "it had seized a Chinese fishing boat and detained the captain and crew after they were caught fishing earlier in the week in waters near the Dongsha Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-03-17",
+  "date_end": "2017-03-17",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Taiwan's Ministry of Foreign Affairs declared that no South China Sea code of conduct would be binding on Taiwan if it were excluded from the negotiations among the rival claimants.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RC"
+  ],
+  "reasoning": "A ministry statement rejecting in advance any code negotiated without Taiwan is a verbal assertion of its standing as a claimant; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://focustaiwan.tw/politics/201703170025",
+    "title": "Taiwan's stance on proposed South China Sea code of conduct",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2017-03-17",
+    "language": "en",
+    "excerpt": "The Republic of China (Taiwan) Ministry of Foreign Affairs (MOFA) has declared that no code of conduct in the South China Sea will be binding on Taiwan if it is cast out of the negotiations"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-03-29",
+  "date_end": "2017-03-31",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard held scheduled live-fire drills on and around Itu Aba (Taiping Island) from Wednesday 29 to Friday 31 March 2017, which it called routine; Vietnam's foreign ministry denounced them on 30 March as a serious violation of its sovereignty.",
+  "actors": "Coast Guard Administration (Nansha garrison)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Taiwanese officials described the drills as quarterly routine; the first of four protested Taiping drills in 2017.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://tribune.com.pk/story/1369697/entertainment",
+    "title": "Vietnam labels Taiwan drills on disputed island 'serious violation'",
+    "publisher": "The Express Tribune (Reuters)",
+    "pub_date": "2017-03-30",
+    "language": "en",
+    "excerpt": "Taiwan's coast guard said that the live-fire drills around Itu Aba were routine. The scheduled drills began on Wednesday and end on Friday."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-04-20",
+  "date_end": "2017-04-28",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Ministry of National Defense ran a nine-day seminar, held mostly on Taiping Island, for 17 graduate and doctoral students on how Taiwan defends its South China Sea territory; the students sailed to the island on 20 April aboard a La Fayette-class frigate on a naval patrol mission and returned to Kaohsiung on 28 April.",
+  "actors": "Ministry of National Defense; ROC Navy (La Fayette-class frigate)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A state-organised civilian programme on a held feature, carried there by a naval patrol, is unilateral non-confrontational presence; demonstrative. Also evidences a navy patrol to the Spratlys in April 2017.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/students-visit-itu-aba-to-demonstrate-nations-soft-power",
+    "title": "Students visit Itu Aba to demonstrate nation's soft power",
+    "publisher": "Eye on Taiwan (Taipei Times)",
+    "pub_date": "2017-04-29",
+    "language": "en",
+    "excerpt": "The students, accompanied by three lecturers, on April 20 sailed to Itu Aba on a La Fayette-class frigate, which was on a naval patrol mission to the South China Sea, the ministry said."
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/mnd-organized-seminar-on-taiping-island-comes-to-a-close",
+    "title": "MND-organized seminar on Taiping Island comes to a close",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2017-04-28",
+    "language": "en",
+    "excerpt": "Seventeen students from graduate schools or doctoral programs at three Taiwanese universities took part in the nine-day seminar"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-05-24",
+  "date_end": "2017-05-26",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard conducted a live-fire exercise around Itu Aba (Taiping Island) on 24-26 May 2017; Vietnam's foreign ministry protested on 26 May and demanded Taiwan not repeat such exercises.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "A routine live-fire exercise at a held feature is unilateral military activity without confrontation; demonstrative. Second protested Taiping drill of 2017; the dates come from a Vietnamese report citing the South China Morning Post.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-requests-taiwan-to-stop-repeated-drills-in-the-spratlys-3590931.html",
+    "title": "Vietnam requests Taiwan to stop repeated drills in the Spratlys",
+    "publisher": "VnExpress International",
+    "pub_date": "2017-05-26",
+    "language": "en",
+    "excerpt": "The live fire exercise by Taiwan's coast guards took place on May 24-26 around Itu Aba Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-06-01",
+  "date_end": "2017-08-31",
+  "date_precision": "month",
+  "location_name": "Dongsha Atoll National Park (Pratas)",
+  "subregion": "",
+  "summary": "Taiwan's national park authorities opened Dongsha Island, a marine national park closed to the public since 2007, to three environmental education group tours for college students between June and August 2017.",
+  "actors": "Dongsha Atoll National Park (Marine National Park Headquarters)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "State-organised visits to a held feature are state-sanctioned tourism; demonstrative. Pratas is disputed only with China and the tours are environmental, so a coder may judge it marginal; low confidence. Announced 1 March 2017; tour dates given only as June to August.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/dongsha-island-in-the-south-china-sea-opens-for-eco-tours",
+    "title": "Dongsha Island in the South China Sea opens for eco tours",
+    "publisher": "Eye on Taiwan (Taiwan News)",
+    "pub_date": "2017-03-01",
+    "language": "en",
+    "excerpt": "will open for three environmental education group tours for college students between June and August"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-07-23",
+  "date_end": "2017-07-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "A defence official said the military had given the Coast Guard Administration six 155mm howitzers, held in reserve on Taiwan proper for deployment to Itu Aba if more firepower were needed, after the coast guard reviewed the Defence Ministry's April recommendations for defending the island.",
+  "actors": "Ministry of National Defense; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RA"
+  ],
+  "reasoning": "Allocating heavy artillery for a held feature's defence is a unilateral military preparation without confrontation; demonstrative. The guns were not deployed, and the report rests on an unnamed official (the article says he spoke on Sunday, i.e. 23 July); low confidence.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/escalation-sees-itu-aba-allocated-howitzers",
+    "title": "Escalation sees Itu Aba allocated howitzers",
+    "publisher": "Eye on Taiwan (Taipei Times)",
+    "pub_date": "2017-07-24",
+    "language": "en",
+    "excerpt": "The military has given the Coast Guard Administration six 155mm howitzers which it is holding in reserve for deployment on Itu Aba Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-08-07",
+  "date_end": "2017-08-07",
+  "date_precision": "day",
+  "location_name": "South China Sea islands",
+  "subregion": "",
+  "summary": "Taiwan's Ministry of Foreign Affairs reaffirmed ROC sovereignty over the South China Sea islands and said Taiwan must be included in any talks on a dispute resolution mechanism, the day after ASEAN and China adopted a framework for a code of conduct in Manila.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A ministry statement reasserting sovereignty and demanding inclusion in a regional process is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantoday.tw/AMP/Politics/Top-News/119597/%7B%7Burl%7D%7D",
+    "title": "ROC reaffirms South China Sea sovereignty",
+    "publisher": "Taiwan Today (MOFA)",
+    "pub_date": "2017-08-08",
+    "language": "en",
+    "excerpt": "The Ministry of Foreign Affairs reaffirmed Aug. 7 the sovereignty of the Republic of China (Taiwan) over the South China Sea islands and said the country must be included in any talks on a dispute resolution mechanism."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-08-23",
+  "date_end": "2017-08-25",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard held a live-fire exercise on Itu Aba (Taiping Island) beginning Wednesday 23 August 2017, which officials called a routine drill held every three months; Vietnam's foreign ministry condemned it on 24 August.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Third protested drill of 2017. The end date comes from the Taipei Times of 26 August (a firing advisory 'from Wednesday to yesterday'), which blocks the importer (HTTP 403); the first source gives only the start day.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://tuoitrenews.vn/news/politics/20170825/vietnam-rebukes-taiwans-livefire-military-drill-in-truong-sa-archipelago/41163.html",
+    "title": "Vietnam rebukes Taiwan's live-fire military drill in Truong Sa Archipelago",
+    "publisher": "Tuoi Tre News",
+    "pub_date": "2017-08-25",
+    "language": "en",
+    "excerpt": "The live-fire exercise took place on Ba Binh (Itu Aba) Island on Wednesday."
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2017/08/26/2003677199",
+    "title": "Taiwan asserts right to conduct drills on Taiping",
+    "publisher": "Taipei Times",
+    "pub_date": "2017-08-26",
+    "language": "en",
+    "excerpt": "it was a routine exercise conducted every three months"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-08-25",
+  "date_end": "2017-08-25",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); Spratly (Nansha) Islands",
+  "subregion": "5",
+  "summary": "Taiwan's Ministry of Foreign Affairs rebutted Vietnam's protest, saying Taiwan unquestionably possesses all rights to the Spratly Islands and surrounding waters and that Itu Aba is national territory on which it has the right to conduct routine live-fire drills.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Publicly rejecting a rival claimant's protest and restating sovereignty is a verbal assertion; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/foreign-ministry-defends-itu-aba-live-fire-exercises",
+    "title": "Foreign ministry defends Itu Aba live-fire exercises",
+    "publisher": "Eye on Taiwan (Taipei Times)",
+    "pub_date": "2017-08-26",
+    "language": "en",
+    "excerpt": "Taiwan has the full right to conduct live-fire exercises on and around Itu Aba Island (Taiping Island, 太平島), the Ministry of Foreign Affairs said yesterday, rebutting a Vietnamese government protest against new exercises."
+   },
+   {
+    "url": "https://focustaiwan.tw/politics/201708250011",
+    "title": "Taiwan reiterates sovereignty over Taiping Island",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2017-08-25",
+    "language": "en",
+    "excerpt": "The Republic of China (Taiwan) government on Friday reiterated its sovereignty over Taiping Island in the South China Sea, after Vietnam voiced protest over live-fire drills conducted by Taiwan on the island."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-09-06",
+  "date_end": "2017-09-06",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's Ministry of Science and Technology took a 24-member international group of academics and researchers to Taiping Island, the first such foreign scientific visit, in line with President Tsai's 2016 directive to develop the island as a base for cross-border scientific research.",
+  "actors": "Ministry of Science and Technology",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Hosting foreign scientists on a held feature is unilateral administration of the island without confrontation; demonstrative. New in that it was the first visit by an international science group.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantoday.tw/AMP/environment/top-news/121132/%7B%7Burl%7D%7D",
+    "title": "Taiping Island visited for 1st time by international science group",
+    "publisher": "Taiwan Today (MOFA)",
+    "pub_date": "2017-09-07",
+    "language": "en",
+    "excerpt": "was visited Sept. 6 for the first time by an international group of academics and researchers organized by the Republic of China (Taiwan) Ministry of Science and Technology"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2017-11-14",
+  "date_end": "2017-11-14",
+  "date_precision": "day",
+  "location_name": "South China Sea islands",
+  "subregion": "",
+  "summary": "Foreign Minister David Lee reiterated Taiwan's sovereignty claim to the South China Sea islands and surrounding waters and said Taiwan should have a place in talks, a day after China and ASEAN announced the start of negotiations on a code of conduct.",
+  "actors": "Ministry of Foreign Affairs (Minister David Lee)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A foreign minister's restatement of the claim is a verbal assertion; declarative. Routine in wording.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwan-should-have-place-at-south-china-sea-talks-fm",
+    "title": "Taiwan should have place at South China Sea talks: FM",
+    "publisher": "Eye on Taiwan (Radio Taiwan International)",
+    "pub_date": "2017-11-14",
+    "language": "en",
+    "excerpt": "Lee reiterated Taiwan’s sovereignty claim to the islands and surrounding waters in the South China Sea"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2018-01-01",
+  "date_end": "2018-01-01",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration held a national flag-raising ceremony on Taiping Island on 1 January 2018 to underscore the government's determination to safeguard its territory, and said that, in light of neighbouring countries' attempts to assert maritime and territorial rights, it was continuing to crack down on foreign fishing vessels trespassing in ROC territorial waters.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A sovereignty ceremony on a held feature is unilateral non-confrontational administration; demonstrative. The stated crackdown on foreign fishing vessels is ongoing enforcement without a dated incident.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/flag-raising-ceremony-held-on-taiwans-taiping-island",
+    "title": "Flag-raising ceremony held on Taiwan's Taiping Island",
+    "publisher": "Eye on Taiwan (Taiwan News)",
+    "pub_date": "2018-01-03",
+    "language": "en",
+    "excerpt": "In light of attempts by neighboring countries to assert maritime and territorial rights in the region, the CGA said it is continuing to crack down on foreign fishing vessels trespassing in ROC territorial waters."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2018-03-21",
+  "date_end": "2018-03-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan held a live-fire drill in the waters around Itu Aba (Taiping Island) from 21 to 23 March 2018; Vietnam's foreign ministry denounced it on 22 March as a serious violation of its sovereignty.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine quarterly live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. First of four protested Taiping drills in 2018.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-protests-over-taiwan-s-live-fire-drill-in-spratlys-3726680.html",
+    "title": "Vietnam protests over Taiwan's live-fire drill in Spratlys",
+    "publisher": "VnExpress International",
+    "pub_date": "2018-03-22",
+    "language": "en",
+    "excerpt": "Taiwan's latest live-fire drill in the waters around the island took place from March 21 to 23, according to Taiwan's web portal."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2018-05-23",
+  "date_end": "2018-05-25",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan held a live-fire drill on Ba Binh (Itu Aba / Taiping Island) from 23 to 25 May 2018; Vietnam's foreign ministry protested on 31 May.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Second protested drill of 2018; dates from the Vietnamese government portal.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/vn-condemns-chinas-violations-of-national-sovereignty-at-sea-11132441.htm",
+    "title": "VN condemns China's violations of national sovereignty at sea",
+    "publisher": "Vietnam Government Portal (VGP)",
+    "pub_date": "2018-05-31",
+    "language": "en",
+    "excerpt": "including its live-fire drill on Ba Binh island from May 23-25"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2018-08-22",
+  "date_end": "2018-08-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard conducted a live-fire drill at Taiping Island from 8 a.m. to 8 p.m. on 22 August and 8 a.m. to noon on 23 August 2018; after Vietnam protested on 23 August, the Coast Guard Administration said the exercise did not endanger other countries' ships.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Third protested drill of 2018; the CGA's rebuttal is a minor declarative act folded in here.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/live-fire-exercise-at-taiping-island-does-not-endanger-others-cga",
+    "title": "Live-fire exercise at Taiping Island does not endanger others: CGA",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2018-08-23",
+    "language": "en",
+    "excerpt": "The live-fire drill was conducted during the hours of 8 a.m. to 8 p.m. Wednesday as well as from 8 a.m. to 12 p.m. Thursday, the CGA said."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2018-11-21",
+  "date_end": "2018-11-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard conducted its final live-fire drills of 2018 on and around Taiping Island from 21 to 23 November, which the Ocean Affairs Council had refused to postpone before the 24 November local elections; Vietnam protested on 22 November.",
+  "actors": "Coast Guard Administration; Ocean Affairs Council (Minister Hwung Hwung-hweng)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Fourth protested drill of 2018; the drill was pre-announced in October and drew wider press attention than earlier ones.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/vietnam-protests-against-taiwan-live-fire-drills-near-south-china-sea-island",
+    "title": "Vietnam protests against Taiwan live-fire drills near South China Sea island",
+    "publisher": "Eye on Taiwan (Taiwan News)",
+    "pub_date": "2018-11-22",
+    "language": "en",
+    "excerpt": "Taiwan’s coast guard is conducting its final set of live-fire drills for the year, directed at potential threats from the waters around Taiping from November 21 to 23"
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/taiping-drill-will-not-be-rescheduled-ahead-of-elections-officials",
+    "title": "Taiping drill will not be rescheduled ahead of elections: officials",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2018-11-05",
+    "language": "en",
+    "excerpt": "the exercise was planned long ago and will be carried out Nov. 21-23 on Taiping Island and in the surrounding waters as scheduled"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-02-11",
+  "date_end": "2019-02-11",
+  "date_precision": "day",
+  "location_name": "Thitu Island (Pag-asa / Zhongye Island)",
+  "subregion": "5",
+  "summary": "Taiwan's Ministry of Foreign Affairs spokesman Andrew Lee urged the Philippine government to halt construction on Philippine-occupied Thitu Island, just north of Taiping Island, reiterating Taiwan's sovereignty over the South China Sea islands and urging all parties to refrain from escalation.",
+  "actors": "Ministry of Foreign Affairs (spokesman Andrew Lee)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A public demand that a rival claimant stop construction on a feature Taiwan claims, with a sovereignty reiteration, is a verbal assertion; declarative. New in that it targeted a specific Philippine activity.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.taiwannews.com.tw/en/news/3636328",
+    "title": "Taiwan criticizes Philippines in dispute over South China Sea feature",
+    "publisher": "Taiwan News",
+    "pub_date": "2019-02-12",
+    "language": "en",
+    "excerpt": "on Monday urged the Philippine government to halt construction operations on Thitu Island"
+   },
+   {
+    "url": "https://www.taiwannews.com.tw/en/news/3636328",
+    "title": "Taiwan criticizes Philippines in dispute over South China Sea feature",
+    "publisher": "Taiwan News",
+    "pub_date": "2019-02-12",
+    "language": "en",
+    "excerpt": "Taiwan reiterates its sovereignty over the South China Sea islands and urges all parties to refrain from action that could escalate tensions in the region."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-02-25",
+  "date_end": "2019-10-20",
+  "date_precision": "day",
+  "location_name": "Waters near Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "The Coast Guard Administration's Dongsha Command held quarterly live-fire training at sea near Dongsha Island throughout 2019, issuing firing notices for 25 February and 4 March (Q1), 7 and 14 April (Q2), 7 and 21 July (Q3) and 20 October with 27 October as reserve (Q4).",
+  "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Routine quarterly live-fire training at a held feature is an established practice, summarised as one event for the year with its frequency; demonstrative. Dates are planned dates from official advance notices (the Q4 notice is a scanned PDF read by OCR); execution is not separately confirmed. The first source is the listing page of the Q2 notice; the PDFs cannot be checked by the importer.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=134133&ctNode=1279&mp=999",
+    "title": "(108)署巡勤射字第027號-東南沙-東沙-4月",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "(108)署巡勤射字第027號-東南沙-東沙-4月"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1548400351402.pdf",
+    "title": "海巡署東南沙分署東沙指揮部 108 年度第一季對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "2019-01-12",
+    "language": "zh-TW",
+    "excerpt": "東沙島附近海域"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1559196089280.pdf",
+    "title": "海巡署東南沙分署東沙指揮部108年度第三季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "東沙島附近海域"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1568769354051.pdf",
+    "title": "海巡署東南沙分署東沙指揮部108年度第四季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "東沙島附近海域"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-03-08",
+  "date_end": "2019-04-02",
+  "date_precision": "month",
+  "location_name": "South China Sea basin",
+  "subregion": "",
+  "summary": "Taiwan's largest research vessel, the state-run National Applied Research Laboratories' RV Legend, made its first research voyage, a 25-day trip collecting oceanographic, geological and meteorological data on the South China Sea basin and its mid-ocean ridge, returning to Tainan on 2 April 2019.",
+  "actors": "National Applied Research Laboratories (NARLabs); RV Legend",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A state scientific survey voyage in the South China Sea can be unilateral activity without confrontation (demonstrative), but the source does not say it entered disputed or claimed waters or was framed as a claim, so it may not be an assertion at all; low confidence. Dates are inferred from the 25-day duration and the 2 April return, so month precision.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwanese-ship-to-bring-back-new-south-china-sea-data",
+    "title": "Taiwanese ship to bring back new South China Sea data",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2019-04-01",
+    "language": "en",
+    "excerpt": "will arrive at Anping Harbor in Tainan after a 25-day trip aimed at collecting data on the evolution of the sea’s basin"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-03-11",
+  "date_end": "2019-03-13",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Atoll, 11.6 nautical miles east of Dongsha Island",
+  "subregion": "",
+  "summary": "During a 'strengthened Dongsha patrol' by one cutter and three patrol boats, Taiwan's coast guard found the Chinese fishing boat Minlongyu 61028 using a roller bottom trawl 11.6 nautical miles east of Dongsha Island in the early hours of 11 March 2019 and escorted the boat and its 10 crew to Kaohsiung for prosecution.",
+  "actors": "Coast Guard Administration (Ocean Affairs Council); Kaohsiung prosecutors",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Seizing a Chinese fishing boat and bringing its crew to court is imposition of punishment; coercive. Taiwan's public broadcaster reported it as the first such roller-trawler caught in Dongsha waters.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.cna.com.tw/news/asoc/201903130249.aspx",
+    "title": "陸船越界東沙海域捕魚 押返高雄偵辦",
+    "publisher": "Central News Agency (CNA)",
+    "pub_date": "2019-03-13",
+    "language": "zh-TW",
+    "excerpt": "在距東沙島東方11.6浬處發現「閩龍漁61028」號涉越界捕魚"
+   },
+   {
+    "url": "https://news.pts.org.tw/article/425469",
+    "title": "查獲陸漁船入東沙海域 竟用滾輪式底拖網",
+    "publisher": "Public Television Service (PTS)",
+    "pub_date": "2019-03-13",
+    "language": "zh-TW",
+    "excerpt": "11號凌晨四點，我國東沙群島11.6海浬處，出現一艘漁船"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-03-20",
+  "date_end": "2019-03-21",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard, which had announced on 12 March that it would hold live-fire drills on Itu Aba (Taiping Island) on 20-21 March using 120mm mortars, 40mm anti-aircraft guns and AT4 anti-armour weapons, carried out the drills; Vietnam protested on 21 March.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. The only Taiping drill of 2019 found with a public date and a Vietnamese protest; others may have occurred unreported.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-denounces-taiwan-s-live-fire-drill-in-south-china-sea-3898274.html",
+    "title": "Vietnam denounces Taiwan's live-fire drill in South China Sea",
+    "publisher": "VnExpress International",
+    "pub_date": "2019-03-21",
+    "language": "en",
+    "excerpt": "Taiwan's coast guards announced on March 12 to perform live-fire drills on the Itu Aba Island from March 20 to 21, using 120 mortars, 40 anti-air cannons and anti-armor AT4 weapon."
+   },
+   {
+    "url": "https://en.baochinhphu.vn/vn-lodges-solemn-protest-against-taiwans-live-fire-drill-around-ba-binh-island-11134750.htm",
+    "title": "VN lodges solemn protest against Taiwan's live-fire drill around Ba Binh Island",
+    "publisher": "Vietnam Government Portal (VGP)",
+    "pub_date": "2019-03-22",
+    "language": "en",
+    "excerpt": "Taiwan’s continuation of live-fire drills in the waters surrounding Ba Binh island"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1550799416426.pdf",
+    "title": "海巡署東南沙分署南沙指揮部對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "2019-02-14",
+    "language": "zh-TW",
+    "excerpt": "南沙太平島環島海域"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-05-21",
+  "date_end": "2019-05-21",
+  "date_precision": "day",
+  "location_name": "Waters off Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration, with the transport, defence, foreign and health ministries, held the 'Nanyuan No. 4' multi-agency humanitarian rescue exercise in the waters off Taiping Island, flying an ambulance out on an air force C-130 for the first time, in line with President Tsai's 2016 plan to make the island a humanitarian rescue centre.",
+  "actors": "Coast Guard Administration (Director-General Chen Kuo-en); Ministry of National Defense (ROC Air Force C-130); Ministry of Foreign Affairs; Ministry of Transportation and Communications; Ministry of Health and Welfare",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A state exercise at a held feature showing Taiwan's capacity to administer the area is non-confrontational presence; demonstrative. It was framed as humanitarian and the CGA offered cooperation with neighbours, so a coder may weigh it as low-intensity.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cna.com.tw/news/firstnews/201905210231.aspx",
+    "title": "太平島人道救援演練 救護車直上C-130後送台灣",
+    "publisher": "Central News Agency (CNA)",
+    "pub_date": "2019-05-21",
+    "language": "zh-TW",
+    "excerpt": "在南沙太平島海域舉行「南援四號」演練"
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/taiwan-conducts-humanitarian-rescue-drill-near-taiping-island",
+    "title": "Taiwan conducts humanitarian rescue drill near Taiping Island",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2019-05-21",
+    "language": "en",
+    "excerpt": "during a multi-agency humanitarian rescue drill off the coast of the Taiwan-administered island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-05-29",
+  "date_end": "2019-05-30",
+  "date_precision": "day",
+  "location_name": "Waters around Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration's Nansha (Spratly) Command issued a notice of live naval-gunfire training in the waters around Taiping Island from 29 to 30 May 2019 (reserve day 5 June), the second Taiping drill of the year.",
+  "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Routine quarterly live-fire training at a held feature is unilateral military activity without confrontation; demonstrative. The source is the official advance firing notice (dates planned, execution not separately confirmed); no Vietnamese protest was found. The listing page carries only the notice number; the dates are in the attached PDF, which the importer cannot check.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=135128&ctNode=1279&mp=999",
+    "title": "(108)署巡勤射字第050號-東南沙分署",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "(108)署巡勤射字第050號-東南沙分署"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1555312407724.pdf",
+    "title": "海巡署東南沙分署南沙指揮部對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "2019-03-28",
+    "language": "zh-TW",
+    "excerpt": "南沙太平島環島海域"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2019-08-21",
+  "date_end": "2019-08-22",
+  "date_precision": "day",
+  "location_name": "Waters around Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration's Nansha Command issued a notice of third-quarter 2019 live artillery firing at sea around Taiping Island, from 08:30 to 21:00 on 21 August and 08:30 to 10:30 on 22 August (reserve day 28 August).",
+  "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Routine quarterly live-fire training at a held feature; demonstrative. Planned dates from the official advance notice; execution not separately confirmed and no Vietnamese protest found; the attached PDF cannot be checked by the importer.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=136808&ctNode=1279&mp=999",
+    "title": "(108)署巡勤射字第110號-本署東南沙分署",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "(108)署巡勤射字第110號-本署東南沙分署"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1563343807082.pdf",
+    "title": "海巡署東南沙分署南沙指揮部108年度第三季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "南沙太平島環島海域"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-02-25",
+  "date_end": "2020-12-27",
+  "date_precision": "day",
+  "location_name": "Waters near Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "The Dongsha Islands garrison of Taiwan's coast guard carried out its routine live-fire training around Dongsha Island in 2020: firing notices were issued for 25 February (reserve 3 March) and for 20 December (reserve 27 December), and on 12 May the coast guard announced the garrison's annual firing exercise for June, under Defence Ministry supervision, as China was reported to be planning a landing exercise simulating the islands' capture.",
+  "actors": "Coast Guard Administration, Dongsha Command; Ministry of National Defense (supervision)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Routine live-fire training at a held feature is an established practice, summarised as one event for the year; demonstrative. The announcement of the June exercise was public and pointedly timed against reported PLA plans; the February and December dates are planned dates from official notices (PDF, not checkable by the importer). The June exercise's exact dates were not found.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/coast-guard-to-hold-live-fire-exercises-near-taiwans-pratas-islands",
+    "title": "Coast Guard to hold live-fire exercises near Taiwan's Pratas islands",
+    "publisher": "Eye on Taiwan (Taiwan News)",
+    "pub_date": "2020-05-13",
+    "language": "en",
+    "excerpt": "the Dongsha Islands Garrison is scheduled to conduct an annual firing exercise around the islands in June"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1581487746595.pdf",
+    "title": "海巡署東南沙分署東沙指揮部109年度第一季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "東沙島附近海域"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1605606319298.pdf",
+    "title": "海巡署東南沙分署東沙指揮部109年度第四季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "東沙島附近海域"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-03-24",
+  "date_end": "2020-03-25",
+  "date_precision": "day",
+  "location_name": "Waters around Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard Nansha Command held first-quarter live artillery firing at sea around Taiping Island, notified for 24 March (08:30-21:00) and 25 March (08:30-12:00) 2020 with 31 March as reserve; Vietnam's foreign ministry protested the drill on 26 March.",
+  "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine quarterly live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. The dates come from the official advance notice (attached PDF, not checkable by the importer); the Vietnamese protest confirms a drill took place.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=140501&ctNode=1279&mp=999",
+    "title": "(109)署巡勤射字第021號-南沙指揮部",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "(109)署巡勤射字第021號-南沙指揮部"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1581488247871.pdf",
+    "title": "海巡署東南沙分署南沙指揮部109年度第一季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "南沙太平島環島海域"
+   },
+   {
+    "url": "https://en.baochinhphu.vn/vn-lodges-solemn-protest-against-taiwans-live-fire-drill-in-spratly-archipelago-11137790.htm",
+    "title": "VN lodges solemn protest against Taiwan's live-fire drill in Spratly archipelago",
+    "publisher": "Vietnam Government Portal (VGP)",
+    "pub_date": "2020-03-26",
+    "language": "en",
+    "excerpt": "Viet Nam resolutely protests against Taiwan’s live-fire drill around Ba Binh island of Viet Nam’s Truong Sa archipelago"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-04-24",
+  "date_end": "2020-04-24",
+  "date_precision": "day",
+  "location_name": "South China Sea islands",
+  "subregion": "",
+  "summary": "Taiwan's Ministry of Foreign Affairs expressed serious concern and protest over recent unilateral and arbitrary measures and statements by countries around the South China Sea, reiterated that the South China Sea islands are ROC territory, and demanded an immediate halt to any act infringing that sovereignty; it followed China's announcement of new Xisha and Nansha districts and names for 80 features.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RC"
+  ],
+  "reasoning": "A formal protest and sovereignty reiteration is a verbal assertion; declarative. The release names no state; the China link is from the timing (China's 18-19 April announcements of new districts and feature names). The English version is at en.mofa.gov.tw News_Content.aspx?n=1329&s=91679 (dated 24 April 2020 in MOFA's open data). MOFA's site intermittently answers non-browser fetchers with HTTP 307 (CDN bot check); the excerpt matched on a successful fetch.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=90923",
+    "title": "外交部重申南海諸島屬於中華民國領土，我國對南海諸島及其相關海域享有國際法及海洋法上的權利",
+    "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+    "pub_date": "2020-04-24",
+    "language": "zh-TW",
+    "excerpt": "中華民國外交部表達嚴正關切與抗議，中華民國政府重申，南海諸島屬於中華民國領土"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-06-22",
+  "date_end": "2020-06-22",
+  "date_precision": "day",
+  "location_name": "Pratas (Dongsha) Islands",
+  "subregion": "",
+  "summary": "A Defence Ministry official confirmed that Taiwanese marines had been temporarily deployed to the Pratas (Dongsha) Islands, on what he called a short training mission to strengthen the defence capabilities of the coast guard officers stationed there, amid reports that the PLA planned drills in the area in August.",
+  "actors": "Ministry of National Defense; ROC Marine Corps; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Placing military personnel on a feature garrisoned by the coast guard since 2000 is a unilateral military reinforcement without confrontation; demonstrative. New in that marines returned to Pratas; the arrival date was not disclosed, so the confirmation date is used.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwan-redeploys-soldiers-to-south-china-sea-for-training-source",
+    "title": "Taiwan redeploys soldiers to South China Sea for training: source",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2020-06-22",
+    "language": "en",
+    "excerpt": "Taiwanese marines have been temporarily deployed to the Pratas Islands (東沙島) in the South China Sea amid reports the Chinese military plans to conduct drills in the area in August, a defense official confirmed Monday."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-07-14",
+  "date_end": "2020-07-16",
+  "date_precision": "day",
+  "location_name": "South China Sea islands",
+  "subregion": "",
+  "summary": "After the US declared most of China's South China Sea maritime claims unlawful, Taiwan's Ministry of Foreign Affairs on 14 July reaffirmed ROC sovereignty over the South China Sea islands, said Taiwan should be included in multilateral dispute mechanisms and opposed any claimant using intimidation, coercion or force; spokesperson Joanne Ou repeated on 16 July that the islands belong to the ROC.",
+  "actors": "Ministry of Foreign Affairs (spokesperson Joanne Ou)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RC"
+  ],
+  "reasoning": "Ministry statements reaffirming sovereignty and opposing coercion by a claimant are verbal assertions; declarative. Two statements in three days are merged.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantoday.tw/AMP/politics/top-news/181330/%7B%7Burl%7D%7D",
+    "title": "MOFA reaffirms ROC (Taiwan) sovereignty over South China Sea islands",
+    "publisher": "Taiwan Today (MOFA)",
+    "pub_date": "2020-07-15",
+    "language": "en",
+    "excerpt": "The Ministry of Foreign Affairs reaffirmed July 14 ROC (Taiwan) sovereignty over the South China Sea islands, and said the country should be included in multilateral mechanisms for resolving disputes."
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/foreign-ministry-south-china-sea-islands-belong-to-taiwan",
+    "title": "Foreign ministry: South China Sea islands belong to Taiwan",
+    "publisher": "Eye on Taiwan (Radio Taiwan International)",
+    "pub_date": "2020-07-16",
+    "language": "en",
+    "excerpt": "Ou said there should be no doubt that Taiwan’s rights to the islands and the surrounding waters are protected by international laws"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-07-24",
+  "date_end": "2020-09-10",
+  "date_precision": "day",
+  "location_name": "Pratas (Dongsha) Islands",
+  "subregion": "",
+  "summary": "Taiwan's coast guard, which began a crackdown on 24 July 2020 after Chinese fishing boats were seen trespassing around the Dongsha (Pratas) Islands, caught the Chinese boat Jinghai 0109309 fishing at night, detained its captain and 17 crew and took them to Kaohsiung; they were held for 46 days, fined NT$600,000 and deported on 10 September.",
+  "actors": "Coast Guard Administration (Kaohsiung); Kaohsiung District Prosecutors' Office",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Detaining a rival claimant's fishermen, with fines, confiscation and deportation, is imposition of punishment; coercive. Also in the 2026-10-18 new-claimants file.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.taiwannews.com.tw/en/news/4006619",
+    "title": "Taiwan deports crew of Chinese vessel after 46-day detention",
+    "publisher": "Taiwan News",
+    "pub_date": "2020-09-11",
+    "language": "en",
+    "excerpt": "The captain and 17 crew members of a Chinese fishing boat caught trespassing in the waters around Taiwan's Dongsha Islands in July were deported Thursday (Sept. 10) after a 46-day detention"
+   },
+   {
+    "url": "https://www.eyeontaiwan.com/chinese-fishing-boat-crew-arrested-for-trespassing-in-taiwanese-waters",
+    "title": "Chinese fishing boat crew arrested for trespassing in Taiwanese waters",
+    "publisher": "Eye on Taiwan (Taiwan News)",
+    "pub_date": "2020-07-28",
+    "language": "en",
+    "excerpt": "the Coast Guard has now begun a crackdown as of Friday"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-07-27",
+  "date_end": "2020-08-04",
+  "date_precision": "month",
+  "location_name": "Pratas (Dongsha) Islands",
+  "subregion": "",
+  "summary": "Taiwan's military sent a company of about 200 marines (reported as from the 99th Marine Brigade) to reinforce the coast guard garrison on the Pratas Islands, according to unnamed military sources cited on 4-5 August 2020, amid reports of a planned PLA landing exercise simulating the islands' capture; the Defence Ministry declined to confirm, saying only that it would respond to changes in the situation.",
+  "actors": "ROC Navy Marine Corps (99th Marine Brigade, reported); Ministry of National Defense; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Reinforcing a held feature with combat troops is a unilateral military deployment without confrontation; demonstrative, and a step up from June's 'training' deployment. Based on anonymous sources and unconfirmed by the ministry; the Taipei Times says 'last week' relative to 4 August, so the week of 27 July is given with month precision. The Taipei Times page blocks the importer (HTTP 403).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwan-sends-marines-to-reinforce-south-china-sea-outpost-amid-reports-china-plans-to-practice-invading-it",
+    "title": "Taiwan sends marines to reinforce South China Sea outpost amid reports China plans to practice invading it",
+    "publisher": "Eye on Taiwan (South China Morning Post)",
+    "pub_date": "2020-08-05",
+    "language": "en",
+    "excerpt": "the navy had sent a company of around 200 marines to reinforce the coastguards stationed on the Pratas Islands"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2020/08/05/2003741143",
+    "title": "Marines sent to Pratas amid PLA drill reports",
+    "publisher": "Taipei Times",
+    "pub_date": "2020-08-05",
+    "language": "en",
+    "excerpt": "The military last week sent “no small number” of Marine Corps officers to the Pratas Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-10-20",
+  "date_end": "2020-10-20",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Islands",
+  "subregion": "",
+  "summary": "Deputy Chief of the General Staff Lt. Gen. Li Ting-sheng flew to the Dongsha Islands aboard a C-130 with a coast guard officer, inspected the troops' facilities and instructed them to conduct joint intelligence, surveillance, reconnaissance and combat-readiness missions, in an apparent show of Taiwan's ability to supply the islands after Hong Kong air traffic control turned back a chartered flight to Dongsha.",
+  "actors": "Ministry of National Defense (Deputy Chief of the General Staff Li Ting-sheng); ROC Air Force C-130; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A senior military inspection flight to a held feature, framed as demonstrating continued access, is unilateral non-confrontational presence; demonstrative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/taiwans-deputy-military-chief-visits-dongsha-islands-following-plane-row",
+    "title": "Taiwan's deputy military chief visits Dongsha Islands following plane row",
+    "publisher": "Eye on Taiwan (CNA)",
+    "pub_date": "2020-10-20",
+    "language": "en",
+    "excerpt": "Deputy Chief of the General Staff Li Ting-sheng (李廷盛), accompanied by a Coast Guard officer, arrived in the Dongsha Islands aboard a C-130 military cargo plane, according to the Military News Agency."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-11-23",
+  "date_end": "2020-11-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba) lighthouse",
+  "subregion": "5",
+  "summary": "State-owned Chunghwa Post issued a set of five stamps showing lighthouses built by Taiwan, one of them the lighthouse built in 2015 on Taiping Island (Itu Aba); Vietnamese stamp collectors reported it to Vietnam's information ministry as a violation of Vietnamese sovereignty.",
+  "actors": "Chunghwa Post (state-owned)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Official stamps depicting a disputed feature as national territory are a symbolic assertion; declarative (a coder may prefer demonstrative as domestic administration). A state-company act of low intensity; low confidence. Vietnamese sources only.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://vietnamnet.vn/en/maritime-sovereignty/taiwan-newspaper-again-issues-stamps-violating-vietnam-s-sovereignty-727710.html",
+    "title": "Taiwan issues stamps violating Vietnam's sovereignty",
+    "publisher": "VietNamNet (VOV)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "The document says on November 23, 2020, Chunghwa Post issued a set of five stamps showing five lighthouses built by Taiwan."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2020-11-24",
+  "date_end": "2020-11-25",
+  "date_precision": "day",
+  "location_name": "Waters around Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Taiwan's coast guard Nansha Command held fourth-quarter live artillery firing around Taiping Island, notified for 24 and 25 November 2020 (reserve 1 December); Vietnam's foreign ministry protested the 24 November drill on 3 December, calling it a serious violation of its sovereignty.",
+  "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Routine quarterly live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Second protested Taiping drill of 2020; no second- or third-quarter Taiping notice for 2020 was found.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://e.vnexpress.net/news/news/vietnam-protests-taiwan-s-illegal-drills-on-truong-sa-islands-4201127.html",
+    "title": "Vietnam protests Taiwan's illegal drills on Truong Sa Islands",
+    "publisher": "VnExpress International",
+    "pub_date": "2020-12-03",
+    "language": "en",
+    "excerpt": "responding to inquiries about the fire drills by Taiwanese defense forces on the Itu Aba Island on November 24"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1605604937976.pdf",
+    "title": "海巡署東南沙分署南沙指揮部109年度第4季火砲對海實彈射擊通報",
+    "publisher": "Coast Guard Administration, Ocean Affairs Council (firing notices)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "南沙太平島環島海域"
+   }
+  ]
+ }
+]

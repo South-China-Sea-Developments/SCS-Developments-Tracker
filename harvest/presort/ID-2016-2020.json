@@ -1,0 +1,335 @@
+{
+ "run_id": "ID-2016-2020",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-b5c063aa94",
+   "disposition": "continuation",
+   "of": "ev-e29ae434b2",
+   "criterion": "",
+   "group": "",
+   "reason": "KKP arrest and tow of a poaching trawler in the Natuna EEZ is the 2015 practice of seizing foreign boats there (ev-e29ae434b2, prev-run candidate); that the boat was Chinese changes the target, not the method, and Indonesia lost the boat to CCG interference. Provisional until 2015 is decided."
+  },
+  {
+   "event_id": "ev-2f13166d74",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2016-protest-china",
+   "reason": "Summoning China's chargé and lodging a formal protest over CCG interference in the EEZ is a new kind of declarative act against 2015, when Jakarta only stated non-recognition of the nine-dash line and asked for clarification (ev-47783c4ac1, ev-c60cba9dbf, prev-run candidates)."
+  },
+  {
+   "event_id": "ev-4e92c6e045",
+   "disposition": "same_move",
+   "of": "ev-2f13166d74",
+   "criterion": "",
+   "group": "2016-protest-china",
+   "reason": "Retno's rejection of China's 'traditional fishing zone' is the public side of the same March 2016 protest over the Kway Fey (ev-2f13166d74)."
+  },
+  {
+   "event_id": "ev-aec79b383a",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2016-warning-shots",
+   "reason": "A warship firing warning shots to arrest a Chinese trawler and blocking a CCG vessel from freeing it is a change of method against 2015, when seizures in Natuna (ev-e29ae434b2, ev-7d261f9658, prev-run candidates) involved boarding and escort to port without gunfire."
+  },
+  {
+   "event_id": "ev-26aeb5a373",
+   "disposition": "same_move",
+   "of": "ev-aec79b383a",
+   "criterion": "",
+   "group": "2016-warning-shots",
+   "reason": "Four warships firing warning shots and detaining a Chinese boat on 17 June is the same 2016 escalation to armed enforcement against Chinese boats as ev-aec79b383a."
+  },
+  {
+   "event_id": "ev-e142237919",
+   "disposition": "continuation",
+   "of": "ev-35e97bc7d1",
+   "criterion": "",
+   "group": "",
+   "reason": "Announcing F-16s and a stronger Natuna base continues 2015's announced and funded reinforcement of the Natuna base (ev-35e97bc7d1, ev-2bd4d6e45b, prev-run candidates) at the same level; the deployment itself had not happened. Provisional until 2015 is decided."
+  },
+  {
+   "event_id": "ev-ac86336b1d",
+   "disposition": "same_move",
+   "of": "ev-2f13166d74",
+   "criterion": "",
+   "group": "2016-protest-china",
+   "reason": "Luhut's renewed rejection of China's 'traditional fishing grounds' after the 17 June shots repeats the position formed in the March protest (ev-2f13166d74, ev-4e92c6e045); one more statement of it belongs with that move, not a move of its own."
+  },
+  {
+   "event_id": "ev-11870bdaba",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2016-natuna-president",
+   "reason": "A presidential visit and cabinet meeting aboard a warship in Natuna waters is a new display of state presence; the 2015 record (prev-run candidates) shows ministerial visits (ev-011cac594b) but nothing at head-of-state level in the EEZ."
+  },
+  {
+   "event_id": "ev-eb13b3fa8a",
+   "disposition": "same_move",
+   "of": "ev-11870bdaba",
+   "criterion": "",
+   "group": "2016-natuna-president",
+   "reason": "The 29 June cabinet package (fishing fleets licensed into Natuna waters, faster gas exploration, runway and frigate port) turns the instructions given aboard KRI Imam Bonjol on 23 June (ev-11870bdaba) into measures; one linked series. The military-infrastructure part alone would be a continuation of ev-35e97bc7d1."
+  },
+  {
+   "event_id": "ev-b30f806eed",
+   "disposition": "unclear",
+   "of": "",
+   "criterion": "",
+   "group": "",
+   "reason": "Not an assertive act of the claimant — likely reject: the award-day statement calls for restraint and respect for UNCLOS without asserting anything about Indonesia's own claim or naming China."
+  },
+  {
+   "event_id": "ev-79e24ce1de",
+   "disposition": "continuation",
+   "of": "ev-169a8b7241",
+   "criterion": "",
+   "group": "",
+   "reason": "The Independence Day mass sinking repeats the 18 August 2015 sinking (ev-169a8b7241, prev-run candidate) and the 2015 sinkings in May and October; a larger batch reflects more seized boats, not a new method. Provisional until 2015 is decided."
+  },
+  {
+   "event_id": "ev-b089ffb9bc",
+   "disposition": "same_move",
+   "of": "ev-11870bdaba",
+   "criterion": "",
+   "group": "2016-natuna-president",
+   "reason": "Widodo's second Natuna visit in four months, to watch a combat exercise concentrated over the islands, continues the 2016 head-of-state display formed by ev-11870bdaba; if the coder treats Angkasa Yudha as a routine yearly exercise it is instead a continuation, but no 2015 Natuna exercise is on the record."
+  },
+  {
+   "event_id": "ev-dd021d9ea0",
+   "disposition": "continuation",
+   "of": "ev-b5c063aa94",
+   "criterion": "",
+   "group": "",
+   "reason": "Mass arrest of Vietnamese boats in the Natuna EEZ is the standing seizure practice shown in 2016 (ev-b5c063aa94; boats seized in Natuna fed the ev-79e24ce1de sinking); more arrests because more boats came is not a frequency move."
+  },
+  {
+   "event_id": "ev-80d81293ae",
+   "disposition": "continuation",
+   "of": "ev-79e24ce1de",
+   "criterion": "",
+   "group": "",
+   "reason": "The 1 April mass sinking repeats the 2016 mass sinkings (ev-79e24ce1de) at the same level; the batch size tracks the number of boats seized."
+  },
+  {
+   "event_id": "ev-cf6460705c",
+   "disposition": "continuation",
+   "of": "ev-b089ffb9bc",
+   "criterion": "",
+   "group": "",
+   "reason": "A large exercise in Natuna watched by the President continues 2016's Angkasa Yudha over Natuna with Widodo present (ev-b089ffb9bc); 'largest yet' is size, not a new method or area. Least sure of this one: a coder may read a 5,900-troop tri-service exercise as a frequency step."
+  },
+  {
+   "event_id": "ev-971339b446",
+   "disposition": "continuation",
+   "of": "ev-b5c063aa94",
+   "criterion": "",
+   "group": "",
+   "reason": "Arresting Vietnamese boats north of Natuna is the same seizure practice as 2016 (ev-b5c063aa94, which also met rival coast-guard interference); the VCG's ramming is Vietnam's act, and Indonesia's diplomatic follow-up is conciliatory."
+  },
+  {
+   "event_id": "ev-25c041495e",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2017-north-natuna-sea",
+   "reason": "Renaming the EEZ waters north of Natuna the 'North Natuna Sea' on the official map is a new method against 2016, which has no naming or cartographic act (nothing comparable among the 2016 candidates). Naming is declarative in Chubb's practice (CN198302) despite the demonstrative suggestion."
+  },
+  {
+   "event_id": "ev-a490d1574c",
+   "disposition": "same_move",
+   "of": "ev-25c041495e",
+   "criterion": "",
+   "group": "2017-north-natuna-sea",
+   "reason": "Susi's rejection of China's protest against the new name defends the renaming (ev-25c041495e); same move."
+  },
+  {
+   "event_id": "ev-156343700b",
+   "disposition": "continuation",
+   "of": "ev-aec79b383a",
+   "criterion": "",
+   "group": "",
+   "reason": "Warning shots to stop and seize a Vietnamese boat repeat the method first used in 2016 against Chinese boats (ev-aec79b383a, ev-26aeb5a373); a different target is not a new method."
+  },
+  {
+   "event_id": "ev-1a41921e8b",
+   "disposition": "continuation",
+   "of": "ev-dd021d9ea0",
+   "criterion": "",
+   "group": "",
+   "reason": "Bakamla's seizure of two Vietnamese boats near Natuna continues the 2017 arrests (ev-dd021d9ea0, ev-971339b446) at the same level."
+  },
+  {
+   "event_id": "ev-f37027dca4",
+   "disposition": "continuation",
+   "of": "ev-80d81293ae",
+   "criterion": "",
+   "group": "",
+   "reason": "The August mass sinking continues the 2017 sinkings (ev-80d81293ae); 125 boats rather than 81 reflects more seizures, and the Natuna share is not confirmed."
+  },
+  {
+   "event_id": "ev-d11db7990b",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "",
+   "reason": "Inaugurating a new integrated tri-service base with a UAV hangar at Selat Lampa is a new fixed facility; 2017 has no construction or garrison act (nothing comparable among the 2017 candidates), the base having been announced in 2015-16 (ev-eb13b3fa8a)."
+  },
+  {
+   "event_id": "ev-1936193d8d",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2019-vietnam-escorts",
+   "reason": "Firing a 76 mm gun to drive off Vietnamese fisheries-surveillance vessels obstructing an arrest is a new method against 2018, when seizures of Vietnamese boats (ev-1a41921e8b) met no state escorts and involved no gunfire; warning shots last seen in 2017 are new again."
+  },
+  {
+   "event_id": "ev-fe9e0db5e6",
+   "disposition": "same_move",
+   "of": "ev-1936193d8d",
+   "criterion": "",
+   "group": "2019-vietnam-escorts",
+   "reason": "Statements demanding an explanation and apology from Vietnam are the declarative side of the 24 February confrontation (ev-1936193d8d)."
+  },
+  {
+   "event_id": "ev-d1751229a0",
+   "disposition": "same_move",
+   "of": "ev-1936193d8d",
+   "criterion": "",
+   "group": "2019-vietnam-escorts",
+   "reason": "Arresting a trawler's crew despite Vietnamese state ships striking the Indonesian corvette is the second confrontation with Vietnamese escorts that year, the same 2019 pattern as ev-1936193d8d."
+  },
+  {
+   "event_id": "ev-12bf9726c5",
+   "disposition": "same_move",
+   "of": "ev-1936193d8d",
+   "criterion": "",
+   "group": "2019-vietnam-escorts",
+   "reason": "Summoning Vietnam's deputy ambassador over the 27 April incident belongs with the 2019 confrontations with Vietnamese state vessels (ev-1936193d8d, ev-d1751229a0); 2018 has no protest to Vietnam. A coder may prefer a separate declarative move for the two protests."
+  },
+  {
+   "event_id": "ev-3ba3d55bb4",
+   "disposition": "continuation",
+   "of": "ev-f37027dca4",
+   "criterion": "",
+   "group": "",
+   "reason": "The May mass sinking continues the 2018 sinkings (ev-f37027dca4); being announced after the Natuna clash does not change the method."
+  },
+  {
+   "event_id": "ev-03fee649f2",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2019-natuna-standoff",
+   "reason": "Chasing out a CCG-escorted Chinese fleet and blocking a CCG vessel with Bakamla and Navy ships is a new method against 2018, which has no confrontation with Chinese state vessels (nothing comparable among the 2018 candidates)."
+  },
+  {
+   "event_id": "ev-c750c4bf67",
+   "disposition": "same_move",
+   "of": "ev-03fee649f2",
+   "criterion": "",
+   "group": "2019-natuna-standoff",
+   "reason": "Summoning China's ambassador with a protest note over the CCG violations is the diplomatic side of the December standoff (ev-03fee649f2); 2018 has no protest to China, so if the coder splits it off it is its own declarative novelty."
+  },
+  {
+   "event_id": "ev-7326de379c",
+   "disposition": "continuation",
+   "of": "ev-c750c4bf67",
+   "criterion": "",
+   "group": "",
+   "reason": "The 1 January statement rejecting China's historic-rights claim restates the 30 December 2019 protest (ev-c750c4bf67) two days later; refusing talks adds no new method."
+  },
+  {
+   "event_id": "ev-39f2da0c71",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "frequency",
+   "group": "2020-01-natuna-surge",
+   "reason": "Sending warships, patrol aircraft and placing forces on combat alert in the North Natuna Sea is a step up from December 2019, when Bakamla worked with two Navy ships (ev-03fee649f2): two ships against eight warships plus F-16s by 7 January."
+  },
+  {
+   "event_id": "ev-8e08535a13",
+   "disposition": "same_move",
+   "of": "ev-39f2da0c71",
+   "criterion": "",
+   "group": "2020-01-natuna-surge",
+   "reason": "The 5-7 January reinforcement to eight warships and four F-16s is the same January surge as ev-39f2da0c71."
+  },
+  {
+   "event_id": "ev-513803d5d6",
+   "disposition": "continuation",
+   "of": "ev-c750c4bf67",
+   "criterion": "",
+   "group": "",
+   "reason": "Widodo's 'non-negotiable' and Retno's non-recognition of the nine-dash line repeat the December 2019 position (ev-c750c4bf67); one more reaffirmation is continuation."
+  },
+  {
+   "event_id": "ev-a2d85c0cb2",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "",
+   "reason": "State mobilisation of some 120 Pantura fishing boats into the contested EEZ as a 'first line of defence' is a new method against 2019 (nothing comparable among the 2019 candidates). It could also be folded into the January surge (ev-39f2da0c71) as one linked response."
+  },
+  {
+   "event_id": "ev-9a0f9944d1",
+   "disposition": "same_move",
+   "of": "ev-39f2da0c71",
+   "criterion": "",
+   "group": "2020-01-natuna-surge",
+   "reason": "Widodo's visit to the ships and airbase facing the Chinese flotilla is part of the January 2020 surge (ev-39f2da0c71); 2019 has no presidential visit."
+  },
+  {
+   "event_id": "ev-dd7720f962",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2020-un-notes",
+   "reason": "A note verbale to the UN Secretary-General rejecting the nine-dash line and historic rights is a new kind of declarative act against 2019, when Indonesia protested only bilaterally (ev-c750c4bf67) — the guide's own example of a declarative novelty."
+  },
+  {
+   "event_id": "ev-fbc674a7d4",
+   "disposition": "same_move",
+   "of": "ev-dd7720f962",
+   "criterion": "",
+   "group": "2020-un-notes",
+   "reason": "The second UN note, denying any overlapping claim and refusing boundary talks, belongs to the same 2020 UN-note exchange as ev-dd7720f962."
+  },
+  {
+   "event_id": "ev-433c825f3d",
+   "disposition": "unclear",
+   "of": "",
+   "criterion": "",
+   "group": "",
+   "reason": "The exercise was held in the Java Sea and off Singkep, south of the Natuna EEZ; it is only an act on the claim if part of it took place in the contested North Natuna waters. The fleet's exercise plan or area would settle it, and no 2019 exercise is on the record to judge it against."
+  },
+  {
+   "event_id": "ev-57d6723d07",
+   "disposition": "continuation",
+   "of": "ev-1936193d8d",
+   "criterion": "",
+   "group": "",
+   "reason": "Firing on and seizing a Vietnamese boat continues the 2019 armed enforcement against Vietnamese boats and escorts (ev-1936193d8d); same method, and less than firing on state vessels."
+  },
+  {
+   "event_id": "ev-63d7872263",
+   "disposition": "continuation",
+   "of": "ev-03fee649f2",
+   "criterion": "",
+   "group": "",
+   "reason": "Shadowing CCG 5204 until it left continues December 2019's interception and expulsion of CCG vessels (ev-03fee649f2) at the same level."
+  },
+  {
+   "event_id": "ev-1022594932",
+   "disposition": "continuation",
+   "of": "ev-c750c4bf67",
+   "criterion": "",
+   "group": "",
+   "reason": "A demarche to China's deputy ambassador over CCG 5204 repeats the 2019 protests to China (ev-c750c4bf67); same practice, no new form."
+  }
+ ]
+}

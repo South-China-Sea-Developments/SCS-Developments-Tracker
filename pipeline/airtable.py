@@ -6,8 +6,9 @@ the site build, and this module is the only one that knows it exists.
 
 Configuration: pipeline/airtable.json  {"enabled": true|false, "base_id": "app...", "table": "Candidates",
 "table_id": "tbl...", "interface": "<url of the review interface, for people>", "field_ids": {name: "fld..."}};
-the field ids are only needed to read an export made with another Airtable client (pull --from), the
-REST client works by field name and addresses the table by its id.
+the REST client translates the code's internal field names to these ids at the wire (ticket 21: the
+base's columns carry readable labels, `LABELS`), falls back to the labels when no ids are configured,
+and addresses the table by its id.
 The access token is the environment variable AIRTABLE_TOKEN only (a repository secret if a workflow
 ever runs the sync; none does today); it never appears in a file. With enabled = false, no base_id or
 no token, every command that would call Airtable says so and does nothing; schema, records and
@@ -23,6 +24,17 @@ Usage:
   python -m pipeline.airtable schema                               print the table's fields as Airtable needs them
   python -m pipeline.airtable records --run <run_id> --out f.json  the push as JSON, without calling Airtable
   python -m pipeline.airtable pull --run <run_id> --from records.json --out decisions.json   decisions from exported records
+  python -m pipeline.airtable run-record --run harvest/runs/<run_id> [--pr N] --out run.json   the run's row for the Runs table (ticket 20)
+  python -m pipeline.airtable archive --run <run_id> --from export.json   file the review in harvest/airtable/<run_id>/ (ticket 22)
+
+The workbench around the queue (ticket 20, after the maintainer's TPD Updates sheet): besides
+`Candidates`, the base has `Runs` (one row per harvest or backfill run, the run log), `Sources` (a
+read-only mirror of pipeline/sources.json), `Sidelines` (things seen that do not merit a candidate)
+and `Notes` (free text across candidates). Candidates carry `flags` (what the machine noticed; the
+reviewer may edit them, so a refresh leaves them alone), `dataset_status` (where the candidate
+stands after the decision; refreshed by the sync, never typed) and `run` (a link to its Runs row).
+The REST client writes the Candidates table only; the other tables are filled through the
+maintainer's Airtable connector from the JSON these commands emit (docs/airtable-workbench.md).
 """
 from __future__ import annotations
 
@@ -30,6 +42,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -37,7 +50,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-from pipeline import schema
+from pipeline import places, schema
 from pipeline.queue import EDITABLE, read_table, repo_root, review_context
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -47,6 +60,29 @@ BATCH = 10
 DECISIONS = ["undecided", "merge", "new_move", "duplicate", "reject"]
 CRITERIA = list(schema.INTENSIFICATION_CRITERIA)
 SUBREGION_CHOICES = [f"{i} {n}" for i, n in zip(range(1, 11), schema.SUBREGION_NAMES)]
+FLAGS = ["Excerpt not checked", "Excerpt not found", "Source unreachable", "Possible duplicate", "Date approximate",
+         "Low confidence", "Type uncertain", "Needs a second source"]
+DATASET_STATUSES = ["In review", "Decision recorded", "Pulled into dataset", "Merged", "Published on site", "Closed without change"]
+RUN_TYPES = ["Weekly harvest", "Backfill", "Manual", "Catch-up"]
+RUN_VERDICTS = ["Pass", "Partial", "Failed", "No candidates"]
+REPO_URL = "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
+CLAIMANT_COLOURS = {"CN": "redLight2", "VN": "yellowLight2", "PH": "blueLight2", "MY": "greenLight2", "ID": "orangeLight2", "TW": "purpleLight2"}
+TYPE_COLOURS = {"declarative": "blueLight2", "demonstrative": "tealLight2", "coercive": "orangeLight2", "force": "redLight2"}
+PRECISION_COLOURS = {"day": "greenLight2", "month": "yellowLight2", "year": "orangeLight2"}
+SUBREGION_COLOURS = ["grayLight2", "redLight2", "orangeLight2", "yellowLight2", "greenLight2", "tealLight2", "cyanLight2", "blueLight2", "purpleLight2", "pinkLight2"]
+DOMAIN_COLOURS = {"domestic": "purpleLight2", "diplomatic": "blueLight2", "physical": "orangeLight2"}
+ISSUE_COLOURS = {"military": "redLight2", "administrative": "blueLight2", "energy": "yellowLight2", "fisheries": "tealLight2", "politics": "purpleLight2"}
+DYAD_ACTOR_COLOURS = {"C": "redLight2", "V": "yellowLight2", "P": "blueLight2", "M": "greenLight2", "I": "orangeLight2", "R": "purpleLight2"}
+DYADS = [a + b for a in "CVPMBIR" for b in "CVPMBIRAU" if a != b]   # actor first; a dyad not listed is typecast into a grey option
+
+
+def _choices(names, colours=None) -> dict:
+    """Select options, coloured when a colour map is given (the base's chips, ticket 21)."""
+    if colours is None:
+        return {"choices": [{"name": n} for n in names]}
+    if isinstance(colours, list):
+        return {"choices": [{"name": n, "color": c} for n, c in zip(names, colours)]}
+    return {"choices": [{"name": n, "color": colours[n] if n in colours else colours.get(n[0], "grayLight2")} for n in names]}
 
 # One Airtable field per thing the review page shows or asks. Order is the column order.
 FIELDS: list[tuple[str, str, dict]] = [
@@ -54,34 +90,39 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("event_id", "singleLineText", {}),
     ("run_id", "singleLineText", {}),
     ("pull_request", "number", {"precision": 0}),
-    ("claimant", "singleLineText", {}),
+    ("claimant", "singleSelect", _choices(list(CLAIMANT_COLOURS), CLAIMANT_COLOURS)),
     ("date_start", "date", {"dateFormat": {"name": "iso"}}),
     ("date_end", "date", {"dateFormat": {"name": "iso"}}),
-    ("date_precision", "singleSelect", {"choices": [{"name": c} for c in schema.DATE_PRECISION]}),
+    ("date_precision", "singleSelect", _choices(schema.DATE_PRECISION, PRECISION_COLOURS)),
     ("location_name", "singleLineText", {}),
     ("location_precision", "singleSelect", {"choices": [{"name": c} for c in schema.LOCATION_PRECISION]}),
-    ("subregion", "singleSelect", {"choices": [{"name": c} for c in SUBREGION_CHOICES]}),
+    ("subregion", "singleSelect", _choices(SUBREGION_CHOICES, SUBREGION_COLOURS)),
     ("lat", "number", {"precision": 5}),
     ("lon", "number", {"precision": 5}),
     ("summary", "multilineText", {}),
     ("actors", "singleLineText", {}),
     ("sources", "multilineText", {}),
     ("excerpt", "multilineText", {}),
-    ("suggested_type", "singleSelect", {"choices": [{"name": c} for c in schema.TYPE_FLAGS]}),
-    ("suggested_domains", "singleLineText", {}),
-    ("suggested_issues", "singleLineText", {}),
-    ("suggested_dyads", "singleLineText", {}),
+    ("suggested_type", "singleSelect", _choices(schema.TYPE_FLAGS, TYPE_COLOURS)),
+    ("suggested_domains", "multipleSelects", _choices(schema.DOMAIN_FLAGS, DOMAIN_COLOURS)),
+    ("suggested_issues", "multipleSelects", _choices(schema.ISSUE_FLAGS, ISSUE_COLOURS)),
+    ("suggested_dyads", "multipleSelects", _choices(DYADS, DYAD_ACTOR_COLOURS)),
     ("suggestion_reasoning", "multilineText", {}),
     ("machine_note", "multilineText", {}),
     ("possible_duplicate_of", "singleLineText", {}),
+    ("presort", "multilineText", {}),
     ("previous_year_moves", "multilineText", {}),
     ("same_year_moves", "multilineText", {}),
+    # the workbench (ticket 20): what the machine noticed, where the candidate stands, which run made it
+    ("flags", "multipleSelects", {"choices": [{"name": c} for c in FLAGS]}),
+    ("dataset_status", "singleSelect", {"choices": [{"name": c} for c in DATASET_STATUSES]}),
+    ("run", "multipleRecordLinks", {"linkedTableId": "RUNS_TABLE"}),   # resolved from the configuration in table_schema()
     # the decision (the coder's)
     ("decision", "singleSelect", {"choices": [{"name": c} for c in DECISIONS]}),
     ("merge_into_move", "singleLineText", {}),
     ("merge_into_candidate", "singleLineText", {}),
     ("duplicate_of", "singleLineText", {}),
-    ("new_type", "singleSelect", {"choices": [{"name": c} for c in schema.TYPE_FLAGS]}),
+    ("new_type", "singleSelect", _choices(schema.TYPE_FLAGS, TYPE_COLOURS)),
     ("new_criterion", "singleSelect", {"choices": [{"name": c} for c in CRITERIA]}),
     ("new_year", "singleLineText", {}),
     ("new_ongoing_through", "singleLineText", {}),
@@ -104,6 +145,28 @@ FIELDS: list[tuple[str, str, dict]] = [
     ("reviewer", "singleLineText", {}),
 ]
 FIELD_NAMES = [f[0] for f in FIELDS]
+
+# What the columns are called in the base (ticket 21: readable names, as in the maintainer's other
+# bases). The code uses the internal names everywhere; the client translates at the wire, by field id
+# when the configuration has them (a rename in the base then changes nothing), else by these labels.
+LABELS = {
+    "event_id": "Event ID", "run_id": "Run ID", "pull_request": "Pull request", "claimant": "Claimant",
+    "date_start": "Start date", "date_end": "End date", "date_precision": "Date precision", "location_name": "Location",
+    "location_precision": "Location precision", "subregion": "Sub-region", "lat": "Lat", "lon": "Lon", "summary": "Summary",
+    "actors": "Actors", "sources": "Sources", "excerpt": "Excerpt", "suggested_type": "Suggested type",
+    "suggested_domains": "Suggested domains", "suggested_issues": "Suggested issues", "suggested_dyads": "Suggested dyads",
+    "suggestion_reasoning": "Suggestion reasoning", "machine_note": "Machine note", "possible_duplicate_of": "Possible duplicate of", "presort": "Pre-sort",
+    "previous_year_moves": "Previous year's moves", "same_year_moves": "Same year's moves",
+    "flags": "Flags", "dataset_status": "Dataset status", "run": "Run",
+    "decision": "Decision", "merge_into_move": "Merge into move", "merge_into_candidate": "Merge into candidate", "duplicate_of": "Duplicate of",
+    "new_type": "New move: type", "new_criterion": "New move: criterion", "new_year": "New move: year",
+    "new_ongoing_through": "New move: ongoing through", "new_dyads": "New move: dyads", "new_domains": "New move: domains",
+    "new_issues": "New move: issues", "new_subregions": "New move: sub-regions", "new_description": "New move: description",
+    "edit_date_start": "Edit: start date", "edit_date_end": "Edit: end date", "edit_date_precision": "Edit: date precision",
+    "edit_location_name": "Edit: location", "edit_subregion": "Edit: sub-region", "edit_lat": "Edit: lat", "edit_lon": "Edit: lon",
+    "edit_actors": "Edit: actors", "edit_summary": "Edit: summary", "note": "Note", "reviewer": "Reviewer",
+}
+LABEL_TO_NAME = {v: k for k, v in LABELS.items()}
 CODER_FIELDS = FIELD_NAMES[FIELD_NAMES.index("decision"):]
 
 
@@ -117,6 +180,12 @@ def load_config(path: Path | None = None) -> dict:
     if path.exists():
         cfg.update(json.loads(path.read_text(encoding="utf-8")))
     return cfg
+
+
+def default_reviewer(path: Path | None = None) -> str:
+    """The `reviewer` of the configuration file: the name pushed into every new row's Reviewer column
+    and the name a decisions file is signed with when no row names one (one coder, decision 07)."""
+    return (load_config(path).get("reviewer") or "").strip()
 
 
 def why_disabled(cfg: dict, token: str | None) -> str:
@@ -134,17 +203,33 @@ def why_disabled(cfg: dict, token: str | None) -> str:
 # the client and its counted calls
 
 def run_filter(run_id: str) -> str:
-    """The Airtable formula selecting one run's records; a quote in the id is escaped, not a break-out."""
-    return "{run_id} = '" + run_id.replace("\\", "\\\\").replace("'", "\\'") + "'"
+    """The Airtable formula selecting one run's records, by the column's label in the base; a quote in
+    the id is escaped, not a break-out."""
+    return "{" + LABELS["run_id"] + "} = '" + run_id.replace("\\", "\\\\").replace("'", "\\'") + "'"
 
 
 class Client:
     """Airtable REST, ten records a call, every call counted. Raises RuntimeError on HTTP and network
     errors. `table` may be the table's id (preferred: survives a rename) or its name."""
 
-    def __init__(self, token: str, base_id: str, table: str, max_calls: int = 200):
+    def __init__(self, token: str, base_id: str, table: str, max_calls: int = 200, field_ids: dict[str, str] | None = None):
         self.token, self.base_id, self.table, self.max_calls = token, base_id, table, max_calls
         self.calls = 0
+        self.field_ids = dict(field_ids or {})
+        self._names = {v: k for k, v in self.field_ids.items()}
+
+    # the wire speaks field ids (or, without them, the internal names); the code speaks internal names
+    def wire(self, name: str) -> str:
+        return self.field_ids.get(name) or LABELS.get(name, name)
+
+    def unwire(self, key: str) -> str:
+        return self._names.get(key) or LABEL_TO_NAME.get(key, key)
+
+    def _out(self, fields: dict) -> dict:
+        return {self.wire(k): v for k, v in fields.items()}
+
+    def _in(self, record: dict) -> dict:
+        return dict(record, fields={self.unwire(k): v for k, v in record.get("fields", {}).items()})
 
     def _check(self, n: int = 1) -> None:
         if self.calls + n > self.max_calls:
@@ -171,12 +256,14 @@ class Client:
         out, offset = [], None
         while True:
             params: dict = {"pageSize": 100}
+            if self.field_ids:
+                params["returnFieldsByFieldId"] = "true"
             if filter_formula:
                 params["filterByFormula"] = filter_formula
             if offset:
                 params["offset"] = offset
             page = self._request("GET", params=params)
-            out += page.get("records", [])
+            out += [self._in(r) for r in page.get("records", [])]
             offset = page.get("offset")
             if not offset:
                 return out
@@ -189,13 +276,15 @@ class Client:
         self._check(self.batches(len(records)))
         out = []
         for i in range(0, len(records), BATCH):
-            out += self._request("POST", body={"records": [{"fields": r} for r in records[i:i + BATCH]], "typecast": True}).get("records", [])
+            page = self._request("POST", body={"records": [{"fields": self._out(r)} for r in records[i:i + BATCH]], "typecast": True,
+                                               **({"returnFieldsByFieldId": True} if self.field_ids else {})})
+            out += [self._in(r) for r in page.get("records", [])]
         return out
 
     def update(self, records: list[tuple[str, dict]]) -> None:
         self._check(self.batches(len(records)))
         for i in range(0, len(records), BATCH):
-            self._request("PATCH", body={"records": [{"id": rid, "fields": f} for rid, f in records[i:i + BATCH]], "typecast": True})
+            self._request("PATCH", body={"records": [{"id": rid, "fields": self._out(f)} for rid, f in records[i:i + BATCH]], "typecast": True})
 
     def delete(self, ids: list[str]) -> None:
         self._check(self.batches(len(ids)))
@@ -219,45 +308,184 @@ def _subregion_choice(n: str) -> str:
     return SUBREGION_CHOICES[int(n) - 1] if n and n.isdigit() and 1 <= int(n) <= 10 else ""
 
 
+MOVE_TEXT_CHARS = 160   # of a move's description in the Airtable lists: orientation, not reading; the review page shows 300
+
+
 def _moves_text(moves: list[dict]) -> str:
-    """The claimant's moves of a year as the review page lists them, one per line."""
-    return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}]{' pending' if m['status'] != 'accepted' else ''}: {m['description']}" for m in moves)
+    """The claimant's moves as the review page lists them, one per line, the description cut to
+    MOVE_TEXT_CHARS (a 2016 China event lists some fifty open moves; the column is for finding the
+    one to name, and the case page has the rest)."""
+    def cut(d: str) -> str:
+        return d if len(d) <= MOVE_TEXT_CHARS else d[:MOVE_TEXT_CHARS].rsplit(" ", 1)[0] + "…"
+    return "\n".join(f"{m['move_id']} [{', '.join(m['types'])}{', through ' + m['ongoing_through'] if m.get('ongoing_through') else ''}]"
+                     f"{' pending' if m['status'] != 'accepted' else ''}: {cut(m['description'])}" for m in moves)
 
 
-def records_for_run(data_dir: Path, run_id: str, pr: int | None = None) -> list[dict]:
+def flags_for(e: dict) -> list[str]:
+    """The flags the import's notes and the suggestion imply, in FLAGS order: the machine note says
+    whether the excerpt was checked, found, or the source unreachable, and whether a near match
+    exists; month or year precision is an approximate date; the reasoning's confidence tag."""
+    note = e.get("review_note") or ""
+    found = set()
+    if "could not be fetched" in note:
+        found |= {"Source unreachable", "Excerpt not checked"}
+    elif "not checked" in note:
+        found.add("Excerpt not checked")
+    if "not found verbatim" in note:
+        found.add("Excerpt not found")
+    if "Possible duplicate" in note:
+        found.add("Possible duplicate")
+    if (e.get("date_precision") or "") in ("month", "year"):
+        found.add("Date approximate")
+    if "[confidence: low]" in (e.get("suggestion_reasoning") or ""):
+        found.add("Low confidence")
+    return [f for f in FLAGS if f in found]
+
+
+def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_record: str | None = None,
+                    presort_path: Path | None = None, reviewer: str = "") -> list[dict]:
     """One Airtable record per candidate of the run: the review page's context fields, and the coder's
     fields prefilled as the page prefills them (decision undecided; the new move's type, dyads, domains,
-    issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag).
-    Year and description are left blank: `decide` defaults them to the event's year and summary, as the
-    page does. Only `push` on a new record writes the coder's fields; a refresh never touches them."""
-    ctx = review_context(data_dir, run_id=run_id)
+    issues and sub-region from the suggestion and the event; duplicate_of from the machine's flag;
+    `reviewer` when a name is given, so a single coder never types it). Year and description are left
+    blank: `decide` defaults them to the event's year and summary, as the page does. Only `push` on a
+    new record writes the coder's fields; a refresh never touches them."""
+    ctx = review_context(data_dir, run_id=run_id, presort_path=presort_path)
     out = []
     for it in ctx["items"]:
         e = it["event"]
         srcs = it["sources"]
         dup = it["duplicate_of"]["event_id"] if it.get("duplicate_of") else ""
+        ps = it.get("presort")
+        presort = (f"{ps['label']} — {ps['reason']}" + (f" (group {ps['group']})" if ps.get("group") else "")
+                   + f" [{ps['presorted_by']}]") if ps else None
+        # ticket 33: a candidate without a sub-region comes with the ones its place suggests, and why
+        guess = places.suggest_subregions(e) if not e["subregion"] else []
+        guessed = [_subregion_choice(str(g["subregion"])) for g in guess]
+        own = _subregion_choice(e["subregion"])
         rec = {
             "event_id": e["event_id"], "run_id": run_id, "pull_request": pr, "claimant": e["claimant"],
             "date_start": e["date_start"] or None, "date_end": e["date_end"] or None, "date_precision": e["date_precision"] or None,
             "location_name": e["location_name"], "location_precision": e["location_precision"] or None,
-            "subregion": _subregion_choice(e["subregion"]) or None, "lat": _num(e["lat"]), "lon": _num(e["lon"]),
+            "subregion": own or (guessed[0] if len(guessed) == 1 else None), "lat": _num(e["lat"]), "lon": _num(e["lon"]),
             "summary": e["summary"], "actors": e["actors"],
             "sources": "\n".join(" ".join(x for x in (s["title"] or s["url"], "—", s["publisher"], s["pub_date"]) if x) + "\n" + s["url"] for s in srcs),
             "excerpt": "\n\n".join(s["excerpt"] for s in srcs if s["excerpt"]),
-            "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"], "suggested_issues": e["suggested_issues"],
-            "suggested_dyads": e["suggested_dyads"], "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
-            "possible_duplicate_of": dup,
+            "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"].split() or None,
+            "suggested_issues": e["suggested_issues"].split() or None, "suggested_dyads": e["suggested_dyads"].split() or None,
+            "suggestion_reasoning": e["suggestion_reasoning"],
+            "machine_note": "\n".join(x for x in (e["review_note"], places.note(guess)) if x),
+            "possible_duplicate_of": dup, "presort": presort,
+            "flags": flags_for(e) or None, "dataset_status": "In review", "run": [run_record] if run_record else None,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
-            "decision": "undecided", "duplicate_of": dup,
+            "decision": "undecided", "duplicate_of": dup, "reviewer": reviewer or None,
             "new_type": e["suggested_type"] or None, "new_dyads": e["suggested_dyads"],
             "new_domains": e["suggested_domains"].split() or None, "new_issues": e["suggested_issues"].split() or None,
-            "new_subregions": [_subregion_choice(e["subregion"])] if _subregion_choice(e["subregion"]) else None,
+            "new_subregions": [own] if own else (guessed or None),
         }
         out.append({k: v for k, v in rec.items() if v not in (None, "")})
     return out
 
 
-CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS]
+# A refresh rewrites the context columns, except what is set once at creation and then owned by the
+# reviewer or the workflow: the flags, the run link, and the dataset status (which moves on by hand
+# until a sync with a token moves it).
+SET_ONCE = ("flags", "run", "dataset_status")
+CONTEXT_FIELDS = [n for n in FIELD_NAMES if n not in CODER_FIELDS and n not in SET_ONCE]
+
+
+# The lists a row carries of the claimant's moves go stale as sittings accept and extend moves; the
+# nightly task rewrites them on the rows still in the base (the only context that changes between pushes).
+REFRESHED_LISTS = ("previous_year_moves", "same_year_moves")
+
+
+def context_updates(current: list[dict], records: list[dict], field_ids: dict[str, str]) -> list[dict]:
+    """The connector updates that bring the rows' move lists in line with `records` (records_for_run's
+    output for the run today): one {"id", "fields"} per row whose lists differ, naming only the
+    differing columns by field id; a list that emptied is written as "" (cleared), and rows the run no
+    longer has are left alone."""
+    by_event = {r["event_id"]: r for r in records}
+    out = []
+    for row in current:
+        f = normalise_record(row, field_ids)
+        want = by_event.get(f.get("event_id"))
+        if want is None:
+            continue
+        fields = {field_ids[k]: (want.get(k) or "") for k in REFRESHED_LISTS if (f.get(k) or "") != (want.get(k) or "")}
+        if fields:
+            out.append({"id": row["id"], "fields": fields})
+    return out
+
+
+def context_mismatches(current: list[dict], records: list[dict], field_ids: dict[str, str]) -> list[str]:
+    """The event ids of rows whose lists still differ from `records`: the check after a refresh."""
+    return sorted(normalise_record(r, field_ids)["event_id"] for r in current
+                  if any(u["id"] == r["id"] for u in context_updates([r], records, field_ids)))
+
+
+# ---------------------------------------------------------------------------
+# the run log (ticket 20): one row per run, from harvest/runs/<run_id>/run.json and the candidates
+
+def run_type(run_id: str) -> str:
+    """Weekly harvests are named by their timestamp, backfill chunks by claimant and period;
+    anything else was compiled by hand. "Catch-up" is chosen by the reviewer, never derived."""
+    if re.fullmatch(r"\d{8}T\d{4}", run_id):
+        return "Weekly harvest"
+    if re.fullmatch(r"[A-Z]{2}-\d{4}(-\d{4}|s|-[A-Za-z]+\d{4})?", run_id):
+        return "Backfill"
+    return "Manual"
+
+
+def run_date(run_id: str, fallback: str = "") -> str:
+    """The run's date: the YYYYMMDD in the id (20261102T0724, manual-20261018-…), else the date given
+    (the run.json's finished_at), else today (a backfill chunk is dated by its import)."""
+    m = re.search(r"(?<!\d)(\d{4})(\d{2})(\d{2})(?!\d)", run_id)
+    if m:
+        return "-".join(m.groups())
+    return fallback[:10] if fallback else dt.date.today().isoformat()
+
+
+def run_record(run_dir: Path, data_dir: Path, pr: int | None = None, notes: str = "") -> dict:
+    """The Runs row: counts from run.json, the excerpt checks and duplicate flags from the run's
+    candidates, the sources that failed, the review PR. `notes` is what the compiler or the run
+    wants the reviewer to look at."""
+    report = json.loads((run_dir / "run.json").read_text(encoding="utf-8"))
+    run_id = report["run_id"]
+    ctx = review_context(data_dir, run_id=run_id)
+    events = [it["event"] for it in ctx["items"]]
+    notes_ = [e.get("review_note") or "" for e in events]
+    not_found = sum("not found verbatim" in n for n in notes_)
+    unchecked = sum(("not checked" in n or "could not be fetched" in n) and "not found verbatim" not in n for n in notes_)
+    verified = len(events) - not_found - unchecked
+    failures = report.get("failures") or []
+    if isinstance(failures, list):
+        failed_sources = sorted({f.get("source_id") or f.get("source") or "?" for f in failures if "deferred" not in (f.get("error") or "")})
+        n_fail = len([f for f in failures if "deferred" not in (f.get("error") or "")])
+    else:
+        failed_sources, n_fail = [], int(failures)
+    dates = sorted(e["date_start"] for e in events if e.get("date_start"))
+    claimants = sorted({e["claimant"] for e in events})
+    scope = ", ".join(ctx["claimants"].get(c, c) for c in claimants)
+    if dates:
+        scope += f" {dates[0][:4]}" + (f"–{dates[-1][:4]}" if dates[-1][:4] != dates[0][:4] else "")
+    if not events and n_fail:
+        verdict = "Failed"
+    elif not events:
+        verdict = "No candidates"
+    elif n_fail:
+        verdict = "Partial"
+    else:
+        verdict = "Pass"
+    rec = {
+        "run_id": run_id, "date": run_date(run_id, report.get("finished_at", "")), "type": run_type(run_id), "scope": scope,
+        "verdict": verdict, "documents": report.get("documents"), "candidates": len(events),
+        "possible_duplicates": sum("Possible duplicate" in n for n in notes_), "failures": n_fail,
+        "excerpts_verified": verified, "excerpts_unchecked": unchecked, "excerpts_not_found": not_found,
+        "review_pr": pr, "review_pr_url": f"{REPO_URL}/pull/{pr}" if pr else None,
+        "extractor": report.get("extractor", ""), "unreachable_sources": "\n".join(failed_sources) or None,
+        "what_to_look_at": notes or None,
+    }
+    return {k: v for k, v in rec.items() if v not in (None, "")}
 
 
 # ---------------------------------------------------------------------------
@@ -282,12 +510,10 @@ def normalise_record(r: dict, field_ids: dict[str, str] | None = None) -> dict:
     """One record's fields keyed by field name, with plain values, whatever the export shape:
     {"fields": {name: value}} (REST), {"cellValuesByFieldId": {id: value}} (other clients, needs
     the name->id map from the configuration), or a bare {name: value} dict."""
-    if "cellValuesByFieldId" in r:
-        names = {v: k for k, v in (field_ids or {}).items()}
-        raw = {names.get(k, k): v for k, v in r["cellValuesByFieldId"].items()}
-    else:
-        raw = r.get("fields", r)
-    return {k: _plain(v) for k, v in raw.items()}
+    names = {v: k for k, v in (field_ids or {}).items()}
+    raw = r["cellValuesByFieldId"] if "cellValuesByFieldId" in r else r.get("fields", r)
+    # keys may be field ids, the base's labels or the internal names, depending on the export
+    return {names.get(k) or LABEL_TO_NAME.get(k, k): _plain(v) for k, v in raw.items()}
 
 
 def _same(col: str, edited, shown) -> bool:
@@ -299,8 +525,19 @@ def _same(col: str, edited, shown) -> bool:
     return str(edited).strip() == str(shown or "").strip()
 
 
+_CONTINUATION = re.compile(r"^\s*continuation of (\S+)")
+
+
+def confirmed_continuation(presort: str) -> str:
+    """The note a rejection gets when the coder left it blank: the pre-sort's continuation target, marked
+    as confirmed ("continuation of CN198201 (pre-sort confirmed)"), or "" when the pre-sort said anything
+    else — a blank note then still fails `decide`, as it should."""
+    m = _CONTINUATION.match(presort or "")
+    return f"continuation of {m.group(1)} (pre-sort confirmed)" if m else ""
+
+
 def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: dict[str, str] | None = None,
-                           run_id: str | None = None) -> dict:
+                           run_id: str | None = None, default: str = "") -> dict:
     """The decisions file `pipeline.queue decide` reads, from the coder's fields. Records left
     'undecided', and records of other runs when run_id is given, are skipped; a blank edit field, or
     one repeating the value shown, keeps the event's value, as on the page. Decisions come out in
@@ -317,6 +554,8 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
         if not f.get("event_id"):
             raise ValueError(f"record {r.get('id', '?')} has a decision ({action}) but no event_id; only rows the sync created can be decided")
         d: dict[str, Any] = {"event_id": f["event_id"], "action": action, "note": (f.get("note") or "").strip()}
+        if action == "reject" and not d["note"]:
+            d["note"] = confirmed_continuation(f.get("presort") or "")
         if f.get("reviewer"):
             reviewers.add(f["reviewer"].strip())
         if action == "merge":
@@ -347,7 +586,8 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
         decisions.append(d)
     decisions.sort(key=lambda d: d["event_id"])          # table order is not meaningful; the file is deterministic
     out = {"decisions": decisions}
-    name = reviewer or (reviewers.pop() if len(reviewers) == 1 else "")
+    # signed by the name given, else the one name the rows carry, else the configured default
+    name = reviewer or (reviewers.pop() if len(reviewers) == 1 else "") or default
     if name:
         out["reviewer"] = name
     return out
@@ -362,7 +602,9 @@ def push(client: Client, records: list[dict], run_id: str) -> dict:
     push is checked against the budget before anything is sent."""
     existing = {r["fields"].get("event_id"): r["id"] for r in client.list(run_filter(run_id))}
     new = [r for r in records if r["event_id"] not in existing]
-    upd = [(existing[r["event_id"]], {k: r.get(k) for k in CONTEXT_FIELDS}) for r in records if r["event_id"] in existing]
+    # a refresh without a pre-sort file must not blank a pre-sort the base already holds
+    upd = [(existing[r["event_id"]], {k: r.get(k) for k in CONTEXT_FIELDS if k != "presort" or r.get("presort")})
+           for r in records if r["event_id"] in existing]
     client._check(client.batches(len(new)) + client.batches(len(upd)))
     if new:
         client.create(new)
@@ -371,9 +613,9 @@ def push(client: Client, records: list[dict], run_id: str) -> dict:
     return {"created": len(new), "updated": len(upd), "calls": client.calls}
 
 
-def pull(client: Client, run_id: str, reviewer: str = "") -> dict:
+def pull(client: Client, run_id: str, reviewer: str = "", default: str = "") -> dict:
     """The run's decisions as the file `queue decide` reads (see decisions_from_records)."""
-    return decisions_from_records(client.list(run_filter(run_id)), reviewer, run_id=run_id)
+    return decisions_from_records(client.list(run_filter(run_id)), reviewer, run_id=run_id, default=default)
 
 
 def clear(client: Client, run_id: str) -> int:
@@ -384,9 +626,73 @@ def clear(client: Client, run_id: str) -> int:
     return len(ids)
 
 
+
+
+def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "",
+                reviewer: str = "", field_ids: dict[str, str] | None = None, default: str = "") -> dict:
+    """Ticket 22: the review archive. From the run's rows as exported from the base (any export shape
+    `normalise_record` accepts), write three files into out_dir — the repository's record of the review,
+    so the rows can leave Airtable without anything being lost (the free plan caps a base at 1,000 rows):
+
+      records.json    every row of the run, under the code's field names, with its Airtable id and the
+                      coder's own columns (decision, note, priority, selected, edits …); merged by event_id
+                      with an earlier records.json, so a run reviewed in several sittings accumulates, and
+                      rows already cleared from the base keep their last exported state;
+      decisions.json  the rows decided in THIS sitting, as `pipeline.queue decide` reads them — a row whose
+                      earlier archived state already carried a decision was applied then and is left out,
+                      so a failed or partial clear does not make `decide` refuse the whole file;
+      clear.json      the Airtable record ids of the decided rows of this export, for the connector's
+                      delete call — undecided rows stay in the base.
+
+    Returns {"kept", "decided", "to_clear"}. Nothing is sent anywhere. Raises ValueError when the export
+    holds two rows for one event (the base should never, and the archive would keep only one)."""
+    today = today or dt.date.today().isoformat()
+    cfg = load_config()
+    field_ids = field_ids if field_ids is not None else cfg.get("field_ids") or {}
+    out_dir.mkdir(parents=True, exist_ok=True)
+    rec_path = out_dir / "records.json"
+    earlier: dict[str, dict] = {}
+    if rec_path.exists():
+        for old in json.loads(rec_path.read_text(encoding="utf-8")).get("records", []):
+            earlier[old["event_id"]] = old
+    rows: dict[str, dict] = {}
+    ours: list[dict] = []
+    for r in exported:
+        f = normalise_record(r, field_ids)
+        if f.get("run_id") != run_id or not f.get("event_id"):
+            continue
+        if f["event_id"] in rows:
+            raise ValueError(f"the export holds two rows for event {f['event_id']} ({rows[f['event_id']]['airtable_id']} and {r.get('id', '?')})")
+        row = {"airtable_id": r.get("id", ""), "archived_on": today}
+        row.update({k: v for k, v in f.items() if v is not None and v != "" and v != [] and not str(k).startswith("zz old")})
+        rows[f["event_id"]] = row
+        ours.append(r)
+    kept = {**earlier, **rows}                           # this export is the newer state of the rows it holds
+    archive = {"run_id": run_id, "exported_on": today,
+               "records": sorted(kept.values(), key=lambda x: x["event_id"])}
+    rec_path.write_text(json.dumps(archive, indent=1, ensure_ascii=False), encoding="utf-8")
+    already = {eid for eid, old in earlier.items() if (old.get("decision") or "undecided") != "undecided"}
+    decisions = decisions_from_records(ours, reviewer, field_ids, run_id=run_id, default=default)
+    decisions["decisions"] = [d for d in decisions["decisions"] if d["event_id"] not in already]
+    (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=1, ensure_ascii=False), encoding="utf-8")
+    decided = {d["event_id"] for d in decisions["decisions"]}
+    clear_ids = [rows[eid]["airtable_id"] for eid in sorted(decided) if rows[eid]["airtable_id"]]
+    clear_spec = {"run_id": run_id, "table": cfg.get("table", "Candidates"),
+                  "record_ids": clear_ids, "event_ids": sorted(decided)}
+    (out_dir / "clear.json").write_text(json.dumps(clear_spec, indent=1, ensure_ascii=False), encoding="utf-8")
+    return {"kept": len(archive["records"]), "decided": len(decided), "to_clear": len(clear_ids)}
+
+
 def table_schema() -> dict:
-    """The Candidates table as Airtable's schema API wants it; the live base was created from it."""
-    return {"name": load_config().get("table", "Candidates"), "fields": [{"name": n, "type": t, **({"options": o} if o else {})} for n, t, o in FIELDS]}
+    """The Candidates table as Airtable's schema API wants it (`name` is the base's label; `internal`
+    the code's name); the live base was created from an earlier version of it and updated by hand since."""
+    cfg = load_config()
+    fields = []
+    for n, t, o in FIELDS:
+        if n == "run":
+            o = {"linkedTableId": cfg.get("runs_table_id", "")}
+        fields.append({"name": LABELS[n], "internal": n, "type": t, **({"options": o} if o else {})})
+    return {"name": cfg.get("table", "Candidates"), "fields": fields}
 
 
 def main(argv=None) -> int:
@@ -400,19 +706,71 @@ def main(argv=None) -> int:
             s.add_argument("--max-calls", type=int, default=200)
         if name in ("push", "records"):
             s.add_argument("--pr", type=int, default=None)
+            s.add_argument("--presort", type=Path, default=None, help="a pre-sort file (default harvest/presort/<run_id>.json when it exists)")
+            s.add_argument("--run-record", default=None, help="the Runs table record id to link the candidates to (rec...)")
         if name in ("pull", "records"):
             s.add_argument("--out", type=Path, required=True)
+        s.add_argument("--reviewer", default=None, help="the coder's name (default: `reviewer` in pipeline/airtable.json)")
         if name == "pull":
-            s.add_argument("--reviewer", default="")
             s.add_argument("--from", dest="from_file", type=Path, default=None, help="records exported from Airtable as JSON, instead of calling it")
     sub.add_parser("schema")
+    ar = sub.add_parser("archive", help="ticket 22: file the run's exported rows in the repository and name the decided ones for deletion")
+    ar.add_argument("--run", required=True)
+    ar.add_argument("--from", dest="from_file", type=Path, required=True, help="the run's records exported from Airtable as JSON")
+    ar.add_argument("--out-dir", type=Path, default=None, help="default harvest/airtable/<run_id>")
+    ar.add_argument("--reviewer", default=None, help="the coder's name (default: `reviewer` in pipeline/airtable.json)")
+    ar.add_argument("--date", default="")
+    cd = sub.add_parser("context-diff", help="the connector updates that refresh the move lists on rows already in the base")
+    cd.add_argument("--current", type=Path, required=True, help="the rows as the connector lists them (event_id and the two lists)")
+    cd.add_argument("--records", type=Path, required=True, help="the output of `records` for the run today")
+    cd.add_argument("--out", type=Path, required=True, help="batches of updates, as JSON")
+    cd.add_argument("--batch", type=int, default=4, help="updates per batch")
+    cc = sub.add_parser("context-check", help="exit 1 naming the rows whose move lists still differ from `records`")
+    cc.add_argument("--current", type=Path, required=True)
+    cc.add_argument("--records", type=Path, required=True)
+    rr = sub.add_parser("run-record")
+    rr.add_argument("--run", required=True, type=Path, help="the run folder, harvest/runs/<run_id>")
+    rr.add_argument("--data", type=Path, default=None)
+    rr.add_argument("--pr", type=int, default=None)
+    rr.add_argument("--notes", default="", help="what the reviewer should look at")
+    rr.add_argument("--out", type=Path, required=True)
     a = p.parse_args(argv)
+    if a.cmd == "run-record":
+        rec = run_record(a.run, a.data or repo_root() / "data", a.pr, a.notes)
+        a.out.write_text(json.dumps(rec, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"run record for {rec['run_id']} -> {a.out} (nothing sent)")
+        return 0
     if a.cmd == "schema":
         print(json.dumps(table_schema(), indent=1))
         return 0
+    if a.cmd in ("context-diff", "context-check"):
+        cur = json.loads(a.current.read_text(encoding="utf-8"))
+        cur = cur.get("records", []) if isinstance(cur, dict) else cur
+        recs = json.loads(a.records.read_text(encoding="utf-8"))
+        ids = load_config().get("field_ids") or {}
+        if a.cmd == "context-diff":
+            ups = context_updates(cur, recs, ids)
+            a.out.write_text(json.dumps([ups[i:i + a.batch] for i in range(0, len(ups), a.batch)], indent=1, ensure_ascii=False), encoding="utf-8")
+            print(f"{len(ups)} row(s) to refresh in {-(-len(ups) // a.batch) if ups else 0} batch(es) -> {a.out}")
+            return 0
+        bad = context_mismatches(cur, recs, ids)
+        print("all rows carry the current lists" if not bad else f"{len(bad)} row(s) still differ: {', '.join(bad)}")
+        return 1 if bad else 0
+    if a.cmd == "archive":
+        exported = json.loads(a.from_file.read_text(encoding="utf-8"))
+        if isinstance(exported, dict):
+            exported = exported.get("records", [])
+        out_dir = a.out_dir or repo_root() / "harvest" / "airtable" / a.run
+        res = archive_run(exported, a.run, out_dir, a.date, a.reviewer or "", default=default_reviewer())
+        if not res["kept"]:
+            print(f"nothing archived: no exported row belongs to run {a.run} (wrong run id, or an export keyed by field ids without field_ids in pipeline/airtable.json)", file=sys.stderr)
+            return 1
+        print(f"archived run {a.run} -> {out_dir}: {res['kept']} row(s) kept, {res['decided']} decided, "
+              f"{res['to_clear']} to clear from the base (clear.json). Apply with: python -m pipeline.queue decide {out_dir / 'decisions.json'}")
+        return 0
     data_dir = a.data or repo_root() / "data"
     if a.cmd == "records":
-        recs = records_for_run(data_dir, a.run, a.pr)
+        recs = records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, default_reviewer() if a.reviewer is None else a.reviewer)
         a.out.write_text(json.dumps(recs, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(recs)} record(s) -> {a.out} (nothing sent)")
         return 0
@@ -420,7 +778,7 @@ def main(argv=None) -> int:
         exported = json.loads(a.from_file.read_text(encoding="utf-8"))
         if isinstance(exported, dict):
             exported = exported.get("records", [])
-        d = decisions_from_records(exported, a.reviewer, load_config().get("field_ids"), run_id=a.run)
+        d = decisions_from_records(exported, a.reviewer or "", load_config().get("field_ids"), run_id=a.run, default=default_reviewer())
         a.out.write_text(json.dumps(d, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(d['decisions'])} decision(s) -> {a.out}")
         return 0
@@ -430,12 +788,12 @@ def main(argv=None) -> int:
     if reason:
         print(f"nothing done: {reason}")
         return 0
-    client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls)
+    client = Client(token, cfg["base_id"], cfg.get("table_id") or cfg["table"], a.max_calls, cfg.get("field_ids"))
     if a.cmd == "push":
-        res = push(client, records_for_run(data_dir, a.run, a.pr), a.run)
+        res = push(client, records_for_run(data_dir, a.run, a.pr, a.run_record, a.presort, default_reviewer() if a.reviewer is None else a.reviewer), a.run)
         print(f"pushed run {a.run}: {res['created']} created, {res['updated']} refreshed, {res['calls']} API call(s)")
     elif a.cmd == "pull":
-        d = pull(client, a.run, a.reviewer)
+        d = pull(client, a.run, a.reviewer or "", default_reviewer())
         a.out.write_text(json.dumps(d, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{len(d['decisions'])} decision(s) -> {a.out}; {client.calls} API call(s). Apply with: python -m pipeline.queue decide {a.out}")
     elif a.cmd == "clear":
