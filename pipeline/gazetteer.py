@@ -110,10 +110,23 @@ def load(gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXTRA, geonames: P
             feats[r["feature_id"]] = merged
         else:
             feats[r["feature_id"]] = {k: r.get(k, "") for k in COLUMNS}
+    feats = _merge_duplicates(feats)
     for r in feats.values():
         r["lat"], r["lon"] = float(r["lat"]), float(r["lon"])
         r["subregion"] = int(r["subregion"]) if r["subregion"] and r["subregion"] != "-" else None   # "-" = spans several
         r["names"] = sorted({r[c] for c in NAME_COLUMNS if r[c]} | {a for a in r["aliases"].split("|") if a})
+    return feats
+
+
+def _merge_duplicates(feats: dict[str, dict]) -> dict[str, dict]:
+    """A row whose kind is "=<feature_id>" is a duplicate of that feature (Wikidata keeps some reefs twice,
+    once under the Chinese name only): its names become the other's aliases and it leaves the map."""
+    for fid in [f for f, r in feats.items() if r["kind"].startswith("=")]:
+        dup = feats.pop(fid)
+        target = feats[dup["kind"][1:]]
+        names = {dup[c] for c in NAME_COLUMNS if dup[c]} | {a for a in dup["aliases"].split("|") if a}
+        own = {target[c] for c in NAME_COLUMNS}
+        target["aliases"] = "|".join(sorted({a for a in target["aliases"].split("|") if a} | (names - own)))
     return feats
 
 
@@ -263,4 +276,48 @@ def named_features(text: str, gazetteer: Path = GAZETTEER, extra: Path = GAZETTE
         if fid not in seen:
             seen.add(fid)
             out.append(feats[fid])
+    return out
+
+
+# A name the maps can show: Latin letters, no pinyin or Vietnamese feature word (ticket 32).
+NOT_ENGLISH = re.compile(r"\b(jiao|tan|dao|ansha|shazhou|qundao|qunjiao|lianjiao|sha|yu|chiao|tao|da|bai|banc|recif)\b"
+                         r"|[^\x00-\x7f’–—]", re.I)
+
+
+def is_english_name(name: str) -> bool:
+    return bool(name and name.strip()) and not NOT_ENGLISH.search(name)
+
+
+def english_place(text: str, gazetteer: Path = GAZETTEER, extra: Path = GAZETTEER_EXTRA) -> str:
+    """A place as the maps show it, in English (ticket 32): "Huangyan Dao (Scarborough Shoal)" becomes
+    "Scarborough Shoal", "Nansha Qundao" "Spratly Islands"; a name the gazetteer does not know, or text
+    already in English, is left as it is. The recorded place in events.csv is not changed."""
+    if not text or is_english_name(text):
+        return text
+
+    def paren(m):
+        a, b = m.group(1), m.group(2).strip()
+        if is_english_name(a) != is_english_name(b):
+            return a if is_english_name(a) else b
+        return m.group(0)
+    out = re.sub(r"\b([A-Z][\w'’\-]*(?:\s[A-Z][\w'’\-]*)*)\s*\(([^()]+)\)", paren, text)
+    feats = load(gazetteer, extra)
+    names = sorted({(n, f["name_en"]) for f in feats.values() if f["name_en"] for n in f["names"]
+                    if not is_english_name(n) and len(n) >= 4}, key=lambda t: -len(t[0]))
+    owners: dict[str, set] = {}
+    for f in feats.values():
+        for n in f["names"]:
+            owners.setdefault(n.casefold(), set()).add(f["name_en"])
+    replaced = []
+    for n, en in names:
+        if len(owners[n.casefold()]) > 1:
+            continue   # shared by several features: no single English name
+        pat = re.compile(r"(?<![\w'’])" + re.escape(n) + r"(?![\w'’])", re.I)
+        if pat.search(out):
+            out = pat.sub(en, out)
+            replaced.append(en)
+    for en in replaced:   # "Recto (Reed) Bank, Liyue Tan" -> not "..., Reed Bank" twice over
+        rest = out.replace(", " + en, "", 1)
+        if rest != out and all(re.search(r"\b" + re.escape(w) + r"\b", rest) for w in en.split()):
+            out = rest
     return out

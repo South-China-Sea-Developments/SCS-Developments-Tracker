@@ -480,6 +480,19 @@ def test_map_data_matches_the_validator(dist):
     assert [f["properties"]["n"] for f in data["subregions"]["features"]] == list(range(1, 11))
 
 
+
+def test_every_name_on_the_maps_is_english(dist):
+    """Ticket 32: feature labels, the reefs a move names, event places and sub-region names, all in English."""
+    from pipeline.gazetteer import is_english_name
+    data = json.loads((dist / "data/events.json").read_text(encoding="utf-8"))
+    names = [f["properties"]["n"] for f in data["assert"]["gazetteer"]["features"]]
+    names += [f["n"] for f in data["assert"]["features"].values()]
+    names += [e["n"] for e in data["events"] if e["n"]]
+    names += list(data["subregion_names"].values()) + [f["properties"]["name"] for f in data["subregions"]["features"]]
+    bad = sorted({n for n in names if not is_english_name(n)})
+    assert not bad, bad
+
+
 @pytest.mark.parametrize("viewport", [(1280, 900), (390, 800)])
 def test_map_renders_offline_without_errors(browser, dist, viewport):
     from pipeline.validate import event_aggregates

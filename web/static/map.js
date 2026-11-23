@@ -150,7 +150,7 @@
              q: searchEl ? searchEl.value.trim().toLowerCase() : "" };
   }
   function haystack(e) {   // what the search box looks through: summary, place, claimant, move id, sub-region names
-    if (!e.hay) e.hay = [(NAMES[e.c] || e.c), e.m, e.n || "", e.s || "", e.sr.map(function (s) { return SR_NAMES[s] || ""; }).join(" ")].join(" ").toLowerCase();
+    if (!e.hay) e.hay = [(NAMES[e.c] || e.c), e.m, e.n || "", e.n0 || "", e.s || "", e.sr.map(function (s) { return SR_NAMES[s] || ""; }).join(" ")].join(" ").toLowerCase();
     return e.hay;
   }
   function matches(e, f) {

@@ -191,3 +191,27 @@ def test_the_geonames_layer_adds_features_without_clashing_names():
     clashes = {n: o for n, o in owners.items() if n in added and len(o) > 1}
     assert not clashes, list(clashes.items())[:5]
 
+
+def test_every_feature_has_an_english_name():
+    """Ticket 32: the maps label features with name_en, so every feature has one, in English (no pinyin,
+    Vietnamese or Chinese)."""
+    from pipeline import gazetteer as gz
+    bad = [(fid, f["name_en"]) for fid, f in gz.load().items() if not gz.is_english_name(f["name_en"])]
+    assert not bad, bad
+
+
+def test_duplicates_merge_into_their_english_feature():
+    from pipeline import gazetteer as gz
+    feats = gz.load()
+    assert "安定连礁" not in feats and "安定连礁" in feats["addington-patch"]["names"]
+    assert [f["feature_id"] for f in gz.named_features("Chinese ships at 安定连礁")] == ["addington-patch"]
+
+
+def test_english_place():
+    from pipeline import gazetteer as gz
+    assert gz.english_place("Huangyan Dao (Scarborough Shoal)") == "Scarborough Shoal"
+    assert gz.english_place("Meiji Jiao (Mischief Reef) and Zhubi Jiao (Subi Reef)") == "Mischief Reef and Subi Reef"
+    assert gz.english_place("Xisha Qundao and Nansha Qundao") == "Paracel Islands and Spratly Islands"
+    assert gz.english_place("near Woody Island (Yongxing Dao), Paracels") == "near Woody Island, Paracels"
+    assert gz.english_place("Second Thomas Shoal") == "Second Thomas Shoal"
+
