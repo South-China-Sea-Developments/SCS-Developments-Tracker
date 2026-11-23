@@ -630,3 +630,22 @@ def test_context_updates_name_only_the_rows_whose_lists_changed(tmp_path):
     assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out), "--batch", "1"]) == 0
     assert json.loads(out.read_text(encoding="utf-8")) == [[{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]]
     assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 1
+
+
+def test_a_candidate_without_a_sub_region_comes_with_suggestions(tmp_path):
+    """Ticket 33: a blank sub-region is prefilled from the place ("off Sabah and Sarawak" -> 10 and 7),
+    with the reason in the machine note; the event row itself is not changed."""
+    d = opened_copy(tmp_path, "d")
+    path = d / "events.csv"
+    rows = list(csv.DictReader(open(path, encoding="utf-8")))
+    target = next(r for r in rows if r["harvest_run_id"] == "fixture" and r["status"] == "candidate" and not r["location_name"])
+    target.update(location_name="Malaysian continental shelf off Sabah and Sarawak", subregion="", lat="", lon="")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    rec = next(r for r in airtable.records_for_run(d, "fixture", pr=17) if r["event_id"] == target["event_id"])
+    assert rec["new_subregions"] == ["10 Far South", "7 Spratly SE"]
+    assert "subregion" not in rec                                   # two suggestions: the single sub-region is left to the coder
+    assert rec["machine_note"].startswith("Sub-regions suggested: 10 Far South (") and "Sarawak coast 99%" in rec["machine_note"]
+    assert next(r for r in csv.DictReader(open(path, encoding="utf-8")) if r["event_id"] == target["event_id"])["subregion"] == ""
