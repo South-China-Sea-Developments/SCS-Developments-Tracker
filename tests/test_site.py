@@ -767,3 +767,15 @@ def test_the_map_zooms_in_a_little_and_back_out_on_scrolling(browser, dist):
     assert problems == []
     page.close()
 
+
+
+def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
+    """Ticket 29: MapLibre's ctrl + scroll hint is hidden on a desktop, and never veils the map."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.mouse.move(700, 500)
+    page.mouse.wheel(0, 200)
+    page.wait_for_timeout(150)
+    assert page.evaluate("(() => { const m = document.querySelector('#amap .maplibregl-desktop-message'); return !m || getComputedStyle(m).display === 'none'; })()")
+    assert page.evaluate("(() => { const s = document.querySelector('#amap .maplibregl-cooperative-gesture-screen'); return !s || getComputedStyle(s).backgroundColor === 'rgba(0, 0, 0, 0)'; })()")
+    assert problems == []
+    page.close()

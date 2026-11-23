@@ -32,3 +32,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 26 | [Main's version of shared rows after a merge](26-sync-data.md) | 22 | built |
 | 27 | [The assertiveness map, first version](27-map-redesign.md) | 17 | built |
 | 28 | [The other pages in the home page's style](28-site-restyle.md) | 27 | built |
+| 29 | [Map polish after launch](29-map-polish.md) | 27 | in progress |

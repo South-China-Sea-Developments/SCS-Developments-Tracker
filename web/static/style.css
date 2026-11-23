@@ -648,3 +648,9 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .pills { display: flex; flex-wrap: wrap; gap: 6px; }
 .filter-groups .pill { font-size: inherit; }
 #map:not(.zoomed) .evt { display: none; }   /* events at their positions only when zoomed in (ticket 28) */
+/* MapLibre's "use ctrl + scroll / two fingers" hint (ticket 29): it covered the map every time the page
+   scrolled over it. On a desktop it is gone (the + and − buttons and ctrl + scroll still zoom); on a phone
+   it is a small pill at the foot of the map, with no veil over the map. */
+.maplibregl-cooperative-gesture-screen { background: none !important; align-items: flex-end !important; padding: 0 0 64px !important; font-size: 0.78rem !important; color: var(--ink) !important; }
+.maplibregl-cooperative-gesture-screen .maplibregl-desktop-message { display: none !important; }
+.maplibregl-cooperative-gesture-screen .maplibregl-mobile-message { background: color-mix(in srgb, var(--surface) 92%, transparent); padding: 4px 12px; border-radius: 999px; box-shadow: 0 1px 3px rgba(var(--shadow), 0.2); }

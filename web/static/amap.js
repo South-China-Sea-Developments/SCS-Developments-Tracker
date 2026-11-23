@@ -196,6 +196,27 @@
     });
   }
 
+
+  // reefs and small islands (Natural Earth), faint and only when zoomed in: the far view is unchanged
+  function addShapes(map, before) {
+    var S = DATA.assert && DATA.assert.shapes;
+    if (!S) return;
+    map.addSource("shp-islands", { type: "geojson", data: S.islands });
+    map.addLayer({ id: "shp-islands", type: "fill", source: "shp-islands", minzoom: 5.5,
+                   paint: { "fill-color": "#eceee9", "fill-outline-color": "#9aa6ac", "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5.5, 0, 6.2, 1] } }, before);
+    map.addSource("shp-reefs", { type: "geojson", data: S.reefs });
+    map.addLayer({ id: "shp-reefs", type: "line", source: "shp-reefs", minzoom: 5.5,
+                   paint: { "line-color": "#7f97a3", "line-width": 0.9, "line-dasharray": [2, 1.5], "line-opacity": ["interpolate", ["linear"], ["zoom"], 5.5, 0, 6.2, 0.9] } }, before);
+    var G = DATA.assert.gazetteer;
+    if (!G) return;
+    map.addSource("gz", { type: "geojson", data: G });
+    map.addLayer({ id: "gz-dot", type: "circle", source: "gz", minzoom: 6,
+                   paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 1.4, 9, 3], "circle-color": "#7d8a92",
+                            "circle-stroke-color": "#ffffff", "circle-stroke-width": 0.6, "circle-opacity": ["interpolate", ["linear"], ["zoom"], 6, 0, 6.6, 0.85] } }, before);
+    map.addLayer({ id: "gz-name", type: "symbol", source: "gz", minzoom: 7.6,
+                   layout: { "text-field": ["get", "n"], "text-font": ["Noto Sans Regular"], "text-size": 10, "text-offset": [0, 0.9], "text-anchor": "top", "text-optional": true },
+                   paint: { "text-color": "#5d6b76", "text-halo-color": "#ffffff", "text-halo-width": 1.2 } }, before);
+  }
   var loaded = false;
   var FILL_BY_ZOOM = ["interpolate", ["linear"], ["zoom"], ZOOM_FEATURES - 0.5, 0.55, ZOOM_FEATURES + 0.5, 0.22];
   function zoomClass() {
@@ -238,6 +259,7 @@
     map.addLayer({ id: "asr-fill", type: "fill", source: "asr", paint: { "fill-color": rampExpr(), "fill-opacity": FILL_BY_ZOOM } });
     // hairline white seams between the sub-regions read lighter than dark outlines on the grey sea
     map.addLayer({ id: "asr-line", type: "line", source: "asr", paint: { "line-color": "#ffffff", "line-width": 1.2, "line-opacity": 0.85 } });
+    addShapes(map);
     map.addLayer({ id: "asr-sel", type: "line", source: "asr", filter: ["==", ["get", "n"], -1], paint: { "line-color": INK, "line-width": 1.8 } });
     // reference lines, off by default: indicative maritime boundaries (dotted grey), China's dashed line (dashed ink)
     if (A.lines) {
