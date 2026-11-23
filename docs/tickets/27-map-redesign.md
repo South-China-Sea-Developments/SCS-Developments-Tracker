@@ -94,6 +94,7 @@ then several rounds of tuning over the following weeks.
   maritime lines are indicative median, treaty and disputed lines between neighbours, sparse inside the
   sea, not 200-nm EEZ limits; a full EEZ layer needs the Marine Regions data (CC BY), which the
   maintainer would have to supply.
+- Round 8: a gentle zoom in (up to 0.6 levels, halfway down the section) and back out as the page scrolls past the map, on the whole-sea view only, off once the reader zooms, pans or picks a sub-region, and off under reduced motion.
 - Round 7 also: the coding-source note under the slider removed (the tick's tooltip keeps it); the
   "Most intense" line removed from the details.
 

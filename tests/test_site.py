@@ -776,3 +776,17 @@ def test_the_map_scores_match_the_reference(browser, dist):
     assert problems == []
     page.close()
 
+
+def test_the_map_zooms_in_a_little_and_back_out_on_scrolling(browser, dist):
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    zoom = lambda: float(page.get_attribute("#amap", "data-zoom"))
+    start = zoom()
+    page.evaluate("(() => { const s = document.querySelector('.amap'); window.scrollTo(0, (s.offsetHeight - innerHeight) / 2); })()")
+    page.wait_for_timeout(400)
+    middle = zoom()
+    page.evaluate("(() => { const s = document.querySelector('.amap'); window.scrollTo(0, s.offsetTop + s.offsetHeight - innerHeight); })()")
+    page.wait_for_timeout(400)
+    assert middle > start + 0.3 and abs(zoom() - start) < 0.1, (start, middle, zoom())
+    assert problems == []
+    page.close()
+

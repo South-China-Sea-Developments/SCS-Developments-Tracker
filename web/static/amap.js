@@ -74,7 +74,7 @@
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
   map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-right");
-  window.addEventListener("resize", function () { sizeStage(); map.resize(); if (state.sel === null) map.fitBounds(SEA, { padding: padding(), animate: false }); });
+  window.addEventListener("resize", function () { sizeStage(); map.resize(); if (state.sel === null) { scrollBase = null; map.fitBounds(SEA, { padding: padding(), animate: false }); } });
   map.on("error", function (e) {
     var msg = e && e.error ? String(e.error.message || e.error) : "";
     if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("amap: " + msg);
@@ -200,12 +200,38 @@
   var FILL_BY_ZOOM = ["interpolate", ["linear"], ["zoom"], ZOOM_FEATURES - 0.5, 0.55, ZOOM_FEATURES + 0.5, 0.22];
   function zoomClass() {
     var z = map.getZoom();
+    canvasBox.setAttribute("data-zoom", z.toFixed(2));
     canvasBox.classList.toggle("zoomed", z >= ZOOM_FEATURES || state.sel !== null);
     canvasBox.classList.toggle("named", z >= ZOOM_NAMES);
     if (loaded) map.setPaintProperty("asr-fill", "fill-opacity", state.sel !== null ? 0.22 : FILL_BY_ZOOM);
   }
   map.on("zoom", zoomClass);
   map.on("moveend", zoomClass);
+
+  // ---- a gentle zoom in and back out as the page scrolls past the map ----------------------------
+  // Only on the whole-sea view the page fitted itself: once the reader zooms, pans or picks a
+  // sub-region, scrolling leaves the map alone. Off for readers who ask for reduced motion.
+  var SCROLL_ZOOM = 0.6;   // the most it zooms in, in zoom levels, halfway down the section
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var scrollBase = null, scrolling = false, readerMoved = false;
+  map.on("movestart", function (e) { if (e.originalEvent && !scrolling) readerMoved = true; });
+  function baseView() { scrollBase = { zoom: map.getZoom(), center: map.getCenter() }; }
+  function onScroll() {
+    if (!loaded || still.matches || readerMoved || state.sel !== null) return;
+    if (!scrollBase) baseView();
+    var section = document.querySelector(".amap");
+    var r = section.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight);
+    var p = Math.min(1, Math.max(0, -r.top / span));
+    scrolling = true;
+    map.jumpTo({ zoom: scrollBase.zoom + SCROLL_ZOOM * Math.sin(Math.PI * p), center: scrollBase.center });
+    scrolling = false;
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; onScroll(); });
+  }, { passive: true });
   map.on("load", function () {
     loaded = true;
     map.addSource("asr", { type: "geojson", data: shaded() });
@@ -243,7 +269,7 @@
     state.feat = null;
     state.sel = state.sel === n ? null : n;
     render();
-    if (state.sel === null) map.fitBounds(SEA, { padding: padding() });
+    if (state.sel === null) { readerMoved = false; scrollBase = null; map.fitBounds(SEA, { padding: padding() }); }
     else { fitTo(n); showPanel(); }
   }
   function selectFeature(fid) {
