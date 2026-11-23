@@ -284,7 +284,9 @@ patrol [MATS]).
 summarise [Project, ADR 0002].
 **Here.** Decide *merge* (into an existing move of the same claimant and year, or into a move formed from
 another candidate in the same batch via `move_of_event`), *new move*, *duplicate* (another report of an
-accepted event — status `merged`), or *reject*. Merge checks claimant and year.
+accepted event — status `merged`), or *reject*. Merge checks claimant and year. A merge (or duplicate)
+whose lead is rejected is rejected with it: `decide` turns the decision into a *reject* noted "Rejected with
+<lead>: …", so rejecting a lead needs no second pass over the candidates that pointed at it.
 **Don't.** Don't merge a 2024 event into a 2023 move: a move is a year's intensification, and the
 validator binds an event to a move of its own claimant and year. If the behaviour continued into 2024 at
 the same level, the 2024 event is decided *reject* with the note "continuation of <move_id>" (in Airtable, a

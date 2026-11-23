@@ -277,7 +277,25 @@
     });
     return problems;
   }
+  function cascadeRejects() {
+    // A merge into a candidate that is itself rejected cannot form a move: it is rejected with it, note first,
+    // through any chain of such merges. `queue decide` applies the same rule to whatever reaches it.
+    var changed = true;
+    while (changed) {
+      changed = false;
+      cards.forEach(function (card) {
+        if (card.getAttribute("data-presorted") === "1") return;
+        var d = readCard(card);
+        if (d.action !== "merge" || !d.move_of_event || (draft[d.move_of_event] || {}).action !== "reject") return;
+        var r = card.querySelector('input[name="a-' + d.event_id + '"][value="reject"]'); if (r) r.checked = true;
+        var n = card.querySelector(".f-note"), msg = "Rejected with " + d.move_of_event + ": the candidate it would merge into was rejected.";
+        n.value = n.value.trim() ? msg + " " + n.value.trim() : msg;
+        adopt(card); changed = true;
+      });
+    }
+  }
   document.getElementById("export").addEventListener("click", function () {
+    cascadeRejects();
     var decisions = [];
     cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
     var problems = validate(decisions);
