@@ -647,3 +647,4 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .pill input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; }
 .filter-groups .pill { font-size: inherit; }
+#map:not(.zoomed) .evt { display: none; }   /* events at their positions only when zoomed in (ticket 28) */

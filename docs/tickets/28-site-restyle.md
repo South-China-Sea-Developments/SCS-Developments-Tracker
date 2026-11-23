@@ -26,5 +26,6 @@ Tests follow the moved pages; the redirects are tested.
   their coloured dots on Events, which double as the legend).
 - Trends: quiet chart frames (a hairline above each figure, no card or shadow), more air between
   small multiples.
+- Events map: points only from zoom 6 in (the counts carry every event further out), with a legend hint.
 - Case pages: the inset map in the home map's blue, with the reefs, shoals and islands the
   description names as dots and listed under it.

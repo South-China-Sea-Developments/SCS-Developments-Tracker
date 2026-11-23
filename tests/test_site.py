@@ -535,6 +535,12 @@ def dist_placed(tmp_path_factory):
 def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     page, problems, _ = _open_map(browser, dist_placed)
     assert "3 placed" in page.evaluate("document.getElementById('map-count').textContent")
+    # the points show only zoomed in; far out the sub-region counts carry every event
+    assert page.locator(".evt:visible").count() == 0 and page.locator(".sr-count:visible").count() >= 1
+    for _ in range(3):
+        page.locator("#map .maplibregl-ctrl-zoom-in").click()
+        page.wait_for_timeout(400)
+    assert page.locator(".evt:visible").count() == 2
     # two events at one feature stack into one hollow marker carrying their count; the point event is filled
     evts = page.locator(".evt")
     assert evts.count() == 2
