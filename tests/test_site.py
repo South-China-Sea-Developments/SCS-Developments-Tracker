@@ -784,21 +784,21 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     page.close()
 
 
-def test_inner_pages_open_on_the_whole_banner_and_fold_it(browser, dist):
-    """Ticket 30: an inner page opens on the whole banner (logo included) and folds it into the strip as it scrolls."""
+def test_inner_pages_banner_strip_opens_on_hover(browser, dist):
+    """Ticket 30, option 2: the slim strip opens to the whole banner under the pointer, over the page."""
     page, problems = _open(browser, dist, "trends.html", (1440, 900))
     h = lambda: page.evaluate("document.querySelector('.banner').getBoundingClientRect().height")
-    full = round(1440 * 950 / 2219)
-    assert abs(h() - full) <= 2, h()
-    page.evaluate("window.scrollTo(0, 300)")
-    page.wait_for_timeout(150)
-    assert 150 <= h() < full - 200
-    # the menu band stays against the banner while it folds
-    gap = page.evaluate("document.querySelector('.navband').getBoundingClientRect().top - document.querySelector('.banner').getBoundingClientRect().bottom")
-    assert abs(gap) <= 2, gap
-    page.evaluate("window.scrollTo(0, 1500)")
-    page.wait_for_timeout(150)
-    assert page.evaluate("document.querySelector('.banner').getBoundingClientRect().bottom") <= 0, "folded, then gone with the page"
+    band = lambda: page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")
+    page.mouse.move(700, 850)
+    page.wait_for_timeout(1000)
+    slim, band0 = h(), band()
+    assert slim <= 150
+    page.hover(".banner-hit")
+    page.wait_for_timeout(700)
+    assert abs(h() - round(1440 * 950 / 2219)) <= 3 and band() == band0, "whole, and nothing below moved"
+    page.mouse.move(700, 850)
+    page.wait_for_timeout(1200)
+    assert h() <= 150
     assert problems == []
     page.close()
 
@@ -806,6 +806,11 @@ def test_inner_pages_open_on_the_whole_banner_and_fold_it(browser, dist):
 def test_the_home_page_opens_with_a_curtain_once(browser, dist):
     page, problems = _open(browser, dist, "index.html", (1440, 900), curtain=True)
     assert page.evaluate("!document.getElementById('curtain').hidden")
+    # it fills the screen with the logo and the title in view
+    box = page.evaluate("(() => { const r = document.querySelector('#curtain img').getBoundingClientRect(); return [r.left, r.top, r.width, r.height]; })()")
+    left, top, width, height = box
+    assert left + 0.008 * width >= -1 and left + 0.75 * width <= 1441, box
+    assert height >= 0.85 * 900, box
     page.wait_for_timeout(2900)
     assert page.evaluate("document.getElementById('curtain').hidden"), "it lifts by itself"
     page.reload()
@@ -814,3 +819,20 @@ def test_the_home_page_opens_with_a_curtain_once(browser, dist):
     assert problems == []
     page.close()
 
+
+
+def test_the_scroll_zoom_carries_on_after_a_manual_zoom(browser, dist):
+    """Ticket 30: zooming by hand first moves the base the scroll works from; the effect is kept."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    zoom = lambda: float(page.get_attribute("#amap", "data-zoom"))
+    page.locator("#amap .maplibregl-ctrl-zoom-in").click()
+    page.wait_for_timeout(800)
+    manual = zoom()
+    page.evaluate("(() => { const s = document.querySelector('.amap'); window.scrollTo(0, (s.offsetHeight - innerHeight) / 2); })()")
+    page.wait_for_timeout(500)
+    assert zoom() > manual + 0.3, (manual, zoom())
+    page.evaluate("window.scrollTo(0, 0)")
+    page.wait_for_timeout(500)
+    assert abs(zoom() - manual) < 0.1, (manual, zoom())
+    assert problems == []
+    page.close()

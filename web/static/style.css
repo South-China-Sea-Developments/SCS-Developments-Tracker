@@ -99,11 +99,23 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 /* the image edge to edge; on wide screens the height is capped at 32 % of the width, which keeps the logo, the title
    and its rule (the top two thirds of the artwork) in view; under 700px the whole image shows */
 .banner { overflow: hidden; }
-/* inner pages (ticket 30): the whole banner on arrival, folding into the strip; site.js sets the heights.
-   Without the script it is the strip, as before. */
-.banner-fold { position: relative; height: auto; }
-.banner-fold .banner { position: sticky; top: 0; height: clamp(84px, 11vw, 150px); background: var(--sea); }
-.banner-img { display: block; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: center 35%; }   
+/* inner pages (ticket 30, option 2): the slim strip opens to the whole banner under the pointer or on focus,
+   over the page; the box keeps the strip's height so nothing below moves */
+.banner-fold { position: relative; height: clamp(84px, 11vw, 150px); z-index: 20; }
+.banner-fold .banner { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: var(--sea); overflow: hidden; pointer-events: none;
+  transition: height 0.45s ease, box-shadow 0.45s ease; }
+/* only the strip itself answers the pointer: the opened banner lets it through, so moving down onto the
+   page closes it and nothing underneath is ever blocked */
+.banner-hit { position: absolute; inset: 0; z-index: 1; }
+.banner-hit:focus-visible { outline: 2px solid var(--focus-dark); outline-offset: -3px; }
+.banner-img { display: block; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: center 35%; transition: object-position 0.45s ease; }
+@media (hover: hover) {
+  .banner-fold:hover .banner { height: calc(100vw * 950 / 2219); box-shadow: 0 8px 24px rgba(var(--shadow), 0.3); }
+  .banner-fold:hover .banner-img { object-position: center center; }
+}
+.banner-fold:focus-within .banner { height: calc(100vw * 950 / 2219); }
+.banner-fold:focus-within .banner-img { object-position: center center; }
+@media (prefers-reduced-motion: reduce) { .banner-fold .banner, .banner-img { transition: none; } }   
 .banner-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .navband { background: var(--navy); border-top: 1px solid var(--band-rule); }
 .navband-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 52px; }
@@ -658,10 +670,10 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .maplibregl-cooperative-gesture-screen { background: none !important; align-items: flex-end !important; padding: 0 0 64px !important; font-size: 0.78rem !important; color: var(--ink) !important; }
 .maplibregl-cooperative-gesture-screen .maplibregl-desktop-message { display: none !important; }
 .maplibregl-cooperative-gesture-screen .maplibregl-mobile-message { background: color-mix(in srgb, var(--surface) 92%, transparent); padding: 4px 12px; border-radius: 999px; box-shadow: 0 1px 3px rgba(var(--shadow), 0.2); }
-/* the home page's opening curtain (ticket 30): the whole banner, logo and title included, on its own sea
-   colour (cropping it to fill a laptop screen would cut the logo or the title) */
+/* the home page's opening curtain (ticket 30): the banner fills the screen as far as it can while the logo
+   (top left) and the whole title stay in view; any band left over is the banner's own deep blue */
 .curtain { position: fixed; inset: 0; z-index: 1000; background: #0b1730; transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1); cursor: pointer; }
-.curtain img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+.curtain img { position: absolute; left: 0; top: 50%; width: 100%; height: auto; transform: translateY(-50%); display: block; max-width: none; }   /* site.js sizes and places it to fill the screen with the logo and title kept in view */
 .curtain.up { transform: translateY(-100%); pointer-events: none; }
 html.curtain-on { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .curtain { display: none; } }
