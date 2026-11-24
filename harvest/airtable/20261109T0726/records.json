@@ -3,6 +3,62 @@
  "exported_on": "2026-11-24",
  "records": [
   {
+   "airtable_id": "recfwX2lGER5Sl51o",
+   "archived_on": "2026-11-24",
+   "actors": "Teodoro",
+   "suggestion_reasoning": "The headline reports a Philippine official publicly condemning Chinese actions in waters the Philippines claims, a verbal statement, hence declarative. Only the surname Teodoro is in the text; the wording and the actions criticised are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-03), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "PC",
+   "excerpt": "Teodoro Slams China's West Philippine Sea Actions Amid ASEAN Defense Meeting Dispute",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "West Philippine Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Sub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "Teodoro Slams China's West Philippine Sea Actions Amid ASEAN Defense Meeting Dispute - Daily Tribune — News search: Philippine Coast Guard / West Philippine Sea 2026-11-03\nhttps://news.google.com/rss/articles/CBMisgFBVV95cUxPRl9PS2N0QzNzNkN3TlFUSlZ2aHNGTmtBUHluMm8xVXBYYnFpU3M5YjlzVkFIR1M4eG5LbVQ0T2d6c0N1Z2JTOXRzX3Vad1RRQ2lIdVFxeUgyUVhGQWFvUm8tQ3FCQS02cENYMTJnUTB0TnVZd295WlpoOFF5MnBUUjJmTnB6OTNqU3Z2LUNmbTNZWVV0MkxUZmdBUlpIOWV3UlhrYkJlcksxRnRSbm16MEVn?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T17:19:50.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-06258f3fec",
+   "run_id": "20261109T0726",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "note": "continuation of ev-5319572db3 - And is a duplicate",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Teodoro, a Philippine official, criticised China's actions in the West Philippine Sea amid a dispute over an ASEAN defence meeting, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "continuation of ev-5319572db3 (a candidate, provisional) — Defence Secretary Teodoro condemning China's actions continues the DND's 2026 public rejections of Chinese claims and conduct (ev-5319572db3, May 2026); headline-only, no new method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "rec6W5FETGR5doAu4",
    "archived_on": "2026-11-24",
    "suggestion_reasoning": "The headline reports a Chinese government message warning outside powers off the South China Sea dispute, a verbal statement, hence declarative. It is addressed to non-claimants, so the dyad is left unclear and this is a marginal candidate; the speaker and wording are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-07), so the coder must verify the date and details against the full article. [confidence: low]",
@@ -104,6 +160,65 @@
    "claimant": "CN",
    "new_domains": [
     "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recEE2Ek46WKXdTpI",
+   "archived_on": "2026-11-24",
+   "actors": "Teodoro",
+   "possible_duplicate_of": "ev-06258f3fec",
+   "suggestion_reasoning": "The headline reports a statement by a Philippine official rejecting joint exploration with China in waters the Philippines claims, a verbal assertion, hence declarative. Only the surname Teodoro is in the text; his office is not stated there. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-04), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "PC",
+   "excerpt": "Teodoro says PH-China oil exploration in West Philippine Sea is illegal",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "West Philippine Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Possible duplicate of ev-06258f3fec.\nSub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "Teodoro says PH-China oil exploration in West Philippine Sea is illegal - DZRH — News search: Philippine Coast Guard / West Philippine Sea 2026-11-04\nhttps://news.google.com/rss/articles/CBMiogFBVV95cUxPSXVuRHBoU3h4RUhvYmc5VXgzR3JEaUtXaTlEdEtTWjJtdTFNQkFud01HRWxiSUVvNy1kblgyX0sxUGhSSHVJSFptT09RNEFPckRUeGFmSFBYLU0tZzY1eGF3SkM1U3ZROFdIV1kycmsxWHFlOFhFcWhZN0pFTEMyenllUDJnUDJFMW5kanRHOHNFdlpfMk1WR0poMkd0LS1SYVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T17:19:40.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bbd552aeb5",
+   "run_id": "20261109T0726",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "note": "Not enough evidence of this action being state-backed.",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "duplicate_of": "ev-06258f3fec",
+   "summary": "Teodoro, a Philippine official, said that Philippine-Chinese oil exploration in the West Philippine Sea was illegal, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "unclear — Headline-only statement by Teodoro that PH-China oil exploration in the West Philippine Sea is illegal; nothing comparable in PH's 2025-2026 record. The full article would show whether it asserts the claim against China (declarative, possibly new) or is domestic comment on a cooperative proposal (likely reject). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "domestic"
    ]
   },
   {
