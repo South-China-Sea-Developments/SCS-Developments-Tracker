@@ -30,14 +30,14 @@ deserve a closer read in review.
   AMTI; both quoted.
 - **Sep 2016 — Joint Sea 2016 exercise** ▲ first source USNI News, unverifiable by the importer.
 - **Oct 2017 — Xi Jinping's 19th Congress report line on island construction** ◆ no reachable primary
-  text (gov.cn/Xinhua 2017 pages dead).
+  text (gov.cn/Xinhua 2017 pages dead). — compiled in GAPS-20261124
 - **2017 — incidents with Vietnamese fishermen (CCG seizures, Paracels)** ◆ Vietnamnet pages return empty
   bodies; not compiled at all.
 - **2017 — Chinese survey ships at Benham Rise** ○ Pacific side, not an SCS claim assertion.
 - **Mar 2018 — Repsol Red Emperor halted under Chinese pressure** ▲ rests on BBC-sourced reports of threats;
   first source The Diplomat (unverified); month precision.
 - **Apr 2018 — missile and jamming deployments on the Spratly bases** ▲ month precision.
-- **May 2018 — summer fishing moratorium** ◆ the only year 2016–2020 without a dated source; omitted.
+- **May 2018 — summer fishing moratorium** ◆ the only year 2016–2020 without a dated source; omitted. — compiled in GAPS-20261124
 - **Jul 2017 (disclosed Aug 2018) — radio warnings to Philippine aircraft** ▲ dated to the period the AP-seen
   report covers.
 - **Dec 2018–Jan 2019 — maritime-militia swarm at Thitu** ▲ split into a Dec 2018 start and a Jan–Apr 2019
@@ -75,7 +75,7 @@ AMTI 2025 summary and not at all for 2026; Vietnamese MOFA, Hanoi Times, MMEA an
   assertions (CV/CA); a coder may drop statements aimed at the US.
 - **2021 — drones and activity near Pratas** ◆ not searched here; the Taiwan 2021–26 set documents the responses.
 - **29 Jan–1 Feb 2022 — PLAN 792 in the Sulu Sea** ○ outside the SCS (BenarNews 14 Mar 2022).
-- **1–2 Jun 2022 — MFA rejects the Philippine protest at the fishing ban** ◆ not compiled (Philstar 2 Jun 2022).
+- **1–2 Jun 2022 — MFA rejects the Philippine protest at the fishing ban** ◆ not compiled (Philstar 2 Jun 2022). — compiled in GAPS-20261124
 - **Jul 2022 — Paracel drills** ▲ month only, from Vietnam's 21 Jul protest; navigation warnings not found. **Aug 2022
   — obstruction of the Teresa Magbanua resupply** ▲ month from a Feb 2023 PCG statement. **9–11 Aug 2022 — PLA live
   fire under a Guangdong MSA warning** ○ location may not be disputed.
@@ -86,24 +86,24 @@ AMTI 2025 summary and not at all for 2026; Vietnamese MOFA, Hanoi Times, MMEA an
   ranges from imagery or report dates; end dates approximate.
 - **Mar 2023 — militia swarming at the Pag-asa sandbars** ◆ not searched. **Apr 2023 — China raises Petronas activity
   with Anwar** ◆ Malaysian Hansard 4 Apr 2023 only. **2023 — Paracel drills, harassment of Vietnamese fishermen,
-  Sabina and Iroquois incidents** ◆ not searched.
+  Sabina and Iroquois incidents** ◆ not searched. — compiled in GAPS-20261124
 - **1 May 2023 — fishing ban** ▲ documented through Vietnam's protest; Chinese notice not opened. **10 Nov 2023 — MFA
   rejects the G7's endorsement of the award** ○ aimed at non-claimants. **Dec 2023 — Whitsun massing** ▲ month
   precision; Philippine count and first sighting not opened.
 - **18 Feb 2024 — note to Malaysia** ▲ RFA/Inquirer date vs MalaysiaNow's "last week" (late Aug 2024).
 - **Mar–Apr 2024 and later — PLA "combat readiness patrols" answering Philippine joint sails** ◆ collapsed into the
   13 Nov 2024 and Oct 2025 events (Global Times, China Military). **May 2024 — CCG shadowing of the Atin Ito
-  convoy** ◆ not searched.
+  convoy** ◆ not searched. — compiled in GAPS-20261124
 - **17 Jun 2024 boarding; 29 Sep 2024 beating of Vietnamese fishermen; 20 Jul 2026 baton assault** ▲ typed force;
   each could be coercive. **Jul 2024 — provisional arrangement on Second Thomas** ○ cooperative.
 - **31 Aug 2024 — ramming ship 5202 (Tribune) vs 5205 (summary)** ▲ confirm the hull number.
 - **Nov–Dec 2024 — Huangyan Dao baselines deposited with the UN** ◆ deposit date unknown (GMA 928917, 3 Dec 2024;
-  DOALOS records).
+  DOALOS records). — compiled in GAPS-20261124
 - **Feb and Dec 2025 — PLA "expels" Philippine aircraft over Huangyan Dao; May 2025 — PLA blocks a Philippine
   corvette** ◆ not compiled (Global Times 1328661, 1350402, 1333576). **Apr 2025 — Sandy Cay flag landing** ▲ typed
-  demonstrative (seizure denied by Manila and Washington).
+  demonstrative (seizure denied by Manila and Washington). — compiled in GAPS-20261124
 - **Aug 2025 — two Chinese research ships at Bajo de Masinloc (GMA 956531)** ◆ not opened. **Aug 2026 — China
-  confirms deaths in the Aug 2025 CCG–PLAN collision** ○ not assertive.
+  confirms deaths in the Aug 2025 CCG–PLAN collision** ○ not assertive. — compiled in GAPS-20261124
 - **Oct 2025 — Antelope Reef dredging** ▲ month precision (AMTI, Defense News).
 - **Feb 2026 — jamming patrol** ▲ dated to the month of the 23 Feb report. **Apr–May 2026 — 40+ militia around the
   Kalayaan group during Balikatan (GMA 986761)** ◆ only the 6 May research-ship event compiled.
@@ -174,7 +174,7 @@ spokesperson list is sparse for 2025 — the Vietnamese-language briefings are t
 - **2021–2023 — other spring Spratly/DK1 delegation voyages** ○ one per year entered. **2021–2026 — Hoang Sa
   exhibitions, Gac Ma commemorations, Truong Sa pagoda events** ○ ceremonies, not acts at sea.
 - **2022–2023 — Coast Guard / Fisheries Surveillance shadowing of CCG at Vanguard Bank and Nam Con Son** ◆ not
-  compiled (SeaLight/AMTI). **May 2023 — KN 414 shadows Xiang Yang Hong 10** ▲ demonstrative; could be coercive.
+  compiled (SeaLight/AMTI). **May 2023 — KN 414 shadows Xiang Yang Hong 10** ▲ demonstrative; could be coercive. — compiled in GAPS-20261124
 - **2021–2026 — PetroVietnam moves (Block 06-1, Ca Voi Xanh, Nam Con Son 2)** ◆ not researched / no claim-relevant
   dated act found. **2021–2026 — Fisheries Surveillance vs Indonesian or Malaysian enforcement** ◆ none verified.
 - **2021–2023 — UN notes verbales** ◆ none located (the 2024–25 notes are in the set: 136/CH-2024 and 85/CH-2025
@@ -199,7 +199,7 @@ spokesperson list is sparse for 2025 — the Vietnamese-language briefings are t
   aimed at Thailand (VA). **4 Jun 2026 — Dutch-frigate response** ▲ weak.
 - **11 Dec 2025 — UPI: accelerated reclamation at South Reef** ◆ imagery source not opened; probably in the AMTI
   entries. **Feb 2026 — HCMC coast guard patrols in Truong Sa waters (vietnamnews 1765565)** ◆ possibly a duplicate
-  of the Feb 2026 Region 3 entry.
+  of the Feb 2026 Region 3 entry. — compiled in GAPS-20261124
 - **Sep–Oct 2026 — nothing found** ◆ the government East Sea page and the MOFA spokesperson list have no maritime
   items after Aug 2026; check the Vietnamese-language briefings.
 - **Unreachable** — Hanoi Times (401; items undatable), vietnamnews.vn (403), qdnd.vn (search broken, redirect
@@ -247,9 +247,9 @@ BusinessMirror (403), PNA (no connection / JavaScript) and BFAR (reset) were unr
 - **30 Jun 2023 — PCG patrol near Ayungin blocked** ○ in the China set; no separate protest found. **24 Jul 2023 —
   Marcos's second SONA ("tight-lipped")** ○.
 - **22 and 29 Sep 2023 — the patrol that found the Scarborough barrier; the PCG vow to remove future barriers** ◆
-  folded into the 25 Sep cutting; could stand alone.
+  folded into the 25 Sep cutting; could stand alone. — compiled in GAPS-20261124
 - **13 Oct 2023 — BRP Benguet resupply of Pag-asa shadowed by the PLAN** ◆ in the China set; no Philippine source
-  opened.
+  opened. — compiled in GAPS-20261124
 - **10 Dec 2023 — contested Ayungin resupply with AFP chief Brawner aboard** ▲ inside the 10–11 Dec Marcos/DFA
   statement event; a coder may want it separate. **10 Dec 2023, 14–17 May 2024 — Atin Ito civilian convoys** ○
   civilian; only the May 2024 PCG escort is in.
@@ -258,20 +258,20 @@ BusinessMirror (403), PNA (no connection / JavaScript) and BFAR (reset) were unr
 - **c. 15 Apr 2024 — Teresa Magbanua arrives at Escoda** ▲ counted back from "26 days" on 11 May. **15 Sep 2024 —
   her withdrawal** ▲ entered as the National Maritime Council's statement; confirm whether the withdrawal itself
   should be recorded. **26 Jun 2024 — note verbale** ▲ dated to disclosure ("sent last week").
-- **31 Aug 2024 — DFA protest at the ramming of Teresa Magbanua** ◆ no curl-able page (Manila Bulletin).
+- **31 Aug 2024 — DFA protest at the ramming of Teresa Magbanua** ◆ no curl-able page (Manila Bulletin). — compiled in GAPS-20261124
 - **Dec 2024 — BFAR Christmas mission / convoy** ◆ not searched. **30 Dec 2024 — 2025 appropriation for the Pag-asa
   airport and Pag-asa/Lawak ports** ▲ typed demonstrative; could be declarative.
 - **6 Jan 2025 — Zambales stand-off start** ▲ counted back from "eighth day" on 13 Jan; the PCG pushing CCG ships off
   Zambales typed coercive (could be demonstrative), as is the May 2026 radio warning to Xiang Yang Hong 33.
 - **26–28 Apr 2025 — National Maritime Council and Palace statements rejecting China's Sandy Cay claim** ◆ only the
   27 Apr landing is in (Philstar 28 Apr). **21 May 2025 — Sandy Cay research mission** ▲ Tribune date; China's set
-  has the water cannon on 22 May.
+  has the water cannon on 22 May. — compiled in GAPS-20261124
 - **c. 1 Aug 2025 — Marcos: "no shift" in asserting sovereignty after the SONA** ◆ interview date not given (GMA
   955262). **2025 — contested Ayungin missions, if any, and PCG/BFAR Kadiwa missions beyond 11 Aug and 16 Sep** ◆
   not compiled (PTV).
 - **Jan–Feb 2026 — "word war": PCG spokesman's Xi cartoon post; DFA statement on Chinese bans of 16 Filipinos; AFP
   vow to continue the transparency initiative** ◆ only the 26 Jan DFA representation is in (Philstar 17 Jan; Tribune
-  11 Feb; MB 10 Feb unreachable).
+  11 Feb; MB 10 Feb unreachable). — compiled in GAPS-20261124
 - **Feb 2026 — PCG overflight of Scarborough** ▲ month precision. **1 Mar 2026 — PCG ships deployed to protect
   fishermen at Scarborough and Escoda (mb.com.ph)** ◆ unreachable. **23 Mar 2026 — DFA maritime-affairs spokesperson
   statement** ◆ the DFA "notoneinch" page not opened.
@@ -529,7 +529,7 @@ BusinessMirror (403), PNA (no connection / JavaScript) and BFAR (reset) were unr
 - **27 Jun 2023 — Mohamad Hasan: many notes sent, assets at Kasawari and Beting Patinggi Ali** ○ folded into
   the 16 Mar 2023 event as a repeat.
 - **2023–2024 — first gas at Kasawari and Jerun** ◆ no dated source opened (AMTI 16 Nov 2026 mentions
-  production without dates); energy events are monthly/yearly AMTI summaries; Jun 2025 farm-ins low confidence.
+  production without dates); energy events are monthly/yearly AMTI summaries; Jun 2025 farm-ins low confidence. — compiled in GAPS-20261124
 - **after 18 Feb 2024 — reply to China's note demanding a halt to work near Luconia** ◆ undated (Anwar said only
   that Beijing had been informed; RFA 5 Sep 2024, AMTI 1 Oct 2024).
 - **26 Mar 2024 — Mohamad Hasan "protest after protest"** ○ routine (Hansard dn 26 Mar 2024).
@@ -673,7 +673,7 @@ from 1990 to 30 Aug 1996 (collection items `micro_IA1176901_*`); nothing of it i
 - **18 Dec 1995 — Indonesia–Australia security agreement, read as aimed at China** ○ non-claimant.
 - **15 Mar 1996 — "RI set to start development of Natuna project" (Jakarta Post)** ◆ unreachable (cited in Storey;
   CSEA 1998).
-- **1996 — Keppres 71/1996 making Natuna a KAPET zone** ◆ no date; peraturan.go.id and BPK unreachable.
+- **1996 — Keppres 71/1996 making Natuna a KAPET zone** ◆ no date; peraturan.go.id and BPK unreachable. — compiled in GAPS-20261124
 - **1996 — "the 1996 Indonesian map" of Natuna waters** ◆ no source found.
 - **Jun–Jul 1996 — Bukittinggi objection and aide-memoire on China's Paracel baselines** ▲ in the set; tied to
   Natuna only by the warning against similar Spratly baselines — a coder may drop them.
@@ -717,10 +717,10 @@ seizure may fall in the previous month.
 - **28 Jan 2003 — four Philippine boats sunk in the Aru Sea; Sep 2005, Mar/Oct 2006 — Chinese and Taiwanese boats
   fired on in the Arafura Sea and off Papua; Apr/Nov 2008 — Merauke and Malacca Strait seizures** ○ outside the SCS.
 - **2003 — Bakorkamla revived; 29 Dec 2005 — Perpres 81/2005 re-establishing it** ◆ national, not SCS-specific;
-  the 2005 text could not be opened (jdih.kemenkeu 404, peraturan.go.id reset).
+  the 2005 text could not be opened (jdih.kemenkeu 404, peraturan.go.id reset). — compiled in GAPS-20261124
 - **2003 — fleet commander's general warning to fire on violators; 2004 — 16 seized boats handed to local
   fishermen; 2006 — Vietnamese sugar-smuggling ship; 2006 — Yudhoyono's Natuna visit** ▲ in the set, low confidence.
-- **6 Oct 2004 — Fisheries Law 31/2004 (armed patrol officers, sinking powers)** ◆ national law; text not opened.
+- **6 Oct 2004 — Fisheries Law 31/2004 (armed patrol officers, sinking powers)** ◆ national law; text not opened. — compiled in GAPS-20261124
 - **12 Dec 2004 — plan to bar foreign-flagged fishing from 2005** ○ national licensing policy (Liputan6 91735).
 - **2005–06 — 104 Vietnamese crew still held (Mar 2007 report)** ▲ in the set as a year-level stand-in.
 - **29 Dec 2005 — Perpres 78/2005 on the outermost small islands (Natuna)** ◆ text opened but the island annex
@@ -776,22 +776,22 @@ Izzuddin, Connelly and the yearly reviews were not searched for this chunk — a
   Japanese publication date respectively. **2013-03-29** ▲ year taken from the weekday (ICSF reproduction of a
   Jakarta Post story). **14 Apr 2013 seizure** ▲ ministry says 14 Apr, Jakarta Post "Tuesday" (23 Apr).
 - **8 Feb 2013 — 17 Vietnamese divers on Indonesian-flagged boats detained by the Berakit post, Bintan** ◆ SCS edge;
-  reads as an immigration case (ANTARA 357367).
+  reads as an immigration case (ANTARA 357367). — compiled in GAPS-20261124
 - **Aug 2013 / Mar–Apr 2014 — Komodo 2014 multilateral exercise, Natuna/Anambas** ○ cooperative (ANTARA 391830, 425789).
 - **12 Mar and 24 Apr 2014 — Moeldoko statements** ▲ in the set, quoted from a blog reproducing an Asia Sentinel
   column; the WSJ op-ed itself is not on the fetch allowlist.
 - **25 Jun 2014 — Taiwanese Kuo Rong-333 seized off Lombok; 21 Dec 2014 Ambon, 20 May 2015 Bitung/Belawan/Aceh,
   18 Aug 2015 Belawan, 22 Oct 2015 Tarakan sinkings** ○ outside the SCS.
 - **17 Oct 2014 — Law 32/2014 on Marine Affairs (Bakamla's legal basis)** ◆ national law; text not opened.
-  **15 Dec 2014 — Bakamla established** ▲ in the set, national rather than SCS-specific, low confidence.
+  **15 Dec 2014 — Bakamla established** ▲ in the set, national rather than SCS-specific, low confidence. — compiled in GAPS-20261124
 - **30 Oct 2014 — Hiu 009 seizes KM Laut Natuna 28 (Thai crew) off Tambelan, sunk 9 Feb 2015 off Batam; 11 Dec 2014
   KRI Sultan Hasanuddin seizes Thai-crewed boats west of Jemaja; c. 29–30 Apr 2015 KRI Kapitan Patimura seizes five
   Thai boats off Pulau Pejantan** ○ non-claimant (ANTARA 462237, 478964, 468956, 493850).
 - **4 Nov 2014 — Susi meets the ambassadors of Thailand, Malaysia, Vietnam, the Philippines, Australia and China on
   illegal fishing** ◆ pressure or consultation? (ANTARA 462347).
-- **4 Dec 2014 — police chief inspects Natuna and Pulau Laut** ◆ low weight (ANTARA 467584).
+- **4 Dec 2014 — police chief inspects Natuna and Pulau Laut** ◆ low weight (ANTARA 467584). — compiled in GAPS-20261124
 - **7 and 10 Mar 2015 — Thai and Vietnamese boats seized** ◆ no location (ANTARA 485750). **c. Apr 2015 — a KRI
-  seizes a Vietnamese boat in Natuna's territorial sea, to be sunk at Natuna** ◆ no capture date (ANTARA 491814).
+  seizes a Vietnamese boat in Natuna's territorial sea, to be sunk at Natuna** ◆ no capture date (ANTARA 491814). — compiled in GAPS-20261124
 - **27 May 2015 — Bakamla plans a Natuna maritime zone and Operasi Nusantara patrols** ◆ plans only (ANTARA 498455).
 - **31 May and 29 Jul 2015 — Tedjo: Indonesia neutral, promotes dialogue** ○ conciliatory (ANTARA 499066, 509443).
 - **Jun 2015 — seven protest notes to Malaysia (airspace, Ambalat)** ○ not SCS (CNN Indonesia 17 Jun 2015).
@@ -803,7 +803,7 @@ Izzuddin, Connelly and the yearly reviews were not searched for this chunk — a
   de-escalatory, though a coder could read it as declarative (ANTARA 530634).
 - **24–27 Nov 2015 — Indonesian delegation observes the PCA hearing; Havas: no Chinese claim to Natuna** ○ observer
   role; no Indonesian filing found (ANTARA 531918).
-- **9 Dec 2015 — 14 warships on routine ALKI I patrol, partly anticipating SCS conflict** ◆ routine (ANTARA 534169).
+- **9 Dec 2015 — 14 warships on routine ALKI I patrol, partly anticipating SCS conflict** ◆ routine (ANTARA 534169). — compiled in GAPS-20261124
 - **31 Dec 2015 — ten boats sunk at four sites, one at Tarempa** ◆ nationality not given (ANTARA 537614).
 - **12 Jan 2016 Lanud Ranai type-B upgrade; 31 Mar 2016 F-16s to Natuna** ○ next chunk; within 2014–15 only
   Moeldoko's promise of fighters (24 Apr 2014 entry).
@@ -830,12 +830,12 @@ and RFA carry most events; Kemlu, Bakamla and KKP sites load but offered no date
 - **Aug 2021 — Garuda Shield with the US, protested by China** ○ Sumatra, Kalimantan, Sulawesi — outside the SCS.
 - **Feb 2022 — PP 13/2022 on maritime security and law enforcement (basis for joint patrols)** ◆ national; date not
   verified (Mongabay 31 Dec 2022). **Mar 2022 — Natuna zoning regulation "signed in March"** ▲ in the set, no
-  number or day. **Jun 2022 — corvette deployment** ▲ low confidence.
+  number or day. **Jun 2022 — corvette deployment** ▲ low confidence. — compiled in GAPS-20261124
 - **8 Sep 2022 — CCG 5403 confronts a Natuna fisherman; PSDKP and Bakamla only "checking"** ◆ no dated Indonesian
   act (Mongabay 14 Sep 2022).
 - **Dec 2022 / 2025 — Indonesia–Vietnam EEZ delimitation concluded and later ratified** ○ cooperative.
 - **2 Jan 2023 — Tuna development plan approval** ▲ dated to the SKK Migas announcement.
-- **Mar 2023 — PP 11/2023 quota-based "measured fishing", zones covering WPP 711 (Natuna)** ◆ not opened or verified.
+- **Mar 2023 — PP 11/2023 quota-based "measured fishing", zones covering WPP 711 (Natuna)** ◆ not opened or verified. — compiled in GAPS-20261124
 - **Apr–May 2023 — Chinese research vessels Nan Feng and Jia Geng in the North Natuna Sea (IOJI via Mongabay 19 Mar
   2024)** ◆ no Indonesian response found. **2023 counts** ▲ PSDKP six Vietnamese boats vs KKP data one.
 - **Sep 2023 — ASEAN Solidarity Exercise, South Natuna Sea** ○ multilateral, cooperative.
@@ -844,16 +844,16 @@ and RFA carry most events; Kemlu, Bakamla and KKP sites load but offered no date
 - **9 Nov 2024 — Prabowo–Xi joint statement on "overlapping claims"** ○ conciliatory; only the Kemlu (11 Nov) and
   Sugiono (2 Dec) clarifications are in the set.
 - **13 Nov 2024 — Prabowo in Washington: "we will always safeguard our sovereignty"** ◆ weak, close to the Kemlu
-  clarification (The Diplomat, Nov 2024).
+  clarification (The Diplomat, Nov 2024). — compiled in GAPS-20261124
 - **18 Nov 2024 — Bakamla head Irvansyah: one ship patrols the North Natuna Sea daily** ◆ general statement (Antara
-  English 334881).
+  English 334881). — compiled in GAPS-20261124
 - **Mar 2025, May/Jun/Sep 2026 — Natuna licensing and drilling items** ▲ month precision, from AMTI 16 Nov 2026;
   the Jun 2026 Tuna resumption is low confidence (actor is the Russian contractor).
 - **Apr 2025 — Indonesia–China 2+2 dialogue institutionalised** ○ cooperative (9DashLine).
 - **May 2025 — Prabowo inaugurates first production at South Natuna Block B (Forel/Terubuk)** ◆ the block appears to
   lie outside the nine-dash line (AMTI 16 Nov 2026; Republika 21 May 2025).
 - **May–Sep 2025 — IOJI documents repeated Nan Feng and CCG operations; 9DashLine mentions Indonesian patrols and
-  "formal diplomatic protests"** ◆ no dates given.
+  "formal diplomatic protests"** ◆ no dates given. — compiled in GAPS-20261124
 - **Aug 2025 — Kodam XIX/Tuanku Tambusai created, covering the Riau Islands (TNI 2025 expansion)** ◆ inauguration
   date not verified (Katadata; Antara).
 - **6 Nov 2025 — KKP seizes the Vietnamese boat HP 9213 TS** ▲ inside the 2025 summary.
@@ -865,7 +865,7 @@ and RFA carry most events; Kemlu, Bakamla and KKP sites load but offered no date
   from a Saturday 11 Jul report.
 - **14 Jul 2026 — Indonesia–Vietnam talks on the EEZ and maritime security** ○ cooperative.
 - **Aug–Sep 2026 — CCG and research-vessel presence around Natuna (Energy Intelligence 9 Nov 2026, paywalled;
-  Jakarta Post opinion 13 Nov 2026)** ◆ no dated Indonesian response found.
+  Jakarta Post opinion 13 Nov 2026)** ◆ no dated Indonesian response found. — compiled in GAPS-20261124
 - **27–29 Oct 2026 — Raden Sadjad air base defence exercise (Hanlan 2026)** ◆ routine base drill (Antara English
   439227; Bursa Kota).
 - **Jan–Oct 2026 — no individual seizure of a Vietnamese boat in the North Natuna Sea found** ◆ check KKP/PSDKP
@@ -1095,7 +1095,7 @@ Peninsula, Macau Daily Times and Hanoi Times excerpts came through WebFetch in s
 2010, 2014 and 2015 are thin for access reasons, not because the period was quiet; the CGA, MND, Legislative
 Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — the obvious second pass.
 - **27 Jul 2010 — Dongsha station** ▲ Control Yuan gives both 21 and 27 Jul.
-- **1 Sep 2010 — Executive Yuan spokesman restates the SCS sovereignty position** ◆ Control Yuan 38766 only.
+- **1 Sep 2010 — Executive Yuan spokesman restates the SCS sovereignty position** ◆ Control Yuan 38766 only. — compiled in GAPS-20261124
 - **2010–2012 — Vietnamese intrusions near Taiping (42 in 2010, 106 in 2011, 41 in Jan–Apr 2012 per legislator Lin
   Yu-fang, Taipei Times 3 May 2012)** ○ Vietnamese acts; no CGA expulsion count found.
 - **27 Dec 2010 Dongsha and 3 Aug 2011 Taiping — Control Yuan inspection visits** ◆ oversight visits (Control Yuan).
@@ -1103,7 +1103,7 @@ Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — 
   (MOFA 7 Jul 2015). **2011 onward — MND "Nansha study camp" and CGA "Dongsha experience camp"** ◆ undated (MOFA
   7 Jul 2015; 20 Jul 2012 release mentions a student visit).
 - **22 Mar 2012 — Vietnamese boat fires a blank round at a CGA vessel off Taiping; protest to Hanoi** ◆ protest day
-  unknown (Taipei Times mirror 20120503-01).
+  unknown (Taipei Times mirror 20120503-01). — compiled in GAPS-20261124
 - **Aug 2012 — shipment of the 40 mm guns and 120 mm mortars to Taiping (CNA 4 Sep 2012)** ▲ folded into the 24 Jul
   2012 event.
 - **Nov 2012 — protest at China's e-passport map** ○ cross-strait. **Dec 2012 — oil-exploration plan** ▲ month
@@ -1115,11 +1115,11 @@ Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — 
   waters framing — a coder may retype or drop them. **13–16 May 2013 — Navy–CGA patrols and exercise in the Bashi
   Channel** ○ outside the SCS.
 - **c. 20 May 2013 — Ma: frigate pier and runway extension on Taiping are "must-dos"** ◆ no primary text (Taipei
-  Times mirror 20130528-04).
+  Times mirror 20130528-04). — compiled in GAPS-20261124
 - **Nov 2013 — wharf and runway works begin** ▲ month only (MOFA 7 Jul 2015). **Dec 2013 — MOTC communications
   network on Taiping** ◆ low salience.
 - **2014 — port construction in progress (Reuters via Taipei Times 27 May 2014); Vietnamese protests and ROC replies**
-  ◆ not compiled separately.
+  ◆ not compiled separately. — compiled in GAPS-20261124
 - **12 Jun 2015 — Ma's open letter on the Peace Initiative (president.gov.tw NEWS/4709)** ◆. **Nov 2015 — Peace
   Initiative "road map"** ◆ not found.
 - **Sep or 25 Nov 2015 — Taiping runway renovation completed** ◆ SCMP 1868130 says September, the Presidential
@@ -1136,7 +1136,7 @@ Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — 
 - **28 Jan, 12–13 Jul 2016, Jul 2016 patrols, 24 Jul 2020** ▲ overlap the earlier hand-compiled set (#17);
   dedupe.
 - **May 2016 — warship docking at Taiping** ▲ month only; first source Taipei Times (403 to the fetcher).
-- **2016 — stamps of Taiping** ◆ no issue date found (the Nov 2020 lighthouse stamps are in the set).
+- **2016 — stamps of Taiping** ◆ no issue date found (the Nov 2020 lighthouse stamps are in the set). — compiled in GAPS-20261124
 - **29 or 28 Nov 2016 — rescue drill at Taiping** ▲ 29 Nov per Taiwan, 28 Nov per Vietnam.
 - **Mar 2017 — Pratas seizure** ▲ month only.
 - **2017–2020 — quarterly Taiping live-fire drills** ▲ each listed separately (Mar/May/Aug 2017; Mar/May/Aug/
@@ -1144,7 +1144,7 @@ Yuan gazette, Executive Yuan Gazette, AMTI and PCA documents were not tried — 
   notices found for Q2–Q3 2020. Pratas drills one event a year (2019, 2020).
 - **2013–2017 (disclosed Oct 2019) — Economics Ministry geological survey around Taiping** ◆ no month dates.
 - **2018 — thin year (four drills and a flag-raising)** ◆ a real lull or a coverage gap.
-- **3 Aug 2018 — MOFA statement** ◆ no source could be opened.
+- **3 Aug 2018 — MOFA statement** ◆ no source could be opened. — compiled in GAPS-20261124
 - **May 2017 — detention of Chinese fishermen off Penghu** ○ Taiwan Strait.
 - **Mar 2019 — RV Legend research cruise** ▲ dates inferred from its stated length; may not be an assertion.
 - **Jul–Aug 2020 — marine reinforcement of Pratas** ▲ unnamed sources; MND declined to confirm; month only.
@@ -1190,7 +1190,7 @@ records, MND archives, Liberty Times and UDN were not searched directly, so 2021
   ◆ not opened.
 - **Feb 2026 — first CCG incident of the year** ▲ the 2026 summary starts 6 Feb 2026, the first dated report.
 - **Apr 2026 — Dongsha defence-plan announcement** ▲ merged into the Jul–Sep 2026 pier/basing event (month precision).
-  **Apr 2026 — Vietnam's reaction to Kuan's Taiping visit (Baird Maritime, 403)** ◆ not opened.
+  **Apr 2026 — Vietnam's reaction to Kuan's Taiping visit (Baird Maritime, 403)** ◆ not opened. — compiled in GAPS-20261124
 - **3–5 Jun 2026 — MOFA on the Japan–Philippines EEZ talks** ○ east of Taiwan. **18 Jun 2026 — Lai calls on China to
   halt military expansion in the SCS** ○ not a claim assertion (Taiwan News 6385600).
 - **27 Jun 2026 — CGA ship Taichung intercepts CCG 3101 inside Pratas restricted waters (Jamestown)** ▲ counted in the
