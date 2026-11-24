@@ -137,6 +137,27 @@ def move_view(m: dict, events_by_move: dict, sources_by_event: dict) -> dict:
     }
 
 
+def gist(text: str, limit: int = 110) -> str:
+    """A move's description cut to its first sentence, then to a word boundary within the limit."""
+    first = re.split(r"(?<=[.;])\s", text.strip(), maxsplit=1)[0].rstrip(".;")
+    if len(first) <= limit:
+        return first
+    return first[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+
+
+def latest_moves(views: list[dict], names: dict, n: int = 4) -> list[dict]:
+    """The home page's card (2026-11-24): the n moves whose first event is most recent, newest first."""
+    def first_date(v):
+        dated = [e for e in v["events"] if e["date_start"]]
+        return (dated[0]["date_start"] if dated else f"{v['year']}-00-00"), v["id"]
+    out = []
+    for v in sorted(views, key=first_date, reverse=True)[:n]:
+        dated = [e for e in v["events"] if e["date_start"]]
+        out.append({"id": v["id"], "claimant": names.get(v["claimant"], v["claimant"]),
+                    "date": dated[0]["date_label"] if dated else str(v["year"]), "gist": gist(v["description"])})
+    return out
+
+
 def periods(years: list[int]) -> list[dict]:
     """The map's periods: the first year alone, then five-year bins, extending as years are added.
 
@@ -645,7 +666,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
-               dyad_targets=DYAD_NAMES)
+               dyad_targets=DYAD_NAMES, latest_moves=latest_moves(views, names))
     pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
              "downloads.html": "downloads.html"}

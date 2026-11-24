@@ -810,6 +810,33 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     page.close()
 
 
+def test_the_home_page_lists_the_latest_moves_under_the_caption(browser, dist):
+    """Option H5 (2026-11-24): a card of the newest moves under the map's caption, each a link to its case
+    page; the two newest on a shorter screen; none at phone size."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    items = page.locator(".amap-latest-list li")
+    assert 1 <= items.count() <= 4
+    cap = page.evaluate("document.querySelector('.amap-caption').getBoundingClientRect().bottom")
+    card = page.evaluate("(() => { const r = document.querySelector('.amap-latest').getBoundingClientRect(); return [r.top, r.left, r.bottom]; })()")
+    assert card[0] > cap and card[1] < 40, "under the caption, at the left"
+    assert card[2] < page.evaluate("document.querySelector('.amap-cue').getBoundingClientRect().top"), "clear of the scroll cue"
+    hrefs = page.eval_on_selector_all(".amap-latest-list a", "els => els.map(a => a.getAttribute('href'))")
+    assert all((dist / h).exists() for h in hrefs), hrefs
+    dates = page.eval_on_selector_all(".amap-latest-meta", "els => els.map(e => e.textContent)")
+    assert all(" · " in d for d in dates)
+    assert problems == []
+    page.set_viewport_size({"width": 1280, "height": 760})
+    page.wait_for_timeout(200)
+    assert page.locator(".amap-latest-list li:visible").count() <= 2
+    page.locator(".amap-count").nth(5).click()
+    page.wait_for_timeout(1200)
+    assert page.locator(".amap-latest").is_hidden(), "zoomed in, the card steps aside"
+    page.close()
+    page, problems = _open(browser, dist, "index.html", (390, 800))
+    assert page.locator(".amap-latest").is_hidden()
+    page.close()
+
+
 def test_the_masthead_and_the_thin_menu_band(browser, dist):
     """Option C (2026-11-24): on every page a thin masthead, the logo and the programme's name on the sea blue
     and the banner's reefs at the right, a link home; the menu band below has no logo and is one thin row."""

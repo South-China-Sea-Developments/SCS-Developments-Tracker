@@ -517,7 +517,22 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
    (the banner's height) is below the fold, and the map is fitted to the part above it */
 .amap-stage { grid-area: 1 / 1; position: sticky; top: 0; height: var(--stage-h); background: var(--map-plane); }
 .amap-canvas { width: 100%; height: 100%; }   /* not absolute: MapLibre sets its container relative */
-.amap-caption { position: absolute; top: var(--s4); left: var(--s4); z-index: 2; max-width: min(26rem, calc(100% - 2 * var(--s4)));
+/* the caption and, under it, the latest moves (2026-11-24): one column at the map's top left */
+.amap-left { position: absolute; top: var(--s4); left: var(--s4); z-index: 2; width: min(21rem, calc(100% - 2 * var(--s4))); display: flex; flex-direction: column; gap: var(--s3);
+  max-height: calc(var(--fold) - 2 * var(--s4) - 40px); }   /* clear of the scroll cue */
+.amap-latest { flex: 0 1 auto; background: color-mix(in srgb, var(--surface) 94%, transparent); border-radius: var(--radius); padding: var(--s3) var(--s4); box-shadow: 0 1px 3px rgba(var(--shadow), 0.18); overflow: hidden; min-height: 0; }
+.amap-latest .kicker { margin: 0 0 var(--s1, 4px); }
+.amap-latest-list { list-style: none; margin: 0 0 var(--s2); padding: 0; }
+.amap-latest-list li + li { border-top: 1px solid var(--rule, #e3e8ee); }
+.amap-latest-list a { display: grid; gap: 2px; padding: 8px 0; color: var(--ink); text-decoration: none; }
+.amap-latest-list a:hover .amap-latest-gist { text-decoration: underline; }
+.amap-latest-meta { font-size: 0.75rem; font-weight: 600; color: var(--accent); }
+.amap-latest-gist { font-size: 0.85rem; line-height: 1.4; }
+.amap-latest-all { font-size: 0.85rem; font-weight: 600; }
+@media (max-height: 860px) { .amap-latest-list li:nth-child(n+3) { display: none; } }   /* a shorter screen: the two newest */
+@media (max-height: 600px) { .amap-latest { display: none; } }
+.amap-canvas.zoomed ~ .amap-left .amap-latest { display: none; }   /* zoomed into a sub-region, the map needs the room */
+.amap-caption { max-width: 100%;
   background: color-mix(in srgb, var(--surface) 92%, transparent); border-radius: var(--radius); padding: var(--s3) var(--s4);
   box-shadow: 0 1px 3px rgba(var(--shadow), 0.18); }
 .amap-title { font: var(--display-weight) 1.45rem/1.2 var(--font-display); margin: 0; color: var(--ink); }
@@ -558,6 +573,7 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
   .amap-cue { display: none; }
   .amap-title { font-size: 1.15rem; }
   .amap-caption { padding: var(--s2) var(--s3); }
+  .amap-latest { display: none !important; }   /* phone: the map is half the screen; the card would cover it */
 }
 @media print { .amap-stage { position: static; height: 480px; } .amap-panel { margin-top: var(--s4); width: auto; justify-self: stretch; } .amap-cue { display: none; } }
 /* sub-region counts (far out) and features (zoomed in) */
@@ -723,7 +739,7 @@ html.curtain-on { overflow: hidden; }
 .amap-cite-actions { margin: 2px 0 0; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
 .embed-credit { display: none; }
 /* embedded: the map and its caption only, with a link back */
-html.embed .site-head, html.embed .colophon, html.embed .masthead, html.embed .skip, html.embed .amap-panel, html.embed .amap-cue, html.embed .curtain { display: none !important; }
+html.embed .site-head, html.embed .colophon, html.embed .masthead, html.embed .skip, html.embed .amap-panel, html.embed .amap-cue, html.embed .amap-latest, html.embed .curtain { display: none !important; }
 html.embed body { margin: 0; }
 html.embed .amap-stage { height: 100vh; position: relative; top: 0; }
 html.embed .embed-credit { display: block; position: absolute; left: 10px; bottom: 10px; z-index: 5; background: rgba(255,255,255,0.94); padding: 3px 8px; border-radius: 4px; font-size: 12px; color: var(--ink, #0c1a2a); text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
