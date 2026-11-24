@@ -1,0 +1,717 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-0193a85f28",
+   "action": "reject",
+   "note": "Routine statement (disagreeing with the suggestion to register it as a new move)"
+  },
+  {
+   "event_id": "ev-035205c738",
+   "action": "reject",
+   "note": "continuation of ev-c40458e043"
+  },
+  {
+   "event_id": "ev-041b339f80",
+   "action": "reject",
+   "note": "continuation of ev-f2e7d4e869"
+  },
+  {
+   "event_id": "ev-0ad7a0a152",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-8529060eb8"
+  },
+  {
+   "event_id": "ev-0c22e5bf75",
+   "action": "reject",
+   "note": "continuation of ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-0cababeac5",
+   "action": "reject",
+   "note": "continuation of ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-0d72eec94f",
+   "action": "reject",
+   "note": "Fairly routine"
+  },
+  {
+   "event_id": "ev-10e94cf67d",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-8529060eb8"
+  },
+  {
+   "event_id": "ev-164fb6e148",
+   "action": "reject",
+   "note": "continuation of ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-18ab46cfcf",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-1dd5c3c2e0",
+   "action": "reject",
+   "note": "continuation of ev-deedc91ea6"
+  },
+  {
+   "event_id": "ev-1e70a2b404",
+   "action": "reject",
+   "note": "continuation of ev-8fa9597832"
+  },
+  {
+   "event_id": "ev-1e821d32ea",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-73c2ddaf62"
+  },
+  {
+   "event_id": "ev-200b863687",
+   "action": "reject",
+   "note": "continuation of ev-041b339f80"
+  },
+  {
+   "event_id": "ev-215337fdcf",
+   "action": "reject",
+   "note": "continuation of ev-200b863687"
+  },
+  {
+   "event_id": "ev-217cb2b82a",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "frequency",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC",
+     "VA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-242fa7d953",
+   "action": "reject",
+   "note": "continuation of ev-28a5995044"
+  },
+  {
+   "event_id": "ev-245150ee24",
+   "action": "reject",
+   "note": "continuation of ev-039e33b731"
+  },
+  {
+   "event_id": "ev-256e4939ea",
+   "action": "reject",
+   "note": "continuation of ev-3b571300e7"
+  },
+  {
+   "event_id": "ev-27513c4def",
+   "action": "reject",
+   "note": "continuation of ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-2777b78ee9",
+   "action": "reject",
+   "note": "continuation of ev-ee89708464"
+  },
+  {
+   "event_id": "ev-28a5995044",
+   "action": "reject",
+   "note": "continuation of ev-a13937b5b7"
+  },
+  {
+   "event_id": "ev-2c64f53449",
+   "action": "reject",
+   "note": "continuation of ev-e817ad5eb5"
+  },
+  {
+   "event_id": "ev-2f08ce9d8e",
+   "action": "reject",
+   "note": "continuation of ev-368243ae20"
+  },
+  {
+   "event_id": "ev-33e46e587f",
+   "action": "reject",
+   "note": "continuation of ev-af124cec8f"
+  },
+  {
+   "event_id": "ev-368243ae20",
+   "action": "reject",
+   "note": "continuation of ev-e817ad5eb5"
+  },
+  {
+   "event_id": "ev-3860d38b36",
+   "action": "reject",
+   "note": "continuation of ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-3b1c74a5c2",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "5"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-3b571300e7",
+   "action": "reject",
+   "note": "Not directed at a state or other claimant"
+  },
+  {
+   "event_id": "ev-3f12614670",
+   "action": "reject",
+   "note": "continuation of ev-dc1d1de5df"
+  },
+  {
+   "event_id": "ev-4205d0a740",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-73c2ddaf62"
+  },
+  {
+   "event_id": "ev-4558b610b8",
+   "action": "reject",
+   "note": "Irrelevant"
+  },
+  {
+   "event_id": "ev-4630800bf3",
+   "action": "reject",
+   "note": "continuation of ev-acaf7258f5"
+  },
+  {
+   "event_id": "ev-49df757118",
+   "action": "reject",
+   "note": "continuation of ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-4bbbd60711",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fa1f65f942"
+  },
+  {
+   "event_id": "ev-4c57ab1b2e",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fa1f65f942"
+  },
+  {
+   "event_id": "ev-51ad85757e",
+   "action": "reject",
+   "note": "continuation of ev-c40458e043"
+  },
+  {
+   "event_id": "ev-541b6f4bcf",
+   "action": "reject",
+   "note": "continuation of ev-8fa9597832"
+  },
+  {
+   "event_id": "ev-584741fc09",
+   "action": "reject",
+   "note": "continuation of ev-af5f71757f"
+  },
+  {
+   "event_id": "ev-58c6e500d3",
+   "action": "reject",
+   "note": "continuation of ev-83f06a9726"
+  },
+  {
+   "event_id": "ev-59b05b7997",
+   "action": "reject",
+   "note": "continuation of ev-852fb8a906"
+  },
+  {
+   "event_id": "ev-5a58916c07",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-3b1c74a5c2"
+  },
+  {
+   "event_id": "ev-5b43100745",
+   "action": "reject",
+   "note": "continuation of ev-782295e0f1"
+  },
+  {
+   "event_id": "ev-5f496e3adf",
+   "action": "reject",
+   "note": "continuation of ev-16792ff0cc"
+  },
+  {
+   "event_id": "ev-5f77c68ada",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VA",
+     "VC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "energy"
+    ],
+    "subregions": [
+     "3"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-61d7c957cf",
+   "action": "reject",
+   "note": "continuation of ev-a13937b5b7"
+  },
+  {
+   "event_id": "ev-62168e8294",
+   "action": "reject",
+   "note": "continuation of ev-fa6898e122"
+  },
+  {
+   "event_id": "ev-63abb5d67e",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-3b1c74a5c2"
+  },
+  {
+   "event_id": "ev-6b3a0b0fd7",
+   "action": "reject",
+   "note": "continuation of ev-16792ff0cc"
+  },
+  {
+   "event_id": "ev-6dba2d546e",
+   "action": "reject",
+   "note": "Has 2020 precedents"
+  },
+  {
+   "event_id": "ev-70fba6e8e6",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-782295e0f1"
+  },
+  {
+   "event_id": "ev-73c2ddaf62",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy",
+     "administrative"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-7549b98a31",
+   "action": "reject",
+   "note": "continuation of ev-a77db96971"
+  },
+  {
+   "event_id": "ev-782295e0f1",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC",
+     "VA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-78db19e7fc",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC",
+     "VA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-8192c223f9",
+   "action": "reject",
+   "note": "Precedents"
+  },
+  {
+   "event_id": "ev-83dfd5ce00",
+   "action": "reject",
+   "note": "Not in SCS disputed waters"
+  },
+  {
+   "event_id": "ev-83f06a9726",
+   "action": "reject",
+   "note": "continuation of ev-fd7e158577"
+  },
+  {
+   "event_id": "ev-8529060eb8",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-852fb8a906",
+   "action": "reject",
+   "note": "continuation of ev-3f12614670"
+  },
+  {
+   "event_id": "ev-88b49524b4",
+   "action": "reject",
+   "note": "continuation of ev-039e33b731"
+  },
+  {
+   "event_id": "ev-9ea73dd699",
+   "action": "reject",
+   "note": "continuation of ev-58c6e500d3"
+  },
+  {
+   "event_id": "ev-a13937b5b7",
+   "action": "reject",
+   "note": "continuation of ev-245150ee24"
+  },
+  {
+   "event_id": "ev-a158e22b05",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-5f77c68ada"
+  },
+  {
+   "event_id": "ev-a4855f8769",
+   "action": "reject",
+   "note": "continuation of ev-d929900f84"
+  },
+  {
+   "event_id": "ev-a77a910f57",
+   "action": "reject",
+   "note": "Vague statement only"
+  },
+  {
+   "event_id": "ev-a8ea3fffc4",
+   "action": "reject",
+   "note": "continuation of ev-376d9688bb"
+  },
+  {
+   "event_id": "ev-ab73782a35",
+   "action": "reject",
+   "note": "continuation of ev-2c64f53449"
+  },
+  {
+   "event_id": "ev-acaf7258f5",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-73c2ddaf62"
+  },
+  {
+   "event_id": "ev-af124cec8f",
+   "action": "reject",
+   "note": "continuation of ev-4558b610b8 (pre-sort confirmed)"
+  },
+  {
+   "event_id": "ev-af4203e8fc",
+   "action": "reject",
+   "note": "continuation of ev-16792ff0cc"
+  },
+  {
+   "event_id": "ev-af5f71757f",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-5f77c68ada"
+  },
+  {
+   "event_id": "ev-b9fdb10e4b",
+   "action": "reject",
+   "note": "continuation of ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-ba679583a3",
+   "action": "reject",
+   "note": "continuation of ev-2777b78ee9"
+  },
+  {
+   "event_id": "ev-c18edaa0e3",
+   "action": "reject",
+   "note": "continuation of ev-62168e8294"
+  },
+  {
+   "event_id": "ev-c1d97bf08f",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-c40458e043",
+   "action": "reject",
+   "note": "continuation of ev-a878b8c8e1"
+  },
+  {
+   "event_id": "ev-c463d22d3c",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-5f77c68ada"
+  },
+  {
+   "event_id": "ev-ca44a759a5",
+   "action": "reject",
+   "note": "continuation of ev-af124cec8f"
+  },
+  {
+   "event_id": "ev-ca9d122aa9",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-cfb1d766b6",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-cfb8519228",
+   "action": "reject",
+   "note": "continuation of ev-9ea73dd699"
+  },
+  {
+   "event_id": "ev-d2ae644149",
+   "action": "reject",
+   "note": "continuation of ev-d5623f325a"
+  },
+  {
+   "event_id": "ev-d929900f84",
+   "action": "reject",
+   "note": "continuation of ev-c40458e043"
+  },
+  {
+   "event_id": "ev-db430aff42",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-217cb2b82a"
+  },
+  {
+   "event_id": "ev-dd1f82e1fd",
+   "action": "reject",
+   "note": "continuation of ev-18ab46cfcf"
+  },
+  {
+   "event_id": "ev-deedc91ea6",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-df935af356",
+   "action": "reject",
+   "note": "Routine behaviour"
+  },
+  {
+   "event_id": "ev-e817ad5eb5",
+   "action": "reject",
+   "note": "continuation of ev-dc1d1de5df"
+  },
+  {
+   "event_id": "ev-ec3475d64a",
+   "action": "reject",
+   "note": "continuation of ev-a4855f8769"
+  },
+  {
+   "event_id": "ev-ee89708464",
+   "action": "reject",
+   "note": "No clear move, only vague condemnations"
+  },
+  {
+   "event_id": "ev-ef55bcc6ff",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-3b1c74a5c2"
+  },
+  {
+   "event_id": "ev-efc9a54e4a",
+   "action": "reject",
+   "note": "continuation of ev-ee89708464"
+  },
+  {
+   "event_id": "ev-f1df6bb833",
+   "action": "reject",
+   "note": "continuation of ev-6dba2d546e"
+  },
+  {
+   "event_id": "ev-f2e7d4e869",
+   "action": "reject",
+   "note": "continuation of ev-f1df6bb833"
+  },
+  {
+   "event_id": "ev-f315fe6d0f",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-f6b48b3f69",
+   "action": "reject",
+   "note": "same move as ev-3b1c74a5c2"
+  },
+  {
+   "event_id": "ev-f9e3d1f43d",
+   "action": "reject",
+   "note": "continuation of ev-fdf8ca8919"
+  },
+  {
+   "event_id": "ev-fa1f65f942",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VA"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "5"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-fa6898e122",
+   "action": "reject",
+   "note": "continuation of ev-0d72eec94f"
+  },
+  {
+   "event_id": "ev-fd7e158577",
+   "action": "reject",
+   "note": "continuation of ev-d2ae644149"
+  },
+  {
+   "event_id": "ev-fd8ccd2362",
+   "action": "reject",
+   "note": "Routine drill"
+  },
+  {
+   "event_id": "ev-fdf8ca8919",
+   "action": "reject",
+   "note": "continuation of ev-acaf7258f5"
+  }
+ ],
+ "reviewer": "Angelo"
+}
