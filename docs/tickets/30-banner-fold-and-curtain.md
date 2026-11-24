@@ -25,3 +25,17 @@ The maintainer chose options 1 and 4 of the banner mock-ups on 2026-11-22, with 
 
 - **Inner pages:** the strip no longer opens to the whole banner under the pointer or on keyboard focus; it
   stays the slim strip, a link home, everywhere. The curtain on the home page is unchanged.
+
+## Replaced 2026-11-24 (maintainer): the masthead, option C
+
+- **Every page, the home page included:** a thin masthead (64–92 px) replaces the strip: the institute's
+  logo and "South China Sea Research Initiative" on the sea blue, the logo on the page's left edge, and the
+  banner's reefs (its lower part, below the artwork's own title) filling the rest, fading in from the blue.
+  The whole masthead is a link home.
+- **The menu band:** no logo (it is in the masthead); the tracker's name and the links share one thin row
+  from 1000 px; below that the links take their own row and scroll as before.
+- The home page's opening curtain is unchanged.
+- **Masthead artwork, the same day:** the banner photo (2,219 px, soft; the "HD" file the maintainer
+  supplied is the same image) gives way to a vector drawing, `web/static/img/masthead.svg`: option M1's
+  reef atoll, island, contour rings and dashed lines on option M3's shelf, deep blue shoaling to lagoon.
+  Sharp at any size; the curtain keeps the photo.

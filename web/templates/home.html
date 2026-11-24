@@ -17,10 +17,21 @@
 <section class="amap" aria-labelledby="amap-title">
   <div class="amap-stage">
     <div id="amap" class="amap-canvas" role="region" aria-label="Map of the South China Sea: the ten sub-regions shaded by assertive moves in the selected five years"></div>
+    <div class="amap-left">
     <div class="amap-caption">
       <h1 id="amap-title" class="amap-title">Assertive moves, <span id="amap-when"></span></h1>
       <p class="amap-who" id="amap-who">All claimants</p>
       <div class="amap-legend"><span class="amap-legend-title">Degree of assertiveness</span><span class="amap-ramp" aria-hidden="true"></span><span class="amap-ends" aria-hidden="true"><span>Low</span><span>High</span></span></div>
+    </div>
+    {# the latest moves (option H5, chosen 2026-11-24), under the caption: the newest by their first event; a
+       rollover (2026-11-24): a slim bar that opens under the pointer, on click or tap, or from the keyboard #}
+    {% if latest_moves %}<details class="amap-latest" id="amap-latest">
+      <summary><span class="kicker">Latest moves</span><span class="amap-latest-newest">{{ latest_moves[0].date }}</span></summary>
+      <ol class="amap-latest-list">
+        {% for m in latest_moves %}<li><a href="cases/{{ m.id }}.html"><span class="amap-latest-meta">{{ m.date }} · {{ m.claimant }}</span><span class="amap-latest-gist">{{ m.gist }}</span></a></li>
+        {% endfor %}</ol>
+      <a class="amap-latest-all" href="map.html">All events on the Events page</a>
+    </details>{% endif %}
     </div>
     <a class="amap-cue" href="#amap-explore">Explore the map</a>
     <a class="embed-credit" id="amap-embed-credit" href="index.html" target="_blank" rel="noopener">SCS Developments Tracker ↗</a>
@@ -46,7 +57,7 @@
       <fieldset class="fgroup amap-decades-group"><legend>By decade</legend>
         <div class="amap-decades" id="amap-decades"></div>
       </fieldset>
-      <fieldset class="fgroup amap-decades-group"><legend>By claimant <span class="amap-muted">(this window, one scale for all)</span></legend>
+      <fieldset class="fgroup amap-decades-group"><legend>By claimant</legend>
         <div class="amap-decades amap-claimants" id="amap-claimants"></div>
       </fieldset>
       <fieldset class="fgroup"><legend>Show</legend>
@@ -67,12 +78,12 @@
         </div>
       </fieldset>
       <fieldset class="fgroup amap-lines"><legend>On the map</legend>
-        <label class="check amap-opt"><input type="checkbox" id="amap-line-eez"><span class="box" aria-hidden="true"></span><span class="check-label">EEZ boundaries <span class="amap-muted">(where settled or claimed)</span></span></label>
-        <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line <span class="amap-muted">(a claim)</span></span></label>
-        <label class="check amap-opt"><input type="checkbox" id="amap-line-held"><span class="box" aria-hidden="true"></span><span class="check-label">Who holds each feature <span class="amap-muted">(outposts, in the holder's colour)</span></span></label>
-        <p class="amap-muted amap-source">Lines: <a href="https://www.marineregions.org/">Marine Regions</a> (EEZ, v12, CC BY 4.0); Natural Earth (dashed line); holders: Wikipedia's list of Spratly features (2026-11-23).</p>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-eez"><span class="box" aria-hidden="true"></span><span class="check-label">EEZ boundaries</span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line</span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-held"><span class="box" aria-hidden="true"></span><span class="check-label">Who holds each feature</span></label>
+        <p class="amap-muted amap-source">Sources: <a href="methodology.html#map-sources">Marine Regions, Natural Earth, Wikipedia</a></p>
       </fieldset>
-      <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among the sub-regions it covers, so a claim over the whole sea does not count in full everywhere</span></label>
+      <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among its sub-regions</span></label>
       <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>
       <details class="amap-cite" id="amap-cite-box" data-version="{{ release.version }}" data-year="{{ meta.build_date[:4] }}">
         <summary>Cite, download or embed this view</summary>
