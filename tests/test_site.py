@@ -179,8 +179,8 @@ def test_public_face(browser, dist):
     no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "map.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 2219
-    assert page.evaluate("(() => { const i = document.querySelector('.banner-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
+    assert page.locator(".site-head .masthead-img").count() == 1 and page.evaluate("document.querySelector('.masthead-img').naturalWidth") == 2219
+    assert page.evaluate("(() => { const i = document.querySelector('.masthead-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
     assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
     # ticket 18: the tracker is white like the rest of the site; only the navigation band and the banner's band are dark
     side_rgb, map_rgb, nav_rgb = page.evaluate("[getComputedStyle(document.querySelector('.side')).backgroundColor, getComputedStyle(document.getElementById('map')).backgroundColor, getComputedStyle(document.querySelector('.navband')).backgroundColor]")
@@ -195,7 +195,7 @@ def test_public_face(browser, dist):
     page.close()
     page, problems = _open(browser, dist, "methodology.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1
+    assert page.locator(".site-head .masthead-img").count() == 1
     assert _luma(page.evaluate("getComputedStyle(document.body).backgroundColor")) > 250, "white article paper"
     assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING")
     page.close()
@@ -235,10 +235,12 @@ def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
     assert page.evaluate("document.activeElement.textContent") == "Downloads"
     box = page.evaluate("(() => { const r = document.activeElement.getBoundingClientRect(); return [r.left, r.right]; })()")
     assert 0 <= box[0] and box[1] <= 390, box
-    # at a tablet width the nav has moved under the brand rather than hiding links behind the brand
+    # from 1000px the tracker's name and every link share one thin row, nothing hidden or scrolled
     page.set_viewport_size({"width": 1024, "height": 800})
     page.wait_for_timeout(100)
-    assert page.evaluate(f"{nav}.getBoundingClientRect().top") > page.evaluate("document.querySelector('.brand').getBoundingClientRect().bottom") - 1
+    assert abs(page.evaluate(f"{nav}.getBoundingClientRect().top") - page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")) < 3
+    assert page.evaluate(f"{nav}.scrollWidth <= {nav}.clientWidth") and page.evaluate(f"{nav}.getBoundingClientRect().right") <= 1024
+    assert page.evaluate("document.querySelector('.navband').getBoundingClientRect().height") <= 48
     page.close()
 
 
@@ -700,13 +702,13 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
 
 
 def test_the_first_screen_is_the_assertiveness_map(browser, dist):
-    """Ticket 27: under the slim banner and the menu, the map of the latest five-year window fills the first
+    """Ticket 27: under the masthead and the menu, the map of the latest five-year window fills the first
     screen; the slider, the claimant choice and the details come on scrolling; the event tracker follows."""
     page, problems = _open(browser, dist, "index.html", (1440, 900))
     assert problems == []
     assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
-    assert page.locator(".site-head .banner-img").count() == 0 and page.locator(".site-head .brand-logo").count() == 1, "the banner follows the map"
-    assert page.locator(".banner-img").count() == 0 and page.locator("#map").count() == 0, "no banner and one map on the home page"
+    assert page.locator(".site-head .masthead").count() == 1, "the masthead heads the home page too (2026-11-24)"
+    assert page.locator("#map").count() == 0, "one map on the home page"
     stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
     assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
     # it opens on the latest five years with moves (the fixture's data ends in 2015); the slider reaches the build year
@@ -808,20 +810,22 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     page.close()
 
 
-def test_inner_pages_banner_strip_stays_slim_under_the_pointer(browser, dist):
-    """Ticket 30, revised 2026-11-23: the slim strip no longer opens to the whole banner on hover or focus."""
-    page, problems = _open(browser, dist, "trends.html", (1440, 900))
-    h = lambda: page.evaluate("document.querySelector('.banner').getBoundingClientRect().height")
-    page.mouse.move(700, 850)
-    page.wait_for_timeout(300)
-    slim = h()
-    assert slim <= 150
-    page.hover(".banner-hit")
-    page.wait_for_timeout(700)
-    assert h() == slim, "hover leaves the strip as it is"
-    page.focus(".banner-hit")
-    page.wait_for_timeout(300)
-    assert h() == slim, "and so does keyboard focus"
+def test_the_masthead_and_the_thin_menu_band(browser, dist):
+    """Option C (2026-11-24): on every page a thin masthead, the logo and the programme's name on the sea blue
+    and the banner's reefs at the right, a link home; the menu band below has no logo and is one thin row."""
+    for name in ("trends.html", "index.html", "cases.html"):
+        page, problems = _open(browser, dist, name, (1440, 900))
+        head = page.evaluate("(() => { const r = document.querySelector('.masthead').getBoundingClientRect(); return [r.top, r.height]; })()")
+        assert head[0] == 0 and 60 <= head[1] <= 92, (name, head)
+        assert page.locator(".masthead .masthead-logo").count() == 1 and page.locator(".navband img").count() == 0, "the logo once, in the masthead"
+        assert page.locator(".masthead").get_attribute("href").endswith("index.html")
+        assert "Research Initiative" in page.locator(".masthead-name").inner_text()
+        assert page.evaluate("document.querySelector('.navband').getBoundingClientRect().height") <= 44, "one thin row"
+        assert problems == []
+        page.close()
+    page, problems = _open(browser, dist, "trends.html", (390, 800))
+    assert page.evaluate("document.querySelector('.masthead').getBoundingClientRect().height") <= 66
+    assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
     assert problems == []
     page.close()
 
