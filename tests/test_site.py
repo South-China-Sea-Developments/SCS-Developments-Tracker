@@ -248,7 +248,7 @@ def test_overview_charts_and_controls(browser, dist):
     assert page.locator('[data-chart="all-claimants"] svg').count() == 1
     assert page.locator('[data-chart="by-type"] svg').count() == 3
     # a claimant with no moves in the data has no panel and no chip (the page shows what is recorded, not the coding's state)
-    assert page.locator('.figure.small[hidden]').count() == 3 and page.locator('#claimant-filter .chip[hidden]').count() == 3
+    assert page.locator('.figure.small[hidden]').count() == 4 and page.locator('#claimant-filter .chip[hidden]').count() == 4
     assert page.locator('[data-chart="by-type"] .empty').count() == 0
     # 357 columns worth of segments: China+Vietnam+Philippines across the years
     assert page.locator('[data-chart="all-claimants"] .seg').count() > 100

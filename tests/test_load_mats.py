@@ -17,7 +17,7 @@ def accepted_chubb(loaded):
 
 
 def test_claimants(loaded):
-    assert [c["code"] for c in loaded["claimants"]] == ["CN", "VN", "PH", "MY", "ID", "TW"]
+    assert [c["code"] for c in loaded["claimants"]] == ["CN", "VN", "PH", "MY", "ID", "TW", "BN"]
 
 
 def test_357_accepted_moves_with_published_counts(loaded):

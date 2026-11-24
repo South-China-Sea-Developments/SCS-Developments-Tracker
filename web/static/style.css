@@ -62,7 +62,7 @@
   --measure: 38rem;          /* prose line length */
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px;
   /* ---- data palette (validated; does not follow the brand) ---- */
-  --cn: #2a78d6; --vn: #eb6834; --ph: #1baf7a; --my: #eda100; --id: #e87ba4; --tw: #008300;
+  --cn: #2a78d6; --vn: #eb6834; --ph: #1baf7a; --my: #eda100; --id: #e87ba4; --tw: #008300; --bn: #6250d6;
   --t-declarative: #86b6ef; --t-demonstrative: #3987e5; --t-coercive: #1c5cab; --t-force: #0d366b;
   /* aliases kept for the chart and map rules below */
   --grid: var(--rule);
@@ -231,6 +231,7 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .chip input:not(:checked) ~ span:last-child { color: var(--muted); }
 [data-code="CN"] { --c: var(--cn); } [data-code="VN"] { --c: var(--vn); } [data-code="PH"] { --c: var(--ph); }
 [data-code="MY"] { --c: var(--my); } [data-code="ID"] { --c: var(--id); } [data-code="TW"] { --c: var(--tw); }
+[data-code="BN"] { --c: var(--bn); }
 .filters-note { margin: 0; color: var(--muted); font-size: 0.9375rem; }
 
 /* Figures */
