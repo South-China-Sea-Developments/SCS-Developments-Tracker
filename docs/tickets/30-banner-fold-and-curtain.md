@@ -20,3 +20,8 @@ The maintainer chose options 1 and 4 of the banner mock-ups on 2026-11-22, with 
   fit across; otherwise it is scaled to just fit them, centred on its blue (thin bands at 16:10, none at 16:9).
 - **Scroll zoom after a manual zoom:** the scroll's zoom is added to the reader's own view, which a zoom,
   pan or fit moves; it no longer stops once the reader has zoomed.
+
+## Revised 2026-11-23 (maintainer)
+
+- **Inner pages:** the strip no longer opens to the whole banner under the pointer or on keyboard focus; it
+  stays the slim strip, a link home, everywhere. The curtain on the home page is unchanged.

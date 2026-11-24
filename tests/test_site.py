@@ -808,21 +808,20 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     page.close()
 
 
-def test_inner_pages_banner_strip_opens_on_hover(browser, dist):
-    """Ticket 30, option 2: the slim strip opens to the whole banner under the pointer, over the page."""
+def test_inner_pages_banner_strip_stays_slim_under_the_pointer(browser, dist):
+    """Ticket 30, revised 2026-11-23: the slim strip no longer opens to the whole banner on hover or focus."""
     page, problems = _open(browser, dist, "trends.html", (1440, 900))
     h = lambda: page.evaluate("document.querySelector('.banner').getBoundingClientRect().height")
-    band = lambda: page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")
     page.mouse.move(700, 850)
-    page.wait_for_timeout(1000)
-    slim, band0 = h(), band()
+    page.wait_for_timeout(300)
+    slim = h()
     assert slim <= 150
     page.hover(".banner-hit")
     page.wait_for_timeout(700)
-    assert abs(h() - round(1440 * 950 / 2219)) <= 3 and band() == band0, "whole, and nothing below moved"
-    page.mouse.move(700, 850)
-    page.wait_for_timeout(1200)
-    assert h() <= 150
+    assert h() == slim, "hover leaves the strip as it is"
+    page.focus(".banner-hit")
+    page.wait_for_timeout(300)
+    assert h() == slim, "and so does keyboard focus"
     assert problems == []
     page.close()
 
