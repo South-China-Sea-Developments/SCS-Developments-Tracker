@@ -10,7 +10,7 @@ import pytest
 
 from pipeline import airtable, harvest, queue, schema
 from pipeline.validate import validate
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REVIEWER, DATE = "Test Coder", "2026-10-15"
@@ -24,13 +24,14 @@ def rows(d: Path, name: str) -> list[dict]:
 @pytest.fixture
 def opened(tmp_path):
     """A data copy with the fixture run's five candidates appended, as `queue open` leaves it."""
+    base = chubb_data(tmp_path / "base")     # the fixture's 2026 events are its own, not the dataset's
     d = tmp_path / "data"
     d.mkdir()
     for f in ("claimants", "moves", "events", "sources", "corrections"):
-        shutil.copy(DATA_DIR / f"{f}.csv", d / f"{f}.csv")
+        shutil.copy(base / f"{f}.csv", d / f"{f}.csv")
     run = tmp_path / "run"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
-                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)]) == 0
     assert queue.append_run(run, d) == (5, 5)
     assert queue.append_run(run, d) == (0, 0)          # idempotent: a second open adds nothing
     return d
@@ -195,6 +196,40 @@ def test_duplicate_decision_marks_the_event_merged_into_the_same_move(opened):
     assert e["status"] == "merged" and e["move_id"] == "CN202601"
     assert e["review_note"].endswith(f"| Reviewer: Duplicate of {scar['event_id']}. same report")
     assert validate(opened, RAW_XLSX, RAW_MAVD) == []
+
+
+def test_a_merge_into_a_rejected_lead_is_rejected_with_it(opened):
+    """A merge whose lead candidate is rejected cannot form a move: the merge becomes a rejection of its own,
+    in the same batch, transitively, and when the lead was rejected in an earlier batch."""
+    cands = candidates(opened)
+    pick = lambda prefix: next(x for x in cands if x["location_name"].startswith(prefix))
+    stas, scar, thitu = pick("Second"), pick("Scarb"), pick("Thitu")
+    headline = next(x for x in cands if not x["location_name"])
+    decisions = [
+        {"event_id": scar["event_id"], "action": "reject", "note": "Routine presence, no intensification."},
+        {"event_id": thitu["event_id"], "action": "merge", "move_of_event": scar["event_id"], "note": "Same operation, second area."},
+        {"event_id": stas["event_id"], "action": "merge", "move_of_event": thitu["event_id"]},     # chained through thitu
+    ]
+    counts = queue.apply_decisions(decisions, REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts == {"rejected": 3, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0, "extended": 0}
+    ev = {e["event_id"]: e for e in rows(opened, "events")}
+    t, s = ev[thitu["event_id"]], ev[stas["event_id"]]
+    assert t["status"] == "rejected" and t["move_id"] == "" and t["reviewer"] == REVIEWER
+    assert t["review_note"].endswith(f"| Reviewer: Rejected with {scar['event_id']}: the candidate it would merge into was rejected. Same operation, second area.")
+    assert s["status"] == "rejected" and f"Rejected with {thitu['event_id']}" in s["review_note"]
+    # the next batch: a merge into a lead rejected earlier, and a duplicate of a rejected event, go the same way
+    counts = queue.apply_decisions([{"event_id": headline["event_id"], "action": "merge", "move_of_event": scar["event_id"]}],
+                                   REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 1 and counts["merged"] == 0
+    vn = next(x for x in cands if x["claimant"] == "VN")
+    counts = queue.apply_decisions([{"event_id": vn["event_id"], "action": "duplicate", "duplicate_of": headline["event_id"]}],
+                                   REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 1 and counts["duplicates"] == 0
+    ev = {e["event_id"]: e for e in rows(opened, "events")}
+    assert ev[headline["event_id"]]["status"] == "rejected" and ev[vn["event_id"]]["status"] == "rejected"
+    assert ev[vn["event_id"]]["review_note"].endswith(f"Rejected with {headline['event_id']}: the event it duplicates was rejected.")
+    assert validate(opened, RAW_XLSX, RAW_MAVD) == []
+    # (a merge into a lead decided anything else than new_move or reject is still refused: see the parametrized case)
 
 
 def test_a_batch_whose_result_fails_the_gate_writes_nothing(opened):

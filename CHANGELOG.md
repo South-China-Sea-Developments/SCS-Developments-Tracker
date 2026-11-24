@@ -16,6 +16,11 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - Candidates without a sub-region come to review with sub-regions suggested from their place (coasts, EEZs, seas, oil blocks) and the reason (ticket 33); new reference files `areas.csv` and `area_points.csv`.
 - Moves are also placed by their events' places and coordinates, and by four one-word feature names (ticket 34): 158 of 388 placed (was 144). Thitu Island shown under its English name.
 - A page for each reef, shoal or island with moves or a holder, and a By place index (ticket 35); who holds each feature, on the feature pages and as an optional map layer (ticket 36); new reference file `occupation.csv`; Ladd Reef's position corrected.
+- A selected sub-region's panel shows its score over every window, with the not-yet-coded years marked (ticket 37).
+- One small map per claimant for the window shown, on one shared scale (ticket 38).
+- Cite, download (PNG) or embed any view of the map (ticket 39).
+- A What's new page and Atom feed of moves added, updated and retracted (ticket 40).
+- Every candidate to the same place rules (English place, named features placed) at intake and on the runs open; 40 of Chubb's dated incidents given their move's places; 15 Chubb moves naming a feature outside their coded sub-regions listed for review (ticket 41).
 - Extraction prompt: the four types carry Chubb's full definitions from the coding guide (§C), the type is the highest the act meets, and `force` is suggested only for a change in control of a feature or military violence; physical interference, boarding, seizure of boats, detention of crews, water cannon and ramming are `coercive` whatever the outcome (§G). The prompt hash in every later candidate's `extractor` changes accordingly.
 
 ## v2.0.0-dev — 2026-10-16

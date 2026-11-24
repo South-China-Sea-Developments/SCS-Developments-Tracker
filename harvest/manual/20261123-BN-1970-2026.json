@@ -1,0 +1,495 @@
+[
+ {
+  "claimant": "BN",
+  "date_start": "1980-08-04",
+  "date_end": "1980-08-04",
+  "date_precision": "day",
+  "location_name": "Bruneian continental shelf (Malaysia's 1979 map)",
+  "subregion": "",
+  "summary": "The United Kingdom, which then conducted Brunei's foreign affairs, protested to the Malaysian government on Brunei's behalf against the continental-shelf limits of Malaysia's map of 21 December 1979, which cut across the shelf Brunei claimed.",
+  "actors": "United Kingdom (on behalf of Brunei)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "A diplomatic protest against a rival's claim map is declarative. It was made by Britain on Brunei's behalf before independence: decision 03 (2026-11-23) brings such acts to review as Brunei candidates for the maintainer to decide.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-1-no.-3).pdf",
+    "title": "The Brunei-Malaysia Dispute over Territorial and Maritime Claims in International Law (Maritime Briefing 1(3))",
+    "publisher": "IBRU, Durham University (R. Haller-Trost)",
+    "pub_date": "1994",
+    "language": "en",
+    "excerpt": "Britain protested to the Malaysian Government on behalf of Brunei in August 1980"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1981-05-26",
+  "date_end": "1981-05-26",
+  "date_precision": "day",
+  "location_name": "Bruneian continental shelf (Malaysia's 1979 map)",
+  "subregion": "",
+  "summary": "The United Kingdom protested again to Malaysia on Brunei's behalf against the continental-shelf limits of Malaysia's 1979 map.",
+  "actors": "United Kingdom (on behalf of Brunei)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "A second protest against the same map: declarative. Possibly a continuation of the August 1980 protest rather than a new move; made by Britain for Brunei, as above.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-1-no.-3).pdf",
+    "title": "The Brunei-Malaysia Dispute over Territorial and Maritime Claims in International Law (Maritime Briefing 1(3))",
+    "publisher": "IBRU, Durham University (R. Haller-Trost)",
+    "pub_date": "1994",
+    "language": "en",
+    "excerpt": "and again in May of 1981"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1983-01-01",
+  "date_end": "1983-01-01",
+  "date_precision": "day",
+  "location_name": "Bruneian fishery limits (200 nautical miles)",
+  "subregion": "",
+  "summary": "Brunei's Fishery Limits Act came into force, extending Brunei's fishery limits to 200 nautical miles from its baselines, with a lateral boundary with Sabah, and barring foreign fishing boats from them except as the Act allows.",
+  "actors": "Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "Legislation claiming a 200-mile fishery zone over waters Malaysia also claimed is a declarative act in the domestic domain. Enacted by the Sultanate's government before independence, which decision 03 counts as Brunei's.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://faolex.fao.org/docs/pdf/bru81474.pdf",
+    "title": "Brunei Darussalam Fishery Limits Act (Cap. 130)",
+    "publisher": "FAOLEX",
+    "pub_date": "2012",
+    "language": "en",
+    "excerpt": "Commencement: 1st January 1983"
+   },
+   {
+    "url": "https://leap.unep.org/en/countries/bn/national-legislation/brunei-darussalam-fishery-limits-act-no-5-1983-chapter-130",
+    "title": "Brunei Darussalam Fishery Limits Act (No. 5 of 1983) (Chapter 130)",
+    "publisher": "UNEP LEAP / FAOLEX",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "This Act extends the fishery limits of Brunei Darussalam to 200 nautical miles from the baselines from which the breadth of the territorial sea adjacent to Brunei Darussalam is measured."
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1983-02-10",
+  "date_end": "1983-02-10",
+  "date_precision": "day",
+  "location_name": "Bruneian territorial waters (12 nautical miles)",
+  "subregion": "",
+  "summary": "Brunei's Territorial Waters Act came into force, declaring a territorial sea of twelve nautical miles measured in accordance with international law and providing for a map of its baselines and outer limit.",
+  "actors": "Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "Extending the territorial sea from three to twelve miles by statute is declarative, domestic and administrative. Sources date the enactment to 1982 and its commencement to 10 February 1983.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://faolex.fao.org/docs/pdf/bru30627.pdf",
+    "title": "Territorial Waters of Brunei Act (Chapter 138)",
+    "publisher": "FAOLEX",
+    "pub_date": "2002",
+    "language": "en",
+    "excerpt": "Commencement: 10th February 1983"
+   },
+   {
+    "url": "https://www.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/BRN_1982_Act.pdf",
+    "title": "Territorial Waters of Brunei Act, 1982",
+    "publisher": "UN DOALOS",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "It is hereby declared that the breadth of the territorial waters of Brunei shall be twelve nautical miles."
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1984-01-01",
+  "date_end": "1984-12-31",
+  "date_precision": "year",
+  "location_name": "Bruneian continental shelf",
+  "subregion": "",
+  "summary": "In the 1984 revised laws of independent Brunei, the Interpretation and General Clauses Act defined Brunei as including its continental shelf and incorporated the 1958 British Orders in Council that fix its sea boundaries with Sarawak and Sabah.",
+  "actors": "Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "A statutory definition of the national territory to include the continental shelf is a declarative, domestic, administrative act; low salience, so the coder may prefer to fold it into the 1983 acts or reject it.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-1-no.-3).pdf",
+    "title": "The Brunei-Malaysia Dispute over Territorial and Maritime Claims in International Law (Maritime Briefing 1(3))",
+    "publisher": "IBRU, Durham University (R. Haller-Trost)",
+    "pub_date": "1994",
+    "language": "en",
+    "excerpt": "also includes the continental shelf"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1987-01-01",
+  "date_end": "1987-12-31",
+  "date_precision": "year",
+  "location_name": "Bruneian territorial waters",
+  "subregion": "",
+  "summary": "Brunei published the Map Showing Territorial Waters of Brunei Darussalam under the Territorial Waters Act, giving the outer limit of its territorial sea by seven coordinates.",
+  "actors": "Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "An official claim map is declarative (Chubb codes maps as declarative); the first of Brunei's three maritime maps.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-1-no.-3).pdf",
+    "title": "The Brunei-Malaysia Dispute over Territorial and Maritime Claims in International Law (Maritime Briefing 1(3))",
+    "publisher": "IBRU, Durham University (R. Haller-Trost)",
+    "pub_date": "1994",
+    "language": "en",
+    "excerpt": "This Map is published pursuant to section 3(2) of the Territorial Waters of Brunei Act (Cap.138)"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1988-01-01",
+  "date_end": "1988-12-31",
+  "date_precision": "year",
+  "location_name": "Bruneian continental shelf and fishery limits, incl. Louisa Reef and Rifleman Bank",
+  "subregion": "",
+  "summary": "Brunei published maps of its continental shelf and fishery limits, drawing its shelf claim out to a line about 265 nautical miles from its baseline, north of Rifleman Bank, and stating that the boundaries were not yet agreed and were without prejudice to its Limbang claim.",
+  "actors": "Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "BM",
+   "BC",
+   "BV"
+  ],
+  "reasoning": "Claim maps are declarative. The shelf line runs past Louisa Reef to beyond Rifleman Bank, into waters Malaysia, China and Vietnam claim, hence the three dyads.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-1-no.-3).pdf",
+    "title": "The Brunei-Malaysia Dispute over Territorial and Maritime Claims in International Law (Maritime Briefing 1(3))",
+    "publisher": "IBRU, Durham University (R. Haller-Trost)",
+    "pub_date": "1994",
+    "language": "en",
+    "excerpt": "delimited in 1988 by a line at a distance of 265 nm from the inferred baseline"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "1993-07-20",
+  "date_end": "1993-07-20",
+  "date_precision": "day",
+  "location_name": "Bruneian Exclusive Economic Zone",
+  "subregion": "",
+  "summary": "Brunei established an exclusive economic zone by proclamation of the Sultan, a zone contiguous to its territorial sea extending 200 nautical miles from its baselines, reserving its rights over the continental shelf beyond (gazetted 26 March 1994).",
+  "actors": "Sultan Hassanal Bolkiah; Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "BM",
+   "BC",
+   "BV"
+  ],
+  "reasoning": "Proclaiming an EEZ over waters overlapping other claims is declarative and domestic. Haller-Trost dates it 21 July 1993; the government's own letter to the IOPC Funds gives 20 July 1993.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://documentservices.iopcfunds.org/wp-content/uploads/sites/2/2018/05/57_application-of-convention_e.pdf",
+    "title": "Application of the 1992 Fund Convention to the exclusive economic zone (92FUND/Circ.57)",
+    "publisher": "IOPC Funds",
+    "pub_date": "2007-01",
+    "language": "en",
+    "excerpt": "The Brunei Darussalam EEZ was established on 20th July 1993."
+   },
+   {
+    "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-1-no.-3).pdf",
+    "title": "The Brunei-Malaysia Dispute over Territorial and Maritime Claims in International Law (Maritime Briefing 1(3))",
+    "publisher": "IBRU, Durham University (R. Haller-Trost)",
+    "pub_date": "1994",
+    "language": "en",
+    "excerpt": "Brunei proclaimed its EEZ on 21/7/1993"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "2003-04-01",
+  "date_end": "2003-04-30",
+  "date_precision": "month",
+  "location_name": "Blocks J and K, deepwater off Brunei",
+  "subregion": "",
+  "summary": "Brunei's production-sharing contract for deepwater Block J was signed in April 2003 by a Total-led consortium, with Block K going to a Shell-led consortium, in waters Brunei claimed as its EEZ and Malaysia licensed in January 2003 as Blocks L and M.",
+  "actors": "Government of Brunei (Petroleum Unit); Total, BHP Billiton, Amerada Hess; Shell, ConocoPhillips, Mitsubishi",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "BM"
+  ],
+  "reasoning": "Licensing exploration of a disputed seabed area is unilateral resource administration: demonstrative. Malaysia's navy chased a Total survey vessel from Block J the same year (a Malaysian move). The award dates to 2002; the April signing is the dated act.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://energynewsbulletin.net/exploration/news/1052495/brunei-fights-malaysia-oil-future",
+    "title": "Brunei fights Malaysia for its oil future",
+    "publisher": "Energy News Bulletin",
+    "pub_date": "2003",
+    "language": "en",
+    "excerpt": "A profit-sharing development contract for block J was awarded in 2002 by the Brunei government, and was signed in April by Total, BHP Billiton and Amerada Hess (AHC)."
+   },
+   {
+    "url": "https://www.offshore-mag.com/deepwater/article/16755582/new-southeast-asia-discoveries-drilling-suggest-growth-in-deepwater-exploration",
+    "title": "New Southeast Asia discoveries, drilling suggest growth in deepwater exploration",
+    "publisher": "Offshore Magazine",
+    "pub_date": "2003-04-01",
+    "language": "en",
+    "excerpt": "Block J was awarded to a consortium led by TotalFinaElf"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "2009-03-16",
+  "date_end": "2009-03-16",
+  "date_precision": "day",
+  "location_name": "Brunei-Malaysia maritime boundary (Blocks J and K)",
+  "subregion": "",
+  "summary": "Brunei and Malaysia exchanged letters delimiting their territorial seas, EEZs and continental shelves out to 200 nautical miles; Malaysia later confirmed that its Blocks L and M lie within Brunei's maritime areas.",
+  "actors": "Sultan Hassanal Bolkiah; Prime Minister Abdullah Ahmad Badawi",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "BC"
+  ],
+  "reasoning": "A cooperative boundary settlement with a fellow claimant is not assertive toward Malaysia; it is listed because it fixed Brunei's EEZ in waters China also claims. The coder may well reject it; confidence is low.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.cna.org/reports/2014/iop-2014-u-008434.pdf",
+    "title": "Malaysia and Brunei: An Analysis of their Claims in the South China Sea",
+    "publisher": "CNA (J. Ashley Roach)",
+    "pub_date": "2014-08",
+    "language": "en",
+    "excerpt": "delimited by an Exchange of Letters dated 16 March 2009"
+   },
+   {
+    "url": "https://www.malaysiakini.com/news/130809",
+    "title": "Wisma Putra: Oil-concession areas in Brunei's hands",
+    "publisher": "Malaysiakini",
+    "pub_date": "2010-05-03",
+    "language": "en",
+    "excerpt": "are recognised under the Exchange of Letters as being situated within Brunei"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "2009-05-12",
+  "date_end": "2009-05-12",
+  "date_precision": "day",
+  "location_name": "Bruneian continental shelf beyond 200 nautical miles",
+  "subregion": "",
+  "summary": "Brunei lodged preliminary information with the UN Secretary-General indicating that its continental shelf extends beyond 200 nautical miles from its baselines, toward the centre of the South China Sea.",
+  "actors": "Government of Brunei",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "BC",
+   "BV"
+  ],
+  "reasoning": "A filing with the UN asserting an outer continental shelf into waters China and Vietnam claim is declarative and diplomatic; filed the day before the 13 May 2009 deadline, alongside the Malaysia-Vietnam joint submission.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.un.org/depts/los/clcs_new/commission_preliminary.htm",
+    "title": "Preliminary information indicative of the outer limits of the continental shelf beyond 200 nautical miles",
+    "publisher": "UN DOALOS",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "Brunei Darussalam (preliminary information)"
+   },
+   {
+    "url": "https://www.un.org/Depts/los/clcs_new/submissions_files/preliminary/brn2009preliminaryinformation.pdf",
+    "title": "Brunei Darussalam's Preliminary Submission concerning the Outer Limits of its Continental Shelf",
+    "publisher": "Government of Brunei Darussalam / UN DOALOS",
+    "pub_date": "2009-05-12",
+    "language": "en",
+    "excerpt": "Brunei hereby provides to the Secretary-General preliminary information indicative of the outer limits"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "2020-07-20",
+  "date_end": "2020-07-20",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Brunei's Ministry of Foreign Affairs issued a rare statement on the South China Sea, maintaining its two-step approach and stating that disputes should be resolved under UNCLOS and international law through bilateral negotiation between the countries directly concerned.",
+  "actors": "Ministry of Foreign Affairs, Brunei Darussalam",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "BC"
+  ],
+  "reasoning": "A public statement of Brunei's position, issued a week after the US declared most of China's maritime claims unlawful; declarative. Commentators called it Brunei's first unilateral statement on the dispute.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://imoa.ph/brunei-the-quiet-claimant-breaks-its-silence-on-the-south-china-sea/",
+    "title": "Brunei, the quiet claimant, breaks its silence on the South China Sea",
+    "publisher": "IMOA (from Rappler)",
+    "pub_date": "2020-07",
+    "language": "en",
+    "excerpt": "Brunei Darussalam emphasizes that such negotiations on the South China Sea should be resolved in accordance with the 1982 United Nations Convention on the Law of the Sea (UNCLOS)"
+   },
+   {
+    "url": "https://vietnamnet.vn/en/brunei-stresses-significance-of-unclos-to-dispute-settlement-in-east-sea-659869.html",
+    "title": "Brunei stresses significance of UNCLOS to dispute settlement in East Sea",
+    "publisher": "VietNamNet / VNA",
+    "pub_date": "2020-07-22",
+    "language": "en",
+    "excerpt": "negotiations on the East Sea issue should be resolved in accordance with the 1982 United Nations Convention on the Law of the Sea (UNCLOS)"
+   }
+  ]
+ },
+ {
+  "claimant": "BN",
+  "date_start": "2023-09-02",
+  "date_end": "2023-09-02",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Five days after China published its 2023 standard map, Brunei's Ministry of Foreign Affairs issued a statement on latest developments in the South China Sea, stating that maritime entitlements are governed exclusively by international law, in particular UNCLOS, and maintaining its two-step approach.",
+  "actors": "Ministry of Foreign Affairs, Brunei Darussalam",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "BC"
+  ],
+  "reasoning": "A diplomatic statement responding to China's new map (counted among the claimants' protests by The Diplomat), though it does not name China; declarative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://aipalync.org/document/view/1822",
+    "title": "Statement on latest developments in the South China Sea",
+    "publisher": "Ministry of Foreign Affairs, Brunei Darussalam (via AIPA)",
+    "pub_date": "2023-09-02",
+    "language": "en",
+    "excerpt": "We reaffirm our commitment to the maintenance of peace, stability and security in the South China Sea."
+   },
+   {
+    "url": "https://manage.thediplomat.com/2023/09/chinese-premier-seeks-to-calm-south-china-sea-concerns",
+    "title": "Chinese Premier Seeks to Calm South China Sea Concerns",
+    "publisher": "The Diplomat",
+    "pub_date": "2023-09-07",
+    "language": "en",
+    "excerpt": "The map’s release prompted public protests from the four Southeast Asian South China Sea claimants – Vietnam, Malaysia, the Philippines, and Brunei – as well as Indonesia."
+   }
+  ]
+ }
+]

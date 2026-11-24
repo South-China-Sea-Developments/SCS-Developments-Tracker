@@ -66,7 +66,7 @@ DATASET_STATUSES = ["In review", "Decision recorded", "Pulled into dataset", "Me
 RUN_TYPES = ["Weekly harvest", "Backfill", "Manual", "Catch-up"]
 RUN_VERDICTS = ["Pass", "Partial", "Failed", "No candidates"]
 REPO_URL = "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
-CLAIMANT_COLOURS = {"CN": "redLight2", "VN": "yellowLight2", "PH": "blueLight2", "MY": "greenLight2", "ID": "orangeLight2", "TW": "purpleLight2"}
+CLAIMANT_COLOURS = {"CN": "redLight2", "VN": "yellowLight2", "PH": "blueLight2", "MY": "greenLight2", "ID": "orangeLight2", "TW": "purpleLight2", "BN": "cyanLight2"}
 TYPE_COLOURS = {"declarative": "blueLight2", "demonstrative": "tealLight2", "coercive": "orangeLight2", "force": "redLight2"}
 PRECISION_COLOURS = {"day": "greenLight2", "month": "yellowLight2", "year": "orangeLight2"}
 SUBREGION_COLOURS = ["grayLight2", "redLight2", "orangeLight2", "yellowLight2", "greenLight2", "tealLight2", "cyanLight2", "blueLight2", "purpleLight2", "pinkLight2"]
@@ -559,10 +559,15 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
         if f.get("reviewer"):
             reviewers.add(f["reviewer"].strip())
         if action == "merge":
+            into_move = (f.get("merge_into_move") or "").strip()
             if f.get("merge_into_candidate"):
                 d["move_of_event"] = f["merge_into_candidate"].strip()
+            elif into_move.startswith("ev-"):
+                # an event id typed into "Merge into move" (twice on 2026-11-24): it names a candidate, so
+                # the merge is into that candidate's move, and a rejected lead rejects it (queue.py)
+                d["move_of_event"] = into_move
             else:
-                d["move_id"] = (f.get("merge_into_move") or "").strip()
+                d["move_id"] = into_move
         if action == "duplicate":
             d["duplicate_of"] = (f.get("duplicate_of") or "").strip()
         if action == "new_move":

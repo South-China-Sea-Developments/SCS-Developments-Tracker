@@ -36,8 +36,9 @@ RELEASE_FILES = {"data/claimants.csv": "claimants.csv", "data/moves.csv": "moves
                  "data/reference/gazetteer_geonames.csv": "gazetteer_geonames.csv",
                  "data/reference/areas.csv": "areas.csv", "data/reference/area_points.csv": "area_points.csv",
                  "data/reference/occupation.csv": "occupation.csv",
+                 "data/reference/place_translations.csv": "place_translations.csv",
                  "data/reference/retired_moves.csv": "retired_moves.csv",
-                 **{f"data/baselines/{c}.md": f"BASELINE-{c}.md" for c in ("CN", "VN", "PH", "MY", "ID", "TW")},
+                 **{f"data/baselines/{c}.md": f"BASELINE-{c}.md" for c in schema.CLAIMANT_CODES},
                  "data/README.md": "COLUMNS.md", "docs/spec.md": "SPEC.md", "docs/codebook/chubb-2021-appendix.txt": "CODEBOOK-chubb-2021-appendix.txt",
                  "CHANGELOG.md": "CHANGELOG.md", "CITATION.cff": "CITATION.cff"}
 CHANGELOG = ROOT / "CHANGELOG.md"
