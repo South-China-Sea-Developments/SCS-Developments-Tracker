@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}What's new — South China Sea Developments Tracker{% endblock %}
+{% block description %}Moves added, updated and retracted in the South China Sea Developments Tracker, newest first.{% endblock %}
+{% block content %}
+<section class="lede">
+  <p class="kicker">Cases</p>
+  <h1>What's new</h1>
+  <p class="lede-text">Moves added to the dataset, moves updated and moves retracted, newest first. Follow it in a feed reader with the <a href="feed.xml">Atom feed</a>.</p>
+</section>
+<div class="news">
+  {% for day, entries in days %}
+  <section class="news-day">
+    <h2><time datetime="{{ day }}">{{ day }}</time> <span class="news-n">{{ entries|selectattr('kind', 'equalto', 'added')|list|length }} added{% set u = entries|selectattr('kind', 'equalto', 'updated')|list|length %}{% if u %}, {{ u }} updated{% endif %}{% set r = entries|selectattr('kind', 'equalto', 'retracted')|list|length %}{% if r %}, {{ r }} retracted{% endif %}</span></h2>
+    <ol class="feature-moves news-list">
+      {% for e in entries %}
+      <li class="news-{{ e.kind }}">{% if e.page %}<a href="cases/{{ e.id }}.html">{% endif %}<span class="news-kind">{{ {'added': 'New', 'updated': 'Updated', 'retracted': 'Retracted'}[e.kind] }}</span>
+        <span class="fm-year">{{ e.year or '' }}</span> <span class="case-claimant" data-code="{{ e.claimant }}">{{ names.get(e.claimant, e.claimant) }}</span>
+        <span class="fm-types">{{ e.id }}{% if e.types %} · {{ e.types|join(', ') }}{% endif %}</span>{% if e.page %}</a>{% endif %}
+        <p>{{ e.text }}{% if e.kind == 'added' and e.text|length >= 280 %}…{% endif %}</p></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% else %}
+  <p class="empty">Nothing yet: the dataset is Chubb's coding as published.</p>
+  {% endfor %}
+</div>
+{% endblock %}

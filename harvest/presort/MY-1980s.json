@@ -1,0 +1,209 @@
+{
+ "run_id": "MY-1980s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-ed7189cb69",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1980-optugu",
+   "reason": "Novelty: Op Tugu's construction of permanent sovereignty monuments on four Spratly reefs is physical presence where 1979's record (prev file: ev-19cdf47a22, ev-bd12e6ed48, ev-72def46a32) holds only a cabinet decision, a statement and a map; lead of the 1980 Op Tugu move."
+  },
+  {
+   "event_id": "ev-b6a74d7848",
+   "disposition": "same_move",
+   "of": "ev-ed7189cb69",
+   "group": "MY1980-optugu",
+   "reason": "Phases II and III of the same Op Tugu monument campaign (Commodore, Swallow, Royal Charlotte, Louisa reefs) led by ev-ed7189cb69."
+  },
+  {
+   "event_id": "ev-ca5affa1a7",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1980-protests",
+   "reason": "New again: the protest 'in the strongest terms' to Nguyen Co Thach over Vietnam's Amboyna garrison, with the rebuttals of rival protests against the map, has nothing comparable in 1979's record (prev file: no protest or rebuttal; the last démarche, 1978's ev-6203883aff, was absent in 1979); lead of the 1980 diplomatic-defence move."
+  },
+  {
+   "event_id": "ev-72d1ab239f",
+   "disposition": "same_move",
+   "of": "ev-ca5affa1a7",
+   "group": "MY1980-protests",
+   "reason": "The Foreign Minister's insistence in the Dewan Negara on the Peta Baru claims against Vietnam's note is part of the 1980 defence of the map and protest over Amboyna led by ev-ca5affa1a7."
+  },
+  {
+   "event_id": "ev-9d3d030a01",
+   "disposition": "same_move",
+   "of": "ev-ca5affa1a7",
+   "group": "MY1980-protests",
+   "reason": "Rejection of the neighbours' formal protests against the 1979 map, naming the disputed reefs; same 1980 diplomatic-defence move as ev-ca5affa1a7."
+  },
+  {
+   "event_id": "ev-e2c6e4cfcd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the formal EEZ proclamation (P.U.(A) 115) is a legal claim in force, against 1979's record (prev file: ev-bd12e6ed48), which only announced that one was being prepared; a separate move from the map defence."
+  },
+  {
+   "event_id": "ev-69d9556a4e",
+   "disposition": "unclear",
+   "reason": "The Cabinet order to occupy Swallow Reef is a decision (the guide dates behaviour, not decisions; the occupation came in May 1983, ev-5a605b9b38), and the 'intensified patrols and surveys' it set off are undated. Settled by whether the order was public in 1981 or patrols/surveys are dated to 1981 (then novelty or frequency against 1980's ev-ed7189cb69/ev-ca5affa1a7)."
+  },
+  {
+   "event_id": "ev-09f3d81fdc",
+   "disposition": "continuation",
+   "of": "ev-69d9556a4e",
+   "reason": "The May 1982 hydrographic survey of Swallow Reef is one of the occupation preparations already shown in 1981's ev-69d9556a4e (intensified patrols and surveys around the reef); provisional, and new (novelty) instead if those 1981 surveys turn out not to be 1981."
+  },
+  {
+   "event_id": "ev-5a605b9b38",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1983-swallow",
+   "reason": "Novelty: the first permanent Malaysian garrison on a Spratly feature (Swallow Reef, 5 May 1983), against 1982's record of only a survey (ev-09f3d81fdc); lead of the 1983 occupation move (type force vs demonstrative is the coder's call)."
+  },
+  {
+   "event_id": "ev-9f9440c451",
+   "disposition": "same_move",
+   "of": "ev-5a605b9b38",
+   "group": "MY1983-swallow",
+   "reason": "Military exercises around Swallow Reef three months after the landing consolidate the occupation led by ev-5a605b9b38 (and may be the same 'Pahlawan' exercise)."
+  },
+  {
+   "event_id": "ev-ab41b48cf2",
+   "disposition": "same_move",
+   "of": "ev-5a605b9b38",
+   "group": "MY1983-swallow",
+   "reason": "The refusal to withdraw troops in answer to Vietnamese and Chinese protests is the verbal side of the Swallow Reef occupation ev-5a605b9b38, not a separate intensification."
+  },
+  {
+   "event_id": "ev-bf789d0b90",
+   "disposition": "same_move",
+   "of": "ev-5a605b9b38",
+   "group": "MY1983-swallow",
+   "reason": "Parliamentary rejection of Vietnam's protest over the Swallow Reef presence belongs with the occupation ev-5a605b9b38; its repeat of the Amboyna protest is covered by ev-0c82302a59."
+  },
+  {
+   "event_id": "ev-0c82302a59",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "New again: a sovereignty assertion and diplomatic protest against Vietnam's Amboyna garrison, absent from 1982's record (ev-09f3d81fdc only) and last seen in 1980 (ev-ca5affa1a7). Check whether the protest was lodged in 1983 or is the 1980 one restated."
+  },
+  {
+   "event_id": "ev-9c42da2ce6",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: a built permanent naval station (Station Lima, caisson island, hangar, channel) and the first head-of-government visit, against 1983's bare garrison (ev-5a605b9b38). Dates conflict (NST puts the station in April 1986); if 1986, it joins the 1986 occupations move."
+  },
+  {
+   "event_id": "ev-bf415d3795",
+   "disposition": "continuation",
+   "of": "ev-0c82302a59",
+   "reason": "Repeats 1983's protest to Vietnam over Amboyna (ev-0c82302a59) and the Swallow garrison defence (ev-ab41b48cf2) at the same level; the module reference adds nothing new as an act. Provisional on 1983 being decided."
+  },
+  {
+   "event_id": "ev-8758ebb904",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the EEZ Act 1984 gives statutory form and enforcement and detention powers to the zone, a new legal instrument; 1983's record has no EEZ act or legislation (nothing comparable)."
+  },
+  {
+   "event_id": "ev-02308769b6",
+   "disposition": "continuation",
+   "of": "ev-bf415d3795",
+   "reason": "A routine restatement that Swallow Reef is Malaysian and secure, at the same level as 1984's parliamentary defence ev-bf415d3795. Provisional on 1984 being decided."
+  },
+  {
+   "event_id": "ev-5ded6cbc43",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "MY1986-occupations",
+   "reason": "Scope: garrisoning Ardasier (and Mariveles, ev-31edb3d6f9) extends occupation from one reef to three, against 1985's record, which shows only the existing Swallow garrison restated (ev-02308769b6); lead of the 1986 occupations move."
+  },
+  {
+   "event_id": "ev-31edb3d6f9",
+   "disposition": "same_move",
+   "of": "ev-5ded6cbc43",
+   "group": "MY1986-occupations",
+   "reason": "Station Mike on Mariveles Reef is the second 1986 occupation in the expansion led by ev-5ded6cbc43."
+  },
+  {
+   "event_id": "ev-7d4224d75d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: state-licensed deep-sea tuna fishing around Swallow Reef and the MARSAL research station are economic use of the disputed waters, unseen in 1986's record (occupations ev-5ded6cbc43, ev-31edb3d6f9)."
+  },
+  {
+   "event_id": "ev-529eaee2a6",
+   "disposition": "unclear",
+   "reason": "A routine restatement of the Swallow Reef claim. 1986's record has no declarative candidate, so strictly it is new again, but the 1985 restatement ev-02308769b6 and the standing practice of answering protests since 1979 suggest a source gap. Settled by 1986 Hansard: a similar answer there makes it a continuation."
+  },
+  {
+   "event_id": "ev-960779aae7",
+   "disposition": "continuation",
+   "of": "ev-529eaee2a6",
+   "reason": "General reaffirmation of sovereignty under the 1979 map in reaction to the China-Vietnam clash, at the level of 1987's ev-529eaee2a6; more statements because there was more to react to is not a frequency move. Provisional."
+  },
+  {
+   "event_id": "ev-75acd56f14",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "MY1988-claim-disclosure",
+   "reason": "Scope: the first official claim naming eight southern Spratly features and disclosing the Ardasier and Mariveles garrisons, against 1987's statement ev-529eaee2a6 covering Swallow Reef alone; lead of the 1988 declarative move."
+  },
+  {
+   "event_id": "ev-3564d1c46f",
+   "disposition": "same_move",
+   "of": "ev-75acd56f14",
+   "group": "MY1988-claim-disclosure",
+   "reason": "Elaborates the March disclosure ev-75acd56f14 with garrison numbers and the international-forum option; same move."
+  },
+  {
+   "event_id": "ev-ee70ffbd17",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY1988-enforcement",
+   "reason": "Novelty: seizure, prosecution and a formal warning to Manila over Philippine boats near Commodore Reef; 1987's record has no coercive act (nothing comparable). Lead of the 1988 Spratly fisheries-enforcement move; Hansard detention counts (3 Philippine boats 1986, 5 Vietnamese 1986-87) are unlocated and could show earlier enforcement."
+  },
+  {
+   "event_id": "ev-8674f800be",
+   "disposition": "same_move",
+   "of": "ev-ee70ffbd17",
+   "group": "MY1988-enforcement",
+   "reason": "Detention and fining of four Taiwanese boats in the Spratly area (7 Taiwanese boats in 1988 against 1 in 1987) is the same 1988 enforcement intensification as ev-ee70ffbd17; a coder may split it by dyad."
+  },
+  {
+   "event_id": "ev-9e16ec4d82",
+   "disposition": "unclear",
+   "reason": "A parliamentary funding approval for a jetty, beacons and air-force fuel on Swallow Reef; the works are undated. Settled by when they were built: in the build year, a novelty (first air-support infrastructure) against Station Lima (ev-9c42da2ce6) and MARSAL (ev-7d4224d75d)."
+  },
+  {
+   "event_id": "ev-f324e9b611",
+   "disposition": "continuation",
+   "of": "ev-7d4224d75d",
+   "reason": "Licensing tuna fishing and expanding research at Swallow Reef implements 1987's deep-sea fishing initiative ev-7d4224d75d at the same level. Provisional on 1987 being decided."
+  },
+  {
+   "event_id": "ev-7028c32506",
+   "disposition": "unclear",
+   "reason": "Oil exploration 'near' the claimed Spratly features, with no block, operator or start date; 1987's record has nothing to compare it with. Settled by identifying the blocks: new exploration inside the Spratly claim in 1988 is a novelty, while long-running Sarawak/Luconia shelf work is not a 1988 move."
+  },
+  {
+   "event_id": "ev-5df85f5fed",
+   "disposition": "unclear",
+   "reason": "Describes a standing practice (constant RMN patrols, daily RMAF flights over the Spratlys) with no start date; 1987's record has no patrol candidate. Settled by when the daily air patrols began: a 1988 start is a frequency/novelty move, otherwise it continues an undocumented practice."
+  },
+  {
+   "event_id": "ev-50de0edf83",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: a state-backed tourist resort on Swallow Reef is civilian tourism, a new method unseen in 1988's record (fishing licences ev-f324e9b611, infrastructure funding ev-9e16ec4d82)."
+  },
+  {
+   "event_id": "ev-c268da3204",
+   "disposition": "continuation",
+   "of": "ev-960779aae7",
+   "reason": "A routine restatement of the Peta Baru claim with a call for negotiation, at the level of 1988's general reaffirmation ev-960779aae7. Provisional on 1988 being decided."
+  }
+ ]
+}

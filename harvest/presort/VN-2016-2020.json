@@ -1,0 +1,655 @@
+{
+ "run_id": "VN-2016-2020",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-800fe0bb68",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to China's first test flight to Fiery Cross, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-691318accd",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to the 6 January civilian landings on Fiery Cross; repeats ev-800fe0bb68, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-e94979b843",
+   "disposition": "unclear",
+   "reason": "CAAV's complaint to ICAO about 46 unannounced Chinese flights is a reaction through an international channel; if Vietnam had not used ICAO/FIR complaints before (nothing in 2015 moves), it could be a declarative novelty, otherwise it continues the UN-channel protest practice VN199202. Settle by checking whether CAAV had complained to ICAO in 2014–2015."
+  },
+  {
+   "event_id": "ev-622ff73105",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to China's 11 January explanation of the Fiery Cross flights; same series as ev-800fe0bb68, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-3611c4b2e8",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Protest and withdrawal demand over HYSY 981 off the Gulf of Tonkin repeats the standing protest practice (VN199202; Vietnam protested the rig's moves in 2014–2015 too) at the same level — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-50f257f50e",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Protest against Ma Ying-jeou's Itu Aba visit is a routine sovereignty protest (standing practice, cf. VN199202, here with dyad VR); Vietnam protested Taiwanese Itu Aba works in 2015 as well, so no new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-abc5e42196",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Diplomatic note on the HQ-9 deployment with a request that the UN circulate it is exactly the UN-channel protest practice of VN199202 (ongoing through 2015) — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-0889166952",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to the Woody Island weapons deployment; follows ev-abc5e42196, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-90c424bdd0",
+   "disposition": "unclear",
+   "reason": "Border-defence drives against Chinese boats and the seizure of fuel tanker 13056 in the Tonkin Gulf Common Fishery Zone are coercive, but no 2015 move covers Vietnamese enforcement there and the zone is a delimited, agreement-governed area; settle by whether the coder treats Tonkin CFZ enforcement as about the claim and whether 2015 saw similar seizures (if not, a coercive novelty)."
+  },
+  {
+   "event_id": "ev-c8ffa2f6d2",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to Chinese reclamation in the Paracels, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-692b5736bc",
+   "disposition": "continuation",
+   "of": "VN200903",
+   "reason": "Protest and compensation demand over Chinese vessel 46101's treatment of a Quang Nam fishing boat is the practice VN200903 describes (MOFA statements and notes when fishermen are seized), ongoing through 2015 — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-38ac8a88cd",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Notes over HYSY 981's return and the Subi lighthouse repeat ev-3611c4b2e8's protest at the same level (standing practice VN199202) — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-a3b869acba",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to the fighter-jet deployment to Woody Island, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-95ec1e9aea",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Protest against Taiwanese official visits and Itu Aba stamps repeats ev-50f257f50e at the same level (standing protest practice, cf. VN199202, dyad VR) — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-a908831670",
+   "disposition": "continuation",
+   "of": "VN200903",
+   "reason": "Annual rejection of China's summer fishing moratorium, a routine yearly repeat already present in 2015 and covered by VN200903 (opposition to the unilateral fishing ban, ongoing through 2015) — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-106dee055f",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to Chinese facilities on Fiery Cross/Subi and COSCO's Paracel cruises, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-151e6251c8",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to a Chinese MSA exercise notice over the Paracels, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-2455a01c2e",
+   "disposition": "continuation",
+   "of": "VN200903",
+   "reason": "Protest note and compensation demand after the coast guard sank QNg 90479TS — the MOFA response to attacks on fishermen described in VN200903 (ongoing through 2015), same method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-097ee8b320",
+   "disposition": "continuation",
+   "of": "VN201403",
+   "reason": "Welcoming the Annex VII award restates the 5 December 2014 Statement of Interest position (VN201403, ongoing through 2015) without a new step — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-3e9c895334",
+   "disposition": "unclear",
+   "reason": "Chasing six Chinese boats out of Vietnamese waters near Con Co is routine enforcement in undisputed coastal waters (the source itself says one of hundreds); likely reject as not about the disputed claim, unless the coder groups it with ev-90c424bdd0 as a Tonkin enforcement move."
+  },
+  {
+   "event_id": "ev-79596ac83a",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Shipping EXTRA mobile rocket launchers to five Spratly bases is a new military capability against nothing comparable in 2015 (VN201501 is reclamation; earlier point defences under VN201104 were artillery and MANPADS) — novelty; demonstrative, military. Rests on Reuters' Western sources, denied by Hanoi, so needs verification."
+  },
+  {
+   "event_id": "ev-6ab6af7e5f",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to Chang Wanquan's remarks, Chinese naming and Paracel cemetery works, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-2459f01aef",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Calling Taiwan's Itu Aba occupation and new facilities illegal is the same routine VR protest as ev-50f257f50e (standing practice, cf. VN199202) — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-aebcf80784",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to the second Sansha people's congress election and Chinese patrols, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-97f039013e",
+   "disposition": "continuation",
+   "of": "VN201501",
+   "reason": "Chubb's VN201501 already records the Spratly Island reclamation 'enabling a runway extension completed the following year'; the lengthened runway and hangars are that move carried into 2016 — continuation, though the hangars could be argued a further intensification."
+  },
+  {
+   "event_id": "ev-5a19a7908f",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Protest against Taiwan's 28 November Itu Aba drill is the same routine VR protest as ev-50f257f50e (cf. VN199202) — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-b32578669a",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Dredging a channel at Ladd Reef extends Vietnam's reclamation to a feature not among VN201501's 2015 sites (Spratly Island, West Reef, Collins, Discovery Great, Barque Canada) — scope; demonstrative."
+  },
+  {
+   "event_id": "ev-ad6025c42d",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to the PLA Navy's '70 years of recovery' commemoration, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-9ffde24ddf",
+   "disposition": "continuation",
+   "of": "VN199202",
+   "reason": "Routine MFA protest at the level Vietnam already maintained in 2015 (standing practice of protest notes and spokesman statements, cf. VN199202, ongoing through 2015); a reaction to China's new civilian air route to Woody Island, not a new method — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-a42ec47e77",
+   "disposition": "unclear",
+   "reason": "Heads of agreement with ExxonMobil for Blue Whale (Block 118) continue the foreign-partner oil licensing practice (VN198807, VN200802 — Exxon in Blocks 117–119 since 2008), recorded only through 2015, and no 2016 candidate shows it; likely reject as a continuation, or as outside the disputed area if Block 118 is judged undisputed."
+  },
+  {
+   "event_id": "ev-c7f65e227f",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese bank branches in 'Sansha', the same method and level as 2016's ev-aebcf80784 — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-aebcf80784"
+  },
+  {
+   "event_id": "ev-a2f80191fc",
+   "disposition": "continuation",
+   "reason": "Detention of two Chinese boats off Quang Binh repeats the 2016 Tonkin enforcement of ev-90c424bdd0 (and ev-3e9c895334) at the same level — continuation of that candidate, provisional while 2016 is undecided; likely reject, also because it may not concern the disputed claim.",
+   "of": "ev-90c424bdd0"
+  },
+  {
+   "event_id": "ev-4791b4358f",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Paracel tourism and a CCG chase of a fishing boat, the same method and level as 2016's ev-692b5736bc — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-692b5736bc"
+  },
+  {
+   "event_id": "ev-0db068b21d",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's Itu Aba live-fire drill, the same method and level as 2016's ev-5a19a7908f — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-5a19a7908f"
+  },
+  {
+   "event_id": "ev-9ea701a5bd",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over the Sinan yacht race and a quarantine office on Woody Island, the same method and level as 2016's ev-aebcf80784 — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-aebcf80784"
+  },
+  {
+   "event_id": "ev-e30bfde6e5",
+   "disposition": "continuation",
+   "reason": "Annual rejection of China's summer fishing ban, a routine yearly repeat of 2016's ev-a908831670 — continuation of that candidate (provisional while 2016 is undecided), likely reject.",
+   "of": "ev-a908831670"
+  },
+  {
+   "event_id": "ev-65e2da22e5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Vietnam Coast Guard ships physically obstructing an Indonesian patrol, ramming a seized boat and holding boarding officers is a new method against Indonesia, with nothing comparable among 2016 candidates or the 2015 moves — novelty; coercive (no possession changed hands), dyad VI, Natuna waters (no sub-region)."
+  },
+  {
+   "event_id": "ev-fdebcba4a5",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over further Taiwanese Itu Aba live-fire exercises (more protests only because there were more drills), the same method and level as 2016's ev-5a19a7908f — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-5a19a7908f"
+  },
+  {
+   "event_id": "ev-fff7179b99",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "VN2017-block136",
+   "reason": "Licensing and starting drilling in Block 136/03 near Vanguard Bank inside the nine-dash line extends Vietnam's drilling to an area with nothing comparable among 2016 candidates (Vanguard blocks were last pushed in VN199601) — scope; demonstrative, energy. Unsure: if production drilling elsewhere inside the line ran through 2016, the coder may read it as continuation."
+  },
+  {
+   "event_id": "ev-2bd9790dc4",
+   "disposition": "continuation",
+   "reason": "AMTI's 2017 Spratly upgrades (hangars finished, radome, pillboxes, DK1 expansions under way since 2016) carry on 2016's ev-97f039013e at the same pace — continuation of that candidate, provisional while 2016 is undecided; the coder may count the second DK1 structures as new.",
+   "of": "ev-97f039013e"
+  },
+  {
+   "event_id": "ev-6468c0ca47",
+   "disposition": "unclear",
+   "reason": "Two-year extension of ONGC Videsh's Block 128 licence renews an arrangement held since 2006 (VN200602, recorded through 2015), with no 2016 candidate; a renewal at the same level — likely reject as continuation."
+  },
+  {
+   "event_id": "ev-ebfd8bdbf7",
+   "disposition": "same_move",
+   "of": "ev-fff7179b99",
+   "group": "VN2017-block136",
+   "reason": "The spokesperson's defence of the Block 136/03 activity under Chinese pressure is part of the same 2017 drilling episode led by ev-fff7179b99."
+  },
+  {
+   "event_id": "ev-8ff2ebf9d5",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over a Chinese cinema on Woody Island, the same method and level as 2016's ev-106dee055f — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-106dee055f"
+  },
+  {
+   "event_id": "ev-108eb3dd19",
+   "disposition": "unclear",
+   "reason": "Pushing ASEAN communique wording on island-building is the ASEAN-channel practice Chubb records from VN199701 (recorded through 2015); no 2016 candidate covers it, though Vietnam did the same at the 2016 AMM; likely reject as continuation."
+  },
+  {
+   "event_id": "ev-20e307dbf7",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's repeated Itu Aba drills (third such protest of 2017, more drills to react to), the same method and level as 2016's ev-5a19a7908f — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-5a19a7908f"
+  },
+  {
+   "event_id": "ev-403be0d1e9",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over a Chinese exercise off the Gulf of Tonkin, the same method and level as 2016's ev-151e6251c8 — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-151e6251c8"
+  },
+  {
+   "event_id": "ev-40c0b650b6",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over a Chinese live-fire exercise in the Paracels, the same method and level as 2016's ev-151e6251c8 — continuation of that candidate, provisional while 2016 is undecided; likely reject.",
+   "of": "ev-151e6251c8"
+  },
+  {
+   "event_id": "ev-09982d3e66",
+   "disposition": "continuation",
+   "reason": "Radome on Spratly Island and completion of the Petley/South Reef pillboxes finish the work begun in 2017 (ev-2bd9790dc4) at the same pace — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-2bd9790dc4"
+  },
+  {
+   "event_id": "ev-a01d7e2cd3",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "A new channel and outpost expansion on dredged fill at Ladd Reef adds reclamation at a feature where 2017's record (ev-2bd9790dc4: structures at Spratly, Pearson, Petley, South, DK1s) shows none — scope; demonstrative. Unsure: if the 2016 Ladd dredging (ev-b32578669a) ran on through 2017, this is a continuation."
+  },
+  {
+   "event_id": "ev-09b7905293",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's March Itu Aba drill, the same method and level as 2017's ev-20e307dbf7 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-094b68ed40",
+   "disposition": "continuation",
+   "reason": "Annual rejection of China's fishing moratorium, a routine yearly repeat of 2017's ev-e30bfde6e5 — continuation of that candidate (provisional), likely reject.",
+   "of": "ev-e30bfde6e5"
+  },
+  {
+   "event_id": "ev-ba5478cc69",
+   "disposition": "unclear",
+   "reason": "Da Nang's Hoang Sa Exhibition House is domestic sovereignty education of the kind in VN200804 (recorded through 2015), with nothing comparable among 2017 candidates; settle by whether the coder sees a new state institution for the Paracel claim (declarative novelty) or routine propaganda (reject)."
+  },
+  {
+   "event_id": "ev-f407953e97",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese exercises in the two archipelagos, the same method and level as 2017's ev-40c0b650b6 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-01d4f8a001",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese missile deployments on its Spratly structures, the same method and level as 2017's ev-8ff2ebf9d5 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-8ff2ebf9d5"
+  },
+  {
+   "event_id": "ev-c8131827f4",
+   "disposition": "continuation",
+   "reason": "Rosneft's LD-3P well in long-producing Block 06.1 inside the nine-dash line is the same practice as 2017's Block 136/03 drilling (ev-fff7179b99) — continuation of that candidate, provisional while 2017 is undecided; the coder may see drilling through a Chinese warning as new.",
+   "of": "ev-fff7179b99"
+  },
+  {
+   "event_id": "ev-8af1490b6d",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over H-6K bomber drills on Woody Island, the same method and level as 2017's ev-40c0b650b6 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-faab757f0d",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese live-fire drills around the Paracels, the same method and level as 2017's ev-40c0b650b6 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-9054ad27b2",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's May Itu Aba drill, the same method and level as 2017's ev-20e307dbf7 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-3281fdb897",
+   "disposition": "unclear",
+   "reason": "Vietnam's proposals in the COC single draft text to outlaw island-building, missiles and ADIZs are negotiating positions inside a cooperative process, with nothing comparable among 2017 candidates; settle by whether the coder treats COC drafting positions as assertive declarative acts (then a novelty) or as cooperative (likely reject)."
+  },
+  {
+   "event_id": "ev-ab1f3682fb",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over the 'Sansha' anniversary and Chinese activities on Woody Island, the same method and level as 2017's ev-c7f65e227f — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-c7f65e227f"
+  },
+  {
+   "event_id": "ev-01b0bd3420",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's August Itu Aba drills, the same method and level as 2017's ev-20e307dbf7 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-83cbeda651",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese weather-observation systems on its Spratly structures, the same method and level as 2017's ev-8ff2ebf9d5 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-8ff2ebf9d5"
+  },
+  {
+   "event_id": "ev-54ab20c2ec",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The Law on Vietnam Coast Guard is a new statute governing enforcement in Vietnam's claimed waters, with nothing comparable among 2017 candidates (the last maritime statute was VN201202, the 2012 Law of the Sea) — novelty; declarative, dyad VA."
+  },
+  {
+   "event_id": "ev-b6cecc13aa",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over a new Chinese platform on Bombay Reef, the same method and level as 2017's ev-40c0b650b6 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-341b899fac",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's November Itu Aba drills (fourth protest of 2018, more drills to react to), the same method and level as 2017's ev-20e307dbf7 — continuation of that candidate, provisional while 2017 is undecided; likely reject.",
+   "of": "ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-b436f17e62",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Coastal-defence emplacements, bunkers and tunnels at West Reef and Sin Cowe, plus radomes at Pearson and Namyit, extend fortification to features and a kind of work beyond 2018's record (ev-09982d3e66: one radome, two pillboxes) — scope; demonstrative, military. The work runs into 2020, so 2020 may be its ongoing year."
+  },
+  {
+   "event_id": "ev-57900c17a2",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2019-natuna",
+   "reason": "Fisheries surveillance ships moving to block an Indonesian navy arrest in the North Natuna waters: physical interference against Indonesia, absent from 2018's record (last seen 2017, ev-65e2da22e5), so new again — novelty; coercive, dyad VI."
+  },
+  {
+   "event_id": "ev-c20531399f",
+   "disposition": "unclear",
+   "reason": "Protest note over the sinking of a Quang Ngai boat at Discovery Reef is the standing fishermen-protest practice (VN200903; 2016's ev-2455a01c2e), with no 2018 counterpart in the run; likely reject as continuation once the earlier years are decided."
+  },
+  {
+   "event_id": "ev-b658a26357",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's March Itu Aba drill, the same method and level as 2018's ev-341b899fac — continuation of that candidate, provisional while 2018 is undecided; likely reject.",
+   "of": "ev-341b899fac"
+  },
+  {
+   "event_id": "ev-1c27ef9078",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Paracel live-fire drills and Chinese plans for Woody/Tree/Drummond, the same method and level as 2018's ev-faab757f0d — continuation of that candidate, provisional while 2018 is undecided; likely reject.",
+   "of": "ev-faab757f0d"
+  },
+  {
+   "event_id": "ev-700d7e43fc",
+   "disposition": "same_move",
+   "of": "ev-57900c17a2",
+   "group": "VN2019-natuna",
+   "reason": "The April ramming of KRI Tjiptadi-381 by a Vietnam Coast Guard ship is the same 2019 practice of obstructing Indonesian arrests as ev-57900c17a2 (coercive; no possession seized, so not force)."
+  },
+  {
+   "event_id": "ev-cccc26b994",
+   "disposition": "same_move",
+   "of": "ev-57900c17a2",
+   "group": "VN2019-natuna",
+   "reason": "The note to Indonesia asserting the boats fished in Vietnamese waters is the diplomatic side of the same 2019 Natuna episode as ev-57900c17a2."
+  },
+  {
+   "event_id": "ev-f6e97fe98e",
+   "disposition": "continuation",
+   "reason": "Annual rejection of China's fishing ban, a routine yearly repeat of 2018's ev-094b68ed40 — continuation of that candidate (provisional), likely reject.",
+   "of": "ev-094b68ed40"
+  },
+  {
+   "event_id": "ev-aa98acba48",
+   "disposition": "same_move",
+   "of": "ev-57900c17a2",
+   "group": "VN2019-natuna",
+   "reason": "Protest at Indonesia's sinking of 13 seized Vietnamese boats belongs to the same 2019 Natuna episode as ev-57900c17a2; the coder may instead reject it as a mild statement of concern."
+  },
+  {
+   "event_id": "ev-1aa9be7262",
+   "disposition": "continuation",
+   "reason": "Rosneft's Hakuryu-5 well in Block 06-01 continues the drilling seen in the same block in 2018 (ev-c8131827f4) at the same level — continuation of that candidate (provisional); what is new in 2019 is the at-sea defence of the rig (ev-fb28aaa9a2), with which the coder may group it.",
+   "of": "ev-c8131827f4"
+  },
+  {
+   "event_id": "ev-fb28aaa9a2",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2019-vanguard",
+   "reason": "Some 50 Vietnamese law-enforcement vessels shadowing Haiyang Dizhi 8 and placing themselves between the Hakuryu-5 rig and CCG 5303 for over three months is a new method, with nothing comparable among 2018 candidates — novelty; coercive (shadowing and blocking), dyad VC."
+  },
+  {
+   "event_id": "ev-f90be28b1e",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "Extending the Hakuryu-5 drilling campaign and warning vessels clear despite the CCG presence is part of the same Vanguard Bank standoff led by ev-fb28aaa9a2."
+  },
+  {
+   "event_id": "ev-a2c8e5b86b",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "The first statement naming Haiyang Dizhi 8 and demanding withdrawal is the diplomatic side of the Vanguard Bank standoff led by ev-fb28aaa9a2 (on its own it would be a routine protest)."
+  },
+  {
+   "event_id": "ev-ab3c9bf51b",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "Raising the Haiyang Dizhi 8 incursion party-to-party with Zhao Leji is part of the same 2019 Vanguard Bank response led by ev-fb28aaa9a2."
+  },
+  {
+   "event_id": "ev-f262f441ca",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "Pham Binh Minh's protest at the ASEAN-China ministerial is part of the same 2019 Vanguard Bank response led by ev-fb28aaa9a2."
+  },
+  {
+   "event_id": "ev-a8e85a50aa",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "Renewed withdrawal demand after Haiyang Dizhi 8 returned on 13 August is part of the same Vanguard Bank standoff led by ev-fb28aaa9a2."
+  },
+  {
+   "event_id": "ev-d8d14b76d3",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "Further demand that China withdraw the survey group (and the Lan Jing transit) is part of the same Vanguard Bank standoff led by ev-fb28aaa9a2."
+  },
+  {
+   "event_id": "ev-1c1c5f21e9",
+   "disposition": "unclear",
+   "reason": "The UNGA speech refers to incidents in general terms and calls for restraint, close to the 'we urge restraint' the guide says asserts nothing; likely reject, unless the coder takes it into the Vanguard Bank response (ev-fb28aaa9a2)."
+  },
+  {
+   "event_id": "ev-dc695724a5",
+   "disposition": "same_move",
+   "of": "ev-fb28aaa9a2",
+   "group": "VN2019-vanguard",
+   "reason": "The formal statement that Haiyang Dizhi 8 had expanded its operations and that Vietnam would defend its rights is part of the same Vanguard Bank standoff led by ev-fb28aaa9a2."
+  },
+  {
+   "event_id": "ev-b17ccd8e7d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2019-ninedash",
+   "reason": "Pulling 'Abominable' from cinemas and revoking its licence over a nine-dash-line map uses state administrative sanctions against depictions of the line, absent from 2018's record (the nearest earlier practice, VN200805's scholar protests, is a different method) — novelty; declarative, domestic."
+  },
+  {
+   "event_id": "ev-53301c1243",
+   "disposition": "same_move",
+   "of": "ev-b17ccd8e7d",
+   "group": "VN2019-ninedash",
+   "reason": "Customs confiscating a car whose navigation app showed the nine-dash line, and fining the importer, is the same 2019 practice of sanctioning nine-dash depictions as ev-b17ccd8e7d."
+  },
+  {
+   "event_id": "ev-f6d9dc5539",
+   "disposition": "unclear",
+   "reason": "A deputy minister listing arbitration and litigation as options repeats the 2014 talk recorded under VN201403 and takes no step; no 2018 counterpart. Likely reject unless the coder reads it as a new threat of legal action (declarative novelty)."
+  },
+  {
+   "event_id": "ev-7b12c45fe1",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over China's 8 November Spratly sovereignty statement, the same method and level as 2018's ev-f407953e97 — continuation of that candidate, provisional while 2018 is undecided; likely reject.",
+   "of": "ev-f407953e97"
+  },
+  {
+   "event_id": "ev-59a2aabc74",
+   "disposition": "unclear",
+   "reason": "The 2019 Defence White Paper is a periodic document (previous 2009) that mainly restates the 'four no's' and peaceful settlement, with nothing comparable among 2018 candidates; settle by whether it contains new claim or force-posture language (then declarative novelty), else reject."
+  },
+  {
+   "event_id": "ev-a77db96971",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over a Chinese nine-dash-line map posted online, the same method and level as 2019's ev-7b12c45fe1 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-7b12c45fe1"
+  },
+  {
+   "event_id": "ev-57cd4f8053",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese research stations on Fiery Cross and Subi, the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-48a8a0440b",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's Itu Aba live-fire drill, the same method and level as 2019's ev-b658a26357 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-b658a26357"
+  },
+  {
+   "event_id": "ev-6c702a85f5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "VN2020-un-notes",
+   "reason": "Note Verbale 22/HC-2020 sets out new legal positions (every Paracel/Spratly high-tide feature under Art. 121(3), no straight baselines around the groups, rejection of historic rights) in the CLCS record, with no UN note or comparable legal statement among 2019 candidates — novelty; declarative, dyads VC VM."
+  },
+  {
+   "event_id": "ev-271eff5888",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over the CCG sinking of QNg 90617 TS near the Paracels, the same method and level as 2019's ev-c20531399f — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-c20531399f"
+  },
+  {
+   "event_id": "ev-8625be0575",
+   "disposition": "same_move",
+   "of": "ev-6c702a85f5",
+   "group": "VN2020-un-notes",
+   "reason": "Notes 24 and 25/HC-2020 continue the same April 2020 exchange in the CLCS record of Malaysia's submission, led by ev-6c702a85f5."
+  },
+  {
+   "event_id": "ev-16792ff0cc",
+   "disposition": "continuation",
+   "reason": "A brief 'closely monitoring' statement on Haiyang Dizhi 8's re-entry continues, at or below that level, 2019's Vanguard Bank statements (ev-a2c8e5b86b, in the move led by ev-fb28aaa9a2) — continuation of that candidate (provisional), likely reject.",
+   "of": "ev-a2c8e5b86b"
+  },
+  {
+   "event_id": "ev-8fa9597832",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over China's new 'Xisha' and 'Nansha' districts, the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-6f26f471d1",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over China's naming of 80 features, the same method and level as 2019's ev-7b12c45fe1 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-7b12c45fe1"
+  },
+  {
+   "event_id": "ev-d5623f325a",
+   "disposition": "continuation",
+   "reason": "Annual rejection of China's fishing ban, a routine yearly repeat of 2019's ev-f6e97fe98e — continuation of that candidate (provisional), likely reject.",
+   "of": "ev-f6e97fe98e"
+  },
+  {
+   "event_id": "ev-f8574d1d01",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over the boarding and robbery of QNg 96416 TS near Lincoln Island, the same method and level as 2019's ev-c20531399f — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-c20531399f"
+  },
+  {
+   "event_id": "ev-376d9688bb",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over the 1–5 July Chinese drill around the Paracels, the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-039e33b731",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese jets and warships at Subi and the 'Blue Ocean Information Network', the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-4e26373bce",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over the H-6J bomber deployment to Woody Island, the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-a878b8c8e1",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over repeated Chinese exercises in the Paracels, the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-ab86e8b3dc",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Chinese businesses registered in 'Sansha', the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-dc1d1de5df",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Taiwan's 24 November Itu Aba drill, the same method and level as 2019's ev-b658a26357 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-b658a26357"
+  },
+  {
+   "event_id": "ev-512eb04e5c",
+   "disposition": "continuation",
+   "reason": "Routine MFA protest over Hainan's Paracel cruise routes and the Nanyi-13 hospital ship at Fiery Cross, the same method and level as 2019's ev-1c27ef9078 — continuation of that candidate, provisional while 2019 is undecided; likely reject.",
+   "of": "ev-1c27ef9078"
+  }
+ ]
+}

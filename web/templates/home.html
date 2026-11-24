@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}South China Sea Developments Tracker{% endblock %}
+{% block body_class %}is-home{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="mapdata" type="application/json">{{ map_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+{# The opening curtain (ticket 30): on a reader's first visit the whole banner, logo and all, fills the
+   screen for a moment and lifts to reveal the map; site.js runs it and remembers the visit. A click, a
+   key or a scroll lifts it at once; readers who ask for reduced motion never see it. #}
+<div class="curtain" id="curtain" hidden><img src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950"></div>
+<main id="main">
+{# The assertiveness map (ticket 27): the first screen is the menu and this map, the ten sub-regions shaded
+   by the type-weighted moves of the latest five-year window, each with its count of moves; zoomed in, the
+   reefs, shoals and islands the moves name. On scrolling, the map stays and a panel slides up over it with
+   the year slider, the claimant choice and the details. amap.js finds its controls by id. #}
+<section class="amap" aria-labelledby="amap-title">
+  <div class="amap-stage">
+    <div id="amap" class="amap-canvas" role="region" aria-label="Map of the South China Sea: the ten sub-regions shaded by assertive moves in the selected five years"></div>
+    <div class="amap-left">
+    <div class="amap-caption">
+      <h1 id="amap-title" class="amap-title">Assertive moves, <span id="amap-when"></span></h1>
+      <p class="amap-who" id="amap-who">All claimants</p>
+      <div class="amap-legend"><span class="amap-legend-title">Degree of assertiveness</span><span class="amap-ramp" aria-hidden="true"></span><span class="amap-ends" aria-hidden="true"><span>Low</span><span>High</span></span></div>
+    </div>
+    {# the latest moves (option H5, chosen 2026-11-24), under the caption: the newest by their first event; a
+       rollover (2026-11-24): a slim bar that opens under the pointer, on click or tap, or from the keyboard #}
+    {% if latest_moves %}<details class="amap-latest" id="amap-latest">
+      <summary><span class="kicker">Latest moves</span><span class="amap-latest-newest">{{ latest_moves[0].date }}</span></summary>
+      <ol class="amap-latest-list">
+        {% for m in latest_moves %}<li><a href="cases/{{ m.id }}.html"><span class="amap-latest-meta">{{ m.date }} · {{ m.claimant }}</span><span class="amap-latest-gist">{{ m.gist }}</span></a></li>
+        {% endfor %}</ol>
+      <a class="amap-latest-all" href="map.html">All events on the Events page</a>
+    </details>{% endif %}
+    </div>
+    <a class="amap-cue" href="#amap-explore">Explore the map</a>
+    <a class="embed-credit" id="amap-embed-credit" href="index.html" target="_blank" rel="noopener">SCS Developments Tracker ↗</a>
+  </div>
+  <div class="amap-panel" id="amap-explore">
+    <form class="amap-controls" id="amap-controls" aria-label="Explore the map" onsubmit="return false">
+      <fieldset class="fgroup"><legend>Time</legend>
+        <div class="amap-mode" role="radiogroup" aria-label="What the shading counts">
+          <label><input type="radio" name="amap-mode" value="window" checked><span>Five-year window</span></label>
+          <label><input type="radio" name="amap-mode" value="cumulative"><span>Build-up since {{ meta.first_year }}</span></label>
+        </div>
+        <div class="amap-timeline" id="amap-timeline"></div>
+        <div class="time-row">
+          <button type="button" class="play" id="amap-play" aria-pressed="false" aria-label="Play through the years">Play</button>
+          <output class="time-label" id="amap-label" for="amap-year"></output>
+        </div>
+        <div class="amap-slider">
+          <label class="time-slider"><span class="sr-only">Last year shown</span>
+            <input type="range" id="amap-year" min="0" max="0" step="1" value="0"></label>
+          <div class="amap-ticks" id="amap-ticks" aria-hidden="true"></div>
+        </div>
+      </fieldset>
+      <fieldset class="fgroup amap-decades-group"><legend>By decade</legend>
+        <div class="amap-decades" id="amap-decades"></div>
+      </fieldset>
+      <fieldset class="fgroup amap-decades-group"><legend>By claimant</legend>
+        <div class="amap-decades amap-claimants" id="amap-claimants"></div>
+      </fieldset>
+      <fieldset class="fgroup"><legend>Show</legend>
+        <div class="amap-types" id="amap-types" role="group" aria-label="Types of move">
+          {% for key, label, blurb in types %}<label class="amap-type" data-type="{{ key }}"><input type="checkbox" name="amap-type" value="{{ key }}" checked><span><i aria-hidden="true"></i>{{ label }}</span></label>{% endfor %}
+        </div>
+        <div class="amap-selects">
+          <label><span class="amap-select-label">By</span>
+            <select id="amap-claimant" aria-label="Claimant">
+              <option value="ALL">all claimants</option>
+              {% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}
+            </select></label>
+          <label><span class="amap-select-label">Directed at</span>
+            <select id="amap-target" aria-label="Directed at">
+              <option value="">anyone</option>
+              {% for code, name in dyad_targets.items() %}{% if code not in ('A', 'U') %}<option value="{{ code }}">{{ name }}</option>{% endif %}{% endfor %}
+            </select></label>
+        </div>
+      </fieldset>
+      <fieldset class="fgroup amap-lines"><legend>On the map</legend>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-eez"><span class="box" aria-hidden="true"></span><span class="check-label">EEZ boundaries</span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line</span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-held"><span class="box" aria-hidden="true"></span><span class="check-label">Who holds each feature</span></label>
+        <p class="amap-muted amap-source">Sources: <a href="methodology.html#map-sources">Marine Regions, Natural Earth, Wikipedia</a></p>
+      </fieldset>
+      <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among its sub-regions</span></label>
+      <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>
+      <details class="amap-cite" id="amap-cite-box" data-version="{{ release.version }}" data-year="{{ meta.build_date[:4] }}">
+        <summary>Cite, download or embed this view</summary>
+        <label class="amap-cite-field"><span>Citation</span><textarea id="amap-cite" rows="5" readonly></textarea></label>
+        <p class="amap-cite-actions"><button type="button" class="amap-sr" id="amap-cite-copy">Copy the citation</button>
+          <button type="button" class="amap-sr" id="amap-png">Download the map as an image</button> <span id="amap-cite-done" class="amap-done" aria-live="polite"></span></p>
+        <label class="amap-cite-field"><span>Embed on another page</span><textarea id="amap-embed" rows="3" readonly></textarea></label>
+        <p class="amap-cite-actions"><button type="button" class="amap-sr" id="amap-embed-copy">Copy the embed code</button></p>
+      </details>
+    </form>
+    <div class="amap-detail" id="amap-detail" aria-live="polite"></div>
+    <p class="amap-how"><a href="{{ root }}methodology.html#map">How the shading is worked out</a> · <a href="{{ root }}map.html">Every event, with filters</a></p>
+  </div>
+</section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/amap.js"></script>{% endblock %}

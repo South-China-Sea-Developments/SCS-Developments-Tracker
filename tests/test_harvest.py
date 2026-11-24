@@ -12,7 +12,7 @@ import pytest
 from pipeline import harvest, schema
 from pipeline.extract import Extractor, RecordedClient, find_duplicate, parse_events_json
 from pipeline.validate import validate
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REQUIRED_SOURCES = {"amti", "scspi", "ph_pcg", "ph_dfa", "ph_bfar", "cn_mfa_press", "cn_ccg", "vn_mfa", "my_mmea", "id_kemlu",
@@ -197,8 +197,9 @@ def test_fetch_reports_http_errors_without_raising(local_site, tmp_path):
 @pytest.fixture(scope="module")
 def fixture_run(tmp_path_factory):
     out = tmp_path_factory.mktemp("run")
+    base = chubb_data(tmp_path_factory.mktemp("base") / "data")   # the fixture's 2026 events are its own
     rc = harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(out),
-                       "--recordings", str(FIX / "recordings"), "--run-id", "fixture"])
+                       "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)])
     assert rc == 0
     return out
 

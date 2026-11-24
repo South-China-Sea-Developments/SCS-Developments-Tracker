@@ -8,9 +8,9 @@ from pathlib import Path
 
 import pytest
 
-from pipeline import harvest, queue, schema
+from pipeline import airtable, harvest, queue, schema
 from pipeline.validate import validate
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REVIEWER, DATE = "Test Coder", "2026-10-15"
@@ -24,13 +24,14 @@ def rows(d: Path, name: str) -> list[dict]:
 @pytest.fixture
 def opened(tmp_path):
     """A data copy with the fixture run's five candidates appended, as `queue open` leaves it."""
+    base = chubb_data(tmp_path / "base")     # the fixture's 2026 events are its own, not the dataset's
     d = tmp_path / "data"
     d.mkdir()
     for f in ("claimants", "moves", "events", "sources", "corrections"):
-        shutil.copy(DATA_DIR / f"{f}.csv", d / f"{f}.csv")
+        shutil.copy(base / f"{f}.csv", d / f"{f}.csv")
     run = tmp_path / "run"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
-                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)]) == 0
     assert queue.append_run(run, d) == (5, 5)
     assert queue.append_run(run, d) == (0, 0)          # idempotent: a second open adds nothing
     return d
@@ -88,8 +89,8 @@ def test_review_page_shows_what_the_coder_needs(opened, tmp_path):
     html = page.read_text(encoding="utf-8")
     assert html.count('class="cand"') == 5
     assert "Second Thomas Shoal" in html and "possible duplicate of" in html
-    assert "China's moves in 2025" in html and "None recorded." in html     # previous-year moves (none coded yet)
-    assert "Vietnam's moves in 2025" in html
+    assert "China's moves open through 2025" in html and "None recorded." in html     # no CN move runs that late yet
+    assert "Vietnam's moves open through 2025" in html
     assert "form a new move" in html and "Intensification criterion" in html
     assert "fmprc.gov.cn" in html                                          # source link and excerpt
     assert "Physical interference" in html                                  # the extractor's reasoning
@@ -119,7 +120,7 @@ def test_every_decision_type_yields_the_expected_files(opened):
                       "year": "2026"}},
     ]
     counts = queue.apply_decisions(decisions, REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
-    assert counts == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4}
+    assert counts == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4, "extended": 0}
 
     ev = {e["event_id"]: e for e in rows(opened, "events")}
     mv = {m["move_id"]: m for m in rows(opened, "moves")}
@@ -150,7 +151,7 @@ def test_every_decision_type_yields_the_expected_files(opened):
     assert sum(1 for x in mv.values() if x["coded_by"] == "chubb") == 358
 
 
-NEW = {"type": "coercive", "intensification_criterion": "novelty"}
+NEW = {"type": "coercive", "intensification_criterion": "novelty", "subregions": ["4"]}
 
 
 @pytest.mark.parametrize("bad, message", [
@@ -217,7 +218,7 @@ def test_decided_events_cannot_be_decided_twice(opened):
 def test_validator_requires_a_criterion_on_project_moves(opened):
     eid = candidates(opened)[0]["event_id"]
     queue.apply_decisions([{"event_id": eid, "action": "new_move",
-                            "new_move": {"type": "coercive", "intensification_criterion": "scope"}}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+                            "new_move": {"type": "coercive", "intensification_criterion": "scope", "subregions": ["4"]}}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
     mrows = rows(opened, "moves")
     for m in mrows:
         if m["coded_by"] == "project":
@@ -259,3 +260,117 @@ def test_open_and_decide_end_to_end_in_a_git_checkout(tmp_path):
     r = subprocess.run([sys.executable, "-m", "pipeline.queue", "decide", "bad.json", "--reviewer", "T"], cwd=clone, capture_output=True, text=True, env=env)
     assert r.returncode == 1 and "nothing applied" in r.stderr
     assert validate(clone / "data", RAW_XLSX, RAW_MAVD) == []
+
+
+# ---------------------------------------------------------------------------
+# ticket 24: a continuation note extends the move it names
+
+def test_a_continuation_note_extends_the_named_moves_ongoing_through(opened):
+    cands = candidates(opened)
+    cn = [x for x in cands if x["claimant"] == "CN"]
+    scar = next(x for x in cn if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cn if x["location_name"].startswith("Thitu"))
+    headline = next(x for x in cn if not x["location_name"])
+    moves = rows(opened, "moves")            # fix the reach of the two moves, whatever later decisions did to the live file
+    for m in moves:
+        if m["move_id"] in ("CN201504", "CN201501"):
+            m["ongoing_through"] = {"CN201504": "2018", "CN201501": "2016"}[m["move_id"]]
+    queue.write_table("moves", moves, opened)
+    corr = [c for c in rows(opened, "corrections") if c["move_id"] not in ("CN201504", "CN201501") or c["field"] != "ongoing_through"]
+    queue.write_table("corrections", corr, opened)
+    before = {m["move_id"]: m for m in rows(opened, "moves")}
+    assert before["CN201504"]["coded_by"] == "chubb"
+    counts = queue.apply_decisions([
+        {"event_id": scar["event_id"], "action": "reject", "note": "continuation of CN201504 (pre-sort confirmed)"},
+        {"event_id": thitu["event_id"], "action": "reject", "note": "continuation of CN201504 — same practice"},
+        {"event_id": headline["event_id"], "action": "reject", "note": "Continuation of CN201501."},   # through 2016: extended too; case and stop tolerated
+    ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 3 and counts["extended"] == 2
+    after = {m["move_id"]: m for m in rows(opened, "moves")}
+    assert after["CN201504"]["ongoing_through"] == "2026" and after["CN201501"]["ongoing_through"] == "2026"
+    corr = [c for c in rows(opened, "corrections") if c["field"] == "ongoing_through" and c["date"] == DATE]
+    assert {(c["move_id"], c["new_value"], c["by"], c["date"]) for c in corr} == {("CN201504", "2026", REVIEWER, DATE), ("CN201501", "2026", REVIEWER, DATE)}
+    assert all(c["reason"].startswith("continuation: ev-") for c in corr)
+    assert validate(opened, RAW_XLSX, RAW_MAVD) == []          # the guarded change is documented
+    # the events keep the note; nothing else about them changed
+    assert all(x["status"] == "rejected" for x in rows(opened, "events") if x["event_id"] in (scar["event_id"], thitu["event_id"]))
+
+
+def test_a_continuation_note_may_name_a_candidate_whose_move_exists(opened):
+    cands = candidates(opened)
+    scar = next(x for x in cands if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cands if x["location_name"].startswith("Thitu"))
+    queue.apply_decisions([{"event_id": scar["event_id"], "action": "new_move",
+                            "new_move": {"type": "coercive", "intensification_criterion": "novelty", "domains": ["physical"],
+                                         "issues": ["military"], "dyads": ["CP"], "subregions": ["4"]}}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    # a later sitting: the follower is a continuation of the lead candidate, same year → nothing to extend
+    counts = queue.apply_decisions([{"event_id": thitu["event_id"], "action": "reject", "note": f"continuation of {scar['event_id']} (pre-sort confirmed)"}],
+                                   REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 1 and counts["extended"] == 0
+    # a year no later than the move's extends nothing, and a second sitting adds no second corrections row
+    assert queue.apply_decisions([{"event_id": next(x for x in cands if x["claimant"] == "VN")["event_id"], "action": "reject",
+                                   "note": "continuation of VN201501 (pre-sort confirmed)"}], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)["extended"] == 1
+    assert len([c for c in rows(opened, "corrections") if c["move_id"] == "VN201501"]) == 1
+    # a note naming a move that does not exist is a mistake the batch must not swallow
+    headline = next(x for x in cands if not x["location_name"])
+    with pytest.raises(ValueError, match="continuation of CN199999"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of CN199999"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    with pytest.raises(ValueError, match="not an event"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of ev-doesnotexist"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    # and a move of another claimant cannot be the continuation target
+    with pytest.raises(ValueError, match="VN"):
+        queue.apply_decisions([{"event_id": headline["event_id"], "action": "reject", "note": "continuation of VN201501"}],
+                              REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+
+
+def test_a_follower_of_a_lead_decided_in_the_same_batch_resolves_through_it(opened):
+    cands = candidates(opened)
+    scar = next(x for x in cands if x["location_name"].startswith("Scarb"))
+    thitu = next(x for x in cands if x["location_name"].startswith("Thitu"))
+    counts = queue.apply_decisions([
+        {"event_id": scar["event_id"], "action": "new_move",
+         "new_move": {"type": "coercive", "intensification_criterion": "novelty", "domains": ["physical"], "issues": ["military"], "dyads": ["CP"], "subregions": ["4"]}},
+        {"event_id": thitu["event_id"], "action": "reject", "note": f"continuation of {scar['event_id']}"},
+    ], REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["new_moves"] == 1 and counts["rejected"] == 1 and counts["extended"] == 0   # same year: nothing to extend, no error
+
+
+
+def test_the_previous_year_list_holds_every_move_open_through_that_year(opened):
+    """A continuation target is usually an older move still running (CN200802, 2008, open through 2015),
+    not a move coded in the previous year; the list shows all of them, newest first, with their reach."""
+    moves = rows(opened, "moves")
+    for m in moves:                                   # let two old moves run into the fixture's year (2026)
+        if m["move_id"] in ("CN201403", "CN201504"):
+            m["ongoing_through"] = "2025"
+    queue.write_table("moves", moves, opened)
+    ctx = queue.review_context(opened, "fixture")
+    cn = next(it for it in ctx["items"] if it["event"]["claimant"] == "CN")
+    ids = [m["move_id"] for m in cn["previous_year_moves"]]
+    assert ids == ["CN201504", "CN201403"]            # open through 2025; CN201501 (through 2016) is not
+    assert "through 2025" in airtable._moves_text(cn["previous_year_moves"])
+
+
+def test_sync_data_keeps_mains_version_of_shared_rows_and_the_branchs_own(tmp_path):
+    """Ticket 26: after a union merge, a row both sides hold appears twice; main's version wins."""
+    from pipeline import sync_data
+    main_rows = [{"move_id": "CN201605", "loc08_spratly_sw": "1"}, {"move_id": "CN201504", "loc08_spratly_sw": "1"}]
+    working = [{"move_id": "CN201605", "loc08_spratly_sw": "1"}, {"move_id": "CN201605", "loc08_spratly_sw": "0"},
+               {"move_id": "CN201504", "loc08_spratly_sw": "1"}, {"move_id": "CN201701", "loc08_spratly_sw": "0"},
+               {"move_id": "CN201701", "loc08_spratly_sw": "0"}]
+    out = sync_data.merged(main_rows, working, ("move_id",))
+    assert out == main_rows + [{"move_id": "CN201701", "loc08_spratly_sw": "0"}]
+
+
+def test_a_retired_move_id_is_never_reused(tmp_path, monkeypatch):
+    """A retracted move's id stays a gap: the next 2017 China move skips it, and the validator refuses it."""
+    retired = tmp_path / "retired.csv"
+    retired.write_text("move_id,date,by,reason\nCN201702,2026-11-20,T,test\n", encoding="utf-8")
+    monkeypatch.setattr(queue, "RETIRED", retired)
+    monkeypatch.setattr(queue.retired_move_ids, "__defaults__", (retired,))
+    moves = [{"move_id": "CN201701"}, {"move_id": "CN201703"}]
+    assert queue.next_move_id("CN", 2017, moves) == "CN201704"
+    assert queue.next_move_id("CN", 2018, moves) == "CN201801"
+
