@@ -1,14 +1,9 @@
 {
  "decisions": [
   {
-   "event_id": "ev-06258f3fec",
+   "event_id": "ev-093344fd02",
    "action": "reject",
-   "note": "continuation of ev-5319572db3 - And is a duplicate"
-  },
-  {
-   "event_id": "ev-bbd552aeb5",
-   "action": "reject",
-   "note": "Not enough evidence of this action being state-backed."
+   "note": "Continuation of ev-c40458e043"
   }
  ],
  "reviewer": "Angelo"
