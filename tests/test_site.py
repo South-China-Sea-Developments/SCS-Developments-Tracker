@@ -179,8 +179,8 @@ def test_public_face(browser, dist):
     no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "map.html")
     assert problems == []
-    assert page.locator(".site-head .masthead-img").count() == 1 and page.evaluate("document.querySelector('.masthead-img').naturalWidth") == 2219
-    assert page.evaluate("(() => { const i = document.querySelector('.masthead-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
+    assert page.locator(".site-head .masthead-img").count() == 1 and page.evaluate("document.querySelector('.masthead-img').getAttribute('src')").endswith("masthead.svg")
+    assert page.evaluate("document.querySelector('.masthead-img').complete && document.querySelector('.masthead-img').naturalWidth > 0"), "the vector artwork loads"
     assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
     # ticket 18: the tracker is white like the rest of the site; only the navigation band and the banner's band are dark
     side_rgb, map_rgb, nav_rgb = page.evaluate("[getComputedStyle(document.querySelector('.side')).backgroundColor, getComputedStyle(document.getElementById('map')).backgroundColor, getComputedStyle(document.querySelector('.navband')).backgroundColor]")

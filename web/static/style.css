@@ -95,7 +95,7 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 /* ---- site header: the masthead, then the navigation band --------------------------------------- */
 .site-head { background: var(--band); color: var(--band-ink); --focus: var(--focus-dark); }
 /* the masthead (option C, chosen 2026-11-24), on every page: logo and the programme's name on the sea blue at
-   the page's left edge, the banner's reefs filling the rest (its lower part, below the artwork's own title), a link home */
+   the page's left edge, a drawn reef atoll on the shelf filling the rest (its lower part, below the artwork's own title), a link home */
 .masthead { display: flex; height: clamp(64px, 6.2vw, 92px); background: var(--sea); color: var(--band-ink); text-decoration: none; overflow: hidden; }
 .masthead:focus-visible { outline: 2px solid var(--focus-dark); outline-offset: -3px; }
 .masthead-id { flex: none; display: flex; align-items: center; justify-content: flex-start; gap: clamp(12px, 1.4vw, 20px); box-sizing: border-box; min-width: 0;
@@ -103,7 +103,7 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 .masthead-logo { height: clamp(30px, 3vw, 44px); width: auto; padding-right: clamp(12px, 1.4vw, 20px); border-right: 1px solid rgba(255, 255, 255, 0.35); flex: none; box-sizing: content-box; }
 .masthead-name { font-family: var(--font-display); font-weight: 300; font-size: clamp(0.9375rem, 0.6rem + 1vw, 1.375rem); line-height: 1.15; white-space: nowrap; }
 .masthead-photo { position: relative; flex: 1 1 auto; overflow: hidden; min-width: 0; }
-.masthead-img { position: absolute; right: 0; bottom: 0; width: max(160%, 640px); max-width: none; height: auto; display: block; }
+.masthead-img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: right center; display: block; }   /* vector artwork (2026-11-24): sharp at any size */
 .masthead-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, var(--sea) 0%, rgba(13, 24, 45, 0) 38%); }
 @media (max-width: 700px) {
   .masthead-id { flex: 1 1 auto; padding: 0 12px 0 var(--gutter); }
