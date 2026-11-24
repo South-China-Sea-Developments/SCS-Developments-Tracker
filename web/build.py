@@ -473,7 +473,7 @@ FILE_WHAT = {
     "areas.csv": "Named sea areas (coasts, EEZs, seas, oil blocks) with their share of each sub-region, for suggesting sub-regions.",
     "area_points.csv": "Sourced points for the oil and gas blocks in areas.csv.",
     "occupation.csv": "Who holds each occupied feature, and since when (Wikipedia's list of Spratly features; the Paracels; Scarborough Shoal).",
-    **{f"BASELINE-{c}.md": f"{n}: pre-1970 baseline actions, with sources." for c, n in (("CN", "China"), ("VN", "Vietnam"), ("PH", "Philippines"), ("MY", "Malaysia"), ("ID", "Indonesia"), ("TW", "Taiwan"))},
+    **{f"BASELINE-{c}.md": f"{n}: pre-1970 baseline actions, with sources." for c, n in schema.CLAIMANTS},
     "COLUMNS.md": "Column definitions of every table (data/README.md at this version).",
     "SPEC.md": "The project specification at this version.",
     "CODEBOOK-chubb-2021-appendix.txt": "Andrew Chubb's methodology appendix: the coding rules (CC0).",
