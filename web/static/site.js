@@ -52,5 +52,9 @@
   if (latest && window.matchMedia && window.matchMedia("(hover: hover)").matches) {
     latest.addEventListener("mouseenter", function () { latest.open = true; });
     latest.addEventListener("mouseleave", function () { if (!latest.contains(document.activeElement)) latest.open = false; });
+    // the pointer has already opened it: a mouse click keeps it open rather than closing it again
+    // (a keyboard Enter, event.detail 0, still toggles it)
+    latest.addEventListener("focusout", function (ev) { if (!latest.contains(ev.relatedTarget) && !latest.matches(":hover")) latest.open = false; });
+    latest.querySelector("summary").addEventListener("click", function (ev) { if (ev.detail > 0) { ev.preventDefault(); latest.open = true; } });
   }
 })();
