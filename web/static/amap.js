@@ -445,8 +445,8 @@
     var rising = DATA.subregions.features.map(function (f) { return f.properties.n; }).filter(function (n) { return change(n).dir === "up"; });
     if (rising.length) srLinks("Rising since " + fiveLabel(state.end - SPAN) + ": ", rising);
     el("p", "amap-hint", state.mode === "cumulative"
-      ? "The number on each sub-region is its moves since " + FIRST_YEAR + ", building up year by year. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name."
-      : "The number on each sub-region is its moves in these five years; ▲ and ▼ mark a rise or fall of a fifth or more in intensity against the five years before. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name.", detail);
+      ? "Numbers: moves since " + FIRST_YEAR + ", building up year by year."
+      : "Numbers: moves in these five years. ▲ ▼ a rise or fall of a fifth or more on the five years before.", detail);
   }
 
   // ---- the timeline: moves per year by type, the years shown highlighted ------------------------
@@ -572,7 +572,7 @@
         svgEl("path", { d: d0, fill: v && max ? colourAt(Math.sqrt(v / max)) : "none", "fill-opacity": "0.75", stroke: "#a7b1b8", "stroke-width": "0.5" }, svg);
       });
       el("span", "amap-decade-label", NAMES[c], b);
-      el("span", "amap-claimant-total", total ? fmt(total) : "no moves yet", b);
+      el("span", "amap-claimant-total", fmt(total || 0), b);
       claimantsBox.appendChild(b);
     });
   }
@@ -584,7 +584,6 @@
     if (!ticks || mats < FIRST || mats > LAST) return;
     var t = el("span", "amap-tick source", undefined, ticks);
     t.style.left = (100 * (mats - FIRST) / Math.max(1, LAST - FIRST)) + "%";
-    t.title = "Chubb's coding (MATS) ends with " + mats;
   })();
 
   // ---- the view in the address: #y2015-c-cn-at-p-t-cf-s6-f-scarborough-shoal ---------------------

@@ -57,7 +57,7 @@
       <fieldset class="fgroup amap-decades-group"><legend>By decade</legend>
         <div class="amap-decades" id="amap-decades"></div>
       </fieldset>
-      <fieldset class="fgroup amap-decades-group"><legend>By claimant <span class="amap-muted">(this window, one scale for all)</span></legend>
+      <fieldset class="fgroup amap-decades-group"><legend>By claimant</legend>
         <div class="amap-decades amap-claimants" id="amap-claimants"></div>
       </fieldset>
       <fieldset class="fgroup"><legend>Show</legend>
@@ -78,12 +78,12 @@
         </div>
       </fieldset>
       <fieldset class="fgroup amap-lines"><legend>On the map</legend>
-        <label class="check amap-opt"><input type="checkbox" id="amap-line-eez"><span class="box" aria-hidden="true"></span><span class="check-label">EEZ boundaries <span class="amap-muted">(where settled or claimed)</span></span></label>
-        <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line <span class="amap-muted">(a claim)</span></span></label>
-        <label class="check amap-opt"><input type="checkbox" id="amap-line-held"><span class="box" aria-hidden="true"></span><span class="check-label">Who holds each feature <span class="amap-muted">(outposts, in the holder's colour)</span></span></label>
-        <p class="amap-muted amap-source">Lines: <a href="https://www.marineregions.org/">Marine Regions</a> (EEZ, v12, CC BY 4.0); Natural Earth (dashed line); holders: Wikipedia's list of Spratly features (2026-11-23).</p>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-eez"><span class="box" aria-hidden="true"></span><span class="check-label">EEZ boundaries</span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-dashline"><span class="box" aria-hidden="true"></span><span class="check-label">China's dashed line</span></label>
+        <label class="check amap-opt"><input type="checkbox" id="amap-line-held"><span class="box" aria-hidden="true"></span><span class="check-label">Who holds each feature</span></label>
+        <p class="amap-muted amap-source">Sources: <a href="methodology.html#map-sources">Marine Regions, Natural Earth, Wikipedia</a></p>
       </fieldset>
-      <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among the sub-regions it covers, so a claim over the whole sea does not count in full everywhere</span></label>
+      <label class="check amap-opt"><input type="checkbox" id="amap-shared" checked><span class="box" aria-hidden="true"></span><span class="check-label">Share each move's weight among its sub-regions</span></label>
       <p class="amap-share"><button type="button" class="amap-sr" id="amap-link">Copy a link to this view</button> <span id="amap-link-done" class="amap-done" aria-live="polite"></span></p>
       <details class="amap-cite" id="amap-cite-box" data-version="{{ release.version }}" data-year="{{ meta.build_date[:4] }}">
         <summary>Cite, download or embed this view</summary>

@@ -510,7 +510,9 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
     assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
     assert "OpenFreeMap" in page.inner_text("#map .maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text("#map .maplibregl-ctrl-attrib")
     text = page.evaluate("document.getElementById('map-count').textContent")
-    assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text and f"{expected['n_events']} by sub-region" in text
+    data = page.evaluate("(() => { const d = document.getElementById('map-count').dataset; return [+d.placed, +d.bySubregion]; })()")
+    assert text.startswith(f"{expected['n_events']} events through ") and data == [expected['n_points'], expected['n_events']], (text, data)
+    assert "placed" not in text and "by sub-region" not in text, "the count line is the count and the period only (2026-11-24)"
     # the sub-region counts on the map are the validator's, summed over claimants
     shown = {}
     for el in page.locator("[role='button'][tabindex='0']").element_handles():
@@ -563,7 +565,7 @@ def dist_placed(tmp_path_factory):
 
 def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     page, problems, _ = _open_map(browser, dist_placed)
-    assert "3 placed" in page.evaluate("document.getElementById('map-count').textContent")
+    assert page.evaluate("document.getElementById('map-count').dataset.placed") == "3"
     # the points show only zoomed in; far out the sub-region counts carry every event
     assert page.locator(".evt:visible").count() == 0 and page.locator(".sr-count:visible").count() >= 1
     for _ in range(3):
@@ -590,8 +592,7 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
         page.fill("#month", str((year - 1970) * 12 + month_no - 1))
         page.dispatch_event("#month", "input")
         page.wait_for_timeout(250)
-        text = page.evaluate("document.getElementById('map-count').textContent")
-        return int(re.search(r"(\d+) placed", text).group(1)), int(re.search(r"(\d+) by sub-region", text).group(1))
+        return tuple(page.evaluate("(() => { const d = document.getElementById('map-count').dataset; return [+d.placed, +d.bySubregion]; })()"))
     assert counts_at(2014, 5)[0] == 1 and counts_at(2014, 5 + 1)[0] == 0          # the rig, dated to May 2014
     assert counts_at(2013, 11)[1] >= 1 and counts_at(2013, 1)[1] >= 1            # the filing, dated to 2013
     assert counts_at(2012, 4)[0] == 1 and counts_at(2012, 4 + 1)[0] == 1 and counts_at(2012, 6)[0] == 0   # two day-dated events
@@ -625,7 +626,7 @@ def test_map_time_window_and_filters(browser, dist):
     page.dispatch_event("#month", "input")
     page.wait_for_timeout(300)
     in_2014 = [e for e in shown if e["date_start"][:4] <= "2014" and (e["date_end"] or e["date_start"])[:4] >= "2014"]
-    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events Jan 2014 – Dec 2014")
+    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events January 2014 to December 2014")
     # unchecking a claimant removes its events; a type filter keeps only moves of that type
     page.uncheck('input[name="claimant"][value="VN"]', force=True)
     page.wait_for_timeout(300)
