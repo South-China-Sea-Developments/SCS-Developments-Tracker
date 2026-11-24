@@ -1,0 +1,2811 @@
+[
+  {
+    "claimant": "PH",
+    "date_start": "2016-01-07",
+    "date_end": "2016-01-07",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island, near Subi Reef",
+    "subregion": "5",
+    "summary": "Personnel of the Civil Aviation Authority of the Philippines flew a Cessna to Pag-asa Island on 7 January 2016 to conduct an engineering survey ahead of the planned installation of aviation safety equipment on the island, ignoring two radio warnings from the Chinese navy at Subi Reef and completing the trip.",
+    "actors": "Civil Aviation Authority of the Philippines (CAAP)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A civil-agency survey flight to improve infrastructure on an occupied disputed island is unilateral administration without confrontation; demonstrative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2016/01/18/1543918/philippine-plane-warned-chinese-navy-disputed-sea",
+        "title": "Philippine plane warned by 'Chinese navy' in disputed sea",
+        "publisher": "Philstar.com (Associated Press)",
+        "pub_date": "2016-01-18",
+        "language": "en",
+        "excerpt": "Eric Apolonio said the incident happened Jan. 7 when he and other personnel of the Civil Aviation Authority of the Philippines flew to a Philippine-occupied island for an engineering survey ahead of the planned installation of aviation safety equipment on the island."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-01-08",
+    "date_end": "2016-01-08",
+    "date_precision": "day",
+    "location_name": "Kagitingan (Fiery Cross) Reef",
+    "subregion": "8",
+    "summary": "The Philippine Department of Foreign Affairs filed a diplomatic protest with China over Chinese test flights to the new airfield on Kagitingan (Fiery Cross) Reef, summoning a Chinese embassy official to receive the note; spokesman Charles Jose announced it on 12 January.",
+    "actors": "Department of Foreign Affairs (DFA); spokesman Charles Jose",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A formal diplomatic protest is a verbal assertion of the Philippine claim against China's activity on an occupied Spratly feature; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/01/14/1542339/philippines-files-protest-vs-china-flights",
+        "title": "Philippines files protest vs China on flights",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-01-13",
+        "language": "en",
+        "excerpt": "“We formally protested on Jan. 8, 2016 the recent test flights conducted by China to the Kagitingan Reef or Fiery Cross Reef,” he said."
+      },
+      {
+        "url": "https://globalnation.inquirer.net/135053/manila-formally-files-protest-against-china-over-test-flights",
+        "title": "Manila formally files protest against China over test flights",
+        "publisher": "Philippine Daily Inquirer",
+        "pub_date": "2016-01-14",
+        "language": "en",
+        "excerpt": "the Philippines filed the diplomatic protest through a representative of the Chinese Embassy in Manila on Jan. 8."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-02-10",
+    "date_end": "2016-02-10",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island; Ayungin Shoal vicinity",
+    "subregion": "5",
+    "summary": "The Philippine Navy supply ship BRP Laguna (LS-501) sailed from Palawan on a routine three-day resupply voyage to the civilian and military population of Pag-asa Island, turning back near Ayungin Shoal on 10 February 2016 with mechanical trouble; the mission was resumed later that month (one example of the Navy's regular Kalayaan resupply runs in 2016).",
+    "actors": "Philippine Navy (BRP Laguna); Municipality of Kalayaan (Mayor Eugenio Bito-onon Jr.)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Routine resupply of occupied features is unilateral administration without confrontation; demonstrative. Recorded as the year's representative instance of an established practice.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2016/02/11/1552147/navy-ship-bound-pag-asa-island-breaks-down",
+        "title": "Navy ship bound for Pag-asa Island breaks down",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-02-11",
+        "language": "en",
+        "excerpt": "The Navy’s supply and logistic ship BRP Laguna was halfway on her supposed three-day voyage when it suffered mechanical trouble and had to get back to Palawan for repairs."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-02-19",
+    "date_end": "2016-02-19",
+    "date_precision": "day",
+    "location_name": "Woody Island (Paracels)",
+    "subregion": "2",
+    "summary": "The Department of Foreign Affairs issued a statement on China's reported deployment of surface-to-air missiles on Woody Island, saying such actions negated China's commitment not to militarise the South China Sea and were a clear violation of the ASEAN-China DOC; spokesman Charles Jose said the Philippines would raise the issue at the ASEAN ministers' retreat in Laos.",
+    "actors": "Department of Foreign Affairs; spokesman Charles Jose",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official statement criticising Chinese militarisation in the disputed sea is a verbal assertion; declarative. Woody Island is not claimed by the Philippines, so relevance is as a general SCS position.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/02/23/1556019/philippines-eyeing-discuss-chinese-missiles-asean-meet-laos",
+        "title": "Philippines eyeing to discuss Chinese missiles at Asean meet in Laos",
+        "publisher": "Philstar.com",
+        "pub_date": "2016-02-23",
+        "language": "en",
+        "excerpt": "\"We are expressing concern over these developments, including the reported missile on Woody Islands. Of course, all these things raise our concern and its effect on freedom of navigation, overflight and unimpeded flow of commerce,\" Foreign Affairs spokesperson Charles Jose said"
+      },
+      {
+        "url": "https://dfa.gov.ph/authentication-functions/78-newsroom/dfa-releases/8568-statement-on-china-s-reported-deployment-of-missiles-on-woody-island",
+        "title": "Statement on China's Reported Deployment of Missiles on Woody Island",
+        "publisher": "Department of Foreign Affairs, Republic of the Philippines",
+        "pub_date": "2016-02-19",
+        "language": "en",
+        "excerpt": "Such actions negate China’s earlier commitment not to militarize the South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-07-12",
+    "date_end": "2016-07-12",
+    "date_precision": "day",
+    "location_name": "South China Sea / West Philippine Sea",
+    "subregion": "",
+    "summary": "Foreign Secretary Perfecto Yasay issued the Philippine government's statement welcoming the Annex VII arbitral tribunal's Award in Philippines v. China, saying it upheld international law and UNCLOS, while calling for restraint and sobriety.",
+    "actors": "Department of Foreign Affairs; Secretary Perfecto R. Yasay Jr.",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official statement endorsing the award that invalidated China's nine-dash line is a verbal assertion of the Philippine maritime claim; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://riyadhpe.dfa.gov.ph/newsroom/press-releases/2762-pr-114-2016",
+        "title": "Statement of Philippine Secretary of Foreign Affairs Perfecto R. Yasay, Jr. on the Ruling of the Permanent Court of Arbitration",
+        "publisher": "Department of Foreign Affairs (Philippine Embassy Riyadh)",
+        "pub_date": "2016-07-14",
+        "language": "en",
+        "excerpt": "Our experts are studying the Award with the care and thoroughness that this significant arbitral outcome deserves."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2016/07/12/1602130/dfa-calls-restraint-sobriety-after-tribunal-favors-philippines",
+        "title": "DFA calls for restraint, sobriety after tribunal favors Philippines",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-07-12",
+        "language": "en",
+        "excerpt": "restraint and sobriety"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-07-16",
+    "date_end": "2016-07-16",
+    "date_precision": "day",
+    "location_name": "",
+    "subregion": "",
+    "summary": "On the sidelines of the ASEM summit in Mongolia, Foreign Secretary Yasay rejected Chinese Foreign Minister Wang Yi's offer of bilateral negotiations conditioned on setting aside the arbitral ruling, saying it was inconsistent with the Philippine Constitution and national interest.",
+    "actors": "Department of Foreign Affairs; Secretary Perfecto Yasay",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Insisting that talks proceed only on the basis of the award is a verbal assertion of the Philippine legal position; declarative. Date approximate: 'last weekend' before the 19 July report (ASEM 15-16 July).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/07/19/1604466/philippines-rejects-talks-not-based-arbitral-ruling-china-warns-confrontation",
+        "title": "Philippines rejects talks not based on arbitral ruling; China warns of confrontation",
+        "publisher": "Philstar.com",
+        "pub_date": "2016-07-19",
+        "language": "en",
+        "excerpt": "The Foreign Affairs chief, however, rejected Wang's offer citing that it was not consistent with the country's Constitution and national interests."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-09-07",
+    "date_end": "2016-09-07",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal",
+    "subregion": "4",
+    "summary": "The Philippine Department of National Defense released aerial surveillance photographs of Chinese coast guard ships and barges around Scarborough Shoal hours before the ASEAN-China summit in Laos; Defense Secretary Lorenzana called the situation 'very worrisome' and said 'That area is ours.'",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Armed Forces of the Philippines",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Publicising surveillance of Chinese ships and asserting ownership of the shoal is a verbal/public assertion of claim without coercion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/09/07/1621416/china-confirms-vessels-scarborough-denies-reclamation",
+        "title": "China confirms vessels on Scarborough, denies reclamation",
+        "publisher": "Philstar.com",
+        "pub_date": "2016-09-07",
+        "language": "en",
+        "excerpt": "The statement came following the Philippine government's release of surveillance pictures of Chinese coast guard ships and barges around Scarborough just hours before the Chinese Premier Li Keqiang attended the regional summit."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-09-08",
+    "date_end": "2016-09-08",
+    "date_precision": "day",
+    "location_name": "21 nautical miles off Dile Point, Sta. Catalina, Ilocos Sur",
+    "subregion": "",
+    "summary": "The Philippine Navy apprehended 17 Vietnamese fishermen aboard three commercial fishing vessels about 21 nautical miles off Ilocos Sur for poaching; the men were held by the Bureau of Immigration and their vessels by BFAR at Sual, Pangasinan, until President Duterte sent them home on 2 November 2016.",
+    "actors": "Philippine Navy; Bureau of Fisheries and Aquatic Resources (BFAR); Bureau of Immigration",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PV"
+    ],
+    "reasoning": "Detention of another claimant's fishermen and seizure of their vessels in waters the Philippines claims as EEZ is physical enforcement imposing punishment; coercive.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/11/02/1638734/rody-send-back-17-vietnamese-poachers",
+        "title": "Rody to send back 17 Vietnamese poachers",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-11-02",
+        "language": "en",
+        "excerpt": "On Sept. 8, the Philippine Navy caught the Vietnamese fishermen from Dile Point, Sta. Catalina, Ilocos Sur."
+      },
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/587252/duterte-sends-off-17-vietnamese-fishermen-arrested-for-alleged-poaching-in-phl-waters-nbsp/story/",
+        "title": "Duterte sends off 17 Vietnamese fishermen arrested for alleged poaching in PHL waters",
+        "publisher": "GMA News Online",
+        "pub_date": "2016-11-02",
+        "language": "en",
+        "excerpt": "President Rodrigo Duterte on Wednesday led the sending off of 17 Vietnamese fishermen here."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-10-16",
+    "date_end": "2016-10-16",
+    "date_precision": "day",
+    "location_name": "South China Sea",
+    "subregion": "",
+    "summary": "Before departing for Brunei and a state visit to China, President Duterte told reporters that the Philippines' sovereign claims in the South China Sea were not up for bargain and that he would 'continue to insist on what is ours', while saying the arbitral ruling would be discussed in Beijing without 'hard impositions'.",
+    "actors": "President Rodrigo Duterte",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A presidential statement reaffirming the claim is a verbal assertion; declarative, low intensity given its conciliatory framing.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/10/17/1634275/well-insist-what-ours",
+        "title": "'We'll insist on what is ours'",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-10-17",
+        "language": "en",
+        "excerpt": "“We will stick to our claim. We do not bargain anything. We will continue to insist on what is ours,” Duterte told reporters at the Davao International Airport"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-11-05",
+    "date_end": "2016-11-05",
+    "date_precision": "day",
+    "location_name": "Panatag (Scarborough) Shoal",
+    "subregion": "4",
+    "summary": "Two Philippine Coast Guard ships, the newly acquired BRP Tubbataha and the BFAR-type monitoring, control and surveillance vessel MCS 3010, arrived at Panatag (Scarborough) Shoal on 5 November 2016 to conduct patrols, on the directive of Transportation Secretary Tugade for the PCG to patrol the Philippine EEZ, the first Philippine government patrol there since Filipino fishermen regained access.",
+    "actors": "Philippine Coast Guard (BRP Tubbataha, MCS 3010); Department of Transportation; Rear Admiral William Melad",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A government patrol to a feature controlled by China since 2012 is unilateral administration without direct confrontation; demonstrative, and new in scope for the Philippines.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/11/08/1640554/2-coast-guard-ships-arrive-panatag",
+        "title": "2 Coast Guard ships arrive at Panatag",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-11-08",
+        "language": "en",
+        "excerpt": "Two ships of the Philippine Coast Guard (PCG) arrived to conduct patrols at Panatag (Scarborough) Shoal on Nov. 5."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-11-21",
+    "date_end": "2016-11-21",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal lagoon",
+    "subregion": "4",
+    "summary": "President Duterte decided to issue a formal order declaring the lagoon of Scarborough Shoal a marine sanctuary in which Filipino and Chinese fishing would be prohibited, his officials announced after his return from the APEC summit.",
+    "actors": "President Rodrigo Duterte; Office of the President",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A unilateral administrative designation of a disputed feature's lagoon as a protected area is an act of administration without confrontation; demonstrative (announced intention, order itself not confirmed issued).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.thejakartapost.com/seasia/2016/11/21/duterte-to-declare-disputed-area-a-no-fishing-zone-for-all-.html",
+        "title": "Duterte to declare disputed area a no-fishing zone for all",
+        "publisher": "The Jakarta Post (Associated Press)",
+        "pub_date": "2016-11-21",
+        "language": "en",
+        "excerpt": "Philippine President Rodrigo Duterte has decided to issue a formal order declaring a sprawling lagoon in a disputed South China Sea shoal a maritime sanctuary where Filipinos and Chinese will be prohibited from fishing, officials said in a statement Monday."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2016/11/23/1644723/fishermen-fear-displacement",
+        "title": "Fishermen fear displacement",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-11-23",
+        "language": "en",
+        "excerpt": "asked President Duterte to reconsider his decision declaring the lagoon a marine protected area"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-12-01",
+    "date_end": "2016-12-31",
+    "date_precision": "month",
+    "location_name": "Spratly Islands (Chinese artificial islands)",
+    "subregion": "",
+    "summary": "The Philippines filed a diplomatic protest with China over Beijing's installation of anti-aircraft and anti-missile systems on its man-made islands in the Spratlys; Foreign Secretary Yasay disclosed the note on 16 January 2017, saying it had been sent quietly the previous month.",
+    "actors": "Department of Foreign Affairs; Secretary Perfecto Yasay",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A diplomatic note of protest is a verbal assertion against China's militarisation of claimed features; declarative. Month precision because the note's date was not given.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/world/philippines-says-protested-against-china-arms-buildup-on-s-china-sea-isles-3529309.html",
+        "title": "Philippines says protested against China arms buildup on S. China Sea isles",
+        "publisher": "VnExpress International (Reuters)",
+        "pub_date": "2017-01-16",
+        "language": "en",
+        "excerpt": "The Philippines has filed a diplomatic protest with China, its foreign minister said on Monday, over Beijing's installation last year of anti-aircraft and anti-missile systems on its manmade islands"
+      },
+      {
+        "url": "https://www.gulf-times.com/story/528494/chinas-sea-militarisation-is-very-troubling-defence-chief",
+        "title": "China's sea militarisation is 'very troubling': defence chief",
+        "publisher": "Gulf Times (Reuters)",
+        "pub_date": "2017-01-17",
+        "language": "en",
+        "excerpt": "Foreign Secretary Perfecto Yasay had earlier said the Philippines had quietly sent a diplomatic note to Beijing last month over the reports of Chinese missile installations in the Spratlys"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2016-12-19",
+    "date_end": "2016-12-19",
+    "date_precision": "day",
+    "location_name": "South China Sea",
+    "subregion": "",
+    "summary": "Foreign Secretary Yasay said the Philippines would not 'deviate' from the arbitral tribunal's ruling rejecting China's claims, while saying trust had to be built with Beijing before sensitive issues were discussed; President Duterte said he would bring up the ruling with China 'someday'.",
+    "actors": "Department of Foreign Affairs; Secretary Perfecto Yasay; President Rodrigo Duterte",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A reaffirmation of the award as binding is a verbal assertion; declarative, low intensity.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2016/12/20/1655206/philippines-not-deviating-arbitral-court-ruling-scs",
+        "title": "'Philippines not deviating from arbitral court ruling on SCS'",
+        "publisher": "The Philippine Star",
+        "pub_date": "2016-12-20",
+        "language": "en",
+        "excerpt": "The Philippines will not “deviate” from an international tribunal’s ruling that rejected China’s extensive claims in the South China Sea, but Manila must build trust with Beijing before discussing “sensitive” bilateral issues, Foreign Affairs Secretary Perfecto Yasay Jr. said yesterday."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-01-17",
+    "date_end": "2017-01-17",
+    "date_precision": "day",
+    "location_name": "Spratly Islands",
+    "subregion": "",
+    "summary": "Defense Secretary Delfin Lorenzana issued a statement calling China's militarisation of disputed Spratly features 'very troubling' and saying the government would be remiss if it did not protest and seek clarification from China on the presence of weapons there, hours before President Duterte met Chinese Vice Foreign Minister Liu Zhenmin.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A public ministerial statement objecting to Chinese weapons on claimed features is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gulf-times.com/story/528494/chinas-sea-militarisation-is-very-troubling-defence-chief",
+        "title": "China's sea militarisation is 'very troubling': defence chief",
+        "publisher": "Gulf Times (Reuters)",
+        "pub_date": "2017-01-17",
+        "language": "en",
+        "excerpt": "the Philippine government would be remiss in its duty to protect its national interest if it does not protest, question and seek clarification from China on the presence of weapons in the Spratlys"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-02-01",
+    "date_end": "2018-05-17",
+    "date_precision": "month",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "Between February 2017 and May 2018 the Philippines constructed at least seven new buildings on Thitu (Pag-asa) Island, near the residential area, the administrative facilities, the northern shore and the western end, according to AMTI comparison of satellite imagery.",
+    "actors": "Armed Forces of the Philippines; Department of National Defense; Municipality of Kalayaan",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "New construction on an occupied disputed feature is unilateral administration without confrontation; demonstrative. Dated by the imagery interval.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/philippines-launches-spratly-repairs/",
+        "title": "Philippines Launches Spratly Runway Repairs",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2018-05-25",
+        "language": "en",
+        "excerpt": "At least seven new buildings have been constructed in the last year, with four near the residential area on the eastern side of the island, one near the administrative facilities at its center, another along the northern shore, and one at the western end"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-02-21",
+    "date_end": "2017-02-21",
+    "date_precision": "day",
+    "location_name": "Chinese artificial islands, South China Sea",
+    "subregion": "",
+    "summary": "As ASEAN chair, Foreign Secretary Yasay told reporters after the ASEAN foreign ministers' retreat in Boracay that the ministers had noted 'very unsettlingly' China's installation of weapons systems on its man-made islands and were unanimous in their concern about reclamation and militarisation.",
+    "actors": "Department of Foreign Affairs; Secretary Perfecto Yasay (ASEAN chair)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A public statement by the Philippine foreign secretary criticising China's militarisation of disputed features is a verbal assertion; declarative, low intensity.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2017/02/22/1673865/asean-concerned-over-reclamation-disputed-seas",
+        "title": "'ASEAN concerned over reclamation in disputed seas'",
+        "publisher": "The Philippine Star",
+        "pub_date": "2017-02-22",
+        "language": "en",
+        "excerpt": "“They have noticed, very unsettlingly, that China has installed weapons systems in these facilities that they have established, and they have expressed strong concern about this,” Yasay told reporters after a ministers’ retreat on the island of Boracay."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-03-09",
+    "date_end": "2017-03-09",
+    "date_precision": "day",
+    "location_name": "Reed Bank (and Benham Rise, outside the SCS)",
+    "subregion": "6",
+    "summary": "Defense Secretary Lorenzana said Chinese survey ships had been seen in 2016 near Reed Bank in the South China Sea as well as Benham Rise, and that he had ordered the Navy to accost and drive away such ships if seen again this year, calling their seabed surveying 'very concerning'.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Philippine Navy",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "domestic",
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "energy"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An order to the Navy to accost and expel foreign survey ships from claimed waters is a threat of physical interference; coercive at the level of declared policy. The order primarily concerned Benham Rise (outside the SCS), with Reed Bank also named, hence medium confidence.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://gulfnews.com/world/asia/philippines/chinese-survey-ships-entering-philippine-territory-manila-1.1991031",
+        "title": "Chinese survey ships entering Philippine territory: Manila",
+        "publisher": "Gulf News (AFP)",
+        "pub_date": "2017-03-09",
+        "language": "en",
+        "excerpt": "“I have ordered the navy that if they see this service ship this year, to start to accost them and drive them away” from Benham Rise, Lorenzana said."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-04-06",
+    "date_end": "2017-04-06",
+    "date_precision": "day",
+    "location_name": "Philippine-occupied Spratly features; Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Speaking at Western Command headquarters in Puerto Princesa, President Duterte ordered the military to occupy and fortify the nine or ten Spratly features the Philippines claims, to raise the national flag on them, and said he might raise the flag himself on Pag-asa on Independence Day in June.",
+    "actors": "President Rodrigo Duterte; Armed Forces of the Philippines",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A presidential order and public statement to fortify and flag disputed features is a verbal assertion of sovereignty; declarative (the physical follow-through is coded separately).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.npr.org/sections/thetwo-way/2017/04/06/522891024/duterte-orders-philippine-army-to-occupy-disputed-islands-in-south-china-sea",
+        "title": "Duterte Orders Philippine Army To Occupy Disputed Islands In South China Sea",
+        "publisher": "NPR",
+        "pub_date": "2017-04-06",
+        "language": "en",
+        "excerpt": "The Philippine military should raise the national flag on those islands, Duterte said, adding that he might do that himself on one island, Pagasa (also known as Thitu), on Philippine Independence Day in June"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-04-21",
+    "date_end": "2017-04-21",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Defense Secretary Delfin Lorenzana and AFP Chief of Staff Gen. Eduardo Año flew to Pag-asa (Thitu) Island with journalists to inspect the eroded airstrip, took part in a flag-raising ceremony and announced plans to repair the runway and build a dock, fish port and other facilities; Chinese forces radioed warnings to their aircraft and Beijing lodged representations.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; AFP Chief of Staff Gen. Eduardo Año; Philippine Air Force",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A high-level official visit, flag-raising and construction announcement on a disputed occupied island is unilateral administration intended to assert the claim; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2017/04/21/1687659/headlines",
+        "title": "Lorenzana visits Pag-asa Island",
+        "publisher": "Philstar.com (Associated Press)",
+        "pub_date": "2017-04-21",
+        "language": "en",
+        "excerpt": "The Philippine defense secretary and military chief of staff visited a Philippine-occupied island in the South China Sea on Friday to assert the country's claim to the heartland of a disputed area"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2017/4/22/china-philippines-spar-over-military-visit-to-island",
+        "title": "China, Philippines spar over military visit to island",
+        "publisher": "Al Jazeera",
+        "pub_date": "2017-04-22",
+        "language": "en",
+        "excerpt": "Lorenzana and Ano also met Filipino troops and villagers and took part in a flag-raising ceremony on Pag-asa"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-04-21",
+    "date_end": "2017-04-21",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island, Kalayaan Island Group",
+    "subregion": "5",
+    "summary": "Following President Duterte's directive, Defense Secretary Lorenzana announced that Philippine Navy Seabees and Air Force engineers would repair existing facilities and build new ones on Pag-asa, starting with a beaching ramp and a dock for larger vessels, with construction to begin the following week under a P1.6 billion programme.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Philippine Navy Seabees; Philippine Air Force",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official decision and announcement to build infrastructure on a disputed occupied feature is a verbal/administrative assertion; declarative (physical works coded as they occurred, from 2018).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2017/04/23/1688022/troops-upgrade-kalayaan-facilities",
+        "title": "Troops to upgrade Kalayaan facilities",
+        "publisher": "The Philippine Star",
+        "pub_date": "2017-04-23",
+        "language": "en",
+        "excerpt": "Specialized military units will undertake the construction of new facilities on Kalayaan Island in the disputed Spratlys archipelago, Defense Secretary Delfin Lorenzana said on Friday."
+      },
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/607856/phl-allocates-p1-6-b-for-pag-asa-island-development/story",
+        "title": "PHL allocates P1.6-B for Pag-asa Island development",
+        "publisher": "GMA News Online",
+        "pub_date": "2017-04-21",
+        "language": "en",
+        "excerpt": "P1.6-B for Pag-asa Island development"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-05-01",
+    "date_end": "2017-05-31",
+    "date_precision": "month",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "The Philippine Navy began delivering construction supplies, including wood and cement, together with troops to Pag-asa Island for the facilities upgrade ordered by President Duterte, the AFP Western Command chief reported.",
+    "actors": "Philippine Navy; AFP Western Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Delivery of construction materials to an occupied disputed island is unilateral administration; demonstrative. Month inferred from the article's sequence number and reference to 'last April' (Lorenzana's visit); date not stated on page, hence low confidence.",
+    "confidence": "low",
+    "sources": [
+      {
+        "url": "https://newsinfo.inquirer.net/896099/navy-starts-delivery-of-construction-supplies-on-pagasa-island",
+        "title": "Navy starts delivery of construction supplies to Pagasa Island",
+        "publisher": "Philippine Daily Inquirer",
+        "pub_date": "",
+        "language": "en",
+        "excerpt": "The Philippine Navy has started the delivery of construction supplies to Pagasa Island in the West Philippine Sea"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-05-15",
+    "date_end": "2017-05-15",
+    "date_precision": "day",
+    "location_name": "disputed part of the South China Sea (Philippine oil blocks)",
+    "subregion": "",
+    "summary": "In a meeting with Xi Jinping in Beijing on 15 May 2017, President Duterte told the Chinese leader that the Philippines intended to drill for oil in disputed waters it considers its own ('I can drill the oil ... because it is ours'); he disclosed on 19 May that Xi had warned of war in response.",
+    "actors": "President Rodrigo Duterte",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "energy",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A head-of-state assertion to China of the right to exploit resources in disputed waters is a verbal claim assertion; declarative. Dated to the meeting as recounted by Duterte on 19 May.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.aljazeera.com/news/2017/5/19/duterte-chinas-xi-threatened-war-over-sea-oil",
+        "title": "Duterte: China's Xi threatened 'war' over sea oil",
+        "publisher": "Al Jazeera (Reuters)",
+        "pub_date": "2017-05-19",
+        "language": "en",
+        "excerpt": "“We intend to drill oil there, if it’s yours, well, that’s your view, but my view is, I can drill the oil, if there is some inside the bowels of the earth because it is ours,” Duterte said in a speech, recalling his conversation with Xi."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-07-01",
+    "date_end": "2017-12-31",
+    "date_precision": "month",
+    "location_name": "Spratly archipelago, near Chinese artificial islands",
+    "subregion": "5",
+    "summary": "Philippine military aircraft conducted maritime air surveillance patrols near China's artificial islands in the Spratlys throughout the second half of 2017, receiving Chinese radio warnings at least 46 times, according to a Philippine government report seen by AP; Manila raised concern with China over the warnings, including at a bilateral meeting in early 2018.",
+    "actors": "Philippine Air Force; Armed Forces of the Philippines; Department of Foreign Affairs",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Routine maritime air patrols over disputed waters are unilateral administration without confrontation; demonstrative. Summarised as one event for the half-year with frequency stated.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.voanews.com/a/philippines-raises-concern-over-chinese-radio-warnings/4506235.html",
+        "title": "Philippines Raises Concern Over Chinese Radio Warnings",
+        "publisher": "VOA News (Associated Press)",
+        "pub_date": "2018-07-30",
+        "language": "en",
+        "excerpt": "in the second half of last year alone, Philippine military aircraft received such Chinese radio warnings at least 46 times while patrolling near artificial islands built by China in the South China Sea's Spratly archipelago"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-08-01",
+    "date_end": "2017-08-31",
+    "date_precision": "month",
+    "location_name": "sandbars (Sandy Cay) west of Thitu / Pag-asa Island",
+    "subregion": "5",
+    "summary": "Filipino fishers, with Philippine government involvement, began building shelters on unoccupied sandbars just west of Pag-asa (Thitu) Island in August 2017; a BFAR vessel attempted to approach on 13 August but was blocked by Chinese vessels, and President Duterte ordered the construction halted in November after China complained of a 'new feature'.",
+    "actors": "Bureau of Fisheries and Aquatic Resources (BFAR); Department of National Defense; Filipino fishers from Pag-asa",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Attempting to erect structures on an unoccupied disputed sandbar and sending a BFAR patrol vessel is unilateral administration; demonstrative. Later halted, which the coder may weigh.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2017/11/08/1756907/duterte-stops-building-fishers-shelters-disputed-reef",
+        "title": "Duterte stops building of fishers' shelters on disputed reef",
+        "publisher": "Philstar.com",
+        "pub_date": "2017-11-08",
+        "language": "en",
+        "excerpt": "President Rodrigo Duterte ordered to stop the construction of shelters for Filipino fishermen on sandbars just off the coast of Manila-claimed Pag-asa (Thitu) Island in the West Philippine Sea, the Defense chief said."
+      },
+      {
+        "url": "https://amti.csis.org/confirming-chinese-flotilla-near-thitu-island/",
+        "title": "Confirming the Chinese Flotilla Near Thitu Island",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2017-08-17",
+        "language": "en",
+        "excerpt": "these vessels prevented a ship from the Philippine Bureau of Fisheries and Aquatic Resources from approaching the area on August 13"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-08-08",
+    "date_end": "2017-08-08",
+    "date_precision": "day",
+    "location_name": "vicinity of the Malampaya gas field, c. 32 nm from Taputin Island, Palawan",
+    "subregion": "",
+    "summary": "The Philippine Navy flagship BRP Gregorio del Pilar, on sea patrol, intercepted a Vietnamese-flagged fishing vessel near the Malampaya gas field off Palawan and detained ten Vietnamese fishermen on suspicion of poaching, the Philippine Coast Guard announced.",
+    "actors": "Philippine Navy (BRP Gregorio del Pilar); Philippine Coast Guard",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PV"
+    ],
+    "reasoning": "Interception and detention of another claimant's fishing vessel in Philippine-claimed waters is physical enforcement; coercive.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.rfa.org/english/news/vietnam/philippines-poachers-08102017131301.html",
+        "title": "10 Vietnamese Caught on Suspicion of Poaching in Philippine Waters",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2017-08-10",
+        "language": "en",
+        "excerpt": "The Philippine Navy’s flagship BRP Gregorio del Pilar was conducting a sea patrol on Tuesday when it intercepted a fishing vessel in the vicinity of the Malampaya gas field"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-09-23",
+    "date_end": "2017-09-23",
+    "date_precision": "day",
+    "location_name": "off Cape Bolinao, Pangasinan (Philippine EEZ, South China Sea)",
+    "subregion": "",
+    "summary": "A Philippine Navy vessel fired warning shots during a chase of a Vietnamese fishing boat about 34 miles off Cape Bolinao, Pangasinan, killing two Vietnamese fishermen; the Navy took five other Vietnamese fishermen into custody and Manila asserted the area was within its exclusive economic zone.",
+    "actors": "Philippine Navy; Presidential spokesman Ernesto Abella; Department of Foreign Affairs",
+    "suggested_type": "force",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PV"
+    ],
+    "reasoning": "Lethal fisheries enforcement against a foreign fishing boat in the Philippine-claimed EEZ is use of force by a claimant against another claimant's nationals; coded force (or coercive if the coder treats warning shots as the relevant act).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.benarnews.org/english/news/philippine/philippines-vietnam-09252017124106.html",
+        "title": "Philippines Launches Probe into Deaths of 2 Vietnamese Fishermen",
+        "publisher": "BenarNews",
+        "pub_date": "2017-09-25",
+        "language": "en",
+        "excerpt": "the deaths of two Vietnamese fishermen who were gunned down after a local navy ship fired warning shots during a sea chase at the weekend"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2017-11-07",
+    "date_end": "2017-11-07",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Defense Secretary Lorenzana announced that the Philippines had started upgrading military facilities on Pag-asa (Thitu) Island, with a contractor building a beach ramp intermittently in the monsoon season and completion expected in early 2018, as Chinese vessels gathered around the island.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; private contractor",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Announced and ongoing construction of a beaching ramp on an occupied disputed island is unilateral administration; demonstrative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/topstories/nation/632272/phl-starts-construction-near-china-s-man-made-islands-in-disputed-waters/story/",
+        "title": "PHL starts construction near China's man-made islands in disputed waters",
+        "publisher": "GMA News Online (Reuters)",
+        "pub_date": "2017-11-07",
+        "language": "en",
+        "excerpt": "Delfin Lorenzana said a contractor was building a beach ramp on Thitu Island, locally known as Pag-asa (hope), the largest of nine features the Philippines holds in the Spratly islands."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-01-22",
+    "date_end": "2018-01-22",
+    "date_precision": "day",
+    "location_name": "Panatag (Scarborough) Shoal",
+    "subregion": "4",
+    "summary": "Presidential spokesman Harry Roque stated at a press briefing that all evidence affirmed Philippine sovereignty over Panatag (Scarborough) Shoal and that the arbitral tribunal had already ruled on China's 'historic waters' basis, days after China protested a US destroyer's passage near the shoal.",
+    "actors": "Office of the President; spokesman Harry Roque",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official reaffirmation of sovereignty over a Chinese-controlled feature is a verbal assertion; declarative, low intensity.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/01/23/1780473/palace-philippines-has-sovereignty-over-scarborough-shoal",
+        "title": "Palace: Philippines has sovereignty over Scarborough",
+        "publisher": "The Philippine Star",
+        "pub_date": "2018-01-23",
+        "language": "en",
+        "excerpt": "“What can we do? That is their claim. But what is very clear is all pieces of evidence affirm that we have sovereignty (over the shoal),” presidential spokesman Harry Roque said in a press briefing."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-03-14",
+    "date_end": "2018-03-14",
+    "date_precision": "day",
+    "location_name": "off Paluan, Occidental Mindoro",
+    "subregion": "",
+    "summary": "Philippine police on a seaborne patrol arrested 14 Vietnamese fishermen aboard two vessels for poaching off Paluan, Occidental Mindoro, weeks after President Duterte ordered the navy to shoot foreign ships extracting resources from Philippine waters.",
+    "actors": "Philippine National Police (Paluan police, Region IV-B)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PV"
+    ],
+    "reasoning": "Arrest of another claimant's fishermen is physical enforcement imposing punishment; coercive. Location is on the eastern margin of the South China Sea (Mindoro Strait).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.rfa.org/english/news/vietnam/philippines-fishermen-03152018133936.html",
+        "title": "Philippines Arrests 14 Vietnamese on Charges of Illegal Fishing",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2018-03-15",
+        "language": "en",
+        "excerpt": "Philippine authorities arrested 14 Vietnamese fishermen on suspicion of poaching, police said Thursday, a few weeks after President Rodrigo Duterte ordered his navy to shoot foreign ships"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-01",
+    "date_end": "2018-05-31",
+    "date_precision": "month",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "The Philippines began repair work on the crumbling runway of Thitu (Pag-asa) Island, with the first barge of construction materials arriving in May 2018, as tracked by satellite imagery.",
+    "actors": "Department of National Defense; Armed Forces of the Philippines (Western Command)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Construction on an occupied disputed feature is unilateral administration without direct confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/the-long-patrol-staredown-at-thitu-island-enters-its-sixteenth-month/",
+        "title": "The Long Patrol: Staredown at Thitu Island Enters its Sixteenth Month",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2020-03-05",
+        "language": "en",
+        "excerpt": "The first barge of materials to repair the runway arrived in May 2018"
+      },
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "AMTI previously tracked the start of repair work on the runway in May 2018"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-01",
+    "date_end": "2018-05-31",
+    "date_precision": "month",
+    "location_name": "Ayungin (Second Thomas) Shoal",
+    "subregion": "6",
+    "summary": "In May 2018 Philippine Navy troops conducted a resupply mission to personnel stationed on BRP Sierra Madre at Ayungin Shoal; Rep. Gary Alejano told the House that Chinese navy and coast guard ships harassed the mission, with a Chinese navy helicopter hovering close as the Navy launched a rubber boat.",
+    "actors": "Philippine Navy",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A resupply mission to the Second Thomas Shoal outpost is unilateral administration of an occupied feature; demonstrative. Sourced second-hand via a legislator's account.",
+    "confidence": "low",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/09/19/1953204/china-coast-guard-blocked-resupply-mission-ayungin-shoal-dnd",
+        "title": "China Coast Guard blocked resupply mission to Ayungin Shoal — DND",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-09-19",
+        "language": "en",
+        "excerpt": "In May 2018, former Rep. Gary Alejano (Magdalo Party-list) also told the House that Chinese navy and coast guard ships harassed Filipino troops conducting resupply missions to personnel stationed on Ayungin Shoal."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-01",
+    "date_end": "2018-11-30",
+    "date_precision": "month",
+    "location_name": "Commodore Reef, Loaita Cay, Nanshan Island, West York Island",
+    "subregion": "5",
+    "summary": "Between May and November 2018 the Philippines built new shelters at Commodore Reef and Loaita Cay, installed a helipad on Nanshan Island, announced plans for five lighthouses in the Spratlys and built one on the western shore of West York Island, according to AMTI satellite analysis.",
+    "actors": "Government of the Philippines; Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PA"
+    ],
+    "reasoning": "Construction of shelters, a helipad and a lighthouse on occupied features is unilateral administration without confrontation; demonstrative. Date range reflects imagery dates given by the source.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "In May 2018, AMTI noted the construction of new shelters at Commodore Reef and Loaita Cay (often confused with nearby Lankiam Cay) and the installation of a helipad on Nanshan Island."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-04",
+    "date_end": "2018-05-04",
+    "date_precision": "day",
+    "location_name": "Chinese artificial islands, West Philippine Sea (Spratlys)",
+    "subregion": "",
+    "summary": "Presidential spokesman Harry Roque issued a statement that the Philippines was 'concerned with China's reported missile deployments over the contested areas in the West Philippine Sea' and would explore all diplomatic means to address it, while adding that the missiles were not believed to be directed at the Philippines.",
+    "actors": "Office of the President; spokesman Harry Roque",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official statement of concern about militarisation of claimed features is a mild verbal assertion; declarative, low intensity.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/05/1812309/palace-concerned-over-reef-missiles",
+        "title": "Palace 'concerned' over reef missiles",
+        "publisher": "The Philippine Star",
+        "pub_date": "2018-05-05",
+        "language": "en",
+        "excerpt": "“We are concerned with China’s reported missile deployments over the contested areas in the West Philippine Sea,” presidential spokesman Harry Roque said in a statement yesterday."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-17",
+    "date_end": "2018-05-17",
+    "date_precision": "day",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "Satellite imagery of 17 May 2018 showed two Philippine barges with a grab dredger and backhoe anchored off the collapsed western end of the Thitu runway, with dredged sediment in the water and fresh sand deposited along the runway's northern edge, marking the start of long-delayed runway repairs.",
+    "actors": "Department of National Defense; Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Dredging and runway repair on an occupied disputed feature is unilateral administration; demonstrative. Complements the month-level May 2018 entry with the first imagery date.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/philippines-launches-spratly-repairs/",
+        "title": "Philippines Launches Spratly Runway Repairs",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2018-05-25",
+        "language": "en",
+        "excerpt": "Satellite imagery from May 17 shows two barges anchored just off the western edge of the Thitu Island runway, which collapsed into the sea years ago."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-21",
+    "date_end": "2018-05-21",
+    "date_precision": "day",
+    "location_name": "Woody Island (Paracels)",
+    "subregion": "2",
+    "summary": "The Department of Foreign Affairs stated that it had taken diplomatic action in 'appropriate language' through diplomatic channels to notify Beijing of Philippine concern over the landing of Chinese H-6K bombers on Woody Island, declining to publicly call out China.",
+    "actors": "Department of Foreign Affairs; Presidential spokesman Harry Roque",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Quiet diplomatic representations over Chinese militarisation are a verbal assertion of interest; declarative, low intensity. Date is that of the DFA statement reported the following week.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/23/1817841/palace-wont-antagonize-china-over-west-philippine-sea-roque",
+        "title": "Palace won't antagonize China over West Philippine Sea - Roque",
+        "publisher": "The Philippine Star",
+        "pub_date": "2018-05-23",
+        "language": "en",
+        "excerpt": "Roque reiterated that the government – through the Department of Foreign Affairs (DFA) – had already notified Beijing of its concern over the landing of the bombers on Woody Island in the Paracel Islands."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/28/1819453/philippines-disclose-diplomatic-actions-at-right-time",
+        "title": "Philippines to disclose diplomatic actions 'at the right time'",
+        "publisher": "Philstar.com",
+        "pub_date": "2018-05-28",
+        "language": "en",
+        "excerpt": "Last week, the Department of Foreign Affairs released a statement that actions have been taken to address China's landing of an H-6K bomber on Woody Island"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-26",
+    "date_end": "2018-05-26",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island, Rancudo Airfield; Kalayaan Island Group outposts",
+    "subregion": "5",
+    "summary": "A senior Philippine security official confirmed that long-delayed repairs of Rancudo Airfield on Pag-asa Island and limited development projects on several smaller Kalayaan outposts were under way, and Malacañang defended the repairs as an assertion of Philippine sovereignty over the islands.",
+    "actors": "Department of National Defense; Office of the President (Malacañang)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Official confirmation and defence of construction as a sovereignty assertion is a verbal act accompanying the physical works (coded separately); declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/27/1819041/philippines-repairs-spratlys-runway",
+        "title": "Philippines repairs Spratlys runway",
+        "publisher": "The Philippine Star",
+        "pub_date": "2018-05-27",
+        "language": "en",
+        "excerpt": "Malacañang defended yesterday the repairs, saying these are tantamount to the Philippines’ assertion of sovereignty in the contested group of islands."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-05-28",
+    "date_end": "2018-05-28",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal; Second Thomas (Ayungin) Shoal; West Philippine Sea",
+    "subregion": "4",
+    "summary": "At a DFA flag-raising ceremony, Foreign Secretary Cayetano said the Philippines had informed China of 'red lines': China could not build on Scarborough Shoal, remove the BRP Sierra Madre from Ayungin Shoal, harass Filipino troops resupplying occupied features, or unilaterally extract natural resources, and that President Duterte would go to war if they were crossed.",
+    "actors": "Department of Foreign Affairs; Secretary Alan Peter Cayetano",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "energy",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A public threat of military response if China takes specified actions is a verbal threat of punishment; coercive (a coder may prefer declarative).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/05/29/1819745/headlines",
+        "title": "Philippines, China draw 'red lines' in South China Sea dispute",
+        "publisher": "Philstar.com",
+        "pub_date": "2018-05-29",
+        "language": "en",
+        "excerpt": "\"What is our red line? Our red line is that they cannot build on Scarborough [Shoal],\" Cayetano in Filipino said during a flag-raising ceremony at the Department of Foreign Affairs."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-06-11",
+    "date_end": "2018-06-11",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal",
+    "subregion": "4",
+    "summary": "The Philippine government said it had raised with Beijing, and was demanding a stop to, the Chinese coast guard's practice of boarding Filipino fishing boats at Scarborough Shoal and taking their catch, describing the actions as unacceptable, after GMA News aired video of the practice.",
+    "actors": "Department of Foreign Affairs; Office of the President (spokesman Harry Roque); Secretary Alan Peter Cayetano",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A diplomatic demand asserting Filipino fishing rights at the shoal is a verbal assertion; declarative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://media.interaksyon.com/breaking-news/2018/06/12/128545/philippines-china-coast-guard-fishermens-catch-scarborough/",
+        "title": "Philippines asks China to stop coast guard from taking fishermen's catch in Scarborough",
+        "publisher": "Interaksyon (Reuters)",
+        "pub_date": "2018-06-12",
+        "language": "en",
+        "excerpt": "The Philippines said on Monday it has asked Beijing to stop the Chinese coast guard from taking the catch of Filipino fishermen in the disputed Scarborough Shoal, describing such actions as unacceptable."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-07-30",
+    "date_end": "2018-07-30",
+    "date_precision": "day",
+    "location_name": "Spratly archipelago",
+    "subregion": "5",
+    "summary": "Philippine officials said the Philippines had expressed concern to China, including at a bilateral consultation meeting in Manila earlier in 2018, over the increasing number of Chinese radio messages warning Philippine aircraft and ships away from China's fortified islands in the Spratlys.",
+    "actors": "Department of Foreign Affairs; Department of National Defense",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Raising concern with China over interference with Philippine patrols asserts the right to operate in the area; declarative. Dated to the AP report; the representations themselves were earlier in 2018.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.voanews.com/a/philippines-raises-concern-over-chinese-radio-warnings/4506235.html",
+        "title": "Philippines Raises Concern Over Chinese Radio Warnings",
+        "publisher": "VOA News (Associated Press)",
+        "pub_date": "2018-07-30",
+        "language": "en",
+        "excerpt": "The Philippines has expressed concern to China over an increasing number of Chinese radio messages warning Philippine aircraft and ships to stay away from newly fortified islands"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-08-13",
+    "date_end": "2018-08-13",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea (Spratlys near Chinese artificial islands)",
+    "subregion": "5",
+    "summary": "AFP Chief of Staff Gen. Carlito Galvez said Philippine aircraft and vessels conducting routine patrols in the West Philippine Sea were challenged by the Chinese military daily, up to three times a day on flights, and that the patrols along plotted flight lines over Philippine 'jurisdiction, territory' would continue regardless.",
+    "actors": "Armed Forces of the Philippines; Gen. Carlito Galvez Jr.; Philippine Air Force; Philippine Navy",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Confirms sustained daily air and sea patrols over disputed waters in 2018 and the decision to continue them; demonstrative (the statement itself is declarative). Summarises an established practice with frequency stated.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/664008/patrols-in-disputed-waters-warned-by-chinese-on-daily-basis-afp/story/",
+        "title": "Patrols in disputed waters warned by Chinese on daily basis — AFP",
+        "publisher": "GMA News Online",
+        "pub_date": "2018-08-13",
+        "language": "en",
+        "excerpt": "Philippine aircraft and vessels conducting routine patrols in the West Philippine Sea are confronted by Chinese military on a daily basis, Armed Forces of the Philippines chief of staff General Carlito Galvez Jr. said on Monday."
+      },
+      {
+        "url": "https://globalnation.inquirer.net/169002/chinas-daily-radio-warnings-afp-patrols-continue-chief/amp",
+        "title": "China's daily radio warnings: AFP patrols continue - chief",
+        "publisher": "Philippine Daily Inquirer",
+        "pub_date": "2018-08-13",
+        "language": "en",
+        "excerpt": "Our soldiers, airmen, sailors just continue because we know we are patrolling in our territory."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-08-29",
+    "date_end": "2018-08-29",
+    "date_precision": "day",
+    "location_name": "Hasa-Hasa (Half Moon) Shoal, c. 60 nm off Bataraza, Palawan",
+    "subregion": "7",
+    "summary": "The Philippine Navy flagship BRP Gregorio del Pilar ran aground while on a regular patrol mission in the vicinity of Hasa-Hasa (Half Moon) Shoal in the Spratlys, evidence of continuing Philippine naval patrols in the disputed area; the ship was later pulled off the shoal.",
+    "actors": "Philippine Navy (BRP Gregorio del Pilar); Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A naval sovereignty patrol in disputed waters is unilateral administration without confrontation; demonstrative. The grounding itself is incidental.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/09/01/1847680/navy-flagship-brp-gregorio-del-pilar-runs-aground-near-shoal",
+        "title": "Navy flagship BRP Gregorio del Pilar runs aground near shoal",
+        "publisher": "The Philippine Star",
+        "pub_date": "2018-09-01",
+        "language": "en",
+        "excerpt": "The flagship of the Philippine Navy ran aground Wednesday night while on a patrol mission in the vicinity of Hasa Hasa (Half Moon) Shoal in the waters off Palawan in the West Philippine Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-11-23",
+    "date_end": "2018-11-23",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Defense Secretary Lorenzana disclosed that Chinese Ambassador Zhao Jianhua had told him 'No' when he learned of the plan to repair the Pag-asa runway, and said he had rejected the objection, insisting it was proper for the Philippines to improve the runway and every facility on the island since China had developed Subi Reef.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Publicly rejecting a Chinese demand to halt construction on an occupied feature is a verbal assertion of the right to administer it; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/11/23/1871088/china-tried-block-pag-asa-island-repairs-lorenzana",
+        "title": "China tried to block Pag-asa Island repairs — Lorenzana",
+        "publisher": "Philstar.com",
+        "pub_date": "2018-11-23",
+        "language": "en",
+        "excerpt": "In response to Zhao, Lorenzana stressed that it was proper for the Philippines to improve the runway and every facility in Pag-asa Island as China already developed Subi Reef."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-12-01",
+    "date_end": "2018-12-31",
+    "date_precision": "month",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "In early-to-mid December 2018 the Philippines began reclamation and construction of a beaching ramp on the west coast of Thitu (Pag-asa) Island, with a barge, excavators and a bulldozer depositing sand to extend the causeway to the reef edge; China responded by deploying dozens of militia vessels from Subi Reef.",
+    "actors": "Department of National Defense; Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "New landfill and ramp construction on an occupied disputed feature is unilateral administration; demonstrative, and a step up in scope from earlier repairs.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "The new construction started sometime in early to mid-December, as no apparent work is visible in imagery dated December 3."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-12-20",
+    "date_end": "2018-12-20",
+    "date_precision": "day",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "The Philippine Navy frigate BRP Ramon Alcaraz was positioned southeast of Thitu Island, just over 7 nautical miles from a PLA Navy frigate, during the peak of China's militia deployment around the island, per satellite imagery of 20 December 2018.",
+    "actors": "Philippine Navy (BRP Ramon Alcaraz)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A naval presence patrol guarding an occupied feature during a Chinese deployment is a show of administration without confrontation; demonstrative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "one of the Philippine Navy’s flagships, the BRP Ramon Alcaraz , can be seen to the southeast of Thitu just over 7 nautical miles from the PLAN frigate"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2018-12-20",
+    "date_end": "2018-12-20",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea; Ayungin Shoal; nine Philippine-occupied islands",
+    "subregion": "",
+    "summary": "At the DND year-end press conference, Defense Secretary Lorenzana said the Philippines would protest any Chinese action inconsistent with its national interest, that the Navy would patrol the West Philippine Sea regularly and keep the BRP Sierra Madre crew at Ayungin Shoal, and that the government would 'continue strengthening our islands'.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Philippine Navy",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A ministerial statement of intent to patrol, protest and fortify is a verbal assertion of administration; declarative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2018/12/21/1878881/philippines-ready-protest-chinas-actions-west-philippine-sea-lorenzana",
+        "title": "Philippines ready to protest China's actions in West Philippine Sea — Lorenzana",
+        "publisher": "Philstar.com",
+        "pub_date": "2018-12-21",
+        "language": "en",
+        "excerpt": "\"We will still continue with our activities there. We will patrol regularly… [and] continue strengthening our islands. We have nine islands,\" Lorenzana said."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-01-01",
+    "date_end": "2019-01-26",
+    "date_precision": "month",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "Satellite imagery of 11 and 26 January 2019 showed Philippine excavators depositing sand over about 8 acres (32,000 sq m) north of Thitu's causeway, reclamation more ambitious than a simple beaching ramp, with channels dredged to the reef edge.",
+    "actors": "Department of National Defense; Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Land reclamation on an occupied feature is unilateral administration without confrontation; demonstrative, and new in scale for the Philippines.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "they reveal excavators depositing sand over an area of approximately 8 acres, or more than 32,000 square meters, to the north of the existing causeway"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-02-04",
+    "date_end": "2019-02-04",
+    "date_precision": "day",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "Defense Secretary Delfin Lorenzana announced that construction of a new beaching ramp at Thitu (Pag-asa) Island would be completed in early 2019, to allow delivery of equipment and materials for repair of the runway and other planned upgrades.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A public announcement of construction plans on a disputed feature is a verbal assertion of administration; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/under-pressure-philippine-construction-paramilitary-response/",
+        "title": "Under Pressure: Philippine Construction Provokes a Paramilitary Response",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2019-02-06",
+        "language": "en",
+        "excerpt": "On February 4, Philippine defense secretary Delfin Lorenzana announced that construction of a new beaching ramp at Thitu Island would be completed in early 2019."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-04-01",
+    "date_end": "2019-04-01",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Presidential spokesman Panelo announced on 1 April 2019 that the DFA had lodged a diplomatic protest over the presence of hundreds of Chinese vessels (275 counted by AFP Western Command since January) around Pag-asa Island; Foreign Secretary Locsin said he had 'fired off [a] salvo of diplomatic notes' over the swarming before his China trip.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; Presidential spokesman Salvador Panelo; AFP Western Command",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Notes verbales protesting Chinese vessel presence around an occupied feature are verbal assertions; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/04/01/1906394/headlines",
+        "title": "Philippines protests Chinese vessels near Pag-asa Island",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-04-01",
+        "language": "en",
+        "excerpt": "The Philippine government has lodged a diplomatic protest against the presence of hundreds of Chinese vessels in the vicinity of Pag-asa Island in the West Philippine Sea."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2019/04/16/1910543/headlines",
+        "title": "Palace: China's extraction of Scarborough clams violate Philippine sovereignty",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-04-16",
+        "language": "en",
+        "excerpt": "Earlier this month, Locsin said he had \"fired off [a] salvo of diplomatic notes\" over the presence of Chinese vessels near the vicinity of Pag-asa Island in the West Philippine Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-04-04",
+    "date_end": "2019-04-04",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island and Kalayaan Island Group",
+    "subregion": "5",
+    "summary": "The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan Island Group features 'illegal' and a clear violation of Philippine sovereignty, sovereign rights and jurisdiction, saying it had raised the matter with China through notes verbales and meetings.",
+    "actors": "Department of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A formal public statement and notes verbale protesting Chinese presence around an occupied feature is a verbal assertion of sovereignty; declarative, and unusually strong for the Duterte period.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/04/05/1907523/philippines-protests-illegal-presence-chinese-ships-around-pag-asa",
+        "title": "Philippines protests 'illegal' presence of Chinese ships around Pag-asa",
+        "publisher": "The Philippine Star",
+        "pub_date": "2019-04-05",
+        "language": "en",
+        "excerpt": "“The presence of Chinese vessels near and around Pag-asa and other maritime features in the KIG is illegal,” the DFA said in a statement."
+      },
+      {
+        "url": "https://dfa.gov.ph/dfa-news/statements-and-advisoriesupdate/21089-statement-on-the-presence-of-chinese-vessels-near-and-around-pag-asa",
+        "title": "Statement: On the Presence of Chinese Vessels Near and Around Pag-asa",
+        "publisher": "Department of Foreign Affairs, Republic of the Philippines",
+        "pub_date": "2019-04-04",
+        "language": "en",
+        "excerpt": "the presence of Chinese vessels near and around Pag-asa and other maritime features in the KIG is illegal"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-04-04",
+    "date_end": "2019-04-04",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "In a speech to prosecutors, President Duterte warned China to 'lay off' Pag-asa Island, saying that if China touched it he would order his soldiers to 'prepare for suicide missions', after the military reported hundreds of Chinese vessels swarming the island.",
+    "actors": "President Rodrigo Duterte",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A head-of-state threat of military response if China touches an occupied feature is a verbal threat of punishment; coercive (a coder may prefer declarative).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.solardaily.com/reports/Philippines_Duterte_warns_China_to_back_off_disputed_island_999.html",
+        "title": "Philippines' Duterte warns China to back off disputed island",
+        "publisher": "Solar Daily (AFP)",
+        "pub_date": "2019-04-05",
+        "language": "en",
+        "excerpt": "\"I will not plead or beg, but I am just telling you that lay off the Pag-asa because I have soldiers there,\" Duterte said in speech to prosecutors."
+      },
+      {
+        "url": "https://newsinfo.inquirer.net/1103377/duterte-to-send-soldiers-on-suicide-mission-vs-china-if",
+        "title": "Duterte to send soldiers on suicide mission vs. China if...",
+        "publisher": "Philippine Daily Inquirer",
+        "pub_date": "2019-04-04",
+        "language": "en",
+        "excerpt": "suicide mission"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-04-16",
+    "date_end": "2019-04-16",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal (Bajo de Masinloc)",
+    "subregion": "4",
+    "summary": "Foreign Secretary Locsin announced that the Philippines had filed a diplomatic note with China over Chinese fishermen harvesting giant clams at Scarborough Shoal and would take legal action; presidential spokesman Panelo called the harvesting 'an affront to our territory and to our sovereignty'.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; Presidential spokesman Salvador Panelo",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A diplomatic note and public statement asserting sovereignty over Scarborough against Chinese resource extraction is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/04/16/1910543/headlines",
+        "title": "Palace: China's extraction of Scarborough clams violate Philippine sovereignty",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-04-16",
+        "language": "en",
+        "excerpt": "\"We just caught them doing that recently, filed a diplomatic note, and will be taking legal action. With our legal department now,\" Locsin said on Twitter Tuesday morning."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-05-01",
+    "date_end": "2019-05-31",
+    "date_precision": "month",
+    "location_name": "Ayungin (Second Thomas) Shoal",
+    "subregion": "6",
+    "summary": "In May 2019 three Philippine civilian vessels conducted a Rotation and Reprovision (resupply) mission to the Philippine Navy's grounded BRP Sierra Madre on Ayungin Shoal; a China Coast Guard ship (bow number 3305) blocked their route, approaching to within 1,600 yards, according to a Department of National Defense report to the House released in September 2019.",
+    "actors": "Philippine Navy; Department of National Defense; chartered civilian resupply vessels",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Maintaining and resupplying the garrison at Second Thomas Shoal is unilateral administration of an occupied feature; demonstrative. Chinese blocking is China's act.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/09/19/1953204/china-coast-guard-blocked-resupply-mission-ayungin-shoal-dnd",
+        "title": "China Coast Guard blocked resupply mission to Ayungin Shoal — DND",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-09-19",
+        "language": "en",
+        "excerpt": "The Department of National Defense (DND) reported that in May, a Chinese Coast Guard ship blocked the route of three Philippine civilian vessels on a resupply mission to grounded BRP Sierra Madre on Ayungin Shoal."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-06-06",
+    "date_end": "2019-06-06",
+    "date_precision": "day",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "Satellite imagery of 6 June 2019 showed two Philippine barges at Thitu Island, one offloading sand to fill in the collapsed runway and the other offloading supplies at the beaching ramp, with a retaining wall built beside newly created beach; by 3 October 2019 the runway was mostly filled in and a channel was being dredged to the reef edge.",
+    "actors": "Department of National Defense; Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Continued runway repair, dredging and beach creation on an occupied disputed feature is unilateral administration; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/the-long-patrol-staredown-at-thitu-island-enters-its-sixteenth-month/",
+        "title": "The Long Patrol: Staredown at Thitu Island Enters its Sixteenth Month",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2020-03-05",
+        "language": "en",
+        "excerpt": "Imagery from June 6, 2019, shows two barges pulled up to Thitu. One was offloading sand and materials to fill in the runway—a job that had been on hold for months."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-06-12",
+    "date_end": "2019-06-12",
+    "date_precision": "day",
+    "location_name": "Recto (Reed) Bank",
+    "subregion": "6",
+    "summary": "Defense Secretary Lorenzana issued a statement denouncing a Chinese fishing vessel for ramming and sinking the anchored Filipino boat F/B Gem-Ver 1 near Recto Bank on 9 June and abandoning its 22 crew, called for a formal investigation, and said the Navy's BRP Ramon Alcaraz, on routine patrol in the area, was ordered to assist recovery.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Philippine Navy (BRP Ramon Alcaraz)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A ministerial statement denouncing Chinese conduct within the Philippine-claimed EEZ asserts jurisdiction verbally; declarative. The naval patrol at Reed Bank is noted as context.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/06/12/1925872/dnd-wants-probe-collision-near-recto-bank-sank-filipino-fishing-boat",
+        "title": "DND wants probe of collision near Recto Bank that sank Filipino fishing boat",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-06-12",
+        "language": "en",
+        "excerpt": "\"We denounce the actions of the Chinese vessel for immediately leaving the scene of the incident, abandoning the 22 Filipino crewmen to the mercy of the elements,\" Lorenzana said."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-06-12",
+    "date_end": "2019-06-12",
+    "date_precision": "day",
+    "location_name": "Recto (Reed) Bank",
+    "subregion": "6",
+    "summary": "Foreign Secretary Teodoro Locsin Jr. lodged a diplomatic protest with China over the sinking of the Filipino fishing boat at Recto Bank on 9 June and the abandonment of its crew; presidential spokesman Panelo said an intentional sinking could warrant cutting diplomatic ties.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; Presidential spokesman Salvador Panelo",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A formal diplomatic protest is a verbal assertion of jurisdiction over Reed Bank; declarative. Panelo's conditional threat to cut ties could be read as coercive.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/06/14/1926388/philippines-fires-diplomatic-protest-over-boat-sinking",
+        "title": "Philippines fires off diplomatic protest over boat sinking",
+        "publisher": "The Philippine Star",
+        "pub_date": "2019-06-14",
+        "language": "en",
+        "excerpt": "The Philippines has lodged a diplomatic protest over the sinking of a fishing boat by a Chinese vessel in Recto Bank on June 9, with the Chinese abandoning the Filipino fishermen in the sea."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-07-22",
+    "date_end": "2019-07-22",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea",
+    "subregion": "",
+    "summary": "In his fourth State of the Nation Address before Congress, President Duterte declared that 'the West Philippine Sea is ours, there is no ifs or buts, it is ours', invoking the arbitral ruling, while explaining that the government had to temper its assertion with the realities of avoiding war with China.",
+    "actors": "President Rodrigo Duterte",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A formal presidential declaration of the claim before the legislature is a verbal assertion; declarative, low intensity.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/07/23/1937187/duterte-no-ifs-or-buts-wps-ours-but",
+        "title": "Duterte: No ifs or buts, WPS is ours. But...",
+        "publisher": "The Philippine Star",
+        "pub_date": "2019-07-23",
+        "language": "en",
+        "excerpt": "the West Philippine Sea is ours, there is no ifs or buts, it is ours, but we have been acting along that legal truth and line, but we have to temper it with the times and realities that we face today"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-07-23",
+    "date_end": "2019-07-23",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Defense Secretary Lorenzana said at a press conference that the beaching ramp on Pag-asa Island was 70 percent complete and would be finished within the year, and that the government planned to build structures for troops and possibly hotels to open the island to Filipino tourists.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official statement of plans for tourism and troop facilities on a disputed occupied island is a verbal assertion of administration; declarative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/07/23/1937227/netflix",
+        "title": "Philippines eyes opening Pag-asa Island to tourists",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-07-23",
+        "language": "en",
+        "excerpt": "\"Plus in the future we'll be building structures for our troops there and maybe some hotels for Filipinos who would like to go there as tourists,\" Lorenzana said in a press conference Tuesday."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-07-31",
+    "date_end": "2019-07-31",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Foreign Secretary Locsin announced that the DFA had 'fired off' a diplomatic protest to China over a fresh swarming of more than a hundred Chinese vessels around Pag-asa Island, the second protest since the June sinking of a Filipino fishing boat, after National Security Adviser Esperon raised the issue.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; National Security Adviser Hermogenes Esperon",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A diplomatic protest over Chinese presence at an occupied feature is a verbal assertion; declarative, and part of a more frequent protest pattern in 2019.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/08/01/1939693/philippines-fires-protest-vs-china-ships-near-pag-asa",
+        "title": "Philippines fires off protest vs China ships near Pag-asa",
+        "publisher": "The Philippine Star",
+        "pub_date": "2019-08-01",
+        "language": "en",
+        "excerpt": "As reports of more than a hundred Chinese ships swarming around Pag-asa island emerged, the Department of Foreign (DFA) “fired off” a diplomatic protest – the second since the sinking in June of a Filipino fishing boat by a Chinese trawler."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-08-09",
+    "date_end": "2019-08-09",
+    "date_precision": "day",
+    "location_name": "Philippine EEZ off Ilocos Norte (Dong Fang Hong 3) and off Samar (Zhang Jian)",
+    "subregion": "",
+    "summary": "Foreign Secretary Locsin announced the DFA was 'firing off' a diplomatic protest to China over the unannounced presence of Chinese oceanographic survey ships and warships in the Philippine EEZ, after Defense Secretary Lorenzana demanded that China explain what the vessels were doing there without Philippine knowledge.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; Department of National Defense; Secretary Delfin Lorenzana",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A protest asserting EEZ jurisdiction over foreign survey activity is a verbal assertion; declarative. One of the two ships was off the Pacific coast (outside the SCS), so relevance is partial.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/08/09/1941959/headlines",
+        "title": "Philippines to fire off diplomatic protest over Chinese survey ships, warships",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-08-09",
+        "language": "en",
+        "excerpt": "\"Okay, got it, General. [DFA] firing off diplomatic protest,\" Foreign Affairs Secretary Teodoro Locsin Jr. tweeted in response to the remarks of Defense Secretary Delfin Lorenzana."
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2019/08/09/1941957/dnd-chief-lorenzana-wants-china-explain-presence-survey-ships-philippine-eez",
+        "title": "DND chief Lorenzana wants China to explain presence of survey ships in Philippine EEZ",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-08-09",
+        "language": "en",
+        "excerpt": "\"The action I would like our government to do is to inform or ask the Chinese Embassy what these ships are doing in our EEZ without our knowledge,\" Lorenzana told ANC's \"Headstart.\""
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-08-29",
+    "date_end": "2019-08-29",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea",
+    "subregion": "",
+    "summary": "In a bilateral meeting with Chinese President Xi Jinping in Beijing, President Duterte raised the 2016 arbitral award for the first time, describing it as 'final, binding and not subject to appeal' and asserting Philippine rights over its 200-nautical-mile EEZ; Xi reiterated China's non-recognition of the ruling.",
+    "actors": "President Rodrigo Duterte; Presidential spokesman Salvador Panelo",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A head-of-state verbal assertion of the award directly to China's leader is a declarative act, new for Duterte who had previously declined to raise it.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2019/08/30/1947670/headlines",
+        "title": "Duterte, Xi stick to opposing stances on arbitral ruling",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-08-30",
+        "language": "en",
+        "excerpt": "Duterte described the arbitral award issued by the Hague-based Permanent Court of Arbitration as \"final, binding and not subject to appeal.\""
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-09-04",
+    "date_end": "2019-09-04",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea",
+    "subregion": "",
+    "summary": "At a House committee on appropriations hearing, Foreign Secretary Locsin stated that the Duterte administration had filed 'more or less 60' diplomatic protests against China over the West Philippine Sea since 2016 (later put at 63 from DFA records), confirming a sustained pace of formal protests not individually publicised.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official tally of protests is itself a verbal assertion and gives the coder the frequency of protest activity across 2016-2019; declarative. Source is a Rappler AMP page fetched via web tool, excerpt not curl-checked.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://amp.rappler.com/nation/239321-locsin-says-dfa-filed-diplomatic-protests-vs-china-since-2016",
+        "title": "Locsin says DFA filed diplomatic protests vs China since 2016",
+        "publisher": "Rappler",
+        "pub_date": "2019-09-04",
+        "language": "en",
+        "excerpt": "more or less 60"
+      },
+      {
+        "url": "https://globalnation.inquirer.net/?p=179691",
+        "title": "Locsin says 60 protests sent to China over WPS",
+        "publisher": "Philippine Daily Inquirer",
+        "pub_date": "2019-09-05",
+        "language": "en",
+        "excerpt": "Locsin says 60 protests sent to China over WPS"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2019-10-02",
+    "date_end": "2019-10-02",
+    "date_precision": "day",
+    "location_name": "Ayungin (Second Thomas) Shoal",
+    "subregion": "6",
+    "summary": "Foreign Secretary Locsin, travelling with President Duterte in Moscow, ordered the DFA to file a diplomatic protest with China over the unannounced entry of Chinese vessels near Ayungin (Second Thomas) Shoal reported by the military.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; Armed Forces of the Philippines (report)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A diplomatic protest asserting jurisdiction over waters around an occupied feature is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://philstar.com/headlines/2019/10/02/1956773/dfa-chief-orders-filing-protest-over-chinese-ships-near-ayungin-shoal",
+        "title": "DFA chief orders filing of protest over Chinese ships near Ayungin Shoal",
+        "publisher": "Philstar.com",
+        "pub_date": "2019-10-02",
+        "language": "en",
+        "excerpt": "Foreign Affairs Secretary Teodoro Locsin Jr. has ordered the filing of a diplomatic protest over the entry of Chinese vessels near Ayungin or Second Thomas Shoal in the West Philippine Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-02-13",
+    "date_end": "2020-02-13",
+    "date_precision": "day",
+    "location_name": "Thitu (Pag-asa) Island",
+    "subregion": "5",
+    "summary": "Satellite imagery of 13 February 2020 showed that the Philippines had largely completed dredging north of Thitu's beaching ramp, turning the area into a small harbor, while runway repairs continued slowly; the Philippine military reported monitoring 136 unique Chinese vessels near the island in January-February 2020.",
+    "actors": "Department of National Defense; Armed Forces of the Philippines",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Dredging a harbor on an occupied disputed feature is unilateral administration without confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://amti.csis.org/the-long-patrol-staredown-at-thitu-island-enters-its-sixteenth-month/",
+        "title": "The Long Patrol: Staredown at Thitu Island Enters its Sixteenth Month",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2020-03-05",
+        "language": "en",
+        "excerpt": "But most of the dredging to the north is complete and it seems clear that this area is being turned into a small harbor."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-02-17",
+    "date_end": "2020-02-17",
+    "date_precision": "day",
+    "location_name": "near Rizal (Commodore) Reef, Kalayaan Island Group",
+    "subregion": "7",
+    "summary": "The Philippine Navy corvette BRP Conrado Yap, on a sovereignty patrol from Puerto Princesa to the Malampaya gas field and the Kalayaan Island Group, radio-challenged a grey Chinese warship while sailing to Rizal Reef Detachment on 17 February 2020; the Chinese ship aimed its gun control director at the Philippine ship, prompting a diplomatic protest in April.",
+    "actors": "Philippine Navy (BRP Conrado Yap PS-39); AFP Western Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A declared sovereignty patrol and radio challenge of a Chinese warship in the claimed area is unilateral administration; demonstrative (the Chinese radar-pointing is China's act).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/04/23/2009308/headlines",
+        "title": "Chinese ship showed 'hostile intent' in February incident in West Philippine Sea",
+        "publisher": "Philstar.com",
+        "pub_date": "2020-04-23",
+        "language": "en",
+        "excerpt": "the ship sailed out of Puerto Princesa City on February 15 to conduct Territorial Defense Operations and sovereignty patrol at Malampaya Natural Gas to Power Project (MNGPP) and in the Kalayaan Island Group in the West Philippine Sea"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-03-06",
+    "date_end": "2020-03-06",
+    "date_precision": "day",
+    "location_name": "Kalayaan Island Group and Bajo de Masinloc (Scarborough Shoal); South China Sea",
+    "subregion": "",
+    "summary": "The Philippine Mission to the UN sent Note Verbale No. 000191-2020 to the Secretary-General responding to China's note CML/14/2019, stating that China's positions were inconsistent with UNCLOS, that the Philippines has sovereignty and jurisdiction over the Kalayaan Island Group and Bajo de Masinloc, and invoking the 12 July 2016 arbitral award.",
+    "actors": "Permanent Mission of the Republic of the Philippines to the United Nations; Department of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A formal note verbale deposited at the UN asserting sovereignty and invoking the award is a legal/verbal assertion; declarative. Source is a scanned PDF so the excerpt (OCR text) cannot be checked by the importer.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.un.org/depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_03_06_PHL_NV_UN_001.pdf",
+        "title": "Note Verbale No. 000191-2020 of the Permanent Mission of the Philippines to the United Nations (with reference to China's Note CML/14/2019)",
+        "publisher": "UN Division for Ocean Affairs and the Law of the Sea (CLCS submission by Malaysia)",
+        "pub_date": "2020-03-06",
+        "language": "en",
+        "excerpt": "On the features in the South China Sea, the Republic of the Philippines has sovereignty and jurisdiction over the Kalayaan Island Group and Bajo de Masinloc."
+      },
+      {
+        "url": "https://www.un.org/depts/los/clcs_new/submissions_files/submission_mys_12_12_2019.html",
+        "title": "Continental Shelf - Submission by Malaysia (Communications received with regard to the submission)",
+        "publisher": "UN Division for Ocean Affairs and the Law of the Sea",
+        "pub_date": "",
+        "language": "en",
+        "excerpt": "Philippines Communication dated 6 March 2020: Communication 1 | Communication 2"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-03-06",
+    "date_end": "2020-03-06",
+    "date_precision": "day",
+    "location_name": "Kalayaan Island Group; continental shelf beyond 200 nm; North Borneo",
+    "subregion": "",
+    "summary": "The Philippine Mission to the UN sent Note Verbale No. 000192-2020 objecting to Malaysia's 12 December 2019 partial CLCS submission, stating that the area covers features of the Kalayaan Island Group over which the Philippines has sovereignty, overlaps with the Philippine extended continental shelf, and is projected from North Borneo over which the Philippines has never relinquished sovereignty.",
+    "actors": "Permanent Mission of the Republic of the Philippines to the United Nations; Department of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PM"
+    ],
+    "reasoning": "A formal protest note against another claimant's continental-shelf submission is a legal/verbal assertion of claim; declarative. Scanned PDF, excerpt not machine-checkable.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.un.org/depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_03_06_PHL_NV_UN_002.pdf",
+        "title": "Note Verbale No. 000192-2020 of the Permanent Mission of the Philippines to the United Nations (with reference to Malaysia's submission HA 59/19)",
+        "publisher": "UN Division for Ocean Affairs and the Law of the Sea (CLCS submission by Malaysia)",
+        "pub_date": "2020-03-06",
+        "language": "en",
+        "excerpt": "the area of the Malaysian submission dated 12 December 2019 covers features within the Kalayaan Island Group over which the Republic of the Philippines has sovereignty"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-04-08",
+    "date_end": "2020-04-08",
+    "date_precision": "day",
+    "location_name": "South China Sea (Paracels, Vietnamese boat sinking)",
+    "subregion": "2",
+    "summary": "The Department of Foreign Affairs issued a statement expressing 'deep concern' at China's reported sinking of a Vietnamese fishing vessel in the South China Sea, recalling the Philippines' own Recto Bank experience and expressing solidarity with Vietnam.",
+    "actors": "Department of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official statement criticising Chinese conduct in the disputed sea in support of another claimant is a verbal act with no coercion; declarative, low intensity.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/metro/2020/04/09/2006490/philippines-concerned-over-chinas-sinking-vietnamese-vessel",
+        "title": "Philippines concerned over China's sinking of Vietnamese vessel",
+        "publisher": "The Philippine Star",
+        "pub_date": "2020-04-09",
+        "language": "en",
+        "excerpt": "The Philippines yesterday expressed deep concern over the reported sinking of a Vietnamese fishing vessel by China in the South China Sea late last week, saying Manila’s similar experience revealed the trust lost in a friendship."
+      },
+      {
+        "url": "https://dfa.gov.ph/dfa-news/statements-and-advisoriesupdate/26621-statement-on-the-sinking-of-a-vietnamese-fishing-vessel-in-the-south-china-sea",
+        "title": "Statement: On the Sinking of a Vietnamese Fishing Vessel in the South China Sea",
+        "publisher": "Department of Foreign Affairs, Republic of the Philippines",
+        "pub_date": "2020-04-08",
+        "language": "en",
+        "excerpt": "Sinking of a Vietnamese Fishing Vessel in the South China Sea"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-04-22",
+    "date_end": "2020-04-22",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea (Commodore Reef area); Spratly and Paracel 'districts'",
+    "subregion": "",
+    "summary": "Foreign Secretary Locsin announced that the Philippines filed two diplomatic protests at the Chinese embassy: one over a Chinese navy ship pointing a radar gun at a Philippine Navy ship in Philippine waters, and one over China declaring parts of Philippine territory part of Hainan province through new Nansha and Xisha districts.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Two formal diplomatic protests are verbal assertions of sovereignty against Chinese military and administrative acts; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/04/22/2009146/locsin-diplomatic-protests-sent-china-over-violations-intl-law-philippine-sovereignty",
+        "title": "Locsin: Diplomatic protests sent to China over violations of int'l law, Philippine sovereignty",
+        "publisher": "Philstar.com",
+        "pub_date": "2020-04-22",
+        "language": "en",
+        "excerpt": "two diplomatic protests have been filed today at the local Chinese embassy, namely \"the pointing of a radar gun at a Philippine Navy ship in [Philippine] waters\" and \"declaring parts of Philippine territory as part of Hainan province.\""
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-04-30",
+    "date_end": "2020-04-30",
+    "date_precision": "day",
+    "location_name": "Kalayaan Island Group; Kagitingan (Fiery Cross) Reef",
+    "subregion": "8",
+    "summary": "The Department of Foreign Affairs issued a statement that the Philippine government 'strongly protests' China's establishment of Nansha and Xisha districts under Sansha City, does not recognise China's naming of features in the Kalayaan Island Group, and protested the designation of Kagitingan (Fiery Cross) Reef as the Nansha district's administrative centre, invoking the 2016 award.",
+    "actors": "Department of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A public protest statement rejecting Chinese administrative designations and asserting Philippine territory is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/04/30/2010894/philippines-protests-chinas-self-declared-south-china-sea-districts-naming-kalayaan-features",
+        "title": "Philippines protests China's self-declared South China Sea districts, naming of Kalayaan features",
+        "publisher": "Philstar.com",
+        "pub_date": "2020-04-30",
+        "language": "en",
+        "excerpt": "The Department of Foreign Affairs on Thursday said the government \"strongly protests\" China's establishment of two districts in the South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-05-01",
+    "date_end": "2020-05-14",
+    "date_precision": "month",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "In May 2020 the Philippine Navy heavy landing craft BRP Ivatan completed a re-provisioning mission to Pag-asa Island, docking at the new beaching ramp, the first time a navy vessel of its size had docked at the island, which Defense Secretary Lorenzana called historic.",
+    "actors": "Philippine Navy (BRP Ivatan); Department of National Defense",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A first-of-its-kind naval resupply landing at an occupied disputed island is unilateral administration with new scope; demonstrative. Dated 'more than a week' before the 22 May report.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.benarnews.org/english/news/philippine/Thitu-Island-05222020075029.html",
+        "title": "Philippine Defense Chief: Repairs on South China Sea Island Not Yet Finished",
+        "publisher": "BenarNews",
+        "pub_date": "2020-05-22",
+        "language": "en",
+        "excerpt": "a Philippine Navy heavy landing craft, the BRP Ivanatan, completed a re-provisioning mission to Pag-asa, the first time that a navy vessel of its size had docked there"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-06-09",
+    "date_end": "2020-06-09",
+    "date_precision": "day",
+    "location_name": "Pag-asa (Thitu) Island",
+    "subregion": "5",
+    "summary": "Defense Secretary Delfin Lorenzana flew to Pag-asa (Thitu) Island with journalists and inaugurated the newly completed beaching ramp, formally turned over to the government, saying it would allow more materials and equipment to be brought in to repair the airstrip and strengthen Filipino presence on the island.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Armed Forces of the Philippines; Municipality of Kalayaan",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Completion and ceremonial inauguration of infrastructure on an occupied disputed feature, with a ministerial visit, is unilateral administration without confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/741811/look-beaching-ramp-in-pag-asa-now-in-place/story/",
+        "title": "Beaching ramp in Pag-asa Island now in place",
+        "publisher": "GMA News Online",
+        "pub_date": "2020-06-09",
+        "language": "en",
+        "excerpt": "Defense Secretary Delfin Lorenzana led Tuesday the inauguration of the beaching ramp for the Pag-asa Island."
+      },
+      {
+        "url": "https://www.sunstar.com.ph/manila/local-news/defense-chief-flies-to-disputed-island-amid-feud",
+        "title": "Defense chief flies to disputed island amid feud",
+        "publisher": "SunStar (Associated Press)",
+        "pub_date": "2020-06-09",
+        "language": "en",
+        "excerpt": "Defense Secretary Delfin Lorenzana brought journalists to witness the ribbon-cutting ceremony on the island, internationally called Thitu"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-07-12",
+    "date_end": "2020-07-12",
+    "date_precision": "day",
+    "location_name": "South China Sea / Philippine exclusive economic zone",
+    "subregion": "",
+    "summary": "On the fourth anniversary of the arbitral award, Foreign Secretary Teodoro Locsin Jr. issued a statement declaring the award 'non-negotiable' with no possibility of compromise or change, stating that Chinese actions within the Philippine EEZ violated Philippine sovereign rights and calling on China to comply in good faith.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "An official anniversary statement asserting the award and Philippine sovereign rights against China is a verbal assertion; declarative (the first such anniversary statement under Duterte).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/07/13/2027585/philippines-says-south-china-sea-ruling-non-negotiable",
+        "title": "Philippines says South China Sea ruling 'non-negotiable'",
+        "publisher": "The Philippine Star",
+        "pub_date": "2020-07-13",
+        "language": "en",
+        "excerpt": "On the fourth anniversary of the South China Sea ruling, the Philippines yesterday stressed that the unanimous award in favor of Manila is “non-negotiable” and that there is no possibility of “compromise or change.”"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-07-14",
+    "date_end": "2020-07-14",
+    "date_precision": "day",
+    "location_name": "South China Sea",
+    "subregion": "",
+    "summary": "Defense Secretary Lorenzana issued a statement urging China to comply with the Permanent Court of Arbitration ruling and abide by UNCLOS, saying he strongly agreed with the international community that a rules-based order was needed in the South China Sea, a day after the US declared China's maritime claims unlawful.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A ministerial statement demanding Chinese compliance with the award is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/746850/lorenzana-to-china-comply-with-arbitration-ruling-abide-by-unclos/story/",
+        "title": "Lorenzana to China: Comply with arbitration ruling, abide by UNCLOS",
+        "publisher": "GMA News Online",
+        "pub_date": "2020-07-14",
+        "language": "en",
+        "excerpt": "\"We urge China to comply with the Permanent Court of Arbitration (PCA) ruling, and abide by the United Nations Convention on the Law of the Seas (UNCLOS) to which it is a signatory,\" Lorenzana said."
+      },
+      {
+        "url": "https://amti.csis.org/after-four-years-the-philippines-acknowledges-the-2016-arbitral-tribunal-award/",
+        "title": "After Four Years, the Philippines Acknowledges the 2016 Arbitral Tribunal Award!",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2020-07-27",
+        "language": "en",
+        "excerpt": "This is the first time that the Philippines, under the Duterte administration, has publicly called on China to comply with the 2016 arbitral award"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-08-10",
+    "date_end": "2020-08-10",
+    "date_precision": "day",
+    "location_name": "Reed Bank",
+    "subregion": "6",
+    "summary": "Philippine Navy chief Vice Admiral Giovanni Bacordo told foreign correspondents that two Chinese survey ships had explored for about a week near Reed Bank within the Philippine EEZ, that Western Command forces were monitoring them, and that the Navy would request the DFA to protest 'the illegal activity of the Chinese', while avoiding confrontation.",
+    "actors": "Philippine Navy; Vice Admiral Giovanni Carlo Bacordo; AFP Western Command",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "energy",
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Publicly labelling Chinese survey activity at Reed Bank illegal and requesting a protest is a verbal assertion of EEZ jurisdiction; declarative.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.rfa.org/english/news/china/philippines-southchinasea-08102020213955.html",
+        "title": "Chinese Vessels Maintain Presence in Philippine-claimed Waters in South China Sea",
+        "publisher": "Radio Free Asia (BenarNews)",
+        "pub_date": "2020-08-10",
+        "language": "en",
+        "excerpt": "“We will submit a report to higher headquarters and request the foreign affairs’ department to protest the illegal activity of the Chinese.”"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-08-20",
+    "date_end": "2020-08-20",
+    "date_precision": "day",
+    "location_name": "Bajo de Masinloc (Scarborough Shoal); West Philippine Sea",
+    "subregion": "4",
+    "summary": "The Department of Foreign Affairs lodged a diplomatic protest against China over the Chinese coast guard's confiscation in May of Filipino fishermen's fish-aggregating devices (payaos) at Scarborough Shoal, and objected to China's continuing radio challenges to Philippine aircraft conducting regular maritime patrols in the West Philippine Sea.",
+    "actors": "Department of Foreign Affairs; Philippine Air Force / AFP maritime patrols (referenced)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries",
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A formal protest asserting Filipino fishing rights at the shoal and the legitimacy of Philippine patrols is a verbal assertion; declarative. The statement also confirms that regular Philippine maritime air patrols were being conducted.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/08/21/2036841/philippines-protests-chinas-seizing-filipino-fishermens-devices-scarborough",
+        "title": "Philippines protests China's seizing of Filipino fishermen's devices on Scarborough",
+        "publisher": "Philstar.com",
+        "pub_date": "2020-08-21",
+        "language": "en",
+        "excerpt": "\"The Philippines also resolutely objected to China’s continuing illicit issuances of radio challenges Philippine aircraft conducting legitimate regular maritime patrols in the West Philippine Sea,\" the DFA wrote in the statement released Thursday night."
+      },
+      {
+        "url": "https://dfa.gov.ph/authentication-functions/78-newsroom/dfa-releases/27445-ph-lodges-diplomatic-protest-against-china",
+        "title": "PH lodges diplomatic protest against China",
+        "publisher": "Department of Foreign Affairs, Republic of the Philippines",
+        "pub_date": "2020-08-20",
+        "language": "en",
+        "excerpt": "diplomatic protest"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-08-24",
+    "date_end": "2020-08-24",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea; Spratly Islands",
+    "subregion": "",
+    "summary": "Defense Secretary Lorenzana rejected China's accusation that the Philippines was conducting 'illegal provocations' by flying military patrol aircraft over the Spratlys, saying it was Chinese forces that committed illegal provocations including the illegal occupation of areas within the Philippine EEZ.",
+    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Philippine Air Force (patrol flights)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A ministerial rebuttal asserting the legitimacy of Philippine patrols and calling China's occupation illegal is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/752603/lorenzana-slams-china-for-saying-philippines-did-illegal-provocations-in-west-philippine-sea/story",
+        "title": "Lorenzana slams China for saying Philippines did 'illegal provocations' in West Philippine Sea",
+        "publisher": "GMA News Online",
+        "pub_date": "2020-08-24",
+        "language": "en",
+        "excerpt": "Lorenzana claimed that it is the Chinese forces who practice illegal provocations in the resource-rich region, including its illegal occupation of areas within the Philippines' exclusive economic zone."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-08-28",
+    "date_end": "2020-08-28",
+    "date_precision": "day",
+    "location_name": "South China Sea (Chinese artificial islands)",
+    "subregion": "",
+    "summary": "Foreign Secretary Locsin said he would strongly recommend terminating Philippine government contracts with Chinese state companies involved in building China's artificial islands in the South China Sea, after the US sanctioned 24 such firms; President Duterte decided on 1 September not to follow the US lead.",
+    "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A ministerial threat of economic punishment linked to China's island-building is a verbal act; declarative (not implemented, so not coercive). Low confidence as a claim assertion since the president rejected it.",
+    "confidence": "low",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/news/nation/753278/locsin-to-recommend-termination-of-contracts-with-chinese-companies-involved-in-south-china-sea-island-reclam/story/",
+        "title": "Locsin to recommend termination of contracts with Chinese companies involved in South China Sea island reclamation",
+        "publisher": "GMA News Online",
+        "pub_date": "2020-08-28",
+        "language": "en",
+        "excerpt": "“If I find that any of those companies are doing business with us then I would strongly recommend we terminate that relationship with that company,” Locsin said on CNN Philippines."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-09-22",
+    "date_end": "2020-09-22",
+    "date_precision": "day",
+    "location_name": "South China Sea / West Philippine Sea",
+    "subregion": "",
+    "summary": "In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law, beyond compromise and beyond the reach of governments to dilute or demean' and that the Philippines firmly rejected attempts to undermine it.",
+    "actors": "President Rodrigo Duterte",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "A head-of-state statement at the UN asserting the binding award against China is a verbal claim assertion; declarative, and a new venue for the Duterte government.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/09/23/2044288/headlines",
+        "title": "Duterte at UN meet: South China Sea ruling is 'beyond compromise'",
+        "publisher": "Philstar.com",
+        "pub_date": "2020-09-23",
+        "language": "en",
+        "excerpt": "\"The award is now part of international law, beyond compromise and beyond the reach of governments to dilute or demean,\" the president said in his pre-recorded message."
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-10-09",
+    "date_end": "2020-10-09",
+    "date_precision": "day",
+    "location_name": "Kalayaan Island Group; North Borneo",
+    "subregion": "",
+    "summary": "The Philippine Mission to the UN sent Note Verbale No. 0929-2020 replying to Malaysia's note of 27 August 2020, asserting that the Philippines claims no maritime entitlements beyond those defined by UNCLOS as interpreted by the 2016 award, and reiterating that Malaysia's submission is projected from a portion of North Borneo over which the Philippines has never relinquished sovereignty.",
+    "actors": "Permanent Mission of the Republic of the Philippines to the United Nations; Department of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "PM"
+    ],
+    "reasoning": "A formal UN note restating the Philippine legal position against Malaysia is a verbal assertion; declarative. Scanned PDF, excerpt not machine-checkable.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.un.org/depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_10_09_PHL_NV_UN_003.pdf",
+        "title": "Note Verbale No. 0929-2020 of the Permanent Mission of the Philippines to the United Nations (with reference to Malaysia's Note HA 30/20)",
+        "publisher": "UN Division for Ocean Affairs and the Law of the Sea (CLCS submission by Malaysia)",
+        "pub_date": "2020-10-09",
+        "language": "en",
+        "excerpt": "the Malaysian submission is projected from a portion of North Borneo over which the Republic of the Philippines has never relinquished its sovereignty"
+      }
+    ]
+  },
+  {
+    "claimant": "PH",
+    "date_start": "2020-10-15",
+    "date_end": "2020-10-15",
+    "date_precision": "day",
+    "location_name": "West Philippine Sea (Recto/Reed Bank service contract areas)",
+    "subregion": "6",
+    "summary": "President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to allow service contractors Forum Energy and PXP Energy to resume activities; Energy Secretary Cusi described it as 'a unilateral action on our part'.",
+    "actors": "President Rodrigo Duterte; Department of Energy; Secretary Alfonso Cusi; Presidential spokesman Harry Roque",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "energy"
+    ],
+    "suggested_dyads": [
+      "PC"
+    ],
+    "reasoning": "Authorising resource exploration in disputed waters is unilateral administration/resource development without confrontation; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.philstar.com/headlines/2020/10/17/2050188/duterte-oks-resumption-energy-projects-west-philippine-sea",
+        "title": "Duterte OKs resumption of energy projects in West Philippine Sea",
+        "publisher": "The Philippine Star",
+        "pub_date": "2020-10-17",
+        "language": "en",
+        "excerpt": "President Duterte has lifted the moratorium on oil and gas explorations in the West Philippine Sea to allow service contractors Forum Energy Ltd. and PXP Energy Corp. to resume their activities in the area"
+      },
+      {
+        "url": "https://www.philstar.com/business/2020/10/15/2049948/philippines-lifts-west-philippine-sea-oil-exploration-ban",
+        "title": "Philippines lifts West Philippine Sea oil exploration ban",
+        "publisher": "Philstar.com",
+        "pub_date": "2020-10-15",
+        "language": "en",
+        "excerpt": "lifts West Philippine Sea oil exploration ban"
+      }
+    ]
+  }
+]

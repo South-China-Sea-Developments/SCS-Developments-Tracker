@@ -17,7 +17,7 @@ def accepted_chubb(loaded):
 
 
 def test_claimants(loaded):
-    assert [c["code"] for c in loaded["claimants"]] == ["CN", "VN", "PH", "MY", "ID", "TW"]
+    assert [c["code"] for c in loaded["claimants"]] == ["CN", "VN", "PH", "MY", "ID", "TW", "BN"]
 
 
 def test_357_accepted_moves_with_published_counts(loaded):
@@ -156,6 +156,28 @@ def test_check_passes_with_extra_project_rows_and_fails_on_a_changed_mats_row(tm
     d = tmp_path / "data"
     shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
     assert load_mats.check_mats_rows(d, loaded) == []
+    # a documented correction is honoured; an undocumented change to the same field is not
+    with open(d / "corrections.csv", "a", newline="", encoding="utf-8") as f:
+        csv.DictWriter(f, fieldnames=schema.TABLES["corrections"], lineterminator="\n").writerow(
+            {"move_id": "CN201401", "field": "ongoing_through", "new_value": "2031", "date": "2026-11-20", "by": "T", "reason": "test"})
+    moves = list(csv.DictReader(open(d / "moves.csv", newline="", encoding="utf-8")))
+    for m in moves:
+        if m["move_id"] == "CN201401":
+            m["ongoing_through"] = "2031"
+    with open(d / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n"); w.writeheader(); w.writerows(moves)
+    assert load_mats.check_mats_rows(d, loaded) == []
+    for m in moves:
+        if m["move_id"] == "CN201401":
+            m["ongoing_through"] = "2032"
+    with open(d / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n"); w.writeheader(); w.writerows(moves)
+    assert any("CN201401" in e and "ongoing_through" in e for e in load_mats.check_mats_rows(d, loaded))
+    for m in moves:
+        if m["move_id"] == "CN201401":
+            m["ongoing_through"] = "2031"
+    with open(d / "moves.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=schema.TABLES["moves"], lineterminator="\n"); w.writeheader(); w.writerows(moves)
     with open(d / "events.csv", "a", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=schema.TABLES["events"], lineterminator="\n")
         w.writerow({**{c: "" for c in schema.TABLES["events"]}, "event_id": "ev-extra", "claimant": "MY", "date_start": "2021-06-01",

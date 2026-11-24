@@ -1,0 +1,175 @@
+{
+ "run_id": "MY-2000s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-f7b3dd14b7",
+   "disposition": "continuation",
+   "of": "ev-e08811c3b7",
+   "reason": "Provisional continuation of ev-e08811c3b7 (1999 is undecided candidates of MY-1990s): a minister in Parliament defending the Erica/Investigator presence as the exercise of Malaysia's rights, the same method and wording as Toyad's 29 Jul 1999 Dewan Negara answer; no new kind or wider claim - likely reject."
+  },
+  {
+   "event_id": "ev-359d70a6fc",
+   "disposition": "continuation",
+   "of": "ev-e08811c3b7",
+   "reason": "Provisional continuation of ev-e08811c3b7 (1999 is undecided candidates of MY-1990s): routine parliamentary reaffirmation of sovereignty over the claimed islands, as in 1999 - likely reject."
+  },
+  {
+   "event_id": "ev-eea8fc07e9",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2003-blockL",
+   "reason": "Naval vessel chasing Brunei's Total team out of Block J/L is physical interference against Brunei; nothing comparable in 2002 (no MY candidates at all for 2001-2002), a new method - coercive lead of the Block L/M dispute move."
+  },
+  {
+   "event_id": "ev-c808d1082e",
+   "disposition": "same_move",
+   "of": "ev-eea8fc07e9",
+   "group": "MY2003-blockL",
+   "reason": "Petronas licensing Blocks L and M over Brunei's J and K (Jan 2003) is the claim the RMN enforced in March (ev-eea8fc07e9): one intensification over the same acreage. If the coder prefers to count the licensing separately it is a demonstrative novelty against nothing in 2002."
+  },
+  {
+   "event_id": "ev-380eca7195",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Runway on Swallow Reef lengthened to ~1,367 m (2003) is new construction consolidating the outpost; nothing comparable in 2002 (no MY candidates for 2001-2002). Date to the day rests on a blog."
+  },
+  {
+   "event_id": "ev-19f2c0991a",
+   "disposition": "unclear",
+   "reason": "Fisheries seizures (79 vessels to Oct 2004) are routine enforcement; the 2003 record has no enforcement candidate, but that is probably a gap in sources, not an absence, and the vessels' nationalities/seas are not given. Settle with 2003 seizure figures and how many 2004 cases were in the South China Sea; at a similar level, likely reject."
+  },
+  {
+   "event_id": "ev-b9625df7cd",
+   "disposition": "unclear",
+   "reason": "MARSAL research station 'began operating' July 2004, but Lai et al. date MARSAL to 1987 and the source could not be fetched. If a new state facility opened in 2004 it is a novelty against 2003's runway work (ev-380eca7195); if 1987, not a 2004 act - settle the date."
+  },
+  {
+   "event_id": "ev-e67564b23f",
+   "disposition": "continuation",
+   "of": "ev-380eca7195",
+   "reason": "Provisional continuation of ev-380eca7195 (2003 undecided): further small Navy construction (a bird mound) on Swallow Reef, construction date not given, continues the 2003 development of the outpost at no higher level; the minister's statement adds nothing new - likely reject."
+  },
+  {
+   "event_id": "ev-719d0ce647",
+   "disposition": "continuation",
+   "of": "ev-19f2c0991a",
+   "reason": "Provisional continuation of ev-19f2c0991a (2004 undecided): marine-police arrests of Vietnamese boats off Sarawak repeat the 2004 seizures and detentions (the same debate cites 30 arrests in 2004); same method - likely reject."
+  },
+  {
+   "event_id": "ev-a6ff7508c3",
+   "disposition": "continuation",
+   "of": "ev-719d0ce647",
+   "reason": "Provisional continuation of ev-719d0ce647 (2005 undecided): arrests and court fines on foreign fishermen, 15 Vietnamese cases, the same method as the 2005 Sarawak arrests; no number shows a rise - likely reject."
+  },
+  {
+   "event_id": "ev-264b3bdbad",
+   "disposition": "unclear",
+   "reason": "Tsunami early-warning buoy in Swallow Reef waters is state equipment in disputed waters but of civil purpose; nothing comparable in 2005. Settle whether the coder treats civil monitoring equipment as assertive presence; if so a demonstrative novelty, else not an assertive act - likely reject."
+  },
+  {
+   "event_id": "ev-51cbe1c5b0",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2006-baselines",
+   "reason": "Baselines of Maritime Zones Act 2006 (with EEZ Act amendments) is new maritime-zone legislation underpinning the CLCS claim; nothing comparable in 2005 - declarative lead (coercive only once baselines upgrading disputed waters are actually declared)."
+  },
+  {
+   "event_id": "ev-9ff49813c4",
+   "disposition": "same_move",
+   "of": "ev-51cbe1c5b0",
+   "group": "MY2006-baselines",
+   "reason": "The 12 Apr 2006 Cabinet decision to prepare a CLCS submission is the decision that the baselines law (ev-51cbe1c5b0, Cabinet 3 May 2006, 'prerequisite for the CLCS submission') implements; a decision, not behaviour, so it belongs with that move rather than standing alone."
+  },
+  {
+   "event_id": "ev-e97cd9ef04",
+   "disposition": "unclear",
+   "reason": "Two RMN ships in Gugusan Semarang Peninjau waters and twice-weekly RMAF patrols are the standing garrison presence; the 2006 record has no patrol candidate, almost certainly a gap rather than an absence (the stations date from 1983-1999). Settle with 2006 deployment levels; if similar, maintenance - likely reject."
+  },
+  {
+   "event_id": "ev-c880382334",
+   "disposition": "unclear",
+   "reason": "2008 arrests (7 off Sarawak incl. 2 Chinese boats; 58 national cases) continue the enforcement of 2004-2006 (ev-a6ff7508c3), and ev-6217ed8a3e records 8 Sarawak cases in 2007, but no 2007 candidate exists to name. Arresting Chinese boats is more to react to, not a new method (counterfactual) - likely reject as continuation once 2007 is filled."
+  },
+  {
+   "event_id": "ev-6217ed8a3e",
+   "disposition": "unclear",
+   "reason": "Ministerial sovereignty-and-enforcement pledge over Sarawak waters is a routine reaffirmation; the 2007 record has no declarative candidate (the last ones are 2000). Settle by whether such Hansard statements were made in 2007; likely reject as one more reaffirmation."
+  },
+  {
+   "event_id": "ev-4a76c6e88e",
+   "disposition": "unclear",
+   "reason": "RM10m Continental Shelf Project trust fund is preparatory administration for the 2009 CLCS submission; nothing comparable in 2007, but it is a decision/funding step rather than an act on the claim. Settle whether the coder counts CLCS preparation (surveys) as a 2008 act or only the 2009 submission - likely reject."
+  },
+  {
+   "event_id": "ev-1e0d70f1d3",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Deputy PM/Defence Minister's visit to Swallow Reef with senior editors and a public pledge to defend sovereignty (drawing a Taiwanese rebuttal) is a new method of publicity against 2007, which shows only routine patrols (ev-e97cd9ef04)."
+  },
+  {
+   "event_id": "ev-5fa4811d66",
+   "disposition": "unclear",
+   "reason": "Announced plan to lengthen the Swallow Reef runway to 1,637 m; the answer is garbled and also describes the 2003 work. Settle whether a new extension was actually begun (behaviour, not a plan); a plan alone - likely reject."
+  },
+  {
+   "event_id": "ev-157020f48a",
+   "disposition": "continuation",
+   "of": "ev-e97cd9ef04",
+   "reason": "Provisional continuation of ev-e97cd9ef04 (2007 undecided): at least one Navy ship always at the Spratly stations, a combat boat at each reef and 130 personnel - the same standing presence as 2007's two ships - likely reject."
+  },
+  {
+   "event_id": "ev-7588f91c85",
+   "disposition": "continuation",
+   "of": "ev-c880382334",
+   "reason": "Provisional continuation of ev-c880382334 (2008 undecided): MMEA arrests off Sarawak (14 boats vs 7 in 2008, mostly Vietnamese) with forfeiture, same method; more intruders is more to react to. Continuous patrols at the Luconia shoals may be worth a scope check. Not a duplicate: 2008 is not accepted."
+  },
+  {
+   "event_id": "ev-424bf6497d",
+   "disposition": "continuation",
+   "of": "ev-1e0d70f1d3",
+   "reason": "Provisional continuation of ev-1e0d70f1d3 (2008 undecided): PM's visit to Swallow Reef repeats the 2008 Najib visit at the same level - likely reject."
+  },
+  {
+   "event_id": "ev-1b46d2adfd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2009-CLCS",
+   "reason": "Joint Malaysia-Vietnam submission to the CLCS of shelf beyond 200 nm is a new method of advancing the claim before an international authority; 2008 shows only the preparatory trust fund (ev-4a76c6e88e). Declarative lead."
+  },
+  {
+   "event_id": "ev-2c7ae66c4c",
+   "disposition": "same_move",
+   "of": "ev-1b46d2adfd",
+   "group": "MY2009-CLCS",
+   "reason": "Note verbale HA 24/09 rejecting China's objection defends the joint submission (ev-1b46d2adfd): part of the same intensification."
+  },
+  {
+   "event_id": "ev-bfe68cac9e",
+   "disposition": "same_move",
+   "of": "ev-1b46d2adfd",
+   "group": "MY2009-CLCS",
+   "reason": "Note verbale HA 41/09 rejecting the Philippines' objection (and its Sabah claim) defends the joint submission (ev-1b46d2adfd): same intensification."
+  },
+  {
+   "event_id": "ev-24cd4032fd",
+   "disposition": "same_move",
+   "of": "ev-1b46d2adfd",
+   "group": "MY2009-CLCS",
+   "reason": "Continental Shelf (Amendment) Act 2009 brings the shelf law into line with Art. 76 for the submission (ev-1b46d2adfd) six weeks later; one legal intensification. A coder may instead count the exclusive-rights clause as its own declarative novelty."
+  },
+  {
+   "event_id": "ev-53b042614e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First submarine (KD Tunku Abdul Rahman) based at Sepanggar with a stated mission of protecting sovereignty around Swallow Reef is a new military capability; nothing comparable in 2008, which shows standing surface presence (ev-157020f48a). Demonstrative, issue military."
+  },
+  {
+   "event_id": "ev-75ae657584",
+   "disposition": "continuation",
+   "of": "ev-6217ed8a3e",
+   "reason": "Provisional continuation of ev-6217ed8a3e (2008 undecided): one more ministerial statement in Parliament that the features on Malaysia's shelf belong to Malaysia; no new kind or wider claim - likely reject."
+  }
+ ]
+}

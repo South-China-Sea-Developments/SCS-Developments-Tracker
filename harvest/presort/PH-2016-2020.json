@@ -1,0 +1,647 @@
+{
+ "run_id": "PH-2016-2020",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-b9635295d7",
+   "disposition": "continuation",
+   "of": "PH201103",
+   "reason": "The CAAP survey flight to Pag-asa prepares the long-announced upgrade of the Thitu airstrip and facilities (PH201103, ongoing through 2015); ignoring Chinese radio warnings is the same practice of supplying and improving Pag-asa, not a new method against 2015.",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-4b210ecd96",
+   "disposition": "continuation",
+   "of": "PH201406",
+   "reason": "A diplomatic protest against China's use of its new Fiery Cross airfield continues Manila's public campaign against Chinese island building (PH201406, ongoing through 2015); one more protest of the same kind is not a declarative intensification.",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-456ffd3ca8",
+   "disposition": "continuation",
+   "of": "PH197101",
+   "reason": "Routine Navy resupply of the Pag-asa population is the standing occupation of Thitu (PH197101, with civilians since PH200103), present every year including 2015; continuation at the same level.",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-ca6cbf52e0",
+   "disposition": "unclear",
+   "reason": "Criticism of Chinese missiles on Woody Island (Paracels, not a Philippine claim) asserts no Philippine claim beyond the DOC; likely reject, or at most continuation of PH201406's campaign against Chinese militarisation. Settled by whether the coder treats a statement about another claimant's dispute as a Philippine assertion.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-290de934db",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2016-award",
+   "reason": "Invoking the July 2016 Award as binding law is a new legal basis for the claim, unavailable in 2015 when only the case itself (PH201301) was running; lead of the 2016 award-assertion group (ev-f9ecc84c77, ev-920f4be045).",
+   "of": ""
+  },
+  {
+   "event_id": "ev-f9ecc84c77",
+   "disposition": "same_move",
+   "of": "ev-290de934db",
+   "group": "PH2016-award",
+   "reason": "Rejecting Wang Yi's offer of talks that set aside the ruling is the same 2016 assertion of the Award as the basis of the Philippine position as ev-290de934db.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-57ca5f60f2",
+   "disposition": "continuation",
+   "of": "PH201202",
+   "reason": "Releasing surveillance photos of Chinese ships at Scarborough and saying 'that area is ours' is the publicity campaign over the shoal begun in PH201202, which Chubb notes continued in subsequent years (ongoing through 2015).",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-6ac8242104",
+   "disposition": "unclear",
+   "reason": "Detention of Vietnamese fishermen 21 nm off Ilocos Sur is coercive and nothing comparable is among the 2015 moves, but those waters lie off the Luzon coast, probably outside any area Vietnam or China disputes. Settled by whether the site is within a disputed area; if yes, new_move (novelty), if not, reject as not about the claim.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-d9c7ea974b",
+   "disposition": "unclear",
+   "reason": "Duterte's 'we'll insist on what is ours', framed as conciliatory before the Beijing visit, is a generic reaffirmation with no new content; likely continuation of the standing claim statements (PH197104) or same_move of ev-290de934db if read as invoking the Award. Settled by whether the coder counts it as an assertion at all.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-0611c0f83f",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "A Coast Guard patrol at Scarborough is the first Philippine government presence there since 2012; nothing comparable in 2015 (PH201202 was publicity only), so Philippine patrolling extended to a new area.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-d9581b0a6c",
+   "disposition": "unclear",
+   "reason": "A no-fishing sanctuary in the Scarborough lagoon would be a new administrative method (nothing comparable in 2015), but the source reports only an intended order, and banning Filipino as well as Chinese fishing reads as an accommodation. Settled by evidence the order was issued and enforced; if so, new_move (novelty).",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-1b1f6c31b3",
+   "disposition": "continuation",
+   "of": "PH201406",
+   "reason": "A quiet diplomatic note over Chinese weapons on the artificial Spratly islands continues the campaign against Chinese island building and militarisation (PH201406, ongoing through 2015) at the same or lower level.",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-920f4be045",
+   "disposition": "same_move",
+   "of": "ev-290de934db",
+   "group": "PH2016-award",
+   "reason": "Yasay saying Manila will not 'deviate' from the ruling is another expression of the 2016 Award-based position led by ev-290de934db.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-6f0cad6f5f",
+   "disposition": "continuation",
+   "reason": "Lorenzana's objection to Chinese weapons on the Spratly features repeats the December 2016 protest over the same weapons (ev-1b1f6c31b3); continuation at the same level, provisional while 2016 is undecided.",
+   "of": "ev-1b1f6c31b3",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-ba0d3a1048",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2017-pagasa-upgrade",
+   "reason": "Actual new construction on Pag-asa (at least seven buildings, Feb 2017-May 2018) where 2016 shows only a survey flight and routine resupply (ev-b9635295d7, ev-456ffd3ca8); the long-planned upgrade (PH201103) is carried out for the first time. Lead of the 2017 Pag-asa upgrade group.",
+   "of": ""
+  },
+  {
+   "event_id": "ev-158b4258c5",
+   "disposition": "continuation",
+   "reason": "Voicing, as ASEAN chair, concern over Chinese militarisation repeats the 2016 protests over the same weapons (ev-1b1f6c31b3); continuation, or reject if the coder treats the multilateral statement as not a distinct Philippine act.",
+   "of": "ev-1b1f6c31b3",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-493737c321",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "An order to the Navy to accost and drive away Chinese survey ships, Reed Bank included, is a declared coercive threat with nothing comparable among the 2016 candidates; doubt because the order concerned mainly Benham Rise, outside the SCS.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-4e36a01e40",
+   "disposition": "same_move",
+   "of": "ev-ba0d3a1048",
+   "group": "PH2017-pagasa-upgrade",
+   "reason": "Duterte's order to fortify and flag the Philippine-held features is the decision behind the 2017 Pag-asa upgrade led by ev-ba0d3a1048; the series dates the behaviour, so it joins that move.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-34ccc4b385",
+   "disposition": "same_move",
+   "of": "ev-ba0d3a1048",
+   "group": "PH2017-pagasa-upgrade",
+   "reason": "The Lorenzana/Año visit, flag-raising and announced runway repair are part of the 2017 Pag-asa upgrade led by ev-ba0d3a1048.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-a9e0b91394",
+   "disposition": "same_move",
+   "of": "ev-ba0d3a1048",
+   "group": "PH2017-pagasa-upgrade",
+   "reason": "The same 21 April announcement as ev-34ccc4b385 (beaching ramp, dock, P1.6bn), one report of the 2017 Pag-asa upgrade led by ev-ba0d3a1048.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-82537c51ee",
+   "disposition": "same_move",
+   "of": "ev-ba0d3a1048",
+   "group": "PH2017-pagasa-upgrade",
+   "reason": "Delivery of construction materials and troops for the ordered upgrade belongs to the 2017 Pag-asa upgrade led by ev-ba0d3a1048.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-04f5db5a58",
+   "disposition": "continuation",
+   "reason": "Duterte telling Xi the Philippines will drill 'because it is ours' is a privately made, later-recounted reaffirmation of the kind seen in 2016 (ev-d9c7ea974b); no drilling step followed, so continuation.",
+   "of": "ev-d9c7ea974b",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-01375c8404",
+   "disposition": "unclear",
+   "reason": "Air patrols near Chinese-held Spratly features are a standing practice (increased in PH201103) with no 2016 candidate to compare against; the 46 radio warnings measure Chinese response, not a Philippine increase. Settled by evidence of the 2016 patrol level; if comparable, continuation.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-e61b75f462",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Building shelters on the unoccupied sandbars west of Pag-asa extends presence to a new feature; nothing comparable among the 2016 candidates (ev-b9635295d7, ev-456ffd3ca8 concern Pag-asa itself). Distinct from the Pag-asa upgrade (ev-ba0d3a1048) as a different feature; halted in November.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-7167b3fc48",
+   "disposition": "unclear",
+   "reason": "Detaining Vietnamese fishermen near Malampaya repeats the 2016 detention off Ilocos Sur (ev-6ac8242104, undecided); by the counterfactual, more arrests because more boats came is not a move. Settled by whether the coder treats fisheries arrests in the Philippine EEZ as about the dispute; if so, likely continuation of that 2016 candidate.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-3b0dd79710",
+   "disposition": "unclear",
+   "reason": "Warning shots that killed two Vietnamese fishermen are a change of method against the 2016 arrests (ev-6ac8242104) and would be novelty, but the site 34 miles off Bolinao is probably outside any disputed area. Settled by the location; if disputed, new_move (novelty), coercive rather than force since no possession changed hands.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-ed54657e51",
+   "disposition": "same_move",
+   "of": "ev-ba0d3a1048",
+   "group": "PH2017-pagasa-upgrade",
+   "reason": "Construction of the beaching ramp, announced as begun in November, is the physical works of the 2017 Pag-asa upgrade led by ev-ba0d3a1048.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-affec5bb41",
+   "disposition": "unclear",
+   "reason": "Roque's reaffirmation of sovereignty over Scarborough, citing the Award, repeats the 2016 Award-based position (ev-290de934db); no 2017 candidate shows such statements, but their absence is likely a harvest gap. Likely continuation; settled by whether 2017 reaffirmations are documented.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-0d6fdfc4e9",
+   "disposition": "unclear",
+   "reason": "Police arrest of Vietnamese fishermen off Paluan, Mindoro repeats the 2017 arrests (ev-7167b3fc48, undecided) and is probably outside any disputed area; likely reject as not about the claim or continuation of that 2017 candidate.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-65e4f29bdc",
+   "disposition": "continuation",
+   "reason": "Runway repair materials arriving at Pag-asa in May 2018 carry out the 2017 upgrade programme (ev-ba0d3a1048, imagery to May 2018); same practice, continuation.",
+   "of": "ev-ba0d3a1048",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-27b5f1633b",
+   "disposition": "unclear",
+   "reason": "Resupply of BRP Sierra Madre at Ayungin is the standing practice of PH199902/PH201302, but no 2017 candidate records it and those moves are only ongoing through 2015 in the data. Likely continuation once PH201302's ongoing_through is extended; settled by that edit.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-4c8e310fa8",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "New shelters at Commodore Reef and Loaita Cay, a helipad on Nanshan and a lighthouse on West York extend construction from Pag-asa alone (2017, ev-ba0d3a1048) to several other Philippine-held features.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-f27568d052",
+   "disposition": "continuation",
+   "reason": "A mild statement of concern over Chinese missiles in the Spratlys repeats the 2017 objection to the same militarisation (ev-6f0cad6f5f); continuation.",
+   "of": "ev-6f0cad6f5f",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-43a2c9f1d9",
+   "disposition": "continuation",
+   "reason": "Dredging at the Thitu runway (17 May 2018) is the runway works of the 2017 Pag-asa upgrade programme (ev-ba0d3a1048); continuation.",
+   "of": "ev-ba0d3a1048",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-68ad902e35",
+   "disposition": "unclear",
+   "reason": "Quiet representations over Chinese bombers on Woody Island (Paracels, not a Philippine claim) assert no Philippine claim; likely reject, or continuation of the 2017 militarisation objections (ev-6f0cad6f5f).",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-f9410752c5",
+   "disposition": "continuation",
+   "reason": "Confirmation that the Rancudo runway repairs are under way, defended as asserting sovereignty, is the verbal side of the Pag-asa works begun in 2017 (ev-ba0d3a1048); continuation.",
+   "of": "ev-ba0d3a1048",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-f4af04adf5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Publicly naming red lines (no building at Scarborough, no removal of Sierra Madre, no harassment of resupply) backed by a threat of war is a new coercive declaration; the nearest 2017 act, the order to drive away survey ships (ev-493737c321), set no such threat against China.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-e4e1bd94b6",
+   "disposition": "unclear",
+   "reason": "Demanding that China stop taking Filipino fishermen's catch at Scarborough is the kind of speaking out over the shoal Chubb notes continued after PH201202; no 2017 candidate concerns Scarborough. Likely continuation; settled by whether 2017 Scarborough protests are documented.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-e1cca6ca7b",
+   "disposition": "unclear",
+   "reason": "The concern over Chinese radio warnings raised at the early-2018 bilateral meeting is the same representation already reported in the 2017 candidate ev-01375c8404 (same AP report); likely merged with it or rejected, not a new move.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-dbdc8e81af",
+   "disposition": "continuation",
+   "reason": "Daily AFP patrols despite Chinese challenges continue the 2017 patrol practice (ev-01375c8404); the rise in warnings measures China's response, not more Philippine patrols. Continuation.",
+   "of": "ev-01375c8404",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-79ec9dd48e",
+   "disposition": "continuation",
+   "reason": "A regular Navy patrol near Half Moon Shoal (known only through the grounding) is the standing patrol practice of 2017 (ev-01375c8404); continuation.",
+   "of": "ev-01375c8404",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-deb2ab3471",
+   "disposition": "continuation",
+   "reason": "Lorenzana's rejection of the Chinese ambassador's objection to the runway repair is the verbal side of the Pag-asa works begun in 2017 (ev-ba0d3a1048); continuation.",
+   "of": "ev-ba0d3a1048",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-24c7bbf5e2",
+   "disposition": "unclear",
+   "reason": "Reclamation extending the Thitu causeway is landfill, which may be a new method beyond the 2017 building and ramp works (ev-ba0d3a1048, ev-ed54657e51); settled by whether the coder reads it as the same beaching-ramp project (continuation) or as new land reclamation (new_move, novelty).",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-fadb93643b",
+   "disposition": "continuation",
+   "reason": "A frigate stationed off Thitu during the Chinese militia surge is a reaction within the 2017 patrol practice (ev-01375c8404); continuation unless the coder treats a guard station at Thitu as new.",
+   "of": "ev-01375c8404",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-a2058f5a93",
+   "disposition": "continuation",
+   "reason": "Lorenzana's year-end pledge to patrol and keep 'strengthening our islands' restates the Pag-asa works begun in 2017 (ev-ba0d3a1048) and the 2017 patrols (ev-01375c8404); continuation.",
+   "of": "ev-ba0d3a1048",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-968c5ae300",
+   "disposition": "unclear",
+   "reason": "The 8-acre fill north of Thitu's causeway (Jan 2019) carries on the reclamation begun in December 2018 (ev-24c7bbf5e2, undecided); if that becomes a move this is its continuation, and if the 2018 works were only the ramp, this larger fill would be the novelty itself. Settled by how ev-24c7bbf5e2 is decided.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-908e8a244a",
+   "disposition": "continuation",
+   "reason": "Announcing completion of the Thitu beaching ramp restates the December 2018 ramp works (ev-24c7bbf5e2); continuation.",
+   "of": "ev-24c7bbf5e2",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-0cc1c6dda8",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "Locsin's 'salvo of diplomatic notes' over the Pag-asa swarm is part of the 2019 shift to publicly announced protests led by ev-0d8e6daa30.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-0d8e6daa30",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2019-public-protests",
+   "reason": "Publicly declaring the Chinese presence around Pag-asa 'illegal' and announcing notes verbales breaks with 2018's quiet diplomacy, when the DFA declined to call out China (ev-68ad902e35, ev-f27568d052); a change of method, not just more protests because there were more Chinese ships. Lead of the 2019 public-protest group; the coder may prefer continuation if the 2016-17 announced protests are taken as the standing level.",
+   "of": ""
+  },
+  {
+   "event_id": "ev-d476e368fc",
+   "disposition": "continuation",
+   "reason": "Duterte's 'suicide missions' warning if China touches Pag-asa is the same kind of conditional war threat as the 2018 red lines (ev-f4af04adf5); continuation.",
+   "of": "ev-f4af04adf5",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-9d75afef41",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "A publicly announced note over Chinese clam harvesting at Scarborough belongs to the 2019 public-protest pattern led by ev-0d8e6daa30; the threatened legal action was not taken.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-8e9e5aadd2",
+   "disposition": "continuation",
+   "reason": "The May 2019 Ayungin resupply repeats the May 2018 resupply (ev-27b5f1633b) of the standing PH199902/PH201302 practice; continuation.",
+   "of": "ev-27b5f1633b",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-e0addc6deb",
+   "disposition": "continuation",
+   "reason": "Runway fill and dredging at Thitu (June-Oct 2019) continue the runway repairs begun in May 2018 (ev-65e4f29bdc); continuation.",
+   "of": "ev-65e4f29bdc",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-39b9179375",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "The DND's public denunciation of the Reed Bank sinking is part of the 2019 public-protest pattern led by ev-0d8e6daa30; the Navy's routine patrol there is context.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-7a0746f511",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "The diplomatic protest over the Reed Bank sinking, announced by Locsin, belongs to the 2019 public-protest pattern led by ev-0d8e6daa30 (same incident as ev-39b9179375).",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-6b6bcf4fcf",
+   "disposition": "continuation",
+   "reason": "'The West Philippine Sea is ours', tempered by avoiding war, is a generic reaffirmation like Roque's 2018 statement (ev-affec5bb41); continuation.",
+   "of": "ev-affec5bb41",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-9670e54e28",
+   "disposition": "continuation",
+   "reason": "Progress on the ramp plus a stated plan for troop housing and tourism on Pag-asa continues the 2018 ramp works (ev-24c7bbf5e2); tourism would be a new method only if acted on. Continuation.",
+   "of": "ev-24c7bbf5e2",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-2df1f96785",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "A further announced protest over a fresh swarm at Pag-asa belongs to the 2019 public-protest pattern led by ev-0d8e6daa30.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-923dc880cf",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "The announced protest over Chinese survey ships and warships in the EEZ belongs to the 2019 public-protest pattern led by ev-0d8e6daa30; only the Ilocos Norte ship was in the SCS.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-aad5b5e1f0",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Duterte raising the Award as 'final, binding' directly with Xi is new at head-of-state level; in 2018 the Award was cited only by spokesmen (ev-affec5bb41) and Duterte had declined to raise it.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-db55d83845",
+   "disposition": "unclear",
+   "reason": "Locsin's tally of about 60 protests since 2016 is evidence of the level of protest, not an act of its own, and gives no per-year split to support a frequency claim; likely attached as a source to ev-0d8e6daa30's group or rejected.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-3f08a20937",
+   "disposition": "same_move",
+   "of": "ev-0d8e6daa30",
+   "group": "PH2019-public-protests",
+   "reason": "The ordered protest over Chinese vessels near Ayungin belongs to the 2019 public-protest pattern led by ev-0d8e6daa30.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-b0ccac1fcd",
+   "disposition": "continuation",
+   "reason": "Dredging the small harbour north of Thitu's ramp finishes the January 2019 reclamation and dredging (ev-968c5ae300); continuation.",
+   "of": "ev-968c5ae300",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-5b45a93de3",
+   "disposition": "continuation",
+   "reason": "A sovereignty patrol to the Kalayaan outposts continues the routine Navy patrols of 2019 (ev-39b9179375); the radio challenge to a Chinese warship may be a new step, but likely continuation.",
+   "of": "ev-39b9179375",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-6338c1512d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A note verbale to the UN Secretary-General asserting sovereignty over the KIG and Scarborough and invoking the Award against China's CML/14/2019 is a new channel; no 2019 candidate puts the Philippine position on the UN record.",
+   "of": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-73aefad1e3",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2020-UN-notes-Malaysia",
+   "reason": "Objecting at the UN to Malaysia's 2019 CLCS submission (KIG features, extended shelf, North Borneo) is a new assertion against Malaysia with nothing comparable in 2019; kept apart from the China note ev-6338c1512d because it bears on a different claimant (dyad PM), though the coder may merge them as one UN-notes move.",
+   "of": ""
+  },
+  {
+   "event_id": "ev-30cad33b84",
+   "disposition": "unclear",
+   "reason": "Solidarity with Vietnam over a boat sunk in the Paracels asserts no Philippine claim; not an assertive act of the claimant — likely reject.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-22a940b603",
+   "disposition": "continuation",
+   "reason": "Two announced protests (radar targeting, new Sansha districts) continue the 2019 pattern of publicly announced protests (ev-0d8e6daa30); more protests because China did more is not a frequency move. Continuation.",
+   "of": "ev-0d8e6daa30",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-9f904fec97",
+   "disposition": "continuation",
+   "reason": "The DFA's public protest against the Nansha/Xisha districts and Chinese feature names reacts to a new Chinese act with the unchanged 2019 method of announced protests (ev-0d8e6daa30); continuation.",
+   "of": "ev-0d8e6daa30",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-175b432032",
+   "disposition": "continuation",
+   "reason": "BRP Ivatan's resupply landing at Pag-asa uses the ramp completed under the 2019 works (ev-908e8a244a); continuation, unless the coder counts the first heavy-landing-craft docking as a new capability.",
+   "of": "ev-908e8a244a",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-a63ff102b3",
+   "disposition": "continuation",
+   "reason": "Inaugurating the completed Pag-asa ramp, with a ministerial visit, concludes the 2019 ramp works (ev-908e8a244a, ev-9670e54e28); continuation.",
+   "of": "ev-908e8a244a",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-776ef4a3f8",
+   "disposition": "same_move",
+   "of": "ev-a10d2ca4d8",
+   "group": "PH2020-award-public",
+   "reason": "Locsin's 'non-negotiable' anniversary statement, the first under Duterte, is part of the 2020 public assertion of the Award led by ev-a10d2ca4d8.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-74b0957d3f",
+   "disposition": "same_move",
+   "of": "ev-a10d2ca4d8",
+   "group": "PH2020-award-public",
+   "reason": "Lorenzana's call for China to comply with the Award belongs to the 2020 public assertion of the Award led by ev-a10d2ca4d8.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-398a77b0fe",
+   "disposition": "continuation",
+   "reason": "The Navy chief calling Chinese survey work at Reed Bank illegal and asking for a protest repeats the 2019 protest over Chinese survey ships (ev-923dc880cf); continuation.",
+   "of": "ev-923dc880cf",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-c4d54793d5",
+   "disposition": "continuation",
+   "reason": "The protest over seized payaos at Scarborough and radio challenges to patrols repeats the 2019 announced Scarborough protest (ev-9d75afef41); continuation.",
+   "of": "ev-9d75afef41",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-96af8b5dd6",
+   "disposition": "continuation",
+   "reason": "Lorenzana's rebuttal of China's 'illegal provocations' charge restates the 2019 public-protest position (ev-0d8e6daa30); continuation.",
+   "of": "ev-0d8e6daa30",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-f5e2d24c7f",
+   "disposition": "unclear",
+   "reason": "Locsin's recommendation to end contracts with Chinese island-building firms was overruled by Duterte within days, so no act followed; likely reject. Would be a new (economic) method only if a contract had actually been terminated.",
+   "of": "",
+   "criterion": "",
+   "group": ""
+  },
+  {
+   "event_id": "ev-a10d2ca4d8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2020-award-public",
+   "reason": "Duterte declaring the Award 'beyond compromise' at the UN General Assembly, with the first anniversary statement and ministerial compliance demands, makes the Award a public international plank where in 2019 it was raised privately with Xi (ev-aad5b5e1f0). Lead of the 2020 award group; the coder may see it as continuation of that 2019 candidate.",
+   "of": ""
+  },
+  {
+   "event_id": "ev-a671181c93",
+   "disposition": "same_move",
+   "of": "ev-73aefad1e3",
+   "group": "PH2020-UN-notes-Malaysia",
+   "reason": "The October reply to Malaysia's note restates the March objection (ev-73aefad1e3) in the same exchange of UN notes.",
+   "criterion": ""
+  },
+  {
+   "event_id": "ev-f1dd420b1a",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Lifting the 2014 moratorium so service contractors can resume exploration at Reed Bank restarts energy activity absent in 2019 (no comparable candidate); a practice absent last year is new again. Demonstrative.",
+   "of": "",
+   "group": ""
+  }
+ ]
+}

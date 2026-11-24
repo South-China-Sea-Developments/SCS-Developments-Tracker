@@ -24,13 +24,14 @@ import csv
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import gazetteer, schema
+from pipeline import enrich, gazetteer, schema
 
 TEMPLATES = Path(__file__).resolve().parent / "templates"
 REPO = os.environ.get("GITHUB_REPOSITORY") or "South-China-Sea-Developments/SCS-Developments-Tracker"
@@ -82,7 +83,7 @@ def append_run(run_dir: Path, data_dir: Path) -> tuple[int, int]:
     sources = read_table("sources", data_dir)
     have_e = {e["event_id"] for e in events}
     have_s = {s["source_id"] for s in sources}
-    new_e = [gazetteer.locate(c) for c in cand if c["event_id"] not in have_e]   # named features get coordinates
+    new_e = [enrich.enrich(c) for c in cand if c["event_id"] not in have_e]   # English place, named features placed (ticket 41)
     new_s = [s for s in srcs if s["source_id"] not in have_s and s["event_id"] in have_e | {c["event_id"] for c in new_e}]
     write_table("events", events + new_e, data_dir)
     write_table("sources", sources + new_s, data_dir)
@@ -153,7 +154,17 @@ def cmd_open(args) -> int:
 # ---------------------------------------------------------------------------
 # the review page
 
-def review_context(data_dir: Path, run_id: str | None = None) -> dict:
+def review_context(data_dir: Path, run_id: str | None = None, presort_path: Path | None = None) -> dict:
+    from pipeline import presort as _presort
+    if presort_path is None and run_id:
+        cand = _presort.default_path(run_id, data_dir=data_dir)
+        presort_path = cand if cand.exists() else None
+    pre = {}
+    if presort_path:
+        doc = _presort.load(presort_path)
+        if doc.get("run_id") != run_id:
+            raise ValueError(f"{presort_path} is the pre-sort of run {doc.get('run_id')!r}, not {run_id!r}")
+        pre = _presort.by_event(doc)
     events = read_table("events", data_dir)
     sources = read_table("sources", data_dir)
     moves = read_table("moves", data_dir)
@@ -166,7 +177,12 @@ def review_context(data_dir: Path, run_id: str | None = None) -> dict:
 
     def brief(m: dict) -> dict:
         return {"move_id": m["move_id"], "year": m["year"], "types": [t for t in schema.TYPE_FLAGS if m[t] == "1"],
-                "description": m["description"][:300], "status": m["status"], "coded_by": m["coded_by"]}
+                "description": m["description"][:300], "status": m["status"], "coded_by": m["coded_by"],
+                "ongoing_through": m["ongoing_through"] or m["year"]}
+
+    def open_through(m: dict, y: int) -> bool:
+        """The move was running in year y: coded in or before it and ongoing through it or later."""
+        return m["year"].isdigit() and int(m["year"]) <= y and int(m["ongoing_through"] or m["year"]) >= y
 
     items = []
     for e in cands:
@@ -175,25 +191,30 @@ def review_context(data_dir: Path, run_id: str | None = None) -> dict:
                  placed_area=feat["name_en"] if feat and not e["lat"] and e["subregion"] else "",
                  ambiguous=", ".join(f"{a['name_en']} (sub-region {a['subregion']})" for a in gazetteer.ambiguous(e["location_name"])) if e["location_name"] and not feat else "")
         year = int(e["date_start"][:4]) if e["date_start"][:4].isdigit() else None
-        prev = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year - 1]
+        # every move of the claimant open through the previous year, newest first: the continuation target
+        # is more often an old move still running (CN200802, 2008, through 2015) than a move coded last year
+        prev = sorted((brief(m) for m in moves if m["claimant"] == e["claimant"] and year and open_through(m, year - 1)),
+                      key=lambda b: (-int(b["year"]), b["move_id"]))
         same = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year]
         dup = ""
-        if e["review_note"].startswith("Possible duplicate of "):
-            dup = e["review_note"].split("Possible duplicate of ", 1)[1].rstrip(".")
+        m_dup = re.search(r"Possible duplicate of (ev-[0-9a-f]+)", e["review_note"])   # other notes may follow (ticket 41)
+        if m_dup:
+            dup = m_dup.group(1)
         dup_event = next((x for x in events if x["event_id"] == dup), None)
         items.append({"event": e, "sources": by_event.get(e["event_id"], []), "year": year, "previous_year_moves": prev,
-                      "same_year_moves": same, "duplicate_of": dup_event, "claimant_name": claimants.get(e["claimant"], e["claimant"])})
+                      "same_year_moves": same, "duplicate_of": dup_event, "claimant_name": claimants.get(e["claimant"], e["claimant"]),
+                      "presort": pre.get(e["event_id"])})
     return {"run_id": run_id or "all", "items": items, "claimants": claimants,
             "types": [(t, schema.TYPE_LABELS[t]) for t in schema.TYPE_FLAGS],
             "domains": [(d, schema.DOMAIN_LABELS[d]) for d in schema.DOMAIN_FLAGS],
             "issues": [(i, schema.ISSUE_LABELS[i]) for i in schema.ISSUE_FLAGS],
             "subregions": list(zip(range(1, 11), schema.SUBREGION_NAMES)),
             "criteria": schema.INTENSIFICATION_CRITERIA, "generated": dt.date.today().isoformat(),
-            "move_index": move_index}
+            "move_index": move_index, "presorted_by": next((v["presorted_by"] for v in pre.values()), "")}
 
 
-def write_review_page(path: Path, data_dir: Path, run_id: str | None = None) -> int:
-    ctx = review_context(data_dir, run_id)
+def write_review_page(path: Path, data_dir: Path, run_id: str | None = None, presort_path: Path | None = None) -> int:
+    ctx = review_context(data_dir, run_id, presort_path)
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=select_autoescape(["html"]))
     ctx_json = json.dumps({"run_id": ctx["run_id"], "items": ctx["items"]}, ensure_ascii=False).replace("</", "<\\/")
     html = env.get_template("review.html").render(ctx_json=ctx_json, **ctx)
@@ -205,7 +226,7 @@ def write_review_page(path: Path, data_dir: Path, run_id: str | None = None) -> 
 def cmd_page(args) -> int:
     root = repo_root()
     out = Path(args.out) if args.out else root / "docs" / "review" / f"{args.run_id or 'all'}.html"
-    n = write_review_page(out, root / "data", run_id=args.run_id or None)
+    n = write_review_page(out, root / "data", run_id=args.run_id or None, presort_path=Path(args.presort) if args.presort else None)
     print(f"{n} candidates -> {out}")
     return 0
 
@@ -284,8 +305,20 @@ def _check_edits(eid: str, e: dict, edits: dict) -> dict:
     return out
 
 
+RETIRED = Path(__file__).resolve().parents[1] / "data" / "reference" / "retired_moves.csv"
+
+
+def retired_move_ids(path: Path = RETIRED) -> set[str]:
+    """Ids of retracted moves: never reused, so a citation of one finds a gap, not another move."""
+    if not path.exists():
+        return set()
+    with open(path, newline="", encoding="utf-8") as f:
+        return {r["move_id"] for r in csv.DictReader(f)}
+
+
 def next_move_id(claimant: str, year: int, moves: list[dict]) -> str:
-    used = {int(m["move_id"][-2:]) for m in moves if m["move_id"].startswith(f"{claimant}{year}") and m["move_id"][-2:].isdigit()}
+    ids = {m["move_id"] for m in moves} | retired_move_ids()
+    used = {int(i[-2:]) for i in ids if i.startswith(f"{claimant}{year}") and i[-2:].isdigit()}
     n = 1
     while n in used:
         n += 1
@@ -341,13 +374,46 @@ def _build_move(eid: str, e: dict, spec: dict, reviewer: str, date: str, moves: 
     return m
 
 
+CONTINUATION = re.compile(r"^continuation of\s+\(?([A-Za-z0-9-]+)", re.I)   # the note form of a rejected continuation (guide §K)
+
+
+def _reject_with_rejected_lead(decisions: list[dict], by_id: dict[str, dict]) -> list[dict]:
+    """A merge into a candidate (move_of_event), or a duplicate of an event (duplicate_of), whose lead is
+    rejected — in this batch, through a chain of such merges, or in an earlier one — cannot join a move:
+    it is rejected with its lead, with a note saying so, instead of failing the whole batch. The decision
+    dicts are copied, not changed in place. A lead decided anything else is left to the usual checks."""
+    rejected = {d["event_id"] for d in decisions if d.get("action") == "reject"}
+    rejected |= {eid for eid, e in by_id.items() if e["status"] == "rejected"}
+    out = [dict(d) for d in decisions]
+    changed = True
+    while changed:
+        changed = False
+        for d in out:
+            if d.get("action") == "merge" and d.get("move_of_event") in rejected:
+                lead, why = d["move_of_event"], "the candidate it would merge into was rejected"
+            elif d.get("action") == "duplicate" and d.get("duplicate_of") in rejected:
+                lead, why = d["duplicate_of"], "the event it duplicates was rejected"
+            else:
+                continue
+            note = f"Rejected with {lead}: {why}."
+            if (d.get("note") or "").strip():
+                note += " " + d["note"].strip()
+            d.update(action="reject", note=note)
+            for k in ("move_of_event", "move_id", "duplicate_of"):   # edits still apply, as on any rejection
+                d.pop(k, None)
+            rejected.add(d["event_id"]); changed = True
+    return out
+
+
 def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: Path,
                     xlsx_path: Path | None = None, mavd_path: Path | None = None) -> dict:
     """Apply a batch of decisions to the canonical files. All-or-nothing: an invalid decision, or a result
     the validator rejects, raises ValueError and writes nothing.
 
-    Actions: reject (note required); merge (into an existing move, or into the move formed from another
+    Actions: reject (note required; "continuation of X" also extends X's ongoing_through to the event's
+    year, with a corrections.csv line when X is Chubb's); merge (into an existing move, or into the move formed from another
     candidate in this batch via move_of_event); new_move; duplicate (of an accepted event: status merged).
+    A merge or duplicate whose lead is rejected is rejected with it (see _reject_with_rejected_lead).
 
     The order of the decisions in the batch does not matter: they are applied in the order of their
     events in events.csv, so new moves are numbered the same whichever front end exported the file.
@@ -356,7 +422,7 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
     moves = read_table("moves", data_dir)
     by_id = {e["event_id"]: e for e in events}
     move_by_id = {m["move_id"]: m for m in moves}
-    counts = {"rejected": 0, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0}
+    counts = {"rejected": 0, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0, "extended": 0}
     new_moves: list[dict] = []
     move_of_event: dict[str, str] = {}
 
@@ -370,6 +436,7 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         raise ValueError("an event has more than one decision in this batch")
     position = {e["event_id"]: i for i, e in enumerate(events)}
     decisions = sorted(decisions, key=lambda d: position[d["event_id"]])
+    decisions = _reject_with_rejected_lead(decisions, by_id)
 
     def finish(e: dict, d: dict, note: str):
         e["reviewer"] = reviewer
@@ -426,13 +493,50 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         e.update(edits); e["move_id"] = target; e["status"] = "accepted"
         counts["merged"] += 1; counts["accepted_events"] += 1; finish(e, d, note)
 
+    # pass 3: a rejection noted "continuation of X" keeps X running through the event's year (ticket 24).
+    # X is a move id, or a candidate's event id once that candidate has a move. Chubb's rows are guarded,
+    # so each extension of one is documented in corrections.csv as the validator requires.
+    corrections = read_table("corrections", data_dir)
+    new_corrections: list[dict] = []
+    extend: dict[str, tuple[int, str]] = {}            # move_id -> (year, the event that reached it)
+    for d in decisions:
+        if d.get("action") != "reject":
+            continue
+        m = CONTINUATION.match((d.get("note") or "").strip())
+        if not m:
+            continue
+        eid, e, target = d["event_id"], by_id[d["event_id"]], m.group(1)
+        if target.startswith("ev-"):
+            lead = by_id.get(target)
+            if lead is None:
+                raise ValueError(f"{eid}: the note says continuation of {target}, which is not an event")
+            if not lead.get("move_id"):
+                continue                                   # the lead is not decided yet: nothing to extend
+            target = lead["move_id"]
+        mv = all_moves.get(target)
+        if mv is None:
+            raise ValueError(f"{eid}: the note says continuation of {target}, which is not a move")
+        if mv["claimant"] != e["claimant"]:
+            raise ValueError(f"{eid}: continuation of {target}, a {mv['claimant']} move, for a {e['claimant']} event")
+        year = int(e["date_start"][:4])
+        if year > int(mv["ongoing_through"] or mv["year"]) and year > extend.get(target, (0, ""))[0]:
+            extend[target] = (year, eid)
+    for target, (year, eid) in sorted(extend.items()):
+        mv = all_moves[target]
+        mv["ongoing_through"] = str(year)
+        counts["extended"] += 1
+        if mv.get("coded_by") == "chubb":
+            new_corrections.append({"move_id": target, "field": "ongoing_through", "new_value": str(year), "date": date,
+                                    "by": reviewer, "reason": f"continuation: {eid} ({by_id[eid]['date_start']})"})
+
     # the merge gate, before anything is written
     import tempfile
     from pipeline.validate import validate
     with tempfile.TemporaryDirectory() as tmp:
         td = Path(tmp)
-        for name in ("claimants", "sources", "corrections"):
+        for name in ("claimants", "sources"):
             (td / f"{name}.csv").write_bytes((data_dir / f"{name}.csv").read_bytes())
+        write_table("corrections", corrections + new_corrections, td)
         write_table("events", events, td)
         write_table("moves", moves + new_moves, td)
         xlsx = xlsx_path or data_dir / "raw/mats-1.02/MATS_1-02_all_cases.xlsx"
@@ -442,8 +546,10 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         raise ValueError("the result would not pass the validator:\n  " + "\n  ".join(errors[:10]))
 
     write_table("events", events, data_dir)
-    if new_moves:
+    if new_moves or extend:
         write_table("moves", moves + new_moves, data_dir)
+    if new_corrections:
+        write_table("corrections", corrections + new_corrections, data_dir)
     return counts
 
 
@@ -468,9 +574,10 @@ def cmd_decide(args) -> int:
     print(f"applied {len(decisions)} decisions: {counts}")
     if args.no_commit:
         return 0
-    git("add", "data/events.csv", "data/moves.csv", cwd=root)
+    git("add", "data/events.csv", "data/moves.csv", "data/corrections.csv", cwd=root)
     git("commit", "-q", "-m", f"Review by {reviewer}: {counts['rejected']} rejected, {counts['merged']} merged, "
-        f"{counts['new_moves']} new moves, {counts['duplicates']} duplicates\n\nEvents: {ids}\nApplied with pipeline.queue decide on {date}.", cwd=root)
+        f"{counts['new_moves']} new moves, {counts['duplicates']} duplicates, {counts['extended']} moves extended"
+        f"\n\nEvents: {ids}\nApplied with pipeline.queue decide on {date}.", cwd=root)
     print("committed; push and let the validator run")
     return 0
 
@@ -480,7 +587,8 @@ def main(argv=None) -> int:
     sub = p.add_subparsers(dest="cmd", required=True)
     so = sub.add_parser("open"); so.add_argument("--run", required=True); so.add_argument("--no-push", action="store_true")
     so.add_argument("--base", default="main"); so.set_defaults(fn=cmd_open)
-    sp = sub.add_parser("page"); sp.add_argument("--out", default=""); sp.add_argument("--run-id", default=""); sp.set_defaults(fn=cmd_page)
+    sp = sub.add_parser("page"); sp.add_argument("--out", default=""); sp.add_argument("--run-id", default="")
+    sp.add_argument("--presort", default="", help="a pre-sort file (default harvest/presort/<run_id>.json when it exists)"); sp.set_defaults(fn=cmd_page)
     sd = sub.add_parser("decide"); sd.add_argument("decisions"); sd.add_argument("--reviewer", default="")
     sd.add_argument("--date", default=""); sd.add_argument("--no-commit", action="store_true"); sd.set_defaults(fn=cmd_decide)
     a = p.parse_args(argv)

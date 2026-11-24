@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Places — South China Sea Developments Tracker{% endblock %}
+{% block content %}
+<section class="lede">
+  <p class="kicker">Cases</p>
+  <h1>By place</h1>
+  <p class="lede-text">The {{ n_features }} reefs, shoals and islands that moves are placed at or that a claimant holds, by sub-region, with the number of moves placed at each.</p>
+  <p class="places-key">A ring marks a feature a claimant holds, in its colour:
+    {% for c in claimants %}<span class="places-held"><i class="dot" data-code="{{ c.code }}"></i> {{ c.name }}</span>{% if not loop.last %} · {% endif %}{% endfor %}.</p>
+</section>
+<div class="places">
+  {% for sr, fs in groups %}
+  <section class="places-group">
+    <h2>{% if sr %}{{ sr }} {{ subregion_names[sr] }}{% else %}Outside the sub-regions{% endif %}</h2>
+    <ul>
+      {% for f in fs %}<li><a href="features/{{ f.slug }}.html">{{ f.name }}</a> {% if f.moves %}<span class="places-n">{{ f.moves|length }}</span>{% endif %}{% if f.held %} <span class="places-held">{% for c in f.held.codes %}<i class="dot" data-code="{{ c }}" title="Held by {{ names.get(c, c) }}"></i>{% endfor %}</span>{% endif %}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

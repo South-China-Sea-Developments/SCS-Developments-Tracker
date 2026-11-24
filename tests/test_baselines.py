@@ -34,9 +34,9 @@ def test_chubbs_prc_list_is_reproduced_from_the_appendix():
 
 
 def test_project_baselines_cite_a_source_per_row():
-    """Every row of the five project-compiled lists names a source with its URL, or points at a source
+    """Every row of the six project-compiled lists names a source with its URL, or points at a source
     whose URL is given earlier in the same document ("URL above"); every document lists its sources."""
-    for code in ("VN", "PH", "MY", "ID", "TW"):
+    for code in ("VN", "PH", "MY", "ID", "TW", "BN"):
         text = (BASELINES / f"{code}.md").read_text(encoding="utf-8")
         assert "## Sources consulted" in text, code
         header = next(l for l in text.splitlines() if l.startswith("| Date"))
