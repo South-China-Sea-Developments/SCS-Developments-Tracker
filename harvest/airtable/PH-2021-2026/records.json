@@ -874,6 +874,63 @@
    ]
   },
   {
+   "airtable_id": "recTgPKLpNdJhjfwE",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+   "lat": 9.96667,
+   "suggestion_reasoning": "Formal protest plus a declared policy of daily protests is a verbal assertion, new in frequency compared with 2020; declarative. [confidence: high]",
+   "date_end": "2021-04-07",
+   "new_dyads": "PC",
+   "excerpt": "“Firing another diplomatic protest. Everyday till the last one’s gone like it should be by now if it is really fishing,” Foreign Affairs Secretary Teodoro Locsin Jr. tweeted, vowing to file a protest daily as long as Chinese ships are in the reef.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:38:34.000Z",
+   "location_name": "Whitsun Reef",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Julian Felipe (Whitsun) Reef”.",
+   "reviewer": "Angelo",
+   "sources": "Philippines files new diplomatic protest vs China over boats — The Philippine Star 2021-04-08\nhttps://philstar.com/headlines/2021/04/08/2089675/philippines-files-new-diplomatic-protest-vs-china-over-boats",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "5 Spratly NW",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:30:12.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-23790226e2",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "5 Spratly NW"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The DFA filed another diplomatic protest, the second in two weeks, over Chinese maritime militia vessels at Julian Felipe Reef, and Foreign Secretary Locsin vowed to file a protest every day until the last vessel left.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-04-07",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Second Whitsun protest with Locsin's declared policy of a protest every day — the stated form of the frequency increase carried by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 114.65,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "reczbzbFkX38acQHG",
    "archived_on": "2026-11-24",
    "actors": "Department of Foreign Affairs; National Maritime Council",
@@ -1589,6 +1646,65 @@
    ]
   },
   {
+   "airtable_id": "recGgluoD2CEvdLiY",
+   "archived_on": "2026-11-24",
+   "actors": "Department of National Defense; Secretary Delfin Lorenzana",
+   "lat": 9.96667,
+   "suggestion_reasoning": "A public ministerial demand that foreign vessels leave is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2021-04-03",
+   "new_dyads": "PC",
+   "excerpt": "Defense Secretary Delfin Lorenzana issued a strong statement on Saturday, telling the remaining 44 Chinese vessels to leave Julian Felipe Reef in the West Philippine Sea.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:38:34.000Z",
+   "location_name": "Whitsun Reef",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Julian Felipe (Whitsun) Reef”.",
+   "reviewer": "Angelo",
+   "sources": "Lorenzana tells 44 Chinese vessels to leave Julian Felipe Reef — GMA News Online 2021-04-03\nhttps://www.gmanetwork.com/news/news/nation/782303/lorenzana-tells-44-chinese-vessels-to-leave-julian-felipe-reef/story",
+   "pull_request": 93,
+   "new_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "5 Spratly NW",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:29:56.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3dbb7833fe",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "5 Spratly NW"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Defense Secretary Lorenzana issued a statement telling the 44 Chinese vessels remaining at Julian Felipe Reef to leave ('Umalis na kayo diyan') and said the Chinese ambassador had 'a lot of explaining to do'.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-04-03",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Lorenzana's public demand that the Chinese vessels leave Whitsun Reef is part of the same Whitsun diplomatic campaign counted in the 2021 protest-surge move ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 114.65,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
    "airtable_id": "recgAwtmrvtEOoMHi",
    "archived_on": "2026-11-24",
    "actors": "President Ferdinand Marcos Jr.",
@@ -2142,6 +2258,61 @@
    ]
   },
   {
+   "airtable_id": "recqSbbH9kTy59i1F",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+   "lat": 15.18333,
+   "suggestion_reasoning": "Protest and unusually aggressive public demand by the foreign secretary are verbal assertions; declarative. [confidence: high]",
+   "date_end": "2021-05-03",
+   "new_dyads": "PC",
+   "excerpt": "The order came as his foreign affairs department accused China's coastguard of \"belligerent actions\" against Filipino boats involved in maritime drills near the contested Panatag (Scarborough) Shoal.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:40:42.000Z",
+   "location_name": "Scarborough Shoal; West Philippine Sea",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Panatag (Scarborough) Shoal; West Philippine Sea”.",
+   "reviewer": "Angelo",
+   "sources": "Top diplomat Locsin swears at China online, tells nation to leave West Philippine Sea — Philstar.com 2021-05-03\nhttps://www.philstar.com/headlines/2021/05/03/2095564/headlines",
+   "pull_request": 93,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "4 Central-East",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:37:26.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5585ab1bb6",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "4 Central-East"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Foreign Secretary Locsin tweeted 'China, my friend, how politely can I put it? ... GET THE FUCK OUT', as the DFA announced it had lodged a diplomatic protest over Chinese coast guard 'belligerent actions' against Philippine coast guard vessels in drills near Scarborough Shoal (24–25 April).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-05-03",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Protest over CCG actions near Scarborough with Locsin's tweet; one of the 2021 surge protests led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 117.76667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recBuWYlUuGwpF7fY",
    "archived_on": "2026-11-24",
    "actors": "Armed Forces of the Philippines; General Romeo Brawner Jr.",
@@ -2308,6 +2479,61 @@
    ]
   },
   {
+   "airtable_id": "recFFThej1JowRfEj",
+   "archived_on": "2026-11-24",
+   "actors": "National Task Force for the West Philippine Sea; Department of Foreign Affairs",
+   "suggestion_reasoning": "Rejecting another claimant's fishing ban and urging nationals to fish is a verbal assertion of jurisdiction; declarative. Statement 'late on Tuesday' (4 May). [confidence: high]",
+   "date_end": "2021-05-04",
+   "new_dyads": "PC",
+   "excerpt": "“This fishing ban does not apply to our fishermen,” the Philippines’ South China Sea task force said in a statement late on Tuesday.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:40:42.000Z",
+   "merge_into_move": "ev-d644783f0f",
+   "location_name": "West Philippine Sea",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "Manila tells fishermen to ignore Beijing's ban amid incursions — Al Jazeera 2021-05-05\nhttps://www.aljazeera.com/news/2021/5/5/manila-tells-fishermen-to-ignore-beijings-ban-amid-standoff",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:37:52.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5da81bbe13",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The National Task Force for the West Philippine Sea declared that China's annual summer fishing ban (1 May–16 August) did not apply to Filipino fishermen, opposed its imposition over areas under Philippine jurisdiction, and encouraged fisherfolk to go out and fish in the West Philippine Sea; the DFA later protested the ban.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-05-04",
+   "presort": "same move as ev-d644783f0f — NTF-WPS rejection of China's fishing ban, followed by a DFA protest; no fishing-ban rejection appears in the 2020 candidates, but it is a declarative protest of the same 2021 surge led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recswZL6E458VHXbO",
    "archived_on": "2026-11-24",
    "actors": "Department of National Defense; Secretary Delfin Lorenzana; Philippine Navy; Philippine Coast Guard",
@@ -2363,6 +2589,63 @@
    "new_domains": [
     "physical",
     "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recSNZrlwyCJWX5oC",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Department of National Defense; Secretary Delfin Lorenzana",
+   "lat": 9.96667,
+   "suggestion_reasoning": "Protest and public demand for withdrawal of foreign vessels from a disputed reef is a verbal assertion; declarative. Whitsun lies in the Union Banks (subregion assignment approximate). [confidence: high]",
+   "date_end": "2021-03-23",
+   "new_dyads": "PC",
+   "excerpt": "\"The Philippines demands that China promptly withdraw its fishing vessels and maritime assets in the vicinity and adjacent waters of relevant features in the Kalayaan Group of Islands in the West Philippine Sea, and to direct its fishing vessels to desist from environmentally destructive activities,\" the DFA said.\n\nManila filed a diplomatic protest on March 21 after 220 Chinese ships were seen in the Julian Felipe (Whitsun) Reef in the West Philippine Sea.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:38:34.000Z",
+   "location_name": "Whitsun Reef, Kalayaan Island Group",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Julian Felipe (Whitsun) Reef, Kalayaan Island Group”.",
+   "reviewer": "Angelo",
+   "sources": "Philippines demands withdrawal of China vessels from Julian Felipe Reef — GMA News Online 2021-03-23\nhttps://www.gmanetwork.com/news/topstories/nation/780897/dfa-demands-prompt-withdrawal-of-chinese-vessels-from-julian-felipe-reef/story/\nChinese vessels in Juan Felipe Reef must go, Manila tells Beijing — Philstar.com 2021-03-23\nhttps://www.philstar.com/headlines/2021/03/23/2086502/headlines",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "5 Spratly NW",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:28:50.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5f8b40631b",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "5 Spratly NW"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The Philippines lodged a diplomatic protest on 21 March over some 220 Chinese vessels moored at Julian Felipe (Whitsun) Reef; on 23 March the DFA demanded that China promptly withdraw its fishing vessels and maritime assets from the vicinity of features in the Kalayaan Island Group, calling their presence a blatant infringement of Philippine sovereignty. Defense Secretary Lorenzana issued a similar demand on 21 March.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-03-21",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Whitsun Reef protest and withdrawal demand, the opening of the 2021 protest surge led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 114.65,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
    ]
   },
   {
@@ -4292,6 +4575,61 @@
    ]
   },
   {
+   "airtable_id": "recSFUbqepLNck1Bv",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+   "lat": 9.65,
+   "suggestion_reasoning": "Formal protest and statement asserting the right to resupply the outpost; declarative. [confidence: high]",
+   "date_end": "2021-11-18",
+   "new_dyads": "PC",
+   "excerpt": "\"I have conveyed in the strongest terms to H.E. Huang Xillian, Ambassador of China and to the Ministry of Foreign Affairs in Beijing, our outrage, condemnation and protest of the incident,\" Locsin said.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:40:42.000Z",
+   "location_name": "Second Thomas Shoal",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Ayungin (Second Thomas) Shoal”.",
+   "reviewer": "Angelo",
+   "sources": "China Coast Guard blocked, water cannoned Philippine boats en route to Ayungin — DFA — Philstar.com 2021-11-18\nhttps://www.philstar.com/headlines/2021/11/18/2142158/china-coast-guard-blocked-water-cannoned-philippine-boats-en-route-ayungin-dfa",
+   "pull_request": 93,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "6 Spratly NE",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:45:21.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-94fa126207",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "6 Spratly NE"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Foreign Secretary Locsin issued a statement conveying 'in the strongest terms' to the Chinese ambassador and Beijing the Philippines' outrage, condemnation and protest at Chinese coast guard vessels blocking and water-cannoning two supply boats bound for Ayungin Shoal on 16 November, saying 'We do not ask permission to do what we need to do to our territory' and invoking the Mutual Defense Treaty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-11-18",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Strongest-terms protest over the 16 November Ayungin water-cannoning; part of the 2021 protest surge led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 115.85,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recUJYP7Q743KPZcc",
    "archived_on": "2026-11-24",
    "actors": "Department of Foreign Affairs; Philippine Mission to the UN",
@@ -4509,6 +4847,61 @@
    "claimant": "PH",
    "new_domains": [
     "physical"
+   ]
+  },
+  {
+   "airtable_id": "recVJKOYm1cmcuENQ",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.; National Task Force for the West Philippine Sea",
+   "suggestion_reasoning": "A further formal protest; declarative. [confidence: high]",
+   "date_end": "2021-05-13",
+   "new_dyads": "PC",
+   "excerpt": "Foreign Affairs Secretary Teodoro Locsin Jr. on Thursday ordered the filing of another diplomatic protest with Beijing over a fresh report of 287 Chinese militia ships spotted across the West Philippine Sea.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:40:42.000Z",
+   "location_name": "West Philippine Sea",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "DFA to file new protest over Chinese ships seen across West Philippine Sea — Philstar.com 2021-05-13\nhttps://philstar.com/headlines/2021/05/13/2097971/dfa-file-new-protest-over-chinese-ships-seen-across-west-philippine-sea",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:38:07.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9f45b25ca2",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Foreign Secretary Locsin ordered the filing of another diplomatic protest after the NTF-WPS reported 287 Chinese militia ships across the West Philippine Sea, including 34 still at Julian Felipe Reef.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-05-13",
+   "merge_into_candidate": "ev-d644783f0f ",
+   "presort": "same move as ev-d644783f0f — Another protest over the 287 militia ships; part of the 2021 protest surge led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
    ]
   },
   {
@@ -4831,6 +5224,63 @@
    ]
   },
   {
+   "airtable_id": "rec1pBLtGhQ9rXUgE",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Secretary Teodoro Locsin Jr.",
+   "lat": 15.18333,
+   "suggestion_reasoning": "Formal protests; declarative. [confidence: high]",
+   "date_end": "2021-09-29",
+   "new_dyads": "PC",
+   "excerpt": "The Philippines' top diplomat on Thursday ordered the filing of three new diplomatic protests against Beijing's activities in the West Philippine Sea.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:40:42.000Z",
+   "location_name": "Scarborough Shoal; Iroquois Reef",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Bajo de Masinloc (Scarborough Shoal); Iroquois Reef”.",
+   "reviewer": "Angelo",
+   "sources": "3 new diplomatic protests filed over Chinese activities in West Philippine Sea — Philstar.com 2021-09-30\nhttps://www.philstar.com/headlines/2021/09/30/2130815/3-new-diplomatic-protests-filed-over-chinese-activities-west-philippine-sea",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "4 Central-East",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:39:06.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-ba12686b29",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "4 Central-East"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Foreign Secretary Locsin ordered the DFA to file three diplomatic protests: over Chinese radio challenges against Philippine maritime patrols, China's restriction of Filipino fishermen at Bajo de Masinloc, and the continued presence of Chinese fishing vessels near Iroquois Reef.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-09-29",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Three more protests (radio challenges, Scarborough, Iroquois Reef); part of the 2021 protest surge led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 117.76667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recHF2FywBWTpO6nP",
    "archived_on": "2026-11-24",
    "actors": "President Ferdinand Marcos Jr.; AFP Western Command",
@@ -5049,6 +5499,61 @@
    ]
   },
   {
+   "airtable_id": "rectumgwICQp8YQXu",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs",
+   "suggestion_reasoning": "Near-daily diplomatic protests (summarised here as one event for April 2021 alongside the 7 April protest) are verbal assertions; declarative. [confidence: high]",
+   "date_end": "2021-04-21",
+   "new_dyads": "PC",
+   "excerpt": "The two diplomatic protests were the latest among the scores filed almost daily against China for the continued presence of its vessels in Julian Felipe Reef, the DFA said.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:38:34.000Z",
+   "location_name": "Kalayaan Island Group; Scarborough Shoal",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Kalayaan Island Group; Bajo de Masinloc (Scarborough Shoal)”.\nSub-regions suggested: 4 Central-East (Scarborough Shoal).",
+   "reviewer": "Angelo",
+   "sources": "Philippines files 2 more protests vs China over West Philippine Sea — The Philippine Star 2021-04-24\nhttps://www.philstar.com/headlines/2021/04/24/2093395/philippines-files-2-more-protests-vs-china-over-west-philippine-sea",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "subregion": "4 Central-East",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:36:27.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c99f3543d2",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "4 Central-East"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The DFA lodged two new diplomatic notes protesting the continued deployment and presence of Chinese vessels in Philippine maritime zones, saying 160 Chinese fishing and militia vessels and five coast guard vessels were observed near Pag-asa, Bajo de Masinloc and Ayungin Shoal; the DFA said such protests were being filed almost daily.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-04-21",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — Two more notes, with the DFA saying protests were being filed almost daily — evidence of the frequency surge led by ev-d644783f0f. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recVVKlOSaaj0Y9Pi",
    "archived_on": "2026-11-24",
    "actors": "Department of Foreign Affairs (Secretary Ma. Theresa Lazaro)",
@@ -5154,6 +5659,61 @@
    "claimant": "PH",
    "new_domains": [
     "physical"
+   ]
+  },
+  {
+   "airtable_id": "recxbKn2iK8mSik13",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Assistant Secretary Eduardo Meñez",
+   "suggestion_reasoning": "A protest plus the year's protest tally (153 notes verbales to October, a step up on earlier years); declarative. Tally recorded here as the one per-year protest-frequency event. [confidence: high]",
+   "date_end": "2021-10-21",
+   "new_dyads": "PC",
+   "excerpt": "In a statement, the DFA said it had protested recent Chinese harassment of Philippine vessels, which includes \"unlawful issuance of over 200 radio challenges, sounding of sirens, and blowing of horns,\" while conducting routine patrols within the Philippines' territorial waters.\n\na total of 153 out of the 211 notes verbales, or diplomatic notes, were filed in 2021 alone",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:40:42.000Z",
+   "location_name": "West Philippine Sea; South China Sea",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "DFA protests China's 'unlawful' challenges in Philippine waters — GMA News Online 2021-10-20\nhttps://www.gmanetwork.com/news/news/nation/807763/dfa-protests-china-s-unlawful-challenges-in-philippine-waters/story\nPhilippines steps up diplomatic protests to Beijing over South China Sea — Radio Free Asia (BenarNews) 2021-10-22\nhttps://www.rfa.org/english/news/china/philippines-southchinasea-10222021123725.html",
+   "pull_request": 93,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:43:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d644783f0f",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "note": "Despite the increase, all of these moves are reactive and not \"unilateral\".",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The DFA protested the unlawful issuance of over 200 radio challenges, sirens and horns by Chinese government vessels against Philippine vessels on routine patrols; the next day it said 153 of the 211 diplomatic notes sent to China since 2016 had been filed in 2021 alone.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-10-20",
+   "presort": "new move (frequency) — Frequency: the DFA's own tally puts 153 of the 211 notes verbales sent to China since 2016 in 2021 alone (so at most 58 across 2016-2020), against the handful of 2020 protests in PH-2016-2020's undecided candidates (ev-22a940b603, ev-c4d54793d5); lead of the 2021 protest-surge move. (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
    ]
   },
   {
@@ -5264,6 +5824,63 @@
    "claimant": "PH",
    "new_domains": [
     "physical"
+   ]
+  },
+  {
+   "airtable_id": "rectH5Mumcx1Po1Zs",
+   "archived_on": "2026-11-24",
+   "actors": "Department of Foreign Affairs; Undersecretary Elizabeth Buensuceso",
+   "lat": 9.96667,
+   "suggestion_reasoning": "Summoning an ambassador to protest is a verbal/diplomatic assertion without punishment; declarative. [confidence: high]",
+   "date_end": "2021-04-13",
+   "new_dyads": "PC",
+   "excerpt": "This is the first time that Chinese Ambassador Huang Xilian has been summoned by the DFA since taking over as China's envoy in the Philippines.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T01:38:34.000Z",
+   "location_name": "Whitsun Reef",
+   "run": [
+    "PH-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Julian Felipe (Whitsun) Reef”.",
+   "reviewer": "Angelo",
+   "sources": "DFA summons Chinese envoy over lingering ships in West Philippine Sea — Philstar.com 2021-04-13\nhttps://philstar.com/headlines/2021/04/13/2090826/dfa-summons-chinese-envoy-over-lingering-ships-west-philippine-sea",
+   "pull_request": 93,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "5 Spratly NW",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T14:30:23.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e5e8f3c5b2",
+   "run_id": "PH-2021-2026",
+   "new_subregions": [
+    "5 Spratly NW"
+   ],
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The DFA summoned Chinese Ambassador Huang Xilian, the first time he had been summoned, to express displeasure over the illegal lingering presence of Chinese vessels at Julian Felipe Reef off Bataraza, Palawan.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-04-13",
+   "merge_into_candidate": "ev-d644783f0f",
+   "presort": "same move as ev-d644783f0f — First summoning of Ambassador Huang over Whitsun Reef; part of the same 2021 protest campaign led by ev-d644783f0f (could be argued a novelty of method if no ambassador was summoned in 2020 — none appears in the 2020 candidates). (group PH2021-protest-surge) [claude-code/opus]",
+   "previous_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…\nPH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…",
+   "decision": "merge",
+   "lon": 114.65,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
    ]
   },
   {
