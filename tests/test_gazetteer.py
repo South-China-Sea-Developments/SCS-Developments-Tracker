@@ -170,3 +170,48 @@ def test_named_features_lists_every_point_feature_in_order_of_first_mention():
     assert named_features("Vietnam garrisons in the Spratly Islands") == []   # a group, and it hides "Spratly Island"
     assert [f["feature_id"] for f in named_features("Spratly Island airstrip extended")] == ["spratly-island"]
     assert named_features("") == [] and named_features("no place named") == []
+
+
+def test_the_geonames_layer_adds_features_without_clashing_names():
+    """Ticket 31: new GeoNames features lie in the sub-region they state, and no name the layer adds is
+    another feature's too (the matcher would skip both)."""
+    import csv
+    from pipeline import gazetteer as gz
+    rows = list(csv.DictReader(open(gz.GAZETTEER_GEONAMES, encoding="utf-8")))
+    assert rows, "the layer exists"
+    for r in rows:
+        if r["lat"]:
+            assert gz.subregion_of(float(r["lat"]), float(r["lon"])) == int(r["subregion"]), r["feature_id"]
+    feats = gz.load()
+    owners = {}
+    for fid, f in feats.items():
+        for n in f["names"]:
+            owners.setdefault(gz._fold(n), set()).add(fid)
+    added = {gz._fold(a) for r in rows for a in r["aliases"].split("|") if a} | {gz._fold(r["name_en"]) for r in rows if r["name_en"]}
+    clashes = {n: o for n, o in owners.items() if n in added and len(o) > 1}
+    assert not clashes, list(clashes.items())[:5]
+
+
+def test_every_feature_has_an_english_name():
+    """Ticket 32: the maps label features with name_en, so every feature has one, in English (no pinyin,
+    Vietnamese or Chinese)."""
+    from pipeline import gazetteer as gz
+    bad = [(fid, f["name_en"]) for fid, f in gz.load().items() if not gz.is_english_name(f["name_en"])]
+    assert not bad, bad
+
+
+def test_duplicates_merge_into_their_english_feature():
+    from pipeline import gazetteer as gz
+    feats = gz.load()
+    assert "安定连礁" not in feats and "安定连礁" in feats["addington-patch"]["names"]
+    assert [f["feature_id"] for f in gz.named_features("Chinese ships at 安定连礁")] == ["addington-patch"]
+
+
+def test_english_place():
+    from pipeline import gazetteer as gz
+    assert gz.english_place("Huangyan Dao (Scarborough Shoal)") == "Scarborough Shoal"
+    assert gz.english_place("Meiji Jiao (Mischief Reef) and Zhubi Jiao (Subi Reef)") == "Mischief Reef and Subi Reef"
+    assert gz.english_place("Xisha Qundao and Nansha Qundao") == "Paracel Islands and Spratly Islands"
+    assert gz.english_place("near Woody Island (Yongxing Dao), Paracels") == "near Woody Island, Paracels"
+    assert gz.english_place("Second Thomas Shoal") == "Second Thomas Shoal"
+

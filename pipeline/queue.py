@@ -31,7 +31,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from pipeline import gazetteer, schema
+from pipeline import enrich, gazetteer, schema
 
 TEMPLATES = Path(__file__).resolve().parent / "templates"
 REPO = os.environ.get("GITHUB_REPOSITORY") or "South-China-Sea-Developments/SCS-Developments-Tracker"
@@ -83,7 +83,7 @@ def append_run(run_dir: Path, data_dir: Path) -> tuple[int, int]:
     sources = read_table("sources", data_dir)
     have_e = {e["event_id"] for e in events}
     have_s = {s["source_id"] for s in sources}
-    new_e = [gazetteer.locate(c) for c in cand if c["event_id"] not in have_e]   # named features get coordinates
+    new_e = [enrich.enrich(c) for c in cand if c["event_id"] not in have_e]   # English place, named features placed (ticket 41)
     new_s = [s for s in srcs if s["source_id"] not in have_s and s["event_id"] in have_e | {c["event_id"] for c in new_e}]
     write_table("events", events + new_e, data_dir)
     write_table("sources", sources + new_s, data_dir)
@@ -197,8 +197,9 @@ def review_context(data_dir: Path, run_id: str | None = None, presort_path: Path
                       key=lambda b: (-int(b["year"]), b["move_id"]))
         same = [brief(m) for m in moves if m["claimant"] == e["claimant"] and year and int(m["year"]) == year]
         dup = ""
-        if e["review_note"].startswith("Possible duplicate of "):
-            dup = e["review_note"].split("Possible duplicate of ", 1)[1].rstrip(".")
+        m_dup = re.search(r"Possible duplicate of (ev-[0-9a-f]+)", e["review_note"])   # other notes may follow (ticket 41)
+        if m_dup:
+            dup = m_dup.group(1)
         dup_event = next((x for x in events if x["event_id"] == dup), None)
         items.append({"event": e, "sources": by_event.get(e["event_id"], []), "year": year, "previous_year_moves": prev,
                       "same_year_moves": same, "duplicate_of": dup_event, "claimant_name": claimants.get(e["claimant"], e["claimant"]),

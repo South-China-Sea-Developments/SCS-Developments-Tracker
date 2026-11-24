@@ -23,6 +23,12 @@ EMPTY_TILEJSON = json.dumps({"tilejson": "3.0.0", "tiles": ["https://tiles.openf
 HEADLESS_NOISE = re.compile(r"WebGL|swiftshader|GL Driver|GPU stall", re.I)
 
 
+def _stale_tile(request) -> bool:
+    """A stub tile the map cancelled because the view moved on: MapLibre aborts the tiles of a zoom it
+    has left, which is normal and not a failure of the page."""
+    return "/stub/" in request.url and "abort" in (request.failure or "").lower()
+
+
 @pytest.fixture(scope="module")
 def dist(tmp_path_factory, mats_data):
     out = tmp_path_factory.mktemp("dist")
@@ -75,7 +81,7 @@ def _open(browser, dist, page_name, viewport=(1280, 900), curtain=False):
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
-    page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
+    page.on("requestfailed", lambda r: None if _stale_tile(r) else problems.append(("requestfailed", r.url)))
     page.route("https://tiles.openfreemap.org/**", _tile_stub([]))
     page.goto((dist / page_name).resolve().as_uri())
     page.wait_for_timeout(300 if page_name not in ("index.html", "map.html") else 1200)
@@ -173,8 +179,8 @@ def test_public_face(browser, dist):
     no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "map.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 2219
-    assert page.evaluate("(() => { const i = document.querySelector('.banner-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
+    assert page.locator(".site-head .masthead-img").count() == 1 and page.evaluate("document.querySelector('.masthead-img').getAttribute('src')").endswith("masthead.svg")
+    assert page.evaluate("document.querySelector('.masthead-img').complete && document.querySelector('.masthead-img').naturalWidth > 0"), "the vector artwork loads"
     assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
     # ticket 18: the tracker is white like the rest of the site; only the navigation band and the banner's band are dark
     side_rgb, map_rgb, nav_rgb = page.evaluate("[getComputedStyle(document.querySelector('.side')).backgroundColor, getComputedStyle(document.getElementById('map')).backgroundColor, getComputedStyle(document.querySelector('.navband')).backgroundColor]")
@@ -189,7 +195,7 @@ def test_public_face(browser, dist):
     page.close()
     page, problems = _open(browser, dist, "methodology.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1
+    assert page.locator(".site-head .masthead-img").count() == 1
     assert _luma(page.evaluate("getComputedStyle(document.body).backgroundColor")) > 250, "white article paper"
     assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING")
     page.close()
@@ -229,10 +235,12 @@ def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
     assert page.evaluate("document.activeElement.textContent") == "Downloads"
     box = page.evaluate("(() => { const r = document.activeElement.getBoundingClientRect(); return [r.left, r.right]; })()")
     assert 0 <= box[0] and box[1] <= 390, box
-    # at a tablet width the nav has moved under the brand rather than hiding links behind the brand
+    # from 1000px the tracker's name and every link share one thin row, nothing hidden or scrolled
     page.set_viewport_size({"width": 1024, "height": 800})
     page.wait_for_timeout(100)
-    assert page.evaluate(f"{nav}.getBoundingClientRect().top") > page.evaluate("document.querySelector('.brand').getBoundingClientRect().bottom") - 1
+    assert abs(page.evaluate(f"{nav}.getBoundingClientRect().top") - page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")) < 3
+    assert page.evaluate(f"{nav}.scrollWidth <= {nav}.clientWidth") and page.evaluate(f"{nav}.getBoundingClientRect().right") <= 1024
+    assert page.evaluate("document.querySelector('.navband').getBoundingClientRect().height") <= 48
     page.close()
 
 
@@ -242,7 +250,7 @@ def test_overview_charts_and_controls(browser, dist):
     assert page.locator('[data-chart="all-claimants"] svg').count() == 1
     assert page.locator('[data-chart="by-type"] svg').count() == 3
     # a claimant with no moves in the data has no panel and no chip (the page shows what is recorded, not the coding's state)
-    assert page.locator('.figure.small[hidden]').count() == 3 and page.locator('#claimant-filter .chip[hidden]').count() == 3
+    assert page.locator('.figure.small[hidden]').count() == 4 and page.locator('#claimant-filter .chip[hidden]').count() == 4
     assert page.locator('[data-chart="by-type"] .empty').count() == 0
     # 357 columns worth of segments: China+Vietnam+Philippines across the years
     assert page.locator('[data-chart="all-claimants"] .seg').count() > 100
@@ -457,7 +465,7 @@ def _open_map(browser, dist, viewport=(1280, 900)):
     problems = []
     page.on("console", lambda m: problems.append(("console", m.type, m.text)) if m.type in ("error", "warning") and not HEADLESS_NOISE.search(m.text) else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
-    page.on("requestfailed", lambda r: problems.append(("requestfailed", r.url)))
+    page.on("requestfailed", lambda r: None if _stale_tile(r) else problems.append(("requestfailed", r.url)))
     tiles = []
     page.route("https://tiles.openfreemap.org/**", _tile_stub(tiles))
     page.goto((dist / "map.html").resolve().as_uri())
@@ -480,6 +488,19 @@ def test_map_data_matches_the_validator(dist):
     assert [f["properties"]["n"] for f in data["subregions"]["features"]] == list(range(1, 11))
 
 
+
+def test_every_name_on_the_maps_is_english(dist):
+    """Ticket 32: feature labels, the reefs a move names, event places and sub-region names, all in English."""
+    from pipeline.gazetteer import is_english_name
+    data = json.loads((dist / "data/events.json").read_text(encoding="utf-8"))
+    names = [f["properties"]["n"] for f in data["assert"]["gazetteer"]["features"]]
+    names += [f["n"] for f in data["assert"]["features"].values()]
+    names += [e["n"] for e in data["events"] if e["n"]]
+    names += list(data["subregion_names"].values()) + [f["properties"]["name"] for f in data["subregions"]["features"]]
+    bad = sorted({n for n in names if not is_english_name(n)})
+    assert not bad, bad
+
+
 @pytest.mark.parametrize("viewport", [(1280, 900), (390, 800)])
 def test_map_renders_offline_without_errors(browser, dist, viewport):
     from pipeline.validate import event_aggregates
@@ -489,7 +510,9 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
     assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
     assert "OpenFreeMap" in page.inner_text("#map .maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text("#map .maplibregl-ctrl-attrib")
     text = page.evaluate("document.getElementById('map-count').textContent")
-    assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text and f"{expected['n_events']} by sub-region" in text
+    data = page.evaluate("(() => { const d = document.getElementById('map-count').dataset; return [+d.placed, +d.bySubregion]; })()")
+    assert text.startswith(f"{expected['n_events']} events through ") and data == [expected['n_points'], expected['n_events']], (text, data)
+    assert "placed" not in text and "by sub-region" not in text, "the count line is the count and the period only (2026-11-24)"
     # the sub-region counts on the map are the validator's, summed over claimants
     shown = {}
     for el in page.locator("[role='button'][tabindex='0']").element_handles():
@@ -511,12 +534,17 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
 @pytest.fixture(scope="module")
 def dist_placed(tmp_path_factory):
     """A build from a data copy with four placed events (two stacked at one feature, one point, one
-    unplaced) so the point-marker code is exercised while the real data has no coordinates yet."""
+    unplaced) so the point-marker code is exercised on a known set: the data's own coordinates (Chubb's
+    dated incidents placed at their move's feature, ticket 41) are cleared in the copy."""
     import csv
     import shutil
     d = tmp_path_factory.mktemp("placed") / "data"
     shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
     rows = list(csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    for r in rows:
+        if r["lat"]:
+            r["lat"] = r["lon"] = ""
+            r["location_precision"] = "subregion" if r["subregion"] else "unknown"
     cols = list(rows[0])
     extra = [("CN201201", "2012-04-10", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Standoff begins at <b>Scarborough</b> Shoal."),
              ("CN201201", "2012-05-15", "Scarborough Shoal", "15.18000", "117.77000", "4", "feature", "day", "Fishing ban extended to the shoal."),
@@ -537,7 +565,7 @@ def dist_placed(tmp_path_factory):
 
 def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     page, problems, _ = _open_map(browser, dist_placed)
-    assert "3 placed" in page.evaluate("document.getElementById('map-count').textContent")
+    assert page.evaluate("document.getElementById('map-count').dataset.placed") == "3"
     # the points show only zoomed in; far out the sub-region counts carry every event
     assert page.locator(".evt:visible").count() == 0 and page.locator(".sr-count:visible").count() >= 1
     for _ in range(3):
@@ -564,8 +592,7 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
         page.fill("#month", str((year - 1970) * 12 + month_no - 1))
         page.dispatch_event("#month", "input")
         page.wait_for_timeout(250)
-        text = page.evaluate("document.getElementById('map-count').textContent")
-        return int(re.search(r"(\d+) placed", text).group(1)), int(re.search(r"(\d+) by sub-region", text).group(1))
+        return tuple(page.evaluate("(() => { const d = document.getElementById('map-count').dataset; return [+d.placed, +d.bySubregion]; })()"))
     assert counts_at(2014, 5)[0] == 1 and counts_at(2014, 5 + 1)[0] == 0          # the rig, dated to May 2014
     assert counts_at(2013, 11)[1] >= 1 and counts_at(2013, 1)[1] >= 1            # the filing, dated to 2013
     assert counts_at(2012, 4)[0] == 1 and counts_at(2012, 4 + 1)[0] == 1 and counts_at(2012, 6)[0] == 0   # two day-dated events
@@ -599,7 +626,7 @@ def test_map_time_window_and_filters(browser, dist):
     page.dispatch_event("#month", "input")
     page.wait_for_timeout(300)
     in_2014 = [e for e in shown if e["date_start"][:4] <= "2014" and (e["date_end"] or e["date_start"])[:4] >= "2014"]
-    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events Jan 2014 – Dec 2014")
+    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events January 2014 to December 2014")
     # unchecking a claimant removes its events; a type filter keeps only moves of that type
     page.uncheck('input[name="claimant"][value="VN"]', force=True)
     page.wait_for_timeout(300)
@@ -676,13 +703,15 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
 
 
 def test_the_first_screen_is_the_assertiveness_map(browser, dist):
-    """Ticket 27: under the slim banner and the menu, the map of the latest five-year window fills the first
+    """Ticket 27: under the masthead and the menu, the map of the latest five-year window fills the first
     screen; the slider, the claimant choice and the details come on scrolling; the event tracker follows."""
     page, problems = _open(browser, dist, "index.html", (1440, 900))
     assert problems == []
     assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
-    assert page.locator(".site-head .banner-img").count() == 0 and page.locator(".site-head .brand-logo").count() == 1, "the banner follows the map"
-    assert page.locator(".banner-img").count() == 0 and page.locator("#map").count() == 0, "no banner and one map on the home page"
+    assert page.locator(".site-head .masthead").count() == 1, "the masthead heads the home page too (2026-11-24)"
+    assert page.locator("#map").count() == 0, "one map on the home page"
+    scope = page.locator(".amap-caption .amap-scope")
+    assert scope.is_visible() and "not every incident" in scope.inner_text() and scope.locator("a").get_attribute("href") == "methodology.html#what", "what the map measures (2026-11-24)"
     stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
     assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
     # it opens on the latest five years with moves (the fixture's data ends in 2015); the slider reaches the build year
@@ -784,21 +813,53 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     page.close()
 
 
-def test_inner_pages_banner_strip_opens_on_hover(browser, dist):
-    """Ticket 30, option 2: the slim strip opens to the whole banner under the pointer, over the page."""
-    page, problems = _open(browser, dist, "trends.html", (1440, 900))
-    h = lambda: page.evaluate("document.querySelector('.banner').getBoundingClientRect().height")
-    band = lambda: page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")
-    page.mouse.move(700, 850)
-    page.wait_for_timeout(1000)
-    slim, band0 = h(), band()
-    assert slim <= 150
-    page.hover(".banner-hit")
-    page.wait_for_timeout(700)
-    assert abs(h() - round(1440 * 950 / 2219)) <= 3 and band() == band0, "whole, and nothing below moved"
-    page.mouse.move(700, 850)
+def test_the_home_page_lists_the_latest_moves_under_the_caption(browser, dist):
+    """Option H5 (2026-11-24), a rollover: under the map's caption a slim "Latest moves" bar with the newest
+    date; it opens under the pointer, or on click, to the newest moves, each a link to its case page."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    bar = page.locator("#amap-latest")
+    assert bar.get_attribute("open") is None and page.locator(".amap-latest-list").is_hidden(), "closed at first"
+    cap = page.evaluate("document.querySelector('.amap-caption').getBoundingClientRect().bottom")
+    box = page.evaluate("(() => { const r = document.getElementById('amap-latest').getBoundingClientRect(); return [r.top, r.left, r.height]; })()")
+    assert box[0] > cap and box[1] < 40 and box[2] <= 44, ("a slim bar under the caption, at the left", box)
+    page.hover("#amap-latest summary")
+    page.wait_for_timeout(200)
+    items = page.locator(".amap-latest-list li")
+    assert page.locator(".amap-latest-list").is_visible() and 1 <= items.count() <= 4, "open under the pointer"
+    assert page.evaluate("document.getElementById('amap-latest').getBoundingClientRect().bottom") < page.evaluate("document.querySelector('.amap-cue').getBoundingClientRect().top")
+    hrefs = page.eval_on_selector_all(".amap-latest-list a", "els => els.map(a => a.getAttribute('href'))")
+    assert all((dist / h).exists() for h in hrefs), hrefs
+    assert all(" · " in d for d in page.eval_on_selector_all(".amap-latest-meta", "els => els.map(e => e.textContent)"))
+    page.mouse.move(900, 600)
+    page.wait_for_timeout(200)
+    assert bar.get_attribute("open") is None, "closed again when the pointer leaves"
+    assert problems == []
+    page.locator(".amap-count").nth(5).click()
     page.wait_for_timeout(1200)
-    assert h() <= 150
+    assert bar.is_hidden(), "zoomed in, the bar steps aside"
+    page.close()
+    page, problems = _open(browser, dist, "index.html", (390, 800))
+    page.locator("#amap-latest summary").click()
+    assert page.locator(".amap-latest-list").is_visible(), "a tap opens it on a phone"
+    page.close()
+
+
+def test_the_masthead_and_the_thin_menu_band(browser, dist):
+    """Option C (2026-11-24): on every page a thin masthead, the logo and the programme's name on the sea blue
+    and the banner's reefs at the right, a link home; the menu band below has no logo and is one thin row."""
+    for name in ("trends.html", "index.html", "cases.html"):
+        page, problems = _open(browser, dist, name, (1440, 900))
+        head = page.evaluate("(() => { const r = document.querySelector('.masthead').getBoundingClientRect(); return [r.top, r.height]; })()")
+        assert head[0] == 0 and 60 <= head[1] <= 92, (name, head)
+        assert page.locator(".masthead .masthead-logo").count() == 1 and page.locator(".navband img").count() == 0, "the logo once, in the masthead"
+        assert page.locator(".masthead").get_attribute("href").endswith("index.html")
+        assert "Research Initiative" in page.locator(".masthead-name").inner_text()
+        assert page.evaluate("document.querySelector('.navband').getBoundingClientRect().height") <= 44, "one thin row"
+        assert problems == []
+        page.close()
+    page, problems = _open(browser, dist, "trends.html", (390, 800))
+    assert page.evaluate("document.querySelector('.masthead').getBoundingClientRect().height") <= 66
+    assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
     assert problems == []
     page.close()
 
@@ -836,3 +897,122 @@ def test_the_scroll_zoom_carries_on_after_a_manual_zoom(browser, dist):
     assert abs(zoom() - manual) < 0.1, (manual, zoom())
     assert problems == []
     page.close()
+
+
+def test_feature_pages(dist):
+    """Tickets 35 and 36: a page per reef, shoal or island a move is placed at or a claimant holds, linked
+    from the map's data; it lists the moves placed there and who holds it."""
+    data = json.loads((dist / "data/events.json").read_text(encoding="utf-8"))
+    feats = data["assert"]["features"]
+    paged = {k: f["p"] for k, f in feats.items() if not k.startswith("ev:")}
+    assert paged and all((dist / "features" / f"{p}.html").exists() for p in paged.values())
+    assert all(re.fullmatch(r"[a-z0-9-]+", p) for p in paged.values())          # ASCII addresses, also for Chinese ids
+    html = (dist / "features" / "second-thomas-shoal.html").read_text(encoding="utf-8")
+    assert "Philippines</span> holds it since 1999" in html and html.count('href="../cases/') >= 5
+    assert "仁爱礁" in html                                                     # its names in the other languages
+    woody = (dist / "features" / "woody-island.html").read_text(encoding="utf-8")
+    assert "China</span> holds it since 1974" in woody and "As part of the Paracels" in woody
+    index = (dist / "features.html").read_text(encoding="utf-8")
+    assert all(f'href="features/{p}.html"' in index for p in paged.values())
+    held = {h["n"]: h for h in data["assert"]["held"]}
+    assert held["Taiping Island"]["h"] == ["TW"] and held["Paracel Islands"]["g"] == 1 and "Louisa Reef" not in held
+    case = (dist / "cases" / "PH199902.html").read_text(encoding="utf-8")
+    assert 'href="../features/second-thomas-shoal.html"' in case
+
+
+def test_the_map_shows_who_holds_what_and_links_features(browser, dist):
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2020-c-f-second-thomas-shoal")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    detail = page.locator("#amap-detail")
+    assert detail.locator(".amap-detail-head").inner_text().startswith("Second Thomas Shoal")
+    assert "held by Philippines" in detail.inner_text()
+    assert detail.locator(".amap-feature-link a").get_attribute("href") == "features/second-thomas-shoal.html"
+    page.click("label:has(#amap-line-held)")
+    assert page.evaluate("location.hash") == "#y2020-c-l-h-f-second-thomas-shoal"
+    page.close()
+
+
+def test_the_selected_sub_region_shows_its_history(browser, dist):
+    """Ticket 37: a selected sub-region's panel carries its score over every window, on the map's scale;
+    a click on the chart moves the map to that window."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-s6")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    svg = page.locator("#amap-detail .amap-history svg")
+    assert svg.count() == 1 and "Score of sub-region 6" in svg.get_attribute("aria-label")
+    box = svg.bounding_box()
+    svg.click(position={"x": 4, "y": box["height"] / 2})   # the far left: the first window
+    page.wait_for_timeout(300)
+    assert page.evaluate("location.hash").startswith("#y1974")
+    page.close()
+
+
+def test_one_small_map_per_claimant(browser, dist):
+    """Ticket 38: a small map per claimant for the window shown, on one scale; a click shows that claimant
+    on the main map, and a second click all claimants again."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert problems == []
+    maps = page.locator("#amap-claimants .amap-claimant-map")
+    assert maps.count() == len(read_csv(DATA_DIR / "claimants.csv"))
+    vn = page.locator("#amap-claimants .amap-claimant-map[data-code='VN']")
+    vn.click()
+    assert page.evaluate("location.hash") == "#y2014-vn" and page.locator("#amap-who").inner_text() == "Vietnam"
+    page.locator("#amap-claimants .amap-claimant-map[data-code='VN']").click()
+    assert page.evaluate("location.hash") in ("", "#y2014")
+    page.close()
+
+
+def test_cite_download_and_embed_a_view(browser, dist):
+    """Ticket 39: the view's citation names the window, the claimant and the dataset version and ends
+    with its link; the image downloads as a PNG; the embed code opens the same view in embed mode,
+    which shows the map alone with a link back."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-vn")
+    page.reload()
+    page.wait_for_timeout(1200)
+    page.locator("#amap-cite-box summary").click()
+    page.wait_for_function("document.getElementById('amap-cite').value.length > 0")
+    cite = page.locator("#amap-cite").input_value()
+    assert "map view: Assertive moves, 2010–2014; Vietnam" in cite and "Dataset version " in cite and "#y2014-vn (accessed " in cite
+    embed = page.locator("#amap-embed").input_value()
+    assert embed.startswith('<iframe src="') and "?embed=1#y2014-vn" in embed
+    with page.expect_download() as d:
+        page.click("#amap-png")
+    path = d.value.path()
+    assert d.value.suggested_filename == "scs-tracker-y2014-vn.png" and open(path, "rb").read(8) == b"\x89PNG\r\n\x1a\n"
+    assert problems == []
+    page.goto((dist / "index.html").resolve().as_uri() + "?embed=1#y2014-vn")
+    page.wait_for_timeout(1000)
+    assert page.locator(".site-head").is_hidden() and page.locator("#amap-explore").is_hidden()
+    assert page.locator("#amap-embed-credit").is_visible() and page.locator("#curtain").is_hidden()
+    page.close()
+
+
+def test_whats_new_and_its_feed(tmp_path):
+    """Ticket 40: the project's added moves, corrections and retractions, newest first, as a page and an
+    Atom feed with absolute links; Chubb's own moves are not news. Built from the full data (the MATS-only
+    copy the other site tests use holds no project moves)."""
+    from xml.dom import minidom
+    from web.build import SITE_URL, build as build_site
+    from tests.conftest import DATA_DIR as FULL
+    out = tmp_path / "site"
+    build_site(FULL, out, build_date="2026-11-23")
+    page = (out / "whats-new.html").read_text(encoding="utf-8")
+    project = [m for m in read_csv(FULL / "moves.csv") if m["coded_by"] != "chubb" and m["status"] == "accepted"]
+    assert project and all(f'href="cases/{m["move_id"]}.html"' in page for m in project)
+    assert "CN201702" in page and "Retracted" in page                      # the retraction, without a page link
+    assert 'href="cases/CN201702.html"' not in page
+    doc = minidom.parse(str(out / "feed.xml"))
+    entries = doc.getElementsByTagName("entry")
+    assert 0 < entries.length <= 50
+    links = [e.getElementsByTagName("link")[0].getAttribute("href") for e in entries]
+    assert all(h.startswith(SITE_URL) for h in links)
+    assert 'type="application/atom+xml"' in (out / "index.html").read_text(encoding="utf-8")

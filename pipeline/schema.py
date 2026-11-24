@@ -11,6 +11,7 @@ CLAIMANTS = [
     ("MY", "Malaysia"),
     ("ID", "Indonesia"),
     ("TW", "Taiwan"),
+    ("BN", "Brunei"),
 ]
 CLAIMANT_CODES = [c for c, _ in CLAIMANTS]
 

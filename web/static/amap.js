@@ -6,7 +6,7 @@
    islands the moves name appear. The scores are computed here from the moves, so the filters (types,
    claimant, directed at) and the weighting switch can recombine them; web.build.window_scores is the
    reference the tests hold this to. Below the map: a timeline, the slider, the filters, decade maps, a
-   link to the view (#y2015-c-cn-at-p-t-cf-l-md-s6-f-scarborough-shoal). */
+   link to the view (#y2015-c-cn-at-p-t-cf-l-ed-s6-f-scarborough-shoal). */
 (function () {
   "use strict";
   var src = document.getElementById("mapdata");
@@ -65,8 +65,8 @@
     return { top: phone.matches ? 90 : 24, bottom: 56 + below, left: 24, right: 24 };
   }
   var state = { end: START, who: "ALL", target: "", types: TYPES.slice(), sel: null, feat: null, mode: "window", lines: [] };
-  var LINE_KEY = { maritime: "m", dashline: "d" };
-  var lineInputs = ["maritime", "dashline"].map(function (k) { return $("amap-line-" + k); }).filter(Boolean);
+  var LINE_KEY = { eez: "e", dashline: "d", held: "h" }, LINES = ["eez", "dashline", "held"];
+  var lineInputs = LINES.map(function (k) { return $("amap-line-" + k); }).filter(Boolean);
   var map = new maplibregl.Map({
     container: "amap", style: STYLE, bounds: SEA, fitBoundsOptions: { padding: padding() },
     minZoom: 3.5, maxZoom: 10, cooperativeGestures: true, attributionControl: false, dragRotate: false, pitchWithRotate: false
@@ -266,14 +266,33 @@
     map.addLayer({ id: "asr-line", type: "line", source: "asr", paint: { "line-color": "#ffffff", "line-width": 1.2, "line-opacity": 0.85 } });
     addShapes(map);
     map.addLayer({ id: "asr-sel", type: "line", source: "asr", filter: ["==", ["get", "n"], -1], paint: { "line-color": INK, "line-width": 1.8 } });
-    // reference lines, off by default: indicative maritime boundaries (dotted grey), China's dashed line (dashed ink)
+    // reference lines, off by default: EEZ boundaries (Marine Regions; dotted grey), China's dashed line (dashed ink)
     if (A.lines) {
-      map.addSource("ln-maritime", { type: "geojson", data: A.lines.maritime });
-      map.addLayer({ id: "ln-maritime", type: "line", source: "ln-maritime", layout: { visibility: "none", "line-cap": "round" },
+      map.addSource("ln-eez", { type: "geojson", data: A.lines.eez });
+      map.addLayer({ id: "ln-eez", type: "line", source: "ln-eez", layout: { visibility: "none", "line-cap": "round" },
                      paint: { "line-color": "#6b7780", "line-width": 1.1, "line-dasharray": [0.6, 2.2], "line-opacity": 0.9 } });
       map.addSource("ln-dashline", { type: "geojson", data: A.lines.dashline });
       map.addLayer({ id: "ln-dashline", type: "line", source: "ln-dashline", layout: { visibility: "none" },
                      paint: { "line-color": INK, "line-width": 1.4, "line-opacity": 0.75 } });
+    }
+    // who holds what (ticket 36), off by default: each held feature a ring in its holder's colour; the
+    // Paracels, held whole, a label at the group
+    if (A.held && A.held.length) {
+      var css = getComputedStyle(document.documentElement), col = ["match", ["get", "h"]];
+      Object.keys(NAMES).forEach(function (c) { col.push(c, (css.getPropertyValue("--" + c.toLowerCase()) || "#666").trim() || "#666"); });
+      col.push("#666");
+      map.addSource("ln-held", { type: "geojson", data: { type: "FeatureCollection", features: A.held.map(function (f) {
+        return { type: "Feature", properties: { n: f.n, h: f.h[0], g: f.g, lab: f.n + ": " + f.h.map(function (c) { return NAMES[c] || c; }).join(" and ") + (f.s ? " since " + f.s : "") },
+                 geometry: { type: "Point", coordinates: [f.lon, f.lat] } };
+      }) } });
+      map.addLayer({ id: "ln-held", type: "circle", source: "ln-held", filter: ["==", ["get", "g"], 0], layout: { visibility: "none" },
+                     paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3, 8, 6], "circle-color": "rgba(0,0,0,0)",
+                              "circle-stroke-color": col, "circle-stroke-width": 2 } });
+      map.addLayer({ id: "ln-held-label", type: "symbol", source: "ln-held", filter: ["==", ["get", "g"], 1], layout: { visibility: "none",
+                     "text-field": ["get", "lab"], "text-font": ["Noto Sans Regular"], "text-size": 11, "text-offset": [0, 3.2] },
+                     paint: { "text-color": INK, "text-halo-color": "#ffffff", "text-halo-width": 1.6 } });
+      map.on("mousemove", "ln-held", function (ev) { map.getCanvas().title = ev.features[0].properties.lab; });
+      map.on("mouseleave", "ln-held", function () { map.getCanvas().title = ""; });
     }
     map.on("mousemove", "asr-fill", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "asr-fill", function () { map.getCanvas().style.cursor = ""; });
@@ -336,6 +355,59 @@
     });
   }
   function none(what) { return state.mode === "cumulative" ? "No " + what + " yet." : "No " + what + " in these five years."; }
+  // the selected sub-region's score at every window end, on the map's fixed scale (ticket 37); the
+  // current window marked, and a click on the chart moves the map to that window
+  function drawHistory(n) {
+    var NS = "http://www.w3.org/2000/svg", W = 300, H = 74, L = 4, R = 4, T = 8, B = 16;
+    var max = scaleMax() || 1, xs = function (e) { return L + (W - L - R) * (e - FIRST) / Math.max(1, LAST - FIRST); };
+    var ys = function (v) { return T + (H - T - B) * (1 - v / max); };
+    var vals = ENDS.map(function (e) { return scoresAt(e)[n - 1]; });
+    var peak = Math.max.apply(null, vals), at = ENDS[vals.indexOf(peak)];
+    var fig = el("figure", "amap-history", undefined, detail);
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Score of sub-region " + n + " for each " + (state.mode === "cumulative" ? "year since " + FIRST_YEAR : "five-year window") +
+      " ending " + FIRST + " to " + LAST + "; highest " + fmt(peak) + " (" + windowLabel(at) + ")");
+    function add(tag, attrs, text) {
+      var x = document.createElementNS(NS, tag);
+      for (var k in attrs) x.setAttribute(k, attrs[k]);
+      if (text !== undefined) x.textContent = text;
+      svg.appendChild(x);
+      return x;
+    }
+    add("line", { x1: L, x2: W - R, y1: ys(0), y2: ys(0), "class": "base" });
+    // windows past the last coded year are still being coded: drawn faint, not read as a fall
+    var CODED = DATA.last_year || LAST;
+    function seg(test) {
+      var pts = ENDS.map(function (e, i) { return test(e) ? xs(e).toFixed(1) + " " + ys(vals[i]).toFixed(1) : null; }).filter(Boolean);
+      return pts.length > 1 ? "M" + pts.join("L") : "";
+    }
+    add("path", { d: seg(function (e) { return e <= CODED; }), "class": "line" });
+    if (CODED < LAST) {
+      add("path", { d: seg(function (e) { return e >= CODED; }), "class": "line uncoded" });
+      add("text", { x: W - R, y: T + 2, "class": "tick end" }, "being coded");
+    }
+    add("circle", { cx: xs(state.end), cy: ys(scoresAt(state.end)[n - 1]), r: 4, "class": "now" });
+    add("text", { x: L, y: H - 3, "class": "tick" }, String(FIRST));
+    add("text", { x: W - R, y: H - 3, "class": "tick end" }, String(LAST));
+    add("rect", { x: 0, y: 0, width: W, height: H, "class": "hit" });
+    svg.addEventListener("click", function (ev) {
+      var box = svg.getBoundingClientRect(), x = (ev.clientX - box.left) * W / box.width;
+      setEnd(Math.round(FIRST + (x - L) / (W - L - R) * (LAST - FIRST)));
+    });
+    svg.addEventListener("mousemove", function (ev) {
+      var box = svg.getBoundingClientRect(), x = (ev.clientX - box.left) * W / box.width;
+      var e = Math.max(FIRST, Math.min(LAST, Math.round(FIRST + (x - L) / (W - L - R) * (LAST - FIRST))));
+      svg.querySelector(".hit").textContent = "";
+      cap.textContent = windowLabel(e) + ": score " + fmt(scoresAt(e)[n - 1]);
+    });
+    svg.addEventListener("mouseleave", function () { cap.textContent = capText; });
+    fig.appendChild(svg);
+    var capText = "Score over time, on the map's scale; highest " + fmt(peak) + " in " + windowLabel(at) + "." +
+      (CODED < LAST ? " Years after " + CODED + " are still being coded." : "");
+    var cap = el("figcaption", "amap-muted", capText, fig);
+  }
   function renderDetail(all) {
     detail.textContent = "";
     var wl = windowLabel(state.end), s = scores();
@@ -343,7 +415,9 @@
       var F = FEATS[state.feat];
       var fm = all.filter(function (m) { return (m.f || []).indexOf(state.feat) >= 0; }).sort(byWeight);
       el("h3", "amap-detail-head", F.n + ", " + wl, detail);
-      if (F.sr) el("p", "amap-where", "In sub-region " + F.sr + " " + SR_NAMES[F.sr], detail);
+      if (F.sr) el("p", "amap-where", "In sub-region " + F.sr + " " + SR_NAMES[F.sr] +
+        (F.h ? "; held by " + F.h.map(function (c) { return NAMES[c] || c; }).join(" and ") : ""), detail);
+      if (F.p) { var fl = el("p", "amap-feature-link", undefined, detail), a = el("a", "", "All moves at " + F.n + " since " + FIRST, fl); a.href = "features/" + F.p + ".html"; }
       if (!fm.length) el("p", "amap-empty", none("moves naming it"), detail);
       else { summary(fm); list(fm); }
       back(state.sel ? "Back to " + state.sel + " " + SR_NAMES[state.sel] : "Back to the whole sea", function () { state.feat = null; render(); });
@@ -356,6 +430,7 @@
       if (!ms.length) el("p", "amap-empty", none("moves in this sub-region"), detail);
       else {
         summary(ms, ", score " + fmt(s[n - 1]));
+        drawHistory(n);
         if (ch.prev !== null) el("p", "amap-where", (ch.dir ? "Intensity " + ch.dir + " from " : "About as intense as in ") + fiveLabel(state.end - SPAN) + " (score " + fmt(ch.prev) + ").", detail);
         var named = ms.filter(function (m) { return (m.f || []).length; }).length;
         el("p", "amap-hint", named ? named + " of them name a reef, shoal or island, shown on the map." : "None of them names a reef, shoal or island.", detail);
@@ -370,8 +445,8 @@
     var rising = DATA.subregions.features.map(function (f) { return f.properties.n; }).filter(function (n) { return change(n).dir === "up"; });
     if (rising.length) srLinks("Rising since " + fiveLabel(state.end - SPAN) + ": ", rising);
     el("p", "amap-hint", state.mode === "cumulative"
-      ? "The number on each sub-region is its moves since " + FIRST_YEAR + ", building up year by year. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name."
-      : "The number on each sub-region is its moves in these five years; ▲ and ▼ mark a rise or fall of a fifth or more in intensity against the five years before. Click a sub-region, or zoom in, for the reefs, shoals and islands the moves name.", detail);
+      ? "Numbers: moves since " + FIRST_YEAR + ", building up year by year."
+      : "Numbers: moves in these five years. ▲ ▼ a rise or fall of a fifth or more on the five years before.", detail);
   }
 
   // ---- the timeline: moves per year by type, the years shown highlighted ------------------------
@@ -448,6 +523,60 @@
     });
   }
 
+  // ---- one small map per claimant (ticket 38): the window (or build-up) for each claimant alone, with
+  // the other filters, on one scale shared by all claimants and all windows, so the maps compare --------
+  var claimCache = { key: null };
+  function measureByClaimant() {
+    var shared = !!(sharedBox && sharedBox.checked);
+    var key = [state.target, state.types.join(","), shared].join("|");
+    if (claimCache.key === key) return claimCache;
+    var years = {};
+    A.moves.forEach(function (m) {
+      if (state.types.indexOf(m.t) < 0 || (state.target && (m.g || []).indexOf(state.target) < 0)) return;
+      var w = shared && m.sr.length ? m.w / m.sr.length : m.w;
+      var byY = years[m.c] || (years[m.c] = {}), row = byY[m.y] || (byY[m.y] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+      m.sr.forEach(function (i) { row[i - 1] += w; });
+    });
+    var out = { key: key, win: {}, cum: {}, maxW: 0, maxC: 0 };
+    Object.keys(NAMES).forEach(function (c) {
+      var byY = years[c] || {};
+      out.win[c] = {}; out.cum[c] = {};
+      ENDS.forEach(function (end) {
+        var w = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], k = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        for (var y = FIRST_YEAR; y <= end; y++) {
+          var r = byY[y]; if (!r) continue;
+          for (var i = 0; i < 10; i++) { k[i] += r[i]; if (y > end - SPAN) w[i] += r[i]; }
+        }
+        out.win[c][end] = w; out.cum[c][end] = k;
+        out.maxW = Math.max(out.maxW, Math.max.apply(null, w));
+        out.maxC = Math.max(out.maxC, Math.max.apply(null, k));
+      });
+    });
+    claimCache = out;
+    return out;
+  }
+  var claimantsBox = $("amap-claimants");
+  function renderClaimants() {
+    if (!claimantsBox) return;
+    var M = measureByClaimant(), cum = state.mode === "cumulative", max = cum ? M.maxC : M.maxW;
+    claimantsBox.textContent = "";
+    Object.keys(NAMES).forEach(function (c) {
+      var vals = (cum ? M.cum : M.win)[c][state.end] || [], total = vals.reduce(function (a, v) { return a + v; }, 0);
+      var b = button("amap-decade amap-claimant-map" + (state.who === c ? " on" : ""), "",
+        NAMES[c] + ", " + windowLabel(state.end) + (total ? ": score " + fmt(total) : ": no moves") + (state.who === c ? " (shown on the map; click for all claimants)" : " (show on the map)"),
+        function () { state.who = state.who === c ? "ALL" : c; claimSel.value = state.who; render(); });
+      b.setAttribute("data-code", c);
+      var svg = svgEl("svg", { viewBox: "0 0 100 " + PROJ.h.toFixed(1), "aria-hidden": "true" }, b);
+      PATHS.forEach(function (d0, i) {
+        var v = vals[i];
+        svgEl("path", { d: d0, fill: v && max ? colourAt(Math.sqrt(v / max)) : "none", "fill-opacity": "0.75", stroke: "#a7b1b8", "stroke-width": "0.5" }, svg);
+      });
+      el("span", "amap-decade-label", NAMES[c], b);
+      el("span", "amap-claimant-total", fmt(total || 0), b);
+      claimantsBox.appendChild(b);
+    });
+  }
+
   // ---- the tick where Chubb's coding ends --------------------------------------------------------
   function clampEnd(y) { return Math.min(LAST, Math.max(FIRST, y)); }
   (function sourceTick() {
@@ -455,7 +584,6 @@
     if (!ticks || mats < FIRST || mats > LAST) return;
     var t = el("span", "amap-tick source", undefined, ticks);
     t.style.left = (100 * (mats - FIRST) / Math.max(1, LAST - FIRST)) + "%";
-    t.title = "Chubb's coding (MATS) ends with " + mats;
   })();
 
   // ---- the view in the address: #y2015-c-cn-at-p-t-cf-s6-f-scarborough-shoal ---------------------
@@ -464,10 +592,16 @@
     return "#y" + state.end + (state.mode === "cumulative" ? "-c" : "") + (state.who !== "ALL" ? "-" + state.who.toLowerCase() : "") +
       (state.target ? "-at-" + state.target.toLowerCase() : "") + t +
       (state.lines.length ? "-l-" + state.lines.map(function (k) { return LINE_KEY[k]; }).join("") : "") +
-      (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + state.feat : "");
+      (state.sel !== null ? "-s" + state.sel : "") + (state.feat ? "-f-" + (FEATS[state.feat].p || state.feat) : "");
+  }
+  // a feature in the address is its page's slug (ticket 35): ASCII, where some ids are Chinese
+  function featFromSlug(x) {
+    if (FEATS[x]) return x;
+    for (var k in FEATS) if (FEATS[k].p === x) return k;
+    return null;
   }
   function readHash() {
-    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-at-([a-z]))?(?:-t-([dmcf]+))?(?:-l-([md]+))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
+    var m = /^#y(\d{4})(-c)?(?:-([a-z]{2}))?(?:-at-([a-z]))?(?:-t-([dmcf]+))?(?:-l-([edh]+))?(?:-s(\d{1,2}))?(?:-f-([a-z0-9-]+))?$/.exec(location.hash);
     if (!m) return false;
     var y = parseInt(m[1], 10);
     if (y >= FIRST && y <= LAST) state.end = y;
@@ -476,9 +610,9 @@
     state.target = m[4] && TARGETS[m[4].toUpperCase()] ? m[4].toUpperCase() : "";
     state.types = m[5] ? TYPES.filter(function (t) { return m[5].indexOf(TYPE_KEY[t]) >= 0; }) : TYPES.slice();
     if (!state.types.length) state.types = TYPES.slice();
-    state.lines = m[6] ? ["maritime", "dashline"].filter(function (k) { return m[6].indexOf(LINE_KEY[k]) >= 0; }) : [];
+    state.lines = m[6] ? LINES.filter(function (k) { return m[6].indexOf(LINE_KEY[k]) >= 0; }) : [];
     state.sel = m[7] && SR_NAMES[m[7]] ? parseInt(m[7], 10) : null;
-    state.feat = m[8] && FEATS[m[8]] ? m[8] : null;
+    state.feat = m[8] ? featFromSlug(m[8]) : null;
     syncControls();
     return true;
   }
@@ -502,6 +636,77 @@
     catch (e) { linkDone.textContent = url; }
   });
 
+  // ---- cite, download or embed this view (ticket 39) -------------------------------------------------
+  var citeBox = $("amap-cite-box"), citeEl = $("amap-cite"), embedEl = $("amap-embed"), citeDone = $("amap-cite-done");
+  function viewUrl() { return location.href.split("#")[0].split("?")[0] + hashFor(); }
+  function viewTitle() {
+    var parts = ["Assertive moves, " + windowLabel(state.end), whoLine()];
+    if (state.sel !== null) parts.push("sub-region " + state.sel + " " + SR_NAMES[state.sel]);
+    if (state.feat) parts.push(FEATS[state.feat].n);
+    return parts.join("; ");
+  }
+  function citation() {
+    var d = new Date(), day = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+    return "South-China-Sea-Developments project (Angelo M., maintainer) (" + (citeBox.getAttribute("data-year") || d.getFullYear()) +
+      "). SCS Developments Tracker, map view: " + viewTitle() + ". Dataset version " + citeBox.getAttribute("data-version") + ". " +
+      viewUrl() + " (accessed " + day + "). Data to 2015: Chubb, A. (2022), Maritime Assertiveness Time Series (MATS 1.02).";
+  }
+  function embedCode() {
+    var u = location.href.split("#")[0].split("?")[0] + "?embed=1" + hashFor();
+    return '<iframe src="' + u + '" title="' + viewTitle().replace(/"/g, "&quot;") + ' (SCS Developments Tracker)" width="100%" height="560" style="border:0" loading="lazy"></iframe>';
+  }
+  var credit = $("amap-embed-credit");
+  function fillCite() {
+    if (credit) credit.href = viewUrl();
+    if (citeBox && citeBox.open) { citeEl.value = citation(); embedEl.value = embedCode(); }
+  }
+  function copy(text, done) {
+    function ok() { done.textContent = "Copied"; setTimeout(function () { done.textContent = ""; }, 2000); }
+    try { navigator.clipboard.writeText(text).then(ok, function () { done.textContent = "Select the text and copy it"; }); }
+    catch (e) { done.textContent = "Select the text and copy it"; }
+  }
+  if (citeBox) {
+    citeBox.addEventListener("toggle", fillCite);
+    $("amap-cite-copy").addEventListener("click", function () { fillCite(); copy(citeEl.value, citeDone); });
+    $("amap-embed-copy").addEventListener("click", function () { fillCite(); copy(embedEl.value, citeDone); });
+    $("amap-png").addEventListener("click", function () { exportImage(); });
+  }
+  // the map as a PNG: the basemap and shading as drawn, the counts on top, a title and a credit line
+  function exportImage() {
+    map.once("render", function () {
+      var src = map.getCanvas(), r = src.width / src.clientWidth, W = src.width, foot = Math.round(46 * r), head = Math.round(54 * r);
+      var out = document.createElement("canvas");
+      out.width = W; out.height = src.height + head + foot;
+      var g = out.getContext("2d");
+      g.fillStyle = "#ffffff"; g.fillRect(0, 0, out.width, out.height);
+      g.drawImage(src, 0, head);
+      var box = map.getContainer().getBoundingClientRect();
+      Array.prototype.forEach.call(map.getContainer().querySelectorAll(".amap-count"), function (b) {
+        var bb = b.getBoundingClientRect(), x = (bb.left - box.left + bb.width / 2) * r, y = head + (bb.top - box.top + bb.height / 2) * r;
+        var t = (b.querySelector(".amap-count-n") || b).textContent, w = (t.length * 8 + 16) * r, h = 22 * r;
+        g.fillStyle = "rgba(255,255,255,0.95)"; g.strokeStyle = "#c9cfd4"; g.lineWidth = r;
+        g.beginPath(); if (g.roundRect) g.roundRect(x - w / 2, y - h / 2, w, h, h / 2); else g.rect(x - w / 2, y - h / 2, w, h); g.fill(); g.stroke();
+        g.fillStyle = INK; g.font = "600 " + Math.round(13 * r) + "px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+        g.fillText(t, x, y);
+      });
+      g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillStyle = INK;
+      g.font = "600 " + Math.round(20 * r) + "px sans-serif"; g.fillText("Assertive moves, " + windowLabel(state.end), 16 * r, 30 * r);
+      g.font = Math.round(13 * r) + "px sans-serif"; g.fillStyle = "#4a5862"; g.fillText(whoLine() + " · degree of assertiveness, light to dark", 16 * r, 48 * r);
+      g.font = Math.round(11 * r) + "px sans-serif"; g.fillStyle = "#4a5862";
+      g.fillText("SCS Developments Tracker (South-China-Sea-Developments project), dataset " + citeBox.getAttribute("data-version") + "; data to 2015: Chubb, MATS 1.02.", 16 * r, src.height + head + 18 * r);
+      g.fillText("Basemap: OpenFreeMap, OpenMapTiles, © OpenStreetMap contributors. " + viewUrl(), 16 * r, src.height + head + 34 * r);
+      out.toBlob(function (blob) {
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "scs-tracker-" + hashFor().slice(1) + ".png";
+        document.body.appendChild(a); a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+        if (citeDone) citeDone.textContent = "Image saved";
+      }, "image/png");
+    });
+    map.triggerRepaint();
+  }
+
   // ---- render ----------------------------------------------------------------------------------
   function whoLine() {
     var parts = [state.who === "ALL" ? "All claimants" : NAMES[state.who] || state.who];
@@ -522,12 +727,16 @@
       map.setFilter("asr-sel", ["==", ["get", "n"], state.sel === null ? -1 : state.sel]);
       drawMarkers(all);
       zoomClass();
-      ["maritime", "dashline"].forEach(function (k) { if (map.getLayer("ln-" + k)) map.setLayoutProperty("ln-" + k, "visibility", state.lines.indexOf(k) >= 0 ? "visible" : "none"); });
+      LINES.forEach(function (k) {
+        [k, k + "-label"].forEach(function (id) { if (map.getLayer("ln-" + id)) map.setLayoutProperty("ln-" + id, "visibility", state.lines.indexOf(k) >= 0 ? "visible" : "none"); });
+      });
     }
     renderDetail(all);
     renderTimeline();
     renderDecades();
+    renderClaimants();
     writeHash();
+    fillCite();
   }
   function setEnd(y) { state.end = clampEnd(y); render(); }
 

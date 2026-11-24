@@ -11,6 +11,16 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - Retraction: `CN201702` (the 2017 *draft* revision of the Maritime Traffic Safety Law) withdrawn by the maintainer — legislation is coded at enactment (April 2021). The id is retired (`data/reference/retired_moves.csv`) and will not be reused.
 - The home page is the assertiveness map (ticket 27): the ten sub-regions shaded by the type-weighted moves of a five-year window (or the build-up since 1970), counts and change arrows, the reefs, shoals and islands the moves name on zoom, a timeline, type / claimant / directed-at filters, decade maps, optional reference lines (Natural Earth), links to a view.
 - The other pages in the same style (ticket 28): six menu items (Tracker, Events, Trends, Cases, Methodology, Downloads), a slim banner on inner pages, Issues and domains and Sub-regions merged into Trends (old addresses redirect), short openings, toggle filters.
+- Official Asia Society Policy Institute logo on every page; EEZ boundaries from Marine Regions (v12, CC BY 4.0) in place of the indicative zones; 37 more features and more names for 52 others from GeoNames (CC BY 4.0) (ticket 31).
+- Every name on the maps in English (ticket 32): 43 features renamed from Chinese, pinyin or Vietnamese, 9 duplicates merged into their English features, event places shown in English (the recorded names are unchanged).
+- Candidates without a sub-region come to review with sub-regions suggested from their place (coasts, EEZs, seas, oil blocks) and the reason (ticket 33); new reference files `areas.csv` and `area_points.csv`.
+- Moves are also placed by their events' places and coordinates, and by four one-word feature names (ticket 34): 158 of 388 placed (was 144). Thitu Island shown under its English name.
+- A page for each reef, shoal or island with moves or a holder, and a By place index (ticket 35); who holds each feature, on the feature pages and as an optional map layer (ticket 36); new reference file `occupation.csv`; Ladd Reef's position corrected.
+- A selected sub-region's panel shows its score over every window, with the not-yet-coded years marked (ticket 37).
+- One small map per claimant for the window shown, on one shared scale (ticket 38).
+- Cite, download (PNG) or embed any view of the map (ticket 39).
+- A What's new page and Atom feed of moves added, updated and retracted (ticket 40).
+- Every candidate to the same place rules (English place, named features placed) at intake and on the runs open; 40 of Chubb's dated incidents given their move's places; 15 Chubb moves naming a feature outside their coded sub-regions listed for review (ticket 41).
 
 ## v2.0.0-dev — 2026-10-16
 

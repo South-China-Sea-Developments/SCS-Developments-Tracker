@@ -10,7 +10,7 @@ import pytest
 
 from pipeline import airtable, harvest, queue, schema
 from pipeline.validate import validate
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REVIEWER, DATE = "Test Coder", "2026-10-15"
@@ -24,13 +24,14 @@ def rows(d: Path, name: str) -> list[dict]:
 @pytest.fixture
 def opened(tmp_path):
     """A data copy with the fixture run's five candidates appended, as `queue open` leaves it."""
+    base = chubb_data(tmp_path / "base")     # the fixture's 2026 events are its own, not the dataset's
     d = tmp_path / "data"
     d.mkdir()
     for f in ("claimants", "moves", "events", "sources", "corrections"):
-        shutil.copy(DATA_DIR / f"{f}.csv", d / f"{f}.csv")
+        shutil.copy(base / f"{f}.csv", d / f"{f}.csv")
     run = tmp_path / "run"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
-                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)]) == 0
     assert queue.append_run(run, d) == (5, 5)
     assert queue.append_run(run, d) == (0, 0)          # idempotent: a second open adds nothing
     return d
