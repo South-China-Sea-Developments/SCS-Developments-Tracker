@@ -17,10 +17,20 @@
 <section class="amap" aria-labelledby="amap-title">
   <div class="amap-stage">
     <div id="amap" class="amap-canvas" role="region" aria-label="Map of the South China Sea: the ten sub-regions shaded by assertive moves in the selected five years"></div>
+    <div class="amap-left">
     <div class="amap-caption">
       <h1 id="amap-title" class="amap-title">Assertive moves, <span id="amap-when"></span></h1>
       <p class="amap-who" id="amap-who">All claimants</p>
       <div class="amap-legend"><span class="amap-legend-title">Degree of assertiveness</span><span class="amap-ramp" aria-hidden="true"></span><span class="amap-ends" aria-hidden="true"><span>Low</span><span>High</span></span></div>
+    </div>
+    {# the latest moves (option H5, chosen 2026-11-24), under the caption: the newest by their first event #}
+    {% if latest_moves %}<section class="amap-latest" aria-labelledby="amap-latest-title">
+      <h2 id="amap-latest-title" class="kicker">Latest moves</h2>
+      <ol class="amap-latest-list">
+        {% for m in latest_moves %}<li><a href="cases/{{ m.id }}.html"><span class="amap-latest-meta">{{ m.date }} · {{ m.claimant }}</span><span class="amap-latest-gist">{{ m.gist }}</span></a></li>
+        {% endfor %}</ol>
+      <a class="amap-latest-all" href="map.html">All events on the Events page</a>
+    </section>{% endif %}
     </div>
     <a class="amap-cue" href="#amap-explore">Explore the map</a>
     <a class="embed-credit" id="amap-embed-credit" href="index.html" target="_blank" rel="noopener">SCS Developments Tracker ↗</a>
