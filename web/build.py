@@ -484,7 +484,7 @@ def slim_geojson(gj: dict) -> dict:
 FILE_WHAT = {
     "claimants.csv": "Claimant codes and names.",
     "moves.csv": "One row per move: Type, Domain, Issue and sub-region flags, dyads, description, ongoing-through, provenance.",
-    "events.csv": "One row per event: dates, place, summary, status, machine suggestions, review and harvest provenance.",
+    "events.csv": "One row per event: dates, place, summary, status and provenance.",
     "sources.csv": "One row per source per event: URL, title, publisher, date, excerpt.",
     "corrections.csv": "Documented corrections to MATS-era rows.",
     "mavd_subregions.geojson": "The ten MAVD sub-region polygons (WGS84).",

@@ -23,6 +23,8 @@
 
   function monthIndex(iso) { return (parseInt(iso.slice(0, 4), 10) - FIRST) * 12 + parseInt(iso.slice(5, 7), 10) - 1; }
   function monthName(k) { return MONTHS[k % 12] + " " + (FIRST + Math.floor(k / 12)); }
+  var MONTHS_FULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function monthFull(k) { return MONTHS_FULL[k % 12] + " " + (FIRST + Math.floor(k / 12)); }
   var lastMonth = Math.max((DATA.last_year - FIRST) * 12 + 11, Math.max.apply(null, EVENTS.map(function (e) { return monthIndex(e.ds); }).concat([0])));
   EVENTS.forEach(function (e) { e.ms = monthIndex(e.ds); e.me = Math.max(e.ms, monthIndex(e.de)); });
   slider.max = String(lastMonth);
@@ -188,7 +190,7 @@
     e.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
     el("p", "event-summary", (e.n ? e.n + ". " : "") + (e.s || "(no summary)"), li);
     var meta = el("p", "event-meta", undefined, li);
-    meta.textContent = "Sub-region " + e.sr.map(function (s) { return s + " " + SR_NAMES[s]; }).join(", ") + (e.lat !== undefined ? (e.lp === "feature" ? " · at a named feature" : " · position known") : "") +
+    meta.textContent = e.sr.map(function (s) { return s + " " + SR_NAMES[s]; }).join(", ") +
       (e.src ? " · " + e.src + (e.src === 1 ? " source" : " sources") : "") + (e.seed ? " · from MATS" : "");
     return li;
   }
@@ -241,8 +243,11 @@
     timeLabel.value = when;
     slider.setAttribute("aria-valuetext", when);
     countEl.textContent = "";
+    countEl.dataset.placed = String(placed);          // the counts the line no longer spells out (2026-11-24); the tests read them
+    countEl.dataset.bySubregion = String(hits.length);
     el("span", "count-n", hits.length + (hits.length === 1 ? " event" : " events"), countEl);
-    el("span", "count-detail", " " + when + " · " + hits.length + " by sub-region, " + placed + " placed at a point" +
+    var whenFull = f.w ? (f.w === 1 ? monthFull(f.to) : monthFull(f.from) + " to " + monthFull(f.to)) : "through " + monthFull(f.to);
+    el("span", "count-detail", " " + whenFull +
       (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : ""), countEl);
     renderList(hits);
   }
