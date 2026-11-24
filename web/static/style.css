@@ -99,23 +99,13 @@ a:focus-visible, button:focus-visible, input:focus-visible + .swatch, input:focu
 /* the image edge to edge; on wide screens the height is capped at 32 % of the width, which keeps the logo, the title
    and its rule (the top two thirds of the artwork) in view; under 700px the whole image shows */
 .banner { overflow: hidden; }
-/* inner pages (ticket 30, option 2): the slim strip opens to the whole banner under the pointer or on focus,
-   over the page; the box keeps the strip's height so nothing below moves */
+/* inner pages (ticket 30): the slim strip, a link home; it no longer opens to the whole banner under the
+   pointer or on focus (the maintainer, 2026-11-23) */
 .banner-fold { position: relative; height: clamp(84px, 11vw, 150px); z-index: 20; }
-.banner-fold .banner { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: var(--sea); overflow: hidden; pointer-events: none;
-  transition: height 0.45s ease, box-shadow 0.45s ease; }
-/* only the strip itself answers the pointer: the opened banner lets it through, so moving down onto the
-   page closes it and nothing underneath is ever blocked */
+.banner-fold .banner { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: var(--sea); overflow: hidden; pointer-events: none; }
 .banner-hit { position: absolute; inset: 0; z-index: 1; }
 .banner-hit:focus-visible { outline: 2px solid var(--focus-dark); outline-offset: -3px; }
-.banner-img { display: block; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: center 35%; transition: object-position 0.45s ease; }
-@media (hover: hover) {
-  .banner-fold:hover .banner { height: calc(100vw * 950 / 2219); box-shadow: 0 8px 24px rgba(var(--shadow), 0.3); }
-  .banner-fold:hover .banner-img { object-position: center center; }
-}
-.banner-fold:focus-within .banner { height: calc(100vw * 950 / 2219); }
-.banner-fold:focus-within .banner-img { object-position: center center; }
-@media (prefers-reduced-motion: reduce) { .banner-fold .banner, .banner-img { transition: none; } }   
+.banner-img { display: block; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: center 35%; }
 .banner-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .navband { background: var(--navy); border-top: 1px solid var(--band-rule); }
 .navband-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4) var(--s6); min-height: 52px; }
