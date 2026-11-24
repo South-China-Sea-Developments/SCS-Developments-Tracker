@@ -233,6 +233,10 @@ def test_candidates_fit_the_canonical_schema(fixture_run, tmp_path):
     for name, src in (("events", "candidates"), ("sources", "sources")):
         with open(fixture_run / f"{src}.csv", newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
+        key = schema.TABLES[name][0]           # as `queue open` does, skip ids the data already holds: a
+        with open(d / f"{name}.csv", newline="", encoding="utf-8") as f:   # weekly run can capture a fixture's document
+            have = {r[key] for r in csv.DictReader(f)}
+        rows = [r for r in rows if r[key] not in have]
         with open(d / f"{name}.csv", "a", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=schema.TABLES[name], lineterminator="\n")
             w.writerows(rows)
