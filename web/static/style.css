@@ -550,6 +550,8 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 .amap-who { margin: 2px 0 var(--s2); color: var(--ink-2); font-size: 0.9rem; }
 .amap-legend { display: grid; gap: 3px; width: 14rem; max-width: 100%; }
 .amap-legend-title { font-size: 0.8rem; font-weight: 600; color: var(--ink-2); }
+.amap-scope { margin: var(--s3) 0 0; padding-top: var(--s2); border-top: 1px solid var(--rule); font-size: 0.78rem; line-height: 1.45; color: var(--ink-2); }   /* what the map measures (2026-11-24) */
+.amap-scope a { white-space: nowrap; }
 .amap-ramp { display: block; height: 10px; border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(var(--shadow), 0.12); }
 .amap-ends { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
 .amap-cue { position: absolute; left: 50%; top: calc(var(--fold) - 48px); transform: translateX(-50%); z-index: 2; font-size: 0.85rem; font-weight: 600;
@@ -583,6 +585,7 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
   .amap-cue { display: none; }
   .amap-title { font-size: 1.15rem; }
   .amap-caption { padding: var(--s2) var(--s3); }
+  .amap-scope { display: none; }   /* phone: the map is half the screen; the methodology says it */
 }
 @media print { .amap-stage { position: static; height: 480px; } .amap-panel { margin-top: var(--s4); width: auto; justify-self: stretch; } .amap-cue { display: none; } }
 /* sub-region counts (far out) and features (zoomed in) */
@@ -748,7 +751,7 @@ html.curtain-on { overflow: hidden; }
 .amap-cite-actions { margin: 2px 0 0; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
 .embed-credit { display: none; }
 /* embedded: the map and its caption only, with a link back */
-html.embed .site-head, html.embed .colophon, html.embed .masthead, html.embed .skip, html.embed .amap-panel, html.embed .amap-cue, html.embed .amap-latest, html.embed .curtain { display: none !important; }
+html.embed .site-head, html.embed .colophon, html.embed .masthead, html.embed .skip, html.embed .amap-panel, html.embed .amap-cue, html.embed .amap-latest, html.embed .amap-scope, html.embed .curtain { display: none !important; }
 html.embed body { margin: 0; }
 html.embed .amap-stage { height: 100vh; position: relative; top: 0; }
 html.embed .embed-credit { display: block; position: absolute; left: 10px; bottom: 10px; z-index: 5; background: rgba(255,255,255,0.94); padding: 3px 8px; border-radius: 4px; font-size: 12px; color: var(--ink, #0c1a2a); text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
