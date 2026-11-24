@@ -710,6 +710,8 @@ def test_the_first_screen_is_the_assertiveness_map(browser, dist):
     assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
     assert page.locator(".site-head .masthead").count() == 1, "the masthead heads the home page too (2026-11-24)"
     assert page.locator("#map").count() == 0, "one map on the home page"
+    scope = page.locator(".amap-caption .amap-scope")
+    assert scope.is_visible() and "not every incident" in scope.inner_text() and scope.locator("a").get_attribute("href") == "methodology.html#what", "what the map measures (2026-11-24)"
     stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
     assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
     # it opens on the latest five years with moves (the fixture's data ends in 2015); the slider reaches the build year
