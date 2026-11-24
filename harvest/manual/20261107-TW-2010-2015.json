@@ -1,0 +1,1385 @@
+[
+ {
+  "claimant": "TW",
+  "date_start": "2010-02-01",
+  "date_end": "2010-02-01",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "On 1 February 2010 the Coast Guard Administration fixed a house-number plate, 'No. 1 Nansha, Neighbourhood 18, Zhongxing Village, Cijin District' (Kaohsiung), on its Nansha Command building on Taiping Island, an act the Control Yuan described as a declaration of sovereignty.",
+  "actors": "Coast Guard Administration (Nansha Command)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A municipal address affixed to a disputed feature is unilateral administration; demonstrative, low salience (a Pratas plate was put up in 1999). Only source is the Control Yuan report PDF, so the excerpt (one line of its text layer) cannot be machine-checked.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權與太平島護土任務案",
+    "publisher": "Control Yuan, ROC",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "99 年 2 月 1 日，海巡署於南沙指揮部掛上「旗"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2010-07-27",
+  "date_end": "2010-07-27",
+  "date_precision": "day",
+  "location_name": "Dongsha Island (Pratas)",
+  "subregion": "",
+  "summary": "Interior Minister Jiang Yi-huah presided over the opening of the Dongsha Atoll National Park management station on Dongsha Island, saying the park showed ROC sovereignty over the Dongsha Islands and reasserting that the South China Sea islands and surrounding waters are ROC territory.",
+  "actors": "Ministry of the Interior (Minister Jiang Yi-huah); Marine National Park Headquarters",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A minister's visit to open park administration facilities on a disputed feature, with a sovereignty statement, is unilateral administration; demonstrative. Taipei Times (28 Jul, 'yesterday') read through a web fetch; the Control Yuan report PDF gives 27 July in its table of official visits but 21 July in its island narrative, so a coder should note the discrepancy.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2010/07/28/2003478982",
+    "title": "Dongsha marine park headquarters unveiled",
+    "publisher": "Taipei Times",
+    "pub_date": "2010-07-28",
+    "language": "en",
+    "excerpt": "After declaring the Dongsha Islands (東沙群島, known as the Pratas Islands in English) and the atolls around them"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告（節略版）：南海諸群島主權與太平島護土任務案",
+    "publisher": "Control Yuan, ROC",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "(１５)內政部部長於 99 年 7 月 27 日前往東沙島主"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2010-07-29",
+  "date_end": "2010-07-29",
+  "date_precision": "day",
+  "location_name": "South China Sea (Spratly, Paracel, Macclesfield Bank, Pratas)",
+  "subregion": "",
+  "summary": "After US Secretary of State Clinton's remarks on the South China Sea at the ASEAN Regional Forum in Hanoi, the Foreign Ministry issued a statement reasserting ROC sovereignty over the Spratly, Paracel, Macclesfield Bank and Pratas islands and their waters, refusing to recognise any other state's claim or occupation, and calling on neighbouring states to avoid unilateral measures.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A formal sovereignty statement with non-recognition of rival claims is a verbal assertion; declarative. MOFA's 7 Jun 2011 release counts it as the first of four such statements since July 2010, the start of a run. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=72053",
+    "title": "中華民國外交部重申南海議題立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2010-07-29",
+    "language": "zh-TW",
+    "excerpt": "任何國家無論以任何理由或方式予以主張或佔據，中華民國政府一概不予承認。"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-04-17",
+  "date_end": "2011-04-17",
+  "date_precision": "day",
+  "location_name": "South China Sea (Spratly Islands)",
+  "subregion": "",
+  "summary": "Amid disputes raised by other states over South China Sea features (following the Philippines' 5 April 2011 note to the UN), the Foreign Ministry spokesman and then a formal press release reasserted that the Spratly Islands and their waters are ROC territory and that the ROC recognises no other claim or occupation of the four island groups.",
+  "actors": "Ministry of Foreign Affairs (spokesman)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A formal sovereignty statement is a verbal assertion; declarative. The link to the Philippine note is context, not stated in the release. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=72519",
+    "title": "中華民國外交部重申南海議題立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2011-04-17",
+    "language": "zh-TW",
+    "excerpt": "南沙群島及其所屬水域為中華民國固有疆域，中華民國擁有其主權"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-04-18",
+  "date_end": "2011-04-18",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Vice Foreign Minister Shen Ssu-tsun summoned MECO chairman Amadeo Perez and Philippine representative Antonio Basilio, restated the ROC's South China Sea position, protested any act infringing ROC sovereignty, handed over a document asserting sovereignty over the four island groups and urged Manila not to take unilateral measures.",
+  "actors": "Ministry of Foreign Affairs (Vice Minister Shen Ssu-tsun)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "Summoning another claimant's envoys to protest is a formal diplomatic protest; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=68518",
+    "title": "外交部常務次長沈斯淳就南海問題約晤「馬尼拉經濟文化辦事處」主席培瑞茲及菲國駐華代表白熙禮",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2011-04-18",
+    "language": "zh-TW",
+    "excerpt": "並表示對任何侵犯我主權的作法均嚴正表達抗議"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-04-27",
+  "date_end": "2011-04-27",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Island; Taiping Island (Itu Aba)",
+  "subregion": "",
+  "summary": "From 27 April 2011 the army soldiers seconded to the Coast Guard garrisons on Pratas and Taiping islands were replaced by marines, the CGA announced on 18 April, ending an eleven-year absence of marines from the South China Sea outposts.",
+  "actors": "Coast Guard Administration; ROC Marine Corps",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Sending better-trained military personnel to garrison disputed features is a unilateral military presence measure; demonstrative, new in kind since the 1999-2000 handover to the CGA. CNA report on GlobalSecurity (402 to scripts); excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2011/taiwan-110418-cna02.htm",
+    "title": "After 11-year hiatus, ROC marines to return to South China Sea: CGA",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2011-04-18",
+    "language": "en",
+    "excerpt": "Taiwan will soon replace army soldiers stationed on remote islands in the South China Sea with marines"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-04-27",
+  "date_end": "2011-04-27",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "The navy's annual midshipmen 'friendship fleet' stopped at Taiping Island while sailing to the South China Sea, and fleet officers disembarked to meet the Coast Guard garrison, a move local media read as highlighting ROC sovereignty.",
+  "actors": "ROC Navy (friendship fleet)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A naval port call at a disputed feature is a show of presence; demonstrative, low salience. Date is 'Wednesday' in a Taipei Times report of Monday 2 May 2011, i.e. 27 April. Taipei Times mirror (taiwantt.org.tw).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2011/05/20110502-04.htm",
+    "title": "CGA rejects Taiping plan: report",
+    "publisher": "Taipei Times (taiwantt.org.tw mirror)",
+    "pub_date": "2011-05-02",
+    "language": "en",
+    "excerpt": "Also yesterday, the ministry said the navy’s friendship fleet, which is on its"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-05-09",
+  "date_end": "2011-05-09",
+  "date_precision": "day",
+  "location_name": "Paracel and Spratly Islands",
+  "subregion": "",
+  "summary": "Responding to Vietnam's note No. 77/HC-2011 to the United Nations of 3 May 2011 claiming the Paracel and Spratly islands, the Foreign Ministry reasserted ROC sovereignty over the four South China Sea island groups and their waters and non-recognition of any other claim.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A rebuttal of another claimant's UN filing is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=73385",
+    "title": "外交部重申中華民國對南沙群島、西沙群島、中沙群島、東沙群島及其周遭水域擁有主權",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2011-05-09",
+    "language": "zh-TW",
+    "excerpt": "針對越南於本（100）年5月3日向聯合國遞交之No.77/HC-2011節略"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-05-24",
+  "date_end": "2011-05-24",
+  "date_precision": "day",
+  "location_name": "Reed Bank; Paracel and Spratly Islands",
+  "subregion": "6",
+  "summary": "After Vietnam's foreign ministry (19 May) called the Paracels and Spratlys Vietnamese and the Philippine presidential palace (23 May) said Reed Bank belonged to Palawan, the Foreign Ministry declared Reed Bank part of the ROC's Spratly Islands and reasserted sovereignty over the four island groups.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RP"
+  ],
+  "reasoning": "A statement naming a specific feature against two rival claimants is a verbal assertion; declarative, new in naming Reed Bank. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=68691",
+    "title": "外交部重申中華民國對南沙群島、西沙群島、中沙群島、東沙群島及其周遭水域擁有主權，並呼籲各方協商對話、和平解決南海爭端。",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2011-05-24",
+    "language": "zh-TW",
+    "excerpt": "查禮樂灘（Reed Bank）為南沙群島島礁之一"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-06-10",
+  "date_end": "2011-06-10",
+  "date_precision": "day",
+  "location_name": "Paracel and Spratly Islands",
+  "subregion": "",
+  "summary": "Amid the June 2011 China-Vietnam and China-Philippines incidents, the Foreign Ministry again declared that the Spratly, Paracel, Macclesfield Bank and Pratas islands and their waters are inherent ROC territory, responding to neighbouring states that had recently claimed the Paracels and Spratlys.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A formal sovereignty statement is a verbal assertion; declarative, the fifth statement since July 2010 (a 7 Jun 2011 MOFA release defending the government's record counted four). Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=72985",
+    "title": "中華民國外交部茲再次重申南沙群島、西沙群島、中沙群島、東沙群島及其周遭水域為我固有領土及水域，其主權屬於中華民國，不容質疑。",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2011-06-10",
+    "language": "zh-TW",
+    "excerpt": "針對南海週遭國家邇來將屬於我國的西沙群島及南沙群島宣稱為其領土事"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2011-07-20",
+  "date_end": "2011-07-20",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "On the day ASEAN and China agreed guidelines for implementing the Declaration on the Conduct of Parties, the Foreign Ministry reasserted ROC sovereignty and declared that any South China Sea mechanism should include the ROC and that it would not recognise any agreement reached without its participation.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A statement rejecting a multilateral arrangement that excludes the ROC is a verbal assertion; declarative, new in target (the DOC process). Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=71108",
+    "title": "外交部重申中華民國對南沙群島、西沙群島、中沙群島、東沙群島及其周遭水域擁有主權，任何與南海相關之機制應邀我國參與，對於無我方參與所達成之任何協議，中華民國政府一概不予承認。",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2011-07-20",
+    "language": "zh-TW",
+    "excerpt": "對於無我方參與所達成之任何協議，中華民國政府一概不予承認"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-03-12",
+  "date_end": "2012-03-12",
+  "date_precision": "day",
+  "location_name": "Reed Bank; waters off north-west Palawan (Areas 3 and 4)",
+  "subregion": "6",
+  "summary": "Responding to Philippine plans to open oil and gas Areas 3 and 4 off north-west Palawan and Reed Bank to bidding, the Foreign Ministry declared Philippine exploration and development in ROC territory and waters illegal and void and restated that Reed Bank is part of the ROC's Spratly Islands, noting seven releases on the South China Sea since early 2011.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A statement declaring another claimant's resource licensing illegal is a verbal assertion; declarative, energy issue. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=72978",
+    "title": "中華民國外交部針對菲律賓邇來持續在我固有領土及水域中探勘及開發油氣事，嚴正重申我一貫南海主張及立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-03-12",
+    "language": "zh-TW",
+    "excerpt": "菲律賓邇來持續在我固有領土及水域中探勘及開發油氣，係屬違法無效"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-03-31",
+  "date_end": "2012-03-31",
+  "date_precision": "day",
+  "location_name": "Thitu Island (Zhongye Island, Pag-asa)",
+  "subregion": "5",
+  "summary": "Responding to Philippine plans to build a wharf on Thitu (Zhongye) Island, the Foreign Ministry reasserted that Thitu is one of the ROC's Spratly Islands and that the ROC does not recognise any other state's claim or occupation.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A protest against another claimant's construction on an occupied feature is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=71687",
+    "title": "中華民國外交部針對菲律賓將於南沙群島之中業島興建碼頭事，嚴正重申我一貫南海主張及立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-03-31",
+    "language": "zh-TW",
+    "excerpt": "針對菲律賓將於南沙群島之中業島興建碼頭並宣稱有權在主權範圍內修建設施事"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-04-20",
+  "date_end": "2012-04-20",
+  "date_precision": "day",
+  "location_name": "Scarborough Shoal (Huangyan Island)",
+  "subregion": "4",
+  "summary": "During the China-Philippines standoff at Scarborough Shoal, the Foreign Ministry declared that Huangyan Island belongs to the ROC's Macclesfield Bank group (Zhongsha) and that the ROC recognises no other claim or occupation.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP",
+   "RC"
+  ],
+  "reasoning": "A sovereignty statement on a feature in active dispute between two other claimants is a verbal assertion; declarative, new in naming Scarborough. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70683",
+    "title": "中華民國外交部嚴正重申中沙群島所屬黃岩島及其週遭水域為我國固有領土及水域",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-04-20",
+    "language": "zh-TW",
+    "excerpt": "黃岩島為中沙群島島礁之一"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-04-30",
+  "date_end": "2012-04-30",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "Three ruling KMT legislators of the Foreign Affairs and National Defense Committee visited Taiping Island to defend the country's sovereignty amid regional tensions; Vietnam protested on 10 May that the visit by ROC officials violated its sovereignty.",
+  "actors": "Legislative Yuan (KMT legislators, Foreign Affairs and National Defense Committee)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A visit by state legislators to a disputed feature to assert sovereignty is a show of presence; demonstrative, and it drew a Vietnamese protest. CNA report on GlobalSecurity (402 to scripts); excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/military/library/news/2012/04/mil-120430-cna01.htm",
+    "title": "Lawmakers visit Taiping Island to defend Taiwan's sovereignty",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2012-04-30",
+    "language": "en",
+    "excerpt": "A group of lawmakers of the ruling Kuomintang visited Taiwan-controlled Taiping Island Monday"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-05-10",
+  "date_end": "2012-05-10",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "After Vietnam's foreign ministry said the visit of ROC officials to Taiping Island violated Vietnamese sovereignty, the Foreign Ministry declared Taiping inherent ROC territory, called Vietnam's statement contrary to fact and restated its sovereignty over the four island groups.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A rebuttal of another claimant's protest is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=73363",
+    "title": "針對越南外交部指稱我國官員訪問太平島係侵犯越南主權事，中華民國外交部嚴正重申太平島屬中華民國固有領土，主權不容置疑",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-05-10",
+    "language": "zh-TW",
+    "excerpt": "中華民國外交部嚴正重申太平島屬中華民國固有領土，主權不容置疑"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-05-10",
+  "date_end": "2012-05-10",
+  "date_precision": "day",
+  "location_name": "Dongsha Islands (Pratas)",
+  "subregion": "",
+  "summary": "Seven legislators from the KMT, DPP and PFP, led by Foreign and National Defense Committee co-convener Mark Chen, flew to the Dongsha Islands to reassert Taiwan's claim amid South China Sea tensions and to visit the coast guard garrison.",
+  "actors": "Legislative Yuan (cross-party delegation led by Mark Chen)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A legislative visit to a disputed feature to assert sovereignty is a show of presence; demonstrative, low salience (Pratas is contested only by the PRC). Taipei Times mirror ('yesterday' in the 11 May issue).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2012/05/20120511-01.htm",
+    "title": "Cross-party group makes visit to Dongsha Islands",
+    "publisher": "Taipei Times (taiwantt.org.tw mirror)",
+    "pub_date": "2012-05-11",
+    "language": "en",
+    "excerpt": "Seven legislators from across the political spectrum flew to the Dongsha Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-06-22",
+  "date_end": "2012-06-22",
+  "date_precision": "day",
+  "location_name": "Pratas, Spratly, Macclesfield Bank and Paracel Islands",
+  "subregion": "",
+  "summary": "After Vietnam's National Assembly passed its Law of the Sea (21 June) and China announced Sansha City, the Foreign Ministry expressed serious concern and protest at 'improper measures' by South China Sea neighbours and reasserted ROC sovereignty over the four island groups.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RV",
+   "RC"
+  ],
+  "reasoning": "A protest statement against other claimants' legislation and administrative acts is a verbal assertion; declarative. The release does not name the states; the link to Vietnam's law and Sansha is context. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=73030",
+    "title": "外交部重申中華民國對東沙、南沙、中沙及西沙群島及其周遭水域擁有主權",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-06-22",
+    "language": "zh-TW",
+    "excerpt": "近來南海周邊國家就南海諸島礁及其鄰近水域採取不當舉措，中華民國外交部表達嚴正關切與抗議"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-07-20",
+  "date_end": "2012-07-20",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "Responding to Vietnam's concern over a possible extension of the Taiping Island airstrip and a visit by university students to the island, the Foreign Ministry declared that the ROC exercises effective governance on Taiping and restated its sovereignty claim.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A rebuttal of another claimant's objections is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70901",
+    "title": "中華民國外交部嚴正重申太平島屬中華民國固有領土，主權不容置疑",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-07-20",
+    "language": "zh-TW",
+    "excerpt": "中華民國政府在該島實施有效治理之措施，不容置疑"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-07-24",
+  "date_end": "2012-07-24",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "The Ministry of National Defense announced it was ready to deploy 120mm mortars and 40mm anti-aircraft guns to Taiping Island to strengthen the coast guard garrison; the weapons were shipped in August 2012.",
+  "actors": "Ministry of National Defense; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Upgrading weapons on a disputed outpost is a unilateral military build-up without confrontation; demonstrative, new in kind (heavier weapons than the CGA had held). Vietnam protested in early August (see MOFA 10 Aug). CNA on GlobalSecurity (402 to scripts); excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2012/taiwan-120724-cna01.htm",
+    "title": "Taiwan reinforces military deployment in South China Sea",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2012-07-24",
+    "language": "en",
+    "excerpt": "is standing ready to deploy mortars and anti-aircraft guns on Taiping Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-08-10",
+  "date_end": "2012-08-10",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "After Vietnam said the ROC's strengthened military deployment on Taiping violated Vietnamese sovereignty and demanded it stop, the Foreign Ministry reasserted sovereignty and declared the ROC's activities on the island lawful.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A rebuttal defending a military deployment against another claimant's protest is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70570",
+    "title": "針對外界報導，越南頃再指稱我國加強太平島軍事部署係侵犯越南主權，致區域局勢緊張，要求我停止該等活動事，外交部再次嚴正重申太平島屬中華民國固有領土，主權不容置疑",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2012-08-10",
+    "language": "zh-TW",
+    "excerpt": "我國在該島上進行之相關活動及措施，均屬合法作為，不致引起區域情勢緊張。"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-08-31",
+  "date_end": "2012-08-31",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba) and Zhongzhou Reef (Sand Cay), Spratly Islands",
+  "subregion": "5",
+  "summary": "National Security Council Secretary-General Hu Wei-jen, Interior Minister Lee Hong-yuan and CGA Minister Wang Jinn-wang visited Taiping Island on the president's behalf and landed on nearby Zhongzhou Reef to raise the ROC flag, the first such flag-raising there in Ma's presidency.",
+  "actors": "National Security Council (Hu Wei-jen); Ministry of the Interior (Lee Hong-yuan); Coast Guard Administration (Wang Jinn-wang)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A visit by the most senior officials of Ma's term with a flag-raising on a second, unoccupied feature is a show of presence; demonstrative, wider in scope (Zhongzhou). CNA on GlobalSecurity (402 to scripts); excerpt read through a web fetch.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2012/taiwan-120831-cna01.htm",
+    "title": "Senior Taiwan officials visit Taiping Island to assert sovereignty",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2012-08-31",
+    "language": "en",
+    "excerpt": "including National Security Council Secretary-General Hu Wei-chen,"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-09-04",
+  "date_end": "2012-09-04",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "The Coast Guard held its annual live-fire drill on Taiping Island, firing machine guns and 81mm mortars and practising with the newly delivered 40mm guns and 120mm mortars, watched by three legislators of the Foreign Affairs and National Defense Committee; the Foreign Ministry had notified neighbouring countries of the drill on 20 August.",
+  "actors": "Coast Guard Administration (Nansha Command); Legislative Yuan",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A live-fire exercise on a disputed feature is a unilateral show of force without confrontation; demonstrative, with greater scope than before (new weapons, legislators present, prior notification). Taipei Times (5 Sep, 'yesterday') read through a web fetch; CNA of 20 Aug gave the planned window 1-5 Sep.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2012/09/05/2003541991",
+    "title": "Lawmakers observe live-fire drill on Taiping Island",
+    "publisher": "Taipei Times",
+    "pub_date": "2012-09-05",
+    "language": "en",
+    "excerpt": "visited Itu Aba Island (Taiping Island, 太平島) to observe a live-fire drill held by the Coast Guard Administration."
+   },
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2012/taiwan-120820-cna02.htm",
+    "title": "Taiwan to conduct live-fire drill on Taiping Island",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2012-08-20",
+    "language": "en",
+    "excerpt": "is scheduled to carry out a live-fire exercise Sept. 1-5 on Taiping Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-12-01",
+  "date_end": "2012-12-31",
+  "date_precision": "month",
+  "location_name": "Waters around Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Officials of the Ministry of Economic Affairs said the Bureau of Mines and state-run CPC Corp would begin exploring for oil and gas in the sea around Taiping Island in 2013, with a monthly budget of NT$17 million.",
+  "actors": "Ministry of Economic Affairs (Bureau of Mines, Bureau of Energy); CPC Corp, Taiwan",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "An official announcement of planned state resource exploration in disputed waters is a verbal assertion of resource rights; declarative (the survey itself is the Oct 2013 event). Reported by the Taipei Times on 28 Dec and AFP on 29 Dec ('yesterday'); the announcement's exact day is not stated, so month precision. AFP via The Peninsula, read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://thepeninsulaqatar.com/article/29/12/2012/taiwan-plans-oil-gas-exploration-in-south-china-sea",
+    "title": "Taiwan plans oil, gas exploration in South China Sea",
+    "publisher": "The Peninsula (AFP)",
+    "pub_date": "2012-12-29",
+    "language": "en",
+    "excerpt": "Taiwan plans to start exploring for oil and gas in the South China Sea from next year,"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2012/12/28/2003551168",
+    "title": "Oil exploration planned off Itu Aba",
+    "publisher": "Taipei Times",
+    "pub_date": "2012-12-28",
+    "language": "en",
+    "excerpt": "Taiwan will launch oil exploration efforts in waters off Itu Aba Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-01-02",
+  "date_end": "2013-01-03",
+  "date_precision": "day",
+  "location_name": "Paracel and Spratly Islands",
+  "subregion": "",
+  "summary": "The Foreign Ministry issued a statement of strong concern and protest on 2 January over Vietnam's Law of the Sea, in force from 1 January 2013, which claims the Paracel and Spratly islands, instructed its office in Hanoi to convey the position, and its spokesman Steve Hsia restated the protest on 3 January.",
+  "actors": "Ministry of Foreign Affairs (spokesman Steve Hsia); Taipei Economic and Cultural Office in Vietnam",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A formal protest against another claimant's legislation is a verbal assertion; declarative. The 2 Jan statement is not in the MOFA online archive; CNA on GlobalSecurity (402 to scripts), excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/military/library/news/2013/01/mil-130103-cna01.htm",
+    "title": "Taiwan protests Vietnam law that claims South China Sea islands",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2013-01-03",
+    "language": "en",
+    "excerpt": "Taiwan has voiced strong concern and protest over a new maritime law enacted by Vietnam"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-04-01",
+  "date_end": "2013-04-30",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "Coast Guard personnel on Taiping Island held a live-fire drill in mid-April 2013, using the 40mm anti-aircraft guns and 120mm mortars deployed the previous August, as part of safeguarding sovereignty; CGA Minister Wang Jinn-wang confirmed it to the legislature on 22 April and said such drills are held every six months.",
+  "actors": "Coast Guard Administration (Nansha Command)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A live-fire drill on a disputed feature is a unilateral show of force; demonstrative, routine (semi-annual) but the first with the new heavy weapons fired. CNA on GlobalSecurity (402 to scripts); excerpt read through a web fetch; day not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2013/taiwan-130422-cna01.htm",
+    "title": "Taiwan holds live-fire drill in Spratlys: official",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2013-04-22",
+    "language": "en",
+    "excerpt": "conducted a live-fire drill earlier this month"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-05-09",
+  "date_end": "2013-05-10",
+  "date_precision": "day",
+  "location_name": "164 nm south-east of Eluanbi (Taiwan-Philippines overlapping waters, near the Balintang Channel)",
+  "subregion": "",
+  "summary": "After a Philippine Bureau of Fisheries vessel shot dead fisherman Hung Shih-cheng on the Guang Da Xing No. 28 on 9 May, the ROC envoy in Manila protested that night and on 10 May Vice Foreign Minister Shih Ding summoned the Philippine representative, demanding an apology, punishment and compensation and proposing a fisheries agreement for the overlapping waters; Foreign Minister David Lin protested publicly the same day.",
+  "actors": "Ministry of Foreign Affairs (Minister David Lin, Vice Minister Shih Ding); ROC representative in Manila",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A formal protest over an incident in claimed overlapping EEZ waters is a verbal assertion; declarative. The site lies off the Luzon Strait rather than inside the South China Sea proper; included because MOFA ties the dispute to the Taiwan-Philippine overlapping waters (see Gaps). Primary MOFA press releases (9 and 10 May).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=68593",
+    "title": "外交部強烈抗議及譴責菲律賓公務船槍擊我漁船",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2013-05-09",
+    "language": "zh-TW",
+    "excerpt": "中華民國政府對於菲律賓公務船在我鵝鑾鼻東南方164海浬附近水域槍擊我國籍漁船「廣大興28號」"
+   },
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=68961",
+    "title": "外交部部長林永樂召開記者會表達對菲律賓公務船槍擊我國籍漁船事件之強烈抗議與譴責",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2013-05-10",
+    "language": "zh-TW",
+    "excerpt": "以解決兩國漁民在臺菲重疊海域長期以來的漁務糾紛"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-05-11",
+  "date_end": "2013-05-11",
+  "date_precision": "day",
+  "location_name": "Taiwan-Philippines overlapping waters",
+  "subregion": "",
+  "summary": "The ROC government (President Ma) set the Philippines four demands - formal apology, compensation, investigation and punishment, and the start of fisheries talks - and threatened that if Manila did not respond within 72 hours of midnight on 12 May it would freeze Filipino worker applications, recall its representative and ask the Philippine representative to leave.",
+  "actors": "Office of the President; Ministry of Foreign Affairs",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "An ultimatum threatening diplomatic and economic punishment is a threat of punishment; coercive under Chubb's definitions (the task brief proposed treating it as declarative, so a coder should weigh this). Same location caveat as the 9 May protest. Primary MOFA press release.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=69519",
+    "title": "中華民國要求菲律賓政府自5月12日零時起72小時內正面回應我方4項嚴正要求",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2013-05-11",
+    "language": "zh-TW",
+    "excerpt": "中華民國政府向菲律賓政府提出四項嚴正要求"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-05-15",
+  "date_end": "2013-05-15",
+  "date_precision": "day",
+  "location_name": "Taiwan-Philippines overlapping waters",
+  "subregion": "",
+  "summary": "Judging President Aquino's apology insufficient, Premier Jiang Yi-huah announced at 6pm on 15 May that the first three and a further eight retaliatory measures (eleven in all) were in force, including a freeze on Filipino worker applications, recall of the ROC representative, a travel alert, and suspension of exchanges, while MOFA called the Philippine vessel's entry into Taiwan's EEZ an illegal use of force.",
+  "actors": "Executive Yuan (Premier Jiang Yi-huah); Ministry of Foreign Affairs",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "Imposing diplomatic and economic sanctions on another state over a fisheries incident in claimed EEZ waters is an imposition of punishment; coercive. Sanctions were lifted on 8 Aug 2013. Taipei Times mirror (16 May issue, 'yesterday') and MOFA release of 17 May.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2013/05/20130516-01.htm",
+    "title": "Sanctions on Philippines beefed up as row escalates",
+    "publisher": "Taipei Times (taiwantt.org.tw mirror)",
+    "pub_date": "2013-05-16",
+    "language": "en",
+    "excerpt": "The government launched eight retaliatory measures, including a travel alert on"
+   },
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=72704",
+    "title": "中華民國外交部請馬尼拉經濟文化辦事處理事主席裴瑞茲返回菲律賓向菲國政府傳達我政府嚴正要求",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2013-05-17",
+    "language": "zh-TW",
+    "excerpt": "在此一事件中，菲國公務船係侵入我專屬經濟海域攻擊我無武裝的漁船"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-05-25",
+  "date_end": "2013-05-25",
+  "date_precision": "day",
+  "location_name": "Second Thomas Shoal (Ren'ai Shoal), Spratly Islands",
+  "subregion": "6",
+  "summary": "The Foreign Ministry expressed concern and protested the Philippines' recent dispatch of naval vessels to Second Thomas Shoal (Ren'ai Shoal), declaring any claim or occupation of the feature illegal and unrecognised.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A protest against another claimant's naval activity at a specific feature is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70692",
+    "title": "中華民國外交部關切並抗議菲律賓邇來派遣軍艦前往我南沙群島仁愛暗沙的非法作為，並重申嚴正立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2013-05-25",
+    "language": "zh-TW",
+    "excerpt": "中華民國外交部關切並抗議菲律賓邇來派遣軍艦前往我南沙群島仁愛暗沙的非法作為"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-10-07",
+  "date_end": "2013-10-08",
+  "date_precision": "day",
+  "location_name": "Waters off Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "A team of technicians from state-run CPC Corp sailed to Taiping Island on 7 October 2013 and completed a geological survey for natural gas and oil in the surrounding waters on 8 October, legislator Lin Yu-fang's office announced.",
+  "actors": "CPC Corp, Taiwan; Ministry of Economic Affairs",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A state-company hydrocarbon survey in disputed waters is unilateral resource activity; demonstrative, new for Taiwan in this period. AFP via The Peninsula (9 Oct, 'Monday' and 'Tuesday'), read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://thepeninsulaqatar.com/article/09/10/2013/taiwan-risks-tensions-with-survey-of-disputed-spratlys",
+    "title": "Taiwan risks tensions with survey of disputed Spratlys",
+    "publisher": "The Peninsula (AFP)",
+    "pub_date": "2013-10-09",
+    "language": "en",
+    "excerpt": "TAIPEI: Taiwan has conducted a natural gas and oil survey in the disputed Spratly Islands,"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-11-01",
+  "date_end": "2013-11-30",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "From November 2013 the Ministry of Transportation and Communications, the Ministry of National Defense and the Coast Guard Administration began a transport infrastructure upgrade on Taiping Island, rebuilding the wharf to take 3,000-tonne vessels and improving the runway; Vietnam objected in early November 2013.",
+  "actors": "Ministry of Transportation and Communications; Ministry of National Defense; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Construction of a port and runway works on a disputed feature is unilateral construction; demonstrative, new in scale. Date from MOFA's 7 Jul 2015 statement (month only); the opening is the 12 Dec 2015 event. Primary MOFA statement.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=75162",
+    "title": "中華民國對南海問題之立場聲明",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2015-07-07",
+    "language": "zh-TW",
+    "excerpt": "自民國102年（2013年）11月起，由交通部、國防部與海巡署共同執行南沙太平島交通基礎整建工程。"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2014-04-10",
+  "date_end": "2014-04-10",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "The navy landed marines on Taiping Island in an exercise escorted by navy frigates, with landing craft bringing more than 20 assault vehicles ashore; Deputy Defense Minister Andrew Hsia and legislator Lin Yu-fang described it at the end of April as asserting Taiwan's claim.",
+  "actors": "ROC Navy; ROC Marine Corps",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "An amphibious military exercise on a disputed feature is a unilateral show of force without confrontation; demonstrative, new in kind (the largest such drill since the military left in 2000, per The Diplomat). CNA on GlobalSecurity (402 to scripts); excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2014/taiwan-140428-cna02.htm",
+    "title": "Taiwan marines conduct drill in Spratlys: lawmaker",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2014-04-28",
+    "language": "en",
+    "excerpt": "Taiwan's marines, escorted by a fleet of Navy frigates,"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2014-05-09",
+  "date_end": "2014-05-09",
+  "date_precision": "day",
+  "location_name": "Paracel Islands",
+  "subregion": "2",
+  "summary": "During the China-Vietnam confrontation over the Haiyang Shiyou 981 rig, the Foreign Ministry expressed serious concern and reasserted ROC sovereignty and sovereign rights over the four island groups, declaring any other claim or occupation illegal.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RC",
+   "RV"
+  ],
+  "reasoning": "A sovereignty statement on a clash between two other claimants is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=72197",
+    "title": "針對近來西沙群島附近海域衝突事，中華民國外交部表達嚴正關切，並重申我政府立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2014-05-09",
+    "language": "zh-TW",
+    "excerpt": "中華民國擁有主權及主權權利，不容置疑"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2014-11-03",
+  "date_end": "2014-11-04",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "The Coast Guard held live-fire drills on Taiping Island on 3-4 November 2014, which it described as annual; Vietnam's foreign ministry protested and asked Taiwan to stop.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A live-fire exercise on a disputed feature is a unilateral show of force; demonstrative, routine. Reuters via Macau Daily Times and Hanoi Times, read through web fetches.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://macaudailytimes.com.mo/south-china-sea-disputes-taiwan-conducts-live-fire-drills-spratlys-angering-vietnam.html",
+    "title": "Taiwan conducts live fire drills on Spratlys, angering Vietnam",
+    "publisher": "Macau Daily Times (Reuters)",
+    "pub_date": "2014-11-05",
+    "language": "en",
+    "excerpt": "Taiwan's coast guard was conducting a second day of live-fire drills on an island in the disputed Spratly chain"
+   },
+   {
+    "url": "https://hanoitimes.vn/vietnam-protests-requests-taiwan-to-stop-fire-in-truong-sa-17232.html",
+    "title": "Vietnam protests, requests Taiwan to stop fire in Truong Sa",
+    "publisher": "Hanoi Times",
+    "pub_date": "2014-11-04",
+    "language": "en",
+    "excerpt": "Foreign Ministry spokesman Le Hai Binh said:"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2014-12-14",
+  "date_end": "2014-12-14",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "The government launched the second phase of a solar power system on Taiping Island, run by the Coast Guard Administration, as part of turning the island into a 'low-carbon island'; with the first phase (2011) it supplies about 16 percent of the island's electricity.",
+  "actors": "Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Building permanent civil infrastructure on a disputed feature is unilateral construction; demonstrative, low salience. Taipei Times (Tue 16 Dec, 'Sunday') read through a web fetch.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2014/12/16/2003606867",
+    "title": "Itu Aba launches second phase solar power system",
+    "publisher": "Taipei Times",
+    "pub_date": "2014-12-16",
+    "language": "en",
+    "excerpt": "The government on Sunday launched the second phase of a solar power system on Itu Aba Island (Taiping Island, 太平島),"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2015-05-26",
+  "date_end": "2015-05-26",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Opening the ILA-ASIL Asia-Pacific Research Forum in Taipei, President Ma Ying-jeou restated that the Spratly, Paracel, Macclesfield Bank and Pratas islands and their waters are inherent ROC territory and proposed the South China Sea Peace Initiative, asking that the ROC be included in regional mechanisms and that sovereignty disputes be shelved for joint resource development.",
+  "actors": "Office of the President (President Ma Ying-jeou)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A presidential sovereignty restatement packaged with a peace proposal is a verbal assertion; declarative, mixed with conciliatory content a coder may discount. Primary Presidential Office transcript.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4643",
+    "title": "President Ma's remarks at opening ceremony of “2015 ILA-ASIL Asia-Pacific Research Forum”",
+    "publisher": "Office of the President, ROC (Taiwan)",
+    "pub_date": "2015-05-26",
+    "language": "en",
+    "excerpt": "But to peacefully resolve disputes in the South China Sea, the ROC government is proposing the South China Sea Peace Initiative."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2015-07-07",
+  "date_end": "2015-07-07",
+  "date_precision": "day",
+  "location_name": "South China Sea; Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "As the arbitral tribunal held its jurisdiction hearing in the Philippines v. China case, the Foreign Ministry issued a 'Statement on the South China Sea' asserting ROC sovereignty over the four island groups, that Taiping Island is an island and not a rock under UNCLOS Article 121, and that no arrangement on Taiping or other features reached without ROC participation and consent would be recognised.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP"
+  ],
+  "reasoning": "A formal statement defending a feature's legal status against an arbitration claim is a legal-verbal assertion; declarative, new in content (Taiping's island status). Primary MOFA statement (聲明 archive).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=75162",
+    "title": "中華民國對南海問題之立場聲明",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2015-07-07",
+    "language": "zh-TW",
+    "excerpt": "中華民國堅決捍衛太平島為一島嶼之事實"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2015-10-31",
+  "date_end": "2015-10-31",
+  "date_precision": "day",
+  "location_name": "South China Sea; Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "After the tribunal's 29 October 2015 award on jurisdiction in the Philippines v. China arbitration, the Foreign Ministry reasserted ROC sovereignty and Taiping's island status and declared that, as the ROC was neither invited nor consulted, it neither recognised nor accepted the tribunal's rulings.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A formal rejection of an international tribunal's rulings is a legal-verbal assertion; declarative. Primary MOFA press release (an English version is News_Content.aspx?n=1329&s=32669).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=73836",
+    "title": "中華民國政府重申對南海議題之立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+    "pub_date": "2015-10-31",
+    "language": "zh-TW",
+    "excerpt": "故本案與中華民國完全無涉，中華民國政府對其相關判斷既不承認，亦不接受"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2015-12-12",
+  "date_end": "2015-12-12",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "Interior Minister Chen Wei-zen and CGA Minister Wang Chung-yi flew to Taiping Island and presided over the opening of the rebuilt wharf (318m, able to take 3,000-tonne ships) and a new lighthouse on the 69th anniversary of the island's recovery from Japan.",
+  "actors": "Ministry of the Interior (Minister Chen Wei-zen); Coast Guard Administration (Minister Wang Chung-yi)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A ministerial visit opening new port and navigation infrastructure on a disputed feature is unilateral construction and administration; demonstrative. CNA via eyeontaiwan.com (curl-readable); Ma's 28 Jan 2016 remarks give the wharf dimensions.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.eyeontaiwan.com/wharf-lighthouse-on-taiping-island-inaugurated",
+    "title": "Wharf, lighthouse on Taiping Island inaugurated",
+    "publisher": "Eye On Taiwan (CNA)",
+    "pub_date": "2015-12-12",
+    "language": "en",
+    "excerpt": "Saturday over the opening of a renovated wharf and a newly constructed lighthouse on Taiping Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2015-12-13",
+  "date_end": "2015-12-14",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba), Spratly Islands",
+  "subregion": "5",
+  "summary": "After Vietnam on 13 December called the wharf and lighthouse opening illegal and invalid, the Foreign Ministry replied that the interior minister's inspection was an exercise of Taiwan's sovereignty over its own territory and none of any other nation's business.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A rebuttal of another claimant's protest is a verbal assertion; declarative. The reply's day is not stated in the 15 Dec Taipei Times report (Vietnam objected on Sunday 13 Dec), so the range is 13-14 Dec. Read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2015/12/15/2003634849",
+    "title": "Taiping trip none of other nations’ business: MOFA",
+    "publisher": "Taipei Times",
+    "pub_date": "2015-12-15",
+    "language": "en",
+    "excerpt": "was an exercise of Taiwan's sovereignty over its territory"
+   }
+  ]
+ }
+]

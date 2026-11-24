@@ -1,0 +1,54 @@
+{
+ "run_id": "MY-1970s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-af41776905",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: Operation Terumbu's tri-service landing and sovereignty markers on Amboyna Cay and other claimed Spratly features is the first Malaysian physical presence in the Spratlys; Malaysia has no 1974 candidate or move, so nothing comparable last year."
+  },
+  {
+   "event_id": "ev-8155996da4",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the Law Minister's public announcement of a coming 200-mile EEZ, notified to Vietnam and possibly reaching the Spratlys, is Malaysia's first verbal maritime-jurisdiction claim; there is no 1976 candidate, so nothing comparable last year. Separate from the physical marking ev-4093c90634."
+  },
+  {
+   "event_id": "ev-4093c90634",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "New again: the 1975 marking (ev-af41776905) has no 1976 counterpart, so re-erecting the Amboyna Cay sign over a Vietnamese marker and pressing surveys and markings at Swallow Reef and other reefs is an intensification against a blank 1976 (and wider in scope than 1975). The 1977 vs 1978 dating conflict in the sources should be settled first; if 1978, it moves to that year."
+  },
+  {
+   "event_id": "ev-413bef2512",
+   "disposition": "continuation",
+   "of": "ev-8155996da4",
+   "reason": "Repeats the 1977 announcement of a coming EEZ (ev-8155996da4) at the same level, with more emphasis on exclusive resource rights but no new method; general (dyad MA) rather than aimed at a rival. Provisional on 1977 being decided."
+  },
+  {
+   "event_id": "ev-6203883aff",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the Prime Minister's representation to Pham Van Dong over Vietnamese troops on Amboyna Cay is Malaysia's first protest to a rival over a feature; 1977's record (EEZ announcement ev-8155996da4, marking ev-4093c90634) has no démarche."
+  },
+  {
+   "event_id": "ev-19cdf47a22",
+   "disposition": "unclear",
+   "reason": "The 13 June 1979 cabinet decision to build ten sovereignty monuments is a decision, and the guide dates behaviour, not decisions; the monuments went up under Operation Tugu from January 1980. It is settled by whether the decision was made public in 1979 (then a novelty declarative move against 1978's ev-6203883aff) or not (then evidence for the 1980 construction move)."
+  },
+  {
+   "event_id": "ev-bd12e6ed48",
+   "disposition": "continuation",
+   "of": "ev-413bef2512",
+   "reason": "A further ministerial statement that the EEZ is being prepared, at the same level as 1978's ev-413bef2512 (itself continuing 1977's ev-8155996da4); the proclamation came only in April 1980. Provisional on 1978 being decided."
+  },
+  {
+   "event_id": "ev-72def46a32",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: the Peta Baru of 21 December 1979 is Malaysia's first formal legal claim enclosing about a dozen Spratly features, Amboyna Cay and Commodore Reef among them; 1978's record has only EEZ statements (ev-413bef2512) and a démarche (ev-6203883aff), nothing comparable."
+  }
+ ]
+}

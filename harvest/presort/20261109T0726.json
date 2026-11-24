@@ -1,0 +1,111 @@
+{
+ "run_id": "20261109T0726",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-093344fd02",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-c40458e043 (the 5 August 2021 demand that China stop its 6-10 August Hainan-Paracels drill), which continues 2020's protests of Paracel drills (ev-376d9688bb, ev-a878b8c8e1); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as continuation of ev-c40458e043."
+  },
+  {
+   "event_id": "ev-ea81d4b361",
+   "disposition": "continuation",
+   "of": "ev-9a3bba41b6",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run CN-2021-2026 as ev-9a3bba41b6 (AMTI's 2024 count of near-daily CCG patrols, including 359 days at Luconia Shoals); a headline-only nine-month aggregate of the same presence."
+  },
+  {
+   "event_id": "ev-c4d9537fea",
+   "disposition": "continuation",
+   "of": "ev-2777b78ee9",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-2777b78ee9 (28 March 2024 statement that landings on Sandy Cay violate Vietnam's sovereignty, matching the headline's date) or ev-efc9a54e4a (23 March); headline-only."
+  },
+  {
+   "event_id": "ev-ce3166efbd",
+   "disposition": "continuation",
+   "of": "ev-58c6e500d3",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-58c6e500d3 (25 April 2024 rejection of China's annual fishing ban), itself a routine yearly repeat."
+  },
+  {
+   "event_id": "ev-439f16eb84",
+   "disposition": "continuation",
+   "of": "ev-3a41c8e0ac",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run MY-2021-2026 as ev-3a41c8e0ac (Anwar's September 2024 statement that oil exploration in Malaysian waters will go on despite Beijing's protest); the October headline restates it."
+  },
+  {
+   "event_id": "ev-ab915932c4",
+   "disposition": "continuation",
+   "of": "ev-acf008fd20",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run MY-2021-2026 as ev-acf008fd20 (15 new exploratory wells off Sarawak in 2024) and ev-86771ff4f6 (2024 block awards); the headline names no new block or area."
+  },
+  {
+   "event_id": "ev-c92a77c9df",
+   "disposition": "continuation",
+   "of": "ev-172c2ceb83",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run ID-2021-2026 as ev-172c2ceb83 (Bakamla's repeated expulsions of CCG 5402 from the North Natuna Sea, 21-25 October 2024); the ANTARA headline reports one of those expulsions."
+  },
+  {
+   "event_id": "ev-0de72d09cf",
+   "disposition": "continuation",
+   "of": "ev-62168e8294",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run VN-2021-2026 as ev-62168e8294 (21 November 2024 response to the Philippines' maritime zones laws and China's feature names); headline-only."
+  },
+  {
+   "event_id": "ev-7dc0c2294b",
+   "disposition": "continuation",
+   "of": "ev-53baf85095",
+   "criterion": null,
+   "group": null,
+   "reason": "Same act/practice already in run MY-2021-2026 as ev-53baf85095 (2026 statement that Malaysia maintains a show of presence at Beting Patinggi Ali), continuing the Op Satria monitoring of Luconia (ev-6a19ca049d, 2025); headline-only."
+  },
+  {
+   "event_id": "ev-2830669532",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not clearly an assertive act of the claimant on its claim: a warning to the Quad (non-claimants) not to raise the dispute asserts no specific claim and nothing comparable is in CN's 2025-2026 record; likely reject unless the full text restates sovereignty. Same report as ev-9c52dbaad2."
+  },
+  {
+   "event_id": "ev-9c52dbaad2",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Same headline as ev-2830669532 (a different outlet): a warning to the Quad not to raise the dispute asserts no specific claim; likely reject unless the full text restates sovereignty, and in any case one report with ev-2830669532."
+  },
+  {
+   "event_id": "ev-06258f3fec",
+   "disposition": "continuation",
+   "of": "ev-5319572db3",
+   "criterion": null,
+   "group": null,
+   "reason": "Defence Secretary Teodoro condemning China's actions continues the DND's 2026 public rejections of Chinese claims and conduct (ev-5319572db3, May 2026); headline-only, no new method."
+  },
+  {
+   "event_id": "ev-bbd552aeb5",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Headline-only statement by Teodoro that PH-China oil exploration in the West Philippine Sea is illegal; nothing comparable in PH's 2025-2026 record. The full article would show whether it asserts the claim against China (declarative, possibly new) or is domestic comment on a cooperative proposal (likely reject)."
+  }
+ ]
+}

@@ -1,0 +1,202 @@
+{
+ "run_id": "TW-1990s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-52c1d45738",
+   "disposition": "continuation",
+   "of": "ev-3c246a4303",
+   "reason": "A Ministry of the Interior national stele on Taiping with a restatement of sovereignty repeats, at the same level, the MOI national monument erected on Pratas in 1989 (ev-3c246a4303, the previous run's undecided candidate); provisional until 1989 is decided. If the coder reads the Taiping stele as wider scope than Pratas, it is a scope move."
+  },
+  {
+   "event_id": "ev-9ae176e838",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A Kaohsiung administrative committee taking over Taiping as part of Qijin District, with a fishery station, is a new civil-administration arrangement for the Spratlys, against only a monument in 1989 (ev-3c246a4303, prev file); the 1979 Kaohsiung assignment is too old to count against novelty."
+  },
+  {
+   "event_id": "ev-d06478552c",
+   "disposition": "unclear",
+   "reason": "Internal MOI committees to draft baselines and maritime laws, adopting a historic-waters reading, are a decision rather than observable behaviour; the assertion surfaces in 1991's Bandung statement (ev-898c54618e) and the 1993 guidelines. Likely reject unless the coder treats the committees as an administrative arrangement governing the area."
+  },
+  {
+   "event_id": "ev-285ff72e79",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A Foreign Minister's reaffirmation of the Spratly claim, against no ROC claim statement in 1989 (ev-3c246a4303, prev file, is a monument); the 1988 reassertions were absent in 1989, so it is new again. Weak: occasion and wording unknown, and a coder may fold it with the stele's reiteration (ev-52c1d45738)."
+  },
+  {
+   "event_id": "ev-8c8bcba4df",
+   "disposition": "unclear",
+   "reason": "An MOI-hosted conference at which a retired admiral urged driving out foreign troops: the hawkish words are not an official's, so not an assertive act of the claimant — likely reject; one-line source."
+  },
+  {
+   "event_id": "ev-898c54618e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First ROC public claim that the SCS is a body of water under ROC jurisdiction where others need its approval (historic waters), against 1990's island-only reaffirmation ev-285ff72e79 and the internal committees ev-d06478552c; a new kind of claim, also wider in scope."
+  },
+  {
+   "event_id": "ev-01399e569c",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A military geodetic datum survey on Pratas for construction surveys is a new kind of state activity on the feature, against 1990's Taiping administrative committee ev-9ae176e838 and stele ev-52c1d45738; low salience."
+  },
+  {
+   "event_id": "ev-02d67c1211",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1992-maritime-zones",
+   "reason": "Cabinet approval of 12-nm territorial sea and 200-nm EEZ bills covering Spratly waters is a legislative step beyond 1991's verbal historic-waters statement ev-898c54618e; lead of the 1992 maritime-jurisdiction move. Vietnam and the Philippines reacted."
+  },
+  {
+   "event_id": "ev-61d0cb477d",
+   "disposition": "same_move",
+   "of": "ev-02d67c1211",
+   "group": "TW1992-maritime-zones",
+   "reason": "The claimed right to sea and air patrols around Itu Aba is part of the same 1992 assertion of maritime jurisdiction led by ev-02d67c1211; known only from Vietnam's protest."
+  },
+  {
+   "event_id": "ev-1860b8c161",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A standing inter-ministerial South China Sea Task Force is a new administrative arrangement for managing the claim, nothing comparable in 1991 (ev-8c8bcba4df was a one-off conference); distinct from the maritime-zone bills ev-02d67c1211."
+  },
+  {
+   "event_id": "ev-2fa81fe86c",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The Interior Minister's own visit to Pratas to inaugurate the corridor around the national stele: ministerial landings and monuments were seen in 1990 (ev-52c1d45738) but absent in 1991 (ev-01399e569c is a survey), so new again. Low salience."
+  },
+  {
+   "event_id": "ev-ae8d604e7c",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Permanent water infrastructure (catchment aprons, reservoirs) on Taiping is construction with nothing comparable in 1991 (the Pratas datum ev-01399e569c only prepared construction). Year only; a coder may read garrison utilities as maintenance and reject."
+  },
+  {
+   "event_id": "ev-ca42aa19a0",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1993-policy-guidelines",
+   "reason": "The cabinet's South China Sea Policy Guidelines formally claim all four archipelagos and jurisdiction over historic waters, an official instrument going beyond 1992's maritime-zone bills ev-02d67c1211 and Task Force ev-1860b8c161; lead of the 1993 guidelines move."
+  },
+  {
+   "event_id": "ev-31d989d6cc",
+   "disposition": "same_move",
+   "of": "ev-ca42aa19a0",
+   "group": "TW1993-policy-guidelines",
+   "reason": "The RDEC chairman's public explanation of the U-line as historic waters expounds the guidelines adopted in ev-ca42aa19a0; same intensification."
+  },
+  {
+   "event_id": "ev-19a89a8cdd",
+   "disposition": "same_move",
+   "of": "ev-ca42aa19a0",
+   "group": "TW1993-policy-guidelines",
+   "reason": "The September conference held under the guidelines' implementation plan, proposing more presence and patrols, belongs with ev-ca42aa19a0; a decision, not behaviour, so a coder may reject it and code the patrols when they appear."
+  },
+  {
+   "event_id": "ev-8ae61b1da6",
+   "disposition": "continuation",
+   "of": "ev-ae8d604e7c",
+   "reason": "Desalination units on Taiping continue the 1992 water-supply works for the garrison (ev-ae8d604e7c) at the same level; provisional until 1992 is decided."
+  },
+  {
+   "event_id": "ev-81e97c9e67",
+   "disposition": "unclear",
+   "reason": "A draft plan for a military-capable runway on Taiping would be a novelty against 1992 (no airfield), but it is a plan known only through Vietnamese reactions and was not carried out in the decade. Settled by an ROC announcement of the plan (a declarative novelty) or by works on the ground."
+  },
+  {
+   "event_id": "ev-262ba8e3ea",
+   "disposition": "continuation",
+   "of": "ev-81e97c9e67",
+   "reason": "Reported plans for an airport, seaport and lighthouse at Itu Aba carry forward the unexecuted 1993 airstrip plan ev-81e97c9e67, again known only via Vietnam; provisional. If the coder takes the added port and lighthouse as a wider plan, scope."
+  },
+  {
+   "event_id": "ev-d30d956294",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "TW1994-guidelines-implementation",
+   "reason": "Cadastral survey and land registration of Pratas and Taiping is a new administrative method, against 1993's guidelines ev-ca42aa19a0 (which ordered it) and desalination units ev-8ae61b1da6; lead of the 1994 implementation move on the features."
+  },
+  {
+   "event_id": "ev-a7dc0e9405",
+   "disposition": "same_move",
+   "of": "ev-d30d956294",
+   "group": "TW1994-guidelines-implementation",
+   "reason": "The COA's marine survey of Taiping waters under the guidelines is part of the 1994 implementation led by ev-d30d956294; a coder may split it as a separate novelty (state scientific survey, none in 1993)."
+  },
+  {
+   "event_id": "ev-79152e15ac",
+   "disposition": "same_move",
+   "of": "ev-d30d956294",
+   "group": "TW1994-guidelines-implementation",
+   "reason": "The MOTC's announced build-up of the Itu Aba weather station, with a no-renunciation statement, belongs with the 1994 implementation led by ev-d30d956294; a coder may split it off."
+  },
+  {
+   "event_id": "ev-cc9f9ded2d",
+   "disposition": "continuation",
+   "of": "ev-31d989d6cc",
+   "reason": "A minister's restatement that the U-line waters are ROC historic waters repeats the 1993 official public line (ev-31d989d6cc, group of ev-ca42aa19a0) at the same level; provisional until 1993 is decided."
+  },
+  {
+   "event_id": "ev-d3dcb50147",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Artillery warning fire at the Vietnamese ship Bien Dong 80 near Ban Than is a coercive method with nothing comparable in 1994 (surveys, registration, statements: ev-d30d956294 group, ev-cc9f9ded2d); MOFA confirmed it as warning fire."
+  },
+  {
+   "event_id": "ev-e318e2c970",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Construction on Ban Than (Zhongzhou) reef extends ROC physical presence to a second Spratly feature beyond Itu Aba, against 1994 activity confined to Taiping and Pratas (ev-d30d956294 group); known only from Vietnam's statements."
+  },
+  {
+   "event_id": "ev-319c398726",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Dispatch of an armed police patrol to the Spratlys and Pratas is a new presence method against 1994 (no patrols in the candidates); recalled from the Spratly leg, it reached only Pratas, so a coder may weigh the announcement as the act."
+  },
+  {
+   "event_id": "ev-1fbc55f7ff",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A state memorial wall and ministry-commissioned archaeology on Taiping: monuments were absent in 1994 (ev-d30d956294 group), so new again; low salience, and the planned acceptance by the police patrol links it to ev-319c398726, with which a coder may merge it."
+  },
+  {
+   "event_id": "ev-39ffce2ffb",
+   "disposition": "unclear",
+   "reason": "An unnamed Manila office official's remark that the ROC might follow Beijing in extending maritime claims asserts nothing yet; likely reject as a conditional signal, unless the coder reads it as a declarative step after 1995's statements (ev-d3dcb50147's MOFA line)."
+  },
+  {
+   "event_id": "ev-4b5c2da0dc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First statutory territorial sea, contiguous zone and EEZ with enforcement penalties, against nothing in 1997 (no candidates); the 1992 bills ev-02d67c1211 are too old to count against novelty."
+  },
+  {
+   "event_id": "ev-f1f1f5745a",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Chief of the General Staff Tang Fei's landing on Taiping, the highest-ranking ever, with a monument: a top-level display of military presence against nothing in 1997; separate from the maritime laws ev-4b5c2da0dc."
+  },
+  {
+   "event_id": "ev-f4bdfb22a7",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First ROC territorial-sea baselines in the SCS (Pratas, Scarborough) and a declaration of all Spratly features inside the U-line, a new legal method against 1998's framework laws ev-4b5c2da0dc which left baselines to come; a coder may type it coercive under Chubb's baselines rule."
+  },
+  {
+   "event_id": "ev-b5af29b0b4",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The Kaohsiung mayor fixing a municipal house number on Pratas 'to declare sovereignty' is a new civil-administrative act, against 1998's military visit to Taiping ev-f1f1f5745a; low salience."
+  },
+  {
+   "event_id": "ev-df7250f50c",
+   "disposition": "unclear",
+   "reason": "A military press tour of the existing Pratas garrison publicises presence without changing it; no 1998 candidate shows such tours to name as continued. Likely reject as maintenance unless the coder treats publicising the garrison as a novelty."
+  }
+ ]
+}

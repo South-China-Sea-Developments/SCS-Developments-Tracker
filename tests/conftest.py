@@ -8,6 +8,39 @@ RAW_MAVD = ROOT / "data/raw/mavd-arcgis-2023/All_Actions7.csv"
 DATA_DIR = ROOT / "data"
 
 
+def chubb_data(d: Path) -> Path:
+    """Copy data/ to d holding only what the loader made from MATS 1.02 and the MAVD table: Chubb's moves,
+    the seed events and their sources. The project's own decisions (moves coded_by=project, harvested
+    events and their sources) are stripped, so tests against Chubb's known counts, and the harvest
+    fixture's 2026 candidates (whose events the dataset may since have accepted), keep passing as the
+    dataset grows. Corrections stay: they document the chubb rows as they are."""
+    import csv
+    import shutil
+
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+
+    def filter_csv(name, keep):
+        with open(d / f"{name}.csv", newline="", encoding="utf-8") as f:
+            r = csv.DictReader(f)
+            fields, rows = r.fieldnames, [x for x in r if keep(x)]
+        with open(d / f"{name}.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        return rows
+
+    filter_csv("moves", lambda m: m["coded_by"] == "chubb")
+    kept = {e["event_id"] for e in filter_csv("events", lambda e: e["harvest_run_id"].startswith("seed"))}
+    filter_csv("sources", lambda s_: s_["event_id"] in kept)
+    return d
+
+
+@pytest.fixture(scope="session")
+def mats_data(tmp_path_factory):
+    """data/ as the loader made it from MATS 1.02 and the MAVD table (see chubb_data)."""
+    return chubb_data(tmp_path_factory.mktemp("mats") / "data")
+
+
 @pytest.fixture(scope="session")
 def loaded():
     """Canonical tables built in memory from the raw inputs (never touches data/*.csv)."""

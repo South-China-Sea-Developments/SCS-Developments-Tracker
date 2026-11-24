@@ -1,0 +1,161 @@
+{
+ "run_id": "20261109T0726",
+ "exported_on": "2026-11-24",
+ "records": [
+  {
+   "airtable_id": "rec6W5FETGR5doAu4",
+   "archived_on": "2026-11-24",
+   "suggestion_reasoning": "The headline reports a Chinese government message warning outside powers off the South China Sea dispute, a verbal statement, hence declarative. It is addressed to non-claimants, so the dyad is left unclear and this is a marginal candidate; the speaker and wording are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-07), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "CU",
+   "excerpt": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row - The Times of India — News search: South China Sea 2026-11-07\nhttps://news.google.com/rss/articles/CBMi2AFBVV95cUxOTGVVcUhGS1NoUlIxNVBreWM2NTFJTDEwNml5NzJpdlBXYTZoa2RydEdNUHdkdWJVN214MnFtNGNHdWJjQjVrNnZ2WV9ZcmlmQnB6bkpwNElFZkdCRFhMM2lFcVl5aWlnR1QtemR2RzdCY3IzWEgyN2E3dzNTaUdjZnMwUkpMUzJZT1NqLTVtM3ZRMFpzRkd6Y2VqUkZwQW5xSTV1cWpXQmtBX1JjOS0tRXZhZXQ4NGlTOHRIdUtsdFUyUWRFeEIzYTZhcjgtRHVpYnZZdmNtTTbSAd4BQVVfeXFMTzZFQTlIdlJtUmgtM1BzNWNreUtuMVVDa21YSnc5Z1NfZEU3SEVRYVZaSUlNVGMxYVFWeExTRkVWazZfYXl5ejlpcVpSRlpVTURuVUNUanlaSktRalVYOU1NMm5qVUY3Vmp5M1hMdEpFNkdhd3MzelFKVG1WREhMZDliaWp4cldGMlhQLUxoYTRWMVJqZFdNOEdZWHpNZURlY0lRNk13aTlramNQTVFmMkoyTnhFWnR6enlNal8zSFBRdjNCREZjOGVHdmc2V05TYVJPeVp5QndnUy1Kald3?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T19:22:16.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2830669532",
+   "run_id": "20261109T0726",
+   "note": "Routine",
+   "suggested_dyads": [
+    "CU"
+   ],
+   "summary": "China told the Quad countries not to raise the South China Sea dispute ahead of a summit, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "unclear — Not clearly an assertive act of the claimant on its claim: a warning to the Quad (non-claimants) not to raise the dispute asserts no specific claim and nothing comparable is in CN's 2025-2026 record; likely reject unless the full text restates sovereignty. Same report as ev-9c52dbaad2. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recA4y1vYU2aLLgmB",
+   "archived_on": "2026-11-24",
+   "possible_duplicate_of": "ev-2830669532",
+   "suggestion_reasoning": "The headline reports a Chinese government message warning outside powers off the South China Sea dispute, a verbal statement, hence declarative. It is addressed to non-claimants, so the dyad is left unclear and this is a marginal candidate; the speaker and wording are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-07), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "CU",
+   "excerpt": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:20:13.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Possible duplicate of ev-2830669532.",
+   "reviewer": "Angelo",
+   "sources": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row - inkl — News search: South China Sea 2026-11-07\nhttps://news.google.com/rss/articles/CBMimAFBVV95cUxPSmR6Tjl2YVBBemNvbnJGUXNFVFpfUEV1R0pwSTJnY0lmQ29pQVVXU2JrM191TmhoZldUeThISVV3bkV3VndXanQ2X3RPcm9OdnN1RnJubXRJX2s4SDRJWmVXQnFtVk9haHluOEZZMXZXTjRvNmxTbUx6dWZnMjItajhfTFRFMzdkcTQ3X0ZZQlRqZjN5UzN5Vw?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T19:22:30.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9c52dbaad2",
+   "run_id": "20261109T0726",
+   "note": "Routine",
+   "suggested_dyads": [
+    "CU"
+   ],
+   "duplicate_of": "ev-2830669532",
+   "summary": "China told the Quad countries not to raise the South China Sea dispute ahead of a summit, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "unclear — Same headline as ev-2830669532 (a different outlet): a warning to the Quad not to raise the dispute asserts no specific claim; likely reject unless the full text restates sovereignty, and in any case one report with ev-2830669532. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec3SM4D04wXvY47p",
+   "archived_on": "2026-11-24",
+   "actors": "Chinese Coast Guard",
+   "suggestion_reasoning": "The headline reports Chinese coast guard patrols in waters Malaysia regards as its own, a unilateral patrol with no confrontation described, hence demonstrative. The document is a headline only: it gives a nine-month aggregate (January to September 2024) rather than a single dated incident, names no specific feature, and does not itself say the waters are in the South China Sea, so the dating and coding are uncertain. [confidence: low]",
+   "date_end": "2024-09-30",
+   "new_dyads": "CM",
+   "excerpt": "Nine Chinese Coast Guard Vessels Patrolled Malaysian Waters from Jan-Sept 2024",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Nine Chinese Coast Guard Vessels Patrolled Malaysian Waters from Jan-Sept 2024 - Defence Security Asia — News search: Malaysia South China Sea 2024-10-20\nhttps://news.google.com/rss/articles/CBMitAFBVV95cUxNbFJLSUdtTVRZQzhCdmRnaXJKUXpQZGRNSjZYelFoT2lUVHB4RlMzREpkQXZqUktwUlBlaTRTSkJRX1VKZjdSbVZvTm1rMXUwMUtfQlFfZk1XTEtiNmFfQmh6QmI4MF8tTHAwM2tERGROMlZtMVBhYnJpR2lFRzF2Y1RibkRETHV5ZkNnc09ObXh6ZVNTZ0Iwc3pHX0N4dDJmbEdzY3c1U1ZUY2prbkNpcXRFUzY?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T15:17:36.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-ea81d4b361",
+   "run_id": "20261109T0726",
+   "suggested_dyads": [
+    "CM"
+   ],
+   "summary": "Nine China Coast Guard vessels patrolled waters described as Malaysian between January and September 2024, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-01-01",
+   "presort": "continuation of ev-9a3bba41b6 (a candidate, provisional) — Same act/practice already in run CN-2021-2026 as ev-9a3bba41b6 (AMTI's 2024 count of near-daily CCG patrols, including 359 days at Luconia Shoals); a headline-only nine-month aggregate of the same presence. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}
