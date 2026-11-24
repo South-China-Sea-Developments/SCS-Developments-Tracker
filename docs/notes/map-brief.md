@@ -18,6 +18,11 @@ Starting principles (to argue with, not settled):
   for those who want it.
 - **Events are detail on demand.** Dots and counts appear on zoom or on clicking a sub-region, to explain
   the colour, not to compete with it.
+- **A uniform sub-region view, points optional** (added 2026-11-20): every event counts on its
+  sub-region, so the colour covers the whole dataset however unevenly events could be placed; the points
+  are a layer the reader switches on.
+
+Agreed 2026-11-22: ticket 27 (`docs/tickets/27-map-redesign.md`) is the first version.
 
 Open questions for the spec: the weighting of types; whether to normalise by period length; how to show
 the comparability break (CN/VN/PH Chubb-coded to 2015, project-coded after; MY/ID/TW project-coded

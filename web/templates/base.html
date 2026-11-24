@@ -3,31 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}SCS Developments Tracker{% endblock %}</title>
+<title>{% block title %}South China Sea Developments Tracker{% endblock %}</title>
 <meta name="description" content="{% block description %}Assertive moves by claimant states in the South China Sea from 1970 onward. A continuation of the Maritime Assertiveness Time Series (MATS).{% endblock %}">
 <link rel="stylesheet" href="{{ root }}assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="SCS Developments Tracker: what's new" href="{{ root }}feed.xml">
+<script>/* embedded on another page (ticket 39): the map alone */ if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.className += " embed";</script>
 {% block head_data %}<script id="agg" type="application/json">{{ agg_json|safe }}</script>{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
-  {# The programme banner the maintainer supplied (ticket 17): logo and title as sent, on the sea band,
-     cropped from the top on wide screens so the logo and the title stay in view. The file is the institute's own high-resolution artwork. #}
-  <div class="banner">
-    <a class="banner-link" href="{{ root }}index.html"><img class="banner-img" src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950"></a>
-  </div>
+  {# The programme banner the maintainer supplied (ticket 17). Inner pages (ticket 30, option 2): a slim strip
+     on the title's first line that opens to the whole banner, logo and all, under the pointer or on keyboard
+     focus, over the page (the box keeps the strip's height in the flow). The home page shows it as an
+     opening curtain instead (home.html). The institute's logo is in the menu band on every page. #}
+  {% if page != 'index.html' %}<div class="banner-fold">
+  <div class="banner"><img class="banner-img" src="{{ root }}assets/img/banner.jpg" alt="South China Sea Research Initiative — Asia Society Policy Institute" width="2219" height="950"></div>
+  <a class="banner-hit" href="{{ root }}index.html" aria-label="South China Sea Research Initiative: the tracker's home page"></a>
+  </div>{% endif %}
   <div class="navband">
     <div class="wrap navband-row">
-      <a class="brand" href="{{ root }}index.html"><span class="brand-name">SCS Developments Tracker</span></a>
+      <a class="brand" href="{{ root }}index.html"><img class="brand-logo" src="{{ root }}assets/img/aspi-logo.png" alt="Asia Society Policy Institute" width="330" height="113"><span class="brand-name">South China Sea Developments Tracker</span></a>
       <nav class="nav" aria-label="Site">
-        <a href="{{ root }}index.html"{% if page in ('index.html', 'map.html') %} aria-current="page"{% endif %}>Tracker</a>
+        <a href="{{ root }}index.html"{% if page == 'index.html' %} aria-current="page"{% endif %}>Tracker</a>
+        <a href="{{ root }}map.html"{% if page == 'map.html' %} aria-current="page"{% endif %}>Events</a>
         <a href="{{ root }}trends.html"{% if page == 'trends.html' %} aria-current="page"{% endif %}>Trends</a>
         <a href="{{ root }}cases.html"{% if page in ('cases.html', 'case') %} aria-current="page"{% endif %}>Cases</a>
-        <a href="{{ root }}issues-domains.html"{% if page == 'issues-domains.html' %} aria-current="page"{% endif %}>Issues and domains</a>
-        <a href="{{ root }}subregions.html"{% if page == 'subregions.html' %} aria-current="page"{% endif %}>Sub-regions</a>
         <a href="{{ root }}methodology.html"{% if page == 'methodology.html' %} aria-current="page"{% endif %}>Methodology</a>
         <a href="{{ root }}downloads.html"{% if page == 'downloads.html' %} aria-current="page"{% endif %}>Downloads</a>
-        <a href="{{ meta.repo_url }}">Data and code</a>
       </nav>
     </div>
   </div>
@@ -40,8 +43,8 @@
 <footer class="colophon">
   <div class="wrap colophon-grid">
     <div class="colophon-about">
-      <p class="colophon-title">SCS Developments Tracker</p>
-      <p>Andrew Chubb's <em>Maritime Assertiveness Time Series</em>, extended to the present and to six claimants with the same coding rules.</p>
+      <p class="colophon-title">South China Sea Developments Tracker</p>
+      <p>Andrew Chubb's <em>Maritime Assertiveness Time Series</em>, extended to the present and to seven claimants with the same coding rules.</p>
     </div>
     <div>
       <p class="colophon-title">Provenance</p>
@@ -49,10 +52,11 @@
     </div>
     <div>
       <p class="colophon-title">Cite</p>
-      <p>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). <a href="{{ root }}downloads.html#cite">How to cite this dataset</a>.</p>
+      <p>Chubb, A. (2021), “PRC Assertiveness in the South China Sea: Measuring Continuity and Change, 1970–2015,” <em>International Security</em> 45(3): 79–121; Chubb, A. (2022), <em>Dynamics of Assertiveness in the South China Sea</em> (NBR). <a href="{{ root }}downloads.html#cite">How to cite this dataset</a> · <a href="{{ root }}whats-new.html">What's new</a> (<a href="{{ root }}feed.xml">feed</a>).</p>
     </div>
   </div>
 </footer>
+<script src="{{ root }}assets/site.js"></script>
 {% block scripts %}<script src="{{ root }}assets/charts.js"></script>{% endblock %}
 </body>
 </html>

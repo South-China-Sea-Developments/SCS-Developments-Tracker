@@ -49,6 +49,13 @@
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-left");
   map.addControl(new maplibregl.AttributionControl({ compact: false }));   // the style carries OpenFreeMap, OpenMapTiles and OSM
+  // events at their positions only from this zoom in; further out the sub-region counts carry them all
+  // (the maintainer, 2026-11-22: the dots should not compete with the counts)
+  var ZOOM_POINTS = 6;
+  var mapBox = document.getElementById("map");
+  function zoomClass() { mapBox.classList.toggle("zoomed", map.getZoom() >= ZOOM_POINTS); }
+  map.on("zoom", zoomClass);
+  map.on("load", zoomClass);
   map.on("error", function (e) {   // a missing tile, font or sprite is the offline case, not a fault
     var msg = e && e.error ? String(e.error.message || e.error) : "";
     if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("map: " + msg);
@@ -71,11 +78,33 @@
   var rootStyle = getComputedStyle(document.documentElement);
   var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#1a5e78").trim();
   var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#5d6b76").trim();
+
+  // reefs and small islands (Natural Earth), faint and only when zoomed in: the far view is unchanged
+  function addShapes(map, before) {
+    var S = DATA.assert && DATA.assert.shapes;
+    if (!S) return;
+    map.addSource("shp-islands", { type: "geojson", data: S.islands });
+    map.addLayer({ id: "shp-islands", type: "fill", source: "shp-islands", minzoom: 5.5,
+                   paint: { "fill-color": "#eceee9", "fill-outline-color": "#9aa6ac", "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5.5, 0, 6.2, 1] } }, before);
+    map.addSource("shp-reefs", { type: "geojson", data: S.reefs });
+    map.addLayer({ id: "shp-reefs", type: "line", source: "shp-reefs", minzoom: 5.5,
+                   paint: { "line-color": "#7f97a3", "line-width": 0.9, "line-dasharray": [2, 1.5], "line-opacity": ["interpolate", ["linear"], ["zoom"], 5.5, 0, 6.2, 0.9] } }, before);
+    var G = DATA.assert.gazetteer;
+    if (!G) return;
+    map.addSource("gz", { type: "geojson", data: G });
+    map.addLayer({ id: "gz-dot", type: "circle", source: "gz", minzoom: 6,
+                   paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 1.4, 9, 3], "circle-color": "#7d8a92",
+                            "circle-stroke-color": "#ffffff", "circle-stroke-width": 0.6, "circle-opacity": ["interpolate", ["linear"], ["zoom"], 6, 0, 6.6, 0.85] } }, before);
+    map.addLayer({ id: "gz-name", type: "symbol", source: "gz", minzoom: 7.6,
+                   layout: { "text-field": ["get", "n"], "text-font": ["Noto Sans Regular"], "text-size": 10, "text-offset": [0, 0.9], "text-anchor": "top", "text-optional": true },
+                   paint: { "text-color": "#5d6b76", "text-halo-color": "#ffffff", "text-halo-width": 1.2 } }, before);
+  }
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
     map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.1 } });
     // solid outlines: the basemap's boundaries are the dashed ones
     map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.75 } });
+    addShapes(map);
   });
 
   var srCenters = {};
@@ -121,7 +150,7 @@
              q: searchEl ? searchEl.value.trim().toLowerCase() : "" };
   }
   function haystack(e) {   // what the search box looks through: summary, place, claimant, move id, sub-region names
-    if (!e.hay) e.hay = [(NAMES[e.c] || e.c), e.m, e.n || "", e.s || "", e.sr.map(function (s) { return SR_NAMES[s] || ""; }).join(" ")].join(" ").toLowerCase();
+    if (!e.hay) e.hay = [(NAMES[e.c] || e.c), e.m, e.n || "", e.n0 || "", e.s || "", e.sr.map(function (s) { return SR_NAMES[s] || ""; }).join(" ")].join(" ").toLowerCase();
     return e.hay;
   }
   function matches(e, f) {

@@ -50,7 +50,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-from pipeline import schema
+from pipeline import places, schema
 from pipeline.queue import EDITABLE, read_table, repo_root, review_context
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -66,7 +66,7 @@ DATASET_STATUSES = ["In review", "Decision recorded", "Pulled into dataset", "Me
 RUN_TYPES = ["Weekly harvest", "Backfill", "Manual", "Catch-up"]
 RUN_VERDICTS = ["Pass", "Partial", "Failed", "No candidates"]
 REPO_URL = "https://github.com/South-China-Sea-Developments/SCS-Developments-Tracker"
-CLAIMANT_COLOURS = {"CN": "redLight2", "VN": "yellowLight2", "PH": "blueLight2", "MY": "greenLight2", "ID": "orangeLight2", "TW": "purpleLight2"}
+CLAIMANT_COLOURS = {"CN": "redLight2", "VN": "yellowLight2", "PH": "blueLight2", "MY": "greenLight2", "ID": "orangeLight2", "TW": "purpleLight2", "BN": "cyanLight2"}
 TYPE_COLOURS = {"declarative": "blueLight2", "demonstrative": "tealLight2", "coercive": "orangeLight2", "force": "redLight2"}
 PRECISION_COLOURS = {"day": "greenLight2", "month": "yellowLight2", "year": "orangeLight2"}
 SUBREGION_COLOURS = ["grayLight2", "redLight2", "orangeLight2", "yellowLight2", "greenLight2", "tealLight2", "cyanLight2", "blueLight2", "purpleLight2", "pinkLight2"]
@@ -359,24 +359,29 @@ def records_for_run(data_dir: Path, run_id: str, pr: int | None = None, run_reco
         ps = it.get("presort")
         presort = (f"{ps['label']} — {ps['reason']}" + (f" (group {ps['group']})" if ps.get("group") else "")
                    + f" [{ps['presorted_by']}]") if ps else None
+        # ticket 33: a candidate without a sub-region comes with the ones its place suggests, and why
+        guess = places.suggest_subregions(e) if not e["subregion"] else []
+        guessed = [_subregion_choice(str(g["subregion"])) for g in guess]
+        own = _subregion_choice(e["subregion"])
         rec = {
             "event_id": e["event_id"], "run_id": run_id, "pull_request": pr, "claimant": e["claimant"],
             "date_start": e["date_start"] or None, "date_end": e["date_end"] or None, "date_precision": e["date_precision"] or None,
             "location_name": e["location_name"], "location_precision": e["location_precision"] or None,
-            "subregion": _subregion_choice(e["subregion"]) or None, "lat": _num(e["lat"]), "lon": _num(e["lon"]),
+            "subregion": own or (guessed[0] if len(guessed) == 1 else None), "lat": _num(e["lat"]), "lon": _num(e["lon"]),
             "summary": e["summary"], "actors": e["actors"],
             "sources": "\n".join(" ".join(x for x in (s["title"] or s["url"], "—", s["publisher"], s["pub_date"]) if x) + "\n" + s["url"] for s in srcs),
             "excerpt": "\n\n".join(s["excerpt"] for s in srcs if s["excerpt"]),
             "suggested_type": e["suggested_type"] or None, "suggested_domains": e["suggested_domains"].split() or None,
             "suggested_issues": e["suggested_issues"].split() or None, "suggested_dyads": e["suggested_dyads"].split() or None,
-            "suggestion_reasoning": e["suggestion_reasoning"], "machine_note": e["review_note"],
+            "suggestion_reasoning": e["suggestion_reasoning"],
+            "machine_note": "\n".join(x for x in (e["review_note"], places.note(guess)) if x),
             "possible_duplicate_of": dup, "presort": presort,
             "flags": flags_for(e) or None, "dataset_status": "In review", "run": [run_record] if run_record else None,
             "previous_year_moves": _moves_text(it["previous_year_moves"]), "same_year_moves": _moves_text(it["same_year_moves"]),
             "decision": "undecided", "duplicate_of": dup, "reviewer": reviewer or None,
             "new_type": e["suggested_type"] or None, "new_dyads": e["suggested_dyads"],
             "new_domains": e["suggested_domains"].split() or None, "new_issues": e["suggested_issues"].split() or None,
-            "new_subregions": [_subregion_choice(e["subregion"])] if _subregion_choice(e["subregion"]) else None,
+            "new_subregions": [own] if own else (guessed or None),
         }
         out.append({k: v for k, v in rec.items() if v not in (None, "")})
     return out

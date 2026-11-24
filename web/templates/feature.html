@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ feature.name }} — South China Sea Developments Tracker{% endblock %}
+{% block description %}{{ feature.name }}: {{ feature.moves|length }} assertive move{{ '' if feature.moves|length == 1 else 's' }} placed here since {{ meta.first_year }}{% if feature.held %}; held by {{ feature.held.by|join(' and ') }}{% endif %}.{% endblock %}
+{% block head_data %}{% endblock %}
+{% block content %}
+<article class="case feature-page">
+  <p class="crumbs"><a href="{{ root }}features.html">Places</a> / {{ feature.name }}</p>
+  <header class="case-head">
+    <h1>{{ feature.name }}</h1>
+    <p class="feature-sub">{{ feature.kind|capitalize }}{% if feature.subregion %} in sub-region {{ feature.subregion }} {{ subregion_names[feature.subregion] }}{% endif %}
+      {% if feature.held %} · <span class="feature-held">{% for c in feature.held.codes %}<span class="case-claimant" data-code="{{ c }}">{{ names.get(c, c) }}</span>{% if not loop.last %} and {% endif %}{% endfor %} holds it{% if feature.held.since %} since {{ feature.held.since }}{% endif %}</span>{% endif %}</p>
+  </header>
+
+  <div class="case-body">
+    <section class="case-main">
+      <h2>Moves placed here</h2>
+      {% if feature.moves %}
+      <p class="feature-count">{{ feature.moves|length }} move{{ '' if feature.moves|length == 1 else 's' }} since {{ meta.first_year }}:
+        {% for c, n in feature.by_claimant %}<span class="case-claimant" data-code="{{ c }}">{{ names.get(c, c) }}</span> {{ n }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+      <ol class="feature-moves">
+        {% for m in feature.moves %}
+        <li><a href="{{ root }}cases/{{ m.id }}.html"><span class="fm-year">{{ m.year }}</span> <span class="case-claimant" data-code="{{ m.claimant }}">{{ names.get(m.claimant, m.claimant) }}</span>
+          <span class="fm-types">{{ m.types|join(', ') }}</span></a>
+          <p>{{ m.text }}{% if m.text|length >= 240 %}…{% endif %}</p></li>
+        {% endfor %}
+      </ol>
+      {% else %}
+      <p class="empty">No move is placed here yet. It is listed because a claimant holds it.</p>
+      {% endif %}
+    </section>
+
+    <aside class="case-side">
+      <h2>Names</h2>
+      <dl class="coding">
+        <dt>English</dt><dd>{{ feature.name }}</dd>
+        {% for label, n in feature.names if label != 'English' %}<dt>{{ label }}</dt><dd lang="{{ {'Chinese': 'zh', 'Vietnamese': 'vi', 'Filipino': 'fil', 'Malay': 'ms'}[label] }}">{{ n }}</dd>{% endfor %}
+        {% if feature.also %}<dt>Also written</dt><dd class="feature-also">{{ feature.also|join(' · ') }}</dd>{% endif %}
+      </dl>
+      {% if feature.held %}
+      <h2>Held by</h2>
+      <p>{{ feature.held.by|join(' and ') }}{% if feature.held.since %}, since {{ feature.held.since }}{% endif %}.{% if feature.held.note %} {{ feature.held.note }}.{% endif %}</p>
+      <p class="feature-source">Source: {{ feature.held.source }}.</p>
+      {% endif %}
+      <figure class="inset">
+        <svg viewBox="0 0 {{ view_w }} {{ view_h }}" role="img" aria-label="{{ feature.name }} on the map of the sub-regions">
+          {% for n, d in subregion_paths.items()|sort %}<path d="{{ d }}" class="sr{% if n == feature.subregion %} is-on{% endif %}" data-loc="{{ n }}"><title>{{ n }} {{ subregion_names[n] }}</title></path>{% endfor %}
+          <circle class="feat" cx="{{ feature.xy[0] }}" cy="{{ feature.xy[1] }}" r="4"><title>{{ feature.name }}</title></circle>
+        </svg>
+        <figcaption>{{ '%.3f'|format(feature.lat) }}° N, {{ '%.3f'|format(feature.lon) }}° E{% if feature.wikidata %} · <a href="https://www.wikidata.org/wiki/{{ feature.wikidata }}">Wikidata</a>{% endif %}</figcaption>
+      </figure>
+      <p class="feature-map"><a href="{{ root }}index.html#y{{ meta.last_year }}-c-f-{{ feature.id }}">See it on the map</a></p>
+    </aside>
+  </div>
+</article>
+{% endblock %}
+{% block scripts %}{% endblock %}
