@@ -520,8 +520,18 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
 /* the caption and, under it, the latest moves (2026-11-24): one column at the map's top left */
 .amap-left { position: absolute; top: var(--s4); left: var(--s4); z-index: 2; width: min(21rem, calc(100% - 2 * var(--s4))); display: flex; flex-direction: column; gap: var(--s3);
   max-height: calc(var(--fold) - 2 * var(--s4) - 40px); }   /* clear of the scroll cue */
-.amap-latest { flex: 0 1 auto; background: color-mix(in srgb, var(--surface) 94%, transparent); border-radius: var(--radius); padding: var(--s3) var(--s4); box-shadow: 0 1px 3px rgba(var(--shadow), 0.18); overflow: hidden; min-height: 0; }
-.amap-latest .kicker { margin: 0 0 var(--s1, 4px); }
+.amap-latest { flex: 0 1 auto; background: color-mix(in srgb, var(--surface) 94%, transparent); border-radius: var(--radius); box-shadow: 0 1px 3px rgba(var(--shadow), 0.18); overflow: hidden; min-height: 0; }
+.amap-latest > summary { display: flex; align-items: center; gap: var(--s2); padding: var(--s2) var(--s4); cursor: pointer; list-style: none; }
+.amap-latest > summary::-webkit-details-marker { display: none; }
+.amap-latest > summary .kicker { margin: 0; }
+.amap-latest-newest { font-size: 0.8rem; color: var(--ink-2); }
+.amap-latest > summary::after { content: ""; margin-left: auto; width: 7px; height: 7px; border-right: 1.5px solid var(--ink-2); border-bottom: 1.5px solid var(--ink-2); transform: translateY(-2px) rotate(45deg); transition: transform 0.2s; }
+.amap-latest[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+.amap-latest[open] > summary .amap-latest-newest { visibility: hidden; }
+.amap-latest > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.amap-latest[open] { padding-bottom: var(--s3); }
+.amap-latest[open] .amap-latest-list, .amap-latest[open] .amap-latest-all { margin-left: var(--s4); margin-right: var(--s4); }
+.amap-latest-all { display: inline-block; }
 .amap-latest-list { list-style: none; margin: 0 0 var(--s2); padding: 0; }
 .amap-latest-list li + li { border-top: 1px solid var(--rule, #e3e8ee); }
 .amap-latest-list a { display: grid; gap: 2px; padding: 8px 0; color: var(--ink); text-decoration: none; }
@@ -573,7 +583,6 @@ pre.cite { white-space: pre-wrap; background: var(--surface-2); border: 1px soli
   .amap-cue { display: none; }
   .amap-title { font-size: 1.15rem; }
   .amap-caption { padding: var(--s2) var(--s3); }
-  .amap-latest { display: none !important; }   /* phone: the map is half the screen; the card would cover it */
 }
 @media print { .amap-stage { position: static; height: 480px; } .amap-panel { margin-top: var(--s4); width: auto; justify-self: stretch; } .amap-cue { display: none; } }
 /* sub-region counts (far out) and features (zoomed in) */
