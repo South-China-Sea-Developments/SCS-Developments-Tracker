@@ -1,0 +1,10 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-ec63d75b23",
+   "action": "reject",
+   "note": "Rejected with ev-dec0e0289e: the candidate it would merge into was rejected. It can also be noted that such statements are quite routine"
+  }
+ ],
+ "reviewer": "Angelo"
+}

@@ -1,0 +1,174 @@
+{
+ "run_id": "ID-1990s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-11f379bf83",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Prosecuting, jailing and confiscating the boats of 64 Vietnamese fishermen caught off Natuna is coercive enforcement with nothing comparable in 1990 (no candidates) or in the 1989 prev file (empty), so new against last year. Doubt: the prosecutor says foreign boats were 'often' seen, so such arrests may have been routine and simply unreported earlier."
+  },
+  {
+   "event_id": "ev-532ff4c1d7",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Stepped-up air and naval patrols around Natuna in reaction to China's 1992 territorial-sea law are military presence the 1991 record does not show (a fishing prosecution only, ev-11f379bf83); demonstrative. The year is inferred from context (Storey's footnote lost it), so check the date before accepting."
+  },
+  {
+   "event_id": "ev-681d0f31dc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The first diplomatic note to China over its dashed line near Natuna is a new method against 1992, whose record shows only patrols (ev-532ff4c1d7), and against the baseline (no position on China's claim before 1993); declarative."
+  },
+  {
+   "event_id": "ev-502251531b",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "State resettlement of 3,000 families on Natuna, justified as protecting the islands from rival claimants, is new administrative presence with nothing comparable in 1992 (patrols only, ev-532ff4c1d7); demonstrative. Single garbled Reuters fragment via Storey."
+  },
+  {
+   "event_id": "ev-2f5c759ff2",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "A four-day joint naval-air exercise with seven warships, a submarine and a Spratly-based enemy scenario is a different method from the 1992 stepped-up patrols (ev-532ff4c1d7); demonstrative. Doubt: a coder may see it as the same military presence at a similar level, i.e. a continuation of ev-532ff4c1d7."
+  },
+  {
+   "event_id": "ev-3ffea871c9",
+   "disposition": "continuation",
+   "of": "ev-2f5c759ff2",
+   "reason": "The two-month Natuna Jaya naval operation keeps up the naval presence shown in 1993 (ev-2f5c759ff2) at no higher level, and its stated targets are boat people and piracy rather than a rival claimant; continuation, likely reject."
+  },
+  {
+   "event_id": "ev-7fd58a53ba",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "The Exxon agreement to develop D-Alpha, inside China's dashed line, moves the field from contract to development; the 1993 record shows no resource activity (note, resettlement, exercise: ev-681d0f31dc, ev-502251531b, ev-2f5c759ff2), so it is new against last year; demonstrative."
+  },
+  {
+   "event_id": "ev-b3745afbc7",
+   "disposition": "continuation",
+   "of": "ev-7fd58a53ba",
+   "reason": "The final Natuna gas contract follows the November 1994 heads of agreement (ev-7fd58a53ba) for the same field and partners, at the same level; continuation, provisional until 1994 is decided."
+  },
+  {
+   "event_id": "ev-6f97d09d98",
+   "disposition": "unclear",
+   "reason": "A minister's statement that Natuna resettlement is for security and defence states a motive rather than new behaviour; the 1994 record has no resettlement candidate (only ev-3ffea871c9, ev-7fd58a53ba), though the summary says the ministry announced large-scale Natuna resettlement in 1994. Settle by whether 1994 resettlement is evidenced (then a continuation of the 1993 programme, ev-502251531b) or settlements expanded in 1995."
+  },
+  {
+   "event_id": "ev-814e47453d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "ID1995-china-line-diplomacy",
+   "reason": "Lead of the 1995 public diplomatic challenge to China's dashed line over Natuna: disclosing the note (AFP reports a fresh one weeks earlier) and calling China's historical basis unjustifiable is declarative pressure absent from the 1994 record (naval operation and gas deal only, ev-3ffea871c9, ev-7fd58a53ba), so new again after the 1993 note (ev-681d0f31dc)."
+  },
+  {
+   "event_id": "ev-8d94958b34",
+   "disposition": "same_move",
+   "of": "ev-814e47453d",
+   "group": "ID1995-china-line-diplomacy",
+   "reason": "Alatas calling China's map 'merely illustrative' is part of the same 1995 public denial of China's line led by ev-814e47453d; one move."
+  },
+  {
+   "event_id": "ev-5907a9182a",
+   "disposition": "same_move",
+   "of": "ev-814e47453d",
+   "group": "ID1995-china-line-diplomacy",
+   "reason": "Hasjim Djalal pressing China over the unanswered note is part of the same 1995 diplomatic challenge led by ev-814e47453d; one move."
+  },
+  {
+   "event_id": "ev-9f6d4b98b9",
+   "disposition": "same_move",
+   "of": "ev-814e47453d",
+   "group": "ID1995-china-line-diplomacy",
+   "reason": "Alatas telling parliament of the formal clarification request is part of the same 1995 diplomatic challenge led by ev-814e47453d; one move."
+  },
+  {
+   "event_id": "ev-3488966987",
+   "disposition": "same_move",
+   "of": "ev-814e47453d",
+   "group": "ID1995-china-line-diplomacy",
+   "reason": "Alatas saying China never claimed Natuna and must clarify its line first is part of the same 1995 diplomatic challenge led by ev-814e47453d; one move."
+  },
+  {
+   "event_id": "ev-9af9a5f279",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "ID1995-natuna-military-posture",
+   "reason": "Lead of ABRI's 1995 posture over Natuna: intensified air patrols over the South China Sea, announced with a sovereignty claim, are military air presence the 1994 record does not show (a naval anti-boat-people operation only, ev-3ffea871c9); demonstrative. No numbers are given for the increase, hence novelty against last year rather than frequency."
+  },
+  {
+   "event_id": "ev-254f046a37",
+   "disposition": "same_move",
+   "of": "ev-9af9a5f279",
+   "group": "ID1995-natuna-military-posture",
+   "reason": "Feisal Tanjung's February readiness statement to parliament is part of ABRI's 1995 military posture over Natuna led by ev-9af9a5f279; one move."
+  },
+  {
+   "event_id": "ev-c827b9dc74",
+   "disposition": "same_move",
+   "of": "ev-9af9a5f279",
+   "group": "ID1995-natuna-military-posture",
+   "reason": "Feisal Tanjung's May pledge to defend Natuna and upgrade forces in stages is part of ABRI's 1995 military posture led by ev-9af9a5f279; it could instead sit with the diplomatic group (ev-814e47453d), since it also cites the clarification letter."
+  },
+  {
+   "event_id": "ev-6f08af8ccb",
+   "disposition": "unclear",
+   "reason": "Habibie's announced naval port and airport for the gas project are plans, not built, and the series dates behaviour rather than decisions. Settle by when the naval port was actually built: that year would carry a demonstrative construction move."
+  },
+  {
+   "event_id": "ev-49353bad83",
+   "disposition": "continuation",
+   "of": "ev-814e47453d",
+   "reason": "Objecting to China's new baselines at the ASEAN-China consultations is a diplomatic challenge to a Chinese claim at the same level as the 1995 challenges (ev-814e47453d); more to react to, not a new method; continuation, likely reject."
+  },
+  {
+   "event_id": "ev-1be56357ec",
+   "disposition": "continuation",
+   "of": "ev-814e47453d",
+   "reason": "The aide-memoire questioning China's baselines continues the 1995 written challenges to China's claim (ev-814e47453d) by the same method; the warning against Spratly baselines is the strongest element but not a change of method; continuation, likely reject."
+  },
+  {
+   "event_id": "ev-4d09642bdc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Law 6/1996 replaces the 1960 waters law and sets the archipelagic-baseline regime later applied to Natuna; legislation is a new method against 1995 (statements, patrols, contracts); declarative. Doubt: it is nationwide UNCLOS implementation, so a coder may treat it as routine and wait for the Natuna baselines (ev-c7a0d24a85)."
+  },
+  {
+   "event_id": "ev-80d2f0ea55",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "ABRI's largest-ever combined exercise around Natuna (about 20,000 troops, 50 warships, 40 aircraft) is a large exercise the 1995 record does not show (air patrols and statements, ev-9af9a5f279); demonstrative."
+  },
+  {
+   "event_id": "ev-e124cf8bc5",
+   "disposition": "continuation",
+   "of": "ev-80d2f0ea55",
+   "reason": "Saying the Hawk aircraft were bought to guard the Natuna gas project restates the protective military posture shown in 1996 by the exercise 'aimed at protecting the Natuna gas project' (ev-80d2f0ea55), at no higher level; continuation, likely reject."
+  },
+  {
+   "event_id": "ev-102ba7ae35",
+   "disposition": "unclear",
+   "reason": "A Natuna field defence strategy (reportedly with SAMs on platforms) was only scheduled for approval, drafted with a non-claimant; it is a plan, not behaviour. Settle by whether it was adopted and any missiles deployed, and when."
+  },
+  {
+   "event_id": "ev-e854dbb162",
+   "disposition": "continuation",
+   "of": "ev-80d2f0ea55",
+   "reason": "Announcing Su-30 and Mi-17 purchases 'primarily to protect' the Natuna fields continues the 1996 protective posture (ev-80d2f0ea55) in words; the aircraft were to be based at Ujung Pandang and the order was cancelled; continuation, likely reject."
+  },
+  {
+   "event_id": "ev-c7a0d24a85",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "PP 61/1998 fixes archipelagic basepoints around Natuna, the first Natuna-specific baseline act since 1960, with nothing comparable in 1997 (military statements and plans, ev-e124cf8bc5, ev-e854dbb162); declarative (a coder may type it coercive under Chubb's baseline rule)."
+  },
+  {
+   "event_id": "ev-4d5b0cdec2",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Creating Natuna Regency gives the islands their own local government, a change of administrative arrangement against 1998 (baselines only, ev-c7a0d24a85); demonstrative or declarative. Doubt: part of a nationwide decentralisation package naming no claimant, so a coder may see domestic routine."
+  }
+ ]
+}

@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 from pipeline import airtable, harvest, queue
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REVIEWER, DATE = "Test Coder", "2026-10-15"
@@ -73,13 +73,14 @@ class FakeAirtable(airtable.Client):
 
 
 def opened_copy(tmp_path: Path, name: str) -> Path:
+    base = chubb_data(tmp_path / f"base-{name}")   # the fixture's 2026 events are its own, not the dataset's
     d = tmp_path / name
     d.mkdir()
     for f in ("claimants", "moves", "events", "sources", "corrections"):
-        shutil.copy(DATA_DIR / f"{f}.csv", d / f"{f}.csv")
+        shutil.copy(base / f"{f}.csv", d / f"{f}.csv")
     run = tmp_path / f"run-{name}"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
-                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)]) == 0
     assert queue.append_run(run, d)[0] == 5
     return d
 
@@ -140,7 +141,7 @@ def test_same_decisions_through_airtable_and_through_the_review_page_yield_ident
 
     ca = queue.apply_decisions(pulled["decisions"], pulled["reviewer"], DATE, a, RAW_XLSX, RAW_MAVD)
     cb = queue.apply_decisions(page_decisions["decisions"], page_decisions["reviewer"], DATE, b, RAW_XLSX, RAW_MAVD)
-    assert ca == cb == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4}
+    assert ca == cb == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4, "extended": 0}
     for f in ("claimants", "moves", "events", "sources", "corrections"):
         assert filecmp.cmp(a / f"{f}.csv", b / f"{f}.csv", shallow=False), f
 
@@ -412,3 +413,254 @@ def test_records_send_lists_for_the_multi_selects(tmp_path):
     typed = next(r for r in recs if r.get("suggested_domains"))
     assert isinstance(typed["suggested_domains"], list) and typed["new_domains"] == typed["suggested_domains"]
     assert all(isinstance(r.get("suggested_dyads", []), list) for r in recs)
+
+
+# ---------------------------------------------------------------------------
+# ticket 22: the review archive — reviewed rows leave Airtable, the record stays in the repository
+
+def _exported(run_id: str, rows: list[dict]) -> list[dict]:
+    """What the connector's list_records_for_table hands back: records keyed by the base's labels."""
+    out = []
+    for i, r in enumerate(rows, 1):
+        fields = {airtable.LABELS.get(k, k): v for k, v in r.items()}
+        fields[airtable.LABELS["run_id"]] = run_id
+        out.append({"id": f"rec{i:05d}", "fields": fields})
+    return out
+
+
+def test_archive_keeps_every_exported_row_and_names_only_the_decided_ones_for_deletion(tmp_path):
+    rows = [
+        {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "not an act", "reviewer": "Angelo",
+         "new_year": "1971"},
+        {"event_id": "E2", "claimant": "MY", "summary": "b", "decision": "undecided"},
+        {"event_id": "E3", "claimant": "MY", "summary": "c"},                     # never touched: no decision field at all
+        {"event_id": "E4", "claimant": "ID", "summary": "other run"},
+    ]
+    exported = _exported("MY-1970s", rows[:3]) + _exported("ID-1970s", rows[3:])
+    out = tmp_path / "harvest" / "airtable" / "MY-1970s"
+    res = airtable.archive_run(exported, "MY-1970s", out, today="2026-11-17")
+    archive = json.loads((out / "records.json").read_text(encoding="utf-8"))
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
+    # every row of the run is kept, with its Airtable id and the coder's own columns, under the code's names
+    assert [r["event_id"] for r in archive["records"]] == ["E1", "E2", "E3"]
+    e1 = archive["records"][0]
+    assert e1["airtable_id"] == "rec00001" and e1["new_year"] == "1971" and e1["decision"] == "reject"
+    assert archive["run_id"] == "MY-1970s" and archive["exported_on"] == "2026-11-17"
+    assert "E4" not in json.dumps(archive)                                       # the other run's row is not ours
+    # the decisions file is the one queue decide reads, decided rows only
+    assert decisions == {"reviewer": "Angelo", "decisions": [{"event_id": "E1", "action": "reject", "note": "not an act"}]}
+    # and only the decided rows are listed for deletion; undecided rows stay in the base
+    assert clear == {"run_id": "MY-1970s", "table": "Candidates", "record_ids": ["rec00001"], "event_ids": ["E1"]}
+    assert res == {"kept": 3, "decided": 1, "to_clear": 1}
+
+
+def test_archive_merges_a_later_export_by_event_id_so_partial_reviews_accumulate(tmp_path):
+    out = tmp_path / "MY-1970s"
+    first = _exported("MY-1970s", [{"event_id": "E1", "summary": "a", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2", "summary": "b"}])
+    airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
+    # E1 has since been cleared from the base; E2 is now decided and re-exported alone
+    second = _exported("MY-1970s", [{"event_id": "E2", "summary": "b", "decision": "new_move", "new_type": "declarative",
+                                     "new_criterion": "novelty", "new_year": "1979", "reviewer": "A"}])
+    second[0]["id"] = "rec00002"
+    res = airtable.archive_run(second, "MY-1970s", out, today="2026-11-18")
+    archive = json.loads((out / "records.json").read_text(encoding="utf-8"))
+    assert [(r["event_id"], r.get("decision")) for r in archive["records"]] == [("E1", "reject"), ("E2", "new_move")]
+    assert archive["exported_on"] == "2026-11-18" and archive["records"][0]["archived_on"] == "2026-11-17"
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # this export's decisions only
+    assert json.loads((out / "clear.json").read_text(encoding="utf-8"))["record_ids"] == ["rec00002"]
+    assert res == {"kept": 2, "decided": 1, "to_clear": 1}
+
+
+def test_archive_command_runs_offline_and_its_decisions_apply(tmp_path, monkeypatch):
+    monkeypatch.delenv("AIRTABLE_TOKEN", raising=False)
+    d = opened_copy(tmp_path, "archive")
+    cands = candidates(d)
+    eid = next(iter(cands.values()))["event_id"]
+    export = tmp_path / "export.json"
+    export.write_text(json.dumps({"records": _exported("fixture", [{"event_id": eid, "decision": "reject", "note": "fixture", "reviewer": "A"}])}), encoding="utf-8")
+    out = tmp_path / "harvest" / "airtable" / "fixture"
+    assert airtable.main(["archive", "--run", "fixture", "--from", str(export), "--out-dir", str(out)]) == 0
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    counts = queue.apply_decisions(decisions["decisions"], decisions["reviewer"], "2026-11-17", d)
+    assert counts["rejected"] == 1
+
+
+def test_archive_leaves_out_decisions_already_applied_in_an_earlier_sitting_and_refuses_duplicate_rows(tmp_path):
+    out = tmp_path / "MY-1970s"
+    first = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2"}])
+    airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
+    # the clear failed: E1 is still in the base and comes back in the next export, now beside a decided E2
+    again = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2", "decision": "reject", "note": "y", "reviewer": "A", "lat": 0, "edit_lat": False}])
+    res = airtable.archive_run(again, "MY-1970s", out, today="2026-11-18")
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # E1 was applied last time; decide would refuse it
+    clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
+    assert clear["record_ids"] == ["rec00002"] and res == {"kept": 2, "decided": 1, "to_clear": 1}
+    e2 = next(r for r in json.loads((out / "records.json").read_text(encoding="utf-8"))["records"] if r["event_id"] == "E2")
+    assert e2["lat"] == 0 and e2["edit_lat"] is False                        # a typed 0 or False is kept; only None, "" and [] are dropped
+    dup = _exported("MY-1970s", [{"event_id": "E3"}, {"event_id": "E3"}])
+    with pytest.raises(ValueError, match="two rows for event E3"):
+        airtable.archive_run(dup, "MY-1970s", tmp_path / "dup")
+
+
+def test_archive_reads_an_export_keyed_by_field_id(tmp_path):
+    ids = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))["field_ids"]
+    rec = {"id": "recAAAAAAAAAAAAAA", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["run_id"]: "TW-2000s", ids["note"]: "later",
+                                                               ids["decision"]: {"name": "undecided"}}}
+    out = tmp_path / "TW-2000s"
+    assert airtable.archive_run([rec], "TW-2000s", out, today="2026-11-17") == {"kept": 1, "decided": 0, "to_clear": 0}
+    row = json.loads((out / "records.json").read_text(encoding="utf-8"))["records"][0]
+    assert row["note"] == "later" and row["decision"] == "undecided" and "fld" not in json.dumps(row)
+
+
+def test_archive_command_refuses_an_export_with_no_row_of_the_run(tmp_path, capsys):
+    export = tmp_path / "export.json"
+    export.write_text(json.dumps(_exported("ID-1970s", [{"event_id": "E1"}])), encoding="utf-8")
+    assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(export), "--out-dir", str(tmp_path / "out")]) == 1
+    assert "no exported row belongs to run MY-1970s" in capsys.readouterr().err
+
+
+# ---------------------------------------------------------------------------
+# the reviewer's name: set on every pushed row, and the fallback when no row names one
+
+def test_records_carry_the_configured_reviewer_so_the_coder_never_types_it(tmp_path):
+    recs = airtable.records_for_run(opened_copy(tmp_path, "d"), "fixture", pr=17, reviewer="Angelo")
+    assert all(r["reviewer"] == "Angelo" for r in recs)
+    # without a name the column is left for the coder, as before
+    assert all("reviewer" not in r for r in airtable.records_for_run(opened_copy(tmp_path, "e"), "fixture", pr=17))
+
+
+def test_the_configured_reviewer_is_the_default_name_on_the_command_line(tmp_path, monkeypatch):
+    cfg = tmp_path / "airtable.json"
+    cfg.write_text(json.dumps({"reviewer": "Angelo"}), encoding="utf-8")
+    assert airtable.default_reviewer(cfg) == "Angelo"
+    assert airtable.default_reviewer(tmp_path / "missing.json") == ""
+    monkeypatch.setattr(airtable, "CONFIG", cfg)
+    d = opened_copy(tmp_path, "d")
+    # records: the configured name unless --reviewer says otherwise; an empty --reviewer leaves the column blank
+    def names(*extra):
+        out = tmp_path / "r.json"
+        assert airtable.main(["records", "--run", "fixture", "--data", str(d), "--out", str(out), *extra]) == 0
+        return {r.get("reviewer") for r in json.loads(out.read_text(encoding="utf-8"))}
+    assert names() == {"Angelo"}
+    assert names("--reviewer", "Bea") == {"Bea"}
+    assert names("--reviewer", "") == {None}
+    # archive: the flag, else the one name the rows carry, else the configured name
+    def signed(rows, *extra):
+        exp = tmp_path / "export.json"
+        exp.write_text(json.dumps(_exported("MY-1970s", rows)), encoding="utf-8")
+        out = tmp_path / "arch"
+        shutil.rmtree(out, ignore_errors=True)
+        assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(exp), "--out-dir", str(out), *extra]) == 0
+        return json.loads((out / "decisions.json").read_text(encoding="utf-8")).get("reviewer")
+    rejected = {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "x"}
+    assert signed([rejected]) == "Angelo"
+    assert signed([dict(rejected, reviewer="Bea")]) == "Bea"
+    assert signed([dict(rejected, reviewer="Bea")], "--reviewer", "Cy") == "Cy"
+    # subcommands without the option are untouched by the configuration
+    assert airtable.main(["schema"]) == 0
+
+
+def test_a_blank_note_on_a_reject_takes_the_presorts_continuation_as_confirmed():
+    rows = [
+        {"event_id": "E1", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "continuation of CN198201 — rig back where it was in 2015 [claude-code/opus]"},
+        {"event_id": "E2", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "continuation of ev-1234567890 (a candidate, provisional) — follows the June patrol [claude-code/opus]"},
+        {"event_id": "E3", "decision": "reject", "note": "statement to a non-claimant", "run_id": "R",
+         "presort": "continuation of CN201501 — ... [claude-code/opus]"},        # the coder's own note wins
+        {"event_id": "E4", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "new move (scope) — ... [claude-code/opus]"},                 # not a continuation: still needs a note
+    ]
+    d = {x["event_id"]: x for x in airtable.decisions_from_records(rows, run_id="R")["decisions"]}
+    assert d["E1"]["note"] == "continuation of CN198201 (pre-sort confirmed)"
+    assert d["E2"]["note"] == "continuation of ev-1234567890 (pre-sort confirmed)"
+    assert d["E3"]["note"] == "statement to a non-claimant"
+    assert d["E4"]["note"] == ""
+
+
+def test_the_airtable_move_lists_cut_long_descriptions_at_a_word():
+    long = "word " * 80
+    text = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": long}])
+    assert text.startswith("CN200802 [coercive, through 2016]: word word") and text.endswith("…") and len(text) < 200
+    short = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": "short"}])
+    assert short == "CN200802 [coercive, through 2016]: short"
+
+
+# ---------------------------------------------------------------------------
+# the nightly refresh of the context columns on rows already in the base
+
+def test_context_updates_name_only_the_rows_whose_lists_changed(tmp_path):
+    ids = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))["field_ids"]
+    current = [  # as the connector lists them: keyed by field id
+        {"id": "rec1", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["previous_year_moves"]: "old list", ids["same_year_moves"]: ""}},
+        {"id": "rec2", "cellValuesByFieldId": {ids["event_id"]: "E2", ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x", ids["same_year_moves"]: "CN201601 [demonstrative]: y"}},
+        {"id": "rec3", "cellValuesByFieldId": {ids["event_id"]: "E3"}},
+    ]
+    records = [  # as `records` generates them today
+        {"event_id": "E1", "previous_year_moves": "CN200802 [coercive, through 2016]: x", "same_year_moves": None},
+        {"event_id": "E2", "previous_year_moves": "CN200802 [coercive, through 2016]: x", "same_year_moves": "CN201601 [demonstrative]: y"},
+        {"event_id": "E3", "previous_year_moves": None, "same_year_moves": None},
+        {"event_id": "E9", "previous_year_moves": "not in the base", "same_year_moves": None},
+    ]
+    ups = airtable.context_updates(current, records, ids)
+    assert ups == [{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]
+    # a row whose list emptied is cleared, not skipped
+    records[1]["same_year_moves"] = None
+    ups = airtable.context_updates(current, records, ids)
+    assert {ids["same_year_moves"]: ""} == ups[1]["fields"] and ups[1]["id"] == "rec2"
+    # the check names mismatches by event id and is quiet when all agree
+    assert airtable.context_mismatches(current, records, ids) == ["E1", "E2"]
+    current[0]["cellValuesByFieldId"][ids["previous_year_moves"]] = "CN200802 [coercive, through 2016]: x"
+    current[1]["cellValuesByFieldId"][ids["same_year_moves"]] = ""
+    assert airtable.context_mismatches(current, records, ids) == []
+    # the command line: diff writes the update batches, check exits 1 on a mismatch
+    cur, rec = tmp_path / "current.json", tmp_path / "records.json"
+    cur.write_text(json.dumps({"records": current}), encoding="utf-8"); rec.write_text(json.dumps(records), encoding="utf-8")
+    out = tmp_path / "updates.json"
+    assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out)]) == 0
+    assert json.loads(out.read_text(encoding="utf-8")) == []
+    assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 0
+    current[0]["cellValuesByFieldId"][ids["previous_year_moves"]] = "stale"
+    cur.write_text(json.dumps({"records": current}), encoding="utf-8")
+    assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out), "--batch", "1"]) == 0
+    assert json.loads(out.read_text(encoding="utf-8")) == [[{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]]
+    assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 1
+
+
+def test_a_candidate_without_a_sub_region_comes_with_suggestions(tmp_path):
+    """Ticket 33: a blank sub-region is prefilled from the place ("off Sabah and Sarawak" -> 10 and 7),
+    with the reason in the machine note; the event row itself is not changed."""
+    d = opened_copy(tmp_path, "d")
+    path = d / "events.csv"
+    rows = list(csv.DictReader(open(path, encoding="utf-8")))
+    target = next(r for r in rows if r["harvest_run_id"] == "fixture" and r["status"] == "candidate" and not r["location_name"])
+    target.update(location_name="Malaysian continental shelf off Sabah and Sarawak", subregion="", lat="", lon="")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    rec = next(r for r in airtable.records_for_run(d, "fixture", pr=17) if r["event_id"] == target["event_id"])
+    assert rec["new_subregions"] == ["10 Far South", "7 Spratly SE"]
+    assert "subregion" not in rec                                   # two suggestions: the single sub-region is left to the coder
+    assert rec["machine_note"].startswith("Sub-regions suggested: 10 Far South (") and "Sarawak coast 99%" in rec["machine_note"]
+    assert next(r for r in csv.DictReader(open(path, encoding="utf-8")) if r["event_id"] == target["event_id"])["subregion"] == ""
+
+
+def test_an_event_id_in_merge_into_move_is_read_as_a_merge_into_that_candidate():
+    """2026-11-24: twice a lead's event id was typed into "Merge into move"; it names a candidate."""
+    ids = airtable.load_config()["field_ids"]
+    rec = {"id": "recA", "cellValuesByFieldId": {ids["event_id"]: "ev-aaa", ids["decision"]: {"name": "merge"},
+                                                 ids["merge_into_move"]: " ev-bbb "}}
+    d = airtable.decisions_from_records([rec], field_ids=ids)
+    item = (d["decisions"] if isinstance(d, dict) else d)[0]
+    assert item["move_of_event"] == "ev-bbb" and "move_id" not in item
+    rec["cellValuesByFieldId"][ids["merge_into_move"]] = "CN201602"
+    d = airtable.decisions_from_records([rec], field_ids=ids)
+    item = (d["decisions"] if isinstance(d, dict) else d)[0]
+    assert item["move_id"] == "CN201602" and "move_of_event" not in item

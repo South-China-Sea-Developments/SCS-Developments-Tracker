@@ -127,6 +127,8 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
         errors.append(f"CODE: claimants.code {c} not in {schema.CLAIMANT_CODES}")
 
     moves = tables["moves"]
+    retired_path = data_dir / "reference" / "retired_moves.csv"
+    retired = {r["move_id"] for r in csv.DictReader(open(retired_path, newline="", encoding="utf-8"))} if retired_path.exists() else set()
     for m in moves:
         mid = m["move_id"]
         if m["claimant"] not in claimants:
@@ -137,6 +139,10 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
             errors.append(f"CODE: moves {mid} coded_by {m['coded_by']!r}")
         if m["coded_by"] == "project" and not m["intensification_criterion"]:
             errors.append(f"CODE: moves {mid} is project-coded without an intensification_criterion")
+        if mid in retired:
+            errors.append(f"CODE: moves {mid} uses a retired move id (data/reference/retired_moves.csv)")
+        if m["coded_by"] == "project" and m["status"] == "accepted" and not any(m[f] == "1" for f in schema.SUBREGION_FLAGS):
+            errors.append(f"CODE: moves {mid} is project-coded without a sub-region (it could not be counted on the map)")
         if m["intensification_criterion"] and m["intensification_criterion"] not in schema.INTENSIFICATION_CRITERIA:
             errors.append(f"CODE: moves {mid} intensification_criterion {m['intensification_criterion']!r}")
         for f in schema.FLAG_COLUMNS:
@@ -328,9 +334,9 @@ def aggregates(moves: list[dict]) -> dict:
 
 def event_aggregates(events: list[dict], moves: list[dict]) -> dict:
     """The map's numbers, computed a different way from web.build.map_data (seam 3 holds the two to
-    one answer): accepted events of accepted moves; "points" have both coordinates; the rest count
-    once on their own sub-region or, having none, once on each sub-region of their move, read off
-    the flag names (loc05_... -> "5")."""
+    one answer): accepted events of accepted moves; every one counts once on its own sub-region or,
+    having none, once on each sub-region of its move, read off the flag names (loc05_... -> "5");
+    "points" are those that also have both coordinates."""
     accepted_moves = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
     flag_number = {f: str(int(f[3:5])) for f in schema.SUBREGION_FLAGS}
     shown = [e for e in events if e["status"] == "accepted" and e["move_id"] in accepted_moves]
@@ -338,8 +344,6 @@ def event_aggregates(events: list[dict], moves: list[dict]) -> dict:
     points = Counter(e["claimant"] for e in shown if e["lat"] and e["lon"])
     subregions: Counter = Counter()
     for e in shown:
-        if e["lat"] and e["lon"]:
-            continue
         where = [e["subregion"]] if e["subregion"] else [n for f, n in flag_number.items() if accepted_moves[e["move_id"]][f] == "1"]
         subregions.update((e["claimant"], sr) for sr in where)
     n_events = Counter(e["claimant"] for e in shown)

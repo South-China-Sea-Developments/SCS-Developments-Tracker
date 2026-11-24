@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}SCS Developments Tracker{% endblock %}
+{% block title %}Events — South China Sea Developments Tracker{% endblock %}
 {% block body_class %}is-tracker{% endblock %}
 {% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
 <script id="mapdata" type="application/json">{{ map_json|safe }}</script>
@@ -12,8 +12,8 @@
 <main id="main" class="tracker">
   <aside class="side" aria-label="Filters and events in view">
     <div class="side-head">
-      <h1>SCS Developments Tracker</h1>
-      <p class="byline">Assertive moves by the claimant states in the South China Sea since 1970 — statements, patrols, construction, interference, force — on the coding rules of the <em>Maritime Assertiveness Time Series</em>. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
+      <h1>Events</h1>
+      <p class="byline">Every dated event behind the moves, on the map and in a list. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
     </div>
     <div class="side-count">
       <p class="count" id="map-count" aria-live="polite"></p>
@@ -29,17 +29,17 @@
         </div>
       </fieldset>
       <fieldset class="fgroup"><legend>Type of move</legend>
-        <div class="checks">
-          {% for key, label, blurb in types %}<label class="check"><input type="checkbox" name="t" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}
+        <div class="pills">
+          {% for key, label, blurb in types %}<label class="pill" data-type="{{ key }}"><input type="checkbox" name="t" value="{{ key }}"><span><i aria-hidden="true"></i>{{ label }}</span></label>{% endfor %}
         </div>
       </fieldset>
       <details class="fgroup more">
         <summary>More filters</summary>
         <fieldset><legend>Domain</legend>
-          <div class="checks">{% for key, label in domain_labels.items() %}<label class="check"><input type="checkbox" name="d" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}</div>
+          <div class="pills">{% for key, label in domain_labels.items() %}<label class="pill"><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}</div>
         </fieldset>
         <fieldset><legend>Issue</legend>
-          <div class="checks">{% for key, label in issue_labels.items() %}<label class="check"><input type="checkbox" name="i" value="{{ key }}"><span class="box" aria-hidden="true"></span><span class="check-label">{{ label }}</span></label>{% endfor %}</div>
+          <div class="pills">{% for key, label in issue_labels.items() %}<label class="pill"><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}</div>
         </fieldset>
         <fieldset><legend>Directed at</legend>
           <select id="target" aria-label="Directed at">
@@ -71,6 +71,7 @@
   <div class="map-stage">
     <div id="map" class="map-canvas" role="region" aria-label="Map of the South China Sea with event locations"></div>
     <div class="map-legend" aria-hidden="true">
+      <span class="legend-point legend-hint">Zoom in for events at their positions:</span>
       <span class="legend-point"><i class="dot"></i> event at a known position</span>
       <span class="legend-point"><i class="dot feature"></i> at a named feature</span>
       <span class="legend-point"><i class="count-swatch">n</i> known only to the sub-region</span>

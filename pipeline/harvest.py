@@ -410,7 +410,7 @@ def cmd_extract(args) -> int:
     client = make_client(args)
     ex = Extractor(client, run_id=args.run_id or Path(args.out).name)
     existing = []
-    events_csv = ROOT / "data" / "events.csv"
+    events_csv = Path(getattr(args, "data", "") or ROOT / "data") / "events.csv"
     if events_csv.exists():
         with open(events_csv, newline="", encoding="utf-8") as f:
             existing = list(csv.DictReader(f))
@@ -562,7 +562,9 @@ def main(argv=None) -> int:
     se = sub.add_parser("extract"); se.add_argument("--captures", required=True); se.add_argument("--out", required=True)
     se.add_argument("--recordings", default=""); se.add_argument("--record", action="store_true")
     se.add_argument("--prompts", default="", help="a prompts folder written by `prompts`: only its selected documents are extracted")
-    se.add_argument("--model", default=Extractor.DEFAULT_MODEL); se.add_argument("--run-id", default=""); se.set_defaults(fn=cmd_extract)
+    se.add_argument("--model", default=Extractor.DEFAULT_MODEL); se.add_argument("--run-id", default="")
+    se.add_argument("--data", default="", help="the data folder whose events new candidates are checked against for duplicates (default: data/)")
+    se.set_defaults(fn=cmd_extract)
     sp = sub.add_parser("prompts"); sp.add_argument("--captures", required=True); sp.add_argument("--out", required=True)
     sp.add_argument("--max-documents", type=int, default=0, help="prompts per run; the rest are deferred to the next run (0 = all)")
     sp.add_argument("--all", action="store_true", help="a prompt for every document, relevant or not")

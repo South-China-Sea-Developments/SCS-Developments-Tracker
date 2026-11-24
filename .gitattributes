@@ -1,0 +1,2 @@
+# Run branches and main both append rows to the data files; a merge keeps both sides (rows are independent lines).
+data/*.csv merge=union
