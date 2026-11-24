@@ -198,6 +198,40 @@ def test_duplicate_decision_marks_the_event_merged_into_the_same_move(opened):
     assert validate(opened, RAW_XLSX, RAW_MAVD) == []
 
 
+def test_a_merge_into_a_rejected_lead_is_rejected_with_it(opened):
+    """A merge whose lead candidate is rejected cannot form a move: the merge becomes a rejection of its own,
+    in the same batch, transitively, and when the lead was rejected in an earlier batch."""
+    cands = candidates(opened)
+    pick = lambda prefix: next(x for x in cands if x["location_name"].startswith(prefix))
+    stas, scar, thitu = pick("Second"), pick("Scarb"), pick("Thitu")
+    headline = next(x for x in cands if not x["location_name"])
+    decisions = [
+        {"event_id": scar["event_id"], "action": "reject", "note": "Routine presence, no intensification."},
+        {"event_id": thitu["event_id"], "action": "merge", "move_of_event": scar["event_id"], "note": "Same operation, second area."},
+        {"event_id": stas["event_id"], "action": "merge", "move_of_event": thitu["event_id"]},     # chained through thitu
+    ]
+    counts = queue.apply_decisions(decisions, REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts == {"rejected": 3, "merged": 0, "new_moves": 0, "duplicates": 0, "accepted_events": 0, "extended": 0}
+    ev = {e["event_id"]: e for e in rows(opened, "events")}
+    t, s = ev[thitu["event_id"]], ev[stas["event_id"]]
+    assert t["status"] == "rejected" and t["move_id"] == "" and t["reviewer"] == REVIEWER
+    assert t["review_note"].endswith(f"| Reviewer: Rejected with {scar['event_id']}: the candidate it would merge into was rejected. Same operation, second area.")
+    assert s["status"] == "rejected" and f"Rejected with {thitu['event_id']}" in s["review_note"]
+    # the next batch: a merge into a lead rejected earlier, and a duplicate of a rejected event, go the same way
+    counts = queue.apply_decisions([{"event_id": headline["event_id"], "action": "merge", "move_of_event": scar["event_id"]}],
+                                   REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 1 and counts["merged"] == 0
+    vn = next(x for x in cands if x["claimant"] == "VN")
+    counts = queue.apply_decisions([{"event_id": vn["event_id"], "action": "duplicate", "duplicate_of": headline["event_id"]}],
+                                   REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["rejected"] == 1 and counts["duplicates"] == 0
+    ev = {e["event_id"]: e for e in rows(opened, "events")}
+    assert ev[headline["event_id"]]["status"] == "rejected" and ev[vn["event_id"]]["status"] == "rejected"
+    assert ev[vn["event_id"]]["review_note"].endswith(f"Rejected with {headline['event_id']}: the event it duplicates was rejected.")
+    assert validate(opened, RAW_XLSX, RAW_MAVD) == []
+    # (a merge into a lead decided anything else than new_move or reject is still refused: see the parametrized case)
+
+
 def test_a_batch_whose_result_fails_the_gate_writes_nothing(opened):
     """Two decisions in one batch; the second is valid on its own but the validator must see the whole result."""
     eid = next(x for x in candidates(opened) if x["location_name"].startswith("Second"))["event_id"]
