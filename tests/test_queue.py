@@ -274,6 +274,9 @@ def test_open_and_decide_end_to_end_in_a_git_checkout(tmp_path):
     run = clone / "harvest" / "runs" / "fixture"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
                          "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+    # `open` skips ids the data already holds (a weekly run can capture a fixture's document)
+    have = {e["event_id"] for e in rows(clone / "data", "events")}
+    new = sum(c["event_id"] not in have for c in rows(run, "candidates"))
     r = subprocess.run([sys.executable, "-m", "pipeline.queue", "open", "--run", str(run), "--no-push"], cwd=clone, capture_output=True, text=True, env=env)
     assert r.returncode == 0, r.stderr
     assert subprocess.run(["git", "-C", str(clone), "branch", "--show-current"], capture_output=True, text=True).stdout.strip() == "harvest/fixture"
@@ -282,7 +285,7 @@ def test_open_and_decide_end_to_end_in_a_git_checkout(tmp_path):
     assert r.returncode == 0 and "resuming" in r.stdout and "0 new candidate" in r.stdout
     assert (clone / "docs/review/fixture.html").exists()
     log = subprocess.run(["git", "-C", str(clone), "log", "--oneline", "-1"], capture_output=True, text=True).stdout
-    assert "Harvest fixture: 5 candidate events" in log
+    assert f"Harvest fixture: {new} candidate events" in log
     eid = [e for e in rows(clone / "data", "events") if e["status"] == "candidate" and e["harvest_run_id"] == "fixture"][0]["event_id"]
     (clone / "decisions.json").write_text(json.dumps({"decisions": [{"event_id": eid, "action": "reject", "note": "test"}]}), encoding="utf-8")
     r = subprocess.run([sys.executable, "-m", "pipeline.queue", "decide", "decisions.json", "--reviewer", "T", "--date", DATE], cwd=clone, capture_output=True, text=True, env=env)
