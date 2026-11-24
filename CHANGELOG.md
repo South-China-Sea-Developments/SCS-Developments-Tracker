@@ -21,6 +21,7 @@ One section per release tag, newest first. The section's body becomes the GitHub
 - Cite, download (PNG) or embed any view of the map (ticket 39).
 - A What's new page and Atom feed of moves added, updated and retracted (ticket 40).
 - Every candidate to the same place rules (English place, named features placed) at intake and on the runs open; 40 of Chubb's dated incidents given their move's places; 15 Chubb moves naming a feature outside their coded sub-regions listed for review (ticket 41).
+- Extraction prompt: the four types carry Chubb's full definitions from the coding guide (§C), the type is the highest the act meets, and `force` is suggested only for a change in control of a feature or military violence; physical interference, boarding, seizure of boats, detention of crews, water cannon and ramming are `coercive` whatever the outcome (§G). The prompt hash in every later candidate's `extractor` changes accordingly.
 
 ## v2.0.0-dev — 2026-10-16
 
