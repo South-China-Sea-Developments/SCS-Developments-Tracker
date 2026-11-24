@@ -1,4 +1,4 @@
-/* Event map: dated events as points (or as counts on their sub-region when unplaced), a time
+/* Event map: every dated event counted on its sub-region, those with coordinates drawn as points too, a time
    window scrubbed by month, and the same filter semantics as the case browser. MapLibre draws the
    map; the data is inline (data/events.json has the same content for reuse). */
 (function () {
@@ -17,15 +17,25 @@
   var timeLabel = document.getElementById("time-label");
   var countEl = document.getElementById("map-count");
   var listEl = document.getElementById("event-list");
+  var targetSel = document.getElementById("target");
+  var searchEl = document.getElementById("search");
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function monthIndex(iso) { return (parseInt(iso.slice(0, 4), 10) - FIRST) * 12 + parseInt(iso.slice(5, 7), 10) - 1; }
   function monthName(k) { return MONTHS[k % 12] + " " + (FIRST + Math.floor(k / 12)); }
+  var MONTHS_FULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function monthFull(k) { return MONTHS_FULL[k % 12] + " " + (FIRST + Math.floor(k / 12)); }
   var lastMonth = Math.max((DATA.last_year - FIRST) * 12 + 11, Math.max.apply(null, EVENTS.map(function (e) { return monthIndex(e.ds); }).concat([0])));
   EVENTS.forEach(function (e) { e.ms = monthIndex(e.ds); e.me = Math.max(e.ms, monthIndex(e.de)); });
   slider.max = String(lastMonth);
   slider.value = String(lastMonth);
   windowSel.value = "0";
+
+  // the tracker fills the viewport under the navigation band (the banner scrolls off), whatever the band's height at this width
+  var head = document.querySelector(".navband");
+  function sizeTracker() { if (head) document.documentElement.style.setProperty("--head-h", head.offsetHeight + "px"); }
+  sizeTracker();
+  window.addEventListener("resize", sizeTracker);
 
   // ---- map -------------------------------------------------------------------------------------
   // MapLibre over OpenFreeMap vector tiles with an English-first label style (vendored, inlined by
@@ -41,6 +51,13 @@
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-left");
   map.addControl(new maplibregl.AttributionControl({ compact: false }));   // the style carries OpenFreeMap, OpenMapTiles and OSM
+  // events at their positions only from this zoom in; further out the sub-region counts carry them all
+  // (the maintainer, 2026-11-22: the dots should not compete with the counts)
+  var ZOOM_POINTS = 6;
+  var mapBox = document.getElementById("map");
+  function zoomClass() { mapBox.classList.toggle("zoomed", map.getZoom() >= ZOOM_POINTS); }
+  map.on("zoom", zoomClass);
+  map.on("load", zoomClass);
   map.on("error", function (e) {   // a missing tile, font or sprite is the offline case, not a fault
     var msg = e && e.error ? String(e.error.message || e.error) : "";
     if (!/tile|sprite|glyph|font|fetch|network|load|status|json|response/i.test(msg)) console.warn("map: " + msg);
@@ -59,12 +76,37 @@
     var b = geoBounds({ features: [f] });
     return [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
   }
-  // the polygons are context, not controls. They are painted in light-mode colours whatever the
-  // scheme: in dark mode the stylesheet inverts the whole canvas, basemap and polygons together.
+  // the polygons are context, not controls. Their colours are the stylesheet's --map-zone tokens.
+  var rootStyle = getComputedStyle(document.documentElement);
+  var ZONE_FILL = (rootStyle.getPropertyValue("--map-zone") || "#1a5e78").trim();
+  var ZONE_LINE = (rootStyle.getPropertyValue("--map-zone-line") || "#5d6b76").trim();
+
+  // reefs and small islands (Natural Earth), faint and only when zoomed in: the far view is unchanged
+  function addShapes(map, before) {
+    var S = DATA.assert && DATA.assert.shapes;
+    if (!S) return;
+    map.addSource("shp-islands", { type: "geojson", data: S.islands });
+    map.addLayer({ id: "shp-islands", type: "fill", source: "shp-islands", minzoom: 5.5,
+                   paint: { "fill-color": "#eceee9", "fill-outline-color": "#9aa6ac", "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5.5, 0, 6.2, 1] } }, before);
+    map.addSource("shp-reefs", { type: "geojson", data: S.reefs });
+    map.addLayer({ id: "shp-reefs", type: "line", source: "shp-reefs", minzoom: 5.5,
+                   paint: { "line-color": "#7f97a3", "line-width": 0.9, "line-dasharray": [2, 1.5], "line-opacity": ["interpolate", ["linear"], ["zoom"], 5.5, 0, 6.2, 0.9] } }, before);
+    var G = DATA.assert.gazetteer;
+    if (!G) return;
+    map.addSource("gz", { type: "geojson", data: G });
+    map.addLayer({ id: "gz-dot", type: "circle", source: "gz", minzoom: 6,
+                   paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 1.4, 9, 3], "circle-color": "#7d8a92",
+                            "circle-stroke-color": "#ffffff", "circle-stroke-width": 0.6, "circle-opacity": ["interpolate", ["linear"], ["zoom"], 6, 0, 6.6, 0.85] } }, before);
+    map.addLayer({ id: "gz-name", type: "symbol", source: "gz", minzoom: 7.6,
+                   layout: { "text-field": ["get", "n"], "text-font": ["Noto Sans Regular"], "text-size": 10, "text-offset": [0, 0.9], "text-anchor": "top", "text-optional": true },
+                   paint: { "text-color": "#5d6b76", "text-halo-color": "#ffffff", "text-halo-width": 1.2 } }, before);
+  }
   map.on("load", function () {
     map.addSource("subregions", { type: "geojson", data: DATA.subregions });
-    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": "#0e5a86", "fill-opacity": 0.07 } });
-    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": "#5e6b73", "line-width": 1, "line-opacity": 0.9 } });
+    map.addLayer({ id: "sr-fill", type: "fill", source: "subregions", paint: { "fill-color": ZONE_FILL, "fill-opacity": 0.1 } });
+    // solid outlines: the basemap's boundaries are the dashed ones
+    map.addLayer({ id: "sr-line", type: "line", source: "subregions", paint: { "line-color": ZONE_LINE, "line-width": 1, "line-opacity": 0.75 } });
+    addShapes(map);
   });
 
   var srCenters = {};
@@ -106,12 +148,18 @@
   function readFilters() {
     var w = parseInt(windowSel.value, 10), k = parseInt(slider.value, 10);
     return { claimants: checked("claimant"), types: checked("t"), domains: checked("d"), issues: checked("i"),
-             target: document.getElementById("target").value, from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w };
+             target: targetSel ? targetSel.value : "", from: w ? Math.max(0, k - w + 1) : 0, to: k, w: w,
+             q: searchEl ? searchEl.value.trim().toLowerCase() : "" };
+  }
+  function haystack(e) {   // what the search box looks through: summary, place, claimant, move id, sub-region names
+    if (!e.hay) e.hay = [(NAMES[e.c] || e.c), e.m, e.n || "", e.n0 || "", e.s || "", e.sr.map(function (s) { return SR_NAMES[s] || ""; }).join(" ")].join(" ").toLowerCase();
+    return e.hay;
   }
   function matches(e, f) {
     if (f.claimants.indexOf(e.c) < 0) return false;
     if (!anyOf(f.types, e.t) || !anyOf(f.domains, e.d) || !anyOf(f.issues, e.i)) return false;
     if (f.target && e.g.indexOf(f.target) < 0) return false;
+    if (f.q && haystack(e).indexOf(f.q) < 0) return false;
     return e.ms <= f.to && e.me >= f.from;
   }
 
@@ -126,20 +174,23 @@
   function dateLabel(e) {
     if (e.dp === "year") return e.ds.slice(0, 4);
     if (e.dp === "month") return MONTHS[parseInt(e.ds.slice(5, 7), 10) - 1] + " " + e.ds.slice(0, 4);
-    return e.ds + (e.de && e.de !== e.ds ? " to " + e.de : "");
+    function day(iso) { return parseInt(iso.slice(8, 10), 10) + " " + MONTHS[parseInt(iso.slice(5, 7), 10) - 1] + " " + iso.slice(0, 4); }
+    return day(e.ds) + (e.de && e.de !== e.ds ? " to " + day(e.de) : "");
   }
   function eventRow(e, parent) {
     var li = el("li", "event-row", undefined, parent);
+    li.setAttribute("data-event", e.id || "");
     var head = el("div", "event-row-head", undefined, li);
     el("span", "case-claimant", NAMES[e.c] || e.c, head).setAttribute("data-code", e.c);
     el("span", "event-date", dateLabel(e), head);
     var a = el("a", "case-id", e.m, head);
     a.href = "cases/" + e.m + ".html";
+    a.setAttribute("aria-label", "Move " + e.m);
     var pills = el("span", "case-types", undefined, head);
     e.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
     el("p", "event-summary", (e.n ? e.n + ". " : "") + (e.s || "(no summary)"), li);
     var meta = el("p", "event-meta", undefined, li);
-    meta.textContent = (e.lat !== undefined ? (e.lp === "feature" ? "At a named feature" : "Position known") : "Sub-region " + e.sr.map(function (s) { return s + " " + SR_NAMES[s]; }).join(", ")) +
+    meta.textContent = e.sr.map(function (s) { return s + " " + SR_NAMES[s]; }).join(", ") +
       (e.src ? " · " + e.src + (e.src === 1 ? " source" : " sources") : "") + (e.seed ? " · from MATS" : "");
     return li;
   }
@@ -158,13 +209,12 @@
     var stacks = {}, order = [];
     var srCounts = {}, placed = 0;
     hits.forEach(function (e) {
-      if (e.lat !== undefined) {
+      e.sr.forEach(function (s) { srCounts[s] = (srCounts[s] || 0) + 1; });   // every event counts on its sub-region
+      if (e.lat !== undefined) {                                                 // and those with coordinates are drawn there too
         placed++;
         var key = e.lat + "," + e.lon;
         if (!stacks[key]) { stacks[key] = []; order.push(key); }
         stacks[key].push(e);
-      } else {
-        e.sr.forEach(function (s) { srCounts[s] = (srCounts[s] || 0) + 1; });
       }
     });
     order.forEach(function (key) {
@@ -185,18 +235,38 @@
       var el = document.createElement("span");
       el.className = "sr-count";
       el.textContent = String(n);
-      var title = n + (n === 1 ? " event" : " events") + " in sub-region " + s + " " + SR_NAMES[s] + " without a point";
-      var inSr = hits.filter(function (e) { return e.lat === undefined && e.sr.indexOf(s) >= 0; });
+      var title = n + (n === 1 ? " event" : " events") + " in sub-region " + s + " " + SR_NAMES[s];
+      var inSr = hits.filter(function (e) { return e.sr.indexOf(s) >= 0; });
       addMarker(srCenters[s], el, title, function () { return popupFor(inSr); });
     });
     var when = f.w ? (f.w === 1 ? monthName(f.to) : monthName(f.from) + " – " + monthName(f.to)) : "through " + monthName(f.to);
     timeLabel.value = when;
     slider.setAttribute("aria-valuetext", when);
-    countEl.textContent = hits.length + (hits.length === 1 ? " event " : " events ") + when + ": " + placed + " placed, " + (hits.length - placed) + " by sub-region" +
-      (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : "");
+    countEl.textContent = "";
+    countEl.dataset.placed = String(placed);          // the counts the line no longer spells out (2026-11-24); the tests read them
+    countEl.dataset.bySubregion = String(hits.length);
+    el("span", "count-n", hits.length + (hits.length === 1 ? " event" : " events"), countEl);
+    var whenFull = f.w ? (f.w === 1 ? monthFull(f.to) : monthFull(f.from) + " to " + monthFull(f.to)) : "through " + monthFull(f.to);
+    el("span", "count-detail", " " + whenFull +
+      (hits.length < EVENTS.length ? " (of " + EVENTS.length + " in all)" : ""), countEl);
+    renderList(hits);
+  }
+
+  // the sidebar list: newest first, a page at a time so a long list never makes a long page
+  var LIST_PAGE = 60, listShown = LIST_PAGE, listKey = "";
+  function renderList(hits) {
+    var sorted = hits.slice().sort(function (a, b) { return a.ds < b.ds ? 1 : a.ds > b.ds ? -1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+    var key = sorted.map(function (e) { return e.id; }).join(",");
+    if (key !== listKey) { listKey = key; listShown = LIST_PAGE; }   // a new result set starts at the first page
     listEl.textContent = "";
-    if (!listEl.hidden) hits.slice(0, 400).forEach(function (e) { eventRow(e, listEl); });
-    if (!listEl.hidden && hits.length > 400) el("li", "popup-more", "showing the first 400; narrow the filters", listEl);
+    sorted.slice(0, listShown).forEach(function (e) { eventRow(e, listEl); });
+    if (!sorted.length) el("li", "popup-more", "No events match. Widen the time window or clear a filter.", listEl);
+    if (sorted.length > listShown) {
+      var li = el("li", "list-more", undefined, listEl);
+      var b = el("button", "more", "Show " + Math.min(LIST_PAGE, sorted.length - listShown) + " more of " + sorted.length, li);
+      b.type = "button";
+      b.addEventListener("click", function () { listShown += LIST_PAGE; renderList(hits); });
+    }
   }
 
   var timer = null;
@@ -204,20 +274,17 @@
   form.addEventListener("change", schedule);
   slider.addEventListener("input", schedule);
   windowSel.addEventListener("change", schedule);
-  document.getElementById("reset").addEventListener("click", function () {
+  var resetBtn = document.getElementById("reset");
+  if (resetBtn) resetBtn.addEventListener("click", function () {
     form.querySelectorAll('input[type="checkbox"]').forEach(function (i) { i.checked = i.name === "claimant"; });
-    document.getElementById("target").value = "";
+    if (targetSel) targetSel.value = "";
+    if (searchEl) searchEl.value = "";
     windowSel.value = "0";
     slider.value = slider.max;
     stopPlay();
     render();
   });
-  var listToggle = document.getElementById("list-toggle");
-  listToggle.addEventListener("click", function () {
-    listEl.hidden = !listEl.hidden;
-    listToggle.setAttribute("aria-pressed", String(!listEl.hidden));
-    render();
-  });
+  if (searchEl) searchEl.addEventListener("input", schedule);
 
   // ---- play ------------------------------------------------------------------------------------
   var playBtn = document.getElementById("play"), playTimer = null;

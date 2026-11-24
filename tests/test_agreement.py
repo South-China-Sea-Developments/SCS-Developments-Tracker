@@ -125,11 +125,11 @@ def test_markdown_table(fixture):
     assert "| 2025 | 1 | 1/1 | 1/1 | 1/1 | 0/1 | 1/1 | 1/1 |" in lines
 
 
-def test_build_regenerates_the_file_and_the_page_renders_it(tmp_path, fixture, browser):
+def test_build_regenerates_the_file_and_the_page_renders_it(tmp_path, fixture, browser, mats_data):
     from web.build import build
     moves, events = fixture
     d = tmp_path / "data"
-    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    shutil.copytree(mats_data, d)          # Chubb's rows only: the project's own decided events would be counted too
     for name, rows in (("moves", moves), ("events", events)):
         with open(d / f"{name}.csv", "a", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=schema.TABLES[name], lineterminator="\n")
@@ -161,4 +161,4 @@ def test_the_built_page_matches_the_report_whatever_the_data_holds(tmp_path):
     events = [dict(x) for x in csv.DictReader(open(DATA_DIR / "events.csv", newline="", encoding="utf-8"))]
     assert r == agreement.report(events, moves)
     html = (out / "methodology.html").read_text(encoding="utf-8")
-    assert ("No machine suggestion has been reviewed yet" in html) == (r["n_decided"] == 0)
+    assert ("The tables are filled from reviewed harvest runs" in html) == (r["n_decided"] == 0)

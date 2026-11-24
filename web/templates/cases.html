@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Cases — SCS Developments Tracker{% endblock %}
+{% block title %}Cases — South China Sea Developments Tracker{% endblock %}
 {% block head_data %}<script id="cases" type="application/json">{{ index_json|safe }}</script>{% endblock %}
 {% block content %}
 <section class="lede">
-  <h1>Every move, searchable</h1>
-  <p class="lede-text">{{ meta.n_moves }} moves with their full coding{% if meta.n_pending %}, plus {{ meta.n_pending }} pending the author's confirmation{% endif %}. Search the case descriptions, narrow by claimant, year, type, domain, issue, counterpart or sub-region, and open any move for its events and sources.</p>
+  <p class="kicker">Cases</p>
+  <h1>Every move</h1>
+  <p class="lede-text">Search the moves and open any of them for its coding, events and sources, or <a href="features.html">browse them by place</a>. <a href="whats-new.html">What's new</a> lists the latest additions.</p>
 </section>
 
 <form class="case-filters" id="case-filters" aria-label="Filter cases">
@@ -23,13 +24,13 @@
       <label>to <input type="number" id="y1" min="{{ meta.first_year }}" max="{{ meta.last_year }}" value="{{ meta.last_year }}"></label>
     </fieldset>
     <fieldset><legend>Type</legend>
-      {% for key, label, blurb in types %}<label><input type="checkbox" name="t" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+      {% for key, label, blurb in types %}<label class="pill" data-type="{{ key }}"><input type="checkbox" name="t" value="{{ key }}"><span><i aria-hidden="true"></i>{{ label }}</span></label>{% endfor %}
     </fieldset>
     <fieldset><legend>Domain</legend>
-      {% for key, label in domain_labels.items() %}<label><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+      {% for key, label in domain_labels.items() %}<label class="pill"><input type="checkbox" name="d" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
     </fieldset>
     <fieldset><legend>Issue</legend>
-      {% for key, label in issue_labels.items() %}<label><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
+      {% for key, label in issue_labels.items() %}<label class="pill"><input type="checkbox" name="i" value="{{ key }}"><span>{{ label }}</span></label>{% endfor %}
     </fieldset>
     <fieldset><legend>Directed at</legend>
       <select id="target" aria-label="Directed at">

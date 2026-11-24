@@ -1,0 +1,804 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-01b0bd3420",
+   "action": "reject",
+   "note": "continuation of ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-01d4f8a001",
+   "action": "reject",
+   "note": "continuation of ev-8ff2ebf9d5"
+  },
+  {
+   "event_id": "ev-039e33b731",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-0889166952",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-094b68ed40",
+   "action": "reject",
+   "note": "continuation of ev-e30bfde6e5"
+  },
+  {
+   "event_id": "ev-097ee8b320",
+   "action": "reject",
+   "note": "continuation of VN201403"
+  },
+  {
+   "event_id": "ev-09982d3e66",
+   "action": "reject",
+   "note": "continuation of ev-2bd9790dc4"
+  },
+  {
+   "event_id": "ev-09b7905293",
+   "action": "reject",
+   "note": "continuation of ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-0db068b21d",
+   "action": "reject",
+   "note": "continuation of ev-5a19a7908f"
+  },
+  {
+   "event_id": "ev-106dee055f",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-108eb3dd19",
+   "action": "reject",
+   "note": "Unclear that it pushes for new levels of declarative assertiveness. Strongly leaning no + preventing presentism biases"
+  },
+  {
+   "event_id": "ev-151e6251c8",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-16792ff0cc",
+   "action": "reject",
+   "note": "continuation of ev-a2c8e5b86b"
+  },
+  {
+   "event_id": "ev-1aa9be7262",
+   "action": "reject",
+   "note": "continuation of ev-c8131827f4"
+  },
+  {
+   "event_id": "ev-1c1c5f21e9",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-1c27ef9078",
+   "action": "reject",
+   "note": "continuation of ev-faab757f0d"
+  },
+  {
+   "event_id": "ev-20e307dbf7",
+   "action": "reject",
+   "note": "continuation of ev-5a19a7908f"
+  },
+  {
+   "event_id": "ev-2455a01c2e",
+   "action": "reject",
+   "note": "continuation of VN200903"
+  },
+  {
+   "event_id": "ev-2459f01aef",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-271eff5888",
+   "action": "reject",
+   "note": "continuation of ev-c20531399f"
+  },
+  {
+   "event_id": "ev-2bd9790dc4",
+   "action": "reject",
+   "note": "continuation of ev-97f039013e"
+  },
+  {
+   "event_id": "ev-3281fdb897",
+   "action": "reject",
+   "note": "Just a proposition"
+  },
+  {
+   "event_id": "ev-341b899fac",
+   "action": "reject",
+   "note": "continuation of ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-3611c4b2e8",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-376d9688bb",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-38ac8a88cd",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-3e9c895334",
+   "action": "reject",
+   "note": "Not in disputed SCS waters"
+  },
+  {
+   "event_id": "ev-403be0d1e9",
+   "action": "reject",
+   "note": "continuation of ev-151e6251c8"
+  },
+  {
+   "event_id": "ev-40c0b650b6",
+   "action": "reject",
+   "note": "continuation of ev-151e6251c8"
+  },
+  {
+   "event_id": "ev-4791b4358f",
+   "action": "reject",
+   "note": "continuation of ev-692b5736bc"
+  },
+  {
+   "event_id": "ev-48a8a0440b",
+   "action": "reject",
+   "note": "continuation of ev-b658a26357"
+  },
+  {
+   "event_id": "ev-4e26373bce",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-50f257f50e",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-512eb04e5c",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-53301c1243",
+   "action": "reject",
+   "note": "Irrelevant"
+  },
+  {
+   "event_id": "ev-54ab20c2ec",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "military"
+    ],
+    "subregions": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-57900c17a2",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VI"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-57cd4f8053",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-59a2aabc74",
+   "action": "new_move",
+   "note": "Expands upon the 2009 \"three-no's\" doctrine and add a clause stating that defence can be used if necessary.",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "military",
+     "politics"
+    ],
+    "subregions": [
+     "1",
+     "2",
+     "3",
+     "6",
+     "4",
+     "5",
+     "8",
+     "7",
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-5a19a7908f",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-622ff73105",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-6468c0ca47",
+   "action": "reject",
+   "note": "Precedents"
+  },
+  {
+   "event_id": "ev-65e2da22e5",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VI"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-691318accd",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-692b5736bc",
+   "action": "reject",
+   "note": "continuation of VN200903"
+  },
+  {
+   "event_id": "ev-6ab6af7e5f",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-6c702a85f5",
+   "action": "new_move",
+   "note": "Not coded as coercive because no specific new territorial entitlements were advanced",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC",
+     "VM"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "politics"
+    ],
+    "subregions": [
+     "2"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-6f26f471d1",
+   "action": "reject",
+   "note": "continuation of ev-7b12c45fe1"
+  },
+  {
+   "event_id": "ev-700d7e43fc",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-57900c17a2"
+  },
+  {
+   "event_id": "ev-79596ac83a",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-7b12c45fe1",
+   "action": "reject",
+   "note": "continuation of ev-f407953e97"
+  },
+  {
+   "event_id": "ev-800fe0bb68",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-83cbeda651",
+   "action": "reject",
+   "note": "continuation of ev-8ff2ebf9d5"
+  },
+  {
+   "event_id": "ev-8625be0575",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-6c702a85f5"
+  },
+  {
+   "event_id": "ev-8af1490b6d",
+   "action": "reject",
+   "note": "continuation of ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-8fa9597832",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-8ff2ebf9d5",
+   "action": "reject",
+   "note": "continuation of ev-106dee055f"
+  },
+  {
+   "event_id": "ev-9054ad27b2",
+   "action": "reject",
+   "note": "continuation of ev-20e307dbf7"
+  },
+  {
+   "event_id": "ev-90c424bdd0",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "1"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-95ec1e9aea",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-97f039013e",
+   "action": "reject",
+   "note": "Not a larger scope, just extending an already recorded assertive move"
+  },
+  {
+   "event_id": "ev-9ea701a5bd",
+   "action": "reject",
+   "note": "continuation of ev-aebcf80784"
+  },
+  {
+   "event_id": "ev-9ffde24ddf",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-a01d7e2cd3",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "administrative",
+     "military"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-a2c8e5b86b",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-a2f80191fc",
+   "action": "reject",
+   "note": "continuation of ev-90c424bdd0"
+  },
+  {
+   "event_id": "ev-a3b869acba",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-a42ec47e77",
+   "action": "reject",
+   "note": "Continuation"
+  },
+  {
+   "event_id": "ev-a77db96971",
+   "action": "reject",
+   "note": "continuation of ev-7b12c45fe1"
+  },
+  {
+   "event_id": "ev-a878b8c8e1",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-a8e85a50aa",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-a908831670",
+   "action": "reject",
+   "note": "continuation of VN200903"
+  },
+  {
+   "event_id": "ev-aa98acba48",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-57900c17a2"
+  },
+  {
+   "event_id": "ev-ab1f3682fb",
+   "action": "reject",
+   "note": "continuation of ev-c7f65e227f"
+  },
+  {
+   "event_id": "ev-ab3c9bf51b",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-ab86e8b3dc",
+   "action": "reject",
+   "note": "continuation of ev-1c27ef9078"
+  },
+  {
+   "event_id": "ev-abc5e42196",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-ad6025c42d",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-aebcf80784",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-b17ccd8e7d",
+   "action": "reject",
+   "note": "Totally unrelated to the SCS dispute but this made me laugh."
+  },
+  {
+   "event_id": "ev-b32578669a",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "administrative",
+     "military"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b436f17e62",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b658a26357",
+   "action": "reject",
+   "note": "continuation of ev-341b899fac"
+  },
+  {
+   "event_id": "ev-b6cecc13aa",
+   "action": "reject",
+   "note": "continuation of ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-ba5478cc69",
+   "action": "reject",
+   "note": "Closer to building up a national narrative than asserting anything regionally."
+  },
+  {
+   "event_id": "ev-c20531399f",
+   "action": "reject",
+   "note": "Routine behaviour"
+  },
+  {
+   "event_id": "ev-c7f65e227f",
+   "action": "reject",
+   "note": "continuation of ev-aebcf80784"
+  },
+  {
+   "event_id": "ev-c8131827f4",
+   "action": "reject",
+   "note": "continuation of ev-fff7179b99"
+  },
+  {
+   "event_id": "ev-c8ffa2f6d2",
+   "action": "reject",
+   "note": "continuation of VN199202"
+  },
+  {
+   "event_id": "ev-cccc26b994",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-57900c17a2"
+  },
+  {
+   "event_id": "ev-d5623f325a",
+   "action": "reject",
+   "note": "continuation of ev-f6e97fe98e"
+  },
+  {
+   "event_id": "ev-d8d14b76d3",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-dc1d1de5df",
+   "action": "reject",
+   "note": "continuation of ev-b658a26357"
+  },
+  {
+   "event_id": "ev-dc695724a5",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-e30bfde6e5",
+   "action": "reject",
+   "note": "continuation of ev-a908831670"
+  },
+  {
+   "event_id": "ev-e94979b843",
+   "action": "reject",
+   "note": "A lot of unclarity, and it most likely does not even fall under SCS disputes"
+  },
+  {
+   "event_id": "ev-ebfd8bdbf7",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fff7179b99"
+  },
+  {
+   "event_id": "ev-f262f441ca",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-f407953e97",
+   "action": "reject",
+   "note": "continuation of ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-f6d9dc5539",
+   "action": "reject",
+   "note": "Reads closer to a cooperative or restrained move than an assertive one."
+  },
+  {
+   "event_id": "ev-f6e97fe98e",
+   "action": "reject",
+   "note": "continuation of ev-094b68ed40"
+  },
+  {
+   "event_id": "ev-f8574d1d01",
+   "action": "reject",
+   "note": "continuation of ev-c20531399f"
+  },
+  {
+   "event_id": "ev-f90be28b1e",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-fb28aaa9a2"
+  },
+  {
+   "event_id": "ev-faab757f0d",
+   "action": "reject",
+   "note": "continuation of ev-40c0b650b6"
+  },
+  {
+   "event_id": "ev-fb28aaa9a2",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy",
+     "military"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-fdebcba4a5",
+   "action": "reject",
+   "note": "continuation of ev-5a19a7908f"
+  },
+  {
+   "event_id": "ev-fff7179b99",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "VC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  }
+ ],
+ "reviewer": "Angelo"
+}

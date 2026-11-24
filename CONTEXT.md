@@ -2,7 +2,7 @@
 
 Definitions only. Terms are added as they are resolved; nothing here is a to-do or an implementation detail. Terms marked *(MATS)* are inherited from Chubb's codebook and keep his meaning.
 
-**Move** *(MATS)* — One case in the dataset: an **intensification of a claimant's assertiveness compared with the previous calendar year**, shown by one of three criteria — qualitative novelty, increased frequency, or expanded geographic scope. A move may be a single action or a closely linked series of actions; an action that merely continues the previous year's behaviour at the same level is not a new move (it is covered by the earlier move's Ongoing-through). The unit of analysis for all MATS variables. Identified by a `CaseID` such as `CN201105` (country code, year, instance number within that year). The source files call this field `AltCaseNo`.
+**Move** *(MATS)* — One case in the dataset: an **intensification of a claimant's assertiveness compared with the previous calendar year**, shown by one of three criteria — qualitative novelty, increased frequency, or expanded geographic scope. A move may be a single action or a closely linked series of actions; an action that merely continues the previous year's behaviour at the same level is not a new move (it is covered by the earlier move's Ongoing-through). The unit of analysis for all MATS variables. Identified by a `CaseID` such as `CN201105` (country code, year, instance number within that year). The source files call this field `AltCaseNo`. `docs/coding-guide.md` is the step-by-step guide to applying the rule.
 
 **Event** — A single dated, located, sourced incident (a patrol intercept, a statement, a drilling start). Each event belongs to exactly one move; a move groups one or more events. Dates, coordinates and sources are recorded at event level; MATS variables are not.
 
@@ -12,7 +12,7 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Scheduled run** — The weekly, unattended execution of the harvester on the repository's CI that opens the review queue for its candidates. Its memory between runs (which items each source has already yielded, and a log of each run's cost and yield) is the **harvest state**.
 
-**Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note. Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
+**Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note — a note beginning *continuation of X* also keeps move X running through the event's year (ticket 24). Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
 
 **Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`); this project adds Malaysia (`MY`), Indonesia (`ID`) and Taiwan (`TW`) (decision 03).
 
@@ -46,13 +46,29 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Agreement report** — The derived comparison of the machine's suggested coding (Type, Domains, Issues, dyads; the move, where one was proposed) with the coder's final coding, for every accepted event that carried a suggestion, by extractor version and by year, together with what became of every decided suggestion (accepted, duplicate, rejected). Derived from the events and moves, never a file in the dataset.
 
-**Airtable front end** — The optional mirror of a review run's candidates in an Airtable table (`pipeline/airtable.py`), where a coder may decide instead of on the review page; `pull` turns the decisions into the review page's decisions file. Never read when building the dataset or the site (ADR 0004).
+**Airtable front end** — The optional mirror of a review run's candidates in an Airtable table (`pipeline/airtable.py`), where a coder may decide instead of on the review page — through the "Review queue" interface's Overview dashboard, Queue, Board (kanban by decision) and Review-one-by-one pages, each opening the Candidate Detail page (ticket 13, rebuilt 2026-11-07); `pull` turns the decisions into the review page's decisions file. Never read when building the dataset or the site (ADR 0004). Since ticket 20 the base is a **workbench** laid out like the maintainer's TPD Updates sheet: tables `Runs` (the run log), `Sources` (mirror of `pipeline/sources.json`), `Sidelines` (seen, not an event) and `Notes`; candidates carry `flags`, a `dataset_status` and a link to their run; pages By claimant, Hand-off, Run log, Sources, Sidelines, Notes (`docs/airtable-workbench.md`). Since ticket 21 the columns carry readable names (`airtable.LABELS`) and coloured select chips; the code keeps its internal names and the client translates by field id.
+
+**Review archive** — `harvest/airtable/<run_id>/` (ticket 22, ADR 0005): `records.json`, every row of a run as exported from the Airtable base with the coder's own columns, merged across sittings; `decisions.json`, the decided rows as `queue decide` reads them; `clear.json`, the Airtable ids of those rows, deleted through the connector once the decisions are committed. Rows in the base are transient; this folder is the record of what the coder saw and typed. The base's `Runs` row says `archived_on` and links here.
+
+**Pre-sort** — `harvest/presort/<run_id>.json` (ticket 23): for every candidate of a run, a suggested disposition — continuation of a named move, same move as another candidate, new move with its intensification criterion, duplicate of an event, or unclear — with a reason and the name of who sorted it. Shown and prefilled on the review page and in the Airtable `Pre-sort` field; a suggestion the coder confirms or overrides, never applied by itself (ADR 0003).
 
 **Extraction route** — Who answers the harvester's extraction prompts: the API (`ANTHROPIC_API_KEY`), the Claude Code GitHub Action on the maintainer's subscription (`CLAUDE_CODE_OAUTH_TOKEN`), or a person or assistant in a session. The prompt and the checks are the same on every route; the subscription route is named in the event's `extractor` (`claude-code/<model>`), the API route by the bare model id.
 
 **Prompt files** — A run's extraction prompts written to disk (`harvest/prompts/<run_id>/`: `system.md`, one user prompt per document, `index.json`) and their answers (`harvest/recordings/<run_id>/<key>.json`, the recorded-response format). The contract between the pipeline and whatever answers.
 
 **Relevance filter** — The check that spares the extractor documents naming no South China Sea term or feature (`pipeline/relevance.py`); not a coding judgment. With the per-run cap it bounds what a run costs; documents over the cap are deferred to the next run.
+
+**Token block** — The first block of `web/static/style.css`: the site's faces, colours, kicker style and spacing. Since ticket 17 the colours are the programme banner's (the logo's navy, the sea's teals) and the manner is CFR's Global Conflict Tracker; one colour scheme, no dark mode.
+
+**The banner** — The "South China Sea Research Initiative" image the maintainer supplied (`web/static/img/banner.jpg`, the institute's own 2219×950 artwork, logo and title as sent), the header of every page. The site presents itself as the institute's at the maintainer's request (decision 06, amended 2026-10-27).
+
+**The tracker** — The home page (`index.html`, also served as `map.html`): a sidebar — title, the count of events in view, search, filters with the claimant dots as legend, time controls, the events in view newest first — beside the event map, filling the viewport under the navigation band; white like the rest of the site since ticket 18. The charts live on the Trends page.
+
+**Kicker** — The small bold letter-spaced capitals over a page title, on the navigation, the sidebar's group labels, the brand name and the footer headings; the site's one all-caps style.
+
+**Handoff** — `docs/handoff.md`: what lives in the repository (everything), what is bound to an account (the scheduled task, recreated from `docs/scheduled-task-prompt.md`; the Airtable base; GitHub access), and what the weekly cycle costs on each route.
+
+**Published move** — An accepted move. The site publishes accepted moves only: a pending move has no page, no row and no count anywhere on the site until it is accepted (ticket 17); the files and `aggregates.json` keep it as data.
 
 **Dataset version** — The number this project gives the dataset (`DATASET_VERSION`, `MAJOR.MINOR.PATCH`, a `-dev` suffix while it is being built), written on every project-coded move as `data_version`. Versions 1.x are Chubb's MATS; this project's are 2.x.
 

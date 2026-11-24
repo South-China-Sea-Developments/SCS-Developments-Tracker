@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 from pipeline import airtable, harvest, queue
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REVIEWER, DATE = "Test Coder", "2026-10-15"
@@ -27,8 +27,8 @@ class FakeAirtable(airtable.Client):
     pages of `page` records on reads with an offset to continue. Records come back in reverse order
     of creation, so nothing may rely on table order."""
 
-    def __init__(self, max_calls: int = 200, page: int = 100):
-        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls)
+    def __init__(self, max_calls: int = 200, page: int = 100, field_ids: dict | None = None):
+        super().__init__("fake-token", "appFAKE", "tblFAKE", max_calls, field_ids)
         self.rows: dict[str, dict] = {}
         self.n = 0
         self.page = page
@@ -39,7 +39,8 @@ class FakeAirtable(airtable.Client):
         if method == "GET":
             formula = (params or {}).get("filterByFormula", "")
             run = formula.split("'")[1] if "'" in formula else None
-            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get("run_id") == run]
+            key = self.wire("run_id")
+            recs = [{"id": i, "fields": dict(f)} for i, f in reversed(self.rows.items()) if run is None or f.get(key) == run]
             start = int((params or {}).get("offset") or 0)
             page = recs[start:start + self.page]
             return {"records": page, **({"offset": str(start + self.page)} if start + self.page < len(recs) else {})}
@@ -67,18 +68,19 @@ class FakeAirtable(airtable.Client):
 
     def decide(self, event_id: str, **coder_fields):
         """What the coder does in the Airtable grid: fill the decision columns of one row."""
-        rid = next(i for i, f in self.rows.items() if f["event_id"] == event_id)
-        self.rows[rid].update(coder_fields)
+        rid = next(i for i, f in self.rows.items() if f[self.wire("event_id")] == event_id)
+        self.rows[rid].update({self.wire(k): v for k, v in coder_fields.items()})
 
 
 def opened_copy(tmp_path: Path, name: str) -> Path:
+    base = chubb_data(tmp_path / f"base-{name}")   # the fixture's 2026 events are its own, not the dataset's
     d = tmp_path / name
     d.mkdir()
     for f in ("claimants", "moves", "events", "sources", "corrections"):
-        shutil.copy(DATA_DIR / f"{f}.csv", d / f"{f}.csv")
+        shutil.copy(base / f"{f}.csv", d / f"{f}.csv")
     run = tmp_path / f"run-{name}"
     assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
-                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)]) == 0
     assert queue.append_run(run, d)[0] == 5
     return d
 
@@ -139,7 +141,7 @@ def test_same_decisions_through_airtable_and_through_the_review_page_yield_ident
 
     ca = queue.apply_decisions(pulled["decisions"], pulled["reviewer"], DATE, a, RAW_XLSX, RAW_MAVD)
     cb = queue.apply_decisions(page_decisions["decisions"], page_decisions["reviewer"], DATE, b, RAW_XLSX, RAW_MAVD)
-    assert ca == cb == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4}
+    assert ca == cb == {"rejected": 1, "merged": 1, "new_moves": 3, "duplicates": 0, "accepted_events": 4, "extended": 0}
     for f in ("claimants", "moves", "events", "sources", "corrections"):
         assert filecmp.cmp(a / f"{f}.csv", b / f"{f}.csv", shallow=False), f
 
@@ -159,7 +161,7 @@ def test_push_is_idempotent_and_never_touches_the_coders_columns(tmp_path):
     again[0].pop("machine_note", None)
     res = airtable.push(fake, again, "fixture")
     assert res["created"] == 0 and res["updated"] == 5
-    row = next(f for f in fake.rows.values() if f["event_id"] == eid)
+    row = {fake.unwire(k): v for k, v in next(f for f in fake.rows.values() if f[fake.wire("event_id")] == eid).items()}
     assert row["pull_request"] == 18 and row["summary"] == "corrected summary" and row["machine_note"] is None
     assert row["decision"] == "reject" and row["note"] == "keep me" and row["new_type"] == "force"
     assert len(fake.rows) == 5
@@ -168,7 +170,7 @@ def test_push_is_idempotent_and_never_touches_the_coders_columns(tmp_path):
     flagged = next(r for r in recs if r.get("possible_duplicate_of"))           # the fixture run has one flagged duplicate
     assert flagged["duplicate_of"] == flagged["possible_duplicate_of"]
     typed = next(r for r in recs if r.get("suggested_type"))
-    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"].split()
+    assert typed["new_type"] == typed["suggested_type"] and typed["new_domains"] == typed["suggested_domains"]
 
 
 def test_push_batches_ten_a_call_and_list_follows_the_pages():
@@ -268,14 +270,15 @@ def test_offline_routes_need_no_token(tmp_path, monkeypatch):
 
 def test_schema_matches_what_the_review_page_offers():
     s = airtable.table_schema()
-    names = [f["name"] for f in s["fields"]]
+    names = [f["internal"] for f in s["fields"]]
+    assert [f["name"] for f in s["fields"]] == [airtable.LABELS[n] for n in names]
     for col in queue.EDITABLE:
         if col != "location_precision":
             assert f"edit_{col}" in names, col
     # the live base recorded in the configuration has every field the code writes or reads
     cfg = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))
     assert set(cfg["field_ids"]) == set(names)
-    dec = next(f for f in s["fields"] if f["name"] == "decision")
+    dec = next(f for f in s["fields"] if f["internal"] == "decision")
     assert [c["name"] for c in dec["options"]["choices"]] == ["undecided", "merge", "new_move", "duplicate", "reject"]
 
 
@@ -296,3 +299,368 @@ def test_nothing_that_builds_the_dataset_or_the_site_knows_airtable_exists():
     # and a clean subprocess that loads, validates and builds never imports the module
     code = "import sys; from pipeline import validate, queue, load_mats; import web.build; print('pipeline.airtable' in sys.modules)"
     assert subprocess.run([sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip() == "False"
+
+
+# ---------------------------------------------------------------------------
+# ticket 20: the workbench around the queue (flags, the dataset status, the run log)
+
+def test_records_carry_flags_and_an_in_review_status(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    assert all(r["dataset_status"] == "In review" for r in recs)
+    flagged = next(r for r in recs if r.get("possible_duplicate_of"))
+    assert "Possible duplicate" in flagged["flags"]
+    # a month-precision event is flagged as approximate; a day-precision one without notes carries no flags key
+    assert all(("Date approximate" in r.get("flags", [])) == (r.get("date_precision") in ("month", "year")) for r in recs)
+    assert airtable.flags_for({"review_note": "Source page could not be fetched (HTTP 403); excerpt not checked.",
+                               "date_precision": "day", "suggestion_reasoning": "x [confidence: low]"}) == \
+        ["Excerpt not checked", "Source unreachable", "Low confidence"]
+    assert airtable.flags_for({"review_note": "Excerpt not found verbatim in the captured text.", "date_precision": "day",
+                               "suggestion_reasoning": ""}) == ["Excerpt not found"]
+    # the run link is only set when a Runs record id is given, and the refresh never touches the reviewer's flags
+    assert "run" not in recs[0]
+    linked = airtable.records_for_run(d, "fixture", pr=17, run_record="recRUN")
+    assert linked[0]["run"] == ["recRUN"]
+    assert not {"flags", "run", "dataset_status"} & set(airtable.CONTEXT_FIELDS)
+    assert airtable.flags_for({"review_note": "", "date_precision": "month", "suggestion_reasoning": ""}) == ["Date approximate"]
+    # a second push leaves a status the maintainer moved on where it is
+    fake = FakeAirtable()
+    airtable.push(fake, recs, "fixture")
+    rid = next(i for i, f in fake.rows.items() if f[fake.wire("event_id")] == recs[0]["event_id"])
+    fake.rows[rid][fake.wire("dataset_status")] = "Merged"
+    airtable.push(fake, airtable.records_for_run(d, "fixture", pr=18), "fixture")
+    assert fake.rows[rid][fake.wire("dataset_status")] == "Merged" and fake.rows[rid][fake.wire("pull_request")] == 18
+    # the schema names the Runs table the link points to
+    link = next(f for f in airtable.table_schema()["fields"] if f["internal"] == "run")
+    assert link["options"]["linkedTableId"].startswith("tbl")
+
+
+def test_the_run_record_summarises_the_run_for_the_run_log(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    run = tmp_path / "run-d"
+    rec = airtable.run_record(run, d, pr=17)
+    assert rec["run_id"] == "fixture" and rec["review_pr"] == 17 and rec["review_pr_url"].endswith("/pull/17")
+    assert rec["type"] == "Manual" and rec["candidates"] == 5 and rec["verdict"] in ("Pass", "Partial")
+    assert rec["excerpts_verified"] + rec["excerpts_unchecked"] + rec["excerpts_not_found"] == 5
+    assert rec["possible_duplicates"] == 1
+    assert rec["scope"] == "China, Vietnam 2026"
+    assert airtable.run_type("20261102T0724") == "Weekly harvest"
+    assert airtable.run_type("PH-2016-2020") == "Backfill" and airtable.run_type("MY-1970s") == "Backfill"
+    assert airtable.run_type("manual-20261018-new-claimants") == "Manual"
+    assert airtable.run_date("20261102T0724") == "2026-11-02"
+    assert airtable.run_date("manual-20261018-new-claimants") == "2026-10-18"
+    assert airtable.run_date("PH-2016-2020", "2026-11-07T16:00:00+00:00") == "2026-11-07"
+    # a run whose candidates carry import notes counts them; a run with failures and nothing else failed
+    (run / "run.json").write_text(json.dumps({"run_id": "fixture", "documents": 7, "candidates": 5, "failures": [
+        {"source_id": "amti", "error": "HTTP 403"}, {"source_id": "amti", "error": "deferred: over this run's document cap"}]}), encoding="utf-8")
+    import csv as _csv
+    rows = list(_csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    cand = [r for r in rows if r["status"] == "candidate" and r["harvest_run_id"] == "fixture"]
+    cand[0]["review_note"] = "Source page could not be fetched (HTTP 403); excerpt not checked."
+    cand[1]["review_note"] = "Excerpt not found verbatim in the captured text."
+    with open(d / "events.csv", "w", newline="", encoding="utf-8") as f:
+        w = _csv.DictWriter(f, fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
+    rec = airtable.run_record(run, d, pr=17)
+    assert (rec["excerpts_unchecked"], rec["excerpts_not_found"], rec["excerpts_verified"]) == (1, 1, 3)
+    assert rec["failures"] == 1 and rec["unreachable_sources"] == "amti" and rec["verdict"] == "Partial"
+    # the command writes it as JSON without calling Airtable
+    out = tmp_path / "run.json"
+    assert airtable.main(["run-record", "--run", str(run), "--data", str(d), "--pr", "17", "--out", str(out)]) == 0
+    assert json.loads(out.read_text(encoding="utf-8"))["run_id"] == "fixture"
+
+
+# ---------------------------------------------------------------------------
+# ticket 21: the base wears readable labels and coloured selects; the client speaks ids
+
+def test_the_client_translates_internal_names_to_field_ids_and_back(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    ids = {n: f"fld{i:014d}" for i, n in enumerate(airtable.FIELD_NAMES)}
+    fake = FakeAirtable(field_ids=ids)
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    airtable.push(fake, recs, "fixture")
+    stored = next(iter(fake.rows.values()))
+    assert set(stored) <= set(ids.values()), "the wire carries field ids, not names"
+    # the base returns ids too (returnFieldsByFieldId); pull reads them as internal names
+    eid = recs[0]["event_id"]
+    rid = next(i for i, f in fake.rows.items() if f[ids["event_id"]] == eid)
+    fake.rows[rid].update({ids["decision"]: "reject", ids["note"]: "no"})
+    out = airtable.pull(fake, "fixture")
+    assert out["decisions"] == [{"event_id": eid, "action": "reject", "note": "no"}]
+    # and a second push still finds the existing rows (idempotent through the translation)
+    assert airtable.push(fake, recs, "fixture")["created"] == 0
+    # the filter formula names the run column by its label in the base
+    assert airtable.run_filter("x").startswith("{" + airtable.LABELS["run_id"] + "}")
+    # without ids the wire speaks labels, and an export keyed by labels or ids reads back as internal names
+    bare = FakeAirtable()
+    assert bare.wire("claimant") == "Claimant" and bare.unwire("New move: type") == "new_type"
+    assert airtable.normalise_record({"fields": {"Event ID": "e1", "Decision": {"name": "reject"}}}) == {"event_id": "e1", "decision": "reject"}
+    assert airtable.normalise_record({"fields": {ids["event_id"]: "e1"}}, ids) == {"event_id": "e1"}
+
+
+def test_labels_and_select_types_match_the_base():
+    assert airtable.LABELS["claimant"] == "Claimant" and airtable.LABELS["new_type"] == "New move: type"
+    assert set(airtable.LABELS) == set(airtable.FIELD_NAMES) and len(set(airtable.LABELS.values())) == len(airtable.FIELD_NAMES)
+    types = {n: t for n, t, _ in airtable.FIELDS}
+    assert types["claimant"] == "singleSelect" and types["suggested_domains"] == types["suggested_issues"] == types["suggested_dyads"] == "multipleSelects"
+    s = airtable.table_schema()
+    typ = next(f for f in s["fields"] if f["internal"] == "suggested_type")
+    assert all(c.get("color") for c in typ["options"]["choices"]), "the chips are coloured"
+
+
+def test_records_send_lists_for_the_multi_selects(tmp_path):
+    d = opened_copy(tmp_path, "d")
+    recs = airtable.records_for_run(d, "fixture", pr=17)
+    typed = next(r for r in recs if r.get("suggested_domains"))
+    assert isinstance(typed["suggested_domains"], list) and typed["new_domains"] == typed["suggested_domains"]
+    assert all(isinstance(r.get("suggested_dyads", []), list) for r in recs)
+
+
+# ---------------------------------------------------------------------------
+# ticket 22: the review archive — reviewed rows leave Airtable, the record stays in the repository
+
+def _exported(run_id: str, rows: list[dict]) -> list[dict]:
+    """What the connector's list_records_for_table hands back: records keyed by the base's labels."""
+    out = []
+    for i, r in enumerate(rows, 1):
+        fields = {airtable.LABELS.get(k, k): v for k, v in r.items()}
+        fields[airtable.LABELS["run_id"]] = run_id
+        out.append({"id": f"rec{i:05d}", "fields": fields})
+    return out
+
+
+def test_archive_keeps_every_exported_row_and_names_only_the_decided_ones_for_deletion(tmp_path):
+    rows = [
+        {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "not an act", "reviewer": "Angelo",
+         "new_year": "1971"},
+        {"event_id": "E2", "claimant": "MY", "summary": "b", "decision": "undecided"},
+        {"event_id": "E3", "claimant": "MY", "summary": "c"},                     # never touched: no decision field at all
+        {"event_id": "E4", "claimant": "ID", "summary": "other run"},
+    ]
+    exported = _exported("MY-1970s", rows[:3]) + _exported("ID-1970s", rows[3:])
+    out = tmp_path / "harvest" / "airtable" / "MY-1970s"
+    res = airtable.archive_run(exported, "MY-1970s", out, today="2026-11-17")
+    archive = json.loads((out / "records.json").read_text(encoding="utf-8"))
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
+    # every row of the run is kept, with its Airtable id and the coder's own columns, under the code's names
+    assert [r["event_id"] for r in archive["records"]] == ["E1", "E2", "E3"]
+    e1 = archive["records"][0]
+    assert e1["airtable_id"] == "rec00001" and e1["new_year"] == "1971" and e1["decision"] == "reject"
+    assert archive["run_id"] == "MY-1970s" and archive["exported_on"] == "2026-11-17"
+    assert "E4" not in json.dumps(archive)                                       # the other run's row is not ours
+    # the decisions file is the one queue decide reads, decided rows only
+    assert decisions == {"reviewer": "Angelo", "decisions": [{"event_id": "E1", "action": "reject", "note": "not an act"}]}
+    # and only the decided rows are listed for deletion; undecided rows stay in the base
+    assert clear == {"run_id": "MY-1970s", "table": "Candidates", "record_ids": ["rec00001"], "event_ids": ["E1"]}
+    assert res == {"kept": 3, "decided": 1, "to_clear": 1}
+
+
+def test_archive_merges_a_later_export_by_event_id_so_partial_reviews_accumulate(tmp_path):
+    out = tmp_path / "MY-1970s"
+    first = _exported("MY-1970s", [{"event_id": "E1", "summary": "a", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2", "summary": "b"}])
+    airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
+    # E1 has since been cleared from the base; E2 is now decided and re-exported alone
+    second = _exported("MY-1970s", [{"event_id": "E2", "summary": "b", "decision": "new_move", "new_type": "declarative",
+                                     "new_criterion": "novelty", "new_year": "1979", "reviewer": "A"}])
+    second[0]["id"] = "rec00002"
+    res = airtable.archive_run(second, "MY-1970s", out, today="2026-11-18")
+    archive = json.loads((out / "records.json").read_text(encoding="utf-8"))
+    assert [(r["event_id"], r.get("decision")) for r in archive["records"]] == [("E1", "reject"), ("E2", "new_move")]
+    assert archive["exported_on"] == "2026-11-18" and archive["records"][0]["archived_on"] == "2026-11-17"
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # this export's decisions only
+    assert json.loads((out / "clear.json").read_text(encoding="utf-8"))["record_ids"] == ["rec00002"]
+    assert res == {"kept": 2, "decided": 1, "to_clear": 1}
+
+
+def test_archive_command_runs_offline_and_its_decisions_apply(tmp_path, monkeypatch):
+    monkeypatch.delenv("AIRTABLE_TOKEN", raising=False)
+    d = opened_copy(tmp_path, "archive")
+    cands = candidates(d)
+    eid = next(iter(cands.values()))["event_id"]
+    export = tmp_path / "export.json"
+    export.write_text(json.dumps({"records": _exported("fixture", [{"event_id": eid, "decision": "reject", "note": "fixture", "reviewer": "A"}])}), encoding="utf-8")
+    out = tmp_path / "harvest" / "airtable" / "fixture"
+    assert airtable.main(["archive", "--run", "fixture", "--from", str(export), "--out-dir", str(out)]) == 0
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    counts = queue.apply_decisions(decisions["decisions"], decisions["reviewer"], "2026-11-17", d)
+    assert counts["rejected"] == 1
+
+
+def test_archive_leaves_out_decisions_already_applied_in_an_earlier_sitting_and_refuses_duplicate_rows(tmp_path):
+    out = tmp_path / "MY-1970s"
+    first = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2"}])
+    airtable.archive_run(first, "MY-1970s", out, today="2026-11-17")
+    # the clear failed: E1 is still in the base and comes back in the next export, now beside a decided E2
+    again = _exported("MY-1970s", [{"event_id": "E1", "decision": "reject", "note": "x", "reviewer": "A"},
+                                   {"event_id": "E2", "decision": "reject", "note": "y", "reviewer": "A", "lat": 0, "edit_lat": False}])
+    res = airtable.archive_run(again, "MY-1970s", out, today="2026-11-18")
+    decisions = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+    assert [d["event_id"] for d in decisions["decisions"]] == ["E2"]          # E1 was applied last time; decide would refuse it
+    clear = json.loads((out / "clear.json").read_text(encoding="utf-8"))
+    assert clear["record_ids"] == ["rec00002"] and res == {"kept": 2, "decided": 1, "to_clear": 1}
+    e2 = next(r for r in json.loads((out / "records.json").read_text(encoding="utf-8"))["records"] if r["event_id"] == "E2")
+    assert e2["lat"] == 0 and e2["edit_lat"] is False                        # a typed 0 or False is kept; only None, "" and [] are dropped
+    dup = _exported("MY-1970s", [{"event_id": "E3"}, {"event_id": "E3"}])
+    with pytest.raises(ValueError, match="two rows for event E3"):
+        airtable.archive_run(dup, "MY-1970s", tmp_path / "dup")
+
+
+def test_archive_reads_an_export_keyed_by_field_id(tmp_path):
+    ids = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))["field_ids"]
+    rec = {"id": "recAAAAAAAAAAAAAA", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["run_id"]: "TW-2000s", ids["note"]: "later",
+                                                               ids["decision"]: {"name": "undecided"}}}
+    out = tmp_path / "TW-2000s"
+    assert airtable.archive_run([rec], "TW-2000s", out, today="2026-11-17") == {"kept": 1, "decided": 0, "to_clear": 0}
+    row = json.loads((out / "records.json").read_text(encoding="utf-8"))["records"][0]
+    assert row["note"] == "later" and row["decision"] == "undecided" and "fld" not in json.dumps(row)
+
+
+def test_archive_command_refuses_an_export_with_no_row_of_the_run(tmp_path, capsys):
+    export = tmp_path / "export.json"
+    export.write_text(json.dumps(_exported("ID-1970s", [{"event_id": "E1"}])), encoding="utf-8")
+    assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(export), "--out-dir", str(tmp_path / "out")]) == 1
+    assert "no exported row belongs to run MY-1970s" in capsys.readouterr().err
+
+
+# ---------------------------------------------------------------------------
+# the reviewer's name: set on every pushed row, and the fallback when no row names one
+
+def test_records_carry_the_configured_reviewer_so_the_coder_never_types_it(tmp_path):
+    recs = airtable.records_for_run(opened_copy(tmp_path, "d"), "fixture", pr=17, reviewer="Angelo")
+    assert all(r["reviewer"] == "Angelo" for r in recs)
+    # without a name the column is left for the coder, as before
+    assert all("reviewer" not in r for r in airtable.records_for_run(opened_copy(tmp_path, "e"), "fixture", pr=17))
+
+
+def test_the_configured_reviewer_is_the_default_name_on_the_command_line(tmp_path, monkeypatch):
+    cfg = tmp_path / "airtable.json"
+    cfg.write_text(json.dumps({"reviewer": "Angelo"}), encoding="utf-8")
+    assert airtable.default_reviewer(cfg) == "Angelo"
+    assert airtable.default_reviewer(tmp_path / "missing.json") == ""
+    monkeypatch.setattr(airtable, "CONFIG", cfg)
+    d = opened_copy(tmp_path, "d")
+    # records: the configured name unless --reviewer says otherwise; an empty --reviewer leaves the column blank
+    def names(*extra):
+        out = tmp_path / "r.json"
+        assert airtable.main(["records", "--run", "fixture", "--data", str(d), "--out", str(out), *extra]) == 0
+        return {r.get("reviewer") for r in json.loads(out.read_text(encoding="utf-8"))}
+    assert names() == {"Angelo"}
+    assert names("--reviewer", "Bea") == {"Bea"}
+    assert names("--reviewer", "") == {None}
+    # archive: the flag, else the one name the rows carry, else the configured name
+    def signed(rows, *extra):
+        exp = tmp_path / "export.json"
+        exp.write_text(json.dumps(_exported("MY-1970s", rows)), encoding="utf-8")
+        out = tmp_path / "arch"
+        shutil.rmtree(out, ignore_errors=True)
+        assert airtable.main(["archive", "--run", "MY-1970s", "--from", str(exp), "--out-dir", str(out), *extra]) == 0
+        return json.loads((out / "decisions.json").read_text(encoding="utf-8")).get("reviewer")
+    rejected = {"event_id": "E1", "claimant": "MY", "summary": "a", "decision": "reject", "note": "x"}
+    assert signed([rejected]) == "Angelo"
+    assert signed([dict(rejected, reviewer="Bea")]) == "Bea"
+    assert signed([dict(rejected, reviewer="Bea")], "--reviewer", "Cy") == "Cy"
+    # subcommands without the option are untouched by the configuration
+    assert airtable.main(["schema"]) == 0
+
+
+def test_a_blank_note_on_a_reject_takes_the_presorts_continuation_as_confirmed():
+    rows = [
+        {"event_id": "E1", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "continuation of CN198201 — rig back where it was in 2015 [claude-code/opus]"},
+        {"event_id": "E2", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "continuation of ev-1234567890 (a candidate, provisional) — follows the June patrol [claude-code/opus]"},
+        {"event_id": "E3", "decision": "reject", "note": "statement to a non-claimant", "run_id": "R",
+         "presort": "continuation of CN201501 — ... [claude-code/opus]"},        # the coder's own note wins
+        {"event_id": "E4", "decision": "reject", "note": "", "run_id": "R",
+         "presort": "new move (scope) — ... [claude-code/opus]"},                 # not a continuation: still needs a note
+    ]
+    d = {x["event_id"]: x for x in airtable.decisions_from_records(rows, run_id="R")["decisions"]}
+    assert d["E1"]["note"] == "continuation of CN198201 (pre-sort confirmed)"
+    assert d["E2"]["note"] == "continuation of ev-1234567890 (pre-sort confirmed)"
+    assert d["E3"]["note"] == "statement to a non-claimant"
+    assert d["E4"]["note"] == ""
+
+
+def test_the_airtable_move_lists_cut_long_descriptions_at_a_word():
+    long = "word " * 80
+    text = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": long}])
+    assert text.startswith("CN200802 [coercive, through 2016]: word word") and text.endswith("…") and len(text) < 200
+    short = airtable._moves_text([{"move_id": "CN200802", "types": ["coercive"], "status": "accepted", "ongoing_through": "2016", "description": "short"}])
+    assert short == "CN200802 [coercive, through 2016]: short"
+
+
+# ---------------------------------------------------------------------------
+# the nightly refresh of the context columns on rows already in the base
+
+def test_context_updates_name_only_the_rows_whose_lists_changed(tmp_path):
+    ids = json.loads((ROOT / "pipeline" / "airtable.json").read_text(encoding="utf-8"))["field_ids"]
+    current = [  # as the connector lists them: keyed by field id
+        {"id": "rec1", "cellValuesByFieldId": {ids["event_id"]: "E1", ids["previous_year_moves"]: "old list", ids["same_year_moves"]: ""}},
+        {"id": "rec2", "cellValuesByFieldId": {ids["event_id"]: "E2", ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x", ids["same_year_moves"]: "CN201601 [demonstrative]: y"}},
+        {"id": "rec3", "cellValuesByFieldId": {ids["event_id"]: "E3"}},
+    ]
+    records = [  # as `records` generates them today
+        {"event_id": "E1", "previous_year_moves": "CN200802 [coercive, through 2016]: x", "same_year_moves": None},
+        {"event_id": "E2", "previous_year_moves": "CN200802 [coercive, through 2016]: x", "same_year_moves": "CN201601 [demonstrative]: y"},
+        {"event_id": "E3", "previous_year_moves": None, "same_year_moves": None},
+        {"event_id": "E9", "previous_year_moves": "not in the base", "same_year_moves": None},
+    ]
+    ups = airtable.context_updates(current, records, ids)
+    assert ups == [{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]
+    # a row whose list emptied is cleared, not skipped
+    records[1]["same_year_moves"] = None
+    ups = airtable.context_updates(current, records, ids)
+    assert {ids["same_year_moves"]: ""} == ups[1]["fields"] and ups[1]["id"] == "rec2"
+    # the check names mismatches by event id and is quiet when all agree
+    assert airtable.context_mismatches(current, records, ids) == ["E1", "E2"]
+    current[0]["cellValuesByFieldId"][ids["previous_year_moves"]] = "CN200802 [coercive, through 2016]: x"
+    current[1]["cellValuesByFieldId"][ids["same_year_moves"]] = ""
+    assert airtable.context_mismatches(current, records, ids) == []
+    # the command line: diff writes the update batches, check exits 1 on a mismatch
+    cur, rec = tmp_path / "current.json", tmp_path / "records.json"
+    cur.write_text(json.dumps({"records": current}), encoding="utf-8"); rec.write_text(json.dumps(records), encoding="utf-8")
+    out = tmp_path / "updates.json"
+    assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out)]) == 0
+    assert json.loads(out.read_text(encoding="utf-8")) == []
+    assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 0
+    current[0]["cellValuesByFieldId"][ids["previous_year_moves"]] = "stale"
+    cur.write_text(json.dumps({"records": current}), encoding="utf-8")
+    assert airtable.main(["context-diff", "--current", str(cur), "--records", str(rec), "--out", str(out), "--batch", "1"]) == 0
+    assert json.loads(out.read_text(encoding="utf-8")) == [[{"id": "rec1", "fields": {ids["previous_year_moves"]: "CN200802 [coercive, through 2016]: x"}}]]
+    assert airtable.main(["context-check", "--current", str(cur), "--records", str(rec)]) == 1
+
+
+def test_a_candidate_without_a_sub_region_comes_with_suggestions(tmp_path):
+    """Ticket 33: a blank sub-region is prefilled from the place ("off Sabah and Sarawak" -> 10 and 7),
+    with the reason in the machine note; the event row itself is not changed."""
+    d = opened_copy(tmp_path, "d")
+    path = d / "events.csv"
+    rows = list(csv.DictReader(open(path, encoding="utf-8")))
+    target = next(r for r in rows if r["harvest_run_id"] == "fixture" and r["status"] == "candidate" and not r["location_name"])
+    target.update(location_name="Malaysian continental shelf off Sabah and Sarawak", subregion="", lat="", lon="")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    rec = next(r for r in airtable.records_for_run(d, "fixture", pr=17) if r["event_id"] == target["event_id"])
+    assert rec["new_subregions"] == ["10 Far South", "7 Spratly SE"]
+    assert "subregion" not in rec                                   # two suggestions: the single sub-region is left to the coder
+    assert rec["machine_note"].startswith("Sub-regions suggested: 10 Far South (") and "Sarawak coast 99%" in rec["machine_note"]
+    assert next(r for r in csv.DictReader(open(path, encoding="utf-8")) if r["event_id"] == target["event_id"])["subregion"] == ""
+
+
+def test_an_event_id_in_merge_into_move_is_read_as_a_merge_into_that_candidate():
+    """2026-11-24: twice a lead's event id was typed into "Merge into move"; it names a candidate."""
+    ids = airtable.load_config()["field_ids"]
+    rec = {"id": "recA", "cellValuesByFieldId": {ids["event_id"]: "ev-aaa", ids["decision"]: {"name": "merge"},
+                                                 ids["merge_into_move"]: " ev-bbb "}}
+    d = airtable.decisions_from_records([rec], field_ids=ids)
+    item = (d["decisions"] if isinstance(d, dict) else d)[0]
+    assert item["move_of_event"] == "ev-bbb" and "move_id" not in item
+    rec["cellValuesByFieldId"][ids["merge_into_move"]] = "CN201602"
+    d = airtable.decisions_from_records([rec], field_ids=ids)
+    item = (d["decisions"] if isinstance(d, dict) else d)[0]
+    assert item["move_id"] == "CN201602" and "move_of_event" not in item

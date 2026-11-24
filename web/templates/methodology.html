@@ -1,17 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Methodology — SCS Developments Tracker{% endblock %}
+{% block title %}Methodology — South China Sea Developments Tracker{% endblock %}
 {% block head_data %}{% endblock %}
 {% block scripts %}{% endblock %}
 {% block content %}
 <article class="prose">
-<h1>Methodology and credits</h1>
+<p class="kicker">Methodology</p>
+<h1>How the moves are coded</h1>
+<p class="lede-text">Andrew Chubb's coding rules (MATS), unchanged, carried forward from 2016 and extended to seven claimants; every move dated, placed and sourced.</p>
+<nav class="section-links" aria-label="On this page"><a href="#what">What counts</a><a href="#coding">Coding</a><a href="#subregions">Sub-regions</a><a href="#sources">Sources</a><a href="#map">The map</a><a href="#agreement">Machine suggestions</a><a href="#cite">How to cite</a><a href="#credits">Credits</a></nav>
 
-<p>The SCS Developments Tracker continues Andrew Chubb's <em>Maritime Assertiveness Time Series</em> (MATS). MATS 1.0 coded assertive moves by China, Vietnam and the Philippines in the South China Sea from 1970 to 2015. This project keeps that coding scheme unchanged, carries the series forward to the present, extends it to Malaysia, Indonesia and Taiwan, and adds an event layer beneath each move with dates, locations and sources.</p>
+<p>The South China Sea Developments Tracker continues Andrew Chubb's <em>Maritime Assertiveness Time Series</em> (MATS). MATS 1.0 coded assertive moves by China, Vietnam and the Philippines in the South China Sea from 1970 to 2015. This project keeps that coding scheme unchanged, carries the series forward to the present, extends it to Malaysia, Indonesia, Taiwan and Brunei, and adds an event layer beneath each move with dates, locations and sources.</p>
 
-<h2>What counts as a move</h2>
+<h2 id="what">What counts as a move</h2>
 <p>A move is an intensification of a claimant's assertiveness compared with the previous calendar year, shown by one of three criteria: qualitative novelty, increased frequency, or expanded geographic scope. An action that merely continues the previous year's behaviour at the same level is not a new move; it is covered by the earlier move's estimated duration. Only non-cooperative behaviour is coded; conciliatory actions are deliberately excluded.</p>
 
-<h2>How a move is coded</h2>
+<h2 id="coding">How a move is coded</h2>
 <dl class="defs">
   {% for key, label, blurb in types %}
   <dt>{{ label }}</dt><dd>{{ blurb }}</dd>
@@ -19,20 +22,28 @@
 </dl>
 <p>Each move also records its domains (domestic, diplomatic, physical), the issues at stake (military, administrative, energy, fisheries, politics), the dyads involved, the sub-regions concerned, and the estimated last year the behaviour continued.</p>
 
-<h2>Sub-regions</h2>
+<h2 id="subregions">Sub-regions</h2>
 <p>Ten zones, numbered as in MATS: {% for n, name in subregions %}{{ n }} {{ name }}{% if not loop.last %}; {% endif %}{% endfor %}.</p>
 
-<h2>Where the data come from</h2>
-<p>The 1970–2015 moves for China, Vietnam and the Philippines are Chubb's MATS 1.02, loaded unchanged ({{ meta.n_moves }} accepted moves at this build{% if meta.n_pending %}, plus {{ meta.n_pending }} pending the author's confirmation{% endif %}). The full methodology, including source lists, verification practice and inter-coder checks, is in the <a href="https://doi.org/10.7910/DVN/3Y7NRU">appendix to Chubb (2021)</a>, released under CC0 and kept as the project codebook in <a href="{{ meta.repo_url }}/tree/main/docs/codebook">the repository</a>.</p>
+<h2 id="sources">Where the data come from</h2>
+<p>The 1970–2015 moves for China, Vietnam and the Philippines are Chubb's MATS 1.02, loaded unchanged. The full methodology, including source lists, verification practice and inter-coder checks, is in the <a href="https://doi.org/10.7910/DVN/3Y7NRU">appendix to Chubb (2021)</a>, released under CC0 and kept as the project codebook in <a href="{{ meta.repo_url }}/tree/main/docs/codebook">the repository</a>.</p>
 <p>Each claimant's 1970 level is read against a baseline of its known actions before 1970: Chubb's own list for China, and lists compiled by this project for the other five (<code>BASELINE-*.md</code> on the <a href="downloads.html">Downloads</a> page), each row with its source.</p>
 <p>For later years and for the additional claimants, scheduled runs harvest a documented list of sources and propose candidate events; a human coder decides what enters the dataset. Candidates compiled by hand from sources enter the same queue and are labelled by their compiler rather than by a model. Every machine suggestion is kept beside the coder's final decision so that agreement can be measured (<a href="#agreement">the report is below</a>). Project-coded moves are labelled as such wherever they appear.</p>
 <p>Every change to the dataset is a reviewed, versioned commit in the <a href="{{ meta.repo_url }}">public repository</a>, and an automatic check refuses any change that would alter the 1970–2015 figures for the original three claimants.</p>
+
+<section id="map">
+<h2>Reading the map</h2>
+<p>The map at the top of the tracker shades each of the ten sub-regions by the moves of a five-year window, the most recent first. Every move counts on each sub-region it is coded for, weighted by its most severe type: declarative 1, demonstrative 2, coercive 3, force 4. A sub-region's score is the sum of those weights in the window, for all claimants or for the one chosen. The scale is fixed across every window (shown on a square-root ramp, so lower scores stay visible beside the highest), so a darker shade in one period than in another means more moves, harsher moves, or both. A claim covering the whole sea counts on sub-regions 2 to 10 at once; by default the map shares each move's weight among the sub-regions it covers (a claim over nine of them adds a ninth of its weight to each), and a switch below the map counts every move in full on each instead. An arrow beside a sub-region's number marks a rise (▲) or fall (▼) of a fifth or more in its score against the five years before. The number on each sub-region is its count of moves in the window. Zoomed in, or with a sub-region chosen, the map shows the reefs, shoals and islands the moves' descriptions name, matched against the project's gazetteer; a move that names none (about two in three) is known only to its sub-regions. The types of move, the claimant and the party a move is directed at can be narrowed below the map; the timeline above the slider counts the moves per year for the same choice. A switch shows instead the build-up since 1970, every move up to the year chosen, as the original MAVD map does. The slider moves the window back in time; the Events page shows the events one by one, with filters.</p>
+<p>A point is one event: a patrol intercept, a statement, a drilling start, dated and sourced on its move's page. A filled point has coordinates of its own; a hollow point stands at the named feature (reef, shoal, island) the sources mention, placed with the project's <a href="{{ meta.repo_url }}/blob/main/data/reference/gazetteer.csv">gazetteer</a>. Every event is counted on a sub-region — its own if one is known, otherwise once on each sub-region of its move, so the numbers on the ten polygons can add up to more than the number of events — and those with coordinates are drawn at them as well; the sub-region counts therefore hold the whole dataset, whatever the sources could place. The filters use the move's coding (type, domain, issue, counterpart), because MATS variables belong to the move, not the event. The base map is drawn from <a href="https://openfreemap.org">OpenFreeMap</a> vector tiles (<a href="https://www.openmaptiles.org/">OpenMapTiles</a> schema, © OpenStreetMap contributors, ODbL), recoloured by the project, with English names in the Latin alphabet wherever the data has them; the tiles and their fonts are the only things on the tracker not in the bundle, and without them the sub-regions and events still draw. Boundaries and names on the base map are those of its providers; the feature names this project uses follow the source text and Wikidata's English labels; neither implies a position on any claim.</p>
+<p>The claimant buttons below the map share one scale, the window's, so their shades compare across claimants. The Events page counts every event in the period chosen; most are known only to their sub-region, and those the sources place are drawn at a point as well. The review notes kept with each event (the source's wording for a place, a possible duplicate, whether an excerpt was checked against its page) are in the data files, not on the case pages.</p>
+<p id="map-sources">Lines on the map: EEZ boundaries, where settled or claimed, from <a href="https://www.marineregions.org/">Marine Regions</a> (Maritime Boundaries v12, CC BY 4.0); China's dashed line, shown as a claim, from <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain); who holds each feature, its outposts drawn in the holder's colour, from Wikipedia's list of Spratly Islands features (read 2026-11-23), the Paracels and Scarborough Shoal.</p>
+</section>
 
 <section id="agreement">
 <h2>How good are the machine's suggestions</h2>
 <p>Every candidate event the harvester proposes carries a suggested coding (Type, Domains, Issues, dyads and, should an extractor propose one, the move it belongs to) and the name of the extractor that made it. The coder's decision is final; the suggestion stays on the row. This report compares the two for every accepted event with a suggestion, by extractor version and by the year of the event, and is regenerated on every build (<a href="data/agreement.json">agreement.json</a>). It is a measure of the suggestions, not of the dataset: the dataset holds only what a coder decided.</p>
 {% if agreement.n_decided == 0 %}
-<p class="figure-note">No machine suggestion has been reviewed yet; the tables fill from the first reviewed harvest.</p>
+<p class="figure-note">The tables are filled from reviewed harvest runs.</p>
 {% else %}
 <dl class="definitions">
   <dt>Type, Domains, Issues, Dyads</dt><dd>Agreement means the suggestion equals the move's final coding exactly: the one Type; the full set of domains, of issues, of dyads.</dd>
@@ -87,7 +98,7 @@
 </ul>
 <p>For this continuation, cite the dataset at its version: see <a href="downloads.html#cite">Downloads and citation</a> (this build: dataset {{ meta.dataset_version }}, build {{ meta.version }}, {{ meta.build_date }}).</p>
 
-<h2>Credits</h2>
-<p>Original dataset and coding scheme: Andrew Chubb. Original visualisation: the Maritime Assertiveness Visualization Dashboard (National Bureau of Asian Research, 2023). Continuation and this site: Angelo M. and the South-China-Sea-Developments project. Typeface: Instrument Sans (SIL Open Font License). Event map: MapLibre GL (BSD-3-Clause) over OpenFreeMap tiles (OpenMapTiles schema, © OpenStreetMap contributors, ODbL); feature names and coordinates from Wikidata (CC0) with the project's corrections.</p>
+<h2 id="credits">Credits</h2>
+<p>Original dataset and coding scheme: Andrew Chubb. Original visualisation: the Maritime Assertiveness Visualization Dashboard (National Bureau of Asian Research, 2023). Continuation and this site: Angelo M. and the South-China-Sea-Developments project. Typefaces: Outfit and Instrument Sans, both under the SIL Open Font License. Event map: MapLibre GL (BSD-3-Clause) over OpenFreeMap tiles (OpenMapTiles schema, © OpenStreetMap contributors, ODbL); feature names and coordinates from Wikidata (CC0) and <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0) with the project's corrections; EEZ boundaries from <a href="https://www.marineregions.org/">Marine Regions</a> (Flanders Marine Institute, Maritime Boundaries Geodatabase v12, CC BY 4.0); reefs, minor islands and China's dashed line from Natural Earth (public domain).</p>
 </article>
 {% endblock %}

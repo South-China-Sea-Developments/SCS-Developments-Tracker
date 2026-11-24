@@ -1,0 +1,571 @@
+{
+ "run_id": "CN-2016-2020",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-9c7790c4a9",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First flights to a Spratly artificial-island runway (Fiery Cross, Jan 2016): operating the airfields is a new method; CN201504/CN201403 covered building them, nothing comparable was flown in 2015.",
+   "group": "CN16-spratly-runways"
+  },
+  {
+   "event_id": "ev-7d70f0f685",
+   "disposition": "continuation",
+   "of": "CN198201",
+   "reason": "HYSY 981 operating again in the overlapping shelf off the Gulf of Tonkin mouth, as it did there in mid-2015; same-level continuation of state oil activity in the Tonkin/Yinggehai area (CN198201, ongoing through 2015)."
+  },
+  {
+   "event_id": "ev-7cd6864e49",
+   "disposition": "continuation",
+   "of": "CN201501",
+   "reason": "Warning, shadowing and protesting US FONOPs continues the 2015 practice of challenging foreign military units near Chinese-held features (CN201501, ongoing through 2016; the Lassen FONOP drew the same response in Oct 2015); more FONOPs to react to is not a frequency move."
+  },
+  {
+   "event_id": "ev-5ba80d68d3",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Excluding Filipino fishermen from Jackson (Quirino) Atoll extends the coercion of CN201402, which in 2015 was confined to Scarborough Shoal, to a new feature."
+  },
+  {
+   "event_id": "ev-13ddf85191",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "HQ-9 surface-to-air missiles on Woody Island are a new capability in the Paracels; the 2015 record (CN197102, CN201002) has no missile deployment.",
+   "group": "CN16-woody-missiles"
+  },
+  {
+   "event_id": "ev-c9aac89a9d",
+   "disposition": "same_move",
+   "of": "ev-13ddf85191",
+   "group": "CN16-woody-missiles",
+   "reason": "YJ-62 anti-ship missiles on Woody Island a month after the HQ-9s: the same intensification (missile deployment to Woody), lead ev-13ddf85191."
+  },
+  {
+   "event_id": "ev-be22ccbe21",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "Radar towers on Cuarteron and other reefs were built over the preceding months as part of the island building of CN201504 (ongoing through 2018); dated only by the imagery report."
+  },
+  {
+   "event_id": "ev-3a64632f5a",
+   "disposition": "continuation",
+   "of": "CN200802",
+   "reason": "Boarding and robbing Vietnamese fishing boats around the Paracels continues the standing expulsion practice of CN200802 (ongoing through 2015); no change of method reported, and the account is Vietnamese-only."
+  },
+  {
+   "event_id": "ev-f9e3216299",
+   "disposition": "same_move",
+   "of": "ev-e30c993d81",
+   "group": "CN16-judicial-jurisdiction",
+   "reason": "March announcement of a maritime judicial centre is the forerunner of the August SPC interpretation (ev-e30c993d81); one intensification of judicial jurisdiction over claimed waters."
+  },
+  {
+   "event_id": "ev-e30c993d81",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "SPC judicial interpretation extending Chinese court jurisdiction to the claimed EEZ/shelf with jail terms for foreign fishers is a new national-level legal instrument; nearest 2015-standing measure is Hainan's provincial board-and-search rules (CN201209).",
+   "group": "CN16-judicial-jurisdiction"
+  },
+  {
+   "event_id": "ev-7ad6eeb7b5",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "CCG ramming a detained trawler free from an Indonesian patrol off Natuna is physical interference against Indonesia with nothing comparable in China's 2015 moves (none has dyad CI).",
+   "group": "CN16-natuna"
+  },
+  {
+   "event_id": "ev-5b8b6b6bd4",
+   "disposition": "same_move",
+   "of": "ev-7ad6eeb7b5",
+   "group": "CN16-natuna",
+   "reason": "May protest over the Gui Bei Yu 27088 detention asserts the same Natuna fishing-ground claim as the March clash (ev-7ad6eeb7b5)."
+  },
+  {
+   "event_id": "ev-7141b5a4c0",
+   "disposition": "same_move",
+   "of": "ev-7ad6eeb7b5",
+   "group": "CN16-natuna",
+   "reason": "June CCG dispatch and first explicit claim of overlapping rights off Natuna belong with the 2016 Natuna intensification led by ev-7ad6eeb7b5; the coder may prefer a separate declarative move."
+  },
+  {
+   "event_id": "ev-8894d63346",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "Commissioning the Subi lighthouse repeats the 2015 commissioning of lighthouses on Cuarteron and Johnson South; civil infrastructure on the outposts built under CN201504 (ongoing through 2018)."
+  },
+  {
+   "event_id": "ev-66585c9b2f",
+   "disposition": "same_move",
+   "of": "ev-9c7790c4a9",
+   "group": "CN16-spratly-runways",
+   "reason": "First military landing on the Fiery Cross strip (17 Apr) is part of the 2016 start of Spratly air operations led by ev-9c7790c4a9; the coder may split military use into its own move."
+  },
+  {
+   "event_id": "ev-0ce3112282",
+   "disposition": "unclear",
+   "reason": "A CMC vice-chairman's inspection of the Spratly outposts is demonstrative, but whether senior inspections were absent in 2015 is not shown; settle by checking 2015 PLA leadership visits to the Spratlys (if none, novelty; otherwise continuation of CN201504)."
+  },
+  {
+   "event_id": "ev-85fce8ad11",
+   "disposition": "continuation",
+   "of": "CN200202",
+   "reason": "Annual summer fishing moratorium, a routine yearly repeat present in 2015 and enforced against foreign boats since CN200202 (ongoing through 2015)."
+  },
+  {
+   "event_id": "ev-cf957696c3",
+   "disposition": "continuation",
+   "of": "CN201209",
+   "reason": "Restating the right of law-enforcement vessels to manage Paracel waters repeats the standing jurisdiction claim of CN201209 (ongoing through 2015); one more reaffirmation."
+  },
+  {
+   "event_id": "ev-436bf217f8",
+   "disposition": "continuation",
+   "of": "CN201002",
+   "reason": "PLAN Paracels exercise with area closure is one of the regular announced SCS exercises (5-6 a year through 2015, CN201002); called routine and under the annual plan."
+  },
+  {
+   "event_id": "ev-694aeef72a",
+   "disposition": "unclear",
+   "reason": "Ramming and sinking QNg 90479 near the Paracels is coercive; whether sinking was a change of method against 2015 (when Paracels enforcement was harassment/robbery under CN200802) is unclear; settle by checking 2015 for comparable sinkings (if none, novelty with ev-3a64632f5a's practice as baseline). Vietnamese-sourced."
+  },
+  {
+   "event_id": "ev-832c64dcf0",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Government statement of 12 July claiming maritime zones from Nanhai Zhudao and historic rights, and declaring the award void, is a new formal articulation of the claim; nothing comparable in 2015 moves.",
+   "group": "CN16-award-rejection"
+  },
+  {
+   "event_id": "ev-96b902d9ec",
+   "disposition": "same_move",
+   "of": "ev-832c64dcf0",
+   "group": "CN16-award-rejection",
+   "reason": "White paper and ADIZ-right remark the day after the award are part of the same post-award declarative push led by ev-832c64dcf0."
+  },
+  {
+   "event_id": "ev-11cedb20da",
+   "disposition": "same_move",
+   "of": "ev-9c7790c4a9",
+   "group": "CN16-spratly-runways",
+   "reason": "First landings on the Mischief and Subi runways extend the 2016 start of Spratly air operations (lead ev-9c7790c4a9) to two more outposts."
+  },
+  {
+   "event_id": "ev-a31de4d44e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "H-6K bomber over Scarborough and announcement of regular SCS combat air patrols: a new method; 2015 had radio challenges (CN201501) and naval exercises (CN201002) but no announced air combat patrols.",
+   "group": "CN16-combat-air-patrols"
+  },
+  {
+   "event_id": "ev-2318cd96ea",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "Hardened hangars on Fiery Cross, Subi and Mischief are construction on the outposts, part of CN201504's island building (ongoing through 2018)."
+  },
+  {
+   "event_id": "ev-e502919087",
+   "disposition": "same_move",
+   "of": "ev-a31de4d44e",
+   "group": "CN16-combat-air-patrols",
+   "reason": "Second announced combat air patrol over the Spratlys and Scarborough (6 Aug) is the same practice launched in July (ev-a31de4d44e)."
+  },
+  {
+   "event_id": "ev-2d721ef662",
+   "disposition": "continuation",
+   "of": "CN201205",
+   "reason": "CCG presence at Scarborough continues the constant presence established by CN201205 (ongoing through 2015); denial of reclamation, and more ships is not shown to be a lasting rise."
+  },
+  {
+   "event_id": "ev-fdfd60d45e",
+   "disposition": "unclear",
+   "reason": "Joint Sea 2016 was held off Zhanjiang, outside disputed waters, with a non-claimant partner; settle by whether the coder treats exercises in undisputed SCS waters as part of CN201002 — likely reject."
+  },
+  {
+   "event_id": "ev-71c4cfd8e3",
+   "disposition": "continuation",
+   "of": "CN198705",
+   "reason": "Routine MFA protest naming Vietnam over Spratly Island construction continues the standing practice of publicly criticising rival claimants by name (CN198705, ongoing through 2015); one more statement is not a move."
+  },
+  {
+   "event_id": "ev-5a17d118f5",
+   "disposition": "continuation",
+   "of": "CN198705",
+   "reason": "Routine MFA protest over Vietnamese dredging at Ladd Reef; same standing practice as CN198705, no rise in kind or count shown."
+  },
+  {
+   "event_id": "ev-11e6c8d7a8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Anti-aircraft guns and CIWS on all seven Spratly outposts are the first weapons emplacements on the artificial islands; CN201504 was construction only. Kept apart from the Woody missiles (different sub-region and standing)."
+  },
+  {
+   "event_id": "ev-050fffbf7e",
+   "disposition": "unclear",
+   "reason": "Seizing a US UUV near Subic is coercive but was framed as navigational safety and lies probably outside the nine-dash line; settle by the location against the claim — if not about the claim, reject; if it is, a novelty coercive move with dyad CU."
+  },
+  {
+   "event_id": "ev-fdf2c4c55e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First scheduled civilian passenger flights to Woody Island, opening the airport to civil use; the flights under CN197801 were official/military, and nothing comparable in 2015."
+  },
+  {
+   "event_id": "ev-acb12cf567",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First announced carrier-group exercise (Liaoning, J-15 flight ops) in the South China Sea; nothing comparable among 2016 candidates, whose exercises were surface drills (ev-436bf217f8) and air patrols (ev-a31de4d44e)."
+  },
+  {
+   "event_id": "ev-7297605ce2",
+   "disposition": "continuation",
+   "of": "ev-11e6c8d7a8",
+   "reason": "Repeats the Dec 2016 MFA line on the right to arm the Nansha outposts given with ev-11e6c8d7a8; one more reaffirmation, provisional while 2016 is undecided."
+  },
+  {
+   "event_id": "ev-3756193d89",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Draft Maritime Traffic Safety Law revision letting authorities bar foreign ships and regulate submersibles in claimed waters is a new legal instrument; 2016's legal step (ev-e30c993d81) concerned court jurisdiction over fishing. Only a draft, which the coder may hold back."
+  },
+  {
+   "event_id": "ev-62ee135542",
+   "disposition": "new_move",
+   "criterion": "frequency",
+   "reason": "Summer moratorium lengthened from 16 May-1 Aug (77 days, ev-85fce8ad11, 2016) to 1 May-16 Aug (108 days) over the same disputed waters: a longer enforced closure, not a routine repeat."
+  },
+  {
+   "event_id": "ev-5246e8120b",
+   "disposition": "unclear",
+   "reason": "State-backed Paracel cruises have run since CN201306 (2013, ended 2015 in the record) and no 2016 candidate records them; whether a second, larger ship is a frequency rise or continuation needs the 2016 cruise count."
+  },
+  {
+   "event_id": "ev-4574ae4c43",
+   "disposition": "unclear",
+   "reason": "Sansha's announced monitoring stations at Scarborough were disavowed by the MFA as false; settle by whether a disavowed local-government announcement counts as a state claim — if so, novelty (2016 candidate ev-2d721ef662 had China denying construction there)."
+  },
+  {
+   "event_id": "ev-c4bb3394b5",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "Completion of hangars, radars and missile shelters on the Big Three continues the island building of CN201504 (ongoing through 2018), begun in 2016 (ev-2318cd96ea)."
+  },
+  {
+   "event_id": "ev-3560ee4bd1",
+   "disposition": "continuation",
+   "of": "ev-13ddf85191",
+   "reason": "Fighter rotation to Woody Island continues the fighters reported there in Feb 2016 with ev-13ddf85191; provisional while 2016 is undecided."
+  },
+  {
+   "event_id": "ev-c7f033d95a",
+   "disposition": "continuation",
+   "of": "ev-2d721ef662",
+   "reason": "CCG stationing at Scarborough continues the 2016 law-enforcement presence (ev-2d721ef662, itself the CN201205 practice); provisional while 2016 is undecided."
+  },
+  {
+   "event_id": "ev-0934929e97",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Threatening to attack Vietnamese Spratly bases to halt Repsol's drilling is a new coercive method; nothing comparable among 2016 candidates (CN200704's oil-company threats ended 2015)."
+  },
+  {
+   "event_id": "ev-b3a00a44aa",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "New shelters, radar and underground storage on Fiery Cross, Mischief and Subi are further construction under CN201504 (ongoing through 2018)."
+  },
+  {
+   "event_id": "ev-c995d82196",
+   "disposition": "continuation",
+   "of": "CN201501",
+   "reason": "Radio warnings ordering Philippine aircraft away from the Spratly outposts are the practice of CN201501 (ongoing through 2016); 46 warnings in H2 2017 but no 2016 count to compare."
+  },
+  {
+   "event_id": "ev-7f733197fe",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "New reclamation at North Island and a dredged harbour at Drummond extend island building to Paracel features; 2016 candidates show construction only in the Spratlys (ev-2318cd96ea, ev-be22ccbe21).",
+   "group": "CN17-paracel-reclamation"
+  },
+  {
+   "event_id": "ev-caeb6e9933",
+   "disposition": "continuation",
+   "of": "CN201501",
+   "reason": "Warning off US FONOPs near Mischief and Triton continues the 2016 response (ev-7cd6864e49) under CN201501 (ongoing through 2016); more FONOPs is not a frequency move."
+  },
+  {
+   "event_id": "ev-c2627ecb81",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Flotilla blocking a BFAR ship at the Thitu sandbars extends coercion of Philippine state vessels to a new feature; 2016 candidates had it at Jackson Atoll (ev-5ba80d68d3) and Scarborough only."
+  },
+  {
+   "event_id": "ev-4876258964",
+   "disposition": "same_move",
+   "of": "ev-7f733197fe",
+   "group": "CN17-paracel-reclamation",
+   "reason": "Year-end AMTI review: its Spratly part is CN201504 construction, its new element is the North/Tree/Triton reclamation, i.e. the Paracel reclamation led by ev-7f733197fe."
+  },
+  {
+   "event_id": "ev-ca24d171e0",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Military transports landing on Mischief and Subi extend military use of the Spratly runways beyond Fiery Cross (2016, ev-66585c9b2f); no 2017 candidate shows military aircraft on the Spratly strips."
+  },
+  {
+   "event_id": "ev-b73209ee3a",
+   "disposition": "continuation",
+   "of": "ev-0934929e97",
+   "reason": "Pressure halting Repsol's Red Emperor project repeats the 2017 coercion over Block 136-03 (ev-0934929e97) by the same method in an adjacent block; provisional."
+  },
+  {
+   "event_id": "ev-625213d311",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "YJ-12B and HQ-9B missiles on Fiery Cross, Subi and Mischief are the first missile deployment to the Spratly outposts; in 2017 the shelters were built but empty (ev-c4bb3394b5, ev-b3a00a44aa).",
+   "group": "CN18-spratly-missiles"
+  },
+  {
+   "event_id": "ev-21d0f5dbec",
+   "disposition": "same_move",
+   "of": "ev-625213d311",
+   "group": "CN18-spratly-missiles",
+   "reason": "Jamming equipment on Mischief and Fiery Cross (Apr 2018) is part of the same first weapons deployment to the Spratly outposts led by ev-625213d311; the importer's duplicate flag against ev-ca24d171e0 does not hold (different act)."
+  },
+  {
+   "event_id": "ev-8c3dff1b5b",
+   "disposition": "unclear",
+   "reason": "Largest-ever fleet review was held off Hainan, outside disputed waters, like ev-fdfd60d45e in 2016; settle by whether a display in undisputed SCS waters counts — likely reject; if it counts, compare its scale with the 2017 carrier drill (ev-acb12cf567)."
+  },
+  {
+   "event_id": "ev-0c6bdb5f9b",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Navy helicopter hovering dangerously over a Philippine resupply boat at Second Thomas is a new method of interference there; no 2017 candidate shows harassment at the shoal (CN201303's presence ended 2015 in the record)."
+  },
+  {
+   "event_id": "ev-5166e52f1d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First take-off and landing of H-6K bombers on a SCS island (Woody); 2017 had only fighter rotations there (ev-3560ee4bd1)."
+  },
+  {
+   "event_id": "ev-3416105bdb",
+   "disposition": "unclear",
+   "reason": "CCG boarding Filipino boats and taking catch at Scarborough; fishermen call it routine, implying it continued from 2017 (ev-c7f033d95a, undecided). Settle by whether confiscation already happened in 2017: if yes continuation, if not novelty (coercive)."
+  },
+  {
+   "event_id": "ev-b0585d4e3a",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Surveillance platform on previously untouched Bombay Reef extends installations to a new Paracel feature beyond the 2017 reclamation at North, Tree and Drummond (ev-7f733197fe)."
+  },
+  {
+   "event_id": "ev-ae29ec2d36",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Lanzhou's unsafe approach forcing USS Decatur off course is a change of method from the 2017 identify-and-warn responses (ev-caeb6e9933); CN201501 ended 2016 so cannot be continued."
+  },
+  {
+   "event_id": "ev-73c18aadce",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "Weather and environmental stations on Fiery Cross, Subi and Mischief are further facilities on the outposts built under CN201504 (ongoing through 2018), like the 2016 lighthouse (ev-8894d63346)."
+  },
+  {
+   "event_id": "ev-c22227b9dd",
+   "disposition": "unclear",
+   "reason": "Militia flotilla of up to 95 vessels at Thitu vs a handful in Aug 2017 (ev-c2627ecb81, undecided); settle by the counterfactual — it answered new Philippine construction at Thitu, so a frequency move only if the scale is a change of approach rather than more to react to."
+  },
+  {
+   "event_id": "ev-218aa0e9a4",
+   "disposition": "continuation",
+   "of": "ev-c22227b9dd",
+   "reason": "The Jan-Mar 2019 militia swarm at Thitu is the Dec 2018 deployment (ev-c22227b9dd) carried on at the same level; provisional."
+  },
+  {
+   "event_id": "ev-ed82a89831",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "reason": "Maritime rescue centre on Fiery Cross follows the 2018 weather stations (ev-73c18aadce) and Subi rescue ship as further civil facilities on the outposts built under CN201504 (ongoing through 2018); the coder may judge a staffed institution a novelty."
+  },
+  {
+   "event_id": "ev-76c553751b",
+   "disposition": "continuation",
+   "of": "ev-ae29ec2d36",
+   "reason": "Identifying and warning off 2019's US FONOPs continues the 2018 practice (ev-ae29ec2d36) at no higher level; provisional."
+  },
+  {
+   "event_id": "ev-73c8829d40",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Ramming and sinking QNg 90819 at Discovery Reef: no coercion of Vietnamese fishers appears among 2018 candidates, so the method is new again (last seen 2016, ev-694aeef72a). Vietnamese-sourced."
+  },
+  {
+   "event_id": "ev-38f5466276",
+   "disposition": "unclear",
+   "reason": "Annual summer moratorium on the same dates as 2017 (ev-62ee135542); no 2018 candidate records the ban though it ran every year — a routine repeat, likely reject as continuation once the 2017 decision is known."
+  },
+  {
+   "event_id": "ev-f0ce0e38a0",
+   "disposition": "continuation",
+   "of": "ev-0c6bdb5f9b",
+   "reason": "CCG blocking a Second Thomas resupply continues the 2018 harassment of resupply (ev-0c6bdb5f9b) by a similar method; provisional."
+  },
+  {
+   "event_id": "ev-d9c1d4c518",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "CCG attempting to obstruct the Sapura Esperanza rig at Luconia is interference with Malaysian drilling; no 2018 candidate concerns Malaysia (CN201407's Luconia presence ended 2015). Kept apart from the Vietnam drilling standoff (different dyad), though the same cutter Haijing 35111 was involved."
+  },
+  {
+   "event_id": "ev-73d063b5b1",
+   "disposition": "unclear",
+   "reason": "not an assertive act of the claimant — likely reject: a Guangdong fishing boat rammed Gem-Ver 1 and Beijing called it an accident; state direction is not shown. Settle by evidence the vessel was militia."
+  },
+  {
+   "event_id": "ev-7364114379",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Haiyang Dizhi 8's coast-guard-escorted survey at Vanguard Bank and harassment of the Hakuryu-5 rig: physical presence in Vietnam's EEZ replaces the 2018 method of diplomatic pressure on Repsol (ev-b73209ee3a).",
+   "group": "CN19-vanguard-bank"
+  },
+  {
+   "event_id": "ev-059eac796e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "First anti-ship ballistic missile test into the South China Sea, with a declared danger area; 2018 had bomber landings (ev-5166e52f1d) and a fleet review but no missile firings."
+  },
+  {
+   "event_id": "ev-df2ff8fda9",
+   "disposition": "continuation",
+   "of": "ev-625213d311",
+   "reason": "The defence white paper restates the right to deploy defences on the islands, the line given with the 2018 Spratly missiles (ev-625213d311); one more reaffirmation, unless the coder counts a white paper as a new kind."
+  },
+  {
+   "event_id": "ev-9c6d62057b",
+   "disposition": "same_move",
+   "of": "ev-7364114379",
+   "group": "CN19-vanguard-bank",
+   "reason": "MFA claim of jurisdiction over Vanguard Bank waters and demand that Vietnam stop drilling is the declarative side of the 2019 Vanguard Bank standoff led by ev-7364114379."
+  },
+  {
+   "event_id": "ev-8cf559f861",
+   "disposition": "unclear",
+   "reason": "Calling Vietnam's Spratly garrisons occupation of Chinese territory is a routine reaffirmation; no 2018 comparator and no rise in count or kind shown — likely reject."
+  },
+  {
+   "event_id": "ev-d73044394d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Note verbale CML/14/2019 to the CLCS restating Nanhai Zhudao sovereignty and historic rights and blocking Malaysia's submission: a UN filing where 2018 candidates had only spokesperson lines; nothing comparable in 2018."
+  },
+  {
+   "event_id": "ev-2b5458f8ed",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "CCG-escorted fishing fleet in Indonesia's Natuna EEZ with a historic-rights claim: no Natuna candidate in 2018, so new again (last seen 2016, ev-7ad6eeb7b5)."
+  },
+  {
+   "event_id": "ev-3252bb0728",
+   "disposition": "continuation",
+   "of": "ev-2b5458f8ed",
+   "reason": "The Natuna fleet staying into Jan 2020 is the Dec 2019 incursion (ev-2b5458f8ed) carried over at the same level; provisional."
+  },
+  {
+   "event_id": "ev-9f5b352480",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "PLAN corvette training its gun fire-control director on BRP Conrado Yap is a threat of force by a new method; 2019 candidates against the Philippines were militia swarming (ev-218aa0e9a4) and CCG blocking (ev-f0ce0e38a0)."
+  },
+  {
+   "event_id": "ev-2a77d78488",
+   "disposition": "continuation",
+   "of": "ev-ed82a89831",
+   "reason": "CAS research stations on Fiery Cross and Subi continue the 2019 build-out of civil facilities on the outposts (ev-ed82a89831); provisional."
+  },
+  {
+   "event_id": "ev-6a8e6ed27e",
+   "disposition": "continuation",
+   "of": "ev-d73044394d",
+   "reason": "Note CML/11/2020 repeats the UN-note method of Dec 2019 (ev-d73044394d), answering others' notes (more to react to, not frequency); provisional."
+  },
+  {
+   "event_id": "ev-c9ac9147a6",
+   "disposition": "continuation",
+   "of": "ev-73c8829d40",
+   "reason": "CCG 4301 sinking QNg 90617 near Woody repeats the 2019 sinking near Discovery Reef (ev-73c8829d40) by the same method; provisional."
+  },
+  {
+   "event_id": "ev-c966892c8f",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Escorted Haiyang Dizhi 8 survey shadowing the West Capella on Malaysia's shelf carries the 2019 Vanguard Bank method (ev-7364114379) into a new area; 2019 against Malaysia was a lone cutter near Sapura Esperanza (ev-d9c1d4c518)."
+  },
+  {
+   "event_id": "ev-007a4bbf47",
+   "disposition": "continuation",
+   "of": "ev-d73044394d",
+   "reason": "Note CML/42/2020 rejecting Vietnam's notes is one more UN note in reply, the method of Dec 2019 (ev-d73044394d); provisional."
+  },
+  {
+   "event_id": "ev-401cf15a99",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Creating Xisha and Nansha districts under Sansha and publishing 80 standard feature names is a new administrative arrangement; nothing comparable among 2019 candidates (Sansha itself is CN201206, 2012)."
+  },
+  {
+   "event_id": "ev-f89607f096",
+   "disposition": "continuation",
+   "of": "ev-76c553751b",
+   "reason": "Tracking and 'expelling' US FONOPs in 2020 continues the 2019 practice (ev-76c553751b) with no change of method shown; provisional."
+  },
+  {
+   "event_id": "ev-2de6fa208c",
+   "disposition": "continuation",
+   "of": "ev-38f5466276",
+   "reason": "Annual summer moratorium on the same dates as 2019 (ev-38f5466276); routine yearly repeat."
+  },
+  {
+   "event_id": "ev-63d26d0b1b",
+   "disposition": "unclear",
+   "reason": "Confiscating payaos at Scarborough and radio-challenging Philippine aircraft: no 2019 candidate shows either at Scarborough or over the Spratlys, but both are standing practices (ev-3416105bdb 2018, ev-c995d82196 2017); settle by 2019 evidence — absent, the gear seizure is new again (novelty). Not a duplicate of the fishing ban ev-2de6fa208c."
+  },
+  {
+   "event_id": "ev-7cbb37617c",
+   "disposition": "continuation",
+   "of": "ev-d73044394d",
+   "reason": "Five further UN notes replying to others' notes continue the Dec 2019 method (ev-d73044394d); by the counterfactual more notes to answer is not a frequency move, though the coder may see the 2020 notes as one."
+  },
+  {
+   "event_id": "ev-32d0b4c61f",
+   "disposition": "unclear",
+   "reason": "Paracels island-assault exercise with closure repeats the yearly Paracel drill (2016 ev-436bf217f8; CN201002 ended 2015); no 2019 exercise candidate though drills ran — settle by 2019 exercise record, likely continuation."
+  },
+  {
+   "event_id": "ev-60f35ac039",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Eight J-11s and the first H-6J anti-ship bomber on Woody Island; no 2019 candidate shows aircraft deployments there, so new again against 2019 (last seen 2018, ev-5166e52f1d)."
+  },
+  {
+   "event_id": "ev-dda1031e6d",
+   "disposition": "continuation",
+   "of": "ev-059eac796e",
+   "reason": "DF-21D/DF-26B firings near the Paracels repeat the 2019 ASBM test (ev-059eac796e); continuation unless the coder reads the second type and impact area as scope."
+  },
+  {
+   "event_id": "ev-e5d4e47643",
+   "disposition": "continuation",
+   "of": "ev-df2ff8fda9",
+   "reason": "Restating the right to deploy defences on the Nansha islands repeats the 2019 white-paper line (ev-df2ff8fda9); one more reaffirmation."
+  },
+  {
+   "event_id": "ev-8c1dd52d0b",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Draft Coast Guard Law authorising weapons use and demolition of foreign structures in claimed waters is a new legal instrument with a threat (coercive); nothing comparable among 2019 candidates. Enacted Jan 2021, so the coder may date the move 2021."
+  }
+ ]
+}

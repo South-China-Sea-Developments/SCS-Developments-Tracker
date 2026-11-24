@@ -1,0 +1,351 @@
+{
+ "run_id": "MY-2021-2026",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-2c7fb7e0c7",
+   "disposition": "continuation",
+   "of": "ev-395be8f897",
+   "criterion": null,
+   "group": null,
+   "reason": "MMEA detention of Vietnamese boats and crews off Terengganu continues the 2020 enforcement against Vietnamese fishing (ev-395be8f897, Op Naga figures in ev-9de33b5a46, prev run); a representative instance, no change of method — continuation (provisional on 2020)."
+  },
+  {
+   "event_id": "ev-4d6a3fb8ef",
+   "disposition": "continuation",
+   "of": "ev-f8d6830dbb",
+   "criterion": null,
+   "group": null,
+   "reason": "Installing the Kasawari wellhead platform with Bunga Mas Lima standing by while CCG ships loitered continues the 2020 practice of naval protection for licensed operations near Luconia (KD Keris by the Gunnlod rig, ev-f8d6830dbb; West Capella escort, ev-cae2a725dd, prev run); if the coder counts a permanent production installation as a new method, it would be novelty — continuation (provisional on 2020)."
+  },
+  {
+   "event_id": "ev-49ca57afeb",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Scrambling RMAF fighters to intercept 16 PLAAF aircraft off Sarawak is an air-domain coercive act with nothing comparable in the 2020 record, which shows only naval and coast-guard shadowing (ev-f8d6830dbb, prev run); the counterfactual (Malaysia would likely have scrambled in 2020 too) argues against, so the coder may reject it."
+  },
+  {
+   "event_id": "ev-7af16173a4",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "MY2021-summons",
+   "reason": "The protest note and summons of the Chinese ambassador (3 June) go beyond the 2020 record, which shows protest notes and UN notes verbales but no summons (ev-9de33b5a46, ev-a2ffe95951, prev run) — a summons last seen in 2016 is new again; the coder may instead merge it into the air-intercept move ev-49ca57afeb."
+  },
+  {
+   "event_id": "ev-3b679e3947",
+   "disposition": "continuation",
+   "of": "ev-09e2bdf328",
+   "criterion": null,
+   "group": null,
+   "reason": "West Capella drilling in Block K off Sabah, continued while a Chinese survey ship passed close, repeats the 2020 practice of drilling on under Chinese pressure (ev-09e2bdf328, prev run), inside the 200 nm line and with no naval escort reported — continuation (provisional on 2020)."
+  },
+  {
+   "event_id": "ev-e677bcc107",
+   "disposition": "continuation",
+   "of": "ev-9de33b5a46",
+   "criterion": null,
+   "group": null,
+   "reason": "Saifuddin's Dewan Rakyat statement that Malaysia consistently sends protest notes and never recognised China's overlapping claims restates the 2020 parliamentary answer (ev-9de33b5a46, prev run) — continuation (provisional on 2020)."
+  },
+  {
+   "event_id": "ev-e050461164",
+   "disposition": "same_move",
+   "of": "ev-7af16173a4",
+   "criterion": null,
+   "group": "MY2021-summons",
+   "reason": "Summoning ambassador Ouyang Yujing over Da Yang Hao's survey in the EEZ is the second summons of 2021 and the same intensification of diplomatic method as ev-7af16173a4 — merge."
+  },
+  {
+   "event_id": "ev-451799b80d",
+   "disposition": "continuation",
+   "of": "ev-f8d6830dbb",
+   "criterion": null,
+   "group": null,
+   "reason": "The deputy defence minister's listing of standing operations (Op Wira at Beting Patinggi Ali, continuous presence beside the CCG) confirms the naval presence at Luconia shown in 2020 (ev-f8d6830dbb, prev run) — continuation (provisional on 2020)."
+  },
+  {
+   "event_id": "ev-4b9f0345db",
+   "disposition": "continuation",
+   "of": "ev-2c7fb7e0c7",
+   "criterion": null,
+   "group": null,
+   "reason": "Boarding and detaining a Vietnamese boat's crew off Kudat continues the 2021 MMEA detentions (ev-2c7fb7e0c7); the ramming drew no new method — continuation (provisional on 2021)."
+  },
+  {
+   "event_id": "ev-7a919138c8",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Depositing the coordinates of Malaysia's territorial-sea base points with the UN under UNCLOS art. 16(2) is a legally significant act with nothing comparable in 2021; dyad MA (it bears on all neighbours), and the coder should check whether the deposit changed any baseline."
+  },
+  {
+   "event_id": "ev-a49b1d526f",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Re-purposing the continental-shelf trust fund as a National Maritime Sovereignty Trust Fund, widened to upgrading and maintaining outermost features under the 1979 map, is a new administrative arrangement for the claimed features with nothing comparable in 2021; weak (a renamed fund, cabinet decision of 2020), so the coder may reject it or merge it with ev-7a919138c8."
+  },
+  {
+   "event_id": "ev-7981623e15",
+   "disposition": "continuation",
+   "of": "ev-3b679e3947",
+   "criterion": null,
+   "group": null,
+   "reason": "Petronas-licensed exploratory drilling off Sarawak near Luconia continues the 2021 drilling inside the nine-dash line (ev-3b679e3947, ev-4d6a3fb8ef) — continuation (provisional on 2021)."
+  },
+  {
+   "event_id": "ev-584f850541",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Licensing ultra-deepwater blocks off Sabah inside the nine-dash line; the 2021 candidates show drilling but no licensing round. Settle by whether Petronas awarded blocks inside the line in 2021 (its annual bid rounds suggest yes, then continuation of ev-3b679e3947) or these ultra-deepwater blocks extend acreage further out (then scope)."
+  },
+  {
+   "event_id": "ev-d78e824e39",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "frequency",
+   "group": null,
+   "reason": "25 new exploration wells in 2023, the highest annual total since 2015, against the 2022 record of a handful of discoveries in three Sarawak blocks (ev-7981623e15) — a frequency increase in resource exploration; how many wells lie inside the nine-dash line is not stated, and a commercial cycle (not a policy change) may explain it, so the coder may call it continuation."
+  },
+  {
+   "event_id": "ev-36cf3c00a8",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "MY2023-kasawari",
+   "reason": "Building the Kasawari central processing platform 25 nm from Luconia, with CCG 5901 at times within 1.5 nm and KD Badik calling, is construction of a permanent installation with nothing comparable in 2022 (drilling and licensing only, ev-7981623e15, ev-584f850541); the 2021 wellhead installation (ev-4d6a3fb8ef) was the earlier stage, absent last year."
+  },
+  {
+   "event_id": "ev-1d18247d5c",
+   "disposition": "continuation",
+   "of": "ev-451799b80d",
+   "criterion": null,
+   "group": null,
+   "reason": "Mohamad Hasan's statement that Malaysia stations its own assets beside the CCG and radios \"you are in our territory\" describes the standing presence at Luconia already shown in 2021 (ev-451799b80d); 2022 has no candidate on it, likely a source gap — continuation (provisional on 2021)."
+  },
+  {
+   "event_id": "ev-fe0373e68e",
+   "disposition": "same_move",
+   "of": "ev-36cf3c00a8",
+   "criterion": null,
+   "group": "MY2023-kasawari",
+   "reason": "Anwar telling Li Qiang and Xi that the area is Malaysian and Petronas will continue is the declarative defence of the Kasawari work (ev-36cf3c00a8) — merge."
+  },
+  {
+   "event_id": "ev-57bd137b84",
+   "disposition": "continuation",
+   "of": "ev-4b9f0345db",
+   "criterion": null,
+   "group": null,
+   "reason": "Boarding and detaining a Vietnamese crew off Terengganu continues the 2022 MMEA detentions (ev-4b9f0345db); the gunfire was in self-defence after an officer was slashed, as in the 2020 case (ev-395be8f897), so not a change of method — continuation (provisional on 2022)."
+  },
+  {
+   "event_id": "ev-775a76a73e",
+   "disposition": "continuation",
+   "of": "ev-e677bcc107",
+   "criterion": null,
+   "group": null,
+   "reason": "The press statement rejecting China's 2023 standard map is a reaction at the standing level of non-recognition and protest shown in 2021 (ev-e677bcc107, ev-e050461164); more to react to, not a new method; 2022 shows no statement, likely a source gap — continuation (provisional on 2021)."
+  },
+  {
+   "event_id": "ev-d8267714f5",
+   "disposition": "continuation",
+   "of": "ev-e677bcc107",
+   "criterion": null,
+   "group": null,
+   "reason": "The protest note over the 2023 standard map continues the practice of protest notes shown in 2021 (ev-e677bcc107); it follows ev-775a76a73e on the same map — continuation (provisional on 2021)."
+  },
+  {
+   "event_id": "ev-2624331f1d",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Approval of the Mawilla 4 naval base at Bintulu with a border regiment, RMAF forward base and long-range radar to guard Beting Patinggi Ali and Kasawari is a new military-infrastructure decision with nothing comparable in 2022; the 2016 Bintulu plan (ev-894ec00504, previous run) was years earlier, so this is new again — though it is an approval, not a built base."
+  },
+  {
+   "event_id": "ev-acf008fd20",
+   "disposition": "continuation",
+   "of": "ev-d78e824e39",
+   "criterion": null,
+   "group": null,
+   "reason": "15 exploratory wells off Sarawak in nine months and continued production at Timi, Kasawari and Jerun despite China's February note keep the 2023 level (25 wells nationwide, ev-d78e824e39), not above it — continuation (provisional on 2023)."
+  },
+  {
+   "event_id": "ev-86771ff4f6",
+   "disposition": "continuation",
+   "of": "ev-584f850541",
+   "criterion": null,
+   "group": null,
+   "reason": "Awarding blocks SK330, SK510, 5E and the Ubah Cluster inside the nine-dash line is the routine yearly licensing shown in 2022 (ev-584f850541); 2023 has no licensing candidate, likely a source gap — continuation (provisional on 2022)."
+  },
+  {
+   "event_id": "ev-1390b92e06",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Operasi Satria, a 24/7 joint RMN/RMAF/MMEA operation at Beting Patinggi Ali, would be novelty if it began in 2024, but its start date is not given and in 2023 the defence minister already described assets stationed there day and night (ev-1d18247d5c). Settle by the start date of Op Satria (2023 or earlier: continuation of ev-1d18247d5c)."
+  },
+  {
+   "event_id": "ev-564cd566e3",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "KM Arau's collision with a Vietnamese boat near Investigator Shoal may be enforcement in the disputed Spratlys (a scope step beyond 2023's detentions in the peninsular EEZ, ev-57bd137b84) or an accident; the source does not say what KM Arau was doing. Settle by whether it was an interception — if an accident, likely reject."
+  },
+  {
+   "event_id": "ev-e0aa5711f8",
+   "disposition": "continuation",
+   "of": "ev-b6735182ed",
+   "criterion": null,
+   "group": null,
+   "reason": "Note verbale HA 37/2024 rejecting the Philippines' West Palawan CLCS submission uses the same method as Malaysia's 2020 note rejecting the Philippines' Kalayaan-based claims (ev-b6735182ed, prev run); a reaction to a new filing, and Malaysia would have answered the same way in any year — continuation; nothing comparable in 2023, so the coder may treat it as new again (novelty)."
+  },
+  {
+   "event_id": "ev-3a41c8e0ac",
+   "disposition": "continuation",
+   "of": "ev-fe0373e68e",
+   "criterion": null,
+   "group": null,
+   "reason": "Anwar's statement that exploration is in Malaysia's own waters and must go on repeats his 2023 answer to China's objection (ev-fe0373e68e) — continuation (provisional on 2023)."
+  },
+  {
+   "event_id": "ev-139e257c21",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A complaint to Vietnam over its enlargement of Barque Canada Reef is Malaysia's first protest against another claimant's island-building, with nothing comparable in 2023 (protests to China only, ev-d8267714f5) — novelty, dyad MV; reported only by unnamed officials."
+  },
+  {
+   "event_id": "ev-4ecf58c008",
+   "disposition": "continuation",
+   "of": "ev-b6735182ed",
+   "criterion": null,
+   "group": null,
+   "reason": "The protest note against the Philippines' Maritime Zones Act is a reaction to new Philippine legislation by the established method of rejecting Philippine claims (ev-b6735182ed, prev run; ev-e0aa5711f8 the same year) — continuation (provisional on 2020)."
+  },
+  {
+   "event_id": "ev-2c55128b38",
+   "disposition": "continuation",
+   "of": "ev-3a41c8e0ac",
+   "criterion": null,
+   "group": null,
+   "reason": "Alamin's statement that Malaysia never recognised the nine-dash line and will not negotiate Beting Patinggi Ali, with operations guarded around the shoals, restates the 2024 position (ev-3a41c8e0ac, ev-acf008fd20) — continuation (provisional on 2024)."
+  },
+  {
+   "event_id": "ev-2b4c500a42",
+   "disposition": "continuation",
+   "of": "ev-564cd566e3",
+   "criterion": null,
+   "group": null,
+   "reason": "Detaining a Vietnamese boat off Kuala Niah continues the MMEA enforcement against Vietnamese fishing seen in 2024 (ev-564cd566e3) and 2023 (ev-57bd137b84) — continuation (provisional on 2024)."
+  },
+  {
+   "event_id": "ev-7e83b8215c",
+   "disposition": "continuation",
+   "of": "ev-86771ff4f6",
+   "criterion": null,
+   "group": null,
+   "reason": "Bringing TotalEnergies, Idemitsu and ENEOS into Sarawak acreage inside the nine-dash line is the routine licensing shown in 2024 (ev-86771ff4f6) — continuation (provisional on 2024)."
+  },
+  {
+   "event_id": "ev-a324c22be9",
+   "disposition": "continuation",
+   "of": "ev-139e257c21",
+   "criterion": null,
+   "group": null,
+   "reason": "The written reply reports protest notes over Vietnamese and Chinese island-building, the practice begun with the 2024 complaint to Vietnam (ev-139e257c21), and an unquantified \"intensified\" patrolling — no number, so not a frequency move; continuation (provisional on 2024). If a dated 2025 note to China over island-building is found, that would be new."
+  },
+  {
+   "event_id": "ev-6a19ca049d",
+   "disposition": "continuation",
+   "of": "ev-1390b92e06",
+   "criterion": null,
+   "group": null,
+   "reason": "KD Kelantan shadowing a CCG ship at South Luconia under Op Satria continues the 24/7 monitoring shown in 2024 (ev-1390b92e06) — continuation (provisional on 2024)."
+  },
+  {
+   "event_id": "ev-edc66ae7ee",
+   "disposition": "continuation",
+   "of": "ev-2b4c500a42",
+   "criterion": null,
+   "group": null,
+   "reason": "A 2020-2025 aggregate of 478 detentions (69% Vietnamese) and OPV \"white hull\" patrols to 200 nm documents the standing enforcement shown in 2025 (ev-2b4c500a42), not a 2026 step-up — continuation (provisional on 2025)."
+  },
+  {
+   "event_id": "ev-e33daf036b",
+   "disposition": "continuation",
+   "of": "ev-7e83b8215c",
+   "criterion": null,
+   "group": null,
+   "reason": "2026 awards and development (Permata, SK405B, Balingian, SK8, D35, 2E) inside the nine-dash line continue the routine licensing of 2025 (ev-7e83b8215c) — continuation (provisional on 2025)."
+  },
+  {
+   "event_id": "ev-53baf85095",
+   "disposition": "continuation",
+   "of": "ev-2c55128b38",
+   "criterion": null,
+   "group": null,
+   "reason": "Lukanisman's rejection of the nine-dash line, consistent protest notes and show of presence at Beting Patinggi Ali restate the 2025 parliamentary position (ev-2c55128b38) — continuation (provisional on 2025)."
+  },
+  {
+   "event_id": "ev-6701b83d5a",
+   "disposition": "continuation",
+   "of": "ev-4ecf58c008",
+   "criterion": null,
+   "group": null,
+   "reason": "An announced note rejecting a revived Philippine claim to Sabah, sent \"tens of times\" before, repeats the 2024 protest to the Philippines (ev-4ecf58c008); Sabah is a land-sovereignty question, so the coder may also reject it as outside the South China Sea claim — continuation."
+  },
+  {
+   "event_id": "ev-1a79a51ff2",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A new air-defence radar planned for RMN Station Lima on Swallow Reef adds a military capability on an occupied Spratly feature, with nothing comparable in 2025; it is an announcement of work due by 2029, so the coder may wait for construction to begin."
+  },
+  {
+   "event_id": "ev-3814478e50",
+   "disposition": "continuation",
+   "of": "ev-4ecf58c008",
+   "criterion": null,
+   "group": null,
+   "reason": "A \"very strong\" note to an unnamed country over a territorial claim (by the description, the Philippines and Sabah) repeats the 2024 protest to the Philippines (ev-4ecf58c008) and the same-year ev-6701b83d5a; Sabah may be out of scope — continuation."
+  },
+  {
+   "event_id": "ev-c5c731b196",
+   "disposition": "continuation",
+   "of": "ev-e0aa5711f8",
+   "criterion": null,
+   "group": null,
+   "reason": "Note verbale HA 49/2026 reaffirms the 2024 rejection of the Philippines' West Palawan submission (ev-e0aa5711f8) ahead of the oral presentation — a repeat, continuation (provisional on 2024)."
+  },
+  {
+   "event_id": "ev-686659d7c8",
+   "disposition": "continuation",
+   "of": "ev-2b4c500a42",
+   "criterion": null,
+   "group": null,
+   "reason": "Detaining a disguised Vietnamese boat off Tok Bali under Ops Naga and other standing operations continues the 2025 enforcement (ev-2b4c500a42) — continuation (provisional on 2025)."
+  },
+  {
+   "event_id": "ev-a07e10f947",
+   "disposition": "continuation",
+   "of": "ev-7e83b8215c",
+   "criterion": null,
+   "group": null,
+   "reason": "West Capella's appraisal drilling of the Megah discovery in block 3K off Sabah, unopposed, continues the 2025 development of acreage inside the nine-dash line (ev-7e83b8215c); 2025 has no drilling candidate, but the Megah discovery itself was a 2025 well — continuation (provisional on 2025)."
+  }
+ ]
+}

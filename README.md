@@ -2,7 +2,7 @@
 
 A continuously updated database of **assertive moves by claimant states in the South China Sea**, built as the successor to Andrew Chubb's *Maritime Assertiveness Time Series* (MATS 1.0, 1970–2015) and its public visualization, the *Maritime Assertiveness Visualization Dashboard* (MAVD, NBR, 2023).
 
-**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07); the site has an event map with a time slider and filters, and a gazetteer places events at named features (08); releases are tags, with a Downloads page, checksums and a citation (09); the methodology page reports machine–coder agreement (10); baselines for all six claimants and hand-compiled candidate sets enter the same queue (11); the archival source lists and routine for the 1970–2015 backfill are in place, coding not started (12); candidates can be reviewed in Airtable with the decisions landing in the pull request unchanged (13); the weekly extraction can run on the maintainer's Claude subscription instead of an API key (14).
+**Status:** building. Decisions are settled (`docs/adr/`, `docs/decisions/`), the spec is confirmed (`docs/spec.md`) and work proceeds by ticket (`docs/tickets/`). Done so far: the canonical files hold MATS 1.02 and pass the validator in CI (01); the public site has the overview, issues/domains, sub-regions, case browser and methodology pages (02–04); the harvester fetches the registered sources and proposes candidate events (05); a run becomes a review pull request with a review page, and decisions are applied with one command (06); the run is scheduled weekly, with failure issues and review reminders (07); the site has an event map with a time slider and filters, and a gazetteer places events at named features (08); releases are tags, with a Downloads page, checksums and a citation (09); the methodology page reports machine–coder agreement (10); baselines for all six claimants and hand-compiled candidate sets enter the same queue (11); the archival source lists and routine for the 1970–2015 backfill are in place, coding not started (12); candidates can be reviewed in Airtable with the decisions landing in the pull request unchanged (13); the weekly extraction can run on the maintainer's Claude subscription instead of an API key (14); the site has one coherent visual system with a home page that leads with the map and the latest developments (15); its type, hero and map panel follow the three references the maintainer supplied (16); the home page is a tracker in the manner of CFR's under the institute's banner, with the charts on a Trends page and nothing about the project's own progress on show (17); the tracker is white like the rest of the site and the banner sharper (18); the Airtable base is a workbench with a run log, a source registry, a hand-off view, sidelines and notes (20).
 
 **Site:** https://south-china-sea-developments.github.io/SCS-Developments-Tracker/ (rebuilt on every merge to `main` and on every release tag). **Harvest:** every Monday on GitHub Actions; review pull requests are the queue.
 
@@ -20,9 +20,14 @@ python -m pipeline.harvest prompts --captures harvest/captures/<id> --out harves
 python -m pipeline.harvest extract --captures harvest/captures/<id> --out harvest/runs/<id> --prompts harvest/prompts/<id> --recordings harvest/recordings/<id>   # candidates from the answers
 python -m pipeline.harvest import events.json --run-id <id> --extractor "who"   # hand-compiled candidates into the same queue
 python -m pipeline.queue open --run harvest/runs/<run_id>   # branch + review page + pull request
-python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions, commit
+python -m pipeline.queue decide decisions.json --reviewer "Name"   # apply the coder's decisions (a "continuation of X" note extends X), commit
 python -m pipeline.airtable push --run <run_id> --pr N   # mirror a run's candidates into the Airtable review table (needs AIRTABLE_TOKEN)
+python -m pipeline.airtable archive --run <run_id> --from export.json   # file a reviewed run's Airtable rows
+python -m pipeline.tally                                                # docs/reports/candidate-tallies.md: candidates by claimant, year, practice (a pointer, not a count)
+python -m pipeline.airtable context-diff --current rows.json --records records.json --out updates.json   # refresh the move lists on rows in the base (weekly apply task) in harvest/airtable/<run_id>/ before they are cleared (ticket 22)
+python -m pipeline.presort context --run <run_id> --out ctx.json   # what a pre-sorter needs; `check --run <run_id>` validates harvest/presort/<run_id>.json (ticket 23)
 python -m pipeline.airtable pull --run <run_id> --out decisions.json   # the decisions made there, as the file `queue decide` reads
+python -m pipeline.airtable run-record --run harvest/runs/<run_id> --pr N --out run.json   # the run's row for the Runs table (docs/airtable-workbench.md)
 python -m pipeline.ops --help      # what the scheduled run does around a harvest: state branch, failure issue, reminders
 python -m pipeline.agreement       # machine suggestions vs the coder's final coding, as a Markdown table
 python -m pipeline.release latest  # the newest release tag; `assets --out DIR` writes the downloadable files for it (docs/releases.md)
@@ -41,6 +46,11 @@ python -m pipeline.release latest  # the newest release tag; `assets --out DIR` 
 | `tests/` | Tests at the agreed seams. |
 | `docs/spec.md`, `docs/tickets/` | What is being built and in which slices. |
 | `docs/backfill.md` | How a 1970–2015 chunk for Malaysia, Indonesia or Taiwan is coded and reviewed. |
+| `docs/coding-guide.md` | How to code the way Chubb did: the move as a year-on-year intensification, the four types, the tests and the mistakes they guard against, step by step from source to release. |
+| `docs/notes/frequency-sources.md` | Where the numbers for a *frequency* move live: the counting series per claimant and practice, and the sources Chubb cited for his own increase moves (ticket 25). |
+| `docs/reports/candidate-tallies.md` | Harvested candidates by claimant, year and practice — a pointer to where a frequency source is worth looking for, never a count to cite (`python -m pipeline.tally`). |
+| `docs/handoff.md`, `docs/scheduled-task-prompt.md` | How to resume the project from any account or none; the weekly task's prompt, verbatim. |
+| `docs/notes/` | Ideas recorded for later (a de-escalation tracker as a separate project that would copy this code). |
 | `CHANGELOG.md`, `CITATION.cff`, `docs/releases.md` | What each tagged version holds, how to cite it, how a release is made. |
 | `docs/decisions/`, `docs/adr/` | Why. |
 | `docs/codebook/` | Chubb's methodology appendix (CC0), the coding rules. |
