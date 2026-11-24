@@ -46,4 +46,11 @@
       });
     }
   }
+
+  // ---- home page: the latest moves open under the pointer (they also open on click, tap or Enter) ----
+  var latest = document.getElementById("amap-latest");
+  if (latest && window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+    latest.addEventListener("mouseenter", function () { latest.open = true; });
+    latest.addEventListener("mouseleave", function () { if (!latest.contains(document.activeElement)) latest.open = false; });
+  }
 })();

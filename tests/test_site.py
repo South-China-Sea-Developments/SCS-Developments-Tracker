@@ -811,29 +811,33 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
 
 
 def test_the_home_page_lists_the_latest_moves_under_the_caption(browser, dist):
-    """Option H5 (2026-11-24): a card of the newest moves under the map's caption, each a link to its case
-    page; the two newest on a shorter screen; none at phone size."""
+    """Option H5 (2026-11-24), a rollover: under the map's caption a slim "Latest moves" bar with the newest
+    date; it opens under the pointer, or on click, to the newest moves, each a link to its case page."""
     page, problems = _open(browser, dist, "index.html", (1440, 900))
-    items = page.locator(".amap-latest-list li")
-    assert 1 <= items.count() <= 4
+    bar = page.locator("#amap-latest")
+    assert bar.get_attribute("open") is None and page.locator(".amap-latest-list").is_hidden(), "closed at first"
     cap = page.evaluate("document.querySelector('.amap-caption').getBoundingClientRect().bottom")
-    card = page.evaluate("(() => { const r = document.querySelector('.amap-latest').getBoundingClientRect(); return [r.top, r.left, r.bottom]; })()")
-    assert card[0] > cap and card[1] < 40, "under the caption, at the left"
-    assert card[2] < page.evaluate("document.querySelector('.amap-cue').getBoundingClientRect().top"), "clear of the scroll cue"
+    box = page.evaluate("(() => { const r = document.getElementById('amap-latest').getBoundingClientRect(); return [r.top, r.left, r.height]; })()")
+    assert box[0] > cap and box[1] < 40 and box[2] <= 44, ("a slim bar under the caption, at the left", box)
+    page.hover("#amap-latest summary")
+    page.wait_for_timeout(200)
+    items = page.locator(".amap-latest-list li")
+    assert page.locator(".amap-latest-list").is_visible() and 1 <= items.count() <= 4, "open under the pointer"
+    assert page.evaluate("document.getElementById('amap-latest').getBoundingClientRect().bottom") < page.evaluate("document.querySelector('.amap-cue').getBoundingClientRect().top")
     hrefs = page.eval_on_selector_all(".amap-latest-list a", "els => els.map(a => a.getAttribute('href'))")
     assert all((dist / h).exists() for h in hrefs), hrefs
-    dates = page.eval_on_selector_all(".amap-latest-meta", "els => els.map(e => e.textContent)")
-    assert all(" · " in d for d in dates)
-    assert problems == []
-    page.set_viewport_size({"width": 1280, "height": 760})
+    assert all(" · " in d for d in page.eval_on_selector_all(".amap-latest-meta", "els => els.map(e => e.textContent)"))
+    page.mouse.move(900, 600)
     page.wait_for_timeout(200)
-    assert page.locator(".amap-latest-list li:visible").count() <= 2
+    assert bar.get_attribute("open") is None, "closed again when the pointer leaves"
+    assert problems == []
     page.locator(".amap-count").nth(5).click()
     page.wait_for_timeout(1200)
-    assert page.locator(".amap-latest").is_hidden(), "zoomed in, the card steps aside"
+    assert bar.is_hidden(), "zoomed in, the bar steps aside"
     page.close()
     page, problems = _open(browser, dist, "index.html", (390, 800))
-    assert page.locator(".amap-latest").is_hidden()
+    page.locator("#amap-latest summary").click()
+    assert page.locator(".amap-latest-list").is_visible(), "a tap opens it on a phone"
     page.close()
 
 
