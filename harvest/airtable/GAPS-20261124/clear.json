@@ -1,0 +1,16 @@
+{
+ "run_id": "GAPS-20261124",
+ "table": "Candidates",
+ "record_ids": [
+  "recORv1nWRQ7FhYZp",
+  "recQXZMCBHP62AjM6",
+  "recsAtYsirYBwexHJ",
+  "rece6x3wJbJYVL18t"
+ ],
+ "event_ids": [
+  "ev-37f3848d90",
+  "ev-39c7feddf8",
+  "ev-5fcdbb2293",
+  "ev-ad017b31fe"
+ ]
+}
