@@ -1,0 +1,327 @@
+{
+ "run_id": "MY-2016-2020",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-d1d8be7f62",
+   "disposition": "continuation",
+   "of": "ev-676c0cf97d",
+   "criterion": null,
+   "group": null,
+   "reason": "Routine Dewan Rakyat reply, the same parliamentary formula (criticism of China's conduct, \"Malaysia conducts patrols, surveillance and enforcement\") shown in 2015 by ev-676c0cf97d and ev-f35795066b (prev run); it concerns a feature outside Malaysia's claim and asserts nothing new — continuation, likely reject (provisional on 2015)."
+  },
+  {
+   "event_id": "ev-9619d0dccf",
+   "disposition": "continuation",
+   "of": "ev-676c0cf97d",
+   "criterion": null,
+   "group": null,
+   "reason": "Restates non-recognition of the nine-dash line in Parliament, exactly as Hamzah Zainudin did in the Dewan Rakyat and Dewan Negara in 2015 (ev-676c0cf97d, prev run) — same level, continuation (provisional on 2015)."
+  },
+  {
+   "event_id": "ev-57c3e0b7e2",
+   "disposition": "continuation",
+   "of": "ev-497b14cfd4",
+   "criterion": null,
+   "group": null,
+   "reason": "Dispatching MMEA and RMN ships to watch Chinese boats at Luconia continues the standing 2015 presence there (345 ship-days, ev-497b14cfd4; round-the-clock watch, ev-a15caaf75e, prev run); more to react to (about 100 fishing boats), not a change of method — continuation (provisional on 2015)."
+  },
+  {
+   "event_id": "ev-2a924fa331",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Summoning the Chinese ambassador is a step beyond the routine protest notes of 2015 (ev-b5c1b8b1a7, ev-fe1ec8c654, prev run) and Reuters calls it uncharacteristic for Malaysia — a new, higher-profile diplomatic method; if the coder treats a summons as just another protest, it is a continuation of ev-b5c1b8b1a7."
+  },
+  {
+   "event_id": "ev-3ab8b10c3d",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "The Kunming text was an ASEAN collective statement, released by Malaysia and retracted within hours; not an assertive act of the claimant — likely reject."
+  },
+  {
+   "event_id": "ev-f46dde92b5",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "The post-award statement only calls for self-restraint, respect for legal processes and the DOC, without asserting Malaysia's own claim or naming China; not an assertive act of the claimant — likely reject."
+  },
+  {
+   "event_id": "ev-399cfad81d",
+   "disposition": "continuation",
+   "of": "ev-520a06d61f",
+   "criterion": null,
+   "group": null,
+   "reason": "Detaining Vietnamese boats and crews continues the 2015 MMEA seizures (ev-520a06d61f, prev run) at about the same level (65 boats in 2016 against 62 in 2015, per ev-555225be3d) — continuation (provisional on 2015)."
+  },
+  {
+   "event_id": "ev-894ec00504",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "MY2016-bintulu",
+   "reason": "A new army camp and navy forward base at Bintulu, the coast facing Luconia, announced after the March incident, goes beyond 2015's upgrade of the existing Sepanggar base (ev-9779298267, prev run) — a new basing arrangement for the claimed area; it is a plan, so the coder may prefer to wait for the base to be stood up."
+  },
+  {
+   "event_id": "ev-57f2f75ee4",
+   "disposition": "same_move",
+   "of": "ev-894ec00504",
+   "criterion": null,
+   "group": "MY2016-bintulu",
+   "reason": "The Chief of Navy's announcement of a fourth naval region at Bintulu is the same 2016 intensification as the Bintulu base plan ev-894ec00504 — merge."
+  },
+  {
+   "event_id": "ev-98915c19fb",
+   "disposition": "continuation",
+   "of": "ev-2a924fa331",
+   "criterion": null,
+   "group": null,
+   "reason": "A diplomatic protest note to China over the South Luconia Shoals continues the protests the 2016 record shows (ambassador summoned over Luconia, ev-2a924fa331) and the near-weekly notes of 2015; one of six in 2016-2019, so no rise in frequency — continuation (provisional on 2016)."
+  },
+  {
+   "event_id": "ev-b04b09111c",
+   "disposition": "continuation",
+   "of": "ev-57c3e0b7e2",
+   "criterion": null,
+   "group": null,
+   "reason": "KD Selangor's January patrol beside CCG 3501 at Luconia continues the navy/MMEA presence there shown in 2016 (ev-57c3e0b7e2) — same level, continuation (provisional on 2016)."
+  },
+  {
+   "event_id": "ev-0d43ccecd8",
+   "disposition": "continuation",
+   "of": "ev-9619d0dccf",
+   "criterion": null,
+   "group": null,
+   "reason": "The Dewan Rakyat non-recognition formula, as in 2016 (ev-9619d0dccf); \"no overlapping claims\" was already said by Anifah in 2015 (ev-b883f85b55) — continuation (provisional on 2016)."
+  },
+  {
+   "event_id": "ev-809147a19f",
+   "disposition": "continuation",
+   "of": "ev-d1d8be7f62",
+   "criterion": null,
+   "group": null,
+   "reason": "Opposing militarisation of China's artificial islands repeats the 2016 criticism of China's Fiery Cross flights (ev-d1d8be7f62) and asserts no Malaysian claim — continuation, likely reject."
+  },
+  {
+   "event_id": "ev-555225be3d",
+   "disposition": "continuation",
+   "of": "ev-399cfad81d",
+   "criterion": null,
+   "group": null,
+   "reason": "102 Vietnamese boats detained against 65 in 2016 (ev-399cfad81d) is a rise, but the method is unchanged and the counterfactual applies: more Vietnamese boats encroaching, more detentions — not a frequency move; continuation (provisional on 2016)."
+  },
+  {
+   "event_id": "ev-4425b85d9b",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Announcing that seized foreign boats will be burnt and sunk is a new method of punishment against 2016, when the record shows detention only (ev-399cfad81d) — a coercive novelty; worth checking whether any boats were in fact destroyed in 2017."
+  },
+  {
+   "event_id": "ev-2f346c59f1",
+   "disposition": "continuation",
+   "of": "ev-b04b09111c",
+   "criterion": null,
+   "group": null,
+   "reason": "An announcement that RMN assets will patrol Sarawak waters more often, with no numbers, restates the standing Luconia patrol practice shown in 2017 (ev-b04b09111c); without a stated comparison it is not a frequency move — continuation (provisional on 2017)."
+  },
+  {
+   "event_id": "ev-9866168cb7",
+   "disposition": "continuation",
+   "of": "ev-0d43ccecd8",
+   "criterion": null,
+   "group": null,
+   "reason": "The year's instance of the Dewan Rakyat non-recognition formula, as in 2017 (ev-0d43ccecd8) — continuation (provisional on 2017)."
+  },
+  {
+   "event_id": "ev-e5ea7c40ce",
+   "disposition": "continuation",
+   "of": "ev-0d43ccecd8",
+   "criterion": null,
+   "group": null,
+   "reason": "Mahathir's wish to keep the Spratly features Malaysia occupies restates the 2017 assertion that all features in Malaysia's maritime area belong to it (ev-0d43ccecd8); paired with a call against warships, nothing escalates — continuation (provisional on 2017)."
+  },
+  {
+   "event_id": "ev-e649b8e80f",
+   "disposition": "continuation",
+   "of": "ev-555225be3d",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizure of Vietnamese boats off Kudat continues the MMEA detentions of 2017 (ev-555225be3d); one representative instance, no change of method — continuation (provisional on 2017)."
+  },
+  {
+   "event_id": "ev-7dee62dc47",
+   "disposition": "continuation",
+   "of": "ev-809147a19f",
+   "criterion": null,
+   "group": null,
+   "reason": "Saifuddin's \"firmer\" posture and call for a Code of Conduct with teeth is rhetoric at the 2017 declarative level (ev-809147a19f), with self-restraint and a multilateral COC as its content — continuation, possibly likely reject."
+  },
+  {
+   "event_id": "ev-46bc24187c",
+   "disposition": "continuation",
+   "of": "ev-b04b09111c",
+   "criterion": null,
+   "group": null,
+   "reason": "RMN warships patrolling near CCG 3306 at Luconia continue the 2017 monitoring (ev-b04b09111c) — continuation (provisional on 2017)."
+  },
+  {
+   "event_id": "ev-9284eb29a8",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Licensed drilling on a Sarawak Shell block near Luconia Breakers; the 2018 candidates show no drilling, but Sarawak offshore exploitation in these blocks is long-standing. Settle by whether Malaysian drilling in the Luconia blocks went on in 2018 (then continuation) or this block/area is new (then scope)."
+  },
+  {
+   "event_id": "ev-69a8d4bf33",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "MY2019-vn-fishing",
+   "reason": "Ops Naga is a new Cabinet-mandated, multi-agency operation (MMEA, navy, air force, police) against foreign fishing, a change of method from the routine MMEA detentions of 2018 (ev-e649b8e80f), with 184 Vietnamese boats seized by November against 102 in 2017 (2018 total not in the record)."
+  },
+  {
+   "event_id": "ev-72ddbf3ab3",
+   "disposition": "same_move",
+   "of": "ev-69a8d4bf33",
+   "criterion": null,
+   "group": "MY2019-vn-fishing",
+   "reason": "The 8 May protest note to Vietnam over repeated fishing encroachments, handed over during Ops Naga's first phase, is part of the same 2019 crackdown on Vietnamese fishing (ev-69a8d4bf33); nothing comparable toward Vietnam in 2018 — merge."
+  },
+  {
+   "event_id": "ev-84bd1bb58f",
+   "disposition": "continuation",
+   "of": "ev-46bc24187c",
+   "criterion": null,
+   "group": null,
+   "reason": "RMN auxiliary Bunga Mas 5 shadowing CCG 5401 at Luconia continues the 2018 naval monitoring there (ev-46bc24187c) — continuation (provisional on 2018)."
+  },
+  {
+   "event_id": "ev-c303e3c040",
+   "disposition": "continuation",
+   "of": "ev-7dee62dc47",
+   "criterion": null,
+   "group": null,
+   "reason": "Saifuddin's parliamentary remarks on the CCG's near-constant presence and the need for bigger ships are declarative at the 2018 level (ev-7dee62dc47); \"could send diplomatic objections\" adds no new act — continuation (provisional on 2018)."
+  },
+  {
+   "event_id": "ev-3d99bdbde7",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Malaysia's first Defence White Paper, approved by Parliament, names China's occupation and militarisation and calls EEZ intrusions off Sabah and Sarawak an infringement — a new formal policy instrument against 2018's ministerial remarks (ev-7dee62dc47); the coder may judge it the same declarative level and fold it into continuation."
+  },
+  {
+   "event_id": "ev-7c6dbc8761",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "MY2019-clcs",
+   "reason": "Malaysia's own partial CLCS submission for the outer shelf overlapping the nine-dash line and the Spratlys is a new legal method — nothing comparable in 2018, and the first unilateral filing since the 2009 joint submission."
+  },
+  {
+   "event_id": "ev-117e74b7e5",
+   "disposition": "same_move",
+   "of": "ev-7c6dbc8761",
+   "criterion": null,
+   "group": "MY2019-clcs",
+   "reason": "Saifuddin's \"ridiculous\" rejection of China's claim and pledge to defend the 12 December submission is the declarative accompaniment of ev-7c6dbc8761 — merge."
+  },
+  {
+   "event_id": "ev-d1c89a64f7",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": null,
+   "reason": "West Capella's move to block ND2 beyond 200 nm, in shelf also claimed by Vietnam and inside the nine-dash line, takes state-company drilling into an area not worked before — nothing comparable in 2018; a scope move."
+  },
+  {
+   "event_id": "ev-3db1af18f4",
+   "disposition": "continuation",
+   "of": "ev-117e74b7e5",
+   "criterion": null,
+   "group": null,
+   "reason": "Saifuddin's pledge to maintain the shelf claim despite China's objection repeats his 20 December 2019 statement (ev-117e74b7e5) — continuation (provisional on 2019)."
+  },
+  {
+   "event_id": "ev-cae2a725dd",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "scope",
+   "group": "MY2020-westcapella",
+   "reason": "Navy and MMEA ships deployed to guard the West Capella beyond 200 nm carry Malaysia's naval presence into blocks ND1/ND2, where in 2019 it shadowed the CCG only at Luconia (ev-84bd1bb58f) and the drilling went unescorted (ev-d1c89a64f7) — scope."
+  },
+  {
+   "event_id": "ev-09e2bdf328",
+   "disposition": "same_move",
+   "of": "ev-cae2a725dd",
+   "criterion": null,
+   "group": "MY2020-westcapella",
+   "reason": "The April-May standoff, with RMN/MMEA ships patrolling around the West Capella while Haiyang Dizhi 8 surveyed nearby, is the same 2020 naval protection of the ND2 drilling as ev-cae2a725dd — merge (the drilling itself continues ev-d1c89a64f7)."
+  },
+  {
+   "event_id": "ev-2588d43235",
+   "disposition": "continuation",
+   "of": "ev-117e74b7e5",
+   "criterion": null,
+   "group": null,
+   "reason": "Hishammuddin's cautious statement during the standoff (firm on rights, resolve peacefully, warships raise tension) is declarative at or below the 2019 level (ev-117e74b7e5) — continuation, possibly likely reject."
+  },
+  {
+   "event_id": "ev-a2ffe95951",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "MY2020-un-notes",
+   "reason": "Note verbale HA 26/20 rejecting China's historic rights and its claim to the features as without basis in law puts a formal, legally significant rejection of China's claim on the UN record — a new method against 2019, when the rejection was oral (ev-117e74b7e5); first such public note against China since 2009."
+  },
+  {
+   "event_id": "ev-b6735182ed",
+   "disposition": "same_move",
+   "of": "ev-a2ffe95951",
+   "criterion": null,
+   "group": "MY2020-un-notes",
+   "reason": "Note verbale HA 30/20 rejecting the Philippines' Kalayaan-based claims and its Sabah claim belongs to the same 2020 UN note campaign defending the 2019 submission as ev-a2ffe95951 — merge (dyad MP added); the coder may prefer a separate move per target."
+  },
+  {
+   "event_id": "ev-9de33b5a46",
+   "disposition": "continuation",
+   "of": "ev-c303e3c040",
+   "criterion": null,
+   "group": null,
+   "reason": "A parliamentary answer that Malaysia consistently sends protest notes over encroachments at Luconia, with Op Naga figures, restates the 2019 practice (ev-c303e3c040, ev-72ddbf3ab3) — continuation (provisional on 2019)."
+  },
+  {
+   "event_id": "ev-395be8f897",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Warning shots and lethal fire would be a new method against 2019's detentions under Ops Naga (ev-69a8d4bf33), but they came after the boats rammed the patrol boat and threw petrol bombs (the counterfactual says Malaysia would have done the same in 2019), and off Tok Bali is undisputed peninsular EEZ. Settle by whether the coder counts a self-defence shooting in undisputed waters; otherwise continuation of ev-69a8d4bf33."
+  },
+  {
+   "event_id": "ev-8a28e6ca1f",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Detaining Chinese boats for anchoring without permits off Johor is port-limits enforcement in undisputed waters, not plainly about the South China Sea claim; likely reject. If in scope, it would be novelty (first mass detention of Chinese vessels, nothing comparable in 2019)."
+  },
+  {
+   "event_id": "ev-f8d6830dbb",
+   "disposition": "continuation",
+   "of": "ev-84bd1bb58f",
+   "criterion": null,
+   "group": null,
+   "reason": "RMN shadowing of CCG 5402 at Luconia continues the 2019 monitoring (ev-84bd1bb58f); staying by the Gunnlod rig adds rig protection, which the coder may instead merge into the 2020 West Capella move ev-cae2a725dd — continuation (provisional on 2019)."
+  }
+ ]
+}

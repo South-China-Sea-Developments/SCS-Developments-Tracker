@@ -1,0 +1,1444 @@
+[
+ {
+  "claimant": "TW",
+  "date_start": "2000-02-01",
+  "date_end": "2000-02-01",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "On 1 February 2000 the newly created Coast Guard Administration (CGA) set up its Dongsha Command (東沙指揮部) and took over the garrison of Dongsha (Pratas) Island from the armed forces; the CGA later added radar and used its vessels to drive off boats fishing illegally in the atoll's waters.",
+  "actors": "Coast Guard Administration (海巡署), Dongsha Command (東沙指揮部)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Replacing the marine garrison with a new law-enforcement agency that administers and patrols the feature is a unilateral administrative act of presence; demonstrative, and new in kind (a civilian coast guard holding a disputed feature). A coder may read the withdrawal of troops as de-escalatory. A 2005 AIT cable says the military completed the turnover of Pratas's airstrip and port only 'by 2002'. The CGA source is a PDF, so the excerpt cannot be machine-checked.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835858418.pdf",
+    "title": "東沙島環境與歷史沿革（海巡署東南沙分署簡介）",
+    "publisher": "Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "89年2月1日，海巡署成立「東沙指揮部」駐守東沙島本署駐"
+   },
+   {
+    "url": "https://wikileaks.jcvignoli.com/cable_05TAIPEI2655",
+    "title": "Pratas Island: Taiwan's Strategic Weakest Link? (cable 05TAIPEI2655)",
+    "publisher": "American Institute in Taiwan, via WikiLeaks",
+    "pub_date": "2005-06-16",
+    "language": "en",
+    "excerpt": "turnover of the facility on Pratas to the Taiwan Coast Guard"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2000-02-01",
+  "date_end": "2000-02-16",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 1 February 2000 the Coast Guard Administration took over the defence of Taiping Island (Itu Aba) from the ROC Marine Corps, and on 16 February it established its Nansha Command (南沙指揮部) on the island.",
+  "actors": "Coast Guard Administration (海巡署), Nansha Command (南沙指揮部); ROC Marine Corps",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Installing a new coast guard command to hold and police a disputed Spratly feature is a unilateral administrative act; demonstrative and new in kind. The government itself later presented the handover as a demilitarising step, which a coder may weigh. The Presidential Office page is checkable; the CGA and Control Yuan sources (which give 1 Feb and 16 Feb) are PDFs. The Control Yuan report also gives 28 Jan 2000 as the CGA's founding date.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/4832",
+    "title": "Remarks by President Ma on Taiping Island",
+    "publisher": "Office of the President, ROC",
+    "pub_date": "2016-01-28",
+    "language": "en",
+    "excerpt": "in 2000, the Coast Guard Administration (CGA) took over defense of Taiping Island from the ROC Marine Corps"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "南沙太平島（海巡署東南沙分署簡介）",
+    "publisher": "Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "89 年 2 月 1 日，行政院海岸巡防署接防南沙太平島，並成立"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2000-05-01",
+  "date_end": "2000-05-25",
+  "date_precision": "month",
+  "location_name": "Pratas (Dongsha) Islands",
+  "subregion": "",
+  "summary": "In May 2000 the Taipei Times reported that the government planned to open the restricted Pratas Islands to capped tourism, reasoning that this would assert Taiwan's sovereignty and help develop South China Sea resources, and that the island group's defences had recently been upgraded with Chaparral surface-to-air missiles.",
+  "actors": "ROC government; Kaohsiung City Government; ROC armed forces",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A tourism-opening plan explicitly framed as an assertion of sovereignty, together with new air-defence missiles on the feature, is unilateral presence-building; demonstrative, low salience. The report (25 May 2000) gives no date for the missile deployment ('recently'), so the range runs from the start of the month to the report date. Taipei Times returns 403 to scripts; the excerpt was read through a web fetch.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/local/archives/2000/05/25/0000037371",
+    "title": "(Taipei Times, local news, 25 May 2000) Pratas Islands to open to tourism",
+    "publisher": "Taipei Times",
+    "pub_date": "2000-05-25",
+    "language": "en",
+    "excerpt": "Military hardware on the island group has recently been upgraded with the addition of Chaparral surface-to-air missiles"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2000-12-21",
+  "date_end": "2000-12-21",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Islands",
+  "subregion": "",
+  "summary": "On 21 December 2000 President Chen Shui-bian made a half-day visit to the Pratas, his first as president, and told the Coast Guard to drive away Chinese and other foreign fishing boats illegally entering Taiwan's territorial waters there.",
+  "actors": "President Chen Shui-bian; Coast Guard Administration",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A presidential visit to a disputed garrison, with an instruction to expel foreign fishing boats, is a show of presence; demonstrative, and higher in rank than any earlier Pratas visit. The day is from Chen's own 2005 speech and the Control Yuan table (89.12.21); the Taipei Times report of 22 Dec 2000 gives the content.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/2009",
+    "title": "President Chen Visits Tungsha Islands",
+    "publisher": "Office of the President, ROC",
+    "pub_date": "2005-07-28",
+    "language": "en",
+    "excerpt": "My first trip was on December 21st, 2000 and now five years later"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/local/archives/2000/12/22/0000066524",
+    "title": "(Taipei Times, local news, 22 Dec 2000) Chen visits the Pratas",
+    "publisher": "Taipei Times",
+    "pub_date": "2000-12-22",
+    "language": "en",
+    "excerpt": "It was the first time that Chen had visited the Pratas since taking office."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2001-12-01",
+  "date_end": "2001-12-31",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "In December 2001 a solar power installation was completed on Taiping Island as a backup to the diesel generators that supply the Coast Guard garrison.",
+  "actors": "ROC government (agency not named); Coast Guard Administration Nansha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Building permanent infrastructure on a disputed feature is a unilateral construction act; demonstrative, very low salience. It is the only dated 2001 act found. Source is the Control Yuan report (PDF), so the excerpt cannot be machine-checked.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "運補。90 年 12 月，完成太陽能裝置當備用電源。"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2002-11-08",
+  "date_end": "2002-11-08",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "On 8 November 2002 Interior Minister Yu Cheng-hsien (余政憲) inspected Dongsha (Pratas) Island, one of the official visits the Control Yuan lists as exercises of ROC sovereignty over the South China Sea islands.",
+  "actors": "Minister of the Interior Yu Cheng-hsien",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A ministerial inspection of a disputed feature is a symbolic act of administration; demonstrative, low salience. Known only from the Control Yuan's table of official visits (91.11.8), a PDF, so the excerpt cannot be machine-checked.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "91.11.8    余政憲部長    東沙島   視察東沙島"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2003-01-01",
+  "date_end": "2003-01-01",
+  "date_precision": "day",
+  "location_name": "Pratas (Tungsha) Islands",
+  "subregion": "",
+  "summary": "On 1 January 2003 Vice President Annette Lu flew to the Pratas with the Vice Minister of National Defense and the Coast Guard's deputy director-general, claimed ROC sovereignty over the islands and called for building them into a springboard for Taiwan to become a maritime power.",
+  "actors": "Vice President Annette Lu; Vice Minister of National Defense Chen Chao-min; CGA Deputy Director-General Yu Chien-hsi",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A vice-presidential visit to a disputed garrison with an explicit sovereignty claim is a show of presence; demonstrative (with a declarative element). Presidential Office release reproducing a CNA report.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/367",
+    "title": "Vice President Lu Visits the Tungsha Islands",
+    "publisher": "Office of the President, ROC (CNA)",
+    "pub_date": "2003-01-01",
+    "language": "en",
+    "excerpt": "claimed the Republic of China's sovereignty over the Taiwan-held islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2003-01-01",
+  "date_end": "2003-12-31",
+  "date_precision": "year",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "In 2003 the Kaohsiung City Government completed a cadastral (land-registry) survey of Taiping Island, which it administers as part of Cijin District.",
+  "actors": "Kaohsiung City Government",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A municipal land survey of a disputed feature is a unilateral administrative act; demonstrative, low salience. The Coast Guard dates it only to 民國92年 (2003); it may be linked to the Interior Minister's August visit. PDF source, excerpt not machine-checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "南沙太平島（海巡署東南沙分署簡介）",
+    "publisher": "Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "府完成南沙太平島地籍測量工作。當時內政部長余政憲先生"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2003-08-16",
+  "date_end": "2003-08-16",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); Zhongzhou Reef (Ban Than)",
+  "subregion": "5",
+  "summary": "On 16 August 2003 Interior Minister Yu Cheng-hsien led a delegation of senior officials to Taiping Island, broke ground for a first-class satellite control point and proposed a marine national park, then landed on nearby Zhongzhou Reef (Ban Than) and planted the ROC flag to proclaim sovereignty over the Spratlys.",
+  "actors": "Minister of the Interior Yu Cheng-hsien; CEPD, RDEC and CGA deputy heads; Kaohsiung Deputy Mayor Lin Yung-chien",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "A ministerial landing and flag-planting on a second, unoccupied reef next to Itu Aba, with a new survey installation, is a symbolic act of possession of wider scope than a garrison visit; demonstrative. Zhongzhou Reef lies about 4 nm from Vietnamese-held Sand Cay. The date is from the PCA translation of the CGA chronology and the Control Yuan table (92.8.16); all sources are PDFs.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration (South China Sea Arbitration)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "On 16 August 2003, the Republic of China Minister of the Interior Yu Zhengxian led the Executive Yuan"
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "南沙太平島（海巡署東南沙分署簡介）",
+    "publisher": "Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "中洲島插示國旗，宣示我國擁有南沙主權。"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2004-03-28",
+  "date_end": "2004-03-28",
+  "date_precision": "day",
+  "location_name": "Zhongzhou Reef (Ban Than / Banthan), Tizard Bank",
+  "subregion": "5",
+  "summary": "The Coast Guard Administration built an 'ecological conservation observation pavilion' (生態保育觀測亭) on Zhongzhou Reef (Ban Than), completed on 28 March 2004; Vietnam protested the structure as a stilt house and a grave violation of its sovereignty, and Taiwan's Foreign Ministry replied that it was a bird-watching station. Waves destroyed the pavilion on 21 July 2004.",
+  "actors": "Coast Guard Administration; Ministry of Foreign Affairs (Richard Shih)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Erecting a structure on an unoccupied reef extends the ROC's physical presence beyond Itu Aba; demonstrative, of wider scope, and it drew a Vietnamese protest. The completion date is from a CGA publication (PDF); IPS (5 April 2004) reports the Vietnamese protest and Taiwan's reply but gives no day, and implies the building began in March.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.ipsnews.net/?p=10116",
+    "title": "VIETNAM-CHINA: Tours, Bird-watching Trigger New Row over Spratlys",
+    "publisher": "Inter Press Service",
+    "pub_date": "2004-04-05",
+    "language": "en",
+    "excerpt": "Taiwan sent a speedboat out to a disputed reef and built what Vietnam described as a small house on stilts."
+   },
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Data/spratly_islands.pdf",
+    "title": "The Ocean and the Seas of Taiwan, ch. 7: 南沙群島（太平島、中洲礁）",
+    "publisher": "Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "2004 年 3 月 28 日完工，2004 年 7 月 21 日「生"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2004-04-01",
+  "date_end": "2004-04-01",
+  "date_precision": "day",
+  "location_name": "Spratly Islands",
+  "subregion": "",
+  "summary": "On 1 April 2004, after Vietnam warned that a stilted house Taiwan had built on a Spratly islet violated its sovereignty, Interior Minister Yu Cheng-hsien reaffirmed that the Spratly Islands are part of the ROC's traditional territory on historical, geographic and legal grounds and offered his ministry's help to the Foreign Ministry.",
+  "actors": "Minister of the Interior Yu Cheng-hsien",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A ministerial reaffirmation of sovereignty in answer to a Vietnamese protest is a verbal assertion; declarative. CNA report on GlobalSecurity, which returns 402 to scripts; excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2004/taiwan-040401-cna02.htm",
+    "title": "Interior Minister Insists on ROC Sovereignty over Spratly Islands",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2004-04-01",
+    "language": "en",
+    "excerpt": "is ready to give a helping hand at any time"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2004-04-01",
+  "date_end": "2004-04-20",
+  "date_precision": "month",
+  "location_name": "Spratly Islands",
+  "subregion": "",
+  "summary": "In April 2004, as Vietnam took a tourist ship with about 60 tourists and 40 officials to its Spratly outposts, Taiwan's Foreign Ministry voiced serious concern and twice called in Vietnam's representative in Taipei, urging restraint, and the Ministry of National Defense said it had a contingency plan to defend Taiwan's territorial claims.",
+  "actors": "Ministry of Foreign Affairs; Ministry of National Defense (spokesman Huang Suey-sheng)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Summoning another claimant's envoy over its activity in the disputed area is a diplomatic protest; declarative. The CNA report is dated 20 April; the summonses' days are not given. GlobalSecurity returns 402 to scripts; excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2004/taiwan-040420-cna03.htm",
+    "title": "Defense Ministry Will Act Accordingly on Vietnam Tourists to Spratlys",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2004-04-20",
+    "language": "en",
+    "excerpt": "The Ministry of National Defense will act in line with the government's policy"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2004-06-07",
+  "date_end": "2004-06-15",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Islands",
+  "subregion": "",
+  "summary": "On 7 June 2004 the Ministry of National Defense announced revised restricted and prohibited waters for mainland Chinese vessels around Dongsha: a prohibited zone of 12 nm and a restricted zone of 24 nm from the territorial-sea baselines, in force from 15 June 2004.",
+  "actors": "Ministry of National Defense (order (93)猛獅字第0930001493號)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Proclaiming enforcement zones around a disputed feature against PRC vessels is a legal-administrative assertion; declarative. Source is a Control Yuan investigation (PDF), excerpt not machine-checkable.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38753",
+    "title": "監察院調查意見：大陸漁船入侵東沙海域及99年元旦非法登島案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "告東沙禁止水域範圍為自領海基線起 12 浬水域，"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-02-01",
+  "date_end": "2005-02-28",
+  "date_precision": "month",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "In February 2005 the Coast Guard detachment on Pratas scuffled with PRC fishermen who were trying to build a temporary shelter on the island; afterwards up to 200 PRC fishing vessels reportedly tried to blockade the Coast Guard facility in protest at Taiwan's refusal to let PRC fishermen land during bad weather.",
+  "actors": "Coast Guard Administration, Dongsha Command",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Physically stopping PRC fishermen from building on a held feature and denying them landing is imposition by force short of military force; coercive. Known from a US diplomatic cable reporting what Taiwan officials told AIT; the blockade is reported, not confirmed, and its date is not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://wikileaks.jcvignoli.com/cable_05TAIPEI2655",
+    "title": "Pratas Island: Taiwan's Strategic Weakest Link? (cable 05TAIPEI2655)",
+    "publisher": "American Institute in Taiwan, via WikiLeaks",
+    "pub_date": "2005-06-16",
+    "language": "en",
+    "excerpt": "with PRC fishermen attempting to construct a temporary"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-05-03",
+  "date_end": "2005-05-04",
+  "date_precision": "day",
+  "location_name": "Waters off the Pratas (Tungsha) Islands",
+  "subregion": "",
+  "summary": "After the PRC survey ship Tanbao entered waters around the Pratas from 3 May 2005, Taiwan on 4 May demanded that the Chinese exploration vessel leave and the Coast Guard sent a ship to the area; President Chen later said the Coast Guard's intervention made two Chinese survey intrusions that May end.",
+  "actors": "Coast Guard Administration; ROC government",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Demanding that another state's survey ship leave and dispatching a patrol ship to drive it out is enforcement against a foreign state vessel; coercive. The Taipei Times report of 5 May says 'yesterday'; CNA (26 May) gives 3 May for the Tanbao's entry. Taipei Times returns 403 to scripts; excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2005/05/05/2003253186",
+    "title": "(Taipei Times, front page, 5 May 2005) Taiwan tells Chinese vessel to leave Pratas waters",
+    "publisher": "Taipei Times",
+    "pub_date": "2005-05-05",
+    "language": "en",
+    "excerpt": "our coast guard has sent a ship to handle the situation"
+   },
+   {
+    "url": "https://english.president.gov.tw/NEWS/2009",
+    "title": "President Chen Visits Tungsha Islands",
+    "publisher": "Office of the President, ROC",
+    "pub_date": "2005-07-28",
+    "language": "en",
+    "excerpt": "In May of this year, Chinese oceanographic ships intruded into our country's waters twice in less than 20 days."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-05-26",
+  "date_end": "2005-05-27",
+  "date_precision": "day",
+  "location_name": "Waters off the Pratas Island / Taiwan's south-western EEZ",
+  "subregion": "",
+  "summary": "On 26 May 2005 Taiwan, through the Straits Exchange Foundation, told Beijing to recall the research vessel Fen Dou (Feng-Dow) No. 4 and warned that Coast Guard patrol ships would chase it away, and on 27 May a Coast Guard vessel threatened to board the ship if it did not leave immediately.",
+  "actors": "Coast Guard Administration (Minister Syu Huei-you); Straits Exchange Foundation",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A threat to board a foreign state research vessel is a threat of enforcement; coercive, and a step up from the earlier expulsions. Location caveat: the AIT cable places the 27 May confrontation off Pratas, but CNA (26 May) says the Fen Dou No. 4 was operating off Taiwan's south-western coast from 22 May, which may be outside the South China Sea proper; a coder should check.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://wikileaks.jcvignoli.com/cable_05TAIPEI2655",
+    "title": "Pratas Island: Taiwan's Strategic Weakest Link? (cable 05TAIPEI2655)",
+    "publisher": "American Institute in Taiwan, via WikiLeaks",
+    "pub_date": "2005-06-16",
+    "language": "en",
+    "excerpt": "to board the PRC research vessel Feng-Dow No. 4 if it did not"
+   },
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2005/taiwan-050526-cna01.htm",
+    "title": "Taiwan again asks China to recall intruding research ship",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2005-05-26",
+    "language": "en",
+    "excerpt": "Taiwan's coast guard patrol vessels will chase the ship away."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-07-01",
+  "date_end": "2005-07-31",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "In July 2005 the Ministry of the Interior set up a Nansha satellite tracking station on Taiping Island.",
+  "actors": "Ministry of the Interior",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A new state survey installation on a disputed feature is unilateral construction; demonstrative, low salience (it follows the 2003 control-point groundbreaking). Source is an article in an MND journal (PDF), excerpt not machine-checkable.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.mnd.gov.tw/File/24869",
+    "title": "黃盈智，〈海巡署建立南沙太平島測地統制之研究〉",
+    "publisher": "Ministry of National Defense (journal article)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "政部雖於民國 94 年 7 月於太平島建立南沙衛星追蹤站（如圖十一），惟太平島"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-07-28",
+  "date_end": "2005-07-28",
+  "date_precision": "day",
+  "location_name": "Dongsha (Tungsha / Pratas) Island",
+  "subregion": "",
+  "summary": "On 28 July 2005 President Chen Shui-bian made his second visit to Dongsha Island, inaugurated the Coast Guard Administration's Fifth Maritime Patrol Squad, said the visit marked his determination to secure the country's soil and sovereignty, and promised a larger budget and stronger maritime patrol capacity for the Pratas and Spratlys.",
+  "actors": "President Chen Shui-bian; Coast Guard Administration (Fifth Maritime Patrol Squad)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "fisheries",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A presidential visit to a disputed feature that inaugurates a new patrol unit and pledges more patrolling is a show of presence and capacity-building; demonstrative. Presidential Office release (checkable) and Taipei Times report.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://english.president.gov.tw/NEWS/2009",
+    "title": "President Chen Visits Tungsha Islands",
+    "publisher": "Office of the President, ROC",
+    "pub_date": "2005-07-28",
+    "language": "en",
+    "excerpt": "inaugurated the Fifth Maritime Patrol Squad of the Coast Guard Administration"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2005/07/29/2003265485",
+    "title": "(Taipei Times, 29 Jul 2005) Chen visits Pratas Islands",
+    "publisher": "Taipei Times",
+    "pub_date": "2005-07-29",
+    "language": "en",
+    "excerpt": "Chen said he would like to promote the establishment of an oceanic national park at the Pratas Islands"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-12-15",
+  "date_end": "2005-12-15",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 15 December 2005 Vice Defence Minister Huo Shou-yeh and CGA Director-General Shi Hwei-yow confirmed to legislators the plan to build an airstrip on Taiping Island, with the defence ministry sending soldiers to do the construction; the CGA chronology dates the start of work to mid-December 2005.",
+  "actors": "Ministry of National Defense (Vice Minister Huo Shou-yeh); Coast Guard Administration (Shi Hwei-yow)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Starting military construction of a runway on a disputed feature is unilateral construction of wider scope (first airfield in the ROC's Spratly holding); demonstrative. Vietnam protested on 29 December. An MND journal article instead dates the start of construction to November 2004 (民國93年11月) and others to mid-2006; work stopped in July 2006 when the legislature froze funds and resumed in 2007. Taipei Times excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2005/12/16/2003284626",
+    "title": "(Taipei Times, 16 Dec 2005) Military to help build Taiping airstrip",
+    "publisher": "Taipei Times",
+    "pub_date": "2005-12-16",
+    "language": "en",
+    "excerpt": "the Ministry of National Defense will assist by sending soldiers there for the construction work."
+   },
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration (South China Sea Arbitration)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "In the middle of December 2005, the Ministry of Defense started work on its Pacific Defense Papers"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2005-12-29",
+  "date_end": "2005-12-29",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); JMSU agreement area",
+  "subregion": "5",
+  "summary": "On 29 December 2005 the director-general of MOFA's East Asian and Pacific Affairs department, Lee Chuan-tong, called in the head of Vietnam's office in Taipei to reject Vietnam's statement against the Taiping airstrip and to lodge a strong protest that the March 2005 Vietnam-Philippines-China Joint Marine Seismic Undertaking had included Taiping Island in its survey area without informing Taiwan; MOFA also had its office in Hanoi convey the position.",
+  "actors": "Ministry of Foreign Affairs (Director-General Lee Chuan-tong)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A formal protest to another claimant over a tripartite survey covering a ROC-held island is a diplomatic assertion; declarative, and new in target (the first ROC protest against the JMSU found). The protest was delivered to Vietnam only, though it concerns the Philippines and China too. The MOFA press release is dated 3 January 2006.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=68694",
+    "title": "外交部重申：我為南海諸島主權聲索國之一，在南沙太平島興建機場跑道並無政治意圖，亦無關軍事目的。",
+    "publisher": "Ministry of Foreign Affairs, ROC (外交部新聞稿)",
+    "pub_date": "2006-01-03",
+    "language": "zh-TW",
+    "excerpt": "未曾知會我方即將我太平島劃入探勘領域乙節表達嚴正抗議"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2006-01-03",
+  "date_end": "2006-01-03",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); Spratly, Paracel, Macclesfield and Pratas islands",
+  "subregion": "5",
+  "summary": "On 3 January 2006 the Foreign Ministry rejected Vietnam's 29 December 2005 statement and demand that Taiwan stop building the Taiping airstrip, declaring the Spratly, Paracel, Macclesfield and Pratas groups inherent ROC territory, saying the airstrip had no political or military purpose, and urging ASEAN governments to let Taiwan join the Declaration on the Conduct of Parties.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A public rejection of another claimant's protest with a full sovereignty claim is a verbal assertion; declarative. Primary MOFA press release, confirmed by the Taipei Times (6 Jan 2006).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=68694",
+    "title": "外交部重申：我為南海諸島主權聲索國之一，在南沙太平島興建機場跑道並無政治意圖，亦無關軍事目的。",
+    "publisher": "Ministry of Foreign Affairs, ROC (外交部新聞稿)",
+    "pub_date": "2006-01-03",
+    "language": "zh-TW",
+    "excerpt": "南沙、西沙、中沙及東沙等四群島皆為我國固有領土之一部分"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2006/01/06/2003287638",
+    "title": "(Taipei Times, 6 Jan 2006) Taiping airstrip has strategic motives, official says",
+    "publisher": "Taipei Times",
+    "pub_date": "2006-01-06",
+    "language": "en",
+    "excerpt": "rejected Vietnam's demand that it cease building airstrips"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2006-12-01",
+  "date_end": "2006-12-31",
+  "date_precision": "month",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "In December 2006 an L-shaped berthing platform, known as the Nanxing wharf (南星碼頭, 30 m by 15 m), was completed beside Taiping Island's broken trestle pier for amphibious resupply and Coast Guard boats.",
+  "actors": "ROC government (builder not named; Coast Guard / armed forces)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "New port infrastructure on a disputed feature is unilateral construction; demonstrative, low salience. Source is an MND journal article (PDF), excerpt not machine-checkable.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.mnd.gov.tw/File/24869",
+    "title": "黃盈智，〈海巡署建立南沙太平島測地統制之研究〉",
+    "publisher": "Ministry of National Defense (journal article)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "原有的棧橋碼頭於民國 81 年損壞，直至民國 95 年 12 月於損壞之棧橋碼頭"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2007-01-17",
+  "date_end": "2007-01-17",
+  "date_precision": "day",
+  "location_name": "Dongsha Atoll (Pratas) and surrounding waters",
+  "subregion": "",
+  "summary": "In January 2007 the Ministry of the Interior established Dongsha Atoll National Park, Taiwan's seventh and first marine national park (about 353,668 ha, covering the atoll and waters out to 12 nm), under the Construction and Planning Agency; a Marine National Park Headquarters in Kaohsiung was set up on 4 October 2007 to manage it.",
+  "actors": "Ministry of the Interior (Construction and Planning Agency); Marine National Park Headquarters",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "Placing a disputed atoll and its territorial sea under a national-park regime with access and fishing controls is a unilateral administrative act; demonstrative, new in kind (the first ROC national park in the South China Sea). Date caveat: the Control Yuan report gives 17 January in one passage and 19 January in another; the checkable National Park Service page gives only January 2007.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.taiwan.nps.gov.tw/home/en-us/NP_Quarterly/31691/9342.html",
+    "title": "National Park Quarterly: Dongsha Atoll",
+    "publisher": "National Park Service of Taiwan",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "eventually led to Dongsha's establishment in January 2007"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "７、我國於 96 年 1 月 17 日時成立東沙環礁國家公"
+   },
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2008/02/20080211.htm",
+    "title": "Chen pays visit to Dongsha Islands (Taipei Times, 11 Feb 2008, p. 1; mirror)",
+    "publisher": "Taipei Times (mirrored by Taiwan Tati Cultural Foundation)",
+    "pub_date": "2008-02-11",
+    "language": "en",
+    "excerpt": "In January last year, the Dongsha Marine National Park was established"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2007-03-03",
+  "date_end": "2007-03-03",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba) and waters to 12 nm",
+  "subregion": "5",
+  "summary": "On 3 March 2007 the Kaohsiung City Government's Marine Bureau, under Article 45 of the Fisheries Act, designated a Taiping Island sea turtle breeding conservation area covering the island's nesting beaches and the sea from the low-tide line out to 12 nautical miles.",
+  "actors": "Kaohsiung City Government Marine Bureau (高雄市政府海洋局)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A fisheries-law zoning order covering a disputed feature's 12-nm sea is a legal-administrative assertion of jurisdiction; declarative (a coder could also read it as demonstrative administration), and new in kind (the first ROC conservation zone at Taiping). Sources are the PCA translation of the CGA chronology and the Control Yuan report (PDFs).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration (South China Sea Arbitration)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "In 3 March 2007, the Kaohsiung City Government Maritime Office considered the local activities of sea turtles"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "１７、96 年 3 月 3 日，高雄市政府海洋局為保護當地"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2007-11-06",
+  "date_end": "2007-11-06",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "Defence Minister Lee Tien-yu made a low-key visit to Taiping Island to inspect the military's widening of the island's main road into a runway, returning on 6 November 2007.",
+  "actors": "Minister of National Defense Lee Tien-yu",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A defence minister's inspection of military construction on a disputed feature is a show of presence; demonstrative. CNA gives only the return day ('Tuesday', 6 November); the visit's start is not stated. GlobalSecurity returns 402 to scripts; excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2007/taiwan-071106-cna01.htm",
+    "title": "Defense minister returns from low-key visit to Taiping Island",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2007-11-06",
+    "language": "en",
+    "excerpt": "an inspection tour of a road expansion project on the Taiwan-held Taiping Island"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2007-11-20",
+  "date_end": "2007-11-20",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba); South China Sea islands",
+  "subregion": "5",
+  "summary": "On 20 November 2007 the Foreign Ministry answered Vietnam's 15 November statement that the Taiping airstrip seriously violated Vietnamese sovereignty, declaring the Spratly, Paracel, Macclesfield and Pratas groups inherent ROC territory whose sovereignty is beyond question and urging all states to recognise Taiwan as a claimant.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Publicly rejecting another claimant's protest and restating the full claim is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70065",
+    "title": "外交部針對我於南海水域及諸島主權之立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (外交部新聞稿)",
+    "pub_date": "2007-11-20",
+    "language": "zh-TW",
+    "excerpt": "我國政府對該諸島之主權不容質疑並享有一切應有之權益"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2007-12-12",
+  "date_end": "2007-12-12",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "The Taiping Project (太平專案) runway on Taiping Island, built by troops by widening the island's main road into a 1,150 m by 30 m strip able to take C-130 transports, was completed on 12 December 2007 after work resumed in autumn 2007; Vietnam protested twice as construction progressed.",
+  "actors": "Ministry of National Defense; ROC armed forces; Executive Yuan (funding)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV"
+  ],
+  "reasoning": "Completing an airstrip on a disputed feature is construction of wider scope than anything before at Taiping; demonstrative. Date caveat: the Control Yuan report gives 12 Dec 2007, an MND journal article 17 Dec 2007, the PCA-translated CGA chronology 'December 2007', and the Taipei Times (3 Feb 2008) says the runway was completed 'late last month' (January 2008). CNA (31 Aug 2007) reported the MND's defence of the project and a planned 25 Sept restart.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "帶暨低潮線以深至 12 浬。12 月 12 日，太帄專案"
+   },
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2007/taiwan-070831-cna02.htm",
+    "title": "Defense Ministry defends islet road expansion project",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2007-08-31",
+    "language": "en",
+    "excerpt": "the road is needed for sustainable development and as an emergency runway"
+   },
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2008/02/20080203.htm",
+    "title": "President visits disputed islands (Taipei Times, 3 Feb 2008, p. 1; mirror)",
+    "publisher": "Taipei Times (mirrored by Taiwan Tati Cultural Foundation)",
+    "pub_date": "2008-02-03",
+    "language": "en",
+    "excerpt": "Vietnam has protested to Taiwan twice in the last two months as airstrip"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2008-01-21",
+  "date_end": "2008-01-21",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 21 January 2008 an ROC Air Force C-130 transport landed on Taiping Island for the first time, testing the new runway, and an air force service detachment was stationed on the island to maintain it.",
+  "actors": "ROC Air Force",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RV",
+   "RP"
+  ],
+  "reasoning": "The first military aircraft landing on a disputed Spratly feature, and the stationing of an air force detachment, is a new kind of physical presence; demonstrative. Vietnam and the Philippines voiced concern. Control Yuan report (PDF) and Jamestown China Brief.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "１８、97 年 1 月 21 日，我國空軍 C-130 運輸機首度"
+   },
+   {
+    "url": "https://jamestown.org/?p=38568",
+    "title": "Taiwan Lands on the Spratlys",
+    "publisher": "Jamestown Foundation, China Brief 8(3)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "conducted a one-day mission to the Spratly Islets"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2008-02-02",
+  "date_end": "2008-02-02",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 2 February 2008 President Chen Shui-bian became the first ROC president to land on Taiping Island, flying in by C-130 with the defence and interior ministers and the Coast Guard minister under the cover of a large naval deployment; he opened the new airstrip and proposed a 'Spratly Initiative' to set aside sovereignty disputes and make the area an ecological protection zone. The Philippines called the visit 'lamentable' and Vietnam protested.",
+  "actors": "President Chen Shui-bian; Minister of National Defense Lee Tien-yu; Minister of the Interior Lee Yi-yang; CGA Minister Wang Jinn-wang; ROC Navy",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA",
+   "RP",
+   "RV"
+  ],
+  "reasoning": "The first presidential visit to a disputed Spratly feature, escorted by about half the navy's main warships, is a show of presence at the highest level; demonstrative, with a declarative element (the Spratly Initiative). First source is a mirror of the Taipei Times article; the original (taipeitimes.com, 403 to scripts) and a CNA report are listed too.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2008/02/20080203.htm",
+    "title": "President visits disputed islands (Taipei Times, 3 Feb 2008, p. 1; mirror)",
+    "publisher": "Taipei Times (mirrored by Taiwan Tati Cultural Foundation)",
+    "pub_date": "2008-02-03",
+    "language": "en",
+    "excerpt": "In his speech at the opening ceremony for the airstrip, Chen proposed a"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2008/02/03/2003400014",
+    "title": "President visits disputed islands",
+    "publisher": "Taipei Times",
+    "pub_date": "2008-02-03",
+    "language": "en",
+    "excerpt": "A navy deployment this large has been rare in recent years."
+   },
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2008/taiwan-080202-cna02.htm",
+    "title": "Taiwan defends Taiping Island airstrip as humanitarian project",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2008-02-02",
+    "language": "en",
+    "excerpt": "is for humanitarian purpose only."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2008-02-10",
+  "date_end": "2008-02-10",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Islands",
+  "subregion": "",
+  "summary": "On 10 February 2008 President Chen Shui-bian, with Defence Minister Lee Tien-yu, made his third visit to the Dongsha Islands, repeated his Spratly Initiative and called on neighbouring countries to settle sovereignty disputes with Taiwan peacefully.",
+  "actors": "President Chen Shui-bian; Minister of National Defense Lee Tien-yu",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RC",
+   "RA"
+  ],
+  "reasoning": "A presidential visit to a disputed feature is a show of presence; demonstrative, low added salience after the Taiping visit. Taipei Times (mirror; 'yesterday' in the 11 Feb issue) and the Control Yuan table (97.2.10).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://taiwantt.org.tw/taipeitimes/2008/02/20080211.htm",
+    "title": "Chen pays visit to Dongsha Islands (Taipei Times, 11 Feb 2008, p. 1; mirror)",
+    "publisher": "Taipei Times (mirrored by Taiwan Tati Cultural Foundation)",
+    "pub_date": "2008-02-11",
+    "language": "en",
+    "excerpt": "yesterday paid a third visit to the Dongsha"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "97.2.10    陳水扁總統    東沙島 視察東沙島"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2008-08-13",
+  "date_end": "2008-08-13",
+  "date_precision": "day",
+  "location_name": "Swallow Reef (Layang-Layang, 彈丸礁)",
+  "subregion": "7",
+  "summary": "On 13 August 2008, after Malaysian Deputy Prime Minister Najib Razak took reporters to Swallow Reef (Pulau Layang-Layang) on 11 August to assert Malaysian sovereignty, the Foreign Ministry stated that the reef and the Spratlys belong to ROC waters and territory, and called on neighbouring states to shelve disputes and develop resources jointly under its Spratly Initiative.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RM"
+  ],
+  "reasoning": "A public rebuttal of another claimant's sovereignty act is a verbal assertion; declarative, and new in target (a statement aimed at Malaysia). Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70942",
+    "title": "中華民國政府重申擁有南沙群島主權並提出「南沙倡議」主張應以環境保護取代主權爭議",
+    "publisher": "Ministry of Foreign Affairs, ROC (外交部新聞稿)",
+    "pub_date": "2008-08-13",
+    "language": "zh-TW",
+    "excerpt": "南沙群島包括拉央拉央島（又稱彈丸礁或燕子島）向屬於中華民國"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2008-09-10",
+  "date_end": "2008-09-10",
+  "date_precision": "day",
+  "location_name": "Dongsha (Pratas) Island",
+  "subregion": "",
+  "summary": "On 10 September 2008 President Ma Ying-jeou inspected the Dahanshan radar station in Pingtung and Dongsha (Pratas) Island, where he handed out Mid-Autumn Festival bonuses to the garrison; it was his first visit to a South China Sea feature as president.",
+  "actors": "President Ma Ying-jeou",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A presidential visit to a disputed garrison is a show of presence; demonstrative, low salience (Ma's predecessor had visited three times and Ma made no reported sovereignty statement). Sources are the Presidential Office Gazette's activity log (no. 6822, 17 Sep 2008) and the Control Yuan table of official visits (97.9.10), both PDFs; no contemporary news report was reached.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.president.gov.tw/File/Doc/36e2d98d-cac0-493f-803e-50467b623312",
+    "title": "總統府公報 第6822號（總統活動紀要，97年9月10日）",
+    "publisher": "Office of the President, ROC (Presidential Office Gazette)",
+    "pub_date": "2008-09-17",
+    "language": "zh-TW",
+    "excerpt": "視導屏東縣大漢山雷達站與東沙島頒發加菜金並賀秋節"
+   },
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "97.9.10    馬英九總統    東沙島 視察東沙島"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2009-01-25",
+  "date_end": "2009-01-25",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "On 25 January 2009 the Coast Guard's Nansha Command moved into a new administrative building on Taiping Island, built by the CGA under a 2007 project (groundbreaking 7 December 2007) and given a house-number plate, which also houses island personnel.",
+  "actors": "Coast Guard Administration, Nansha Command",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "New permanent government buildings on a disputed feature are unilateral construction; demonstrative, low salience. CGA booklet and the PCA translation of the CGA chronology (PDFs).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1386835266360.pdf",
+    "title": "南沙太平島（海巡署東南沙分署簡介）",
+    "publisher": "Coast Guard Administration (海巡署)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "98 年 1 月 25 日落成搬遷，兼供駐島人員住宿，設施完善，"
+   },
+   {
+    "url": "https://files.pca-cpa.org/pcadocs/The%20Philippines'%20Written%20Responses%20on%20Itu%20Aba%20(25%20April%202016)%20(Annexes%20893-913).pdf",
+    "title": "Annex 910: ROC Coast Guard Administration, 'Historical Background' (translation), in The Philippines' Written Responses on Itu Aba, Annexes 893-913",
+    "publisher": "Permanent Court of Arbitration (South China Sea Arbitration)",
+    "pub_date": "2016-04-25",
+    "language": "en",
+    "excerpt": "on 25 January 2009, the moving was completed."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2009-02-04",
+  "date_end": "2009-02-04",
+  "date_precision": "day",
+  "location_name": "Spratly Islands; Macclesfield Bank (incl. Scarborough Shoal)",
+  "subregion": "",
+  "summary": "On 4 February 2009, after the Philippine Congress voted in late January and early February on a baselines bill placing some Spratly and Macclesfield Bank features under Philippine territory, the Foreign Ministry issued a statement reaffirming the ROC's sovereignty over the South China Sea islands, including the Spratlys.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "A public sovereignty statement responding to another claimant's legislation is a verbal assertion; declarative. CNA report on GlobalSecurity (402 to scripts); excerpt is the headline read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2009/taiwan-090204-cna01.htm",
+    "title": "MOFA reaffirms sovereignty over Spratlys in South China Sea",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2009-02-04",
+    "language": "en",
+    "excerpt": "MOFA reaffirms sovereignty over Spratlys in South China Sea"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2009-03-06",
+  "date_end": "2009-03-06",
+  "date_precision": "day",
+  "location_name": "Swallow Reef (Layang-Layang, 彈丸礁)",
+  "subregion": "7",
+  "summary": "On 6 March 2009 the Foreign Ministry responded to Malaysian Prime Minister Abdullah Badawi's 5 March visit to Swallow Reef by declaring that the Spratly, Paracel, Macclesfield and Pratas groups and their waters are ROC territory and that the ROC does not recognise any other state's claim to or occupation of them, and urged neighbours to avoid unilateral measures.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RM"
+  ],
+  "reasoning": "A formal non-recognition statement against another claimant's sovereignty act is a verbal assertion; declarative. Primary MOFA press release.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=70019",
+    "title": "外交部重申我國對南沙群島及周遭水域擁有主權之立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (外交部新聞稿)",
+    "pub_date": "2009-03-06",
+    "language": "zh-TW",
+    "excerpt": "中華民國政府一概不予承認"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2009-03-13",
+  "date_end": "2009-03-13",
+  "date_precision": "day",
+  "location_name": "Spratly Islands; Scarborough Shoal (黃岩島)",
+  "subregion": "",
+  "summary": "After Philippine President Gloria Macapagal-Arroyo signed the archipelagic baselines law (Republic Act 9522) on 10 March 2009, placing some ROC-claimed Spratly features and Scarborough Shoal within Philippine territory, MOFA's Asia-Pacific director-general Yu Te-sheng called in the Philippine representative in Taipei and lodged a protest, reaffirming ROC sovereignty over the four island groups and the South China Sea waters (press release of 13 March).",
+  "actors": "Ministry of Foreign Affairs (Director-General of Asia-Pacific Affairs Yu Te-sheng)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "Summoning another claimant's envoy to protest its legislation is a formal diplomatic protest; declarative. The meeting's day is not stated; the range of the event is taken as the press-release date, 13 March 2009 (it falls between 10 and 13 March).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=73388",
+    "title": "外交部重申我國對南沙群島及周遭水域擁有主權之立場",
+    "publisher": "Ministry of Foreign Affairs, ROC (外交部新聞稿)",
+    "pub_date": "2009-03-13",
+    "language": "zh-TW",
+    "excerpt": "代表我國政府向菲國提出抗議"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2009-05-09",
+  "date_end": "2009-05-09",
+  "date_precision": "day",
+  "location_name": "South China Sea (Spratly, Paracel, Macclesfield, Pratas groups)",
+  "subregion": "",
+  "summary": "On 9 May 2009, after Malaysia and Vietnam filed a joint submission to the UN Commission on the Limits of the Continental Shelf, the Foreign Ministry reaffirmed ROC sovereignty over the Spratly, Paracel, Macclesfield and Pratas groups and rejected any other country's claims to or occupation of them.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "RM",
+   "RV"
+  ],
+  "reasoning": "A sovereignty statement answering other claimants' continental-shelf filings is a verbal assertion; declarative. CNA report on GlobalSecurity (402 to scripts); excerpt read through a web fetch.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/wmd/library/news/taiwan/2009/taiwan-090509-cna01.htm",
+    "title": "Taiwan reaffirms sovereignty over South China Sea islands",
+    "publisher": "Central News Agency (via GlobalSecurity.org)",
+    "pub_date": "2009-05-09",
+    "language": "en",
+    "excerpt": "Taiwan reaffirmed Saturday its sovereignty over several island groups in the South China Sea"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2009-05-12",
+  "date_end": "2009-05-12",
+  "date_precision": "day",
+  "location_name": "South China Sea islands and waters",
+  "subregion": "",
+  "summary": "On 12 May 2009 the Foreign Ministry issued a 'Statement on the Outer Limits of the ROC's Continental Shelf', restating that the South China Sea islands and their surrounding waters are ROC inherent territory and waters, while calling for joint development and resource sharing.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "energy",
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A formal statement claiming continental-shelf rights in the South China Sea, timed to the CLCS deadline, is a legal-verbal assertion; declarative, new in kind (the ROC's first continental-shelf statement). Known from the Control Yuan report (PDF); the MOFA release itself was not found in the online press archive.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "監察院調查報告：我國南海諸島主權維護（東沙島、太平島）調查案",
+    "publisher": "Control Yuan (監察院)",
+    "pub_date": "",
+    "language": "zh-TW",
+    "excerpt": "，98 年 5 月 12 日再發布「我國大陸礁層外部"
+   }
+  ]
+ }
+]

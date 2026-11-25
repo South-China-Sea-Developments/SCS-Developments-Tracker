@@ -78,7 +78,7 @@
       el("span", "case-year", String(c.y), a);
       var pills = el("span", "case-types", undefined, head);
       c.t.forEach(function (t) { el("span", "type-pill", TYPE_LABELS[t] || t, pills).setAttribute("data-type", t); });
-      if (c.cb !== "chubb") el("span", "prov-pill project-pill", "project coding", pills).title = "Coded by this project, not part of MATS 1.02";
+      if (c.cb !== "chubb") el("span", "prov-pill project-pill", "project coding", pills);
       el("span", "case-id", c.id, head);
       el("p", "case-excerpt", excerpt(c.x, f.q), li);
     });

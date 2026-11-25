@@ -1,0 +1,30 @@
+{
+ "run_id": "PH-2021-2026",
+ "table": "Candidates",
+ "record_ids": [
+  "recTgPKLpNdJhjfwE",
+  "recGgluoD2CEvdLiY",
+  "recqSbbH9kTy59i1F",
+  "recFFThej1JowRfEj",
+  "recSNZrlwyCJWX5oC",
+  "recSFUbqepLNck1Bv",
+  "recVJKOYm1cmcuENQ",
+  "rec1pBLtGhQ9rXUgE",
+  "rectumgwICQp8YQXu",
+  "recxbKn2iK8mSik13",
+  "rectH5Mumcx1Po1Zs"
+ ],
+ "event_ids": [
+  "ev-23790226e2",
+  "ev-3dbb7833fe",
+  "ev-5585ab1bb6",
+  "ev-5da81bbe13",
+  "ev-5f8b40631b",
+  "ev-94fa126207",
+  "ev-9f45b25ca2",
+  "ev-ba12686b29",
+  "ev-c99f3543d2",
+  "ev-d644783f0f",
+  "ev-e5e8f3c5b2"
+ ]
+}

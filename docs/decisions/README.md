@@ -12,3 +12,4 @@ The open decisions between here and a working, automatically updated database, o
 | 06 | Public front end | 05 | settled |
 | 07 | Governance: licence, versioning, attribution, author relationship | 01 | settled in part (versioning, releases, citation); licence and credit line open |
 | 08 | Operations: where scheduled runs happen, who maintains | 04, 05 | settled |
+| 09 | Series start (1970, or back to 1946/1949) | 01, 03 | settled: 1970 kept |

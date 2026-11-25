@@ -1,0 +1,2390 @@
+[
+  {
+    "claimant": "TW",
+    "date_start": "2021-03-01",
+    "date_end": "2021-03-31",
+    "date_precision": "month",
+    "location_name": "Dongsha (Pratas) Island airport",
+    "subregion": "",
+    "summary": "Taiwan began reconstructing the runway of Dongsha Airport on the Pratas Islands in March 2021, a Defence Ministry project approved in February 2020 and delayed by cross-strait tensions and weather, scheduled for completion by February 2022 to strengthen the islands' defence.",
+    "actors": "Ministry of National Defense; Air Force",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Construction to upgrade military-usable infrastructure on a held feature is unilateral administration without confrontation; demonstrative. Month precision: the report says construction 'did not begin until this March'.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/4167720",
+        "title": "Taiwan begins renovation of Dongsha Island runway",
+        "publisher": "Taiwan News",
+        "pub_date": "2021-04-03",
+        "language": "en",
+        "excerpt": "However, due to cross-strait tensions and weather concerns, construction did not begin until this March"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2021-03-01",
+    "date_end": "2021-12-12",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The Coast Guard Administration's Dongsha Command held its routine live-fire training around the Pratas (Dongsha) Islands throughout 2021: a round of live-fire exercises on 1 March, a second-quarter notice for 25 April (reserve 2 May), third-quarter firing on 5 and 12 September that the CGA used to test an indigenous anti-armour rocket, and a fourth-quarter notice for 5 December (reserve 12 December).",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Routine quarterly live-fire training at a held feature is unilateral military activity without confrontation; demonstrative. Summarised as one event for the year, as in the 2016-2020 set; the September rocket test is new. Dates after March are planned dates from the CGA's official notices (attached PDFs, not checkable by the importer); the Taipei Times item on the September test blocks the importer.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/politics/202103010013",
+        "title": "Taiwan stages live-fire drill on island in South China Sea",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2021-03-01",
+        "language": "en",
+        "excerpt": "The Coast Guard Administration (CGA) was scheduled to hold a round of live-fire exercises on the Taiwan-held Pratas (Dongsha) Islands in the South China Sea on Monday amid rising tensions in the region."
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=145051&ctNode=1279&mp=999",
+        "title": "(110)署巡勤射字第036號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(110)署巡勤射字第036號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1627375141301.pdf",
+        "title": "海巡署東南沙分署東沙指揮部110年度第三季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部110年度第三季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://www.taipeitimes.com/News/front/archives/2021/08/07/2003762172",
+        "title": "(headline not retrieved; Taipei Times front page, 7 August 2021)",
+        "publisher": "Taipei Times",
+        "pub_date": "2021-08-07",
+        "language": "en",
+        "excerpt": "The exercises are scheduled from 8am to 9am on Sept. 5 and 12,"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1635384245309.pdf",
+        "title": "海巡署東南沙分署東沙指揮部110年度第四季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部110年度第四季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2021-03-17",
+    "date_end": "2021-03-17",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Newly appointed Defence Minister Chiu Kuo-cheng told the Legislative Yuan that Taiwan had increased the personnel and armaments stationed on Itu Aba (Taiping Island), citing China's 'expansionism' in the region, though a return to a permanent army garrison was not being considered.",
+    "actors": "Ministry of National Defense (Minister Chiu Kuo-cheng)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RC"
+    ],
+    "reasoning": "Reinforcing the garrison of a held feature is a unilateral military deployment without confrontation; demonstrative. The reinforcement's own date is not given, so the date of the disclosure is used.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.aljazeera.com/news/2021/3/17/taiwan-boosts-south-china-sea-deployments-gets-submarine-nod",
+        "title": "Taiwan boosts South China Sea deployments, gets submarine nod",
+        "publisher": "Al Jazeera (Reuters)",
+        "pub_date": "2021-03-17",
+        "language": "en",
+        "excerpt": "Speaking in parliament on Wednesday, Defence Minister Chiu Kuo-cheng, who took up his post last month, said Taiwan had increased personnel and armaments stationed on Itu Aba, the main island Taiwan occupies in the South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2021-04-01",
+    "date_end": "2021-04-07",
+    "date_precision": "day",
+    "location_name": "Dongsha (Pratas) Islands",
+    "subregion": "",
+    "summary": "After Chinese drones were seen circling the Pratas Islands, the Coast Guard Administration told a legislative committee on 1 April that it would strengthen defences around the islands, and on 7 April Ocean Affairs Council head Lee Chung-wei told the legislature that drones entering the restricted waters or airspace would be handled under the rules of engagement: 'If we need to open fire, we open fire.'",
+    "actors": "Coast Guard Administration; Ocean Affairs Council (Lee Chung-wei)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "diplomatic",
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "An official threat to fire on another state's aircraft entering held airspace is a threat of force against a rival claimant's assets; coercive (a coder may prefer declarative for a parliamentary answer). The defence strengthening announced on 1 April is merged.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/4171603",
+        "title": "Taiwan may shoot down Chinese drones if they fly over Dongsha Islands",
+        "publisher": "Taiwan News",
+        "pub_date": "2021-04-08",
+        "language": "en",
+        "excerpt": "Taiwan’s Coast Guard Administration has been tracking Chinese drones around the Dongsha Islands (東沙群島, Pratas Islands) in the disputed South China Sea and may shoot them down if they enter Taiwanese restricted waters or airspace."
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/4166166",
+        "title": "Taiwan to build up defenses after Chinese drones spotted over Dongsha Island",
+        "publisher": "Taiwan News",
+        "pub_date": "2021-04-01",
+        "language": "en",
+        "excerpt": "The Coast Guard Administration (CGA) said Thursday (April 1) it would strengthen defenses around the disputed South China Sea islands after Chinese drones were spotted near the Dongsha Islands"
+      },
+      {
+        "url": "https://www.rfa.org/english/news/china/taiwan-drones-04072021180138.html",
+        "title": "Chinese Drones Fly Near Taiwan-held Island in South China Sea",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2021-04-07",
+        "language": "en",
+        "excerpt": "Lee indicated that Taiwanese forces would open fire on UAVs that fly over the island, which is also claimed by the People’s Republic of China."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2021-04-26",
+    "date_end": "2021-04-26",
+    "date_precision": "day",
+    "location_name": "Dongsha (Pratas) Islands and Itu Aba (Taiping Island)",
+    "subregion": "",
+    "summary": "Taiwanese defence officials told the legislature that the existing defence systems on Taiwan's two South China Sea islands, Pratas and Itu Aba, were capable of deterring any attempted invasion by Chinese forces.",
+    "actors": "Ministry of National Defense",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A public statement of resolve and capability to defend held features is a verbal assertion; declarative. Low weight: a deterrence statement rather than a new act.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/politics/202104260014",
+        "title": "Taiwan capable of repelling attack on its South China Sea islands: MND",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2021-04-26",
+        "language": "en",
+        "excerpt": "Taiwan's existing defense systems on two of its islands in the disputed South China Sea are capable of deterring any attempted invasion by Chinese forces, Taiwanese defense officials said Monday."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2021-06-01",
+    "date_end": "2021-06-30",
+    "date_precision": "month",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Taiwan's Coast Guard Administration conducted a live-fire drill in the waters around Itu Aba (Taiping Island) in June 2021; Vietnam's foreign ministry spokeswoman Le Thi Thu Hang protested on 11 June and demanded that Taiwan not repeat it.",
+    "actors": "Coast Guard Administration, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "A live-fire drill at a held feature is unilateral military activity without confrontation; demonstrative. No CGA notice for this drill survives in the CGA's online list, and the Vietnamese report's phrase 'a drill conducted ... on June 11' coincides with the protest date, so month precision is used.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://e.vnexpress.net/news/news/stop-illegal-drills-off-truong-sa-islands-vietnam-tells-taiwan-4292608.html",
+        "title": "Stop illegal drills off Truong Sa Islands, Vietnam tells Taiwan",
+        "publisher": "VnExpress International",
+        "pub_date": "2021-06-11",
+        "language": "en",
+        "excerpt": "She was responding to requests for comments on a drill conducted by Taiwan's Coast Guard on June 11."
+      },
+      {
+        "url": "https://en.baoquocte.vn/apicenter@/print_article&i=148053",
+        "title": "Viet Nam requests Taiwan to stop illegal drills on Truong Sa’s Ba Binh island",
+        "publisher": "The World and Vietnam Report",
+        "pub_date": "2021-06-11",
+        "language": "en",
+        "excerpt": "Responding to the press' question on this issue on June 11, Hang stressed that Taiwan’s staging of live-fire drills around Ba Binh has seriously infringed upon Viet Nam's territorial sovereignty over the archipelago"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2021-11-09",
+    "date_end": "2021-11-10",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of fourth-quarter 2021 live artillery firing at sea around Taiping Island on 9 and 10 November, 08:00-21:00, with 17 November as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. The dates are planned dates from the official notice (PDF, not checkable by the importer); no first- to third-quarter 2021 Taiping notice appears in the CGA's online list.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=146659&ctNode=1279&mp=999",
+        "title": "(110)署巡勤射字第176號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(110)署巡勤射字第176號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1633593993912.pdf",
+        "title": "海巡署東南沙分署南沙指揮部110年度第四季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部110年度第四季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-02-25",
+    "date_end": "2022-02-26",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of first-quarter 2022 live artillery firing at sea around Taiping Island on 25 and 26 February, 08:00-21:00, with 1 March as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drills at a held feature are unilateral military activity without confrontation; demonstrative. Dates are planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=147302&ctNode=1279&mp=999",
+        "title": "(111)署巡勤射字第004號-東南沙分署南沙指揮部--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(111)署巡勤射字第004號-東南沙分署南沙指揮部--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1644977121983.pdf",
+        "title": "海巡署東南沙分署南沙指揮部111年度第一季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部111年度第一季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-03-26",
+    "date_end": "2022-11-05",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The Coast Guard Administration's Dongsha Command held its routine quarterly live artillery firing at sea around Dongsha Island in 2022, notified for 26 March (reserve 31 March), 28 May (reserve 6 June), 6 August (reserve 13 August) and 29 October (reserve 5 November).",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Routine quarterly live-fire training at a held feature, summarised as one event for the year as in the 2016-2020 set; demonstrative. Planned dates from the official notices (PDFs, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=147499&ctNode=1279&mp=999",
+        "title": "(111)署巡勤射字第017號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(111)署巡勤射字第017號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1644990131841.pdf",
+        "title": "海巡署東南沙分署東沙指揮部111年度第一季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部111年度第一季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1663757033139.pdf",
+        "title": "海巡署東南沙分署東沙指揮部111年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部111年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-04-28",
+    "date_end": "2022-04-28",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "After China's Taiwan Affairs Office warned Taipei it was 'playing with fire' over a reported plan to lengthen the Taiping Island airstrip and asserted China's sovereignty over the Spratlys, Taiwan's Ministry of Foreign Affairs rejected the statement, saying the South China Sea islands belong to the ROC and the government's determination to defend their sovereignty has never wavered.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A ministry rebuttal reasserting sovereignty is a verbal assertion; declarative. The runway-extension plan itself was reported by United Daily News from an unnamed source and not confirmed by the air force, so it is not listed as an event.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.rfa.org/english/news/china/taiwan-taiping-04282022135623.html",
+        "title": "China says Taiwan ‘playing with fire’ over alleged Taiping Island plans",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2022-04-28",
+        "language": "en",
+        "excerpt": "Taiwan's Ministry of Foreign Affairs on Thursday rejected China's statement, saying that the islands in the South China Sea belong to the Republic of China (ROC or Taiwan)"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-06-28",
+    "date_end": "2022-06-29",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command held second-quarter live artillery firing around Taiping Island, notified for 28 and 29 June 2022 (reserve 1 July); after the Philippine Department of Foreign Affairs lodged a 'strong objection' on 28 June, Taiwan said on 29 June it had the right to conduct the drills and always gave advance warning, and Vietnam protested on 2 July.",
+    "actors": "Coast Guard Administration, Nansha Command; Ministry of Foreign Affairs",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RP",
+      "RV"
+    ],
+    "reasoning": "A live-fire drill at a held feature is unilateral military activity; demonstrative. The Philippine and Vietnamese protests confirm it; Taiwan's 29 June rebuff (a spokesperson's reply, not a formal MOFA statement) is merged here.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2022/06/29/taiwan-rebuffs-philippines-complaint-about-south-china-sea-live-fire-drills",
+        "title": "Taiwan rebuffs Philippines complaint about South China Sea live fire drills",
+        "publisher": "The Star (Reuters)",
+        "pub_date": "2022-06-29",
+        "language": "en",
+        "excerpt": "Taiwan on Wednesday (June 29) rebuffed a complaint from the Philippines about live fire drills around a Taiwan-controlled island deep in the South China Sea, saying it had the right to do so and always gives issues a warning of its exercises."
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=150037&ctNode=1279&mp=999",
+        "title": "(111)署巡勤射字第080號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(111)署巡勤射字第080號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://vietnamlawmagazine.vn/vietnam-opposes-and-demands-taiwan-to-cancel-live-fire-drills-on-ba-binh-island-48758.html",
+        "title": "Vietnam opposes and demands Taiwan to cancel live-fire drills on Ba Binh island",
+        "publisher": "Vietnam Law & Legal Forum",
+        "pub_date": "2022-07-03",
+        "language": "en",
+        "excerpt": "Vietnam resolutely opposes and demands Taiwan to cancel live-fire drills in the waters around Ba Binh island belonging to Vietnam’s Truong Sa (Spratly) archipelago and not to repeat similar violations in the future"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-09-22",
+    "date_end": "2022-09-23",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command held third-quarter live artillery firing around Taiping Island, rescheduled to 22 and 23 September 2022 (08:00-21:00, reserve 24 September) from the originally notified 20 and 21 September.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drills at a held feature; demonstrative. Dates are from the revised official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=151149&ctNode=1279&mp=999",
+        "title": "(111)署巡勤射字第170號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(111)署巡勤射字第170號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1663207585147.pdf",
+        "title": "海巡署東南沙分署南沙指揮部111年度第三季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部111年度第三季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-11-29",
+    "date_end": "2022-11-29",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command held fourth-quarter live artillery firing around Taiping Island on 29 November 2022 (08:00-21:00, reserve 2 December), which Vietnam's foreign ministry protested on 2 December.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. MOFA's statement confirms the drill took place on 29 November.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=155384&ctNode=1279&mp=999",
+        "title": "(111)署巡勤射字第206號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(111)署巡勤射字第206號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1666836081649.pdf",
+        "title": "海巡署東南沙分署南沙指揮部111年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部111年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2022-12-02",
+    "date_end": "2022-12-02",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Taiwan's Ministry of Foreign Affairs rejected as unacceptable Vietnam's 2 December statement that the 29 November live-fire drill around Taiping Island seriously violated Vietnamese sovereignty, reaffirming that Taiping Island is ROC territory and that the government may exercise all the rights of a sovereign state on the island and in its waters.",
+    "actors": "Ministry of Foreign Affairs (Department of East Asian and Pacific Affairs)",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RV"
+    ],
+    "reasoning": "A formal rebuttal of a rival claimant's protest, reasserting sovereignty, is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=99221",
+        "title": "有關媒體報導，越南外交部發布聲明，指稱我國於本(111)年11月29日在太平島周邊水域進行例行性實彈射擊是「嚴重侵犯」越南主權事，外交部嚴正回應如下：",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2022-12-02",
+        "language": "zh",
+        "excerpt": "太平島屬於中華民國領土，不容質疑，我國政府有權在太平島上及其相關海域行使做為主權國家的一切權利。"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-03-22",
+    "date_end": "2023-03-22",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of first-quarter 2023 live artillery firing at sea around Taiping Island on 22 March, 08:00-21:00, with 27 March as the reserve day; Vietnam's foreign ministry objected on 31 March to Taiwan's notice of live-fire drills around the island.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer); the Vietnamese objection refers to a drill notice without dates.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=155933&ctNode=1279&mp=999",
+        "title": "(112)署巡勤射字第012號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(112)署巡勤射字第012號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1675299068354.pdf",
+        "title": "海巡署東南沙分署南沙指揮部112年度第1季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部112年度第1季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://tuoitrenews.vn/news/politics/20230401/vietnam-opposes-taiwans-illegal-livefire-drills-in-ba-binh-island-waters/72401.html",
+        "title": "Vietnam opposes Taiwan’s illegal live-fire drills in Ba Binh Island waters",
+        "publisher": "Tuoi Tre News",
+        "pub_date": "2023-04-01",
+        "language": "en",
+        "excerpt": "The ministry’s deputy spokesperson, Pham Thu Hang, made the objection in response to local media’s questions about Vietnam’s reactions to Taiwan’s notice of live-fire drills in the said waters."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-05-06",
+    "date_end": "2023-10-21",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The Coast Guard Administration's Dongsha Command held its routine live artillery firing at sea around Dongsha Island in 2023, notified for 6 May (reserve 13 May), 22 July (reserve 29 July) and 14 October (reserve 21 October), 07:00-22:00.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Routine live-fire training at a held feature, summarised as one event for the year; demonstrative. No first-quarter 2023 Dongsha notice appears in the CGA list. Planned dates from the official notices (PDFs, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=156257&ctNode=1279&mp=999",
+        "title": "(112)署巡勤射字第057號-東南沙分署--海(空)域-東沙",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(112)署巡勤射字第057號-東南沙分署--海(空)域-東沙"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1680576578891.pdf",
+        "title": "海巡署東南沙分署東沙指揮部112年度第2季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部112年度第2季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1694490856542.pdf",
+        "title": "海巡署東南沙分署東沙指揮部112年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部112年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-06-07",
+    "date_end": "2023-06-07",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command held second-quarter live artillery firing around Taiping Island on 7 June 2023 (notified 08:00-21:00, reserve 12 June); Vietnam's foreign ministry called it a serious violation of Vietnamese sovereignty on 8 June.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. MOFA's 11 June statement confirms the 7 June date.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=156463&ctNode=1279&mp=999",
+        "title": "(112)署巡勤射字第073號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(112)署巡勤射字第073號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1682090853068.pdf",
+        "title": "海巡署東南沙分署南沙指揮部112年度第2季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部112年度第2季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-06-11",
+    "date_end": "2023-06-11",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Taiwan's Ministry of Foreign Affairs said it completely rejected Vietnam's 8 June statement that the 7 June live-fire drill around Taiping Island seriously violated Vietnam's sovereignty over the Spratlys, reaffirming the ROC's rights over the South China Sea islands and that Taiping Island is ROC territory.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RV"
+    ],
+    "reasoning": "A formal rebuttal of a rival claimant's protest reasserting sovereignty; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=114856",
+        "title": "有關越南外交部發言人范秋姮（Pham Thu Hang）稱我國於本（6）月7日在太平島周邊水域舉行實彈射擊是嚴重侵犯越南主權事，外交部回應如下：",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2023-06-11",
+        "language": "zh",
+        "excerpt": "太平島屬於我國領土，不容質疑，我國政府有權在太平島上及其相關海域行使作為主權國家的一切權利。"
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/4915552",
+        "title": "Vietnam demands Taiwan cancel military drills in Spratly Islands",
+        "publisher": "Taiwan News",
+        "pub_date": "2023-06-11",
+        "language": "en",
+        "excerpt": "Taiwan's Ministry of Foreign Affairs (MOFA) says it completely rejects Vietnam's assertion that Taiwan’s planned live-fire drills in the Spratly Islands territory are a serious violation of Vietnam's sovereignty."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-08-22",
+    "date_end": "2023-08-22",
+    "date_precision": "day",
+    "location_name": "Triton Island (Zhongjian Dao), Paracel Islands",
+    "subregion": "2",
+    "summary": "Responding to an AP report that China appeared to be building an airstrip on Triton Island in the Paracels, Taiwan's Ministry of Foreign Affairs reaffirmed that the South China Sea islands, including the Paracels, are ROC territory and called on all parties to refrain from unilateral actions that escalate tensions.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A sovereignty reassertion in reaction to a rival's construction is a verbal assertion; declarative. Notable as a Paracels-specific statement.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=115311",
+        "title": "有關日前美聯社報導中國疑似在西沙群島「中建島」興建簡便飛機跑道事，外交部回應如下：",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2023-08-22",
+        "language": "zh",
+        "excerpt": "外交部重申，包括西沙群島在內的南海諸島屬於中華民國領土，我國對南海諸島及其相關海域享有國際法及海洋法上的一切權利，不容置疑。"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-08-23",
+    "date_end": "2023-08-23",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command held third-quarter live artillery firing around Taiping Island on 23 August 2023 (notified 08:00-21:00, reserve 28 August); after Vietnam protested, the CGA said the drills were routine and carried out several times a year.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. MOFA's 29 August statement confirms the 23 August date.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=157138&ctNode=1279&mp=999",
+        "title": "(112)署巡勤射字第138號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(112)署巡勤射字第138號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/4983670",
+        "title": "Vietnam's criticism of live fire drills in Spratly Is. 'totally unacceptable': Taiwan",
+        "publisher": "Taiwan News",
+        "pub_date": "2023-08-29",
+        "language": "en",
+        "excerpt": "“The artillery fire drills in the Spratly Islands are carried out regularly, and the announcement was not made suddenly,” a Coast Guard spokesperson said."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-08-29",
+    "date_end": "2023-08-29",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Taiwan's Ministry of Foreign Affairs rejected as unacceptable Vietnam's claim that the 23 August live-fire drill around Taiping Island infringed its sovereignty over the Spratlys, reaffirming that Taiping Island is indisputably ROC territory.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RV"
+    ],
+    "reasoning": "A formal rebuttal of a rival claimant's protest reasserting sovereignty; declarative. Third such MOFA rebuttal to Vietnam since December 2022.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=115362",
+        "title": "有關越南外交部表示，我國於今（112）年8月23日在太平島周邊水域舉行實彈射擊是嚴重侵犯越南主權事，外交部回應如下：",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2023-08-29",
+        "language": "zh",
+        "excerpt": "太平島屬於中華民國領土不容質疑，我國政府有權在太平島上及其相關海域行使主權國家的一切權利。"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-09-13",
+    "date_end": "2023-09-13",
+    "date_precision": "day",
+    "location_name": "Dongsha (Pratas) Islands",
+    "subregion": "",
+    "summary": "Interior Minister Lin Yu-chang and Ocean Affairs Council Minister Kuan Bi-ling visited the Dongsha Islands, where they visited coast guard and national park staff and watched the CGA patrol boat Wei Hsing chase four Chinese fishing trawlers 13 nautical miles north of the island.",
+    "actors": "Ministry of the Interior (Lin Yu-chang); Ocean Affairs Council (Kuan Bi-ling); Coast Guard Administration",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A visit by two cabinet ministers to a held feature is a unilateral sovereignty display; demonstrative. Reported on 13 September; the visit may have been a day or two earlier.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/4997942",
+        "title": "Taiwan ministers visit disputed Dongsha Islands",
+        "publisher": "Taiwan News",
+        "pub_date": "2023-09-13",
+        "language": "en",
+        "excerpt": "During their visit, the ministers witnessed the CGA’s Wei Hsing patrol boat chasing four Chinese fishing trawlers 13 nautical miles north of Dongsha"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2023-11-08",
+    "date_end": "2023-11-08",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of fourth-quarter 2023 live artillery firing at sea around Taiping Island on 8 November, 08:00-21:00, with 13 November as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=157645&ctNode=1279&mp=999",
+        "title": "(112)署巡勤射字第199號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(112)署巡勤射字第199號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1695792404396.pdf",
+        "title": "海巡署東南沙分署南沙指揮部112年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部112年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-02-24",
+    "date_end": "2024-10-12",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The Coast Guard Administration's Dongsha Command held its routine quarterly live artillery firing at sea around Dongsha Island in 2024, notified for 24 February (reserve 2 March), 27 April (reserve 4 May), 6 July (reserve 13 July) and 5 October (reserve 12 October), 07:00-22:00.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Routine quarterly live-fire training at a held feature, summarised as one event for the year; demonstrative. Planned dates from the official notices (PDFs, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=159467&ctNode=1279&mp=999",
+        "title": "(113)署巡勤射字第002號-東南沙分署--海(空)域-東沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(113)署巡勤射字第002號-東南沙分署--海(空)域-東沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1704421119611.pdf",
+        "title": "海巡署東南沙分署東沙指揮部113年第1季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部113年第1季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1724048082878.pdf",
+        "title": "海巡署東南沙分署東沙指揮部113年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部113年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-03-18",
+    "date_end": "2024-03-18",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration held a completion ceremony for its NT$1.7 billion harbour-dredging and wharf-renovation project at Taiping Island, finished in 2023 and accepted on 20 January 2024, which lets 4,000-tonne cutters berth; the 1,000-tonne patrol vessel Miaoli, which left Kaohsiung on 15 March, berthed at the island for the occasion. President Tsai did not attend.",
+    "actors": "Coast Guard Administration; Ocean Affairs Council",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "RA"
+    ],
+    "reasoning": "Completing and inaugurating port works that let larger patrol ships be based at a held feature is unilateral construction and administration without confrontation; demonstrative. The project dates from 2020; the ceremony date is used, and the January acceptance and November 2023 announcement that larger vessels would deploy are folded in.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://newtalk.tw/news/view/2024-03-19/912787",
+        "title": "蔡英文昨未登太平島 藍黨團籲蔡卸任前登島宣示領導主權",
+        "publisher": "Newtalk",
+        "pub_date": "2024-03-19",
+        "language": "zh",
+        "excerpt": "海巡署耗資17億元的「南沙太平島港側浚深及碼頭整修工程」昨舉行完成典禮，總統蔡英文並未出席。"
+      },
+      {
+        "url": "https://news.pts.org.tw/article/678739",
+        "title": "太平島碼頭整修竣工 綠委盼蔡英文卸任前登島秀主權",
+        "publisher": "PTS News (公視新聞)",
+        "pub_date": "2024-01-29",
+        "language": "zh",
+        "excerpt": "太平島碼頭整修工程竣工後已於20日驗收通過，海巡署將在今（2024）年度派遣1艘100噸級巡防艇進駐"
+      },
+      {
+        "url": "https://www.asiae.co.kr/en/article/2024031816044359146",
+        "title": "[News Spot] Taiwan Strengthens Effective Control over 'Taipingdao'",
+        "publisher": "The Asia Business Daily",
+        "pub_date": "2024-03-18",
+        "language": "en",
+        "excerpt": "Taiwan Coast Guard Administration stated that its 1000-ton Miao-li patrol vessel departed from southern Kaohsiung Port on the 15th and arrived at Taipingdao the previous afternoon."
+      },
+      {
+        "url": "https://focustaiwan.tw/politics/202311060011",
+        "title": "Larger Coast Guard vessels headed to Taiwan-controlled Taiping Island soon",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2023-11-06",
+        "language": "en",
+        "excerpt": "Taiwan's Coast Guard Administration (CGA) will soon deploy larger patrol vessels to Taiping Island in the disputed South China Sea, the nation's top intelligence chief told lawmakers on Monday."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-03-25",
+    "date_end": "2024-03-25",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of first-quarter 2024 live artillery firing at sea around Taiping Island on 25 March, 08:00-21:00, with 1 April as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=159681&ctNode=1279&mp=999",
+        "title": "(113)署巡勤射字第020號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(113)署巡勤射字第020號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1708055764016.pdf",
+        "title": "海巡署東南沙分署南沙指揮部113年度第1季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部113年度第1季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-05-18",
+    "date_end": "2024-05-18",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Ten legislators, nine from the opposition Kuomintang and one from the Taiwan People's Party, led by Foreign Affairs and National Defense Committee convener Ma Wen-chun and including Deputy Speaker Johnny Chiang, flew to Taiping Island on an Air Force C-130H to declare sovereignty, observe drills and inspect the renovated pier, two days before President Lai's inauguration.",
+    "actors": "Legislative Yuan (Foreign Affairs and National Defense Committee); Air Force; Coast Guard Administration",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical",
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RA"
+    ],
+    "reasoning": "An official parliamentary inspection of a held feature, flown by the air force and billed as a sovereignty declaration, is a state-sanctioned sovereignty display; demonstrative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/5689576",
+        "title": "Taiwan lawmakers conduct inspection tour of distant Taiping Island",
+        "publisher": "Taiwan News",
+        "pub_date": "2024-05-18",
+        "language": "en",
+        "excerpt": "A group of Kuomintang (KMT) lawmakers arrived on Taiping Island in the South China Sea on Saturday (May 18) to observe military exercises and inspect new facilities."
+      },
+      {
+        "url": "https://www.rfa.org/english/news/southchinasea/taiwan-taiping-visit-05162024032918.html",
+        "title": "Taiwan lawmakers to visit disputed South China Sea island",
+        "publisher": "Radio Free Asia",
+        "pub_date": "2024-05-16",
+        "language": "en",
+        "excerpt": "plans to spend a morning on the island to declare sovereignty, inspect newly developed facilities such as a harbor and typhoon shelter, and greet troops stationed there"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-05-27",
+    "date_end": "2024-05-27",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of second-quarter 2024 live artillery firing at sea around Taiping Island on 27 May, 08:00-21:00, with 3 June as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=160223&ctNode=1279&mp=999",
+        "title": "(113)署巡勤射字第060號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(113)署巡勤射字第060號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1713422107075.pdf",
+        "title": "海巡署東南沙分署南沙指揮部113年度第2季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部113年度第2季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-07-19",
+    "date_end": "2024-07-19",
+    "date_precision": "day",
+    "location_name": "South China Sea (west Palawan region; central South China Sea)",
+    "subregion": "",
+    "summary": "Taiwan's Ministry of Foreign Affairs declared unacceptable the Philippines' 15 June 2024 and Vietnam's 17 July 2024 submissions to the UN Commission on the Limits of the Continental Shelf for extended continental shelves in the South China Sea, saying they infringed the ROC's territorial sovereignty and rights, and reaffirmed that the South China Sea islands are ROC territory.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "energy",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RP",
+      "RV"
+    ],
+    "reasoning": "A formal rejection of two rival claimants' UN filings is a verbal assertion; declarative. Taiwan cannot file with the CLCS, so this statement is its only response.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=117736",
+        "title": "有關菲律賓、越南近期分別向聯合國大陸礁層界限委員會（CLCS）提交南海大陸礁層主張，引起我國相關學者關注事，外交部回應如下：",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2024-07-19",
+        "language": "zh",
+        "excerpt": "外交部對前述菲律賓及越南片面向聯合國提交擴大南海大陸礁層界限的主張及作法表示無法接受，菲、越兩國的作法已侵犯我國在南海的領土主權與國際法及海洋法上的權利。"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-08-12",
+    "date_end": "2024-08-12",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of third-quarter 2024 live artillery firing at sea around Taiping Island on 12 August, 08:00-21:00, with 19 August as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=160778&ctNode=1279&mp=999",
+        "title": "(113)署巡勤射字第122號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(113)署巡勤射字第122號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1719912594942.pdf",
+        "title": "海巡署東南沙分署南沙指揮部113年度第3季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部113年度第3季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-11-04",
+    "date_end": "2024-11-04",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of fourth-quarter 2024 live artillery firing at sea around Taiping Island on 4 November, 08:00-21:00, with 11 November as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=162389&ctNode=1279&mp=999",
+        "title": "(113)署巡勤射字第182號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(113)署巡勤射字第182號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1725609626688.pdf",
+        "title": "海巡署東南沙分署南沙指揮部113年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部113年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2024-11-12",
+    "date_end": "2024-11-12",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal (Minzhu Reef) and the South China Sea islands",
+    "subregion": "4",
+    "summary": "Taiwan's government declared that the Philippines' Maritime Zones Act and Archipelagic Sea Lanes Act, signed on 8 November 2024, China's same-day announcement of territorial-sea baselines around Scarborough Shoal and its publication of standard names and coordinates for 64 South China Sea features did not affect the fact that the South China Sea islands are ROC territory, and pledged to firmly defend its territorial sovereignty and maritime rights there.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RP",
+      "RC"
+    ],
+    "reasoning": "A formal statement (聲明) rejecting two rivals' legislative and administrative acts and reasserting sovereignty is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=118576",
+        "title": "有關菲律賓總統小馬可仕11月8日簽署「菲律賓海域法案」及「菲律賓群島海道法案」，以及中國為反制菲方於同日公布黃岩島領海基線並公開命名仁愛礁等64個部分南海島礁中文名稱及座標事，外交部聲明如下：",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2024-11-12",
+        "language": "zh",
+        "excerpt": "外交部強調，我國領土主權不容挑戰，將堅定捍衛我國在南海的領土主權及相關海域的權利。"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-01-11",
+    "date_end": "2025-10-11",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The Coast Guard Administration's Dongsha Command held its routine quarterly live artillery firing at sea around Dongsha Island in 2025, notified for 11 January (reserve 18 January), 19 April (reserve 26 April), 5 July (reserve 12 July) and 11 October, 07:00-22:00.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Routine quarterly live-fire training at a held feature, summarised as one event for the year; demonstrative. Planned dates from the official notices (PDFs, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=162921&ctNode=1279&mp=999",
+        "title": "(113)署巡勤射字第238號-東南沙分署--海(空)域-東沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(113)署巡勤射字第238號-東南沙分署--海(空)域-東沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1733287966737.pdf",
+        "title": "海巡署東南沙分署東沙指揮部114年度第1季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部114年度第1季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1759978512414.pdf",
+        "title": "海巡署東南沙分署東沙指揮部114年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部114年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-02-01",
+    "date_end": "2025-12-31",
+    "date_precision": "month",
+    "location_name": "Restricted waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "From February 2025, when China Coast Guard vessels began entering the waters around Dongsha Island, Taiwan's Coast Guard Administration responded to each intrusion by sending patrol vessels to shadow the ships one-to-one, broadcast warnings and push them out of the restricted waters; it counted 33 such incursions in 2025, including two CCG ships chased out on 16 July during the Han Kuang exercise and two expelled on 1 October.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Shadowing and driving rival government ships out of claimed waters is physical interference with another state's vessels; coercive. A new practice in 2025 (AMTI found no CCG/MSA presence in 2021 and only contiguous-zone patrols in 2022-23), summarised as one event with the CGA's annual count; the count is from a June 2026 report.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6373923",
+        "title": "Taiwan reports over 30 Chinese coast guard incursions around Dongsha since last year",
+        "publisher": "Taiwan News",
+        "pub_date": "2026-06-01",
+        "language": "en",
+        "excerpt": "Taiwan has responded by deploying patrol vessels to closely shadow the ships one-to-one and push them out of restricted waters."
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6157464",
+        "title": "Taiwan chases 2 Chinese coast guard ships out of Dongsha waters",
+        "publisher": "Taiwan News",
+        "pub_date": "2025-07-16",
+        "language": "en",
+        "excerpt": "The Coast Guard chased two Chinese coast guard vessels out of restricted waters near the Dongsha islands, reports said Wednesday."
+      },
+      {
+        "url": "https://www.taiwanplus.com/news/taiwan-news/military/251002009/taiwan-coast-guard-drives-two-chinese-ships-away-from-restricted-waters",
+        "title": "Taiwan Coast Guard Drives Two Chinese Ships Away From Restricted Waters",
+        "publisher": "TaiwanPlus",
+        "pub_date": "2025-10-02",
+        "language": "en",
+        "excerpt": "The Taiwan Coast Guard announced it expelled two Chinese coast guard ships it detected around Dongsha Island, commonly known as Pratas Island."
+      },
+      {
+        "url": "https://amti.csis.org/patrolling-pratas-from-peripheral-concern-to-a-new-normal/",
+        "title": "Patrolling Pratas: From Peripheral Concern to a New Normal",
+        "publisher": "CSIS Asia Maritime Transparency Initiative",
+        "pub_date": "2026-03-30",
+        "language": "en",
+        "excerpt": "This rose dramatically in 2024 with the CCG and MSA patrolling for 25 days, followed by an even more dramatic rise to 60 days in 2025."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-02-15",
+    "date_end": "2025-03-21",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Islands",
+    "subregion": "",
+    "summary": "After unusually large groups of Chinese fishing vessels, escorted by China Coast Guard ships, appeared around the Dongsha Islands from 15 February 2025, the Coast Guard Administration sent vessels to expel them and stepped up patrols, boarded the Chinese fishing vessel Yueraoyu 23588 on 26 February while two CCG ships tried to intervene, and on 21 March Taiwanese authorities publicly condemned the CCG-escorted illegal fishing.",
+    "actors": "Coast Guard Administration; Ocean Affairs Council",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Expelling and boarding a rival's fishing vessels under the eyes of its coast guard is enforcement against a rival claimant's nationals; coercive. The 21 March condemnation is merged. Details beyond the lead are from the Taipei Times (blocks the importer) and the CNA story's full text is archived behind a paywall.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/cross-strait/202503210013",
+        "title": "Taiwan condemns China coast guard activities around Dongsha",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2025-03-21",
+        "language": "en",
+        "excerpt": "Taiwanese authorities on Friday condemned the recent increase in Chinese coast guard-escorted fishing vessels operating illegally in waters around Taiwan-controlled Dongsha Islands in the South China Sea."
+      },
+      {
+        "url": "https://taipeitimes.com/News/taiwan/archives/2025/03/22/2003833872",
+        "title": "(headline not retrieved; Taipei Times Taiwan news, 22 March 2025)",
+        "publisher": "Taipei Times",
+        "pub_date": "2025-03-22",
+        "language": "en",
+        "excerpt": "Due to the provocation, the CGA initiated an operation to increase patrols around the Dongsha Islands, it added."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-02-20",
+    "date_end": "2025-02-20",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal (Minzhu Reef)",
+    "subregion": "4",
+    "summary": "Taiwan's Ministry of Foreign Affairs condemned a PLA Navy helicopter's dangerous approach to within three metres of a Philippine fisheries aircraft over Scarborough Shoal (Minzhu Reef) on 18 February and restated the ROC's South China Sea position, beginning with the claim that the South China Sea islands are ROC territory.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A press release condemning a rival claimant's act at a feature Taiwan claims, with an explicit sovereignty restatement, is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=119166",
+        "title": "外交部針對2月18日菲律賓公務飛機在南海空域遭中國解放軍直升機危險逼近飛行一事表達嚴正關切",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2025-02-20",
+        "language": "zh",
+        "excerpt": "（一）南海諸島屬於中華民國領土，我國對南海諸島及其相關海域享有國際法及海洋法上的相關權利，不容置疑。"
+      },
+      {
+        "url": "https://en.mofa.gov.tw/News_Content.aspx?n=1329&s=119173",
+        "title": "MOFA expresses serious concern regarding Chinese PLA helicopter converging on Philippine government aircraft over South China Sea",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2025-02-20",
+        "language": "en",
+        "excerpt": "(1) The South China Sea Islands are part of the territory of the ROC (Taiwan)."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-05-03",
+    "date_end": "2025-05-03",
+    "date_precision": "day",
+    "location_name": "Territorial waters of the Dongsha (Pratas) Islands",
+    "subregion": "",
+    "summary": "The coast guard cutter Taichung used water cannon to drive the Chinese fishing boat Yue Shen Shan Yu 11366 out of Taiwan's territorial waters near the Dongsha Islands; the CGA said that since January it had driven away 30 Chinese fishing boats in 111 incidents in Dongsha waters and seized seven small vessels, and criticised China for failing to enforce its own summer fishing ban.",
+    "actors": "Coast Guard Administration (CGA Taichung, Hsun Hu No. 9), Dongsha-Nansha Branch",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Using water cannon against and seizing a rival's fishing boats is physical enforcement; coercive. The year-to-date counts give the frequency of routine expulsions.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6102502",
+        "title": "Taiwan Coast Guard sprays Chinese fishing boat for intruding on Dongsha waters",
+        "publisher": "Taiwan News",
+        "pub_date": "2025-05-06",
+        "language": "en",
+        "excerpt": "Since January, the Coast Guard has driven away 30 Chinese fishing boats in 111 incidents in the Dongsha Islands waters and has seized seven small vessels."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-05-18",
+    "date_end": "2025-05-18",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of second-quarter 2025 live artillery firing at sea around Taiping Island on 18 May, 08:00-21:00, with 25 May as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=164647&ctNode=1279&mp=999",
+        "title": "(114)署巡勤射字第045號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(114)署巡勤射字第045號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1742798074752.pdf",
+        "title": "海巡署東南沙分署南沙指揮部114年度第2季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部114年度第2季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-08-09",
+    "date_end": "2025-08-09",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of third-quarter 2025 live artillery firing at sea around Taiping Island on 9 August, 08:00-21:00, with 16 August as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=165386&ctNode=1279&mp=999",
+        "title": "(114)署巡勤射字第129號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(114)署巡勤射字第129號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1751019312788.pdf",
+        "title": "海巡署東南沙分署南沙指揮部114年度第3季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-09-01",
+    "date_end": "2025-09-14",
+    "date_precision": "month",
+    "location_name": "Itu Aba (Taiping Island) wharf",
+    "subregion": "5",
+    "summary": "The ROC Navy's 2025 goodwill training squadron sailed to Taiping Island, where the 10,000-tonne fleet replenishment ship Panshi berthed at the newly dredged and rebuilt Taiping wharf, the first publicised berthing of a ship of that size at the island, reported by the Military News Agency on 14 September.",
+    "actors": "ROC Navy (2025 Goodwill Fleet; replenishment ship Panshi)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA"
+    ],
+    "reasoning": "A naval squadron's port call at a held feature, using the new wharf for a large warship, is a unilateral military presence without confrontation; demonstrative. The source says the squadron arrived 'recently' (日前) before the 14 September report, so month precision is used and the arrival may have been in late August.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://news.tvbs.com.tw/politics/2988543",
+        "title": "海軍萬噸級「磐石艦」泊靠太平島首曝光　戰略意義重大",
+        "publisher": "TVBS News",
+        "pub_date": "2025-09-14",
+        "language": "zh",
+        "excerpt": "海軍114年敦睦遠航訓練支隊日前航抵南沙太平島，油彈補給艦磐石軍艦順利泊靠整建浚深的南沙太平碼頭。"
+      },
+      {
+        "url": "https://news.pts.org.tw/article/770439",
+        "title": "磐石艦首泊南沙太平島畫面曝 專家：具戰略意義",
+        "publisher": "PTS News (公視新聞)",
+        "pub_date": "2025-09-14",
+        "language": "zh",
+        "excerpt": "磐石艦首泊南沙太平島畫面曝 專家：具戰略意義"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-09-11",
+    "date_end": "2025-09-11",
+    "date_precision": "day",
+    "location_name": "Scarborough Shoal (Minzhu Reef)",
+    "subregion": "4",
+    "summary": "In a formal statement (No. 001), Taiwan's government declared that China had no right to designate a 'national nature reserve' at Scarborough Shoal (Minzhu Reef), approved by China's State Council on 9 September, and reaffirmed that the ROC's rights over the South China Sea islands and their waters were unaffected by China's unilateral claims or acts.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "administrative",
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A formal government statement rejecting a rival's administrative act at a claimed feature and reasserting sovereignty is a verbal assertion; declarative. Its title calls Scarborough 'our' Minzhu Reef (我國所屬民主礁), a sharper wording than earlier statements.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=97&s=120647",
+        "title": "中華民國擁有南海諸島無庸置疑，中國無權對我國所屬民主礁採取任何不當舉措",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2025-09-11",
+        "language": "zh",
+        "excerpt": "中國完全無權在民主礁（中方稱「黃岩島」）非法片面劃設保護區"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-09-12",
+    "date_end": "2025-09-15",
+    "date_precision": "day",
+    "location_name": "Restricted waters around Dongsha (Pratas) Island; Dongsha Atoll National Park",
+    "subregion": "",
+    "summary": "On the night of Friday 12 September the coast guard seized a Chinese fishing boat with three people on board that had entered the restricted waters around Dongsha Island, after driving a China Coast Guard ship out of the same waters earlier that day; on 15 September Ocean Affairs Council Minister Kuan Bi-ling condemned cyanide fishing by Chinese boats, said Taiwan had detained a vessel carrying cyanide in the Dongsha Atoll National Park, and pledged continued detentions and expanded drone and aircraft surveillance.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch; Ocean Affairs Council (Kuan Bi-ling)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Seizing a rival's fishing boat and expelling its coast guard ship is physical enforcement; coercive. The minister's statement is merged. The TaiwanPlus report of 14 September says 'Friday night', i.e. 12 September.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.taiwanplus.com/news/taiwan-news/military/250914011/taiwan-expels-chinese-fishing-boat-in-south-china-sea",
+        "title": "Taiwan Expels Chinese Fishing Boat in South China Sea",
+        "publisher": "TaiwanPlus",
+        "pub_date": "2025-09-14",
+        "language": "en",
+        "excerpt": "The coast guard seized the boat, which had three people onboard, and drove the fishing vessel out."
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6201126",
+        "title": "Taiwan condemns China for cyanide fishing near Dongsha Island",
+        "publisher": "Taiwan News",
+        "pub_date": "2025-09-16",
+        "language": "en",
+        "excerpt": "Kuan said Taiwan recently detained a Chinese vessel at Dongsha Atoll National Park with cyanide onboard"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2025-11-01",
+    "date_end": "2025-11-01",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of fourth-quarter 2025 live artillery firing at sea around Taiping Island on 1 November, 08:00-21:00, with 8 November as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=165942&ctNode=1279&mp=999",
+        "title": "(114)署巡勤射字第199號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(114)署巡勤射字第199號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1758156447981.pdf",
+        "title": "海巡署東南沙分署南沙指揮部114年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部114年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-01-17",
+    "date_end": "2026-01-17",
+    "date_precision": "day",
+    "location_name": "Airspace of Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "Taiwan's Ministry of National Defense reported that a PLA reconnaissance drone entered the airspace of Dongsha (Pratas) Island at 05:44 on 17 January 2026 and left four minutes later, and publicly condemned the flight as 'provocative and irresponsible'.",
+    "actors": "Ministry of National Defense",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "The PLA flight is not a Taiwanese act; Taiwan's response was a public protest asserting the airspace as its own, a verbal assertion; declarative. No interception or other physical response was reported in the leads opened (the CNA full text is archived).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/politics/202601170009",
+        "title": "PLA drone enters airspace over Taiwan-controlled Dongsha Island",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2026-01-17",
+        "language": "en",
+        "excerpt": "A Chinese People's Liberation Army (PLA) military drone was detected in the airspace of Taiwan-controlled Dongsha Island"
+      },
+      {
+        "url": "https://www.arabnews.pk/node/2629638",
+        "title": "Taiwan says Chinese drone made ‘provocative’ flight over South China Sea island",
+        "publisher": "Arab News (Reuters)",
+        "pub_date": "2026-01-17",
+        "language": "en",
+        "excerpt": "A Chinese reconnaissance drone briefly flew over the Taiwan-controlled Pratas Islands at the top end of the South China Sea on Saturday"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-02-06",
+    "date_end": "2026-10-31",
+    "date_precision": "day",
+    "location_name": "Restricted waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "Through 2026 Taiwan's Coast Guard Administration confronted and drove out China Coast Guard ships entering the restricted waters around Dongsha Island, counting 13 intrusions involving 16 vessels by 31 October: it reported on 6 February forcing out two CCG ships after warnings in Chinese and English (the third incursion of the year), expelled one on 19 March, held a radio confrontation over sovereignty with a CCG ship on 23-24 May, ordered a ship out on 7 September (the 12th confrontation), reported a coordinated 'hybrid' operation by 16 Chinese coast guard, research and fishing vessels around Taiwan and Pratas that it drove away around 18 October, and on 31 October confronted a CCG ship to within one nautical mile.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch (incl. CGA Taichung, Changhua)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Repeatedly confronting and expelling a rival's government ships from claimed waters is physical interference; coercive. Summarised as one event with the CGA's year-to-date count; the sharper new incidents of 5-6 June and 1 October are listed separately. The 18 October operation also covered waters around Taiwan's main island, which are out of scope. The February incident's own date is not given in the report; 6 February is the report date.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cp24.com/news/world/2026/11/01/taiwan-accuses-china-of-harassment-after-standoff-between-coast-guard-ships/",
+        "title": "Taiwan: China accused of harassment after ship standoff",
+        "publisher": "CP24 (AP)",
+        "pub_date": "2026-11-01",
+        "language": "en",
+        "excerpt": "It said that the incident was the 13th such intrusion near the Pratas Islands this year, involving 16 vessels."
+      },
+      {
+        "url": "https://www.taiwanplus.com/news/taiwan-news/military/260206020/two-chinese-vessels-expelled-near-dongsha-island-in-south-china-sea",
+        "title": "Two Chinese Vessels Expelled Near Dongsha Island in South China Sea",
+        "publisher": "TaiwanPlus",
+        "pub_date": "2026-02-06",
+        "language": "en",
+        "excerpt": "Taiwan’s coast guard forced two Chinese coast guard vessels out of restricted waters near the Taiwan-controlled Dongsha Island in the South China Sea after issuing warnings in Chinese and English."
+      },
+      {
+        "url": "https://focustaiwan.tw/politics/202603190020",
+        "title": "CGA expels Chinese vessel from restricted Dongsha waters",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2026-03-19",
+        "language": "en",
+        "excerpt": "Taiwan's Coast Guard on Thursday expelled a China Coast Guard vessel that entered restricted waters near Taiwan-controlled Dongsha Island in the South China Sea"
+      },
+      {
+        "url": "https://gcaptain.com/chinese-ship-leaves-after-tense-standoff-near-taiwan-controlled-islands/",
+        "title": "Chinese Ship Leaves After Tense Standoff Near Taiwan-Controlled Islands",
+        "publisher": "gCaptain (Reuters)",
+        "pub_date": "2026-05-24",
+        "language": "en",
+        "excerpt": "engaged in an intense verbal confrontation over sovereignty via radio."
+      },
+      {
+        "url": "https://www.taiwanplus.com/news/taiwan-news/taiwan-china-relations/260908004/taiwan-coast-guard-confronts-chinese-vessel-near-dongsha-island",
+        "title": "Taiwan Coast Guard Confronts Chinese Vessel Near Dongsha Island",
+        "publisher": "TaiwanPlus",
+        "pub_date": "2026-09-08",
+        "language": "en",
+        "excerpt": "This marks the 12th such confrontation this year."
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/10/18/taiwan-drives-away-16-chinese-ships-accused-of-maritime-harassment",
+        "title": "‘Hybrid warfare’: Taiwan drives away 16 Chinese ships",
+        "publisher": "Al Jazeera (AFP)",
+        "pub_date": "2026-10-18",
+        "language": "en",
+        "excerpt": "Taiwan has confronted and driven away 16 Chinese coastguard, research and fishing vessels that it said were involved in simultaneous “maritime harassment” operations."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-03-07",
+    "date_end": "2026-03-07",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of first-quarter 2026 live artillery firing at sea around Taiping Island on 7 March, 08:00-21:00, with 14 March as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=166879&ctNode=1279&mp=999",
+        "title": "(115)署巡勤射字第011號-東南沙分署--海(空)域-南沙-",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(115)署巡勤射字第011號-東南沙分署--海(空)域-南沙-"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1770119698840.pdf",
+        "title": "海巡署東南沙分署南沙指揮部115年度第1季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部115年度第1季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-04-18",
+    "date_end": "2026-10-24",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The Coast Guard Administration's Dongsha Command held its routine quarterly live artillery firing at sea around Dongsha Island in 2026, notified for 18 April (reserve 25 April), 11 July (reserve 18 July) and 17 October (reserve 24 October), 07:00-22:00.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Dongsha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Routine quarterly live-fire training at a held feature, summarised as one event for the year; demonstrative. No first-quarter 2026 Dongsha notice appears in the CGA list. Planned dates from the official notices (PDFs, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=167147&ctNode=1279&mp=999",
+        "title": "(115)署巡勤射字第045號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(115)署巡勤射字第045號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1773191062623.pdf",
+        "title": "海巡署東南沙分署東沙指揮部115年度第2季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部115年度第2季火砲對海實彈射擊通報"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1787827032840.pdf",
+        "title": "海巡署東南沙分署東沙指揮部115年度第4季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署東沙指揮部115年度第4季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-04-21",
+    "date_end": "2026-04-21",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Ocean Affairs Council Minister Kuan Bi-ling visited Taiping Island, the first visit by an OAC head in seven years, to preside over the cross-agency 'Nanyuan No. 9' humanitarian relief, medical evacuation and marine-pollution exercise, in which coast guard special forces practised an armed boarding of a suspicious cargo ship that was escorted back to the island for investigation.",
+    "actors": "Ocean Affairs Council (Kuan Bi-ling); Coast Guard Administration, Dongsha-Nansha Branch; Ministries of Transportation, National Defense, Foreign Affairs, Health and Welfare",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "politics",
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "A ministerial visit and an enforcement-style exercise (simulated boarding of a ship 'in waters under our jurisdiction') at a held feature are a unilateral sovereignty and jurisdiction display without confrontation; demonstrative. CNA called it the first visit by an Ocean Affairs Council head in seven years.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.gmanetwork.com/news/topstories/world/985116/taiwan-minister-visit-south-china-sea-island/story/",
+        "title": "Taiwan minister makes rare visit to South China Sea island for drills",
+        "publisher": "GMA News (Reuters)",
+        "pub_date": "2026-04-23",
+        "language": "en",
+        "excerpt": "In a statement late on Wednesday, Taiwan's coast guard said Ocean Affairs Council Minister Kuan Bi-ling had visited Itu Aba, which it calls Taiping Island, the previous day for a \"humanitarian relief, medical evacuation, and marine pollution removal\" exercise."
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/zh/news/6346346",
+        "title": "管碧玲首赴南沙太平島主持人道救援演練",
+        "publisher": "Taiwan News (Chinese edition)",
+        "pub_date": "2026-04-23",
+        "language": "zh",
+        "excerpt": "海洋委員會主委管碧玲 21 日首度親赴南沙太平島，主持代號「南援九號」的人道救援演練。"
+      },
+      {
+        "url": "https://focustaiwan.tw/politics/202604230011",
+        "title": "Ocean Affairs Council minister visits Taiping for first time in 7 years during drill",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2026-04-23",
+        "language": "en",
+        "excerpt": "marking the first visit by an OCA head in seven years to the Taiwan-controlled island in the disputed South China Sea."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-06-05",
+    "date_end": "2026-06-06",
+    "date_precision": "day",
+    "location_name": "Waters around Dongsha (Pratas) Islands",
+    "subregion": "",
+    "summary": "After CCG ship 3501 approached the Pratas Islands on 5 June and the Chinese survey vessel Hai Si Lu No. 6 appeared 32.7 nautical miles south-east of the atoll on 6 June, in what the CGA called the first coordinated coast guard-survey ship operation to provoke Taiwan, the coast guard confronted the CCG ship with the cutter Changhua and dispatched the patrol frigate CG-129 Kaohsiung and two patrol boats to reinforce the Pratas garrison; National Security Council chief Joseph Wu called the acts highly provocative.",
+    "actors": "Coast Guard Administration (CG-129 Kaohsiung, CG1001 Changhua); National Security Council (Joseph Wu)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical",
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Confronting a rival's coast guard ship and surging a frigate to shadow a survey vessel is physical interference and reinforcement in response to a new kind of Chinese operation; coercive (a coder may prefer demonstrative for the reinforcement alone).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/politics/202606060015",
+        "title": "Taiwan dispatches patrol frigate over Chinese vessels near Pratas Islands",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2026-06-06",
+        "language": "en",
+        "excerpt": "Taiwan on Saturday dispatched the patrol frigate CG‑129 Kaohsiung and two patrol boats in response to the sighting of a Chinese survey vessel near restricted waters around the Pratas Islands"
+      },
+      {
+        "url": "https://www.gmanetwork.com/news/topstories/world/990507/taiwan-chinese-ships-south-china-sea/story/",
+        "title": "Taiwan says Chinese coast guard, research ships near key South China Sea islands",
+        "publisher": "GMA News (Reuters)",
+        "pub_date": "2026-06-07",
+        "language": "en",
+        "excerpt": "\"This is the first observed instance of Chinese coast guard and survey vessels acting in coordination to provoke Taiwan,\" it said."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-06-06",
+    "date_end": "2026-06-06",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of second-quarter 2026 live artillery firing at sea around Taiping Island on 6 June, 08:00-21:00, with 13 June as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer).",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=167738&ctNode=1279&mp=999",
+        "title": "(115)署巡勤射字第079號-東南沙分署--海(空)域",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(115)署巡勤射字第079號-東南沙分署--海(空)域"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1777892068691.pdf",
+        "title": "海巡署東南沙分署南沙指揮部115年度第2季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部115年度第2季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-06-11",
+    "date_end": "2026-06-11",
+    "date_precision": "day",
+    "location_name": "Restricted waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "When the Chinese patrol vessel Sansha Zhifa 301 and supply ship Sansha 2 twice entered the restricted waters around Taiping Island on the morning of 11 June 2026, the first such incursion detected there, the CGA patrol boats CP-1039 and CP-1083 tracked them and ordered them out, forcing them from the area by about 08:43, and the CGA issued its 'strongest condemnation' and vowed to take all necessary measures to safeguard sovereignty.",
+    "actors": "Coast Guard Administration, Nansha Command (patrol boats CP-1039, CP-1083)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Driving a rival's government ships out of a held feature's restricted waters is physical interference; coercive. New in place: the first CGA expulsion of Chinese official vessels at Taiping.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/politics/202606110018",
+        "title": "Coast guard expels Chinese vessels from Taiping Island restricted waters",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2026-06-11",
+        "language": "en",
+        "excerpt": "The CGA issued its \"strongest condemnation\" of China after the patrol vessel Sansha Zhifa 301 and the supply ship Sansha 2 were detected entering restricted waters around Taiping Island twice on Thursday morning, according to a CGA press release."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-06-12",
+    "date_end": "2026-06-12",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "Taiwan's Ministry of Foreign Affairs strongly condemned the 'brazen and unprecedented' intrusion of two Chinese government vessels into the waters around Taiping Island on 11 June, reaffirmed that the South China Sea islands are ROC territory, and called on the international community to jointly counter China's illegal actions.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics",
+      "military"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "A formal protest and sovereignty reassertion, with an appeal for international counter-action, is a verbal assertion; declarative.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=122484",
+        "title": "外交部強烈譴責中國公務船公然首度侵擾我國太平島水域，並呼籲國際社會共同反制中國違法行徑",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2026-06-12",
+        "language": "zh",
+        "excerpt": "中國公務船侵入我國太平島水域，不僅嚴重侵犯我國主權，更危及我方艦艇與人員的人身安全。"
+      },
+      {
+        "url": "https://en.mofa.gov.tw/News_Content.aspx?n=1329&s=122485",
+        "title": "MOFA strongly condemns brazen and unprecedented intrusion into waters around Taiping Island by Chinese government vessels, urges international community to jointly counter China’s illegal actions",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2026-06-12",
+        "language": "en",
+        "excerpt": "Two Chinese government vessels committed a brazen and unprecedented intrusion into waters around Taiwan’s Taiping Island on the morning of June 11."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-07-01",
+    "date_end": "2026-09-24",
+    "date_precision": "month",
+    "location_name": "Dongsha (Pratas) Island pier",
+    "subregion": "",
+    "summary": "After completing a renovation of the Dongsha Island pier in July 2026, the Coast Guard Administration began stationing newly built 100-tonne patrol vessels at the island on a long-term basis to counter Chinese coast guard ships and fishing boats, part of the plans Ocean Affairs Council Minister Kuan Bi-ling had outlined on 2 April to strengthen Dongsha's defences with wharf upgrades and regular deployments of more capable ships; the CGA said it had handled eight cases involving nine Chinese boats in Dongsha waters in 2026 so far.",
+    "actors": "Coast Guard Administration; Ocean Affairs Council (Kuan Bi-ling)",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military",
+      "administrative",
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Port works and permanent basing of patrol ships at a held feature are unilateral construction and deployment without confrontation; demonstrative. Month precision: the pier was finished 'in July' and the basing was reported on 24 September; the April announcement is merged.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6445893",
+        "title": "Taiwan permanently stations 100-tonne patrol ships at Dongsha Island",
+        "publisher": "Taiwan News",
+        "pub_date": "2026-09-24",
+        "language": "en",
+        "excerpt": "The Coast Guard Administration has begun stationing newly built 100-tonne patrol vessels at Dongsha Island on a long-term basis, after completing a pier renovation project in July."
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6334096",
+        "title": "Taiwan to strengthen Dongsha Islands defense",
+        "publisher": "Taiwan News",
+        "pub_date": "2026-04-03",
+        "language": "en",
+        "excerpt": "Taiwan has begun upgrading infrastructure on Dongsha's main island, including renovating its wharf and planning regular deployments of more capable vessels."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-07-12",
+    "date_end": "2026-07-12",
+    "date_precision": "day",
+    "location_name": "South China Sea islands",
+    "subregion": "",
+    "summary": "On the tenth anniversary of the South China Sea arbitral award, Taiwan's Ministry of Foreign Affairs reaffirmed that the ROC's sovereignty claims and policies over the South China Sea islands were unchanged, restated President Tsai's 2016 'four principles and five actions', said no discussion of a regional code of conduct should exclude Taiwan, and opposed unilateral expansionism, gray-zone coercion and militarisation by any party.",
+    "actors": "Ministry of Foreign Affairs",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "diplomatic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RA"
+    ],
+    "reasoning": "An anniversary statement reaffirming sovereignty claims and demanding inclusion in code-of-conduct talks is a verbal assertion; declarative. The first such anniversary press release found in MOFA's lists for 2021-2026.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.mofa.gov.tw/News_Content.aspx?n=96&s=122637",
+        "title": "外交部重申我國南海立場，呼籲各方共同維護區域和平穩定",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2026-07-12",
+        "language": "zh",
+        "excerpt": "外交部重申，中華民國台灣關於南海諸島的主權主張與相關政策沒有改變。"
+      },
+      {
+        "url": "https://en.mofa.gov.tw/News_Content.aspx?n=1329&s=122638",
+        "title": "MOFA reiterates Taiwan’s position on South China Sea; calls on all parties to jointly safeguard regional peace and stability",
+        "publisher": "Ministry of Foreign Affairs, ROC (Taiwan)",
+        "pub_date": "2026-07-12",
+        "language": "en",
+        "excerpt": "The Ministry of Foreign Affairs (MOFA) reaffirms that the sovereignty claims and relevant policies of the ROC (Taiwan) regarding the South China Sea Islands remain unchanged."
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-07-22",
+    "date_end": "2026-07-22",
+    "date_precision": "day",
+    "location_name": "Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "At a Legislative Yuan hearing on South China Sea policy held for the arbitral award's tenth anniversary, Foreign Minister Lin Chia-lung reaffirmed that the ROC's sovereignty claims over the South China Sea islands were unchanged and said Taiping Island 'is, of course, an island rather than a rock', while acknowledging Taipei was not actively publicising its claims.",
+    "actors": "Ministry of Foreign Affairs (Foreign Minister Lin Chia-lung); Legislative Yuan",
+    "suggested_type": "declarative",
+    "suggested_domains": [
+      "domestic"
+    ],
+    "suggested_issues": [
+      "politics"
+    ],
+    "suggested_dyads": [
+      "RP",
+      "RA"
+    ],
+    "reasoning": "A minister's sovereignty restatement and rejection of the tribunal's 'rock' finding in parliament is a verbal assertion; declarative. UDN reported it as his first such statement (外長首度表態).",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://focustaiwan.tw/politics/202607220012",
+        "title": "Taiwan's South China Sea stance reaffirmed amid latest tensions",
+        "publisher": "Focus Taiwan (CNA)",
+        "pub_date": "2026-07-22",
+        "language": "en",
+        "excerpt": "\"Taiping Island is, of course, an island rather than a rock,\" Lin said."
+      },
+      {
+        "url": "https://udn.com/news/story/6656/9645197",
+        "title": "外長首度表態：太平島當然是島 中華民國有主權",
+        "publisher": "United Daily News",
+        "pub_date": "2026-07-23",
+        "language": "zh",
+        "excerpt": "外長首度表態：太平島當然是島 中華民國有主權"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-08-29",
+    "date_end": "2026-08-29",
+    "date_precision": "day",
+    "location_name": "Waters around Itu Aba (Taiping Island)",
+    "subregion": "5",
+    "summary": "The Coast Guard Administration's Nansha Command issued a notice of third-quarter 2026 live artillery firing at sea around Taiping Island on 29 August, 08:00-21:00, with 5 September as the reserve day.",
+    "actors": "Coast Guard Administration, Dongsha-Nansha Branch, Nansha Command",
+    "suggested_type": "demonstrative",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "military"
+    ],
+    "suggested_dyads": [
+      "RA",
+      "RV"
+    ],
+    "reasoning": "Routine quarterly live-fire drill at a held feature; demonstrative. Planned dates from the official notice (PDF, not checkable by the importer). The fourth-quarter notice (7 November, reserve 14 November) falls outside this period.",
+    "confidence": "medium",
+    "sources": [
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/ct?xItem=168468&ctNode=1279&mp=999",
+        "title": "(115)署巡勤射字第140號-東南沙分署--海(空)域-南沙",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "(115)署巡勤射字第140號-東南沙分署--海(空)域-南沙"
+      },
+      {
+        "url": "https://www.cga.gov.tw/GipOpen/wSite/public/Attachment/f1784528015178.pdf",
+        "title": "海巡署東南沙分署南沙指揮部115年度第3季火砲對海實彈射擊通報",
+        "publisher": "Coast Guard Administration (firing notices)",
+        "pub_date": "",
+        "language": "zh",
+        "excerpt": "海巡署東南沙分署南沙指揮部115年度第3季火砲對海實彈射擊通報"
+      }
+    ]
+  },
+  {
+    "claimant": "TW",
+    "date_start": "2026-10-01",
+    "date_end": "2026-10-02",
+    "date_precision": "day",
+    "location_name": "Restricted waters east of Dongsha (Pratas) Island",
+    "subregion": "",
+    "summary": "The coast guard cutter Yunlin found two Chinese fishing boats about 8 nautical miles inside the restricted waters east of Dongsha Island; when the Jin Sha refused three radio orders to leave, the Yunlin fired its water cannon into the air and then at the boat's bridge, and after the Jin Sha lost power towed it out of the restricted waters and handed it to a Chinese vessel on 2 October.",
+    "actors": "Coast Guard Administration (CGA Yunlin)",
+    "suggested_type": "coercive",
+    "suggested_domains": [
+      "physical"
+    ],
+    "suggested_issues": [
+      "fisheries"
+    ],
+    "suggested_dyads": [
+      "RC"
+    ],
+    "reasoning": "Using water cannon against a rival's fishing boat to enforce exclusion is physical coercion; coercive. China's Taiwan Affairs Office warned Taiwan would 'bear the consequences', marking the act as escalatory.",
+    "confidence": "high",
+    "sources": [
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6450720",
+        "title": "Taiwan Coast Guard uses water cannon to drive Chinese fishing boat from Dongsha waters",
+        "publisher": "Taiwan News",
+        "pub_date": "2026-10-02",
+        "language": "en",
+        "excerpt": "After three unsuccessful radio warnings, the Yunlin sprayed water from its water cannon into the air from about 200 meters away, then moved closer and directed the water at Jin Sha’s bridge."
+      },
+      {
+        "url": "https://koreatimes.co.kr/world/20261021/china-says-it-is-safeguarding-order-around-taiwan-controlled-south-china-sea-atoll",
+        "title": "China says it is 'safeguarding order' around Taiwan-controlled South China Sea atoll",
+        "publisher": "The Korea Times (Reuters)",
+        "pub_date": "2026-10-21",
+        "language": "en",
+        "excerpt": "China, which views democratically governed Taiwan as its own territory, said last week that Taiwan must \"bear the consequences\" of its coast guard using a water cannon against a Chinese fishing boat near the Pratas Islands."
+      }
+    ]
+  }
+]

@@ -1,0 +1,197 @@
+{
+ "run_id": "MY-2010-2015",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-02be125100",
+   "disposition": "continuation",
+   "of": "ev-7588f91c85",
+   "reason": "Provisional continuation of ev-7588f91c85 (2009 is undecided candidates of MY-2000s): MMEA arrests of foreign (incl. Vietnamese) fishing boats, the same method as the 2009 Sarawak arrests; the 103 national cases cover all Malaysian seas, so no South China Sea rise is shown - likely reject."
+  },
+  {
+   "event_id": "ev-1f4f6cbade",
+   "disposition": "continuation",
+   "of": "ev-75ae657584",
+   "reason": "Provisional continuation of ev-75ae657584 (2009 is undecided candidates of MY-2000s): deputy foreign minister in Parliament restating the claim and the standing patrols, as Kohilan Pillay did in Nov 2009; the warning of 'appropriate action' against unauthorised research vessels restates existing EEZ law - likely reject."
+  },
+  {
+   "event_id": "ev-0ab00177ce",
+   "disposition": "continuation",
+   "of": "ev-02be125100",
+   "reason": "Provisional continuation of ev-02be125100 (2010 undecided): 70 arrest cases against 103 in 2010, the same practice at a lower level - likely reject (a possible diminished note, not a move)."
+  },
+  {
+   "event_id": "ev-bcaca39dbf",
+   "disposition": "continuation",
+   "of": "ev-0ab00177ce",
+   "reason": "Provisional continuation of ev-0ab00177ce (2011 undecided): 57 arrest cases against 70 in 2011, same practice - likely reject."
+  },
+  {
+   "event_id": "ev-b40be793bb",
+   "disposition": "unclear",
+   "reason": "Territorial Sea Act 2012 re-enacts the 12 nm breadth of the 1969 Emergency Ordinance on the 2006 baselines; nothing comparable in 2011, but the claim is not widened and the minister said it was not drafted for the Spratlys. Settle whether replacing the ordinance changes the claim in the South China Sea; if not, maintenance - likely reject."
+  },
+  {
+   "event_id": "ev-c9063fba75",
+   "disposition": "continuation",
+   "of": "ev-bcaca39dbf",
+   "reason": "Provisional continuation of ev-bcaca39dbf (2012 undecided): 61 cases (33 Vietnamese) against 57 in 2012, same practice - likely reject."
+  },
+  {
+   "event_id": "ev-cc57294efc",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2013-PLAN-response",
+   "reason": "KD Perak shadowing the PLAN amphibious group at James Shoal and ordering it to leave is a warning to a rival's navy in claimed waters; 2012 shows only fisheries arrests and a statute (ev-bcaca39dbf, ev-b40be793bb), so a new method - coercive lead. Rests on one ASPI piece."
+  },
+  {
+   "event_id": "ev-94b1641f13",
+   "disposition": "same_move",
+   "of": "ev-cc57294efc",
+   "group": "MY2013-PLAN-response",
+   "reason": "The private protest to Beijing over the same James Shoal exercise is the diplomatic side of the response led by ev-cc57294efc; one intensification."
+  },
+  {
+   "event_id": "ev-fadf832845",
+   "disposition": "same_move",
+   "of": "ev-cc57294efc",
+   "group": "MY2013-PLAN-response",
+   "reason": "Sending KD Serang to the Luconia Shoals after the first CCG intrusion (Sept 2013) and stationing ships by the Chinese vessel is the same new practice as ev-cc57294efc - naval response to Chinese state ships off Sarawak. A coder may split it as a separate demonstrative novelty (CCG, not PLAN; another shoal)."
+  },
+  {
+   "event_id": "ev-b1a8db8e9c",
+   "disposition": "unclear",
+   "reason": "Foreign Minister restates the 1979-map claim and says ASEAN does not recognise the nine-dash line; 2012 has no declarative statement and the 2009-2010 ones (ev-75ae657584, ev-1f4f6cbade) did not reject the line. Settle whether this was Malaysia's first public rejection of the nine-dash line: if so declarative novelty, else continuation."
+  },
+  {
+   "event_id": "ev-4d26731ad8",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Announced marine corps and RMN base at Bintulu, ~60 nm from James Shoal, is a new force-posture step facing the disputed area; nothing comparable in 2012. An announced plan, so a coder may type it declarative or wait for the base to be built."
+  },
+  {
+   "event_id": "ev-dc9eb5efaa",
+   "disposition": "continuation",
+   "of": "ev-fadf832845",
+   "reason": "Provisional continuation of ev-fadf832845 (2013 undecided): 269 ship-days at Luconia watching the stationed CCG ship continues the presence begun in Sept 2013 at about the same daily rate; more days because the Chinese ship stayed (counterfactual) - likely reject."
+  },
+  {
+   "event_id": "ev-2d06848164",
+   "disposition": "continuation",
+   "of": "ev-c9063fba75",
+   "reason": "Provisional continuation of ev-c9063fba75 (2013 undecided): 47-74 foreign boats seized (46 Vietnamese) against 61 cases (33 Vietnamese) in 2013, same method - likely reject."
+  },
+  {
+   "event_id": "ev-59b85ed993",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2014-public-intrusions",
+   "reason": "First public official characterisation in Parliament of PLAN and CCG presence as intrusions into Malaysia's EEZ, naming the shoals and counting the intrusions; in 2013 Malaysia protested only privately (ev-94b1641f13) and made no public statement. Declarative lead."
+  },
+  {
+   "event_id": "ev-9ef41fd44d",
+   "disposition": "same_move",
+   "of": "ev-59b85ed993",
+   "group": "MY2014-public-intrusions",
+   "reason": "Dec 2014 statement that intrusions are mostly Chinese, each followed by a protest, and the nine-dash line not recognised continues the public naming begun in ev-59b85ed993 the same year: one intensification."
+  },
+  {
+   "event_id": "ev-cd639374d6",
+   "disposition": "unclear",
+   "reason": "A standing special operation patrolling Sarawak waters at all times, shadowing foreign warships until they leave; start date unknown. Settle when it began and whether it widened presence beyond the Luconia watch of 2013 (ev-fadf832845): if wider, a scope move (or same move as ev-59b85ed993's year); if not, continuation of ev-fadf832845."
+  },
+  {
+   "event_id": "ev-ddf4e42666",
+   "disposition": "unclear",
+   "reason": "Hawk squadron moved to Labuan in the 2015 Budget; the main stated reason is eastern Sabah (Sulu Sea), the South China Sea secondary. Settle whether it bears on the claim; if so it is the same method as the 2013 Bintulu announcement (ev-4d26731ad8) - likely continuation."
+  },
+  {
+   "event_id": "ev-cbd9efc525",
+   "disposition": "unclear",
+   "reason": "Live Black Shark torpedo firing 'in the South China Sea' off Sabah, framed as readiness to defend sovereignty, with no disputed area or rival named; nothing comparable in 2013. Settle whether the firing area lies in disputed waters; otherwise not a claim-specific act - likely reject."
+  },
+  {
+   "event_id": "ev-c145c8cc46",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2015-Luconia",
+   "reason": "Navy warning CCG 1123 to leave the South Luconia Shoals (3 Jun 2015) while shadowing it is a change of method against 2014, when ships only watched the Chinese vessel (ev-dc9eb5efaa); coercive lead. Weakened if ev-cd639374d6's 'ordered out' practice is shown to have been applied in 2014."
+  },
+  {
+   "event_id": "ev-497b14cfd4",
+   "disposition": "same_move",
+   "of": "ev-c145c8cc46",
+   "group": "MY2015-Luconia",
+   "reason": "345 ship-days at Luconia (vs 269 in 2014) and a 17-ship MMEA rotation is the sustained side of the same 2015 Luconia move (ev-c145c8cc46); if the coder rejects the novelty, this is the frequency case (269 to 345, +28%) - though the CCG presence also persisted, so check the counterfactual."
+  },
+  {
+   "event_id": "ev-3f0b4a8af5",
+   "disposition": "same_move",
+   "of": "ev-c145c8cc46",
+   "group": "MY2015-Luconia",
+   "reason": "Kedah-class OPV shadowing a CCG ship at Luconia Breakers (imagery 13 Feb 2015) is one incident of the 2015 Luconia presence (ev-c145c8cc46)."
+  },
+  {
+   "event_id": "ev-a15caaf75e",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "MY2015-public-protest",
+   "reason": "Minister publishes photographs of CCG 1123, calls it an intrusion where there are 'no overlapping claims', announces a protest to Beijing and talk of raising it with Xi: going public with imagery and a named protest is a new method against 2014's parliamentary answers (ev-59b85ed993, ev-9ef41fd44d). Declarative lead."
+  },
+  {
+   "event_id": "ev-b883f85b55",
+   "disposition": "same_move",
+   "of": "ev-a15caaf75e",
+   "group": "MY2015-public-protest",
+   "reason": "Anifah's public claim that Beting Patinggi Ali is not subject to overlapping claims and that any foreign coast guard there is encroaching repeats the position first taken in public in ev-a15caaf75e; same move."
+  },
+  {
+   "event_id": "ev-b5c1b8b1a7",
+   "disposition": "continuation",
+   "of": "ev-9ef41fd44d",
+   "reason": "Provisional continuation of ev-9ef41fd44d (2014 undecided): near-weekly protest notes over the CCG ships at Beting Patinggi Ali, the practice the minister already described in Dec 2014 (a protest for every intrusion) - likely reject."
+  },
+  {
+   "event_id": "ev-676c0cf97d",
+   "disposition": "continuation",
+   "of": "ev-9ef41fd44d",
+   "reason": "Provisional continuation of ev-9ef41fd44d (2014 undecided): parliamentary rejection of the nine-dash line, already stated in Dec 2014 - likely reject."
+  },
+  {
+   "event_id": "ev-5c0e76f826",
+   "disposition": "continuation",
+   "of": "ev-9ef41fd44d",
+   "reason": "Provisional continuation of ev-9ef41fd44d (2014 undecided): statement that foreign fishermen at Beting Patinggi Ali will be arrested repeats the Dec 2014 pledge that every foreign fishing boat entering would be detained - likely reject."
+  },
+  {
+   "event_id": "ev-7a7c6a35a2",
+   "disposition": "continuation",
+   "of": "ev-9ef41fd44d",
+   "reason": "Provisional continuation of ev-9ef41fd44d (2014 undecided): DPM's party-congress rejection of historic claims and call to defend sovereignty is the same declarative line as 2014; rhetoric louder but no new kind or wider claim - likely reject (or fold into ev-a15caaf75e if the coder reads 2015 publicity as one move)."
+  },
+  {
+   "event_id": "ev-f35795066b",
+   "disposition": "continuation",
+   "of": "ev-9ef41fd44d",
+   "reason": "Provisional continuation of ev-9ef41fd44d (2014 undecided): parliamentary restatement of the 1979-map claim and UNCLOS basis; mentioning ICJ/arbitration as 'an available option' is not a step taken - likely reject."
+  },
+  {
+   "event_id": "ev-fe1ec8c654",
+   "disposition": "unclear",
+   "reason": "Mostly a restatement of protests (continuation of ev-9ef41fd44d), but it reports the removal of a wooden structure with foreign writing at the shoal, undated. Settle the date and nature of the removal: if in 2015, a new physical method (demonstrative or coercive) against 2014; otherwise likely reject."
+  },
+  {
+   "event_id": "ev-9779298267",
+   "disposition": "continuation",
+   "of": "ev-ddf4e42666",
+   "reason": "Provisional continuation of ev-ddf4e42666 (2014 undecided): announced air-defence system for Sepanggar is another announced force-posture step of the kind seen in 2014 (and 2013's Bintulu base), no system chosen - likely reject."
+  },
+  {
+   "event_id": "ev-520a06d61f",
+   "disposition": "continuation",
+   "of": "ev-2d06848164",
+   "reason": "Provisional continuation of ev-2d06848164 (2014 undecided): MMEA seizure of four Vietnamese trawlers off Terengganu, same method as 2014's seizures - likely reject."
+  }
+ ]
+}

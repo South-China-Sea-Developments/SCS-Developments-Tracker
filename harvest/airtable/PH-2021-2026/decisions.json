@@ -1,0 +1,60 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-23790226e2",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-3dbb7833fe",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-5585ab1bb6",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-5da81bbe13",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-5f8b40631b",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-94fa126207",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-9f45b25ca2",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-ba12686b29",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-c99f3543d2",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  },
+  {
+   "event_id": "ev-d644783f0f",
+   "action": "reject",
+   "note": "Despite the increase, all of these moves are reactive and not \"unilateral\"."
+  },
+  {
+   "event_id": "ev-e5e8f3c5b2",
+   "action": "reject",
+   "note": "Rejected with ev-d644783f0f: the candidate it would merge into was rejected."
+  }
+ ],
+ "reviewer": "Angelo"
+}

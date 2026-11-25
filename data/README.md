@@ -13,6 +13,7 @@ These files are the dataset. A record exists only if it is here, on `main` (ADR 
 | `reference/mavd_subregions.geojson` | sub-region polygon | Ten MAVD polygons, `LocationNo` 1–10. |
 | `reference/gazetteer.csv` | feature | Generated from Wikidata (`python -m pipeline.gazetteer_wikidata`); do not edit by hand. Columns: `feature_id`, names in en/zh/vi/fil/ms, `aliases`, `lat`, `lon`, `subregion`, `kind`, `wikidata`, `retrieved`. |
 | `reference/gazetteer_extra.csv` | feature | Hand additions and corrections, same columns; a row with an existing `feature_id` corrects it (blank fields keep the generated value, aliases are added, `-Name` removes one); a new `feature_id` adds a feature, where a blank `subregion` means outside all ten polygons (Pratas, Natuna) and `-` means spanning several. Edit this one. |
+| `reference/retired_moves.csv` | retracted move | Ids of moves withdrawn after acceptance (`move_id`, `date`, `by`, `reason`); never reused by `queue decide`, refused by the validator. |
 | `raw/` | — | Inputs as received. Never edited. |
 
 Regenerate from raw inputs: `python -m pipeline.load_mats`. Check: `python -m pipeline.validate`. CI runs both on every pull request and refuses a merge that fails either, or whose files differ from a fresh regeneration.

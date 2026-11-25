@@ -1,0 +1,734 @@
+{
+ "run_id": "PH-2021-2026",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-d644783f0f",
+   "disposition": "new_move",
+   "criterion": "frequency",
+   "group": "PH2021-protest-surge",
+   "reason": "Frequency: the DFA's own tally puts 153 of the 211 notes verbales sent to China since 2016 in 2021 alone (so at most 58 across 2016-2020), against the handful of 2020 protests in PH-2016-2020's undecided candidates (ev-22a940b603, ev-c4d54793d5); lead of the 2021 protest-surge move."
+  },
+  {
+   "event_id": "ev-11408730bd",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "One of the 2021 protests behind the near-daily protest surge led by ev-d644783f0f (protest against China's Coast Guard Law); a single protest is not itself new against 2020's ev-22a940b603."
+  },
+  {
+   "event_id": "ev-5f8b40631b",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Whitsun Reef protest and withdrawal demand, the opening of the 2021 protest surge led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-3dbb7833fe",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Lorenzana's public demand that the Chinese vessels leave Whitsun Reef is part of the same Whitsun diplomatic campaign counted in the 2021 protest-surge move ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-23790226e2",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Second Whitsun protest with Locsin's declared policy of a protest every day — the stated form of the frequency increase carried by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-e5e8f3c5b2",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "First summoning of Ambassador Huang over Whitsun Reef; part of the same 2021 protest campaign led by ev-d644783f0f (could be argued a novelty of method if no ambassador was summoned in 2020 — none appears in the 2020 candidates)."
+  },
+  {
+   "event_id": "ev-c99f3543d2",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Two more notes, with the DFA saying protests were being filed almost daily — evidence of the frequency surge led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-5585ab1bb6",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Protest over CCG actions near Scarborough with Locsin's tweet; one of the 2021 surge protests led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-5da81bbe13",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "NTF-WPS rejection of China's fishing ban, followed by a DFA protest; no fishing-ban rejection appears in the 2020 candidates, but it is a declarative protest of the same 2021 surge led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-9f45b25ca2",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Another protest over the 287 militia ships; part of the 2021 protest surge led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-ba12686b29",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Three more protests (radio challenges, Scarborough, Iroquois Reef); part of the 2021 protest surge led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-94fa126207",
+   "disposition": "same_move",
+   "of": "ev-d644783f0f",
+   "group": "PH2021-protest-surge",
+   "reason": "Strongest-terms protest over the 16 November Ayungin water-cannoning; part of the 2021 protest surge led by ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-5df9214d75",
+   "disposition": "new_move",
+   "criterion": "frequency",
+   "group": "PH2021-patrol-surge",
+   "reason": "Frequency/scope: the DND ordered an increased Navy and PCG presence on sovereignty patrols in the WPS, against 2020's single reported sovereignty patrol (ev-5b45a93de3, PH-2016-2020 undecided); lead of the 2021 patrol-surge move, which ev-338be3760f and ev-7af60969da show on the water."
+  },
+  {
+   "event_id": "ev-338be3760f",
+   "disposition": "same_move",
+   "of": "ev-5df9214d75",
+   "group": "PH2021-patrol-surge",
+   "reason": "PCG/BFAR Task Force Pagsasanay exercises at Scarborough and Pag-asa are the deployment of the increased presence ordered in ev-5df9214d75; Scarborough adds scope against 2020's Spratly-only patrols (ev-5b45a93de3)."
+  },
+  {
+   "event_id": "ev-7af60969da",
+   "disposition": "same_move",
+   "of": "ev-5df9214d75",
+   "group": "PH2021-patrol-surge",
+   "reason": "PCG challenges that dispersed militia vessels at Sabina Shoal happened on the sovereignty patrols ordered in ev-5df9214d75 and would lift that move to coercive; if the coder treats challenge-and-disperse as a new method against 2020's radio challenge (ev-5b45a93de3), it is a separate novelty move instead."
+  },
+  {
+   "event_id": "ev-440bd74cbf",
+   "disposition": "unclear",
+   "reason": "Duterte's conditional pledge to send navy ships if China drills, in an address conceding Chinese possession; nothing comparable among the 2020 candidates, but it is unclear whether a conditional, unexecuted statement is a step up — settle by whether the coder counts it as a new (threat) form against 2020's ev-a10d2ca4d8 line or as rhetoric."
+  },
+  {
+   "event_id": "ev-858c1cdb0f",
+   "disposition": "continuation",
+   "of": "ev-776ef4a3f8",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-776ef4a3f8. Annual arbitral-award anniversary statement, a routine yearly repeat of 2020's ev-776ef4a3f8 (PH-2016-2020, undecided); a continuation if that candidate becomes a move, otherwise likely reject."
+  },
+  {
+   "event_id": "ev-0db101b10d",
+   "disposition": "continuation",
+   "of": "ev-a10d2ca4d8",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-a10d2ca4d8. UNGA restatement of the award, a yearly repeat of Duterte's 2020 UNGA line ev-a10d2ca4d8 (PH-2016-2020, undecided); a continuation if that candidate becomes a move, otherwise likely reject."
+  },
+  {
+   "event_id": "ev-12a91423b3",
+   "disposition": "unclear",
+   "reason": "Duterte's 'we abhor' rebuke at the ASEAN-China summit is new in setting (face to face with Xi) but the same award-based line as 2020's ev-a10d2ca4d8; settle by whether a head-of-state rebuke at a summit with China counts as a new declarative method, otherwise fold into the protest surge ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-47f357fe2c",
+   "disposition": "unclear",
+   "reason": "Routine resupply of BRP Sierra Madre, a standing practice; no 2020 Ayungin resupply is among the undecided 2020 candidates (only Pag-asa re-provisioning, ev-175b432032), so settle by whether 2020 resupplies are on record — likely a continuation, not a move."
+  },
+  {
+   "event_id": "ev-65fdb3c077",
+   "disposition": "continuation",
+   "of": "ev-96af8b5dd6",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-96af8b5dd6. Lorenzana's rejection of China's demand to remove the Sierra Madre repeats the 2020 line of rebutting Chinese accusations (ev-96af8b5dd6, PH-2016-2020 undecided); likely continuation of that or part of the protest surge ev-d644783f0f."
+  },
+  {
+   "event_id": "ev-e67b414f51",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: PCG navigational buoys and new command-observation posts on Likas, Lawak and Parola — nothing comparable among the 2021 candidates (patrols ev-5df9214d75, no installation); excerpt unverified (HTTP 403), so needs a source check."
+  },
+  {
+   "event_id": "ev-0ee4464342",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: first Sierra Madre resupply escorted by PCG vessels (Teresa Magbanua, Malapascua), a change of method against 2021's unescorted resupply ev-47f357fe2c."
+  },
+  {
+   "event_id": "ev-3673591fd6",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: termination of joint oil-and-gas talks with China on sovereignty grounds — nothing comparable in 2021; it ends a cooperative framework rather than adding an act, so the coder may instead read it as withdrawal from cooperation and reject."
+  },
+  {
+   "event_id": "ev-2cbe321fe5",
+   "disposition": "continuation",
+   "of": "ev-d644783f0f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-d644783f0f. A protest over a CCG manoeuvre at Scarborough continues the 2021 protest practice (lead ev-d644783f0f, undecided); 2022's tally (ev-38c3e000b4, 193 notes) is not above 2021's, so."
+  },
+  {
+   "event_id": "ev-64dd117d33",
+   "disposition": "continuation",
+   "of": "ev-e5e8f3c5b2",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-e5e8f3c5b2. Summoning a Chinese embassy official over the RV Legend survey repeats the 2021 summoning ev-e5e8f3c5b2 (part of ev-d644783f0f's group); likely continuation unless the coder treats protecting Philippine-authorised marine research as a new issue."
+  },
+  {
+   "event_id": "ev-eb8500fcc7",
+   "disposition": "continuation",
+   "of": "ev-5da81bbe13",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-5da81bbe13. Annual protest of China's fishing ban, a yearly repeat of 2021's ev-5da81bbe13 (undecided, in group ev-d644783f0f)."
+  },
+  {
+   "event_id": "ev-454495e92f",
+   "disposition": "continuation",
+   "of": "ev-5f8b40631b",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-5f8b40631b. Protest at the return of Chinese vessels to Whitsun Reef continues the 2021 Whitsun protests (ev-5f8b40631b, group ev-d644783f0f)."
+  },
+  {
+   "event_id": "ev-b3cbefcfb4",
+   "disposition": "continuation",
+   "of": "ev-858c1cdb0f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-858c1cdb0f. Annual award-anniversary statement, a routine repeat of 2021's ev-858c1cdb0f (undecided)."
+  },
+  {
+   "event_id": "ev-3ea65bb95e",
+   "disposition": "continuation",
+   "of": "ev-0db101b10d",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-0db101b10d. Marcos's first SONA 'not one square inch' pledge is a head-of-state sovereignty restatement comparable to 2021's UNGA line ev-0db101b10d; settle by whether the coder counts a new administration's pledge as new."
+  },
+  {
+   "event_id": "ev-764b15db1f",
+   "disposition": "continuation",
+   "of": "ev-d644783f0f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-d644783f0f. Note verbale and protest over the CCG's seizure of rocket debris near Pag-asa continues the 2021 protest practice (ev-d644783f0f); 2022's protest count (ev-38c3e000b4) shows no increase, so."
+  },
+  {
+   "event_id": "ev-7c598eff68",
+   "disposition": "unclear",
+   "reason": "Senate resolution of 'disgust' over the debris incident — a different organ's act, not a duplicate of ev-764b15db1f; no legislative resolution among the 2021 candidates, so settle by whether a Senate resolution is a new declarative method or routine domestic politics."
+  },
+  {
+   "event_id": "ev-38c3e000b4",
+   "disposition": "continuation",
+   "of": "ev-d644783f0f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-d644783f0f. The 2022 tally of 193 notes verbales is level with 2021's (153 by October, ~200 for the year, ev-d644783f0f) — no frequency increase; likely continuation of the 2021 protest surge."
+  },
+  {
+   "event_id": "ev-f2fac8e61d",
+   "disposition": "continuation",
+   "of": "ev-5df9214d75",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-5df9214d75. DFA concern and a DND order to ramp up presence over reported Chinese land formation; the order repeats 2021's ev-5df9214d75 and no deployment is observed here — settle by evidence of an actual increase in deployments after 22 December 2022."
+  },
+  {
+   "event_id": "ev-7f10ef24b2",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2023-transparency",
+   "reason": "Novelty: start of the PCG transparency initiative (systematic release of video and accounts of CCG actions, here the 6 Feb laser incident) — absent from the 2022 candidates, where Chinese acts surfaced only through DFA protests (ev-2cbe321fe5, ev-764b15db1f); coding guide worked case 2. Excerpt not found verbatim — check source."
+  },
+  {
+   "event_id": "ev-4763c5e6e2",
+   "disposition": "same_move",
+   "of": "ev-7f10ef24b2",
+   "group": "PH2023-transparency",
+   "reason": "The week-long PCG patrol with journalists embedded to document CCG interceptions is the transparency method of ev-7f10ef24b2 in practice; if the coder sees the patrol itself as the point, compare it with 2022's routine Scarborough patrol (ev-2cbe321fe5) — likely no step up there."
+  },
+  {
+   "event_id": "ev-d7ddd30870",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "reason": "Scope: PCG sovereignty buoys extended to five further features (Patag, Balagtas, Kota, Panata, Whitsun) beyond the 2022 buoys at Philippine-held features (ev-e67b414f51, undecided)."
+  },
+  {
+   "event_id": "ev-31f0bf8ffd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: PCG physically removed China's floating barrier at Scarborough on presidential order — no comparable interference with a Chinese installation among the 2022 candidates; coercive."
+  },
+  {
+   "event_id": "ev-c367bf4fc4",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2023-pagasa-build",
+   "reason": "Novelty: a new three-storey PCG station with radar/AIS on Pag-asa — no construction on Pag-asa among the 2022 candidates (2022's installations were buoys and posts on other features, ev-e67b414f51); lead of the 2023 Pag-asa build-up."
+  },
+  {
+   "event_id": "ev-5a6384242e",
+   "disposition": "same_move",
+   "of": "ev-c367bf4fc4",
+   "group": "PH2023-pagasa-build",
+   "reason": "House leaders' visit pledging P3bn for Pag-asa (airport, reclamation extension, port) belongs with the 2023 Pag-asa build-up led by ev-c367bf4fc4; a pledge alone is not construction."
+  },
+  {
+   "event_id": "ev-803a411e06",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: BFAR vessels sent to Scarborough to supply Filipino fishermen and staying despite CCG water cannon — no state mission to Scarborough fishermen among the 2022 candidates (only a routine PCG patrol, ev-2cbe321fe5)."
+  },
+  {
+   "event_id": "ev-33741bdfea",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: Marcos's rescinding of any agreement to remove BRP Sierra Madre — nothing comparable in 2022 (2021's Lorenzana rebuttal ev-65fdb3c077 was absent in 2022, so this is new again); declarative, and weak enough that the coder may call it a restatement."
+  },
+  {
+   "event_id": "ev-8ad91e945e",
+   "disposition": "unclear",
+   "reason": "Protest plus a summons of the ambassador by President Marcos himself; protests and summons continue 2022 practice (ev-64dd117d33, ev-764b15db1f) and the 2023 protest count fell (ev-e9b4e96577) — settle by whether a presidential summons counts as a new method."
+  },
+  {
+   "event_id": "ev-6bc11d5416",
+   "disposition": "continuation",
+   "of": "ev-2cbe321fe5",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-2cbe321fe5. DFA statement asserting the right to patrol after the 23 April near-collision continues the 2022 protest practice (ev-2cbe321fe5)."
+  },
+  {
+   "event_id": "ev-2f8f1c1272",
+   "disposition": "continuation",
+   "of": "ev-b3cbefcfb4",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-b3cbefcfb4. Annual award-anniversary statement, a routine repeat of 2022's ev-b3cbefcfb4 (undecided)."
+  },
+  {
+   "event_id": "ev-fc1116c4a9",
+   "disposition": "continuation",
+   "of": "ev-7c598eff68",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-7c598eff68. Senate resolution condemning Chinese harassment repeats 2022's Senate resolution ev-7c598eff68 (undecided)."
+  },
+  {
+   "event_id": "ev-8ac630d777",
+   "disposition": "continuation",
+   "of": "ev-764b15db1f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-764b15db1f. Summons, protest and NSC 'never abandon Ayungin' after the 5 August water-cannoning continue the 2022 protest practice (ev-764b15db1f); with the 2023 protest count down (ev-e9b4e96577)."
+  },
+  {
+   "event_id": "ev-6bfcf43d04",
+   "disposition": "continuation",
+   "of": "ev-0ee4464342",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-0ee4464342. Coast-guard-escorted resupply of BRP Sierra Madre, the method begun in 2022 (ev-0ee4464342, undecided); more contested missions because China blocked more is not a move (counterfactual)."
+  },
+  {
+   "event_id": "ev-9f0bf4af9a",
+   "disposition": "continuation",
+   "of": "ev-0ee4464342",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-0ee4464342. Another contested Sierra Madre resupply, same method as 2022's escorted mission ev-0ee4464342 (undecided)."
+  },
+  {
+   "event_id": "ev-c8bc460a1a",
+   "disposition": "continuation",
+   "of": "ev-0ee4464342",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-0ee4464342. Another contested Sierra Madre resupply with accompanying protest, same method as 2022's ev-0ee4464342 (undecided)."
+  },
+  {
+   "event_id": "ev-89ad2543cf",
+   "disposition": "continuation",
+   "of": "ev-764b15db1f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-764b15db1f. Protest at China's 2023 standard map is a reaction to a new Chinese act by the standing protest method (2022: ev-764b15db1f); more to react to is not a move."
+  },
+  {
+   "event_id": "ev-e9b4e96577",
+   "disposition": "continuation",
+   "of": "ev-38c3e000b4",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-38c3e000b4. Tally of 43 protests to 12 September 2023 against 195 in 2022 (ev-38c3e000b4) shows protest frequency falling — evidence for diminishment of the protest practice, not a move."
+  },
+  {
+   "event_id": "ev-914415132b",
+   "disposition": "continuation",
+   "of": "ev-764b15db1f",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-764b15db1f. Protest and summons after the 22 October collisions continue the 2022 protest practice (ev-764b15db1f)."
+  },
+  {
+   "event_id": "ev-045c476a64",
+   "disposition": "unclear",
+   "reason": "DFA demand that China remove its structures, cease reclamation and pay damages is wider than the 2022 statements (ev-f2fac8e61d only voiced concern); settle by whether the coder counts a demand for dismantlement and accountability as a new declarative claim or as a strong protest."
+  },
+  {
+   "event_id": "ev-a4f87b3704",
+   "disposition": "unclear",
+   "reason": "Marcos's exclusive-rights statement, new protests and a floated persona non grata after the 10 December incidents; protests continue 2022 practice (ev-764b15db1f) and the expulsion was not carried out — settle by whether the coder counts the PNG threat as a new method."
+  },
+  {
+   "event_id": "ev-4aa396e5d5",
+   "disposition": "new_move",
+   "criterion": "frequency",
+   "group": "PH2024-scarborough-rotation",
+   "reason": "Frequency: a standing order for rotational PCG and BFAR deployments at Scarborough from February 2024, against a single BFAR mission there in 2023 (ev-803a411e06, undecided); lead of the 2024 Scarborough presence move."
+  },
+  {
+   "event_id": "ev-404d7d9886",
+   "disposition": "same_move",
+   "of": "ev-4aa396e5d5",
+   "group": "PH2024-scarborough-rotation",
+   "reason": "PCG escort of the Atin Ito convoy to Scarborough, with a Navy ship standing by, is part of the stepped-up Scarborough presence led by ev-4aa396e5d5 (no escort of a civilian convoy among the 2023 candidates — a coder could split it as a novelty)."
+  },
+  {
+   "event_id": "ev-48d7163252",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2024-escoda-station",
+   "reason": "Novelty: BRP Teresa Magbanua kept on station at Escoda (Sabina) Shoal for about five months to deter reclamation — continuous station-keeping at an unoccupied feature, against 2023's week-long transiting patrols (ev-4763c5e6e2); lead of the 2024 Escoda presence move."
+  },
+  {
+   "event_id": "ev-b257d8b70a",
+   "disposition": "same_move",
+   "of": "ev-48d7163252",
+   "group": "PH2024-escoda-station",
+   "reason": "BFAR humanitarian run to fishermen at Escoda during the PCG's station-keeping belongs with the Escoda presence move ev-48d7163252 (2023's comparable BFAR mission was at Scarborough, ev-803a411e06)."
+  },
+  {
+   "event_id": "ev-0d1ef93d8b",
+   "disposition": "same_move",
+   "of": "ev-48d7163252",
+   "group": "PH2024-escoda-station",
+   "reason": "The NMC's pledge to maintain presence at Escoda as Teresa Magbanua withdrew is the close of the Escoda presence move ev-48d7163252, not a new act; the withdrawal bears on its ongoing_through/diminishment."
+  },
+  {
+   "event_id": "ev-ea3d2cff34",
+   "disposition": "new_move",
+   "criterion": "scope",
+   "group": "PH2024-lawak-pagasa-build",
+   "reason": "Scope: the 2025 GAA funds a sheltered port on Lawak as well as Pag-asa airport expansion and port, extending construction beyond 2023's Pag-asa-only build-up (ev-c367bf4fc4, ev-5a6384242e); an appropriation rather than observed works — the coder may hold it for evidence of construction."
+  },
+  {
+   "event_id": "ev-55a4b2f433",
+   "disposition": "same_move",
+   "of": "ev-ea3d2cff34",
+   "group": "PH2024-lawak-pagasa-build",
+   "reason": "AFP chief Brawner's announcement that Pag-asa and Lawak would be developed is the declared side of the build-up funded in ev-ea3d2cff34."
+  },
+  {
+   "event_id": "ev-30e404b6d1",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: EO 57 creates the National Maritime Council to govern maritime security in the WPS — a new administrative arrangement, nothing comparable among the 2023 candidates; declarative."
+  },
+  {
+   "event_id": "ev-6707e222d7",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: Marcos's public red line (killing of a Filipino would be close to an act of war) — no such deterrent threshold among the 2023 statements (ev-a4f87b3704 floated only a persona non grata); a deterrent threat the coder may type coercive rather than declarative."
+  },
+  {
+   "event_id": "ev-953175c9cd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: CLCS submission for an extended continental shelf in the West Palawan Region — no submission to an international body among the 2023 candidates; declarative legal step."
+  },
+  {
+   "event_id": "ev-8cad753299",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: Maritime Zones Act (RA 12064) and Archipelagic Sea Lanes Act define Philippine maritime zones in law — no legislation among the 2023 candidates; declarative."
+  },
+  {
+   "event_id": "ev-83587a8101",
+   "disposition": "continuation",
+   "of": "ev-6bfcf43d04",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-6bfcf43d04. Coast-guard-escorted Sierra Madre resupply, the method of 2023's missions (ev-6bfcf43d04, undecided); more contested missions because China blocked more is not a move — likely continuation. Not a duplicate of ev-fd1af4d167 (that is the protest)."
+  },
+  {
+   "event_id": "ev-8248358e3a",
+   "disposition": "continuation",
+   "of": "ev-6bfcf43d04",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-6bfcf43d04. Another contested Sierra Madre resupply, same method as 2023's ev-6bfcf43d04 (undecided)."
+  },
+  {
+   "event_id": "ev-1cd8479194",
+   "disposition": "continuation",
+   "of": "ev-6bfcf43d04",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-6bfcf43d04. Sierra Madre resupply by Navy boats, boarded by the CCG on 17 June; same practice as 2023's ev-6bfcf43d04 unless the coder treats the switch to Navy boats as a change of method."
+  },
+  {
+   "event_id": "ev-1d5d5eeab4",
+   "disposition": "continuation",
+   "of": "ev-6bfcf43d04",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-6bfcf43d04. Uncontested resupply under the July 2024 provisional understanding — the same standing practice as 2023's ev-6bfcf43d04, and the arrangement itself is cooperative."
+  },
+  {
+   "event_id": "ev-fd1af4d167",
+   "disposition": "continuation",
+   "of": "ev-914415132b",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-914415132b. Summons and protest over the 5 March water-cannoning continue the 2023 protest practice (ev-914415132b, ev-e9b4e96577); 2024's 60 protests (ev-18c7dc86d6) are no higher than 2023's."
+  },
+  {
+   "event_id": "ev-60784fe1e7",
+   "disposition": "continuation",
+   "of": "ev-914415132b",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-914415132b. Summons, protest and demand that China leave Ayungin and the EEZ continue the 2023 protest-and-demand practice (ev-914415132b; 2023's NTF demand to leave Scarborough in ev-803a411e06)."
+  },
+  {
+   "event_id": "ev-82e85e9b0a",
+   "disposition": "continuation",
+   "of": "ev-a4f87b3704",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-a4f87b3704. Summons, protest and demand to vacate Scarborough repeat 2023's demand and protests (ev-803a411e06, ev-a4f87b3704)."
+  },
+  {
+   "event_id": "ev-6a434fc79f",
+   "disposition": "continuation",
+   "of": "ev-914415132b",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-914415132b. Note verbale over the 17 June boarding continues the 2023 protest practice (ev-914415132b)."
+  },
+  {
+   "event_id": "ev-8cba222931",
+   "disposition": "continuation",
+   "of": "ev-914415132b",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-914415132b. Protest and condemnation of PLAAF flares against a PAF patrol at Scarborough continue the 2023 protest practice (ev-914415132b); the air patrol itself is routine."
+  },
+  {
+   "event_id": "ev-2ffa23e276",
+   "disposition": "continuation",
+   "of": "ev-89ad2543cf",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-89ad2543cf. Summoning the ambassador over China's Scarborough baselines is the standing protest method applied to a new Chinese act (2023: ev-89ad2543cf over the standard map)."
+  },
+  {
+   "event_id": "ev-18c7dc86d6",
+   "disposition": "continuation",
+   "of": "ev-e9b4e96577",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-e9b4e96577. Protest plus the 2024 tally of 60 protests — no higher than 2023 (193 since July 2022 implies roughly 65-70 in 2023, cf. ev-e9b4e96577); likely continuation of the protest practice."
+  },
+  {
+   "event_id": "ev-9e154a744a",
+   "disposition": "unclear",
+   "reason": "Marcos's promised 'response and countermeasure package' is a statement of intent with implied threat; compare 2023's floated persona non grata (ev-a4f87b3704) — settle by what countermeasures were actually taken."
+  },
+  {
+   "event_id": "ev-ba9381ca21",
+   "disposition": "continuation",
+   "of": "ev-a4f87b3704",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-a4f87b3704. Marcos's statement of resolve to troops at WESCOM repeats 2023 presidential lines (ev-a4f87b3704)."
+  },
+  {
+   "event_id": "ev-e7cfd012d4",
+   "disposition": "continuation",
+   "of": "ev-2f8f1c1272",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-2f8f1c1272. Annual award-anniversary statement, a routine repeat of 2023's ev-2f8f1c1272 (undecided)."
+  },
+  {
+   "event_id": "ev-62a5d3ed0e",
+   "disposition": "unclear",
+   "reason": "SONA sovereignty line, a yearly repeat of 2022's ev-3ea65bb95e; no 2023 SONA candidate exists — settle by whether the 2023 SONA carried a WPS line (if so, continuation)."
+  },
+  {
+   "event_id": "ev-7035b2c092",
+   "disposition": "unclear",
+   "reason": "NMC says it is considering a new international case after the Escoda collisions; a stated option, not a filing — settle by whether a case was lodged (then novelty against 2023, which had none)."
+  },
+  {
+   "event_id": "ev-982a727a73",
+   "disposition": "unclear",
+   "reason": "BFAR patrol to the Sandy Cays docking at the new Pag-asa Sheltered Port; patrols near Pag-asa continue 2023 practice (ev-4763c5e6e2) — settle by whether the port's first use evidences new completed construction for the build-up move ev-ea3d2cff34."
+  },
+  {
+   "event_id": "ev-7c7bd93042",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: PCG ships (Teresa Magbanua) shadowed and pushed CCG 3304 and the CCG 5901 cutter farther off Zambales over weeks — a change of method from 2024's station-keeping at Escoda (ev-48d7163252) and escorts (ev-404d7d9886); coercive."
+  },
+  {
+   "event_id": "ev-da96038f5d",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2025-sandy-cay",
+   "reason": "Novelty: Navy, PCG and PNP teams landed on a Pag-asa Cay and raised the flag — 2024 had only a BFAR patrol to the Sandy Cays without landing (ev-982a727a73); coding guide worked case 6. Lead of the 2025 Sandy Cay move."
+  },
+  {
+   "event_id": "ev-94a5a42c4d",
+   "disposition": "same_move",
+   "of": "ev-da96038f5d",
+   "group": "PH2025-sandy-cay",
+   "reason": "State-backed scientific sampling on Pag-asa Cay 2 a month later extends the same Sandy Cay presence led by ev-da96038f5d; a coder could split it as a separate novelty (no state marine research among the 2024 candidates)."
+  },
+  {
+   "event_id": "ev-82422dd7c4",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "group": "PH2025-kadiwa-fisheries",
+   "reason": "Novelty: the KBBM programme puts a government fish carrier at sea to buy catch plus fuel/ice subsidies, a new method of sustaining Filipino fishing in the WPS against 2024's ad hoc BFAR supply runs (ev-b257d8b70a, ev-4aa396e5d5); lead of the 2025 fisheries-support move — the coder may see it as a continuation of those runs instead."
+  },
+  {
+   "event_id": "ev-59485ecfaf",
+   "disposition": "same_move",
+   "of": "ev-82422dd7c4",
+   "group": "PH2025-kadiwa-fisheries",
+   "reason": "PCG/BFAR provisions to fishermen near Scarborough under the 2025 fisheries-support effort led by ev-82422dd7c4."
+  },
+  {
+   "event_id": "ev-8bf3b5cb8a",
+   "disposition": "same_move",
+   "of": "ev-82422dd7c4",
+   "group": "PH2025-kadiwa-fisheries",
+   "reason": "A named KBBM supply mission with ten BFAR vessels near Scarborough; part of the move led by ev-82422dd7c4."
+  },
+  {
+   "event_id": "ev-1d1468491c",
+   "disposition": "same_move",
+   "of": "ev-82422dd7c4",
+   "group": "PH2025-kadiwa-fisheries",
+   "reason": "BFAR vessels protecting fishermen in Pag-asa's territorial sea belong with the 2025 fisheries-support move ev-82422dd7c4; otherwise a continuation of 2024 BFAR patrols near Pag-asa (ev-982a727a73)."
+  },
+  {
+   "event_id": "ev-2b999f8b7b",
+   "disposition": "unclear",
+   "reason": "Pag-asa runway extension works funded by the 2025 GAA: if the coder forms the 2024 build-up move from the appropriation (ev-ea3d2cff34, undecided), this is its continuation; if not, the observed works are the move. Not a duplicate — ev-ea3d2cff34 is not accepted and is a different act (funding)."
+  },
+  {
+   "event_id": "ev-03dbe7dd2c",
+   "disposition": "continuation",
+   "of": "ev-7035b2c092",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-7035b2c092. Justice Secretary's announcement of a second international case repeats 2024's NMC statement that a case was being considered (ev-7035b2c092); no filing — settle by whether a case was filed."
+  },
+  {
+   "event_id": "ev-fa78a86edc",
+   "disposition": "continuation",
+   "of": "ev-8cba222931",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-8cba222931. BFAR MDA overflight of Scarborough and protest over the PLAN helicopter continue the 2024 practice (air patrol and protest, ev-8cba222931)."
+  },
+  {
+   "event_id": "ev-a035dadcbc",
+   "disposition": "continuation",
+   "of": "ev-e7cfd012d4",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-e7cfd012d4. Annual award-anniversary statement, a routine repeat of 2024's ev-e7cfd012d4 (undecided)."
+  },
+  {
+   "event_id": "ev-d4b8ef600a",
+   "disposition": "continuation",
+   "of": "ev-82e85e9b0a",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-82e85e9b0a. DFA concern and announced protest over interference with the Scarborough provisions continue the 2024 protest practice (ev-82e85e9b0a)."
+  },
+  {
+   "event_id": "ev-25a89360c0",
+   "disposition": "continuation",
+   "of": "ev-2ffa23e276",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-2ffa23e276. Protest at China's Scarborough nature reserve is the standing protest method applied to a new Chinese act (2024: ev-2ffa23e276 over the baselines)."
+  },
+  {
+   "event_id": "ev-0270c1a457",
+   "disposition": "continuation",
+   "of": "ev-4aa396e5d5",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-4aa396e5d5. AFP pledge of round-the-clock monitoring and patrols at Scarborough restates the 2024 rotational presence (ev-4aa396e5d5, undecided); likely continuation. Not a duplicate of ev-25a89360c0 (different agency and act)."
+  },
+  {
+   "event_id": "ev-2078ebb986",
+   "disposition": "continuation",
+   "of": "ev-18c7dc86d6",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-18c7dc86d6. Protest over the 16 September water-cannoning continues the 2024 protest practice (ev-18c7dc86d6); likely continuation. Not a duplicate of ev-8bf3b5cb8a (that is the mission)."
+  },
+  {
+   "event_id": "ev-aa9be91fda",
+   "disposition": "continuation",
+   "of": "ev-18c7dc86d6",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-18c7dc86d6. 2025 tally of 47 protests by mid-October against 60 in 2024 (ev-18c7dc86d6): no frequency increase — evidence of continuation or diminishment of the protest practice, not a move."
+  },
+  {
+   "event_id": "ev-f3de1ecc05",
+   "disposition": "continuation",
+   "of": "ev-6707e222d7",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-6707e222d7. Marcos's criticism of Chinese coercion at the ASEAN-US summit repeats 2024's presidential lines at international fora (ev-6707e222d7 was a stronger red line)."
+  },
+  {
+   "event_id": "ev-ec7e228166",
+   "disposition": "unclear",
+   "reason": "Protest plus a protective PCG deployment and presidential order after the Escoda water-cannoning; the protest continues 2024 practice (ev-18c7dc86d6) and the deployment resembles 2024's Escoda presence (ev-48d7163252) — settle by whether the 'personnel to strategic locations' order produced a new standing deployment."
+  },
+  {
+   "event_id": "ev-fdeba4eefd",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: deposit with the UN of NAMRIA Chart 1567 giving territorial-sea baselines around Scarborough — no baselines or charts among the 2025 candidates; Chubb types baselines that upgrade disputed waters to territorial sea as coercive (administrative), so check the type against the suggested declarative."
+  },
+  {
+   "event_id": "ev-091fd39816",
+   "disposition": "new_move",
+   "criterion": "novelty",
+   "reason": "Novelty: for the tenth anniversary, a Philippine-led joint statement with 13 governments rejecting China's 'historic rights', against 2025's DFA-only anniversary line (ev-a035dadcbc); if the coder treats it as the yearly anniversary statement with partners added, it is a continuation instead."
+  },
+  {
+   "event_id": "ev-0d01631843",
+   "disposition": "continuation",
+   "of": "ev-aa9be91fda",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-aa9be91fda. 'Firm representations' over Chinese Embassy attacks on Philippine officials continue the 2025 protest practice (ev-aa9be91fda)."
+  },
+  {
+   "event_id": "ev-67bf6adec2",
+   "disposition": "continuation",
+   "of": "ev-fa78a86edc",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-fa78a86edc. PCG MDA overflight of Scarborough with BFAR vessels supporting fishermen continues 2025's Scarborough overflights and patrols (ev-fa78a86edc, ev-0270c1a457)."
+  },
+  {
+   "event_id": "ev-0536a069db",
+   "disposition": "continuation",
+   "of": "ev-8bf3b5cb8a",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-8bf3b5cb8a. Extra ships and aircraft sent to Scarborough after fishermen were driven off — more presence because there was more to react to (counterfactual), at the level of 2025's Scarborough missions (ev-8bf3b5cb8a, ev-0270c1a457); settle by whether the reinforcement became standing."
+  },
+  {
+   "event_id": "ev-84751cfbf2",
+   "disposition": "unclear",
+   "reason": "PCG aircraft radio-warning a Chinese research ship off Iroquois Reef; 2025's PCG challenges were to CCG ships off Zambales (ev-7c7bd93042) — settle by whether warning off foreign research vessels is a new method or the same challenge practice."
+  },
+  {
+   "event_id": "ev-5319572db3",
+   "disposition": "unclear",
+   "reason": "DND rejection of China's claim to Pag-asa and Lawak restates sovereignty and defends the works of 2025 (ev-2b999f8b7b); likely continuation, and it evidences the ongoing Thitu runway and Nanshan port works for that candidate's ongoing_through."
+  },
+  {
+   "event_id": "ev-3b9fc29ab1",
+   "disposition": "continuation",
+   "of": "ev-25a89360c0",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-25a89360c0. Protest over the floating structure in the Scarborough lagoon and a vow of legal measures continue the 2025 protest practice (ev-25a89360c0)."
+  },
+  {
+   "event_id": "ev-778ee42f44",
+   "disposition": "continuation",
+   "of": "ev-2078ebb986",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-2078ebb986. NTF-WPS condemnation and a 'strong protest' to Wang Yi after the baton attack, with a renewed call to dismantle Scarborough structures, continue the 2025 protest practice (ev-2078ebb986)."
+  },
+  {
+   "event_id": "ev-521fa9ae15",
+   "disposition": "continuation",
+   "of": "ev-8bf3b5cb8a",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-8bf3b5cb8a. Eight-vessel KBBM fuel mission to Scarborough repeats 2025's KBBM missions (ev-8bf3b5cb8a, group ev-82422dd7c4, undecided)."
+  },
+  {
+   "event_id": "ev-6cbe44db6a",
+   "disposition": "unclear",
+   "reason": "SONA upholding the award, a yearly repeat of 2024's ev-62a5d3ed0e; no 2025 SONA candidate — settle by whether the 2025 SONA carried a WPS line (if so, continuation)."
+  },
+  {
+   "event_id": "ev-beccd80b78",
+   "disposition": "unclear",
+   "reason": "Summary of 15 incident-free Sierra Madre resupplies under the July 2024 understanding — the standing practice of 2024's ev-1d5d5eeab4, with no 2025 resupply candidate in the run; likely continuation (evidence for ongoing_through)."
+  },
+  {
+   "event_id": "ev-7fa2c18dfe",
+   "disposition": "continuation",
+   "of": "ev-25a89360c0",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-25a89360c0. Renewed rejection of the Scarborough nature reserve with a warning against implementing it repeats 2025's protest ev-25a89360c0."
+  },
+  {
+   "event_id": "ev-2a6c3f0fb8",
+   "disposition": "continuation",
+   "of": "ev-aa9be91fda",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-aa9be91fda. Tally of 27 protests in H1 2026 and a PCG pledge to keep patrolling Scarborough; no increase over 2025 (47 by mid-October, ev-aa9be91fda)."
+  },
+  {
+   "event_id": "ev-ba0a5066de",
+   "disposition": "continuation",
+   "of": "ev-aa9be91fda",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-aa9be91fda. Tally of 39 protests by early September 2026 against 47 by mid-October 2025 (ev-aa9be91fda): no frequency increase — continuation, not a move."
+  },
+  {
+   "event_id": "ev-84200f2b92",
+   "disposition": "continuation",
+   "of": "ev-82422dd7c4",
+   "reason": "Continuation (provisional: the previous year is undecided) of the practice shown by ev-82422dd7c4. BFAR patrol and fuel-subsidy delivery near Abad Santos Shoal continues the 2025 KBBM fisheries support (ev-82422dd7c4, undecided); settle by whether Abad Santos lies outside the 2025 mission areas (then possibly scope)."
+  },
+  {
+   "event_id": "ev-6f3e6587ec",
+   "disposition": "unclear",
+   "reason": "Navy/PCG-escorted Sierra Madre resupply discontinued under Chinese shadowing; resupply is the standing practice (ev-beccd80b78; 2024's escorted missions ev-83587a8101) — likely continuation."
+  },
+  {
+   "event_id": "ev-d51ce1b699",
+   "disposition": "unclear",
+   "reason": "PCG medical evacuation from BRP Sierra Madre under CCG water cannon is humanitarian upkeep of the outpost, part of the standing resupply practice (ev-beccd80b78); likely continuation/reject."
+  }
+ ]
+}
