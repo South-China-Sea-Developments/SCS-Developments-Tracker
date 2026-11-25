@@ -1,0 +1,65 @@
+{
+ "run_id": "MY-2000s",
+ "exported_on": "2026-11-25",
+ "records": [
+  {
+   "airtable_id": "recMJwEizYPwLL9BI",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia (National Security Council, Ministry of Foreign Affairs, Petronas and others) jointly with Vietnam",
+   "suggestion_reasoning": "A formal extended continental shelf claim deposited with a UN body over disputed waters is a legal/diplomatic assertion; declarative. The CIL page was read through WebFetch (curl returns a script stub), and the UN executive summary is a PDF, so the excerpts may not be machine-checkable; Vietnam Law Magazine wrongly dates the submission 7 May. [confidence: high]",
+   "date_end": "2009-05-06",
+   "new_dyads": "MC MP MB",
+   "excerpt": "On 6 May 2009, Malaysia and Vietnam made a joint submission to the CLCS\n\nunresolved disputes in the Defined Area of this Joint Submission\n\nOn 6 May 2009, Malaysia and Vietnam lodged a joint submission to",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "Southern part of the South China Sea (defined area beyond 200 nm)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://cil.nus.edu.sg/publication/south-china-sea-disputes-arise-again.",
+   "reviewer": "Angelo",
+   "sources": "South China Sea Disputes Arise Again — Centre for International Law, National University of Singapore\nhttps://cil.nus.edu.sg/publication/south-china-sea-disputes-arise-again\nJoint Submission to the CLCS by Malaysia and the Socialist Republic of Viet Nam in respect of the southern part of the South China Sea: Executive Summary — United Nations (DOALOS/CLCS), Governments of Malaysia and Viet Nam 2009-05-06\nhttps://digitallibrary.un.org/record/3897205/files/mys_vnm2009excutivesummary.pdf\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T14:44:14.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-1b46d2adfd",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "8 Spratly SW",
+    "9 Nam Con Son"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MP",
+    "MB"
+   ],
+   "summary": "Malaysia and Vietnam on 6 May 2009 lodged a joint submission to the UN Commission on the Limits of the Continental Shelf claiming continental shelf beyond 200 nautical miles in a defined area of the southern South China Sea, informing the Commission that there were unresolved disputes in the area.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2009-05-06",
+   "presort": "new move (novelty) — Joint Malaysia-Vietnam submission to the CLCS of shelf beyond 200 nm is a new method of advancing the claim before an international authority; 2008 shows only the preparatory trust fund (ev-4a76c6e88e). Declarative lead. (group MY2009-CLCS) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  }
+ ]
+}
