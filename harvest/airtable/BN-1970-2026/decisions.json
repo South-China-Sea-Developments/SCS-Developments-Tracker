@@ -1,0 +1,216 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-118a6c3d04",
+   "action": "new_move",
+   "note": "Manually verified",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "1983",
+    "ongoing_through": "1987",
+    "dyads": [
+     "BM",
+     "BA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "fisheries"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": "1983 January 1: Brunei's Fishery Limits Act (5 of 1983, Cap. 130) came into force, extending the Sultanate's fishery limits to 200 nautical miles from its baselines, or to the median line where that is nearer, 'without prejudice to any claim to wider limits', and barring foreign fishing boats except as designated (FAOLEX text, s. 3; Haller-Trost 1994, pp. 38, 43-44). On 10 February 1983 the Territorial Waters of Brunei Act (9 of 1983, Cap. 138) extended the territorial sea from 3 to 12 nautical miles and provided for a map of its limits (FAOLEX; UN DOALOS). Brunei had no fishery zone before and a shelf claim only to the 100-fathom line (1954 proclamation, 1958 Orders in Council); the 200-mile zone runs across the shelf Malaysia's 1979 map allots to itself and encloses Louisa Reef (Dzurek 1996, p. 28). The 1984 revised laws and the 1987 territorial-waters map restated these limits without enlarging them (ongoing through 1987); the 1988 maps then widened the claim."
+   },
+   "edits": {
+    "summary": "Brunei's Fishery Limits Act (5 of 1983) came into force, extending Brunei's fishery limits to 200 nautical miles from its baselines, or to the median line where that is nearer, without prejudice to wider claims, and barring foreign fishing boats except as the Act allows."
+   }
+  },
+  {
+   "event_id": "ev-121d192829",
+   "action": "merge",
+   "note": "same move as ev-118a6c3d04: the 12-nm Territorial Waters Act (9 of 1983, commencement 10 February 1983 per the statute; Haller-Trost's 19/2/1983 looks like a transposition) is the second statute of the one 1983 extension of Brunei's zones. (pre-sort, to confirm)",
+   "move_of_event": "ev-118a6c3d04"
+  },
+  {
+   "event_id": "ev-14497bc041",
+   "action": "reject",
+   "note": "continuation of ev-118a6c3d04: the 1984 Revised Edition (BLRO 1/1984) republishes the Interpretation and General Clauses Act of 1959, whose 'includes the continental shelf' wording carries no 1984 amendment marker (CommonLII, Cap. 4), and ties 'territorial waters' to the 1983 Act (S 6/84); a consolidation at the same level, nothing new (Haller-Trost 1994, p. 6 fn 11-12). (pre-sort, to confirm)"
+  },
+  {
+   "event_id": "ev-224a2cedcb",
+   "action": "new_move",
+   "note": "Manually confirmed",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "2009",
+    "ongoing_through": "",
+    "dyads": [
+     "BC",
+     "BV",
+     "BM"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "energy"
+    ],
+    "subregions": [
+     "8",
+     "7"
+    ],
+    "description": "2009 May 12: Brunei lodged with the UN Secretary-General preliminary information indicative of the outer limits of its continental shelf beyond 200 nautical miles, asserting natural prolongation across the Northwest Borneo Shelf, the Northwest Borneo Trough and the Dangerous Grounds to the deep ocean floor of the South China Sea within the 350-mile constraint, 'without prejudice to any future delimitation of boundaries with other States', the day before the SPLOS/183 deadline and six days after the Malaysia-Vietnam joint submission (UN DOALOS preliminary-information table; Brunei's document, paras 10-12, 21, 24, 26-27). No coordinates, map or feature were given, the full submission promised within twelve months never followed, and no state reacted (Roach 2014, pp. 35-38). The first formal filing of Brunei's shelf claim with an international body, after the domestic and restricted 1988 map; the area lies inside China's nine-dash line and Vietnam's Spratly claim and may overlap the joint-submission area, which itself denies Brunei a 200-mile shelf."
+   }
+  },
+  {
+   "event_id": "ev-42c20f440e",
+   "action": "reject",
+   "note": "British act for Brunei: British High Commission note 020/4 of 4 August 1980 (Haller-Trost 1994, p. 38 fn 198), colonial context under decision 03 (2026-11-23), not the Sultanate's own act. If counted as Brunei's instead: new move, declarative, novelty, dyads BM, diplomatic, administrative, sub-regions 10 and 7, ongoing through 1981 (second note). (pre-sort, to confirm)"
+  },
+  {
+   "event_id": "ev-8f767ab50d",
+   "action": "reject",
+   "note": "continuation of ev-42c20f440e: second British High Commission note (177/2, 26 May 1981) objecting to the same 1979 map, same method and target (Haller-Trost 1994, p. 38 fn 198); a British act for Brunei like the first, so rejected with it under decision 03 either way. (pre-sort, to confirm)"
+  },
+  {
+   "event_id": "ev-9b8338ca90",
+   "action": "new_move",
+   "note": "New move because it is a rare challenge to an SCS claim. Can arguably be rejected by another human reviewer.",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "2023",
+    "ongoing_through": "",
+    "dyads": [
+     "BC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "politics",
+     "administrative"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": "2023 September 2: five days after China released its 2023 standard map, Brunei's Ministry of Foreign Affairs issued a Statement on Latest Developments in the South China Sea: 'it is essential that questions of maritime delimitation be agreed upon in accordance with the provisions and procedures of UNCLOS', and 'maritime entitlements of mainland and insular territory, and other maritime features are governed exclusively by international law, in particular UNCLOS', while maintaining the two-step approach and calling for the DOC's implementation and an early COC (mfa.gov.bn, Press Room 1067, 'Issued on 2 September 2023'; ASEAN Wonk, 3 September 2023; The Diplomat, 6 September 2023). Neither China nor the map is named, but the entitlements formula is the one that denies dashed-line and historic-rights claims, and the two sentences are absent from the 20 July 2020 statement, whose other sentences the text repeats. No unilateral Bruneian statement came in 2021 or 2022, and none has followed to November 2026: a new method, and new again in any case."
+   }
+  },
+  {
+   "event_id": "ev-a67ece7aea",
+   "action": "reject",
+   "note": "continuation of ev-118a6c3d04: Sheet 1 of 1987 (Surveyor General, BA chart 2109, restricted) is the map section 3 of the 1983 Territorial Waters Act requires, giving seven coordinates for the 12-nm limit already in force; it claims no new area (Haller-Trost 1994, pp. 2-4). The claim-making maps are the 1988 Sheets 2 and 3 (ev-cef7d9f601). (pre-sort, to confirm)"
+  },
+  {
+   "event_id": "ev-bd9ef2878f",
+   "action": "new_move",
+   "note": "Manually verified",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "1993",
+    "ongoing_through": "",
+    "dyads": [
+     "BM",
+     "BA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "energy",
+     "fisheries"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": "1993 July 20: the Sultan proclaimed an Exclusive Economic Zone contiguous to the territorial sea out to 200 nautical miles, with the 1958 lateral lines continued by straight lines (JUAB Sheet 4 at the Surveyor-General), sovereign rights over living and non-living resources and jurisdiction over artificial islands, research and the environment, and a saving (article 9) for 'areas of continental shelf extending beyond the limits of the present exclusive economic zone'; gazetted 26 March 1994 (Brunei Government Gazette Part II No. S 4, reproduced in IOPC Funds 92FUND/Circ.57; Dzurek 1996, pp. 27-28, 58; Haller-Trost 1994, fn 214 - the 21 July there and in Roach 2014 is the Ministry of Law press release). Brunei's first EEZ, the last South China Sea littoral to proclaim one; the same 200-mile area as the 1988 fishery limits, enclosing Louisa Reef, so a new regime over the water column rather than a wider claim. No recorded protest; Malaysia recognised Brunei's zones beyond the 100-fathom line only in 2009."
+   }
+  },
+  {
+   "event_id": "ev-c22fd16dee",
+   "action": "reject",
+   "note": "Cooperative act"
+  },
+  {
+   "event_id": "ev-cef7d9f601",
+   "action": "new_move",
+   "note": "Date: Sheet 3 has a legal date, 28 May 1988 (Fishery Limits Order S 13/88); Sheet 2 only the year, so kept at year precision. Sub-regions 10 and 7 for the 200-mile zone and Louisa Reef, 8 for the 265-mile line and Rifleman Bank. BP omitted: the only Philippine overlap is about 200 sq nm of the shelf corridor with the KIG corner (Haller-Trost fn 216); add BA if you prefer Chubb's all-states code for claim maps. Ongoing through: your call; the line stood until the 2009 filings. (pre-sort, to confirm)",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "scope",
+    "year": "1988",
+    "ongoing_through": "",
+    "dyads": [
+     "BM",
+     "BV",
+     "BC"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "energy",
+     "fisheries"
+    ],
+    "subregions": [
+     "10",
+     "7",
+     "8"
+    ],
+    "description": "1988: the Surveyor General published Sheet 2, Map Showing Continental Shelf of Brunei Darussalam, and Sheet 3, Map Showing Fishery Limits of Brunei Darussalam (BA chart 2660B, restricted), fixing by coordinates the lateral lines of the 1958 Orders in Council and an outer limit at about 265 nautical miles, an 'Approximate Mainland' line north of Rifleman Bank, with the fishery limit at 200 nautical miles and a lighter zone out to the same line; Sheet 3 was given effect by the Fishery Limits Order S 13/88 of 28 May 1988 (Haller-Trost 1994, pp. 4-5, 38, 43-44 and fn 250; FAOLEX, Cap. 130 O1). The shelf claim thereby went beyond the 100-fathom line and beyond the Vietnam median line Britain had conceded for Brunei in 1981, enclosing Louisa Reef, Owen Shoal and Rifleman Bank with Bombay Castle (Dzurek 1996, pp. 21, 45): a broader area than in any earlier year. The maps carry a note that the boundaries are not yet agreed with neighbouring states and are without prejudice to the Limbang claim; Malaysia restated its 1979-map sovereignty over the features on 25 February 1988, and the maps themselves drew no recorded protest."
+   }
+  },
+  {
+   "event_id": "ev-e8c5e96507",
+   "action": "reject",
+   "note": "No assertive move - routine statement"
+  },
+  {
+   "event_id": "ev-ff8bbc9c8f",
+   "action": "new_move",
+   "note": "Confirmed and manually checked",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "2003",
+    "ongoing_through": "",
+    "dyads": [
+     "BM"
+    ],
+    "domains": [
+     "domestic",
+     "physical"
+    ],
+    "issues": [
+     "energy",
+     "administrative"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": "2003 March: after Malaysia had licensed deepwater Blocks L and M to Murphy Oil in January 2003 over the same acreage as Brunei's Blocks J and K (awarded in February 2002 after the 2001 licensing round), Brunei signed the Block J production-sharing agreement with Total, BHP Billiton and Amerada Hess on 10 March 2003 (Total press release of that date, SEC Form 6-K; BHP Billiton Form 20-F 2005) and sent a patrol craft to drive Murphy's drilling ship out of the disputed area; the next month Malaysian gunboats blocked a Total vessel, and both sides halted work pending talks that began with the Sultan and Mahathir in May (Straits Times/FEER, 3 July 2003; AFP via Malaysiakini, 14 July 2003; Energy Intelligence, 9 June 2003; Al Jazeera/Reuters, 22 August 2003). The first known Bruneian naval enforcement against a rival's licensee, and licensing pressed in the face of a rival licence: coercive (physical interference), a new method. The Block K contract with the Shell-led group followed later in 2003."
+   },
+   "edits": {
+    "date_start": "2003-03-01",
+    "date_end": "2003-03-31",
+    "summary": "In March 2003, after Malaysia had licensed Blocks L and M over the same acreage in January, Brunei signed the production-sharing agreement for deepwater Block J with a Total-led consortium (10 March) and sent a patrol craft to drive a Murphy Oil drilling ship from the disputed area; Block K went to a Shell-led consortium later in 2003.",
+    "actors": "Government of Brunei (Petroleum Unit); Royal Brunei Navy patrol craft; Total, BHP Billiton, Amerada Hess (Block J); Murphy Oil (Malaysian licensee of Block L)"
+   }
+  }
+ ],
+ "reviewer": "Angelo"
+}

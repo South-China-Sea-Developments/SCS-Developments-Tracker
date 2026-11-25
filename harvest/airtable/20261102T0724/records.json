@@ -1,7 +1,61 @@
 {
  "run_id": "20261102T0724",
- "exported_on": "2026-11-24",
+ "exported_on": "2026-11-25",
  "records": [
+  {
+   "airtable_id": "recZdEOH2QGzoL2PO",
+   "archived_on": "2026-11-25",
+   "actors": "Vietnam MFA spokesperson Phạm Thu Hằng",
+   "lat": 16.45,
+   "suggestion_reasoning": "A dated spokesperson statement asserting Vietnamese sovereignty over the Paracels in response to Chinese construction is a verbal/diplomatic protest, hence declarative. The item appears only as a related-news teaser and the statement text itself is truncated, so the content is known only from the headline; the Chinese construction it responds to is undated in this document and is not extracted separately. [confidence: medium]",
+   "date_end": "2026-08-28",
+   "new_dyads": "VC",
+   "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:31:38.000Z",
+   "location_name": "Antelope Reef and Ba Ba Island (given as Duncan Island), Paracel Islands",
+   "run": [
+    "20261102T0724"
+   ],
+   "machine_note": "Source's wording for the place: “Đá Hải Sâm (Antelope Reef) and Đảo Ba Ba (Duncan Island), Paracel Islands”.",
+   "reviewer": "Angelo",
+   "sources": "Người Phát ngôn Bộ Ngoại giao Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các cuộc tấn công gần đây nhằm vào các cơ sở hạ tầng dân sự tại Vương quốc Ả-rập Xê-út - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud — Vietnam MFA (press)\nhttps://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-cuoc-tan-cong-gan-day-nham-vao-cac-co-so-ha-tang-dan-su-tai-vuong-quoc-a-rap-xe-ut-62782-10.html",
+   "pull_request": 31,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T22:03:10.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-0b4811f8e6",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "continuation of ev-cfb8519228",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with a statement on China's illegal reclamation and construction activities at Antelope Reef and Duncan Island in the Paracel Islands, which Vietnam describes as its own.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-08-28",
+   "presort": "continuation of ev-cfb8519228 (a candidate, provisional) — Same act/practice already in run VN-2021-2026 as ev-cfb8519228 (Pham Thu Hang's 28 August 2026 statement on Hai Sam and Ba Ba); a teaser copy of the same statement. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 111.58,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
   {
    "airtable_id": "recU8n8phRkhFHXs0",
    "archived_on": "2026-11-24",
@@ -62,6 +116,67 @@
    ]
   },
   {
+   "airtable_id": "recSsVnFqsAjSZDYL",
+   "archived_on": "2026-11-25",
+   "actors": "Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng",
+   "possible_duplicate_of": "ev-0b4811f8e6",
+   "lat": 16.45,
+   "suggestion_reasoning": "A dated MFA spokesperson statement characterising Chinese construction in the Paracels as illegal and the features as Vietnamese is a verbal assertion of claim, hence declarative. The item appears only as a related-news teaser: the body of the statement is cut off, so the exact wording of the protest is not in the document, and the underlying Chinese construction is undated here and not extracted separately. [confidence: medium]",
+   "date_end": "2026-08-28",
+   "new_dyads": "VC",
+   "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:31:38.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Antelope Reef and Ba Ba Island, Paracel Islands",
+   "run": [
+    "20261102T0724"
+   ],
+   "machine_note": "Possible duplicate of ev-0b4811f8e6. Source's wording for the place: “Đá Hải Sâm and Đảo Ba Ba, Hoàng Sa (Paracel) Islands”.",
+   "reviewer": "Angelo",
+   "sources": "Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng , trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng đối với Báo cáo năm 2026 về tình hình mua bán người trên thế giới của Bộ Ngoại giao Hoa Kỳ công bố ngày 09/10/2026 - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud — Vietnam MFA (press)\nhttps://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-doi-voi-bao-cao-nam-2026-ve-tinh-hinh-mua-ban-nguoi-tren-the-gioi-cua-bo-ngoai-giao-hoa-ky-cong-bo-ngay-09102026-62822-10.html",
+   "pull_request": 31,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T22:02:53.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7dc3b8cb21",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "continuation of ev-cfb8519228",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "duplicate_of": "ev-0b4811f8e6",
+   "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a press question on China's \"illegal\" reclamation and construction at Hải Sâm Reef and Ba Ba Island, which the ministry described as part of Vietnam's Hoàng Sa (Paracel) archipelago.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-08-28",
+   "presort": "continuation of ev-cfb8519228 (a candidate, provisional) — Same act/practice already in run VN-2021-2026 as ev-cfb8519228 (28 August 2026 statement on Hai Sam and Ba Ba); a truncated teaser copy. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 111.58,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recKZBzNhQ1C7aHDR",
    "archived_on": "2026-11-24",
    "actors": "President Ferdinand R. Marcos Jr.; Prime Minister Takaichi Sanae",
@@ -106,6 +221,67 @@
     "diplomatic"
    ],
    "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recXDXuO6p8qvm6Fx",
+   "archived_on": "2026-11-25",
+   "actors": "Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng",
+   "possible_duplicate_of": "ev-0b4811f8e6",
+   "lat": 16.45,
+   "suggestion_reasoning": "A dated official statement and diplomatic representation by Vietnam asserting its Paracels claim against Chinese construction; a verbal protest with no coercive element, hence declarative. [confidence: high]",
+   "date_end": "2026-08-28",
+   "new_dyads": "VC",
+   "excerpt": "Việt Nam kiên quyết phản đối, đã giao thiệp nghiêm túc và khẳng định lập trường về vấn đề này, yêu cầu chấm dứt ngay và không tái diễn các hoạt động tương tự",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:31:38.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Antelope Reef and Ba Ba Island, Paracel Islands",
+   "run": [
+    "20261102T0724"
+   ],
+   "machine_note": "Possible duplicate of ev-0b4811f8e6. Source's wording for the place: “đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Paracel Islands)”.",
+   "reviewer": "Angelo",
+   "sources": "Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam - Cổng thông tin Bộ Ngoại Giaosound-loudsound-lou — Vietnam MFA (press)\nhttps://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-viet-nam-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-phan-ung-cua-viet-nam-truoc-cac-hoat-dong-ton-tao-xay-dung-trai-phep-cua-trung-quoc-tai-da-hai-sam-va-dao-ba-ba-thuoc-quan-dao-hoang-sa-cua-viet-nam-61820-10.html",
+   "pull_request": 31,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T22:03:02.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9fa40707b3",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "continuation of ev-cfb8519228",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "duplicate_of": "ev-0b4811f8e6",
+   "summary": "On 28 August 2026 Vietnam's Ministry of Foreign Affairs spokesperson Phạm Thu Hằng, answering a reporter's question, reasserted Vietnam's sovereignty over the Paracels including Hải Sâm reef and Ba Ba island, declared China's reclamation and construction there illegal and void, and said Vietnam resolutely opposed it, had lodged serious representations and demanded an immediate end and no repetition.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-08-28",
+   "presort": "continuation of ev-cfb8519228 (a candidate, provisional) — Same act/practice already in run VN-2021-2026 as ev-cfb8519228: the same 28 August 2026 spokesperson statement and representation on Chinese reclamation at Hai Sam and Ba Ba. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 111.58,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "VN",
    "new_domains": [
     "diplomatic"
    ]
@@ -169,6 +345,67 @@
    "new_domains": [
     "domestic",
     "physical"
+   ]
+  },
+  {
+   "airtable_id": "rechLF1KpUwG8pH0E",
+   "archived_on": "2026-11-25",
+   "actors": "Vietnam Ministry of Foreign Affairs spokesperson Phạm Thu Hằng",
+   "possible_duplicate_of": "ev-0b4811f8e6",
+   "lat": 16.45,
+   "suggestion_reasoning": "A dated MFA spokesperson statement characterising Chinese construction in the Paracels as illegal and asserting Vietnamese sovereignty is a declarative verbal assertion. However, this appears only as a related-article headline in the sidebar of a document about an unrelated EU tax matter, and the body of the statement is truncated, so the coder should verify against the full source. [confidence: medium]",
+   "date_end": "2026-08-28",
+   "new_dyads": "VC",
+   "excerpt": "Ngày 28/8/2026, trả lời câu hỏi của phóng viên đề nghị cho biết phản ứng của Việt Nam trước các hoạt động tôn tạo, xây dựng trái phép của Trung Quốc tại đá Hải Sâm và đảo Ba Ba thuộc quần đảo Hoàng Sa của Việt Nam, Người Phát ngôn Bộ Ngoại giao Việt Nam Phạm Thu Hằng nhấn mạnh:",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:31:38.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Antelope Reef and Ba Ba Island (given as Duncan Island), Paracel Islands",
+   "run": [
+    "20261102T0724"
+   ],
+   "machine_note": "Possible duplicate of ev-0b4811f8e6. Source's wording for the place: “đá Hải Sâm và đảo Ba Ba, quần đảo Hoàng Sa (Antelope Reef and Duncan Island, Paracels)”.",
+   "reviewer": "Angelo",
+   "sources": "Người Phát ngôn Bộ Ngoại giao Phạm Thu Hằng trả lời câu hỏi của phóng viên đề nghị cho biết bình luận của Việt Nam trước việc Liên minh châu Âu (EU) vừa quyết định đưa Việt Nam ra khỏi danh sách các quốc gia không hợp tác về thuế - Cổng thông tin Bộ Ngoại Giaosound-loudsound-loud — Vietnam MFA (press)\nhttps://mofa.gov.vn/tin-chi-tiet/chi-tiet/nguoi-phat-ngon-bo-ngoai-giao-pham-thu-hang-tra-loi-cau-hoi-cua-phong-vien-de-nghi-cho-biet-binh-luan-cua-viet-nam-truoc-viec-lien-minh-chau-au-eu-vua-quyet-dinh-dua-viet-nam-ra-khoi-danh-sach-cac-quoc-gia-khong-hop-tac-ve-thue-62731-10.html",
+   "pull_request": 31,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T22:03:18.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-f4e795ed57",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "continuation of ev-cfb8519228",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "duplicate_of": "ev-0b4811f8e6",
+   "summary": "On 28 August 2026 Vietnam's MFA spokesperson Phạm Thu Hằng responded to a reporter's question with Vietnam's reaction to China's 'illegal' reclamation and construction activities at Hải Sâm reef and Ba Ba island, which Vietnam described as part of its Hoàng Sa (Paracel) archipelago.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-08-28",
+   "presort": "continuation of ev-cfb8519228 (a candidate, provisional) — Same act/practice already in run VN-2021-2026 as ev-cfb8519228 (28 August 2026 statement on Hai Sam and Ba Ba); a sidebar teaser copy. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 111.58,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "diplomatic"
    ]
   }
  ]

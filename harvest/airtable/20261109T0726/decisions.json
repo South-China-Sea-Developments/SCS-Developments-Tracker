@@ -1,9 +1,19 @@
 {
  "decisions": [
   {
-   "event_id": "ev-093344fd02",
+   "event_id": "ev-0de72d09cf",
    "action": "reject",
-   "note": "Continuation of ev-c40458e043"
+   "note": "continuation of ev-62168e8294"
+  },
+  {
+   "event_id": "ev-c4d9537fea",
+   "action": "reject",
+   "note": "continuation of ev-2777b78ee9"
+  },
+  {
+   "event_id": "ev-ce3166efbd",
+   "action": "reject",
+   "note": "continuation of ev-58c6e500d3"
   }
  ],
  "reviewer": "Angelo"
