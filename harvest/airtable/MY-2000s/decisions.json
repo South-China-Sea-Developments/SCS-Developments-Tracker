@@ -1,0 +1,33 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-1b46d2adfd",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC",
+     "MP",
+     "MB"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "energy"
+    ],
+    "subregions": [
+     "8",
+     "9"
+    ],
+    "description": ""
+   }
+  }
+ ],
+ "reviewer": "Angelo"
+}
