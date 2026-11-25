@@ -1,0 +1,34 @@
+{
+ "run_id": "BN-1970-2026",
+ "table": "Candidates",
+ "record_ids": [
+  "recvC5o1l6KCrGncZ",
+  "recdmXD0R4UEtMmMh",
+  "recyp4MNLS1NW1SUK",
+  "recZPe1dG5XoSkf9e",
+  "recJqopnyMFuHCspX",
+  "recUQD0H64Y1QHnAa",
+  "recV7INkFtneniojh",
+  "recm3Nglyyh7iUFf6",
+  "recJirSCDEepLuZRI",
+  "recy7T9VDrzYbsIio",
+  "recjbkSVML6wqgioT",
+  "recgpeKud1dZIe7iP",
+  "rec1YJldIQuLpYLzw"
+ ],
+ "event_ids": [
+  "ev-118a6c3d04",
+  "ev-121d192829",
+  "ev-14497bc041",
+  "ev-224a2cedcb",
+  "ev-42c20f440e",
+  "ev-8f767ab50d",
+  "ev-9b8338ca90",
+  "ev-a67ece7aea",
+  "ev-bd9ef2878f",
+  "ev-c22fd16dee",
+  "ev-cef7d9f601",
+  "ev-e8c5e96507",
+  "ev-ff8bbc9c8f"
+ ]
+}
