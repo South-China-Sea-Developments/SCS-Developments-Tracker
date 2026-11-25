@@ -690,6 +690,7 @@ def test_a_sitting_folds_in_a_review_branch_and_applies_on_one_branch(tmp_path, 
     g = lambda cwd, *a: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True, env=env).stdout.strip()
     origin = tmp_path / "origin"
     subprocess.run(["git", "clone", "-q", str(ROOT), str(origin)], check=True, env=env)
+    g(origin, "checkout", "-q", "-B", "main")          # CI checks out a detached merge commit: name it main
     shutil.rmtree(origin / "pipeline")
     shutil.copytree(ROOT / "pipeline", origin / "pipeline", ignore=shutil.ignore_patterns("__pycache__"))
     g(origin, "add", "pipeline")
