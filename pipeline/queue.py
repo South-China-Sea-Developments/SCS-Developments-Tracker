@@ -479,7 +479,10 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         eid = e["event_id"]
         target = str(d.get("move_id") or "").strip()
         if d.get("move_of_event"):
+            lead = by_id.get(d["move_of_event"])
             target = move_of_event.get(d["move_of_event"], "")
+            if not target and lead and lead["status"] == "accepted" and lead["move_id"]:
+                target = lead["move_id"]          # the lead formed its move in an earlier sitting
             if not target:
                 raise ValueError(f"{eid}: {d['move_of_event']} does not form a new move in this batch")
         if target not in all_moves:
