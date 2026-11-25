@@ -1,0 +1,223 @@
+{
+ "run_id": "ID-2000s",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-59b17deec7",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Detention of Vietnamese (with Thai, Cambodian, Myanmar) fishermen in the Natuna Sea/Karimata waters has nothing comparable in 2000 (no candidates) or in 1999, whose record (prev-run candidate ev-4d5b0cdec2) shows only the Natuna Regency law; the practice last seen in 1991 (ev-11f379bf83) is new again. Provisional on 2000 being genuinely empty, and most of those held were non-claimant crews."
+  },
+  {
+   "event_id": "ev-fddacb9915",
+   "disposition": "continuation",
+   "of": "ev-59b17deec7",
+   "criterion": null,
+   "group": null,
+   "reason": "Mass seizures of Thai and Vietnamese boats in Pejantan/Karimata/Natuna waters, incl. a third Operasi Karimata, continue at the same level the 2001 practice of ev-59b17deec7 (two mass seizures that year too); provisional until 2001 is decided."
+  },
+  {
+   "event_id": "ev-dcfa42a2fc",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "PP 38/2002 restates the archipelagic base points and folds in the 1998 Natuna-only regulation (ev-c7a0d24a85), a law in force throughout 2001; nothing comparable in the 2001 record, but a restatement is maintenance. Settled by whether the 2002 Natuna base points differ from (extend) those of PP 61/1998."
+  },
+  {
+   "event_id": "ev-11ee0efd6f",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "A fleet commander's threat to fire on foreign violators would be a new method against the 2002 seizures (ev-fddacb9915), but it was prompted by sinking Thai boats in the Gelasa Strait, outside the South China Sea dispute, and names no claimant; likely reject unless a source ties the warning to the Natuna waters or rival claimants' vessels."
+  },
+  {
+   "event_id": "ev-7d76d254ae",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A 4,000-strong fleet exercise with naval combat drills in the Natuna Sea has nothing comparable in the 2003 record (only the threat ev-11ee0efd6f); the last such Natuna exercise found was 1996 (ev-80d2f0ea55), so it is new again. A coder may know Armada Jaya as a recurring exercise and check whether 2003's was also held in the Natuna Sea."
+  },
+  {
+   "event_id": "ev-cdd40a3eca",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Permanent court confiscation and redistribution of 16 seized Thai and Vietnamese boats to local fishermen is a change of method (punishment beyond detention) with nothing comparable in 2003 and harsher than the 2002 seizures ev-fddacb9915; low confidence since the number of Vietnamese boats and the place of seizure are not given."
+  },
+  {
+   "event_id": "ev-fa327c4f28",
+   "disposition": "continuation",
+   "of": "ev-cdd40a3eca",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizure of three Vietnamese boats in Natuna waters continues the seizure-and-confiscation practice the 2004 record shows (ev-cdd40a3eca), with no change of method or area; provisional until 2004 is decided."
+  },
+  {
+   "event_id": "ev-1fd25090cc",
+   "disposition": "continuation",
+   "of": "ev-cdd40a3eca",
+   "criterion": null,
+   "group": null,
+   "reason": "The 2005-2006 arrests of Vietnamese crews in Natuna/Pontianak/Pemangkat waters continue the 2004 practice of ev-cdd40a3eca; no count is given, and by the DKP's own account any rise reflects Vietnamese boats newly arriving from 2006 (Chubb's counterfactual), not a change of method."
+  },
+  {
+   "event_id": "ev-463d6a1ab1",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing a Vietnamese cargo ship smuggling sugar is customs/anti-smuggling enforcement, not an assertion of the claim; likely reject, unless the seizure point was in the disputed EEZ rather than Indonesia's archipelagic or territorial waters."
+  },
+  {
+   "event_id": "ev-dbad155a5b",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A presidential visit to the Natuna Islands stressing that outer islands must be safeguarded has nothing comparable in the 2005 record (only fisheries seizures ev-fa327c4f28, ev-1fd25090cc); low confidence, as the visit was a stopover en route to APEC in Hanoi and names no rival."
+  },
+  {
+   "event_id": "ev-ce262c6747",
+   "disposition": "continuation",
+   "of": "ev-1fd25090cc",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizure of four Vietnamese boats and 125 crew off Tarempa continues the 2006 practice in ev-1fd25090cc (2005-2006 arrests); the DKP says Vietnamese boats are newcomers since 2006, so more seizures reflect more boats, not a change of method (Chubb's counterfactual). Provisional."
+  },
+  {
+   "event_id": "ev-869335de93",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Designating the Natuna Sea a priority area for a large-scale anti-illegal-fishing campaign with the Navy is a declarative assertion of jurisdiction with nothing comparable in 2006 (the visit ev-dbad155a5b is a different act); low confidence, as a coder may treat it as routine policy announcement."
+  },
+  {
+   "event_id": "ev-e15b562893",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2008-new-flags",
+   "reason": "Seizure of 17 Vietnamese, Chinese and Taiwanese boats in the Natuna EEZ, with diplomatic notes to all three, extends enforcement to Chinese and Taiwanese vessels, against 2007's Vietnamese-only seizures (ev-ce262c6747). Check Chubb's counterfactual: if Chinese boats simply appeared for the first time, it is a continuation."
+  },
+  {
+   "event_id": "ev-79ad7dc38f",
+   "disposition": "same_move",
+   "of": "ev-e15b562893",
+   "criterion": null,
+   "group": "ID2008-new-flags",
+   "reason": "Seizure of two Malaysian pair trawlers in Natuna waters on 22 April 2008 is part of the same extension of fisheries enforcement to other claimants' vessels as ev-e15b562893 (same month, same DKP patrols); 2007 shows only Vietnamese seizures."
+  },
+  {
+   "event_id": "ev-a364a20719",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "The DKP's public threat to shoot fleeing poachers and sink their boats as 'a show of force' is a new method (a threat of punishment) against 2007's seizures (ev-ce262c6747) and announcement (ev-869335de93); it is national in scope, with the Natuna Sea as the example."
+  },
+  {
+   "event_id": "ev-7887a06047",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "The first TNI joint exercise in 12 years, rehearsing the recapture of Natuna by amphibious landing and paratroops, has nothing comparable in 2007; the 2004 Armada Jaya exercise (ev-7d76d254ae) was absent in 2007, so this is new again."
+  },
+  {
+   "event_id": "ev-c30e71a054",
+   "disposition": "continuation",
+   "of": "ev-ce262c6747",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizure of four Vietnamese (and five Thai) boats in the Natuna EEZ continues at the same level the 2007 Vietnamese-boat seizures of ev-ce262c6747; provisional."
+  },
+  {
+   "event_id": "ev-595186f568",
+   "disposition": "continuation",
+   "of": "ev-ce262c6747",
+   "criterion": null,
+   "group": null,
+   "reason": "A warship's seizure of three Vietnamese trawlers held at Ranai continues the 2007 practice of ev-ce262c6747 (seizure of Vietnamese boats in Natuna/Anambas waters); provisional."
+  },
+  {
+   "event_id": "ev-e5f5cfa5e2",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Law 43/2008 on State Territory, defining Indonesia's waters and jurisdiction zones and allowing unilateral limits where no neighbour borders them, is a new legislative assertion with nothing comparable in 2007; low confidence, as it is a national framework law that does not single out the South China Sea."
+  },
+  {
+   "event_id": "ev-d7d1ea6d0a",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Declaring the ExxonMobil D-Alpha contract lapsed and assigning the block to Pertamina is a domestic contract decision with a US company; nothing comparable in 2008. Settled by whether the decision was presented as asserting control over the block against China's claim (Kalla's 9 February 'no country can intervene' remark points that way)."
+  },
+  {
+   "event_id": "ev-868363285a",
+   "disposition": "continuation",
+   "of": "ev-e15b562893",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizure of a Taiwanese longliner off Ranai continues the 2008 seizures of Taiwanese boats in ev-e15b562893 at the same level; provisional."
+  },
+  {
+   "event_id": "ev-da4d8bf65e",
+   "disposition": "continuation",
+   "of": "ev-c30e71a054",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizure of a Vietnamese purse seiner in the Indonesian EEZ continues the 2008 seizures of Vietnamese boats (ev-c30e71a054); provisional."
+  },
+  {
+   "event_id": "ev-76df87e6ee",
+   "disposition": "continuation",
+   "of": "ev-e15b562893",
+   "criterion": null,
+   "group": null,
+   "reason": "Chinese boats were already among those seized in 2008 (ev-e15b562893), so seizing eight Chinese trawlers is the same practice; the coder should check whether 5 N 110 E is further out than the 2008 seizures (a scope move) and whether eight is more than 2008's Chinese share."
+  },
+  {
+   "event_id": "ev-8356b4f7df",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": "ID2009-reject-CN-protest",
+   "reason": "Publicly rejecting China's protest that the seizure area was open sea, and insisting on prosecution, is a new verbal assertion against China's claim; the 2008 record shows only diplomatic notes asking for detainee verification (ev-e15b562893)."
+  },
+  {
+   "event_id": "ev-2d42351825",
+   "disposition": "same_move",
+   "of": "ev-8356b4f7df",
+   "criterion": null,
+   "group": "ID2009-reject-CN-protest",
+   "reason": "The ambassador's refusal in Beijing of China's demand to release the 77 fishermen is the same rejection of China's protest over the June seizure as ev-8356b4f7df."
+  },
+  {
+   "event_id": "ev-c717a29256",
+   "disposition": "new_move",
+   "of": null,
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Depositing the archipelagic baseline coordinates, including the Natuna base points, with the UN is a submission to an international authority, with nothing comparable in 2008 (Law 43, ev-e5f5cfa5e2, is domestic); low confidence, as it is a routine UNCLOS art. 47(9) obligation."
+  },
+  {
+   "event_id": "ev-574d7e8a33",
+   "disposition": "continuation",
+   "of": "ev-c30e71a054",
+   "criterion": null,
+   "group": null,
+   "reason": "Detaining Vietnamese black-coral divers off Tambelan continues the 2008 practice of detaining Vietnamese crews (ev-c30e71a054), by a local joint team rather than the Navy or DKP; provisional, and marginal as a state act and as a South China Sea location."
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "run_id": "ID-2021-2026",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-17",
+ "items": [
+  {
+   "event_id": "ev-4610eaed84",
+   "disposition": "continuation",
+   "of": "ev-57d6723d07",
+   "criterion": "",
+   "group": "",
+   "reason": "The year's seizures of Vietnamese and other boats in the North Natuna Sea continue the 2020 arrests (ev-57d6723d07, prev-run candidate) at the same level; a higher count tracks more intrusions. Provisional until 2020 is decided."
+  },
+  {
+   "event_id": "ev-42478fa105",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2021-tuna-standoff",
+   "reason": "State-licensed appraisal drilling in the Tuna block inside the nine-dash line, kept going against China's demands, is a new method against 2020, whose record (prev-run candidates) has no hydrocarbon activity in the contested area."
+  },
+  {
+   "event_id": "ev-d58dd0d126",
+   "disposition": "same_move",
+   "of": "ev-42478fa105",
+   "criterion": "",
+   "group": "2021-tuna-standoff",
+   "reason": "The diplomatic reply refusing China's demand to halt drilling is the declarative side of the Tuna block drilling (ev-42478fa105)."
+  },
+  {
+   "event_id": "ev-b7895e69d6",
+   "disposition": "same_move",
+   "of": "ev-42478fa105",
+   "criterion": "",
+   "group": "2021-tuna-standoff",
+   "reason": "Four months of Bakamla and Navy ships guarding the rig and pursuing CCG ships protect the Tuna drilling (ev-42478fa105); same move, which this makes coercive. If split off, it is a frequency step on 2020's three-day shadowing of CCG 5204 (ev-63d7872263, prev-run candidate)."
+  },
+  {
+   "event_id": "ev-22b4b17494",
+   "disposition": "same_move",
+   "of": "ev-42478fa105",
+   "criterion": "",
+   "group": "2021-tuna-standoff",
+   "reason": "Shadowing Haiyang Dizhi 10 while it surveyed the shelf near the Tuna block is part of the same 2021 Tuna standoff (ev-42478fa105)."
+  },
+  {
+   "event_id": "ev-9c9a8bcede",
+   "disposition": "continuation",
+   "of": "ev-39f2da0c71",
+   "criterion": "",
+   "group": "",
+   "reason": "Keeping at least three warships in the North Natuna Sea under Operation Siaga Segara continues the 2020 naval presence there (ev-39f2da0c71, prev-run candidate, eight warships in January) at no higher level; the trigger partly involved US ships."
+  },
+  {
+   "event_id": "ev-dceab18de2",
+   "disposition": "continuation",
+   "of": "ev-9a0f9944d1",
+   "criterion": "",
+   "group": "",
+   "reason": "A ministerial tour of the Natunas aboard a warship continues the 2020 senior visits to Natuna (ev-9a0f9944d1, the President's) at a lower level; nothing new in method."
+  },
+  {
+   "event_id": "ev-ed50c6b9db",
+   "disposition": "continuation",
+   "of": "ev-4610eaed84",
+   "criterion": "",
+   "group": "",
+   "reason": "The 2022 seizures of Vietnamese boats continue the 2021 practice (ev-4610eaed84), at a lower rate; a coder may add a diminished note."
+  },
+  {
+   "event_id": "ev-2c8286f52c",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "",
+   "reason": "A presidential spatial-planning regulation zoning defence areas and fishing grounds out to the 200-mile EEZ is a new legal-administrative method against 2021, which has no regulation or administrative act over the waters (nothing comparable among the 2021 candidates)."
+  },
+  {
+   "event_id": "ev-8a99f7b256",
+   "disposition": "continuation",
+   "of": "ev-9c9a8bcede",
+   "criterion": "",
+   "group": "",
+   "reason": "Sending a corvette and a patrol aircraft to the North Natuna Sea continues the 2021 standing naval patrols there (ev-9c9a8bcede) at a lower level; the trigger was a Chinese-Australian incident."
+  },
+  {
+   "event_id": "ev-23d91fb5b9",
+   "disposition": "continuation",
+   "of": "ev-ed50c6b9db",
+   "criterion": "",
+   "group": "",
+   "reason": "The 2023 seizures of Vietnamese boats continue the 2022 practice (ev-ed50c6b9db) at about the same level."
+  },
+  {
+   "event_id": "ev-e75b9338a8",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "",
+   "reason": "Approving the first development plan for the Tuna gas field, with the Navy to secure it as an 'affirmation of sovereignty', is a new step against 2022, which has no energy activity in the contested area (nothing comparable among the 2022 candidates); the 2021 drilling (ev-42478fa105) was appraisal, and its absence in 2022 makes resource development new again."
+  },
+  {
+   "event_id": "ev-6a6c38585b",
+   "disposition": "continuation",
+   "of": "ev-8a99f7b256",
+   "criterion": "",
+   "group": "",
+   "reason": "Deploying a warship, aircraft and a drone to monitor CCG 5901 continues 2022's warship-and-aircraft deployment to the North Natuna Sea (ev-8a99f7b256) by the same method. Least sure: monitoring a CCG ship near Tuna was absent in 2022, so a coder may treat it as new again against 2021's escort of the rig (ev-b7895e69d6)."
+  },
+  {
+   "event_id": "ev-89a7c2dcf9",
+   "disposition": "unclear",
+   "of": "",
+   "criterion": "",
+   "group": "",
+   "reason": "Saying any line and claim 'must be in accordance with UNCLOS' does not name or reject China's map or assert Indonesia's own rights, close to a call to comply with international law — likely reject; a formal protest note or an explicit rejection of the 2023 map would settle it."
+  },
+  {
+   "event_id": "ev-1873f7e15f",
+   "disposition": "continuation",
+   "of": "ev-23d91fb5b9",
+   "criterion": "",
+   "group": "",
+   "reason": "The 2024 seizures of Vietnamese boats continue the 2023 practice (ev-23d91fb5b9) at a lower count. Warning shots on 4 May are not on the 2023 record; if 2023's seizures used none, a coder may call the method new again."
+  },
+  {
+   "event_id": "ev-efae97a1aa",
+   "disposition": "continuation",
+   "of": "ev-23d91fb5b9",
+   "criterion": "",
+   "group": "",
+   "reason": "Completing a seizure despite a Vietnamese coast guard vessel's request continues the 2023 seizure practice (ev-23d91fb5b9); the encounter is Vietnam's act, and Indonesia's method did not change."
+  },
+  {
+   "event_id": "ev-172c2ceb83",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2024-d-alpha-standoff",
+   "reason": "Driving CCG 5402 out of the North Natuna Sea three times in five days and publicising each expulsion is a change of method against 2023, when Indonesia only monitored CCG 5901 near the Tuna block (ev-6a6c38585b)."
+  },
+  {
+   "event_id": "ev-635f4bebfd",
+   "disposition": "same_move",
+   "of": "ev-172c2ceb83",
+   "criterion": "",
+   "group": "2024-d-alpha-standoff",
+   "reason": "Pertamina's Arwana seismic survey of the D-Alpha field is the activity the expulsions protected (ev-172c2ceb83); one linked move. On its own it would be a scope step on 2023's Tuna development (ev-e75b9338a8), to a new block northeast of Natuna."
+  },
+  {
+   "event_id": "ev-59bb4f8410",
+   "disposition": "continuation",
+   "of": "ev-89a7c2dcf9",
+   "criterion": "",
+   "group": "",
+   "reason": "The statement that the joint statement does not recognise the nine-dash line restates Indonesia's standing non-recognition, voiced in 2023 (ev-89a7c2dcf9); one more reaffirmation is continuation, and it qualifies a cooperative act."
+  },
+  {
+   "event_id": "ev-a9b24bbd02",
+   "disposition": "continuation",
+   "of": "ev-89a7c2dcf9",
+   "criterion": "",
+   "group": "",
+   "reason": "Sugiono's statement to the DPR repeats the same non-recognition line as ev-59bb4f8410; continuation of the reaffirmations on the 2023 record (ev-89a7c2dcf9)."
+  },
+  {
+   "event_id": "ev-3d0fe78efa",
+   "disposition": "continuation",
+   "of": "ev-1873f7e15f",
+   "criterion": "",
+   "group": "",
+   "reason": "Five Vietnamese boats seized in 2025 against three in 2024 (ev-1873f7e15f) is more of the same arrests as more boats came; the counterfactual makes it continuation."
+  },
+  {
+   "event_id": "ev-8af5e8fd2b",
+   "disposition": "continuation",
+   "of": "ev-635f4bebfd",
+   "criterion": "",
+   "group": "",
+   "reason": "Pertamina's seismic survey of the East Natuna block continues its 2024 seismic work on the D-Alpha field in the same area (ev-635f4bebfd), same method and area."
+  },
+  {
+   "event_id": "ev-102ca54fa3",
+   "disposition": "continuation",
+   "of": "ev-a9b24bbd02",
+   "criterion": "",
+   "group": "",
+   "reason": "The Speaker's call to treat foreign fishing as a sovereignty violation repeats the 2024 parliamentary-level sovereignty statements (ev-a9b24bbd02); no new form or wider claim."
+  },
+  {
+   "event_id": "ev-7d18b123c8",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": "2025-natuna-garrison",
+   "reason": "Announcing a Type A air base and a permanent Marine force in Natuna is a new garrison build-up against 2024, which has no military infrastructure or garrison act (nothing comparable among the 2024 candidates)."
+  },
+  {
+   "event_id": "ev-13e0bc2dae",
+   "disposition": "same_move",
+   "of": "ev-7d18b123c8",
+   "criterion": "",
+   "group": "2025-natuna-garrison",
+   "reason": "Live-fire with Starstreak and Astros under the new Kodam XIX is the same 2025 strengthening of the Natuna garrison as ev-7d18b123c8. Least sure: it may be routine unit training, and 2024 has no exercise to compare it with."
+  },
+  {
+   "event_id": "ev-7b87238a9f",
+   "disposition": "continuation",
+   "of": "ev-8af5e8fd2b",
+   "criterion": "",
+   "group": "",
+   "reason": "Licensing the Arwana III block continues the 2025 resource development inside the nine-dash line (ev-8af5e8fd2b, East Natuna seismic and rig contracting) by the same administrative means."
+  },
+  {
+   "event_id": "ev-fc5872ffac",
+   "disposition": "continuation",
+   "of": "ev-8af5e8fd2b",
+   "criterion": "",
+   "group": "",
+   "reason": "Resumed Tuna development under a new foreign partner continues state-licensed gas development in the contested shelf (ev-8af5e8fd2b); no new Indonesian government act is reported."
+  },
+  {
+   "event_id": "ev-dd0e7657bd",
+   "disposition": "unclear",
+   "of": "",
+   "criterion": "",
+   "group": "",
+   "reason": "An order to one warship to step up sector patrols, finding no foreign vessels, looks like routine North Natuna patrolling; the 2025 record has no patrol candidate to compare it with. The Fleet Command I patrol pattern for 2025 would settle whether this is continuation."
+  },
+  {
+   "event_id": "ev-7cfc76ed97",
+   "disposition": "unclear",
+   "of": "",
+   "criterion": "",
+   "group": "",
+   "reason": "Building ten patrol vessels and expanding the Batam pier is an announced capacity plan, not yet an act in the area; 2025 has the military garrison build-up (ev-7d18b123c8) but nothing on fisheries enforcement capacity. Their deployment to the North Natuna Sea would settle it."
+  },
+  {
+   "event_id": "ev-515aa42946",
+   "disposition": "continuation",
+   "of": "ev-8af5e8fd2b",
+   "criterion": "",
+   "group": "",
+   "reason": "Awarding the D-Alpha exploration contract continues the 2025 resource development of the same East Natuna area (ev-8af5e8fd2b) by administrative means; who received it does not change the method."
+  }
+ ]
+}

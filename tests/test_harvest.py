@@ -12,7 +12,7 @@ import pytest
 from pipeline import harvest, schema
 from pipeline.extract import Extractor, RecordedClient, find_duplicate, parse_events_json
 from pipeline.validate import validate
-from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT
+from tests.conftest import DATA_DIR, RAW_MAVD, RAW_XLSX, ROOT, chubb_data
 
 FIX = ROOT / "tests/fixtures/harvest"
 REQUIRED_SOURCES = {"amti", "scspi", "ph_pcg", "ph_dfa", "ph_bfar", "cn_mfa_press", "cn_ccg", "vn_mfa", "my_mmea", "id_kemlu",
@@ -197,8 +197,9 @@ def test_fetch_reports_http_errors_without_raising(local_site, tmp_path):
 @pytest.fixture(scope="module")
 def fixture_run(tmp_path_factory):
     out = tmp_path_factory.mktemp("run")
+    base = chubb_data(tmp_path_factory.mktemp("base") / "data")   # the fixture's 2026 events are its own
     rc = harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(out),
-                       "--recordings", str(FIX / "recordings"), "--run-id", "fixture"])
+                       "--recordings", str(FIX / "recordings"), "--run-id", "fixture", "--data", str(base)])
     assert rc == 0
     return out
 
@@ -232,6 +233,10 @@ def test_candidates_fit_the_canonical_schema(fixture_run, tmp_path):
     for name, src in (("events", "candidates"), ("sources", "sources")):
         with open(fixture_run / f"{src}.csv", newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
+        key = schema.TABLES[name][0]           # as `queue open` does, skip ids the data already holds: a
+        with open(d / f"{name}.csv", newline="", encoding="utf-8") as f:   # weekly run can capture a fixture's document
+            have = {r[key] for r in csv.DictReader(f)}
+        rows = [r for r in rows if r[key] not in have]
         with open(d / f"{name}.csv", "a", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=schema.TABLES[name], lineterminator="\n")
             w.writerows(rows)

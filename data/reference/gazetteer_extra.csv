@@ -2,14 +2,14 @@ feature_id,name_en,name_zh,name_vi,name_fil,name_ms,aliases,lat,lon,subregion,ki
 reed-tablemount,Reed Bank,,,,,Reed Bank|Recto Bank|Liyue Tan|Liyue Bank|Bãi Cỏ Rong,,,,,,
 whitsum-reef,Whitsun Reef,,,,,Whitsun Reef|Niu'e Jiao|Julian Felipe Reef,,,,,,
 pag-asa-island,,,,,,Thitu Island|Thitu|Zhongye Dao|Pagasa Island|Pag-asa Island,,,,,,
-scarborough-shoal,,,,,,Huangyan Dao|Huangyan Island|Bajo de Masinloc|Panatag|Scarborough,,,,,,
+scarborough-shoal,,,,,,Huangyan Dao|Huangyan Island|Bajo de Masinloc|Panatag|Scarborough|Scaborough Shoal|Scarsborough Shoal|Scarbrough Shoal,,,,,,
 second-thomas-shoal,,,,,,Ren'ai Jiao|Renai Jiao|Ren'ai Reef|Ayungin Shoal,,,,,,
 sandy-cay,,,,,,Tiexian Jiao|Tiexian Reef,,,,,,
 mischief-reef,,,,,,Meiji Jiao|Meiji Reef|Panganiban Reef,,,,,,
 fiery-cross-reef,,,,,,Yongshu Jiao|Yongshu Reef|Kagitingan Reef,,,,,,
 subi-reef,,,,,,Zhubi Jiao|Zhubi Reef|Zamora Reef,,,,,,
-johnson-south-reef,,,,,,Chigua Jiao|Chigua Reef|Mabini Reef,,,,,,
-cuarteron-reef,,,,,,Huayang Jiao|Huayang Reef|Calderon Reef,,,,,,
+johnson-south-reef,,,,,,Chigua Jiao|Chigua Reef|Mabini Reef|South Johnson Reef,,,,,,
+cuarteron-reef,,,,,,Huayang Jiao|Huayang Reef|Calderon Reef|Cuarteron Reefs,,,,,,
 gaven-reefs,,,,,,Nanxun Jiao|Nanxun Reef|Burgos Reef|Gaven Reef,,,,,,
 hughes-reef,,,,,,Dongmen Jiao|Dongmen Reef|McKennan Reef,,,,,,
 woody-island-scs,Woody Island,,,,,Yongxing Dao|Yongxing Island|Phu Lam|Sansha,,,,,,
@@ -27,3 +27,65 @@ macclesfield-bank,,,,,,Zhongsha Qundao|Zhongsha Islands|Zhongsha,,,,,,
 paracel-islands,,,,,,Paracels|Xisha|Xisha Qundao|Hoang Sa|Hoàng Sa,,,,,,
 spratly-islands,,,,,,Spratlys|Nansha|Nansha Qundao|Truong Sa|Kalayaan,,,-,,,
 south-china-sea-islands,,,,,,,,,-,,,
+jackson-atoll,,,,,,Jakcson Atoll,,,,,,
+thitu-island-and-reefs,,,,,,Thitu Islands,,,,,,
+华夏暗沙,Cathay Shoal,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+波洑暗沙,Balfour Shoal,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+屏南暗沙,Payne Shoal,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+海鸠暗沙,Plover Shoal,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+nui-ngam-stewart,Stewart Seamount,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+果淀暗沙,Cawston Shoal,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+布德暗沙,Bassett Shoal,,,,,,,,,,,English name: GeoNames/Wikidata alias 2026-11-23
+康泰滩,Coronation Bank,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+中北暗沙,Oliver Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+中南暗沙,Dreyer Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+比微暗沙,Pygmy Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+隐矶滩,Egeria Bank,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+涛静暗沙,Tancred Shoal,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+乐西暗沙,Phillip's Shoal,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+指掌暗沙,Hand Shoal,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+武勇暗沙,Howard Shoal,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+石塘连礁,Hardy Patches,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+都护暗沙,North Viper Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+金吾暗沙,South West Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+奥南暗沙,Orleana Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+常骏暗沙,Johnson Patch,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+金盾暗沙,Kingston Shoal,,,,,,,,,,,English name: Wikipedia (zh) 2026-11-23
+ha-tan-rock,Lizzie Webber Reef,,,,,Ha Tan rock,,,,,,English name: Wikipedia (zh) 2026-11-23
+lidi-ansha,Lydie Shoal,,,,,Lidi Ansha,,,,,,"English name: Wikipedia (en), James Shoal 2026-11-23"
+loaita-nan,Loaita Southwest Reef,,,,,Loaita Nan,,,,,,English name: Wikidata alias 2026-11-23
+南沙洲,South Sand,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+dongxin-shazhou,New East Sand,,,,,Dongxin Shazhou,,,,,,English name: Wikipedia (en) 2026-11-23
+xixin-shazhou,New West Sand,,,,,Xixin Shazhou,,,,,,English name: Wikipedia (en) 2026-11-23
+kuangzai-shazhou,Little Basket,,,,,Kuangzai Shazhou,,,,,,English name: Wikipedia (en) 2026-11-23
+xianshe-yu,Salty Hut,,,,,Xianshe Yu,,,,,,English name: Wikipedia (en) 2026-11-23
+yinyuzai,Lesser Silver Islet,,,,,Yinyuzai,,,,,,English name: Wikipedia (en) 2026-11-23
+珊瑚东暗沙,East Shanhu Shoal,,,,,,,,,,,English name: Wikipedia (en) 2026-11-23
+qilian-yu,Seven Sisters,,,,,Qilian Yu,,,,,,English name: Wikipedia (en) 2026-11-23
+asdasier-bank,Ardasier Bank,,,,,Asdasier Bank,,,,,,English name: spelling 2026-11-23
+sanzhizai,Sanzhizai Islet,,,,,Sanzhizai,,,,,,English name: no English name found; local name with English generic 2026-11-23
+永南暗沙,Yongnan Shoal,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+普宁暗沙,Puning Shoal,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+碎浪暗沙,Suilang Shoal,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+玉诺礁,Yunuo Reef,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+a-nhan-gia,Nhan Gia Reef,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+a-sa-huynh,Sa Huynh Reef,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+a-tam-trung,Tam Trung Reef,,,,,,,,,,,English name: no English name found; local name with English generic 2026-11-23
+排波暗沙,,,,,,,,,,=parry-shoal,,"duplicate of parry-shoal (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+排洪滩,,,,,,,,,,=penguin-reef,,"duplicate of penguin-reef (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+控湃暗沙,,,,,,,,,,=combe-shoal,,"duplicate of combe-shoal (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+南扉暗沙,,,,,,,,,,=margesson-shoal,,"duplicate of margesson-shoal (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+安定连礁,,,,,,,,,,=addington-patch,,"duplicate of addington-patch (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+济猛暗沙,,,,,,,,,,=learmonth-shoal,,"duplicate of learmonth-shoal (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+美溪暗沙,,,,,,,,,,=smith-shoal,,"duplicate of smith-shoal (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+jinghong-dao,,,,,,,,,,=sin-cowe-island,,"duplicate of sin-cowe-island (same Chinese name, Wikipedia/GeoNames) 2026-11-23"
+da-bac-reefs,,,,,,,,,,=north-reef-6,,"duplicate of north-reef-6 (Đá Bắc, ""North Reef"", 2.6 km) 2026-11-23"
+pag-asa-island,Thitu Island,,,,,Pag-asa Island,,,,,,English name: Thitu Island (Pag-asa is the Filipino name) 2026-11-23
+ladd-reef,,,,,,,8.66583,111.67667,3,,,"position: Wikipedia, Ladd Reef (8°39′57″N 111°40′36″E) 2026-11-23; Wikidata had it ~95 km off"
+central-london-reef,Central London Reef,,,,,,,,,,,spacing 2026-11-23
+bombay-castle,Bombay Castle,,,,,Bombay Castle platform|Ba Kè|Đá Ba Kè,7.93333,111.71667,8,reef,,"Wikipedia, List of maritime features in the Spratly Islands (on Rifleman Bank) 2026-11-23"
+silangang-ligaw-reef,Ban Than Reef,,,,,Silangang Ligaw Reef,,,,,,English name: Ban Than Reef (Silangang Ligaw is the Filipino name) 2026-11-23
+collins-reef,Collins Reef,,,,,Collins reef,,,,,,capitalisation 2026-11-23
+pattle-island,,,,,,-Hoàng Sa|-Hoang Sa,,,,,,"""Hoang Sa"" alone means the Paracels in sources, not Pattle Island (đảo Hoàng Sa) 2026-11-23"
+natuna-islands,,,,,,-Laut Natuna Utara|-Natuna waters|-North Natuna Sea,,,,,,sea names are not the islands (the North Natuna Sea is the sea around them) 2026-11-23
+bombay-shoal,,,,,,Abad Santos Shoal,,,,,,"Philippine name, as in the PCG and Tribune reports of 18 Sep 2026; 2026-11-23"

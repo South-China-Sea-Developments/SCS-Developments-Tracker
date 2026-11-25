@@ -20,3 +20,21 @@ What a set's compiler could not compile is recorded in the single register `docs
 | `20261107-MY-1970s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 8 candidate events, MY 1970s |
 | `20261107-MY-1980s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 32 candidate events, MY 1980s |
 | `20261107-MY-1990s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 29 candidate events, MY 1990s |
+| `20261107-MY-2000s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 28 candidate events, MY 2000s |
+| `20261107-MY-2010-2015.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 31 candidate events, MY 2010–2015 |
+| `20261107-MY-2021-2026.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 43 candidate events, MY 2021–Oct 2026 |
+| `20261107-ID-1970s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 18 candidate events, ID 1970s |
+| `20261107-ID-1980s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 12 candidate events, ID 1980s |
+| `20261107-ID-1990s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 27 candidate events, ID 1990s |
+| `20261107-ID-2000s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 27 candidate events, ID 2000s |
+| `20261107-ID-2010-2015.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 55 candidate events, ID 2010–2015 |
+| `20261107-ID-2021-2026.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 30 candidate events, ID 2021–Oct 2026 |
+| `20261107-TW-1970s.json` | 2026-11-16 | a research agent for ticket 19, briefed by `BRIEF.md` | 22 candidate events, TW 1970s |
+| `20261107-TW-1980s.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 11 candidate events, TW 1980s |
+| `20261107-TW-1990s.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 32 candidate events, TW 1990s |
+| `20261107-TW-2000s.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 38 candidate events, TW 2000s |
+| `20261107-TW-2010-2015.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 41 candidate events, TW 2010–2015 |
+| `20261107-TW-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 57 candidate events, TW 2021–Oct 2026 |
+| `20261107-CN-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 118 candidate events, CN 2021–Oct 2026 |
+| `20261107-VN-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 103 candidate events, VN 2021–Oct 2026 |
+| `20261107-PH-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 119 candidate events, PH 2021–Oct 2026 |

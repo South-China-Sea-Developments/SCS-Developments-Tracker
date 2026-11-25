@@ -1,0 +1,10 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-4c891be1f5",
+   "action": "reject",
+   "note": "continuation of ev-0d01631843"
+  }
+ ],
+ "reviewer": "Angelo"
+}

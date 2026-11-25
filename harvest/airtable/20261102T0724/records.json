@@ -1,0 +1,175 @@
+{
+ "run_id": "20261102T0724",
+ "exported_on": "2026-11-24",
+ "records": [
+  {
+   "airtable_id": "recU8n8phRkhFHXs0",
+   "archived_on": "2026-11-24",
+   "actors": "Philippine Department of Foreign Affairs",
+   "lat": 15.18333,
+   "suggestion_reasoning": "A diplomatic protest is a declarative assertion. The document does not date the protest; September 2025 is inferred only from its proximity to the 10 September Chinese announcement, so the coder should verify the date. [confidence: low]",
+   "date_end": "2025-09-30",
+   "new_dyads": "PC",
+   "excerpt": "The Department of Foreign Affairs in Manila announced that a diplomatic protest would be lodged against what it termed an unlawful and illegitimate act violating the Philippines’ sovereign rights under international law.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:28:55.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Scarborough Shoal",
+   "run": [
+    "20261102T0724"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Scarborough Peace Park: The Road to Peace and Sustainability in the South China Sea — Asia Maritime Transparency Initiative (CSIS) 2025-11-21\nhttps://amti.csis.org/scarborough-peace-park-the-road-to-peace-and-sustainability-in-the-south-china-sea/",
+   "pull_request": 31,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "4 Central-East",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T16:27:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-19175b3b10",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "4 Central-East"
+   ],
+   "note": "continuation of ev-25a89360c0 ",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "The Philippine Department of Foreign Affairs announced it would lodge a diplomatic protest against China's establishment of a nature reserve at Scarborough Shoal, calling it a pretext to eventual occupation and urging Beijing to withdraw it.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2025-09-01",
+   "presort": "continuation of ev-25a89360c0 (a candidate, provisional) — Same act/practice already in run PH-2021-2026 as ev-25a89360c0 (the DFA's September 2025 protest against the Bajo de Masinloc nature reserve); this undated secondary report adds nothing. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 117.76667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recKZBzNhQ1C7aHDR",
+   "archived_on": "2026-11-24",
+   "actors": "President Ferdinand R. Marcos Jr.; Prime Minister Takaichi Sanae",
+   "suggestion_reasoning": "A joint declaration with a non-claimant reaffirming the 2016 arbitral award and opposing coercion is a verbal assertion of the Philippine position directed at China, hence declarative; but the document is an analytical piece about partnership upgrades and the SCS language is a secondary element, so this is a marginal candidate. [confidence: low]",
+   "date_end": "2026-05-29",
+   "new_dyads": "PC",
+   "excerpt": "It likewise expressed serious concern over developments in the East China Sea and the South China Sea and opposed unilateral attempts to change the status quo through force or coercion. Similarly, both the Philippines-Japan and Philippines-Vietnam declarations reaffirmed the importance of the 1982 United Nations Convention on the Law of the Sea and the 2016 South China Sea Arbitral Award.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:26:43.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "run": [
+    "20261102T0724"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Deepening Strategic Partnerships: The Philippines’ Relations with Japan and Vietnam — Asia Maritime Transparency Initiative (CSIS) 2026-08-06\nhttps://amti.csis.org/deepening-strategic-partnerships-the-philippines-relations-with-japan-and-vietnam/",
+   "pull_request": 31,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T16:55:44.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-8a10d31f4a",
+   "run_id": "20261102T0724",
+   "note": "continuation of ev-091fd39816",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "During President Marcos Jr.'s state visit to Japan, the Philippines and Japan issued a Comprehensive Strategic Partnership Declaration that expressed serious concern over developments in the South China Sea, opposed unilateral attempts to change the status quo through force or coercion, and reaffirmed the 2016 South China Sea Arbitral Award.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-05-26",
+   "presort": "continuation of ev-091fd39816 (a candidate, provisional) — Same act/practice already in run PH-2021-2026 as ev-091fd39816 (2026 joint statements with partner governments reaffirming the arbitral award), and reaffirming the award was already present in 2025 (ev-a035dadcbc); a joint declaration with Japan is no new method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec8aahXdqfxlkPik",
+   "archived_on": "2026-11-24",
+   "actors": "Philippine government",
+   "lat": 15.18333,
+   "suggestion_reasoning": "State support for national fishing activity at a disputed feature is a unilateral administrative assertion without confrontation, hence demonstrative. The document is a headline only: the date of the act is not stated and is inferred from the article's publication month, and no agency or vessel is named. [confidence: low]",
+   "date_end": "2026-10-31",
+   "new_dyads": "CP",
+   "excerpt": "Philippine Gov't Provides Fuel Aid to Fishermen at Bajo de Masinloc Amid Rising Costs",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:28:55.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Bajo de Masinloc",
+   "run": [
+    "20261102T0724"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Philippine Gov't Provides Fuel Aid to Fishermen at Bajo de Masinloc Amid Rising Costs - Daily Tribune — News search: Philippine Coast Guard / West Philippine Sea 2026-10-28\nhttps://news.google.com/rss/articles/CBMiqAFBVV95cUxQdVo0UEs4d1htV0J0UTRVYXlnLUJBam8zd2JLTGVqZEtLLVhfNDRRUVBvR1loX09uRnlIWUJsM1RIcnZ6ZGt0UU1kS3lwMmJZVWVjQVJDU1RHbHpmSUlmaUU3OTJPVFJEaDQ0cXpkTmFfZWQ2UGVDOTlzWmZiZ0xyZEluaTVTQWJoMS0wWV9Ld0ozeE9iXzBkZ29iTUlob2YtV055Q1U3aFk?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 31,
+   "new_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "4 Central-East",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T17:18:37.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-ca2baf0411",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "4 Central-East"
+   ],
+   "note": "continuation of ev-521fa9ae15",
+   "suggested_dyads": [
+    "CP"
+   ],
+   "summary": "The Philippine government provided fuel aid to Filipino fishermen operating at Bajo de Masinloc (Scarborough Shoal), according to a Daily Tribune headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-10-01",
+   "presort": "continuation of ev-521fa9ae15 (a candidate, provisional) — Same act/practice already in run PH-2021-2026 as ev-521fa9ae15 (2026 BFAR fuel deliveries to fishermen at Bajo de Masinloc under the KBBM programme, begun in 2025 as ev-82422dd7c4); headline-only. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 117.76667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  }
+ ]
+}

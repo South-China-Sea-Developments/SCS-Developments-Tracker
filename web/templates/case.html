@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — SCS Developments Tracker{% endblock %}
+{% block title %}{{ move.id }} · {{ names[move.claimant] }}, {{ move.year }} — South China Sea Developments Tracker{% endblock %}
 {% block description %}{{ move.description[:160] }}{% endblock %}
 {% block head_data %}{% endblock %}
 {% block content %}
@@ -27,7 +27,6 @@
           {% if e.is_seed %}<p class="event-seed">Dated incident within this move.</p>{% else %}<p>{{ e.summary }}</p>
           {% if e.location_name or e.subregion or e.lat %}<p class="event-place">{% if e.location_name %}{{ e.location_name }}{% endif %}{% if e.lat %} ({{ e.lat }}, {{ e.lon }}{% if e.location_precision == 'feature' %}, at the named feature{% endif %}){% endif %}{% if e.subregion %} · sub-region {{ e.subregion }} {{ subregion_names[e.subregion|int] }}{% endif %}{% if not e.lat %} · no point{% endif %}</p>{% endif %}{% endif %}
           {% if e.outside_year %}<p class="event-note">This date falls outside the move's year ({{ move.year }}); possibly a typo in the MAVD table.</p>{% endif %}
-          {% if not e.is_seed and e.review_note %}<p class="event-note">{{ e.review_note }}</p>{% endif %}
           {% if e.sources %}
           <ul class="sources">
             {% for s in e.sources %}
@@ -66,12 +65,13 @@
           {% for n, d in subregion_paths.items()|sort %}
           <path d="{{ d }}" class="sr{% if n in move.subregions %} is-on{% endif %}" data-loc="{{ n }}"><title>{{ n }} {{ subregion_names[n] }}</title></path>
           {% endfor %}
+          {% for f in move.features %}<circle class="feat" cx="{{ f.xy[0] }}" cy="{{ f.xy[1] }}" r="3"><title>{{ f.name }}</title></circle>{% endfor %}
         </svg>
-        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}</figcaption>
+        <figcaption>{{ move.subregion_labels|join(', ') or 'No sub-region coded' }}{% if move.features %}<br><span class="inset-named">Named: {% for f in move.features %}{% if f.page %}<a href="{{ root }}features/{{ f.page }}.html">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</figcaption>
       </figure>
       <h2>Provenance</h2>
       <dl class="coding">
-        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'project' }}, SCS Developments Tracker {{ move.data_version }}{% endif %}</dd>
+        <dt>Coded by</dt><dd>{% if move.coded_by == 'chubb' %}Andrew Chubb, MATS {{ move.data_version }}{% else %}{{ move.coder or 'the project' }}{% endif %}</dd>
       </dl>
     </aside>
   </div>
