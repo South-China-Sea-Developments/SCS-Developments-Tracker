@@ -71,5 +71,5 @@ treats them as binding.
 
 - Built 2026-11-25: `pipeline/rereview.py` (rows, apply, archive) with tests; the Re-review table in the
   base (`tblR8Lb34BDuu6KjF`); `docs/audit-prompt.md`; the weekly task applies decided Re-review rows.
-- Waiting: the references repository (to be created by the maintainer) and his go-ahead once the
-  candidates are decided.
+- The references repository holds both texts (2026-11-25).
+- Waiting: his go-ahead once the candidates are decided.
