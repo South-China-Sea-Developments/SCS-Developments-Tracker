@@ -60,13 +60,16 @@ private companion repository, `South-China-Sea-Developments/scs-tracker-referenc
 ## Binding rulings from the maintainer
 
 The maintainer found that Opus misread some boundaries, in particular coercive vs use of force and
-coercive vs declarative. His rulings are to be written into `docs/coding-guide.md` (§G, *The hard
-boundaries*) as worked rules with example records, and the audit treats them as binding. **Pending: his
-rulings.**
+coercive vs declarative, and that the right lines are Chubb's own (2026-11-25): use of force is the taking
+of a feature, and violence against people or vessels is coercive however severe (the example: CCG
+personnel beating fishermen, `CN202406`, coded force by mistake); a claim without a threat of punishment is
+declarative however strong its words. Written into `docs/coding-guide.md` §II.G as *The maintainer's binding
+rulings*, and into the extraction prompt and the research brief so new suggestions follow them. The audit
+treats them as binding.
 
 ## Status
 
 - Built 2026-11-25: `pipeline/rereview.py` (rows, apply, archive) with tests; the Re-review table in the
   base (`tblR8Lb34BDuu6KjF`); `docs/audit-prompt.md`; the weekly task applies decided Re-review rows.
-- Waiting: the references repository (to be created by the maintainer), his type rulings, and his go-ahead
-  once the candidates are decided.
+- Waiting: the references repository (to be created by the maintainer) and his go-ahead once the
+  candidates are decided.
