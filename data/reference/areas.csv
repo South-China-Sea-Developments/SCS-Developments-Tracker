@@ -42,7 +42,7 @@ coast-vietnam-thanh-hoa,Thanh Hóa,Thanh Hoa,coast,1:1.00,"Natural Earth admin-1
 coast-vietnam-thua-thien-hue,Thừa Thiên Huế,Thua Thien Hue,coast,1:1.00,"Natural Earth admin-1 (public domain), sea within ~150 km"
 coast-vietnam-tien-giang,Tiền Giang,Tien Giang,coast,3:0.52|9:0.48,"Natural Earth admin-1 (public domain), sea within ~300 km"
 coast-vietnam-tra-vinh,Trà Vinh,Tra Vinh,coast,9:0.74|3:0.26,"Natural Earth admin-1 (public domain), sea within ~300 km"
-eez-bn,Bruneian EEZ,Brunei's EEZ|Brunei EEZ|Bruneian waters|Brunei's continental shelf|Bruneian continental shelf,eez,8:0.36|10:0.33|7:0.31,"Marine Regions EEZ v12 (CC BY 4.0, doi:10.14284/632)"
+eez-bn,Bruneian EEZ,Brunei's EEZ|Brunei EEZ|Bruneian waters|Brunei's continental shelf|Bruneian continental shelf|Bruneian Exclusive Economic Zone|Brunei's exclusive economic zone|Bruneian fishery limits|Brunei Darussalam fishery limits,eez,8:0.36|10:0.33|7:0.31,"Marine Regions EEZ v12 (CC BY 4.0, doi:10.14284/632)"
 eez-cn,Chinese EEZ,China's EEZ,eez,2:0.54|1:0.46,"Marine Regions EEZ v12 (CC BY 4.0, doi:10.14284/632)"
 eez-id,Indonesian EEZ,Indonesia's EEZ|Indonesian waters,eez,10:0.75|9:0.25,"Marine Regions EEZ v12 (CC BY 4.0, doi:10.14284/632)"
 eez-my,Malaysian EEZ,Malaysia's EEZ|Malaysian waters|Malaysia's continental shelf|Malaysian continental shelf,eez,10:0.56|7:0.25|8:0.19,"Marine Regions EEZ v12 (CC BY 4.0, doi:10.14284/632)"

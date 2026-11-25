@@ -59,7 +59,8 @@ VN_FIX = {"Quàng Nam": "Quảng Nam", "Ha Tinh": "Hà Tĩnh", "Thừa Thiên - 
 EEZ_NAMES = {   # Marine Regions geoname -> (id, English name, aliases)
     "Philippine Exclusive Economic Zone": ("eez-ph", "Philippine EEZ", ["Philippines' EEZ", "Philippine exclusive economic zone", "West Philippine Sea"]),
     "Vietnamese Exclusive Economic Zone": ("eez-vn", "Vietnamese EEZ", ["Vietnam's EEZ", "Vietnamese exclusive economic zone"]),
-    "Bruneian Exclusive Economic Zone": ("eez-bn", "Bruneian EEZ", ["Brunei's EEZ", "Brunei EEZ", "Bruneian waters", "Brunei's continental shelf", "Bruneian continental shelf"]),
+    "Bruneian Exclusive Economic Zone": ("eez-bn", "Bruneian EEZ", ["Brunei's EEZ", "Brunei EEZ", "Bruneian waters", "Brunei's continental shelf", "Bruneian continental shelf",
+                                                                   "Bruneian Exclusive Economic Zone", "Brunei's exclusive economic zone", "Bruneian fishery limits", "Brunei Darussalam fishery limits"]),
     "Malaysian Exclusive Economic Zone": ("eez-my", "Malaysian EEZ", ["Malaysia's EEZ", "Malaysian waters", "Malaysia's continental shelf", "Malaysian continental shelf"]),
     "Indonesian Exclusive Economic Zone": ("eez-id", "Indonesian EEZ", ["Indonesia's EEZ", "Indonesian waters"]),
     "Chinese Exclusive Economic Zone": ("eez-cn", "Chinese EEZ", ["China's EEZ"]),

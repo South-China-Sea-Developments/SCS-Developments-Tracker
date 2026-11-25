@@ -1,0 +1,223 @@
+{
+ "run_id": "GAPS-20261124",
+ "exported_on": "2026-11-25",
+ "records": [
+  {
+   "airtable_id": "recORv1nWRQ7FhYZp",
+   "archived_on": "2026-11-25",
+   "lat": 11.39194,
+   "suggestion_reasoning": "Construction on a held Spratly feature is demonstrative assertion. The imagery date is not given, so the event is dated to the report's month; it may already be covered by the AMTI-based ev-70fba6e8e6 (Jul-Dec 2025) - maintainer to judge. [confidence: low]",
+   "date_end": "2025-12-11",
+   "new_dyads": "VA",
+   "excerpt": "Vietnam has quietly accelerated land reclamation at South Reef",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:29:56.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "South Reef, Spratly Islands",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam steps up South Reef expansion, careful not to provoke China — UPI (via Yahoo News) 2025-12-11\nhttps://www.yahoo.com/news/articles/vietnam-steps-south-reef-expansion-142441277.html",
+   "pull_request": 144,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "5 Spratly NW",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T21:56:51.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-37f3848d90",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "5 Spratly NW"
+   ],
+   "note": "Most likely already covered by AMTI and a single source is a low level of reliability, with no clear, quantifiable data.",
+   "suggested_dyads": [
+    "VA"
+   ],
+   "summary": "UPI reported on 11 December 2025 that Vietnam had quietly accelerated land reclamation at South Reef, with new satellite imagery showing significant dredging, reinforced embankments and the early formation of a possible sheltered harbour and logistics zone.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2025-12-01",
+   "decision": "reject",
+   "lon": 114.29833,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recQXZMCBHP62AjM6",
+   "archived_on": "2026-11-25",
+   "actors": "Vietnam Fisheries Surveillance (Kiem Ngu 278)",
+   "lat": 7.51667,
+   "suggestion_reasoning": "A close shadowing of a Chinese patrol by a Vietnamese state vessel in its EEZ; demonstrative, arguably coercive given the pursuit and 10-metre approach. Source relays AIS tracking by Ray Powell (Stanford). [confidence: medium]",
+   "date_end": "2023-03-26",
+   "new_dyads": "VC",
+   "excerpt": "the Kiem Ngu 278 had been pursuing the considerably larger Chinese ship since March 24\n\neach Chinese ship was shadowed by either the Kiem Ngu or Vietnam Coast Guard (VCG)",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:34:40.000Z",
+   "location_name": "about 50 nautical miles south of Vanguard Bank",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Chinese coast guard ship chased out of Vietnam waters — Radio Free Asia 2023-03-27\nhttps://www.rfa.org/english/news/vietnam/vietnamese-chinese-encounter-eez-03272023054137.html\nPerilous Prospects: Tensions Flare at Malaysian and Vietnamese Oil and Gas Fields — CSIS Asia Maritime Transparency Initiative 2023-03-30\nhttps://amti.csis.org/perilous-prospects-tensions-flare-at-malaysian-vietnamese-oil-and-gas-fields/",
+   "pull_request": 144,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "9 Nam Con Son",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T21:30:57.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-39c7feddf8",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "9 Nam Con Son"
+   ],
+   "note": "Precedents",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "summary": "The Vietnam Fisheries Surveillance ship Kiem Ngu 278 pursued the much larger China Coast Guard ship CCG 5205 from 24 March and came within about 10 metres of it on 26 March some 50 nautical miles south of Vanguard Bank in Vietnam's EEZ; AMTI lists earlier Vietnamese tailing of CCG 5901 and 5302 in January and February 2023.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-03-24",
+   "decision": "reject",
+   "lon": 109.76667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recsAtYsirYBwexHJ",
+   "archived_on": "2026-11-25",
+   "actors": "Vietnam Fisheries Surveillance (Kiem Ngu 263, 264, 268)",
+   "lat": 7.51667,
+   "suggestion_reasoning": "Routine state law-enforcement shadowing of Chinese patrols through Vietnam's oil and gas blocks, summarised as one event for 2022; demonstrative. Dates are those listed in AMTI's table. [confidence: medium]",
+   "date_end": "2022-12-16",
+   "new_dyads": "VC",
+   "excerpt": "each Chinese ship was shadowed by either the Kiem Ngu or Vietnam Coast Guard (VCG)",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:34:40.000Z",
+   "location_name": "Nam Con Son basin; Vanguard Bank",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Perilous Prospects: Tensions Flare at Malaysian and Vietnamese Oil and Gas Fields — CSIS Asia Maritime Transparency Initiative 2023-03-30\nhttps://amti.csis.org/perilous-prospects-tensions-flare-at-malaysian-vietnamese-oil-and-gas-fields/",
+   "pull_request": 144,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "9 Nam Con Son",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T21:24:42.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-5fcdbb2293",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "9 Nam Con Son"
+   ],
+   "note": "Precedents in 2021",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "summary": "Vietnam Fisheries Surveillance ships Kiem Ngu 263, 264 and 268 tailed China Coast Guard ships CCG 5304 (22 September to 3 November) and CCG 5402 (6 November to 16 December) on their patrols through the Nam Con Son basin, AMTI's AIS tracking showed.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2022-09-22",
+   "decision": "reject",
+   "lon": 109.76667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rece6x3wJbJYVL18t",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Viet Nam; Ministry of Foreign Affairs; National Assembly Standing Committee",
+   "suggestion_reasoning": "A new legal act defining maritime zones is a declarative claim assertion and is new for Vietnam in the Gulf; it followed China's own Gulf of Tonkin baseline of March 2024 (per RFA). Not found in the VN set. [confidence: high]",
+   "date_end": "2025-02-21",
+   "new_dyads": "VC",
+   "excerpt": "The baseline serves as a legal foundation for defining Viet Nam’s maritime boundaries\n\nChính phủ Việt Nam hôm 21/2 tuyên bố đường cơ sở ở khu vực Vịnh Bắc Bộ, đảo Bạch Long Vĩ",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:31:32.000Z",
+   "location_name": "Gulf of Tonkin (Vinh Bac Bo), Bach Long Vi island",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Viet Nam announces baseline in Gulf of Tonkin — Viet Nam Government News (baochinhphu.vn) 2025-02-21\nhttps://en.baochinhphu.vn/viet-nam-announces-baseline-in-gulf-of-tonkin-111250221211429833.htm\nViệt Nam tuyên bố đường cơ sở ở Vịnh Bắc Bộ và đảo Bạch Long Vĩ — RFA Vietnamese 2025-02-21\nhttps://rfa.org/vietnamese/trong-nuoc/2025/02/21/viet-nam-tuyen-bo-duong-co-so-o-vinh-bac-bo-va-dao-bach-long-vi/",
+   "pull_request": 144,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "1 Tonkin",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T21:50:34.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-ad017b31fe",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "1 Tonkin"
+   ],
+   "suggested_dyads": [
+    "VC"
+   ],
+   "summary": "The Government of Viet Nam issued a statement, announced by the Ministry of Foreign Affairs, declaring the baseline for measuring the breadth of its territorial sea in the Gulf of Tonkin, including around Bach Long Vi island, following National Assembly Standing Committee Resolution No. 68/NQ-UBTVQH15 of 14 February 2025.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-02-21",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  }
+ ]
+}

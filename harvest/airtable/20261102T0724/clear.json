@@ -2,13 +2,15 @@
  "run_id": "20261102T0724",
  "table": "Candidates",
  "record_ids": [
-  "recU8n8phRkhFHXs0",
-  "recKZBzNhQ1C7aHDR",
-  "rec8aahXdqfxlkPik"
+  "recZdEOH2QGzoL2PO",
+  "recSsVnFqsAjSZDYL",
+  "recXDXuO6p8qvm6Fx",
+  "rechLF1KpUwG8pH0E"
  ],
  "event_ids": [
-  "ev-19175b3b10",
-  "ev-8a10d31f4a",
-  "ev-ca2baf0411"
+  "ev-0b4811f8e6",
+  "ev-7dc3b8cb21",
+  "ev-9fa40707b3",
+  "ev-f4e795ed57"
  ]
 }
