@@ -1,0 +1,68 @@
+{
+ "run_id": "MY-1970s",
+ "exported_on": "2026-11-25",
+ "records": [
+  {
+   "airtable_id": "reciv44YclrWLJzq1",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Armed Forces; Royal Malaysian Navy; Royal Malaysian Air Force; Royal Engineer Regiment",
+   "lat": 7.91667,
+   "suggestion_reasoning": "First recorded Malaysian physical assertion in the Spratlys: unilateral placement of sovereignty markers without confrontation, hence demonstrative and new for Malaysia. The sources give only 'early 1975' (no month), so the date is year-precision and a coder should treat the timing within 1975 as unknown; the first source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]",
+   "date_end": "1975-12-31",
+   "new_dyads": "MV MP MC",
+   "excerpt": "The MAF’s maiden expedition to the claimed Spratly features took place\n\nSeawal tahun 1975, pendirian monumen kedaulatan telah dilakukan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Spratly features claimed by Malaysia, including Amboyna Cay",
+   "run": [
+    "MY-1970s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Spratly features claimed by Malaysia, including Amboyna Cay (Pulau Kecil Amboyna)”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nKeberadaan monumen kedaulatan dan tapak bernilai sejarah di Pulau Layang Layang, dalam Gugusan Semarang Peninjau Malaysia di Laut China Selatan (abstract) — Universiti Malaysia Sabah (UMS eprints)\nhttps://eprints.ums.edu.my/id/eprint/41164/1/ABSTRACT.pdf",
+   "pull_request": 50,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T15:46:35.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-af41776905",
+   "run_id": "MY-1970s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MP",
+    "MC"
+   ],
+   "summary": "In early 1975, under 'Operations Terumbu' (begun after a 1974 directive to the Royal Malaysian Navy to enhance Malaysia's presence in the Spratlys), a tri-service Malaysian Armed Forces expedition (RMN, RMAF and the Army's Royal Engineer Regiment) installed sovereignty markers on Spratly features claimed by Malaysia, including Amboyna Cay.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "1975-01-01",
+   "presort": "new move (novelty) — Novelty: Operation Terumbu's tri-service landing and sovereignty markers on Amboyna Cay and other claimed Spratly features is the first Malaysian physical presence in the Spratlys; Malaysia has no 1974 candidate or move, so nothing comparable last year. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}
