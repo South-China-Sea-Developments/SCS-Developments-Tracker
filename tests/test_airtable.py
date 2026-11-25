@@ -664,3 +664,60 @@ def test_an_event_id_in_merge_into_move_is_read_as_a_merge_into_that_candidate()
     d = airtable.decisions_from_records([rec], field_ids=ids)
     item = (d["decisions"] if isinstance(d, dict) else d)[0]
     assert item["move_id"] == "CN201602" and "move_of_event" not in item
+
+
+# ---------------------------------------------------------------------------
+# 2026-11-25: one sitting, one branch, one pull request
+
+def test_held_back_keeps_only_merges_whose_lead_is_still_undecided():
+    rec = lambda eid, dec, lead="": {"id": "rec" + eid[-4:], "fields": {"event_id": eid, "decision": dec, "merge_into_candidate": lead}}
+    exported = [rec("ev-a", "new_move"), rec("ev-b", "merge", "ev-a"), rec("ev-c", "merge", "ev-z"),
+                rec("ev-d", "merge", "ev-r "), rec("ev-e", "merge", "ev-x"), rec("ev-f", "reject")]
+    events = [{"event_id": "ev-r", "status": "rejected"}, {"event_id": "ev-x", "status": "candidate"}]
+    keep, held = airtable.held_back(exported, events, {})
+    assert [r["fields"]["event_id"] for r in keep] == ["ev-a", "ev-b", "ev-d", "ev-f"]
+    assert {h["event_id"]: h["lead_state"] for h in held} == {"ev-c": "not found", "ev-e": "candidate"}
+
+
+def test_a_sitting_folds_in_a_review_branch_and_applies_on_one_branch(tmp_path, monkeypatch):
+    """The sitting command against a real git origin: the run's review branch is merged into a branch cut
+    from origin/main, its decided rows are applied and committed, a merge whose lead is undecided waits."""
+    import os, sys
+    env = dict(os.environ, GIT_CONFIG_GLOBAL="/dev/null", GIT_CONFIG_NOSYSTEM="1",
+               GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@example.com", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@example.com")
+    for k in ("GIT_CONFIG_GLOBAL", "GIT_CONFIG_NOSYSTEM", "GIT_AUTHOR_NAME", "GIT_AUTHOR_EMAIL", "GIT_COMMITTER_NAME", "GIT_COMMITTER_EMAIL"):
+        monkeypatch.setenv(k, env[k])
+    g = lambda cwd, *a: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True, env=env).stdout.strip()
+    origin = tmp_path / "origin"
+    subprocess.run(["git", "clone", "-q", str(ROOT), str(origin)], check=True, env=env)
+    g(origin, "checkout", "-q", "-B", "main")          # CI checks out a detached merge commit: name it main
+    shutil.rmtree(origin / "pipeline")
+    shutil.copytree(ROOT / "pipeline", origin / "pipeline", ignore=shutil.ignore_patterns("__pycache__"))
+    g(origin, "add", "pipeline")
+    g(origin, "commit", "-q", "--allow-empty", "-m", "code under test")
+    run = origin / "harvest" / "runs" / "fixture"
+    assert harvest.main(["extract", "--captures", str(FIX / "captures"), "--out", str(run),
+                         "--recordings", str(FIX / "recordings"), "--run-id", "fixture"]) == 0
+    r = subprocess.run([sys.executable, "-m", "pipeline.queue", "open", "--run", str(run), "--no-push"], cwd=origin, capture_output=True, text=True, env=env)
+    assert r.returncode == 0, r.stderr
+    branch_data = origin / "data"
+    recs = airtable.records_for_run(branch_data, "fixture")
+    assert len(recs) >= 3
+    g(origin, "checkout", "-q", "main")
+    work = tmp_path / "work"
+    subprocess.run(["git", "clone", "-q", str(origin), str(work)], check=True, env=env)
+    a, b, c = recs[0], recs[1], recs[2]
+    exported = [{"id": "recAAAAAAAAAAAAA1", "fields": {**a, "decision": "reject", "note": "not a move"}},
+                {"id": "recAAAAAAAAAAAAA2", "fields": {**b, "decision": "reject", "note": "routine"}},
+                {"id": "recAAAAAAAAAAAAA3", "fields": {**c, "decision": "merge", "merge_into_candidate": "ev-undecided0"}}]
+    rep = airtable.sitting({"fixture": exported}, DATE, root=work, reviewer="T")
+    assert rep["folded"] == ["fixture"] and not rep["refused"], rep["refused"]
+    assert rep["applied"]["fixture"]["rejected"] == 2
+    assert [h["event_id"] for h in rep["held_back"]["fixture"]] == [c["event_id"]]
+    assert rep["clear"]["fixture"] == ["recAAAAAAAAAAAAA1", "recAAAAAAAAAAAAA2"]
+    assert rep["validate_errors"] == [] and rep.get("commit")
+    assert g(work, "branch", "--show-current") == f"sitting/{DATE}"
+    ev = {e["event_id"]: e for e in queue.read_table("events", work / "data")}
+    assert ev[a["event_id"]]["status"] == ev[b["event_id"]]["status"] == "rejected"
+    assert ev[c["event_id"]]["status"] == "candidate"
+    assert "Apply the maintainer's decisions (sitting of" in g(work, "log", "-1", "--format=%s")

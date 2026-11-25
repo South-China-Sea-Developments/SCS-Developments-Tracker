@@ -147,6 +147,16 @@ Since 2026-11-19 the scheduled apply task (weekly, Mondays 01:35, since 2026-11-
 merges the review pull request (decision 07 as amended; prompt in `docs/apply-task-prompt.md`). A row marked ✗,
 and a merge whose lead is not yet decided, wait for the next run.
 
+**One sitting, one branch (since 2026-11-25).** Steps 1–3 for every run at once:
+`python -m pipeline.airtable sitting --exports <folder of <run_id>.json exports> --report report.json` cuts
+`sitting/<date>` from `origin/main`, merges in the review branch of each run whose candidates are not on main
+yet, holds back merges whose lead is undecided, archives and applies run by run (a refused run is undone and
+reported), validates and commits. One pull request then carries the whole sitting, and a data-only pull
+request gets CI's light check (about five minutes) instead of the full suite. Once it merges, close the folded
+runs' review pull requests and clear the rows listed under `clear`. Applying run by run on each review branch
+meant one CI cycle per run, each repeated after the previous merge conflicted: an hour and a half for six runs
+on 2026-11-25.
+
 With a token, `clear --run <run_id>` deletes a whole run's rows but archives nothing: run `archive` first.
 
 ## The Re-review table (ticket 43)
