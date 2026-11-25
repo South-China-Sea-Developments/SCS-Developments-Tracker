@@ -650,3 +650,17 @@ def test_a_candidate_without_a_sub_region_comes_with_suggestions(tmp_path):
     assert "subregion" not in rec                                   # two suggestions: the single sub-region is left to the coder
     assert rec["machine_note"].startswith("Sub-regions suggested: 10 Far South (") and "Sarawak coast 99%" in rec["machine_note"]
     assert next(r for r in csv.DictReader(open(path, encoding="utf-8")) if r["event_id"] == target["event_id"])["subregion"] == ""
+
+
+def test_an_event_id_in_merge_into_move_is_read_as_a_merge_into_that_candidate():
+    """2026-11-24: twice a lead's event id was typed into "Merge into move"; it names a candidate."""
+    ids = airtable.load_config()["field_ids"]
+    rec = {"id": "recA", "cellValuesByFieldId": {ids["event_id"]: "ev-aaa", ids["decision"]: {"name": "merge"},
+                                                 ids["merge_into_move"]: " ev-bbb "}}
+    d = airtable.decisions_from_records([rec], field_ids=ids)
+    item = (d["decisions"] if isinstance(d, dict) else d)[0]
+    assert item["move_of_event"] == "ev-bbb" and "move_id" not in item
+    rec["cellValuesByFieldId"][ids["merge_into_move"]] = "CN201602"
+    d = airtable.decisions_from_records([rec], field_ids=ids)
+    item = (d["decisions"] if isinstance(d, dict) else d)[0]
+    assert item["move_id"] == "CN201602" and "move_of_event" not in item

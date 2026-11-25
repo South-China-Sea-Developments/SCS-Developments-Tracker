@@ -5,8 +5,17 @@
  "table_id": "tbl1jZACWLq6FXPOq",
  "reviewer": "Angelo",
  "runs_table_id": "tblLK3YqY7mDL2QqW",
- "other_tables": {"Sources": "tblRxHeawvsBiAUfC", "Sidelines": "tblUs0ZmP4x8ShWKZ", "Notes": "tblis1hiTU3E4hwPx"},
+ "other_tables": {"Sources": "tblRxHeawvsBiAUfC", "Sidelines": "tblUs0ZmP4x8ShWKZ", "Notes": "tblis1hiTU3E4hwPx", "Re-review": "tblR8Lb34BDuu6KjF"},
  "interface": "https://airtable.com/appK9OckCTV15vQwx/pbdWq70PPQffUrIye",
+ "rereview": {
+  "table": "Re-review", "table_id": "tblR8Lb34BDuu6KjF",
+  "field_ids": {
+   "finding": "fldxVoT40U6c8YjJR", "kind": "fldAWlqCGuzfFvQ9q", "record": "fldEueixqATojA8MX", "claimant": "fldlegw6Hok3Vffx8",
+   "year": "fldj3fzMuJeAg0Nrs", "field": "fldk6Brf934jWJoi4", "current": "fldIzgxZucsqyZ67L", "proposed": "fldUCuBtMUeU5AMG8",
+   "reasoning": "fld3FUpxOvRcPS3jn", "evidence": "fldLNKEDNLcHZGvvr", "chubb": "fldAeztfk1EYEofB7", "confidence": "fldKc2iU5ksoa0hLI",
+   "audit": "fldwl7ABRAv6LyFpD", "decision": "fldfqbvxrV0gWXnOT", "your_value": "fldy6B7Cc2LYLqMD3", "your_note": "fld7St6BWIwqD0xwM"
+  }
+ },
  "field_ids": {
   "event_id": "fldYslClcFl43XHsR", "run_id": "fldZINTpPC0Ic2DSG", "pull_request": "fldQU03I9eAjADbPE", "claimant": "fldz1OyCg5tZHtMm7",
   "date_start": "fldlIzt0pknkSneHM", "date_end": "fld4Zu1vOOvJBEfCK", "date_precision": "fldjt4e22v8ap779i", "location_name": "fldJS4KlLazxVn3D6",

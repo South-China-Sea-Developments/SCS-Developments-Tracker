@@ -92,7 +92,7 @@ administrative presence (demonstrative), threats of punishment (coercive), and v
   deterrent as well as compellent threats, "to sidestep questions of whether the target had been engaging
   in encroachment or aggression" [IS, n. 27] — so a "defensive" warning is still coercive.
 - **Use of force** — "the application of military violence or direct seizure of the disputed
-  possession"; "the use of force does not necessarily involve military units, since civilian actors can be
+  possession" (in the data, always the taking of a feature: see the binding ruling in §II.G); "the use of force does not necessarily involve military units, since civilian actors can be
   deployed to seize disputed possessions, as in the case of the PRC's occupation of Mischief Reef in 1994"
   [IS]. In the data, the 2012 Scarborough case (`CN201205`, "coercion against Philippine boats at
 Scarborough Shoal, establishing constant presence") is coded force because China "seized Scarborough
@@ -284,7 +284,9 @@ patrol [MATS]).
 summarise [Project, ADR 0002].
 **Here.** Decide *merge* (into an existing move of the same claimant and year, or into a move formed from
 another candidate in the same batch via `move_of_event`), *new move*, *duplicate* (another report of an
-accepted event — status `merged`), or *reject*. Merge checks claimant and year.
+accepted event — status `merged`), or *reject*. Merge checks claimant and year. A merge (or duplicate)
+whose lead is rejected is rejected with it: `decide` turns the decision into a *reject* noted "Rejected with
+<lead>: …", so rejecting a lead needs no second pass over the candidates that pointed at it.
 **Don't.** Don't merge a 2024 event into a 2023 move: a move is a year's intensification, and the
 validator binds an event to a move of its own claimant and year. If the behaviour continued into 2024 at
 the same level, the 2024 event is decided *reject* with the note "continuation of <move_id>" (in Airtable, a
@@ -306,8 +308,9 @@ not reading closely.
   to others" (radio warnings to leave, shadowing with intent, blocking) is coercive [IS, n. 24]. A law is
   declarative; baselines "that upgrade disputed waters to sovereign territorial seas" or an ADIZ are coercive
   [IS]. A fishing ban *announced* is declarative; *enforced* against foreign boats it is coercive.
-- *Coercive vs force*: physical interference, seizure of boats, detention of crews, water cannon, ramming
-  are coercive; a change in control of a *feature*, or military violence, is force. Scarborough 2012 is
+- *Coercive vs force*: physical interference, seizure of boats, detention of crews, water cannon, ramming,
+  beatings are coercive; a change in control of a *feature*, or a military attack to take one, is force
+  (see the binding ruling below). Scarborough 2012 is
   force because the shoal was seized (`CN201205`); the Philippines' 1970 occupation of Nanshan is force
   (`PH197001`); "constant presence" at Second Thomas in 2013 without a change of control is demonstrative
   (`CN201303`) [MATS].
@@ -316,6 +319,30 @@ not reading closely.
   Chubb coded the 1983 naming of 287 features declarative (`CN198302`) [MATS]. An administrative act that
   *manifests* jurisdiction on the ground — a court case over the area, a post office, household
   registration, a weather station, resettlement — is demonstrative (`VN200901`) [IS; MATS].
+**The maintainer's binding rulings (2026-11-25).** Machine coders have crossed two of these lines, so
+they are spelled out here, from Chubb's own rules. They bind every coder, suggester and audit.
+- *Use of force is the taking of a disputed possession.* Chubb's category is "application of military
+  force or direct seizure and occupation of disputed possession" [IS, Table 1]: "brute force", actions
+  that "achieve goals directly, rather than by influencing adversary conduct, as in coercion" [IS]. Every
+  one of the 18 force cases in MATS is the seizure or occupation of a feature, the 1974 Paracels and the
+  1988 Johnson Reef killings included (both took features). **Violence against people or vessels is
+  coercive, however severe**: beating a fishing crew, ramming, water cannon, firing on or near boats,
+  seizing boats or catch, detaining crews. It is the "imposition of punishment" and "physical
+  interference with foreign activities" [IS, Table 1], meant to change what the other side does. Example:
+  Chinese law-enforcement personnel beating a Vietnamese crew with iron bars in the Paracels and seizing
+  their catch (`CN202406`) is coercive, not force. An act is force only when a feature (a reef, an island,
+  a shoal, a cay) passes into the actor's control, or is attacked by military means in order to take it.
+- *Coercive needs a threat or an imposition of punishment; a claim without one is declarative.*
+  Declarative is "official claims over the disputed area that make no discernable threat to impose
+  punishment on rival states" [IS]. A protest, a condemnation, a demand to stop, a reaffirmation of
+  sovereignty, a speech, a ceremony, an anniversary statement, a submission or a filing is declarative,
+  however strong its words. It becomes coercive only when it threatens punishment: a stated consequence
+  (red lines with a response attached, warnings of force, "an act of war", threats to deploy ships or to
+  expel), sanctions, or an administrative act that "communicate[s] threats" to those entering the area,
+  which Chubb limits to baselines that "upgrade disputed waters to sovereign territorial seas" and ADIZs
+  [IS]. A reorganisation of the administrative units governing the islands is a "change in domestic
+  administrative arrangements", declarative [IS].
+
 **Here.** `suggested_type` from the compiler is a suggestion; the coder's type is the move's. The
 agreement report compares the two.
 **Don't.** Don't type by actor ("coast guard ⇒ coercive", "ministry ⇒ declarative"). Don't type by

@@ -377,6 +377,34 @@ def _build_move(eid: str, e: dict, spec: dict, reviewer: str, date: str, moves: 
 CONTINUATION = re.compile(r"^continuation of\s+\(?([A-Za-z0-9-]+)", re.I)   # the note form of a rejected continuation (guide §K)
 
 
+def _reject_with_rejected_lead(decisions: list[dict], by_id: dict[str, dict]) -> list[dict]:
+    """A merge into a candidate (move_of_event), or a duplicate of an event (duplicate_of), whose lead is
+    rejected — in this batch, through a chain of such merges, or in an earlier one — cannot join a move:
+    it is rejected with its lead, with a note saying so, instead of failing the whole batch. The decision
+    dicts are copied, not changed in place. A lead decided anything else is left to the usual checks."""
+    rejected = {d["event_id"] for d in decisions if d.get("action") == "reject"}
+    rejected |= {eid for eid, e in by_id.items() if e["status"] == "rejected"}
+    out = [dict(d) for d in decisions]
+    changed = True
+    while changed:
+        changed = False
+        for d in out:
+            if d.get("action") == "merge" and d.get("move_of_event") in rejected:
+                lead, why = d["move_of_event"], "the candidate it would merge into was rejected"
+            elif d.get("action") == "duplicate" and d.get("duplicate_of") in rejected:
+                lead, why = d["duplicate_of"], "the event it duplicates was rejected"
+            else:
+                continue
+            note = f"Rejected with {lead}: {why}."
+            if (d.get("note") or "").strip():
+                note += " " + d["note"].strip()
+            d.update(action="reject", note=note)
+            for k in ("move_of_event", "move_id", "duplicate_of"):   # edits still apply, as on any rejection
+                d.pop(k, None)
+            rejected.add(d["event_id"]); changed = True
+    return out
+
+
 def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: Path,
                     xlsx_path: Path | None = None, mavd_path: Path | None = None) -> dict:
     """Apply a batch of decisions to the canonical files. All-or-nothing: an invalid decision, or a result
@@ -385,6 +413,7 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
     Actions: reject (note required; "continuation of X" also extends X's ongoing_through to the event's
     year, with a corrections.csv line when X is Chubb's); merge (into an existing move, or into the move formed from another
     candidate in this batch via move_of_event); new_move; duplicate (of an accepted event: status merged).
+    A merge or duplicate whose lead is rejected is rejected with it (see _reject_with_rejected_lead).
 
     The order of the decisions in the batch does not matter: they are applied in the order of their
     events in events.csv, so new moves are numbered the same whichever front end exported the file.
@@ -407,6 +436,7 @@ def apply_decisions(decisions: list[dict], reviewer: str, date: str, data_dir: P
         raise ValueError("an event has more than one decision in this batch")
     position = {e["event_id"]: i for i, e in enumerate(events)}
     decisions = sorted(decisions, key=lambda d: position[d["event_id"]])
+    decisions = _reject_with_rejected_lead(decisions, by_id)
 
     def finish(e: dict, d: dict, note: str):
         e["reviewer"] = reviewer

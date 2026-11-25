@@ -1,6 +1,6 @@
 {
  "run_id": "PH-2016-2020",
- "exported_on": "2026-11-23",
+ "exported_on": "2026-11-24",
  "records": [
   {
    "airtable_id": "recrhdY6gEkqnelGn",
@@ -3329,6 +3329,66 @@
    "new_domains": [
     "physical",
     "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recYjFBxO5hRSjsEq",
+   "archived_on": "2026-11-24",
+   "actors": "Permanent Mission of the Republic of the Philippines to the United Nations; Department of Foreign Affairs",
+   "fld3CiyMSnRAYyJi4": "PM",
+   "suggestion_reasoning": "A formal UN note restating the Philippine legal position against Malaysia is a verbal assertion; declarative. Scanned PDF, excerpt not machine-checkable. [confidence: high]",
+   "date_end": "2020-10-09",
+   "new_dyads": "PM",
+   "fld8z3JWu7OvPwkRC": "diplomatic",
+   "excerpt": "the Malaysian submission is projected from a portion of North Borneo over which the Republic of the Philippines has never relinquished its sovereignty",
+   "fldDaG8ZsjVVmdNQt": "2026-11-07T16:21:09.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "fldGCvNV3wq1D6qme": "declarative",
+   "location_name": "Kalayaan Island Group; North Borneo",
+   "run": [
+    "PH-2016-2020"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.",
+   "reviewer": "Angelo",
+   "sources": "Note Verbale No. 0929-2020 of the Permanent Mission of the Philippines to the United Nations (with reference to Malaysia's Note HA 30/20) — UN Division for Ocean Affairs and the Law of the Sea (CLCS submission by Malaysia) 2020-10-09\nhttps://www.un.org/depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_10_09_PHL_NV_UN_003.pdf",
+   "pull_request": 33,
+   "fldRex95IyKecX3ec": "PH",
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldUP1jlk4YpZaiHF": "declarative",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T21:37:58.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-a671181c93",
+   "fldYtRkvPUOqkvknO": "day",
+   "run_id": "PH-2016-2020",
+   "same_year_moves": "PH202001 [declarative, through 2020]: In his first address to the UN General Assembly (75th session), President Duterte declared that the 2016 arbitral award was 'now part of international law,…\nPH202002 [demonstrative, through 2020]: President Duterte lifted the 2014 moratorium on oil and gas exploration in the West Philippine Sea, approving the Department of Energy's recommendation to…",
+   "suggested_dyads": [
+    "PM"
+   ],
+   "fldgOS7EY5MAA0oIX": "administrative",
+   "summary": "The Philippine Mission to the UN sent Note Verbale No. 0929-2020 replying to Malaysia's note of 27 August 2020, asserting that the Philippines claims no maritime entitlements beyond those defined by UNCLOS as interpreted by the 2016 award, and reiterating that Malaysia's submission is projected from a portion of North Borneo over which the Philippines has never relinquished sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-10-09",
+   "merge_into_candidate": "ev-73aefad1e3",
+   "presort": "same move as ev-73aefad1e3 — The October reply to Malaysia's note restates the March objection (ev-73aefad1e3) in the same exchange of UN notes. (group PH2020-UN-notes-Malaysia) [claude-code/opus]",
+   "previous_year_moves": "PH201901 [declarative, through 2020]: The Department of Foreign Affairs issued a statement declaring the presence of hundreds of Chinese vessels near and around Pag-asa Island and other Kalayaan…\nPH201902 [declarative, through 2019]: In a bilateral meeting with Chinese President Xi Jinping in Beijing, President Duterte raised the 2016 arbitral award for the first time, describing it as…\nPH201802 [coercive, through 2019]: At a DFA flag-raising ceremony, Foreign Secretary Cayetano said the Philippines had informed China of 'red lines': China could not build on Scarborough Shoal,…\nPH201803 [demonstrative, through 2019]: In early-to-mid December 2018 the Philippines began reclamation and construction of a beaching ramp on the west coast of Thitu (Pag-asa) Island, with a barge,…",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
    ]
   },
   {
