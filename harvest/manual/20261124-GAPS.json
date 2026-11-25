@@ -1,0 +1,2109 @@
+[
+ {
+  "claimant": "ID",
+  "date_start": "1996-09-16",
+  "date_end": "1996-09-16",
+  "date_precision": "day",
+  "location_name": "Pulau Natuna",
+  "subregion": "10",
+  "summary": "President Soeharto issued Presidential Decree (Keppres) No. 71 of 1996, established in Jakarta on 16 September 1996, designating Natuna Island an integrated economic development zone (KAPET) and one of Indonesia's economic growth centres.",
+  "actors": "President Soeharto",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Administrative act developing Natuna in the year Indonesia was questioning China's claims and holding its largest Natuna exercise (September 1996); only source is a PDF on peraturan.go.id, so the excerpt may not be machine-checked (register line 676).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://peraturan.go.id/files/kp71-1996.pdf",
+    "title": "Keputusan Presiden Republik Indonesia Nomor 71 Tahun 1996 tentang Pembangunan Pulau Natuna sebagai Kawasan Pengembangan Ekonomi Terpadu",
+    "publisher": "peraturan.go.id (Kementerian Hukum)",
+    "pub_date": "1996-09-16",
+    "language": "id",
+    "excerpt": "Pulau Natuna ditetapkan sebagai kawasan pengembangan ekonomi terpadu"
+   },
+   {
+    "url": "https://pasal.id/peraturan/keppres/keppres-no-71-tahun-1996",
+    "title": "Keputusan Presiden Nomor 71 Tahun 1996 tentang Pembangunan Pulau Natuna Sebagai Kawasan Pengembangan Ekonomi Terpadu",
+    "publisher": "pasal.id",
+    "pub_date": "",
+    "language": "id",
+    "excerpt": "Keputusan Presiden Nomor 71 Tahun 1996 tentang Pembangunan Pulau Natuna Sebagai Kawasan Pengembangan Ekonomi Terpadu"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2004-10-06",
+  "date_end": "2004-10-06",
+  "date_precision": "day",
+  "location_name": "Indonesian EEZ (national)",
+  "subregion": "",
+  "summary": "Indonesia's Fisheries Law No. 31 of 2004 entered into force on 6 October 2004, setting rules for the use of fish resources in Indonesian waters including the Indonesian EEZ.",
+  "actors": "Government of Indonesia (DPR, President)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IA"
+  ],
+  "reasoning": "National legislation regulating fishing in the EEZ (including Natuna waters) and the enforcement framework later used against foreign boats; national rather than SCS-specific, so its weight is a coder's call (register line 723).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://leap.unep.org/en/countries/id/national-legislation/fisheries-law-no-312004",
+    "title": "Fisheries Law No. 31/2004",
+    "publisher": "UNEP LEAP (FAOLEX)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "The Law enters into force on 6 October 2004."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2005-12-29",
+  "date_end": "2005-12-29",
+  "date_precision": "day",
+  "location_name": "Indonesian waters (national)",
+  "subregion": "",
+  "summary": "President Susilo Bambang Yudhoyono issued Presidential Regulation (Perpres) No. 81 of 2005 on the Maritime Security Coordinating Board (Bakorkamla), established in Jakarta on 29 December 2005; it remained in force until 9 December 2014.",
+  "actors": "President Susilo Bambang Yudhoyono; Bakorkamla",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "IA"
+  ],
+  "reasoning": "Re-establishment of the inter-agency maritime security coordinator that later directed joint patrols in Natuna waters; national institutional act, not SCS-specific, so low weight (register line 719). The 2003 revival stays undated.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://pasal.id/peraturan/perpres/perpres-no-81-tahun-2005",
+    "title": "Peraturan Presiden Nomor 81 Tahun 2005 tentang Badan Koordinasi Keamanan Laut",
+    "publisher": "pasal.id",
+    "pub_date": "",
+    "language": "id",
+    "excerpt": "Penetapan 29 Desember 2005"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2010-09-01",
+  "date_end": "2010-09-01",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Interviewed on 1 September 2010, the Executive Yuan spokesman and Government Information Office director restated the government's claim to sovereignty over the South China Sea, saying Taiwan would take part in dialogue on the principle of 'sovereignty is ours, shelve disputes, peace and reciprocity, joint development'.",
+  "actors": "Executive Yuan spokesman; Government Information Office",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Cabinet-level public restatement of the sovereignty claim, recorded in a Control Yuan investigation report; declarative. The source is a Control Yuan PDF (abridged report) whose text has OCR quirks, so the excerpt may not be checkable.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/38766",
+    "title": "調查報告（節略版）",
+    "publisher": "Control Yuan",
+    "pub_date": "",
+    "language": "zh",
+    "excerpt": "9 月 1 日受訪時亦重申政府主張南海主權之立場"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2012-03-22",
+  "date_end": "2012-03-26",
+  "date_precision": "day",
+  "location_name": "Taiping Island, Spratly Islands",
+  "subregion": "5",
+  "summary": "When Vietnamese armed patrol boats twice approached Taiping Island on 22 and 26 March 2012, Coast Guard Administration patrol craft drove them away and, according to a China Times report, fired warning shots after the Vietnamese side fired; Taiwan lodged its most serious protest with Vietnam through foreign-affairs channels. The CGA denied having been fired upon.",
+  "actors": "Coast Guard Administration (Taiping garrison patrol craft); Ministry of Foreign Affairs",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "Expulsion of Vietnamese state vessels near Taiping with reported warning shots, plus a diplomatic protest; coercive. Source is a PRC portal relaying Taiwan's China Times, so details (shots) are contested by the CGA's denial; the protest date is not given (before 21 April).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://news.sina.com.cn/o/2012-04-21/083424307458.shtml",
+    "title": "越南巡逻艇在太平岛附近挑衅",
+    "publisher": "Sina News (citing China Times)",
+    "pub_date": "2012-04-21",
+    "language": "zh",
+    "excerpt": "越南武装巡逻艇在3月22日及26日曾两度接近南沙太平岛"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2013-02-08",
+  "date_end": "2013-02-08",
+  "date_precision": "day",
+  "location_name": "Perairan Tanjungberakit, Bintan (01 12 31 LU, 104 32 48 LT)",
+  "subregion": "",
+  "summary": "Navy personnel of the Satkamla observation post at Tanjungberakit detained two suspicious fishing boats with 17 Vietnamese crew in the waters off Tanjungberakit, Bintan, on Friday 8 February 2013, suspecting them of diving for black coral (akar bahar).",
+  "actors": "Indonesian Navy (Posmat Satkamla TNI AL Tanjungberakit; Pos AL Teluk Merbau)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval detention of Vietnamese crews harvesting marine resources at the southern edge of the SCS off Bintan; reads as resource enforcement rather than immigration, but location is marginal to the SCS (register line 778).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.jpnn.com/news/diduga-angkut-akar-bahar-17-abk-vietnam-diamankan",
+    "title": "Diduga Angkut Akar Bahar, 17 ABK Vietnam Diamankan",
+    "publisher": "JPNN",
+    "pub_date": "2013-02-09",
+    "language": "id",
+    "excerpt": "Anggota TNI AL mengamankan dua kapal ikan yang mencurigakan di Perairan Tanjungberakit, Bintan, Jumat (8/2)."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2013-05-23",
+  "date_end": "2013-05-23",
+  "date_precision": "day",
+  "location_name": "Taiping Island, Spratly Islands",
+  "subregion": "5",
+  "summary": "President Ma Ying-jeou said on 23 May 2013 that the first step on Taiping Island was to build a pier so that supply ships could land, and that repair of the airfield, already under way, was something that must be done, while saying marines need not be redeployed to the island.",
+  "actors": "President Ma Ying-jeou",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Presidential commitment to infrastructure on a disputed feature, a precursor to the Nov 2013 works already in the set; declarative. The page gives '23日' and its URL and timestamp place it in May 2013; no primary text found.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://taiwan.huanqiu.com/news/2013-05/3967464.html",
+    "title": "马英九谈南海局势：不须调陆战队驻守太平岛",
+    "publisher": "Huanqiu (Global Times)",
+    "pub_date": "2013-05-24",
+    "language": "zh",
+    "excerpt": "第一步是先修建码头，让运补船能够顺利上岸"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-10-17",
+  "date_end": "2014-10-17",
+  "date_precision": "day",
+  "location_name": "Indonesian waters and jurisdiction (national)",
+  "subregion": "",
+  "summary": "Indonesia enacted Law No. 32 of 2014 on Marine Affairs (Kelautan), established and promulgated on 17 October 2014, covering defence, security, law enforcement and safety at sea; it is the legal basis for the Maritime Security Agency (Bakamla).",
+  "actors": "Government of Indonesia",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "IA"
+  ],
+  "reasoning": "Maritime-jurisdiction legislation creating the enforcement basis later applied in the North Natuna Sea; national, not SCS-specific (register line 785). The Bakamla link is from the register, not the LEAP abstract.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://leap.unep.org/en/countries/id/national-legislation/law-republic-indonesia-no-32-2014-marine-affairs",
+    "title": "Law of the Republic of Indonesia No. 32 of 2014 on Marine Affairs",
+    "publisher": "UNEP LEAP (FAOLEX)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "This Law enters into force on 17 October 2014."
+   },
+   {
+    "url": "https://jdih.kemenkoinfra.go.id/en/undang-undang-republik-indonesia-no-32-tahun-2014",
+    "title": "Undang-Undang Republik Indonesia Nomor 32 Tahun 2014 tentang Kelautan",
+    "publisher": "JDIH Kemenko Infrastruktur",
+    "pub_date": "",
+    "language": "id",
+    "excerpt": "Undang-Undang Republik Indonesia Nomor 32 Tahun 2014 tentang Kelautan"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2014-10-17",
+  "date_end": "2014-10-17",
+  "date_precision": "day",
+  "location_name": "Taiping Island; Spratly, Paracel, Macclesfield Bank and Pratas islands",
+  "subregion": "5",
+  "summary": "Responding to media reports about Taiwan's activities on Taiping Island, Executive Yuan spokesman Sun Li-chun declared that the ROC's South China Sea sovereignty claim was firm and unchanged, that the four island groups and Taiping are ROC territory beyond doubt, and that the pier repairs on Taiping served humanitarian aid and supply.",
+  "actors": "Executive Yuan; spokesman Sun Li-chun",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "Formal cabinet statement reasserting sovereignty and defending the Taiping port works during the 2014 construction period (register line 1121); declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/107c147e-6878-4460-8555-243995b60b5f",
+    "title": "行政院：我國對南海之主權主張堅定不移 未曾改變",
+    "publisher": "Executive Yuan",
+    "pub_date": "2014-10-17",
+    "language": "zh",
+    "excerpt": "我國對南海之主權主張堅定不移，未曾改變。"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2014-12-01",
+  "date_end": "2014-12-06",
+  "date_precision": "month",
+  "location_name": "Natuna, Riau Islands",
+  "subregion": "10",
+  "summary": "National Police Chief General Sutarman visited Natuna in early December 2014 to inspect police personnel, equipment and facilities and coordinate maritime security and law enforcement, saying Natuna must be given maximal security because of its many islands and rich natural resources.",
+  "actors": "Indonesian National Police; Gen. Sutarman",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "Official visit to the border regency stressing its security, low weight; the article (6 Dec 2014) does not give the day of the visit (the register cites ANTARA for 4 Dec) and does not mention the SCS (register line 792).",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://en.republika.co.id/berita/ng5x0c/national-police-chief-inspects-natuna-islands",
+    "title": "National police chief inspects Natuna Islands",
+    "publisher": "Republika",
+    "pub_date": "2014-12-06",
+    "language": "en",
+    "excerpt": "Natuna must be given a maximal security because it has many isles and rich natural resources."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-03-07",
+  "date_end": "2015-03-07",
+  "date_precision": "day",
+  "location_name": "territorial waters of Laut Anambas, Kepulauan Riau",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel KP Hiu Macan 005 seized the Thai fishing boat KM Sudita (109 GT, 13 Thai crew) in the territorial waters of the Anambas Sea on 7 March 2015.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP); KP Hiu Macan 005",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "Fisheries-enforcement seizure of a foreign boat in Anambas waters at the SCS edge; Thailand is not a claimant, so its weight is a coder's call (register line 793).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://mongabay.co.id/2015/03/17/wooww-kkp-telah-tangkap-31-kapal-penangkap-ikan-ilegal-selama-2015/amp/",
+    "title": "Wooww… KKP Telah Tangkap 31 Kapal Penangkap Ikan Ilegal Selama 2015",
+    "publisher": "Mongabay Indonesia",
+    "pub_date": "2015-03-17",
+    "language": "id",
+    "excerpt": "menangkap satu kapal asing asal Thailand bernama KM Sudita"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-03-10",
+  "date_end": "2015-03-10",
+  "date_precision": "day",
+  "location_name": "territorial waters of Laut Natuna, Kepulauan Riau",
+  "subregion": "10",
+  "summary": "The fisheries patrol vessel KP Hiu Macan Tutul 002 seized two Vietnamese fishing boats, KM Seroja and KM Serasi (110 GT each, 15 Vietnamese crew each), in the territorial waters of the Natuna Sea on 10 March 2015.",
+  "actors": "Ministry of Marine Affairs and Fisheries (KKP); KP Hiu Macan Tutul 002",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Seizure of Vietnamese boats in Natuna waters; distinct from the 14 March Serasan seizure already in the set (register line 793).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://mongabay.co.id/2015/03/17/wooww-kkp-telah-tangkap-31-kapal-penangkap-ikan-ilegal-selama-2015/amp/",
+    "title": "Wooww… KKP Telah Tangkap 31 Kapal Penangkap Ikan Ilegal Selama 2015",
+    "publisher": "Mongabay Indonesia",
+    "pub_date": "2015-03-17",
+    "language": "id",
+    "excerpt": "Pada 10 Maret 2015, KP. Hiu Macan Tutul 002 menangkap dua KIA asal Vietnam, di perairan teritorial Laut Natuna"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-04-22",
+  "date_end": "2015-04-22",
+  "date_precision": "day",
+  "location_name": "Natuna Sea, some 30 nautical miles off Tanjung Datu Melintang",
+  "subregion": "10",
+  "summary": "The warship KRI Pattimura 371 of the Navy's Western Fleet Command intercepted the Vietnam-flagged fishing boat KM BTH 99153 and its six crew about 30 nautical miles off Tanjung Datu Melintang, near the Indonesia-Malaysia border, in the Natuna Sea, on Wednesday 22 April 2015.",
+  "actors": "KRI Pattimura 371; Western Fleet Command (Koarmabar)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "IV"
+  ],
+  "reasoning": "Naval seizure of a Vietnamese fishing boat in Natuna waters; dated Natuna seizure for the c. April 2015 item on register line 793 (may or may not be the same capture as ANTARA 491814).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://en.tempo.co/amp/660483/kri-pattimura-intercepts-illegal-ship-in-natuna-waters",
+    "title": "KRI Pattimura Intercepts Illegal Ship in Natuna Waters",
+    "publisher": "Tempo",
+    "pub_date": "2015-04-24",
+    "language": "en",
+    "excerpt": "some 30 nautical miles off Tanjung Datu Melintang"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2015-12-09",
+  "date_end": "2015-12-09",
+  "date_precision": "day",
+  "location_name": "South China Sea and Natuna (ALKI I)",
+  "subregion": "10",
+  "summary": "The commander of Main Naval Base XII/Pontianak, First Admiral Heru Santoso, said on 9 December 2015 that 14 Navy warships were patrolling the area, the patrols also serving as anticipation of conflict in the South China Sea and Natuna.",
+  "actors": "Indonesian Navy; Main Naval Base XII/Pontianak; First Adm. Heru Santoso",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IU"
+  ],
+  "reasoning": "Naval patrol presence explicitly framed around South China Sea conflict; routine ALKI I patrol, so low weight (register line 806).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://en.republika.co.id/berita/nz4uso317/14-kri-patrol-in-south-china-sea-and-natuna-to-ancticipate-conflict",
+    "title": "14 KRI patrol in South China Sea and Natuna to anticipate conflict",
+    "publisher": "Republika",
+    "pub_date": "2015-12-10",
+    "language": "en",
+    "excerpt": "In addition, the patrols are also as anticipation of conflict in South China Sea and Natuna,"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-05-05",
+  "date_end": "2016-05-05",
+  "date_precision": "day",
+  "location_name": "Taiping Island, Spratly Islands",
+  "subregion": "5",
+  "summary": "Chunghwa Post issued a set of four stamps titled 'South China Sea Peace Initiative of the Republic of China' (NT$5, 9, 13 and 15) on 5 May 2016, depicting Taiping Island's map, lighthouse, hospital, solar farm and ROC flag.",
+  "actors": "Chunghwa Post (state-owned)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A state postal issue presenting a disputed feature as ROC territory, a symbolic administrative act; demonstrative. The only dated source found is a stamp catalogue (StampWorld); the designs come from dealer listings' titles, and no Chunghwa Post page was reached, hence low confidence.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.stampworld.com/stamps/Taiwan/Postage-stamps/g4056",
+    "title": "South China Sea Peace Initiative of the Republic of China 2016",
+    "publisher": "StampWorld (catalogue)",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "South China Sea Peace Initiative of the Republic of China"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2016-06-15",
+  "date_end": "2016-06-15",
+  "date_precision": "day",
+  "location_name": "Waters within the outer limit of the Dongsha (Pratas) territorial sea, incl. the atoll's inner waters",
+  "subregion": "",
+  "summary": "The Kaohsiung City Government issued an announcement on 15 June 2016 banning the taking of coral and reef rock, giant clams, top shells, sea urchins, giant tritons, sea cucumbers, sharks and rays in waters within the outer limit of the Dongsha Islands' territorial sea, punishable under the Fisheries Act.",
+  "actors": "Kaohsiung City Government",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "RC"
+  ],
+  "reasoning": "A fisheries-zoning regulation enforced in the Pratas territorial sea, the basis for later detentions of Chinese fishing boats there; demonstrative. Closest dated act to register line 1067 (the undated 2005 Kaohsiung ban). Source is a National Park PDF notice, so the excerpt may not be checkable; the spaces around the numbers may differ.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dongsha-mr.nsysu.edu.tw/static/file/272/1272/img/1546/615913407.pdf",
+    "title": "東沙環礁國家公園訪客注意事項",
+    "publisher": "Marine National Park Headquarters, Ministry of the Interior (hosted by NSYSU Dongsha station)",
+    "pub_date": "",
+    "language": "zh",
+    "excerpt": "東沙群島領海外界線以內水域禁捕物種有關事項"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2017-10-18",
+  "date_end": "2017-10-18",
+  "date_precision": "day",
+  "location_name": "South China Sea islands and reefs",
+  "subregion": "",
+  "summary": "In his report to the 19th National Congress of the Communist Party of China, Xi Jinping listed among the achievements of the previous five years that construction on islands and reefs in the South China Sea had seen steady progress.",
+  "actors": "Xi Jinping; Communist Party of China",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics",
+   "military"
+  ],
+  "suggested_dyads": [
+   "CA"
+  ],
+  "reasoning": "The top leader's public claim of credit for island construction in the party's main political report is a verbal assertion of the claim; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://language.chinadaily.com.cn/a/201711/06/WS5d034782a3103dbf1432840b.html",
+    "title": "Full text of Xi Jinping's report at 19th CPC National Congress (bilingual)",
+    "publisher": "China Daily / Xinhua",
+    "pub_date": "2017-11-06",
+    "language": "en",
+    "excerpt": "Construction on islands and reefs in the South China Sea has seen steady progress."
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2018-05-01",
+  "date_end": "2018-08-16",
+  "date_precision": "day",
+  "location_name": "South China Sea north of 12°N, incl. Gulf of Tonkin, Paracels and Scarborough Shoal",
+  "subregion": "",
+  "summary": "China's annual summer fishing ban, published by the Ministry of Agriculture on 8 February, ran from 1 May to 16 August 2018 over waters north of 12°N including disputed areas; Vietnam protested.",
+  "actors": "Ministry of Agriculture",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CA"
+  ],
+  "reasoning": "Unilateral fisheries administration over disputed waters; demonstrative. Routine annual practice, compiled to fill the 2018 gap in the moratorium series.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.asianews.it/news-en/Beijing-imposes-fishing-ban-on-South-China-Sea,-Hanoi-protests-43526.html",
+    "title": "Beijing imposes fishing ban on South China Sea, Hanoi protests",
+    "publisher": "AsiaNews",
+    "pub_date": "2018-04-04",
+    "language": "en",
+    "excerpt": "The latter is set to come into force on 1st May until 16 August 2018."
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2018-08-03",
+  "date_end": "2018-08-03",
+  "date_precision": "day",
+  "location_name": "South China Sea islands",
+  "subregion": "",
+  "summary": "Responding to China and ASEAN's agreement on a single draft negotiating text for a South China Sea code of conduct, from which Taiwan was excluded, Taiwan's Ministry of Foreign Affairs restated that the South China Sea islands are ROC territory and said Taiwan had the capacity and was willing to join multilateral negotiations.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RA"
+  ],
+  "reasoning": "A formal sovereignty restatement made in reaction to a China-ASEAN code-of-conduct step that excluded Taiwan; declarative. Focus Taiwan shows only the lead paragraph (the rest is behind a CNA paywall), so the sovereignty sentence is not in the checked excerpt.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://focustaiwan.tw/politics/201808030031",
+    "title": "Taiwan willing to participate in talks over South China Sea: MOFA",
+    "publisher": "Focus Taiwan (CNA)",
+    "pub_date": "2018-08-03",
+    "language": "en",
+    "excerpt": "Taiwan has the capacity and is willing to participate in multilateral negotiations"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2022-03-11",
+  "date_end": "2022-03-11",
+  "date_precision": "day",
+  "location_name": "Indonesian waters and jurisdiction (national)",
+  "subregion": "",
+  "summary": "President Joko Widodo established Government Regulation (PP) No. 13 of 2022 on the conduct of security, safety and law enforcement in Indonesian waters and jurisdiction on 11 March 2022, presented as protecting state sovereignty.",
+  "actors": "President Joko Widodo",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "IA"
+  ],
+  "reasoning": "Maritime law-enforcement regulation (basis for Bakamla-led joint patrols) framed as safeguarding sovereignty; national, not Natuna-specific (register line 831). The excerpt is the regulation's title as it appears on the page next to the date clause.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://jdih.kemenkoinfra.go.id/id/presiden-jokowi-tetapkan-pp-no13-tahun-2022-guna-menjaga-kedaulatan-negara",
+    "title": "Presiden Jokowi Tetapkan PP No.13 Tahun 2022 Guna Menjaga Kedaulatan Negara",
+    "publisher": "JDIH Kemenko Marves",
+    "pub_date": "2022-03-15",
+    "language": "id",
+    "excerpt": "Penyelenggaraan Keamanan, Keselamatan dan Penegakan Hukum di Wilayah Perairan Indonesia dan Wilayah Yurisdiksi Indonesia"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2022-06-02",
+  "date_end": "2022-06-02",
+  "date_precision": "day",
+  "location_name": "South China Sea",
+  "subregion": "",
+  "summary": "Foreign Ministry spokesperson Zhao Lijian, in a statement sent to reporters, rejected the Philippine diplomatic protest against China's annual fishing moratorium and urged Manila to view it in an 'objective and correct perspective'.",
+  "actors": "Ministry of Foreign Affairs (spokesperson Zhao Lijian)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "A verbal rejection of a Philippine protest reasserting China's right to impose its fishing ban in disputed waters; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.philstar.com/headlines/2022/06/02/2185595/china-dismisses-philippines-fishing-ban-protest-calls-it-unwarranted-accusation",
+    "title": "China dismisses Philippines' fishing ban protest, calls it an 'unwarranted accusation'",
+    "publisher": "Philstar.com",
+    "pub_date": "2022-06-02",
+    "language": "en",
+    "excerpt": "We hope the Philippine side can view it in an objective and correct perspective"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2022-06-29",
+  "date_end": "2022-06-29",
+  "date_precision": "day",
+  "location_name": "Taiping Island (Itu Aba)",
+  "subregion": "5",
+  "summary": "A day after the Philippine Department of Foreign Affairs objected to Taiwan's live-fire drills around Itu Aba, Taiwan's Ministry of Foreign Affairs rejected the complaint, saying that as Itu Aba is ROC territory Taiwan has the right to conduct routine exercises at Taiping and its surrounding waters, and that it had issued advance notices.",
+  "actors": "Ministry of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RP"
+  ],
+  "reasoning": "Formal rejection of a Philippine protest, asserting sovereignty over Itu Aba and the right to drill there; declarative. The set has the 28-29 June 2022 drill but not this reply, the first such MOFA rebuff addressed to Manila; found while searching line 1168 (outside the listed diamond items). The Taipei Times page shows no dateline; the date comes from its archive URL (30 June, 'yesterday') and The Star (29 June).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.taipeitimes.com/News/front/archives/2022/06/30/2003780846",
+    "title": "Taiwan asserts right to conduct drills on Taiping",
+    "publisher": "Taipei Times",
+    "pub_date": "2022-06-30",
+    "language": "en",
+    "excerpt": "right to conduct routine exercises at Taiping and its surrounding waters"
+   },
+   {
+    "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2022/06/29/taiwan-rebuffs-philippines-complaint-about-south-china-sea-live-fire-drills",
+    "title": "Taiwan rebuffs Philippines complaint about South China Sea live fire drills",
+    "publisher": "The Star (Reuters)",
+    "pub_date": "2022-06-29",
+    "language": "en",
+    "excerpt": "Taiwan rebuffs Philippines complaint about South China Sea live fire drills"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2022-09-22",
+  "date_end": "2022-12-16",
+  "date_precision": "day",
+  "location_name": "Nam Con Son basin; Vanguard Bank",
+  "subregion": "9",
+  "summary": "Vietnam Fisheries Surveillance ships Kiem Ngu 263, 264 and 268 tailed China Coast Guard ships CCG 5304 (22 September to 3 November) and CCG 5402 (6 November to 16 December) on their patrols through the Nam Con Son basin, AMTI's AIS tracking showed.",
+  "actors": "Vietnam Fisheries Surveillance (Kiem Ngu 263, 264, 268)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "Routine state law-enforcement shadowing of Chinese patrols through Vietnam's oil and gas blocks, summarised as one event for 2022; demonstrative. Dates are those listed in AMTI's table.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://amti.csis.org/perilous-prospects-tensions-flare-at-malaysian-vietnamese-oil-and-gas-fields/",
+    "title": "Perilous Prospects: Tensions Flare at Malaysian and Vietnamese Oil and Gas Fields",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2023-03-30",
+    "language": "en",
+    "excerpt": "each Chinese ship was shadowed by either the Kiem Ngu or Vietnam Coast Guard (VCG)"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2023-03-04",
+  "date_end": "2023-03-04",
+  "date_precision": "day",
+  "location_name": "Pag-asa Island (Thitu); Pag-asa Cay 3 and Cay 4",
+  "subregion": "5",
+  "summary": "A PLA Navy vessel, China Coast Guard ship CCG-5203 and 42 suspected Chinese maritime militia vessels were seen anchored or loitering 4 to 8 nautical miles from Pag-asa Island, inside its 12-nautical-mile territorial sea, with militia ships massed near Pag-asa Cays 3 and 4, the Philippine Coast Guard reported.",
+  "actors": "PLA Navy; China Coast Guard (CCG-5203); maritime militia",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "A mass presence of state and militia vessels inside the territorial sea of a Philippine-held island, without reported confrontation; demonstrative (could be read as coercive swarming). Philstar dates the sighting to 'yesterday' (4 March); RFA/BenarNews says 'on Saturday'.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://philstar.com/headlines/2023/03/05/2249361/chinese-vessels-spotted-near-pag-asa-island",
+    "title": "Chinese vessels spotted near Pag-asa Island",
+    "publisher": "The Philippine Star",
+    "pub_date": "2023-03-05",
+    "language": "en",
+    "excerpt": "along with 42 suspected Chinese maritime militia"
+   },
+   {
+    "url": "https://www.rfa.org/english/news/southchinasea/40chinesevesselspi-03052023142105.html",
+    "title": "More than 40 Chinese vessels reported around Philippine-claimed island",
+    "publisher": "BenarNews / Radio Free Asia",
+    "pub_date": "2023-03-05",
+    "language": "en",
+    "excerpt": "clearly inside the land feature’s 12-nautical mile territorial sea"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2023-03-06",
+  "date_end": "2023-03-06",
+  "date_precision": "day",
+  "location_name": "Indonesian fisheries management areas (WPPNRI, national)",
+  "subregion": "",
+  "summary": "Government Regulation (PP) No. 11 of 2023 on quota-based measured fishing (Penangkapan Ikan Terukur) across Indonesia's fisheries management areas was promulgated on 6 March 2023.",
+  "actors": "Government of Indonesia; Ministry of Marine Affairs and Fisheries",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IA"
+  ],
+  "reasoning": "Administrative fisheries regime applying to zones that include WPP 711 (Natuna), per the register; the page itself speaks only of WPPNRI, so the Natuna link is unverified here (register line 838).",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://jdih.kemenkoinfra.go.id/pp-112023-penangkapan-ikan-terukur",
+    "title": "PP 11/2023 Penangkapan Ikan Terukur",
+    "publisher": "JDIH Kemenko Marves",
+    "pub_date": "2023-03-09",
+    "language": "id",
+    "excerpt": "Maka pada tanggal 6 Maret 2023 telah diundangkan"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2023-03-24",
+  "date_end": "2023-03-26",
+  "date_precision": "day",
+  "location_name": "about 50 nautical miles south of Vanguard Bank",
+  "subregion": "9",
+  "summary": "The Vietnam Fisheries Surveillance ship Kiem Ngu 278 pursued the much larger China Coast Guard ship CCG 5205 from 24 March and came within about 10 metres of it on 26 March some 50 nautical miles south of Vanguard Bank in Vietnam's EEZ; AMTI lists earlier Vietnamese tailing of CCG 5901 and 5302 in January and February 2023.",
+  "actors": "Vietnam Fisheries Surveillance (Kiem Ngu 278)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A close shadowing of a Chinese patrol by a Vietnamese state vessel in its EEZ; demonstrative, arguably coercive given the pursuit and 10-metre approach. Source relays AIS tracking by Ray Powell (Stanford).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.rfa.org/english/news/vietnam/vietnamese-chinese-encounter-eez-03272023054137.html",
+    "title": "Chinese coast guard ship chased out of Vietnam waters",
+    "publisher": "Radio Free Asia",
+    "pub_date": "2023-03-27",
+    "language": "en",
+    "excerpt": "the Kiem Ngu 278 had been pursuing the considerably larger Chinese ship since March 24"
+   },
+   {
+    "url": "https://amti.csis.org/perilous-prospects-tensions-flare-at-malaysian-vietnamese-oil-and-gas-fields/",
+    "title": "Perilous Prospects: Tensions Flare at Malaysian and Vietnamese Oil and Gas Fields",
+    "publisher": "CSIS Asia Maritime Transparency Initiative",
+    "pub_date": "2023-03-30",
+    "language": "en",
+    "excerpt": "each Chinese ship was shadowed by either the Kiem Ngu or Vietnam Coast Guard (VCG)"
+   }
+  ]
+ },
+ {
+  "claimant": "PH",
+  "date_start": "2023-09-22",
+  "date_end": "2023-09-22",
+  "date_precision": "day",
+  "location_name": "Bajo de Masinloc (Scarborough Shoal)",
+  "subregion": "4",
+  "summary": "A PCG and BFAR maritime patrol aboard BRP Datu Bankaw, which gave food and fuel subsidies to more than 50 Filipino fishing boats at Bajo de Masinloc, found a 300-metre floating barrier across the southern part of the shoal, which the PCG publicised on 24 September.",
+  "actors": "Philippine Coast Guard; Bureau of Fisheries and Aquatic Resources (BRP Datu Bankaw)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "fisheries",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "PC"
+  ],
+  "reasoning": "A state patrol supporting Filipino fishers at a Chinese-controlled shoal; demonstrative. Currently folded into the 25 September barrier cutting; the day is inferred from 'Friday' in an article of Sunday 24 September.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.philstar.com/headlines/2023/09/24/2298691/pcg-chinas-floating-barrier-bars-filipino-fishers-bajo-de-masinloc",
+    "title": "PCG: China's floating barrier bars Filipino fishers from Bajo de Masinloc",
+    "publisher": "Philstar.com",
+    "pub_date": "2023-09-24",
+    "language": "en",
+    "excerpt": "There were over 50 Filipino fishing boats in the area at the time of the maritime patrol mission of PCG and BFAR."
+   }
+  ]
+ },
+ {
+  "claimant": "PH",
+  "date_start": "2023-10-13",
+  "date_end": "2023-10-13",
+  "date_precision": "day",
+  "location_name": "southwest of Pag-asa Island",
+  "subregion": "5",
+  "summary": "On a routine resupply run, the Philippine Navy ship BRP Benguet warned off and issued repeated radio challenges under COLREG to PLA Navy ship 621, which trailed it at about 80 yards and tried to cut across its bow southwest of Pag-asa Island.",
+  "actors": "Philippine Navy (BRP Benguet)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "PC"
+  ],
+  "reasoning": "A naval resupply of Philippine-held outposts with active radio challenges to a Chinese warship; demonstrative. The Chinese side of the incident is already in the China set (13 October 2023).",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://philstar.com/headlines/2023/10/16/2304126/navy-warns-chinese-ship-west-philippine-sea",
+    "title": "Navy warns off Chinese ship in West Philippine Sea",
+    "publisher": "The Philippine Star",
+    "pub_date": "2023-10-16",
+    "language": "en",
+    "excerpt": "warned off and issued consecutive radio challenges"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2024-05-15",
+  "date_end": "2024-05-15",
+  "date_precision": "day",
+  "location_name": "about 24 nautical miles from Scarborough (Panatag) Shoal",
+  "subregion": "4",
+  "summary": "Two China Coast Guard ships, 4108 and 4109, shadowed the civilian Atin Ito convoy heading for Scarborough Shoal, and CCG 4108 manoeuvred to block the fishing boat FB Bing Bing about 24 nautical miles from the shoal.",
+  "actors": "China Coast Guard (4108, 4109)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "Physical blocking of a Philippine civilian convoy approaching a disputed shoal; coercive.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://globalnation.inquirer.net/?p=236087",
+    "title": "2 China Coast Guard ships try to block 'Atin Ito' convoy",
+    "publisher": "Philippine Daily Inquirer",
+    "pub_date": "2024-05-16",
+    "language": "en",
+    "excerpt": "a CCG ship, with body No. 4108, maneuvered to block FB Bing Bing"
+   }
+  ]
+ },
+ {
+  "claimant": "MY",
+  "date_start": "2024-07-01",
+  "date_end": "2024-07-09",
+  "date_precision": "month",
+  "location_name": "Jerun field, SK408 production sharing contract",
+  "subregion": "",
+  "summary": "SapuraOMV Upstream, with partners Shell and Petronas, commenced gas production from the Jerun field under the SK408 production sharing contract, announced on 9 July 2024.",
+  "actors": "SapuraOMV Upstream; Petronas; Shell",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "Start of hydrocarbon production in a block off Sarawak within the area China claims; the article does not state the field's position (register line 531).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://thestar.com.my/business/business-news/2024/07/09/sapuraomv-delivers-first-gas-from-jerun-platform-in-malaysia",
+    "title": "SapuraOMV delivers first gas from Jerun platform in Malaysia",
+    "publisher": "The Star",
+    "pub_date": "2024-07-09",
+    "language": "en",
+    "excerpt": "SapuraOMV Upstream Sdn Bhd has commenced gas production from its Jerun field in Malaysia, under the SK408"
+   }
+  ]
+ },
+ {
+  "claimant": "MY",
+  "date_start": "2024-08-01",
+  "date_end": "2024-08-20",
+  "date_precision": "month",
+  "location_name": "Kasawari field, Block SK316, about 200km off Sarawak",
+  "subregion": "10",
+  "summary": "Petronas commenced first gas production at the Kasawari field in Block SK316, about 200km off Sarawak, at an initial 200 million standard cubic feet per day, announced on 20 August 2024.",
+  "actors": "Petronas; Petronas Carigali",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "First production at the field near Luconia Shoals whose construction had drawn Chinese coast guard pressure; the day of first gas is not given, only 'recently' (register line 531).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://dayakdaily.com/200km-offshore-sarawak-petronas-kasawari-field-begins-first-gas-production-at-200-mln-cubic-feet-daily",
+    "title": "200km offshore Sarawak, PETRONAS' Kasawari field begins first gas production at 200 mln cubic feet daily",
+    "publisher": "DayakDaily",
+    "pub_date": "2024-08-21",
+    "language": "en",
+    "excerpt": "Petroliam Nasional Berhad (PETRONAS) recently commenced its first gas production at the Kasawari field,"
+   },
+   {
+    "url": "https://argusmedia.com/en/news-and-insights/latest-market-news/2600077-malaysia-s-petronas-achieves-first-gas-at-kasawari",
+    "title": "Malaysia's Petronas achieves first gas at Kasawari",
+    "publisher": "Argus Media",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "Malaysian state-owned Petronas has started first gas production at the Kasawari field"
+   }
+  ]
+ },
+ {
+  "claimant": "PH",
+  "date_start": "2024-09-05",
+  "date_end": "2024-09-05",
+  "date_precision": "day",
+  "location_name": "Escoda (Sabina) Shoal",
+  "subregion": "6",
+  "summary": "The DFA said it had sent China a protest note, the 43rd note verbale of the year, after repeated collisions near Escoda Shoal, including the China Coast Guard's ramming of BRP Teresa Magbanua and the 25 August water-cannoning of a BFAR supply ship.",
+  "actors": "Department of Foreign Affairs",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "PC"
+  ],
+  "reasoning": "A formal diplomatic protest asserting Philippine rights at Escoda Shoal; declarative. The date is that of the DFA's disclosure reported on 5 September; the note's sending date is not given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://philstar.com/headlines/2024/09/05/2383057/philippines-sends-protest-note-vs-china-after-clashes-near-escoda-shoal",
+    "title": "Philippines sends protest note vs China after clashes near Escoda Shoal",
+    "publisher": "Philstar.com",
+    "pub_date": "2024-09-05",
+    "language": "en",
+    "excerpt": "The protest note is the 43rd note verbale the Philippines has issued against China"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2024-11-13",
+  "date_end": "2024-11-13",
+  "date_precision": "day",
+  "location_name": "Washington; South China Sea",
+  "subregion": "",
+  "summary": "Asked about the South China Sea while in Washington on 13 November 2024, President Prabowo Subianto said Indonesia would always safeguard its sovereignty.",
+  "actors": "President Prabowo Subianto",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Presidential verbal assertion following criticism of the 9 November Prabowo-Xi joint statement; weak and close to the 11 November Foreign Ministry clarification already in the set (register line 846).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://thestar.com.my/aseanplus/aseanplus-news/2024/11/14/indonesian-president-says-he-will-safeguard-sovereignty-in-south-china-sea",
+    "title": "Indonesian president says he will safeguard sovereignty in South China Sea",
+    "publisher": "The Star (Reuters)",
+    "pub_date": "2024-11-14",
+    "language": "en",
+    "excerpt": "Indonesian President Prabowo Subianto said he would \"always safeguard our sovereignty\" when asked about the South China Sea."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2024-11-18",
+  "date_end": "2024-11-18",
+  "date_precision": "day",
+  "location_name": "North Natuna Sea",
+  "subregion": "10",
+  "summary": "Bakamla head Vice Admiral Irvansyah said on 18 November 2024 that Bakamla ships take turns patrolling the North Natuna Sea every day, one ship deployed daily, and that no Chinese coast guard ships were currently active there.",
+  "actors": "Bakamla; Vice Adm. Irvansyah",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Statement of a standing daily coast-guard patrol in the North Natuna Sea after the October 2024 CCG expulsions; a general statement of practice rather than a single act (register line 848).",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://en.antaranews.com/news/334881/homepage-v2.html",
+    "title": "No Chinese ships currently in North Natuna Sea: Bakamla",
+    "publisher": "ANTARA",
+    "pub_date": "2024-11-18",
+    "language": "en",
+    "excerpt": "Bakamla ships are taking turns patrolling the North Natuna Sea every day, with one ship deployed daily for the task."
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2024-12-02",
+  "date_end": "2024-12-02",
+  "date_precision": "day",
+  "location_name": "Huangyan Dao (Scarborough Shoal)",
+  "subregion": "4",
+  "summary": "China's deputy permanent representative to the UN, Geng Shuang, deposited with the UN Legal Counsel the Statement on the Baselines of the Territorial Sea Adjacent to Huangyan Dao and its chart.",
+  "actors": "Permanent Mission of China to the UN (Geng Shuang)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "A formal international deposit of baselines around a disputed feature, following the 10 November 2024 declaration; declarative.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.people.cn/n3/2024/1203/c90000-20249441.html",
+    "title": "China deposits to UN the statement on Baselines of Territorial Sea Adjacent to Huangyan Dao and Chart",
+    "publisher": "People's Daily Online",
+    "pub_date": "2024-12-03",
+    "language": "en",
+    "excerpt": "A Chinese envoy on Monday deposited to the United Nations (UN) the Statement on the Baselines"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-01-27",
+  "date_end": "2025-02-03",
+  "date_precision": "day",
+  "location_name": "off Sarawak, near the Kasawari gas development (Block SK316)",
+  "subregion": "10",
+  "summary": "In the week before 3 February 2025 the China Coast Guard vessel CCG 5403 patrolled inside Malaysia's EEZ to within about 50 nautical miles of Sarawak's coast, reportedly near the Kasawari gas project, according to ship-tracking cited by SeaLight's Ray Powell.",
+  "actors": "China Coast Guard (CCG 5403)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CM"
+  ],
+  "reasoning": "A CCG patrol close to the Sarawak coast and to a Petronas gas field is a unilateral jurisdictional presence without reported confrontation, hence demonstrative; the closeness (50 nm) may matter as wider scope. Dates rest on 'over the past week' in a 3 Feb 2025 report, so the start date is approximate.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://defencesecurityasia.com/en/chinese-coast-guard-ship-spotted-just-50-nautical-miles-from-sarawaks-coast-observer/",
+    "title": "Chinese Coast Guard Ship Spotted Just 50 Nautical Miles from Sarawak's Coast – Observer",
+    "publisher": "Defence Security Asia",
+    "pub_date": "2025-02-03",
+    "language": "en",
+    "excerpt": "has ventured alarmingly close—within just 50 nautical miles—of Sarawak"
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2025-02-21",
+  "date_end": "2025-02-21",
+  "date_precision": "day",
+  "location_name": "Gulf of Tonkin (Vinh Bac Bo), Bach Long Vi island",
+  "subregion": "1",
+  "summary": "The Government of Viet Nam issued a statement, announced by the Ministry of Foreign Affairs, declaring the baseline for measuring the breadth of its territorial sea in the Gulf of Tonkin, including around Bach Long Vi island, following National Assembly Standing Committee Resolution No. 68/NQ-UBTVQH15 of 14 February 2025.",
+  "actors": "Government of Viet Nam; Ministry of Foreign Affairs; National Assembly Standing Committee",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VC"
+  ],
+  "reasoning": "A new legal act defining maritime zones is a declarative claim assertion and is new for Vietnam in the Gulf; it followed China's own Gulf of Tonkin baseline of March 2024 (per RFA). Not found in the VN set.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://en.baochinhphu.vn/viet-nam-announces-baseline-in-gulf-of-tonkin-111250221211429833.htm",
+    "title": "Viet Nam announces baseline in Gulf of Tonkin",
+    "publisher": "Viet Nam Government News (baochinhphu.vn)",
+    "pub_date": "2025-02-21",
+    "language": "en",
+    "excerpt": "The baseline serves as a legal foundation for defining Viet Nam’s maritime boundaries"
+   },
+   {
+    "url": "https://rfa.org/vietnamese/trong-nuoc/2025/02/21/viet-nam-tuyen-bo-duong-co-so-o-vinh-bac-bo-va-dao-bach-long-vi/",
+    "title": "Việt Nam tuyên bố đường cơ sở ở Vịnh Bắc Bộ và đảo Bạch Long Vĩ",
+    "publisher": "RFA Vietnamese",
+    "pub_date": "2025-02-21",
+    "language": "vi",
+    "excerpt": "Chính phủ Việt Nam hôm 21/2 tuyên bố đường cơ sở ở khu vực Vịnh Bắc Bộ, đảo Bạch Long Vĩ"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-02-28",
+  "date_end": "2025-06-10",
+  "date_precision": "day",
+  "location_name": "Central area of the South China Sea (Vietnam's extended continental shelf submission)",
+  "subregion": "",
+  "summary": "China sent three communications to the UN Secretary-General, dated 28 February, 8 April and 10 June 2025, on Viet Nam's partial submission to the Commission on the Limits of the Continental Shelf for the central area of the East Sea; Viet Nam's note of 12 May 2025 rejected China's position.",
+  "actors": "Permanent Mission of China to the UN",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "CV"
+  ],
+  "reasoning": "Repeated notes verbales contesting Vietnam's CLCS submission are diplomatic claim assertions, grouped as one event with three dates. The note texts (PDFs) could not be opened, so the summary states only that they were sent and concern Vietnam's submission; the UN listing page is the checked source.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.un.org/depts/los/clcs_new/submissions_files/submission_vnm_95_2024.htm",
+    "title": "Submission by Viet Nam (VNM-C): communications received",
+    "publisher": "UN Commission on the Limits of the Continental Shelf",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "Communication dated 28 February 2025"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-05-01",
+  "date_end": "2025-05-31",
+  "date_precision": "month",
+  "location_name": "North Natuna Sea, Indonesian EEZ",
+  "subregion": "10",
+  "summary": "A local news site reported on 6 May 2025 that a China Coast Guard ship, hull number 5901, was operating without permission in Indonesia's EEZ in the North Natuna Sea and was found there by the Bakamla patrol ship KN Marore-322.",
+  "actors": "China Coast Guard (CCG 5901)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CI"
+  ],
+  "reasoning": "A CCG patrol inside Indonesia's EEZ within the nine-dash line asserts China's claim by presence. Only one minor regional outlet found, and no corroboration from Bakamla or national press; the incident date is not given (month taken from the 6 May 2025 publication date), so confidence is low.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://faktamaluku.org/kembali-terjadi-bakamla-usir-kapal-china-di-laut-natuna-utara/",
+    "title": "Kembali Terjadi, Bakamla Usir Kapal China di Laut Natuna Utara",
+    "publisher": "Fakta Maluku",
+    "pub_date": "2025-05-06",
+    "language": "id",
+    "excerpt": "kapal patroli mereka, KN Marore-322, mendapati keberadaan kapal China Coast Guard (CCG) dengan nomor lambung 5901"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-05-01",
+  "date_end": "2025-09-30",
+  "date_precision": "month",
+  "location_name": "North Natuna Sea (three points)",
+  "subregion": "10",
+  "summary": "Between May and September 2025 the Chinese oceanographic research vessel Nan Feng and China Coast Guard ships operated repeatedly at three different points in the North Natuna Sea inside Indonesia's jurisdiction, as documented by the Indonesia Ocean Justice Initiative (IOJI).",
+  "actors": "Nan Feng (research vessel); China Coast Guard",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "CI"
+  ],
+  "reasoning": "Unauthorised Chinese state research and coast-guard operations in Indonesia's EEZ assert China's nine-dash-line claim through presence and survey, without reported confrontation; summarised as one event for the documented May-Sep 2025 period.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://oceanjusticeinitiative.org/press-release-illegal-fishing-foreign-vessel-intrusions-and-submarine-cable-damage-in-indonesias-waters-and-jurisdiction/",
+    "title": "[Press Release] Illegal Fishing, Foreign Vessel Intrusions, and Submarine Cable Damage in Indonesia's Waters and Jurisdiction",
+    "publisher": "Indonesia Ocean Justice Initiative",
+    "pub_date": "2025-11-20",
+    "language": "en",
+    "excerpt": "a Chinese oceanographic research vessel, Nan Feng, at three different points in the North Natuna Sea"
+   },
+   {
+    "url": "https://www.9dashline.com/article/the-grey-zone-of-interest-how-china-tests-indonesias-south-china-sea-strategy",
+    "title": "The grey-zone of interest: How China tests Indonesia's South China Sea strategy",
+    "publisher": "9DashLine",
+    "pub_date": "2026-03-02",
+    "language": "en",
+    "excerpt": "repeated operations by the Chinese research vessel Nan Feng and CCG ships in the North Natuna Sea."
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2025-05-01",
+  "date_end": "2025-05-31",
+  "date_precision": "month",
+  "location_name": "North Natuna Sea, Indonesian EEZ",
+  "subregion": "10",
+  "summary": "Bakamla's patrol ship KN Marore-322 was reported (6 May 2025) to have driven the China Coast Guard ship 5901 out of Indonesia's EEZ in the North Natuna Sea using radio warnings and manoeuvres; its commander, Lt. Col. (Bakamla) Yuhanes Antara, said Bakamla acted firmly under national and international law.",
+  "actors": "Bakamla RI, KN Marore-322",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "Expelling a foreign coast-guard ship from waters China claims is enforcement of Indonesia's claim through physical interference. Single minor outlet, no Bakamla release found and no incident date, so low confidence.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://faktamaluku.org/kembali-terjadi-bakamla-usir-kapal-china-di-laut-natuna-utara/",
+    "title": "Kembali Terjadi, Bakamla Usir Kapal China di Laut Natuna Utara",
+    "publisher": "Fakta Maluku",
+    "pub_date": "2025-05-06",
+    "language": "id",
+    "excerpt": "Kami bertindak tegas sesuai dengan hukum nasional dan internasional"
+   }
+  ]
+ },
+ {
+  "claimant": "PH",
+  "date_start": "2025-05-03",
+  "date_end": "2025-05-03",
+  "date_precision": "day",
+  "location_name": "Sandy Cay (Pag-asa Cay 2), near Pag-asa Island",
+  "subregion": "5",
+  "summary": "The National Maritime Council rejected Chinese state media's claim to have taken control of Sandy Cay near Pag-asa Island, calling it disinformation meant to mislead China's own people and the international community.",
+  "actors": "National Maritime Council",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "PC"
+  ],
+  "reasoning": "A formal government statement rejecting China's claimed control of a feature Manila claims; declarative. Separate from the 27 April counter-landing already in the set.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.philstar.com/headlines/2025/05/03/2440262/philippines-slams-chinas-claim-over-sandy-cay-disinformation",
+    "title": "Philippines slams China's claim over Sandy Cay as 'disinformation'",
+    "publisher": "Philstar.com",
+    "pub_date": "2025-05-03",
+    "language": "en",
+    "excerpt": "China uses disinformation to mislead its own people and the international community."
+   },
+   {
+    "url": "https://www.gmanetwork.com/news/topstories/nation/944841/nmc-china-s-seizure-of-sandy-cay-a-clear-example-of-disinformation/story",
+    "title": "NMC: China's seizure of Sandy Cay a clear example of disinformation",
+    "publisher": "GMA News Online",
+    "pub_date": "2025-05-03",
+    "language": "en",
+    "excerpt": "China uses disinformation to mislead its own people and the international community."
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-05-05",
+  "date_end": "2025-05-05",
+  "date_precision": "day",
+  "location_name": "waters around Huangyan Dao (Scarborough Shoal)",
+  "subregion": "4",
+  "summary": "The PLA Southern Theater Command said its naval and air forces tracked, monitored, warned and expelled Philippine Navy corvette 35 attempting to enter waters around Huangyan Dao, releasing a track chart; the Foreign Ministry said Huangyan Dao is China's inherent territory.",
+  "actors": "PLA Southern Theater Command (spokesperson Tian Junli); Ministry of Foreign Affairs (Lin Jian)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "Naval and air forces warning and driving off a Philippine warship near a disputed feature is physical interference; coercive. Incident 'on Monday' in an article of Thursday 8 May.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://www.globaltimes.cn/page/202505/1333576.shtml",
+    "title": "PLA prevents Philippine corvette from trespassing into Huangyan Dao waters, releases trail illustration",
+    "publisher": "Global Times",
+    "pub_date": "2025-05-08",
+    "language": "en",
+    "excerpt": "organized naval and air forces to lawfully track, monitor, issue warnings, and expel the vessel"
+   }
+  ]
+ },
+ {
+  "claimant": "MY",
+  "date_start": "2025-05-15",
+  "date_end": "2025-05-15",
+  "date_precision": "day",
+  "location_name": "Beting Patinggi Ali (Luconia Shoals), off Miri",
+  "subregion": "10",
+  "summary": "On 15 May 2025 MMEA Sarawak director First Admiral Mohd Khairi Abd Aziz stated that Beting Patinggi Ali lies within Malaysia's EEZ under UNCLOS and that waters off Miri remained safe despite the China Coast Guard's presence in the area, saying MMEA stood ready to act to protect Malaysian fishermen.",
+  "actors": "Malaysian Maritime Enforcement Agency (MMEA) Sarawak; First Admiral Mohd Khairi Abd Aziz",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "An official MMEA statement reasserting Malaysian EEZ jurisdiction at the shoal in response to CCG presence is a verbal assertion (declarative). Statement date per article (issued the day before the 16 May dateline); year from URL path.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.theborneopost.com/2025/05/16/mmea-beting-patinggi-ali-miri-waters-safe-secure-despite-ccg-presence/",
+    "title": "MMEA: Beting Patinggi Ali, Miri waters safe, secure despite CCG presence",
+    "publisher": "The Borneo Post",
+    "pub_date": "2025-05-16",
+    "language": "en",
+    "excerpt": "lies well within the country's Exclusive Economic Zone"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-06-01",
+  "date_end": "2025-06-26",
+  "date_precision": "month",
+  "location_name": "Vietnam's exclusive economic zone and extended continental shelf, near Cam Ranh",
+  "subregion": "",
+  "summary": "The Chinese survey ship Bei Dao 996 repeatedly operated in Vietnam's EEZ from mid-June 2025, surveying nearly 2,000 sq km, about 1,100 sq km of it inside the EEZ, in waters near Cam Ranh; Vietnam's fisheries surveillance vessel Kiem Ngu 471 shadowed it.",
+  "actors": "Bei Dao 996 (Chinese survey ship)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "energy",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CV"
+  ],
+  "reasoning": "A Chinese state survey in waters Vietnam claims as its EEZ is unilateral administration of the claim; Vietnam's 3 July 2025 response (already in set as ev-f9e3d1f43d) is the VN side, the Chinese act itself is not in the CN set. Start given only as 'mid-June', so month precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globalsecurity.org/military/library/news/2025/06/mil-250626-rfa01.htm",
+    "title": "Chinese ship conducts survey off Vietnam but Hanoi's state media stays silent",
+    "publisher": "Radio Free Asia (via GlobalSecurity.org)",
+    "pub_date": "2025-06-26",
+    "language": "en",
+    "excerpt": "The vessel, named Bei Dao 996, was first tracked by SeaLight"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-08-15",
+  "date_end": "2025-08-20",
+  "date_precision": "day",
+  "location_name": "south of Bajo de Masinloc (Scarborough Shoal)",
+  "subregion": "4",
+  "summary": "Two Chinese research vessels, the deep-sea research ship Xiang Yang Hong 10 (arrived 15 August) and the drone mothership Zhu Hai Yun (arrived 18 August), were reported operating south of Scarborough Shoal.",
+  "actors": "Xiang Yang Hong 10; Zhu Hai Yun",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "State research vessels operating at a disputed shoal is unilateral survey activity; demonstrative. Source relays a maritime-security analyst's tracking (Ray Powell), not an official statement.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.gmanetwork.com/news/topstories/nation/956531/2-chinese-research-ships-operating-in-bajo-de-masinloc/story",
+    "title": "2 Chinese research ships operating in Bajo de Masinloc",
+    "publisher": "GMA News Online",
+    "pub_date": "2025-08-21",
+    "language": "en",
+    "excerpt": "Xiang Yang Hong 10 deep-sea research ship arrived 15 August."
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-09-01",
+  "date_end": "2025-09-30",
+  "date_precision": "month",
+  "location_name": "North Natuna Sea, Indonesian waters",
+  "subregion": "10",
+  "summary": "The China Coast Guard ship CCG 5204 again entered Indonesian waters in the North Natuna Sea in September 2025, according to IOJI monitoring, which linked the patrol to China's nine-dash-line claim.",
+  "actors": "China Coast Guard (CCG 5204)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CI"
+  ],
+  "reasoning": "A CCG patrol inside Indonesia's EEZ asserts China's claimed jurisdiction by presence; no Indonesian expulsion reported, so demonstrative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://oceanjusticeinitiative.org/press-release-illegal-fishing-foreign-vessel-intrusions-and-submarine-cable-damage-in-indonesias-waters-and-jurisdiction/",
+    "title": "[Press Release] Illegal Fishing, Foreign Vessel Intrusions, and Submarine Cable Damage in Indonesia's Waters and Jurisdiction",
+    "publisher": "Indonesia Ocean Justice Initiative",
+    "pub_date": "2025-11-20",
+    "language": "en",
+    "excerpt": "The China Coast Guard vessel CCG 5204 was again detected entering Indonesian waters in September 2025"
+   }
+  ]
+ },
+ {
+  "claimant": "MY",
+  "date_start": "2025-10-31",
+  "date_end": "2025-10-31",
+  "date_precision": "day",
+  "location_name": "Malaysia's EEZ (South China Sea)",
+  "subregion": "",
+  "summary": "On 31 October 2025, on the sidelines of the ADMM in Kuala Lumpur, Chief of Defence Force Gen Mohd Nizam Jaafar said foreign vessels including Chinese ships were regularly present in Malaysia's EEZ and that Malaysia was handling them through diplomatic notes and its own means.",
+  "actors": "Malaysian Armed Forces; Chief of Defence Force Gen Mohd Nizam Jaafar",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "A public statement by Malaysia's top military officer that Chinese presence in the EEZ is answered with diplomatic notes is a verbal assertion of jurisdiction; it confirms notes but gives no dates for them, so the event is the statement itself.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.malaymail.com/news/malaysia/2025/10/31/we-are-handling-it-defence-force-chief-says-chinese-ships-in-eez-under-control/196783",
+    "title": "'We are handling it': Defence force chief says Chinese ships in EEZ under control",
+    "publisher": "Malay Mail",
+    "pub_date": "2025-10-31",
+    "language": "en",
+    "excerpt": "We are handling it — through diplomatic notes, sometimes in our own way."
+   }
+  ]
+ },
+ {
+  "claimant": "VN",
+  "date_start": "2025-12-01",
+  "date_end": "2025-12-11",
+  "date_precision": "month",
+  "location_name": "South Reef, Spratly Islands",
+  "subregion": "5",
+  "summary": "UPI reported on 11 December 2025 that Vietnam had quietly accelerated land reclamation at South Reef, with new satellite imagery showing significant dredging, reinforced embankments and the early formation of a possible sheltered harbour and logistics zone.",
+  "actors": "",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "VA"
+  ],
+  "reasoning": "Construction on a held Spratly feature is demonstrative assertion. The imagery date is not given, so the event is dated to the report's month; it may already be covered by the AMTI-based ev-70fba6e8e6 (Jul-Dec 2025) - maintainer to judge.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.yahoo.com/news/articles/vietnam-steps-south-reef-expansion-142441277.html",
+    "title": "Vietnam steps up South Reef expansion, careful not to provoke China",
+    "publisher": "UPI (via Yahoo News)",
+    "pub_date": "2025-12-11",
+    "language": "en",
+    "excerpt": "Vietnam has quietly accelerated land reclamation at South Reef"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-12-12",
+  "date_end": "2025-12-12",
+  "date_precision": "day",
+  "location_name": "airspace of Huangyan Dao (Scarborough Shoal)",
+  "subregion": "4",
+  "summary": "The PLA Southern Theater Command (spokesperson Tian Junli) announced that it had tracked, warned and expelled several small Philippine aircraft that had entered the airspace over Huangyan Dao 'in recent days', and warned Manila to cease its provocations.",
+  "actors": "PLA Southern Theater Command (Senior Colonel Tian Junli)",
+  "suggested_type": "coercive",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "CP"
+  ],
+  "reasoning": "Military interception and expulsion of Philippine aircraft over a disputed shoal plus a public warning; coercive. Distinct from the same-day CCG water-cannon incident at Sabina Shoal already in the set. Date is that of the announcement; the flights were 'in recent days'.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.globaltimes.cn/page/202512/1350411.shtml",
+    "title": "Chinese PLA, CCG expel intruding Philippine aircraft, vessels",
+    "publisher": "Global Times",
+    "pub_date": "2025-12-12",
+    "language": "en",
+    "excerpt": "illegally intruded into the airspace of China's Huangyan Dao in recent days"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2025-12-25",
+  "date_end": "2025-12-25",
+  "date_precision": "day",
+  "location_name": "Yongxing (Woody / Phu Lam) Island, Paracel Islands",
+  "subregion": "2",
+  "summary": "Sansha City opened the first commercial centre on Yongxing (Woody) Island in the Paracels on 25 December 2025; Vietnam's Foreign Ministry objected on 9 January 2026.",
+  "actors": "Sansha City government",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "domestic",
+   "physical"
+  ],
+  "suggested_issues": [
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CV"
+  ],
+  "reasoning": "Civilian administrative development on a disputed feature is demonstrative; Vietnam's protest is in the set (ev-27513c4def) but the Chinese act is not. SCMP gives the opening as 'Thursday', consistent with 25 Dec 2025.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://sputniknews.cn/20260111/1069260264.html",
+    "title": "Vietnam objects to China opening a commercial centre on Yongxing Island",
+    "publisher": "Sputnik (Chinese edition)",
+    "pub_date": "2026-01-11",
+    "language": "zh",
+    "excerpt": "12月25日，三沙市永兴岛首家商业中心盛大开业。"
+   },
+   {
+    "url": "https://www.scmp.com/news/china/diplomacy/article/3337811/china-opens-shopping-centre-woody-island-disputed-paracels-south-china-sea",
+    "title": "China opens shopping centre on Woody Island in disputed Paracels",
+    "publisher": "South China Morning Post",
+    "pub_date": "",
+    "language": "en",
+    "excerpt": "The Sansha City Commercial Centre opened to business on Thursday, according to the local government."
+   }
+  ]
+ },
+ {
+  "claimant": "PH",
+  "date_start": "2026-01-16",
+  "date_end": "2026-01-16",
+  "date_precision": "day",
+  "location_name": "",
+  "subregion": "",
+  "summary": "PCG spokesperson Jay Tarriela, after China lodged a diplomatic protest over caricatures of Xi Jinping shown in his university presentation, replied in a Facebook post that the protest was not legitimate diplomacy but an effort to intimidate and suppress truthful reporting on the West Philippine Sea.",
+  "actors": "Philippine Coast Guard (spokesperson Jay Tarriela)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic",
+   "domestic"
+  ],
+  "suggested_issues": [
+   "politics"
+  ],
+  "suggested_dyads": [
+   "PC"
+  ],
+  "reasoning": "An official spokesman's public rebuttal defending the transparency campaign in the January 2026 'word war'; declarative. Weak claim content; included because the register lists it.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.philstar.com/business/business-as-usual/2026/01/17/2501633/tarriela-fires-back-chinas-diplomatic-protest-exchanges-accusations-anew",
+    "title": "Tarriela fires back at China's diplomatic protest, exchanges accusations anew",
+    "publisher": "Philstar.com",
+    "pub_date": "2026-01-17",
+    "language": "en",
+    "excerpt": "This is not legitimate diplomacy; it is an effort to intimidate and suppress truthful reporting"
+   }
+  ]
+ },
+ {
+  "claimant": "MY",
+  "date_start": "2026-02-06",
+  "date_end": "2026-02-06",
+  "date_precision": "day",
+  "location_name": "Beting Patinggi Ali (Luconia Shoals), about 80 nm off Bintulu",
+  "subregion": "10",
+  "summary": "In a Dewan Rakyat written reply on 6 February 2026, the Ministry of Defence said the Royal Malaysian Navy was maintaining persistent presence, layered surveillance and integrated response against foreign coast guard vessel intrusions near Beting Patinggi Ali, and that any foreign presence threatening sovereignty would be handled firmly.",
+  "actors": "Ministry of Defence (MINDEF); Royal Malaysian Navy (TLDM)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "military",
+   "energy"
+  ],
+  "suggested_dyads": [
+   "MC"
+  ],
+  "reasoning": "A parliamentary reply stating a standing naval-presence posture against foreign (by context Chinese) coast guard intrusions is a declarative assertion. Nationality is not named in the source. Close in content to the Jan 2026 'show of presence' item (ev-7dc0c2294b) and the 5 Feb 2026 debate reply (ev-53baf85095), but a separate act by a different ministry; maintainer may merge.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.airtimes.my/2026/02/06/tldm-terus-peraga-kehadiran-pertahan-kedaulatan-beting-patinggi-ali/",
+    "title": "TLDM terus peraga kehadiran pertahan kedaulatan Beting Patinggi Ali",
+    "publisher": "Air Times News Network",
+    "pub_date": "2026-02-06",
+    "language": "ms",
+    "excerpt": "sebarang kehadiran asing yang menggugat kedaulatan negara akan ditangani secara tegas dan berhemah"
+   }
+  ]
+ },
+ {
+  "claimant": "PH",
+  "date_start": "2026-03-16",
+  "date_end": "2026-03-16",
+  "date_precision": "day",
+  "location_name": "Bajo de Masinloc (Scarborough Shoal); Kalayaan Island Group",
+  "subregion": "",
+  "summary": "Answering a Chinese Embassy statement, the DFA spokesperson for maritime affairs reaffirmed Philippine sovereignty over Bajo de Masinloc and the Kalayaan Island Group and rejected China's South China Sea claims, saying dialogue did not mean concessions.",
+  "actors": "Department of Foreign Affairs (spokesperson for maritime affairs)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "PC"
+  ],
+  "reasoning": "A formal sovereignty statement; declarative. Offered in place of the 23 March 2026 statement in the register, which concerns the PCG-CCG MOU and is cooperative.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://sites.google.com/dfa.gov.ph/notoneinch/statements-of-the-spokesperson-for-maritime-affairs",
+    "title": "Statements of the Spokesperson for Maritime Affairs",
+    "publisher": "Department of Foreign Affairs (Philippines)",
+    "pub_date": "2026-03-16",
+    "language": "en",
+    "excerpt": "indivisible, incontrovertible and longstanding sovereignty over Bajo de Masinloc"
+   }
+  ]
+ },
+ {
+  "claimant": "TW",
+  "date_start": "2026-04-01",
+  "date_end": "2026-04-29",
+  "date_precision": "month",
+  "location_name": "Zhongzhou Reef (Jhongjhou Reef, Ban Than), near Taiping Island",
+  "subregion": "5",
+  "summary": "During her April 2026 South China Sea trip, Ocean Affairs Council Minister Kuan Bi-ling also landed on the nearby, uninhabited Zhongzhou Reef to lead a beach cleanup; on 29 April she told reporters in the legislature that Vietnam had complained about the trip and said the exercise had not caused and would not cause regional tension.",
+  "actors": "Ocean Affairs Council; Minister Kuan Bi-ling",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical",
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "politics"
+  ],
+  "suggested_dyads": [
+   "RV"
+  ],
+  "reasoning": "A ministerial landing on a second Taiwan-held feature, an administrative show of presence beyond the 21 April Taiping visit already in the set, plus a public rebuff of Vietnam's complaint; demonstrative. The day of the reef landing is not given, so month precision.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://theprint.in/world/taiwan-minister-says-she-visited-second-islet-in-disputed-south-china-sea/2917115/",
+    "title": "Taiwan minister says she visited second islet in disputed South China Sea",
+    "publisher": "ThePrint (Reuters)",
+    "pub_date": "2026-04-29",
+    "language": "en",
+    "excerpt": "the nearby and uninhabited Zhongzhou Reef to carry out a beach cleanup"
+   },
+   {
+    "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/04/29/2003856455",
+    "title": "Taipei Times report on Kuan Bi-ling's South China Sea visit (headline not shown in fetched text)",
+    "publisher": "Taipei Times",
+    "pub_date": "2026-04-29",
+    "language": "en",
+    "excerpt": "nearby and uninhabited Jhongjhou Reef (中洲礁) to carry out a beach cleanup"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2026-08-01",
+  "date_end": "2026-09-30",
+  "date_precision": "month",
+  "location_name": "Waters around the Natuna Islands, Indonesian EEZ (North Natuna Sea)",
+  "subregion": "10",
+  "summary": "In August and September 2026 China Coast Guard and research vessels kept up a sustained presence around Indonesia's Natuna Islands, overlapping Indonesia's EEZ, according to a maritime intelligence report cited by Energy Intelligence; an Indonesian outlet reported on 7 August 2026 that three Chinese warships had stopped and carried out unspecified activities inside Indonesia's EEZ in the North Natuna Sea.",
+  "actors": "China Coast Guard; Chinese research vessels; PLA Navy (three unnamed warships)",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military",
+   "administrative"
+  ],
+  "suggested_dyads": [
+   "CI"
+  ],
+  "reasoning": "Sustained Chinese state presence inside Indonesia's EEZ within the nine-dash line asserts China's claim without reported confrontation. The first source is paywalled (only the opening summary visible, so the excerpt may not be checkable); the second is a minor outlet that names no Chinese ship or Indonesian commander, so confidence is low.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.energyintel.com/000001a1-bf08-dd9b-adff-ff2825af0000",
+    "title": "Chinese Maritime Patrols Test Indonesia's Gas Ambitions",
+    "publisher": "Energy Intelligence",
+    "pub_date": "2026-11-09",
+    "language": "en",
+    "excerpt": "Chinese coast guard and research vessels maintained a sustained presence around Indonesia's Natuna Islands"
+   },
+   {
+    "url": "https://radar-faktual.id/berita/tni-al-pantau-ketat-tiga-kapal-perang-china-di-laut-natuna",
+    "title": "TNI AL Pantau Ketat Tiga Kapal Perang China di Laut Natuna",
+    "publisher": "Radar Faktual",
+    "pub_date": "2026-08-07",
+    "language": "id",
+    "excerpt": "ketiga kapal perang China tidak sekadar melakukan transit, melainkan berhenti dan melakukan aktivitas tertentu"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2026-08-01",
+  "date_end": "2026-08-31",
+  "date_precision": "month",
+  "location_name": "North Natuna Sea, Indonesian EEZ",
+  "subregion": "10",
+  "summary": "The Indonesian Navy was reported on 7 August 2026 to have stepped up surveillance in the North Natuna Sea, deploying the frigate KRI Sultan Iskandar Muda-367 and a CN-235 patrol aircraft to track three Chinese warships in Indonesia's EEZ in real time; the Fleet Command I commander said the ships had stopped and carried out activities rather than transiting.",
+  "actors": "TNI AL; Koarmada I; KRI Sultan Iskandar Muda-367; CN-235 maritime patrol aircraft",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A naval deployment explicitly in response to Chinese warships in the EEZ asserts Indonesian jurisdiction by presence (shadowing, no expulsion). Single minor outlet, commander unnamed and no incident day given, so low confidence.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://radar-faktual.id/berita/tni-al-pantau-ketat-tiga-kapal-perang-china-di-laut-natuna",
+    "title": "TNI AL Pantau Ketat Tiga Kapal Perang China di Laut Natuna",
+    "publisher": "Radar Faktual",
+    "pub_date": "2026-08-07",
+    "language": "id",
+    "excerpt": "KRI Sultan Iskandar Muda-367 dan pesawat patroli CN-235 telah diterjunkan"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2026-09-01",
+  "date_end": "2026-09-30",
+  "date_precision": "month",
+  "location_name": "Antelope Reef, Paracel Islands",
+  "subregion": "2",
+  "summary": "Planet Labs imagery taken in September 2026 showed what appeared to be a nearly 3-km runway on China's reclaimed Antelope Reef, which would be Beijing's second runway in the Paracels, according to an AFP report drawing on Deep Dive, CSIS and Lowy Institute analysis.",
+  "actors": "",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "CV"
+  ],
+  "reasoning": "A new runway is a new kind of construction at the feature (military infrastructure), distinct from the reclamation already in the set (ev-662ba989f5, ev-9692a591d1); dated by the imagery month as given.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://www.manilatimes.net/2026/11/19/news/national/beijing-bolsters-south-china-sea-push-with-new-island-runway/2472811",
+    "title": "Beijing bolsters South China Sea push with new island runway",
+    "publisher": "The Manila Times (AFP)",
+    "pub_date": "2026-11-19",
+    "language": "en",
+    "excerpt": "A structure that appears to be a runway is clearly visible in photos taken in September by Earth imaging company"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2026-09-01",
+  "date_end": "2026-09-30",
+  "date_precision": "month",
+  "location_name": "North Natuna Sea",
+  "subregion": "10",
+  "summary": "In September 2026 Indonesia deployed warships, maritime patrol aircraft and drones to monitor the China Coast Guard ship CCG 5901 in the North Natuna Sea; the navy chief said the ship was doing nothing suspicious but its presence still required monitoring.",
+  "actors": "TNI AL (navy chief, unnamed); CCG 5901",
+  "suggested_type": "demonstrative",
+  "suggested_domains": [
+   "physical"
+  ],
+  "suggested_issues": [
+   "military"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "A military monitoring deployment tied explicitly to a CCG ship in Indonesian waters. Caution: the only source is a November 2026 commentary, and the details (CCG 5901, warship plus patrol aircraft plus drone, 'no suspicious activity') closely match the January 2023 episode, so the date may be wrong; low confidence.",
+  "confidence": "low",
+  "sources": [
+   {
+    "url": "https://www.indomaritim.com/2026/11/08/natuna-jalur-laut-strategis-dan-ujian-otonomi-indonesia-di-tengah-rivalitas-kekuatan-global/",
+    "title": "Natuna, Jalur Laut Strategis, dan Ujian Otonomi Indonesia di Tengah Rivalitas Kekuatan Global",
+    "publisher": "Indo Maritim",
+    "pub_date": "2026-11-08",
+    "language": "id",
+    "excerpt": "pada September 2026 ketika Indonesia mengerahkan kapal perang"
+   }
+  ]
+ },
+ {
+  "claimant": "CN",
+  "date_start": "2026-09-03",
+  "date_end": "2026-09-03",
+  "date_precision": "day",
+  "location_name": "Paracel Islands (Xisha), incl. Antelope Reef and Duncan (Yagong) Island",
+  "subregion": "2",
+  "summary": "Asked about Vietnam's statement that all foreign activities in the Paracels, including at Antelope Reef and Duncan Island, were illegal and void, Foreign Ministry spokesperson Guo Jiakun said the Xisha Islands are China's inherent territory with no dispute, that construction on its own territory is a matter of sovereignty, and that Vietnam had no right to comment.",
+  "actors": "Ministry of Foreign Affairs (spokesperson Guo Jiakun)",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "diplomatic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "military"
+  ],
+  "suggested_dyads": [
+   "CV"
+  ],
+  "reasoning": "A spokesperson's rebuttal of Vietnam's 28 August 2026 protest is a verbal claim assertion against Vietnam; the CN set has the Aug 2026 construction and the VN protest but not this rejection.",
+  "confidence": "high",
+  "sources": [
+   {
+    "url": "https://m.gmw.cn/2026-09/03/content_1304558573.htm",
+    "title": "越南声称对西沙群岛拥有主权 中国外交部驳斥",
+    "publisher": "China News Service (via Guangming Online)",
+    "pub_date": "2026-09-03",
+    "language": "zh",
+    "excerpt": "中国在自己的领土上开展必要建设，是主权范围内的事，越方无权说三道四。"
+   }
+  ]
+ },
+ {
+  "claimant": "ID",
+  "date_start": "2026-10-08",
+  "date_end": "2026-10-08",
+  "date_precision": "day",
+  "location_name": "North Natuna Sea (Laut Natuna Utara)",
+  "subregion": "10",
+  "summary": "At a government coordination meeting on the North Natuna Sea situation on 8 October 2026, led by Maj. Gen. Purwito Hadi Wardhono of the Coordinating Ministry for Political and Security Affairs, officials flagged foreign warships operating with China Coast Guard ships in Indonesia's EEZ and stated that Indonesia rejects traditional-fishing-ground and historical claims by foreign parties.",
+  "actors": "Kemenko Polkam (Deputy for Defence Coordination Maj. Gen. Purwito Hadi Wardhono); Natuna and Anambas regency governments",
+  "suggested_type": "declarative",
+  "suggested_domains": [
+   "domestic"
+  ],
+  "suggested_issues": [
+   "administrative",
+   "fisheries",
+   "military"
+  ],
+  "suggested_dyads": [
+   "IC"
+  ],
+  "reasoning": "An official restatement rejecting China's 'traditional fishing ground' and historical-rights claim in a meeting convened on the North Natuna Sea, prompted by CCG presence in the EEZ; reported by regional press, not a ministry release.",
+  "confidence": "medium",
+  "sources": [
+   {
+    "url": "https://wartakepri.co.id/2026/10/11/bupati-anambas-ikuti-rakor-laut-natuna-utara-pemerintah-perkuat-koordinasi-jaga-kedaulatan/",
+    "title": "Bupati Anambas Ikuti Rakor Laut Natuna Utara, Pemerintah Perkuat Koordinasi Jaga Kedaulatan",
+    "publisher": "Warta Kepri",
+    "pub_date": "2026-10-11",
+    "language": "id",
+    "excerpt": "Indonesia juga menolak klaim traditional fishing ground"
+   },
+   {
+    "url": "https://suluhkepri.com/bupati-aneng-ikuti-rakor-situasi-laut-natuna-utara-kedaulatan-dan-keamanan-maritim-jadi-perhatian/",
+    "title": "Bupati Aneng Ikuti Rakor Situasi Laut Natuna Utara, Kedaulatan dan Keamanan Maritim Jadi Perhatian",
+    "publisher": "Suluh Kepri",
+    "pub_date": "2026-10-12",
+    "language": "id",
+    "excerpt": "China Coast Guard di wilayah ZEE Indonesia"
+   }
+  ]
+ }
+]

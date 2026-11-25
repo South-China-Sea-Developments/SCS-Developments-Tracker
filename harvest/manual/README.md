@@ -38,3 +38,4 @@ What a set's compiler could not compile is recorded in the single register `docs
 | `20261107-CN-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 118 candidate events, CN 2021–Oct 2026 |
 | `20261107-VN-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 103 candidate events, VN 2021–Oct 2026 |
 | `20261107-PH-2021-2026.json` | 2026-11-17 | a research agent for ticket 19, briefed by `BRIEF.md` | 119 candidate events, PH 2021–Oct 2026 |
+| `20261124-GAPS.json` | 2026-11-24 | six research agents run by Claude Opus 5.5 for the gaps register, briefed by `BRIEF.md` | 61 candidate events (CN 19, ID 18, TW 9, PH 6, MY 5, VN 4): Chinese acts against Vietnam, Malaysia and Indonesia 2025–Oct 2026 and the responses, plus 37 register ◆ entries |
