@@ -1,0 +1,1389 @@
+{
+ "run_id": "MY-2010-2015",
+ "exported_on": "2026-11-25",
+ "records": [
+  {
+   "airtable_id": "recFEjwt9uxRbfGBs",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA/APMM), Eastern Region",
+   "suggestion_reasoning": "Arrests of foreign fishing boats in Malaysia's claimed EEZ are imposed enforcement; coercive, summarised as one routine event for the year. The national total covers all Malaysian waters (including the Strait of Malacca and Sulu/Celebes seas), so only part of it is South China Sea; the 2010 figure comes from a 2014 ministerial answer. [confidence: medium]",
+   "date_end": "2010-12-31",
+   "new_dyads": "MV MU",
+   "excerpt": "Pada tahun 2010 pula, sebanyak 103 kes dicatatkan.\n\ndetained nine Vietnamese boats with 95 crew, including its skippers for conducting illegal fishing activities in Malaysian waters last month",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters (incl. Terengganu and Kelantan waters, South China Sea)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2014-06-16: Oral answer on the Malaysian Maritime Enforcement Agency (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2014-06-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2014-06-16\nAgency detains nine fishing boats — The Star 2010-09-20\nhttps://www.thestar.com.my/news/community/2010/09/20/agency-detains-nine-fishing-boats",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:24:36.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-02be125100",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-7588f91c85",
+   "suggested_dyads": [
+    "MV",
+    "MU"
+   ],
+   "summary": "Malaysian maritime enforcement recorded 103 cases of arrests of foreign fishermen intruding into Malaysian waters in 2010, according to figures later given to the Dewan Rakyat; in one instance the Malaysian Maritime Enforcement Agency detained nine Vietnamese boats with 95 crew off Terengganu and Kelantan in August 2010.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2010-01-01",
+   "presort": "continuation of ev-7588f91c85 (a candidate, provisional) — Provisional continuation of ev-7588f91c85 (2009 is undecided candidates of MY-2000s): MMEA arrests of foreign (incl. Vietnamese) fishing boats, the same method as the 2009 Sarawak arrests; the 103 national cases cover all Malaysian seas, so no South China Sea rise is shown - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recq6rcVp1VB1DuEy",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA/APMM)",
+   "possible_duplicate_of": "ev-02be125100",
+   "suggestion_reasoning": "Routine detention of foreign fishing boats in claimed waters is imposed enforcement; coercive, one event for the year. The national figure covers all Malaysian waters and is not broken down by sea or nationality; Vietnamese boats were the largest group in 2008-2013 per a 4 December 2013 answer. [confidence: medium]",
+   "date_end": "2011-12-31",
+   "new_dyads": "MV MU",
+   "excerpt": "Pada tahun 2011, sebanyak 70 kes dicatatkan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Possible duplicate of ev-02be125100.\nSub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2014-06-16: Oral answer on the Malaysian Maritime Enforcement Agency (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2014-06-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2014-06-16",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:25:04.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-0ab00177ce",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-02be125100",
+   "suggested_dyads": [
+    "MV",
+    "MU"
+   ],
+   "duplicate_of": "ev-02be125100",
+   "summary": "Malaysian maritime enforcement recorded 70 cases of arrests of foreign fishermen intruding into Malaysian waters in 2011, according to figures later given to the Dewan Rakyat by the minister responsible for the Malaysian Maritime Enforcement Agency.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2011-01-01",
+   "presort": "continuation of ev-02be125100 (a candidate, provisional) — Provisional continuation of ev-02be125100 (2010 undecided): 70 arrest cases against 103 in 2010, the same practice at a lower level - likely reject (a possible diminished note, not a move). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recE205DxpLwsc3NF",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Minister of Foreign Affairs A. Kohilan Pillay; Dewan Negara",
+   "suggestion_reasoning": "A ministerial statement to Parliament asserting continuous patrols of Malaysia's claimed area and warning of action against unauthorised research vessels is a verbal assertion; declarative. Dzirhan Mahadzir's ISEAS chapter cites government replies to the same senator on 6 May and 28 July 2010; the 6 May 2010 Dewan Negara sitting yielded no matching passage in a keyword scan. [confidence: high]",
+   "date_end": "2010-07-28",
+   "new_dyads": "MC",
+   "excerpt": "sukacita saya ingin maklumkan bahawa Malaysia menjalankan rondaan dan pengawasan secara berterusan di kawasan maritim yang dituntut di Laut China Selatan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "location_name": "Laut China Selatan (Spratly Islands; Malaysian EEZ)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2010-07-28: Oral answer No. 3 on the Spratlys and Chinese vessels in the EEZ (A. Kohilan Pillay) — Parliament of Malaysia (Digital Hansard) 2010-07-28\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2010-07-28",
+   "pull_request": 60,
+   "new_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:24:49.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-1f4f6cbade",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-75ae657584",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Answering Senator Tunku Abdul Aziz in the Dewan Negara on 28 July 2010, Deputy Foreign Minister A. Kohilan Pillay said China claimed the whole South China Sea including the Spratlys, that Malaysia continuously patrolled and monitored the maritime areas it claims there, that vessels conducting activities such as marine scientific research in Malaysia's EEZ without consent would face appropriate action, and that the Navy monitored foreign warships in Malaysian maritime areas.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2010-07-28",
+   "presort": "continuation of ev-75ae657584 (a candidate, provisional) — Provisional continuation of ev-75ae657584 (2009 is undecided candidates of MY-2000s): deputy foreign minister in Parliament restating the claim and the standing patrols, as Kohilan Pillay did in Nov 2009; the warning of 'appropriate action' against unauthorised research vessels restates existing EEZ law - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recLUpt4DTmTbviYj",
+   "archived_on": "2026-11-25",
+   "actors": "Agriculture Minister Ismail Sabri Yaakob; Deputy Agriculture Minister Nogeh Gumbek; Department of Fisheries Malaysia",
+   "possible_duplicate_of": "ev-c9063fba75",
+   "suggestion_reasoning": "Routine detention of foreign fishing boats in claimed waters is imposed enforcement; coercive, one event for the year. The figures cover all Malaysian waters; most Vietnamese boats are taken in the South China Sea. [confidence: medium]",
+   "date_end": "2014-12-31",
+   "new_dyads": "MV MI MU",
+   "excerpt": "nelayan asing turut ditangkap sepanjang tahun 2014 kerana melakukan aktiviti pencerobohan iaitu menangkap ikan dalam perairan negara tanpa kebenaran Ketua Pengarah Perikanan Malaysia\n\nPada tahun 2014, di dapati ada 74 bot nelayan asing yang menangkap ikan di perairan Malaysia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Possible duplicate of ev-c9063fba75.\nSub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2014-12-16: Supply Bill 2015, winding-up, Ministry of Agriculture — Parliament of Malaysia (Digital Hansard) 2014-12-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2014-12-16\nHansard, Dewan Negara, 2015-12-17: Oral answer on foreign fishing boats — Parliament of Malaysia (Digital Hansard) 2015-12-17\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-12-17",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:30:54.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-2d06848164",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-c9063fba75",
+   "suggested_dyads": [
+    "MV",
+    "MI",
+    "MU"
+   ],
+   "duplicate_of": "ev-c9063fba75",
+   "summary": "Malaysian authorities seized 47 foreign fishing vessels during 2014 for fishing in Malaysian waters without the Director-General of Fisheries' permission, Agriculture Minister Ismail Sabri Yaakob told the Dewan Negara on 16 December 2014; a later answer put 2014 at 74 foreign boats found fishing in Malaysian waters, 46 of them Vietnamese, 19 Indonesian, eight Thai and one Philippine.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2014-01-01",
+   "presort": "continuation of ev-c9063fba75 (a candidate, provisional) — Provisional continuation of ev-c9063fba75 (2013 undecided): 47-74 foreign boats seized (46 Vietnamese) against 61 cases (33 Vietnamese) in 2013, same method - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recfklkP76LzxWLbw",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (Kedah-class offshore patrol vessel)",
+   "lat": 4.98333,
+   "suggestion_reasoning": "Shadowing a foreign coast guard ship at a claimed shoal is presence without reported confrontation; demonstrative. Evidence is a satellite image reported by The Diplomat and relayed by Malaysiakini; only the image date (13 February) is known, so month precision. [confidence: medium]",
+   "date_end": "2015-02-28",
+   "new_dyads": "MC",
+   "excerpt": "The report said the satellite images also showed the Royal Malaysian Navy's (RMN) approximately 1,800 tonnes Kedah-class patrol vessel shadowing the Chinese ship.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Luconia Breakers, South Luconia Shoals",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Breakers (Hempasan Bentin), South Luconia Shoals”.",
+   "reviewer": "Angelo",
+   "sources": "China intrusion more extensive than revealed — Malaysiakini 2015-06-20\nhttps://www.malaysiakini.com/news/302507",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:46:33.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-3f0b4a8af5",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Satellite imagery of 13 February 2015 showed a Royal Malaysian Navy Kedah-class offshore patrol vessel shadowing a 4,000-tonne China Coast Guard ship stationed near Luconia Breakers, part of the South Luconia Shoals, a deployment Malaysia had not disclosed.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2015-02-01",
+   "merge_into_candidate": "ev-c145c8cc46",
+   "presort": "same move as ev-c145c8cc46 — Kedah-class OPV shadowing a CCG ship at Luconia Breakers (imagery 13 Feb 2015) is one incident of the 2015 Luconia presence (ev-c145c8cc46). (group MY2015-Luconia) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 112.61667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reciAuG8rHThtzL8S",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Malaysian Maritime Enforcement Agency (MMEA/APMM)",
+   "possible_duplicate_of": "ev-dc9eb5efaa",
+   "lat": 5.9,
+   "suggestion_reasoning": "Sustained and increased patrol presence at a claimed shoal is unilateral patrolling; demonstrative, one event for the year with its frequency (up about 28 percent on 2014). [confidence: medium]",
+   "date_end": "2015-12-31",
+   "new_dyads": "MC",
+   "excerpt": "Untuk tahun 2015, TLDM dan APMM telah melakukan sebanyak 345 hari pelayaran iaitu TLDM selama 241 hari dan APMM selama 104 hari.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Possible duplicate of ev-dc9eb5efaa. Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2015-12-14: Winding-up, Prime Minister's Department (Shahidan Kassim) on Beting Patinggi Ali — Parliament of Malaysia (Digital Hansard) 2015-12-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-12-14",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:46:08.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-497b14cfd4",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "duplicate_of": "ev-dc9eb5efaa",
+   "summary": "Royal Malaysian Navy and Malaysian Maritime Enforcement Agency ships spent 345 ship-days operating at the Luconia Shoals (Beting Patinggi Ali) in 2015, 241 by the navy and 104 by the MMEA, up from 269 in 2014, and the MMEA readied 17 ships from Sarawak, Labuan and Kota Kinabalu on rotation to counter the China Coast Guard presence, backed by periodic air surveillance.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2015-01-01",
+   "merge_into_candidate": "ev-c145c8cc46 ",
+   "presort": "same move as ev-c145c8cc46 — 345 ship-days at Luconia (vs 269 in 2014) and a 17-ship MMEA rotation is the sustained side of the same 2015 Luconia move (ev-c145c8cc46); if the coder rejects the novelty, this is the frequency case (269 to 345, +28%) - though the CCG presence also persisted, so check the counterfactual. (group MY2015-Luconia) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recBTEayl00Jj9Zrp",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Hishammuddin Hussein; Royal Malaysian Navy; Malaysian Armed Forces",
+   "lat": 3.97389,
+   "suggestion_reasoning": "Announcing a new naval base and amphibious force facing a disputed area is a unilateral military posture decision; demonstrative (a coder may prefer declarative because it was an announced plan; the base was not built in this period). The minister did not mention China, and the marine corps was also justified by Sabah security. [confidence: medium]",
+   "date_end": "2013-10-10",
+   "new_dyads": "MC",
+   "excerpt": "Malaysia is to set up a marine corps and establish a naval base close to waters claimed by China, Defence Minister Hishammuddin Tun Hussein said in a statement on 10 October.\n\nthe new naval base will be built in Bintulu on the South China Sea (SCS) for the explicit purpose of protecting nearby waters and oil reserves",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "location_name": "Bintulu, Sarawak (near James Shoal)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia to establish marine corps, naval base close to James Shoal (IHS Jane's Defence Weekly, 15 October 2013, reposted) — Army.ca forum (reprint of IHS Jane's Defence Weekly) 2013-10-15\nhttps://army.ca/forums/threads/malaysia-to-establish-marine-corps-set-up-naval-base-in-disputed-waters.112523/\nMalaysia to Establish Marine Corps and South China Sea Naval Base — South China Sea Institute, Xiamen University (reprint of The Diplomat) 2013-10-19\nhttps://scsi.xmu.edu.cn/info/1180/6302.htm",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:30:28.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4d26731ad8",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Defence Minister Hishammuddin Hussein announced in a statement on 10 October 2013 that Malaysia would set up a marine corps and establish a Royal Malaysian Navy base at Bintulu on the South China Sea to protect the surrounding area and its oil reserves; the site is about 60 nautical miles from James Shoal, where the Chinese navy had exercised in March 2013.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2013-10-10",
+   "presort": "new move (novelty) — Announced marine corps and RMN base at Bintulu, ~60 nm from James Shoal, is a new force-posture step facing the disputed area; nothing comparable in 2012. An announced plan, so a coder may type it declarative or wait for the base to be built. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.34889,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec50FLquryvCUkrB",
+   "archived_on": "2026-11-25",
+   "actors": "Minister in the Prime Minister's Department Shahidan Kassim; Dewan Rakyat",
+   "lat": 5.9,
+   "suggestion_reasoning": "The first public official characterisation of Chinese naval and coast guard presence as intrusions into Malaysia's EEZ is a verbal assertion; declarative. It also shows Malaysia's monitoring of the shoals, but the act coded here is the statement. [confidence: high]",
+   "date_end": "2014-03-20",
+   "new_dyads": "MC",
+   "excerpt": "Sepanjang 2013 hingga 2014, tujuh pencerobohan dikesan yang melibatkan 16 buah aset tentera laut",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "location_name": "South China Sea: Luconia Shoals, North Luconia Shoals, James Shoal",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Laut China Selatan: Beting Patinggi Ali (Luconia Shoals), Beting Raja Jarum, Beting Serupai (James Shoal)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2014-03-20: Oral answer on Chinese warships at James Shoal (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2014-03-20\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2014-03-20",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:31:40.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-59b85ed993",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Fairly routine statement ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Answering a question on China's warship visits to James Shoal, Minister in the Prime Minister's Department Shahidan Kassim told the Dewan Rakyat on 20 March 2014 that Chinese warship intrusions into Malaysian waters had occurred almost yearly since 2011, rising in 2013 around Beting Patinggi Ali, Beting Raja Jarum and Beting Serupai, all inside Malaysia's EEZ, with seven intrusions involving 16 PLA Navy and China Coast Guard assets detected in 2013-2014; he restated that the dispute should be settled peacefully under UNCLOS 1982.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2014-03-20",
+   "presort": "new move (novelty) — First public official characterisation in Parliament of PLAN and CCG presence as intrusions into Malaysia's EEZ, naming the shoals and counting the intrusions; in 2013 Malaysia protested only privately (ev-94b1641f13) and made no public statement. Declarative lead. (group MY2014-public-intrusions) [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recqynumShwqFhVgo",
+   "archived_on": "2026-11-25",
+   "actors": "Minister in the Prime Minister's Department Shahidan Kassim; Malaysian Maritime Enforcement Agency",
+   "lat": 5.9,
+   "suggestion_reasoning": "A public statement that foreign fishermen at a contested shoal will be arrested is a verbal assertion of jurisdiction with an implied warning; declarative (a coder may read it as a coercive threat). [confidence: medium]",
+   "date_end": "2015-03-26",
+   "new_dyads": "MC",
+   "excerpt": "Mereka masuk, kita akan tangkap sebagaimana yang kita jalankan kepada nelayan lain.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2015-03-26: Winding-up, Prime Minister's Department (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2015-03-26\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2015-03-26",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:46:46.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5c0e76f826",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-9ef41fd44d",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Minister in the Prime Minister's Department Shahidan Kassim told the Dewan Rakyat on 26 March 2015 that although foreign military assets were present at Beting Patinggi Ali and would be handled diplomatically, the Malaysian Maritime Enforcement Agency would not tolerate foreign fishermen there and would arrest any that entered Malaysian waters.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-03-26",
+   "presort": "continuation of ev-9ef41fd44d (a candidate, provisional) — Provisional continuation of ev-9ef41fd44d (2014 undecided): statement that foreign fishermen at Beting Patinggi Ali will be arrested repeats the Dec 2014 pledge that every foreign fishing boat entering would be detained - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recpnxfsxq76iA7Ks",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia (Wisma Putra)",
+   "lat": 3.97389,
+   "suggestion_reasoning": "A diplomatic protest over a foreign naval exercise inside Malaysia's claimed EEZ is a verbal assertion; declarative. Known only from Reuters' diplomatic sources (February 2014); the protest was not made public and its exact date is unknown, so month precision. [confidence: medium]",
+   "date_end": "2013-03-31",
+   "new_dyads": "MC",
+   "excerpt": "In March 2013, a similar exercise at the James Shoal by a four-ship Chinese amphibious taskforce rattled Malaysia and prompted it to make a rare private protest to Beijing.\n\nprompted it to make a rare private protest to Beijing",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "James Shoal",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “James Shoal (Beting Serupai)”.",
+   "reviewer": "Angelo",
+   "sources": "China's Assertiveness Hardens Malaysian Stance in Sea Dispute — MarineLink (Reuters) 2014-02-26\nhttps://www.marinelink.com/news/assertiveness-malaysian364728\nChina's assertiveness hardens Malaysian stance in sea dispute — Arab News (Reuters) 2014-02-26\nhttps://arabnews.com/node/537026",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:26:38.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-94b1641f13",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "After the March 2013 Chinese naval amphibious exercise at James Shoal, Malaysia made a rare private diplomatic protest to Beijing, senior diplomats later told Reuters.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2013-03-01",
+   "merge_into_candidate": " ev-cc57294efc",
+   "presort": "same move as ev-cc57294efc — The private protest to Beijing over the same James Shoal exercise is the diplomatic side of the response led by ev-cc57294efc; one intensification. (group MY2013-PLAN-response) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 112.34889,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recTc5zzNgjRAqdcl",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Hishammuddin Hussein; Royal Malaysian Navy",
+   "suggestion_reasoning": "Announcing defensive hardening of the main naval base facing the disputed sea is a unilateral military posture decision; demonstrative, low confidence because no system was chosen and no rival was named. Jane's (via the blog reprint) dates the media statement to 26 January; Military Periscope (Bernama) says the minister spoke on Sunday, i.e. 25 January. [confidence: low]",
+   "date_end": "2015-01-26",
+   "new_dyads": "MU MC",
+   "excerpt": "Malaysia is looking to equip its naval base at Teluk Sepanggar with an air defence system as a pre-emptive measure against potential threats\n\nis needed in response to developments in the South China Sea and eastern Sabah waters",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Teluk Sepanggar naval base (RMN Kota Kinabalu), Sabah",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysia Mulls Air Defences for Submarine Base Near South China Sea (IHS Jane's, reposted) — Defense Studies blog (reprint of IHS Jane's Defence Weekly) 2015-01-28\nhttps://defense-studies.blogspot.com/2015/01/malaysia-mulls-air-defences-for.html\nNaval Base In Line For Advanced Air Defense System, Says Defense Minister — Military Periscope (Bernama) 2015-01-27\nhttps://www.militaryperiscope.com/news/naval-base-line-advanced-air-defense-system-says-defense-minister",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:46:23.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9779298267",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-ddf4e42666",
+   "suggested_dyads": [
+    "MU",
+    "MC"
+   ],
+   "summary": "Defence Minister Hishammuddin Hussein said on 25-26 January 2015 that the Royal Malaysian Navy's Teluk Sepanggar base in Sabah, home of its two Scorpene submarines, would be equipped with an air defence system, citing potential threats from the South China Sea and eastern Sabah waters.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-01-25",
+   "presort": "continuation of ev-ddf4e42666 (a candidate, provisional) — Provisional continuation of ev-ddf4e42666 (2014 undecided): announced air-defence system for Sepanggar is another announced force-posture step of the kind seen in 2014 (and 2013's Bintulu base), no system chosen - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recGGkKve8ECE5SEg",
+   "archived_on": "2026-11-25",
+   "actors": "Minister in the Prime Minister's Department Shahidan Kassim; National Security Council; Dewan Negara",
+   "suggestion_reasoning": "A ministerial statement rejecting the nine-dash line and disclosing a practice of diplomatic protests against each intrusion is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2014-12-15",
+   "new_dyads": "MC",
+   "excerpt": "Semua kapal yang didapati menceroboh akan direkodkan dan disusuli dengan bantahan kepada diplomatik oleh kerajaan.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "location_name": "Sarawak waters, South China Sea",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2014-12-15: Supply Bill 2015, winding-up, Prime Minister's Department (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2014-12-15\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2014-12-15",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:45:55.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9ef41fd44d",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Minister in the Prime Minister's Department Shahidan Kassim told the Dewan Negara on 15 December 2014 that most warship intrusions near Sarawak involved Chinese vessels, that Malaysia did not recognise China's nine-dash line, that a special integrated operation had been mounted to strengthen control of Sarawak waters, that every intruding ship was recorded and followed by a diplomatic protest, and that every foreign fishing boat entering Malaysian waters would be detained.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2014-12-15",
+   "merge_into_candidate": "ev-59b85ed993",
+   "presort": "same move as ev-59b85ed993 — Dec 2014 statement that intrusions are mostly Chinese, each followed by a protest, and the nine-dash line not recognised continues the public naming begun in ev-59b85ed993 the same year: one intensification. (group MY2014-public-intrusions) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recBkxQvADgBWZosD",
+   "archived_on": "2026-11-25",
+   "actors": "Minister in the Prime Minister's Department Shahidan Kassim; National Security Council; Royal Malaysian Navy; MMEA",
+   "lat": 5.9,
+   "suggestion_reasoning": "A public denunciation of a Chinese coast guard presence and announcement of a formal protest is a verbal assertion; declarative. Asan Forum (Scott Bentley) dates the press conference to 2 June; Malaysiakini reported the Facebook posting on 4 June; Reuters reported the Najib-Xi remark on 9 June. [confidence: high]",
+   "date_end": "2015-06-09",
+   "new_dyads": "MC",
+   "excerpt": "Shahidan, in a Facebook posting, said he made an official visit to Patinggi Ali Shoals (Luconia Shoals) in the South China Sea\n\nMalaysian National Security Minister Shahidan Kassim was quoted as telling the Journal that Prime Minister Najib Razak would raise the issue directly with Chinese President Xi Jinping.\n\nHe announced that Malaysia was responding to the incident by filing an official protest with Beijing",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "China ship intrudes into M'sia, moored for 2 years — Malaysiakini 2015-06-04\nhttps://www.malaysiakini.com/news/300677\nMalaysia to Protest Chinese Coast Guard Intrusion — The Maritime Executive (Reuters) 2015-06-09\nhttps://maritime-executive.com/article/malaysia-to-protest-chinese-coast-guard-intrusion\nMalaysia's 'Special Relationship' with China and the South China Sea: Not So Special Anymore (Asan Forum, reposted) — Andrew S. Erickson blog (reprint of The Asan Forum) 2015-08-03\nhttps://www.andrewerickson.com/2015/08/malaysias-special-relationship-with-china-and-the-south-china-sea-not-so-special-anymore/",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "politics",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:47:06.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-a15caaf75e",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Minister in the Prime Minister's Department Shahidan Kassim, after an official surveillance visit to the Luconia Shoals, publicised photographs of China Coast Guard ship 1123 anchored there, called it an intrusion into Malaysian waters in an area with no overlapping claims, and announced that Malaysia would protest to Beijing and keep navy and MMEA ships on watch around the clock; on 8 June he told the Wall Street Journal that Prime Minister Najib Razak would raise the matter directly with President Xi Jinping, a step he walked back the next day.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-06-02",
+   "presort": "new move (novelty) — Minister publishes photographs of CCG 1123, calls it an intrusion where there are 'no overlapping claims', announces a protest to Beijing and talk of raising it with Xi: going public with imagery and a named protest is a new method against 2014's parliamentary answers (ev-59b85ed993, ev-9ef41fd44d). Declarative lead. (group MY2015-public-protest) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recCPtuJJUTntbpA9",
+   "archived_on": "2026-11-25",
+   "actors": "Minister of Foreign Affairs Anifah Aman; Dewan Rakyat",
+   "suggestion_reasoning": "A ministerial statement of the scope of Malaysia's claim and rejection of the nine-dash line is a verbal assertion; declarative. The listed sovereignty displays (resort, research station, navigation aids) are long-standing and not new acts. [confidence: high]",
+   "date_end": "2013-06-26",
+   "new_dyads": "MC MA",
+   "excerpt": "Malaysia berpendirian bahawa ciri-ciri geografi seperti terumbu, beting dan sebagainya yang terdapat dalam kawasan maritim Malaysia adalah merupakan kepunyaan Malaysia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "location_name": "South China Sea (Spratly Islands; Swallow Reef)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Laut China Selatan (Spratly Islands; Pulau Layang-Layang / Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2013-06-26: Oral answer on overlapping claims in the South China Sea (Anifah Aman) — Parliament of Malaysia (Digital Hansard) 2013-06-26\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2013-06-26",
+   "pull_request": 60,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:28:53.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b1a8db8e9c",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Some evidence of the strongest rejection of the nine-dash line, around 2013, when UNCLOS tensions started rising. Can arguably be rejected as a routine statement.",
+   "suggested_dyads": [
+    "MC",
+    "MA"
+   ],
+   "summary": "Foreign Minister Anifah Aman told the Dewan Rakyat on 26 June 2013 that Malaysia's claim in the South China Sea was as shown on the 1979 Malaysian map and covered part of the Spratlys, that the ASEAN states did not recognise China's nine-dash line because it rested on history rather than UNCLOS, and that reefs, shoals and other features within Malaysia's maritime area belonged to Malaysia, citing the development of Pulau Layang-Layang for tourism, a marine research station there and navigation aids as expressions of Malaysian sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2013-06-26",
+   "presort": "unclear — Foreign Minister restates the 1979-map claim and says ASEAN does not recognise the nine-dash line; 2012 has no declarative statement and the 2009-2010 ones (ev-75ae657584, ev-1f4f6cbade) did not reject the line. Settle whether this was Malaysia's first public rejection of the nine-dash line: if so declarative novelty, else continuation. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec391Q37rRgX2uw0",
+   "archived_on": "2026-11-25",
+   "actors": "Minister in the Prime Minister's Department Mohamed Nazri Abdul Aziz; Deputy Minister Liew Vui Keong; Parliament of Malaysia",
+   "suggestion_reasoning": "National legislation defining a maritime zone is a legal assertion of jurisdiction; declarative. It replaced the 1969 Emergency Ordinance No. 7 and the minister said it was not drafted because of the Spratly disputes, so its relevance to the South China Sea is general; low confidence that a coder will count it. [confidence: low]",
+   "date_end": "2012-06-22",
+   "new_dyads": "MA",
+   "excerpt": "Rang Undang-undang Laut Wilayah 2012 amat penting bagi memelihara hak kedaulatan negara\n\nFasal 1 mengandungi tajuk ringkas dan tarikh kuat kuasa akta ini iaitu pada 22 Jun 2012",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Malaysian territorial sea",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2012-04-18: Territorial Sea Bill 2012, second reading (Mohamed Nazri Abdul Aziz) — Parliament of Malaysia (Digital Hansard) 2012-04-18\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2012-04-18\nHansard, Dewan Negara, 2012-05-09: Territorial Sea Bill 2012 (Liew Vui Keong) — Parliament of Malaysia (Digital Hansard) 2012-05-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2012-05-09",
+   "pull_request": 60,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:25:48.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b40be793bb",
+   "run_id": "MY-2010-2015",
+   "note": "Unclear degree of new assertiveness - leaned towards no (also considering presentism bias)",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Minister in the Prime Minister's Department Mohamed Nazri Abdul Aziz moved the second reading of the Territorial Sea Bill 2012 in the Dewan Rakyat on 18 April 2012, fixing the breadth of Malaysia's territorial sea at 12 nautical miles from the baselines under the Baselines of Maritime Zones Act 2006 and vesting sovereignty over it in the Yang di-Pertuan Agong; the Dewan Negara debated it on 9 May 2012 and the Act took effect on 22 June 2012.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2012-04-18",
+   "presort": "unclear — Territorial Sea Act 2012 re-enacts the 12 nm breadth of the 1969 Emergency Ordinance on the 2006 baselines; nothing comparable in 2011, but the claim is not widened and the minister said it was not drafted for the Spratlys. Settle whether replacing the ordinance changes the claim in the South China Sea; if not, maintenance - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recqS7ky4JzQZH8Fw",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA/APMM)",
+   "possible_duplicate_of": "ev-0ab00177ce",
+   "suggestion_reasoning": "Routine detention of foreign fishing boats in claimed waters is imposed enforcement; coercive, one event for the year. The figure covers all Malaysian waters and is not broken down by sea or nationality. [confidence: medium]",
+   "date_end": "2012-12-31",
+   "new_dyads": "MV MU",
+   "excerpt": "pada tahun 2012 sebanyak 57 kes dicatatkan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Possible duplicate of ev-0ab00177ce.\nSub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2014-06-16: Oral answer on the Malaysian Maritime Enforcement Agency (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2014-06-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2014-06-16",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:25:17.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-bcaca39dbf",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-0ab00177ce",
+   "suggested_dyads": [
+    "MV",
+    "MU"
+   ],
+   "duplicate_of": "ev-0ab00177ce",
+   "summary": "Malaysian maritime enforcement recorded 57 cases of arrests of foreign fishermen intruding into Malaysian waters in 2012, according to figures later given to the Dewan Rakyat by the minister responsible for the Malaysian Maritime Enforcement Agency.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2012-01-01",
+   "presort": "continuation of ev-0ab00177ce (a candidate, provisional) — Provisional continuation of ev-0ab00177ce (2011 undecided): 57 arrest cases against 70 in 2011, same practice - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recgpT9rydPW1SU1P",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (KD Laksamana Hang Nadim)",
+   "lat": 5.9,
+   "suggestion_reasoning": "Warning a foreign government vessel to leave claimed waters while shadowing it is a direct demand backed by naval presence; coercive. [confidence: medium]",
+   "date_end": "2015-06-03",
+   "new_dyads": "MC",
+   "excerpt": "Specifically, Malaysia used the 62-metre KD Laksamana Hang Nadim, deployed on June 3.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "China intrusion more extensive than revealed — Malaysiakini 2015-06-20\nhttps://www.malaysiakini.com/news/302507",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:47:28.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-c145c8cc46",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "The Royal Malaysian Navy deployed the corvette KD Laksamana Hang Nadim on 3 June 2015 to monitor China Coast Guard ship 1123 at the South Luconia Shoals; a navy spokesperson told IHS Jane's that the Chinese vessel had been warned to leave the area and was being monitored very closely.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-06-03",
+   "presort": "new move (novelty) — Navy warning CCG 1123 to leave the South Luconia Shoals (3 Jun 2015) while shadowing it is a change of method against 2014, when ships only watched the Chinese vessel (ev-dc9eb5efaa); coercive lead. Weakened if ev-cd639374d6's 'ordered out' practice is shown to have been applied in 2014. (group MY2015-Luconia) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recA5rwmZDnvctpqT",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA/APMM)",
+   "possible_duplicate_of": "ev-bcaca39dbf",
+   "suggestion_reasoning": "Routine detention of foreign fishing boats in claimed waters is imposed enforcement; coercive, one event for the year. The figures cover all Malaysian waters; Vietnamese boats are mostly seized in the South China Sea off the east coast of Peninsular Malaysia. [confidence: medium]",
+   "date_end": "2013-12-31",
+   "new_dyads": "MV MI MU",
+   "excerpt": "Ini termasuklah di antaranya bagi tahun 2013, tiga dari Thailand, 33 dari Vietnam dan 25 dari Indonesia\n\nManakala pada tahun 2013 pula, sebanyak 61 kes dicatatkan.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters (incl. South China Sea off Peninsular Malaysia and Borneo)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Possible duplicate of ev-bcaca39dbf.\nSub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2013-12-04: Oral answer on MMEA patrols and foreign fishing boats (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2013-12-04\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2013-12-04\nHansard, Dewan Rakyat, 2014-06-16: Oral answer on the Malaysian Maritime Enforcement Agency (Shahidan Kassim) — Parliament of Malaysia (Digital Hansard) 2014-06-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2014-06-16",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:26:26.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-c9063fba75",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-bcaca39dbf ",
+   "suggested_dyads": [
+    "MV",
+    "MI",
+    "MU"
+   ],
+   "duplicate_of": "ev-bcaca39dbf",
+   "summary": "Malaysian maritime enforcement recorded 61 cases of arrests of foreign fishermen in 2013; the minister responsible for the Malaysian Maritime Enforcement Agency told the Dewan Rakyat on 4 December 2013 that foreign boats seized in 2013 included three Thai, 33 Vietnamese and 25 Indonesian boats, and 508 foreign boats (263 of them Vietnamese) had been seized in 2008-2013.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2013-01-01",
+   "presort": "continuation of ev-bcaca39dbf (a candidate, provisional) — Provisional continuation of ev-bcaca39dbf (2012 undecided): 61 cases (33 Vietnamese) against 57 in 2012, same practice - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recuozTeYxPKt0i02",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (KD Tun Razak, KD Jebat, KD Terengganu, KD Kasturi, KD Laksamana Tan Pusmah); Royal Malaysian Air Force",
+   "suggestion_reasoning": "A live-fire naval demonstration in the South China Sea framed as defending sovereignty is a show of capability without a target state; demonstrative, low confidence because no disputed area or rival is named. [confidence: low]",
+   "date_end": "2014-10-31",
+   "new_dyads": "MU",
+   "excerpt": "successfully fired a Black Shark torpedo that hit the intended target in South China Sea this morning",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "South China Sea (off Sabah)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysian navy successfully test-fires Black Shark torpedo in South China Sea — Malay Mail (Bernama) 2014-10-31\nhttps://www.malaymail.com/news/malaysia/2014/10/31/malaysian-navy-successfully-test-fires-black-shark-torpedo-in-south-china-s/774317",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:36:04.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-cbd9efc525",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "Outside disputed SCS waters",
+   "suggested_dyads": [
+    "MU"
+   ],
+   "summary": "The Royal Malaysian Navy submarine KD Tun Razak fired a live Black Shark torpedo that sank a converted ferry used as a target in the South China Sea on 31 October 2014, supported by four warships, a helicopter and combat boats; the navy said the firing showed the forces' readiness to defend the country's sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2014-10-31",
+   "presort": "unclear — Live Black Shark torpedo firing 'in the South China Sea' off Sabah, framed as readiness to defend sovereignty, with no disputed area or rival named; nothing comparable in 2013. Settle whether the firing area lies in disputed waters; otherwise not a claim-specific act - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recX56mFHoCot76kb",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (KD Perak)",
+   "lat": 3.97389,
+   "suggestion_reasoning": "Shadowing a foreign naval group and ordering it to leave claimed waters is a direct warning; coercive. Single analytical source (ASPI The Strategist, 24 April 2013) without an official confirmation, and the Strategist dates the exercise to 26 March 2013; hence low confidence. [confidence: low]",
+   "date_end": "2013-03-26",
+   "new_dyads": "MC",
+   "excerpt": "monitored the exercise and issued orders for the PLA Navy to leave the area",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "James Shoal",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “James Shoal (Beting Serupai)”.",
+   "reviewer": "Angelo",
+   "sources": "Why Malaysia isn't afraid of China (for now) — ASPI The Strategist 2013-04-24\nhttps://www.aspistrategist.org.au/why-malaysia-isnt-afraid-of-china-for-now/",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:26:49.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-cc57294efc",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "When a four-ship Chinese navy amphibious task group led by the landing ship Jinggangshan exercised at James Shoal, about 80 km off Sarawak, the Royal Malaysian Navy offshore patrol vessel KD Perak monitored the exercise and ordered the PLA Navy ships to leave the area, according to an ASPI analysis; the Malaysian government made no public statement.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2013-03-26",
+   "presort": "new move (novelty) — KD Perak shadowing the PLAN amphibious group at James Shoal and ordering it to leave is a warning to a rival's navy in claimed waters; 2012 shows only fisheries arrests and a statute (ev-bcaca39dbf, ev-b40be793bb), so a new method - coercive lead. Rests on one ASPI piece. (group MY2013-PLAN-response) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.34889,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recKSdLG1sI42YENy",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Defence Minister Abdul Rahim Bakri; Royal Malaysian Navy; Royal Malaysian Air Force; MMEA",
+   "suggestion_reasoning": "The establishment of a standing patrol operation in waters where Chinese naval and coast guard ships had been present is unilateral patrolling; demonstrative. The start date of the operation is not given; the statement date is used. [confidence: medium]",
+   "date_end": "2014-11-04",
+   "new_dyads": "MC",
+   "excerpt": "satu operasi khas telah diwujudkan di mana kapal Tentera Laut Diraja Malaysia ditugaskan untuk melaksanakan rondaan pada sebilang masa di perairan Sarawak",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "location_name": "Sarawak waters, South China Sea",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2014-11-04: Supply Bill 2015, Committee, Ministry of Defence winding-up (Abdul Rahim Bakri) — Parliament of Malaysia (Digital Hansard) 2014-11-04\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2014-11-04",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:45:43.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-cd639374d6",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Unclear scope and application",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Winding up the Defence Ministry's budget debate in the Dewan Rakyat on 4 November 2014, Deputy Defence Minister Abdul Rahim Bakri said a special operation had been set up in which navy ships patrolled Sarawak waters at all times together with the Malaysian Maritime Enforcement Agency and air force maritime patrol aircraft, that foreign warships detected in Malaysian waters were shadowed until they left, and that any found harming Malaysia's security would be ordered out and protested through diplomatic channels.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2014-11-04",
+   "presort": "unclear — A standing special operation patrolling Sarawak waters at all times, shadowing foreign warships until they leave; start date unknown. Settle when it began and whether it widened presence beyond the Luconia watch of 2013 (ev-fadf832845): if wider, a scope move (or same move as ev-59b85ed993's year); if not, continuation of ev-fadf832845. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recRHiZ1q31j4BiRx",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Malaysian Maritime Enforcement Agency (MMEA/APMM)",
+   "lat": 5.9,
+   "suggestion_reasoning": "Sustained naval and coast-guard presence at a claimed shoal without reported confrontation is unilateral patrolling; demonstrative, one event for the year with its frequency. Figures from the 14 December 2015 Dewan Negara answer. [confidence: medium]",
+   "date_end": "2014-12-31",
+   "new_dyads": "MC",
+   "excerpt": "Bagi tahun 2014 , jumlah pelayaran kapal TLDM dan APMM yang beroperasi di Beting Patinggi Ali sebanyak 269 hari",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2015-12-14: Winding-up, Prime Minister's Department (Shahidan Kassim) on Beting Patinggi Ali — Parliament of Malaysia (Digital Hansard) 2015-12-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-12-14",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:31:04.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-dc9eb5efaa",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-fadf832845",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Royal Malaysian Navy and Malaysian Maritime Enforcement Agency ships spent a total of 269 ship-days operating at the Luconia Shoals (Beting Patinggi Ali) in 2014, 191 by the navy and 78 by the MMEA, to watch the China Coast Guard vessel stationed there, according to a later ministerial answer.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2014-01-01",
+   "presort": "continuation of ev-fadf832845 (a candidate, provisional) — Provisional continuation of ev-fadf832845 (2013 undecided): 269 ship-days at Luconia watching the stationed CCG ship continues the presence begun in Sept 2013 at about the same daily rate; more days because the Chinese ship stayed (counterfactual) - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJdVT8s0Bg1elfB",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister Najib Razak; Ministry of Defence; Royal Malaysian Air Force",
+   "suggestion_reasoning": "Forward-deploying combat aircraft towards a disputed sea is a unilateral military posture move; demonstrative. Low confidence because the stated primary purpose was security of eastern Sabah (ESSCOM, Sulu Sea), with the South China Sea a secondary justification. [confidence: low]",
+   "date_end": "2014-10-10",
+   "new_dyads": "MU MC",
+   "excerpt": "ini adalah selaras dengan kenyataan rasmi yang telah diumumkan oleh Yang Amat Berhormat Perdana Menteri di dalam Bajet 2015 yang telah dibentangkan pada 10 Oktober 2014\n\naset Skuadron Hawk dari Butterworth digerakkan ke Labuan semula",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Labuan (South China Sea coast of Borneo)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Labuan coast 53%); 10 Far South (Labuan coast 47%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2014-12-16: Supply Bill 2015, winding-up, Ministry of Defence (Abdul Rahim Bakri) — Parliament of Malaysia (Digital Hansard) 2014-12-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2014-12-16\nHansard, Dewan Rakyat, 2015-03-23: Oral answer on defence in Sabah and Labuan (Abdul Rahim Bakri) — Parliament of Malaysia (Digital Hansard) 2015-03-23\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2015-03-23",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:34:06.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-ddf4e42666",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "SCS is secondary in this case",
+   "suggested_dyads": [
+    "MU",
+    "MC"
+   ],
+   "summary": "In the 2015 Budget presented on 10 October 2014, Prime Minister Najib Razak announced the relocation of the Royal Malaysian Air Force's Hawk fighter squadron from Butterworth to Labuan; the Defence Ministry later justified Labuan partly by its position on oil and gas resources and South China Sea sea lanes, and a deputy defence minister said in March 2015 the move was meant to raise surveillance of the South China Sea and support monitoring of Beting Patinggi Ali and Beting Raja Jarum.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2014-10-10",
+   "presort": "unclear — Hawk squadron moved to Labuan in the 2015 Budget; the main stated reason is eastern Sabah (Sulu Sea), the South China Sea secondary. Settle whether it bears on the claim; if so it is the same method as the 2013 Bintulu announcement (ev-4d26731ad8) - likely continuation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recbDUZgnDfaMZxaH",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (KD Serang)",
+   "possible_duplicate_of": "ev-c9063fba75",
+   "lat": 5.9,
+   "suggestion_reasoning": "Dispatching a warship to a claimed shoal in response to a foreign coast-guard presence is unilateral presence without reported confrontation; demonstrative. The date comes from a later (14 December 2015) ministerial answer. [confidence: medium]",
+   "date_end": "2013-09-05",
+   "new_dyads": "MC",
+   "excerpt": "Pencerobohan pertama kapal Coast Guard China di perairan Beting Patinggi Ali adalah pada 4 September 2013, di mana TLDM telah mengarahkan KD Serang ke lokasi pada 5 September 2013",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:24:32.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Possible duplicate of ev-c9063fba75. Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2015-12-14: Winding-up, Prime Minister's Department (Shahidan Kassim) on Beting Patinggi Ali — Parliament of Malaysia (Digital Hansard) 2015-12-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-12-14",
+   "pull_request": 60,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:29:57.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-fadf832845",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "duplicate_of": "ev-c9063fba75",
+   "summary": "After the first intrusion by a China Coast Guard vessel into the waters of the Luconia Shoals (Beting Patinggi Ali) on 4 September 2013, the Royal Malaysian Navy ordered the patrol vessel KD Serang to the location on 5 September 2013, the minister responsible for the Malaysian Maritime Enforcement Agency told the Dewan Negara in December 2015; Malaysian navy and MMEA ships thereafter stationed themselves near the Chinese vessel.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2013-09-05",
+   "merge_into_candidate": "ev-cc57294efc",
+   "presort": "same move as ev-cc57294efc — Sending KD Serang to the Luconia Shoals after the first CCG intrusion (Sept 2013) and stationing ships by the Chinese vessel is the same new practice as ev-cc57294efc - naval response to Chinese state ships off Sarawak. A coder may split it as a separate demonstrative novelty (CCG, not PLAN; another shoal). (group MY2013-PLAN-response) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}

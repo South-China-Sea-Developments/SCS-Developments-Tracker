@@ -1,0 +1,233 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-02be125100",
+   "action": "reject",
+   "note": "continuation of ev-7588f91c85"
+  },
+  {
+   "event_id": "ev-0ab00177ce",
+   "action": "reject",
+   "note": "continuation of ev-02be125100"
+  },
+  {
+   "event_id": "ev-1f4f6cbade",
+   "action": "reject",
+   "note": "continuation of ev-75ae657584"
+  },
+  {
+   "event_id": "ev-2d06848164",
+   "action": "reject",
+   "note": "continuation of ev-c9063fba75"
+  },
+  {
+   "event_id": "ev-3f0b4a8af5",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-c145c8cc46"
+  },
+  {
+   "event_id": "ev-497b14cfd4",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-c145c8cc46"
+  },
+  {
+   "event_id": "ev-4d26731ad8",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "domestic",
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-59b85ed993",
+   "action": "reject",
+   "note": "Fairly routine statement"
+  },
+  {
+   "event_id": "ev-5c0e76f826",
+   "action": "reject",
+   "note": "continuation of ev-9ef41fd44d"
+  },
+  {
+   "event_id": "ev-94b1641f13",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-cc57294efc"
+  },
+  {
+   "event_id": "ev-9779298267",
+   "action": "reject",
+   "note": "continuation of ev-ddf4e42666"
+  },
+  {
+   "event_id": "ev-9ef41fd44d",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-59b85ed993"
+  },
+  {
+   "event_id": "ev-a15caaf75e",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "diplomatic",
+     "domestic"
+    ],
+    "issues": [
+     "military",
+     "politics",
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b1a8db8e9c",
+   "action": "new_move",
+   "note": "Some evidence of the strongest rejection of the nine-dash line, around 2013, when UNCLOS tensions started rising. Can arguably be rejected as a routine statement.",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC",
+     "MA"
+    ],
+    "domains": [
+     "domestic",
+     "diplomatic"
+    ],
+    "issues": [
+     "politics",
+     "administrative"
+    ],
+    "subregions": [
+     "7"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b40be793bb",
+   "action": "reject",
+   "note": "Unclear degree of new assertiveness - leaned towards no (also considering presentism bias)"
+  },
+  {
+   "event_id": "ev-bcaca39dbf",
+   "action": "reject",
+   "note": "continuation of ev-0ab00177ce"
+  },
+  {
+   "event_id": "ev-c145c8cc46",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-c9063fba75",
+   "action": "reject",
+   "note": "continuation of ev-bcaca39dbf"
+  },
+  {
+   "event_id": "ev-cbd9efc525",
+   "action": "reject",
+   "note": "Outside disputed SCS waters"
+  },
+  {
+   "event_id": "ev-cc57294efc",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-cd639374d6",
+   "action": "reject",
+   "note": "Unclear scope and application"
+  },
+  {
+   "event_id": "ev-dc9eb5efaa",
+   "action": "reject",
+   "note": "continuation of ev-fadf832845"
+  },
+  {
+   "event_id": "ev-ddf4e42666",
+   "action": "reject",
+   "note": "SCS is secondary in this case"
+  },
+  {
+   "event_id": "ev-fadf832845",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-cc57294efc"
+  }
+ ],
+ "reviewer": "Angelo"
+}

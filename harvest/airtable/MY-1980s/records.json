@@ -1,0 +1,1874 @@
+{
+ "run_id": "MY-1980s",
+ "exported_on": "2026-11-25",
+ "records": [
+  {
+   "airtable_id": "recLnkJZahAcMkzcO",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Defence Minister Abang Abu Bakar Mustapha; Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "A ministerial assertion of sovereignty and security over a disputed occupied reef is declarative; a routine restatement and the only dated Malaysian assertion found for 1985, so low confidence as a coding signal. Lai et al. note the Royal Charlotte Reef monument was found missing in mid-1985 (not a Malaysian act), and the project's archive register cites the UPNM/CDiSS chronology for a 25 September 1985 Cabinet decision on Mariveles and Ardasier reefs, but that PDF was unreachable, so the decision is not listed. [confidence: low]",
+   "date_end": "1985-07-19",
+   "new_dyads": "MV MC",
+   "excerpt": "Terumbu Layang-layang tidak pernah diduduki oleh mana-mana tentera asing walaupun ianya telah dituntut oleh beberapa buah negara.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1985-07-19: Terumbu Layang-Layang — Parliament of Malaysia (Digital Hansard) 1985-07-19\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1985-07-19",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:06:12.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-02308769b6",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-bf415d3795",
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "summary": "In a Dewan Rakyat answer on 19 July 1985, Deputy Defence Minister Abang Abu Bakar said Swallow Reef had never been occupied by any foreign troops although several states claimed it, and that because it is part of Malaysian territory its security was assured.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1985-07-19",
+   "presort": "continuation of ev-bf415d3795 (a candidate, provisional) — A routine restatement that Swallow Reef is Malaysian and secure, at the same level as 1984's parliamentary defence ev-bf415d3795. Provisional on 1984 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recPNXgqrfjMyJPd8",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (hydrographic service)",
+   "lat": 7.5,
+   "suggestion_reasoning": "A state survey of a disputed reef without confrontation is demonstrative. The only source found is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]",
+   "date_end": "1982-05-23",
+   "new_dyads": "MV MC MP",
+   "excerpt": "hydrographic survey from 11 to 23 May 1982",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:32:15.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-09f3d81fdc",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-69d9556a4e",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "From 11 to 23 May 1982 the Royal Malaysian Navy carried out a hydrographic survey of Swallow Reef as part of the preparations ordered by the Cabinet in August 1981 for its physical occupation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1982-05-11",
+   "presort": "continuation of ev-69d9556a4e (a candidate, provisional) — The May 1982 hydrographic survey of Swallow Reef is one of the occupation preparations already shown in 1981's ev-69d9556a4e (intensified patrols and surveys around the reef); provisional, and new (novelty) instead if those 1981 surveys turn out not to be 1981. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recuwrCExv4sBempe",
+   "archived_on": "2026-11-25",
+   "actors": "Foreign Minister Muhammad Ghazali Shafie; Dewan Rakyat",
+   "lat": 7.91667,
+   "suggestion_reasoning": "A ministerial statement asserting sovereignty and reporting a diplomatic protest against a rival's occupation is declarative. The answer does not date the protest itself, so the date is that of the answer. [confidence: high]",
+   "date_end": "1983-07-26",
+   "new_dyads": "MV",
+   "excerpt": "Kita telah membuat bantahan diplomatik kepada Vietnam terhadap pendudukan tenteranya di Pulau Kecil Amboyna yang merupakan pencerobohan Vietnam terhadap wilayah kita.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Amboyna Cay",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Kecil Amboyna (Amboyna Cay)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1983-07-26: Pulau Amboyna Cay - Pencerobohan Vietnam — Parliament of Malaysia (Digital Hansard) 1983-07-26\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1983-07-26",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:59:57.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-0c82302a59",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "In a written Dewan Rakyat answer of 26 July 1983, Foreign Minister Ghazali Shafie stated that Amboyna Cay had long been part of Malaysian territory on the basis of Malaysia's sovereignty over the island itself, and that Malaysia had lodged a diplomatic protest with Vietnam over its troops' occupation of the cay, which he called an encroachment on Malaysian territory.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1983-07-26",
+   "presort": "new move (novelty) — New again: a sovereignty assertion and diplomatic protest against Vietnam's Amboyna garrison, absent from 1982's record (ev-09f3d81fdc only) and last seen in 1980 (ev-ca5affa1a7). Check whether the protest was lodged in 1983 or is the 1980 one restated. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recfdEv6vnvrvyqiQ",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (Vice-Admiral Abdul Wahab Nawi); Malaysian Shipyard and Engineering (MSE) Sdn Bhd",
+   "lat": 7.98333,
+   "suggestion_reasoning": "The third Malaysian occupation of a disputed Spratly feature (seizure, 'force', or demonstrative if the coder counts only displacement of another state); new in that it lies close to Vietnam's Amboyna garrison. Construction began in September 1986 (day unknown, so date_start is the first of the month); the Dewan Rakyat was told on 27 June 1988 that the reef had been guarded since November 1986. [confidence: high]",
+   "date_end": "1986-11-03",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "On Nov 3 that year, we witnessed the then RMN chief, vice-admiral Tan Sri Abdul Wahab Nawi, officiating the station\n\nKeduanya, di Terumbu Mantanani, seorang pegawai dan 8 orang anggota yang lain telahpun mengawal terumbu ini sejak bulan November, 1986.\n\nMantanani (Mariveles Reef) in 1986 (16 April and 3 November, respectively),",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Mariveles Reef, Station Mike",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Mantanani (Mariveles Reef), Station Mike”.",
+   "reviewer": "Angelo",
+   "sources": "How Malaysia's five naval stations in the Spratlys were built — New Straits Times 2019-03-04\nhttps://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built\nHansard, Dewan Rakyat, 1988-06-27: Tuntutan Malaysia ke atas Kepulauan Spratly — Parliament of Malaysia (Digital Hansard) 1988-06-27\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-06-27\nPulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "force",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:08:00.000Z",
+   "new_type": "force",
+   "event_id": "ev-31edb3d6f9",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "Malaysian Shipyard and Engineering built Station Mike, a 60 m outpost, on Mariveles Reef (Terumbu Mantanani) from September 1986, and on 3 November 1986 Navy chief Vice-Admiral Abdul Wahab Nawi officiated the station, which Malaysian naval personnel have manned since; the reef lies about 35 nm north of Station Lima near Vietnam-held Amboyna Cay.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1986-09-01",
+   "merge_into_candidate": "ev-5ded6cbc43",
+   "presort": "same move as ev-5ded6cbc43 — Station Mike on Mariveles Reef is the second 1986 occupation in the expansion led by ev-5ded6cbc43. (group MY1986-occupations) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recfeJCsS55rWurlx",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister Abdullah Fadzil Che Wan; Dewan Rakyat",
+   "suggestion_reasoning": "A ministerial statement publicly detailing the garrisons on three disputed reefs is declarative; it adds troop numbers and dates to the March 1988 disclosure. [confidence: medium]",
+   "date_end": "1988-06-27",
+   "new_dyads": "MC MV MP MR",
+   "excerpt": "Keduanya, di Terumbu Mantanani, seorang pegawai dan 8 orang anggota yang lain telahpun mengawal terumbu ini sejak bulan November, 1986.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Malaysian-claimed features in the southern Spratlys",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Swallow Reef).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1988-06-27: Tuntutan Malaysia ke atas Kepulauan Spratly — Parliament of Malaysia (Digital Hansard) 1988-06-27\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-06-27",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:14:17.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3564d1c46f",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MR"
+   ],
+   "summary": "Answering in the Dewan Rakyat on 27 June 1988, Deputy Foreign Minister Abdullah Fadzil Che Wan said Malaysia claimed the southern Spratly features through the 1979 national map, had besides diplomacy 'shown its presence' there, and gave the garrisons: 2 officers and 25 other ranks on Swallow Reef since May 1983, and an officer and 8 men each on Mariveles and Ardasier reefs since November 1986; he named China, Vietnam, Taiwan and the Philippines as rival claimants and said Malaysia might take the matter to an international forum if bilateral talks failed.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-06-27",
+   "merge_into_candidate": " ev-75acd56f14",
+   "presort": "same move as ev-75acd56f14 — Elaborates the March disclosure ev-75acd56f14 with garrison numbers and the international-forum option; same move. (group MY1988-claim-disclosure) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recWbuLtaNFVotNmb",
+   "archived_on": "2026-11-25",
+   "actors": "Private resort developer, with government backing",
+   "lat": 7.5,
+   "suggestion_reasoning": "State-sanctioned tourism infrastructure on a disputed occupied feature is demonstrative, and a new kind of activity (civilian tourism) for Malaysia; Lai et al. cite Chung (2000) that the aim was to show the reef can sustain economic life and so generate an EEZ. The source is a PDF (not machine-checkable) giving only the month. [confidence: medium]",
+   "date_end": "1989-10-31",
+   "new_dyads": "MV MC MP",
+   "excerpt": "by a private company was completed in October 1989",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:17:05.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-50de0edf83",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "In October 1989 a private company completed construction of the Layang-Layang Island Resort on Swallow Reef, part of a government effort to develop the occupied reef as a diving and deep-sea fishing destination; it received its first international and domestic visitors on 15 January 1990.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1989-10-01",
+   "presort": "new move (novelty) — Novelty: a state-backed tourist resort on Swallow Reef is civilian tourism, a new method unseen in 1988's record (fishing licences ev-f324e9b611, infrastructure funding ev-9e16ec4d82). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec86paRI8S0Bmo74",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Foreign Affairs (Abu Hassan Omar); Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "An official statement restating the claim and the policy of rebutting protests is declarative; largely a restatement, but it confirms a standing practice of diplomatic replies to Vietnamese protests. The speaker is named as Dato' Abu Hassan bin Haji Omar in the Hansard. [confidence: medium]",
+   "date_end": "1987-06-29",
+   "new_dyads": "MV",
+   "excerpt": "Sejak tahun 1979, iaitu tahun pengisytiharan PETA BARU, Kerajaan Malaysia telah mengambil langkah-Iangkah diplomatik untuk membalas sebarang bantahan yang mempertikaikan tuntutan kita.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1987-06-29: Terumbu Layang-Layang - Tuntutan Malaysia — Parliament of Malaysia (Digital Hansard) 1987-06-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1987-06-29",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:10:02.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-529eaee2a6",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Routine statement and a statement hardly is an escalation for a feature which is already occupied",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "In a Dewan Rakyat answer on 29 June 1987, the Foreign Ministry said Swallow Reef, claimed by both Malaysia and Vietnam (which included it in its Truong Sa archipelago in its November 1982 baseline declaration), was claimed by Malaysia as part of its continental shelf under the 1979 Peta Baru, that Malaysian troops had been stationed there since 1983, and that since 1979 Malaysia had taken diplomatic steps to answer every protest disputing its claim.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1987-06-29",
+   "presort": "unclear — A routine restatement of the Swallow Reef claim. 1986's record has no declarative candidate, so strictly it is new again, but the 1985 restatement ev-02308769b6 and the standing practice of answering protests since 1979 suggest a source gap. Settled by 1986 Hansard: a similar answer there makes it a continuation. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recw1iCiiNxzJrF7c",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy: PASKAL Alpha Squadron (Lt Nasaruddin Othman, Lt Johari Ramzan Ahmad), KD Mutiara; Exercise Pahlawan",
+   "lat": 7.5,
+   "suggestion_reasoning": "Malaysia's first permanent military occupation of a disputed Spratly feature; under Chubb's definitions a seizure of a feature is 'force', although the reef was unoccupied and no other state's forces were displaced, so a coder may prefer demonstrative. The first source (NST 2019 retrospective) gives only 'May 1983' and 18 commandos; Lai et al. (PDF, not machine-checkable) give 5 May 1983 and 11 personnel; the Dewan Rakyat was told on 9 October 1984 that troops had been on the reef since May 1983. [confidence: high]",
+   "date_end": "1983-05-05",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "RMN despatched a team of 18 naval commandos in May 1983 to secure Terumbu Layang-Layang\n\non 5 May 1983, 11 personnel from PASKAL’s Alpha Squadron\n\nKerajaan telah menempatkan seperti yang saya katakan tadi pasukan tentera kita ke atas Terumbu Layang-layang sejak Mei, 1983.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "How Malaysia's five naval stations in the Spratlys were built — New Straits Times 2019-03-04\nhttps://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built\nPulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nHansard, Dewan Rakyat, 1984-10-09: Rang Undang-undang Zon Ekonomi Eksklusif — Parliament of Malaysia (Digital Hansard) 1984-10-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1984-10-09",
+   "pull_request": 52,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "force",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:34:29.000Z",
+   "new_type": "force",
+   "event_id": "ev-5a605b9b38",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "On 5 May 1983 eleven (other accounts say eighteen) Royal Malaysian Navy special forces (PASKAL Alpha Squadron) landed from the survey ship KD Mutiara, part of the naval task force of the armed forces' annual exercise 'Pahlawan', and occupied Swallow Reef, which Malaysia has garrisoned permanently since; Vietnam and China protested.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1983-05-05",
+   "presort": "new move (novelty) — Novelty: the first permanent Malaysian garrison on a Spratly feature (Swallow Reef, 5 May 1983), against 1982's record of only a survey (ev-09f3d81fdc); lead of the 1983 occupation move (type force vs demonstrative is the coder's call). (group MY1983-swallow) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recRYVgR4eQOnqsUq",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (naval special forces); Malaysian Shipyard and Engineering (MSE) Sdn Bhd; Defence Minister Abdullah Ahmad Badawi",
+   "lat": 7.62194,
+   "suggestion_reasoning": "The second Malaysian occupation of a disputed Spratly feature; as with Swallow Reef it is coded as a seizure ('force') although no other state's forces were displaced, so a coder may prefer demonstrative. Dates conflict: the NST retrospective and Lai et al. give 16 April 1986, while the Deputy Foreign Minister told the Dewan Rakyat on 27 June 1988 that the reef had been guarded since November 1986. The occupation was not announced at the time; the first official disclosure found is the Dewan Negara answer of 29 March 1988. [confidence: medium]",
+   "date_end": "1986-04-16",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "RMN sent a similar commando team to establish Stesen Uniform (Terumbu Ubi or Ardasier Reef), the largest reef in the Semarang Peninjau cluster, on April 16, 1986.\n\nMantanani (Mariveles Reef) in 1986 (16 April and 3 November, respectively),",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Ardasier Reef, Station Uniform",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Ubi (Ardasier Reef), Station Uniform”.",
+   "reviewer": "Angelo",
+   "sources": "How Malaysia's five naval stations in the Spratlys were built — New Straits Times 2019-03-04\nhttps://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built\nPulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "force",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:07:42.000Z",
+   "new_type": "force",
+   "event_id": "ev-5ded6cbc43",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "On 16 April 1986 a Royal Malaysian Navy commando team occupied Ardasier Reef (Terumbu Ubi), the largest reef of the Semarang Peninjau group, and established Station Uniform there on a barge-based outpost built by Malaysian Shipyard and Engineering, opened by Defence Minister Abdullah Ahmad Badawi.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1986-04-16",
+   "presort": "new move (scope) — Scope: garrisoning Ardasier (and Mariveles, ev-31edb3d6f9) extends occupation from one reef to three, against 1985's record, which shows only the existing Swallow garrison restated (ev-02308769b6); lead of the 1986 occupations move. (group MY1986-occupations) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "lon": 113.86083,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec5sjEtQ3oIF5JSG",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Tengku Ahmad Rithauddeen; Royal Malaysian Navy; Royal Malaysian Air Force (TUDM) maritime patrol aircraft",
+   "suggestion_reasoning": "Routine naval patrols and daily air surveillance of disputed areas are demonstrative; this records a standing practice (frequency 'constant' and 'daily') rather than a single patrol, so it may be coded once for the year. [confidence: medium]",
+   "date_end": "1988-12-05",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "Kapal-kapal Tentera Laut DiRaja Malaysia sentiasa membuat rondaan di kawasan sekitar kepulauan dengan dibantu oleh pesawat Maritim TUDM yang membuat penerbangan harian",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Malaysian-claimed features in the Spratlys and surrounding South China Sea",
+   "run": [
+    "MY-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1988-12-05: Kepulauan Spratly - Kawalan Keselamatan — Parliament of Malaysia (Digital Hansard) 1988-12-05\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-12-05",
+   "pull_request": 52,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:16:50.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-5df85f5fed",
+   "run_id": "MY-1980s",
+   "note": "Routine statement",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "In a Dewan Rakyat answer on 5 December 1988, Defence Minister Tengku Ahmad Rithauddeen said Navy personnel were stationed on the Malaysian-held Spratly islands and that Royal Malaysian Navy ships constantly patrolled around them, supported by daily maritime patrol flights by the air force over the South China Sea, especially around the Spratlys.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-12-05",
+   "presort": "unclear — Describes a standing practice (constant RMN patrols, daily RMAF flights over the Spratlys) with no start date; 1987's record has no patrol candidate. Settled by when the daily air patrols began: a 1988 start is a frequency/novelty move, otherwise it continues an undocumented practice. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recqSkCf08JNgxDNs",
+   "archived_on": "2026-11-25",
+   "actors": "Cabinet (Jemaah Menteri) under Prime Minister Mahathir Mohamad; Malaysian Armed Forces",
+   "lat": 7.5,
+   "suggestion_reasoning": "A cabinet order to occupy a disputed feature is a domestic governmental assertion of the claim (declarative) and a step up from the 1979 order for monuments; the physical occupation followed in May 1983. The only source found is a PDF, so the excerpt cannot be machine-checked; the 'intensified patrols and surveys' are given without dates. [confidence: medium]",
+   "date_end": "1981-08-21",
+   "new_dyads": "MV MC MP",
+   "excerpt": "On 21 August 1981, the cabinet of then Prime Minister",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:31:44.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-69d9556a4e",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Intentions but no actions by that time",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "On 21 August 1981 the Cabinet of Prime Minister Mahathir Mohamad ordered the Malaysian Armed Forces to 'occupy' Swallow Reef, launching preparations that included intensified Navy patrols and surveys around the reef and training of the new naval special forces (PASKAL) to land on and man it.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1981-08-21",
+   "presort": "unclear — The Cabinet order to occupy Swallow Reef is a decision (the guide dates behaviour, not decisions; the occupation came in May 1983, ev-5a605b9b38), and the 'intensified patrols and surveys' it set off are undated. Settled by whether the order was public in 1981 or patrols/surveys are dated to 1981 (then novelty or frequency against 1980's ev-ed7189cb69/ev-ca5affa1a7). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recFomP1aS1tQApi8",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Foreign Affairs; Government of Malaysia (oil exploration, presumably through PETRONAS)",
+   "suggestion_reasoning": "Hydrocarbon exploration in disputed waters is demonstrative resource activity; the answer gives no blocks, operator or start date, so the date is that of the statement and the confidence is low. [confidence: low]",
+   "date_end": "1988-07-14",
+   "new_dyads": "MV MC MP MB",
+   "excerpt": "Pada masa kini, Kerajaan sedang menjalankan kerja- kerja carigali minyak ber- hampiran dengan kawasan pulau-pulau, terumbu-te- rumbu dan benting-benting yang dituntut.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Waters near the Malaysian-claimed Spratly features",
+   "run": [
+    "MY-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1988-07-14: Kepulauan Spratly - Tuntutan Malaysia — Parliament of Malaysia (Digital Hansard) 1988-07-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1988-07-14",
+   "pull_request": 52,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:16:07.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7028c32506",
+   "run_id": "MY-1980s",
+   "note": "Routine statement for a mostly domestic audience",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MB"
+   ],
+   "summary": "In a written Dewan Negara answer of 14 July 1988, the Foreign Ministry stated that the Government was currently carrying out oil exploration near the islands, reefs and shoals claimed by Malaysia in the Spratlys, which it described as rich in fish and hydrocarbons and important to national security and the economy.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-07-14",
+   "presort": "unclear — Oil exploration 'near' the claimed Spratly features, with no block, operator or start date; 1987's record has nothing to compare it with. Settled by identifying the blocks: new exploration inside the Spratly claim in 1988 is a novelty, while long-running Sarawak/Luconia shelf work is not a 1988 move. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recABTzCYZMoNtkzP",
+   "archived_on": "2026-11-25",
+   "actors": "Foreign Minister Tengku Ahmad Rithauddeen; Dewan Negara",
+   "lat": 7.91667,
+   "suggestion_reasoning": "A ministerial statement in Parliament reaffirming the claims drawn on the new map against Vietnam's protest is a verbal assertion; declarative. It also notes Malaysia would not use force and preferred negotiation. [confidence: medium]",
+   "date_end": "1980-04-10",
+   "new_dyads": "MV",
+   "excerpt": "Saya suka menjelaskan lagi Peta Baru ini menunjukkan kawasan-kawasan yang kita claim, yang kita mendesak hak kita.\n\nKementerian saya baru-baru ini telah menerima Nota daripada pihak Vietnam berkenaan perkara ini",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Amboyna Cay and the areas shown on the Peta Baru",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Kecil Amboyna (Amboyna Cay) and the areas shown on the Peta Baru”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1980-04-10: Pencerobohan Tentera Vietnam di Kepulauan Amboyna Cay — Parliament of Malaysia (Digital Hansard) 1980-04-10\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-10\nHansard, Dewan Negara, 1980-04-14: Tentera Vietnam di Kepulauan Amboyna Cay — Parliament of Malaysia (Digital Hansard) 1980-04-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-14",
+   "pull_request": 52,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:24:01.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-72d1ab239f",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "Answering in the Dewan Negara on 10 April 1980, Foreign Minister Tengku Ahmad Rithauddeen said the December 1979 'Peta Baru' showed the areas Malaysia claims and that Malaysia insists on its rights to them, including Amboyna Cay where Vietnamese troops were present; on 14 April he added that his ministry had received a Vietnamese note on the matter.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-04-10",
+   "merge_into_candidate": "ev-ca5affa1a7",
+   "presort": "same move as ev-ca5affa1a7 — The Foreign Minister's insistence in the Dewan Negara on the Peta Baru claims against Vietnam's note is part of the 1980 defence of the map and protest over Amboyna led by ev-ca5affa1a7. (group MY1980-protests) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 112.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recyM6HOr2luF8rhx",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister Abdullah Fadzil Che Wan; Dewan Negara",
+   "lat": 7.5,
+   "suggestion_reasoning": "The first official public acknowledgement found of the 1986 garrisons on Ardasier and Mariveles reefs, made two weeks after the China-Vietnam clash at Johnson South Reef: a verbal assertion (declarative) of wider scope than earlier statements. [confidence: high]",
+   "date_end": "1988-03-29",
+   "new_dyads": "MV MC MP",
+   "excerpt": "Malaysia telah menempatkan pasukan anggota tentera Malaysia di Terumbu Layang- layang, Terumbu Ubi dan Terumbu Mantanani dengan tujuan mengawal\n\nMalaysia menuntut sebagai Wilayah Malaysia beberapa pulau dan terumbu di selatan apa yang dipanggil kepulauan Spratly.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Swallow Reef, Ardasier Reef, Mariveles Reef; Amboyna Cay, Commodore Reef, Terumbu Perahu, Royal Charlotte and Louisa reefs",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Layang-Layang (Swallow Reef), Terumbu Ubi (Ardasier Reef), Terumbu Mantanani (Mariveles Reef); Pulau Kecil Amboyna, Terumbu Laksamana, Terumbu Perahu, Terumbu Semarang Barat Kecil and Besar”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1988-03-29: Kepulauan Spratly - Menempatkan Tentera — Parliament of Malaysia (Digital Hansard) 1988-03-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1988-03-29\nHansard, Dewan Negara, 1988-03-29: Tuntutan Kepulauan Spratly — Parliament of Malaysia (Digital Hansard) 1988-03-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1988-03-29",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:10:58.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-75acd56f14",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "In Dewan Negara answers on 29 March 1988, Deputy Foreign Minister Abdullah Fadzil Che Wan disclosed that Malaysia had stationed armed forces personnel on Swallow, Ardasier and Mariveles reefs to guard and defend their sovereignty as Malaysian territory, listed eight features in the southern Spratlys that Malaysia claims as lying on its continental shelf against Vietnam, China and the Philippines, and said diplomatic efforts were under way to ensure they remain Malaysian territory.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-03-29",
+   "presort": "new move (scope) — Scope: the first official claim naming eight southern Spratly features and disclosing the Ardasier and Mariveles garrisons, against 1987's statement ev-529eaee2a6 covering Swallow Reef alone; lead of the 1988 declarative move. (group MY1988-claim-disclosure) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec2Fhrolx5GcTDuh",
+   "archived_on": "2026-11-25",
+   "actors": "Cabinet (Jemaah Menteri); Department of Fisheries",
+   "lat": 7.5,
+   "suggestion_reasoning": "State-licensed resource exploitation and a research station in disputed waters are demonstrative, and a new kind of activity (economic use) for Malaysia in the Spratlys. The source is a PDF (not machine-checkable) and gives only the month; the MARSAL date is year-only, and the Dewan Rakyat was told on 29 June 1988 that the tuna survey was complete and licences would be issued. [confidence: medium]",
+   "date_end": "1987-03-31",
+   "new_dyads": "MV MC MP",
+   "excerpt": "approval launched the deep-sea fishing initiative\n\nA fisheries and marine research station (MARSAL) was also established the same year",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Waters around Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Waters around Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nPulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:08:23.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7d4224d75d",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "In March 1987 the Malaysian Cabinet approved a deep-sea fishing initiative to exploit the tuna stocks around Swallow Reef, with access regulated by Malaysian permits and mainly Sabah and Sarawak companies taking part; a fisheries and marine research station (MARSAL) was set up on the reef the same year.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1987-03-01",
+   "presort": "new move (novelty) — Novelty: state-licensed deep-sea tuna fishing around Swallow Reef and the MARSAL research station are economic use of the disputed waters, unseen in 1986's record (occupations ev-5ded6cbc43, ev-31edb3d6f9). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recYaerixDtUXZZZO",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian enforcement agencies (Royal Malaysian Navy / Marine Police); Malaysian courts",
+   "suggestion_reasoning": "Detention and court punishment of another claimant's fishing vessels in the disputed Spratly area is coercive. The first source is a PDF (Dzurek 1996, citing P.K.H. Yu 1990), so the excerpt cannot be machine-checked; the Hansard table of foreign boats detained (Dewan Rakyat, 14 November 1988) gives the annual counts but not where they were seized, and also lists 5 Vietnamese boats in each of 1986 and 1987 and 3 Philippine boats in 1986 and 1988. [confidence: medium]",
+   "date_end": "1988-08-20",
+   "new_dyads": "MR",
+   "excerpt": "On 20 August 1988 Malaysia apprehended four Taiwanese fishing vessels within the Spratly area\n\n4. Taiwan .. 3 1 7",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Spratly area within Malaysia's claimed EEZ",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.",
+   "reviewer": "Angelo",
+   "sources": "The Spratly Islands Dispute: Who's On First? (Daniel J. Dzurek, IBRU Maritime Briefing 2(1)) — International Boundaries Research Unit, Durham University 1996-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf\nHansard, Dewan Rakyat, 1988-11-14: Bot Nelayan Asing — Parliament of Malaysia (Digital Hansard) 1988-11-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-11-14",
+   "pull_request": 52,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:16:28.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-8674f800be",
+   "run_id": "MY-1980s",
+   "suggested_dyads": [
+    "MR"
+   ],
+   "summary": "On 20 August 1988 Malaysia apprehended four Taiwanese fishing vessels in the part of the Spratly area overlapped by its EEZ claim; a Malaysian court fined the four masters, and Taiwan did little to protest. Official figures show Malaysia detained seven Taiwanese fishing boats in 1988, against three in 1986 and one in 1987.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-08-20",
+   "merge_into_candidate": "ev-ee70ffbd17",
+   "presort": "same move as ev-ee70ffbd17 — Detention and fining of four Taiwanese boats in the Spratly area (7 Taiwanese boats in 1988 against 1 in 1987) is the same 1988 enforcement intensification as ev-ee70ffbd17; a coder may split it by dyad. (group MY1988-enforcement) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recDo9n8xFxxiVqwt",
+   "archived_on": "2026-11-25",
+   "actors": "Parliament of Malaysia; Yang di-Pertuan Agong",
+   "suggestion_reasoning": "Legislation giving statutory form and enforcement powers to the 1980 EEZ proclamation is a legal assertion (declarative), and the legal basis for the fisheries arrests later in the decade. The first source is the UNEP/FAOLEX record giving the date of text and gazette; the UN DOALOS copy of the Act could not be fetched. [confidence: high]",
+   "date_end": "1984-12-31",
+   "new_dyads": "MA",
+   "excerpt": "Date of text 24 Dec 1984 Repealed No Serial Imprint Government Gazette No. 27, 31 December 1984, Supplement No. 25 (Acts).\n\nKerajaan telah menempatkan seperti yang saya katakan tadi pasukan tentera kita ke atas Terumbu Layang-layang sejak Mei, 1983.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Exclusive Economic Zone and continental shelf of Malaysia",
+   "run": [
+    "MY-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Exclusive Economic Zone Act 1984 (Act No. 311) — UNEP Law and Environment Assistance Platform (FAOLEX record)\nhttps://leap.unep.org/en/countries/my/national-legislation/exclusive-economic-zone-act-1984-act-no-311\nHansard, Dewan Rakyat, 1984-10-09: Rang Undang-undang Zon Ekonomi Eksklusif — Parliament of Malaysia (Digital Hansard) 1984-10-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1984-10-09",
+   "pull_request": 52,
+   "new_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:04:09.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-8758ebb904",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "8 Spratly SW",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Malaysia enacted the Exclusive Economic Zone Act 1984 (Act 311), dated 24 December 1984 and published in the Government Gazette on 31 December 1984, defining a 200-nautical-mile EEZ, making it Malaysian fisheries waters and providing for enforcement, detention of vessels and penalties; the bill was debated in the Dewan Rakyat in October and the Dewan Negara in December 1984.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1984-12-24",
+   "presort": "new move (novelty) — Novelty: the EEZ Act 1984 gives statutory form and enforcement and detention powers to the zone, a new legal instrument; 1983's record has no EEZ act or legislation (nothing comparable). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recSz8QXveN98uB23",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister (not named in the source)",
+   "suggestion_reasoning": "A public ministerial reaffirmation of sovereignty in reaction to the China-Vietnam fighting is declarative. The only source found is a PDF quoting the NST of 25 February 1988 via Haller-Trost (1990), so the excerpt cannot be machine-checked and the day of the statement is not given. [confidence: medium]",
+   "date_end": "1988-02-29",
+   "new_dyads": "MC MV",
+   "excerpt": "The islands and atolls are under Malaysian sovereignty, and Malaysia has in the past reaffirmed its jurisdiction",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Malaysian-claimed Spratly islands and atolls",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf.",
+   "reviewer": "Angelo",
+   "sources": "The Spratly Islands Dispute: Who's On First? (Daniel J. Dzurek, IBRU Maritime Briefing 2(1)) — International Boundaries Research Unit, Durham University 1996-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:10:41.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-960779aae7",
+   "run_id": "MY-1980s",
+   "note": "continuation of ev-529eaee2a6",
+   "suggested_dyads": [
+    "MC",
+    "MV"
+   ],
+   "summary": "In February 1988, as China and Vietnam clashed in the Spratlys, Malaysia's Deputy Foreign Minister stated that the islands and atolls Malaysia claims are under Malaysian sovereignty, lie within its continental shelf, and that this sovereignty had been officially declared through the new Map of Malaysia of 21 December 1979, in line with the 1958 Geneva Convention and UNCLOS (New Straits Times, 25 February 1988).",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1988-02-01",
+   "presort": "continuation of ev-529eaee2a6 (a candidate, provisional) — General reaffirmation of sovereignty under the 1979 map in reaction to the China-Vietnam clash, at the level of 1987's ev-529eaee2a6; more statements because there was more to react to is not a frequency move. Provisional. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recyuhed1xroK6xDi",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Promet Berhad; Prime Minister Mahathir Mohamad",
+   "lat": 7.5,
+   "suggestion_reasoning": "Building a permanent military station and land on a disputed reef, and a head-of-government visit to it, are unilateral physical administration (demonstrative) of wider scope than the 1983 landing. Dates conflict: Lai et al. (PDF, not machine-checkable) give 17 April 1984, while the NST 2019 retrospective (https://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built) says the station was set up three years after May 1983, in April (1986); the deputy minister told the Dewan Rakyat on 9 October 1984 that an $18 million module had been built. [confidence: medium]",
+   "date_end": "1984-04-17",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "Malaysia then established its naval station “Lima” on Layang-Layang on 17 April 1984.\n\nThe first such visit was made by Prime Minister Mahathir in April 1984, upon the completion of Station Lima.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef, Station Lima",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef), Station Lima”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nPulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:03:30.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9c42da2ce6",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "On 17 April 1984 Malaysia established Royal Malaysian Navy Station 'Lima' on Swallow Reef, after construction begun at the end of 1983 by Promet Berhad using caisson-retained island technology (accommodation block, hangar, utilities and a channel blasted through the reef); Prime Minister Mahathir visited the reef in April 1984 on the station's completion, the first leader's visit.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1984-04-17",
+   "presort": "new move (novelty) — Novelty: a built permanent naval station (Station Lima, caisson island, hangar, channel) and the first head-of-government visit, against 1983's bare garrison (ev-5a605b9b38). Dates conflict (NST puts the station in April 1986); if 1986, it joins the 1986 occupations move. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recrXAbX7CNl1VWkF",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Foreign Affairs (Parliamentary Secretary Mohd. Kassim bin Ahmad); Dewan Rakyat",
+   "lat": 8.36667,
+   "suggestion_reasoning": "An official statement rejecting the protests of other claimants against the 1979 map is a verbal assertion (declarative), and the first to name the reefs under dispute. The question named Vietnam, the Philippines and the Republic of China among the protesting states; the answer does not say which state protested over which reef. [confidence: high]",
+   "date_end": "1980-06-09",
+   "new_dyads": "MV MP MR",
+   "excerpt": "sikap dan pendirian Malaysia ialah menolak tuntutan- tuntutan tersebut.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Amboyna Cay, Commodore Reef, Terumbu Perahu, Mariveles Reef, Ardasier Reef, Royal Charlotte Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Kecil Amboyna, Terumbu Laksamana (Commodore), Terumbu Perahu, Terumbu Mantanani (Mariveles), Terumbu Ubi (Ardasier), Terumbu Semarang Barat Kecil (Royal Charlotte)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1980-06-09: Pulau-pulau yang menjadi pertikaian — Parliament of Malaysia (Digital Hansard) 1980-06-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-09",
+   "pull_request": 52,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:31:25.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9d3d030a01",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MP",
+    "MR"
+   ],
+   "summary": "Answering in the Dewan Rakyat on 9 June 1980, the Foreign Ministry's parliamentary secretary confirmed that Malaysia had received formal protests from neighbouring states over features shown on its new map, listing disputed Spratly reefs including Amboyna Cay, Commodore, Mariveles, Ardasier and Royal Charlotte reefs, and stated that Malaysia's position was to reject those claims.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-06-09",
+   "merge_into_candidate": "ev-ca5affa1a7",
+   "presort": "same move as ev-ca5affa1a7 — Rejection of the neighbours' formal protests against the 1979 map, naming the disputed reefs; same 1980 diplomatic-defence move as ev-ca5affa1a7. (group MY1980-protests) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 115.23333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recVAVBXjnSMdnWLr",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister's Department; Ministry of Finance; Dewan Rakyat; Royal Malaysian Air Force (TUDM)",
+   "lat": 7.5,
+   "suggestion_reasoning": "Funding of new infrastructure on an occupied disputed feature is demonstrative (construction), and widens the facilities on Swallow Reef to air operations. The works themselves are undated; the date is the parliamentary approval. [confidence: medium]",
+   "date_end": "1988-06-28",
+   "new_dyads": "MV MC MP",
+   "excerpt": "sebenarnya peruntukan yang diluluskan di bawah Rancangan Malaysia Kelima bagi projek Pulau Layang-layang ini ialah $7 juta.\n\nWang sebanyak $5,370,000 untuk Maksud P.7 diluluskan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1988-06-28: Anggaran Perbelanjaan Pembangunan (Tambahan) (Bil. 1) 1988 — Parliament of Malaysia (Digital Hansard) 1988-06-28\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-06-28\nHansard, Dewan Rakyat, 1988-06-28: Anggaran Perbelanjaan Pembangunan (Tambahan) (Bil. 1) 1988 — Parliament of Malaysia (Digital Hansard) 1988-06-28\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-06-28",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:14:54.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9e16ec4d82",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Decision but no enforcement yet",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "On 28 June 1988 the Dewan Rakyat approved a supplementary development allocation of $5.37 million under the Prime Minister's Department for the Pulau Layang-Layang development project (out of $7 million approved under the Fifth Malaysia Plan), to build a jetty, an accommodation module with sewage treatment, eight beacons, a radio beacon for ships and aircraft, a 10,000-gallon diesel tank for the air force and a mobile crane.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-06-28",
+   "presort": "unclear — A parliamentary funding approval for a jetty, beacons and air-force fuel on Swallow Reef; the works are undated. Settled by when they were built: in the build year, a novelty (first air-support infrastructure) against Station Lima (ev-9c42da2ce6) and MARSAL (ev-7d4224d75d). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recoykrHayYILWIF5",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Armed Forces",
+   "lat": 7.5,
+   "suggestion_reasoning": "A military exercise around a newly occupied disputed feature, without confrontation, is demonstrative. The only source found is a PDF citing The Age, so the excerpt cannot be machine-checked and the exact days are unknown; an opposition MP told the Dewan Rakyat on 9 October 1984 that 'Latihan Pahlawan' had been held there, which may refer to the May 1983 landing exercise. [confidence: medium]",
+   "date_end": "1983-08-31",
+   "new_dyads": "MV MC",
+   "excerpt": "In August 1983, Malaysian armed forces held military exercises in the area",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Swallow Reef area",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef) area”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:00:58.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9f9440c451",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "summary": "In August 1983 the Malaysian armed forces held military exercises in the Swallow Reef area, three months after occupying the reef (reported by The Age, 12 September 1983, under the headline 'Malaysia, Viets dispute island').",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1983-08-01",
+   "merge_into_candidate": "ev-5a605b9b38",
+   "presort": "same move as ev-5a605b9b38 — Military exercises around Swallow Reef three months after the landing consolidate the occupation led by ev-5a605b9b38 (and may be the same 'Pahlawan' exercise). (group MY1983-swallow) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recGekeXt82SZNjwB",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Defence Minister Abang Abu Bakar Mustapha",
+   "lat": 7.5,
+   "suggestion_reasoning": "A public ministerial refusal to withdraw troops in answer to rival protests is a verbal assertion (declarative). The date is that of the newspaper report as cited by Lai et al.; the statement may have been made a day earlier. The source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]",
+   "date_end": "1983-09-16",
+   "new_dyads": "MV MC",
+   "excerpt": "“we see no reason why we should withdraw our troops when our claims are backed by international law”",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:01:07.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-ab41b48cf2",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "summary": "Responding to protests from Vietnam and China, Deputy Defence Minister Abang Abu Bakar said Malaysia had sent its armed forces to Swallow Reef because it is Malaysian territory and 'we see no reason why we should withdraw our troops when our claims are backed by international law' (New Straits Times, 16 September 1983, 'Deputy Minister: We Will Not Quit Island').",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1983-09-16",
+   "merge_into_candidate": "ev-5a605b9b38",
+   "presort": "same move as ev-5a605b9b38 — The refusal to withdraw troops in answer to Vietnamese and Chinese protests is the verbal side of the Swallow Reef occupation ev-5a605b9b38, not a separate intensification. (group MY1983-swallow) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recX2UD0I6HcqOREW",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Engineer Regiment No. 3 Engineer Squadron (Lt Harjit Singh Rendawa); Royal Malaysian Navy",
+   "lat": 8.36667,
+   "suggestion_reasoning": "Erecting permanent sovereignty monuments on disputed reefs, including Commodore Reef claimed and later occupied by the Philippines and Louisa Reef claimed by Brunei, is unilateral physical administration without confrontation (demonstrative). Both sources are PDFs and cannot be machine-checked; the UKM excerpt was read only through a summarising fetch and should be re-checked by hand. [confidence: medium]",
+   "date_end": "1980-07-10",
+   "new_dyads": "MP MV MC MB",
+   "excerpt": "During the third phase, from 16 June to 10 July 1980, 25-feet high concrete\n\nFasa III antara 16 Jun hingga 10 Julai 1980 melibatkan pembinaan monumen kedaulatan obselik segitiga di PLL (21 Jun 1980)",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Commodore Reef, Swallow Reef, Royal Charlotte Reef, Louisa Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Terumbu Laksamana (Commodore Reef), Pulau/Terumbu Layang-Layang (Swallow Reef), Terumbu Semarang Barat Kecil (Royal Charlotte Reef), Terumbu Semarang Barat Besar (Louisa Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nArticle on Malaysia's sovereignty monuments in the Spratlys (Asian Journal of Environment, History and Heritage, article 252) — Universiti Kebangsaan Malaysia\nhttps://spaj.ukm.my/ajehh/index.php/ajehh/article/download/252/309/539",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:26:08.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b6a74d7848",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC",
+    "MB"
+   ],
+   "summary": "In Phases II and III of Op Tugu, Malaysian forces erected triangular obelisk sovereignty monuments (about 25 feet high) on Commodore Reef (6-20 May 1980), Swallow Reef (21 June 1980), Royal Charlotte Reef (4 July 1980) and Louisa Reef (7 July 1980); the Commodore Reef monument was destroyed by Philippine commandos in June 1980.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-05-06",
+   "merge_into_candidate": "ev-ed7189cb69",
+   "presort": "same move as ev-ed7189cb69 — Phases II and III of the same Op Tugu monument campaign (Commodore, Swallow, Royal Charlotte, Louisa reefs) led by ev-ed7189cb69. (group MY1980-optugu) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 115.23333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec3VxfW4iGyYQKO4",
+   "archived_on": "2026-11-25",
+   "actors": "Dato Mohamed Khalil Yaakob (replying for the Government); Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "A government statement in Parliament presenting the Swallow Reef module as a symbol of sovereignty and repeating the protest to Vietnam is declarative; largely a repeat of 1983 positions but the first official reference to the module. [confidence: medium]",
+   "date_end": "1984-10-09",
+   "new_dyads": "MV",
+   "excerpt": "sudah tentulah tindakan yang demikian merupakan satu simbol semangat bagi kita mempertahankan kedaulatan wilayah kita.\n\nKerajaan telah pun membantah dengan sekeras-kerasnya kepada Kerajaan Vietnam terhadap pencerobohan hak dan kedaulatan kita ke atas pulau kecil Amboyna ini.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Swallow Reef; Amboyna Cay",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef); Pulau Kecil Amboyna”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1984-10-09: Rang Undang-undang Zon Ekonomi Eksklusif — Parliament of Malaysia (Digital Hansard) 1984-10-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1984-10-09\nHansard, Dewan Rakyat, 1984-10-09: Rang Undang-undang Zon Ekonomi Eksklusif — Parliament of Malaysia (Digital Hansard) 1984-10-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1984-10-09",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:03:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bf415d3795",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-0c82302a59",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "Winding up the Dewan Rakyat debate on the Exclusive Economic Zone Bill on 9 October 1984, Dato Mohamed Khalil Yaakob, replying for the Government, said the Government had protested 'in the strongest terms' to Vietnam over its encroachment on Malaysian sovereignty at Amboyna Cay and asked it to withdraw, that troops had been stationed on Swallow Reef since May 1983 to defend Malaysia's rights, and that the $18 million module built there was a symbol of the will to defend Malaysia's territorial sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1984-10-09",
+   "presort": "continuation of ev-0c82302a59 (a candidate, provisional) — Repeats 1983's protest to Vietnam over Amboyna (ev-0c82302a59) and the Swallow garrison defence (ev-ab41b48cf2) at the same level; the module reference adds nothing new as an act. Provisional on 1983 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recLsz8RIAVyF54OV",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister Abdul Kadir Sheikh Fadzir; Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "Official statements in Parliament rejecting Vietnam's protest over the occupation and asserting sovereignty over Swallow and Commodore reefs are declarative; the same answer was repeated to further questions through December 1983 (Dewan Rakyat 18 October, Dewan Negara 6 December 1983, the latter adding that some 300 foreign troops were on Amboyna). [confidence: high]",
+   "date_end": "1983-10-12",
+   "new_dyads": "MV",
+   "excerpt": "Namun demikian ingin saya tegaskan di sini bahawa Terumbu Layang-layang telah sepanjang masa dan sememangnya adalah sebahagian dari negara Malaysia.\n\nkehadiran Malaysia di Terumbu Layang-Layang adalah selaras dengan hak kedaulatan negara kita ke atas terumbu tersebut.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Swallow Reef; Commodore Reef; Amboyna Cay",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef); Terumbu Laksamana (Commodore Reef); Pulau Kecil Amboyna”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1983-10-12: Kepulauan Terumbu Layang-Layang — Parliament of Malaysia (Digital Hansard) 1983-10-12\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1983-10-12\nHansard, Dewan Rakyat, 1983-10-11: Pulau Kecil Amboyna - Pendudukan Vietnam — Parliament of Malaysia (Digital Hansard) 1983-10-11\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1983-10-11",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:01:20.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bf789d0b90",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "In Dewan Rakyat answers on 11 and 12 October 1983, Deputy Foreign Minister Abdul Kadir Sheikh Fadzir said Malaysia's presence on Swallow Reef was consistent with its sovereignty, that the reef 'has always been part of Malaysia' despite Vietnam's protest claiming it, that Malaysian troops were there to guard Malaysian territory, that Commodore Reef belongs to Malaysia, and that Malaysia had protested Vietnam's occupation of Amboyna Cay and asked it to withdraw.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1983-10-11",
+   "merge_into_candidate": "ev-5a605b9b38 ",
+   "presort": "same move as ev-5a605b9b38 — Parliamentary rejection of Vietnam's protest over the Swallow Reef presence belongs with the occupation ev-5a605b9b38; its repeat of the Amboyna protest is covered by ev-0c82302a59. (group MY1983-swallow) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recizDotflZIsMQNA",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister Abdullah Fadzil Che Wan; Dewan Rakyat",
+   "suggestion_reasoning": "A routine parliamentary restatement of the claim, paired with a conciliatory call for negotiation; declarative but weak, and the only dated Malaysian statement found for 1989 apart from routine answers. [confidence: low]",
+   "date_end": "1989-12-13",
+   "new_dyads": "MA",
+   "excerpt": "sebahagian Kepulauan Spratly yang termasuk di dalam Peta Baru tersebut menjadi tuntutan Malaysia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Malaysian-claimed part of the Spratly Islands",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Brunei coast 93%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1989-12-13: Kepulauan Spratly - Tuntutan Malaysia — Parliament of Malaysia (Digital Hansard) 1989-12-13\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1989-12-13",
+   "pull_request": 52,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:17:19.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c268da3204",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-960779aae7",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "In a Dewan Rakyat answer on 13 December 1989, Deputy Foreign Minister Abdullah Fadzil Che Wan said that following the 1979 Peta Baru the part of the Spratlys within it was Malaysia's claim, naming the Philippines, Brunei, Vietnam, Taiwan and China as the other claimants and repeating that negotiation was the best way to settle the claims.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1989-12-13",
+   "presort": "continuation of ev-960779aae7 (a candidate, provisional) — A routine restatement of the Peta Baru claim with a call for negotiation, at the level of 1988's general reaffirmation ev-960779aae7. Provisional on 1988 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recbBNodf2q0zaLJB",
+   "archived_on": "2026-11-25",
+   "actors": "Foreign Minister Tengku Ahmad Rithauddeen; Ministry of Foreign Affairs",
+   "lat": 7.91667,
+   "suggestion_reasoning": "A face-to-face diplomatic protest rejecting another claimant's title and objecting to its garrison is a verbal assertion (declarative), stronger in wording than the 1978 démarche. The dates are those of the visit; the answers (Dewan Rakyat 10 and 16 June 1980) do not give the day of the meeting. [confidence: high]",
+   "date_end": "1980-05-11",
+   "new_dyads": "MV",
+   "excerpt": "bahawa Malaysia menolak dakwaan Vietnam yang mengatakan Pulau Kecil Amboyna adalah sebahagian daripada Kepulauan Spartley yang dituntut oleh Vietnam.\n\nketika beliau melawat Malaysia pada 8-11 Mei yang lalu",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Amboyna Cay",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Kecil Amboyna (Amboyna Cay)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1980-06-10: Tentera Vietnam di Pulau Amboyna — Parliament of Malaysia (Digital Hansard) 1980-06-10\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-10\nHansard, Dewan Rakyat, 1980-11-28: Kepulauan Amboyna — Parliament of Malaysia (Digital Hansard) 1980-11-28\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-11-28",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:31:03.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-ca5affa1a7",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "During Vietnamese Foreign Minister Nguyen Co Thach's visit to Malaysia on 8-11 May 1980, Malaysia told him that it rejected Vietnam's assertion that Amboyna Cay is part of the Spratlys claimed by Vietnam, said it viewed the stationing of Vietnamese troops on the cay seriously and protested 'in the strongest terms', while offering to settle the matter by negotiation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-05-08",
+   "presort": "new move (novelty) — New again: the protest 'in the strongest terms' to Nguyen Co Thach over Vietnam's Amboyna garrison, with the rebuttals of rival protests against the map, has nothing comparable in 1979's record (prev file: no protest or rebuttal; the last démarche, 1978's ev-6203883aff, was absent in 1979); lead of the 1980 diplomatic-defence move. (group MY1980-protests) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recvrDoHSxPvsdHfe",
+   "archived_on": "2026-11-25",
+   "actors": "Yang di-Pertuan Agong; Law Minister Hamzah Abu Samah",
+   "suggestion_reasoning": "A formal proclamation of a new maritime zone is a legal claim (declarative), new for Malaysia; in the South China Sea it overlaps the claims of Vietnam, the Philippines, China and Brunei. The proclamation text itself (UN DOALOS) could not be fetched, so the source is the minister's Hansard answer giving the date and gazette number. [confidence: high]",
+   "date_end": "1980-04-25",
+   "new_dyads": "MA",
+   "excerpt": "Dengan pengisytiharan ini yang telah diwartakan sebagai P.U. (A) 115 bertarikh 25hb April, 1980",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "location_name": "Exclusive Economic Zone of Malaysia (up to 200 nautical miles)",
+   "run": [
+    "MY-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1980-06-09: Zon Ekonomi Eksklusif — Parliament of Malaysia (Digital Hansard) 1980-06-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-09",
+   "pull_request": 52,
+   "new_issues": [
+    "administrative",
+    "energy",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:24:28.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e2c6e4cfcd",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "8 Spratly SW",
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "On 25 April 1980 the Yang di-Pertuan Agong formally proclaimed Malaysia's Exclusive Economic Zone of up to 200 nautical miles from the baselines (gazetted as P.U. (A) 115), claiming sovereign rights over living and non-living resources and jurisdiction over artificial islands, marine research and the marine environment; the Law Minister told the Dewan Rakyat on 9 June 1980 that no state had protested it.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-04-25",
+   "presort": "new move (novelty) — Novelty: the formal EEZ proclamation (P.U.(A) 115) is a legal claim in force, against 1979's record (prev file: ev-bd12e6ed48), which only announced that one was being prepared; a separate move from the map defence. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recmATN7iKVjjdFuY",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Armed Forces: Royal Engineer Regiment (RER, Lt Col Choi Siew Pun), Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "Unilateral construction of sovereignty markers on disputed features without confrontation is demonstrative, and a wider and more permanent effort than the 1975-77 markers. Both sources are PDFs, so the excerpts cannot be machine-checked; the UKM article was read only through a summarising fetch, so its Malay excerpt should be re-checked by hand. The UKM article lists Swallow Reef, Commodore Reef and Royal Charlotte Reef among the four foundation sites. [confidence: medium]",
+   "date_end": "1980-04-19",
+   "new_dyads": "MV MP MC",
+   "excerpt": "executed between 2 and 19 April 1980, involved the laying of foundations\n\nPada 31 Januari 1980, Operasi Tugu digerakkan merealisasikan pembinaan monumen baru tersebut",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:19:22.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef, Commodore Reef, Royal Charlotte Reef and another claimed reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef), Terumbu Laksamana (Commodore Reef), Terumbu Semarang Barat Kecil (Royal Charlotte Reef) and another claimed reef”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (Lai Yew Meng, Kuik Cheng-Chwee and Amy Azuan Abdullah, International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nArticle on Malaysia's sovereignty monuments in the Spratlys (Asian Journal of Environment, History and Heritage, article 252) — Universiti Kebangsaan Malaysia\nhttps://spaj.ukm.my/ajehh/index.php/ajehh/article/download/252/309/539",
+   "pull_request": 52,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:23:28.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-ed7189cb69",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MP",
+    "MC"
+   ],
+   "summary": "Under 'Operasi Tugu' (Op Tugu), launched on 31 January 1980 to carry out the Cabinet's June 1979 order for permanent sovereignty monuments, Royal Engineer Regiment teams carried by the Navy laid monument foundations on four Malaysian-claimed Spratly features, including Swallow Reef, during Phase I (2-19 April 1980).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-04-02",
+   "presort": "new move (novelty) — Novelty: Op Tugu's construction of permanent sovereignty monuments on four Spratly reefs is physical presence where 1979's record (prev file: ev-19cdf47a22, ev-bd12e6ed48, ev-72def46a32) holds only a cabinet decision, a statement and a map; lead of the 1980 Op Tugu move. (group MY1980-optugu) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recLe9Kw3EXCfRD55",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Attorney-General's Chambers (prosecution); Ministry of Foreign Affairs",
+   "lat": 8.36667,
+   "suggestion_reasoning": "Detention and prosecution of another claimant's nationals in disputed waters, followed by a formal warning to their government, is coercive (physical interference plus a threat of legal punishment), and the first such action against Filipinos found. The date and location come from Lim (2000) and Dzurek (1996), both PDFs; the checked first source (Hansard, 11 November 1988) describes the prosecution and warning but not the date; Hansard of 29 November 1988 places the detention in the Spratlys. Manila protested and the case strained relations through late 1988. [confidence: high]",
+   "date_end": "1988-04-04",
+   "new_dyads": "MP",
+   "excerpt": "Kerajaan Filipina telah diberitahu secara rasmi supaya memberi amaran kepada nelayan-nelayan mereka\n\nnavy seized three Philippine fishing vessels near Rizal Reef\n\nAlso in April Philippine fishermen were detained by the Malaysian navy near Commodore Reef.\n\nKerajaan Malaysia tidak mengiktirafkan sempadan yang dituntut oleh Filipina walaupun kita melepaskan orang- orang Filipina yang telah pun ditahan di kepulauan Pulau Spratly",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Near Commodore Reef, Malaysian EEZ off Sabah",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Near Terumbu Laksamana (Commodore Reef / Rizal Reef), Malaysian EEZ off Sabah”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1988-11-11: Nelayan Filipina ditahan di Sabah — Parliament of Malaysia (Digital Hansard) 1988-11-11\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-11-11\nTempest over the South China Sea: The Chinese Perspective on the Spratlys (Benito O. Lim, Asian Studies 36(2)) — Asian Center, University of the Philippines Diliman 2000-01-01\nhttps://asj.upd.edu.ph/mediabox/archive/ASJ-36-2-2000/lim.pdf\nThe Spratly Islands Dispute: Who's On First? (Daniel J. Dzurek, IBRU Maritime Briefing 2(1)) — International Boundaries Research Unit, Durham University 1996-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf\nHansard, Dewan Rakyat, 1988-11-29: Kepulauan Spratly - Tuntutan — Parliament of Malaysia (Digital Hansard) 1988-11-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-11-29",
+   "pull_request": 52,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:13:34.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-ee70ffbd17",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "On 4 April 1988 the Royal Malaysian Navy seized three Philippine fishing boats near Commodore (Rizal) Reef and detained their 49 crew, who were charged under Malaysia's fisheries law with fishing without permission in its EEZ; after a Kota Kinabalu Sessions Court freed them the prosecution appealed, then withdrew at Manila's request, and Malaysia formally told the Philippine government to warn its fishermen to respect the Malaysian EEZ or face full legal action, while stating it did not recognise the boundary claimed by the Philippines.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-04-04",
+   "presort": "new move (novelty) — Novelty: seizure, prosecution and a formal warning to Manila over Philippine boats near Commodore Reef; 1987's record has no coercive act (nothing comparable). Lead of the 1988 Spratly fisheries-enforcement move; Hansard detention counts (3 Philippine boats 1986, 5 Vietnamese 1986-87) are unlocated and could show earlier enforcement. (group MY1988-enforcement) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 115.23333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recdlqBk4neBNt71q",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia (reply in committee); Department of Fisheries, Ministry of Agriculture",
+   "lat": 7.5,
+   "suggestion_reasoning": "State licensing of fishing and fisheries research in disputed waters is demonstrative; it implements the March 1987 deep-sea fishing decision. [confidence: medium]",
+   "date_end": "1988-06-29",
+   "new_dyads": "MV MC MP",
+   "excerpt": "Jabatan Perikanan akan mengeluarkan lesen kepada pemohon- pemohon yang berkelayakan untuk menangkap ikan di kawasan Terumbu Layang-layang ini.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:21:48.000Z",
+   "location_name": "Waters around Swallow Reef",
+   "run": [
+    "MY-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Waters around Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1988-06-29: Anggaran Perbelanjaan Pembangunan (Tambahan) (Bil. 1) 1988 (Jawatankuasa) — Parliament of Malaysia (Digital Hansard) 1988-06-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1988-06-29",
+   "pull_request": 52,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:15:10.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-f324e9b611",
+   "run_id": "MY-1980s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-7d4224d75d",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP"
+   ],
+   "summary": "On 29 June 1988 the Government, replying in the Dewan Rakyat committee stage of the supplementary development estimates, said that the Department of Fisheries had completed studies of tuna and seaweed resources at Swallow Reef showing potential for tuna fishing, that it would issue licences to qualified applicants to fish in the reef's waters, and that $358,000 was sought to expand research facilities on the reef.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1988-06-29",
+   "presort": "continuation of ev-7d4224d75d (a candidate, provisional) — Licensing tuna fishing and expanding research at Swallow Reef implements 1987's deep-sea fishing initiative ev-7d4224d75d at the same level. Provisional on 1987 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  }
+ ]
+}

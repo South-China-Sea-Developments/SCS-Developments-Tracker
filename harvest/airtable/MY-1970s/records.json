@@ -3,6 +3,351 @@
  "exported_on": "2026-11-25",
  "records": [
   {
+   "airtable_id": "recdYRyhNpk5xnfzV",
+   "archived_on": "2026-11-25",
+   "actors": "Cabinet of Malaysia (Jemaah Menteri)",
+   "lat": 7.5,
+   "suggestion_reasoning": "A cabinet decision ordering permanent sovereignty structures is a domestic governmental assertion of the claim (declarative); the construction it ordered (demonstrative) happened in 1980 and is outside this chunk. First source is a PDF, so the excerpt cannot be machine-checked. The second source (UKM journal PDF) could only be opened through a summarising fetch, so its excerpt should be re-checked by hand. [confidence: medium]",
+   "date_end": "1979-06-13",
+   "new_dyads": "MV MP MC",
+   "excerpt": "Following a meeting on 13 June 1979, the Malaysian\n\nMelalui Mesyuarat Jemaah Menteri pada 13 Jun 1979 telah memutuskan pembinaan 10 buah monumen setinggi 7.62 meter",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef and other Malaysian-claimed Spratly features",
+   "run": [
+    "MY-1970s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Swallow Reef (Terumbu Layang-Layang) and other Malaysian-claimed Spratly features”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nKeberadaan Monumen Kedaulatan dan Tapak Bernilai Sejarah di Pulau Layang Layang (Asian Journal of Environment, History and Heritage 8(1)) — Universiti Kebangsaan Malaysia 2024-06-01\nhttps://spaj.ukm.my/ajehh/index.php/ajehh/article/download/252/309/539",
+   "pull_request": 50,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:18:01.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-19cdf47a22",
+   "run_id": "MY-1970s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Not enacted nor made known yet.",
+   "suggested_dyads": [
+    "MV",
+    "MP",
+    "MC"
+   ],
+   "summary": "After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its meeting of 13 June 1979 to make Malaysia's South China Sea claims visible by building ten observable sovereignty monuments (about 7.62 m high) on claimed features, with Swallow Reef as the top priority; the decision led to 'Operation Tugu', which began on 31 January 1980.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-06-13",
+   "presort": "unclear — The 13 June 1979 cabinet decision to build ten sovereignty monuments is a decision, and the guide dates behaviour, not decisions; the monuments went up under Operation Tugu from January 1980. It is settled by whether the decision was made public in 1979 (then a novelty declarative move against 1978's ev-6203883aff) or not (then evidence for the 1980 construction move). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recX3qCmGen3v5BzB",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy (hydrographers); Malaysian troops; Directorate of National Mapping",
+   "lat": 7.91667,
+   "suggestion_reasoning": "Re-marking a feature already marked by Vietnam, followed by survey and marking of other claimed reefs, is unilateral physical administration without confrontation: demonstrative, and wider in scope than 1975. A contemporaneous US embassy cable of 19 October 1977 confirms that a Malaysian survey vessel had found a Vietnamese claim marker on Amboyna and that the Foreign Ministry had begun a high-level review of the Spratly claims (a government meeting followed on 27 October 1977). Dates conflict: Lai et al. give 11 October 1977, while a retired RMN commando quoted by the NST (2019) and Dzurek (1996) place the landing and marker in 1978. The first source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]",
+   "date_end": "1977-10-11",
+   "new_dyads": "MV",
+   "excerpt": "erected the signage Pulau Kecil Amboyna on 11 October 1977, to indicate\n\nSTEMMED FROM DISCOVERY BY MALAYSIAN SURVEY VESSEL OF\n\nA retired Royal Malaysian Navy special forces commando recalled the first initiative at Amboyna Minor Cay (Permatang Amboyna Kecil) in 1978.\n\nIn 1978 Malaysian troops visited the southern Spratly islands.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Amboyna Cay; follow-on surveys at Swallow Reef, Dallas, Ardasier, Royal Charlotte and Louisa reefs, Seahorse Breakers, Hayor Reef, South Luconia Shoals",
+   "run": [
+    "MY-1970s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Amboyna Cay (Pulau Kecil Amboyna); follow-on surveys at Swallow Reef (Terumbu Layang-Layang), Dallas, Ardasier, Royal Charlotte and Louisa reefs, Seahorse Breakers, Hayor Reef, South Luconia Shoals”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nClaims to Spratley Islands (Kuala Lumpur 7777) — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD) 1977-10-19\nhttps://search.wikileaks.org/plusd/cables/1977KUALA07777_c.html\nHow Malaysia's five naval stations in the Spratlys were built — New Straits Times 2019-03-04\nhttps://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built\nThe Spratly Islands Dispute: Who's On First? (IBRU Maritime Briefing 2(1)) — International Boundaries Research Unit, Durham University 1996-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+   "pull_request": 50,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:03:16.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4093c90634",
+   "run_id": "MY-1970s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappeared and a Vietnamese monument dated 1976 stood there, Malaysian forces re-erected a 'Pulau Kecil Amboyna' sign on the cay on 11 October 1977 to show Malaysia's claim; Directorate of National Mapping personnel then pressed on with surveys and markings at Swallow Reef and other nearby features.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1977-10-11",
+   "presort": "new move (novelty) — New again: the 1975 marking (ev-af41776905) has no 1976 counterpart, so re-erecting the Amboyna Cay sign over a Vietnamese marker and pressing surveys and markings at Swallow Reef and other reefs is an intensification against a blank 1976 (and wider in scope than 1975). The 1977 vs 1978 dating conflict in the sources should be settled first; if 1978, it moves to that year. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recmwJSrNc3oEOwDK",
+   "archived_on": "2026-11-25",
+   "actors": "Minister of Law Hamzah Abu Samah",
+   "suggestion_reasoning": "A ministerial statement asserting coming EEZ jurisdiction and conditioning foreign access is a verbal claim to maritime rights (declarative). It is general rather than aimed at a named South China Sea rival, so it is a marginal, low-confidence candidate; it repeats the 1977 announcement with more emphasis on exclusive rights. [confidence: low]",
+   "date_end": "1978-09-09",
+   "new_dyads": "MA",
+   "excerpt": "SOON ANNOUNCE THE ESTABLISHMENT OF AN EXCLUSIVE",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "run": [
+    "MY-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "LOS: Malaysia and the exclusive economic zone (Kuala Lumpur 9685) — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD) 1978-09-11\nhttps://search.wikileaks.org/plusd/cables/1978KUALA09685_d.html",
+   "pull_request": 50,
+   "new_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:03:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-413bef2512",
+   "run_id": "MY-1970s",
+   "note": "continuation of ev-8155996da4",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "At a press conference on his return from the UN Law of the Sea conference on 9 September 1978, Law Minister Hamzah Abu Samah said the government would soon announce the establishment of an exclusive economic zone, that Malaysia had made clear at the conference that coastal states had sovereign rights over EEZ resources so that other states' access would have to be regulated by bilateral agreements, and that a committee of experts in his ministry was studying the zone's implications.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1978-09-09",
+   "presort": "continuation of ev-8155996da4 (a candidate, provisional) — Repeats the 1977 announcement of a coming EEZ (ev-8155996da4) at the same level, with more emphasis on exclusive resource rights but no new method; general (dyad MA) rather than aimed at a rival. Provisional on 1977 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec5dimJRy1nhhnYG",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister Hussein Onn",
+   "lat": 7.91667,
+   "suggestion_reasoning": "A head-of-government representation objecting to another claimant's troops on a Malaysian-claimed feature is a verbal diplomatic assertion: declarative, and the first recorded Malaysian démarche on the Spratlys. The Hansard answers (Dewan Negara 10 and 14 April 1980, Dewan Rakyat 10 June 1980) give only 'October 1978'; the visit dates 12-16 October come from a US embassy cable, which does not itself mention Amboyna, so the exact day is unknown. [confidence: high]",
+   "date_end": "1978-10-16",
+   "new_dyads": "MV",
+   "excerpt": "Yang Amat Berhormat Perdana Menteri telah mengambil kesempatan memberitahu Perdana Menteri Vietnam semasa lawatan rasmi beliau ke Malaysia pada bulan Oktober 1978 mengenai kehadiran tentera Vietnam di kepulauan Amboyna Cay itu.\n\nY.A.B. Perdana Menteri sendiri semasa lawatan Perdana Menteri Vietnam Encik Pham Van Dong ke Malaysia dalam bulan Oktober, 1978, telah membangkitkan perkara ini.\n\nDONG'S VISIT HERE OCT. 12-16",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "location_name": "Amboyna Cay",
+   "run": [
+    "MY-1970s"
+   ],
+   "machine_note": "Source's wording for the place: “Amboyna Cay (Pulau Kecil Amboyna)”.",
+   "reviewer": "Angelo",
+   "sources": "Dewan Negara Hansard, 14 April 1980: Tentera Vietnam di Kepulauan Amboyna Cay (question 36, answer by Foreign Minister Tengku Ahmad Rithauddeen) — Parliament of Malaysia (Digital Hansard) 1980-04-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-14\nDewan Negara Hansard, 10 April 1980: Pencerobohan Tentera Vietnam di Kepulauan Amboyna Cay (question 3, answer by Foreign Minister) — Parliament of Malaysia (Digital Hansard) 1980-04-10\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-10\nForeign Minister's comments on Pham Van Dong visit (Kuala Lumpur 11326) — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD) 1978-10-20\nhttps://search.wikileaks.org/plusd/cables/1978KUALA11326_d.html",
+   "pull_request": 50,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:09:15.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-6203883aff",
+   "run_id": "MY-1970s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "During Vietnamese Prime Minister Pham Van Dong's official visit to Malaysia on 12-16 October 1978, Prime Minister Hussein Onn raised with him the presence of Vietnamese troops on Amboyna Cay; Pham Van Dong promised to study the matter and agreed that conflicting claims should be settled peacefully through negotiation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1978-10-12",
+   "presort": "new move (novelty) — Novelty: the Prime Minister's representation to Pham Van Dong over Vietnamese troops on Amboyna Cay is Malaysia's first protest to a rival over a feature; 1977's record (EEZ announcement ev-8155996da4, marking ev-4093c90634) has no démarche. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recsSVXM7CRNZiogo",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia",
+   "suggestion_reasoning": "An official map formally claiming disputed Spratly features is a legal and administrative claim statement: declarative, and the founding document of Malaysia's Spratly claim. In 1980 Vietnam sent a protest note (Dewan Rakyat, 10 June 1980), Singapore protested on 14 February 1980 over Pedra Branca, and the UK protested for Brunei over Louisa Reef (Dzurek 1996). The first source is the Law Minister's Dewan Rakyat answer of 17 June 1980 giving the publication date; the Lai et al. source is a PDF. [confidence: high]",
+   "date_end": "1979-12-21",
+   "new_dyads": "MV MP MC MR MB",
+   "excerpt": "Suatu peta Malaysia yang menunjukkan perairan Wilayah dan pelantar benuanya telahpun diterbitkan pada 21 haribulan Disember, 1979.\n\nits claims to about a dozen tiny reefs and atolls in the SCS.\n\nmarking several islands and reefs in the Spratly Islands as its territory",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "location_name": "Southern Spratlys: Swallow Reef, Ardasier Reef, Mariveles Reef, Dallas Reef, Louisa Reef, Royal Charlotte Reef, Erica Reef, Investigator Shoal, Amboyna Cay, Barque Canada Reef, Commodore Reef; also Ja",
+   "run": [
+    "MY-1970s"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Swallow Reef; Ardasier Reef; Dallas Reef; Louisa Reef; Royal Charlotte Reef; Erica Reef; Investigator Shoal; Commodore Reef); 8 Spratly SW (Mariveles Reef; Amboyna Cay; Barque Canada Reef).",
+   "reviewer": "Angelo",
+   "sources": "Dewan Rakyat Hansard, 17 June 1980: Peta Pelantar Benua bagi Malaysia (question 56, answer by the Minister of Law) — Parliament of Malaysia (Digital Hansard) 1980-06-17\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-17\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nSouth China Sea chronology (1909 - February 2022) — Parliament of Australia, Parliamentary Library 2022-03-01\nhttps://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/Chronologies/2021-22/SouthChinaSeaChronology",
+   "pull_request": 50,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:19:32.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-72def46a32",
+   "run_id": "MY-1970s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MP",
+    "MC",
+    "MR",
+    "MB"
+   ],
+   "summary": "On 21 December 1979 Malaysia published the two-sheet 'Map Showing Territorial Waters and Continental Shelf Boundaries of Malaysia' (Peta Baru), whose Sabah-Sarawak sheet enclosed about a dozen Spratly features, among them Amboyna Cay (held by Vietnam) and Commodore Reef (later held by the Philippines), within Malaysia's territorial waters and continental shelf.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-12-21",
+   "presort": "new move (novelty) — Novelty: the Peta Baru of 21 December 1979 is Malaysia's first formal legal claim enclosing about a dozen Spratly features, Amboyna Cay and Commodore Reef among them; 1978's record has only EEZ statements (ev-413bef2512) and a démarche (ev-6203883aff), nothing comparable. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recGcD9PIiVsuMaHD",
+   "archived_on": "2026-11-25",
+   "actors": "Minister of Law and Attorney-General Tan Sri Abdul Kadir Yusof",
+   "suggestion_reasoning": "A ministerial public announcement of an intended 200-mile EEZ in the South China Sea, notified to Vietnam and potentially overlapping Vietnam's Spratly claim, is a verbal assertion of new maritime jurisdiction: declarative, and the first such statement found for Malaysia. The newspaper articles were not reachable, so the source is the US embassy's reports of them (cables of 25 July and 16 November 1977); the two dates are the two press reports. [confidence: medium]",
+   "date_end": "1977-08-05",
+   "new_dyads": "MV",
+   "excerpt": "ON THE SOUTH CHINA SEA, MENTIONING VIETNAM SPECIFICALLY,\n\nTHE DISPUTED SPRATLEY ISLANDS WHICH HAVE ALREADY BEEN",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "location_name": "South China Sea off Peninsular Malaysia, Sabah and Sarawak; Spratly Islands",
+   "run": [
+    "MY-1970s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sabah coast 15%; Sarawak coast 99%); 7 Spratly SE (Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "Foreign Minister disclaims intention make ASEAN a security [organization] (Kuala Lumpur 4747) — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD) 1977-07-25\nhttps://search.wikileaks.org/plusd/cables/1977KUALA04747_c.html\nLOS: Thai report Malaysia will declare 200 mile economic [zone] (Kuala Lumpur 8657) — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD) 1977-11-16\nhttps://search.wikileaks.org/plusd/cables/1977KUALA08657_c.html",
+   "pull_request": 50,
+   "new_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:01:29.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-8155996da4",
+   "run_id": "MY-1970s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Times, 22 July 1977) that he would table a bill establishing a 200-mile exclusive economic zone and that Malaysia would negotiate the zone's limits with other South China Sea states, naming Vietnam; in a Business Times interview published on 5 August 1977 he said Malaysia would soon start charting the zone, that he had told Vietnam's delegate at the last Law of the Sea session of Malaysia's intention, and the paper noted that Malaysia's claims off Sabah and Sarawak might include the disputed Spratly Islands.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1977-07-22",
+   "presort": "new move (novelty) — Novelty: the Law Minister's public announcement of a coming 200-mile EEZ, notified to Vietnam and possibly reaching the Spratlys, is Malaysia's first verbal maritime-jurisdiction claim; there is no 1976 candidate, so nothing comparable last year. Separate from the physical marking ev-4093c90634. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "reciv44YclrWLJzq1",
    "archived_on": "2026-11-25",
    "actors": "Malaysian Armed Forces; Royal Malaysian Navy; Royal Malaysian Air Force; Royal Engineer Regiment",
@@ -62,6 +407,59 @@
    "claimant": "MY",
    "new_domains": [
     "physical"
+   ]
+  },
+  {
+   "airtable_id": "recF0LbQFryOHHswL",
+   "archived_on": "2026-11-25",
+   "actors": "Minister of Law (Hamzah Abu Samah); Dewan Negara",
+   "suggestion_reasoning": "A ministerial announcement in Parliament of an intended 200-mile EEZ claim is a verbal assertion of new maritime jurisdiction (declarative); it is general rather than South China Sea-specific and the proclamation itself came on 25 April 1980, so a coder may treat it as a marginal precursor. On 26 November 1979 a deputy minister told the Dewan Rakyat the committee had finished and the decision awaited government study. [confidence: low]",
+   "date_end": "1979-07-11",
+   "new_dyads": "MA",
+   "excerpt": "Malaysia sekarang sedang membuat persediaan untuk mengisytiharkan Zon Ekonomi Eksklusifnya sendiri dan ini termasuk menyediakan Undang-undang yang sesuai.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T17:51:05.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "run": [
+    "MY-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Dewan Negara Hansard, 11 July 1979: Undang-undang Laut Antarabangsa (question 29, answer by the Minister of Law) — Parliament of Malaysia (Digital Hansard) 1979-07-11\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1979-07-11",
+   "pull_request": 50,
+   "new_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T19:18:47.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bd12e6ed48",
+   "run_id": "MY-1970s",
+   "note": "Still not made public",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah announced that Malaysia was preparing to proclaim its own Exclusive Economic Zone, including suitable legislation, and that a committee under the head of the ministry's international law division, set up in January 1979, was finalising its report to the government.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-07-11",
+   "presort": "continuation of ev-413bef2512 (a candidate, provisional) — A further ministerial statement that the EEZ is being prepared, at the same level as 1978's ev-413bef2512 (itself continuing 1977's ev-8155996da4); the proclamation came only in April 1980. Provisional on 1978 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
    ]
   }
  ]

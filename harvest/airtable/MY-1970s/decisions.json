@@ -1,7 +1,12 @@
 {
  "decisions": [
   {
-   "event_id": "ev-af41776905",
+   "event_id": "ev-19cdf47a22",
+   "action": "reject",
+   "note": "Not enacted nor made known yet."
+  },
+  {
+   "event_id": "ev-4093c90634",
    "action": "new_move",
    "note": "",
    "new_move": {
@@ -10,9 +15,7 @@
     "year": "",
     "ongoing_through": "",
     "dyads": [
-     "MV",
-     "MP",
-     "MC"
+     "MV"
     ],
     "domains": [
      "physical"
@@ -26,6 +29,99 @@
     ],
     "description": ""
    }
+  },
+  {
+   "event_id": "ev-413bef2512",
+   "action": "reject",
+   "note": "continuation of ev-8155996da4"
+  },
+  {
+   "event_id": "ev-6203883aff",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "military",
+     "politics"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-72def46a32",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV",
+     "MP",
+     "MC",
+     "MR",
+     "MB"
+    ],
+    "domains": [
+     "domestic",
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "energy"
+    ],
+    "subregions": [
+     "7",
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-8155996da4",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV"
+    ],
+    "domains": [
+     "domestic",
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "fisheries"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-bd12e6ed48",
+   "action": "reject",
+   "note": "Still not made public"
   }
  ],
  "reviewer": "Angelo"
