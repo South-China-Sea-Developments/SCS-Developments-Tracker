@@ -14,12 +14,15 @@ moves (ADR 0001). Write in English.
 ## 0. Setup
 - `cd /home/claude/scs-developments-tracker` (clone `South-China-Sea-Developments/SCS-Developments-Tracker`
   there if missing); `git checkout main && git pull --ff-only`; `pip install -e . -q` if needed.
-- Clone the private references: `gh repo clone South-China-Sea-Developments/scs-tracker-references
-  /home/claude/refs`. It holds Chubb's *International Security* article (2021) and NBR Special Report 99
-  (2022), as PDF and as text.
+- Attach the private references to the session first (the `add_repo` tool, owner
+  `South-China-Sea-Developments`, repo `scs-tracker-references`; a private repository is unreachable
+  until it is attached), then clone it as that tool's answer says, to `/home/claude/refs`. It holds
+  Chubb's *International Security* article (2021) and NBR Special Report 99 (2022) as PDF and as text:
+  `chubb/chubb-2021-is.{pdf,txt}` and `chubb/chubb-2022-sr99.{pdf,txt}`. Search the text; quote from the
+  PDF when a page number matters. Never copy either into this public repository.
 - Read, in full and before any record: `docs/coding-guide.md` (above all §I.3 and §II.G, and the
   maintainer's binding rulings there, which override anything else you believe about the method),
-  `docs/codebook/chubb-2021-appendix.txt`, the two texts in `/home/claude/refs`, `docs/spec.md`,
+  `docs/codebook/chubb-2021-appendix.txt`, `/home/claude/refs/chubb/chubb-2021-is.txt` and `chubb-2022-sr99.txt`, `docs/spec.md`,
   `pipeline/rereview.py` (the fields a finding may address and how values are written), and
   `docs/tickets/43-deep-review.md`.
 - `TODAY=$(date -u +%F)`; `mkdir -p /tmp/audit`.
