@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review queue — harvest MY-1970s</title>
+<style>
+  :root { color-scheme: light dark; --ink: #12222c; --ink-2: #46555e; --muted: #5e6b73; --grid: #dfe6ea; --surface: #fbfdfd; --paper: #f1f5f7; --accent: #0e5a86; --warn: #b45309; --ok: #1f7a3a; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8eef1; --ink-2: #b4c0c7; --muted: #88949c; --grid: #273440; --surface: #16212a; --paper: #0f171c; --accent: #7fc0ea; --warn: #f0a35b; --ok: #6fcf8a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.05rem; margin: 0; }
+  .lede { color: var(--ink-2); margin: 0 0 16px; }
+  .bar { position: sticky; top: 0; z-index: 3; background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 16px; }
+  .bar label { display: inline-flex; align-items: center; gap: 6px; font-size: .9375rem; }
+  input[type=text], input[type=date], select, textarea { font: inherit; padding: 4px 8px; border: 1px solid var(--grid); border-radius: 6px; background: var(--surface); color: var(--ink); }
+  textarea { width: 100%; min-height: 56px; }
+  button { font: inherit; padding: 6px 12px; border: 1px solid var(--grid); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .cand { background: var(--surface); border: 1px solid var(--grid); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .cand.decided { border-left: 4px solid var(--ok); } .cand.decided.is-reject { border-left-color: var(--warn); }
+  .head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 6px; }
+  .head b { font-size: 1.05rem; } .id { color: var(--muted); font-size: .85rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .pill { font-size: .8125rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--grid); color: var(--ink-2); }
+  .pill.dup { border-color: var(--warn); color: var(--warn); }
+  .cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 18px; }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+  .k { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; } .k:first-child { margin-top: 0; }
+  blockquote { margin: 4px 0; padding: 6px 10px; border-left: 3px solid var(--grid); color: var(--ink-2); font-size: .9375rem; white-space: pre-wrap; }
+  .moves { list-style: none; margin: 0; padding: 0; } .moves li { font-size: .9rem; margin: 4px 0; color: var(--ink-2); } .moves code { color: var(--ink); }
+  .pill.pre { background: #e8f1ec; color: #1f4d33; }
+  .cand[data-presorted="1"] .decision { background: #f3f8f5; outline: 1px dashed #8fb79d; outline-offset: 4px; }
+  .confirm-pre { font-size: .875rem; margin-left: 8px; }
+  .decision { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--grid); }
+  .choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; }
+  .choices label { display: inline-flex; gap: 6px; align-items: center; }
+  .panel { display: none; margin: 8px 0; padding: 10px; border: 1px dashed var(--grid); border-radius: 6px; }
+  .panel.on { display: block; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 14px; }
+  .grid2 label { display: block; font-size: .9rem; } .grid2 label > span { display: block; color: var(--muted); font-size: .8rem; }
+  .grid2 select { max-width: 100%; }
+  .checks label { display: inline-flex; gap: 4px; margin-right: 10px; font-size: .9rem; }
+  .muted { color: var(--muted); font-size: .85rem; }
+  .req { color: var(--warn); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review queue — harvest MY-1970s</h1>
+  <p class="lede">8 candidate events, generated 2026-11-17. Decide each one, export the decisions file, apply it with <code>python -m pipeline.queue decide decisions-MY-1970s.json</code> on this branch, and push. A move is a year-on-year intensification: form a new move only if the claimant's behaviour is new, more frequent or wider in scope than the previous year's moves shown beside each candidate; otherwise merge the event into the existing move it belongs to. Each card carries a <em>pre-sort</em> (presorted by claude-code/opus): a suggested decision with its reason, prefilled in the form where no draft exists; it is a suggestion, and the decision is yours.</p>
+
+  <div class="bar">
+    <label>Reviewer <input type="text" id="reviewer" placeholder="Your name"></label>
+    <span class="muted" id="progress"></span>
+    <button type="button" id="export" class="primary">Export decisions.json</button>
+    <button type="button" id="clear">Clear draft</button>
+  </div>
+
+  
+  <section class="cand" id="c-ev-af41776905" data-event="ev-af41776905" aria-labelledby="h-ev-af41776905">
+    <div class="head">
+      <h2 id="h-ev-af41776905" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1975-01-01 – 1975-12-31 (year)</span>
+      <span>Spratly features claimed by Malaysia, including Amboyna Cay (Pulau Kecil Amboyna), sub-region 8 — placed at 7.91667, 112.83333 = Amboyna Cay (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-af41776905</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the Royal Malaysian Navy to enhance Malaysia&#39;s presence in the Spratlys), a tri-service Malaysian Armed Forces expedition (RMN, RMAF and the Army&#39;s Royal Engineer Regiment) installed sovereignty markers on Spratly features claimed by Malaysia, including Amboyna Cay.</p>
+        <p class="muted">Actors: Malaysian Armed Forces; Royal Malaysian Navy; Royal Malaysian Air Force; Royal Engineer Regiment</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf" target="_blank" rel="noopener">Pulau Layang-Layang in Malaysia&#39;s South China Sea Policy (International Journal of China Studies 12(2))</a> — Institute of China Studies, Universiti Malaya, 2021-12-01</p>
+        <blockquote>The MAF’s maiden expedition to the claimed Spratly features took place</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://eprints.ums.edu.my/id/eprint/41164/1/ABSTRACT.pdf" target="_blank" rel="noopener">Keberadaan monumen kedaulatan dan tapak bernilai sejarah di Pulau Layang Layang, dalam Gugusan Semarang Peninjau Malaysia di Laut China Selatan (abstract)</a> — Universiti Malaysia Sabah (UMS eprints)</p>
+        <blockquote>Seawal tahun 1975, pendirian monumen kedaulatan telah dilakukan</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military administrative · dyads MV MP MC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">First recorded Malaysian physical assertion in the Spratlys: unilateral placement of sovereignty markers without confrontation, hence demonstrative and new for Malaysia. The sources give only &#39;early 1975&#39; (no month), so the date is year-precision and a coder should treat the timing within 1975 as unknown; the first source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — Novelty: Operation Terumbu&#39;s tri-service landing and sovereignty markers on Amboyna Cay and other claimed Spratly features is the first Malaysian physical presence in the Spratlys; Malaysia has no 1974 candidate or move, so nothing comparable last year.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1974</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1975</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-af41776905" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-af41776905" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-af41776905" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-af41776905" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-af41776905" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1975</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1975" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1975" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MV MP MC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8" checked>8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the Royal Malaysian Navy to enhance Malaysia&#39;s presence in the Spratlys), a tri-service Malaysian Armed Forces expedition (RMN, RMAF and the Army&#39;s Royal Engineer Regiment) installed sovereignty markers on Spratly features claimed by Malaysia, including Amboyna Cay.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1975-01-01"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1975-12-31"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day">day</option><option value="month">month</option><option value="year" selected>year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Spratly features claimed by Malaysia, including Amboyna Cay (Pulau Kecil Amboyna)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="8" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="7.91667" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="112.83333" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Malaysian Armed Forces; Royal Malaysian Navy; Royal Malaysian Air Force; Royal Engineer Regiment"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the Royal Malaysian Navy to enhance Malaysia&#39;s presence in the Spratlys), a tri-service Malaysian Armed Forces expedition (RMN, RMAF and the Army&#39;s Royal Engineer Regiment) installed sovereignty markers on Spratly features claimed by Malaysia, including Amboyna Cay.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-8155996da4" data-event="ev-8155996da4" aria-labelledby="h-ev-8155996da4">
+    <div class="head">
+      <h2 id="h-ev-8155996da4" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1977-07-22 – 1977-08-05 (day)</span>
+      <span>South China Sea off Peninsular Malaysia, Sabah and Sarawak; Spratly Islands — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-8155996da4</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Times, 22 July 1977) that he would table a bill establishing a 200-mile exclusive economic zone and that Malaysia would negotiate the zone&#39;s limits with other South China Sea states, naming Vietnam; in a Business Times interview published on 5 August 1977 he said Malaysia would soon start charting the zone, that he had told Vietnam&#39;s delegate at the last Law of the Sea session of Malaysia&#39;s intention, and the paper noted that Malaysia&#39;s claims off Sabah and Sarawak might include the disputed Spratly Islands.</p>
+        <p class="muted">Actors: Minister of Law and Attorney-General Tan Sri Abdul Kadir Yusof</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://search.wikileaks.org/plusd/cables/1977KUALA04747_c.html" target="_blank" rel="noopener">Foreign Minister disclaims intention make ASEAN a security [organization] (Kuala Lumpur 4747)</a> — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD), 1977-07-25</p>
+        <blockquote>ON THE SOUTH CHINA SEA, MENTIONING VIETNAM SPECIFICALLY,</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://search.wikileaks.org/plusd/cables/1977KUALA08657_c.html" target="_blank" rel="noopener">LOS: Thai report Malaysia will declare 200 mile economic [zone] (Kuala Lumpur 8657)</a> — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD), 1977-11-16</p>
+        <blockquote>THE DISPUTED SPRATLEY ISLANDS WHICH HAVE ALREADY BEEN</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic diplomatic · issues administrative fisheries · dyads MV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A ministerial public announcement of an intended 200-mile EEZ in the South China Sea, notified to Vietnam and potentially overlapping Vietnam&#39;s Spratly claim, is a verbal assertion of new maritime jurisdiction: declarative, and the first such statement found for Malaysia. The newspaper articles were not reachable, so the source is the US embassy&#39;s reports of them (cables of 25 July and 16 November 1977); the two dates are the two press reports. [confidence: medium]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — Novelty: the Law Minister&#39;s public announcement of a coming 200-mile EEZ, notified to Vietnam and possibly reaching the Spratlys, is Malaysia&#39;s first verbal maritime-jurisdiction claim; there is no 1976 candidate, so nothing comparable last year. Separate from the physical marking ev-4093c90634.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1976</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1977</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-8155996da4" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-8155996da4" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-8155996da4" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-8155996da4" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-8155996da4" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1977</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1977" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1977" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Times, 22 July 1977) that he would table a bill establishing a 200-mile exclusive economic zone and that Malaysia would negotiate the zone&#39;s limits with other South China Sea states, naming Vietnam; in a Business Times interview published on 5 August 1977 he said Malaysia would soon start charting the zone, that he had told Vietnam&#39;s delegate at the last Law of the Sea session of Malaysia&#39;s intention, and the paper noted that Malaysia&#39;s claims off Sabah and Sarawak might include the disputed Spratly Islands.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1977-07-22"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1977-08-05"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="South China Sea off Peninsular Malaysia, Sabah and Sarawak; Spratly Islands"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Minister of Law and Attorney-General Tan Sri Abdul Kadir Yusof"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Times, 22 July 1977) that he would table a bill establishing a 200-mile exclusive economic zone and that Malaysia would negotiate the zone&#39;s limits with other South China Sea states, naming Vietnam; in a Business Times interview published on 5 August 1977 he said Malaysia would soon start charting the zone, that he had told Vietnam&#39;s delegate at the last Law of the Sea session of Malaysia&#39;s intention, and the paper noted that Malaysia&#39;s claims off Sabah and Sarawak might include the disputed Spratly Islands.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-4093c90634" data-event="ev-4093c90634" aria-labelledby="h-ev-4093c90634">
+    <div class="head">
+      <h2 id="h-ev-4093c90634" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1977-10-11 (day)</span>
+      <span>Amboyna Cay (Pulau Kecil Amboyna); follow-on surveys at Swallow Reef (Terumbu Layang-Layang), Dallas, Ardasier, Royal Charlotte and Louisa reefs, Seahorse Breakers, Hayor Reef, South Luconia Shoals, sub-region 8 — placed at 7.91667, 112.83333 = Amboyna Cay (feature)</span>
+      <span class="pill">suggested: demonstrative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-4093c90634</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappeared and a Vietnamese monument dated 1976 stood there, Malaysian forces re-erected a &#39;Pulau Kecil Amboyna&#39; sign on the cay on 11 October 1977 to show Malaysia&#39;s claim; Directorate of National Mapping personnel then pressed on with surveys and markings at Swallow Reef and other nearby features.</p>
+        <p class="muted">Actors: Royal Malaysian Navy (hydrographers); Malaysian troops; Directorate of National Mapping</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf" target="_blank" rel="noopener">Pulau Layang-Layang in Malaysia&#39;s South China Sea Policy (International Journal of China Studies 12(2))</a> — Institute of China Studies, Universiti Malaya, 2021-12-01</p>
+        <blockquote>erected the signage Pulau Kecil Amboyna on 11 October 1977, to indicate</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://search.wikileaks.org/plusd/cables/1977KUALA07777_c.html" target="_blank" rel="noopener">Claims to Spratley Islands (Kuala Lumpur 7777)</a> — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD), 1977-10-19</p>
+        <blockquote>STEMMED FROM DISCOVERY BY MALAYSIAN SURVEY VESSEL OF</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built" target="_blank" rel="noopener">How Malaysia&#39;s five naval stations in the Spratlys were built</a> — New Straits Times, 2019-03-04</p>
+        <blockquote>A retired Royal Malaysian Navy special forces commando recalled the first initiative at Amboyna Minor Cay (Permatang Amboyna Kecil) in 1978.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf" target="_blank" rel="noopener">The Spratly Islands Dispute: Who&#39;s On First? (IBRU Maritime Briefing 2(1))</a> — International Boundaries Research Unit, Durham University, 1996-01-01</p>
+        <blockquote>In 1978 Malaysian troops visited the southern Spratly islands.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type demonstrative · domains physical · issues military administrative · dyads MV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">Re-marking a feature already marked by Vietnam, followed by survey and marking of other claimed reefs, is unilateral physical administration without confrontation: demonstrative, and wider in scope than 1975. A contemporaneous US embassy cable of 19 October 1977 confirms that a Malaysian survey vessel had found a Vietnamese claim marker on Amboyna and that the Foreign Ministry had begun a high-level review of the Spratly claims (a government meeting followed on 27 October 1977). Dates conflict: Lai et al. give 11 October 1977, while a retired RMN commando quoted by the NST (2019) and Dzurek (1996) place the landing and marker in 1978. The first source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — New again: the 1975 marking (ev-af41776905) has no 1976 counterpart, so re-erecting the Amboyna Cay sign over a Vietnamese marker and pressing surveys and markings at Swallow Reef and other reefs is an intensification against a blank 1976 (and wider in scope than 1975). The 1977 vs 1978 dating conflict in the sources should be settled first; if 1978, it moves to that year.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1976</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1977</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-4093c90634" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-4093c90634" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-4093c90634" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-4093c90634" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-4093c90634" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1977</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative">Declarative</option><option value="demonstrative" selected>Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1977" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1977" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical" checked>Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8" checked>8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappeared and a Vietnamese monument dated 1976 stood there, Malaysian forces re-erected a &#39;Pulau Kecil Amboyna&#39; sign on the cay on 11 October 1977 to show Malaysia&#39;s claim; Directorate of National Mapping personnel then pressed on with surveys and markings at Swallow Reef and other nearby features.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1977-10-11"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1977-10-11"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Amboyna Cay (Pulau Kecil Amboyna); follow-on surveys at Swallow Reef (Terumbu Layang-Layang), Dallas, Ardasier, Royal Charlotte and Louisa reefs, Seahorse Breakers, Hayor Reef, South Luconia Shoals"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="8" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="7.91667" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="112.83333" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Royal Malaysian Navy (hydrographers); Malaysian troops; Directorate of National Mapping"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappeared and a Vietnamese monument dated 1976 stood there, Malaysian forces re-erected a &#39;Pulau Kecil Amboyna&#39; sign on the cay on 11 October 1977 to show Malaysia&#39;s claim; Directorate of National Mapping personnel then pressed on with surveys and markings at Swallow Reef and other nearby features.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-413bef2512" data-event="ev-413bef2512" aria-labelledby="h-ev-413bef2512">
+    <div class="head">
+      <h2 id="h-ev-413bef2512" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1978-09-09 (day)</span>
+      
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: continuation of ev-8155996da4 (a candidate, provisional)</span>
+      <span class="id">ev-413bef2512</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">At a press conference on his return from the UN Law of the Sea conference on 9 September 1978, Law Minister Hamzah Abu Samah said the government would soon announce the establishment of an exclusive economic zone, that Malaysia had made clear at the conference that coastal states had sovereign rights over EEZ resources so that other states&#39; access would have to be regulated by bilateral agreements, and that a committee of experts in his ministry was studying the zone&#39;s implications.</p>
+        <p class="muted">Actors: Minister of Law Hamzah Abu Samah</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://search.wikileaks.org/plusd/cables/1978KUALA09685_d.html" target="_blank" rel="noopener">LOS: Malaysia and the exclusive economic zone (Kuala Lumpur 9685)</a> — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD), 1978-09-11</p>
+        <blockquote>SOON ANNOUNCE THE ESTABLISHMENT OF AN EXCLUSIVE</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic diplomatic · issues administrative fisheries · dyads MA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A ministerial statement asserting coming EEZ jurisdiction and conditioning foreign access is a verbal claim to maritime rights (declarative). It is general rather than aimed at a named South China Sea rival, so it is a marginal, low-confidence candidate; it repeats the 1977 announcement with more emphasis on exclusive rights. [confidence: low]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>continuation of ev-8155996da4 (a candidate, provisional)</strong> — Repeats the 1977 announcement of a coming EEZ (ev-8155996da4) at the same level, with more emphasis on exclusive resource rights but no new method; general (dyad MA) rather than aimed at a rival. Provisional on 1977 being decided.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1977</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1978</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-413bef2512" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-413bef2512" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-413bef2512" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-413bef2512" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-413bef2512" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1978</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1978" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1978" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">At a press conference on his return from the UN Law of the Sea conference on 9 September 1978, Law Minister Hamzah Abu Samah said the government would soon announce the establishment of an exclusive economic zone, that Malaysia had made clear at the conference that coastal states had sovereign rights over EEZ resources so that other states&#39; access would have to be regulated by bilateral agreements, and that a committee of experts in his ministry was studying the zone&#39;s implications.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1978-09-09"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1978-09-09"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value=""></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Minister of Law Hamzah Abu Samah"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">At a press conference on his return from the UN Law of the Sea conference on 9 September 1978, Law Minister Hamzah Abu Samah said the government would soon announce the establishment of an exclusive economic zone, that Malaysia had made clear at the conference that coastal states had sovereign rights over EEZ resources so that other states&#39; access would have to be regulated by bilateral agreements, and that a committee of experts in his ministry was studying the zone&#39;s implications.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-6203883aff" data-event="ev-6203883aff" aria-labelledby="h-ev-6203883aff">
+    <div class="head">
+      <h2 id="h-ev-6203883aff" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1978-10-12 – 1978-10-16 (day)</span>
+      <span>Amboyna Cay (Pulau Kecil Amboyna), sub-region 8 — placed at 7.91667, 112.83333 = Amboyna Cay (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-6203883aff</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 12-16 October 1978, Prime Minister Hussein Onn raised with him the presence of Vietnamese troops on Amboyna Cay; Pham Van Dong promised to study the matter and agreed that conflicting claims should be settled peacefully through negotiation.</p>
+        <p class="muted">Actors: Prime Minister Hussein Onn</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-14" target="_blank" rel="noopener">Dewan Negara Hansard, 14 April 1980: Tentera Vietnam di Kepulauan Amboyna Cay (question 36, answer by Foreign Minister Tengku Ahmad Rithauddeen)</a> — Parliament of Malaysia (Digital Hansard), 1980-04-14</p>
+        <blockquote>Yang Amat Berhormat Perdana Menteri telah mengambil kesempatan memberitahu Perdana Menteri Vietnam semasa lawatan rasmi beliau ke Malaysia pada bulan Oktober 1978 mengenai kehadiran tentera Vietnam di kepulauan Amboyna Cay itu.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-10" target="_blank" rel="noopener">Dewan Negara Hansard, 10 April 1980: Pencerobohan Tentera Vietnam di Kepulauan Amboyna Cay (question 3, answer by Foreign Minister)</a> — Parliament of Malaysia (Digital Hansard), 1980-04-10</p>
+        <blockquote>Y.A.B. Perdana Menteri sendiri semasa lawatan Perdana Menteri Vietnam Encik Pham Van Dong ke Malaysia dalam bulan Oktober, 1978, telah membangkitkan perkara ini.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://search.wikileaks.org/plusd/cables/1978KUALA11326_d.html" target="_blank" rel="noopener">Foreign Minister&#39;s comments on Pham Van Dong visit (Kuala Lumpur 11326)</a> — US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD), 1978-10-20</p>
+        <blockquote>DONG&#39;S VISIT HERE OCT. 12-16</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains diplomatic · issues military politics · dyads MV</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A head-of-government representation objecting to another claimant&#39;s troops on a Malaysian-claimed feature is a verbal diplomatic assertion: declarative, and the first recorded Malaysian démarche on the Spratlys. The Hansard answers (Dewan Negara 10 and 14 April 1980, Dewan Rakyat 10 June 1980) give only &#39;October 1978&#39;; the visit dates 12-16 October come from a US embassy cable, which does not itself mention Amboyna, so the exact day is unknown. [confidence: high]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — Novelty: the Prime Minister&#39;s representation to Pham Van Dong over Vietnamese troops on Amboyna Cay is Malaysia&#39;s first protest to a rival over a feature; 1977&#39;s record (EEZ announcement ev-8155996da4, marking ev-4093c90634) has no démarche.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1977</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1978</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-6203883aff" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-6203883aff" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-6203883aff" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-6203883aff" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-6203883aff" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1978</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1978" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1978" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MV"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic">Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative">Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics" checked>Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8" checked>8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 12-16 October 1978, Prime Minister Hussein Onn raised with him the presence of Vietnamese troops on Amboyna Cay; Pham Van Dong promised to study the matter and agreed that conflicting claims should be settled peacefully through negotiation.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1978-10-12"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1978-10-16"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Amboyna Cay (Pulau Kecil Amboyna)"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="8" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="7.91667" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="112.83333" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Prime Minister Hussein Onn"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 12-16 October 1978, Prime Minister Hussein Onn raised with him the presence of Vietnamese troops on Amboyna Cay; Pham Van Dong promised to study the matter and agreed that conflicting claims should be settled peacefully through negotiation.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-19cdf47a22" data-event="ev-19cdf47a22" aria-labelledby="h-ev-19cdf47a22">
+    <div class="head">
+      <h2 id="h-ev-19cdf47a22" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1979-06-13 (day)</span>
+      <span>Swallow Reef (Terumbu Layang-Layang) and other Malaysian-claimed Spratly features, sub-region 7 — placed at 7.50000, 113.75000 = Swallow Reef (feature)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: unclear</span>
+      <span class="id">ev-19cdf47a22</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its meeting of 13 June 1979 to make Malaysia&#39;s South China Sea claims visible by building ten observable sovereignty monuments (about 7.62 m high) on claimed features, with Swallow Reef as the top priority; the decision led to &#39;Operation Tugu&#39;, which began on 31 January 1980.</p>
+        <p class="muted">Actors: Cabinet of Malaysia (Jemaah Menteri)</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf" target="_blank" rel="noopener">Pulau Layang-Layang in Malaysia&#39;s South China Sea Policy (International Journal of China Studies 12(2))</a> — Institute of China Studies, Universiti Malaya, 2021-12-01</p>
+        <blockquote>Following a meeting on 13 June 1979, the Malaysian</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://spaj.ukm.my/ajehh/index.php/ajehh/article/download/252/309/539" target="_blank" rel="noopener">Keberadaan Monumen Kedaulatan dan Tapak Bernilai Sejarah di Pulau Layang Layang (Asian Journal of Environment, History and Heritage 8(1))</a> — Universiti Kebangsaan Malaysia, 2024-06-01</p>
+        <blockquote>Melalui Mesyuarat Jemaah Menteri pada 13 Jun 1979 telah memutuskan pembinaan 10 buah monumen setinggi 7.62 meter</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues military administrative · dyads MV MP MC</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A cabinet decision ordering permanent sovereignty structures is a domestic governmental assertion of the claim (declarative); the construction it ordered (demonstrative) happened in 1980 and is outside this chunk. First source is a PDF, so the excerpt cannot be machine-checked. The second source (UKM journal PDF) could only be opened through a summarising fetch, so its excerpt should be re-checked by hand. [confidence: medium]</p>
+        <p class="muted">Note from the extractor: Source is application/pdf; excerpt not checked.</p>
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>unclear</strong> — The 13 June 1979 cabinet decision to build ten sovereignty monuments is a decision, and the guide dates behaviour, not decisions; the monuments went up under Operation Tugu from January 1980. It is settled by whether the decision was made public in 1979 (then a novelty declarative move against 1978&#39;s ev-6203883aff) or not (then evidence for the 1980 construction move).</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1978</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1979</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-19cdf47a22" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-19cdf47a22" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-19cdf47a22" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-19cdf47a22" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-19cdf47a22" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1979</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1979" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1979" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MV MP MC"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military" checked>Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy">Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7" checked>7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its meeting of 13 June 1979 to make Malaysia&#39;s South China Sea claims visible by building ten observable sovereignty monuments (about 7.62 m high) on claimed features, with Swallow Reef as the top priority; the decision led to &#39;Operation Tugu&#39;, which began on 31 January 1980.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1979-06-13"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1979-06-13"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Swallow Reef (Terumbu Layang-Layang) and other Malaysian-claimed Spratly features"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="7" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="7.50000" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="113.75000" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Cabinet of Malaysia (Jemaah Menteri)"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its meeting of 13 June 1979 to make Malaysia&#39;s South China Sea claims visible by building ten observable sovereignty monuments (about 7.62 m high) on claimed features, with Swallow Reef as the top priority; the decision led to &#39;Operation Tugu&#39;, which began on 31 January 1980.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-bd12e6ed48" data-event="ev-bd12e6ed48" aria-labelledby="h-ev-bd12e6ed48">
+    <div class="head">
+      <h2 id="h-ev-bd12e6ed48" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1979-07-11 (day)</span>
+      
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: continuation of ev-413bef2512 (a candidate, provisional)</span>
+      <span class="id">ev-bd12e6ed48</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah announced that Malaysia was preparing to proclaim its own Exclusive Economic Zone, including suitable legislation, and that a committee under the head of the ministry&#39;s international law division, set up in January 1979, was finalising its report to the government.</p>
+        <p class="muted">Actors: Minister of Law (Hamzah Abu Samah); Dewan Negara</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1979-07-11" target="_blank" rel="noopener">Dewan Negara Hansard, 11 July 1979: Undang-undang Laut Antarabangsa (question 29, answer by the Minister of Law)</a> — Parliament of Malaysia (Digital Hansard), 1979-07-11</p>
+        <blockquote>Malaysia sekarang sedang membuat persediaan untuk mengisytiharkan Zon Ekonomi Eksklusifnya sendiri dan ini termasuk menyediakan Undang-undang yang sesuai.</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic · issues administrative fisheries energy · dyads MA</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">A ministerial announcement in Parliament of an intended 200-mile EEZ claim is a verbal assertion of new maritime jurisdiction (declarative); it is general rather than South China Sea-specific and the proclamation itself came on 25 April 1980, so a coder may treat it as a marginal precursor. On 26 November 1979 a deputy minister told the Dewan Rakyat the committee had finished and the decision awaited government study. [confidence: low]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>continuation of ev-413bef2512 (a candidate, provisional)</strong> — A further ministerial statement that the EEZ is being prepared, at the same level as 1978&#39;s ev-413bef2512 (itself continuing 1977&#39;s ev-8155996da4); the proclamation came only in April 1980. Provisional on 1978 being decided.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1978</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1979</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-bd12e6ed48" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-bd12e6ed48" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-bd12e6ed48" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-bd12e6ed48" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-bd12e6ed48" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1979</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-72def46a32">ev-72def46a32 — On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Wa</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1979" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1979" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MA"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic">Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries" checked>Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah announced that Malaysia was preparing to proclaim its own Exclusive Economic Zone, including suitable legislation, and that a committee under the head of the ministry&#39;s international law division, set up in January 1979, was finalising its report to the government.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1979-07-11"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1979-07-11"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value=""></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Minister of Law (Hamzah Abu Samah); Dewan Negara"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah announced that Malaysia was preparing to proclaim its own Exclusive Economic Zone, including suitable legislation, and that a committee under the head of the ministry&#39;s international law division, set up in January 1979, was finalising its report to the government.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  <section class="cand" id="c-ev-72def46a32" data-event="ev-72def46a32" aria-labelledby="h-ev-72def46a32">
+    <div class="head">
+      <h2 id="h-ev-72def46a32" style="font-size:1.05rem;margin:0">Malaysia</h2>
+      <span>1979-12-21 (day)</span>
+      <span>Southern Spratlys: Swallow Reef, Ardasier Reef, Mariveles Reef, Dallas Reef, Louisa Reef, Royal Charlotte Reef, Erica Reef, Investigator Shoal, Amboyna Cay, Barque Canada Reef, Commodore Reef; also Ja — not placed (no feature in the gazetteer by that name)</span>
+      <span class="pill">suggested: declarative</span>
+      
+      <span class="pill pre">pre-sort: new move (novelty)</span>
+      <span class="id">ev-72def46a32</span>
+    </div>
+    <div class="cols">
+      <div>
+        <p style="margin:0 0 6px">On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Waters and Continental Shelf Boundaries of Malaysia&#39; (Peta Baru), whose Sabah-Sarawak sheet enclosed about a dozen Spratly features, among them Amboyna Cay (held by Vietnam) and Commodore Reef (later held by the Philippines), within Malaysia&#39;s territorial waters and continental shelf.</p>
+        <p class="muted">Actors: Government of Malaysia</p>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-17" target="_blank" rel="noopener">Dewan Rakyat Hansard, 17 June 1980: Peta Pelantar Benua bagi Malaysia (question 56, answer by the Minister of Law)</a> — Parliament of Malaysia (Digital Hansard), 1980-06-17</p>
+        <blockquote>Suatu peta Malaysia yang menunjukkan perairan Wilayah dan pelantar benuanya telahpun diterbitkan pada 21 haribulan Disember, 1979.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf" target="_blank" rel="noopener">Pulau Layang-Layang in Malaysia&#39;s South China Sea Policy (International Journal of China Studies 12(2))</a> — Institute of China Studies, Universiti Malaya, 2021-12-01</p>
+        <blockquote>its claims to about a dozen tiny reefs and atolls in the SCS.</blockquote>
+        
+        <p class="k">Source</p>
+        <p style="margin:0"><a href="https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/Chronologies/2021-22/SouthChinaSeaChronology" target="_blank" rel="noopener">South China Sea chronology (1909 - February 2022)</a> — Parliament of Australia, Parliamentary Library, 2022-03-01</p>
+        <blockquote>marking several islands and reefs in the Spratly Islands as its territory</blockquote>
+        
+        <p class="k">Suggested coding and reasoning</p>
+        <p class="muted" style="margin:0">Type declarative · domains domestic diplomatic · issues administrative energy · dyads MV MP MC MR MB</p>
+        <p style="margin:2px 0 0; font-size:.9375rem">An official map formally claiming disputed Spratly features is a legal and administrative claim statement: declarative, and the founding document of Malaysia&#39;s Spratly claim. In 1980 Vietnam sent a protest note (Dewan Rakyat, 10 June 1980), Singapore protested on 14 February 1980 over Pedra Branca, and the UK protested for Brunei over Louisa Reef (Dzurek 1996). The first source is the Law Minister&#39;s Dewan Rakyat answer of 17 June 1980 giving the publication date; the Lai et al. source is a PDF. [confidence: high]</p>
+        
+        
+        <p class="k">Pre-sort (claude-code/opus)</p>
+        <p style="margin:0; font-size:.9375rem"><strong>new move (novelty)</strong> — Novelty: the Peta Baru of 21 December 1979 is Malaysia&#39;s first formal legal claim enclosing about a dozen Spratly features, Amboyna Cay and Commodore Reef among them; 1978&#39;s record has only EEZ statements (ev-413bef2512) and a démarche (ev-6203883aff), nothing comparable.</p>
+        
+        
+      </div>
+      <div>
+        <p class="k">Malaysia's moves in 1978</p>
+        <p class="muted">None recorded.</p>
+        <p class="k">Malaysia's moves already in 1979</p>
+        <p class="muted">None yet.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <fieldset class="choices" style="border:0;padding:0;margin:0 0 8px">
+        <legend class="muted" style="padding:0">Decision <button type="button" class="confirm-pre">Confirm the pre-sort</button></legend>
+        <label><input type="radio" name="a-ev-72def46a32" value=""> undecided</label>
+        <label><input type="radio" name="a-ev-72def46a32" value="merge"> merge into a move</label>
+        <label><input type="radio" name="a-ev-72def46a32" value="new_move"> form a new move</label>
+        <label><input type="radio" name="a-ev-72def46a32" value="duplicate"> duplicate of an accepted event</label>
+        <label><input type="radio" name="a-ev-72def46a32" value="reject"> reject</label>
+      </fieldset>
+      <div class="panel p-merge">
+        <div class="grid2">
+          <label><span>An existing move of 1979</span><select class="f-move_id"><option value="">—</option></select></label>
+          <label><span>or the move formed from another candidate in this batch</span><select class="f-move_of"><option value="">—</option><option value="ev-af41776905">ev-af41776905 — In early 1975, under &#39;Operations Terumbu&#39; (begun after a 1974 directive to the R</option><option value="ev-8155996da4">ev-8155996da4 — Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Ti</option><option value="ev-4093c90634">ev-4093c90634 — After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappea</option><option value="ev-413bef2512">ev-413bef2512 — At a press conference on his return from the UN Law of the Sea conference on 9 S</option><option value="ev-6203883aff">ev-6203883aff — During Vietnamese Prime Minister Pham Van Dong&#39;s official visit to Malaysia on 1</option><option value="ev-19cdf47a22">ev-19cdf47a22 — After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its m</option><option value="ev-bd12e6ed48">ev-bd12e6ed48 — Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah anno</option></select></label>
+          <label><span>or type a move id</span><input type="text" class="f-move_id_text" placeholder="e.g. CN202603" size="12"></label>
+        </div>
+      </div>
+      <div class="panel p-dup">
+        <label><span class="k">Accepted event this duplicates</span><input type="text" class="f-dup_of" value="" placeholder="event id" aria-required="true"></label>
+        <p class="muted">The event joins that event's move with status "merged". Only for a report of the same incident; a second incident on the same day is a merge, not a duplicate.</p>
+      </div>
+      <div class="panel p-new">
+        <div class="grid2">
+          <label><span>Type <span class="req">required</span></span><select class="f-type" aria-required="true"><option value="">—</option><option value="declarative" selected>Declarative</option><option value="demonstrative">Demonstrative</option><option value="coercive">Coercive</option><option value="force">Use of force</option></select></label>
+          <label><span>Intensification criterion <span class="req">required</span></span><select class="f-crit" aria-required="true"><option value="">—</option><option value="novelty">novelty</option><option value="frequency">frequency</option><option value="scope">scope</option></select></label>
+          <label><span>Year</span><input type="text" class="f-year" value="1979" size="6"></label>
+          <label><span>Ongoing through</span><input type="text" class="f-ongoing" value="1979" size="6"></label>
+          <label><span>Dyads (space-separated, actor first)</span><input type="text" class="f-dyads" value="MV MP MC MR MB"></label>
+        </div>
+        <p class="k">Domains</p><div class="checks"><label><input type="checkbox" class="f-domain" value="domestic" checked>Domestic</label><label><input type="checkbox" class="f-domain" value="diplomatic" checked>Diplomatic</label><label><input type="checkbox" class="f-domain" value="physical">Physical</label></div>
+        <p class="k">Issues</p><div class="checks"><label><input type="checkbox" class="f-issue" value="military">Military</label><label><input type="checkbox" class="f-issue" value="administrative" checked>Administrative</label><label><input type="checkbox" class="f-issue" value="energy" checked>Energy</label><label><input type="checkbox" class="f-issue" value="fisheries">Fisheries</label><label><input type="checkbox" class="f-issue" value="politics">Politics</label></div>
+        <p class="k">Sub-regions</p><div class="checks"><label><input type="checkbox" class="f-sub" value="1">1 Tonkin</label><label><input type="checkbox" class="f-sub" value="2">2 Paracels</label><label><input type="checkbox" class="f-sub" value="3">3 Central-West</label><label><input type="checkbox" class="f-sub" value="4">4 Central-East</label><label><input type="checkbox" class="f-sub" value="5">5 Spratly NW</label><label><input type="checkbox" class="f-sub" value="6">6 Spratly NE</label><label><input type="checkbox" class="f-sub" value="7">7 Spratly SE</label><label><input type="checkbox" class="f-sub" value="8">8 Spratly SW</label><label><input type="checkbox" class="f-sub" value="9">9 Nam Con Son</label><label><input type="checkbox" class="f-sub" value="10">10 Far South</label></div>
+        <p class="k">Move description (with sources, as in MATS)</p><textarea class="f-desc">On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Waters and Continental Shelf Boundaries of Malaysia&#39; (Peta Baru), whose Sabah-Sarawak sheet enclosed about a dozen Spratly features, among them Amboyna Cay (held by Vietnam) and Commodore Reef (later held by the Philippines), within Malaysia&#39;s territorial waters and continental shelf.</textarea>
+      </div>
+      <div class="panel p-edits">
+        <p class="k">Edits to the event (a blank field keeps the current value; a changed location name is placed afresh from the gazetteer, typed coordinates get their sub-region from the polygons)</p>
+        <div class="grid2">
+          <label><span>Date start</span><input type="date" class="f-e-date_start" value="1979-12-21"></label>
+          <label><span>Date end</span><input type="date" class="f-e-date_end" value="1979-12-21"></label>
+          <label><span>Precision</span><select class="f-e-date_precision"><option value="day" selected>day</option><option value="month">month</option><option value="year">year</option></select></label>
+          <label><span>Location name</span><input type="text" class="f-e-location_name" value="Southern Spratlys: Swallow Reef, Ardasier Reef, Mariveles Reef, Dallas Reef, Louisa Reef, Royal Charlotte Reef, Erica Reef, Investigator Shoal, Amboyna Cay, Barque Canada Reef, Commodore Reef; also Ja"></label>
+          <label><span>Sub-region (1–10)</span><input type="text" class="f-e-subregion" value="" size="3"></label>
+          <label><span>Latitude</span><input type="text" class="f-e-lat" value="" size="9"></label>
+          <label><span>Longitude</span><input type="text" class="f-e-lon" value="" size="9"></label>
+          <label><span>Actors</span><input type="text" class="f-e-actors" value="Government of Malaysia"></label>
+        </div>
+        <label><span class="k">Summary</span><textarea class="f-e-summary">On 21 December 1979 Malaysia published the two-sheet &#39;Map Showing Territorial Waters and Continental Shelf Boundaries of Malaysia&#39; (Peta Baru), whose Sabah-Sarawak sheet enclosed about a dozen Spratly features, among them Amboyna Cay (held by Vietnam) and Commodore Reef (later held by the Philippines), within Malaysia&#39;s territorial waters and continental shelf.</textarea></label>
+      </div>
+      <label><span class="k">Note<span class="req p-reject-req" hidden> required for a rejection</span></span><textarea class="f-note" placeholder="Why, for the record"></textarea></label>
+    </div>
+  </section>
+  
+  
+</div>
+
+<script id="ctx" type="application/json">{"run_id": "MY-1970s", "items": [{"event": {"event_id": "ev-af41776905", "move_id": "", "claimant": "MY", "date_start": "1975-01-01", "date_end": "1975-12-31", "date_precision": "year", "lat": "7.91667", "lon": "112.83333", "location_name": "Spratly features claimed by Malaysia, including Amboyna Cay (Pulau Kecil Amboyna)", "location_precision": "feature", "subregion": "8", "summary": "In early 1975, under 'Operations Terumbu' (begun after a 1974 directive to the Royal Malaysian Navy to enhance Malaysia's presence in the Spratlys), a tri-service Malaysian Armed Forces expedition (RMN, RMAF and the Army's Royal Engineer Regiment) installed sovereignty markers on Spratly features claimed by Malaysia, including Amboyna Cay.", "actors": "Malaysian Armed Forces; Royal Malaysian Navy; Royal Malaysian Air Force; Royal Engineer Regiment", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military administrative", "suggested_dyads": "MV MP MC", "suggestion_reasoning": "First recorded Malaysian physical assertion in the Spratlys: unilateral placement of sovereignty markers without confrontation, hence demonstrative and new for Malaysia. The sources give only 'early 1975' (no month), so the date is year-precision and a coder should treat the timing within 1975 as unknown; the first source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Amboyna Cay", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-af41776905-S01", "event_id": "ev-af41776905", "url": "https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf", "title": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2))", "publisher": "Institute of China Studies, Universiti Malaya", "pub_date": "2021-12-01", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "The MAF’s maiden expedition to the claimed Spratly features took place"}, {"source_id": "ev-af41776905-S02", "event_id": "ev-af41776905", "url": "https://eprints.ums.edu.my/id/eprint/41164/1/ABSTRACT.pdf", "title": "Keberadaan monumen kedaulatan dan tapak bernilai sejarah di Pulau Layang Layang, dalam Gugusan Semarang Peninjau Malaysia di Laut China Selatan (abstract)", "publisher": "Universiti Malaysia Sabah (UMS eprints)", "pub_date": "", "language": "ms", "accessed_date": "", "archive_url": "", "excerpt": "Seawal tahun 1975, pendirian monumen kedaulatan telah dilakukan"}], "year": 1975, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-af41776905", "disposition": "new_move", "criterion": "novelty", "reason": "Novelty: Operation Terumbu's tri-service landing and sovereignty markers on Amboyna Cay and other claimed Spratly features is the first Malaysian physical presence in the Spratlys; Malaysia has no 1974 candidate or move, so nothing comparable last year.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-8155996da4", "move_id": "", "claimant": "MY", "date_start": "1977-07-22", "date_end": "1977-08-05", "date_precision": "day", "lat": "", "lon": "", "location_name": "South China Sea off Peninsular Malaysia, Sabah and Sarawak; Spratly Islands", "location_precision": "unknown", "subregion": "", "summary": "Law Minister and Attorney-General Tan Sri Abdul Kadir Yusof said (New Straits Times, 22 July 1977) that he would table a bill establishing a 200-mile exclusive economic zone and that Malaysia would negotiate the zone's limits with other South China Sea states, naming Vietnam; in a Business Times interview published on 5 August 1977 he said Malaysia would soon start charting the zone, that he had told Vietnam's delegate at the last Law of the Sea session of Malaysia's intention, and the paper noted that Malaysia's claims off Sabah and Sarawak might include the disputed Spratly Islands.", "actors": "Minister of Law and Attorney-General Tan Sri Abdul Kadir Yusof", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic diplomatic", "suggested_issues": "administrative fisheries", "suggested_dyads": "MV", "suggestion_reasoning": "A ministerial public announcement of an intended 200-mile EEZ in the South China Sea, notified to Vietnam and potentially overlapping Vietnam's Spratly claim, is a verbal assertion of new maritime jurisdiction: declarative, and the first such statement found for Malaysia. The newspaper articles were not reachable, so the source is the US embassy's reports of them (cables of 25 July and 16 November 1977); the two dates are the two press reports. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-8155996da4-S01", "event_id": "ev-8155996da4", "url": "https://search.wikileaks.org/plusd/cables/1977KUALA04747_c.html", "title": "Foreign Minister disclaims intention make ASEAN a security [organization] (Kuala Lumpur 4747)", "publisher": "US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD)", "pub_date": "1977-07-25", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "ON THE SOUTH CHINA SEA, MENTIONING VIETNAM SPECIFICALLY,"}, {"source_id": "ev-8155996da4-S02", "event_id": "ev-8155996da4", "url": "https://search.wikileaks.org/plusd/cables/1977KUALA08657_c.html", "title": "LOS: Thai report Malaysia will declare 200 mile economic [zone] (Kuala Lumpur 8657)", "publisher": "US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD)", "pub_date": "1977-11-16", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "THE DISPUTED SPRATLEY ISLANDS WHICH HAVE ALREADY BEEN"}], "year": 1977, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-8155996da4", "disposition": "new_move", "criterion": "novelty", "reason": "Novelty: the Law Minister's public announcement of a coming 200-mile EEZ, notified to Vietnam and possibly reaching the Spratlys, is Malaysia's first verbal maritime-jurisdiction claim; there is no 1976 candidate, so nothing comparable last year. Separate from the physical marking ev-4093c90634.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-4093c90634", "move_id": "", "claimant": "MY", "date_start": "1977-10-11", "date_end": "1977-10-11", "date_precision": "day", "lat": "7.91667", "lon": "112.83333", "location_name": "Amboyna Cay (Pulau Kecil Amboyna); follow-on surveys at Swallow Reef (Terumbu Layang-Layang), Dallas, Ardasier, Royal Charlotte and Louisa reefs, Seahorse Breakers, Hayor Reef, South Luconia Shoals", "location_precision": "feature", "subregion": "8", "summary": "After finding that the Malaysian marker laid on Amboyna Cay in 1975 had disappeared and a Vietnamese monument dated 1976 stood there, Malaysian forces re-erected a 'Pulau Kecil Amboyna' sign on the cay on 11 October 1977 to show Malaysia's claim; Directorate of National Mapping personnel then pressed on with surveys and markings at Swallow Reef and other nearby features.", "actors": "Royal Malaysian Navy (hydrographers); Malaysian troops; Directorate of National Mapping", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "demonstrative", "suggested_domains": "physical", "suggested_issues": "military administrative", "suggested_dyads": "MV", "suggestion_reasoning": "Re-marking a feature already marked by Vietnam, followed by survey and marking of other claimed reefs, is unilateral physical administration without confrontation: demonstrative, and wider in scope than 1975. A contemporaneous US embassy cable of 19 October 1977 confirms that a Malaysian survey vessel had found a Vietnamese claim marker on Amboyna and that the Foreign Ministry had begun a high-level review of the Spratly claims (a government meeting followed on 27 October 1977). Dates conflict: Lai et al. give 11 October 1977, while a retired RMN commando quoted by the NST (2019) and Dzurek (1996) place the landing and marker in 1978. The first source is a PDF, so the excerpt cannot be machine-checked. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Amboyna Cay", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-4093c90634-S01", "event_id": "ev-4093c90634", "url": "https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf", "title": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2))", "publisher": "Institute of China Studies, Universiti Malaya", "pub_date": "2021-12-01", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "erected the signage Pulau Kecil Amboyna on 11 October 1977, to indicate"}, {"source_id": "ev-4093c90634-S02", "event_id": "ev-4093c90634", "url": "https://search.wikileaks.org/plusd/cables/1977KUALA07777_c.html", "title": "Claims to Spratley Islands (Kuala Lumpur 7777)", "publisher": "US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD)", "pub_date": "1977-10-19", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "STEMMED FROM DISCOVERY BY MALAYSIAN SURVEY VESSEL OF"}, {"source_id": "ev-4093c90634-S03", "event_id": "ev-4093c90634", "url": "https://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built", "title": "How Malaysia's five naval stations in the Spratlys were built", "publisher": "New Straits Times", "pub_date": "2019-03-04", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "A retired Royal Malaysian Navy special forces commando recalled the first initiative at Amboyna Minor Cay (Permatang Amboyna Kecil) in 1978."}, {"source_id": "ev-4093c90634-S04", "event_id": "ev-4093c90634", "url": "https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf", "title": "The Spratly Islands Dispute: Who's On First? (IBRU Maritime Briefing 2(1))", "publisher": "International Boundaries Research Unit, Durham University", "pub_date": "1996-01-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "In 1978 Malaysian troops visited the southern Spratly islands."}], "year": 1977, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-4093c90634", "disposition": "new_move", "criterion": "novelty", "reason": "New again: the 1975 marking (ev-af41776905) has no 1976 counterpart, so re-erecting the Amboyna Cay sign over a Vietnamese marker and pressing surveys and markings at Swallow Reef and other reefs is an intensification against a blank 1976 (and wider in scope than 1975). The 1977 vs 1978 dating conflict in the sources should be settled first; if 1978, it moves to that year.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-413bef2512", "move_id": "", "claimant": "MY", "date_start": "1978-09-09", "date_end": "1978-09-09", "date_precision": "day", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "At a press conference on his return from the UN Law of the Sea conference on 9 September 1978, Law Minister Hamzah Abu Samah said the government would soon announce the establishment of an exclusive economic zone, that Malaysia had made clear at the conference that coastal states had sovereign rights over EEZ resources so that other states' access would have to be regulated by bilateral agreements, and that a committee of experts in his ministry was studying the zone's implications.", "actors": "Minister of Law Hamzah Abu Samah", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic diplomatic", "suggested_issues": "administrative fisheries", "suggested_dyads": "MA", "suggestion_reasoning": "A ministerial statement asserting coming EEZ jurisdiction and conditioning foreign access is a verbal claim to maritime rights (declarative). It is general rather than aimed at a named South China Sea rival, so it is a marginal, low-confidence candidate; it repeats the 1977 announcement with more emphasis on exclusive rights. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-413bef2512-S01", "event_id": "ev-413bef2512", "url": "https://search.wikileaks.org/plusd/cables/1978KUALA09685_d.html", "title": "LOS: Malaysia and the exclusive economic zone (Kuala Lumpur 9685)", "publisher": "US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD)", "pub_date": "1978-09-11", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "SOON ANNOUNCE THE ESTABLISHMENT OF AN EXCLUSIVE"}], "year": 1978, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-413bef2512", "disposition": "continuation", "of": "ev-8155996da4", "reason": "Repeats the 1977 announcement of a coming EEZ (ev-8155996da4) at the same level, with more emphasis on exclusive resource rights but no new method; general (dyad MA) rather than aimed at a rival. Provisional on 1977 being decided.", "label": "continuation of ev-8155996da4 (a candidate, provisional)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-6203883aff", "move_id": "", "claimant": "MY", "date_start": "1978-10-12", "date_end": "1978-10-16", "date_precision": "day", "lat": "7.91667", "lon": "112.83333", "location_name": "Amboyna Cay (Pulau Kecil Amboyna)", "location_precision": "feature", "subregion": "8", "summary": "During Vietnamese Prime Minister Pham Van Dong's official visit to Malaysia on 12-16 October 1978, Prime Minister Hussein Onn raised with him the presence of Vietnamese troops on Amboyna Cay; Pham Van Dong promised to study the matter and agreed that conflicting claims should be settled peacefully through negotiation.", "actors": "Prime Minister Hussein Onn", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "diplomatic", "suggested_issues": "military politics", "suggested_dyads": "MV", "suggestion_reasoning": "A head-of-government representation objecting to another claimant's troops on a Malaysian-claimed feature is a verbal diplomatic assertion: declarative, and the first recorded Malaysian démarche on the Spratlys. The Hansard answers (Dewan Negara 10 and 14 April 1980, Dewan Rakyat 10 June 1980) give only 'October 1978'; the visit dates 12-16 October come from a US embassy cable, which does not itself mention Amboyna, so the exact day is unknown. [confidence: high]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "Amboyna Cay", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-6203883aff-S01", "event_id": "ev-6203883aff", "url": "https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-14", "title": "Dewan Negara Hansard, 14 April 1980: Tentera Vietnam di Kepulauan Amboyna Cay (question 36, answer by Foreign Minister Tengku Ahmad Rithauddeen)", "publisher": "Parliament of Malaysia (Digital Hansard)", "pub_date": "1980-04-14", "language": "ms", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Yang Amat Berhormat Perdana Menteri telah mengambil kesempatan memberitahu Perdana Menteri Vietnam semasa lawatan rasmi beliau ke Malaysia pada bulan Oktober 1978 mengenai kehadiran tentera Vietnam di kepulauan Amboyna Cay itu."}, {"source_id": "ev-6203883aff-S02", "event_id": "ev-6203883aff", "url": "https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1980-04-10", "title": "Dewan Negara Hansard, 10 April 1980: Pencerobohan Tentera Vietnam di Kepulauan Amboyna Cay (question 3, answer by Foreign Minister)", "publisher": "Parliament of Malaysia (Digital Hansard)", "pub_date": "1980-04-10", "language": "ms", "accessed_date": "", "archive_url": "", "excerpt": "Y.A.B. Perdana Menteri sendiri semasa lawatan Perdana Menteri Vietnam Encik Pham Van Dong ke Malaysia dalam bulan Oktober, 1978, telah membangkitkan perkara ini."}, {"source_id": "ev-6203883aff-S03", "event_id": "ev-6203883aff", "url": "https://search.wikileaks.org/plusd/cables/1978KUALA11326_d.html", "title": "Foreign Minister's comments on Pham Van Dong visit (Kuala Lumpur 11326)", "publisher": "US Embassy Kuala Lumpur / Department of State telegram (WikiLeaks PlusD)", "pub_date": "1978-10-20", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "DONG'S VISIT HERE OCT. 12-16"}], "year": 1978, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-6203883aff", "disposition": "new_move", "criterion": "novelty", "reason": "Novelty: the Prime Minister's representation to Pham Van Dong over Vietnamese troops on Amboyna Cay is Malaysia's first protest to a rival over a feature; 1977's record (EEZ announcement ev-8155996da4, marking ev-4093c90634) has no démarche.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-19cdf47a22", "move_id": "", "claimant": "MY", "date_start": "1979-06-13", "date_end": "1979-06-13", "date_precision": "day", "lat": "7.50000", "lon": "113.75000", "location_name": "Swallow Reef (Terumbu Layang-Layang) and other Malaysian-claimed Spratly features", "location_precision": "feature", "subregion": "7", "summary": "After the loss of Amboyna Cay to Vietnam, the Malaysian Cabinet decided at its meeting of 13 June 1979 to make Malaysia's South China Sea claims visible by building ten observable sovereignty monuments (about 7.62 m high) on claimed features, with Swallow Reef as the top priority; the decision led to 'Operation Tugu', which began on 31 January 1980.", "actors": "Cabinet of Malaysia (Jemaah Menteri)", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "military administrative", "suggested_dyads": "MV MP MC", "suggestion_reasoning": "A cabinet decision ordering permanent sovereignty structures is a domestic governmental assertion of the claim (declarative); the construction it ordered (demonstrative) happened in 1980 and is outside this chunk. First source is a PDF, so the excerpt cannot be machine-checked. The second source (UKM journal PDF) could only be opened through a summarising fetch, so its excerpt should be re-checked by hand. [confidence: medium]", "reviewer": "", "review_date": "", "review_note": "Source is application/pdf; excerpt not checked.", "placed_name": "Swallow Reef", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-19cdf47a22-S01", "event_id": "ev-19cdf47a22", "url": "https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf", "title": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2))", "publisher": "Institute of China Studies, Universiti Malaya", "pub_date": "2021-12-01", "language": "en", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Following a meeting on 13 June 1979, the Malaysian"}, {"source_id": "ev-19cdf47a22-S02", "event_id": "ev-19cdf47a22", "url": "https://spaj.ukm.my/ajehh/index.php/ajehh/article/download/252/309/539", "title": "Keberadaan Monumen Kedaulatan dan Tapak Bernilai Sejarah di Pulau Layang Layang (Asian Journal of Environment, History and Heritage 8(1))", "publisher": "Universiti Kebangsaan Malaysia", "pub_date": "2024-06-01", "language": "ms", "accessed_date": "", "archive_url": "", "excerpt": "Melalui Mesyuarat Jemaah Menteri pada 13 Jun 1979 telah memutuskan pembinaan 10 buah monumen setinggi 7.62 meter"}], "year": 1979, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-19cdf47a22", "disposition": "unclear", "reason": "The 13 June 1979 cabinet decision to build ten sovereignty monuments is a decision, and the guide dates behaviour, not decisions; the monuments went up under Operation Tugu from January 1980. It is settled by whether the decision was made public in 1979 (then a novelty declarative move against 1978's ev-6203883aff) or not (then evidence for the 1980 construction move).", "label": "unclear", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-bd12e6ed48", "move_id": "", "claimant": "MY", "date_start": "1979-07-11", "date_end": "1979-07-11", "date_precision": "day", "lat": "", "lon": "", "location_name": "", "location_precision": "unknown", "subregion": "", "summary": "Replying in the Dewan Negara on 11 July 1979, Law Minister Hamzah Abu Samah announced that Malaysia was preparing to proclaim its own Exclusive Economic Zone, including suitable legislation, and that a committee under the head of the ministry's international law division, set up in January 1979, was finalising its report to the government.", "actors": "Minister of Law (Hamzah Abu Samah); Dewan Negara", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic", "suggested_issues": "administrative fisheries energy", "suggested_dyads": "MA", "suggestion_reasoning": "A ministerial announcement in Parliament of an intended 200-mile EEZ claim is a verbal assertion of new maritime jurisdiction (declarative); it is general rather than South China Sea-specific and the proclamation itself came on 25 April 1980, so a coder may treat it as a marginal precursor. On 26 November 1979 a deputy minister told the Dewan Rakyat the committee had finished and the decision awaited government study. [confidence: low]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-bd12e6ed48-S01", "event_id": "ev-bd12e6ed48", "url": "https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1979-07-11", "title": "Dewan Negara Hansard, 11 July 1979: Undang-undang Laut Antarabangsa (question 29, answer by the Minister of Law)", "publisher": "Parliament of Malaysia (Digital Hansard)", "pub_date": "1979-07-11", "language": "ms", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Malaysia sekarang sedang membuat persediaan untuk mengisytiharkan Zon Ekonomi Eksklusifnya sendiri dan ini termasuk menyediakan Undang-undang yang sesuai."}], "year": 1979, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-bd12e6ed48", "disposition": "continuation", "of": "ev-413bef2512", "reason": "A further ministerial statement that the EEZ is being prepared, at the same level as 1978's ev-413bef2512 (itself continuing 1977's ev-8155996da4); the proclamation came only in April 1980. Provisional on 1978 being decided.", "label": "continuation of ev-413bef2512 (a candidate, provisional)", "presorted_by": "claude-code/opus"}}, {"event": {"event_id": "ev-72def46a32", "move_id": "", "claimant": "MY", "date_start": "1979-12-21", "date_end": "1979-12-21", "date_precision": "day", "lat": "", "lon": "", "location_name": "Southern Spratlys: Swallow Reef, Ardasier Reef, Mariveles Reef, Dallas Reef, Louisa Reef, Royal Charlotte Reef, Erica Reef, Investigator Shoal, Amboyna Cay, Barque Canada Reef, Commodore Reef; also Ja", "location_precision": "unknown", "subregion": "", "summary": "On 21 December 1979 Malaysia published the two-sheet 'Map Showing Territorial Waters and Continental Shelf Boundaries of Malaysia' (Peta Baru), whose Sabah-Sarawak sheet enclosed about a dozen Spratly features, among them Amboyna Cay (held by Vietnam) and Commodore Reef (later held by the Philippines), within Malaysia's territorial waters and continental shelf.", "actors": "Government of Malaysia", "status": "candidate", "harvest_run_id": "MY-1970s", "extractor": "manual:research agent for ticket 19", "suggested_move_id": "", "suggested_type": "declarative", "suggested_domains": "domestic diplomatic", "suggested_issues": "administrative energy", "suggested_dyads": "MV MP MC MR MB", "suggestion_reasoning": "An official map formally claiming disputed Spratly features is a legal and administrative claim statement: declarative, and the founding document of Malaysia's Spratly claim. In 1980 Vietnam sent a protest note (Dewan Rakyat, 10 June 1980), Singapore protested on 14 February 1980 over Pedra Branca, and the UK protested for Brunei over Louisa Reef (Dzurek 1996). The first source is the Law Minister's Dewan Rakyat answer of 17 June 1980 giving the publication date; the Lai et al. source is a PDF. [confidence: high]", "reviewer": "", "review_date": "", "review_note": "", "placed_name": "", "placed_area": "", "ambiguous": ""}, "sources": [{"source_id": "ev-72def46a32-S01", "event_id": "ev-72def46a32", "url": "https://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-17", "title": "Dewan Rakyat Hansard, 17 June 1980: Peta Pelantar Benua bagi Malaysia (question 56, answer by the Minister of Law)", "publisher": "Parliament of Malaysia (Digital Hansard)", "pub_date": "1980-06-17", "language": "ms", "accessed_date": "2026-11-16", "archive_url": "", "excerpt": "Suatu peta Malaysia yang menunjukkan perairan Wilayah dan pelantar benuanya telahpun diterbitkan pada 21 haribulan Disember, 1979."}, {"source_id": "ev-72def46a32-S02", "event_id": "ev-72def46a32", "url": "https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf", "title": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2))", "publisher": "Institute of China Studies, Universiti Malaya", "pub_date": "2021-12-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "its claims to about a dozen tiny reefs and atolls in the SCS."}, {"source_id": "ev-72def46a32-S03", "event_id": "ev-72def46a32", "url": "https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/Chronologies/2021-22/SouthChinaSeaChronology", "title": "South China Sea chronology (1909 - February 2022)", "publisher": "Parliament of Australia, Parliamentary Library", "pub_date": "2022-03-01", "language": "en", "accessed_date": "", "archive_url": "", "excerpt": "marking several islands and reefs in the Spratly Islands as its territory"}], "year": 1979, "previous_year_moves": [], "same_year_moves": [], "duplicate_of": null, "claimant_name": "Malaysia", "presort": {"event_id": "ev-72def46a32", "disposition": "new_move", "criterion": "novelty", "reason": "Novelty: the Peta Baru of 21 December 1979 is Malaysia's first formal legal claim enclosing about a dozen Spratly features, Amboyna Cay and Commodore Reef among them; 1978's record has only EEZ statements (ev-413bef2512) and a démarche (ev-6203883aff), nothing comparable.", "label": "new move (novelty)", "presorted_by": "claude-code/opus"}}]}</script>
+<script>
+(function () {
+  "use strict";
+  var CTX = JSON.parse(document.getElementById("ctx").textContent);
+  var KEY = "scs-review-" + CTX.run_id;
+  var draft = {};
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { draft = {}; }
+  var reviewer = document.getElementById("reviewer");
+  reviewer.value = draft._reviewer || "";
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(draft)); } catch (e) {} progress(); }
+  function progress() {
+    var n = CTX.items.length, done = CTX.items.filter(function (it) { return (draft[it.event.event_id] || {}).action; }).length;
+    document.getElementById("progress").textContent = done + " of " + n + " decided";
+  }
+  function orig(id) { for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) return CTX.items[i].event; return {}; }
+
+  function readCard(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    var d = { event_id: id, action: action, note: card.querySelector(".f-note").value.trim() };
+    if (action === "merge") {
+      var of = card.querySelector(".f-move_of").value;
+      if (of) d.move_of_event = of; else d.move_id = card.querySelector(".f-move_id_text").value.trim() || card.querySelector(".f-move_id").value;
+    }
+    if (action === "duplicate") d.duplicate_of = card.querySelector(".f-dup_of").value.trim();
+    if (action === "new_move") {
+      d.new_move = {
+        type: card.querySelector(".f-type").value, intensification_criterion: card.querySelector(".f-crit").value,
+        year: card.querySelector(".f-year").value.trim(), ongoing_through: card.querySelector(".f-ongoing").value.trim(),
+        dyads: card.querySelector(".f-dyads").value.trim().split(/\s+/).filter(Boolean),
+        domains: Array.prototype.map.call(card.querySelectorAll(".f-domain:checked"), function (i) { return i.value; }),
+        issues: Array.prototype.map.call(card.querySelectorAll(".f-issue:checked"), function (i) { return i.value; }),
+        subregions: Array.prototype.map.call(card.querySelectorAll(".f-sub:checked"), function (i) { return i.value; }),
+        description: card.querySelector(".f-desc").value.trim()
+      };
+    }
+    if (action === "merge" || action === "new_move" || action === "duplicate") {
+      var o = orig(id), edits = {};
+      ["date_start", "date_end", "date_precision", "location_name", "subregion", "lat", "lon", "actors", "summary"].forEach(function (f) {
+        var v = card.querySelector(".f-e-" + f).value.trim();
+        if (v && v !== (o[f] || "")) edits[f] = v;     // blank keeps the current value
+      });
+      if (Object.keys(edits).length) d.edits = edits;
+    }
+    return d;
+  }
+  function paint(card) {
+    var id = card.getAttribute("data-event");
+    var action = (card.querySelector('input[name="a-' + id + '"]:checked') || {}).value || "";
+    card.querySelector(".p-merge").classList.toggle("on", action === "merge");
+    card.querySelector(".p-new").classList.toggle("on", action === "new_move");
+    card.querySelector(".p-dup").classList.toggle("on", action === "duplicate");
+    card.querySelector(".p-edits").classList.toggle("on", action === "merge" || action === "new_move" || action === "duplicate");
+    card.querySelector(".p-reject-req").hidden = action !== "reject";
+    card.classList.toggle("decided", !!action);
+    card.classList.toggle("is-reject", action === "reject");
+  }
+  function restore(card) {
+    var id = card.getAttribute("data-event"), d = draft[id];
+    if (!d) return;
+    var r = card.querySelector('input[name="a-' + id + '"][value="' + (d.action || "") + '"]'); if (r) r.checked = true;
+    card.querySelector(".f-note").value = d.note || "";
+    if (d.move_id) card.querySelector(".f-move_id_text").value = d.move_id;
+    if (d.move_of_event) card.querySelector(".f-move_of").value = d.move_of_event;
+    if (d.duplicate_of) card.querySelector(".f-dup_of").value = d.duplicate_of;
+    if (d.new_move) {
+      var m = d.new_move;
+      card.querySelector(".f-type").value = m.type || ""; card.querySelector(".f-crit").value = m.intensification_criterion || "";
+      card.querySelector(".f-year").value = m.year || ""; card.querySelector(".f-ongoing").value = m.ongoing_through || "";
+      card.querySelector(".f-dyads").value = (m.dyads || []).join(" "); card.querySelector(".f-desc").value = m.description || "";
+      card.querySelectorAll(".f-domain").forEach(function (i) { i.checked = (m.domains || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-issue").forEach(function (i) { i.checked = (m.issues || []).indexOf(i.value) >= 0; });
+      card.querySelectorAll(".f-sub").forEach(function (i) { i.checked = (m.subregions || []).indexOf(i.value) >= 0; });
+    }
+    if (d.edits) Object.keys(d.edits).forEach(function (f) { var el = card.querySelector(".f-e-" + f); if (el) el.value = d.edits[f]; });
+  }
+
+  var cards = document.querySelectorAll(".cand");
+  function prefill(card) {
+    var it = null, id = card.getAttribute("data-event");
+    for (var i = 0; i < CTX.items.length; i++) if (CTX.items[i].event.event_id === id) it = CTX.items[i];
+    if (!it || !it.presort || (id in draft)) return;                   // any saved draft, even "undecided", wins over the pre-sort
+    card.setAttribute("data-presorted", "1");                           // shown as a suggestion: not in the draft, not exported, not counted
+    var p = it.presort, radio = function (v) { var r = card.querySelector('input[type=radio][value="' + v + '"]'); if (r) r.checked = true; };
+    if (p.disposition === "continuation") { radio("reject"); var n = card.querySelector(".f-note"); if (n && !n.value) n.value = "continuation of " + p.of + (/^ev-/.test(p.of) ? " (last year's candidate; provisional until that year is decided)" : ""); }
+    else if (p.disposition === "same_move") { radio("merge"); var m = card.querySelector(".f-move_of"); if (m) m.value = p.of; }
+    else if (p.disposition === "new_move") { radio("new_move"); var c = card.querySelector(".f-crit"); if (c) c.value = p.criterion || ""; }
+    else if (p.disposition === "duplicate") { radio("duplicate"); var d = card.querySelector(".f-dup_of"); if (d) d.value = p.of; }
+    paint(card);
+  }
+  function adopt(card) { card.removeAttribute("data-presorted"); draft[card.getAttribute("data-event")] = readCard(card); paint(card); save(); }
+  cards.forEach(function (card) {
+    restore(card); prefill(card); paint(card);
+    var btn = card.querySelector(".confirm-pre");
+    if (btn) btn.addEventListener("click", function () { adopt(card); });
+    card.addEventListener("input", function () { adopt(card); });
+    card.addEventListener("change", function () { adopt(card); });
+  });
+  reviewer.addEventListener("input", function () { draft._reviewer = reviewer.value; save(); });
+
+  function validate(decisions) {
+    var problems = [];
+    decisions.forEach(function (d) {
+      if (d.action === "reject" && !d.note) problems.push(d.event_id + ": a rejection needs a note");
+      if (d.action === "merge" && !d.move_id && !d.move_of_event) problems.push(d.event_id + ": choose the move to merge into");
+      if (d.action === "merge" && d.move_id && !/^[A-Z]{2}\d{6}$/.test(d.move_id)) problems.push(d.event_id + ": a move id looks like CN202601");
+      if (d.action === "merge" && d.move_of_event && !(draft[d.move_of_event] || {}).action) problems.push(d.event_id + ": the candidate it merges into has no decision yet");
+      if (d.action === "merge" && d.move_of_event && (draft[d.move_of_event] || {}).action && draft[d.move_of_event].action !== "new_move") problems.push(d.event_id + ": the candidate it merges into does not form a new move");
+      if (d.action === "duplicate" && !d.duplicate_of) problems.push(d.event_id + ": name the event it duplicates");
+      if (d.action === "new_move" && d.new_move.dyads.some(function (x) { return !/^[RCPVMBIAU]{1,2}$/.test(x); })) problems.push(d.event_id + ": dyads are one or two of the letters R C P V M B I A U");
+      if (d.action === "new_move" && d.new_move.year && !/^\d{4}$/.test(d.new_move.year)) problems.push(d.event_id + ": year must be four digits");
+      if (d.action === "new_move") {
+        if (!d.new_move.type) problems.push(d.event_id + ": a new move needs a type");
+        if (!d.new_move.intensification_criterion) problems.push(d.event_id + ": a new move needs its intensification criterion");
+      }
+    });
+    return problems;
+  }
+  document.getElementById("export").addEventListener("click", function () {
+    var decisions = [];
+    cards.forEach(function (card) { if (card.getAttribute("data-presorted") === "1") return; var d = readCard(card); draft[d.event_id] = d; if (d.action) decisions.push(d); });
+    var problems = validate(decisions);
+    if (!decisions.length) { alert("No decisions yet."); return; }
+    if (problems.length) { alert("Please fix:\n\n" + problems.join("\n")); return; }
+    var out = { run_id: CTX.run_id, reviewer: reviewer.value.trim(), exported: new Date().toISOString().slice(0, 10), decisions: decisions };
+    var blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "decisions-" + CTX.run_id + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  document.getElementById("clear").addEventListener("click", function () {
+    if (!confirm("Discard the saved draft for this page?")) return;
+    draft = {}; try { localStorage.removeItem(KEY); } catch (e) {} location.reload();
+  });
+  progress();
+})();
+</script>
+</body>
+</html>

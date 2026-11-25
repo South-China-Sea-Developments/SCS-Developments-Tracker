@@ -1,0 +1,32 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-af41776905",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV",
+     "MP",
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "administrative"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  }
+ ],
+ "reviewer": "Angelo"
+}
