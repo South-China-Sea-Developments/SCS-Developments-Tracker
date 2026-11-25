@@ -43,6 +43,7 @@ import datetime as dt
 import json
 import os
 import re
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
@@ -688,6 +689,113 @@ def archive_run(exported: list[dict], run_id: str, out_dir: Path, today: str = "
     return {"kept": len(archive["records"]), "decided": len(decided), "to_clear": len(clear_ids)}
 
 
+def held_back(records: list[dict], events: list[dict], field_ids: dict[str, str] | None = None) -> tuple[list[dict], list[dict]]:
+    """Split an export into the rows a sitting can apply and the merges it must hold back: a merge into a
+    candidate whose lead is neither decided new_move or reject in this export nor already rejected or
+    accepted in the data (its lead is still undecided, in this run or another). A merge into a rejected
+    lead is applied: `decide` rejects it with its lead (#133). Ids are compared stripped."""
+    f = [normalise_record(r, field_ids) for r in records]
+    decided = {(x.get("event_id") or "").strip(): x.get("decision") for x in f}
+    status = {e["event_id"]: e["status"] for e in events}
+    keep, held = [], []
+    for r, x in zip(records, f):
+        lead = (x.get("merge_into_candidate") or "").strip()
+        into = (x.get("merge_into_move") or "").strip()
+        lead = lead or (into if into.startswith("ev-") else "")
+        if x.get("decision") == "merge" and lead and decided.get(lead) not in ("new_move", "reject") \
+                and status.get(lead) not in ("rejected", "accepted"):
+            held.append({"event_id": x.get("event_id"), "lead": lead, "lead_state": decided.get(lead) or status.get(lead, "not found")})
+        else:
+            keep.append(r)
+    return keep, held
+
+
+def sitting(exports: dict[str, list[dict]], date: str, root: Path | None = None, branch: str = "",
+            reviewer: str = "", commit: bool = True) -> dict:
+    """One sitting, one branch (2026-11-25): every run's decided rows applied together, so a sitting is one
+    pull request and one CI cycle, with nothing to conflict. On a branch cut from origin/main, the review
+    branch of each run whose candidates are not on main yet (`origin/harvest/<run>` ahead of main) is merged
+    in under the union rule and the tables synced to main's version of shared rows; then, run by run, the
+    held-back merges are set aside, the rows archived (`harvest/airtable/<run>/`) and the decisions applied.
+    A run `decide` refuses is undone (its archive files restored) and reported; the others stand.
+    `exports` maps run_id -> the run's exported rows. Returns the report: runs applied with their counts,
+    runs folded in (their review pull requests can be closed once the sitting is merged), runs refused with
+    the error, held-back merges, and the Airtable ids to clear."""
+    from pipeline import sync_data
+    from pipeline.queue import apply_decisions, git
+    root = root or repo_root()
+    branch = branch or f"sitting/{date}"
+    attrs = Path(git("rev-parse", "--git-common-dir", cwd=root))
+    attrs = (attrs if attrs.is_absolute() else root / attrs) / "info" / "attributes"
+    attrs.parent.mkdir(parents=True, exist_ok=True)
+    if "merge=union" not in (attrs.read_text() if attrs.exists() else ""):
+        with open(attrs, "a") as f:
+            f.write("data/*.csv merge=union\n")
+    git("fetch", "-q", "origin", cwd=root)
+    git("checkout", "-q", "-B", branch, "origin/main", cwd=root)
+    report = {"branch": branch, "applied": {}, "folded": [], "refused": {}, "held_back": {}, "clear": {}}
+    import csv as _csv, io as _io
+    on_main = {e["event_id"] for e in _csv.DictReader(_io.StringIO(git("show", "origin/main:data/events.csv", cwd=root)))}
+    cfg_ids = load_config().get("field_ids") or {}
+    for run in sorted(exports):
+        ref = f"origin/harvest/{run}"
+        wanted = {(normalise_record(r, cfg_ids).get("event_id") or "").strip() for r in exports[run]} - {""}
+        if wanted <= on_main:
+            continue                                      # the run's candidates are on main already
+        if not git("rev-parse", "--verify", "-q", ref, cwd=root, check=False):
+            report["refused"][run] = f"its candidates are not on main and {ref} does not exist"
+            continue
+        r = subprocess.run(["git", "merge", "-q", "--no-edit", ref], cwd=root, capture_output=True, text=True)
+        if r.returncode:
+            subprocess.run(["git", "merge", "--abort"], cwd=root, capture_output=True)
+            report["refused"][run] = f"merging {ref} conflicts: {(r.stdout + r.stderr).strip()[:300]}"
+        else:
+            report["folded"].append(run)
+    sync_data.sync(root / "data", "origin/main", root)
+    cfg = load_config()
+    ids = cfg.get("field_ids") or {}
+    for run in sorted(exports):
+        if run in report["refused"]:
+            continue
+        events = read_table("events", root / "data")
+        rows, held = held_back(exports[run], events, ids)
+        if held:
+            report["held_back"][run] = held
+        out = root / "harvest" / "airtable" / run
+        existed = out.exists()
+        before = {p: p.read_bytes() for p in out.glob("*.json")} if existed else {}
+        res = archive_run(rows, run, out, date, reviewer, ids, default=default_reviewer())
+        dec = json.loads((out / "decisions.json").read_text(encoding="utf-8"))
+        if not dec["decisions"]:
+            report["refused"][run] = "no decided row left to apply"
+        else:
+            try:
+                report["applied"][run] = apply_decisions(dec["decisions"], dec.get("reviewer") or reviewer or default_reviewer(), date, root / "data")
+                report["clear"][run] = json.loads((out / "clear.json").read_text(encoding="utf-8"))["record_ids"]
+                continue
+            except ValueError as e:
+                report["refused"][run] = str(e)[:1500]
+        for p in out.glob("*.json"):                      # undo this run's archive
+            if p in before:
+                p.write_bytes(before[p])
+            else:
+                p.unlink()
+        if not existed and out.exists() and not any(out.iterdir()):
+            out.rmdir()
+    from pipeline.validate import validate
+    errors = validate(root / "data", root / "data/raw/mats-1.02/MATS_1-02_all_cases.xlsx",
+                      root / "data/raw/mavd-arcgis-2023/All_Actions7.csv")
+    report["validate_errors"] = errors[:20]
+    if commit and report["applied"] and not errors:
+        git("add", "data", *[f"harvest/airtable/{r}" for r in report["applied"]], cwd=root)
+        counts = "; ".join(f"{r}: " + ", ".join(f"{v} {k.replace('_', ' ')}" for k, v in c.items() if v) for r, c in report["applied"].items())
+        body = f"{counts}.\n\nRuns folded in from their review branches: {', '.join(report['folded']) or 'none'}." + \
+            (f"\nRefused: {', '.join(report['refused'])}." if report["refused"] else "")
+        git("commit", "-q", "-m", f"Apply the maintainer's decisions (sitting of {date})\n\n{body}", cwd=root)
+        report["commit"] = git("rev-parse", "HEAD", cwd=root)
+    return report
+
+
 def table_schema() -> dict:
     """The Candidates table as Airtable's schema API wants it (`name` is the base's label; `internal`
     the code's name); the live base was created from an earlier version of it and updated by hand since."""
@@ -725,6 +833,12 @@ def main(argv=None) -> int:
     ar.add_argument("--out-dir", type=Path, default=None, help="default harvest/airtable/<run_id>")
     ar.add_argument("--reviewer", default=None, help="the coder's name (default: `reviewer` in pipeline/airtable.json)")
     ar.add_argument("--date", default="")
+    st = sub.add_parser("sitting", help="apply every run's decided rows on one branch: one pull request, one CI cycle")
+    st.add_argument("--exports", type=Path, required=True, help="a folder of <run_id>.json exports (each {'records': [...]} as listed from the base)")
+    st.add_argument("--date", default="")
+    st.add_argument("--branch", default="", help="default sitting/<date>")
+    st.add_argument("--report", type=Path, required=True, help="where to write the sitting's report (JSON)")
+    st.add_argument("--no-commit", action="store_true")
     cd = sub.add_parser("context-diff", help="the connector updates that refresh the move lists on rows already in the base")
     cd.add_argument("--current", type=Path, required=True, help="the rows as the connector lists them (event_id and the two lists)")
     cd.add_argument("--records", type=Path, required=True, help="the output of `records` for the run today")
@@ -761,6 +875,20 @@ def main(argv=None) -> int:
         bad = context_mismatches(cur, recs, ids)
         print("all rows carry the current lists" if not bad else f"{len(bad)} row(s) still differ: {', '.join(bad)}")
         return 1 if bad else 0
+    if a.cmd == "sitting":
+        exports = {}
+        for f in sorted(a.exports.glob("*.json")):
+            d = json.loads(f.read_text(encoding="utf-8"))
+            exports[f.stem] = d.get("records", []) if isinstance(d, dict) else d
+        rep = sitting(exports, a.date or dt.date.today().isoformat(), branch=a.branch, commit=not a.no_commit)
+        a.report.write_text(json.dumps(rep, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"sitting on {rep['branch']}: applied {', '.join(rep['applied']) or 'nothing'}; folded {', '.join(rep['folded']) or 'none'}; "
+              f"refused {', '.join(rep['refused']) or 'none'}; held back {sum(len(v) for v in rep['held_back'].values())}; "
+              f"{sum(len(v) for v in rep['clear'].values())} row(s) to clear; validator: {len(rep['validate_errors'])} error(s)"
+              + (f"; committed {rep['commit'][:9]}" if rep.get("commit") else ""))
+        for r, e in rep["refused"].items():
+            print(f"  refused {r}: {e}")
+        return 1 if rep["validate_errors"] else 0
     if a.cmd == "archive":
         exported = json.loads(a.from_file.read_text(encoding="utf-8"))
         if isinstance(exported, dict):
