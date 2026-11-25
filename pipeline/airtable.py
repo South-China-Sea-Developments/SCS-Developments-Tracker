@@ -559,10 +559,15 @@ def decisions_from_records(records: list[dict], reviewer: str = "", field_ids: d
         if f.get("reviewer"):
             reviewers.add(f["reviewer"].strip())
         if action == "merge":
+            into_move = (f.get("merge_into_move") or "").strip()
             if f.get("merge_into_candidate"):
                 d["move_of_event"] = f["merge_into_candidate"].strip()
+            elif into_move.startswith("ev-"):
+                # an event id typed into "Merge into move" (twice on 2026-11-24): it names a candidate, so
+                # the merge is into that candidate's move, and a rejected lead rejects it (queue.py)
+                d["move_of_event"] = into_move
             else:
-                d["move_id"] = (f.get("merge_into_move") or "").strip()
+                d["move_id"] = into_move
         if action == "duplicate":
             d["duplicate_of"] = (f.get("duplicate_of") or "").strip()
         if action == "new_move":

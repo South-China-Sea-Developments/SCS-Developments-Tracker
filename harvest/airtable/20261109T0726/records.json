@@ -1,0 +1,330 @@
+{
+ "run_id": "20261109T0726",
+ "exported_on": "2026-11-24",
+ "records": [
+  {
+   "airtable_id": "recfwX2lGER5Sl51o",
+   "archived_on": "2026-11-24",
+   "actors": "Teodoro",
+   "suggestion_reasoning": "The headline reports a Philippine official publicly condemning Chinese actions in waters the Philippines claims, a verbal statement, hence declarative. Only the surname Teodoro is in the text; the wording and the actions criticised are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-03), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "PC",
+   "excerpt": "Teodoro Slams China's West Philippine Sea Actions Amid ASEAN Defense Meeting Dispute",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "West Philippine Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Sub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "Teodoro Slams China's West Philippine Sea Actions Amid ASEAN Defense Meeting Dispute - Daily Tribune — News search: Philippine Coast Guard / West Philippine Sea 2026-11-03\nhttps://news.google.com/rss/articles/CBMisgFBVV95cUxPRl9PS2N0QzNzNkN3TlFUSlZ2aHNGTmtBUHluMm8xVXBYYnFpU3M5YjlzVkFIR1M4eG5LbVQ0T2d6c0N1Z2JTOXRzX3Vad1RRQ2lIdVFxeUgyUVhGQWFvUm8tQ3FCQS02cENYMTJnUTB0TnVZd295WlpoOFF5MnBUUjJmTnB6OTNqU3Z2LUNmbTNZWVV0MkxUZmdBUlpIOWV3UlhrYkJlcksxRnRSbm16MEVn?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T17:19:50.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-06258f3fec",
+   "run_id": "20261109T0726",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "note": "continuation of ev-5319572db3 - And is a duplicate",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "summary": "Teodoro, a Philippine official, criticised China's actions in the West Philippine Sea amid a dispute over an ASEAN defence meeting, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "continuation of ev-5319572db3 (a candidate, provisional) — Defence Secretary Teodoro condemning China's actions continues the DND's 2026 public rejections of Chinese claims and conduct (ev-5319572db3, May 2026); headline-only, no new method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recAKccG3achAtl8M",
+   "archived_on": "2026-11-24",
+   "suggestion_reasoning": "The headline reports a Vietnamese demand that China halt drills in the Paracels, a diplomatic protest with no coercive element, hence declarative. The speaker and the date of the drills are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2021-08-05), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2021-08-31",
+   "new_dyads": "VC",
+   "excerpt": "Vietnam demands China stop Paracel Islands military drills",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:20:13.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Paracel Islands",
+   "run": [
+    "20261109T0726"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam demands China stop Paracel Islands military drills - VnExpress International — News search: Vietnam East Sea 2021-08-05\nhttps://news.google.com/rss/articles/CBMiqAFBVV95cUxOWlZNUlF5T2lVVGtSeGhfMkJZZWpQYlEzSTU4ZEhUR29SMk52WkZ0YnBZa053bTFBb0JLM2taUjQtZVA0T3hLNUw5QXd3d21RVWZHbGV6bXN1OFQtMERNbENaaEpDa19GSkJpLTdYekNxT01LdFhfVkMtTVAxbmNIbmpwQ3NwTGlFdDFUMXNIUlFpQzZYNzY5VlpXVWw1NkotX2lPRmo?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "2 Paracels",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T21:02:18.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-093344fd02",
+   "run_id": "20261109T0726",
+   "new_subregions": [
+    "2 Paracels"
+   ],
+   "note": "Continuation of ev-c40458e043 ",
+   "suggested_dyads": [
+    "VC"
+   ],
+   "summary": "Vietnam demanded that China stop military drills in the Paracel Islands, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2021-08-01",
+   "presort": "unclear — Same act/practice already in run VN-2021-2026 as ev-c40458e043 (the 5 August 2021 demand that China stop its 6-10 August Hainan-Paracels drill), which continues 2020's protests of Paracel drills (ev-376d9688bb, ev-a878b8c8e1); that id cannot be named as `of` because the prev file covers only 2024 onward. Likely reject as continuation of ev-c40458e043. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "VN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec6W5FETGR5doAu4",
+   "archived_on": "2026-11-24",
+   "suggestion_reasoning": "The headline reports a Chinese government message warning outside powers off the South China Sea dispute, a verbal statement, hence declarative. It is addressed to non-claimants, so the dyad is left unclear and this is a marginal candidate; the speaker and wording are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-07), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "CU",
+   "excerpt": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row - The Times of India — News search: South China Sea 2026-11-07\nhttps://news.google.com/rss/articles/CBMi2AFBVV95cUxOTGVVcUhGS1NoUlIxNVBreWM2NTFJTDEwNml5NzJpdlBXYTZoa2RydEdNUHdkdWJVN214MnFtNGNHdWJjQjVrNnZ2WV9ZcmlmQnB6bkpwNElFZkdCRFhMM2lFcVl5aWlnR1QtemR2RzdCY3IzWEgyN2E3dzNTaUdjZnMwUkpMUzJZT1NqLTVtM3ZRMFpzRkd6Y2VqUkZwQW5xSTV1cWpXQmtBX1JjOS0tRXZhZXQ4NGlTOHRIdUtsdFUyUWRFeEIzYTZhcjgtRHVpYnZZdmNtTTbSAd4BQVVfeXFMTzZFQTlIdlJtUmgtM1BzNWNreUtuMVVDa21YSnc5Z1NfZEU3SEVRYVZaSUlNVGMxYVFWeExTRkVWazZfYXl5ejlpcVpSRlpVTURuVUNUanlaSktRalVYOU1NMm5qVUY3Vmp5M1hMdEpFNkdhd3MzelFKVG1WREhMZDliaWp4cldGMlhQLUxoYTRWMVJqZFdNOEdZWHpNZURlY0lRNk13aTlramNQTVFmMkoyTnhFWnR6enlNal8zSFBRdjNCREZjOGVHdmc2V05TYVJPeVp5QndnUy1Kald3?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T19:22:16.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2830669532",
+   "run_id": "20261109T0726",
+   "note": "Routine",
+   "suggested_dyads": [
+    "CU"
+   ],
+   "summary": "China told the Quad countries not to raise the South China Sea dispute ahead of a summit, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "unclear — Not clearly an assertive act of the claimant on its claim: a warning to the Quad (non-claimants) not to raise the dispute asserts no specific claim and nothing comparable is in CN's 2025-2026 record; likely reject unless the full text restates sovereignty. Same report as ev-9c52dbaad2. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recA4y1vYU2aLLgmB",
+   "archived_on": "2026-11-24",
+   "possible_duplicate_of": "ev-2830669532",
+   "suggestion_reasoning": "The headline reports a Chinese government message warning outside powers off the South China Sea dispute, a verbal statement, hence declarative. It is addressed to non-claimants, so the dyad is left unclear and this is a marginal candidate; the speaker and wording are not given. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-07), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "CU",
+   "excerpt": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:20:13.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Possible duplicate of ev-2830669532.",
+   "reviewer": "Angelo",
+   "sources": "Ahead of summit, Beijing tells Quad: Don't rake up South China sea row - inkl — News search: South China Sea 2026-11-07\nhttps://news.google.com/rss/articles/CBMimAFBVV95cUxPSmR6Tjl2YVBBemNvbnJGUXNFVFpfUEV1R0pwSTJnY0lmQ29pQVVXU2JrM191TmhoZldUeThISVV3bkV3VndXanQ2X3RPcm9OdnN1RnJubXRJX2s4SDRJWmVXQnFtVk9haHluOEZZMXZXTjRvNmxTbUx6dWZnMjItajhfTFRFMzdkcTQ3X0ZZQlRqZjN5UzN5Vw?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T19:22:30.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9c52dbaad2",
+   "run_id": "20261109T0726",
+   "note": "Routine",
+   "suggested_dyads": [
+    "CU"
+   ],
+   "duplicate_of": "ev-2830669532",
+   "summary": "China told the Quad countries not to raise the South China Sea dispute ahead of a summit, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "unclear — Same headline as ev-2830669532 (a different outlet): a warning to the Quad not to raise the dispute asserts no specific claim; likely reject unless the full text restates sovereignty, and in any case one report with ev-2830669532. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recEE2Ek46WKXdTpI",
+   "archived_on": "2026-11-24",
+   "actors": "Teodoro",
+   "possible_duplicate_of": "ev-06258f3fec",
+   "suggestion_reasoning": "The headline reports a statement by a Philippine official rejecting joint exploration with China in waters the Philippines claims, a verbal assertion, hence declarative. Only the surname Teodoro is in the text; his office is not stated there. The document is a headline only: the date of the act is not stated and the month is inferred from the article's publication date (2026-11-04), so the coder must verify the date and details against the full article. [confidence: low]",
+   "date_end": "2026-11-30",
+   "new_dyads": "PC",
+   "excerpt": "Teodoro says PH-China oil exploration in West Philippine Sea is illegal",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "West Philippine Sea",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Possible duplicate of ev-06258f3fec.\nSub-regions suggested: 4 Central-East (Philippine EEZ 54%); 6 Spratly NE (Philippine EEZ 28%).",
+   "reviewer": "Angelo",
+   "sources": "Teodoro says PH-China oil exploration in West Philippine Sea is illegal - DZRH — News search: Philippine Coast Guard / West Philippine Sea 2026-11-04\nhttps://news.google.com/rss/articles/CBMiogFBVV95cUxPSXVuRHBoU3h4RUhvYmc5VXgzR3JEaUtXaTlEdEtTWjJtdTFNQkFud01HRWxiSUVvNy1kblgyX0sxUGhSSHVJSFptT09RNEFPckRUeGFmSFBYLU0tZzY1eGF3SkM1U3ZROFdIV1kycmsxWHFlOFhFcWhZN0pFTEMyenllUDJnUDJFMW5kanRHOHNFdlpfMk1WR0poMkd0LS1SYVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-24T17:19:40.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bbd552aeb5",
+   "run_id": "20261109T0726",
+   "new_subregions": [
+    "4 Central-East",
+    "6 Spratly NE"
+   ],
+   "note": "Not enough evidence of this action being state-backed.",
+   "suggested_dyads": [
+    "PC"
+   ],
+   "duplicate_of": "ev-06258f3fec",
+   "summary": "Teodoro, a Philippine official, said that Philippine-Chinese oil exploration in the West Philippine Sea was illegal, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-11-01",
+   "presort": "unclear — Headline-only statement by Teodoro that PH-China oil exploration in the West Philippine Sea is illegal; nothing comparable in PH's 2025-2026 record. The full article would show whether it asserts the claim against China (declarative, possibly new) or is domestic comment on a cooperative proposal (likely reject). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "PH",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec3SM4D04wXvY47p",
+   "archived_on": "2026-11-24",
+   "actors": "Chinese Coast Guard",
+   "suggestion_reasoning": "The headline reports Chinese coast guard patrols in waters Malaysia regards as its own, a unilateral patrol with no confrontation described, hence demonstrative. The document is a headline only: it gives a nine-month aggregate (January to September 2024) rather than a single dated incident, names no specific feature, and does not itself say the waters are in the South China Sea, so the dating and coding are uncertain. [confidence: low]",
+   "date_end": "2024-09-30",
+   "new_dyads": "CM",
+   "excerpt": "Nine Chinese Coast Guard Vessels Patrolled Malaysian Waters from Jan-Sept 2024",
+   "fldDaG8ZsjVVmdNQt": "2026-11-20T23:19:07.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "20261109T0726"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Nine Chinese Coast Guard Vessels Patrolled Malaysian Waters from Jan-Sept 2024 - Defence Security Asia — News search: Malaysia South China Sea 2024-10-20\nhttps://news.google.com/rss/articles/CBMitAFBVV95cUxNbFJLSUdtTVRZQzhCdmRnaXJKUXpQZGRNSjZYelFoT2lUVHB4RlMzREpkQXZqUktwUlBlaTRTSkJRX1VKZjdSbVZvTm1rMXUwMUtfQlFfZk1XTEtiNmFfQmh6QmI4MF8tTHAwM2tERGROMlZtMVBhYnJpR2lFRzF2Y1RibkRETHV5ZkNnc09ObXh6ZVNTZ0Iwc3pHX0N4dDJmbEdzY3c1U1ZUY2prbkNpcXRFUzY?oc=5&hl=en-US&gl=US&ceid=US:en",
+   "pull_request": 37,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-23T15:17:36.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-ea81d4b361",
+   "run_id": "20261109T0726",
+   "suggested_dyads": [
+    "CM"
+   ],
+   "summary": "Nine China Coast Guard vessels patrolled waters described as Malaysian between January and September 2024, according to the headline.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-01-01",
+   "presort": "continuation of ev-9a3bba41b6 (a candidate, provisional) — Same act/practice already in run CN-2021-2026 as ev-9a3bba41b6 (AMTI's 2024 count of near-daily CCG patrols, including 359 days at Luconia Shoals); a headline-only nine-month aggregate of the same presence. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "CN",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}

@@ -27,10 +27,10 @@ For each event return an object with:
 - `actors`: the units or agencies named (e.g. "CCG 5203; PCG BRP Cabra"), or empty.
 - `excerpt`: the passage from the document, copied verbatim (same characters, same punctuation) and in its original language, that supports the event (at most 400 characters). It will be checked against the document.
 - `suggested_type`: one of `declarative`, `demonstrative`, `coercive`, `force`, using Chubb's definitions:
-  - declarative — verbal assertions via non-coercive statements, diplomatic protests, legislation;
+  - declarative — verbal assertions via non-coercive statements, diplomatic protests, legislation: claims that make no threat of punishment, however strong their words;
   - demonstrative — unilateral administration of disputed possessions without confrontation: patrols, surveys, resource development, construction, state-sanctioned tourism or activism, domestic judicial proceedings, cooperative agreements with third parties;
-  - coercive — threat or imposition of punishment: verbal, diplomatic, administrative or economic punishment, warning shots, physical interference with foreign activities;
-  - force — application of military force, or direct seizure and occupation of a disputed possession.
+  - coercive — threat or imposition of punishment: verbal, diplomatic, administrative or economic punishment, warning shots, physical interference with foreign activities; violence against people or vessels (beating a crew, ramming, water cannon, firing on boats, seizing boats or catch, detaining crews) is coercive, however severe;
+  - force — direct seizure and occupation of a disputed possession (a feature passing into the actor's control), or a military attack to take one.
 - `suggested_domains`: subset of `domestic`, `diplomatic`, `physical`.
 - `suggested_issues`: subset of `military`, `administrative`, `energy`, `fisheries`, `politics`.
 - `suggested_dyads`: MATS dyad codes, actor first: letters C (PRC), V (Vietnam), P (Philippines), M (Malaysia), B (Brunei), I (Indonesia), R (Taiwan/ROC), A (all states), U (unclear). E.g. `["CP"]` for China acting toward the Philippines.

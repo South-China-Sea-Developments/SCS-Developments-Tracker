@@ -65,7 +65,8 @@ actors            the units or agencies named, or ""
 suggested_type    declarative | demonstrative | coercive | force (Chubb's definitions: declarative = verbal assertions, protests,
                   legislation; demonstrative = unilateral administration without confrontation: patrols, surveys, construction,
                   resource development, tourism, domestic judicial acts; coercive = threat or imposition of punishment: warnings,
-                  diplomatic/economic punishment, warning shots, physical interference; force = military force or seizure)
+                  diplomatic/economic punishment, warning shots, physical interference, and any violence against people or
+                  vessels, however severe; force = seizure or occupation of a feature, or a military attack to take one)
 suggested_domains subset of ["domestic", "diplomatic", "physical"]
 suggested_issues  subset of ["military", "administrative", "energy", "fisheries", "politics"]
 suggested_dyads   list of two-letter codes, actor first: C China, V Vietnam, P Philippines, M Malaysia, B Brunei, I Indonesia,

@@ -149,6 +149,21 @@ and a merge whose lead is not yet decided, wait for the next run.
 
 With a token, `clear --run <run_id>` deletes a whole run's rows but archives nothing: run `archive` first.
 
+## The Re-review table (ticket 43)
+
+`Re-review` (`tblR8Lb34BDuu6KjF`) holds the audit's disagreements with records already decided: one row
+per record and field, with *Current*, *Proposed*, *Reasoning*, *Evidence* (source passages) and *Chubb
+comparison*. Answer *Decision*: **keep** (the current coding stands), **take** (the proposal) or **edit**
+(your own value in *Your value*, written as *Current* is: a type name, comma-separated flags, sub-region
+numbers, `name | lat | lon | precision | subregion` for a place, `start | end | precision` for a date).
+*Your note* is optional and goes into the record's review note.
+
+`python -m pipeline.rereview rows` builds the rows from an audit's findings; `python -m pipeline.rereview
+apply --from <export.json>` applies the decided rows to `data/`, archives them under
+`harvest/airtable/rereview/` and writes `clear.json`. A row whose record changed after the finding was made
+is skipped and stays. The weekly task applies decided rows and pushes waiting ones as room frees.
+The rows count toward the base's 1,000-record cap.
+
 ## Not done
 
 The `dataset_status` transitions after *In review* are not automated (the sync has no token to run

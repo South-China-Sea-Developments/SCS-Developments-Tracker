@@ -179,8 +179,8 @@ def test_public_face(browser, dist):
     no count of claimants or moves coded."""
     page, problems = _open(browser, dist, "map.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1 and page.evaluate("document.querySelector('.banner-img').naturalWidth") == 2219
-    assert page.evaluate("(() => { const i = document.querySelector('.banner-img'); return i.getBoundingClientRect().width <= i.naturalWidth; })()"), "shown at or below its own size"
+    assert page.locator(".site-head .masthead-img").count() == 1 and page.evaluate("document.querySelector('.masthead-img').getAttribute('src')").endswith("masthead.svg")
+    assert page.evaluate("document.querySelector('.masthead-img').complete && document.querySelector('.masthead-img').naturalWidth > 0"), "the vector artwork loads"
     assert page.evaluate("[...document.fonts].some(f => f.family === 'Outfit' && f.status === 'loaded')")
     # ticket 18: the tracker is white like the rest of the site; only the navigation band and the banner's band are dark
     side_rgb, map_rgb, nav_rgb = page.evaluate("[getComputedStyle(document.querySelector('.side')).backgroundColor, getComputedStyle(document.getElementById('map')).backgroundColor, getComputedStyle(document.querySelector('.navband')).backgroundColor]")
@@ -195,7 +195,7 @@ def test_public_face(browser, dist):
     page.close()
     page, problems = _open(browser, dist, "methodology.html")
     assert problems == []
-    assert page.locator(".site-head .banner-img").count() == 1
+    assert page.locator(".site-head .masthead-img").count() == 1
     assert _luma(page.evaluate("getComputedStyle(document.body).backgroundColor")) > 250, "white article paper"
     assert page.evaluate("document.querySelector('main .kicker').compareDocumentPosition(document.querySelector('main h1')) & Node.DOCUMENT_POSITION_FOLLOWING")
     page.close()
@@ -235,10 +235,12 @@ def test_nav_scrolls_rather_than_wraps_at_phone_width(browser, dist):
     assert page.evaluate("document.activeElement.textContent") == "Downloads"
     box = page.evaluate("(() => { const r = document.activeElement.getBoundingClientRect(); return [r.left, r.right]; })()")
     assert 0 <= box[0] and box[1] <= 390, box
-    # at a tablet width the nav has moved under the brand rather than hiding links behind the brand
+    # from 1000px the tracker's name and every link share one thin row, nothing hidden or scrolled
     page.set_viewport_size({"width": 1024, "height": 800})
     page.wait_for_timeout(100)
-    assert page.evaluate(f"{nav}.getBoundingClientRect().top") > page.evaluate("document.querySelector('.brand').getBoundingClientRect().bottom") - 1
+    assert abs(page.evaluate(f"{nav}.getBoundingClientRect().top") - page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")) < 3
+    assert page.evaluate(f"{nav}.scrollWidth <= {nav}.clientWidth") and page.evaluate(f"{nav}.getBoundingClientRect().right") <= 1024
+    assert page.evaluate("document.querySelector('.navband').getBoundingClientRect().height") <= 48
     page.close()
 
 
@@ -508,7 +510,9 @@ def test_map_renders_offline_without_errors(browser, dist, viewport):
     assert any(t.rstrip("/").endswith("/planet") for t in tiles), "basemap requested from the attribution-compliant provider"
     assert "OpenFreeMap" in page.inner_text("#map .maplibregl-ctrl-attrib") and "OpenStreetMap" in page.inner_text("#map .maplibregl-ctrl-attrib")
     text = page.evaluate("document.getElementById('map-count').textContent")
-    assert text.startswith(f"{expected['n_events']} events") and f"{expected['n_points']} placed" in text and f"{expected['n_events']} by sub-region" in text
+    data = page.evaluate("(() => { const d = document.getElementById('map-count').dataset; return [+d.placed, +d.bySubregion]; })()")
+    assert text.startswith(f"{expected['n_events']} events through ") and data == [expected['n_points'], expected['n_events']], (text, data)
+    assert "placed" not in text and "by sub-region" not in text, "the count line is the count and the period only (2026-11-24)"
     # the sub-region counts on the map are the validator's, summed over claimants
     shown = {}
     for el in page.locator("[role='button'][tabindex='0']").element_handles():
@@ -561,7 +565,7 @@ def dist_placed(tmp_path_factory):
 
 def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
     page, problems, _ = _open_map(browser, dist_placed)
-    assert "3 placed" in page.evaluate("document.getElementById('map-count').textContent")
+    assert page.evaluate("document.getElementById('map-count').dataset.placed") == "3"
     # the points show only zoomed in; far out the sub-region counts carry every event
     assert page.locator(".evt:visible").count() == 0 and page.locator(".sr-count:visible").count() >= 1
     for _ in range(3):
@@ -588,8 +592,7 @@ def test_map_points_stack_open_and_follow_precision(browser, dist_placed):
         page.fill("#month", str((year - 1970) * 12 + month_no - 1))
         page.dispatch_event("#month", "input")
         page.wait_for_timeout(250)
-        text = page.evaluate("document.getElementById('map-count').textContent")
-        return int(re.search(r"(\d+) placed", text).group(1)), int(re.search(r"(\d+) by sub-region", text).group(1))
+        return tuple(page.evaluate("(() => { const d = document.getElementById('map-count').dataset; return [+d.placed, +d.bySubregion]; })()"))
     assert counts_at(2014, 5)[0] == 1 and counts_at(2014, 5 + 1)[0] == 0          # the rig, dated to May 2014
     assert counts_at(2013, 11)[1] >= 1 and counts_at(2013, 1)[1] >= 1            # the filing, dated to 2013
     assert counts_at(2012, 4)[0] == 1 and counts_at(2012, 4 + 1)[0] == 1 and counts_at(2012, 6)[0] == 0   # two day-dated events
@@ -623,7 +626,7 @@ def test_map_time_window_and_filters(browser, dist):
     page.dispatch_event("#month", "input")
     page.wait_for_timeout(300)
     in_2014 = [e for e in shown if e["date_start"][:4] <= "2014" and (e["date_end"] or e["date_start"])[:4] >= "2014"]
-    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events Jan 2014 – Dec 2014")
+    assert page.evaluate("document.getElementById('map-count').textContent").startswith(f"{len(in_2014)} events January 2014 to December 2014")
     # unchecking a claimant removes its events; a type filter keeps only moves of that type
     page.uncheck('input[name="claimant"][value="VN"]', force=True)
     page.wait_for_timeout(300)
@@ -700,13 +703,15 @@ def test_new_claimants_render_everywhere_without_special_casing(tmp_path):
 
 
 def test_the_first_screen_is_the_assertiveness_map(browser, dist):
-    """Ticket 27: under the slim banner and the menu, the map of the latest five-year window fills the first
+    """Ticket 27: under the masthead and the menu, the map of the latest five-year window fills the first
     screen; the slider, the claimant choice and the details come on scrolling; the event tracker follows."""
     page, problems = _open(browser, dist, "index.html", (1440, 900))
     assert problems == []
     assert page.locator("#amap canvas.maplibregl-canvas").count() == 1
-    assert page.locator(".site-head .banner-img").count() == 0 and page.locator(".site-head .brand-logo").count() == 1, "the banner follows the map"
-    assert page.locator(".banner-img").count() == 0 and page.locator("#map").count() == 0, "no banner and one map on the home page"
+    assert page.locator(".site-head .masthead").count() == 1, "the masthead heads the home page too (2026-11-24)"
+    assert page.locator("#map").count() == 0, "one map on the home page"
+    scope = page.locator(".amap-caption .amap-scope")
+    assert scope.is_visible() and "not every incident" in scope.inner_text() and scope.locator("a").get_attribute("href") == "methodology.html#what", "what the map measures (2026-11-24)"
     stage_top = page.evaluate("document.querySelector('.amap-stage').getBoundingClientRect().top")
     assert stage_top < 260 and page.evaluate("document.getElementById('amap-explore').getBoundingClientRect().top") >= 880, "the panel waits below the fold"
     # it opens on the latest five years with moves (the fixture's data ends in 2015); the slider reaches the build year
@@ -808,21 +813,53 @@ def test_the_zoom_hint_never_covers_the_map_on_a_desktop(browser, dist):
     page.close()
 
 
-def test_inner_pages_banner_strip_opens_on_hover(browser, dist):
-    """Ticket 30, option 2: the slim strip opens to the whole banner under the pointer, over the page."""
-    page, problems = _open(browser, dist, "trends.html", (1440, 900))
-    h = lambda: page.evaluate("document.querySelector('.banner').getBoundingClientRect().height")
-    band = lambda: page.evaluate("document.querySelector('.navband').getBoundingClientRect().top")
-    page.mouse.move(700, 850)
-    page.wait_for_timeout(1000)
-    slim, band0 = h(), band()
-    assert slim <= 150
-    page.hover(".banner-hit")
-    page.wait_for_timeout(700)
-    assert abs(h() - round(1440 * 950 / 2219)) <= 3 and band() == band0, "whole, and nothing below moved"
-    page.mouse.move(700, 850)
+def test_the_home_page_lists_the_latest_moves_under_the_caption(browser, dist):
+    """Option H5 (2026-11-24), a rollover: under the map's caption a slim "Latest moves" bar with the newest
+    date; it opens under the pointer, or on click, to the newest moves, each a link to its case page."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    bar = page.locator("#amap-latest")
+    assert bar.get_attribute("open") is None and page.locator(".amap-latest-list").is_hidden(), "closed at first"
+    cap = page.evaluate("document.querySelector('.amap-caption').getBoundingClientRect().bottom")
+    box = page.evaluate("(() => { const r = document.getElementById('amap-latest').getBoundingClientRect(); return [r.top, r.left, r.height]; })()")
+    assert box[0] > cap and box[1] < 40 and box[2] <= 44, ("a slim bar under the caption, at the left", box)
+    page.hover("#amap-latest summary")
+    page.wait_for_timeout(200)
+    items = page.locator(".amap-latest-list li")
+    assert page.locator(".amap-latest-list").is_visible() and 1 <= items.count() <= 4, "open under the pointer"
+    assert page.evaluate("document.getElementById('amap-latest').getBoundingClientRect().bottom") < page.evaluate("document.querySelector('.amap-cue').getBoundingClientRect().top")
+    hrefs = page.eval_on_selector_all(".amap-latest-list a", "els => els.map(a => a.getAttribute('href'))")
+    assert all((dist / h).exists() for h in hrefs), hrefs
+    assert all(" · " in d for d in page.eval_on_selector_all(".amap-latest-meta", "els => els.map(e => e.textContent)"))
+    page.mouse.move(900, 600)
+    page.wait_for_timeout(200)
+    assert bar.get_attribute("open") is None, "closed again when the pointer leaves"
+    assert problems == []
+    page.locator(".amap-count").nth(5).click()
     page.wait_for_timeout(1200)
-    assert h() <= 150
+    assert bar.is_hidden(), "zoomed in, the bar steps aside"
+    page.close()
+    page, problems = _open(browser, dist, "index.html", (390, 800))
+    page.locator("#amap-latest summary").click()
+    assert page.locator(".amap-latest-list").is_visible(), "a tap opens it on a phone"
+    page.close()
+
+
+def test_the_masthead_and_the_thin_menu_band(browser, dist):
+    """Option C (2026-11-24): on every page a thin masthead, the logo and the programme's name on the sea blue
+    and the banner's reefs at the right, a link home; the menu band below has no logo and is one thin row."""
+    for name in ("trends.html", "index.html", "cases.html"):
+        page, problems = _open(browser, dist, name, (1440, 900))
+        head = page.evaluate("(() => { const r = document.querySelector('.masthead').getBoundingClientRect(); return [r.top, r.height]; })()")
+        assert head[0] == 0 and 60 <= head[1] <= 92, (name, head)
+        assert page.locator(".masthead .masthead-logo").count() == 1 and page.locator(".navband img").count() == 0, "the logo once, in the masthead"
+        assert page.locator(".masthead").get_attribute("href").endswith("index.html")
+        assert "Research Initiative" in page.locator(".masthead-name").inner_text()
+        assert page.evaluate("document.querySelector('.navband').getBoundingClientRect().height") <= 44, "one thin row"
+        assert problems == []
+        page.close()
+    page, problems = _open(browser, dist, "trends.html", (390, 800))
+    assert page.evaluate("document.querySelector('.masthead').getBoundingClientRect().height") <= 66
+    assert not page.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
     assert problems == []
     page.close()
 
