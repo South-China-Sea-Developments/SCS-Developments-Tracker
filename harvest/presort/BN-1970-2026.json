@@ -5,10 +5,9 @@
   "items": [
     {
       "event_id": "ev-42c20f440e",
-      "disposition": "new_move",
-      "criterion": "novelty",
+      "disposition": "unclear",
       "group": "BN1980-UK-protest",
-      "reason": "First protest at a rival's claim map (British High Commission note 020/4 of 4 Aug 1980 to Malaysia against the 1979 map's shelf limits and Louisa Reef; Haller-Trost 1994 p. 38 fn 198, Dzurek 1996 p. 21) - a new method against a 1979 baseline of nothing. But the actor is the British Crown for Brunei: under decision 03 (2026-11-23) only the Sultanate's own acts count as Brunei's, so the maintainer may reject it as colonial context instead; if rejected, ev-8f767ab50d falls with it."
+      "reason": "Recommend reject as a British act: the protest is British High Commission note 020/4 of 4 Aug 1980 to Malaysia against the 1979 map's shelf limits and Louisa Reef (Haller-Trost 1994 p. 38 fn 198; Dzurek 1996 p. 21), with no recorded part for the Sultanate's government, and decision 03 (2026-11-23) counts only the Sultanate's own acts as Brunei's, British acts for Brunei being colonial context. If the maintainer counts it anyway it is a new move (novelty): the first protest at a rival's claim map after a 1979 of nothing; ev-8f767ab50d follows its fate."
     },
     {
       "event_id": "ev-8f767ab50d",
