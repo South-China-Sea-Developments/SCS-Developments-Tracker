@@ -174,6 +174,22 @@ apply --from <export.json>` applies the decided rows to `data/`, archives them u
 is skipped and stays. The weekly task applies decided rows and pushes waiting ones as room frees.
 The rows count toward the base's 1,000-record cap.
 
+## The Episodes table (ticket 45)
+
+`Episodes` (`tblgnx0ydOXJsJskT`) holds the episodes the pipeline proposes: runs of accepted events by two
+claimants at the same place (within 25 km), each within six months of the last, with events by both sides.
+One row per proposal: the proposed name, the pair, the span, the number of events and one line per event
+(date, claimant, move, summary). The maintainer sets **Decision** to *confirm* (editing **Name** if he
+likes) or *reject*, with a **Note** if he wants one. An *extend* row is an episode he decided before, with
+events found since (listed in **New events**); confirming it keeps the episode's id and adds them.
+
+`python -m pipeline.episodes rows` builds the rows (leaving out proposals already open in the table);
+`python -m pipeline.episodes apply --from export.json --date D` writes the answers to `data/episodes.csv`,
+archives them under `harvest/airtable/episodes/` and prints the row ids to clear. The weekly task applies
+the answers in step A4 and proposes new episodes in step C9. The validator checks `data/episodes.csv`
+(`python -m pipeline.episodes check`): every event known and accepted, by one of the two claimants, and in
+one confirmed episode at most.
+
 ## Not done
 
 The `dataset_status` transitions after *In review* are not automated (the sync has no token to run
