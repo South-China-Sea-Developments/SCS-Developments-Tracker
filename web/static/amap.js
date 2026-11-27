@@ -347,13 +347,6 @@
     var hard = ms.filter(function (m) { return m.w >= 3; }).length;
     el("p", "amap-sum", ms.length + (ms.length === 1 ? " move" : " moves") + (extra || "") + "; " + hard + " coercive or force.", detail);
   }
-  function srLinks(prefix, ns) {
-    var p = el("p", "amap-top", prefix, detail);
-    ns.forEach(function (n, i) {
-      p.appendChild(button("amap-sr", n + " " + SR_NAMES[n], "", function () { select(n); }));
-      if (i < ns.length - 1) p.appendChild(document.createTextNode(", "));
-    });
-  }
   function none(what) { return state.mode === "cumulative" ? "No " + what + " yet." : "No " + what + " in these five years."; }
   // the selected sub-region's score at every window end, on the map's fixed scale (ticket 37); the
   // current window marked, and a click on the chart moves the map to that window
@@ -442,8 +435,6 @@
     el("h3", "amap-detail-head", "Across the sea, " + wl, detail);
     if (!all.length) { el("p", "amap-empty", none("moves"), detail); return; }
     summary(all);
-    var rising = DATA.subregions.features.map(function (f) { return f.properties.n; }).filter(function (n) { return change(n).dir === "up"; });
-    if (rising.length) srLinks("Rising since " + fiveLabel(state.end - SPAN) + ": ", rising);
     el("p", "amap-hint", state.mode === "cumulative"
       ? "Numbers: moves since " + FIRST_YEAR + ", building up year by year."
       : "Numbers: moves in these five years. ▲ ▼ a rise or fall of a fifth or more on the five years before.", detail);
