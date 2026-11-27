@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ pair.title }} · Between claimants · South China Sea Developments Tracker{% endblock %}
+{% block description %}How {{ pair.title }} have directed their assertive moves at each other in the South China Sea since 1970: how often, where, how coercively and for how long.{% endblock %}
+{% block body_class %}is-between is-pair{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="bcdata" type="application/json">{{ bc_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+{# One pair of claimants (ticket 44): the ten sub-regions shaded by the pair's score in the five years, the
+   pair's figures in the side panel, and the tabs below the map. between.js finds everything by id. #}
+{% set a_name = names[pair.a] %}{% set b_name = names[pair.b] %}
+<main id="main" class="bc">
+  <nav class="bc-crumb" aria-label="Breadcrumb"><a href="../between-claimants.html">Between claimants</a> › <span aria-current="page">{{ pair.title }}</span></nav>
+  <div class="bc-stage">
+    <form class="bc-side" id="bc-controls" aria-label="{{ pair.title }}: what the map shows" onsubmit="return false">
+      {% include "_between_side.html" %}
+      <div class="bc-summary" id="bc-summary" aria-live="polite"></div>
+      <fieldset class="bc-group"><legend>Direction</legend>
+        <div class="bc-seg bc-seg-3" role="radiogroup" aria-label="Direction">
+          <label><input type="radio" name="bc-pdir" value="both" checked><span>Both</span></label>
+          <label><input type="radio" name="bc-pdir" value="ab"><span>{{ a_name }} → {{ b_name }}</span></label>
+          <label><input type="radio" name="bc-pdir" value="ba"><span>{{ b_name }} → {{ a_name }}</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="bc-group"><legend>Show</legend>
+        <label class="bc-check"><input type="checkbox" id="bc-coer"><span>Coercive and force only</span></label>
+        <label class="bc-check"><input type="checkbox" id="bc-shared" checked><span>Share each move’s weight among its sub-regions</span></label>
+      </fieldset>
+      <p class="bc-intro">On the map, the pair’s score in each sub-region over the five years. The figure is the number of moves; ▲ ▼ mark a change of a fifth or more since the five years before. <a href="../methodology.html#between">How this is worked out</a></p>
+    </form>
+    <div class="bc-map-wrap">
+      <div id="bc-map" class="bc-map" role="region" aria-label="Map of the South China Sea: the ten sub-regions shaded by the score of {{ pair.title }} in the selected five years"></div>
+      <div class="bc-legend"><span>Score in each sub-region</span><span class="bc-ramp" aria-hidden="true"></span></div>
+    </div>
+  </div>
+  <section class="wrap bc-below">
+    {% if pair.apart %}<p class="bc-apart">Beijing treats Taipei’s claim as China’s own, so this pair is not read like the others and is left out of the rankings on the Between claimants map.</p>{% endif %}
+    <div class="bc-tabs" role="tablist" aria-label="Views of {{ pair.title }}">
+      <button type="button" role="tab" id="bc-t-time" aria-controls="bc-p-time" aria-selected="true">Over time</button>
+      <button type="button" role="tab" id="bc-t-long" aria-controls="bc-p-long" aria-selected="false" tabindex="-1">For how long</button>
+      <button type="button" role="tab" id="bc-t-where" aria-controls="bc-p-where" aria-selected="false" tabindex="-1">Where</button>
+      <button type="button" role="tab" id="bc-t-moves" aria-controls="bc-p-moves" aria-selected="false" tabindex="-1">The moves</button>
+      <button type="button" role="tab" id="bc-t-about" aria-controls="bc-p-about" aria-selected="false" tabindex="-1">About the data</button>
+    </div>
+    <div class="bc-panel" role="tabpanel" id="bc-p-time" aria-labelledby="bc-t-time"></div>
+    <div class="bc-panel" role="tabpanel" id="bc-p-long" aria-labelledby="bc-t-long" hidden></div>
+    <div class="bc-panel" role="tabpanel" id="bc-p-where" aria-labelledby="bc-t-where" hidden></div>
+    <div class="bc-panel" role="tabpanel" id="bc-p-moves" aria-labelledby="bc-t-moves" hidden></div>
+    <div class="bc-panel" role="tabpanel" id="bc-p-about" aria-labelledby="bc-t-about" hidden>
+      {% set n_pair = pair.n_ab + pair.n_ba %}{% set n_src = pair.languages.values()|sum %}
+      {% if n_pair %}
+      <p>{{ pair.n_ab }} recorded move{{ '' if pair.n_ab == 1 else 's' }} by {{ a_name }} directed at {{ b_name }}, and {{ pair.n_ba }} by {{ b_name }} directed at {{ a_name }}, {{ pair.first }}–{{ pair.last }}.
+        {% if pair.chubb %}{{ pair.chubb }} of them ({{ meta.first_year }}–{{ meta.mats_last_year }}) are Andrew Chubb’s MATS 1.02 coding; {% endif %}{{ pair.project }} {{ 'is' if pair.project == 1 else 'are' }} the project’s, with his rules.</p>
+      {% if n_src %}<p>{{ n_src }} source{{ '' if n_src == 1 else 's' }} stand behind the pair’s {{ pair.n_events }} events:
+        {% for lang, n in pair.languages.items() %}{{ n }} in {{ lang_names.get(lang, lang) }}{% if not loop.last %}, {% endif %}{% endfor %}. Coverage depends on what each side and the press make public, so a lower count can mean fewer reports as well as fewer moves.</p>
+      {% else %}<p>The moves are known from Chubb’s case list; the pair has no separately sourced events yet.</p>{% endif %}
+      {% else %}<p>No moves by either claimant directed at the other are recorded yet.{% if pair.a in ('ID', 'TW') or pair.b in ('ID', 'TW') %} The records for Indonesia and Taiwan are still in review.{% endif %}</p>{% endif %}
+      <p>A move marks a step up in a claimant’s assertiveness on the year before, not every incident at sea, so a standoff held at the same level shows in how long a move lasts rather than in new moves. Moves aimed at all claimants are counted in the figures (in grey) but left out of the share coded coercive or force and off the map. <a href="../methodology.html#between">How this page is worked out</a></p>
+    </div>
+    {% include "_between_tools.html" %}
+  </section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/between.js"></script>{% endblock %}

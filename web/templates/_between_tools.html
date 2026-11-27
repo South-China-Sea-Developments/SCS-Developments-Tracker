@@ -1,0 +1,9 @@
+{# copy a link, cite, embed: as on the homepage (ticket 44) #}
+<div class="bc-tools">
+  <button type="button" class="bc-link-btn" id="bc-link">Copy a link to this view</button> <span class="bc-done" id="bc-link-done" aria-live="polite"></span>
+  <details class="bc-cite">
+    <summary>Cite or embed this view</summary>
+    <label class="bc-field"><span>Citation</span><textarea rows="4" readonly>{{ citation.text }}</textarea></label>
+    <label class="bc-field"><span>Embed on another page</span><textarea id="bc-embed" rows="3" readonly></textarea></label>
+  </details>
+</div>

@@ -303,6 +303,86 @@ def window_moves(moves: list[dict], features: dict | None = None, events_by_move
     return out
 
 
+# ---- Between claimants (ticket 44): how claimants direct their moves at one another ----------------------
+CLAIMANT_LETTER = {"CN": "C", "VN": "V", "PH": "P", "MY": "M", "BN": "B", "ID": "I", "TW": "R"}   # the dyad letters
+LETTER_CLAIMANT = {v: k for k, v in CLAIMANT_LETTER.items()}
+# where a claimant's lines meet on the Between claimants map: a point on its coast facing the sea, [lon, lat]
+CLAIMANT_ANCHOR = {"CN": [111.2, 21.9], "TW": [120.9, 23.6], "VN": [108.6, 14.4], "PH": [120.8, 15.4],
+                   "MY": [112.9, 2.9], "BN": [114.7, 4.6], "ID": [108.2, 3.9]}
+LANG_NAMES = {"en": "English", "vi": "Vietnamese", "zh": "Chinese", "ms": "Malay", "id": "Indonesian", "tl": "Filipino",
+              "fil": "Filipino", "ja": "Japanese", "fr": "French", "unknown": "not recorded"}
+SMALL_N = 10          # under this many moves no share coded coercive or force is given
+APART_PAIRS = {("CN", "TW")}   # drawn apart and left out of rankings: Beijing treats Taipei's claim as China's own
+
+
+def move_bearing(m: dict) -> tuple[list[str], bool]:
+    """Whom a move bears on, from its dyads (actor first: `CV` is China toward Vietnam): the other claimants
+    it is directed at, and whether it is aimed at all claimants (`xA`, or a bare `A`)."""
+    own = CLAIMANT_LETTER.get(m["claimant"], "")
+    targets, everyone = set(), False
+    for d in m.get("dyads", "").split():
+        if d == "A" or (len(d) == 2 and d[0] == own and d[1] == "A"):
+            everyone = True
+        elif len(d) == 2 and d[0] == own and d[1] in LETTER_CLAIMANT and d[1] != own:
+            targets.add(LETTER_CLAIMANT[d[1]])
+    return sorted(targets), everyone
+
+
+def between_moves(moves: list[dict]) -> list[dict]:
+    """The accepted moves that bear on another claimant or on all of them, compact: id, claimant, year,
+    weight, highest type, sub-regions, ongoing-through year, the claimants it is directed at (`to`),
+    whether it is aimed at all claimants (`a`), who coded it and the description's first 220 characters."""
+    out = []
+    for m in sorted(moves, key=lambda m: (m["year"], m["move_id"])):
+        if m["status"] != "accepted":
+            continue
+        to, everyone = move_bearing(m)
+        if not to and not everyone:
+            continue
+        w = move_weight(m)
+        y = int(m["year"])
+        o = int(m["ongoing_through"]) if m.get("ongoing_through", "").isdigit() else y
+        out.append({"m": m["move_id"], "c": m["claimant"], "y": y, "w": w,
+                    "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
+                    "o": max(o, y), "to": to, "a": int(everyone), "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220]})
+    return out
+
+
+def pair_slug(names: dict, a: str, b: str) -> str:
+    """A pair's page name, its two claimants in alphabetical order: china-vietnam."""
+    x, y = sorted((names.get(a, a), names.get(b, b)))
+    return re.sub(r"[^a-z0-9]+", "-", f"{x} {y}".lower()).strip("-")
+
+
+def between_pairs(bmoves: list[dict], events_by_move: dict, sources_by_event: dict, names: dict) -> list[dict]:
+    """Every pair of claimants, in name order, with its page name, its moves each way (all years) and what
+    the reader is told about the data behind it: who coded the moves, and the languages of the sources."""
+    codes = sorted(names, key=lambda c: names[c])
+    out = []
+    for i, a in enumerate(codes):
+        for b in codes[i + 1:]:
+            ab = [m for m in bmoves if m["c"] == a and b in m["to"]]
+            ba = [m for m in bmoves if m["c"] == b and a in m["to"]]
+            langs: dict[str, int] = {}
+            n_events = 0
+            for m in ab + ba:
+                for e in events_by_move.get(m["m"], ()):
+                    if e.get("status") != "accepted":
+                        continue
+                    n_events += 1
+                    for s in sources_by_event.get(e["event_id"], ()):
+                        lang = (s.get("language") or "").strip()
+                        lang = lang if re.fullmatch(r"[a-z]{2,3}(-[A-Za-z]{2,4})?", lang) else "unknown"
+                        langs[lang] = langs.get(lang, 0) + 1
+            years = [m["y"] for m in ab + ba]
+            out.append({"a": a, "b": b, "slug": pair_slug(names, a, b), "title": f"{names[a]} and {names[b]}",
+                        "n_ab": len(ab), "n_ba": len(ba), "apart": (a, b) in APART_PAIRS or (b, a) in APART_PAIRS,
+                        "chubb": sum(1 for m in ab + ba if m["cb"] == "chubb"), "project": sum(1 for m in ab + ba if m["cb"] != "chubb"),
+                        "first": min(years) if years else None, "last": max(years) if years else None,
+                        "n_events": n_events, "languages": dict(sorted(langs.items(), key=lambda kv: -kv[1]))})
+    return out
+
+
 def move_places(m: dict, events=()) -> list[dict]:
     """The points a move is placed at (ticket 34), first mention first: the features its description names,
     then those its accepted events' places name, then its events' own coordinates (a position the coder
@@ -755,7 +835,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                subregion_paths=paths, view_w=VIEW_W, view_h=VIEW_H,
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
-               dyad_targets=DYAD_NAMES, latest_moves=latest_moves(views, names))
+               dyad_targets=DYAD_NAMES, latest_moves=latest_moves(views, names), lang_names=LANG_NAMES)
     pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
              "downloads.html": "downloads.html"}
@@ -785,6 +865,24 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     (out_dir / "whats-new.html").write_text(env.get_template("whats-new.html").render(page="whats-new.html", root="", days=list(groups.items())[:60], **ctx), encoding="utf-8")
     (out_dir / "feed.xml").write_text(atom_feed(news, names), encoding="utf-8")
     (out_dir / "features.html").write_text(env.get_template("features.html").render(page="features.html", root="", groups=sorted(by_sr.items()), n_features=len(fpages), **ctx), encoding="utf-8")
+    # Between claimants (ticket 44): the page of all pairs, and one page per pair carrying only its own moves
+    bmoves = between_moves(published)
+    bpairs = between_pairs(bmoves, events_by_move, sources_by_event, names)
+    bbase = {"span": WINDOW_SPAN, "ends": mapd["assert"]["ends"], "names": names, "subregion_names": mapd["subregion_names"],
+             "subregions": mapd["subregions"], "anchors": CLAIMANT_ANCHOR, "small_n": SMALL_N,
+             "pairs": [{k: p[k] for k in ("a", "b", "slug", "title", "apart")} for p in bpairs],
+             "mats_last_year": schema.MATS_YEARS[-1], "type_labels": TYPE_LABELS}
+    def bjson(d: dict) -> str:
+        return json.dumps(d, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    (out_dir / "between-claimants.html").write_text(env.get_template("between.html").render(
+        page="between", root="", bc_json=bjson({**bbase, "mode": "all", "moves": bmoves}), bc_pairs=bpairs, **ctx), encoding="utf-8")
+    (out_dir / "between-claimants").mkdir(exist_ok=True)
+    pair_tmpl = env.get_template("between-pair.html")
+    for bp in bpairs:
+        a, b = bp["a"], bp["b"]
+        own = [m for m in bmoves if (m["c"] == a and (b in m["to"] or m["a"])) or (m["c"] == b and (a in m["to"] or m["a"]))]
+        (out_dir / "between-claimants" / f"{bp['slug']}.html").write_text(pair_tmpl.render(
+            page="between", root="../", pair=bp, bc_pairs=bpairs, bc_json=bjson({**bbase, "mode": "pair", "pair": bp, "moves": own}), **ctx), encoding="utf-8")
     return agg
 
 

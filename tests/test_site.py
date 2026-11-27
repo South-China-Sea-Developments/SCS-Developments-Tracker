@@ -57,7 +57,8 @@ def test_known_counts_appear_in_aggregates(dist):
 
 
 def test_bundle_is_self_contained_and_relative(dist):
-    for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html", "downloads.html", "map.html"):
+    for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html", "downloads.html", "map.html",
+                 "between-claimants.html", "between-claimants/china-vietnam.html"):
         html = (dist / page).read_text(encoding="utf-8")
         # every src/href that is not an external link is relative and resolves from the page's own folder
         for attr, target in re.findall(r'(src|href)="([^"]+)"', html):
@@ -100,7 +101,8 @@ def _tile_stub(tiles):
     return stub
 
 
-@pytest.mark.parametrize("page_name", ["index.html", "map.html", "trends.html", "methodology.html", "cases.html", "downloads.html"])
+@pytest.mark.parametrize("page_name", ["index.html", "map.html", "trends.html", "methodology.html", "cases.html", "downloads.html",
+                                       "between-claimants.html", "between-claimants/china-vietnam.html"])
 @pytest.mark.parametrize("viewport", [(1280, 900), (1024, 768), (390, 800)])
 def test_pages_render_without_errors(browser, dist, page_name, viewport):
     page, problems = _open(browser, dist, page_name, viewport)
@@ -1016,3 +1018,76 @@ def test_whats_new_and_its_feed(tmp_path):
     links = [e.getElementsByTagName("link")[0].getAttribute("href") for e in entries]
     assert all(h.startswith(SITE_URL) for h in links)
     assert 'type="application/atom+xml"' in (out / "index.html").read_text(encoding="utf-8")
+
+
+# ---- Between claimants (ticket 44) ---------------------------------------------------------------------------
+LETTER = {"CN": "C", "VN": "V", "PH": "P", "MY": "M", "BN": "B", "ID": "I", "TW": "R"}
+
+
+def _bcdata(path):
+    return json.loads(re.search(r'<script id="bcdata" type="application/json">(.*?)</script>', path.read_text(encoding="utf-8"), re.S).group(1))
+
+
+def test_between_claimants_pages_build(dist):
+    assert (dist / "between-claimants.html").exists()
+    pages = sorted(p.name for p in (dist / "between-claimants").glob("*.html"))
+    assert len(pages) == 21 and "china-vietnam.html" in pages and "indonesia-taiwan.html" in pages
+    assert 'href="between-claimants.html"' in (dist / "index.html").read_text(encoding="utf-8")
+    assert 'id="between"' in (dist / "methodology.html").read_text(encoding="utf-8")
+
+
+def test_between_claimants_counts_match_the_moves(dist):
+    moves = [m for m in read_csv(DATA_DIR / "moves.csv") if m["status"] == "accepted"]
+    d = _bcdata(dist / "between-claimants.html")
+    for a, b in (("CN", "VN"), ("VN", "CN"), ("CN", "PH"), ("PH", "CN"), ("PH", "VN")):
+        want = sum(1 for m in moves if m["claimant"] == a and LETTER[a] + LETTER[b] in m["dyads"].split())
+        assert sum(1 for m in d["moves"] if m["c"] == a and b in m["to"]) == want, (a, b)
+    want_all = sum(1 for m in moves if m["claimant"] == "CN" and {"CA", "A"} & set(m["dyads"].split()))
+    assert sum(1 for m in d["moves"] if m["c"] == "CN" and m["a"]) == want_all
+    # each move carries the homepage map's weight
+    home = {m["m"]: m["w"] for m in json.loads((dist / "data/events.json").read_text(encoding="utf-8"))["assert"]["moves"]}
+    assert all(m["w"] == home[m["m"]] for m in d["moves"])
+    # a pair's page carries the two claimants' moves only, and its counts
+    p = _bcdata(dist / "between-claimants" / "china-vietnam.html")
+    assert p["mode"] == "pair" and {m["c"] for m in p["moves"]} <= {"CN", "VN"}
+    assert p["pair"]["n_ab"] == sum(1 for m in moves if m["claimant"] == "CN" and "CV" in m["dyads"].split())
+    assert p["pair"]["n_ba"] == sum(1 for m in moves if m["claimant"] == "VN" and "VC" in m["dyads"].split())
+
+
+def test_between_claimants_draws_offline(browser, dist):
+    page, problems = _open(browser, dist, "between-claimants.html")
+    page.wait_for_timeout(1500)
+    assert page.locator("#bc-map canvas.maplibregl-canvas").count() == 1
+    assert page.locator(".bc-node").count() == 7
+    assert page.locator("#bc-card .bc-rank li").count() >= 1
+    page.select_option("#bc-show", "CN")
+    page.wait_for_timeout(300)
+    assert "China’s moves toward each claimant" in page.inner_text("#bc-card")
+    assert page.evaluate("location.hash").endswith("-c-cn")
+    page.check("#bc-all")
+    assert page.inner_text("#bc-label").startswith("1970")
+    page.click("#bc-table-box summary")
+    page.wait_for_function("document.querySelectorAll('#bc-table td').length === 49")
+    assert not problems, problems
+    page.close()
+
+
+def test_a_pair_page_draws_and_its_tabs_open(browser, dist):
+    page, problems = _open(browser, dist, "between-claimants/china-vietnam.html")
+    page.wait_for_timeout(1500)
+    assert page.locator(".bc-node").count() == 2
+    assert page.inner_text("#bc-summary").startswith("Score")
+    for t in ("long", "where", "moves", "about"):
+        page.click(f"#bc-t-{t}")
+        assert page.locator(f"#bc-p-{t}").is_visible() and page.locator("#bc-p-time").is_hidden()
+    assert page.locator("#bc-p-where tbody tr").count() == 10
+    page.click("#bc-t-moves")
+    assert page.locator("#bc-p-moves a").count() >= 1
+    assert page.evaluate("location.hash").endswith("-tab-moves")
+    assert not problems, problems
+    page.close()
+    empty, problems = _open(browser, dist, "between-claimants/indonesia-taiwan.html")
+    empty.wait_for_timeout(800)
+    assert "No moves" in empty.inner_text("#bc-summary")
+    assert not problems, problems
+    empty.close()
