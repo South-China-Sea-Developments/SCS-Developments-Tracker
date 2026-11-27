@@ -1,24 +1,9 @@
 {
  "decisions": [
   {
-   "event_id": "ev-0b4811f8e6",
+   "event_id": "ev-41c66632fc",
    "action": "reject",
-   "note": "continuation of ev-cfb8519228"
-  },
-  {
-   "event_id": "ev-7dc3b8cb21",
-   "action": "reject",
-   "note": "continuation of ev-cfb8519228"
-  },
-  {
-   "event_id": "ev-9fa40707b3",
-   "action": "reject",
-   "note": "continuation of ev-cfb8519228"
-  },
-  {
-   "event_id": "ev-f4e795ed57",
-   "action": "reject",
-   "note": "continuation of ev-cfb8519228"
+   "note": "continuation of ev-1a79a51ff2"
   }
  ],
  "reviewer": "Angelo"

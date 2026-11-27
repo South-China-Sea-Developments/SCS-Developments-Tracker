@@ -1,6 +1,6 @@
 {
  "run_id": "20261102T0724",
- "exported_on": "2026-11-25",
+ "exported_on": "2026-11-27",
  "records": [
   {
    "airtable_id": "recZdEOH2QGzoL2PO",
@@ -113,6 +113,64 @@
    "claimant": "PH",
    "new_domains": [
     "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec8TSl1gpfUXKCHe",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Ministry of Defence; Defence Minister Mohamed Khaled Nordin",
+   "lat": 7.5,
+   "suggestion_reasoning": "An official announcement of a decision to install military radar on Malaysia's occupied Spratly feature is a verbal assertion of administration over a disputed possession; coded declarative because the document reports only the announcement, not the installation (a coder may prefer demonstrative). The exact date is not stated; the photo caption places the minister at Labuan Air Base 'last Friday' (30 Oct 2026), so the date is inferred to October 2026 at month precision. [confidence: low]",
+   "date_end": "2026-10-31",
+   "new_dyads": "MA",
+   "excerpt": "Kementerian Pertahanan turut memutuskan untuk memasang sistem radar baharu di Pulau Layang-Layang, Sabah bagi memperkukuh keupayaan pemantauan dan amaran awal.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T02:28:55.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "20261102T0724"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang”.",
+   "reviewer": "Angelo",
+   "sources": "Memodenkan senjata memperkukuh kedaulatan — Utusan Malaysia (Malay) 2026-11-02\nhttps://www.utusan.com.my/rencana/2026/11/memodenkan-senjata-memperkukuh-kedaulatan/?utm_source=rss&utm_medium=rss&utm_campaign=memodenkan-senjata-memperkukuh-kedaulatan",
+   "pull_request": 31,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:35:50.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-41c66632fc",
+   "run_id": "20261102T0724",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-1a79a51ff2",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Malaysian Defence Minister Mohamed Khaled Nordin announced that the Ministry of Defence had decided to install a new air-defence radar system on Pulau Layang-Layang (Swallow Reef) in the Spratlys, alongside other measures to strengthen military deployments in Sabah.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-10-01",
+   "presort": "continuation of ev-1a79a51ff2 (a candidate, provisional) — Same act/practice already in run MY-2021-2026 as ev-1a79a51ff2 (Khaled Nordin's 16 June 2026 announcement of an air-defence radar on Pulau Layang-Layang); a restatement of the same decision. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
    ]
   },
   {

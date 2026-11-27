@@ -1,6 +1,6 @@
 {
  "run_id": "GAPS-20261124",
- "exported_on": "2026-11-25",
+ "exported_on": "2026-11-27",
  "records": [
   {
    "airtable_id": "recORv1nWRQ7FhYZp",
@@ -168,6 +168,124 @@
    ]
   },
   {
+   "airtable_id": "rec3akrnSKxZIKb5k",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Armed Forces; Chief of Defence Force Gen Mohd Nizam Jaafar",
+   "suggestion_reasoning": "A public statement by Malaysia's top military officer that Chinese presence in the EEZ is answered with diplomatic notes is a verbal assertion of jurisdiction; it confirms notes but gives no dates for them, so the event is the statement itself. [confidence: low]",
+   "date_end": "2025-10-31",
+   "new_dyads": "MC",
+   "excerpt": "We are handling it — through diplomatic notes, sometimes in our own way.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:29:56.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Malaysia's EEZ (South China Sea)",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "'We are handling it': Defence force chief says Chinese ships in EEZ under control — Malay Mail 2025-10-31\nhttps://www.malaymail.com/news/malaysia/2025/10/31/we-are-handling-it-defence-force-chief-says-chinese-ships-in-eez-under-control/196783",
+   "pull_request": 144,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:31:27.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9457f3aa93",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "Routine statement",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On 31 October 2025, on the sidelines of the ADMM in Kuala Lumpur, Chief of Defence Force Gen Mohd Nizam Jaafar said foreign vessels including Chinese ships were regularly present in Malaysia's EEZ and that Malaysia was handling them through diplomatic notes and its own means.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-10-31",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recjb4lhRApmF5Z7T",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA) Sarawak; First Admiral Mohd Khairi Abd Aziz",
+   "lat": 5.9,
+   "suggestion_reasoning": "An official MMEA statement reasserting Malaysian EEZ jurisdiction at the shoal in response to CCG presence is a verbal assertion (declarative). Statement date per article (issued the day before the 16 May dateline); year from URL path. [confidence: medium]",
+   "date_end": "2025-05-15",
+   "new_dyads": "MC",
+   "excerpt": "lies well within the country's Exclusive Economic Zone",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:33:41.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Luconia Shoals, off Miri",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked. Source's wording for the place: “Beting Patinggi Ali (Luconia Shoals), off Miri”.",
+   "reviewer": "Angelo",
+   "sources": "MMEA: Beting Patinggi Ali, Miri waters safe, secure despite CCG presence — The Borneo Post 2025-05-16\nhttps://www.theborneopost.com/2025/05/16/mmea-beting-patinggi-ali-miri-waters-safe-secure-despite-ccg-presence/",
+   "pull_request": 144,
+   "new_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:30:50.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9c2f8e1dc5",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Routine statement",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On 15 May 2025 MMEA Sarawak director First Admiral Mohd Khairi Abd Aziz stated that Beting Patinggi Ali lies within Malaysia's EEZ under UNCLOS and that waters off Miri remained safe despite the China Coast Guard's presence in the area, saying MMEA stood ready to act to protect Malaysian fishermen.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-05-15",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
    "airtable_id": "rece6x3wJbJYVL18t",
    "archived_on": "2026-11-25",
    "actors": "Government of Viet Nam; Ministry of Foreign Affairs; National Assembly Standing Committee",
@@ -217,6 +335,170 @@
    "new_domains": [
     "domestic",
     "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recU5TwdPAqcwdqyy",
+   "archived_on": "2026-11-27",
+   "actors": "SapuraOMV Upstream; Petronas; Shell",
+   "suggestion_reasoning": "Start of hydrocarbon production in a block off Sarawak within the area China claims; the article does not state the field's position (register line 531). [confidence: medium]",
+   "date_end": "2024-07-09",
+   "new_dyads": "MC",
+   "excerpt": "SapuraOMV Upstream Sdn Bhd has commenced gas production from its Jerun field in Malaysia, under the SK408",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:29:38.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Jerun field, SK408 production sharing contract",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "reviewer": "Angelo",
+   "sources": "SapuraOMV delivers first gas from Jerun platform in Malaysia — The Star 2024-07-09\nhttps://thestar.com.my/business/business-news/2024/07/09/sapuraomv-delivers-first-gas-from-jerun-platform-in-malaysia",
+   "pull_request": 144,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:19:37.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b088992f0c",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "SapuraOMV Upstream, with partners Shell and Petronas, commenced gas production from the Jerun field under the SK408 production sharing contract, announced on 9 July 2024.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-07-01",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recP9EFAAYt3SCJik",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Defence (MINDEF); Royal Malaysian Navy (TLDM)",
+   "lat": 5.9,
+   "suggestion_reasoning": "A parliamentary reply stating a standing naval-presence posture against foreign (by context Chinese) coast guard intrusions is a declarative assertion. Nationality is not named in the source. Close in content to the Jan 2026 'show of presence' item (ev-7dc0c2294b) and the 5 Feb 2026 debate reply (ev-53baf85095), but a separate act by a different ministry; maintainer may merge. [confidence: low]",
+   "date_end": "2026-02-06",
+   "new_dyads": "MC",
+   "excerpt": "sebarang kehadiran asing yang menggugat kedaulatan negara akan ditangani secara tegas dan berhemah",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:32:18.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Luconia Shoals, about 80 nm off Bintulu",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "machine_note": "Source's wording for the place: “Beting Patinggi Ali (Luconia Shoals), about 80 nm off Bintulu”.",
+   "reviewer": "Angelo",
+   "sources": "TLDM terus peraga kehadiran pertahan kedaulatan Beting Patinggi Ali — Air Times News Network 2026-02-06\nhttps://www.airtimes.my/2026/02/06/tldm-terus-peraga-kehadiran-pertahan-kedaulatan-beting-patinggi-ali/",
+   "pull_request": 144,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:34:06.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d32010b527",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Routine statement",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In a Dewan Rakyat written reply on 6 February 2026, the Ministry of Defence said the Royal Malaysian Navy was maintaining persistent presence, layered surveillance and integrated response against foreign coast guard vessel intrusions near Beting Patinggi Ali, and that any foreign presence threatening sovereignty would be handled firmly.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-02-06",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recIOA7MVCjoQCxMV",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Petronas Carigali",
+   "suggestion_reasoning": "First production at the field near Luconia Shoals whose construction had drawn Chinese coast guard pressure; the day of first gas is not given, only 'recently' (register line 531). [confidence: medium]",
+   "date_end": "2024-08-20",
+   "new_dyads": "MC",
+   "excerpt": "Petroliam Nasional Berhad (PETRONAS) recently commenced its first gas production at the Kasawari field,\n\nMalaysian state-owned Petronas has started first gas production at the Kasawari field",
+   "fldDaG8ZsjVVmdNQt": "2026-11-24T20:29:38.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Kasawari field, Block SK316, about 200km off Sarawak",
+   "run": [
+    "GAPS-20261124"
+   ],
+   "reviewer": "Angelo",
+   "sources": "200km offshore Sarawak, PETRONAS' Kasawari field begins first gas production at 200 mln cubic feet daily — DayakDaily 2024-08-21\nhttps://dayakdaily.com/200km-offshore-sarawak-petronas-kasawari-field-begins-first-gas-production-at-200-mln-cubic-feet-daily\nMalaysia's Petronas achieves first gas at Kasawari — Argus Media\nhttps://argusmedia.com/en/news-and-insights/latest-market-news/2600077-malaysia-s-petronas-achieves-first-gas-at-kasawari",
+   "pull_request": 144,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:28:34.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-eac0b5d654",
+   "run_id": "GAPS-20261124",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Expansion of the exploitation (see: https://www.worldoil.com/news/2024/8/21/petronas-achieves-first-gas-production-from-kasawari-field-offshore-malaysia/)",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Petronas commenced first gas production at the Kasawari field in Block SK316, about 200km off Sarawak, at an initial 200 million standard cubic feet per day, announced on 20 August 2024.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-08-01",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
    ]
   }
  ]

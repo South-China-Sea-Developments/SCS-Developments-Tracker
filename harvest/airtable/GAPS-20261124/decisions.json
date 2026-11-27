@@ -1,41 +1,64 @@
 {
  "decisions": [
   {
-   "event_id": "ev-37f3848d90",
+   "event_id": "ev-9457f3aa93",
    "action": "reject",
-   "note": "Most likely already covered by AMTI and a single source is a low level of reliability, with no clear, quantifiable data."
+   "note": "Routine statement"
   },
   {
-   "event_id": "ev-39c7feddf8",
+   "event_id": "ev-9c2f8e1dc5",
    "action": "reject",
-   "note": "Precedents"
+   "note": "Routine statement"
   },
   {
-   "event_id": "ev-5fcdbb2293",
-   "action": "reject",
-   "note": "Precedents in 2021"
-  },
-  {
-   "event_id": "ev-ad017b31fe",
+   "event_id": "ev-b088992f0c",
    "action": "new_move",
    "note": "",
    "new_move": {
-    "type": "coercive",
-    "intensification_criterion": "novelty",
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
     "year": "",
     "ongoing_through": "",
     "dyads": [
-     "VC"
+     "MC"
     ],
     "domains": [
-     "domestic",
-     "diplomatic"
+     "physical"
     ],
     "issues": [
-     "administrative"
+     "energy"
     ],
     "subregions": [
-     "1"
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-d32010b527",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-eac0b5d654",
+   "action": "new_move",
+   "note": "Expansion of the exploitation (see: https://www.worldoil.com/news/2024/8/21/petronas-achieves-first-gas-production-from-kasawari-field-offshore-malaysia/)",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
     ],
     "description": ""
    }
