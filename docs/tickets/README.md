@@ -35,3 +35,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 29 | [Map polish after launch](29-map-polish.md) | 27 | built |
 | 30 | [The whole banner: folding and a curtain](30-banner-fold-and-curtain.md) | 28 | built |
 | 42 | [Brunei, the seventh claimant](42-brunei.md) | 11 | built; candidates await review |
+| 44 | [Between claimants: how claimants direct their moves at one another](44-between-claimants.md) | 27 | built; fine-tuning on the live site |

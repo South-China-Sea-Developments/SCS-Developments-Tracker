@@ -1,0 +1,17 @@
+{# the side panel both Between claimants pages share (ticket 44): what is shown, and the five years #}
+      <div class="bc-head">
+        <p class="kicker bc-kicker">Between claimants</p>
+        <label class="bc-show"><span class="sr-only">Show</span>
+          <select id="bc-show" aria-label="Claimants shown">
+            <option value="ALL"{% if not pair %} selected{% endif %}>All claimants</option>
+            <optgroup label="One claimant">{% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}</optgroup>
+            <optgroup label="A pair">{% for p in bc_pairs %}<option value="pair:{{ p.slug }}"{% if pair and pair.slug == p.slug %} selected{% endif %}>{{ p.title }}</option>{% endfor %}</optgroup>
+          </select></label>
+      </div>
+      <fieldset class="bc-group bc-time"><legend id="bc-time-legend">Five years to</legend>
+        <div class="bc-time-row"><output class="bc-when" id="bc-label" for="bc-year"></output>
+          <button type="button" class="bc-play" id="bc-play" aria-pressed="false" aria-label="Play through the years">▶</button></div>
+        <div class="bc-spark" id="bc-spark" aria-hidden="true"></div>
+        <label class="bc-slider"><span class="sr-only">Last year of the five</span><input type="range" id="bc-year" min="0" max="0" step="1" value="0"></label>
+        <label class="bc-check"><input type="checkbox" id="bc-all"><span>All years, {{ meta.first_year }}–{{ meta.last_year }}</span></label>
+      </fieldset>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Between claimants · South China Sea Developments Tracker{% endblock %}
+{% block description %}How each South China Sea claimant has directed its assertive moves at the others since 1970: how often, where, how coercively and for how long.{% endblock %}
+{% block body_class %}is-between{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="bcdata" type="application/json">{{ bc_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+{# Between claimants (ticket 44): a line joins each pair of claimants, its width and shade the pair's score
+   for the five years (the homepage's measure); choosing a claimant turns the lines into its arrows; a
+   pair opens its own page. between.js finds everything by id. #}
+<main id="main" class="bc">
+  <div class="bc-stage">
+    <form class="bc-side" id="bc-controls" aria-label="Between claimants: what the map shows" onsubmit="return false">
+      {% set pair = None %}{% include "_between_side.html" %}
+      <fieldset class="bc-group" id="bc-dir-box" hidden><legend>Direction</legend>
+        <div class="bc-seg" role="radiogroup" aria-label="Direction">
+          <label><input type="radio" name="bc-dir" value="to" checked><span id="bc-dir-to">Toward the others</span></label>
+          <label><input type="radio" name="bc-dir" value="from"><span id="bc-dir-from">The others toward it</span></label>
+        </div>
+      </fieldset>
+      <p class="bc-intro" id="bc-intro">Each line joins two claimants. Its width and shade show the pair’s score over the years chosen: the moves either has directed at the other, weighted by type as on the homepage. ▲ ▼ mark a change of a fifth or more since the five years before.</p>
+      <div class="bc-legend" id="bc-legend">
+        <span>Score: moves weighted declarative 1 to force 4</span>
+        <span class="bc-ramp" aria-hidden="true"></span>
+        <span id="bc-legend-note">Pairs without moves in these years are not drawn. China and Taiwan (dashed) is shown apart and left out of rankings.</span>
+      </div>
+      <p class="bc-intro"><a href="methodology.html#between">How this page is worked out</a></p>
+    </form>
+    <div class="bc-map-wrap">
+      <div id="bc-map" class="bc-map" role="region" aria-label="Map of the South China Sea: lines between claimants, wider and darker for a higher score in the selected five years"></div>
+      <div class="bc-card" id="bc-card" aria-live="polite"></div>
+    </div>
+  </div>
+  <section class="wrap bc-below">
+    <details class="bc-table-box" id="bc-table-box">
+      <summary>Every pair, in numbers</summary>
+      <p class="bc-note">Moves by the row’s claimant toward the column’s in the years chosen: the count, the mix by type (declarative to force, light to dark), and the share coded coercive or force. Grey: moves aimed at all claimants, counted but not in the share. Under {{ 10 }} moves no share is given.</p>
+      <div class="bc-table-scroll" id="bc-table"></div>
+    </details>
+    {% include "_between_tools.html" %}
+  </section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/between.js"></script>{% endblock %}
