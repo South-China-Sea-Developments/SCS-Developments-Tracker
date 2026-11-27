@@ -1,12 +1,19 @@
 {# the side panel both Between claimants pages share (ticket 44): what is shown, and the five years #}
       <div class="bc-head">
         <p class="kicker bc-kicker">Between claimants</p>
-        <label class="bc-show"><span class="sr-only">Show</span>
-          <select id="bc-show" aria-label="Claimants shown">
-            <option value="ALL"{% if not pair %} selected{% endif %}>All claimants</option>
-            <optgroup label="One claimant">{% for c in claimants %}<option value="{{ c.code }}">{{ c.name }}</option>{% endfor %}</optgroup>
-            <optgroup label="A pair">{% for p in bc_pairs %}<option value="pair:{{ p.slug }}"{% if pair and pair.slug == p.slug %} selected{% endif %}>{{ p.title }}</option>{% endfor %}</optgroup>
-          </select></label>
+        <div class="bc-pick">
+          <label><span class="sr-only">First claimant</span>
+            <select id="bc-first" aria-label="First claimant">
+              <option value="ALL">All claimants</option>
+              {% for c in claimants %}<option value="{{ c.code }}"{% if pair and pair.a == c.code %} selected{% endif %}>{{ c.name }}</option>{% endfor %}
+            </select></label>
+          <button type="button" class="bc-swap" id="bc-swap" aria-label="Swap the two claimants" title="Swap the two claimants">⇄</button>
+          <label><span class="sr-only">Second claimant</span>
+            <select id="bc-second" aria-label="Second claimant">
+              <option value="ALL">all others</option>
+              {% for c in claimants %}<option value="{{ c.code }}"{% if pair and pair.b == c.code %} selected{% endif %}>{{ c.name }}</option>{% endfor %}
+            </select></label>
+        </div>
       </div>
       <fieldset class="bc-group bc-time"><legend id="bc-time-legend">Five years to</legend>
         <div class="bc-time-row"><output class="bc-when" id="bc-label" for="bc-year"></output>

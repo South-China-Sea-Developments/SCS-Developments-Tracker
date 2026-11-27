@@ -11,6 +11,9 @@
   var src = document.getElementById("bcdata");
   if (!src || !document.getElementById("bc-map")) return;
   var D = JSON.parse(src.textContent);
+  // a pair's page can be read either way round: "-rev" puts the second claimant first (the swap button)
+  var REV = D.mode === "pair" && /-rev(?:-|$)/.test(location.hash);
+  if (REV) { var t0 = D.pair.a; D.pair.a = D.pair.b; D.pair.b = t0; }
   var NAMES = D.names, SPAN = D.span, ENDS = D.ends, FIRST = ENDS[0], LAST = ENDS[ENDS.length - 1], FIRST_YEAR = FIRST - SPAN + 1;
   var MOVES = D.moves, PAIR = D.mode === "pair" ? D.pair : null, SMALL = D.small_n || 10, MATS_END = D.mats_last_year;
   var TYPES = ["declarative", "demonstrative", "coercive", "force"], TL = D.type_labels || {};
@@ -266,10 +269,12 @@
       CODES.forEach(function (b) {
         var td = el("td");
         if (a === b) { td.className = "self"; tr.appendChild(td); return; }
-        var s = dirWin(a, b, state.end), na = allWin(a, state.end, b).n;
-        td.appendChild(el("strong", "", String(s.n + na)));
-        td.appendChild(bar(s, na, 0.42));
-        td.appendChild(el("span", "", s.n >= SMALL ? shareShort(s) + " coercive" : (s.n ? "few moves" : (na ? "all-claimant only" : ""))));
+        var s = dirWin(a, b, state.end), na = allWin(a, state.end, b).n, link = el("a"); link.href = pairURL(a, b);
+        link.appendChild(el("strong", "", String(s.n + na)));
+        link.appendChild(bar(s, na, 0.42));
+        link.appendChild(el("span", "", s.n >= SMALL ? shareShort(s) + " coercive" : (s.n ? "few moves" : (na ? "all-claimant only" : ""))));
+        link.setAttribute("aria-label", NAMES[a] + " toward " + NAMES[b] + ": open the pair’s page");
+        td.appendChild(link);
         td.title = NAMES[a] + " toward " + NAMES[b] + ", " + windowText() + ": " + s.n + " directed at " + NAMES[b] + (na ? ", " + na + " aimed at all claimants" : "") + "; " + share(s);
         tr.appendChild(td);
       });
@@ -521,13 +526,26 @@
   });
 
   // ---- what is shown -------------------------------------------------------------------------------------
-  var show = $("bc-show");
-  show.addEventListener("change", function () {
-    var v = show.value;
-    if (v.indexOf("pair:") === 0) { location.href = ROOT + "between-claimants/" + v.slice(5) + ".html" + hashFor(true); return; }
-    if (PAIR) { location.href = ROOT + "between-claimants.html" + hashFor(true) + (v === "ALL" ? "" : "-c-" + v.toLowerCase()); return; }
-    state.who = v; render();
-  });
+  // what is shown: two short choices and a swap (rounds 1-3 of the design). All claimants: every pair;
+  // one claimant and "all others": its arrows; two claimants: their own page
+  var first = $("bc-first"), second = $("bc-second"), swap = $("bc-swap");
+  function pairURL(a, b) { return ROOT + "between-claimants/" + SLUG[key(a, b)] + ".html" + hashFor(true) + (SLUG[key(a, b)] && NAMES[a] > NAMES[b] ? "-rev" : ""); }
+  function paintPick() {
+    var a = PAIR ? PAIR.a : state.who, b = PAIR ? PAIR.b : "ALL";
+    first.value = a; second.value = b;
+    second.disabled = a === "ALL";
+    Array.prototype.forEach.call(second.options, function (o) { o.disabled = o.value !== "ALL" && o.value === a; });
+    swap.disabled = !PAIR;
+  }
+  function pick() {
+    var a = first.value, b = second.value;
+    if (a === "ALL") { if (PAIR) location.href = ROOT + "between-claimants.html" + hashFor(true); else { state.who = "ALL"; render(); } return; }
+    if (b === "ALL" || b === a) { if (PAIR) location.href = ROOT + "between-claimants.html" + hashFor(true) + "-c-" + a.toLowerCase(); else { state.who = a; render(); } return; }
+    location.href = pairURL(a, b);
+  }
+  first.addEventListener("change", function () { if (first.value === second.value) second.value = "ALL"; pick(); });
+  second.addEventListener("change", pick);
+  swap.addEventListener("click", function () { if (PAIR) { location.hash = hashFor(false).replace(/-rev/, "") + (REV ? "" : "-rev"); location.reload(); } });
   Array.prototype.forEach.call(document.querySelectorAll('input[name="bc-dir"]'), function (r) { r.addEventListener("change", function () { if (r.checked) { state.dir = r.value; render(); } }); });
   Array.prototype.forEach.call(document.querySelectorAll('input[name="bc-pdir"]'), function (r) { r.addEventListener("change", function () { if (r.checked) { state.pdir = r.value; render(); } }); });
   var coer = $("bc-coer"), shared = $("bc-shared");
@@ -541,11 +559,11 @@
     var h = "#y" + state.end + (state.all ? "-all" : "");
     if (timeOnly) return h;
     if (!PAIR) { if (state.who !== "ALL") h += "-c-" + state.who.toLowerCase() + (state.dir === "from" ? "-from" : ""); }
-    else { if (state.pdir !== "both") h += "-d-" + state.pdir; if (state.coer) h += "-co"; if (!state.shared) h += "-full"; if (state.tab !== "time") h += "-tab-" + state.tab; }
+    else { if (state.pdir !== "both") h += "-d-" + state.pdir; if (state.coer) h += "-co"; if (!state.shared) h += "-full"; if (state.tab !== "time") h += "-tab-" + state.tab; if (REV) h += "-rev"; }
     return h;
   }
   function readHash() {
-    var m = /^#y(\d{4})(-all)?(?:-c-([a-z]{2}))?(-from)?(?:-d-(ab|ba))?(-co)?(-full)?(?:-tab-(time|long|where|moves|about))?$/.exec(location.hash);
+    var m = /^#y(\d{4})(-all)?(?:-c-([a-z]{2}))?(-from)?(?:-d-(ab|ba))?(-co)?(-full)?(?:-tab-(time|long|where|moves|about))?(-rev)?$/.exec(location.hash);
     if (!m) return;
     var y = parseInt(m[1], 10); if (y >= FIRST && y <= LAST) state.end = y;
     state.all = !!m[2];
@@ -567,12 +585,13 @@
 
   function render() {
     paintTime();
+    paintPick();
     if (PAIR) renderPair(); else renderAll();
     remember();
   }
   function sync() {   // the controls, from the state
     allBox.checked = state.all;
-    if (show && !PAIR) show.value = state.who;
+    paintPick();
     Array.prototype.forEach.call(document.querySelectorAll('input[name="bc-dir"]'), function (r) { r.checked = r.value === state.dir; });
     Array.prototype.forEach.call(document.querySelectorAll('input[name="bc-pdir"]'), function (r) { r.checked = r.value === state.pdir; });
     if (coer) coer.checked = state.coer;
@@ -581,11 +600,16 @@
   window.addEventListener("hashchange", function () { readHash(); sync(); if (PAIR) setTab(state.tab); render(); });
   readHash();
   allBox.checked = state.all;
-  if (show && !PAIR) show.value = state.who;
   Array.prototype.forEach.call(document.querySelectorAll('input[name="bc-dir"]'), function (r) { r.checked = r.value === state.dir; });
   Array.prototype.forEach.call(document.querySelectorAll('input[name="bc-pdir"]'), function (r) { r.checked = r.value === state.pdir; });
   if (coer) coer.checked = state.coer;
   if (shared) shared.checked = state.shared;
-  if (PAIR) setTab(state.tab);
+  if (PAIR) {
+    var ab = $("bc-pdir-ab"), ba = $("bc-pdir-ba");
+    if (ab) ab.textContent = NAMES[PAIR.a] + " → " + NAMES[PAIR.b];
+    if (ba) ba.textContent = NAMES[PAIR.b] + " → " + NAMES[PAIR.a];
+    setTab(state.tab);
+  }
+  paintPick();
   render();
 })();
