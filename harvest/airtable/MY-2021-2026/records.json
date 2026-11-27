@@ -1,0 +1,2371 @@
+{
+ "run_id": "MY-2021-2026",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "recDDjMD5vmxzB7Kr",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy; Royal Malaysian Air Force; MMEA; Deputy Defence Minister Adly Zahari",
+   "lat": 5.9,
+   "suggestion_reasoning": "A standing joint military and coast guard operation to keep continuous presence at a contested feature is unilateral presence without reported confrontation; demonstrative. The operation's start date is not given; it replaces or supplements the Operasi Wira named in 2021. [confidence: medium]",
+   "date_end": "2024-03-25",
+   "new_dyads": "MC",
+   "excerpt": "Justeru, satu operasi khusus iaitu Operasi Satria telah diwujudkan bagi\n\nOperasi Satria",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Luconia Shoals, Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked. Source's wording for the place: “Beting Patinggi Ali (Luconia Shoals), Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Negara, 25 Mac 2024 — Parliament of Malaysia (Digital Hansard) 2024-03-25\nhttps://downloads-hansard.parlimen.gov.my/dewannegara/dn_2024-03-25.csv\nPenyata Rasmi Dewan Rakyat, 20 Mac 2024 — Parliament of Malaysia (Digital Hansard) 2024-03-20\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2024-03-20.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:16:36.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-1390b92e06",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Clear precedent - continuing practice",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Deputy Defence Minister Adly Zahari told the Dewan Negara on 25 March 2024 (having told the Dewan Rakyat on 20 March) that, in response to China Coast Guard intrusions at Beting Patinggi Ali, a special operation, Operasi Satria, had been established to monitor the area continuously 24 hours a day, seven days a week with Royal Malaysian Navy, RMAF and MMEA assets, in addition to the navy's periodic patrols of Malaysia's maritime zone off Sarawak.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-03-25",
+   "presort": "unclear — Operasi Satria, a 24/7 joint RMN/RMAF/MMEA operation at Beting Patinggi Ali, would be novelty if it began in 2024, but its start date is not given and in 2023 the defence minister already described assets stationed there day and night (ev-1d18247d5c). Settle by the start date of Op Satria (2023 or earlier: continuation of ev-1d18247d5c). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recsORpSrdGJpRY0Y",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra)",
+   "lat": 8.16667,
+   "suggestion_reasoning": "A diplomatic complaint to another claimant over its island building at a feature Malaysia claims is a verbal assertion; declarative. New for Malaysia in this period (a rare bilateral protest against Vietnam rather than China). Reported by two unnamed officials; date known only as 'early October'. [confidence: medium]",
+   "date_end": "2024-10-10",
+   "new_dyads": "MV",
+   "excerpt": "Malaysia’s letter was sent to Vietnam’s foreign ministry in early October but has so far received no reply\n\nBarque Canada reef, and Philippines-controlled Commodore and Rizal reefs.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Barque Canada Reef, Spratly Islands",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia complains to Vietnam over South China Sea reef expansion — Free Malaysia Today (Reuters) 2024-11-04\nhttps://www.freemalaysiatoday.com/category/highlight/2024/11/04/malaysia-complains-to-vietnam-over-south-china-sea-reef-expansion\nMalaysia objects to Vietnam’s island building in South China Sea: media report — BenarNews 2024-11-05\nhttps://www.benarnews.org/english/news/malaysian/malaysia-vietnam-island-building-complaint-south-china-sea-11052024114948.html",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:29:35.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-139e257c21",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "In early October 2024 Malaysia sent a letter of complaint to Vietnam's foreign ministry over Vietnam's artificial enlargement of Barque Canada Reef, a Spratly feature claimed by both countries; the letter criticised the enlargement of the feature but not the infrastructure built on it, and was reported by Reuters on 4 November 2024.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-10-01",
+   "presort": "new move (novelty) — A complaint to Vietnam over its enlargement of Barque Canada Reef is Malaysia's first protest against another claimant's island-building, with nothing comparable in 2023 (protests to China only, ev-d8267714f5) — novelty, dyad MV; reported only by unnamed officials. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.3,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recuuBSQAVLNvTS6d",
+   "archived_on": "2026-11-27",
+   "actors": "Defence Minister Mohamed Khaled Nordin; Ministry of Defence; Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "Planned military construction on an occupied Spratly feature is unilateral administration and fortification of a claimed feature; demonstrative, and a new kind of capability (air defence radar) on Swallow Reef. Foreign Minister Mohamad Hasan said on 19 July 2026 that he had asked for the most advanced radar there. [confidence: high]",
+   "date_end": "2026-06-16",
+   "new_dyads": "MA",
+   "excerpt": "Malaysia is set to strengthen its surveillance capabilities in the South China Sea with the installation of a new air defence radar in Pulau Layang-Layang by 2029.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "Swallow Reef, RMN Station Lima",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef), RMN Station Lima”.",
+   "reviewer": "Angelo",
+   "sources": "[UPDATED] Air defence radar to boost South China Sea surveillance by 2029 — New Straits Times 2026-06-16\nhttps://www.nst.com.my/amp/news/nation/2026/06/1464781/air-defence-radar-boost-south-china-sea-surveillance-2029",
+   "pull_request": 62,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:34:58.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-1a79a51ff2",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Announcement but not work started yet",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Defence Minister Mohamed Khaled Nordin announced on 16 June 2026 in Kota Kinabalu that a new air defence radar would be installed at the Royal Malaysian Navy's Station Lima on Pulau Layang-Layang by 2029, complementing the existing maritime surveillance radar, with work on the radar's base to come first; he also invited private investment to redevelop the island's abandoned resort.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-06-16",
+   "presort": "new move (novelty) — A new air-defence radar planned for RMN Station Lima on Swallow Reef adds a military capability on an occupied Spratly feature, with nothing comparable in 2025; it is an announcement of work due by 2029, so the coder may wait for construction to begin. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec3WMamFTZ95A5hb",
+   "archived_on": "2026-11-27",
+   "actors": "Defence Minister Mohamad Hasan; Royal Malaysian Navy",
+   "lat": 5.9,
+   "suggestion_reasoning": "A ministerial statement in Parliament that Malaysia stations its own assets alongside the CCG and radios challenges to it is a verbal assertion describing standing demonstrative presence; declarative (a coder might code the described radio challenges as demonstrative). He repeated the point in the Dewan Negara on 27 June 2023 for Kasawari and Beting Patinggi Ali. [confidence: medium]",
+   "date_end": "2023-03-16",
+   "new_dyads": "MC",
+   "excerpt": "Maka kita pun akan letakkan aset kita di sana untuk kita pastikan bahawa kita\n\nKasawari",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Malaysia's EEZ off Sarawak (Luconia Shoals)",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked. Source's wording for the place: “Malaysia's EEZ off Sarawak (Beting Patinggi Ali / Luconia Shoals)”.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 16 Mac 2023 — Parliament of Malaysia (Digital Hansard) 2023-03-16\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2023-03-16.csv\nPenyata Rasmi Dewan Negara, 27 Jun 2023 — Parliament of Malaysia (Digital Hansard) 2023-06-27\nhttps://downloads-hansard.parlimen.gov.my/dewannegara/dn_2023-06-27.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:08:32.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-1d18247d5c",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-451799b80d",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Answering a question in the Dewan Rakyat on 16 March 2023 about the China Coast Guard cutter dubbed 'the Monster' stationed in Malaysia's EEZ, Defence Minister Mohamad Hasan said Malaysia would also station its own assets there to ensure its EEZ rights were not undermined, and that day and night Malaysia sent the message 'you are in our territory' to be used as evidence.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-03-16",
+   "presort": "continuation of ev-451799b80d (a candidate, provisional) — Mohamad Hasan's statement that Malaysia stations its own assets beside the CCG and radios \"you are in our territory\" describes the standing presence at Luconia already shown in 2021 (ev-451799b80d); 2022 has no candidate on it, likely a source gap — continuation (provisional on 2021). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recZsX4Y5XPfsC7gT",
+   "archived_on": "2026-11-27",
+   "actors": "Defence Minister Mohamad Hasan; Ministry of Defence; Royal Malaysian Navy",
+   "lat": 5.9,
+   "suggestion_reasoning": "A decision to build military infrastructure explicitly to guard a contested feature and nearby energy fields is unilateral military administration; demonstrative. Planning for Mawilla 4 dates back to 2021; the dated act is the announced approval. [confidence: medium]",
+   "date_end": "2023-12-11",
+   "new_dyads": "MC",
+   "excerpt": "yang besar iaitu Markas Wilayah 4 di kawasan Bintulu untuk kita mengawasi kawasan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Bintulu, Sarawak; Luconia Shoals and Kasawari",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked. Source's wording for the place: “Bintulu, Sarawak; Beting Patinggi Ali and Kasawari”.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Negara, 11 Disember 2023 — Parliament of Malaysia (Digital Hansard) 2023-12-11\nhttps://downloads-hansard.parlimen.gov.my/dewannegara/dn_2023-12-11.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:10:20.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-2624331f1d",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Approved but not built yet",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Defence Minister Mohamad Hasan told the Dewan Negara on 11 December 2023 that the government had approved a large new naval base, Naval Region 4 headquarters (Mawilla 4) at Bintulu, to watch over Beting Patinggi Ali and the Kasawari field, together with a 31st Border Regiment, an RMAF forward base and a long-range radar to cover Malaysia's EEZ and its forward and extended areas.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-12-11",
+   "presort": "new move (novelty) — Approval of the Mawilla 4 naval base at Bintulu with a border regiment, RMAF forward base and long-range radar to guard Beting Patinggi Ali and Kasawari is a new military-infrastructure decision with nothing comparable in 2022; the 2016 Bintulu plan (ev-894ec00504, previous run) was years earlier, so this is new again — though it is an approval, not a built base. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec8xkZhkx2FcBNtj",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA), Miri zone; director Khairol Anuar Saad",
+   "suggestion_reasoning": "Interception and detention of another claimant's fishing crew off Sarawak is physical enforcement imposing punishment; coercive. Representative fisheries-enforcement event for 2025 and an example of the Vietnamese fishing pressure off northern Sarawak; the waters are within Malaysia's EEZ and inside China's nine-dash line. [confidence: medium]",
+   "date_end": "2025-05-30",
+   "new_dyads": "MV",
+   "excerpt": "the crew of the Vietnamese boat refused to cooperate when they were confronted about 31 nautical miles northwest of Kuala Niah, Miri.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "about 31 nautical miles northwest of Kuala Niah, Miri, Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "MMEA fends off aggressive Vietnamese fishing crew off Miri — Free Malaysia Today (Bernama) 2025-05-31\nhttps://www.freemalaysiatoday.com/category/nation/2025/05/31/mmea-fends-off-aggressive-vietnamese-fishing-crew-off-miri",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:31:05.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-2b4c500a42",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-564cd566e3",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 30 May 2025 an MMEA Miri patrol vessel intercepted a Vietnamese fishing boat trying to enter Malaysian waters about 31 nautical miles northwest of Kuala Niah; the crew manoeuvred dangerously and threw hard and sharp objects at MMEA personnel, but the boat and its three Vietnamese crew were detained, along with an Indonesian boat off Kuala Suai.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-05-30",
+   "presort": "continuation of ev-564cd566e3 (a candidate, provisional) — Detaining a Vietnamese boat off Kuala Niah continues the MMEA enforcement against Vietnamese fishing seen in 2024 (ev-564cd566e3) and 2023 (ev-57bd137b84) — continuation (provisional on 2024). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recEHHR0gIUGTzTyT",
+   "archived_on": "2026-11-27",
+   "actors": "Deputy Foreign Minister Mohamad Alamin; Petronas; Shell Malaysia",
+   "lat": 5.9,
+   "suggestion_reasoning": "A parliamentary statement refusing to treat a claimed feature as negotiable with China is a verbal assertion; declarative. It also documents continuing resource activity around the shoals, which a coder could treat as demonstrative. [confidence: high]",
+   "date_end": "2025-02-26",
+   "new_dyads": "MC",
+   "excerpt": "Beting Patinggi Ali, memandangkan Beting Patinggi Ali sememangnya berada dalam",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Luconia Shoals; Kasawari, Timi and Rosmari-Marjoram fields",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked. Source's wording for the place: “Beting Patinggi Ali (Luconia Shoals); Kasawari, Timi and Rosmari-Marjoram fields”.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 26 Februari 2025 — Parliament of Malaysia (Digital Hansard) 2025-02-26\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2025-02-26.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "politics",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:30:22.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2c55128b38",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-3a41c8e0ac ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Answering questions in the Dewan Rakyat on 26 February 2025, Deputy Foreign Minister Mohamad Alamin said Malaysia had never recognised any Chinese claim based on the nine-dash line, the Four Sha concept or any Chinese map covering Malaysian maritime areas, that there were no diplomatic negotiations with China over Beting Patinggi Ali because it lies within Malaysia's maritime area under the 1979 map, and that three oil and gas operations were under way around the shoals (Petronas at Kasawari and Timi, and Shell's Rosmari-Marjoram under construction), guarded by enforcement agencies.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-02-26",
+   "presort": "continuation of ev-3a41c8e0ac (a candidate, provisional) — Alamin's statement that Malaysia never recognised the nine-dash line and will not negotiate Beting Patinggi Ali, with operations guarded around the shoals, restates the 2024 position (ev-3a41c8e0ac, ev-acf008fd20) — continuation (provisional on 2024). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec7EploXqnAJkoJP",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA), Terengganu; KM Langkawi; director Muhammad Suffi Mohd Ramli",
+   "suggestion_reasoning": "Detention of another claimant's fishing boats and crews is physical enforcement imposing punishment; coercive. Included as the representative fisheries-enforcement event for 2021 (the government later reported 265 Vietnamese boats held in 2020-2023 without a per-year breakdown); the waters are Malaysia's EEZ off the peninsula, which a coder may treat as outside the disputed area. [confidence: medium]",
+   "date_end": "2021-01-23",
+   "new_dyads": "MV",
+   "excerpt": "managed to detain the boats at 93 and 118 nautical miles northeast of Kuala Terengganu at 4pm yesterday",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "93 and 118 nautical miles northeast of Kuala Terengganu",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "16 Vietnamese fishermen on 2 boats detained off Terengganu — Free Malaysia Today (Bernama) 2021-01-24\nhttps://www.freemalaysiatoday.com/category/nation/2021/01/24/16-vietnamese-fishermen-on-2-boats-detained-off-terengganu/",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:47:51.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-2c7fb7e0c7",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-395be8f897",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 23 January 2021 the Terengganu MMEA patrol ship KM Langkawi detained two Vietnamese fishing boats and their 16 crew 93 and 118 nautical miles northeast of Kuala Terengganu for fishing without licences in Malaysian waters, seizing boats, gear and catch worth RM3 million. It was one of a continuing series of MMEA detentions of Vietnamese boats in 2021.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-01-23",
+   "presort": "continuation of ev-395be8f897 (a candidate, provisional) — MMEA detention of Vietnamese boats and crews off Terengganu continues the 2020 enforcement against Vietnamese fishing (ev-395be8f897, Op Naga figures in ev-9de33b5a46, prev run); a representative instance, no change of method — continuation (provisional on 2020). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec3jzqLffXuVjRh3",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Malaysian Marine Department; Royal Malaysian Navy (KD Badik)",
+   "lat": 5.9,
+   "suggestion_reasoning": "Construction of a gas production platform inside the nine-dash line with a naval visit, without reported confrontation, is unilateral resource development and presence; demonstrative. Dates from Marine Department notices and AIS as published by AMTI. [confidence: high]",
+   "date_end": "2023-04-30",
+   "new_dyads": "MC",
+   "excerpt": "Notices from Malaysia’s Marine Department indicate the transportation of a jacket structure for the Kasawari Central Processing Platform began on February 24, with construction and installation beginning on March 8 and scheduled to last until April 30.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "Kasawari gas field, block SK316, about 25 nautical miles southeast of Luconia Shoals",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Perilous Prospects: Tensions Flare at Malaysian, Vietnamese Oil and Gas Fields — CSIS Asia Maritime Transparency Initiative 2023-03-30\nhttps://amti.csis.org/perilous-prospects-tensions-flare-at-malaysian-vietnamese-oil-and-gas-fields/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:08:20.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-36cf3c00a8",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Petronas transported the jacket for the Kasawari Central Processing Platform from 24 February 2023 and began construction and installation on 8 March, scheduled to run until 30 April, while the China Coast Guard cutter 5901 operated nearby, at times within 1.5 nautical miles; the Royal Malaysian Navy littoral mission ship KD Badik stopped at Kasawari from 19 to about 22 March 2023 before continuing to Kota Kinabalu.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-02-24",
+   "presort": "new move (novelty) — Building the Kasawari central processing platform 25 nm from Luconia, with CCG 5901 at times within 1.5 nm and KD Badik calling, is construction of a permanent installation with nothing comparable in 2022 (drilling and licensing only, ev-7981623e15, ev-584f850541); the 2021 wellhead installation (ev-4d6a3fb8ef) was the earlier stage, absent last year. (group MY2023-kasawari) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recf2mH6dkGRhGOcw",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Mohamad Hasan",
+   "suggestion_reasoning": "A strongly worded protest note against a territorial claim is a verbal assertion; declarative. The country is not named; the description (a UN-recognised referendum) points to the Philippines and Sabah, so the dyad is MP with medium confidence. The note's own date is not given. [confidence: medium]",
+   "date_end": "2026-07-19",
+   "new_dyads": "MP",
+   "excerpt": "Recently, I sent a very strong diplomatic note to the country concerned because it claimed that an area within our country belongs to them.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:01:09.000Z",
+   "location_name": "Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Govt issues strongly worded diplomatic protest over sovereignty claims — The Vibes 2026-07-19\nhttps://www.thevibes.com/index.php/articles/news/125214/govt-issues-strongly-worded-diplomatic-protest-over-sovereignty-claims-reaffirms-territorial-rights",
+   "pull_request": 62,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:35:17.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3814478e50",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-4ecf58c008",
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "Foreign Minister Mohamad Hasan said on 19 July 2026, at an armed forces family day at Sendayan air base, that he had recently sent a very strong diplomatic note to a country, which he did not name, that claimed part of Malaysian territory, rejecting the claim because the territory's people had chosen to join Malaysia in a UN-recognised referendum, and urged the armed forces to defend Malaysia's territory and sovereign rights 'to the very last drop of blood'.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-07-19",
+   "presort": "continuation of ev-4ecf58c008 (a candidate, provisional) — A \"very strong\" note to an unnamed country over a territorial claim (by the description, the Philippines and Sabah) repeats the 2024 protest to the Philippines (ev-4ecf58c008) and the same-year ev-6701b83d5a; Sabah may be out of scope — continuation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recA8eEtzqCqD7WaY",
+   "archived_on": "2026-11-27",
+   "actors": "Prime Minister Anwar Ibrahim; Ministry of Foreign Affairs; Petronas",
+   "lat": 5.9,
+   "suggestion_reasoning": "A public prime-ministerial rejection of China's demand to stop exploration is a verbal claim assertion; declarative. Same event as in the 2016plus hand-compiled set. [confidence: high]",
+   "date_end": "2024-09-05",
+   "new_dyads": "MC",
+   "excerpt": "“We have made it clear that what we are doing with oil exploration is within our own waters,” Anwar said on the sidelines of the Eastern Economic Forum in Vladivostok, Russia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia probes reported leak of note from 'great friend' China — Radio Free Asia 2024-09-05\nhttps://www.rfa.org/english/news/southchinasea/malaysia-china-diplomatic-note-anwar-09052024051231.html",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:27:37.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3a41c8e0ac",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-fe0373e68e ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "After the Philippine Daily Inquirer published a leaked Chinese diplomatic note dated 18 February 2024 demanding that Malaysia halt oil and gas activities near Luconia Shoals, Prime Minister Anwar Ibrahim said on 5 September 2024 in Vladivostok that Malaysia's oil exploration was within its own waters, that Beijing's protests had been answered, and that Malaysia must proceed for its economic survival; Wisma Putra called the leak an irresponsible act and asked for an investigation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-09-05",
+   "presort": "continuation of ev-fe0373e68e (a candidate, provisional) — Anwar's statement that exploration is in Malaysia's own waters and must go on repeats his 2023 answer to China's objection (ev-fe0373e68e) — continuation (provisional on 2023). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recsiaaqLBcXDOKVq",
+   "archived_on": "2026-11-27",
+   "actors": "PTTEP (Petronas-licensed operator); Seadrill (West Capella)",
+   "suggestion_reasoning": "State-licensed hydrocarbon drilling in waters claimed by China, continued under Chinese pressure, is unilateral resource development; demonstrative. AMTI observed no Malaysian navy or MMEA response on AIS; the start is known only to the month. [confidence: medium]",
+   "date_end": "2021-10-15",
+   "new_dyads": "MC",
+   "excerpt": "contracted since July by Thailand’s PTTEP for drilling in the Siakap North Petai oil field in Malaysia’s Block K",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Siakap North-Petai oil field, Block K, off Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Block K 67%; Sabah coast 15%); 7 Spratly SE (Block K 33%; Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "Nervous Energy: China Targets New Indonesian, Malaysian Drilling — CSIS Asia Maritime Transparency Initiative 2021-11-12\nhttps://amti.csis.org/nervous-energy-china-targets-new-indonesian-malaysian-drilling/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:56:55.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-3b679e3947",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-09e2bdf328 ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "From July 2021 the drillship West Capella, contracted by Thailand's PTTEP under its Malaysian production sharing contract, drilled in the Siakap North-Petai oil field in Malaysia's Block K off Sabah, inside China's nine-dash line; it continued while the Chinese survey ship Da Yang Hao, escorted by the China Coast Guard and a militia vessel, surveyed Malaysia's continental shelf from 25 September to 15 October and passed within 6 nautical miles of it three times.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2021-07-01",
+   "presort": "continuation of ev-09e2bdf328 (a candidate, provisional) — West Capella drilling in Block K off Sabah, continued while a Chinese survey ship passed close, repeats the 2020 practice of drilling on under Chinese pressure (ev-09e2bdf328, prev run), inside the 200 nm line and with no naval escort reported — continuation (provisional on 2020). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec9XDFwm0HW0tV6N",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy; Deputy Defence Minister Ikmal Hisham Abdul Aziz",
+   "lat": 5.9,
+   "suggestion_reasoning": "Standing naval patrol operations at a claimed feature are routine unilateral presence; demonstrative. Recorded once for the period as the dated official confirmation of the named operations; the operations themselves are continuous and undated. [confidence: medium]",
+   "date_end": "2021-12-09",
+   "new_dyads": "MC",
+   "excerpt": "(iii) Operasi Wira di Benteng Patinggi Ali, Sarawak",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Luconia Shoals, Sarawak; South China Sea",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked. Source's wording for the place: “Beting Patinggi Ali (Luconia Shoals), Sarawak; South China Sea”.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 9 Disember 2021 — Parliament of Malaysia (Digital Hansard) 2021-12-09\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2021-12-09.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:57:42.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-451799b80d",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-f8d6830dbb",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Winding up the Defence Ministry's supply debate in the Dewan Rakyat on 9 December 2021, Deputy Defence Minister Ikmal Hisham Abdul Aziz listed the Royal Malaysian Navy's standing operations, including Operasi Sinar Sakti in the South China Sea and Operasi Wira at Beting Patinggi Ali off Sarawak, the continuous naval presence at Luconia Shoals maintained alongside the China Coast Guard's patrols there.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-12-09",
+   "presort": "continuation of ev-f8d6830dbb (a candidate, provisional) — The deputy defence minister's listing of standing operations (Op Wira at Beting Patinggi Ali, continuous presence beside the CCG) confirms the naval presence at Luconia shown in 2020 (ev-f8d6830dbb, prev run) — continuation (provisional on 2020). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recBmU4nLDQ7MAWyS",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Air Force",
+   "lat": 5.9,
+   "suggestion_reasoning": "Scrambling armed fighters to intercept and identify foreign military aircraft over claimed waters is physical interference with the rival's activity; coercive. The diplomatic protest that followed is listed separately. AMTI dates the approach to 1 June; Malaysian sources and BenarNews give Monday 31 May. [confidence: high]",
+   "date_end": "2021-05-31",
+   "new_dyads": "MC",
+   "excerpt": "The Royal Malaysian Air Force (RMAF) said it scrambled fighter jets to intercept the Chinese aircraft off the coast of Sarawak state after they refused to communicate with local air-traffic controllers.\n\nThis incident is a serious threat to national sovereignty and flight safety due to the air traffic density over the airways,",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "Kota Kinabalu FIR, about 60 nautical miles from Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Kota Kinabalu FIR, about 60 nautical miles from Beting Patinggi Ali (Luconia Shoals), off Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia Will Lodge Diplomatic Protest with China over Maritime Airspace ‘Intrusion’ — BenarNews 2021-06-01\nhttps://www.benarnews.org/english/news/malaysian/my-ch-planes-06012021135102.html\nRMAF says 16 Chinese military planes almost violated Malaysian airspace with 'suspicious' activity — Malay Mail 2021-06-01\nhttps://www.malaymail.com/news/malaysia/2021/06/01/rmaf-says-16-chinese-military-planes-almost-violated-malaysian-airspace-wit/1978813",
+   "pull_request": 62,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:49:17.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-49ca57afeb",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "The event happened in overlapping claims",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On 31 May 2021 the Royal Malaysian Air Force scrambled fighter jets from Labuan to intercept 16 PLAAF transport aircraft flying in tactical formation that approached within about 60 nautical miles of Sarawak near Beting Patinggi Ali without responding to air traffic control; the RMAF called the incident a serious threat to national sovereignty and flight safety.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-05-31",
+   "presort": "new move (novelty) — Scrambling RMAF fighters to intercept 16 PLAAF aircraft off Sarawak is an air-domain coercive act with nothing comparable in the 2020 record, which shows only naval and coast-guard shadowing (ev-f8d6830dbb, prev run); the counterfactual (Malaysia would likely have scrambled in 2020 too) argues against, so the coder may reject it. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recWkHP6kJmuwtCuD",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA); KM Arau; MMEA Kudat station",
+   "suggestion_reasoning": "Interception, boarding and detention of another claimant's fishing crew in the South China Sea off Sabah is physical enforcement imposing punishment; coercive. Representative fisheries-enforcement event for 2022, and the first in this set by an MMEA offshore patrol vessel in the deep-water area north-west of Sabah. [confidence: medium]",
+   "date_end": "2022-06-11",
+   "new_dyads": "MV",
+   "excerpt": "118 nautical miles off Sabah's Kudat district at around noon (local time) on Saturday, June 11.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "about 118 nautical miles off Kudat, Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Vietnamese fishing boat collides with Malaysian patrol vessel off Sabah — Baird Maritime 2022-06-15\nhttps://www.bairdmaritime.com/fishing/catching/vietnamese-fishing-boat-collides-with-malaysian-patrol-vessel-off-sabah",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:57:53.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-4b9f0345db",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-2c7fb7e0c7 ",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 11 June 2022 the MMEA offshore patrol vessel KM Arau intercepted a Vietnamese fishing boat about 118 nautical miles off Kudat, Sabah; after the boat rammed the patrol vessel while trying to escape, MMEA personnel boarded it and detained its 41 crew, who lacked permits to fish in Malaysian waters, and seized the boat and nearly three tonnes of squid and other catch.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2022-06-11",
+   "presort": "continuation of ev-2c7fb7e0c7 (a candidate, provisional) — Boarding and detaining a Vietnamese boat's crew off Kudat continues the 2021 MMEA detentions (ev-2c7fb7e0c7); the ramming drew no new method — continuation (provisional on 2021). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reconjGaQ3MQKdAgs",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Sapura Energy (Sapura 2000); Royal Malaysian Navy (Bunga Mas Lima)",
+   "suggestion_reasoning": "Construction of an energy installation inside China's nine-dash line with a naval escort but no reported confrontation is unilateral administration of disputed waters; demonstrative. Same event as in the 2016plus hand-compiled set. [confidence: high]",
+   "date_end": "2021-06-13",
+   "new_dyads": "MC",
+   "excerpt": "From May 19 to 24, Malaysia’s state-owned Petronas used six tugs to transport materials to the port of Miri in Sarawak in preparation for the installation of a wellhead platform at Kasawari.\n\na China Coast Guard ship remained at Kasawari along with two Malaysian barges, Sapura 2000 and Sapura 3000",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "Kasawari gas field, block SK316, off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Contest at Kasawari: Another Malaysian Gas Project Faces Pressure — CSIS Asia Maritime Transparency Initiative 2021-07-07\nhttps://amti.csis.org/contest-at-kasawari-another-malaysian-gas-project-faces-pressure/\nUS Think-Tank: China Coast Guard Harasses Malaysian Oil, Gas Operation Off Sarawak — Radio Free Asia 2021-07-08\nhttps://www.rfa.org/english/news/china/harasses-07082021182547.html",
+   "pull_request": 62,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:48:04.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4d6a3fb8ef",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-f8d6830dbb",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Petronas proceeded with installation of a wellhead platform at the Kasawari gas field off Sarawak, about 25 nautical miles southeast of Luconia Shoals: it moved materials to Miri on 19-24 May 2021 under a government notice to mariners, and the Sapura 2000 installation barge arrived on 4 June 2021. The Royal Malaysian Navy deployed the auxiliary Bunga Mas Lima to the site a day ahead of the barge and kept it there until 13 June while China Coast Guard vessels CCG 5403 and then CCG 5303 loitered nearby.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-05-19",
+   "presort": "continuation of ev-f8d6830dbb (a candidate, provisional) — Installing the Kasawari wellhead platform with Bunga Mas Lima standing by while CCG ships loitered continues the 2020 practice of naval protection for licensed operations near Luconia (KD Keris by the Gunnlod rig, ev-f8d6830dbb; West Capella escort, ev-cae2a725dd, prev run); if the coder counts a permanent production installation as a new method, it would be novelty — continuation (provisional on 2020). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recbtynoSmnxdZofV",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs; Deputy Foreign Minister Mohamad Alamin",
+   "suggestion_reasoning": "A formal protest note against another claimant's maritime-zone legislation is a verbal diplomatic assertion; declarative. [confidence: high]",
+   "date_end": "2024-11-14",
+   "new_dyads": "MP",
+   "excerpt": "We’ve finalized and reviewed key issues in our protest note, which we’ll send today [Thursday] to affirm our commitment to protecting Sabah’s sovereignty and rights,\n\nNota bantahan ini kita akan hantar hari ini juga demi",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "Malaysian maritime boundaries under the 1979 map; Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysia protests new Philippine maritime laws for South China Sea encroachment — BenarNews 2024-11-14\nhttps://www.benarnews.org/english/news/malaysian/waterway-encroachment-11142024155141.html\nPenyata Rasmi Dewan Rakyat, 14 November 2024 — Parliament of Malaysia (Digital Hansard) 2024-11-14\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2024-11-14.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:30:13.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-4ecf58c008",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b6735182ed ",
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "Deputy Foreign Minister Mohamad Alamin told the Dewan Rakyat on 14 November 2024 that Malaysia would send a protest note that day to the Philippines over its Maritime Zones Act and Archipelagic Sea Lanes Act of 8 November 2024, which he said extended into Malaysia's maritime boundaries under the 1979 map and encroached on Sabah; he told the Dewan Negara on 19 December 2024 that the note had been sent.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-11-14",
+   "presort": "continuation of ev-b6735182ed (a candidate, provisional) — The protest note against the Philippines' Maritime Zones Act is a reaction to new Philippine legislation by the established method of rejecting Philippine claims (ev-b6735182ed, prev run; ev-e0aa5711f8 the same year) — continuation (provisional on 2020). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recjm6EOQ3LdhBVLS",
+   "archived_on": "2026-11-27",
+   "actors": "Deputy Foreign Minister Lukanisman Awang Sauni",
+   "suggestion_reasoning": "An explicit parliamentary rejection of China's nine-dash line claim is a verbal assertion; declarative. Deputy Prime Minister Ahmad Zahid Hamidi made a similar written reply on the show of presence at Luconia on 26 January 2026 (FMT). [confidence: high]",
+   "date_end": "2026-02-05",
+   "new_dyads": "MC",
+   "excerpt": "tuntutan berlebihan atau dengan izin, *excessive plan* Republik Rakyat China yang\n\nincluding maintaining a show of presence at the Luconia Shoals",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Malaysian maritime areas under the 1979 map",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked.\nSub-regions suggested: 10 Far South (Luconia Shoals).",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 5 Februari 2026 — Parliament of Malaysia (Digital Hansard) 2026-02-05\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2026-02-05.csv\nGovt to ensure continued ‘show of presence’ at Luconia Shoals — Free Malaysia Today 2026-01-26\nhttps://www.freemalaysiatoday.com/category/nation/2026/01/26/govt-to-ensure-continued-show-of-presence-at-luconia-shoals",
+   "pull_request": 62,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:33:54.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-53baf85095",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-2c55128b38",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Winding up the debate on the royal address in the Dewan Rakyat on 5 February 2026, Deputy Foreign Minister Lukanisman Awang Sauni said Malaysia firmly rejected China's excessive claims based on the nine-dash line map or any Chinese map covering Malaysian maritime areas, that the foreign ministry consistently lodged diplomatic protest notes whenever foreign government vessels intruded, and that the government maintained a show of presence at Beting Patinggi Ali to protect fisheries and hydrocarbon activity.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-02-05",
+   "presort": "continuation of ev-2c55128b38 (a candidate, provisional) — Lukanisman's rejection of the nine-dash line, consistent protest notes and show of presence at Beting Patinggi Ali restate the 2025 parliamentary position (ev-2c55128b38) — continuation (provisional on 2025). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec3K3pqRUYToFpgM",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (KM Arau)",
+   "lat": 8.11667,
+   "suggestion_reasoning": "A physical encounter between a Malaysian enforcement vessel and another claimant's fishing boat in disputed Spratly waters, prompting a Vietnamese protest, is physical interference; coded coercive with medium confidence because the source does not say what KM Arau was doing. Janes is paywalled and was read only through WebFetch, so the excerpt could not be checked against the raw page. [confidence: medium]",
+   "date_end": "2024-04-22",
+   "new_dyads": "MV",
+   "excerpt": "The collision took place on 22 April at about 15 n miles southeast of Investigator Shoal",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "about 15 nautical miles southeast of Investigator Shoal, Spratly Islands",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 404); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://janes.com/defence-news/vietnam-issues-diplomatic-note-to-malaysia-after-south-china-sea-collision.",
+   "reviewer": "Angelo",
+   "sources": "Vietnam issues diplomatic note to Malaysia after South China Sea collision — Janes 2024-04-25\nhttps://www.janes.com/defence-news/vietnam-issues-diplomatic-note-to-malaysia-after-south-china-sea-collision",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:17:25.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-564cd566e3",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Unclear assertive intent",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 22 April 2024 the MMEA offshore patrol vessel KM Arau collided with the Vietnamese fishing boat 90729 about 15 nautical miles southeast of Malaysian-occupied Investigator Shoal, throwing 22 fishermen into the sea; Vietnam issued a diplomatic note to Malaysia and the two sides ran a joint search-and-rescue operation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-04-22",
+   "presort": "unclear — KM Arau's collision with a Vietnamese boat near Investigator Shoal may be enforcement in the disputed Spratlys (a scope step beyond 2023's detentions in the peninsular EEZ, ev-57bd137b84) or an accident; the source does not say what KM Arau was doing. Settle by whether it was an interception — if an accident, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 114.5,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec37KWsu97zrVtfT",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA), Terengganu; director Khairulanuar Abd Majid",
+   "suggestion_reasoning": "Boarding, firing on and detaining another claimant's fishing crew is physical enforcement imposing punishment; coercive (gunfire was used in self-defence during an arrest, which a coder might weigh as force). Representative fisheries-enforcement event for 2023; location is Malaysia's EEZ off the peninsula. [confidence: medium]",
+   "date_end": "2023-07-05",
+   "new_dyads": "MV",
+   "excerpt": "Malaysian Maritime Enforcement Agency (MMEA) personnel had to fire shots after they were attacked by a crew of Vietnamese fishermen who encroached into Terengganu waters.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "148 nautical miles off Kuala Terengganu",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "MMEA officer slashed on head, 2 Viet fishermen shot — Free Malaysia Today 2023-07-05\nhttps://www.freemalaysiatoday.com/category/nation/2023/07/05/mmea-officer-slashed-on-head-2-viet-fishermen-shot",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:08:58.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-57bd137b84",
+   "run_id": "MY-2021-2026",
+   "note": "continuation of ev-4b9f0345db",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 5 July 2023 MMEA personnel boarding a Vietnamese fishing boat 148 nautical miles off Kuala Terengganu opened fire after crew members attacked them, slashing an officer on the head with a parang; the captain and two fishermen were wounded by gunfire, and all 16 people on board were detained under the Fisheries Act 1985 and the Immigration Act.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-07-05",
+   "presort": "continuation of ev-4b9f0345db (a candidate, provisional) — Boarding and detaining a Vietnamese crew off Terengganu continues the 2022 MMEA detentions (ev-4b9f0345db); the gunfire was in self-defence after an officer was slashed, as in the 2020 case (ev-395be8f897), so not a change of method — continuation (provisional on 2022). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec9Vcb7CXN7NQ74w",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; TotalEnergies; Shell",
+   "suggestion_reasoning": "Licensing of offshore exploration blocks by the state company in waters claimed by China is unilateral resource administration; demonstrative. AMTI places the blocks among Malaysia's projects inside the nine-dash line; the exact signing day is not given. [confidence: medium]",
+   "date_end": "2022-10-31",
+   "new_dyads": "MC",
+   "excerpt": "A production sharing contract for block 2K was signed in October between France’s TotalEnergies, Malaysia’s Petronas, and the United Kingdom’s Shell",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "ultra-deepwater blocks 2K, 2V, 2W and X off Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "(Almost) Everyone is Drilling Inside the Nine-Dash Line — CSIS Asia Maritime Transparency Initiative 2023-03-08\nhttps://amti.csis.org/almost-everyone-is-drilling-inside-the-nine-dash-line/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:05:10.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-584f850541",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "Most likely a continuation of ev-3b679e3947",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In October 2022 Petronas signed a production sharing contract for ultra-deepwater block 2K off Sabah with TotalEnergies and Shell, completing the licensing of four ultra-deepwater exploration blocks off Sabah (with Shell having signed for blocks 2V, 2W and X) in waters inside China's nine-dash line.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2022-10-01",
+   "presort": "unclear — Licensing ultra-deepwater blocks off Sabah inside the nine-dash line; the 2021 candidates show drilling but no licensing round. Settle by whether Petronas awarded blocks inside the line in 2021 (its annual bid rounds suggest yes, then continuation of ev-3b679e3947) or these ultra-deepwater blocks extend acreage further out (then scope). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recFCrvPaA21lgmx9",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Mohamad Hasan; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "An announced protest note rejecting another claimant's territorial claim is a verbal assertion; declarative. Low confidence for this dataset because the Sabah dispute is a land-sovereignty issue; it is included because Malaysia ties it to the Philippines' South China Sea shelf and maritime-zone claims projected from Sabah. [confidence: low]",
+   "date_end": "2026-03-28",
+   "new_dyads": "MP",
+   "excerpt": "Malaysia will send a diplomatic note to the Philippines Govt to reject any claims on Sabah, says Datuk Seri Mohamad Hasan.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysia to send diplomatic note to Philippines rejecting its claim on Sabah — The Star 2026-03-28\nhttps://www.thestar.com.my/news/nation/2026/03/28/malaysia-to-send-diplomatic-note-to-philippines-rejecting-sabah-claims",
+   "pull_request": 62,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:34:23.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-6701b83d5a",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-4ecf58c008 ",
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "On 28 March 2026 Foreign Minister Mohamad Hasan said Malaysia would send a diplomatic note to the Philippine government rejecting any claim to Sabah, after Philippine Senator Robin Padilla urged President Marcos to revive the claim amid the oil-price crisis, noting that Malaysia had done so 'tens of times' before.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-03-28",
+   "presort": "continuation of ev-4ecf58c008 (a candidate, provisional) — An announced note rejecting a revived Philippine claim to Sabah, sent \"tens of times\" before, repeats the 2024 protest to the Philippines (ev-4ecf58c008); Sabah is a land-sovereignty question, so the coder may also reject it as outside the South China Sea claim — continuation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recUhmmwV2XNmoSnP",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA), Kelantan; director Kamal Mohamad",
+   "suggestion_reasoning": "Interception and detention of another claimant's fishing crew is physical enforcement imposing punishment; coercive. Representative fisheries-enforcement event for 2026, in Malaysia's EEZ off the peninsula. [confidence: medium]",
+   "date_end": "2026-04-18",
+   "new_dyads": "MV",
+   "excerpt": "Swift action by MMEA personnel led to the vessel being successfully intercepted and detained approximately 125 nautical miles off Muara Tok Bali,",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "about 125 nautical miles off Muara Tok Bali, Kelantan",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "MMEA detects Vietnamese vessel posing as local boat, 13 detained — The Star 2026-04-22\nhttps://www.thestar.com.my/news/nation/2026/04/22/mmea-detects-vietnamese-vessel-posing-as-local-boat-13-detained",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:34:32.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-686659d7c8",
+   "run_id": "MY-2021-2026",
+   "note": "continuation of ev-2b4c500a42",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 18 April 2026 Kelantan MMEA patrols under Ops Damai, Ops Naga, Ops Pelantar and Ops Tiris intercepted and detained, about 125 nautical miles off Muara Tok Bali, a Vietnamese fishing vessel disguised with a Terengganu registration number and Malaysian flags whose 13 crew had thrown ropes, nets and barrels into the sea and refused to stop.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-04-18",
+   "presort": "continuation of ev-2b4c500a42 (a candidate, provisional) — Detaining a disguised Vietnamese boat off Tok Bali under Ops Naga and other standing operations continues the 2025 enforcement (ev-2b4c500a42) — continuation (provisional on 2025). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recRCIy23WNugSvZ1",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy (KD Kelantan); Defence Minister Khaled Nordin; Ministry of Foreign Affairs",
+   "lat": 5.08333,
+   "suggestion_reasoning": "Naval shadowing of a Chinese coast guard ship at a claimed feature without reported confrontation is unilateral presence; demonstrative. The announced protest note is a separate declarative act whose dispatch date is not public. [confidence: high]",
+   "date_end": "2026-01-01",
+   "new_dyads": "MC",
+   "excerpt": "Khaled said the CCG vessel had been shadowed by KD Kelantan since Dec 23.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "South Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Armed forces monitoring Chinese vessel at South Luconia Shoals — Free Malaysia Today 2026-01-01\nhttps://www.freemalaysiatoday.com/category/nation/2026/01/01/armed-forces-monitoring-chinese-vessel-at-south-luconia-shoals",
+   "pull_request": 62,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:31:53.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-6a19ca049d",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-1390b92e06",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "From 23 December 2025 the Royal Malaysian Navy offshore patrol vessel KD Kelantan shadowed a China Coast Guard vessel patrolling inside Malaysia's EEZ at South Luconia Shoals; on 1 January 2026 Defence Minister Khaled Nordin said the ministry would pass its information to Wisma Putra so that a protest note could be issued to China, and that the armed forces had run Op Satria to monitor CCG vessels at North and South Luconia 24 hours a day.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-12-23",
+   "presort": "continuation of ev-1390b92e06 (a candidate, provisional) — KD Kelantan shadowing a CCG ship at South Luconia under Op Satria continues the 24/7 monitoring shown in 2024 (ev-1390b92e06) — continuation (provisional on 2024). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.66667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recWBZOrXrGIBfixF",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Foreign Minister Zambry Abdul Kadir",
+   "suggestion_reasoning": "A public foreign-ministry rejection of China's cartographic claim is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2023-08-30",
+   "new_dyads": "MC",
+   "excerpt": "We will be taking further action based on the statement Wisma Putra released (yesterday), including sending the protest note,\n\ntelah mengemukakan kenyataan akhbar pada 30 Ogos 2023 bagi menyatakan pendirian",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "Malaysian maritime areas off Sabah and Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sabah coast 15%; Sarawak coast 99%); 7 Spratly SE (Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysia to send protest note to China over 2023 map — Free Malaysia Today 2023-08-31\nhttps://freemalaysiatoday.com/category/nation/2023/08/31/malaysia-to-send-protest-note-to-china-over-2023-map\nPenyata Rasmi Dewan Rakyat, 19 September 2023 — Parliament of Malaysia (Digital Hansard) 2023-09-19\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2023-09-19.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:09:26.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-775a76a73e",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-e677bcc107",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On 30 August 2023 the Ministry of Foreign Affairs issued a press statement saying Malaysia did not recognise China's claims in the South China Sea as outlined in the 2023 edition of China's standard map, which covered Malaysian maritime areas off Sabah and Sarawak, and that the map was not binding on Malaysia; Foreign Minister Zambry Abdul Kadir said on 31 August that a protest note would follow.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-08-30",
+   "presort": "continuation of ev-e677bcc107 (a candidate, provisional) — The press statement rejecting China's 2023 standard map is a reaction at the standing level of non-recognition and protest shown in 2021 (ev-e677bcc107, ev-e050461164); more to react to, not a new method; 2022 shows no statement, likely a source gap — continuation (provisional on 2021). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recnWhzYHeRBNqvev",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas and its production-sharing contractors",
+   "suggestion_reasoning": "State-licensed exploratory drilling inside China's nine-dash line is unilateral resource development; demonstrative. Dates known only to the month. [confidence: medium]",
+   "date_end": "2022-12-31",
+   "new_dyads": "MC",
+   "excerpt": "In September, exploratory drilling struck gas in block SK320. Then in December, hydrocarbons were discovered at exploratory wells in blocks SK306 and SK410B .",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not found",
+    "Date approximate"
+   ],
+   "location_name": "blocks SK320, SK306 and SK410B off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.",
+   "reviewer": "Angelo",
+   "sources": "(Almost) Everyone is Drilling Inside the Nine-Dash Line — CSIS Asia Maritime Transparency Initiative 2023-03-08\nhttps://amti.csis.org/almost-everyone-is-drilling-inside-the-nine-dash-line/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:02:34.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7981623e15",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-3b679e3947 ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Petronas-licensed exploratory drilling off Sarawak, in the area near Luconia Shoals patrolled by the China Coast Guard, struck gas in block SK320 in September 2022 and found hydrocarbons in blocks SK306 and SK410B in December 2022; SK410B had been the site of the 2020 stand-off between the China Coast Guard and the Royal Malaysian Navy.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2022-09-01",
+   "presort": "continuation of ev-3b679e3947 (a candidate, provisional) — Petronas-licensed exploratory drilling off Sarawak near Luconia continues the 2021 drilling inside the nine-dash line (ev-3b679e3947, ev-4d6a3fb8ef) — continuation (provisional on 2021). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recf3YDCDungKurTS",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Malaysia; Permanent Mission of Malaysia to the United Nations",
+   "suggestion_reasoning": "A formal legal deposit of baselines from which Malaysia's maritime zones, including those facing the South China Sea off Sarawak and Sabah, are measured is a legal/administrative assertion; declarative. The deposit text (PDF) lists base points SWK 01-15 and SBH 01-43; the excerpt is from the UN DOALOS state page. [confidence: high]",
+   "date_end": "2022-08-02",
+   "new_dyads": "MA",
+   "excerpt": "M.Z.N.159.2022.LOS of 2 August 2022 : Deposit of a list of geographical coordinates of points concerning the baselines from which the breadth of the territorial sea is measured\n\nLIST OF GEOGRAPHICAL COORDINATES OF POINTS",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "baselines of Peninsular Malaysia, Sarawak and Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.\nSub-regions suggested: 10 Far South (Sarawak coast 99%; Sabah coast 15%); 7 Spratly SE (Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "Maritime Space: Maritime Zones and Maritime Delimitation - Malaysia — UN Division for Ocean Affairs and the Law of the Sea\nhttps://www.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/MYS.htm\nList of geographical coordinates of points (Annex to the Malaysian deposit) — UN Division for Ocean Affairs and the Law of the Sea 2022-08-02\nhttps://www.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/DEPOSIT/ListofCoords.pdf",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:58:16.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7a919138c8",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Malaysia deposited with the UN Secretary-General, under article 16(2) of UNCLOS, a list of geographical coordinates of the base points of the baselines from which its territorial sea is measured, covering Peninsular Malaysia, Sarawak and Sabah, circulated as M.Z.N.159.2022.LOS of 2 August 2022; Singapore lodged a communication in response on 21 November 2022.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2022-08-02",
+   "presort": "new move (novelty) — Depositing the coordinates of Malaysia's territorial-sea base points with the UN under UNCLOS art. 16(2) is a legally significant act with nothing comparable in 2021; dyad MA (it bears on all neighbours), and the coder should check whether the deposit changed any baseline. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recFjUk0zov8bSVhL",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Foreign Minister Hishammuddin Hussein",
+   "lat": 5.9,
+   "suggestion_reasoning": "A formal protest note and ambassadorial summons are verbal diplomatic assertions; declarative. The summons date (3 June) comes from the 7 March 2022 Dewan Rakyat reply quoted in the second source. [confidence: high]",
+   "date_end": "2021-06-03",
+   "new_dyads": "MC",
+   "excerpt": "the Ministry will issue a diplomatic note of protest against the intrusion to the Government of the People’s Republic of China\n\npencerobohan yang berlaku iaitu pertama pada 3 Jun 2021 apabila 16 buah pesawat",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "Kota Kinabalu FIR off Sarawak, near Luconia Shoals",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “Kota Kinabalu FIR off Sarawak, near Beting Patinggi Ali (Luconia Shoals)”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia Will Lodge Diplomatic Protest with China over Maritime Airspace ‘Intrusion’ — BenarNews 2021-06-01\nhttps://www.benarnews.org/english/news/malaysian/my-ch-planes-06012021135102.html\nPenyata Rasmi Dewan Rakyat, 7 Mac 2022 — Parliament of Malaysia (Digital Hansard) 2022-03-07\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2022-03-07.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:49:54.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7af16173a4",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Not issued yet",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On 1 June 2021 the Ministry of Foreign Affairs announced it would issue a diplomatic note of protest to China over the intrusion of 16 Chinese military aircraft and summon China's ambassador, saying friendly relations did not mean Malaysia would compromise its national security; the deputy foreign minister later told the Dewan Rakyat the ambassador was summoned on 3 June 2021.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-06-01",
+   "presort": "new move (novelty) — The protest note and summons of the Chinese ambassador (3 June) go beyond the 2020 record, which shows protest notes and UN notes verbales but no summons (ev-9de33b5a46, ev-a2ffe95951, prev run) — a summons last seen in 2016 is new again; the coder may instead merge it into the air-intercept move ev-49ca57afeb. (group MY2021-summons) [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recA1E5pxB02uWlLl",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; TotalEnergies; Idemitsu Kosan; ENEOS",
+   "suggestion_reasoning": "Awarding and extending rights to develop hydrocarbons in waters China claims is unilateral resource administration; demonstrative. Low confidence because these are commercial transactions whose assertive weight lies mainly in keeping foreign operators active inside the claimed area. [confidence: low]",
+   "date_end": "2025-06-30",
+   "new_dyads": "MC",
+   "excerpt": "France’s Total Energies acquired a 50 percent operated interest in Petronas’s SK310B and SK313.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "blocks SK310B, SK313, SK427, Ketapu Cluster and SK10 off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:31:14.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7e83b8215c",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-86771ff4f6",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In June 2025 Petronas brought further foreign partners into its Sarawak acreage inside China's nine-dash line: TotalEnergies acquired a 50 percent operated interest in Petronas's blocks SK310B and SK313, Idemitsu Kosan took 40 percent interests in SK427 and the Ketapu Cluster, and ENEOS's production sharing contract for SK10 was extended to 2038.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2025-06-01",
+   "presort": "continuation of ev-86771ff4f6 (a candidate, provisional) — Bringing TotalEnergies, Idemitsu and ENEOS into Sarawak acreage inside the nine-dash line is the routine licensing shown in 2024 (ev-86771ff4f6) — continuation (provisional on 2024). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recX4o2WrYMMYogqj",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas (Malaysia Petroleum Management); INPEX; Pertamina; Shell; ConocoPhillips",
+   "suggestion_reasoning": "Licensing of offshore exploration acreage by the state company inside the area China claims is unilateral resource administration; demonstrative. Months as given by AMTI; the 5E award month is not stated. [confidence: medium]",
+   "date_end": "2024-12-31",
+   "new_dyads": "MC",
+   "excerpt": "Off Sarawak, SK330 and SK510 were licensed in January 2024 for exploration to Malaysian operator Petronas, with Japan’s INPEX and Indonesia’s Pertamina as partners on the latter.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "blocks SK330 and SK510 off Sarawak; block 5E; Ubah Cluster off Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:12:51.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-86771ff4f6",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-584f850541",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In January 2024 Petronas licensed exploration blocks SK330 and SK510 off Sarawak to its own exploration arm, with INPEX and Pertamina as partners on SK510; later in 2024 Shell won operatorship of block 5E and, in December 2024, ConocoPhillips won operatorship of the Ubah Cluster off Sabah, all within China's nine-dash line.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-01-01",
+   "presort": "continuation of ev-584f850541 (a candidate, provisional) — Awarding blocks SK330, SK510, 5E and the Ubah Cluster inside the nine-dash line is the routine yearly licensing shown in 2022 (ev-584f850541); 2023 has no licensing candidate, likely a source gap — continuation (provisional on 2022). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recLh2jLciJLsqjpf",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Seadrill (West Capella)",
+   "suggestion_reasoning": "State-company drilling inside the area China claims is unilateral resource development; demonstrative. The end date is the end of the period covered, not the end of the operation, which AMTI reported as continuing in November 2026. [confidence: high]",
+   "date_end": "2026-10-31",
+   "new_dyads": "MC",
+   "excerpt": "Automatic identification system data and satellite imagery showed the West Capella on site since September 29, this time with no sign (yet) of the China Coast Guard.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:01:09.000Z",
+   "location_name": "Megah discovery, deepwater block 3K off Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:35:41.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-a07e10f947",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-7e83b8215c",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "From 29 September 2026 the drillship West Capella, contracted by Petronas, conducted appraisal drilling of the major 2025 Megah discovery in deepwater block 3K off Sabah, inside China's nine-dash line; it was still on site on 17 October 2026 with no sign of the China Coast Guard.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-09-29",
+   "presort": "continuation of ev-7e83b8215c (a candidate, provisional) — West Capella's appraisal drilling of the Megah discovery in block 3K off Sabah, unopposed, continues the 2025 development of acreage inside the nine-dash line (ev-7e83b8215c); 2025 has no drilling candidate, but the Megah discovery itself was a 2025 well — continuation (provisional on 2025). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reccRQi8b3sswjB1S",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Mohamad Hasan; Ministry of Foreign Affairs; National Security Council; MMEA; Malaysian Armed Forces",
+   "suggestion_reasoning": "Protest notes against other claimants' island building are verbal diplomatic assertions; declarative. The notes themselves are undated in the reply (one to Vietnam was sent in early October 2024, listed separately); the stated intensification of patrols could be coded as demonstrative. [confidence: medium]",
+   "date_end": "2025-11-19",
+   "new_dyads": "MV MC",
+   "excerpt": "Malaysia has also issued diplomatic notes protesting the construction of artificial islands and related infrastructure by Vietnam and China, while urging all claimants to refrain from provocative or militarised actions that may heighten tensions.\n\nMalaysia will not compromise on its sovereignty",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "Spratly Islands and Malaysia's maritime zones in the South China Sea",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia to step up South China Sea patrols, vows no compromise on sovereignty — Asia News Network (The Star) 2025-11-20\nhttps://asianews.network/malaysia-to-step-up-south-china-sea-patrols-vows-no-compromise-on-sovereignty\nM'sia to step up South China Sea patrols, vows no compromise on sovereignty — The Star 2025-11-20\nhttps://www.thestar.com.my/news/nation/2025/11/20/m039sia-to-step-up-south-china-sea-patrols-vows-no-compromise-on-sovereignty",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:31:43.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-a324c22be9",
+   "run_id": "MY-2021-2026",
+   "note": "continuation of ev-139e257c21",
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "summary": "In a parliamentary written reply dated 19 November 2025, Foreign Minister Mohamad Hasan said Malaysia had intensified patrols and enforcement in disputed areas of the South China Sea amid continued island-building by Vietnam and China, that agencies were safeguarding economic resources and infrastructure from exploitation by other states, and that Malaysia had issued diplomatic notes protesting the construction of artificial islands and related infrastructure by Vietnam and China.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-11-19",
+   "presort": "continuation of ev-139e257c21 (a candidate, provisional) — The written reply reports protest notes over Vietnamese and Chinese island-building, the practice begun with the 2024 complaint to Vietnam (ev-139e257c21), and an unquantified \"intensified\" patrolling — no number, so not a frequency move; continuation (provisional on 2024). If a dated 2025 note to China over island-building is found, that would be new. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recflp37DbxBjcxrK",
+   "archived_on": "2026-11-27",
+   "actors": "Dewan Rakyat; Ministry of Finance; National Security Council",
+   "suggestion_reasoning": "Creating dedicated funding for the upkeep and fortification of claimed outlying features is a unilateral domestic administrative act supporting the claim; demonstrative (a coder could see it as declarative legislation). The cabinet decision dates from 13 November 2020; the parliamentary resolution is the dated public act. [confidence: medium]",
+   "date_end": "2022-08-04",
+   "new_dyads": "MA",
+   "excerpt": "dan infrastruktur serta pemulihan pulau entiti paling terkeluar Alta Island di perairan dan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Malaysian islands and features under the 1979 map",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked.\nSub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 4 Ogos 2022 — Parliament of Malaysia (Digital Hansard) 2022-08-04\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2022-08-04.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:02:04.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-a49b1d526f",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "On 4 August 2022 the Dewan Rakyat adopted a resolution moved by Deputy Finance Minister Yamani Hafez Musa renaming the Malaysian Continental Shelf Project trust fund as the National Maritime Sovereignty Trust Fund (Kumpulan Wang Amanah Kedaulatan Maritim Negara) under the National Security Council, widening its scope to the security and sovereignty of Malaysia's continental shelf, maritime boundaries and strategic islands and features, including upgrading and maintaining outermost features, based on the 1979 map.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2022-08-04",
+   "presort": "new move (novelty) — Re-purposing the continental-shelf trust fund as a National Maritime Sovereignty Trust Fund, widened to upgrading and maintaining outermost features under the 1979 map, is a new administrative arrangement for the claimed features with nothing comparable in 2021; weak (a renamed fund, cabinet decision of 2020), so the coder may reject it or merge it with ev-7a919138c8. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recwuzDs5DqSEgQnm",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas and production-sharing contractors; Malaysian Marine Department",
+   "lat": 5.9,
+   "suggestion_reasoning": "Continued and expanded state-licensed drilling and production in waters China demanded Malaysia vacate is unilateral resource development; demonstrative. Period summary from AMTI's AIS and notice analysis. [confidence: medium]",
+   "date_end": "2024-09-30",
+   "new_dyads": "MC",
+   "excerpt": "15 new exploratory wells have been drilled off Sarawak in 2024.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "oil and gas blocks off Sarawak around Luconia Shoals (Timi, Kasawari, Jerun)",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "A Well-Oiled Machine: Chinese Patrols at Luconia Shoals — CSIS Asia Maritime Transparency Initiative 2024-10-01\nhttps://amti.csis.org/a-well-oiled-machine-chinese-patrols-at-luconia-shoals/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:13:57.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-acf008fd20",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-d78e824e39",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In the first nine months of 2024, according to Marine Department announcements, 15 new exploratory wells were drilled off Sarawak, and Malaysia kept producing from fields named in China's leaked February 2024 note (including Timi, Kasawari and Jerun) while China Coast Guard ships stationed at Luconia Shoals passed as close as 1,000 metres from its gas platforms.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2024-01-01",
+   "presort": "continuation of ev-d78e824e39 (a candidate, provisional) — 15 exploratory wells off Sarawak in nine months and continued production at Timi, Kasawari and Jerun despite China's February note keep the 2023 level (25 wells nationwide, ev-d78e824e39), not above it — continuation (provisional on 2023). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recXv5mQNBFwVMiYe",
+   "archived_on": "2026-11-27",
+   "actors": "Permanent Mission of Malaysia to the United Nations; Foreign Minister Mohamad Hasan",
+   "suggestion_reasoning": "A formal note verbale rejecting another claimant's South China Sea shelf submission is a legal/diplomatic verbal assertion; declarative. The UN PDF is a scan (read by OCR here), so the excerpt cannot be machine-checked; the Star report gives the date and context. [confidence: high]",
+   "date_end": "2026-07-24",
+   "new_dyads": "MP",
+   "excerpt": "The Government of Malaysia reaffirms its categorical rejection of the Philippines’ Partial Submission\n\nThe Foreign Minister said the protest was pre-emptively lodged with the UN earlier on July 24 this year, before the Philippines made its own oral submission on July 27, 2026, to extend its maritime territorial claim.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:01:09.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "West Palawan Region (Philippine extended continental shelf submission); Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\nSub-regions suggested: 7 Spratly SE (Palawan coast 26%; Sabah coast 85%); 6 Spratly NE (Palawan coast 64%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Note Verbale HA 49/2026 from the Permanent Mission of Malaysia to the United Nations — UN Division for Ocean Affairs and the Law of the Sea 2026-07-24\nhttps://www.un.org/depts/los/clcs_new/submissions_files/phl1/phl120260724MysNvUn002.pdf\nMalaysia lodges fresh UN protest over Philippines’ Sabah maritime claim — The Star 2026-08-08\nhttps://www.thestar.com.my/news/nation/2026/08/08/malaysia-lodges-fresh-un-protest-over-philippines-sabah-maritime-claim",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:35:27.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c5c731b196",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "6 Spratly NE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-e0aa5711f8",
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "Malaysia's Permanent Mission to the UN sent Note Verbale HA 49/2026 dated 24 July 2026 reaffirming its categorical rejection of the Philippines' 2024 partial submission to the CLCS for the West Palawan Region as projecting the Philippine continental margin from the baselines of Sabah, and again asking the Commission not to examine and qualify it; the note pre-empted the Philippines' oral presentation to the Commission on 27 July 2026, as Foreign Minister Mohamad Hasan said on 8 August 2026.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-07-24",
+   "presort": "continuation of ev-e0aa5711f8 (a candidate, provisional) — Note verbale HA 49/2026 reaffirms the 2024 rejection of the Philippines' West Palawan submission (ev-e0aa5711f8) ahead of the oral presentation — a repeat, continuation (provisional on 2024). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec0O0moJJRGodW4a",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas and production-sharing contractors",
+   "suggestion_reasoning": "A year-level summary of state-licensed exploratory drilling inside the area China claims is unilateral resource development, a marked increase in frequency; demonstrative. AMTI does not say how many of the wells lie inside the nine-dash line. [confidence: medium]",
+   "date_end": "2023-12-31",
+   "new_dyads": "MC",
+   "excerpt": "with 25 new wells (the highest annual total since 2015) leading to 19 discoveries and two appraisal successes",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Petronas exploration blocks off Sarawak and Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "A Well-Oiled Machine: Chinese Patrols at Luconia Shoals — CSIS Asia Maritime Transparency Initiative 2024-10-01\nhttps://amti.csis.org/a-well-oiled-machine-chinese-patrols-at-luconia-shoals/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:07:59.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-d78e824e39",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "During 2023 Petronas and its partners drilled 25 new exploration wells in Malaysia's offshore areas, the highest annual total since 2015, producing 19 discoveries and two appraisal successes amounting to over 1 billion barrels of oil equivalent, much of it in the Sarawak basin around Luconia Shoals inside China's nine-dash line.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2023-01-01",
+   "presort": "new move (frequency) — 25 new exploration wells in 2023, the highest annual total since 2015, against the 2022 record of a handful of discoveries in three Sarawak blocks (ev-7981623e15) — a frequency increase in resource exploration; how many wells lie inside the nine-dash line is not stated, and a commercial cycle (not a policy change) may explain it, so the coder may call it continuation. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "frequency",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJo4yeBK2O3ytxm",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Deputy Foreign Minister Mohamad Alamin",
+   "suggestion_reasoning": "A formal protest note rejecting China's maritime claims is a verbal diplomatic assertion; declarative. The note's date comes from the parliamentary reply (the note itself is not public); in November 2024 Alamin added that the Chinese ambassador was also called in over the map. [confidence: high]",
+   "date_end": "2023-09-11",
+   "new_dyads": "MC",
+   "excerpt": "Pada 11 September 2023, Kerajaan Malaysia telah mengemukakan bantahan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Malaysian maritime areas under the 1979 map",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 19 September 2023 — Parliament of Malaysia (Digital Hansard) 2023-09-19\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2023-09-19.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:09:38.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d8267714f5",
+   "run_id": "MY-2021-2026",
+   "note": "continuation of ev-e677bcc107",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On 11 September 2023 the Malaysian government delivered a diplomatic protest to China over the 2023 standard map, firmly rejecting China's claims to sovereignty, sovereign rights and jurisdiction over maritime features or areas in the South China Sea that cover Malaysia's maritime areas under the 1979 map as inconsistent with international law including UNCLOS, as Deputy Foreign Minister Mohamad Alamin told the Dewan Rakyat on 19 September 2023.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-09-11",
+   "presort": "continuation of ev-e677bcc107 (a candidate, provisional) — The protest note over the 2023 standard map continues the practice of protest notes shown in 2021 (ev-e677bcc107); it follows ev-775a76a73e on the same map — continuation (provisional on 2021). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec4Eivu4uLicoCSR",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra)",
+   "suggestion_reasoning": "An ambassadorial summons and formal protest are verbal diplomatic assertions of jurisdiction; declarative. Same event as in the 2016plus hand-compiled set. [confidence: high]",
+   "date_end": "2021-10-04",
+   "new_dyads": "MC",
+   "excerpt": "called in the Ambassador of the People’s Republic of China to convey Malaysia’s position and protest against the presence and activities of Chinese vessels, including a survey vessel, in Malaysia’s Exclusive Economic Zone off the coasts of Sabah and Sarawak.\n\nChinese ambassador Ouyang Yujing was summoned",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "location_name": "Malaysia's EEZ off Sabah and Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia Summons China’s Envoy to Protest Ships in its EEZ — BenarNews 2021-10-04\nhttps://www.benarnews.org/english/news/malaysian/malaysia-protests-chinese-ships-south-china-sea-10042021154547.html\nWisma Putra summons Chinese envoy to protest South China Sea incursion — MalaysiaNow (AFP) 2021-10-05\nhttps://malaysianow.com/news/2021/10/05/wisma-putra-summons-chinese-envoy-to-protest-south-china-sea-incursion",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:57:24.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e050461164",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "The Ministry of Foreign Affairs summoned Chinese ambassador Ouyang Yujing on 4 October 2021 to protest the presence and activities of Chinese vessels, including the survey ship Da Yang Hao, in Malaysia's exclusive economic zone off Sabah and Sarawak, stating that they were inconsistent with Malaysia's Exclusive Economic Zone Act 1984 and UNCLOS.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-10-04",
+   "merge_into_candidate": " ev-7af16173a4",
+   "presort": "same move as ev-7af16173a4 — Summoning ambassador Ouyang Yujing over Da Yang Hao's survey in the EEZ is the second summons of 2021 and the same intensification of diplomatic method as ev-7af16173a4 — merge. (group MY2021-summons) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recJdWTDkhaQiy192",
+   "archived_on": "2026-11-27",
+   "actors": "Permanent Mission of Malaysia to the United Nations; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A formal note verbale rejecting another claimant's South China Sea shelf submission is a legal/diplomatic verbal assertion; declarative. The UN-hosted PDF is a scan (read by OCR here), so the excerpt cannot be machine-checked; the HTML listing confirms the date. [confidence: high]",
+   "date_end": "2024-06-27",
+   "new_dyads": "MP",
+   "excerpt": "The Government of Malaysia categorically rejects the Philippines’ Partial Submission on the basis that the Republic of the Philippines’ continental margin is projected from the baselines of the Malaysian state of Sabah.\n\nMalaysia Communication dated 27 June 2024",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "West Palawan Region (Philippine extended continental shelf submission); Sabah",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\nSub-regions suggested: 7 Spratly SE (Palawan coast 26%; Sabah coast 85%); 6 Spratly NE (Palawan coast 64%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Note Verbale HA 37/2024 from the Permanent Mission of Malaysia to the United Nations — UN Division for Ocean Affairs and the Law of the Sea 2024-06-27\nhttps://www.un.org/depts/los/clcs_new/submissions_files/phl1/20240627MysNvUn001.pdf\nPartial submission by the Philippines in the West Palawan Region - Commission on the Limits of the Continental Shelf — UN Division for Ocean Affairs and the Law of the Sea\nhttps://www.un.org/depts/los/clcs_new/submissions_files/submission_phl1_2024.htm",
+   "pull_request": 62,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:17:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e0aa5711f8",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "7 Spratly SE",
+    "6 Spratly NE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b6735182ed",
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "Malaysia's Permanent Mission to the UN sent Note Verbale HA 37/2024 dated 27 June 2024 categorically rejecting the Philippines' 14 June 2024 partial submission to the CLCS on the West Palawan Region because the Philippine continental margin was projected from the baselines of Sabah, reaffirming that Malaysia has never recognised the Philippine claim to Sabah and asking the Commission not to examine and qualify the submission.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-06-27",
+   "presort": "continuation of ev-b6735182ed (a candidate, provisional) — Note verbale HA 37/2024 rejecting the Philippines' West Palawan CLCS submission uses the same method as Malaysia's 2020 note rejecting the Philippines' Kalayaan-based claims (ev-b6735182ed, prev run); a reaction to a new filing, and Malaysia would have answered the same way in any year — continuation; nothing comparable in 2023, so the coder may treat it as new again (novelty). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recwadvidRbe07jmU",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Bridge Petroleum; PTTEP; EnQuest; INPEX",
+   "suggestion_reasoning": "Licensing and development of offshore blocks by the state company inside the area China claims is unilateral resource administration; demonstrative. AMTI states that all these areas lie within the nine-dash line; months only. [confidence: medium]",
+   "date_end": "2026-07-31",
+   "new_dyads": "MC",
+   "excerpt": "Development of SK405B, operated by Thailand’s PTTEP, began in spring 2026 with first oil targeted in 2028.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Permata Cluster off Sabah; SK405B, Balingian, SK8, D35 and Block 2E off Sarawak",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:33:43.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-e33daf036b",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-7e83b8215c ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In 2026 Petronas continued awarding and developing acreage inside China's nine-dash line: Bridge Petroleum signed a production sharing contract for the Permata Cluster off Sabah in February 2026, development of PTTEP-operated SK405B began in spring 2026, EnQuest secured operatorship in Balingian, SK8 and D35 in June 2026, and INPEX bought an 85 percent interest in Block 2E in July 2026.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-02-01",
+   "presort": "continuation of ev-7e83b8215c (a candidate, provisional) — 2026 awards and development (Permata, SK405B, Balingian, SK8, D35, 2E) inside the nine-dash line continue the routine licensing of 2025 (ev-7e83b8215c) — continuation (provisional on 2025). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recdI7bIbmtl9uLTI",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Saifuddin Abdullah; Dewan Rakyat",
+   "lat": 5.9,
+   "suggestion_reasoning": "A ministerial statement in Parliament affirming protests and non-recognition of China's claim is a verbal assertion; declarative. Excerpt is from the official Hansard CSV (Malay). [confidence: high]",
+   "date_end": "2021-09-23",
+   "new_dyads": "MC",
+   "excerpt": "Tindakan ini juga adalah sebagai langkah Malaysia yang tidak pernah mengiktiraf tuntutan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Luconia Shoals",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked. Source's wording for the place: “Beting Patinggi Ali (Luconia Shoals)”.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 23 September 2021 — Parliament of Malaysia (Digital Hansard) 2021-09-23\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2021-09-23.csv",
+   "pull_request": 62,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:57:04.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e677bcc107",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-9de33b5a46",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Winding up a debate in the Dewan Rakyat on 23 September 2021, Foreign Minister Saifuddin Abdullah said, answering the MP for Sibuti on Chinese vessels at Beting Patinggi Ali, that the government would not compromise on territorial integrity and sovereignty, that Malaysia consistently sent diplomatic protest notes whenever foreign government vessels intruded into its waters, and that Malaysia had never recognised the claims of other claimants including China where they overlapped its waters under the 1979 map.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-09-23",
+   "presort": "continuation of ev-9de33b5a46 (a candidate, provisional) — Saifuddin's Dewan Rakyat statement that Malaysia consistently sends protest notes and never recognised China's overlapping claims restates the 2020 parliamentary answer (ev-9de33b5a46, prev run) — continuation (provisional on 2020). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recxeTAzA7LNjRO63",
+   "archived_on": "2026-11-27",
+   "actors": "Home Minister Saifuddin Nasution Ismail; Malaysian Maritime Enforcement Agency; Marine Police",
+   "suggestion_reasoning": "A period aggregate of detentions of foreign, mostly Vietnamese, fishing vessels; the detentions are coercive enforcement. Dated to the disclosure because no per-year breakdown is given (an earlier reply of July 2024 gave 265 Vietnamese boats and 2,683 crew for 2020-2023); a coder should spread it over 2020-2025 or treat the individual incidents listed in this set as its sample. Covers the Straits of Malacca as well as the South China Sea. [confidence: medium]",
+   "date_end": "2026-01-21",
+   "new_dyads": "MV",
+   "excerpt": "Local enforcement agencies have detained 478 foreign vessels between 2020 and 2025, with the majority consisting of Vietnamese fishermen, the Dewan Rakyat was told.\n\nSome 265 Vietnamese fishing boats encroached into Malaysian waters between 2020 and last year, the Dewan Rakyat was told.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:00:29.000Z",
+   "location_name": "Malaysian maritime zones (South China Sea and Straits of Malacca)",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Total of 478 foreign vessels detained between 2020 and 2025 — The Star 2026-01-22\nhttps://www.thestar.com.my/news/nation/2026/01/22/total-of-478-foreign-vessels-detained-between-2020-and-2025\n265 Vietnamese fishing boats held for encroachment since 2020, Dewan Rakyat told — The Star 2024-07-17\nhttps://thestar.com.my/news/nation/2024/07/17/265-vietnamese-fishing-boats-held-for-encroachment-since-2020-dewan-rakyat-told",
+   "pull_request": 62,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:33:31.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-edc66ae7ee",
+   "run_id": "MY-2021-2026",
+   "note": "continuation of ev-2b4c500a42",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "In a parliamentary written reply dated 21 January 2026, Home Minister Saifuddin Nasution Ismail said Malaysian enforcement agencies had detained 478 foreign vessels between 2020 and 2025, 331 of them (69.25 percent) involving Vietnamese nationals, and that MMEA offshore patrol vessels such as KM Bendahara and KM Fatimah conducted long patrols up to 200 nautical miles into the EEZ as a peaceful but firm 'white hull' presence.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-01-21",
+   "presort": "continuation of ev-2b4c500a42 (a candidate, provisional) — A 2020-2025 aggregate of 478 detentions (69% Vietnamese) and OPV \"white hull\" patrols to 200 nm documents the standing enforcement shown in 2025 (ev-2b4c500a42), not a 2026 step-up — continuation (provisional on 2025). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec8Lqc9KTJxHRBZD",
+   "archived_on": "2026-11-27",
+   "actors": "Prime Minister Anwar Ibrahim; Petronas",
+   "suggestion_reasoning": "A head-of-government statement in Parliament rejecting China's objection and affirming continued exploration is a verbal claim assertion; declarative. Same event as in the 2016plus hand-compiled set; the first source is the official Hansard. [confidence: high]",
+   "date_end": "2023-04-04",
+   "new_dyads": "MC",
+   "excerpt": "menganggap ini kawasan daerah Malaysia, maka oleh yang demikian, PETRONAS akan\n\nAnwar said he told his Chinese counterparts that Malaysia considers the area Malaysian territory and “therefore Petronas will continue its exploration activities there”.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:56:43.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Petronas exploration area off Sarawak (widely understood to be the Kasawari gas field)",
+   "run": [
+    "MY-2021-2026"
+   ],
+   "machine_note": "Source is binary/octet-stream; excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.aljazeera.com/economy/2023/4/25/malaysian-energy-needs-clash-with-china-claims-in-south-china-sea.",
+   "reviewer": "Angelo",
+   "sources": "Penyata Rasmi Dewan Rakyat, 4 April 2023 — Parliament of Malaysia (Digital Hansard) 2023-04-04\nhttps://downloads-hansard.parlimen.gov.my/dewanrakyat/dr_2023-04-04.csv\nMalaysia's energy needs face Chinese pushback in South China Sea — Al Jazeera 2023-04-25\nhttps://www.aljazeera.com/economy/2023/4/25/malaysian-energy-needs-clash-with-china-claims-in-south-china-sea",
+   "pull_request": 62,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T16:08:48.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-fe0373e68e",
+   "run_id": "MY-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Answering a Dewan Rakyat question on 4 April 2023 after his first official visit to China, Prime Minister Anwar Ibrahim said China was concerned that Petronas had carried out a major activity in an area also claimed by China, and that he had told Premier Li Qiang and President Xi Jinping that Malaysia regards the area as Malaysian and that Petronas would therefore continue exploration there, while being open to negotiation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-04-04",
+   "merge_into_candidate": "ev-36cf3c00a8 ",
+   "presort": "same move as ev-36cf3c00a8 — Anwar telling Li Qiang and Xi that the area is Malaysian and Petronas will continue is the declarative defence of the Kasawari work (ev-36cf3c00a8) — merge. (group MY2023-kasawari) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  }
+ ]
+}

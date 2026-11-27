@@ -1,0 +1,397 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-09e2bdf328",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-cae2a725dd"
+  },
+  {
+   "event_id": "ev-0d43ccecd8",
+   "action": "reject",
+   "note": "continuation of ev-9619d0dccf"
+  },
+  {
+   "event_id": "ev-117e74b7e5",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-7c6dbc8761"
+  },
+  {
+   "event_id": "ev-2588d43235",
+   "action": "reject",
+   "note": "continuation of ev-117e74b7e5"
+  },
+  {
+   "event_id": "ev-2a924fa331",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "fisheries",
+     "politics"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-2f346c59f1",
+   "action": "reject",
+   "note": "continuation of ev-b04b09111c"
+  },
+  {
+   "event_id": "ev-395be8f897",
+   "action": "reject",
+   "note": "Undisputed territories"
+  },
+  {
+   "event_id": "ev-399cfad81d",
+   "action": "reject",
+   "note": "continuation of ev-520a06d61f"
+  },
+  {
+   "event_id": "ev-3ab8b10c3d",
+   "action": "reject",
+   "note": "Retracted statement"
+  },
+  {
+   "event_id": "ev-3d99bdbde7",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "military",
+     "politics"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-3db1af18f4",
+   "action": "reject",
+   "note": "continuation of ev-117e74b7e5"
+  },
+  {
+   "event_id": "ev-4425b85d9b",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV"
+    ],
+    "domains": [
+     "domestic",
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "7",
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-46bc24187c",
+   "action": "reject",
+   "note": "continuation of ev-b04b09111c"
+  },
+  {
+   "event_id": "ev-555225be3d",
+   "action": "reject",
+   "note": "continuation of ev-399cfad81d"
+  },
+  {
+   "event_id": "ev-57c3e0b7e2",
+   "action": "reject",
+   "note": "continuation of ev-497b14cfd4"
+  },
+  {
+   "event_id": "ev-57f2f75ee4",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-894ec00504"
+  },
+  {
+   "event_id": "ev-69a8d4bf33",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10",
+     "7",
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-72ddbf3ab3",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-69a8d4bf33"
+  },
+  {
+   "event_id": "ev-7c6dbc8761",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC",
+     "MV",
+     "MP"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "energy"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-7dee62dc47",
+   "action": "reject",
+   "note": "continuation of ev-809147a19f"
+  },
+  {
+   "event_id": "ev-809147a19f",
+   "action": "reject",
+   "note": "continuation of ev-d1d8be7f62"
+  },
+  {
+   "event_id": "ev-84bd1bb58f",
+   "action": "reject",
+   "note": "continuation of ev-46bc24187c"
+  },
+  {
+   "event_id": "ev-894ec00504",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-8a28e6ca1f",
+   "action": "reject",
+   "note": "Undisputed territorial waters so rejected despite the unprecedented scale"
+  },
+  {
+   "event_id": "ev-9284eb29a8",
+   "action": "reject",
+   "note": "Longstanding practice"
+  },
+  {
+   "event_id": "ev-9619d0dccf",
+   "action": "reject",
+   "note": "continuation of ev-676c0cf97d"
+  },
+  {
+   "event_id": "ev-9866168cb7",
+   "action": "reject",
+   "note": "continuation of ev-0d43ccecd8"
+  },
+  {
+   "event_id": "ev-98915c19fb",
+   "action": "reject",
+   "note": "continuation of ev-2a924fa331"
+  },
+  {
+   "event_id": "ev-9de33b5a46",
+   "action": "reject",
+   "note": "continuation of ev-c303e3c040"
+  },
+  {
+   "event_id": "ev-a2ffe95951",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "politics"
+    ],
+    "subregions": [
+     "10",
+     "7",
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b04b09111c",
+   "action": "reject",
+   "note": "continuation of ev-57c3e0b7e2"
+  },
+  {
+   "event_id": "ev-b6735182ed",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-a2ffe95951"
+  },
+  {
+   "event_id": "ev-c303e3c040",
+   "action": "reject",
+   "note": "continuation of ev-7dee62dc47"
+  },
+  {
+   "event_id": "ev-cae2a725dd",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC",
+     "MV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "energy"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-d1c89a64f7",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "scope",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV",
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-d1d8be7f62",
+   "action": "reject",
+   "note": "continuation of ev-676c0cf97d"
+  },
+  {
+   "event_id": "ev-e5ea7c40ce",
+   "action": "reject",
+   "note": "continuation of ev-0d43ccecd8"
+  },
+  {
+   "event_id": "ev-e649b8e80f",
+   "action": "reject",
+   "note": "continuation of ev-555225be3d"
+  },
+  {
+   "event_id": "ev-f46dde92b5",
+   "action": "reject",
+   "note": "Closer to a call for engagement than an assertive statement"
+  },
+  {
+   "event_id": "ev-f8d6830dbb",
+   "action": "reject",
+   "note": "continuation of ev-84bd1bb58f"
+  }
+ ],
+ "reviewer": "Angelo"
+}
