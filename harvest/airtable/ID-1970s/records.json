@@ -1,0 +1,969 @@
+{
+ "run_id": "ID-1970s",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "rec9Pm2aXMeSQEaSW",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Agip (contractor)",
+   "suggestion_reasoning": "Licensing new drilling in a disputed shelf area is unilateral resource development; demonstrative. Whether the well was drilled is not established (the US had asked the US drilling contractor Atwood to postpone). [confidence: medium]",
+   "date_end": "1975-07-23",
+   "new_dyads": "IV",
+   "excerpt": "AGIP SOUGHT AND WAS GRANTED PERTAMINA APPROVAL (NO",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "GOI/GVN CONTINENTAL SHELF BOUNDARY DISPUTE (Jakarta 09115) — US Department of State cable (WikiLeaks PlusD) 1975-07-25\nhttps://search.wikileaks.org/plusd/cables/1975JAKART09115_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:17:47.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-02305f8eb4",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-ad1b102653",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Pertamina gave Agip its approval (no objection) to drill an exploratory well in the shelf area disputed with Vietnam, without a guarantee of Indonesian military protection, as reported by Agip's local manager to the US embassy on 23 July 1975, less than three months after the fall of Saigon.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1975-07-01",
+   "presort": "continuation of ev-ad1b102653 (a candidate, provisional) — Licensing a further exploratory well in the disputed shelf continues the 1974 practice of drilling there (ev-ad1b102653) at the same level, without the military escort that would mark an escalation; continuation, provisional until 1974 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recsZNTDFS49PewxK",
+   "archived_on": "2026-11-27",
+   "actors": "Acting Foreign Minister Mochtar Kusumaatmadja; Department of Foreign Affairs",
+   "suggestion_reasoning": "Rejecting a rival claimant's demand for a moratorium and insisting on continued exploration is a diplomatic assertion of the claim; declarative. A May 1978 cable from Vientiane quoting an Indonesian diplomat says instead that the two sides agreed not to exploit unresolved areas, so the outcome is disputed; the visit's exact dates are not given. [confidence: medium]",
+   "date_end": "1977-12-31",
+   "new_dyads": "IV",
+   "excerpt": "AND THREATENED AT ONE POINT TO SCRAP THE WHOLE IDEA OF\n\nVIET NAM AND INDONESIA HAD AGREED NOT TO TAKE ANY STEPS",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "FOREIGN MINISTER'S VIEWS ON VIETNAMESE VISIT (Jakarta 00373) — US Department of State cable (WikiLeaks PlusD) 1978-01-10\nhttps://search.wikileaks.org/plusd/cables/1978JAKART00373_d.html\nINDONESIANS REPORTEDLY CONCERNED ABOUT ITALIAN OIL PROSPECTING OFF VIET NAM (Vientiane 00551) — US Department of State cable (WikiLeaks PlusD) 1978-05-12\nhttps://search.wikileaks.org/plusd/cables/1978VIENTI00551_d.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:18:34.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-0245dbdd94",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "During Vietnamese Foreign Minister Nguyen Duy Trinh's visit to Jakarta, which ended with a joint communique on 31 December 1977, Indonesia refused Vietnam's push for a provision that neither side would develop economic resources in the disputed shelf area and, according to Acting Foreign Minister Mochtar Kusumaatmadja, threatened to scrap the communique rather than cease oil exploration already under way.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1977-12-01",
+   "presort": "new move (novelty) — Refusing Vietnam's demanded moratorium and threatening to scrap the communiqué rather than stop exploration is a diplomatic assertion with nothing comparable in 1976 (no candidates), so it is new again; declarative. Doubt: a May 1978 Vientiane cable says the two sides agreed not to exploit unresolved areas, so the coder may want the outcome settled first. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recRtEL63JwvwsS86",
+   "archived_on": "2026-11-27",
+   "actors": "President Soeharto; Pertamina (Lt Gen Ibnu Sutowo)",
+   "suggestion_reasoning": "Presidential ratification of a resource-contract area that extends into a disputed shelf is unilateral administration of the claim; demonstrative. The decree itself was not found: its number and date come only from a Pertamina letter of 12 June 1974 quoted in a US cable, which gives the 1971 decree's date garbled (October 1, 1974), and the cable does not say what the 1973 decree changed. This may be the 1973 'Agip award' mentioned in briefs; low confidence. [confidence: low]",
+   "date_end": "1973-11-17",
+   "new_dyads": "IV",
+   "excerpt": "DATED NOVEMBER 17, 1973. SIGNED LT GENERAL IBNU",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Agip production-sharing contract area, South China Sea (north and east of Natuna)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY/LOS: GVN-GOI CONTINENTAL SHELF DISPUTE (Jakarta 08624, Bow Valley telex) — US Department of State cable (WikiLeaks PlusD) 1974-07-12\nhttps://search.wikileaks.org/plusd/cables/1974JAKART08624_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:13:16.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-1005203f02",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Precedent ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "A Presidential Decree, No. 39 of 1973 dated 17 November 1973, ratified (together with an earlier Decree No. 68 of 1971) the contract area of the Italian state company Agip in the South China Sea under its 1968 production-sharing contract with Pertamina, part of which lay in the shelf area overlapping South Vietnam's claim; Pertamina later cited both decrees when warning foreign contractors off South Vietnamese concessions in that area.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1973-11-17",
+   "presort": "unclear — Presidential ratification of Agip's contract area reaching into the disputed shelf could be a demonstrative novelty against 1972 (nothing comparable after ev-9c94582a2a), but the Agip contract dates from 1968 and was already ratified by Decree 68/1971, so it may only maintain an existing concession. Settle by finding Keppres 39/1973 and what it changed (the decree is known only from a 1974 Pertamina letter). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recfYgHcxwz1PBPHP",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Mochtar Kusumaatmadja; DPR Commission I",
+   "suggestion_reasoning": "A ministerial statement to parliament dismissing a rival's protest and affirming continued exploration is a verbal assertion of the claim; declarative. [confidence: high]",
+   "date_end": "1979-12-06",
+   "new_dyads": "IV",
+   "excerpt": "INDONESIA SHOULD HALT OIL EXPLORATION ACTIVITIES IN THE",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Natuna Islands area",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "INDONESIAN-VIETNAMESE RELATIONS (Jakarta 19502) — US Department of State cable (WikiLeaks PlusD) 1979-12-07\nhttps://search.wikileaks.org/plusd/cables/1979JAKART19502_e.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:23:33.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-26d27c646d",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Foreign Minister Mochtar Kusumaatmadja told the parliament's Commission on Defence and Foreign Affairs on 6 December 1979 that Vietnam's reported protest over Indonesia's award of an oil exploration contract in the disputed Natuna area was merely a formality putting Vietnam's position on record, and that it did not mean Indonesia should halt oil exploration around the Natuna Islands.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-12-06",
+   "merge_into_candidate": "ev-bbef893415",
+   "presort": "same move as ev-bbef893415 — Mochtar's statement to parliament dismissing Vietnam's protest at the awards is the declarative side of the bloc round led by ev-bbef893415; alternatively a continuation of the 1978 rejection of Vietnam's positions (ev-28e2c68f85). (group ID1979-natuna-blocs) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recfXuTUM0Xfv9V99",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Mines; Department of Foreign Affairs negotiators",
+   "suggestion_reasoning": "Flatly rejecting a rival's boundary claim and restating Indonesia's line is a verbal assertion; declarative. It took place inside bilateral negotiations, which are cooperative in themselves, so a coder may prefer to treat it as context; the August round's exact date (11 August per CSIS Analisa) is not in the cable. [confidence: low]",
+   "date_end": "1978-08-31",
+   "new_dyads": "IV",
+   "excerpt": "HE REFUSED TO DISCUSS IT IN HANOI.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "INDONESIA/VIET NAM BOUNDARY IN SOUTH CHINA SEA (Jakarta 11939) — US Department of State cable (WikiLeaks PlusD) 1978-09-01\nhttps://search.wikileaks.org/plusd/cables/1978JAKART11939_d.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:19:18.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-28e2c68f85",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-0245dbdd94",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "In the first two rounds of continental-shelf talks with Vietnam (Hanoi from 5 June 1978; Jakarta in August), Indonesia rejected Vietnam's proposal to use a submarine 'thalweg' about 12 miles north of Natuna as the boundary, its negotiator refusing even to discuss it in Hanoi, and then dismissed Vietnam's compromise of a line halfway between that trench and Indonesia's claim; Indonesia held to a median line from its outermost islands.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1978-06-05",
+   "presort": "continuation of ev-0245dbdd94 (a candidate, provisional) — Rejecting Vietnam's thalweg line in the 1978 talks repeats the 1977 refusal of Vietnam's positions in bilateral diplomacy (ev-0245dbdd94) at the same level, inside a cooperative negotiation; continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "reclHp2iIduEj9O4J",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Marathon Petroleum (contractor)",
+   "suggestion_reasoning": "Awarding an exploration contract over partly disputed acreage in the face of a protest is unilateral resource development; demonstrative. CSIS's Asnani Usman (1984) dates the Vietnamese protest to 29 November 1979 and records that Indonesia ignored it and went on signing contracts in late 1979 and early 1980. [confidence: high]",
+   "date_end": "1979-11-30",
+   "new_dyads": "IV",
+   "excerpt": "NOVEMBER 30 PERTAMINA AND MARATHON SIGNED A PRODUCTION\n\nKecaman ini tidak ditanggapi oleh Indonesia",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Natuna Bloc B, South China Sea",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "NATUNA BLOC B AWARDED TO MARATHON (Jakarta 19190) — US Department of State cable (WikiLeaks PlusD) 1979-12-04\nhttps://search.wikileaks.org/plusd/cables/1979JAKART19190_e.html\nPenetapan Batas Landas Kontinen Indonesia-Vietnam: Aspek Ekonomi, Strategis dan Keamanan (Asnani Usman) — Analisa (CSIS Jakarta), 1984-12 1984-12-01\nhttps://journals.csis.or.id/index.php/analisis/article/download/749/493/1109",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:23:20.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-339a3ca551",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Pertamina and Marathon signed a production-sharing contract on 30 November 1979 for oil exploration in Natuna Bloc B (24,700 sq km, partly in the area disputed with Vietnam), for a reported $8.5 million signature bonus; Vietnam had protested the tender and the awards of Blocs A and B, and Indonesia did not respond to the protest.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-11-30",
+   "merge_into_candidate": "ev-bbef893415",
+   "presort": "same move as ev-bbef893415 — The Marathon contract for Bloc B, signed despite Vietnam's protest, is an award of the bloc round led by ev-bbef893415; one move. (group ID1979-natuna-blocs) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recV6uwWZxCs6PxL0",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Gulf Oil (contractor)",
+   "suggestion_reasoning": "Awarding an exploration contract over partly disputed acreage is unilateral resource development; demonstrative. Vietnam protested the award of Blocs A and B (reported in the Jakarta press in early December 1979). [confidence: high]",
+   "date_end": "1979-10-16",
+   "new_dyads": "IV",
+   "excerpt": "ON OCTOBER 16 PERTAMINA SIGNED A REGULAR PRODUCTION",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Natuna Bloc A, South China Sea",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "PERTAMINA SIGNS NEW PRODUCTION SHARING CONTRACTS WITH GULF AND AMOCO (Jakarta 16637) — US Department of State cable (WikiLeaks PlusD) 1979-10-18\nhttps://search.wikileaks.org/plusd/cables/1979JAKART16637_e.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:22:30.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-6855d9320a",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Pertamina signed a production-sharing contract with Gulf Oil on 16 October 1979 for exploration of Bloc A of the South China Sea (one of the Natuna blocs partly in the area disputed with Vietnam), with a $20 million signature bonus and an estimated $80 million six-year work programme.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-10-16",
+   "merge_into_candidate": "ev-bbef893415",
+   "presort": "same move as ev-bbef893415 — The Gulf contract for Bloc A is one of the awards of the bloc round led by ev-bbef893415; one move. (group ID1979-natuna-blocs) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec6saxEGznLwGUXP",
+   "archived_on": "2026-11-27",
+   "actors": "President Suharto; cabinet political subcommittee; Ministry of Mining (Sadli); Hankam",
+   "suggestion_reasoning": "A presidential decision to harden the negotiating position on a disputed boundary is a policy assertion; declarative (domestic). It was internal and reported only by US embassy sources, so it is of limited visibility to the other side. [confidence: medium]",
+   "date_end": "1974-03-28",
+   "new_dyads": "IV",
+   "excerpt": "DECIDED MARCH 28 NOT RPT NOT TO GO BEYOND COMPROMISE\n\nSUHARTO MARCH 28 DECISION NOT TO GO BEYOND 1972 OFFER",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY-LOS (CERP/EAL): GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 04655) — US Department of State cable (WikiLeaks PlusD) 1974-04-17\nhttps://search.wikileaks.org/plusd/cables/1974JAKART04655_b.html\nENERGY-LOS: GVN-GOI OVERLAPPING CONTINENTAL SHELF CLAIMS (Saigon 05238) — US Department of State cable (WikiLeaks PlusD) 1974-04-22\nhttps://search.wikileaks.org/plusd/cables/1974SAIGON05238_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:14:52.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-6fb60e7a2b",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "No assertive move",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On the recommendation of the cabinet-level political subcommittee, President Suharto decided on 28 March 1974 not to go beyond the compromise Indonesia had offered South Vietnam in June 1972 on the continental-shelf boundary north of Natuna, so as not to sacrifice the 'outermost islands' equidistance principle or the prospective oil and gas area; the Mining Ministry then proposed ending technical talks.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1974-03-28",
+   "presort": "unclear — An internal presidential decision not to go beyond the June 1972 compromise is a decision, not observable behaviour (the series dates behaviour), and it holds rather than hardens the position shown in ev-9c94582a2a; likely reject or context. Settle by whether the decision was conveyed to South Vietnam in 1974. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recAXQVD2vvPFlJTZ",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina (Ir Soediono, Soeparjadi, Gen Soekamto Sajidiman, Lt Gen Ibnu Sutowo)",
+   "suggestion_reasoning": "Demanding that foreign companies withdraw from a rival claimant's concessions, backed by a hint that their Indonesian business would suffer, is economic pressure in support of the claim; coercive. The targets were companies rather than South Vietnam directly, which a coder may weigh; the US embassy called it 'countervailing pressure' in response to South Vietnam's 18 May letter to Agip. [confidence: medium]",
+   "date_end": "1974-07-04",
+   "new_dyads": "IV",
+   "excerpt": "INDONESIA JEOPARDIZED IF AN EQUITABLE SOLUTION WAS\n\nREPORTEDLY REJECTED AGIP REQUEST ON GROUNDS",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY/LOS: GVN-GOI CONTINENTAL SHELF DISPUTE (Jakarta 08624, Bow Valley telex) — US Department of State cable (WikiLeaks PlusD) 1974-07-12\nhttps://search.wikileaks.org/plusd/cables/1974JAKART08624_b.html\nENERGY/LOS: GVN-GOI CONTINENTAL SHELF DISPUTE (Jakarta 08622) — US Department of State cable (WikiLeaks PlusD) 1974-07-12\nhttps://search.wikileaks.org/plusd/cables/1974JAKART08622_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:17:23.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-902f2ee3f3",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Pertamina summoned the manager of Bow Valley Indonesia on 20 June 1974 and, by letter of 22 June, strongly advised it to withdraw from the Sunningdale group's South Vietnamese offshore concession, with an official saying verbally that the company's position in Indonesia might be jeopardised; in the following two weeks Pertamina also called in Shell and Santa Fe (meeting of 4 July) over their South Vietnamese blocks overlapping the disputed area, and Ibnu Sutowo rejected Agip's request to swap its disputed acreage on the grounds that those were Indonesia's waters.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1974-06-20",
+   "presort": "new move (novelty) — Lead of the 1974 pressure on foreign oil companies: summoning Bow Valley, Shell and Santa Fe to quit South Vietnamese concessions, with a hint their Indonesian business would suffer, is a new method against 1973 (law and decree only, ev-934fda52f2, ev-1005203f02); coercive as the highest type of the group. (group ID1974-oil-company-pressure) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recMQBWZualOImlQB",
+   "archived_on": "2026-11-27",
+   "actors": "President Soeharto; Dewan Perwakilan Rakyat",
+   "suggestion_reasoning": "Unilateral legislation asserting sovereign rights over the continental shelf is a legal assertion; declarative. It is archipelago-wide rather than Natuna-specific, hence dyad IA; its SCS relevance is the overlap with South Vietnam's 1971 shelf claim north of Natuna. [confidence: high]",
+   "date_end": "1973-01-06",
+   "new_dyads": "IA",
+   "excerpt": "Penguasaan penuh dan hak eksklusif atas kekayaan alam di Landas Kontinen Indonesia serta pemilikannya ada pada Negara.\n\nDisahkan di Jakarta pada tanggal 6 Januari 1973.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Indonesian continental shelf (incl. north of the Natuna Islands)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Undang-Undang Republik Indonesia Nomor 1 Tahun 1973 tentang Landas Kontinen Indonesia — Wikisource (text of the law) 1973-01-06\nhttps://id.wikisource.org/wiki/Undang-Undang_Republik_Indonesia_Nomor_1_Tahun_1973\nUndang-Undang Nomor 1 Tahun 1973 tentang Landas Kontinen Indonesia — pasal.id\nhttps://pasal.id/peraturan/uu/uu-no-1-tahun-1973",
+   "pull_request": 64,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:11:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-934fda52f2",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IA"
+   ],
+   "summary": "Indonesia enacted Law No. 1 of 1973 on the Indonesian Continental Shelf, signed by President Soeharto on 6 January 1973, which gave statutory form to the 17 February 1969 shelf announcement and vested full control and exclusive rights over the natural resources of the Indonesian continental shelf in the State; the shelf it covers includes the seabed north of the Natuna Islands that South Vietnam also claimed.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1973-01-06",
+   "presort": "new move (novelty) — Statutory enactment of the shelf claim (Law 1/1973) is a new method against 1972, whose record shows only a negotiating-table protest (ev-9c94582a2a); declarative. Doubt: it is archipelago-wide and codifies the 1969 announcement in the baseline, so the coder may judge it maintenance rather than an SCS intensification. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recHQgX870SsxOeYe",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian technical delegation (Department of Mining / Pertamina)",
+   "suggestion_reasoning": "A protest at South Vietnam's overlapping concession decree and a restatement of Indonesia's Natuna-based shelf line is a verbal assertion; declarative. The talks themselves were cooperative, and the protest is known only from 1974 US embassy reporting (a Mining Ministry letter of 18 April 1974 quoted in translation), so a coder should weigh it as a diplomatic protest delivered in a negotiating setting. [confidence: medium]",
+   "date_end": "1972-06-22",
+   "new_dyads": "IV",
+   "excerpt": "TECHNICAL DISCUSSIONS IN SAIGON ON JUNE 22, 1972,\n\nGOI INSISTED ON EQUIDISTANT BASELINE DETERMINED BY",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY-LOS: GVN-GOI CONTINENTAL SHELF DISPUTE (Jakarta 05102) — US Department of State cable (WikiLeaks PlusD) 1974-04-26\nhttps://search.wikileaks.org/plusd/cables/1974JAKART05102_b.html\nENERGY-LOS (CERP/EAL): GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 04655) — US Department of State cable (WikiLeaks PlusD) 1974-04-17\nhttps://search.wikileaks.org/plusd/cables/1974JAKART04655_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:11:36.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9c94582a2a",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "At informal technical talks with South Vietnam in Saigon on 22 June 1972, Indonesian negotiators insisted that the continental-shelf boundary be an equidistance line drawn from the outermost islands (the Natuna group) and, according to a later Indonesian Ministry of Mining letter, their presentation simultaneously constituted a protest against South Vietnam's entry, under its June 1971 concession decree, into Indonesian shelf already contracted by Pertamina to Agip.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1972-06-22",
+   "presort": "new move (novelty) — Indonesia's first recorded protest at a rival's shelf claim north of Natuna (South Vietnam's 1971 concession decree), with the outermost-islands equidistance line insisted on; nothing comparable in 1971 (no candidates, no moves) or in the baseline, which has unilateral announcements but no protest. Known only from 1974 US cables quoting a Mining Ministry letter, so the coder may want it confirmed. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec1ovvAo5ixjOUTQ",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Minister of Mines and Energy Subroto; Mobil Oil and Amoseas (contractors)",
+   "suggestion_reasoning": "Further contract awards over partly disputed acreage, with a public ministerial pledge to continue, are unilateral resource development; demonstrative (the minister's remark is a declarative element of the same act). [confidence: high]",
+   "date_end": "1979-12-11",
+   "new_dyads": "IV",
+   "excerpt": "FOR NATUNA BLOC D1 AND D2 WHILE AMOSEAS WAS AWARDED\n\nDESPITE THE ABSENCE OF AN AGREED OFFSHORE/CONTINENTAL",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Natuna Blocs C, D1 and D2, South China Sea",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "PERTAMINA SIGNS FIVE NEW OIL EXPLORATION CONTRACTS (Jakarta 19810) — US Department of State cable (WikiLeaks PlusD) 1979-12-17\nhttps://search.wikileaks.org/plusd/cables/1979JAKART19810_e.html\nPERTAMINA SIGNS FIVE NEW OIL EXPLORATION CONTRACTS (Jakarta 19810) — US Department of State cable (WikiLeaks PlusD) 1979-12-17\nhttps://search.wikileaks.org/plusd/cables/1979JAKART19810_e.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:23:51.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-a4530c96dd",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Pertamina signed production-sharing contracts on 11 December 1979 with Mobil Oil for Natuna Blocs D1 and D2 and with Amoseas for Natuna Bloc C (partly in the area disputed with Vietnam), and Minister of Mines and Energy Subroto said at the signing that Indonesian oil exploration in the South China Sea would continue on schedule despite the absence of an agreed continental-shelf boundary with Vietnam.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1979-12-11",
+   "merge_into_candidate": "ev-bbef893415 ",
+   "presort": "same move as ev-bbef893415 — The Mobil and Amoseas contracts (Bloc C partly disputed) and Subroto's pledge to continue are the last awards of the bloc round led by ev-bbef893415; one move. (group ID1979-natuna-blocs) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recUYQwsRE569JEX9",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Agip (contractor), with Phillips Petroleum and Tenneco",
+   "suggestion_reasoning": "State-licensed drilling and a discovery in a disputed shelf area are unilateral resource development; demonstrative. Dates are approximate: the discovery is dated only as 'about two months' before the 17 April 1974 cable and the AQ1-X well as abandoned in May, so the event is given at year precision for January-May 1974. [confidence: medium]",
+   "date_end": "1974-05-31",
+   "new_dyads": "IV",
+   "excerpt": "AGIP HAS BEEN ACTIVELY EXPLOORING AND DRILLING IN\n\nVII DRILLING RIG AND TUBULARS TO CONOCO AFTER",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY-LOS (CERP/EAL): GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 04655) — US Department of State cable (WikiLeaks PlusD) 1974-04-17\nhttps://search.wikileaks.org/plusd/cables/1974JAKART04655_b.html\nENERGY-LOS: GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 06916) — US Department of State cable (WikiLeaks PlusD) 1974-06-06\nhttps://search.wikileaks.org/plusd/cables/1974JAKART06916_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:14:14.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-ad1b102653",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Agip, operating Pertamina's South China Sea Block A under a December 1968 production-sharing contract with partners Phillips and Tenneco, actively explored and drilled inside the shelf area also claimed by South Vietnam, making a very large, unannounced natural-gas discovery in the eastern part of the area about two months before mid-April 1974, planning a further well in the western part, and plugging and abandoning well AQ1-X in May 1974.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "1974-01-01",
+   "presort": "new move (novelty) — Drilling and a large gas discovery inside the shelf area South Vietnam claims is unilateral resource exploitation not shown in the 1973 record (law ev-934fda52f2 and contract-area decree ev-1005203f02 only); demonstrative. Doubt: secondary sources date Agip's D-Alpha discovery to 1973, so drilling may already have been under way in 1973, which would make this a continuation. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recIydu5Uu2oc2EZh",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Mining (Sadli); Hankam; Political and Security Stabilization Council",
+   "suggestion_reasoning": "An internal government instruction to defend a boundary line and request military protection for licensed operations is a domestic assertion of the claim; declarative, though it points to readiness for physical protection. Known only from an embassy translation of a document obtained privately, so it was not public. [confidence: medium]",
+   "date_end": "1974-06-17",
+   "new_dyads": "IV",
+   "excerpt": "ASSISTANCE FROM HANKAM FOR ALL ACTIVITIES OF AGI\n\nTUTES A HARD AND FAST LINE, IN ACCORDANCE WITH THE",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY/LOS: GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 07994) — US Department of State cable (WikiLeaks PlusD) 1974-06-28\nhttps://search.wikileaks.org/plusd/cables/1974JAKART07994_b.html\nENERGY/LOS: GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 07994) — US Department of State cable (WikiLeaks PlusD) 1974-06-28\nhttps://search.wikileaks.org/plusd/cables/1974JAKART07994_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:16:22.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b060198587",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Internal document - no claims were stated publicly",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "In a note of 17 June 1974 to the Department of Defence and Security (Hankam), copied to President Suharto and Pertamina, the Ministry of Mining forwarded South Vietnam's 18 May letter demanding that Agip, Phillips and Tenneco stop work in the disputed area, asked Hankam for protective assistance for all Agip activities, and stated that Indonesia would hold the 'Agip line' as a hard and fast continental-shelf boundary in line with a decision of the Political and Security Stabilization Council.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1974-06-17",
+   "presort": "unclear — An internal Mining Ministry note asking Hankam to protect Agip and to hold the 'Agip line' is a decision document, not public; if the coder counts it, it belongs as evidence with the military-protection move ev-b3b40540a4 rather than as a move of its own. Settle by whether any protective deployment followed beyond the Natuna buildup. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec3a8LpRrkehUuFr",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Air Force (AURI); Department of Defence and Security (Hankam)",
+   "suggestion_reasoning": "A military buildup on a frontier island to deter interference with resource activity is a show of presence without confrontation; demonstrative. Reported by the US embassy (from a Migas official and the Defense Attache) and echoed by Embassy Saigon as 'fortification of Natuna'; the exact start date is not given. [confidence: medium]",
+   "date_end": "1974-04-30",
+   "new_dyads": "IV",
+   "excerpt": "BUILDING UP AIR FORCE CAPABILITY AT NATUNA ISLAND TO\n\nGOI FORTIFICATION OF NATUNA ISLAND AND NEW",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Island (Natuna Besar)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY-LOS (CERP/EAL): GOI-GVN CONTINENTAL SHELF DISPUTE (Jakarta 04655) — US Department of State cable (WikiLeaks PlusD) 1974-04-17\nhttps://search.wikileaks.org/plusd/cables/1974JAKART04655_b.html\nENERGY-LOS: GVN-GOI OVERLAPPING CONTINENTAL SHELF CLAIMS (Saigon 05238) — US Department of State cable (WikiLeaks PlusD) 1974-04-22\nhttps://search.wikileaks.org/plusd/cables/1974SAIGON05238_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:15:21.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b3b40540a4",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Indonesia was reported in April 1974 to be building up its air force capability on Natuna Island, where an air force platoon was stationed and facilities were to be upgraded, to signal South Vietnam not to harass offshore drilling due to begin in the disputed shelf area; Hankam had told Suharto the buildup and a joint naval arrangement with Malaysia minimised the risk of South Vietnamese gunboat diplomacy.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1974-04-01",
+   "presort": "new move (novelty) — Air-force buildup on Natuna to deter South Vietnamese interference with drilling is the first military presence used for the claim in the record; nothing comparable in 1973 (ev-934fda52f2, ev-1005203f02) or the baseline; demonstrative. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reciW4Pmg2FreXtza",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina",
+   "suggestion_reasoning": "Tendering oil blocks that extend into a disputed shelf is unilateral resource administration; demonstrative. The tender's opening date is not given in the cable; Vietnam later protested both the tender and the awards. [confidence: high]",
+   "date_end": "1979-09-11",
+   "new_dyads": "IV",
+   "excerpt": "BLOCS A, B AND C PARTIALLY COVER TERRITORY IN WHICH",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna blocs, South China Sea (Blocs A, B, C partly in area disputed with Vietnam)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "PERTAMINA TO AWARD NEW EXPLORATORY BLOCS IN SOUTH CHINA SEA (Jakarta 14422) — US Department of State cable (WikiLeaks PlusD) 1979-09-11\nhttps://search.wikileaks.org/plusd/cables/1979JAKART14422_e.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:21:39.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-bbef893415",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Pertamina offered ten 'Natuna blocs' in the South China Sea, mostly acreage relinquished by Agip in December 1978, and by September 1979 was reviewing bids and negotiating awards of the first six (A Gulf, B Marathon, C Amoseas, D1 and D2 Mobil, D-Alpha Esso); Blocs A, B and C partly covered the area where the boundary with Vietnam was unsettled, and Indonesian and Pertamina officials stressed that the territory was part of Indonesia and would not have been offered if they meant to negotiate substantial changes. Pertamina also planned to expand facilities on Natuna Island as a logistics base.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1979-09-01",
+   "presort": "new move (novelty) — Lead of the 1979 Natuna bloc round: tendering ten new blocs, three partly in the area disputed with Vietnam, is a new method against 1978, whose record shows exploration only in an existing contract (ev-fe81521c5a) and talks (ev-28e2c68f85); demonstrative. (group ID1979-natuna-blocs) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recjIWzSKQSCPWzdY",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Mining (Sadli); Pertamina (Lt Gen Ibnu Sutowo)",
+   "suggestion_reasoning": "A formal written warning to oil companies not to take up a rival claimant's concessions in a disputed area is a verbal assertion of the claim; declarative. The 30 April date is that of the ministerial letter and the Indonesian-language Pertamina letter; the English version is dated 12 June. [confidence: high]",
+   "date_end": "1974-06-12",
+   "new_dyads": "IV",
+   "excerpt": "NO 966/M.251/SJ/1974 DATED APRIL 30, 1974, WE STRONGLY\n\nTO ALL CONTRACTORS OF PERTAMINA STRONGLY ADVISING",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "location_name": "Continental shelf north of the Natuna Islands (Indonesia-South Vietnam overlap, Agip contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ENERGY/LOS: GVN-GOI CONTINENTAL SHELF DISPUTE (Jakarta 08624, Bow Valley telex) — US Department of State cable (WikiLeaks PlusD) 1974-07-12\nhttps://search.wikileaks.org/plusd/cables/1974JAKART08624_b.html\nENERGY/LOS: GVN-GOI CONTINENTAL SHELF DISPUTE (Jakarta 08622) — US Department of State cable (WikiLeaks PlusD) 1974-07-12\nhttps://search.wikileaks.org/plusd/cables/1974JAKART08622_b.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:15:48.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bd430aa894",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Acting on Minister of Mining letter No. 966/M.251/SJ/1974 of 30 April 1974, Pertamina's President Director Lt Gen Ibnu Sutowo sent all of Pertamina's foreign contractors a letter (Indonesian text 30 April, English version 12 June 1974) stating that South Vietnam's 19 February 1974 concession order had included part of Agip's Indonesian contract area and strongly advising them not to apply for South Vietnamese concessions there.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1974-04-30",
+   "merge_into_candidate": " ev-902f2ee3f3",
+   "presort": "same move as ev-902f2ee3f3 — Pertamina's 30 April/12 June letter advising all contractors not to take South Vietnamese concessions is the opening step of the same pressure campaign as ev-902f2ee3f3 (same companies' question, same weeks); one move. (group ID1974-oil-company-pressure) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recs6NEhX3vyKN9qC",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Marathon Oil (contractor)",
+   "suggestion_reasoning": "State-licensed exploratory drilling and a find in a disputed shelf area are unilateral resource development; demonstrative. The find is dated only as among 'early results of 1978' before the 7 July cable, so the event is given at year precision. [confidence: medium]",
+   "date_end": "1978-07-07",
+   "new_dyads": "IV",
+   "excerpt": "OF NATUNA ISLAND ABOVE KALIMANTAN, THE REPS MENTIONED THAT\n\nMARATHON AND CITIES SERVICE HAVE HAD OIL",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T21:25:00.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Northwest of Natuna Island (Marathon contract area)",
+   "run": [
+    "ID-1970s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "MARATHON OIL REPRESENTATIVES DISCUSS OFFSHORE CLAIMS IN SOUTH CHINA SEA (State 256827) — US Department of State cable (WikiLeaks PlusD) 1978-10-11\nhttps://search.wikileaks.org/plusd/cables/1978STATE256827_d.html\nINDONESIAN OIL SECTOR DEVELOPMENTS (Jakarta 09020) — US Department of State cable (WikiLeaks PlusD) 1978-07-07\nhttps://search.wikileaks.org/plusd/cables/1978JAKART09020_d.html",
+   "pull_request": 64,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:19:02.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-fe81521c5a",
+   "run_id": "ID-1970s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-0245dbdd94",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Marathon Oil, a Pertamina contractor, made an exploratory oil find in deep water in the South China Sea northwest of Natuna Island, in the area claimed by both Indonesia and Vietnam, reported by the US embassy in July 1978; Indonesian officials said in September that current oil exploration including the Marathon strike would fall on Vietnam's side under Vietnam's proposal and that Indonesia was unlikely even to listen to a Vietnamese request to halt exploration.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "1978-01-01",
+   "presort": "continuation of ev-0245dbdd94 (a candidate, provisional) — The 1977 record (ev-0245dbdd94) shows Indonesian oil exploration already under way in the disputed shelf and defended against a moratorium; Marathon's 1978 find continues that exploration at the same level. Doubt: it is in a different contract area (northwest of Natuna), so a coder who reads it as new acreage could call it scope. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}
