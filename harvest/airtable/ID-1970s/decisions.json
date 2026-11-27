@@ -1,0 +1,237 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-02305f8eb4",
+   "action": "reject",
+   "note": "continuation of ev-ad1b102653"
+  },
+  {
+   "event_id": "ev-0245dbdd94",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-1005203f02",
+   "action": "reject",
+   "note": "Precedent"
+  },
+  {
+   "event_id": "ev-26d27c646d",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-bbef893415"
+  },
+  {
+   "event_id": "ev-28e2c68f85",
+   "action": "reject",
+   "note": "continuation of ev-0245dbdd94"
+  },
+  {
+   "event_id": "ev-339a3ca551",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-bbef893415"
+  },
+  {
+   "event_id": "ev-6855d9320a",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-bbef893415"
+  },
+  {
+   "event_id": "ev-6fb60e7a2b",
+   "action": "reject",
+   "note": "No assertive move"
+  },
+  {
+   "event_id": "ev-902f2ee3f3",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-934fda52f2",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-9c94582a2a",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "energy",
+     "administrative"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-a4530c96dd",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-bbef893415"
+  },
+  {
+   "event_id": "ev-ad1b102653",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-b060198587",
+   "action": "reject",
+   "note": "Internal document - no claims were stated publicly"
+  },
+  {
+   "event_id": "ev-b3b40540a4",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military",
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-bbef893415",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-bd430aa894",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-902f2ee3f3"
+  },
+  {
+   "event_id": "ev-fe81521c5a",
+   "action": "reject",
+   "note": "continuation of ev-0245dbdd94"
+  }
+ ],
+ "reviewer": "Angelo"
+}
