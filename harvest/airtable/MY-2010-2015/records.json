@@ -1,6 +1,6 @@
 {
  "run_id": "MY-2010-2015",
- "exported_on": "2026-11-25",
+ "exported_on": "2026-11-27",
  "records": [
   {
    "airtable_id": "recFEjwt9uxRbfGBs",
@@ -414,6 +414,59 @@
    ]
   },
   {
+   "airtable_id": "recs6CmpxRC6rMDqI",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (Kuala Terengganu District 9)",
+   "suggestion_reasoning": "Seizure of foreign fishing boats and detention of crews in waters Malaysia claims as its EEZ is imposed enforcement; coercive. The Star says the trawlers were intercepted 'on Thursday' in a report dated Sunday 30 August 2015, i.e. 27 August. [confidence: medium]",
+   "date_end": "2015-08-27",
+   "new_dyads": "MV",
+   "excerpt": "Twenty-four Vietnamese were detained and four of their trawlers seized by the Malaysian Maritime Enforcement Agency (MMEA) after they were found fishing in Malaysian waters.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "118 nautical miles off Kuala Terengganu",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "24 Vietnamese held for fishing in Malaysian waters — The Star 2015-08-30\nhttps://www.thestar.com.my/news/nation/2015/08/30/24-vietnamese-held-for-fishing-in-malaysian-waters",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:19:00.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-520a06d61f",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-2d06848164",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "The Malaysian Maritime Enforcement Agency intercepted four Vietnamese trawlers 118 nautical miles off Kuala Terengganu on 27 August 2015, seizing the boats and detaining 24 Vietnamese crew for fishing in Malaysian waters; this is one example of the agency's continuing seizures of Vietnamese boats in 2015, for which no annual total was found.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-08-27",
+   "presort": "continuation of ev-2d06848164 (a candidate, provisional) — Provisional continuation of ev-2d06848164 (2014 undecided): MMEA seizure of four Vietnamese trawlers off Terengganu, same method as 2014's seizures - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
    "airtable_id": "rec50FLquryvCUkrB",
    "archived_on": "2026-11-25",
    "actors": "Minister in the Prime Minister's Department Shahidan Kassim; Dewan Rakyat",
@@ -517,6 +570,109 @@
    "fldxtFtzSLOFoALEB": "✓",
    "suggested_issues": [
     "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec4pCVpTmzU1oDtO",
+   "archived_on": "2026-11-27",
+   "actors": "Deputy Minister of Foreign Affairs Hamzah Zainudin; Dewan Rakyat",
+   "suggestion_reasoning": "Official rejection of China's nine-dash line in Parliament is a verbal assertion; declarative, one event for three similar statements in 2015. [confidence: high]",
+   "date_end": "2015-06-15",
+   "new_dyads": "MC",
+   "excerpt": "Malaysia dan juga negara-negara ASEAN yang lain tidak mengiktiraf tuntutan China yang berdasarkan\n\nMalaysia dan negara-negara penuntut ASEAN tidak mengiktiraf tuntutan China berdasarkan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Laut China Selatan",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2015-06-15: Oral answer No. 1 on borders (Hamzah Zainudin) — Parliament of Malaysia (Digital Hansard) 2015-06-15\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2015-06-15\nHansard, Dewan Negara, 2015-06-30: Winding-up, Ministry of Foreign Affairs (Hamzah Zainudin) — Parliament of Malaysia (Digital Hansard) 2015-06-30\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-06-30",
+   "pull_request": 60,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:18:24.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-676c0cf97d",
+   "run_id": "MY-2010-2015",
+   "note": "continuation of ev-9ef41fd44d",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Deputy Foreign Minister Hamzah Zainudin told the Dewan Rakyat on 15 June 2015 that Malaysia and the other ASEAN states did not recognise China's claim based on the nine-dashed line because it was inconsistent with international law including UNCLOS 1982; he had made the same point in the Dewan Rakyat on 12 March and repeated it in the Dewan Negara on 30 June 2015.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-06-15",
+   "presort": "continuation of ev-9ef41fd44d (a candidate, provisional) — Provisional continuation of ev-9ef41fd44d (2014 undecided): parliamentary rejection of the nine-dash line, already stated in Dec 2014 - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec6490mw3Br1rMvz",
+   "archived_on": "2026-11-27",
+   "actors": "Deputy Prime Minister Ahmad Zahid Hamidi",
+   "suggestion_reasoning": "A deputy prime minister's public rejection of historic claims and call to defend Malaysia's EEZ is a verbal assertion; declarative. The 155 km 'atolls' reference is unclear (China's Spratly construction was farther away). [confidence: medium]",
+   "date_end": "2015-11-14",
+   "new_dyads": "MC",
+   "excerpt": "South China Sea is only the name, but 200 nautical miles in the exclusive economic zone is under our borders.\n\nTo claim this part of the South China Sea as theirs due to historical narrative is invalid",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "South China Sea (Malaysian EEZ off Sabah)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysian Deputy Prime Minister Says Country Must Defend Its Sovereignty In South China Sea — International Business Times (Reuters) 2015-11-14\nhttps://ibtimes.com/malaysian-deputy-prime-minister-says-country-must-defend-its-sovereignty-south-china-2184746\n'Regional superpower' has encroached into Malaysia's maritime territory: DPM Ahmad Zahid — IMOA (excerpt of The Straits Times / The Star) 2015-11-14\nhttps://imoa.ph/?p=6648",
+   "pull_request": 60,
+   "new_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:19:53.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7a7c6a35a2",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "note": "continuation of ev-9ef41fd44d",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Opening the Parti Bersatu Sabah congress in Kota Kinabalu on 14 November 2015, Deputy Prime Minister Ahmad Zahid Hamidi said, without naming China, that a regional power had encroached on Malaysia's maritime territory by building facilities on atolls about 155 km from Sabah, that claims based on historical narrative were invalid, and that Malaysians should rise to defend the country if its sovereignty was encroached.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-11-14",
+   "presort": "continuation of ev-9ef41fd44d (a candidate, provisional) — Provisional continuation of ev-9ef41fd44d (2014 undecided): DPM's party-congress rejection of historic claims and call to defend sovereignty is the same declarative line as 2014; rhetoric louder but no new kind or wider claim - likely reject (or fold into ev-a15caaf75e if the coder reads 2015 publicity as one move). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
     "military"
    ],
    "suggested_domains": [
@@ -866,6 +1022,123 @@
    ],
    "claimant": "MY",
    "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recknA5UKMtXKdrOd",
+   "archived_on": "2026-11-27",
+   "actors": "Minister in the Prime Minister's Department Shahidan Kassim; Ministry of Foreign Affairs",
+   "lat": 5.9,
+   "suggestion_reasoning": "Repeated diplomatic notes of protest are verbal assertions; declarative, one event for a practice the minister described as weekly. The original Straits Times report (16 August 2015, 'China ships trespassing off Sarawak for two years') was not opened; the CIL NUS SCS News Update No. 29 (PDF) and Bernama (via Malay Mail, November 2015) carry the statement. [confidence: medium]",
+   "date_end": "2015-08-31",
+   "new_dyads": "MC",
+   "excerpt": "said the government had been sending diplomatic notes almost every week and would continue with the diplomatic protest against encroachment by the foreign vessels\n\nMalaysia has been lodging weekly diplomatic protests against the intrusion of Chinese coast guard ships",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Beting Patinggi Ali belongs to Malaysia, not subject to overlapping claims, says Anifah — Malay Mail (Bernama) 2015-11-04\nhttps://www.malaymail.com/news/malaysia/2015/11/04/beting-patinggi-ali-belongs-to-malaysia-not-subject-to-overlapping-claims-s/999357\nSCS News Update No. 29, August 2015 — Centre for International Law, National University of Singapore 2015-08-31\nhttps://cil.nus.edu.sg/wp-content/uploads/2019/02/SCS-News-Update-No.29-August-2015.pdf",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:18:43.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b5c1b8b1a7",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-9ef41fd44d",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Minister in the Prime Minister's Department Shahidan Kassim said in August 2015 that Malaysia had been lodging diplomatic protests almost every week against the China Coast Guard ships stationed near Beting Patinggi Ali off Sarawak for about two years and would continue to do so, saying the ships had to get out of Malaysian waters.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2015-08-01",
+   "presort": "continuation of ev-9ef41fd44d (a candidate, provisional) — Provisional continuation of ev-9ef41fd44d (2014 undecided): near-weekly protest notes over the CCG ships at Beting Patinggi Ali, the practice the minister already described in Dec 2014 (a protest for every intrusion) - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recqAqylzCOSkYmNI",
+   "archived_on": "2026-11-27",
+   "actors": "Minister of Foreign Affairs Anifah Aman",
+   "lat": 5.9,
+   "suggestion_reasoning": "A foreign minister's public assertion of exclusive rights over a shoal where Chinese coast guard ships were stationed is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2015-11-04",
+   "new_dyads": "MC",
+   "excerpt": "Gugusan Beting Patinggi Ali in the South China Sea belongs to Malaysia and is not subject to overlapping claims, said Foreign Minister Datuk Seri Anifah Aman.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Beting Patinggi Ali belongs to Malaysia, not subject to overlapping claims, says Anifah — Malay Mail (Bernama) 2015-11-04\nhttps://www.malaymail.com/news/malaysia/2015/11/04/beting-patinggi-ali-belongs-to-malaysia-not-subject-to-overlapping-claims-s/999357",
+   "pull_request": 60,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:19:20.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b883f85b55",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Foreign Minister Anifah Aman told Bernama on 4 November 2015 that Gugusan Beting Patinggi Ali belonged to Malaysia and was not subject to overlapping claims, lying within Malaysia's EEZ under UNCLOS, that Malaysian fishermen were free to fish there, that any foreign coast guard vessel entering could be taken to be encroaching, and that navy and MMEA vessels patrolled the shoals to safeguard sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-11-04",
+   "merge_into_candidate": "ev-a15caaf75e",
+   "presort": "same move as ev-a15caaf75e — Anifah's public claim that Beting Patinggi Ali is not subject to overlapping claims and that any foreign coast guard there is encroaching repeats the position first taken in public in ev-a15caaf75e; same move. (group MY2015-public-protest) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
     "domestic"
    ]
   },
@@ -1327,6 +1600,67 @@
    ]
   },
   {
+   "airtable_id": "rec27ZQiEv5kXnPFz",
+   "archived_on": "2026-11-27",
+   "actors": "Deputy Minister of Foreign Affairs Reezal Merican Naina Merican; Dewan Negara",
+   "lat": 7.5,
+   "suggestion_reasoning": "A parliamentary statement of the extent of Malaysia's claim and its legal basis is a verbal assertion; declarative. It names Amboyna Cay (occupied by Vietnam) and Commodore Reef (held by the Philippines), so the dyads include Vietnam and the Philippines. [confidence: medium]",
+   "date_end": "2015-12-08",
+   "new_dyads": "MC MV MP MB",
+   "excerpt": "saya hendak maklumkan bahawa tuntutan yang dilakukan oleh Malaysia hanyalah berdasarkan kepada Peta 79",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Spratly features claimed by Malaysia (Swallow Reef, Commodore Reef, Amboyna Cay)",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Spratly features claimed by Malaysia (Pulau Layang-Layang, Terumbu Laksamana, Pulau Amboyna Kecil)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2015-12-08: Oral answer No. 8 on the South China Sea (Reezal Merican) — Parliament of Malaysia (Digital Hansard) 2015-12-08\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-12-08",
+   "pull_request": 60,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:20:03.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-f35795066b",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-9ef41fd44d ",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MB"
+   ],
+   "summary": "Deputy Foreign Minister Reezal Merican Naina Merican told the Dewan Negara on 8 December 2015 that Malaysia's South China Sea claim rested on the 1979 map covering nine or eleven maritime features, including Pulau Layang-Layang, Terumbu Laksamana and Pulau Amboyna Kecil, that disputes must be settled under international law including UNCLOS with referral to the ICJ or an arbitral tribunal an available option, and that Malaysia conducted patrols, surveillance and enforcement and raised the issue at the November ASEAN summit.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-12-08",
+   "presort": "continuation of ev-9ef41fd44d (a candidate, provisional) — Provisional continuation of ev-9ef41fd44d (2014 undecided): parliamentary restatement of the 1979-map claim and UNCLOS basis; mentioning ICJ/arbitration as 'an available option' is not a step taken - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
    "airtable_id": "recbDUZgnDfaMZxaH",
    "archived_on": "2026-11-25",
    "actors": "Royal Malaysian Navy (KD Serang)",
@@ -1383,6 +1717,66 @@
    "claimant": "MY",
    "new_domains": [
     "physical"
+   ]
+  },
+  {
+   "airtable_id": "recTQoh5mcc9myKAj",
+   "archived_on": "2026-11-27",
+   "actors": "Minister in the Prime Minister's Department Shahidan Kassim; MMEA Sarawak Maritime Region; Dewan Negara",
+   "lat": 5.9,
+   "suggestion_reasoning": "A ministerial account of protests and of removing a foreign marker is a verbal assertion; declarative. The removal of the foreign structure is itself a physical act (possibly coercive) but no date is given, so it is reported inside this statement rather than as its own event. [confidence: medium]",
+   "date_end": "2015-12-14",
+   "new_dyads": "MC",
+   "excerpt": "struktur daripada kayu yang menunjukkan ada tulisan asing di papan yang berkenaan. Itu kita buang sebab ini kawasan kita.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T20:26:37.000Z",
+   "location_name": "Luconia Shoals, off Miri, Sarawak",
+   "run": [
+    "MY-2010-2015"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2015-12-14: Winding-up, Prime Minister's Department (Shahidan Kassim) on Beting Patinggi Ali — Parliament of Malaysia (Digital Hansard) 2015-12-14\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2015-12-14",
+   "pull_request": 60,
+   "new_issues": [
+    "military",
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:20:21.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-fe1ec8c654",
+   "run_id": "MY-2010-2015",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Simple summary of past events",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Shahidan Kassim told the Dewan Negara on 14 December 2015 that diplomatic protest notes had been sent over the China Coast Guard intrusions at Beting Patinggi Ali, that the MMEA's Sarawak region sent monthly monitoring reports on the Chinese ships to strengthen Malaysia's control of the area, that the government had agreed to add MMEA patrol assets, and that a wooden structure bearing foreign writing found at the shoal had been removed because the area was Malaysia's.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2015-12-14",
+   "presort": "unclear — Mostly a restatement of protests (continuation of ev-9ef41fd44d), but it reports the removal of a wooden structure with foreign writing at the shoal, undated. Settle the date and nature of the removal: if in 2015, a new physical method (demonstrative or coercive) against 2014; otherwise likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
    ]
   }
  ]

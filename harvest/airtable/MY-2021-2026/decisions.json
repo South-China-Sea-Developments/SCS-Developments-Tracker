@@ -1,0 +1,341 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-1390b92e06",
+   "action": "reject",
+   "note": "Clear precedent - continuing practice"
+  },
+  {
+   "event_id": "ev-139e257c21",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MV"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "politics"
+    ],
+    "subregions": [
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-1a79a51ff2",
+   "action": "reject",
+   "note": "Announcement but not work started yet"
+  },
+  {
+   "event_id": "ev-1d18247d5c",
+   "action": "reject",
+   "note": "continuation of ev-451799b80d"
+  },
+  {
+   "event_id": "ev-2624331f1d",
+   "action": "reject",
+   "note": "Approved but not built yet"
+  },
+  {
+   "event_id": "ev-2b4c500a42",
+   "action": "reject",
+   "note": "continuation of ev-564cd566e3"
+  },
+  {
+   "event_id": "ev-2c55128b38",
+   "action": "reject",
+   "note": "continuation of ev-3a41c8e0ac"
+  },
+  {
+   "event_id": "ev-2c7fb7e0c7",
+   "action": "reject",
+   "note": "continuation of ev-395be8f897"
+  },
+  {
+   "event_id": "ev-36cf3c00a8",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy",
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-3814478e50",
+   "action": "reject",
+   "note": "continuation of ev-4ecf58c008"
+  },
+  {
+   "event_id": "ev-3a41c8e0ac",
+   "action": "reject",
+   "note": "continuation of ev-fe0373e68e"
+  },
+  {
+   "event_id": "ev-3b679e3947",
+   "action": "reject",
+   "note": "continuation of ev-09e2bdf328"
+  },
+  {
+   "event_id": "ev-451799b80d",
+   "action": "reject",
+   "note": "continuation of ev-f8d6830dbb"
+  },
+  {
+   "event_id": "ev-49ca57afeb",
+   "action": "new_move",
+   "note": "The event happened in overlapping claims",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-4b9f0345db",
+   "action": "reject",
+   "note": "continuation of ev-2c7fb7e0c7"
+  },
+  {
+   "event_id": "ev-4d6a3fb8ef",
+   "action": "reject",
+   "note": "continuation of ev-f8d6830dbb"
+  },
+  {
+   "event_id": "ev-4ecf58c008",
+   "action": "reject",
+   "note": "continuation of ev-b6735182ed"
+  },
+  {
+   "event_id": "ev-53baf85095",
+   "action": "reject",
+   "note": "continuation of ev-2c55128b38"
+  },
+  {
+   "event_id": "ev-564cd566e3",
+   "action": "reject",
+   "note": "Unclear assertive intent"
+  },
+  {
+   "event_id": "ev-57bd137b84",
+   "action": "reject",
+   "note": "continuation of ev-4b9f0345db"
+  },
+  {
+   "event_id": "ev-584f850541",
+   "action": "reject",
+   "note": "Most likely a continuation of ev-3b679e3947"
+  },
+  {
+   "event_id": "ev-6701b83d5a",
+   "action": "reject",
+   "note": "continuation of ev-4ecf58c008"
+  },
+  {
+   "event_id": "ev-686659d7c8",
+   "action": "reject",
+   "note": "continuation of ev-2b4c500a42"
+  },
+  {
+   "event_id": "ev-6a19ca049d",
+   "action": "reject",
+   "note": "continuation of ev-1390b92e06"
+  },
+  {
+   "event_id": "ev-775a76a73e",
+   "action": "reject",
+   "note": "continuation of ev-e677bcc107"
+  },
+  {
+   "event_id": "ev-7981623e15",
+   "action": "reject",
+   "note": "continuation of ev-3b679e3947"
+  },
+  {
+   "event_id": "ev-7a919138c8",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MA"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "10",
+     "7"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-7af16173a4",
+   "action": "reject",
+   "note": "Not issued yet"
+  },
+  {
+   "event_id": "ev-7e83b8215c",
+   "action": "reject",
+   "note": "continuation of ev-86771ff4f6"
+  },
+  {
+   "event_id": "ev-86771ff4f6",
+   "action": "reject",
+   "note": "continuation of ev-584f850541"
+  },
+  {
+   "event_id": "ev-a07e10f947",
+   "action": "reject",
+   "note": "continuation of ev-7e83b8215c"
+  },
+  {
+   "event_id": "ev-a324c22be9",
+   "action": "reject",
+   "note": "continuation of ev-139e257c21"
+  },
+  {
+   "event_id": "ev-a49b1d526f",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MA"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "10",
+     "7",
+     "8"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-acf008fd20",
+   "action": "reject",
+   "note": "continuation of ev-d78e824e39"
+  },
+  {
+   "event_id": "ev-c5c731b196",
+   "action": "reject",
+   "note": "continuation of ev-e0aa5711f8"
+  },
+  {
+   "event_id": "ev-d78e824e39",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "frequency",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "MC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-d8267714f5",
+   "action": "reject",
+   "note": "continuation of ev-e677bcc107"
+  },
+  {
+   "event_id": "ev-e050461164",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-7af16173a4"
+  },
+  {
+   "event_id": "ev-e0aa5711f8",
+   "action": "reject",
+   "note": "continuation of ev-b6735182ed"
+  },
+  {
+   "event_id": "ev-e33daf036b",
+   "action": "reject",
+   "note": "continuation of ev-7e83b8215c"
+  },
+  {
+   "event_id": "ev-e677bcc107",
+   "action": "reject",
+   "note": "continuation of ev-9de33b5a46"
+  },
+  {
+   "event_id": "ev-edc66ae7ee",
+   "action": "reject",
+   "note": "continuation of ev-2b4c500a42"
+  },
+  {
+   "event_id": "ev-fe0373e68e",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-36cf3c00a8"
+  }
+ ],
+ "reviewer": "Angelo"
+}

@@ -1,0 +1,2187 @@
+{
+ "run_id": "MY-2016-2020",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "recKJiFRGJIOfJ6Ig",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Seadrill (West Capella); Royal Malaysian Navy (Bunga Mas Lima, KD Kelantan); Malaysian Maritime Enforcement Agency (Director-General Mohd Zubil Mat Som)",
+   "suggestion_reasoning": "Continuing state-company drilling in a contested area under direct Chinese pressure is unilateral resource development without confrontation by Malaysia; demonstrative. Start date is the Chinese survey ship's arrival as reported by Reuters; the drilling itself began in December 2019 (separate event). [confidence: high]",
+   "date_end": "2020-05-12",
+   "new_dyads": "MC MV",
+   "excerpt": "Today, it was close to the Petronas-operated\n\nMalaysian navy and law enforcement ships have been regularly patrolling the area.\n\nleft the disputed waters on Tuesday",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "West Capella drilling site, blocks ND1/ND2, about 324 km off the Malaysian coast",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Close match on https://sg.news.yahoo.com/chinese-malaysian-ships-south-china-153544198.html: \"On Friday, it was close to the Petronas-operated West Capella, according to the security sources,\". Reuters syndicated copy; says 'On Friday' instead of 'Today'; all row sources blocked",
+   "reviewer": "Angelo",
+   "sources": "Chinese and Malaysian ships in South China Sea standoff, say sources — Malay Mail (Reuters) 2020-04-17\nhttps://www.malaymail.com/amp/news/malaysia/2020/04/17/chinese-and-malaysian-ships-in-south-china-sea-standoff-say-sources/1857784\nUpdate: Chinese Survey Ship Escalates Three-Way Standoff — CSIS Asia Maritime Transparency Initiative 2020-04-30\nhttps://amti.csis.org/chinese-survey-ship-escalates-three-way-standoff/\nPetronas Drillship Leaves South China Sea Waters After Standoff — gCaptain (Reuters) 2020-05-12\nhttps://gcaptain.com/petronas-drillship-leaves-south-china-sea-waters-after-standoff",
+   "pull_request": 38,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "9 Nam Con Son",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:41:08.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-09e2bdf328",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "9 Nam Con Son"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV"
+   ],
+   "summary": "Petronas kept the drillship West Capella drilling the Lala-1 field (block ND2) after the Chinese survey ship Haiyang Dizhi 8, escorted by coast guard and maritime militia vessels, entered waters near Malaysia on 16 April 2020 and began surveying close to the drillship; Royal Malaysian Navy and MMEA ships, including the auxiliary Bunga Mas Lima (10 and 30 April) and KD Kelantan (from 25 April), patrolled around the West Capella to protect its operations, MMEA chief Mohd Zubil Mat Som confirmed the Chinese ship was in Malaysian waters, and the West Capella completed its work and left the disputed waters on 12 May 2020.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-04-16",
+   "merge_into_candidate": "ev-cae2a725dd ",
+   "presort": "same move as ev-cae2a725dd — The April-May standoff, with RMN/MMEA ships patrolling around the West Capella while Haiyang Dizhi 8 surveyed nearby, is the same 2020 naval protection of the ND2 drilling as ev-cae2a725dd — merge (the drilling itself continues ev-d1c89a64f7). (group MY2020-westcapella) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recrzgVhBqUtCWWO6",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Anifah Aman; Ministry of Foreign Affairs (Wisma Putra); Dewan Rakyat",
+   "suggestion_reasoning": "A ministerial statement to Parliament rejecting China's claim line and asserting Malaysian ownership of features in its maritime zone is a verbal assertion of claim; declarative. The second source is the scanned parliamentary reply PDF, which cannot be machine-checked. [confidence: high]",
+   "date_end": "2017-03-20",
+   "new_dyads": "MC",
+   "excerpt": "there does not exist any overlapping claims or territorial disputes between Malaysia and China on the South China Sea.\n\nMalaysia, serta negara-negara penuntut ASEAN yang lain tidak mengiktiraf tuntutan China berdasarkan nine-dash line",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Minister: No territorial disputes between Malaysia and China in South China Sea — Malay Mail 2017-03-20\nhttps://www.malaymail.com/news/malaysia/2017/03/20/minister-no-territorial-disputes-between-malaysia-and-china-in-south-china/1339005\nPertanyaan Jawab Lisan No. 64 (PR-1351-L00966), Dewan Rakyat, 20 March 2017 — Parliament of Malaysia (via Sinar Project pardocs) 2017-03-20\nhttps://pardocs.sinarproject.org/documents/2017-march-april-parliamentary-session/oral-questions-soalan-lisan/2017-03-20-parliamentary-replies/soalan-64.pdf",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:25:58.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-0d43ccecd8",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-9619d0dccf",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Foreign Minister Anifah Aman, replying in the Dewan Rakyat on 20 March 2017 to questions from the MPs for Bandar Kuching and Stampin, stated that Malaysia and the other ASEAN claimants do not recognise China's nine-dash line claim as it is not in accordance with international law including UNCLOS 1982, that all maritime features within Malaysia's maritime area belong to Malaysia, and that there are therefore no overlapping claims or territorial disputes between Malaysia and China.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-03-20",
+   "presort": "continuation of ev-9619d0dccf (a candidate, provisional) — The Dewan Rakyat non-recognition formula, as in 2016 (ev-9619d0dccf); \"no overlapping claims\" was already said by Anifah in 2015 (ev-b883f85b55) — continuation (provisional on 2016). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recSQQJHEn7kM4U8o",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Saifuddin Abdullah; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "An unusually blunt public rejection of China's claim by the foreign minister is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2019-12-20",
+   "new_dyads": "MC",
+   "excerpt": "For China to claim that the whole of South China Sea belongs to China, I think that is ridiculous,\n\nridiculous",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia FM: China's 'nine-dash line' claim 'ridiculous' — Al Jazeera 2019-12-21\nhttps://www.aljazeera.com/news/2019/12/21/malaysia-fm-chinas-nine-dash-line-claim-ridiculous\nSaifuddin: China's claim to whole of South China Sea ridiculous — New Straits Times 2019-12-20\nhttps://www.nst.com.my/amp/news/nation/2019/12/549586/saifuddin-chinas-claim-whole-south-china-sea-ridiculous",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:37:08.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-117e74b7e5",
+   "run_id": "MY-2016-2020",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Foreign Minister Saifuddin Abdullah said in Kuala Lumpur on 20 December 2019 that for China to claim the whole of the South China Sea was 'ridiculous', that Malaysia had the sovereign right to claim what lay within its waters, and that it would defend the continental shelf claim submitted to the UN on 12 December.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-12-20",
+   "merge_into_candidate": "ev-7c6dbc8761",
+   "presort": "same move as ev-7c6dbc8761 — Saifuddin's \"ridiculous\" rejection of China's claim and pledge to defend the 12 December submission is the declarative accompaniment of ev-7c6dbc8761 — merge. (group MY2019-clcs) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recJST4D5O1QjK4r1",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Hishammuddin Hussein; Ministry of Foreign Affairs (Wisma Putra)",
+   "suggestion_reasoning": "An official statement asserting Malaysia's rights in the contested area during a standoff is a verbal assertion, though it is cautiously worded and does not name China; declarative. [confidence: high]",
+   "date_end": "2020-04-23",
+   "new_dyads": "MC",
+   "excerpt": "the presence of warships and vessels in the South China Sea has the potential to increase tensions",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "South China Sea (West Capella standoff area)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Foreign minister: Malaysia firm in commitment to safeguard S. China Sea interests, rights — Malay Mail 2020-04-23\nhttps://www.malaymail.com/news/malaysia/2020/04/23/foreign-minister-malaysia-firm-in-commitment-to-safeguard-s.-china-sea-inte/1859497",
+   "pull_request": 38,
+   "new_issues": [
+    "energy",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "9 Nam Con Son",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:41:28.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2588d43235",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "9 Nam Con Son"
+   ],
+   "note": "continuation of ev-117e74b7e5",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Foreign Minister Hishammuddin Hussein issued a statement on 23 April 2020, during the West Capella standoff, saying Malaysia remained firm in its commitment to safeguard its interests and rights in the South China Sea, that the presence of warships and vessels there had the potential to increase tensions, and that matters must be resolved peacefully on the basis of international law.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-04-23",
+   "presort": "continuation of ev-117e74b7e5 (a candidate, provisional) — Hishammuddin's cautious statement during the standoff (firm on rights, resolve peacefully, warships raise tension) is declarative at or below the 2019 level (ev-117e74b7e5) — continuation, possibly likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec2gZtMuT7WOlwb0",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra)",
+   "lat": 5.9,
+   "suggestion_reasoning": "Summoning the ambassador to register concern is a formal diplomatic protest, a verbal assertion of Malaysia's maritime claim; declarative. Described by Reuters as uncharacteristic for Malaysia. [confidence: high]",
+   "date_end": "2016-03-31",
+   "new_dyads": "MC",
+   "excerpt": "summoned Dr Huang Huikang on Thursday to seek clarification",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "Luconia Shoals, South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Chinese ambassador summoned over reports of vessels in Malaysian waters — The Star (Malaysia) 2016-03-31\nhttps://www.thestar.com.my/news/nation/2016/03/31/chinese-ambassador-summoned-vessels-malaysian-waters",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:21:29.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2a924fa331",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Malaysia's Foreign Ministry (Wisma Putra) summoned Chinese ambassador Huang Huikang on 31 March 2016 to seek clarification and register Malaysia's concerns over reports that a large number of Chinese-flagged fishing boats accompanied by China Coast Guard vessels were in Malaysia's maritime areas in the South China Sea.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-31",
+   "presort": "new move (novelty) — Summoning the Chinese ambassador is a step beyond the routine protest notes of 2015 (ev-b5c1b8b1a7, ev-fe1ec8c654, prev run) and Reuters calls it uncharacteristic for Malaysia — a new, higher-profile diplomatic method; if the coder treats a summons as just another protest, it is a continuation of ev-b5c1b8b1a7. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec13QbPuW33sH5L5",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy (Eastern Fleet)",
+   "lat": 5.08333,
+   "suggestion_reasoning": "An announcement of more frequent naval patrols in the waters facing the Luconia Shoals is a statement of intent to administer the claimed area rather than a recorded patrol; declarative. Date inferred from the 27 February 2018 report's 'yesterday'. [confidence: medium]",
+   "date_end": "2018-02-26",
+   "new_dyads": "MC",
+   "excerpt": "From now on, we will increase our presence to ensure our waters will always be protected",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Sarawak waters; Luconia Shoals; Bintulu",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked. Source's wording for the place: “Sarawak waters; Gugusan Beting Patinggi Ali (Luconia Shoals); Bintulu”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.theborneopost.com/2018/02/27/navy-to-deploy-assets-to-patrol-sarawak-waters-more-often/.",
+   "reviewer": "Angelo",
+   "sources": "Navy to deploy assets to patrol Sarawak waters more often — The Borneo Post 2018-02-27\nhttps://www.theborneopost.com/2018/02/27/navy-to-deploy-assets-to-patrol-sarawak-waters-more-often/",
+   "pull_request": 38,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:27:33.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2f346c59f1",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b04b09111c ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "At a press conference aboard the training ship Gagah Samudera at Bintulu Port on 26 February 2018, Royal Malaysian Navy officers First Admiral Khalid Jaafar and First Admiral Shamsuddin Ludin announced that RMN assets would patrol Sarawak waters more often and make more frequent calls at Bintulu to increase the navy's presence, noting the RMN's standing operation area at Beting Patinggi Ali.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-02-26",
+   "presort": "continuation of ev-b04b09111c (a candidate, provisional) — An announcement that RMN assets will patrol Sarawak waters more often, with no numbers, restates the standing Luconia patrol practice shown in 2017 (ev-b04b09111c); without a stated comparison it is not a frequency move — continuation (provisional on 2017). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.66667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recGXFgMkq72KZkg5",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA); Director-General Mohd Zubil Mat Som",
+   "suggestion_reasoning": "Warning shots, lethal fire and detention during fisheries enforcement against another claimant's boats are physical imposition of punishment; coercive (a coder may consider 'force' given the fatality). The location is Malaysia's undisputed peninsular EEZ, not a contested area; Vietnam protested and sought an investigation. [confidence: high]",
+   "date_end": "2020-08-16",
+   "new_dyads": "MV",
+   "excerpt": "One Vietnamese fisherman suffered gunshot wounds and was pronounced dead after he was brought to shore.\n\nRescue Boat 7 was approaching two Vietnamese fishing boats to conduct an inspection when it was rammed",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "about 80-81 nautical miles off Tok Bali, Kelantan",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia coast guard kill Vietnamese fisherman in S. China Sea clash — The Jakarta Post (AFP) 2020-08-18\nhttps://www.thejakartapost.com/seasia/2020/08/18/malaysia-coast-guard-kill-vietnamese-fisherman-in-s-china-sea-clash\nMalaysian Police Probe Deadly Incident Between Coast Guard, Vietnamese Boats — Radio Free Asia 2020-08-17\nhttps://www.rfa.org/english/news/vietnam/boats-08172020172739.html",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:43:00.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-395be8f897",
+   "run_id": "MY-2016-2020",
+   "note": "Undisputed territories",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "Late on 16 August 2020 an MMEA patrol boat approaching two Vietnamese fishing boats for inspection about 80 nautical miles off Tok Bali, Kelantan, fired warning shots and then opened fire after the boats rammed it and crew threw petrol bombs, killing one Vietnamese fisherman; the other 19 crew were detained, and MMEA chief Mohd Zubil Mat Som said his men acted to protect their lives and national sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-08-16",
+   "presort": "unclear — Warning shots and lethal fire would be a new method against 2019's detentions under Ops Naga (ev-69a8d4bf33), but they came after the boats rammed the patrol boat and threw petrol bombs (the counterfactual says Malaysia would have done the same in 2019), and off Tok Bali is undisputed peninsular EEZ. Settle by whether the coder counts a self-defence shooting in undisputed waters; otherwise continuation of ev-69a8d4bf33. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJ6cJzp0arqGS77",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA)",
+   "suggestion_reasoning": "Detention of another claimant's fishermen and vessels is physical enforcement imposing punishment; coercive. The waters off Terengganu are Malaysia's undisputed EEZ rather than a contested area, so a coder may exclude it from the dispute dataset. [confidence: medium]",
+   "date_end": "2016-07-24",
+   "new_dyads": "MV",
+   "excerpt": "Eight fishing vessels and 88 Vietnamese crew members have been detained by Malaysian authorities",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "about 45 nautical miles off Kuala Terengganu",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia detains 88 Vietnamese fishermen over alleged illegal fishing: report — VnExpress International 2016-07-27\nhttps://e.vnexpress.net/news/news/malaysia-detains-88-vietnamese-fishermen-over-alleged-illegal-fishing-report-3442803.html",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:24:16.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-399cfad81d",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-520a06d61f",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "The Malaysian Maritime Enforcement Agency detained eight Vietnamese fishing vessels and 88 crew for illegal fishing in a three-day operation off Terengganu on 22-24 July 2016; the Vietnamese embassy said over 30 boats and hundreds of Vietnamese fishermen had been arrested by Malaysia since the start of 2016 (recorded as the year's representative instance of Malaysia's fisheries enforcement against Vietnamese boats).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-07-22",
+   "presort": "continuation of ev-520a06d61f (a candidate, provisional) — Detaining Vietnamese boats and crews continues the 2015 MMEA seizures (ev-520a06d61f, prev run) at about the same level (65 boats in 2016 against 62 in 2015, per ev-555225be3d) — continuation (provisional on 2015). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recXXy4lBaVS9fsr5",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Foreign Minister Anifah Aman",
+   "suggestion_reasoning": "Releasing a statement critical of developments in the South China Sea is a verbal assertion, but the text was an ASEAN collective statement and was retracted, so a coder may judge it is not Malaysia's own act; declarative, low confidence. [confidence: low]",
+   "date_end": "2016-06-14",
+   "new_dyads": "MC",
+   "excerpt": "serious concerns over recent and ongoing developments, which have eroded trust and confidence\n\nreleased the text of the original joint statement to the AFP",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ASEAN discord blocks issuance of joint statement on sea feud — The Jakarta Post (Associated Press) 2016-06-17\nhttps://www.thejakartapost.com/seasia/2016/06/17/asean-discord-blocks-issuance-of-joint-statement-on-sea-feud\nRevealed: The Truth Behind ASEAN's Retracted Kunming Statement — The Diplomat\nhttps://manage.thediplomat.com/2016/06/revealed-the-truth-behind-aseans-retracted-kunming-statement",
+   "pull_request": 38,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:21:49.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3ab8b10c3d",
+   "run_id": "MY-2016-2020",
+   "note": "Retracted statement",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "At the ASEAN-China special foreign ministers' meeting in Kunming on 14 June 2016, Malaysia's Foreign Ministry issued to reporters an ASEAN ministers' statement expressing serious concerns over developments in the South China Sea that had eroded trust and confidence; the statement was retracted hours later after other members withdrew approval.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-06-14",
+   "presort": "unclear — The Kunming text was an ASEAN collective statement, released by Malaysia and retracted within hours; not an assertive act of the claimant — likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recLlLKGTXFUuzZWh",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Defence; Defence Minister Mohamad Sabu; Dewan Rakyat",
+   "suggestion_reasoning": "A national defence policy document and ministerial speech naming Chinese activity and intrusions in Malaysia's EEZ as infringements are verbal assertions of claim; declarative. [confidence: high]",
+   "date_end": "2019-12-02",
+   "new_dyads": "MC",
+   "excerpt": "The occupation and militarization and other activities by China in the South China Sea\n\nDefence White Paper",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Malaysian EEZ off Sabah and Sarawak, South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysian Parliament Approves Nation's 10-Year Defense Plan — BenarNews 2019-12-02\nhttps://www.benarnews.org/english/news/malaysian/Malaysia-china-12022019175353.html\nDefence White Paper tabled in Dewan Rakyat by Mohamad Sabu — The Star (Malaysia) 2019-12-02\nhttps://www.thestar.com.my/news/nation/2019/12/02/defence-white-paper-tabled-in-dewan-rakyat-by-mohamad-sabu",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:35:19.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3d99bdbde7",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Defence Minister Mohamad Sabu tabled Malaysia's first Defence White Paper in the Dewan Rakyat on 2 December 2019, which Parliament approved after a five-hour debate; in presenting it he cited the occupation and militarisation and other activities by China in the South China Sea and called foreign vessel intrusions off Sabah and Sarawak an infringement on Malaysia's sovereign rights in its exclusive economic zone.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-12-02",
+   "presort": "new move (novelty) — Malaysia's first Defence White Paper, approved by Parliament, names China's occupation and militarisation and calls EEZ intrusions off Sabah and Sarawak an infringement — a new formal policy instrument against 2018's ministerial remarks (ev-7dee62dc47); the coder may judge it the same declarative level and fold it into continuation. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "reczmunmkKM93onR0",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Saifuddin Abdullah; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A public ministerial statement maintaining the extended shelf claim against China's protest is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2020-01-03",
+   "new_dyads": "MC",
+   "excerpt": "If we are to fear that, we will not submit our claim.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "South China Sea (extended continental shelf claim)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia does not fear China retaliation over disputed area claim, says foreign minister — Malay Mail (Bernama) 2020-01-03\nhttps://www.malaymail.com/news/malaysia/2020/01/03/malaysia-does-not-fear-china-retaliation-over-disputed-area-claim-says-fore/1824429",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:38:36.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3db1af18f4",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-117e74b7e5 ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "At a press conference at Wisma Putra on 3 January 2020, Foreign Minister Saifuddin Abdullah said Malaysia would maintain the continental shelf claim it submitted to the UN on 12 December 2019 despite China's objection, which he said was expected, adding that Malaysia did not fear retaliation: 'If we are to fear that, we will not submit our claim.'",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-03",
+   "presort": "continuation of ev-117e74b7e5 (a candidate, provisional) — Saifuddin's pledge to maintain the shelf claim despite China's objection repeats his 20 December 2019 statement (ev-117e74b7e5) — continuation (provisional on 2019). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recspP34llZvsvg3w",
+   "archived_on": "2026-11-27",
+   "actors": "Shahidan Kassim (Minister in the Prime Minister's Department); Malaysian Maritime Enforcement Agency (MMEA)",
+   "suggestion_reasoning": "Announcing that seized foreign boats will be destroyed is a threat of punishment aimed mainly at Vietnamese boats; coercive. Date inferred from 'yesterday' in the 23 October 2017 edition; source is a PressReader scan of The Borneo Post (Sabah). [confidence: medium]",
+   "date_end": "2017-10-22",
+   "new_dyads": "MV",
+   "excerpt": "foreign fishing boats found committing the offence will be burnt and sunk.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Malaysian waters (Sabah and nationwide)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.\nSub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.pressreader.com/malaysia/the-borneo-post-sabah/20171023/281479276657463.",
+   "reviewer": "Angelo",
+   "sources": "Illegal fishing boats will be burnt — The Borneo Post (Sabah) (via PressReader) 2017-10-23\nhttps://www.pressreader.com/malaysia/the-borneo-post-sabah/20171023/281479276657463",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:26:49.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-4425b85d9b",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "At a press conference in Kota Kinabalu on 22 October 2017, Minister in the Prime Minister's Department Shahidan Kassim announced that foreign fishing boats caught encroaching in Malaysian waters would be burnt and sunk by the MMEA, noting that 108 of the 133 foreign fishing vessels detained so far in 2017 were Vietnamese.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-10-22",
+   "presort": "new move (novelty) — Announcing that seized foreign boats will be burnt and sunk is a new method of punishment against 2016, when the record shows detention only (ev-399cfad81d) — a coercive novelty; worth checking whether any boats were in fact destroyed in 2017. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recDkeSHPZwJOgIUU",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy",
+   "lat": 5.9,
+   "suggestion_reasoning": "Naval patrols near a foreign coast guard ship at a claimed feature are unilateral presence without confrontation; demonstrative. Only the months are given. [confidence: medium]",
+   "date_end": "2018-10-31",
+   "new_dyads": "MC",
+   "excerpt": "at Luconia Shoals for at least two days in September and October 2018.\n\ntwo Royal Malaysian Navy warships each patrolled near the Chinese coast guard vessel Haijing 3306",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Signaling Sovereignty: Chinese Patrols at Contested Reefs — CSIS Asia Maritime Transparency Initiative 2019-09-26\nhttps://amti.csis.org/signaling-sovereignty-chinese-patrols-at-contested-reefs/\nWhy China's Coast Guard Spent 258 Days in Waters Claimed by Malaysia — Voice of America (via GlobalSecurity.org) 2019-10-20\nhttps://www.globalsecurity.org/military/library/news/2019/10/mil-191020-voa02.htm",
+   "pull_request": 38,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:31:53.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-46bc24187c",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b04b09111c",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Two Royal Malaysian Navy warships (hull numbers 3502 and 176) each patrolled near the China Coast Guard cutter Haijing 3306 at Luconia Shoals for at least two days in September and October 2018, according to AIS data analysed by CSIS AMTI (the year's documented instance of Malaysia's recurring naval monitoring of the CCG presence at the shoals).",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2018-09-01",
+   "presort": "continuation of ev-b04b09111c (a candidate, provisional) — RMN warships patrolling near CCG 3306 at Luconia continue the 2017 monitoring (ev-b04b09111c) — continuation (provisional on 2017). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recSeXWnLnSHtNqGG",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA); director-general Zulkifli Abu Bakar",
+   "suggestion_reasoning": "Detention of another claimant's fishing boats is physical enforcement imposing punishment; coercive. The number of boats detained in 2017 exceeded the previous two years, which a coder may treat as a step up. Many detentions were in undisputed Malaysian EEZ; first source is a PressReader scan of The Borneo Post. [confidence: medium]",
+   "date_end": "2017-10-31",
+   "new_dyads": "MV",
+   "excerpt": "totalling 102 so far, from 62 boats in 2015 and 65 boats last year.\n\n196 Vietnamese crewmen and skippers arrested in the first five months in 18 cases of illegal fishing",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable",
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters off Kuching, Miri and Bintulu (Sarawak) and the east coast of the peninsula",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.pressreader.com/malaysia/the-borneo-post/20171021/281565176000224.",
+   "reviewer": "Angelo",
+   "sources": "Encroachment by Vietnamese fishing boats more rampant — The Borneo Post (via PressReader) 2017-10-21\nhttps://www.pressreader.com/malaysia/the-borneo-post/20171021/281565176000224\nMMEA: Most foreign fishermen encroaching Sarawak waters are Vietnamese — Malay Mail (Bernama) 2017-06-26\nhttps://www.malaymail.com/amp/news/malaysia/2017/06/26/mmea-most-foreign-fishermen-encroaching-sarawak-waters-are-vietnamese/1407659",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:26:23.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-555225be3d",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-399cfad81d ",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "MMEA director-general Zulkifli Abu Bakar said in October 2017 that Malaysia had detained 102 Vietnamese fishing boats so far in 2017, up from 62 in 2015 and 65 in 2016, with Sarawak encroachments concentrated off Kuching, Miri and Bintulu; earlier MMEA figures gave 196 Vietnamese crew arrested in 18 cases in January-May 2017 (recorded as the year's summary of Malaysia's fisheries enforcement against Vietnamese boats).",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2017-10-01",
+   "presort": "continuation of ev-399cfad81d (a candidate, provisional) — 102 Vietnamese boats detained against 65 in 2016 (ev-399cfad81d) is a rise, but the method is unchanged and the counterfactual applies: more Vietnamese boats encroaching, more detentions — not a frequency move; continuation (provisional on 2016). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rech0PzXL5oj3pQY8",
+   "archived_on": "2026-11-27",
+   "actors": "Shahidan Kassim (Minister in the Prime Minister's Department, National Security Council); Malaysian Maritime Enforcement Agency (MMEA); Royal Malaysian Navy",
+   "lat": 5.9,
+   "suggestion_reasoning": "Dispatching navy and coast guard assets to monitor Chinese vessels in a claimed area is unilateral presence without confrontation; demonstrative. Defence Minister Hishammuddin said on 28 March that the navy had found no encroachment, which a coder should weigh. [confidence: high]",
+   "date_end": "2016-03-24",
+   "new_dyads": "MC",
+   "excerpt": "the Malaysian Maritime Enforcement Agency and the navy to the area to monitor the situation.\n\nMalaysia sent its navy and uncharacteristically summoned China",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source's wording for the place: “Luconia Shoals (Beting Patinggi Ali), off Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia says 100 China boats intrude into its waters — Philstar.com (Associated Press) 2016-03-25\nhttps://philstar.com/headlines/2016/03/25/1566301/malaysia-says-100-china-boats-intrude-its-waters\nSouth China Sea: Malaysia Eyes Harder Response — The Maritime Executive (Reuters) 2016-05-31\nhttps://maritime-executive.com/article/south-china-sea-malaysia-eyes-harder-response",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:21:12.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-57c3e0b7e2",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-497b14cfd4 ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Minister in the Prime Minister's Department Shahidan Kassim announced that about 100 China-registered fishing boats, escorted by Chinese coast guard vessels, had been detected near the Luconia Shoals and that the government had dispatched the Malaysian Maritime Enforcement Agency and the Royal Malaysian Navy to the area to monitor them, warning that legal enforcement action would follow if they were confirmed inside Malaysia's EEZ.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-24",
+   "presort": "continuation of ev-497b14cfd4 (a candidate, provisional) — Dispatching MMEA and RMN ships to watch Chinese boats at Luconia continues the standing 2015 presence there (345 ship-days, ev-497b14cfd4; round-the-clock watch, ev-a15caaf75e, prev run); more to react to (about 100 fishing boats), not a change of method — continuation (provisional on 2015). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec94ernBtHHePe4U",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy; Chief of Navy Admiral Ahmad Kamarulzaman Ahmad Badaruddin",
+   "suggestion_reasoning": "Announcing a new naval command facing the Luconia Shoals area is a statement of intent to strengthen presence rather than a confrontation; declarative. Source is a PressReader scan of The Borneo Post (22 Dec 2016 edition, 'yesterday'). [confidence: medium]",
+   "date_end": "2016-12-21",
+   "new_dyads": "MC",
+   "excerpt": "by creating a naval region in Bintulu, the oil and gas infrastructure in the region can be better protected.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Bintulu, Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.pressreader.com/malaysia/the-borneo-post/20161222/281668254628816.",
+   "reviewer": "Angelo",
+   "sources": "Fourth navy fleet to boost security — The Borneo Post (via PressReader) 2016-12-22\nhttps://www.pressreader.com/malaysia/the-borneo-post/20161222/281668254628816",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:25:13.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-57f2f75ee4",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Chief of Navy Admiral Ahmad Kamarulzaman Ahmad Badaruddin announced on 21 December 2016 at Sepanggar Naval Base that the Royal Malaysian Navy would create a fourth naval region (fleet) based in Bintulu by about April 2017, citing geopolitical and geostrategic factors and the protection of offshore oil and gas infrastructure.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-12-21",
+   "merge_into_candidate": "ev-894ec00504",
+   "presort": "same move as ev-894ec00504 — The Chief of Navy's announcement of a fourth naval region at Bintulu is the same 2016 intensification as the Bintulu base plan ev-894ec00504 — merge. (group MY2016-bintulu) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recMLJ8nbq2ZJ0m6b",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA); Royal Malaysian Navy; Royal Malaysian Air Force; Royal Malaysia Police; Department of Fisheries; inter-ministerial task force",
+   "suggestion_reasoning": "A new, Cabinet-mandated enforcement operation detaining another claimant's fishing boats is physical imposition of punishment on a larger scale than before; coercive. Most detentions were in the undisputed peninsular EEZ, which a coder should weigh. [confidence: high]",
+   "date_end": "2019-05-16",
+   "new_dyads": "MV",
+   "excerpt": "The 25 were Vietnamese fishing vessels and 123 crew members were arrested,\n\nhas successfully seized 184 Vietnamese vessels and detained 1,600 crew since May.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Malaysian waters off Pahang, Terengganu and Kelantan",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "25 Vietnamese fishing boats detained, 123 arrested in multi-agency operation — The Star (Malaysia) 2019-05-18\nhttps://thestar.com.my/news/nation/2019/05/18/25-vietnamese-fishing-boats-detained-123-arrested-in-multiagency-operation/\n184 Vietnamese vessels seized, 1,600 crew detained in Op Naga — New Straits Times\nhttps://nst.com.my/amp/news/nation/2019/11/542300/184-vietnamese-vessels-seized-1600-crew-detained-op-naga",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:34:13.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-69a8d4bf33",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "In the first phase of the multi-agency Ops Naga against illegal foreign fishing, run from 2 to 16 May 2019 by the MMEA with the Royal Malaysian Navy, Royal Malaysian Air Force, police and Fisheries Department, Malaysia inspected 266 vessels and detained 25 Vietnamese fishing boats and 123 crew; by November 2019 the operation had seized 184 Vietnamese vessels and detained 1,600 crew.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-05-02",
+   "presort": "new move (novelty) — Ops Naga is a new Cabinet-mandated, multi-agency operation (MMEA, navy, air force, police) against foreign fishing, a change of method from the routine MMEA detentions of 2018 (ev-e649b8e80f), with 184 Vietnamese boats seized by November against 102 in 2017 (2018 total not in the record). (group MY2019-vn-fishing) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec8SDNLOrhJJZm2A",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Deputy Secretary-General Raja Nushirwan Zainal Abidin",
+   "suggestion_reasoning": "A formal protest note to another claimant asserting Malaysia's sovereignty over its waters is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2019-05-08",
+   "new_dyads": "MV",
+   "excerpt": "a total of 748 vessels and 7,203 Vietnamese crew members were detained since 2006 until now.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Malaysian waters (South China Sea)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysia issues protest note to Vietnam over repeated encroachments — Malay Mail (Bernama) 2019-05-08\nhttps://www.malaymail.com/news/malaysia/2019/05/08/malaysia-issues-protest-note-to-vietnam-over-repeated-encroachments/1751031",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:34:31.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-72ddbf3ab3",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "On 8 May 2019 Wisma Putra deputy secretary-general Raja Nushirwan Zainal Abidin handed Vietnam's ambassador Le Quy Quynh a protest note over repeated encroachments by Vietnamese fishing vessels into Malaysian waters, which the ministry called a violation of Malaysia's sovereignty and territorial integrity and of international law including UNCLOS, noting 748 vessels and 7,203 Vietnamese crew detained since 2006.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-05-08",
+   "merge_into_candidate": "ev-69a8d4bf33",
+   "presort": "same move as ev-69a8d4bf33 — The 8 May protest note to Vietnam over repeated fishing encroachments, handed over during Ops Naga's first phase, is part of the same 2019 crackdown on Vietnamese fishing (ev-69a8d4bf33); nothing comparable toward Vietnam in 2018 — merge. (group MY2019-vn-fishing) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec1YnK2nBTUjhEBS",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Malaysia; Permanent Mission of Malaysia to the United Nations",
+   "suggestion_reasoning": "A unilateral legal deposit extending Malaysia's maritime claim into contested waters is a formal verbal/legal assertion of claim; declarative. New for Malaysia since the 2009 joint submission. [confidence: high]",
+   "date_end": "2019-12-12",
+   "new_dyads": "MC MV MP",
+   "excerpt": "On 12 December 2019, Malaysia submitted to the Commission on the Limits of the Continental Shelf,\n\nIt is a claim that we have made, and we will defend our claim.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "northern part of the South China Sea (continental shelf beyond 200 nm off Sabah and Sarawak)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sabah coast 15%; Sarawak coast 99%); 7 Spratly SE (Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "Partial Submission by Malaysia in the South China Sea - Commission on the Limits of the Continental Shelf — UN Division for Ocean Affairs and the Law of the Sea 2019-12-12\nhttps://www.un.org/Depts/los/clcs_new/submissions_files/submission_mys_12_12_2019.html\nMalaysia FM: China's 'nine-dash line' claim 'ridiculous' — Al Jazeera 2019-12-21\nhttps://www.aljazeera.com/news/2019/12/21/malaysia-fm-chinas-nine-dash-line-claim-ridiculous",
+   "pull_request": 38,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:36:47.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7c6dbc8761",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP"
+   ],
+   "summary": "On 12 December 2019 Malaysia lodged a partial submission with the UN Commission on the Limits of the Continental Shelf for the remaining portion of its continental shelf beyond 200 nautical miles in the South China Sea, an area overlapping China's nine-dash line and the Spratlys; China objected the same day by note CML/14/2019, and the Philippines, Viet Nam and Indonesia also sent notes in 2020.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-12-12",
+   "presort": "new move (novelty) — Malaysia's own partial CLCS submission for the outer shelf overlapping the nine-dash line and the Spratlys is a new legal method — nothing comparable in 2018, and the first unilateral filing since the 2009 joint submission. (group MY2019-clcs) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recLaXnSQgmAvWgfv",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Saifuddin Abdullah; Ministry of Foreign Affairs; Dewan Rakyat",
+   "suggestion_reasoning": "A ministerial statement announcing a firmer approach to the dispute is a verbal assertion of Malaysia's position; declarative. Possible step-up marker for the new Pakatan Harapan government. [confidence: high]",
+   "date_end": "2018-07-25",
+   "new_dyads": "MC",
+   "excerpt": "sending a signal that we want to be more firm, more serious",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia to be firmer in row over South China Sea — Philstar.com 2018-07-25\nhttps://philstar.com/headlines/2018/07/25/1836682/malaysia-be-firmer-row-over-south-china-sea",
+   "pull_request": 38,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:31:41.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7dee62dc47",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-809147a19f",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Foreign Minister Saifuddin Abdullah told Parliament on 25 July 2018 that Prime Minister Mahathir's remarks on warships were a signal that Malaysia wanted to be firmer and more serious in handling the South China Sea dispute, said the 2002 DOC had 'no fangs', and called for a Code of Conduct with teeth, while all parties should exercise self-restraint and act according to international law.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-07-25",
+   "presort": "continuation of ev-809147a19f (a candidate, provisional) — Saifuddin's \"firmer\" posture and call for a Code of Conduct with teeth is rhetoric at the 2017 declarative level (ev-809147a19f), with self-restraint and a multilateral COC as its content — continuation, possibly likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recOUJiyOD7ZHkPqw",
+   "archived_on": "2026-11-27",
+   "actors": "Defence Minister Hishammuddin Hussein; Ministry of Defence",
+   "suggestion_reasoning": "A public ministerial statement opposing China's militarisation of reclaimed features is a verbal assertion of Malaysia's position; declarative. [confidence: high]",
+   "date_end": "2017-06-03",
+   "new_dyads": "MC",
+   "excerpt": "We opposed the militarisation of the artificial island. The Chinese had told us the island will not be militarised,",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "South China Sea (artificial islands)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP error); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://de-awani-web-portal-stg.eco.astro.com.my/berita-malaysia/hishammuddin-malaysia-maintains-stand-opposing-any-militarisation-islands-south-china-sea-144877.",
+   "reviewer": "Angelo",
+   "sources": "Hishammuddin: Malaysia maintains stand opposing any militarisation of islands in South China Sea — Astro Awani (Bernama) 2017-06-03\nhttps://de-awani-web-portal-stg.eco.astro.com.my/berita-malaysia/hishammuddin-malaysia-maintains-stand-opposing-any-militarisation-islands-south-china-sea-144877",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:26:09.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-809147a19f",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-d1d8be7f62",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Defence Minister Hishammuddin Hussein, speaking to reporters at the Shangri-La Dialogue in Singapore on 3 June 2017, said Malaysia opposed the militarisation of the artificial islands in the South China Sea, noting that China had told Malaysia the islands would not be militarised and that this had always been Malaysia's position.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-06-03",
+   "presort": "continuation of ev-d1d8be7f62 (a candidate, provisional) — Opposing militarisation of China's artificial islands repeats the 2016 criticism of China's Fiery Cross flights (ev-d1d8be7f62) and asserts no Malaysian claim — continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recaMFce5TQrlxxoQ",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy (Ka Bunga Mas 5)",
+   "lat": 5.9,
+   "suggestion_reasoning": "Close naval monitoring of a Chinese coast guard patrol at a claimed feature is unilateral presence without confrontation; demonstrative. The end date is the report date, not the end of the deployment. [confidence: medium]",
+   "date_end": "2019-09-26",
+   "new_dyads": "MC",
+   "excerpt": "from the Haijing 5401, which began patrolling the area on September 22.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Signaling Sovereignty: Chinese Patrols at Contested Reefs — CSIS Asia Maritime Transparency Initiative 2019-09-26\nhttps://amti.csis.org/signaling-sovereignty-chinese-patrols-at-contested-reefs/",
+   "pull_request": 38,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:34:46.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-84bd1bb58f",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-46bc24187c",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "From about 22 September 2019 the Royal Malaysian Navy auxiliary ship Ka Bunga Mas 5 operated as close as 2 nautical miles from the China Coast Guard cutter Haijing 5401, which had begun patrolling the Luconia Shoals area that day, according to AIS tracking published by CSIS AMTI on 26 September 2019.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-09-22",
+   "presort": "continuation of ev-46bc24187c (a candidate, provisional) — RMN auxiliary Bunga Mas 5 shadowing CCG 5401 at Luconia continues the 2018 naval monitoring there (ev-46bc24187c) — continuation (provisional on 2018). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recSJEcj4RrGvaoD7",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Defence; Defence Minister Hishammuddin Hussein; Royal Malaysian Navy",
+   "suggestion_reasoning": "An announced plan to base naval forces on the coast nearest the Luconia Shoals and James Shoal is a statement of intent to administer and monitor the claimed area rather than a completed deployment; declarative. Day not given in the source (month precision). [confidence: medium]",
+   "date_end": "2016-09-30",
+   "new_dyads": "MC",
+   "excerpt": "We are also planning to set up the Royal Malaysian Navy base there,\n\nJust a couple of weeks later, Malaysia announced plans to set up a naval forward operating base near Bintulu, south of Miri.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Bintulu, Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Defence Ministry to set up camp, navy base in Bintulu — New Straits Times\nhttps://nst.com.my/amp/news/2016/09/175421/defence-ministry-set-camp-navy-base-bintulu\nSouth China Sea: Malaysia Eyes Harder Response — The Maritime Executive (Reuters) 2016-05-31\nhttps://maritime-executive.com/article/south-china-sea-malaysia-eyes-harder-response",
+   "pull_request": 38,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:24:49.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-894ec00504",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Defence Minister Hishammuddin Hussein announced in September 2016 that the Defence Ministry planned to set up an army camp and a Royal Malaysian Navy base in Bintulu, Sarawak, citing the need to monitor asset movements within Sarawak and the South China Sea; Reuters had earlier reported the plan for a naval forward operating base near Bintulu announced weeks after the March 2016 Luconia Shoals incident.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2016-09-01",
+   "presort": "new move (novelty) — A new army camp and navy forward base at Bintulu, the coast facing Luconia, announced after the March incident, goes beyond 2015's upgrade of the existing Sepanggar base (ev-9779298267, prev run) — a new basing arrangement for the claimed area; it is a plan, so the coder may prefer to wait for the base to be stood up. (group MY2016-bintulu) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recl4vW07qCF1S57d",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA); Johor regional director Mohd Zulfadli Nayan",
+   "suggestion_reasoning": "Detention of Chinese vessels and crews is physical enforcement imposing punishment; coercive. The waters off Johor are undisputed Malaysian waters outside the claimed area, so a coder may exclude it; included because it is Malaysia's first mass detention of Chinese vessels in the period. [confidence: medium]",
+   "date_end": "2020-10-09",
+   "new_dyads": "MC",
+   "excerpt": "detained 60 Chinese nationals and six Chinese-registered fishing vessels\n\nMaritime authorities detained six Chinese fishing vessels and their crew for allegedly trespassing in waters off Johor.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "waters off Johor (southern South China Sea)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Malaysia Detains Chinese Vessels — MarineLink (Reuters) 2020-10-13\nhttps://www.marinelink.com/news/malaysia-detains-chinese-vessels-482379\n6 Chinese fishing vessels, 60 men detained off Johor — Free Malaysia Today (Bloomberg) 2020-10-11\nhttps://www.freemalaysiatoday.com/category/nation/2020/10/11/6-chinese-fishing-vessels-60-men-detained-off-johor",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:44:10.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-8a28e6ca1f",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "Undisputed territorial waters so rejected despite the unprecedented scale",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "On Friday 9 October 2020 the Malaysian Maritime Enforcement Agency detained six Chinese-registered fishing vessels from Qinhuangdao and their 60 Chinese crew in an operation off Johor for anchoring in Malaysian waters without permits; the MMEA announced the detentions on 10 October.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-10-09",
+   "presort": "unclear — Detaining Chinese boats for anchoring without permits off Johor is port-limits enforcement in undisputed waters, not plainly about the South China Sea claim; likely reject. If in scope, it would be novelty (first mass detention of Chinese vessels, nothing comparable in 2019). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recZ15diaXVEtwoSX",
+   "archived_on": "2026-11-27",
+   "actors": "Sarawak Shell (Petronas production-sharing contractor); Sapura Esperanza rig; offshore supply vessels Executive Courage and Executive Excellence",
+   "lat": 5.08333,
+   "suggestion_reasoning": "State-licensed hydrocarbon drilling in a contested area, continued despite Chinese coast guard pressure, is unilateral resource development without confrontation by Malaysia; demonstrative. Exact start and end dates of the drilling are not given. [confidence: medium]",
+   "date_end": "2019-05-31",
+   "new_dyads": "MC",
+   "excerpt": "the Shell-chartered drilling rig Sapura Esperanza, which is working on a lease block in the South Luconia Shoals region about 100 nm off Sarawak.\n\nbetween May 10 and 27, including an oil and gas block licensed to petroleum company Sarawak Shell.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "South Luconia Shoals / Luconia Breakers, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China Attempts to \"Intimidate\" its Neighbors' Offshore Drilling Rigs — The Maritime Executive 2019-07-17\nhttps://maritime-executive.com/article/china-attempts-to-intimidate-its-neighbors-offshore-drilling-rigs\nChina blocking Malaysian and Vietnamese oil and gas vessels shows greater willingness to intimidate, says think tank — IMOA (reprint of South China Morning Post) 2019-07-21\nhttps://imoa.ph/china-blocking-malaysian-and-vietnamese-oil-and-gas-vessels-shows-greater-willingness-to-intimidate-says-think-tank/",
+   "pull_request": 38,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:33:41.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9284eb29a8",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Longstanding practice",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In May 2019 the Shell-chartered drilling rig Sapura Esperanza drilled on a Sarawak Shell lease block near Luconia Breakers in the South Luconia Shoals area, with Malaysian offshore supply vessels (Executive Courage and Executive Excellence) servicing it, while the China Coast Guard cutter Haijing 35111 patrolled around the operation and circled the supply vessels between 10 and 27 May; the Malaysian operation continued.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2019-05-01",
+   "presort": "unclear — Licensed drilling on a Sarawak Shell block near Luconia Breakers; the 2018 candidates show no drilling, but Sarawak offshore exploitation in these blocks is long-standing. Settle by whether Malaysian drilling in the Luconia blocks went on in 2018 (then continuation) or this block/area is new (then scope). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.66667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recKj7LisTo21x9wP",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Dewan Rakyat",
+   "suggestion_reasoning": "An official statement to Parliament rejecting China's nine-dash line is a verbal assertion of Malaysia's claim; declarative. First source is a scanned parliamentary reply PDF (date from the archive folder name), so the excerpt cannot be machine-checked; the same formula was repeated in replies in May 2016, March 2017 and March 2018. [confidence: medium]",
+   "date_end": "2016-03-17",
+   "new_dyads": "MC",
+   "excerpt": "tidak mengiktiraf tuntutan China yang berdasarkan nine-dash line\n\ncontroversial Nine Dash Line, which it uses to claim over 90 percent",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://maritime-executive.com/article/south-china-sea-malaysia-eyes-harder-response.",
+   "reviewer": "Angelo",
+   "sources": "Pertanyaan Jawab Lisan No. 66, Dewan Rakyat, 17 March 2016 (Laut China Selatan) — Parliament of Malaysia (via Sinar Project pardocs) 2016-03-17\nhttps://pardocs.sinarproject.org/documents/2016-march-parliamentary-session/oral-questions-soalan-lisan/2016-03-17-parliamentary-replies/soalan-66_1464232111.pdf\nSouth China Sea: Malaysia Eyes Harder Response — The Maritime Executive (Reuters) 2016-05-31\nhttps://maritime-executive.com/article/south-china-sea-malaysia-eyes-harder-response",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:21:00.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9619d0dccf",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-676c0cf97d ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In a Dewan Rakyat reply dated 17 March 2016 to the MP for Gombak, the Malaysian Foreign Ministry stated that Malaysia and the other ASEAN claimant states do not recognise China's claim based on the nine-dash line, which it said is inconsistent with international law including UNCLOS 1982, and that Malaysia conducts patrols, surveillance and enforcement to protect its interests; Reuters reported the deputy foreign minister reaffirming the same position in Parliament in April 2016.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-17",
+   "presort": "continuation of ev-676c0cf97d (a candidate, provisional) — Restates non-recognition of the nine-dash line in Parliament, exactly as Hamzah Zainudin did in the Dewan Rakyat and Dewan Negara in 2015 (ev-676c0cf97d, prev run) — same level, continuation (provisional on 2015). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recZBCstIY4pasnLT",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Dewan Rakyat",
+   "suggestion_reasoning": "A parliamentary restatement of non-recognition of China's claim line is a routine verbal assertion; declarative. Source is a scanned parliamentary reply PDF hosted by Sinar Project (OCR text, date from the archive folder), so the excerpt cannot be machine-checked. [confidence: low]",
+   "date_end": "2018-03-12",
+   "new_dyads": "MC",
+   "excerpt": "penempatan tentera ini di Laut China Selatan tidak melibatkan kawasan maritim Malaysia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Low confidence"
+   ],
+   "location_name": "Spratly Islands / South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://pardocs.sinarproject.org/documents/2018-march-april-parliamentary-session/oral-questions-soalan-lisan/2018-03-12-parliamentary-replies/soalan-50.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pertanyaan Jawab Lisan No. 50, Dewan Rakyat, 12 March 2018 (Kepulauan Spratly) — Parliament of Malaysia (via Sinar Project pardocs) 2018-03-12\nhttps://pardocs.sinarproject.org/documents/2018-march-april-parliamentary-session/oral-questions-soalan-lisan/2018-03-12-parliamentary-replies/soalan-50.pdf",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:28:07.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9866168cb7",
+   "run_id": "MY-2016-2020",
+   "note": "continuation of ev-0d43ccecd8",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In a Dewan Rakyat reply dated 12 March 2018 to the MP for Batu on China's militarisation of the Spratlys, the Foreign Minister restated that Malaysia and the other ASEAN claimants do not recognise China's nine-dash line as it is inconsistent with international law including UNCLOS 1982, while saying China's military deployments did not involve Malaysia's maritime area (the year's instance of the ministry's standard parliamentary formula).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-03-12",
+   "presort": "continuation of ev-0d43ccecd8 (a candidate, provisional) — The year's instance of the Dewan Rakyat non-recognition formula, as in 2017 (ev-0d43ccecd8) — continuation (provisional on 2017). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec4myxqaIYa5tG5n",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra)",
+   "lat": 5.08333,
+   "suggestion_reasoning": "A formal diplomatic protest rejecting China's claim to the shoals is a verbal assertion; declarative. Only the year is known from the audit report as reported by Reuters; the other five protests are undated in the source. [confidence: medium]",
+   "date_end": "2017-12-31",
+   "new_dyads": "MC",
+   "excerpt": "in response to a Chinese note asserting its claim to the South Luconia Shoals\n\nhas sent six diplomatic protests to China over encroachment in its waters",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "South Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source's wording for the place: “South Luconia Shoals (Beting Patinggi Ali), off Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Chinese ships intruded into Malaysian waters 89 times in four years: report — The Jakarta Post (Reuters) 2020-07-15\nhttps://www.thejakartapost.com/seasia/2020/07/15/chinese-ships-intruded-into-malaysian-waters-89-times-in-four-years-report\nChinese Ships Intruded into Malaysian Waters 89 Times in Four Years -Report — Offshore Engineer (Reuters) 2020-07-14\nhttps://www.oedigital.com/news/480182-chinese-ships-intruded-into-malaysian-waters-89-times-in-four-years-report",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:25:30.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-98915c19fb",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-2a924fa331 ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "During 2017 Malaysia sent a diplomatic protest to China in response to a Chinese note asserting China's claim to the South Luconia Shoals, one of six diplomatic protests Malaysia sent to China over encroachment in its waters in 2016-2019, according to the National Audit Department report tabled in Parliament on 14 July 2020, which also recorded 89 intrusions by Chinese coast guard and navy ships in 2016-2019 and the navy turning them away.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2017-01-01",
+   "presort": "continuation of ev-2a924fa331 (a candidate, provisional) — A diplomatic protest note to China over the South Luconia Shoals continues the protests the 2016 record shows (ambassador summoned over Luconia, ev-2a924fa331) and the near-weekly notes of 2015; one of six in 2016-2019, so no rise in frequency — continuation (provisional on 2016). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.66667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recX0tt5nTt1Io6ff",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Hishammuddin Hussein; Dewan Rakyat; Malaysian Maritime Enforcement Agency",
+   "lat": 5.9,
+   "suggestion_reasoning": "A parliamentary statement affirming that Malaysia protests foreign encroachments at a claimed feature is a verbal assertion; declarative. [confidence: medium]",
+   "date_end": "2020-08-13",
+   "new_dyads": "MC",
+   "excerpt": "has consistently submitted protest notes to countries whose vessels",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP error); excerpt not checked. Source's wording for the place: “Luconia Shoals (Gugusan Beting Patinggi Ali), off Sarawak”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://de-awani-web-portal-stg.eco.astro.com.my/berita-malaysia/malaysia-sends-protest-notes-over-foreign-vessel-encroachment-hishammuddin-255107?amp=1.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia sends protest notes over foreign vessel encroachment - Hishammuddin — Astro Awani (Bernama) 2020-08-13\nhttps://de-awani-web-portal-stg.eco.astro.com.my/berita-malaysia/malaysia-sends-protest-notes-over-foreign-vessel-encroachment-hishammuddin-255107?amp=1",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:42:05.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9de33b5a46",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-c303e3c040",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Answering a Dewan Rakyat question on 13 August 2020 about a China Coast Guard vessel anchored at Luconia Shoals, Foreign Minister Hishammuddin Hussein said Malaysia had consistently submitted protest notes to countries whose vessels were found to have encroached into national waters, and reported that Op Naga had carried out 5,538 inspections since 2019 and detained 121 foreign fishing boats.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-08-13",
+   "presort": "continuation of ev-c303e3c040 (a candidate, provisional) — A parliamentary answer that Malaysia consistently sends protest notes over encroachments at Luconia, with Op Naga figures, restates the 2019 practice (ev-c303e3c040, ev-72ddbf3ab3) — continuation (provisional on 2019). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recBORAtSbE2TVzGE",
+   "archived_on": "2026-11-27",
+   "actors": "Permanent Mission of Malaysia to the United Nations; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A formal note verbale rejecting China's maritime claims is a legal/diplomatic verbal assertion; declarative. Malaysia's first such public UN note against China since 2009. Source is the UN-hosted PDF, so the excerpt cannot be machine-checked. [confidence: high]",
+   "date_end": "2020-07-29",
+   "new_dyads": "MC",
+   "excerpt": "the People's Republic of China's claim to the maritime features in the South China Sea has no basis under international law\n\nSouth China Sea",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\nSub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.freemalaysiatoday.com/category/nation/2020/07/31/putrajaya-rebukes-beijing-over-south-china-sea-claim-says-report.",
+   "reviewer": "Angelo",
+   "sources": "Note Verbale HA 26/20 from the Permanent Mission of Malaysia to the United Nations, 29 July 2020 — UN Division for Ocean Affairs and the Law of the Sea 2020-07-29\nhttps://www.un.org/Depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_07_29_MYS_NV_UN_002_OLA-2020-00373.pdf\nPutrajaya rebukes Beijing over South China Sea claim, says report — Free Malaysia Today 2020-07-31\nhttps://www.freemalaysiatoday.com/category/nation/2020/07/31/putrajaya-rebukes-beijing-over-south-china-sea-claim-says-report",
+   "pull_request": 38,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:41:52.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-a2ffe95951",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Malaysia's Permanent Mission to the UN circulated Note Verbale HA 26/20 dated 29 July 2020, responding to China's note CML/14/2019 on Malaysia's continental shelf submission; it rejected in its entirety the content of China's note, rejected China's claims to historic rights or other sovereign rights and jurisdiction within the nine-dash line as exceeding the limits of UNCLOS, and stated that China's claim to the maritime features in the South China Sea has no basis under international law.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-07-29",
+   "presort": "new move (novelty) — Note verbale HA 26/20 rejecting China's historic rights and its claim to the features as without basis in law puts a formal, legally significant rejection of China's claim on the UN record — a new method against 2019, when the rejection was oral (ev-117e74b7e5); first such public note against China since 2009. (group MY2020-un-notes) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recps3c0gRP8DHsVu",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy (KD Selangor)",
+   "lat": 5.9,
+   "suggestion_reasoning": "A naval patrol to monitor a foreign coast guard presence at a claimed feature is unilateral presence without confrontation; demonstrative. Recorded as the documented instance of Malaysia's recurring navy and MMEA patrols at Luconia Shoals in 2017. [confidence: high]",
+   "date_end": "2017-01-29",
+   "new_dyads": "MC",
+   "excerpt": "patrolled the shoals from January 22 to January 29.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "Luconia Shoals (South Luconia), off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tracking China's Coast Guard off Borneo — CSIS Asia Maritime Transparency Initiative 2017-04-05\nhttps://amti.csis.org/tracking-chinas-coast-guard-off-borneo/",
+   "pull_request": 38,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:25:42.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b04b09111c",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-57c3e0b7e2",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "The Royal Malaysian Navy offshore patrol vessel KD Selangor patrolled the Luconia Shoals from 22 to 29 January 2017, operating as close as about 4 nautical miles from the China Coast Guard cutter Zhongguo Haijing 3501 that had been maintaining a presence at the shoals since late December 2016, according to AIS tracking analysed by CSIS AMTI and C4ADS.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-01-22",
+   "presort": "continuation of ev-57c3e0b7e2 (a candidate, provisional) — KD Selangor's January patrol beside CCG 3501 at Luconia continues the navy/MMEA presence there shown in 2016 (ev-57c3e0b7e2) — same level, continuation (provisional on 2016). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recf06hVvnX5w8pG2",
+   "archived_on": "2026-11-27",
+   "actors": "Permanent Mission of Malaysia to the United Nations; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A formal note verbale rejecting another claimant's Spratly-based maritime claims is a legal/diplomatic verbal assertion; declarative. Source is the UN-hosted PDF (undated in its text; date from the UN submissions page), so the excerpt cannot be machine-checked. [confidence: high]",
+   "date_end": "2020-08-27",
+   "new_dyads": "MP",
+   "excerpt": "The Government of Malaysia categorically rejects the excessive maritime claims arising from the Kalayaan Island Group\n\nCommunication dated 27 August 2020",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Kalayaan Island Group (Spratlys) and North Borneo (Sabah)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.un.org/Depts/los/clcs_new/submissions_files/submission_mys_12_12_2019.html.",
+   "reviewer": "Angelo",
+   "sources": "Note Verbale HA 30/20 from the Permanent Mission of Malaysia to the United Nations, 27 August 2020 — UN Division for Ocean Affairs and the Law of the Sea 2020-08-27\nhttps://www.un.org/Depts/los/clcs_new/submissions_files/mys_12_12_2019/2020_08_27_MYS_NV_UN_003.pdf\nPartial Submission by Malaysia in the South China Sea - Commission on the Limits of the Continental Shelf — UN Division for Ocean Affairs and the Law of the Sea 2019-12-12\nhttps://www.un.org/Depts/los/clcs_new/submissions_files/submission_mys_12_12_2019.html",
+   "pull_request": 38,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:43:29.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b6735182ed",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "Malaysia's Permanent Mission to the UN circulated Note Verbale HA 30/20 dated 27 August 2020 in reply to the Philippines' note of 6 March 2020 on Malaysia's continental shelf submission, categorically rejecting the Philippines' maritime claims arising from the Kalayaan Island Group, calling the Philippine assertion of overlap premature, and stating that Malaysia has never recognised the Philippine claim to Sabah, which has no basis under international law.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-08-27",
+   "merge_into_candidate": "ev-a2ffe95951",
+   "presort": "same move as ev-a2ffe95951 — Note verbale HA 30/20 rejecting the Philippines' Kalayaan-based claims and its Sabah claim belongs to the same 2020 UN note campaign defending the 2019 submission as ev-a2ffe95951 — merge (dyad MP added); the coder may prefer a separate move per target. (group MY2020-un-notes) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recTMfGwIkRilq630",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Saifuddin Abdullah; Dewan Rakyat",
+   "lat": 5.08333,
+   "suggestion_reasoning": "A ministerial statement publicly identifying the Chinese presence at a claimed feature as an encroachment requiring stronger naval assets is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2019-10-17",
+   "new_dyads": "MC",
+   "excerpt": "Our naval ships under the Royal Malaysian Navy are smaller than the Coast Guard vessels from China\n\nwe need to enhance our assets to allow us to protect our coasts",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "South Luconia Shoals, off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia needs to be ready for 'the worst' in South China Sea: Foreign minister — The Jakarta Post (Reuters) 2019-10-17\nhttps://www.thejakartapost.com/seasia/2019/10/17/malaysia-needs-to-be-ready-for-the-worst-in-south-china-sea-foreign-minister.html\nMalaysian Foreign Minister Calls for Upgraded Naval Assets — BenarNews 2019-10-17\nhttps://www.benarnews.org/english/news/malaysian/naval-concerns-10172019170431.html",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:34:56.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c303e3c040",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-7dee62dc47",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "During question time in Parliament on 17 October 2019, Foreign Minister Saifuddin Abdullah said China's coast guard maintained a near 24-hour presence around the South Luconia Shoals off Sarawak, that Malaysia's naval ships were smaller than the Chinese coast guard vessels, that Malaysia's assets needed upgrading to protect its waters should major powers clash, and that Malaysia could send diplomatic objections if a major power encroached on its territory.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-10-17",
+   "presort": "continuation of ev-7dee62dc47 (a candidate, provisional) — Saifuddin's parliamentary remarks on the CCG's near-constant presence and the need for bigger ships are declarative at the 2018 level (ev-7dee62dc47); \"could send diplomatic objections\" adds no new act — continuation (provisional on 2018). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.66667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recNFXLOPimd1Ntvh",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy (KD Jebat, KD Kelantan); Malaysian Maritime Enforcement Agency (KM Bagan Datuk); Petronas; Seadrill (West Capella)",
+   "suggestion_reasoning": "Deploying warships and a coast guard vessel to protect a drilling operation in disputed waters is unilateral presence and administration without reported confrontation; demonstrative. Dates are those of AIS broadcasts, so deployments may have been longer. [confidence: high]",
+   "date_end": "2020-02-10",
+   "new_dyads": "MC MV",
+   "excerpt": "patrolled the area from January 5 to 9.\n\nWest Capella",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Blocks ND1/ND2, beyond 200 nm off Sabah (West Capella drilling site)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia Picks a Three-Way Fight in the South China Sea — CSIS Asia Maritime Transparency Initiative 2020-02-21\nhttps://amti.csis.org/malaysia-picks-a-three-way-fight-in-the-south-china-sea/\nThree-way maritime standoff emerging in Spratlys - think tank — Philstar.com 2020-02-24\nhttps://philstar.com/headlines/2020/02/24/1995623/three-way-maritime-standoff-emerging-spratlys-think-tank",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "9 Nam Con Son",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:38:50.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-cae2a725dd",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "9 Nam Con Son"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV"
+   ],
+   "summary": "To guard the Petronas-contracted drillship West Capella and its supply ships against China Coast Guard and Vietnamese vessels, the Royal Malaysian Navy dispatched the frigate KD Jebat, which patrolled the area from 5 to 9 January 2020, then the Kedah-class patrol vessel KD Kelantan from 26 January to 3 February, and the MMEA deployed the patrol vessel KM Bagan Datuk from 6 to 10 February (returning on 16 February), according to AIS tracking published by CSIS AMTI.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-05",
+   "presort": "new move (scope) — Navy and MMEA ships deployed to guard the West Capella beyond 200 nm carry Malaysia's naval presence into blocks ND1/ND2, where in 2019 it shadowed the CCG only at Luconia (ev-84bd1bb58f) and the drilling went unescorted (ev-d1c89a64f7) — scope. (group MY2020-westcapella) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recA3qtoAjufM1bbc",
+   "archived_on": "2026-11-27",
+   "actors": "Petronas; Seadrill (West Capella)",
+   "suggestion_reasoning": "State-company exploratory drilling in an area Malaysia and Viet Nam had jointly recognised as disputed in 2009 and that China claims is unilateral resource development without confrontation; demonstrative. New area for Malaysia. [confidence: high]",
+   "date_end": "2019-12-21",
+   "new_dyads": "MV MC",
+   "excerpt": "On December 21, the West Capella moved to block ND2, exploring an oil and gas field called Lala-1.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Block ND2 (Lala-1 field), beyond 200 nm off Sabah, in the Malaysia-Viet Nam 'Defined Area'",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia Picks a Three-Way Fight in the South China Sea — CSIS Asia Maritime Transparency Initiative 2020-02-21\nhttps://amti.csis.org/malaysia-picks-a-three-way-fight-in-the-south-china-sea/",
+   "pull_request": 38,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "9 Nam Con Son",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:38:22.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-d1c89a64f7",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "9 Nam Con Son"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "summary": "On 21 December 2019 the Seadrill drillship West Capella, contracted to Petronas, moved from block ND4 off Sabah to block ND2 to explore the Lala-1 field, beyond Malaysia's 200-nautical-mile EEZ in continental shelf claimed also by Viet Nam and within China's nine-dash line, beginning the drilling campaign that became the West Capella standoff of early 2020.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-12-21",
+   "presort": "new move (scope) — West Capella's move to block ND2 beyond 200 nm, in shelf also claimed by Vietnam and inside the nine-dash line, takes state-company drilling into an area not worked before — nothing comparable in 2018; a scope move. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec8ksVObDlgpkIsH",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra); Dewan Rakyat",
+   "lat": 9.61667,
+   "suggestion_reasoning": "A parliamentary reply criticising China's activity on a disputed feature is a mild verbal assertion; declarative. Source is a scanned parliamentary reply PDF hosted by Sinar Project (the date comes from the archive folder name), so the excerpt cannot be machine-checked. [confidence: low]",
+   "date_end": "2016-03-14",
+   "new_dyads": "MC",
+   "excerpt": "langkah-langkah yang sewajarnya sentiasa diambil termasuklah mengadakan rondaan, pengawasan serta Penguatkuasaan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Low confidence"
+   ],
+   "location_name": "Fiery Cross Reef",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Fiery Cross Reef (Pulau Fiery Cross)”.",
+   "reviewer": "Angelo",
+   "sources": "Pertanyaan Jawab Lisan No. 36, Dewan Rakyat, 14 March 2016 (Laut China Selatan / Pulau Fiery Cross) — Parliament of Malaysia (via Sinar Project pardocs) 2016-03-14\nhttps://pardocs.sinarproject.org/documents/2016-march-parliamentary-session/oral-questions-soalan-lisan/2016-03-14-parliamentary-replies/soalan-36_1464232104.pdf",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:20:43.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d1d8be7f62",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-676c0cf97d",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In a Dewan Rakyat reply dated 14 March 2016 to the MP for Stampin on China's airstrip at Fiery Cross Reef, the Malaysian government said that China's test flights and landings there were not conducive to stability and could make resolving the disputes harder, while noting the feature lies outside Malaysia's maritime area and that Malaysia conducts patrols, surveillance and enforcement.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-14",
+   "presort": "continuation of ev-676c0cf97d (a candidate, provisional) — Routine Dewan Rakyat reply, the same parliamentary formula (criticism of China's conduct, \"Malaysia conducts patrols, surveillance and enforcement\") shown in 2015 by ev-676c0cf97d and ev-f35795066b (prev run); it concerns a feature outside Malaysia's claim and asserts nothing new — continuation, likely reject (provisional on 2015). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.96667,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recgpW5T0ojBuUOfz",
+   "archived_on": "2026-11-27",
+   "actors": "Prime Minister Mahathir Mohamad",
+   "suggestion_reasoning": "A head-of-government statement that Malaysia will keep its occupied Spratly features is a verbal assertion of claim; declarative. The interview date is not given; dated by The Star's report. [confidence: medium]",
+   "date_end": "2018-06-19",
+   "new_dyads": "MC",
+   "excerpt": "So we want to retain, of course, about four or five islands that we have occupied.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "Spratly Islands (Malaysian-occupied features)",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Dr M: Let Malaysia continue occupying islands in South China Sea — The Star (Malaysia) 2018-06-19\nhttps://thestar.com.my/news/nation/2018/06/20/dr-m-let-malaysia-continue-occupying-islands-in-south-china-sea",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:30:29.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e5ea7c40ce",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-0d43ccecd8 ",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In an interview with the South China Morning Post reported on 19 June 2018, Prime Minister Mahathir Mohamad said Malaysia wanted to retain the four or five Spratly islands it had occupied, while arguing that warships should not be stationed in the South China Sea because they create tension.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-06-19",
+   "presort": "continuation of ev-0d43ccecd8 (a candidate, provisional) — Mahathir's wish to keep the Spratly features Malaysia occupies restates the 2017 assertion that all features in Malaysia's maritime area belong to it (ev-0d43ccecd8); paired with a call against warships, nothing escalates — continuation (provisional on 2017). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recZXersPNl54KOVQ",
+   "archived_on": "2026-11-27",
+   "actors": "Malaysian Maritime Enforcement Agency (MMEA)",
+   "suggestion_reasoning": "Detention of another claimant's fishing boats in Malaysia's claimed EEZ off Sabah is physical enforcement imposing punishment; coercive. Chosen because the location is in the southern Spratly approaches rather than the undisputed peninsular EEZ. [confidence: medium]",
+   "date_end": "2018-06-19",
+   "new_dyads": "MV",
+   "excerpt": "has seized two fishing boats and detained 12 Vietnamese fishermen",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "about 98 nautical miles north-west of Balambangan Island, off Kudat, Sabah",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "machine_note": "Source's wording for the place: “about 98 nautical miles north-west of Pulau Balambangan, off Kudat, Sabah”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia arrests 12 Vietnamese for illegal fishing — VnExpress International 2018-06-22\nhttps://e.vnexpress.net/news/news/malaysia-arrests-12-vietnamese-for-illegal-fishing-3767281.html",
+   "pull_request": 38,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:29:00.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-e649b8e80f",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-555225be3d ",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "The Malaysian Maritime Enforcement Agency seized two Vietnamese fishing boats and detained 12 Vietnamese fishermen on 19 June 2018 about 98 nautical miles north-west of Pulau Balambangan off Kudat, Sabah (recorded as the year's representative instance of Malaysia's continuing detentions of Vietnamese fishing boats).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-06-19",
+   "presort": "continuation of ev-555225be3d (a candidate, provisional) — Seizure of Vietnamese boats off Kudat continues the MMEA detentions of 2017 (ev-555225be3d); one representative instance, no change of method — continuation (provisional on 2017). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recRrFQKAQaO3TAAl",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Wisma Putra)",
+   "suggestion_reasoning": "An official statement invoking legal processes and UNCLOS after an award that invalidated China's nine-dash line is a verbal assertion of Malaysia's law-based position, though cautiously worded and not naming China; declarative, medium confidence. [confidence: medium]",
+   "date_end": "2016-07-12",
+   "new_dyads": "MC",
+   "excerpt": "Malaysia believes that all relevant parties can peacefully resolve disputes by full respect for diplomatic and legal processes\n\nbelieves that it is important to maintain peace, security and stability through the exercise of self-restraint",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:32:13.000Z",
+   "location_name": "South China Sea",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Malaysia calls for South China Sea dispute resolved by diplomatic, legal processes — The Jakarta Post 2016-07-13\nhttps://www.thejakartapost.com/seasia/2016/07/13/malaysia-calls-for-south-china-sea-dispute-resolved-by-diplomaticlegal-processes.html\nMalaysia urges dialogues to resolve South China Sea dispute — The Star (Malaysia) 2016-07-13\nhttps://www.thestar.com.my/news/nation/2016/07/13/malaysia-urges-dialogues-to-resolve-south-china-sea-dispute",
+   "pull_request": 38,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:22:15.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-f46dde92b5",
+   "run_id": "MY-2016-2020",
+   "note": "Closer to a call for engagement than an assertive statement",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "Malaysia's Foreign Ministry issued a statement late on 12 July 2016, hours after the Philippines v. China arbitral award, saying Malaysia believed all relevant parties could peacefully resolve disputes by full respect for diplomatic and legal processes and relevant international law including UNCLOS, and calling for self-restraint and full implementation of the DOC.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-07-12",
+   "presort": "unclear — The post-award statement only calls for self-restraint, respect for legal processes and the DOC, without asserting Malaysia's own claim or naming China; not an assertive act of the claimant — likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "reczBntQePfeDP1dt",
+   "archived_on": "2026-11-27",
+   "actors": "Royal Malaysian Navy (Bunga Mas Lima, KD Keris); PTTEP/Borr Drilling (Gunnlod rig) under Petronas licence",
+   "lat": 5.9,
+   "suggestion_reasoning": "Naval shadowing of a Chinese coast guard ship and protection of licensed drilling at a claimed feature are unilateral presence without reported confrontation; demonstrative. Dates from AIS as published by CSIS AMTI; the arrival date of Bunga Mas Lima is inferred ('hours later' after the 10 November patrol). [confidence: high]",
+   "date_end": "2020-11-24",
+   "new_dyads": "MC",
+   "excerpt": "arrived at Luconia Shoals hours later and shadowed the 5402 for at least a few days.\n\nare reportedly involved in a standoff over hydrocarbon exploration 44 nautical miles off the coast of Sarawak",
+   "fldDaG8ZsjVVmdNQt": "2026-11-09T13:36:16.000Z",
+   "location_name": "Luconia Shoals and block SK410B, about 44 nautical miles off Sarawak",
+   "run": [
+    "MY-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China and Malaysia in Another Staredown over Offshore Drilling — CSIS Asia Maritime Transparency Initiative 2020-11-25\nhttps://amti.csis.org/china-and-malaysia-in-another-staredown-over-offshore-drilling/\nMalaysian navy vessels, Chinese ship reported in South China Sea standoff — Daily Express (Sabah), citing Free Malaysia Today 2020-11-26\nhttps://www.dailyexpress.com.my/news/162201/malaysian-navy-vessels-chinese-ship-reported-in-south-china-sea-standoff/",
+   "pull_request": 38,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T15:46:48.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-f8d6830dbb",
+   "run_id": "MY-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-84bd1bb58f",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "After the China Coast Guard cutter 5402 took station at Luconia Shoals on 2 November 2020, the Royal Malaysian Navy auxiliary Bunga Mas Lima arrived from Sabah on about 10 November to shadow it; when the 5402 approached within 2 nautical miles of the Malaysian-licensed jackup rig Gunnlod (PTTEP, block SK410B) on 19 November, the RMN deployed the littoral mission ship KD Keris, which stayed by the rig and then followed the 5402 back to Luconia Shoals and on its 24 November patrol; the rig continued drilling.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-11-10",
+   "presort": "continuation of ev-84bd1bb58f (a candidate, provisional) — RMN shadowing of CCG 5402 at Luconia continues the 2019 monitoring (ev-84bd1bb58f); staying by the Gunnlod rig adds rig protection, which the coder may instead merge into the 2020 West Capella move ev-cae2a725dd — continuation (provisional on 2019). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}
