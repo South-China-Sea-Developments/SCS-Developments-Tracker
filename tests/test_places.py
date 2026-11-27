@@ -27,12 +27,21 @@ def test_the_summary_only_when_the_place_says_nothing():
     assert subs("nowhere in particular") == []
 
 
+# Events whose place text points the suggester elsewhere, where the coder's sub-region stands (ADR 0003).
+# Listed by name, so that any new disagreement still fails and gets looked at.
+CODER_OVERRIDES = {
+    "ev-d1c89a64f7": "Block ND2 (Lala-1), 'beyond 200 nm off Sabah' but in the Malaysia-Viet Nam Defined Area: coded 9 (2026-11-27)",
+    "ev-cae2a725dd": "Blocks ND1/ND2, the West Capella drilling site, 'off Sabah': coded 9 (2026-11-27)",
+}
+
+
 def test_agrees_with_the_coded_sub_regions():
     """On the accepted events whose sub-region is known (no coordinates given), the suggestion is never
     wrong about the place: the right sub-region is first in at least 85%, and what the place text alone
     suggests always lists it or is empty. A place named only in the summary (a sovereignty claim such as
     "over Hoang Sa and Truong Sa") is a hint, not the act's place: the coder's sub-region stands
-    (ev-5f77c68ada, Vietnam's central-area shelf submission, coded 3 while its summary names the Paracels)."""
+    (ev-5f77c68ada, Vietnam's central-area shelf submission, coded 3 while its summary names the Paracels).
+    Events whose place text itself misleads the suggester are listed in CODER_OVERRIDES."""
     from pathlib import Path
     rows = [e for e in csv.DictReader(open(Path(__file__).parents[1] / "data/events.csv", encoding="utf-8")) if e["subregion"] and e["status"] == "accepted"]
     top = wrong = 0
@@ -40,7 +49,7 @@ def test_agrees_with_the_coded_sub_regions():
         got = subs(e["location_name"], e["summary"])
         top += bool(got) and got[0] == int(e["subregion"])
         own = subs(e["location_name"])
-        wrong += bool(own) and int(e["subregion"]) not in own
+        wrong += bool(own) and int(e["subregion"]) not in own and e["event_id"] not in CODER_OVERRIDES
     assert wrong == 0 and top >= 0.85 * len(rows), (top, wrong, len(rows))
 
 
