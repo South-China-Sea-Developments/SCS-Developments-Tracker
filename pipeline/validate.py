@@ -296,7 +296,7 @@ def aggregates(moves: list[dict]) -> dict:
     years = list(range(1970, max(last, 1970) + 1))
     out = {"years": years, "types": list(schema.TYPE_FLAGS), "domains": list(schema.DOMAIN_FLAGS),
            "issues": list(schema.ISSUE_FLAGS), "subregions": list(schema.SUBREGION_FLAGS),
-           "claimants": list(schema.CLAIMANT_CODES),
+           "claimants": list(schema.DISPLAY_ORDER),
            "n_moves": len(accepted), "n_pending": sum(1 for m in moves if m["status"] == "pending"),
            "by_claimant": {}}
     dims = schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS
