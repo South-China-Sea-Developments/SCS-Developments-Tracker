@@ -1,0 +1,32 @@
+{
+ "run_id": "ID-1980s",
+ "table": "Candidates",
+ "record_ids": [
+  "recyowblvjRyg7MVv",
+  "recAMmRSS8j2myvgE",
+  "recaRh3wqLUTOgQbQ",
+  "recOLXXpj2u1zqANO",
+  "recdEN9csZTMh9EX5",
+  "rec2q2NScnlKQ3Drb",
+  "recycPprNIiZbObsI",
+  "recddEckqh1K9kton",
+  "recTtt2OS5KVCKjng",
+  "recTQERAkXkJmfmuA",
+  "rechlajBDWACXJdVb",
+  "reco8Fj1v2bkroQgK"
+ ],
+ "event_ids": [
+  "ev-0c7eb0639a",
+  "ev-0d7b8eed93",
+  "ev-4227e29b69",
+  "ev-442456fb9f",
+  "ev-4d61328818",
+  "ev-63e93dcef8",
+  "ev-6821facc66",
+  "ev-7453dbabf6",
+  "ev-797f4b0432",
+  "ev-9299417f47",
+  "ev-a1b708ffde",
+  "ev-d32802dc73"
+ ]
+}

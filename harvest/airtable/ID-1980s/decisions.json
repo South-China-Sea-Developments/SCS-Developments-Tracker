@@ -1,0 +1,170 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-0c7eb0639a",
+   "action": "reject",
+   "note": "Falls outside the SCS"
+  },
+  {
+   "event_id": "ev-0d7b8eed93",
+   "action": "reject",
+   "note": "continuation of ev-9299417f47"
+  },
+  {
+   "event_id": "ev-4227e29b69",
+   "action": "reject",
+   "note": "continuation of ev-bbef893415"
+  },
+  {
+   "event_id": "ev-442456fb9f",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV",
+     "IC",
+     "IM"
+    ],
+    "domains": [
+     "domestic",
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "fisheries",
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-4d61328818",
+   "action": "new_move",
+   "note": "Further evidence: https://www.cia.gov/readingroom/docs/CIA-RDP84-00825R000300220001-6.pdf",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-63e93dcef8",
+   "action": "reject",
+   "note": "continuation of ev-4227e29b69"
+  },
+  {
+   "event_id": "ev-6821facc66",
+   "action": "reject",
+   "note": "Not an assertive escalation"
+  },
+  {
+   "event_id": "ev-7453dbabf6",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV",
+     "IC",
+     "IM"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "fisheries",
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-797f4b0432",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-9299417f47",
+   "action": "reject",
+   "note": "continuation of ev-7453dbabf6"
+  },
+  {
+   "event_id": "ev-a1b708ffde",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-d32802dc73"
+  },
+  {
+   "event_id": "ev-d32802dc73",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  }
+ ],
+ "reviewer": "Angelo"
+}

@@ -1,0 +1,663 @@
+{
+ "run_id": "ID-1980s",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "recyowblvjRyg7MVv",
+   "archived_on": "2026-11-27",
+   "actors": "Department of Foreign Affairs (Deplu)",
+   "suggestion_reasoning": "A formal protest note rejecting another claimant's published boundary map is a verbal assertion; declarative. The note's best-documented target is Sipadan and Ligitan in the Celebes Sea, outside the South China Sea; whether it also objected to the map's South China Sea shelf lines near Natuna is not stated in the sources opened, so a coder may treat it as out of area. The day comes from Indonesia's ICJ memorial (a PDF that blocks scripted fetching, read through a summarising fetch); the Hansard reply gives no date; the IBRU briefing returned 404 to scripted fetching and was also read through a summarising fetch, so the second and third excerpts are unverified. [confidence: medium]",
+   "date_end": "1980-02-08",
+   "new_dyads": "IM",
+   "excerpt": "Bantahan itu ialah berkenaan dengan peta baru (the new map) yang diisytiharkan oleh Malaysia baru-baru ini.\n\nIt must be underlined that Indonesia immediately protested against this map by a note verbale on 8 February 1980.\n\nexcept in the protest note of 1980 issued as a response to the publication of the Malaysian Map",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "location_name": "Malaysian map of territorial waters and continental shelf boundaries (21 December 1979); Sipadan and Ligitan",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Dewan Rakyat, Penyata Rasmi, 9 Jun 1980 (Zon Ekonomi Eksklusif; Pulau-pulau yang menjadi pertikaian) — Parliament of Malaysia (Digital Hansard) 1980-06-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1980-06-09\nSovereignty over Pulau Ligitan and Pulau Sipadan (Indonesia/Malaysia), Memorial of the Republic of Indonesia — International Court of Justice 1999-11-02\nhttps://api.icj-cij.org/sites/default/files/case-related/102/8558.pdf\nThe Territorial Dispute between Indonesia and Malaysia over Pulau Sipadan and Pulau Ligitan in the Celebes Sea (Boundary & Territory Briefing 2(2)) — IBRU, University of Durham (R. Haller-Trost) 1995-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/boundary-amp-territory-briefings/btb_2-2.pdf",
+   "pull_request": 66,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:34:00.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-0c7eb0639a",
+   "run_id": "ID-1980s",
+   "note": "Falls outside the SCS",
+   "suggested_dyads": [
+    "IM"
+   ],
+   "summary": "Indonesia protested Malaysia's 21 December 1979 map of its territorial waters and continental shelf boundaries (the 'Peta Baru') by a note verbale of 8 February 1980 to the Malaysian Embassy in Jakarta, rejecting Malaysia's claimed boundary lines and its claim to Sipadan and Ligitan; Malaysia's Foreign Ministry confirmed in Parliament in June 1980 that Indonesia's protest concerned the new map.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-02-08",
+   "presort": "unclear — The 8 February 1980 note protesting Malaysia's Peta Baru is documented as aimed at Sipadan and Ligitan (Celebes Sea, outside the SCS); nothing comparable in 1979 (prev file). Settle by whether the note also objected to the map's South China Sea shelf lines near Natuna: if yes, a declarative novelty; if not, out of area. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recAMmRSS8j2myvgE",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Agriculture",
+   "suggestion_reasoning": "Charging and licensing foreign fishing across the EEZ, which includes the Natuna waters, is administrative assertion of zone jurisdiction; declarative. Nationwide and not aimed at a named claimant. Only source is a JPRS translation in a DTIC PDF that blocks scripted fetching, read through a summarising fetch, so the excerpt needs checking by hand. [confidence: low]",
+   "date_end": "1985-07-01",
+   "new_dyads": "IA",
+   "excerpt": "every ship wishing to catch fish in the EEZ has to pay a registration fee of US$ 3",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable",
+    "Low confidence"
+   ],
+   "location_name": "Exclusive Economic Zone of Indonesia",
+   "run": [
+    "ID-1980s"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.",
+   "reviewer": "Angelo",
+   "sources": "JPRS-SEA-85-131, Southeast Asia Report, 28 August 1985: 'Fees for Foreign Ships Fishing in EEZ' (ANTARA News Bulletin, 15 Jul 85, p. A8) — Joint Publications Research Service (via DTIC) 1985-08-28\nhttps://apps.dtic.mil/sti/pdfs/ADA350279.pdf",
+   "pull_request": 66,
+   "new_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:43:34.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-0d7b8eed93",
+   "run_id": "ID-1980s",
+   "note": "continuation of ev-9299417f47 ",
+   "suggested_dyads": [
+    "IA"
+   ],
+   "summary": "From 1 July 1985 Indonesia imposed levies and prior-permit requirements on foreign ships fishing in its EEZ under Ministry of Agriculture decrees (No. 473 of 1985 setting an annual allowable catch for the zone and No. 477 of 1985 setting a registration fee for every vessel), as reported by the ANTARA News Bulletin on 15 July 1985.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1985-07-01",
+   "presort": "continuation of ev-9299417f47 (a candidate, provisional) — The 1985 levies and permits on foreign fishing vessels are implementing decrees under PP 15/1984 (ev-9299417f47), nationwide and at the same level; continuation, likely reject. Single summarised JPRS source needs checking. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recaRh3wqLUTOgQbQ",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina; Esso Natuna (Exxon)",
+   "suggestion_reasoning": "A state oil company licensing exploitation of a seabed block in Indonesia's claimed Natuna shelf is unilateral resource administration; demonstrative. The D-Alpha block lies in waters later shown inside China's dashed line; no contemporary protest is recorded, so the dyad is a coder's call (the 1970s set coded the Natuna bloc contracts against Vietnam). The date comes from a 2009 Energy Ministry release. [confidence: medium]",
+   "date_end": "1980-01-08",
+   "new_dyads": "IC",
+   "excerpt": "KKS Blok Natuna D-Alpha ditandatangani antara Pertamina (sekarang BPMIGAS) dengan Esso Natuna pada tanggal 8 Januari 1980 untuk jangka waktu 30 tahun.\n\nKKS Blok Natuna D Alpha ditandatangani antara Pertamina (sekarang BPMIGAS) dengan Esso Natuna pada tanggal 8 Januari 1980 untuk jangka waktu 30 tahun.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "location_name": "Natuna D-Alpha block (East Natuna), South China Sea",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Penjelasan Pemerintah Mengenai Status KKS Natuna D-Alpha (Siaran Pers No. 04/HUMAS DESDM/2009) — Kementerian Energi dan Sumber Daya Mineral (ESDM) 2009-01-16\nhttps://esdm.go.id/id/media-center/arsip-berita/penjelasan-pemerintah-mengenai-status-kks-natuna-d-alpha\nKontrak Exxon di Natuna D Alpha Berakhir 2005 — Ditjen Migas, Kementerian ESDM\nhttps://migas.esdm.go.id/post/Kontrak-Exxon-di-Natuna-D-Alpha-Berakhir-2005",
+   "pull_request": 66,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:24:22.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4227e29b69",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-bbef893415",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Pertamina signed a 30-year production-sharing contract (KKS) for the Natuna D-Alpha block with Esso Natuna on 8 January 1980, with Pertamina and Esso each holding a 50% participating interest, opening the development of the giant gas structure north-east of the Natuna Islands.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-01-08",
+   "presort": "continuation of ev-bbef893415 (a candidate, provisional) — The Esso D-Alpha contract is the award of a bloc already named in the 1979 Natuna bloc round (ev-bbef893415, prev file: 'D-Alpha Esso'), at the same level; continuation, provisional until 1979 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recOLXXpj2u1zqANO",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Indonesia (President Soeharto)",
+   "suggestion_reasoning": "A unilateral proclamation of a 200-mile zone from archipelagic baselines that include the Natunas is a legal assertion over waters overlapping Vietnam's shelf claim and the area of China's dashed line; declarative. Primary text deposited with UN DOALOS. [confidence: high]",
+   "date_end": "1980-03-21",
+   "new_dyads": "IV IC IM",
+   "excerpt": "Declaration by the Government of Indonesia concerning the Exclusive Economic Zone of Indonesia, 21 March 1980\n\nthe breadth of which extends to 200 nautical miles from the baselines from which the breadth of the Indonesian Territorial Sea is measured.\n\nbahwa pada tanggal 21 Maret 1980 telah dikeluarkan Pengumuman Pemerintah Republik Indonesia tentang Zona Ekonomi Eksklusif Indonesia",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "location_name": "Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands)",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia - Maritime Space: Maritime Zones and Maritime Delimitation — UN Division for Ocean Affairs and the Law of the Sea (DOALOS)\nhttps://static.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm\nDeclaration by the Government of Indonesia concerning the Exclusive Economic Zone of Indonesia, 21 March 1980 — UN DOALOS (national legislation) 1980-03-21\nhttps://static.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/IDN_1980_DeclarationEEZ.pdf\nUndang-Undang Republik Indonesia Nomor 5 Tahun 1983 tentang Zona Ekonomi Eksklusif Indonesia — JDIH Kementerian Keuangan 1983-10-18\nhttps://jdih.kemenkeu.go.id/api/download/fulltext/1983/5TAHUN~1983UU.htm",
+   "pull_request": 66,
+   "new_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:34:15.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-442456fb9f",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV",
+    "IC",
+    "IM"
+   ],
+   "summary": "The Indonesian Government proclaimed a 200-nautical-mile Exclusive Economic Zone measured from the baselines of its 1960 archipelagic waters law, asserting sovereign rights over living and non-living resources and jurisdiction over installations, research and the marine environment, and offering to negotiate where the zone overlapped neighbours' claims.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1980-03-21",
+   "presort": "new move (novelty) — Proclaiming a 200-nm EEZ from the archipelagic baselines, covering the waters north of Natuna, is a new legal claim with nothing comparable in the 1979 record (prev file: oil-bloc awards, ev-bbef893415) or the baseline (shelf only); declarative. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recdEN9csZTMh9EX5",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI-AL)",
+   "suggestion_reasoning": "Naval manoeuvres announced for the waters around the Natunas, which Vietnam's shelf claim overlapped, are a show of presence without confrontation; demonstrative. Known only from one contemporary report ('earlier this month'), so the month is the report's and the exercise's dates and units are not given. [confidence: low]",
+   "date_end": "1980-02-29",
+   "new_dyads": "IV",
+   "excerpt": "These were followed by an announcement of Indonesian naval maneuvers near the disputed islands.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam's claim to islands keeps neighbors wary — The Christian Science Monitor (Frederic A. Moritz) 1980-02-29\nhttps://www.csmonitor.com/1980/0229/022941.html",
+   "pull_request": 66,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:32:03.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4d61328818",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Further evidence: https://www.cia.gov/readingroom/docs/CIA-RDP84-00825R000300220001-6.pdf ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "In February 1980 Indonesia announced naval manoeuvres near the Natuna Islands, the area where Vietnam claimed large stretches of sea and seabed, shortly after Indonesian officials had spoken of improving relations with China.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1980-02-01",
+   "presort": "new move (novelty) — Announced naval manoeuvres near Natuna are a military show of presence with nothing comparable in the 1979 record (prev file: bloc tender, contracts and Mochtar's statement, ev-bbef893415, ev-26d27c646d), so new again against last year; demonstrative. Single contemporary report with no dates or units, so weak evidence. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec2q2NScnlKQ3Drb",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Indonesia; Pertamina contractors; Indonesian Navy (TNI-AL)",
+   "suggestion_reasoning": "Completing seismic surveys across the whole disputed block and preparing drilling under naval escort is unilateral resource activity in contested waters; demonstrative. Dated only by the memorandum (GS 81-10007, January 1981), so the surveys themselves fall in 1980 or earlier and the drilling was still prospective; the 1979 Natuna bloc contracts are in the 1970s set. [confidence: medium]",
+   "date_end": "1981-01-31",
+   "new_dyads": "IV",
+   "excerpt": "companies exploration concessions encompassing the entire disputed area, and seismic surveys have already been completed. Drilling is due to start within the next few months with protection provided by Indonesian naval patrol ships.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Shelf area north of Great Natuna disputed with Vietnam (about 12,000 sq nm)",
+   "run": [
+    "ID-1980s"
+   ],
+   "machine_note": "Source's wording for the place: “Shelf area north of Pulau Natuna Besar disputed with Vietnam (about 12,000 sq nm)”.",
+   "reviewer": "Angelo",
+   "sources": "The South China Sea: The Soviet Factor (CIA Intelligence Memorandum GS 81-10007), OCR text of CIA-RDP08C01297R000300180004-8 — Central Intelligence Agency, National Foreign Assessment Center (via Internet Archive CIA Reading Room mirror) 1981-01-01\nhttps://archive.org/download/cia-readingroom-document-cia-rdp08c01297r000300180004-8/cia-rdp08c01297r000300180004-8_djvu.txt",
+   "pull_request": 66,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:37:39.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-63e93dcef8",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-4227e29b69",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "A CIA intelligence memorandum of January 1981 reported that Jakarta had granted foreign oil companies exploration concessions covering the entire area of shelf north of Natuna Besar disputed with Vietnam, that seismic surveys there had been completed, and that drilling was due to begin within months under the protection of Indonesian naval patrol ships; plans to upgrade the Natuna airfield for jet fighters and heavy transports were also under consideration.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1981-01-01",
+   "presort": "continuation of ev-4227e29b69 (a candidate, provisional) — Concessions over the whole disputed shelf and completed seismic work continue the oil licensing shown in 1980 (ev-4227e29b69) at the same level; the naval-escorted drilling it reports was still prospective in January 1981. If escorted drilling is later confirmed, that would be a separate novelty. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recycPprNIiZbObsI",
+   "archived_on": "2026-11-27",
+   "actors": "President Soeharto; Dewan Perwakilan Rakyat (DPR); Department of Foreign Affairs",
+   "suggestion_reasoning": "The ratifying law presents the Convention as international recognition of Indonesia's archipelagic baselines and enclosed waters, including the Natuna group; as a legal assertion of the archipelagic claim it is declarative. Ratifying a multilateral treaty can also be read as cooperative, so a coder may drop it. [confidence: low]",
+   "date_end": "1986-02-03",
+   "new_dyads": "IA",
+   "excerpt": "rejim hukum Negara Kepulauan mempunyai arti dan peranan penting untuk memantapkan kedudukan Indonesia sebagai Negara Kepulauan dalam rangka implementasi Wawasan Nusantara\n\n26. Indonesia (3 February 1986)",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Indonesian archipelagic waters and EEZ",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Undang-Undang Republik Indonesia Nomor 17 Tahun 1985 tentang Pengesahan United Nations Convention on the Law of the Sea — JDIH Kementerian Keuangan 1985-12-31\nhttps://jdih.kemenkeu.go.id/api/download/fulltext/1985/17TAHUN~1985UU.htm\nChronological lists of ratifications of, accessions and successions to the Convention and the related Agreements — UN DOALOS\nhttps://www.un.org/depts/los/reference_files/chronological_lists_of_ratifications.htm",
+   "pull_request": 66,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:44:15.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-6821facc66",
+   "run_id": "ID-1980s",
+   "note": "Not an assertive escalation",
+   "suggested_dyads": [
+    "IA"
+   ],
+   "summary": "Indonesia enacted Law No. 17 of 1985 ratifying the 1982 UN Convention on the Law of the Sea on 31 December 1985, stating that the archipelagic-state regime consolidated Indonesia's position as an archipelagic state under the Wawasan Nusantara and that waters formerly high seas had become Indonesian archipelagic waters; Indonesia deposited its ratification with the UN on 3 February 1986.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1985-12-31",
+   "presort": "unclear — Not an assertive act of the claimant — likely reject: ratifying UNCLOS is a multilateral, cooperative act, though its law presents the Convention as recognition of the archipelagic waters around Natuna. Settle by whether the coder counts the ratifying law's claims as a declarative assertion. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recddEckqh1K9kton",
+   "archived_on": "2026-11-27",
+   "actors": "President Soeharto; Dewan Perwakilan Rakyat (DPR); State Secretary Sudharmono",
+   "suggestion_reasoning": "Legislation establishing and penalising violations of a 200-mile zone that includes waters claimed by Vietnam and within China's dashed line is a legal assertion; declarative. Primary text (Kemenkeu JDIH) and UN DOALOS listing both give 18 October 1983. [confidence: high]",
+   "date_end": "1983-10-18",
+   "new_dyads": "IV IC IM",
+   "excerpt": "dengan batas terluar 200 (dua ratus) mil laut diukur dari garis pangkal laut wilayah Indonesia\n\nAct No. 5 of 1983 on the Indonesian exclusive economic zone, 18 October 1983",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "location_name": "Exclusive Economic Zone of Indonesia (incl. the waters north of the Natuna Islands)",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Undang-Undang Republik Indonesia Nomor 5 Tahun 1983 tentang Zona Ekonomi Eksklusif Indonesia — JDIH Kementerian Keuangan 1983-10-18\nhttps://jdih.kemenkeu.go.id/api/download/fulltext/1983/5TAHUN~1983UU.htm\nIndonesia - Maritime Space: Maritime Zones and Maritime Delimitation — UN Division for Ocean Affairs and the Law of the Sea (DOALOS)\nhttps://static.un.org/depts/los/LEGISLATIONANDTREATIES/STATEFILES/IDN.htm",
+   "pull_request": 66,
+   "new_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:42:58.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7453dbabf6",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV",
+    "IC",
+    "IM"
+   ],
+   "summary": "President Soeharto signed and promulgated Law No. 5 of 1983 on the Indonesian Exclusive Economic Zone, giving statutory force to the 1980 declaration: a 200-nautical-mile zone measured from Indonesia's territorial-sea baselines, sovereign rights over its resources, delimitation by agreement where it overlaps neighbours' zones (with the median line applying until then), and criminal penalties of up to Rp 225 million for violations.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1983-10-18",
+   "presort": "new move (novelty) — Law 5/1983 gives statutory force and criminal penalties to the 1980 EEZ proclamation (ev-442456fb9f); nothing comparable in 1982 (military only, ev-797f4b0432), so the legal assertion is new again; declarative. Doubt: a coder may see it as codifying the same claim rather than intensifying it. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recTtt2OS5KVCKjng",
+   "archived_on": "2026-11-27",
+   "actors": "Department of Defence and Security (Hankam), Defence Minister Gen. M. Jusuf; Indonesian Navy (TNI-AL); Indonesian Air Force (TNI-AU)",
+   "suggestion_reasoning": "Turning the Natunas into a forward base with radar, a submarine and patrol craft adds a standing military presence over waters disputed with Vietnam, without confrontation; demonstrative. The CIA ties it to the sea boundary dispute and the Natuna gas reserves; dated only by the report's information cut-off (15 August 1982), so the deployments fall in the months before. [confidence: medium]",
+   "date_end": "1982-08-15",
+   "new_dyads": "IV",
+   "excerpt": "On Defense Minister Jusuf’s orders, Natuna Island is being upgraded as a forward military base.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Island (Natuna Besar)",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982), OCR text of CIA-RDP03T02547R000100930001-9 — Central Intelligence Agency, Directorate of Intelligence (via Internet Archive CIA Reading Room mirror) 1982-09-01\nhttps://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt",
+   "pull_request": 66,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:42:38.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-797f4b0432",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Defence Minister M. Jusuf's orders Natuna Island was being upgraded as a forward military base: a French Thomson radar was being installed by a new extended runway, troop facilities were enlarged and a fuel depot built, a submarine and a patrol boat from the Navy's new purchases had been deployed at Natuna, a new minehunter was to patrol from the island, and a battalion-strength airborne exercise to the island was planned for 1982 (CIA assessment, information as of 15 August 1982).",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1982-08-01",
+   "presort": "new move (novelty) — Installing radar, a fuel depot and stationing a submarine, a patrol boat and a minehunter at Natuna adds standing military assets the 1981 record does not show (air base and patrols only, ev-d32802dc73, ev-a1b708ffde): a further intensification, not a continuation; demonstrative. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recTQERAkXkJmfmuA",
+   "archived_on": "2026-11-27",
+   "actors": "President Soeharto; Ministry of Agriculture (Directorate General of Fisheries)",
+   "suggestion_reasoning": "An implementing regulation that subjects foreign fishing anywhere in the EEZ, including the Natuna waters, to Indonesian licensing is an administrative legal assertion; declarative. It is nationwide and names no claimant, so a coder may treat it as routine EEZ administration rather than a South China Sea move. [confidence: low]",
+   "date_end": "1984-06-29",
+   "new_dyads": "IA",
+   "excerpt": "Pemberian izin kepada orang atau badan hukum asing untuk menangkap ikan di Zona Ekonomi Eksklusif Indonesia sebagaimana dimaksud dalam Pasal 3 dapat diberikan setelah diadakan persetujuan antara Pemerintah Republik Indonesia dengan Pemerintah Negara Asing",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Exclusive Economic Zone of Indonesia",
+   "run": [
+    "ID-1980s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Indonesian EEZ 75%); 9 Nam Con Son (Indonesian EEZ 25%).",
+   "reviewer": "Angelo",
+   "sources": "Peraturan Pemerintah Nomor 15 Tahun 1984 tentang Pengelolaan Sumber Daya Alam Hayati di Zona Ekonomi Eksklusif Indonesia — Pasal.id (text from peraturan.go.id) 1984-06-29\nhttps://pasal.id/peraturan/pp/pp-no-15-tahun-1984",
+   "pull_request": 66,
+   "new_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:43:18.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9299417f47",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South",
+    "9 Nam Con Son"
+   ],
+   "note": "continuation of ev-7453dbabf6",
+   "suggested_dyads": [
+    "IA"
+   ],
+   "summary": "The Indonesian government issued Government Regulation No. 15 of 1984 on the management of living resources in the Indonesian EEZ, setting allowable catches, banning destructive fishing and requiring foreign persons or companies to obtain licences, granted only after a government-to-government agreement, to fish in the zone, with penalties and licence revocation for violations.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1984-06-29",
+   "presort": "continuation of ev-7453dbabf6 (a candidate, provisional) — PP 15/1984 implements the 1983 EEZ law (ev-7453dbabf6) for fisheries: nationwide, naming no claimant, the same legal-administrative assertion at the same level; continuation, likely reject. A coder who counts foreign-fishing licensing as a new method could call it novelty. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rechlajBDWACXJdVb",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI-AL); Indonesian Army (TNI-AD); Indonesian Armed Forces (ABRI)",
+   "suggestion_reasoning": "Continuous naval patrols from the Natunas and a joint-service reinforcement exercise in the area of the shelf dispute are shows of presence without confrontation; demonstrative. The month is that of the press report; the CIA gives the exercise only the year 1981, and it may be the same manoeuvre the Monitor mentions. [confidence: medium]",
+   "date_end": "1981-07-09",
+   "new_dyads": "IV",
+   "excerpt": "The Indonesian Navy is conducting round-the-clock patrols from the Natunas, and the Army has recently staged maneuvers there.\n\nstaged one major Jjoint-service exercise (in 1981) to test unit reaction time from Sumatra to Natuna",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Islands and surrounding waters",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam pressures Indonesia with territorial claims — The Christian Science Monitor (Arnold C. Brackman) 1981-07-09\nhttps://www.csmonitor.com/1981/0709/070968.html\nIndonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982) — Central Intelligence Agency (via Internet Archive CIA Reading Room mirror) 1982-09-01\nhttps://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt",
+   "pull_request": 66,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:38:17.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-a1b708ffde",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "By early July 1981 the Indonesian Navy was conducting round-the-clock patrols from the Natuna Islands and the Army had recently staged manoeuvres there; a CIA assessment of 1982 records that Indonesia staged a major joint-service exercise in 1981 to test the reaction time of units moved from Sumatra to Natuna.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1981-07-01",
+   "merge_into_candidate": " ev-d32802dc73",
+   "presort": "same move as ev-d32802dc73 — Round-the-clock naval patrols from Natuna and the joint reinforcement exercise are the same 1981 military build-up as the air base (ev-d32802dc73); against the single announced manoeuvre of 1980 (ev-4d61328818) they also raise frequency, but they belong in one move. (group ID1981-natuna-military) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reco8Fj1v2bkroQgK",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Air Force (TNI-AU)",
+   "suggestion_reasoning": "Building a military air base on the islands from which the disputed shelf claim is measured strengthens physical presence without confrontation; demonstrative. One contemporary report gives only the month; a coder may see the construction as defence posture rather than claim assertion. [confidence: medium]",
+   "date_end": "1981-05-31",
+   "new_dyads": "IV",
+   "excerpt": "The Indonesian Air Force completed construction in May of an air base in the Natunas.\n\nFrench- made Thomson radar is being installed near a new extended runway",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:01:55.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Islands (air base, Natuna Besar)",
+   "run": [
+    "ID-1980s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam pressures Indonesia with territorial claims — The Christian Science Monitor (Arnold C. Brackman) 1981-07-09\nhttps://www.csmonitor.com/1981/0709/070968.html\nIndonesia: New Focus on External Security Threats (CIA Intelligence Assessment EA 82-10092, September 1982) — Central Intelligence Agency (via Internet Archive CIA Reading Room mirror) 1982-09-01\nhttps://archive.org/download/cia-readingroom-document-cia-rdp03t02547r000100930001-9/cia-rdp03t02547r000100930001-9_djvu.txt",
+   "pull_request": 66,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:38:00.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-d32802dc73",
+   "run_id": "ID-1980s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "The Indonesian Air Force completed construction of an air base in the Natuna Islands in May 1981, intended to host fighters and bombers from Indonesia and also from Singapore and Malaysia, amid Indonesia's seabed dispute with Vietnam north of the islands.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1981-05-01",
+   "presort": "new move (novelty) — Lead of the 1981 military reinforcement of Natuna: completing an air base for fighters and bombers is new construction against 1980, whose record shows only an announced naval manoeuvre (ev-4d61328818); demonstrative. A coder may read it as defence posture (it was to host Singaporean and Malaysian aircraft too) rather than claim assertion. (group ID1981-natuna-military) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}

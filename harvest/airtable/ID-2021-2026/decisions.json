@@ -1,0 +1,240 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-102ca54fa3",
+   "action": "reject",
+   "note": "continuation of ev-a9b24bbd02"
+  },
+  {
+   "event_id": "ev-13e0bc2dae",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-7d18b123c8"
+  },
+  {
+   "event_id": "ev-172c2ceb83",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy",
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-1873f7e15f",
+   "action": "reject",
+   "note": "continuation of ev-23d91fb5b9"
+  },
+  {
+   "event_id": "ev-22b4b17494",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-42478fa105"
+  },
+  {
+   "event_id": "ev-23d91fb5b9",
+   "action": "reject",
+   "note": "continuation of ev-ed50c6b9db"
+  },
+  {
+   "event_id": "ev-2c8286f52c",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative",
+     "military",
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-3d0fe78efa",
+   "action": "reject",
+   "note": "continuation of ev-1873f7e15f"
+  },
+  {
+   "event_id": "ev-42478fa105",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-4610eaed84",
+   "action": "reject",
+   "note": "continuation of ev-57d6723d07"
+  },
+  {
+   "event_id": "ev-515aa42946",
+   "action": "reject",
+   "note": "continuation of ev-8af5e8fd2b"
+  },
+  {
+   "event_id": "ev-59bb4f8410",
+   "action": "reject",
+   "note": "continuation of ev-89a7c2dcf9"
+  },
+  {
+   "event_id": "ev-635f4bebfd",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-172c2ceb83"
+  },
+  {
+   "event_id": "ev-6a6c38585b",
+   "action": "reject",
+   "note": "continuation of ev-8a99f7b256"
+  },
+  {
+   "event_id": "ev-7b87238a9f",
+   "action": "reject",
+   "note": "continuation of ev-8af5e8fd2b"
+  },
+  {
+   "event_id": "ev-7cfc76ed97",
+   "action": "reject",
+   "note": "Announcement but not implementation yet"
+  },
+  {
+   "event_id": "ev-7d18b123c8",
+   "action": "reject",
+   "note": "Plans but no actions yet"
+  },
+  {
+   "event_id": "ev-89a7c2dcf9",
+   "action": "reject",
+   "note": "Routine statement"
+  },
+  {
+   "event_id": "ev-8a99f7b256",
+   "action": "reject",
+   "note": "continuation of ev-9c9a8bcede"
+  },
+  {
+   "event_id": "ev-8af5e8fd2b",
+   "action": "reject",
+   "note": "continuation of ev-635f4bebfd"
+  },
+  {
+   "event_id": "ev-9c9a8bcede",
+   "action": "reject",
+   "note": "continuation of ev-39f2da0c71"
+  },
+  {
+   "event_id": "ev-a9b24bbd02",
+   "action": "reject",
+   "note": "continuation of ev-89a7c2dcf9"
+  },
+  {
+   "event_id": "ev-b7895e69d6",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-42478fa105"
+  },
+  {
+   "event_id": "ev-d58dd0d126",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-42478fa105"
+  },
+  {
+   "event_id": "ev-dceab18de2",
+   "action": "reject",
+   "note": "continuation of ev-9a0f9944d1"
+  },
+  {
+   "event_id": "ev-dd0e7657bd",
+   "action": "reject",
+   "note": "No assertive escalation or tool to enforce a claim"
+  },
+  {
+   "event_id": "ev-e75b9338a8",
+   "action": "new_move",
+   "note": "The agreement is already assertive in and of itself through the assertive claim over a maritime territory",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "domestic",
+     "physical"
+    ],
+    "issues": [
+     "energy"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-ed50c6b9db",
+   "action": "reject",
+   "note": "continuation of ev-4610eaed84"
+  },
+  {
+   "event_id": "ev-efae97a1aa",
+   "action": "reject",
+   "note": "continuation of ev-23d91fb5b9"
+  },
+  {
+   "event_id": "ev-fc5872ffac",
+   "action": "reject",
+   "note": "continuation of ev-8af5e8fd2b"
+  }
+ ],
+ "reviewer": "Angelo"
+}

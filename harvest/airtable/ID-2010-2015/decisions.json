@@ -1,0 +1,529 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-00d31aba18",
+   "action": "reject",
+   "note": "continuation of ev-6423cf1f68"
+  },
+  {
+   "event_id": "ev-011cac594b",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-cbc293875b"
+  },
+  {
+   "event_id": "ev-0fa264bbc6",
+   "action": "reject",
+   "note": "continuation of ev-2558ab896f"
+  },
+  {
+   "event_id": "ev-169a8b7241",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-a4f944dc5e"
+  },
+  {
+   "event_id": "ev-1b7562aeac",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-91faec81a8"
+  },
+  {
+   "event_id": "ev-2558ab896f",
+   "action": "reject",
+   "note": "continuation of ev-6f261ed319"
+  },
+  {
+   "event_id": "ev-2a1f165417",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "diplomatic",
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-2bd4d6e45b",
+   "action": "reject",
+   "note": "continuation of ev-2a1f165417"
+  },
+  {
+   "event_id": "ev-35e97bc7d1",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-cbc293875b"
+  },
+  {
+   "event_id": "ev-3b721ec4ae",
+   "action": "reject",
+   "note": "continuation of ev-8b71ba1ad7"
+  },
+  {
+   "event_id": "ev-40c365221e",
+   "action": "reject",
+   "note": "Not an assertive SCS move"
+  },
+  {
+   "event_id": "ev-47783c4ac1",
+   "action": "reject",
+   "note": "continuation of ev-1b7562aeac"
+  },
+  {
+   "event_id": "ev-499f08d5bc",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-4a18c7fc41",
+   "action": "reject",
+   "note": "continuation of ev-fb5b1ef1f4"
+  },
+  {
+   "event_id": "ev-4c7703f020",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV",
+     "IM"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-4ecf271bd5",
+   "action": "reject",
+   "note": "continuation of ev-00d31aba18"
+  },
+  {
+   "event_id": "ev-4eff246f50",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-2a1f165417"
+  },
+  {
+   "event_id": "ev-5578705f35",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-91faec81a8"
+  },
+  {
+   "event_id": "ev-561125aa98",
+   "action": "reject",
+   "note": "continuation of ev-6f261ed319"
+  },
+  {
+   "event_id": "ev-5a04af152f",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-ab81cc727a"
+  },
+  {
+   "event_id": "ev-5c94654b46",
+   "action": "reject",
+   "note": "continuation of ev-76df87e6ee"
+  },
+  {
+   "event_id": "ev-6423cf1f68",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IM"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-6f261ed319",
+   "action": "reject",
+   "note": "continuation of ev-d2d02adea6"
+  },
+  {
+   "event_id": "ev-7d261f9658",
+   "action": "reject",
+   "note": "continuation of ev-2558ab896f"
+  },
+  {
+   "event_id": "ev-85d055c138",
+   "action": "reject",
+   "note": "continuation of ev-d2d02adea6"
+  },
+  {
+   "event_id": "ev-86a4b2bec4",
+   "action": "reject",
+   "note": "continuation of ev-fb5b1ef1f4"
+  },
+  {
+   "event_id": "ev-872229c888",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-a4f944dc5e"
+  },
+  {
+   "event_id": "ev-8b71ba1ad7",
+   "action": "reject",
+   "note": "continuation of ev-da4d8bf65e"
+  },
+  {
+   "event_id": "ev-8f0fcd63d9",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative",
+     "politics"
+    ],
+    "subregions": [
+     "10",
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-90f5dfda84",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-91faec81a8",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "domestic",
+     "diplomatic"
+    ],
+    "issues": [
+     "military",
+     "politics"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-97c5aada95",
+   "action": "reject",
+   "note": "continuation of ev-da4d8bf65e"
+  },
+  {
+   "event_id": "ev-98c124ce40",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-499f08d5bc"
+  },
+  {
+   "event_id": "ev-9d10de4cf6",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-a2b3df6ddf",
+   "action": "reject",
+   "note": "continuation of ev-fb5b1ef1f4"
+  },
+  {
+   "event_id": "ev-a4f944dc5e",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "frequency",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC",
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-a7a3a38eaa",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-ab81cc727a"
+  },
+  {
+   "event_id": "ev-ab81cc727a",
+   "action": "reject",
+   "note": "Insufficent data"
+  },
+  {
+   "event_id": "ev-acee3a30bb",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-a4f944dc5e"
+  },
+  {
+   "event_id": "ev-b21314c08f",
+   "action": "reject",
+   "note": "Not done yet"
+  },
+  {
+   "event_id": "ev-b33eba6af8",
+   "action": "reject",
+   "note": "continuation of ev-d2d02adea6"
+  },
+  {
+   "event_id": "ev-bb419fa28f",
+   "action": "reject",
+   "note": "continuation of ev-f0c68a475a"
+  },
+  {
+   "event_id": "ev-c60cba9dbf",
+   "action": "reject",
+   "note": "continuation of ev-1b7562aeac"
+  },
+  {
+   "event_id": "ev-cbc293875b",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "physical",
+     "domestic"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-d2d02adea6",
+   "action": "reject",
+   "note": "continuation of ev-86a4b2bec4"
+  },
+  {
+   "event_id": "ev-e0e95d419d",
+   "action": "reject",
+   "note": "continuation of ev-fb5b1ef1f4"
+  },
+  {
+   "event_id": "ev-e1c4590f45",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "10",
+     "9"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-e29ae434b2",
+   "action": "reject",
+   "note": "continuation of ev-2558ab896f"
+  },
+  {
+   "event_id": "ev-e48b5a82b4",
+   "action": "reject",
+   "note": "continuation of ev-f0c68a475a"
+  },
+  {
+   "event_id": "ev-e8207c1d96",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "politics",
+     "administrative"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-eb9137141e",
+   "action": "reject",
+   "note": "continuation of ev-868363285a"
+  },
+  {
+   "event_id": "ev-f0c68a475a",
+   "action": "reject",
+   "note": "continuation of ev-da4d8bf65e"
+  },
+  {
+   "event_id": "ev-f3324a9adb",
+   "action": "reject",
+   "note": "continuation of ev-4a18c7fc41"
+  },
+  {
+   "event_id": "ev-f37f9b3333",
+   "action": "reject",
+   "note": "continuation of ev-86a4b2bec4"
+  },
+  {
+   "event_id": "ev-fb5b1ef1f4",
+   "action": "reject",
+   "note": "continuation of ev-da4d8bf65e"
+  }
+ ],
+ "reviewer": "Angelo"
+}
