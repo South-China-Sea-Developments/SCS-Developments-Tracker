@@ -1060,7 +1060,8 @@ def test_between_claimants_draws_offline(browser, dist):
     assert page.locator("#bc-map canvas.maplibregl-canvas").count() == 1
     assert page.locator(".bc-node").count() == 7
     assert page.locator("#bc-card .bc-rank li").count() >= 1
-    page.select_option("#bc-show", "CN")
+    assert page.locator("#bc-second").is_disabled() and page.locator("#bc-swap").is_disabled()
+    page.select_option("#bc-first", "CN")
     page.wait_for_timeout(300)
     assert "China’s moves toward each claimant" in page.inner_text("#bc-card")
     assert page.evaluate("location.hash").endswith("-c-cn")
@@ -1068,6 +1069,15 @@ def test_between_claimants_draws_offline(browser, dist):
     assert page.inner_text("#bc-label").startswith("1970")
     page.click("#bc-table-box summary")
     page.wait_for_function("document.querySelectorAll('#bc-table td').length === 49")
+    assert page.locator("#bc-table td a").count() == 42, "each cell opens its pair"
+    # two claimants open their own page, in the order chosen; the swap turns it round
+    page.select_option("#bc-second", "VN")
+    page.wait_for_url("**/between-claimants/china-vietnam.html**")
+    assert page.locator("#bc-first").input_value() == "CN" and page.locator("#bc-second").input_value() == "VN"
+    page.click("#bc-swap")
+    page.wait_for_timeout(1200)
+    assert page.evaluate("location.hash").endswith("-rev")
+    assert page.locator("#bc-first").input_value() == "VN" and page.inner_text("#bc-pdir-ab") == "Vietnam → China"
     assert not problems, problems
     page.close()
 
