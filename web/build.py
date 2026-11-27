@@ -505,6 +505,84 @@ FILE_WHAT = {
 }
 
 
+def process_note(agree: dict, build_date: str) -> str:
+    """data/process-note.md, linked from the methodology and the Downloads page (2026-11-27): how the
+    project's candidate events are compiled and checked, the AI assistance included, and how often the
+    coder kept the suggested coding. The methodology page keeps a short account; the detail is here."""
+    types = schema.TYPE_FLAGS
+    conf = agree.get("type_confusion") or {}
+    lines = [
+        "# How candidate events are compiled and checked",
+        "",
+        f"South China Sea Developments Tracker, a note on method (figures as built on {build_date}).",
+        "",
+        "The 1970-2015 moves for China, Vietnam and the Philippines are Andrew Chubb's (MATS 1.02), loaded",
+        "unchanged. Everything after 2015, and every move by Malaysia, Indonesia, Taiwan and Brunei, is coded by",
+        "the project with Chubb's rules. This note explains how the events behind those moves are found and",
+        "checked, and where AI tools help.",
+        "",
+        "## Finding candidate events",
+        "",
+        "Candidates come from a documented list of sources: foreign-ministry and coast-guard statements,",
+        "government gazettes, parliamentary records, news agencies and open-source research such as the Asia",
+        "Maritime Transparency Initiative. Some are compiled by hand by the coder; others are gathered on a",
+        "schedule, with an AI model reading each new document, picking out any act that could be an assertive",
+        "move, quoting the passage it rests on and suggesting a first coding (type, domains, issues, the claimants",
+        "involved, the place). Each candidate keeps its source links and quoted excerpts, and an excerpt is",
+        "checked against its page where the page can be reached.",
+        "",
+        "## Deciding what enters the dataset",
+        "",
+        "The coder reads every candidate against its sources and decides: a new move, part of an existing move,",
+        "a duplicate report, or not a move at all. The coder's coding is the dataset's; a suggestion has no",
+        "weight of its own. Moves coded by the project are labelled as such wherever they appear, and every",
+        "change to the dataset is a versioned commit in the public repository, with an automatic check that the",
+        "1970-2015 figures for the original three claimants stay exactly as Chubb published them.",
+        "",
+        "## How often the suggested coding was kept",
+        "",
+        "For every accepted event that carried a suggestion, the tables compare the suggested coding with the",
+        "coder's final coding. Agreement on Type, Domains, Issues or Dyads means the suggestion equals the final",
+        "coding exactly; the last column counts the events where Type, Domains and Issues all matched. They",
+        "measure the suggestions, not the dataset, which holds only what the coder decided.",
+        "",
+    ]
+    dims = [d for d in agree.get("dimensions", []) if d != "grouping" or agree["totals"]["grouping"]["n"]]
+    label = lambda d: "Type, Domains and Issues" if d == "all_three" else agreement.LABELS[d]
+    def pct(c, d):
+        return f"{c[d]['agree']} of {c[d]['n']} ({round(100 * c[d]['agree'] / c[d]['n'])}%)" if c[d]["n"] else "–"
+    if not agree.get("n_decided"):
+        lines += ["No suggestion has been decided yet.", ""]
+    else:
+        t = agree["totals"]
+        lines += [f"{agree['n_decided']} suggested events decided: {t['outcome']['accepted']} accepted, "
+                  f"{t['outcome']['merged']} judged duplicates, {t['outcome']['rejected']} rejected. "
+                  f"Of the {agree['n_compared']} accepted, the suggested coding was kept as follows.", "",
+                  "| | " + " | ".join(label(d) for d in dims) + " |", "|---|" + "---|" * len(dims),
+                  "| All accepted events | " + " | ".join(pct(t, d) for d in dims) + " |", ""]
+        decades: dict[str, dict] = {}
+        for year, c in agree.get("by_period", {}).items():
+            key = f"{str(year)[:3]}0s" if str(year)[:4].isdigit() else str(year)
+            acc = decades.setdefault(key, {d: {"agree": 0, "n": 0} for d in dims} | {"n": 0})
+            acc["n"] += c["n"]
+            for d in dims:
+                acc[d]["agree"] += c[d]["agree"]; acc[d]["n"] += c[d]["n"]
+        if decades:
+            lines += ["By the decade of the event:", "", "| Decade | Events | " + " | ".join(label(d) for d in dims) + " |",
+                      "|---|---|" + "---|" * len(dims)]
+            lines += [f"| {k} | {c['n']} | " + " | ".join(pct(c, d) for d in dims) + " |" for k, c in sorted(decades.items())]
+            lines.append("")
+        lines += ["The same comparison by tool version, and year by year, is in `agreement.json`.", ""]
+        if agree.get("n_compared"):
+            lines += ["Type: the suggestion (rows) against the coder's decision (columns).", "",
+                      "| Suggested | " + " | ".join(TYPE_LABELS[t] for t in types) + " |",
+                      "|---|" + "---|" * len(types)]
+            for t in types:
+                lines.append(f"| {TYPE_LABELS[t]} | " + " | ".join(str(conf.get(t, {}).get(u, 0)) for u in types) + " |")
+            lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def size_label(n: int) -> str:
     return f"{n / 1_000_000:.1f} MB" if n >= 1_000_000 else f"{n / 1000:.0f} KB" if n >= 1000 else f"{n} B"
 
@@ -601,6 +679,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     (out_dir / "data" / "aggregates.json").write_text(json.dumps(agg, indent=1), encoding="utf-8")
     agree = agreement.report(events, moves)
     (out_dir / "data" / "agreement.json").write_text(json.dumps(agree, indent=1), encoding="utf-8")
+    (out_dir / "data" / "process-note.md").write_text(process_note(agree, build_date or dt.date.today().isoformat()), encoding="utf-8")
     # the case list the browser filters client-side: one compact record per move
     index = {
         "names": names, "type_labels": TYPE_LABELS,

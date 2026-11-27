@@ -125,7 +125,7 @@ def test_markdown_table(fixture):
     assert "| 2025 | 1 | 1/1 | 1/1 | 1/1 | 0/1 | 1/1 | 1/1 |" in lines
 
 
-def test_build_regenerates_the_file_and_the_page_renders_it(tmp_path, fixture, browser, mats_data):
+def test_build_regenerates_the_file_and_the_note(tmp_path, fixture, browser, mats_data):
     from web.build import build
     moves, events = fixture
     d = tmp_path / "data"
@@ -138,21 +138,26 @@ def test_build_regenerates_the_file_and_the_page_renders_it(tmp_path, fixture, b
     build(d, out, build_date="2026-10-20")
     r = json.loads((out / "data/agreement.json").read_text(encoding="utf-8"))
     assert r["n_compared"] == 6 and r["totals"]["type"] == {"agree": 4, "n": 6}
+    # the figures moved from the methodology page to the downloadable note (2026-11-27)
+    note = (out / "data/process-note.md").read_text(encoding="utf-8")
+    assert "| All accepted events | 4 of 6 (67%) |" in note and "| Suggested |" in note
+    assert EXTRACTOR_A not in note and "Grouping" not in note or r["totals"]["grouping"]["n"]
     html = (out / "methodology.html").read_text(encoding="utf-8")
-    assert "4 of 6" in html and EXTRACTOR_A in html and "Grouping" in html
+    assert "data/process-note.md" in html and 'id="agreement"' not in html
+    assert "harvest" not in html.lower() and "extractor" not in html.lower()
+    assert "data/process-note.md" in (out / "downloads.html").read_text(encoding="utf-8")
     page = browser.new_page()
     problems = []
     page.on("console", lambda m: problems.append((m.type, m.text)) if m.type in ("error", "warning") else None)
     page.on("pageerror", lambda e: problems.append(("pageerror", str(e))))
     page.goto((out / "methodology.html").resolve().as_uri())
-    assert page.locator("#agreement table").count() == 3
-    assert page.locator("#agreement .table-scroll[tabindex='0']").count() == 3
+    assert page.locator("a[href='data/process-note.md']").count() == 1
     assert not problems, problems
     page.close()
 
 
-def test_the_built_page_matches_the_report_whatever_the_data_holds(tmp_path):
-    """State-independent: the page's empty state appears exactly when the report is empty."""
+def test_the_note_matches_the_report_whatever_the_data_holds(tmp_path):
+    """State-independent: the note's empty state appears exactly when the report is empty."""
     from web.build import build
     out = tmp_path / "dist"
     build(DATA_DIR, out, build_date="2026-10-20")
@@ -160,5 +165,6 @@ def test_the_built_page_matches_the_report_whatever_the_data_holds(tmp_path):
     moves = [dict(x) for x in csv.DictReader(open(DATA_DIR / "moves.csv", newline="", encoding="utf-8"))]
     events = [dict(x) for x in csv.DictReader(open(DATA_DIR / "events.csv", newline="", encoding="utf-8"))]
     assert r == agreement.report(events, moves)
-    html = (out / "methodology.html").read_text(encoding="utf-8")
-    assert ("The tables are filled from reviewed harvest runs" in html) == (r["n_decided"] == 0)
+    note = (out / "data/process-note.md").read_text(encoding="utf-8")
+    assert ("No suggestion has been decided yet." in note) == (r["n_decided"] == 0)
+    assert ("| All accepted events |" in note) == (r["n_decided"] > 0)
