@@ -5,8 +5,17 @@
  "table_id": "tbl1jZACWLq6FXPOq",
  "reviewer": "Angelo",
  "runs_table_id": "tblLK3YqY7mDL2QqW",
- "other_tables": {"Sources": "tblRxHeawvsBiAUfC", "Sidelines": "tblUs0ZmP4x8ShWKZ", "Notes": "tblis1hiTU3E4hwPx", "Re-review": "tblR8Lb34BDuu6KjF"},
+ "other_tables": {"Sources": "tblRxHeawvsBiAUfC", "Sidelines": "tblUs0ZmP4x8ShWKZ", "Notes": "tblis1hiTU3E4hwPx", "Re-review": "tblR8Lb34BDuu6KjF", "Episodes": "tblgnx0ydOXJsJskT"},
  "interface": "https://airtable.com/appK9OckCTV15vQwx/pbdWq70PPQffUrIye",
+ "episodes": {
+  "table": "Episodes", "table_id": "tblgnx0ydOXJsJskT",
+  "field_ids": {
+   "episode": "fldTsWNbhOWswu4uU", "decision": "fldeMpzzbn7UTz4GE", "name": "fldxXBP1LXH894QDW", "pair": "fldDR8dcHaZbPxtgi",
+   "span": "fld86V26aqPahAQlB", "n_events": "fldLrMaXveB3X4gjp", "events": "fldnR0wcndOIcGqhK", "kind": "flduqZQksm2U6s1HU",
+   "new_events": "fld5tqhqDC4D6GYQ8", "previously": "fldykc4qHc1UY03E4", "proposed_name": "fldc9cJ6QgVNAbybk",
+   "claimants": "fldAmApPFd6NmQmmL", "event_ids": "fldAVTq93OXi9r1E0", "proposed": "fldBDq325qeydd3NB", "note": "fldCKNZa9OPXCbUjx"
+  }
+ },
  "rereview": {
   "table": "Re-review", "table_id": "tblR8Lb34BDuu6KjF",
   "field_ids": {

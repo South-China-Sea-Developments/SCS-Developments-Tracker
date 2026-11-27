@@ -228,6 +228,10 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
         if c["field"] not in GUARDED_FIELDS:
             errors.append(f"CODE: corrections field {c['field']!r} is not a guarded field")
 
+    # the maintainer's decided episodes (ticket 45), if any
+    from pipeline import episodes
+    errors += [f"CODE: {e}" for e in episodes.check(data_dir)]
+
     if xlsx_path is not None:
         errors += comparability(moves, tables["corrections"], Path(xlsx_path),
                                 Path(mavd_path) if mavd_path else None)

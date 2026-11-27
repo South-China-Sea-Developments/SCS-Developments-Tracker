@@ -29,7 +29,7 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             changed=$(git diff --name-only "$BASE"...HEAD)
             echo "$changed"
-            other=$(echo "$changed" | grep -Ev '^(data/(events|moves|sources|corrections|claimants)\.csv|harvest/(airtable|audit|manual|presort)/|docs/(review|notes)/)' || true)
+            other=$(echo "$changed" | grep -Ev '^(data/(events|moves|sources|corrections|claimants|episodes)\.csv|harvest/(airtable|audit|manual|presort)/|docs/(review|notes)/)' || true)
             if [ -n "$changed" ] && [ -z "$other" ]; then echo "LIGHT=1" >> "$GITHUB_ENV"; echo "light check: data only"; else echo "full suite"; fi
           fi
       - name: Install a browser for the site render tests
@@ -43,7 +43,7 @@ jobs:
         run: >-
           python -m pytest -q tests/test_validate.py tests/test_places.py tests/test_tally.py
           tests/test_window_scores.py tests/test_load_mats.py
-          tests/test_baselines.py tests/test_gazetteer.py
+          tests/test_baselines.py tests/test_gazetteer.py tests/test_episodes.py
       - name: The site builds (light check)
         if: env.LIGHT == '1'
         run: python -m web.build --out /tmp/site
