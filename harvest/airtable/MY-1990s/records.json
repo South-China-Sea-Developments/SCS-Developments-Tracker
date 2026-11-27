@@ -1,0 +1,1706 @@
+{
+ "run_id": "MY-1990s",
+ "exported_on": "2026-11-25",
+ "records": [
+  {
+   "airtable_id": "rec0dLacEvBr5SfSw",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Penang Shipping Corporation-Naval Dockyard Sdn Bhd (contractor)",
+   "possible_duplicate_of": "ev-bc804621b3",
+   "lat": 8.1,
+   "suggestion_reasoning": "Occupation of a previously unoccupied disputed feature is a seizure; force under Chubb's definitions, though unopposed, so a coder may prefer demonstrative. Sources disagree on the day (NST: established 10 May 1999; CDiSS: module arrived 12 May 1999; Lai et al.: 24 April 1999), hence the range. [confidence: high]",
+   "date_end": "1999-05-12",
+   "new_dyads": "MP MV MC MR",
+   "excerpt": "Station Sierra was officially established on May 10, 1999,\n\nModule A arrived Terumbu Peninjau on 10 May 1999 while Module B arrived Terumbu Siput on 12 May 1999.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Erica Reef, RMN Station Sierra",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Possible duplicate of ev-bc804621b3. Source's wording for the place: “Terumbu Siput (Erica Reef), RMN Station Sierra”.",
+   "reviewer": "Angelo",
+   "sources": "How Malaysia's five naval stations in the Spratlys were built — New Straits Times (Adrian David) 2019-03-04\nhttps://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built\nMalaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "force",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:45:22.000Z",
+   "new_type": "force",
+   "event_id": "ev-0f1a31059d",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "duplicate_of": "ev-bc804621b3",
+   "summary": "A barge built at Pulau Jerejak, Penang, was towed under heavy naval escort to Erica Reef in April-May 1999 and fixed to the reef with rocks and concrete; Royal Malaysian Navy Station Sierra was officially established in May 1999 (10 May per NST; the module's arrival is given as 12 May by the CDiSS volume), occupying a reef also claimed by the Philippines, Vietnam, China and Taiwan.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1999-05-10",
+   "merge_into_candidate": "ev-bc804621b3",
+   "presort": "same move as ev-bc804621b3 — Station Sierra on Erica Reef is the second occupation of the same April-May 1999 operation led by ev-bc804621b3. (group MY1999-occupations) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 114.13333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recpehgk2KnM3TomX",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Agriculture (Department of Fisheries); Royal Malaysian Navy; Royal Malaysia Police; Maritime Enforcement Coordination Centre, National Security Council",
+   "suggestion_reasoning": "Detaining and fining other claimants' fishing boats in the claimed EEZ is physical enforcement imposing punishment; coercive. The answer gives no breakdown by nationality and most intrusions were Thai and probably in undisputed waters, so a coder may exclude it; recorded as the 1992 fisheries-enforcement summary. [confidence: low]",
+   "date_end": "1992-11-10",
+   "new_dyads": "MV MC MR",
+   "excerpt": "Kapal/bot yang dimaksudkan adalah dari negara Thai, Indonesia, Vietnam, Taiwan, Hong Kong dan China.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Malaysian EEZ off Peninsular Malaysia and Sarawak",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sarawak coast 99%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1992-11-10: Pencerobohan nelayan asing (written answer, Ministry of Agriculture) — Parliament of Malaysia (Digital Hansard) 1992-11-10\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1992-11-10",
+   "pull_request": 55,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:24:40.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-2b3578f9ed",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Simple summary of events already recorded",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "In a written Dewan Rakyat answer on 10 November 1992 the Agriculture Ministry said foreign fishing boats from Thailand, Indonesia, Vietnam, Taiwan, Hong Kong and China intruded into Malaysia's EEZ off the Peninsula and Sarawak, mainly from November to February; 384 intrusions had been detected in 1992 to November, boats had been detained and fined, and the Navy, Police and Fisheries Department ran joint operations (Operasi Tengkujuh, Operasi Samudera Gagah) and patrols against them.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1992-11-10",
+   "presort": "unclear — A national EEZ-enforcement summary (384 intrusions, detentions and fines) with no breakdown by nationality or area, mostly Thai boats probably in undisputed waters. Settled by a breakdown showing detentions of claimants' boats in the disputed Spratly area; 1991's record has no enforcement candidate. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rectStFHBTtH4Nmb1",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Defence Minister Abdullah Fadzil Che Wan; Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "A ministerial commitment to keep the garrison on a disputed feature to deter rival claimants is a verbal assertion; declarative. [confidence: medium]",
+   "date_end": "1998-11-18",
+   "new_dyads": "MV MC MR",
+   "excerpt": "kita tidak bercadang untuk mengeluarkan mereka dari sana malah kita akan pastikan mereka kekal",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1998-11-18: Committee of Supply, Ministry of Defence — Parliament of Malaysia (Digital Hansard) 1998-11-18\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1998-11-18",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:44:38.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2bcc8f7768",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Maintenance and no expansion",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "Winding up the Defence Ministry's supply debate in the Dewan Rakyat on 18 November 1998, Deputy Defence Minister Abdullah Fadzil Che Wan said Malaysia's troops on Swallow Reef would stay there to guard Malaysia's interests and would not be withdrawn, so that other claimants could not seize what Malaysia regarded as its right.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1998-11-18",
+   "presort": "unclear — A pledge that the Swallow Reef garrison will stay: maintenance of the 1983 occupation. 1997 has no candidates at all, so strictly it is new again, but that looks like a source gap (§K). Likely reject, unless the coder applies new-again to the blank 1997. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recCiM5X4xLBiuc1M",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia; Royal Malaysian Navy",
+   "lat": 8.11667,
+   "suggestion_reasoning": "Building permanent structures on newly occupied disputed features is construction without confrontation; demonstrative. Overlaps the May 1999 occupation events and is listed separately because the structures (not only the barges) were what triggered the June protests. First source is a PDF (not machine-checkable); the second is a paywalled Stratfor analysis whose summary describes the two-storey building. [confidence: medium]",
+   "date_end": "1999-06-30",
+   "new_dyads": "MP MV MC MR",
+   "excerpt": "completed construction of a two-story concrete building and a helipad on Investigator Shoal and Erica Reef, which are also claimed by the Philippines, Vietnam, China and Taiwan, sometime in June 1999.\n\nVietnam on June 28 spoke out against recent construction on the disputed islands undertaken by Malaysia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Investigator Shoal and Erica Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://worldview.ranenetwork.com/content/analysis/1999-06-28/spratlys-continue-to-expose-southeast-asian-fragmentation.",
+   "reviewer": "Angelo",
+   "sources": "The South China Sea Dispute in Philippine Foreign Policy: Problems, Challenges and Prospects (IDSS Monograph No. 5) — Institute of Defence and Strategic Studies (now RSIS), Singapore (Noel M. Novicio) 2003-01-01\nhttps://rsis.edu.sg/wp-content/uploads/2023/02/MN05-The-South-China-Sea-Dispute-in-Philippine-Foreign-Policy.pdf\nSpratlys Continue to Expose Southeast Asian Fragmentation — Stratfor (RANE Worldview) 1999-06-28\nhttps://worldview.ranenetwork.com/content/analysis/1999-06-28/spratlys-continue-to-expose-southeast-asian-fragmentation",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:46:32.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-37ed8dd8cc",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "By June 1999 Malaysia had completed a two-storey concrete building and a helipad on Investigator Shoal and Erica Reef; the Philippines, which had detected the construction, protested, and Vietnam's Foreign Ministry criticised the construction on 28 June 1999.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1999-06-01",
+   "merge_into_candidate": " ev-bc804621b3",
+   "presort": "same move as ev-bc804621b3 — The concrete building and helipad completed by June on the two newly occupied features consolidate the occupation move ev-bc804621b3. (group MY1999-occupations) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 114.5,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJ6gFwlQOVaKhKY",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy",
+   "lat": 7.62194,
+   "suggestion_reasoning": "Installing and commissioning a new naval module on an occupied disputed reef is construction without confrontation; demonstrative. Only source is the CDiSS volume, read through WebFetch (PDF does not download directly), so the excerpt may not be machine-checkable. [confidence: medium]",
+   "date_end": "1996-11-26",
+   "new_dyads": "MV MC MR",
+   "excerpt": "Upon commissioning on 26 November 1996, the module was officially designated as RMN Station UNIFORM.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Ardasier Reef, RMN Station Uniform",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 404); excerpt not checked. Source's wording for the place: “Terumbu Ubi (Ardasier Reef), RMN Station Uniform”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:43:48.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-3f66f992cc",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Not deployed yet and unclear whether it would expand prior capabilities",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "On 26 November 1996 the Royal Malaysian Navy commissioned a new station module on Ardasier Reef (Terumbu Ubi), officially designated RMN Station Uniform.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1996-11-26",
+   "presort": "unclear — A new station module commissioned on Ardasier Reef (Station Uniform, garrisoned since 1986). Settled by whether it enlarges the station (then a novelty/scope move against 1995, which has nothing comparable) or replaces the 1986 outpost at the same level (maintenance, likely reject). [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.86083,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec3RVT7T5tuzbu0P",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Foreign Affairs; Deputy Foreign Minister Abdullah Fadzil Che Wan; Dewan Rakyat",
+   "suggestion_reasoning": "An official rejection of China's claim, made in response to China's February 1992 Law on the Territorial Sea and backed by a conditional statement that Malaysia would defend its sovereignty, is a verbal assertion; declarative. Lai et al. (2021) add that Malaysia sought formal clarification from China over the law, without a date. [confidence: high]",
+   "date_end": "1992-04-28",
+   "new_dyads": "MC",
+   "excerpt": "Kerajaan Malaysia telah menolak tuntutan hakmilik dan kedaulatan negara-negara lain, termasuk tuntutan negeri China ke atas wilayah Malaysia di Laut China Selatan\n\nMalaysia lelah menolak sebarang tuntutan negeri China dan negara-negara lain",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Malaysian-claimed features in the South China Sea",
+   "run": [
+    "MY-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1992-04-28: Kepulauan Spratlys - Tuntutan dari China — Parliament of Malaysia (Digital Hansard) 1992-04-28\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1992-04-28\nHansard, Dewan Rakyat, 1992-05-11: Spratlys Islands - Tindakan Malaysia — Parliament of Malaysia (Digital Hansard) 1992-05-11\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1992-05-11",
+   "pull_request": 55,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:22:10.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5308c6f3a6",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "8 Spratly SW",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In a written Dewan Rakyat answer on 28 April 1992 to a question on China's new law making the Spratlys part of its territory, the Foreign Ministry said Malaysia had rejected the ownership and sovereignty claims of other countries, including China, to Malaysian territory in the South China Sea, and that if Malaysia's sovereignty were threatened the Government would take the necessary steps to defend it; the Deputy Foreign Minister repeated the rejection on 11 May and in the Dewan Negara on 2 June 1992.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1992-04-28",
+   "presort": "new move (novelty) — Novelty: a formal rejection aimed at China's 1992 territorial-sea law, with a conditional pledge to take steps to defend sovereignty; 1991's verbal record (ev-d61240caad) only brushed off protests over the airstrip. Lead of the 1992 rejection move. (group MY1992-rejection) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recuGLX1GqbZGJTGh",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian minister (named in Berita Harian, 1 June 1995)",
+   "lat": 7.5,
+   "suggestion_reasoning": "A ministerial statement that the claim to Swallow Reef is indisputable is a verbal assertion; declarative. Known only through Dzurek's chronology (PDF) and its footnoted FBIS translations of Berita Harian; the minister is not named there and the exact day of the statement is not given (31 May is inferred from 'ended the month' and the 1 June report), so a coder should check FBIS East Asia, 1-2 June 1995. [confidence: low]",
+   "date_end": "1995-06-02",
+   "new_dyads": "MC",
+   "excerpt": "Malaysia ended the month by reiterating its sovereignty claim to Swallow Reef.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Possible duplicate",
+    "Low confidence"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Possible duplicate of ev-83f809b7bf. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf.",
+   "reviewer": "Angelo",
+   "sources": "The Spratly Islands Dispute: Who's On First? (IBRU Maritime Briefing 2(1)) — International Boundaries Research Unit, Durham University (Daniel J. Dzurek) 1996-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:40:46.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5b6d377144",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "At the end of May 1995 Malaysia reiterated its sovereignty claim to Swallow Reef: Berita Harian reported on 1 June 1995 a minister saying the claim to the island was indisputable, and on 2 June 1995 ran a report headed that China was aggravating the situation over Layang-Layang.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-05-31",
+   "merge_into_candidate": "ev-83f809b7bf",
+   "presort": "same move as ev-83f809b7bf — The minister's 'indisputable' Swallow Reef claim at the end of May is the verbal side of the same May 1995 response led by ev-83f809b7bf. (group MY1995-layang) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recV2BPq4jSYJHAVl",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister Mahathir Mohamad; Government of Malaysia",
+   "lat": 7.5,
+   "suggestion_reasoning": "Official renaming of a disputed feature, and upgrading its status to 'island', is an administrative assertion of sovereignty; declarative (a coder may class naming as demonstrative administration). Both sources are PDFs (the CDiSS one read through WebFetch), so excerpts may not be machine-checkable. [confidence: medium]",
+   "date_end": "1992-03-29",
+   "new_dyads": "MV MC MR",
+   "excerpt": "with its name officially changed to “Pulau Layang-Layang” (Layang-Layang Island) on 29 March 1992\n\nby the Prime Minister on 29 March 1992.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nMalaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:20:00.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5e3a768fdc",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Manually verified",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "On 29 March 1992 the Prime Minister officially renamed Terumbu Layang-Layang (Swallow Reef) as Pulau Layang-Layang (Layang-Layang Island), recasting the reclaimed reef as an island.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1992-03-29",
+   "presort": "new move (novelty) — Novelty: officially renaming Terumbu Layang-Layang as Pulau Layang-Layang, recasting a reef as an island, is an administrative status change with nothing comparable in 1991's record (airstrip group ev-f0b2e35258). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recWDXtHsGdta7Hx0",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia (Budget 2000); Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "A budget allocation to develop an occupied disputed feature supports physical presence; demonstrative. Reported by a government backbencher rather than a minister, and the date is that of the debate, not of the budget's tabling, so confidence is low. [confidence: low]",
+   "date_end": "1999-11-09",
+   "new_dyads": "MV MC MR",
+   "excerpt": "kerajaan telah pun memperuntukkan sebanyak RM10 juta untuk tujuan membangunkan Terumbu Layang- layang",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Layang-Layang / Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1999-11-09: Budget 2000 debate (Abdol Mulok Awang Damit) — Parliament of Malaysia (Digital Hansard) 1999-11-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1999-11-09",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:47:24.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-763eaa18b5",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Routine practice and no clear translation into any assertive move ",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "During the Dewan Rakyat debate on the 2000 Budget on 9 November 1999, government backbencher Abdol Mulok Awang Damit noted that the Government had allocated RM10 million in the 2000 Budget to develop Pulau Layang-Layang, and praised the occupation of Investigator Shoal and Erica Reef.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1999-11-09",
+   "presort": "unclear — An RM10 million Layang-Layang development line in the 2000 Budget, reported by a backbencher; 1998's record has no development candidate to continue. Likely a routine allocation (reject); settled by whether it funds a new facility. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recJ28YN3OyeK1hwN",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "Ratification itself is cooperative, but the accompanying declarations reject rival maritime claims and assert coastal-state rights over military activity in the EEZ; declarative. A coder may weigh ratification as cooperative. [confidence: medium]",
+   "date_end": "1996-10-14",
+   "new_dyads": "MA",
+   "excerpt": "Malaysia reserves the right to state its positions concerning all such legislations or declarations at the appropriate time, in particular the maritime claims of any other State having signed or ratified the Convention\n\nIn December 1982, Malaysia signed UNCLOS (ratified on 14 October 1996).",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Malaysian maritime areas (UNCLOS)",
+   "run": [
+    "MY-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "United Nations Convention on the Law of the Sea: status and declarations (Malaysia) — United Nations Treaty Collection\nhttps://treaties.un.org/Pages/ViewDetailsIII.aspx?src=TREATY&mtdsg_no=XXI-6&chapter=21&Temp=mtdsg3&clang=_en\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:41:07.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7fba0019c5",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "8 Spratly SW",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "Malaysia ratified the UN Convention on the Law of the Sea on 14 October 1996 with declarations stating that it was not bound by other states' domestic legislation or declarations and reserved the right to state its position on maritime claims of other states inconsistent with international law and prejudicial to Malaysia's sovereign rights and jurisdiction, and that other states may not hold military exercises in its EEZ without consent.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1996-10-14",
+   "presort": "new move (novelty) — Novelty: the UNCLOS ratification declarations reject other states' inconsistent maritime claims and require consent for foreign military exercises in the EEZ; 1995's record has no legal instrument. Ratification itself is cooperative, so the call rests on the declarations alone. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "reclc5nvkkwM9IYDB",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy",
+   "suggestion_reasoning": "Naval gunfire at another claimant's fishing boat is physical imposition of punishment; coercive (a coder may consider 'force'). The only source found is a scholarly monograph (PDF, not machine-checkable) with no day, place, casualty figures or primary citation; contemporary wire reports were not reachable, so confidence is low. [confidence: low]",
+   "date_end": "1995-03-31",
+   "new_dyads": "MC",
+   "excerpt": "the first violent incident between China and an ASEAN country occurred in March 1995 when a Chinese fishing boat was fired upon by Malaysian naval vessels in waters claimed by Kuala Lumpur",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Waters claimed by Malaysia in the South China Sea",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.",
+   "reviewer": "Angelo",
+   "sources": "The South China Sea Dispute in Philippine Foreign Policy: Problems, Challenges and Prospects (IDSS Monograph No. 5) — Institute of Defence and Strategic Studies (now RSIS), Singapore (Noel M. Novicio) 2003-01-01\nhttps://rsis.edu.sg/wp-content/uploads/2023/02/MN05-The-South-China-Sea-Dispute-in-Philippine-Foreign-Policy.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:36:45.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-807681cb63",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In March 1995 Malaysian naval vessels fired on a Chinese fishing boat in waters claimed by Malaysia, an incident described as the first violent one between China and an ASEAN country.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1995-03-01",
+   "presort": "new move (novelty) — Novelty: naval gunfire at a Chinese fishing boat is a change of method from 1994's arrests (ev-8d7c5c5c73), described as the first violent China-ASEAN incident. Rests on one secondary source with no day or place, so it needs corroboration. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recYcUKnhWj1vEM4s",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister Mahathir Mohamad; Royal Malaysian Navy; Malaysian Armed Forces",
+   "lat": 7.5,
+   "suggestion_reasoning": "A head-of-government visit to an occupied disputed feature with stepped-up patrols and an exercise is a display of presence without confrontation; demonstrative. Source is a PDF (not machine-checkable) citing Wu (2013) and Storey (2011); no day is given, and the exercise is not separately dated. [confidence: medium]",
+   "date_end": "1995-05-31",
+   "new_dyads": "MC MV MR",
+   "excerpt": "Mahathir made another visit to Layang-Layang in May 1995 to reaffirm Malaysia’s claim (Wu, 2013: 144). He spent a night on Swallow Reef, increased naval patrols, and ordered a large-scale military exercise",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:40:29.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-83f809b7bf",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "In May 1995, amid the China-Philippines crisis over Mischief Reef, Prime Minister Mahathir Mohamad visited Pulau Layang-Layang to reaffirm Malaysia's claim, spent a night on the reef, increased naval patrols and ordered a large-scale military exercise.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1995-05-01",
+   "presort": "new move (novelty) — Novelty: Mahathir's overnight visit to Layang-Layang with stepped-up patrols and a large-scale exercise during the Mischief Reef crisis (reactions count); 1994's record has no visit, patrol or exercise. Lead of the 1995 Layang-Layang show-of-presence move. (group MY1995-layang) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec8KfClNkxHjCasA",
+   "archived_on": "2026-11-25",
+   "actors": "Parliamentary Secretary, Ministry of Agriculture (Mohd. Shariff Omar); Department of Fisheries; Dewan Rakyat",
+   "suggestion_reasoning": "Arrest of another claimant's fishermen is physical enforcement imposing punishment; coercive. Routine enforcement summarised as one event for 1994; locations are not given and the arrests may have been in undisputed waters off the east coast of the Peninsula. [confidence: low]",
+   "date_end": "1994-07-11",
+   "new_dyads": "MV",
+   "excerpt": "jumlah kes nelayan asing yang ditangkap di perairan Malaysia sehingga bulan Jun, 1994 adalah sebanyak 74 kes",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1994-07-11: Nelayan asing yang ditangkap — Parliament of Malaysia (Digital Hansard) 1994-07-11\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1994-07-11",
+   "pull_request": 55,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:35:27.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-8d7c5c5c73",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-d7595bdd7f ",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "The Agriculture Ministry told the Dewan Rakyat on 11 July 1994 that 74 cases of foreign fishermen had been arrested in Malaysian waters up to June 1994, including 19 Vietnamese cases involving 201 fishermen (with 46 Thai and 9 Indonesian cases).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1994-07-11",
+   "presort": "continuation of ev-d7595bdd7f (a candidate, provisional) — The same national fisheries-arrest practice as 1993's ev-d7595bdd7f (74 cases to June 1994, 19 of them Vietnamese) with no locations; no change of method. Same caveat: possibly undisputed waters. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recxBA7GeYXVHTIPs",
+   "archived_on": "2026-11-25",
+   "actors": "Layang-Layang Island Resort (private operator); Government of Malaysia",
+   "lat": 7.5,
+   "suggestion_reasoning": "State-sanctioned tourism on an occupied disputed feature is unilateral administration without confrontation; demonstrative. Both sources are PDFs (Lai et al. 2021, citing Yasin et al. 2020; the CDiSS volume read through WebFetch because it does not download directly), so the excerpts may not be machine-checkable. The Christian Science Monitor (1 December 1993) instead dates the resort opening to 1993. [confidence: medium]",
+   "date_end": "1990-01-15",
+   "new_dyads": "MV MC MR",
+   "excerpt": "with the resort officially welcoming its first batch of international and domestic visitors on 15 January 1990\n\nOn 15 January 1990, PLL was opened for local and international visitors.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nMalaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:18:13.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-966de97b8a",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-50de0edf83",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "The Layang-Layang Island Resort, built by a private company on the Malaysian-occupied Swallow Reef as part of a government plan to develop the reef for tourism, officially received its first batch of international and domestic visitors on 15 January 1990.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1990-01-15",
+   "presort": "continuation of ev-50de0edf83 (a candidate, provisional) — The resort's first visitors are the opening of the Layang-Layang resort whose completion is 1989's ev-50de0edf83 (MY-1980s undecided, prev file); same practice at the same level. Provisional on 1989 being decided. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "receJgjvlUh6EsP02",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Tengku Ahmad Rithauddeen; Royal Malaysian Navy (PASKAL); Royal Malaysian Air Force; Dewan Negara",
+   "lat": 7.62194,
+   "suggestion_reasoning": "Standing naval patrols, garrisons and air surveillance of occupied disputed features are unilateral presence without confrontation; demonstrative. Recorded as the one routine-patrol event for 1990. [confidence: medium]",
+   "date_end": "1990-03-19",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "Langkah TLDM menempatkan anggota Pasukan Khas Laut (PASKAL)",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Swallow, Ardasier and Mariveles Reefs",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Layang-Layang, Terumbu Ubi and Terumbu Mantanani (Swallow, Ardasier and Mariveles Reefs)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1990-03-19: Kepulauan Terumbu Layang-Layang - Kawalan Keselamatan — Parliament of Malaysia (Digital Hansard) 1990-03-19\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1990-03-19",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:18:34.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-adbe75b4ab",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Routine statement",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "Answering in the Dewan Negara on 19 March 1990, Defence Minister Tengku Ahmad Rithauddeen said the Royal Malaysian Navy assigned ships to patrol and watch Swallow, Ardasier and Mariveles Reefs at all times, that naval special forces (PASKAL) were stationed on them, that the air force flew reconnaissance over them, and that ships based at Kuantan and Labuan patrolled the South China Sea.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1990-03-19",
+   "presort": "unclear — A description of standing patrols, garrisons and air reconnaissance at the three reefs; 1989's record (prev file: ev-50de0edf83, ev-c268da3204) has no patrol candidate, though 1988's ev-5df85f5fed (MY-1980s) described the same practice. Likely a continuation of an undocumented practice (reject); settled by a 1989 patrol source. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.86083,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recegE7E3wB8xpoCp",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Malaysian Armed Forces; Penang Shipping Corporation-Naval Dockyard (contractor)",
+   "lat": 8.11667,
+   "suggestion_reasoning": "Occupation of a previously unoccupied disputed feature is a seizure; force under Chubb's definitions, though no other state's forces were displaced, so a coder may prefer demonstrative. Dates differ: the CDiSS volume (RMN authors, read through WebFetch) gives arrival on 10 May 1999; NST gives construction 'in April 1999'; Lai et al. give occupation of both reefs on 24 April 1999. [confidence: high]",
+   "date_end": "1999-05-10",
+   "new_dyads": "MP MV MC MR",
+   "excerpt": "He said in April 1999, the same joint-venture firm undertook to construct Station Papa through similar fashion on Beting Peninjau or Investigator Shoal\n\nModule A arrived Terumbu Peninjau on 10 May 1999 while Module B arrived Terumbu Siput on 12 May 1999.\n\nTerumbu Peninjau (Investigator Reef) and Terumbu Siput (Erica Reef) on 24 April 1999",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "location_name": "Investigator Shoal, RMN Station Papa",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Peninjau / Beting Peninjau (Investigator Shoal), RMN Station Papa”.",
+   "reviewer": "Angelo",
+   "sources": "How Malaysia's five naval stations in the Spratlys were built — New Straits Times (Adrian David) 2019-03-04\nhttps://nst.com.my/amp/news/nation/2019/03/465854/how-malaysias-five-naval-stations-spratlys-were-built\nMalaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "force",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:45:32.000Z",
+   "new_type": "force",
+   "event_id": "ev-bc804621b3",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "Under the Cabinet's 1996 decision, a barge-mounted station module built in Penang was towed under naval escort to Investigator Shoal from mid-April 1999 and arrived there on 10 May 1999, establishing Royal Malaysian Navy Station Papa and Malaysia's occupation of the shoal, which the Philippines, Vietnam, China and Taiwan also claim.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1999-05-10",
+   "presort": "new move (scope) — Scope: occupying Investigator Shoal (and Erica Reef, ev-0f1a31059d) extends Malaysia's garrisons to two more features, against 1998's record showing only the existing garrisons maintained (ev-2bcc8f7768, ev-cb3415c14d); lead of the 1999 occupations move. (group MY1999-occupations) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "scope",
+   "lon": 114.5,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recAh4KS0eUHw9SDA",
+   "archived_on": "2026-11-25",
+   "actors": "Yang di-Pertuan Agong Sultan Azlan Shah; Chief of Navy Mohamad Shariff Ishak; Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "A visit by the head of state to an occupied disputed feature is a symbolic display of sovereignty without confrontation; demonstrative. Source is a PDF (not machine-checkable) citing Ahmad and Sani (2017), Liow (2009) and Salleh et al. (2009); no day is given. [confidence: medium]",
+   "date_end": "1992-05-31",
+   "new_dyads": "MV MC MR",
+   "excerpt": "This was followed by a trip in May 1992 by Agong Sultan Azlan Shah and Queen Bainun, accompanied by Chief of RMN, Mohamad Shariff Ishak",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:22:32.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-bf3d440b45",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "In May 1992 the Yang di-Pertuan Agong, Sultan Azlan Shah, and the Raja Permaisuri Agong visited Pulau Layang-Layang, accompanied by the Chief of the Royal Malaysian Navy, Mohamad Shariff Ishak, one of a series of leaders' visits meant to strengthen Malaysia's claim.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1992-05-01",
+   "presort": "new move (novelty) — Novelty: the first visit by the head of state to Layang-Layang, a symbolic display of sovereignty absent from 1991's record (ev-f0b2e35258 group); the last leader's visit was Mahathir's in 1984. A coder may join it with the renaming ev-5e3a768fdc as one Layang-Layang upgrade. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recJPieHLHbvGPluN",
+   "archived_on": "2026-11-25",
+   "actors": "Cabinet of Malaysia; Malaysian Armed Forces",
+   "lat": 8.11667,
+   "suggestion_reasoning": "A Cabinet decision to occupy two more disputed features is a formal (unpublicised) state decision asserting the claim; declarative, by analogy with the 1981 Cabinet order on Swallow Reef. Only source is the CDiSS volume, read through WebFetch because the PDF does not download directly, so the excerpt may not be machine-checkable. [confidence: medium]",
+   "date_end": "1996-10-21",
+   "new_dyads": "MP MV MC MR",
+   "excerpt": "On 21 October 1996, the Cabinet gave a greenlight for the MAF to occupy Terumbu Peninjau and Terumbu Siput.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Investigator Shoal and Erica Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 404); excerpt not checked. Source's wording for the place: “Terumbu Peninjau (Investigator Shoal) and Terumbu Siput (Erica Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:43:28.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c828f52ff7",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Decision not carried out at that time",
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "On 21 October 1996 the Malaysian Cabinet approved the occupation of Investigator Shoal (Terumbu Peninjau) and Erica Reef (Terumbu Siput) by the Malaysian Armed Forces, the decision carried out in 1999.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1996-10-21",
+   "presort": "unclear — An unpublicised Cabinet decision to occupy Investigator Shoal and Erica Reef. The series dates behaviour, not decisions, so it is evidence for the 1999 occupation move ev-bc804621b3 rather than a 1996 move (same treatment as the 1979 and 1981 cabinet orders). Settled if it was made public in 1996. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 114.5,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "reclHRK5NJGNqexhE",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Syed Hamid Albar; Royal Malaysian Navy; Royal Malaysian Air Force; Dewan Negara",
+   "suggestion_reasoning": "Routine naval and air surveillance of occupied disputed reefs, with foreign warships leaving after detection, is presence without direct confrontation; demonstrative. Recorded as the one routine-patrol event for 1998; the foreign warships are not identified. [confidence: medium]",
+   "date_end": "1998-12-17",
+   "new_dyads": "MU",
+   "excerpt": "apabila kapal-kapal ini menyedari mereka dikesan oleh pihak berkuasa di negara ini, mereka terus beredar keluar",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "location_name": "Swallow Reef and nearby Malaysian-held reefs; areas of overlapping claims",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Layang-Layang and nearby Malaysian-held reefs; areas of overlapping claims”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1998-12-17: Perairan negara - usaha-usaha kawalan keselamatan — Parliament of Malaysia (Digital Hansard) 1998-12-17\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1998-12-17",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:45:02.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-cb3415c14d",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Routine practice",
+   "suggested_dyads": [
+    "MU"
+   ],
+   "summary": "Defence Minister Syed Hamid Albar told the Dewan Negara on 17 December 1998 that the Navy kept watch over Swallow Reef and the nearby reefs with air force surveillance, and that foreign warships that sometimes entered areas of overlapping claims left once they realised they had been detected; he said RMN presence had deterred those with ill intent.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1998-12-17",
+   "presort": "unclear — Routine naval and air watch over Swallow and nearby reefs, the practice 1990's ev-adbe75b4ab described; 1997 has no candidates to compare. The warships deterred are unidentified (dyad MU, a non-claimant). Likely a continuation of an undocumented practice (reject). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec1kRa7UwtJcZBte",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Air Force (Hawk 200, Labuan)",
+   "lat": 8.11667,
+   "suggestion_reasoning": "Intercepting and driving off another claimant's military aircraft over a disputed feature is physical interference; coercive, and the first such air interception by Malaysia found. Government backbencher Abdol Mulok Awang Damit in the Dewan Rakyat on 9 November 1999 congratulated the Labuan-based RMAF for chasing off two Philippine air force aircraft 'last week'; the US EIA South China Sea tables record the October 1999 near-engagement. [confidence: medium]",
+   "date_end": "1999-10-28",
+   "new_dyads": "MP",
+   "excerpt": "Two Philippine OV-10s photographing Malaysian construction on Investigator Shoal on 28 Oct were driven away by two Malaysian Hawk-200 light strike-trainers.\n\nmengusir penceroboh daripada Filipina yang menggunakan dua pesawat Tentera Udara Filipina",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "location_name": "Investigator Shoal",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Investigator Shoal (Terumbu Peninjau)”.",
+   "reviewer": "Angelo",
+   "sources": "Philippines: December 31, 1999 — StrategyPage (Stephen V. Cole) 1999-12-31\nhttps://www.strategypage.com/qnd/phillip/articles/19991231.aspx\nHansard, Dewan Rakyat, 1999-11-09: Budget 2000 debate (Abdol Mulok Awang Damit) — Parliament of Malaysia (Digital Hansard) 1999-11-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1999-11-09",
+   "pull_request": 55,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:46:57.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-d5b797f2d8",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "On 28 October 1999 two Royal Malaysian Air Force Hawk 200 light strike aircraft drove away two Philippine Air Force OV-10 aircraft that were photographing Malaysian construction on Investigator Shoal; Philippine sources described the aircraft as nearly engaging, which the Malaysian Defence Ministry denied was a stand-off.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1999-10-28",
+   "presort": "new move (novelty) — Novelty: RMAF Hawks driving off Philippine OV-10s over Investigator Shoal is the first Malaysian air interception found, a coercive method absent from 1998's record (ev-cb3415c14d: foreign warships leaving after detection, with no interference). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 114.5,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recQ6CBVYsY72wkzX",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Najib Razak; Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "A ministerial statement asserting the claim and rejecting neighbours' protests over the airstrip is a verbal assertion; declarative. Dzurek (1996) records that during 1991 Malaysia announced the resort and airstrip on Swallow Reef. [confidence: high]",
+   "date_end": "1991-12-05",
+   "new_dyads": "MV MC MP MR",
+   "excerpt": "Malaysia akan meneruskan rancangan pembinaan landasan kapal terbang di Kepulauan Terumbu Layang-Layang\n\nDuring 1991 Malaysia announced its decision to construct a resort and airstrip on Swallow Reef.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1991-12-05: Committee of Supply, Ministry of Defence — Parliament of Malaysia (Digital Hansard) 1991-12-05\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1991-12-05\nThe Spratly Islands Dispute: Who's On First? (IBRU Maritime Briefing 2(1)) — International Boundaries Research Unit, Durham University (Daniel J. Dzurek) 1996-01-01\nhttps://dur.ac.uk/media/durham-university/research-/research-centres/ibru-centre-for-borders-research/maps-and-databases/publications-database/Maritime-Briefings-(Vol.-2-no.-1).pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:19:41.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d61240caad",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MP",
+    "MR"
+   ],
+   "summary": "Winding up the Defence Ministry's supply debate in the Dewan Rakyat on 5 December 1991, Defence Minister Najib Razak said the Spratly islands were Malaysia's by right and that Malaysia would go ahead with building an airstrip on Swallow Reef despite objections from other countries, while treating the overlapping claims as a diplomatic problem.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1991-12-05",
+   "merge_into_candidate": "ev-f0b2e35258",
+   "presort": "same move as ev-f0b2e35258 — Najib's statement that the airstrip will go ahead despite objections is the verbal side of the airstrip move ev-f0b2e35258. (group MY1991-airstrip) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recZ7PByb7AXghpco",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Agriculture Minister S. Subramaniam; Department of Fisheries; Dewan Negara",
+   "suggestion_reasoning": "Detention of another claimant's (Vietnam's) fishermen is physical enforcement imposing punishment; coercive. Routine enforcement summarised as one event for 1993; the figures are not broken down by nationality or area and many arrests were probably in undisputed waters, so a coder may exclude it. [confidence: low]",
+   "date_end": "1993-08-09",
+   "new_dyads": "MV",
+   "excerpt": "Nelayan- nelayan berkenaan kebanyakannya adalah dari negara Thailand, Indonesia dan Vietnam.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Malaysian fisheries waters (EEZ)",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1993-08-09: Nelayan asing menceroboh perairan negara — Parliament of Malaysia (Digital Hansard) 1993-08-09\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1993-08-09",
+   "pull_request": 55,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:34:59.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-d7595bdd7f",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-2b3578f9ed",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "The Deputy Agriculture Minister told the Dewan Negara on 9 August 1993 that 606 foreign fishermen from 85 vessels had been caught fishing illegally in Malaysian waters up to July 1993, against 680 fishermen from 96 vessels in 1992, mostly from Thailand, Indonesia and Vietnam.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1993-08-09",
+   "presort": "continuation of ev-2b3578f9ed (a candidate, provisional) — The same national fisheries-arrest practice as 1992's ev-2b3578f9ed at a lower level (606 fishermen/85 vessels to July 1993 against 680/96 in 1992), with no area breakdown. Not an intensification, and possibly not in disputed waters. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recbtNQXl8ZoKe3U0",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister's Department; Dewan Rakyat (Supply committee)",
+   "lat": 7.5,
+   "suggestion_reasoning": "A budget allocation to build up an occupied disputed feature is domestic administration supporting physical presence; demonstrative. The figure is quoted by a backbencher from the estimates, not by a minister, so confidence is medium. [confidence: medium]",
+   "date_end": "1991-11-28",
+   "new_dyads": "MV MC MR",
+   "excerpt": "pembangunan Pulau Layang-layang yang diperuntukkan sebanyak $18 juta",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1991-11-28: Committee of Supply, Prime Minister's Department — Parliament of Malaysia (Digital Hansard) 1991-11-28\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1991-11-28",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:18:57.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-d8796cd77e",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "In the Dewan Rakyat committee debate on the 1992 development estimates on 28 November 1991, the item for the development of Pulau Layang-Layang under the Prime Minister's Department was shown with an allocation of $18 million; the MP for Padang Terap noted that neighbouring claimants had protested Malaysia's plan to build an airstrip there.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1991-11-28",
+   "merge_into_candidate": "ev-f0b2e35258",
+   "presort": "same move as ev-f0b2e35258 — The $18 million 1992 allocation for Pulau Layang-Layang, debated amid neighbours' protests at the airstrip plan, funds the airstrip move ev-f0b2e35258. (group MY1991-airstrip) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recsRqVtg1CMdfRQp",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister Abdullah Fadzil Che Wan; Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "A formal rejection of all rival claims combined with an announced plan to develop further occupied reefs is a verbal assertion of the claim, with a new stated intent to extend development beyond Swallow Reef; declarative. [confidence: high]",
+   "date_end": "1992-07-27",
+   "new_dyads": "MA",
+   "excerpt": "Malaysia menolak semua tuntutan negara-negara lain ke atas wilayahnya di Laut China Selatan sepertimana terkandung dalam Peta 1979.\n\nMalaysia menolak tuntutan negara- negara lain ke atas wilayahnya sepertimana terkandung dalam PETA 1979.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Features in the 1979 Peta Baru, incl. Swallow Reef, Mariveles Reef and Ardasier Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Features in the 1979 Peta Baru, incl. Pulau Layang-Layang, Terumbu Mantanani and Terumbu Ubi”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1992-07-27: Spratly - Pendirian Malaysia ke atas Kepulauan — Parliament of Malaysia (Digital Hansard) 1992-07-27\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1992-07-27\nHansard, Dewan Rakyat, 1992-07-29: Spratly - Tuntutan ke atas Kepulauan — Parliament of Malaysia (Digital Hansard) 1992-07-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1992-07-29",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:23:15.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d9859516e1",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "In written Dewan Rakyat answers on 27 and 29 July 1992, Deputy Foreign Minister Abdullah Fadzil Che Wan said Malaysia rejected all other countries' claims to its territory in the South China Sea as shown in the 1979 map, would keep developing the economic potential of Pulau Layang-Layang, and would also develop Mariveles (Mantanani) and Ardasier (Ubi) Reefs and other features on the map to exploit its EEZ and continental shelf, while urging claimants not to use force.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1992-07-27",
+   "merge_into_candidate": "ev-5308c6f3a6",
+   "presort": "same move as ev-5308c6f3a6 — The July written answers repeat the 1992 rejection of all rival claims led by ev-5308c6f3a6 and add an intent to develop Mariveles and Ardasier; same declarative move, with the intent to be watched for the year it is carried out. (group MY1992-rejection) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recI36WcZg4hyo51h",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Foreign Minister Leo Michael Toyad; Dewan Negara",
+   "lat": 8.1,
+   "suggestion_reasoning": "An official defence of the new occupations as an exercise of Malaysian sovereign rights, in the face of Philippine and other protests, is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "1999-07-29",
+   "new_dyads": "MP MV MC MR",
+   "excerpt": "Kehadiran Malaysia sebagai hanya melaksanakan haknya ke atas terumbu-terumbu yang merupakan sebahagian daripada wilayahnya.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:59:23.000Z",
+   "location_name": "Erica Reef and Investigator Shoal",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Siput (Erica Reef) and Terumbu Peninjau (Investigator Shoal)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 1999-07-29: Tuntutan pulau-pulau / Terumbu Siput dan Terumbu Peninjau (Deputy Minister of Foreign Affairs) — Parliament of Malaysia (Digital Hansard) 1999-07-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/1999-07-29",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:46:46.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e08811c3b7",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "Answering in the Dewan Negara on 29 July 1999, Deputy Foreign Minister Leo Michael Toyad said Malaysia would maintain its sovereignty over the islands it claimed, that its peaceful presence on Erica Reef and Investigator Shoal was for marine scientific research and protection of marine resources, that the facilities were built for scientists working in Malaysia's EEZ, and that Malaysia was merely exercising its rights over reefs that were part of its territory.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1999-07-29",
+   "merge_into_candidate": "ev-bc804621b3",
+   "presort": "same move as ev-bc804621b3 — The Dewan Negara defence of the Erica and Investigator presence against the protests is the verbal side of the occupation move ev-bc804621b3. (group MY1999-occupations) [claude-code/opus]",
+   "decision": "merge",
+   "lon": 114.13333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recWMNTOhWHkrdizK",
+   "archived_on": "2026-11-25",
+   "actors": "Defence Minister Najib Razak; Dewan Rakyat",
+   "lat": 7.5,
+   "suggestion_reasoning": "Spending on and developing an occupied disputed feature, explicitly to strengthen the claim through presence and tourism, is unilateral administration without confrontation; demonstrative (the statement itself is also a verbal assertion). The Christian Science Monitor (1 December 1993) reported that Malaysia 'this year' reinforced its claim by opening the tourist resort on the atoll. [confidence: high]",
+   "date_end": "1993-07-20",
+   "new_dyads": "MV MC MR",
+   "excerpt": "Tujuan pembangunan Pulau Layang- layang ialah untuk mengukuhkan tuntutan negara ke atas pulau tersebut\n\nMalaysia, which controls Layang-Layang and other islands, also took the unusual step this year of reinforcing its claim by opening a tourist resort on the atoll.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1993-07-20: Pulau Layang-Layang - Pembangunan (written answer, Minister of Defence) — Parliament of Malaysia (Digital Hansard) 1993-07-20\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1993-07-20\nParadise Islands or an Asian Powder Keg? — The Christian Science Monitor (Clayton Jones) 1993-12-01\nhttps://www.csmonitor.com/1993/1201/01141.html",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:25:33.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-edd8bdf590",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-d9859516e1",
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "In a written Dewan Rakyat answer on 20 July 1993, Defence Minister Najib Razak said RM60.4 million had been spent developing Pulau Layang-Layang, with the purpose of strengthening Malaysia's claim to the island by maintaining a presence there and developing it through tourism.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1993-07-20",
+   "presort": "continuation of ev-d9859516e1 (a candidate, provisional) — RM60.4 million spent developing Layang-Layang for presence and tourism continues the development 1992's ev-d9859516e1 said would go on, with no new method named. Provisional; the CSM's 1993 dating of the resort opening should be checked against ev-966de97b8a. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec1Nay06EyzBEbu6",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia; Royal Malaysian Navy (Station Lima)",
+   "lat": 7.5,
+   "suggestion_reasoning": "Building a runway on an occupied disputed feature is construction without confrontation; demonstrative. Sources differ on whether December 1991 was the decision or the completed extension; Wikipedia gives construction as 1991-1995. Both sources are PDFs (the CDiSS one read through WebFetch), so excerpts may not be machine-checkable. [confidence: medium]",
+   "date_end": "1991-12-31",
+   "new_dyads": "MV MC MR",
+   "excerpt": "the original airstrip at Layang-Layang was extended to 1,067 metres in December 1991\n\nIn December 1991, a decision was made to upgrade the short airstrip at TLL to a 1,067-meter runway.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Date approximate"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau/Terumbu Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Pulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nMalaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:19:23.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-f0b2e35258",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MC",
+    "MR"
+   ],
+   "summary": "In December 1991 Malaysia decided to upgrade the short airstrip on Swallow Reef to a 1,067-metre runway; Lai et al. record the airstrip as extended to 1,067 metres that month. Construction continued over the following years.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1991-12-01",
+   "presort": "new move (novelty) — Novelty: building a 1,067 m runway on Swallow Reef adds air access, a new method against 1990's record (resort opening ev-966de97b8a, patrols ev-adbe75b4ab); lead of the 1991 airstrip move. The sources differ on whether December 1991 was the decision or the extension. (group MY1991-airstrip) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recXZS5KT1lXCahav",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia; Royal Malaysian Navy (Station Mike)",
+   "lat": 7.98333,
+   "suggestion_reasoning": "A legal designation of an occupied disputed feature as a protected zone is an administrative act asserting jurisdiction; declarative (a coder may treat it as demonstrative administration). Only source is the CDiSS volume, read through WebFetch because the PDF does not download directly, so the excerpt may not be machine-checkable. [confidence: medium]",
+   "date_end": "1994-05-18",
+   "new_dyads": "MV MP MC MR",
+   "excerpt": "RMN Station MIKE was declared as a protected zone by the Malaysian government on 18 May 1994.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Mariveles Reef, RMN Station Mike",
+   "run": [
+    "MY-1990s"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 404); excerpt not checked. Source's wording for the place: “Terumbu Mantanani (Mariveles Reef), RMN Station Mike”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia and South China Sea: Policy, Strategy and Risks (ch. 1, Mat Taib Yasin et al.) — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 55,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "8 Spratly SW",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:35:14.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-f0f953f8bd",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MV",
+    "MP",
+    "MC",
+    "MR"
+   ],
+   "summary": "On 18 May 1994 the Malaysian government declared Royal Malaysian Navy Station Mike on Mariveles Reef (Terumbu Mantanani), close to Vietnamese- and Philippine-held features, a protected zone.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1994-05-18",
+   "presort": "new move (novelty) — Novelty: legally declaring Station Mike on Mariveles Reef a protected zone is a new jurisdictional designation; 1993's record (spending ev-edd8bdf590, arrests ev-d7595bdd7f) has nothing comparable. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.83333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec5Iv8g0QRttbxly",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Foreign Affairs; Dewan Rakyat",
+   "suggestion_reasoning": "An official statement defining the legal basis of the claim to the occupied features is a verbal assertion; declarative. The Deputy Foreign Minister repeated on 29 June 1995 that the features Malaysia claims lie outside the Spratly area. [confidence: medium]",
+   "date_end": "1994-10-26",
+   "new_dyads": "MA",
+   "excerpt": "tuntutan yang diduduki oleh Malaysia terletak di luar kawasan Kepulauan Spratlys sebenarnya.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T18:57:34.000Z",
+   "location_name": "Malaysian-occupied reefs in the southern Spratly area",
+   "run": [
+    "MY-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 1994-10-26: Spratlys, Batu Putih, Sipadan dan Ligitan (written answer, Ministry of Foreign Affairs) — Parliament of Malaysia (Digital Hansard) 1994-10-26\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/1994-10-26",
+   "pull_request": 55,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:36:35.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-fe5ee018ef",
+   "run_id": "MY-1990s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Not an assertive statement",
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "In a written Dewan Rakyat answer on 26 October 1994 the Foreign Ministry said Malaysia made no claim to the Spratly Islands as such, because the islands and reefs it claimed and occupied lay outside the Spratlys proper, and that its claim accorded with international law including the Law of the Sea Convention, while offering to negotiate over the area.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1994-10-26",
+   "presort": "unclear — A restatement defining the claim as lying outside the Spratlys proper, under UNCLOS, with an offer to negotiate; 1993's record has no comparable declarative candidate. Likely a routine restatement (reject) unless the coder reads the reframing of the legal basis as a new position (novelty). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  }
+ ]
+}

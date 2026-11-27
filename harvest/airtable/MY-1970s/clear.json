@@ -2,9 +2,21 @@
  "run_id": "MY-1970s",
  "table": "Candidates",
  "record_ids": [
-  "reciv44YclrWLJzq1"
+  "recdYRyhNpk5xnfzV",
+  "recX3qCmGen3v5BzB",
+  "recmwJSrNc3oEOwDK",
+  "rec5dimJRy1nhhnYG",
+  "recsSVXM7CRNZiogo",
+  "recGcD9PIiVsuMaHD",
+  "recF0LbQFryOHHswL"
  ],
  "event_ids": [
-  "ev-af41776905"
+  "ev-19cdf47a22",
+  "ev-4093c90634",
+  "ev-413bef2512",
+  "ev-6203883aff",
+  "ev-72def46a32",
+  "ev-8155996da4",
+  "ev-bd12e6ed48"
  ]
 }

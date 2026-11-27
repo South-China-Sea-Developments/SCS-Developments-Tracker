@@ -3,6 +3,120 @@
  "exported_on": "2026-11-25",
  "records": [
   {
+   "airtable_id": "recKOr0wLdncxvViR",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Minister of Defence Abu Seman Yusop; Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "Permanent garrisons and continuous naval presence at occupied disputed features are unilateral presence; demonstrative. Recorded as the routine-patrol event for 2008. [confidence: high]",
+   "date_end": "2008-12-03",
+   "new_dyads": "MC MV MP MR",
+   "excerpt": "biasanya minimum sebuah kapal ditugaskan setiap masa dan dalam masa yang sama sebuah bot combat ditempatkan di setiap terumbu",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Swallow Reef and the reefs of the Semarang Peninjau group",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang and the reefs of Gugusan Semarang Peninjau”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2008-12-03: Committee of Supply, Ministry of Defence — Parliament of Malaysia (Digital Hansard) 2008-12-03\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2008-12-03",
+   "pull_request": 58,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:22:25.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-157020f48a",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-e97cd9ef04",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MR"
+   ],
+   "summary": "Winding up the Defence Ministry's supply debate in the Dewan Rakyat on 3 December 2008, the Deputy Defence Minister said at least one Navy ship was normally assigned to the Spratly stations at all times, with a combat boat stationed at each reef, 130 Navy personnel serving on Pulau Layang-Layang and the four other reefs, and nearly RM7 million allocated for their upkeep.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2008-12-03",
+   "presort": "continuation of ev-e97cd9ef04 (a candidate, provisional) — Provisional continuation of ev-e97cd9ef04 (2007 undecided): at least one Navy ship always at the Spratly stations, a combat boat at each reef and 130 personnel - the same standing presence as 2007's two ships - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recXX4pQ2A6XbBcyF",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Agriculture and Agro-based Industry; Department of Fisheries",
+   "suggestion_reasoning": "Seizure of foreign fishing vessels and detention of crews is imposition of punishment; coercive. The nationalities and sea areas of the 79 vessels are not given (some may be Thai or Indonesian outside the South China Sea), so the dyad is partly unclear; recorded as the one fisheries-enforcement event for 2004. [confidence: medium]",
+   "date_end": "2004-10-06",
+   "new_dyads": "MV MU",
+   "excerpt": "jumlah vessel asing yang telah ditangkap sehingga 6 Oktober 2004 adalah 79 buah dan jumlah pekerja asing yang telah ditahan adalah 702 orang",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters, incl. the east coast of Peninsular Malaysia (South China Sea)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2004-10-07: Supply debate, Ministry of Agriculture (foreign fishing vessels) — Parliament of Malaysia (Digital Hansard) 2004-10-07\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2004-10-07",
+   "pull_request": 58,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:50:02.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-19f2c0991a",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "Routine practice",
+   "suggested_dyads": [
+    "MV",
+    "MU"
+   ],
+   "summary": "The Agriculture Ministry told the Dewan Rakyat on 7 October 2004 that 79 foreign fishing vessels had been seized and 702 foreign crew detained up to 6 October 2004, with 67 cases taken to court and RM30.15 million in compounds collected; it said the Fisheries Department patrolled the east coast continuously to prevent intrusion.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2004-01-01",
+   "presort": "unclear — Fisheries seizures (79 vessels to Oct 2004) are routine enforcement; the 2003 record has no enforcement candidate, but that is probably a gap in sources, not an absence, and the vessels' nationalities/seas are not given. Settle with 2003 seizure figures and how many 2004 cases were in the South China Sea; at a similar level, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
    "airtable_id": "recMJwEizYPwLL9BI",
    "archived_on": "2026-11-25",
    "actors": "Government of Malaysia (National Security Council, Ministry of Foreign Affairs, Petronas and others) jointly with Vietnam",
@@ -58,6 +172,1439 @@
    ],
    "claimant": "MY",
    "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recIuNYllt317nTiT",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Prime Minister and Minister of Defence Najib Razak; Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "A senior leader's visit to an occupied disputed feature with a public sovereignty pledge is state-sanctioned presence and publicity; demonstrative, with a declarative element. The first source is a Japanese-language PDF digest of a Bernama report, so the excerpt may not be machine-checkable; Lai et al. give 'August 2008'. [confidence: high]",
+   "date_end": "2008-08-12",
+   "new_dyads": "MR MC MV",
+   "excerpt": "マレーシアのラザク副首相兼国防相は 12 日、サバ州沖の Layang-Layang 環礁の領土主権を護る\n\nNajib Razak visited Layang-Layang in August 2008",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "海洋安全保障情報月報 2008年8月 (OPRF Maritime Security Monthly Report, August 2008), citing Bernama, 12 August 2008 — Ocean Policy Research Foundation (OPRF), Sasakawa Peace Foundation 2008-09-01\nhttps://www.spf.org/oceans/wp/wp-content/pdf/200808.pdf\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:21:45.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-1e0d70f1d3",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MR",
+    "MC",
+    "MV"
+   ],
+   "summary": "Deputy Prime Minister and Defence Minister Najib Razak visited Swallow Reef with senior editors of Malaysian media on 12 August 2008 and declared Malaysia would defend its sovereignty over the atoll, saying it did not want a repeat of the loss of Pulau Batu Puteh; Taiwan's Foreign Ministry issued a statement rebutting the claim on 15 August 2008.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2008-08-12",
+   "presort": "new move (novelty) — Deputy PM/Defence Minister's visit to Swallow Reef with senior editors and a public pledge to defend sovereignty (drawing a Taiwanese rebuttal) is a new method of publicity against 2007, which shows only routine patrols (ev-e97cd9ef04). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec7pTA8vzWY8o447",
+   "archived_on": "2026-11-25",
+   "actors": "Parliament of Malaysia; Minister of Natural Resources and Environment Douglas Uggah Embas",
+   "suggestion_reasoning": "Legislation redefining and asserting exclusive rights over the continental shelf is a legal assertion; declarative. Cabinet approved the amendments on 6 March 2009; the Bill had its first reading on 17 March 2009. [confidence: high]",
+   "date_end": "2009-04-08",
+   "new_dyads": "MA",
+   "excerpt": "saya mohon mencadangkan, iaitu rang undang-undang bernama suatu akta untuk meminda Akta Pelantar Benua 1966 dibaca kali yang kedua sekarang\n\nuntuk menjelaskan hak Kerajaan Malaysia dalam mengeksplorasi",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "location_name": "Malaysian continental shelf",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2009-03-24: Continental Shelf (Amendment) Bill 2009, second and third readings — Parliament of Malaysia (Digital Hansard) 2009-03-24\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2009-03-24\nHansard, Dewan Negara, 2009-04-08: Continental Shelf (Amendment) Bill 2009 — Parliament of Malaysia (Digital Hansard) 2009-04-08\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2009-04-08",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:23:06.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-24cd4032fd",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "The Dewan Rakyat on 24 March 2009 passed the Continental Shelf (Amendment) Bill 2009, moved by Natural Resources Minister Douglas Uggah Embas, to bring the 1966 Act into line with UNCLOS (including shelf beyond 200 nm under Article 76) and to state that no other state may explore or exploit Malaysia's shelf without its express consent; the Dewan Negara passed it on 8 April 2009.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2009-03-24",
+   "merge_into_candidate": " ev-1b46d2adfd",
+   "presort": "same move as ev-1b46d2adfd — Continental Shelf (Amendment) Act 2009 brings the shelf law into line with Art. 76 for the submission (ev-1b46d2adfd) six weeks later; one legal intensification. A coder may instead count the exclusive-rights clause as its own declarative novelty. (group MY2009-CLCS) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recbpr0stLm7yhhyT",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Meteorological Department / Ministry of Science, Technology and Innovation",
+   "lat": 7.5,
+   "suggestion_reasoning": "Installing state monitoring equipment in the waters of an occupied disputed feature is unilateral administration; demonstrative. Its purpose is civil (tsunami warning), so a coder may judge it not assertive; low confidence. [confidence: low]",
+   "date_end": "2006-03-21",
+   "new_dyads": "MC MV MR",
+   "excerpt": "sistem ini telah dipasang di perairan Pulau Layang-Layang di Laut China Selatan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Waters of Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Waters of Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2006-03-21: Oral answers: tsunami early-warning system — Parliament of Malaysia (Digital Hansard) 2006-03-21\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2006-03-21",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:52:36.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-264b3bdbad",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Not assertive in nature",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "Answering in the Dewan Rakyat on 21 March 2006, the government said a tsunami early-warning buoy of Malaysia's national warning system had been installed in the waters of Pulau Layang-Layang in the South China Sea.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2006-03-21",
+   "presort": "unclear — Tsunami early-warning buoy in Swallow Reef waters is state equipment in disputed waters but of civil purpose; nothing comparable in 2005. Settle whether the coder treats civil monitoring equipment as assertive presence; if so a demonstrative novelty, else not an assertive act - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec1mGDORZNMadlLj",
+   "archived_on": "2026-11-25",
+   "actors": "Permanent Mission of Malaysia to the United Nations; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A diplomatic note rejecting another claimant's objection and defending Malaysia's claim is a verbal assertion; declarative. The note itself is a scanned UN PDF (read here by OCR), so its excerpt is not machine-checkable; the first source quotes it. [confidence: high]",
+   "date_end": "2009-05-20",
+   "new_dyads": "MC",
+   "excerpt": "In Note HA 24/09 of May 20, 2009, the Permanent Mission of Malaysia to the United Nations reconfirmed that the Joint Submission was made without prejudice\n\nThe Government of Malaysia has informed the People’s Republic of China of its position prior to the submission of the Joint Submission",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "location_name": "Southern part of the South China Sea",
+   "run": [
+    "MY-2000s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Claims to the outer limits of the continental shelf in the South China Sea — Vietnam Law Magazine 2010-03-25\nhttps://vietnamlawmagazine.vn/claims-to-the-outer-limits-of-the-continental-shelf-in-the-south-china-sea-3601.html\nNote verbale HA 24/09 from the Permanent Mission of Malaysia (20 May 2009) — United Nations (CLCS communications) 2009-05-20\nhttps://digitallibrary.un.org/record/3897205/files/mys_re_chn_2009re_mys_vnm_e.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:23:19.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2c7ae66c4c",
+   "run_id": "MY-2000s",
+   "suggested_dyads": [
+    "MC"
+   ],
+   "summary": "In note verbale HA 24/09 of 20 May 2009 to the UN Secretary-General, replying to China's note CML/17/2009 of 7 May, Malaysia's Permanent Mission stated that the Malaysia–Vietnam joint submission constituted legitimate undertakings under UNCLOS, was without prejudice to delimitation and to the positions of parties to disputes, and that Malaysia had informed China of its position before the submission.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2009-05-20",
+   "merge_into_candidate": "ev-1b46d2adfd",
+   "presort": "same move as ev-1b46d2adfd — Note verbale HA 24/09 rejecting China's objection defends the joint submission (ev-1b46d2adfd): part of the same intensification. (group MY2009-CLCS) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recl49ghyY5nnN5fF",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Finance Minister Shafie Mohd Salleh (for the Ministry of Foreign Affairs); Dewan Negara",
+   "suggestion_reasoning": "A government statement in Parliament reaffirming sovereignty over the claimed Spratly features is a verbal assertion; declarative. Routine reaffirmation, recorded once for 2000. [confidence: high]",
+   "date_end": "2000-05-02",
+   "new_dyads": "MC MV MP MR",
+   "excerpt": "Malaysia akan terus mengekalkan kedaulatan kita ke atas pulau-pulau yang dituntut yang dianggap sebagai wilayah Malaysia.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Spratly Islands",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Kepulauan Spratly (Spratly Islands)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2000-05-02: Oral answers: Spratly issue — Parliament of Malaysia (Digital Hansard) 2000-05-02\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2000-05-02",
+   "pull_request": 58,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "unknown",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:48:07.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-359d70a6fc",
+   "run_id": "MY-2000s",
+   "note": "continuation of ev-e08811c3b7",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MR"
+   ],
+   "summary": "Answering an oral question in the Dewan Negara on 2 May 2000 on behalf of the Foreign Ministry, Deputy Finance Minister Shafie Mohd Salleh said Malaysia would continue to maintain its sovereignty over the claimed islands it regarded as Malaysian territory, while preferring bilateral or multilateral settlement among the claimant states only.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2000-05-02",
+   "presort": "continuation of ev-e08811c3b7 (a candidate, provisional) — Provisional continuation of ev-e08811c3b7 (1999 is undecided candidates of MY-1990s): routine parliamentary reaffirmation of sovereignty over the claimed islands, as in 1999 - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "reczvOocDgKUtClkO",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Federal Territories; Government of Malaysia",
+   "lat": 7.5,
+   "suggestion_reasoning": "Extending the runway on an occupied disputed feature is construction that consolidates physical control; demonstrative. The day comes only from a blog (konflikdanmiliter); Lai et al. give 2003 and 1,368 m; the 2008 Hansard answer mixes the 2003 work with a planned extension to 1,637 m. [confidence: medium]",
+   "date_end": "2003-07-20",
+   "new_dyads": "MC MV MR",
+   "excerpt": "Ianya telah dibuat dalam tahun 2003 dengan jumlah kos RM34,86 juta.\n\n1,368 metres in 2003\n\nselepas naik taraf siap pada 20 Julai 2003",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2008-11-24: Committee of Supply, Ministry of Works (Pulau Layang-Layang airstrip) — Parliament of Malaysia (Digital Hansard) 2008-11-24\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2008-11-24\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf\nHistory of Station Lima at Swallow Reef — Konflik dan Militer (blog) 2014-09-01\nhttp://konflikdanmiliter.blogspot.com/2014/09/history-of-station-lima-at-swallow-reef.html",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:49:23.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-380eca7195",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "Malaysia completed an upgrade that lengthened the airstrip on Swallow Reef from about 1,067 m to about 1,367 m, allowing CN-235 and C-130 aircraft to land; a naval-history blog dates completion to 20 July 2003 and the Deputy Works Minister told the Dewan Rakyat in 2008 that the work, under the Federal Territories Ministry, was done in 2003 at a cost of RM34.86 million.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2003-07-20",
+   "presort": "new move (novelty) — Runway on Swallow Reef lengthened to ~1,367 m (2003) is new construction consolidating the outpost; nothing comparable in 2002 (no MY candidates for 2001-2002). Date to the day rests on a blog. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recX1viyR1VtQQuUE",
+   "archived_on": "2026-11-25",
+   "actors": "Prime Minister Abdullah Ahmad Badawi; Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "A head of government's visit to an occupied disputed feature is state-sanctioned presence; demonstrative. No source opened gives the day: the Hansard remark by the MP for Labuan (who accompanied him) is undated, the National Library bibliography lists the Utusan headline of 6 March 2009, and Lai et al. give March 2009. [confidence: medium]",
+   "date_end": "2009-03-06",
+   "new_dyads": "MC MV MR",
+   "excerpt": "Baru-baru ini sewaktu lawatan Yang Amat Berhormat Perdana Menteri kebetulan saya ikut serta pada saat itu\n\nAbdullah harap pulihara Pulau Layang-Layang. Utusan Malaysia. 2: (1); 6 Mac 2009.\n\nPrime Minister Abdullah Badawi did so in March 2009",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2009-03-19: Committee of Supply (supplementary), Ministry of Defence — Parliament of Malaysia (Digital Hansard) 2009-03-19\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2009-03-19\nBibliografi Abdullah Ahmad Badawi: Perdana Menteri Ke-Lima — Perpustakaan Negara Malaysia\nhttps://www.pnm.gov.my/pnm/resources/flipbook/BibliografiAbdullahBadawi/files/Bibliografi%20Abdullah%20Badawi.pdf\nPulau Layang-Layang in Malaysia's South China Sea Policy (International Journal of China Studies 12(2)) — Institute of China Studies, Universiti Malaya 2021-12-01\nhttps://ics.um.edu.my/img/files/Lai-Kuik-Amy.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:22:55.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-424bf6497d",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-1e0d70f1d3 ",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "Prime Minister Abdullah Ahmad Badawi visited Pulau Layang-Layang in early March 2009, meeting the Navy personnel stationed there; Utusan Malaysia reported on 6 March 2009 that he hoped the island would be preserved.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2009-03-01",
+   "presort": "continuation of ev-1e0d70f1d3 (a candidate, provisional) — Provisional continuation of ev-1e0d70f1d3 (2008 undecided): PM's visit to Swallow Reef repeats the 2008 Najib visit at the same level - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec0puafchyzbT0p8",
+   "archived_on": "2026-11-25",
+   "actors": "Cabinet of Malaysia; National Security Council; Ministry of Finance; Petronas",
+   "suggestion_reasoning": "Funding and organising the preparation of an extended continental shelf claim over disputed waters is domestic administration supporting a legal claim; demonstrative. [confidence: high]",
+   "date_end": "2008-07-23",
+   "new_dyads": "MC MP MB",
+   "excerpt": "Jemaah Menteri yang bermesyuarat pada 23 Julai 2008",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Southern South China Sea (extended continental shelf)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2008-12-18: Motion: Malaysian Continental Shelf Project Trust Fund — Parliament of Malaysia (Digital Hansard) 2008-12-18\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2008-12-18",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:21:29.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4a76c6e88e",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "Preparatory work",
+   "suggested_dyads": [
+    "MC",
+    "MP",
+    "MB"
+   ],
+   "summary": "On 23 July 2008 the Malaysian Cabinet agreed, on a memorandum from the Prime Minister on Malaysia's extended continental shelf claim and joint submission with Vietnam, to set up an RM10 million Malaysian Continental Shelf Project Trust Fund under the National Security Council; the Dewan Rakyat approved the fund on 18 December 2008, with Petronas bearing most of the nearly RM40 million cost of surveys.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2008-07-23",
+   "presort": "unclear — RM10m Continental Shelf Project trust fund is preparatory administration for the 2009 CLCS submission; nothing comparable in 2007, but it is a decision/funding step rather than an act on the claim. Settle whether the coder counts CLCS preparation (surveys) as a 2008 act or only the 2009 submission - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rece5I92cfhngNaOh",
+   "archived_on": "2026-11-25",
+   "actors": "Parliament of Malaysia; Deputy Minister in the Prime Minister's Department Abdul Rahman Suliman; Cabinet",
+   "suggestion_reasoning": "Maritime-zone legislation defining the baselines from which Malaysia's claims are measured is a legal assertion; declarative. The Dewan Rakyat record appears twice in the portal (21 and 24 August 2006, identical text) so the lower-house date is uncertain; Lai et al. date the Act to May 2007 (presumably gazettal). [confidence: high]",
+   "date_end": "2006-12-06",
+   "new_dyads": "MA",
+   "excerpt": "Justeru itu, kerajaan pada 3 Mei yang lalu memutuskan supaya Malaysia mengisytiharkan garis dan titik pangkal zon maritim\n\nMelalui pengisytiharan ini, Malaysia telah membuat tuntutan secara unilateral had pelantar benua dan perairan laut wilayahnya.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Malaysian maritime zones",
+   "run": [
+    "MY-2000s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2006-12-06: Baselines of Maritime Zones Bill 2006, second and third readings — Parliament of Malaysia (Digital Hansard) 2006-12-06\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2006-12-06\nHansard, Dewan Rakyat, 2006-08-21: Baselines of Maritime Zones Bill 2006, second and third readings — Parliament of Malaysia (Digital Hansard) 2006-08-21\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2006-08-21",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:53:03.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-51cbe1c5b0",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "8 Spratly SW",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MA"
+   ],
+   "summary": "The Dewan Negara on 6 December 2006 passed the Baselines of Maritime Zones Bill 2006, providing for the declaration of the geographical coordinates of Malaysia's baselines, together with amendments to Emergency Ordinance No. 7 of 1969 and the Exclusive Economic Zone Act 1984; the Dewan Rakyat had passed them in August 2006 and the Cabinet had decided on 3 May 2006 to legislate, as a prerequisite for the CLCS submission.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2006-12-06",
+   "presort": "new move (novelty) — Baselines of Maritime Zones Act 2006 (with EEZ Act amendments) is new maritime-zone legislation underpinning the CLCS claim; nothing comparable in 2005 - declarative lead (coercive only once baselines upgrading disputed waters are actually declared). (group MY2006-baselines) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recWH6G9Sir86BLoD",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy; Chief of Navy Admiral Abdul Aziz Jaafar",
+   "suggestion_reasoning": "Basing a new submarine facing the Spratlys, with a stated mission of defending sovereignty around Swallow Reef, is a military deployment asserting the claim; demonstrative, with a declarative element. The source is a Japanese-language PDF digest of The Star (18 September 2009), so the excerpt may not be machine-checkable. [confidence: medium]",
+   "date_end": "2009-09-17",
+   "new_dyads": "MC MV MR",
+   "excerpt": "Turumbu Layang 周辺海域など、マレーシアの",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Sepanggar naval base, Sabah; Swallow Reef waters",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked. Source's wording for the place: “Sepanggar naval base, Sabah; Terumbu Layang-Layang waters”.",
+   "reviewer": "Angelo",
+   "sources": "海洋安全保障情報月報 2009年9月 (OPRF Maritime Security Monthly Report, September 2009), citing The Star, 18 September 2009 — Ocean Policy Research Foundation (OPRF), Sasakawa Peace Foundation 2009-10-01\nhttps://www.spf.org/oceans/wp/wp-content/pdf/200909.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:23:47.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-53b042614e",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "Malaysia's first submarine, the Scorpene-class KD Tunku Abdul Rahman, arrived at its home port of Sepanggar, Sabah, on 17 September 2009; Chief of Navy Admiral Abdul Aziz Jaafar said at the welcoming ceremony that it would deter potential aggressors and be used to protect Malaysia's sovereignty in areas such as Ambalat and the waters around Terumbu Layang-Layang.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2009-09-17",
+   "presort": "new move (novelty) — First submarine (KD Tunku Abdul Rahman) based at Sepanggar with a stated mission of protecting sovereignty around Swallow Reef is a new military capability; nothing comparable in 2008, which shows standing surface presence (ev-157020f48a). Demonstrative, issue military. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec8dhGmvEhMIDfwE",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Minister of Works Yong Khoon Seng; Ministry of Federal Territories",
+   "lat": 7.5,
+   "suggestion_reasoning": "An announced plan to extend the runway on an occupied disputed feature is planned construction; demonstrative. The answer is garbled (it also says the work was done in 2003), so whether a new extension was planned is uncertain. [confidence: low]",
+   "date_end": "2008-11-24",
+   "new_dyads": "MC MV MR",
+   "excerpt": "sekarang kita akan memanjangkan landasan ini dari 1,067meter ke 1,637 meter",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2008-11-24: Committee of Supply, Ministry of Works — Parliament of Malaysia (Digital Hansard) 2008-11-24\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2008-11-24",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:22:08.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-5fa4811d66",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "No enforcement yet",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "Deputy Works Minister Yong Khoon Seng told the Dewan Rakyat on 24 November 2008 that the airstrip on Pulau Layang-Layang, under the Federal Territories Ministry, would be lengthened from 1,067 m to 1,637 m.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2008-11-24",
+   "presort": "unclear — Announced plan to lengthen the Swallow Reef runway to 1,637 m; the answer is garbled and also describes the 2003 work. Settle whether a new extension was actually begun (behaviour, not a plan); a plan alone - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recV6qaClidd7Bv4U",
+   "archived_on": "2026-11-25",
+   "actors": "Minister of Agriculture and Agro-based Industry Mustapa Mohamed; MMEA; Department of Fisheries; Marine Police",
+   "suggestion_reasoning": "A ministerial statement asserting sovereignty over waters entered by Vietnamese fishermen and pledging enforcement is a verbal assertion; declarative. It also documents the 2007 enforcement cases off Sarawak, for which no separate event is compiled. [confidence: high]",
+   "date_end": "2008-05-29",
+   "new_dyads": "MV",
+   "excerpt": "Ini merupakan pengairan kita, kita ada kedaulatan ke atas kawasan tersebut maka kita akan pertahankan kedaulatan kita",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Sarawak waters",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sarawak coast 99%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2008-05-29: Ministry of Agriculture reply (fishing intrusion off Sarawak) — Parliament of Malaysia (Digital Hansard) 2008-05-29\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2008-05-29",
+   "pull_request": 58,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:03:16.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-6217ed8a3e",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Routine report",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "Agriculture Minister Mustapa Mohamed told the Dewan Negara on 29 May 2008 that there had been eight intrusion cases off Sarawak the previous year, mostly by Vietnamese fishermen, and that because Malaysia had sovereignty over those waters it would defend it through the Malaysian Maritime Enforcement Agency, the Fisheries Department and the marine police.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2008-05-29",
+   "presort": "unclear — Ministerial sovereignty-and-enforcement pledge over Sarawak waters is a routine reaffirmation; the 2007 record has no declarative candidate (the last ones are 2000). Settle by whether such Hansard statements were made in 2007; likely reject as one more reaffirmation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recMN7edIXyZd0fRq",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysia Police Marine Unit (Sarawak)",
+   "suggestion_reasoning": "Arrest of foreign fishing boats is imposition of punishment; coercive. The source is a backbench remark ('baru semalam'), not a ministerial answer, so the day is inferred from the sitting date and the location from the Sarawak context of the debate. [confidence: low]",
+   "date_end": "2005-06-21",
+   "new_dyads": "MV",
+   "excerpt": "Jadi baru dilaporkan nelayan Vietnam baru semalam ditangkap beberapa buah bot oleh polis marin.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Sarawak waters",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sarawak coast 99%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2005-06-22: Debate on foreign fishing intrusion off Sarawak — Parliament of Malaysia (Digital Hansard) 2005-06-22\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2005-06-22",
+   "pull_request": 58,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:51:18.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-719d0ce647",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-19f2c0991a ",
+   "suggested_dyads": [
+    "MV"
+   ],
+   "summary": "Marine police arrested several Vietnamese fishing boats on or about 21 June 2005, a government backbencher (Fadillah Yusof, MP for Petra Jaya) told the Dewan Rakyat the next day in a debate on foreign trawler intrusion off Sarawak; another government MP said Sarawak marine police had arrested 30 foreign fishing boats in 2004.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2005-06-21",
+   "presort": "continuation of ev-19f2c0991a (a candidate, provisional) — Provisional continuation of ev-19f2c0991a (2004 undecided): marine-police arrests of Vietnamese boats off Sarawak repeat the 2004 seizures and detentions (the same debate cites 30 arrests in 2004); same method - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recSvk4xsoG1GXBvI",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Maritime Enforcement Agency (APMM/MMEA); Deputy Minister in the Prime Minister's Department Ahmad Maslan",
+   "possible_duplicate_of": "ev-c880382334",
+   "lat": 5.9,
+   "suggestion_reasoning": "Arrest, prosecution and forfeiture of foreign fishing boats, with continuous patrols at disputed shoals, is imposition of punishment; coercive. One event for the year; the same answer gives national 2006-2009 arrest totals (Vietnam 143 cases, China 4). [confidence: high]",
+   "date_end": "2009-12-14",
+   "new_dyads": "MV MC",
+   "excerpt": "Bagi tahun 2009 sehingga 14 Disember 2009, 14 kes tangkapan dilakukan yang melibatkan lapan bot Vietnam",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "North Luconia Shoals and South Luconia Shoals, about 65 nm north-west of Miri, Sarawak",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Possible duplicate of ev-c880382334. Source's wording for the place: “Beting Raja Jarum and Beting Patinggi Ali (South Luconia Shoals), about 65 nm north-west of Miri, Sarawak”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2009-12-16: Oral answers: foreign trawler intrusion off Sarawak — Parliament of Malaysia (Digital Hansard) 2009-12-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2009-12-16",
+   "pull_request": 58,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:22:43.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-7588f91c85",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-c880382334",
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "duplicate_of": "ev-c880382334",
+   "summary": "The Malaysian Maritime Enforcement Agency arrested 14 foreign fishing boats off Sarawak in 2009 up to 14 December (eight Vietnamese, three Thai, two Indonesian and one Chinese), jailing or fining all 126 skippers and crew and having the boats forfeited; it said it had identified the Beting Raja Jarum and Beting Patinggi Ali shoals as the focus of foreign intrusion and patrolled them continuously through the year.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2009-01-01",
+   "presort": "continuation of ev-c880382334 (a candidate, provisional) — Provisional continuation of ev-c880382334 (2008 undecided): MMEA arrests off Sarawak (14 boats vs 7 in 2008, mostly Vietnamese) with forfeiture, same method; more intruders is more to react to. Continuous patrols at the Luconia shoals may be worth a scope check. Not a duplicate: 2008 is not accepted. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 112.55,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recHLEg9R3OTyqvhQ",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Minister of Foreign Affairs A. Kohilan Pillay; Dewan Rakyat",
+   "suggestion_reasoning": "A ministerial statement in Parliament of Malaysia's sovereignty position over disputed features is a verbal assertion; declarative. [confidence: high]",
+   "date_end": "2009-11-19",
+   "new_dyads": "MC MV MP MB",
+   "excerpt": "Malaysia berpendirian bahawa pulau dan terumbu yang terletak di kawasan Pelantar Benua Malaysia adalah milik Malaysia",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "location_name": "Laut China Selatan (islands and reefs on Malaysia's continental shelf)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2009-11-19: Committee of Supply, Ministry of Foreign Affairs — Parliament of Malaysia (Digital Hansard) 2009-11-19\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2009-11-19",
+   "pull_request": 58,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:24:25.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-75ae657584",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-6217ed8a3e",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MB"
+   ],
+   "summary": "Deputy Foreign Minister A. Kohilan Pillay told the Dewan Rakyat on 19 November 2009 that Malaysia's position was that the islands and reefs located on Malaysia's continental shelf in the South China Sea, also claimed by Vietnam, Brunei, the Philippines and China, belonged to Malaysia, with the dispute to be handled in the spirit of the 2002 DOC.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2009-11-19",
+   "presort": "continuation of ev-6217ed8a3e (a candidate, provisional) — Provisional continuation of ev-6217ed8a3e (2008 undecided): one more ministerial statement in Parliament that the features on Malaysia's shelf belong to Malaysia; no new kind or wider claim - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rechgyshcXgifE9F3",
+   "archived_on": "2026-11-25",
+   "actors": "Cabinet of Malaysia; National Security Council",
+   "suggestion_reasoning": "A Cabinet decision to prepare an extended continental shelf claim in disputed waters is a domestic administrative act preparing a legal claim; demonstrative (a coder may treat it as declarative). Dated by the minister's later account. [confidence: medium]",
+   "date_end": "2006-04-12",
+   "new_dyads": "MC MV MP MB",
+   "excerpt": "Jemaah Menteri telah bermesyuarat pada 12 April 2006, telah menimbang dan bersetuju supaya Malaysia mengemukakan submission kepada Suruhanjaya mengenai Had-had Pelantar Benua.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Continental shelf off Sarawak and western Sabah (South China Sea)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sarawak coast 99%; Sabah coast 15%); 7 Spratly SE (Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2009-03-24: Continental Shelf (Amendment) Bill 2009, second reading — Parliament of Malaysia (Digital Hansard) 2009-03-24\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2009-03-24",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:52:51.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9ff49813c4",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MB"
+   ],
+   "summary": "On 12 April 2006 the Malaysian Cabinet agreed that Malaysia would make a submission to the Commission on the Limits of the Continental Shelf claiming continental shelf beyond 200 nautical miles off Sarawak and western Sabah in the South China Sea, with follow-up coordinated by the National Security Council (as the Natural Resources Minister told the Dewan Rakyat on 24 March 2009).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2006-04-12",
+   "merge_into_candidate": "ev-51cbe1c5b0",
+   "presort": "same move as ev-51cbe1c5b0 — The 12 Apr 2006 Cabinet decision to prepare a CLCS submission is the decision that the baselines law (ev-51cbe1c5b0, Cabinet 3 May 2006, 'prerequisite for the CLCS submission') implements; a decision, not behaviour, so it belongs with that move rather than standing alone. (group MY2006-baselines) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recbdCg9SFFXYdhJx",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Agriculture and Agro-based Industry; Department of Fisheries; enforcement agencies",
+   "suggestion_reasoning": "Arrests and court fines on foreign fishermen are imposition of punishment; coercive. One event for the year's enforcement; the 17 Indonesian and 4 Thai cases were probably outside the South China Sea, and the Taiwanese case location is not given. [confidence: medium]",
+   "date_end": "2006-12-31",
+   "new_dyads": "MV MR",
+   "excerpt": "sebanyak 17 kes melibatkan nelayan Indonesia, 15 kes nelayan Vietnam",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Malaysian waters",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Malaysian EEZ 56%); 7 Spratly SE (Malaysian EEZ 25%); 8 Spratly SW (Malaysian EEZ 19%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2007-07-10: Oral answers: foreign fishermen intrusion — Parliament of Malaysia (Digital Hansard) 2007-07-10\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2007-07-10",
+   "pull_request": 58,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:51:28.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-a6ff7508c3",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE",
+    "8 Spratly SW"
+   ],
+   "note": "continuation of ev-719d0ce647",
+   "suggested_dyads": [
+    "MV",
+    "MR"
+   ],
+   "summary": "The Agriculture Minister told the Dewan Rakyat on 10 July 2007 that in 2006 Malaysian authorities arrested 315 foreign fishermen in 39 cases of intrusion, including 15 cases involving Vietnamese fishermen, with courts imposing fines totalling RM13.975 million.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2006-01-01",
+   "presort": "continuation of ev-719d0ce647 (a candidate, provisional) — Provisional continuation of ev-719d0ce647 (2005 undecided): arrests and court fines on foreign fishermen, 15 Vietnamese cases, the same method as the 2005 Sarawak arrests; no number shows a rise - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recUXmWTo4NNzZXtu",
+   "archived_on": "2026-11-25",
+   "actors": "Government of Malaysia (fisheries/marine research authorities)",
+   "lat": 7.5,
+   "suggestion_reasoning": "Opening a state research station on an occupied disputed feature is unilateral administration; demonstrative. The source is a PDF read through WebFetch, so the excerpt may not be machine-checkable; Lai et al. (2021) instead say MARSAL was established in 1987, so the July 2004 date may refer to a new facility. [confidence: low]",
+   "date_end": "2004-07-31",
+   "new_dyads": "MC MV MR",
+   "excerpt": "In July 2004, a marine research facility, MARSAL (Marine Research Station Pulau Layang-Layang) commenced operations.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 404); excerpt not checked. Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Malaysia and South China Sea: Policy, Strategy and Risks — Centre for Defence and International Security Studies (CDiSS), National Defence University of Malaysia 2020-01-01\nhttps://www.upnm.edu.my/images/CDiSS/MALAYSIA_AND_SOUTH_CHINA_SEA_POLICY_STRATEGY_AND_RISKS.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:50:29.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b9625df7cd",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Lack of clear resources",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "In July 2004 a marine research facility, the Marine Research Station Pulau Layang-Layang (MARSAL), began operating on Swallow Reef.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2004-07-01",
+   "presort": "unclear — MARSAL research station 'began operating' July 2004, but Lai et al. date MARSAL to 1987 and the source could not be fetched. If a new state facility opened in 2004 it is a novelty against 2003's runway work (ev-380eca7195); if 1987, not a 2004 act - settle the date. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rechBQ4xqiYPXWYSq",
+   "archived_on": "2026-11-25",
+   "actors": "Permanent Mission of Malaysia to the United Nations; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A diplomatic note rejecting another claimant's objection and its territorial claim is a verbal assertion; declarative. The only source is a scanned UN PDF read by OCR, so the excerpt is not machine-checkable. [confidence: high]",
+   "date_end": "2009-08-21",
+   "new_dyads": "MP",
+   "excerpt": "Malaysia has never recognised the Philippines’ claim to the Malaysian state of Sabah, formerly known as North Borneo.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:42:12.000Z",
+   "flags": [
+    "Excerpt not checked"
+   ],
+   "location_name": "Southern part of the South China Sea; Sabah",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source is application/pdf; excerpt not checked.\nSub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Note verbale HA 41/09 from the Permanent Mission of Malaysia (21 August 2009) — United Nations (CLCS communications) 2009-08-21\nhttps://digitallibrary.un.org/record/3897205/files/mys_re_phl_2009re_mys_vnm_e.pdf",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:23:34.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-bfe68cac9e",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MP"
+   ],
+   "summary": "In note verbale HA 41/09 of 21 August 2009, replying to the Philippines' note of 4 August 2009, Malaysia's Permanent Mission defended the Malaysia–Vietnam joint submission as legitimate under UNCLOS, stated that Malaysia had never recognised the Philippines' claim to Sabah, which had no basis in international law, and asked the Commission to consider the joint submission.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2009-08-21",
+   "merge_into_candidate": "ev-1b46d2adfd",
+   "presort": "same move as ev-1b46d2adfd — Note verbale HA 41/09 rejecting the Philippines' objection (and its Sabah claim) defends the joint submission (ev-1b46d2adfd): same intensification. (group MY2009-CLCS) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recstGt3PbsFslrs5",
+   "archived_on": "2026-11-25",
+   "actors": "Petronas / Petronas Carigali Sdn Bhd (state oil company); Murphy Sabah Oil Co.",
+   "suggestion_reasoning": "Licensing by a state oil company of exploration acreage in waters claimed by another claimant is unilateral resource development; demonstrative. The OGJ item is datelined 29 January 2003 and gives no signing day; Malaysiakini (16 June 2003) says Malaysia claimed the blocks 'since early this year'. [confidence: medium]",
+   "date_end": "2003-01-29",
+   "new_dyads": "MB",
+   "excerpt": "has signed two production sharing contracts with Malaysia's Petronas Carigali Sdn. Bhd.\n\nSince early this year, however, the deepwater blocks have also been claimed by Malaysia whose state-owned oil firm Petronas awarded identical acreage to US Murphy Oil and its own subsidiary, Petronas Carigali",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Blocks L and M, deepwater off Sabah (overlapping Brunei's Blocks J and K)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 7 Spratly SE (Sabah coast 85%); 10 Far South (Sabah coast 15%).",
+   "reviewer": "Angelo",
+   "sources": "Murphy acquires additional acreage off Malaysia — Oil & Gas Journal 2003-01-29\nhttps://www.ogj.com/general-interest/companies/article/17255598/murphy-acquires-additional-acreage-off-malaysia\nFrench firm Total suspends oil work amid Brunei-M'sia spat — Malaysiakini (AFP) 2003-06-16\nhttps://www.malaysiakini.com/news/15952",
+   "pull_request": 58,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:48:25.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-c808d1082e",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE",
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "MB"
+   ],
+   "summary": "In January 2003 Murphy Sabah Oil Co., a subsidiary of US-based Murphy Oil, signed two production sharing contracts with Petronas Carigali, the exploration arm of Malaysia's state oil company Petronas, for deepwater Blocks L and M off Sabah, acreage that overlapped Blocks J and K awarded by Brunei in 2002.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2003-01-01",
+   "merge_into_candidate": "ev-eea8fc07e9",
+   "presort": "same move as ev-eea8fc07e9 — Petronas licensing Blocks L and M over Brunei's J and K (Jan 2003) is the claim the RMN enforced in March (ev-eea8fc07e9): one intensification over the same acreage. If the coder prefers to count the licensing separately it is a demonstrative novelty against nothing in 2002. (group MY2003-blockL) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recjW1oP1yS4bfKXe",
+   "archived_on": "2026-11-25",
+   "actors": "Malaysian Maritime Enforcement Agency (APMM/MMEA); Department of Fisheries",
+   "suggestion_reasoning": "Arrests of foreign fishing boats, including Chinese and Vietnamese boats off Sarawak, are imposition of punishment; coercive. One event for the year's enforcement; the arrests of Chinese boats are new relative to the earlier Hansard statistics found for this decade. [confidence: medium]",
+   "date_end": "2008-12-31",
+   "new_dyads": "MV MC",
+   "excerpt": "statistik tangkapan kapal pukat tunda asing atau bot nelayan asing untuk tahun 2008 ialah tujuh kes iaitu tiga bot Vietnam, dua bot Republik Rakyat China\n\nBagi bot asing pula daripada Januari hingga Oktober 2008, 58 kes tangkapan melibatkan 404 orang nelayan ditangkap",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Sarawak waters and Malaysian waters generally",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Sarawak coast 99%).",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2009-12-16: Oral answers: foreign trawler intrusion off Sarawak — Parliament of Malaysia (Digital Hansard) 2009-12-16\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2009-12-16\nHansard, Dewan Rakyat, 2008-11-13: Oral answers: fisheries offences — Parliament of Malaysia (Digital Hansard) 2008-11-13\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2008-11-13",
+   "pull_request": 58,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T21:00:06.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-c880382334",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Quite routine",
+   "suggested_dyads": [
+    "MV",
+    "MC"
+   ],
+   "summary": "Malaysian enforcement agencies arrested foreign fishing boats throughout 2008: off Sarawak the MMEA recorded seven cases (three Vietnamese, two Chinese, one Thai and one Philippine boat), and nationally the Agriculture Ministry reported 58 cases involving 404 foreign fishermen from Thailand, Indonesia, the Philippines and Vietnam between January and October, with fines of RM12.2 million.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2008-01-01",
+   "presort": "unclear — 2008 arrests (7 off Sarawak incl. 2 Chinese boats; 58 national cases) continue the enforcement of 2004-2006 (ev-a6ff7508c3), and ev-6217ed8a3e records 8 Sarawak cases in 2007, but no 2007 candidate exists to name. Arresting Chinese boats is more to react to, not a new method (counterfactual) - likely reject as continuation once 2007 is filled. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recQrRRIGItE3zIwV",
+   "archived_on": "2026-11-25",
+   "actors": "Deputy Defence Minister Zainal Abidin Zin; Royal Malaysian Navy",
+   "lat": 7.5,
+   "suggestion_reasoning": "New construction by the Navy on an occupied disputed feature, reported by a minister, is unilateral physical development; demonstrative. The construction date is not given, only the date of the statement. [confidence: medium]",
+   "date_end": "2004-12-02",
+   "new_dyads": "MC MV MR",
+   "excerpt": "pihak tentera laut telah dapat membina satu tukun baru",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Swallow Reef",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Pulau Layang-Layang (Swallow Reef)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2004-12-02: Committee of Supply, Ministry of Defence — Parliament of Malaysia (Digital Hansard) 2004-12-02\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2004-12-02",
+   "pull_request": 58,
+   "new_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:51:03.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-e67564b23f",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-380eca7195",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MR"
+   ],
+   "summary": "Deputy Defence Minister Zainal Abidin Zin told the Dewan Rakyat on 2 December 2004 that Malaysia occupied Pulau Layang-Layang, that the Navy was tasked to guard it, and that the Navy had built a new mound (tukun) there for birds, making it a draw for tourists; he argued that earlier occupation made a claim stronger in international law.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2004-12-02",
+   "presort": "continuation of ev-380eca7195 (a candidate, provisional) — Provisional continuation of ev-380eca7195 (2003 undecided): further small Navy construction (a bird mound) on Swallow Reef, construction date not given, continues the 2003 development of the outpost at no higher level; the minister's statement adds nothing new - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 113.75,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recHeNJkpBDB1OIFy",
+   "archived_on": "2026-11-25",
+   "actors": "Ministry of Defence; Royal Malaysian Navy; Royal Malaysian Air Force",
+   "suggestion_reasoning": "Standing naval deployments and air patrols around occupied disputed features are unilateral presence without confrontation; demonstrative. Recorded as the routine-patrol event for 2007. [confidence: medium]",
+   "date_end": "2007-05-15",
+   "new_dyads": "MC MV MP MR",
+   "excerpt": "dua buah kapal di perairan Gugusan Semarang, peninjau Laut China Selatan",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "the Semarang Peninjau group (Spratly features held by Malaysia), South China Sea",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Gugusan Semarang Peninjau (Spratly features held by Malaysia), South China Sea”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Negara, 2007-05-15: Ministry of Defence reply (patrols off Sabah) — Parliament of Malaysia (Digital Hansard) 2007-05-15\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-negara/2007-05-15",
+   "pull_request": 58,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:56:28.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-e97cd9ef04",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "Routine behaviour",
+   "suggested_dyads": [
+    "MC",
+    "MV",
+    "MP",
+    "MR"
+   ],
+   "summary": "Winding up in the Dewan Negara on 15 May 2007, the Defence Ministry said the Royal Malaysian Navy had deployed two ships in the waters of the Gugusan Semarang Peninjau group in the South China Sea and that the Royal Malaysian Air Force flew maritime patrols over the South China Sea twice a week.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2007-05-15",
+   "presort": "unclear — Two RMN ships in Gugusan Semarang Peninjau waters and twice-weekly RMAF patrols are the standing garrison presence; the 2006 record has no patrol candidate, almost certainly a gap rather than an absence (the stations date from 1983-1999). Settle with 2006 deployment levels; if similar, maintenance - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recL4gx0w4fLOexd5",
+   "archived_on": "2026-11-25",
+   "actors": "Royal Malaysian Navy",
+   "suggestion_reasoning": "Naval interference forcing another claimant's licensed oil operator out of disputed waters is physical interference; coercive. Sources are press reports citing International Oil Daily and a Brunei newspaper; no day is given. [confidence: medium]",
+   "date_end": "2003-03-31",
+   "new_dyads": "MB",
+   "excerpt": "A drilling team from Total was chased off the block by the Malaysian navy in March, according to the Oil Daily , quoting reports from a Brunei newspaper.\n\nThe ambiguity over the disputed waters resulted in a skirmish in March 2003, when a Malaysian navy patrol vessel chased a Total survey team out of the disputed area",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Brunei-awarded Block J, deepwater off Brunei/Sabah (Malaysian Block L)",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Brunei coast 93%; Sabah coast 15%); 7 Spratly SE (Sabah coast 85%).",
+   "reviewer": "Angelo",
+   "sources": "French firm Total suspends oil work amid Brunei-M'sia spat — Malaysiakini (AFP) 2003-06-16\nhttps://www.malaysiakini.com/news/15952\nOil cache creates a lot of saber rattling in Cambodia and Vietnam (reprint of Wall Street Journal report) — KI Media (blog reprint) 2007-08-16\nhttps://ki-media.blogspot.com/2007/08/oil-cache-creates-lot-of-saber-rattling.html",
+   "pull_request": 58,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:49:03.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-eea8fc07e9",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "10 Far South",
+    "7 Spratly SE"
+   ],
+   "suggested_dyads": [
+    "MB"
+   ],
+   "summary": "In March 2003 a Royal Malaysian Navy vessel chased a Total drilling/survey team, working for Brunei on its Block J, out of the area Malaysia claimed as its Block L; Total then suspended work on the block.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2003-03-01",
+   "presort": "new move (novelty) — Naval vessel chasing Brunei's Total team out of Block J/L is physical interference against Brunei; nothing comparable in 2002 (no MY candidates at all for 2001-2002), a new method - coercive lead of the Block L/M dispute move. (group MY2003-blockL) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recSZdULTHKYeV3rj",
+   "archived_on": "2026-11-25",
+   "actors": "Minister in the Prime Minister's Department Mohamed Nazri Abdul Aziz; Dewan Rakyat",
+   "lat": 8.1,
+   "suggestion_reasoning": "A ministerial statement in Parliament defending the 1999 occupation of two reefs as the exercise of Malaysian sovereign rights, and rejecting the other claimants' protests, is a verbal assertion of the claim; declarative. [confidence: high]",
+   "date_end": "2000-04-12",
+   "new_dyads": "MP MV MC",
+   "excerpt": "Kehadiran Malaysia hanya sebagai melaksanakan haknya ke atas terumbu-terumbu yang merupakan sebahagian daripada wilayahnya.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T19:40:31.000Z",
+   "location_name": "Erica Reef and Investigator Shoal",
+   "run": [
+    "MY-2000s"
+   ],
+   "machine_note": "Source's wording for the place: “Terumbu Siput and Terumbu Peninjau (Erica Reef and Investigator Shoal)”.",
+   "reviewer": "Angelo",
+   "sources": "Hansard, Dewan Rakyat, 2000-04-12: Committee of Supply, Prime Minister's Department (Spratlys) — Parliament of Malaysia (Digital Hansard) 2000-04-12\nhttps://hansard.parlimen.gov.my/ms-MY/hansard/dewan-rakyat/2000-04-12",
+   "pull_request": 58,
+   "new_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "7 Spratly SE",
+   "fldWsFH4vyPE1xjxg": "2026-11-25T20:47:50.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-f7b3dd14b7",
+   "run_id": "MY-2000s",
+   "new_subregions": [
+    "7 Spratly SE"
+   ],
+   "note": "continuation of ev-e08811c3b7",
+   "suggested_dyads": [
+    "MP",
+    "MV",
+    "MC"
+   ],
+   "summary": "Winding up a Dewan Rakyat debate on 12 April 2000, Minister in the Prime Minister's Department Mohamed Nazri Abdul Aziz said Malaysia had built facilities on Erica Reef and Investigator Shoal the previous year for marine scientific research in its EEZ, that its presence there was the exercise of its rights over reefs that were part of its territory, and that protests by other claimants had been dealt with through the Foreign Minister's statements.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2000-04-12",
+   "presort": "continuation of ev-e08811c3b7 (a candidate, provisional) — Provisional continuation of ev-e08811c3b7 (1999 is undecided candidates of MY-1990s): a minister in Parliament defending the Erica/Investigator presence as the exercise of Malaysia's rights, the same method and wording as Toyad's 29 Jul 1999 Dewan Negara answer; no new kind or wider claim - likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "lon": 114.13333,
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "MY",
+   "new_domains": [
+    "domestic",
     "diplomatic"
    ]
   }

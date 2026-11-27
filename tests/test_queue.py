@@ -411,3 +411,22 @@ def test_a_retired_move_id_is_never_reused(tmp_path, monkeypatch):
     assert queue.next_move_id("CN", 2017, moves) == "CN201704"
     assert queue.next_move_id("CN", 2018, moves) == "CN201801"
 
+
+
+def test_a_merge_follows_a_lead_that_formed_its_move_in_an_earlier_sitting(opened):
+    """2026-11-25: MY-2000s's lead was made a new move in one sitting and its merges decided in the next;
+    a merge into that candidate goes into the move the lead formed."""
+    cands = candidates(opened)
+    pick = lambda prefix: next(x for x in cands if x["location_name"].startswith(prefix))
+    scar, thitu = pick("Scarb"), pick("Thitu")
+    first = [{"event_id": scar["event_id"], "action": "new_move", "note": "First this year.",
+              "new_move": {"type": "coercive", "intensification_criterion": "frequency", "domains": ["physical"],
+                           "issues": ["military"], "dyads": ["CP"], "subregions": ["4"]}}]
+    queue.apply_decisions(first, REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    move = {e["event_id"]: e for e in rows(opened, "events")}[scar["event_id"]]["move_id"]
+    assert move
+    later = [{"event_id": thitu["event_id"], "action": "merge", "move_of_event": scar["event_id"], "note": "Same operation."}]
+    counts = queue.apply_decisions(later, REVIEWER, DATE, opened, RAW_XLSX, RAW_MAVD)
+    assert counts["merged"] == 1
+    ev = {e["event_id"]: e for e in rows(opened, "events")}[thitu["event_id"]]
+    assert ev["status"] == "accepted" and ev["move_id"] == move
