@@ -56,7 +56,7 @@ def compute_aggregates(moves: list[dict]) -> dict:
     years = list(range(1970, max([int(m["year"]) for m in accepted] + [1970]) + 1))
     dims = schema.TYPE_FLAGS + schema.DOMAIN_FLAGS + schema.ISSUE_FLAGS
     by_claimant = {}
-    for code in schema.CLAIMANT_CODES:
+    for code in schema.DISPLAY_ORDER:
         mine = [m for m in accepted if m["claimant"] == code]
         per_year = {}
         for y in years:
@@ -74,7 +74,7 @@ def compute_aggregates(moves: list[dict]) -> dict:
         by_claimant[code] = {"years": per_year, "totals": totals, "subregions": per_loc, "subregion_years": loc_years}
     return {"years": years, "types": list(schema.TYPE_FLAGS), "domains": list(schema.DOMAIN_FLAGS),
             "issues": list(schema.ISSUE_FLAGS), "subregions": list(schema.SUBREGION_FLAGS),
-            "claimants": list(schema.CLAIMANT_CODES),
+            "claimants": list(schema.DISPLAY_ORDER),
             "n_moves": len(accepted), "n_pending": sum(1 for m in moves if m["status"] == "pending"),
             "by_claimant": by_claimant}
 
@@ -208,7 +208,7 @@ def map_data(events: list[dict], moves: list[dict], sources_by_event: dict) -> d
     move_by_id = {m["move_id"]: m for m in moves if m["status"] == "accepted"}
     out = []
     counts = {"n_events": 0, "n_points": 0, "by_claimant": {c: {"events": 0, "points": 0, "subregions": {str(i): 0 for i in range(1, 11)}, "years": {}}
-                                                             for c in schema.CLAIMANT_CODES}}
+                                                             for c in schema.DISPLAY_ORDER}}
     for e in sorted(events, key=lambda e: (e["date_start"], e["event_id"])):
         m = move_by_id.get(e["move_id"])
         if e["status"] != "accepted" or m is None:
@@ -261,7 +261,7 @@ def window_scores(moves: list[dict], first: int, last: int, span: int = WINDOW_S
     and for each; `max` is each selection's highest score over every window, the map's fixed scale.
     With `shared`, a move's weight is shared among the sub-regions it covers (a sea-wide claim on nine of
     them adds a ninth to each) instead of counted in full on every one; scores keep two decimals."""
-    keys = ["ALL", *schema.CLAIMANT_CODES]
+    keys = ["ALL", *schema.DISPLAY_ORDER]
     per_year = {k: {} for k in keys}   # key -> year -> ten sums
     for m in moves:
         if m["status"] != "accepted":
@@ -383,11 +383,11 @@ def feature_pages(published: list[dict], events_by_move: dict, holders: dict, na
                     "subregion": sr, "xy": [round(v, 1) for v in project(f["lon"], f["lat"])],
                     "names": [(label, f[c]) for c, label in (("name_zh", "Chinese"), ("name_vi", "Vietnamese"), ("name_fil", "Filipino"), ("name_ms", "Malay")) if f[c]],
                     "also": also[:24], "wikidata": f.get("wikidata", ""),
-                    "held": {"by": [names.get(c, c) for c in h["holders"]], "codes": h["holders"], "since": h["since"], "note": h["note"], "source": h["source"]} if h else None,
+                    "held": {"by": [names.get(c, c) for c in sorted(h["holders"], key=lambda c: names.get(c, c))], "codes": sorted(h["holders"], key=lambda c: names.get(c, c)), "since": h["since"], "note": h["note"], "source": h["source"]} if h else None,
                     "moves": [{"id": m["move_id"], "claimant": m["claimant"], "year": int(m["year"]),
                                "types": [TYPE_LABELS[t] for t in schema.TYPE_FLAGS if m[t] == "1"],
                                "text": re.sub(r"\s+", " ", m["description"]).strip()[:240]} for m in ms],
-                    "by_claimant": sorted(by.items(), key=lambda t: -t[1])})
+                    "by_claimant": sorted(by.items(), key=lambda t: names.get(t[0], t[0]))})
     return out
 
 
@@ -494,7 +494,7 @@ FILE_WHAT = {
     "areas.csv": "Named sea areas (coasts, EEZs, seas, oil blocks) with their share of each sub-region, for suggesting sub-regions.",
     "area_points.csv": "Sourced points for the oil and gas blocks in areas.csv.",
     "occupation.csv": "Who holds each occupied feature, and since when (Wikipedia's list of Spratly features; the Paracels; Scarborough Shoal).",
-    **{f"BASELINE-{c}.md": f"{n}: pre-1970 baseline actions, with sources." for c, n in schema.CLAIMANTS},
+    **{f"BASELINE-{c}.md": f"{n}: pre-1970 baseline actions, with sources." for c, n in sorted(schema.CLAIMANTS, key=lambda t: t[1])},
     "COLUMNS.md": "Column definitions of every table (data/README.md at this version).",
     "SPEC.md": "The project specification at this version.",
     "CODEBOOK-chubb-2021-appendix.txt": "Andrew Chubb's methodology appendix: the coding rules (CC0).",
@@ -516,8 +516,8 @@ def process_note(agree: dict, build_date: str) -> str:
         "",
         f"South China Sea Developments Tracker, a note on method (figures as built on {build_date}).",
         "",
-        "The 1970-2015 moves for China, Vietnam and the Philippines are Andrew Chubb's (MATS 1.02), loaded",
-        "unchanged. Everything after 2015, and every move by Malaysia, Indonesia, Taiwan and Brunei, is coded by",
+        "The 1970-2015 moves for China, the Philippines and Vietnam are Andrew Chubb's (MATS 1.02), loaded",
+        "unchanged. Everything after 2015, and every move by Brunei, Indonesia, Malaysia and Taiwan, is coded by",
         "the project with Chubb's rules. This note explains how the events behind those moves are found and",
         "checked, and where AI tools help.",
         "",
@@ -609,6 +609,15 @@ def release_context(root: Path, data_dir: Path, out_dir: Path, build_date: str) 
         m = release.build_assets(root, tag, out_dir / "downloads")
     else:
         m = release.working_assets(data_dir, out_dir / "downloads", date=build_date + "T00:00:00+00:00", root=root)
+    by_name = {c: n for c, n in schema.CLAIMANTS}
+    def file_key(f):          # baselines in claimant-name order, everything else where the release puts it
+        mm = re.fullmatch(r"BASELINE-([A-Z]{2})\.md", f["name"])
+        return (0, by_name.get(mm.group(1), mm.group(1))) if mm else (0, "")
+    first = next((i for i, f in enumerate(m["files"]) if f["name"].startswith("BASELINE-")), None)
+    if first is not None:
+        base = sorted([f for f in m["files"] if f["name"].startswith("BASELINE-")], key=file_key)
+        rest = [f for f in m["files"] if not f["name"].startswith("BASELINE-")]
+        m["files"] = rest[:first] + base + rest[first:]
     for f in m["files"]:
         f["what"] = FILE_WHAT.get(f["name"], "")
         f["size_label"] = size_label(f["bytes"])
@@ -627,7 +636,8 @@ def git_describe(root: Path = ROOT) -> str:
 
 def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Path = ROOT) -> dict:
     moves = read_csv(data_dir / "moves.csv")
-    claimants = read_csv(data_dir / "claimants.csv")
+    order = {c: i for i, c in enumerate(schema.DISPLAY_ORDER)}
+    claimants = sorted(read_csv(data_dir / "claimants.csv"), key=lambda c: (order.get(c["code"], len(order)), c["name"]))
     events = read_csv(data_dir / "events.csv")
     events_by_move: dict[str, list[dict]] = {}
     for e in events:

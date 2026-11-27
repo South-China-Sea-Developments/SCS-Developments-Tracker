@@ -14,6 +14,9 @@ CLAIMANTS = [
     ("BN", "Brunei"),
 ]
 CLAIMANT_CODES = [c for c, _ in CLAIMANTS]
+# the order the site lists and presents claimants in: alphabetical by name (the maintainer, 2026-11-27).
+# CLAIMANTS keeps the data order (claimants.csv, MATS's three first).
+DISPLAY_ORDER = [c for c, _ in sorted(CLAIMANTS, key=lambda t: t[1])]
 
 TYPE_FLAGS = ["declarative", "demonstrative", "coercive", "force"]
 TYPE_LABELS = {"declarative": "Declarative", "demonstrative": "Demonstrative", "coercive": "Coercive",
