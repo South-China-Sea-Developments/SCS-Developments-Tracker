@@ -1,0 +1,423 @@
+{
+ "run_id": "GAPS-20261124",
+ "presorted_by": "claude-code/opus",
+ "date": "2026-11-27",
+ "items": [
+  {
+   "event_id": "ev-b31cb64a99",
+   "disposition": "continuation",
+   "of": "CN201504",
+   "criterion": null,
+   "group": null,
+   "reason": "Xi's congress report praises the Spratly construction that CN201504 already records (ongoing through 2020); claiming progress in a speech is not a new method — continuation. If the coder counts the first Party Congress endorsement as a declarative novelty, a new move."
+  },
+  {
+   "event_id": "ev-a7cbb22494",
+   "disposition": "continuation",
+   "of": "CN201703",
+   "criterion": null,
+   "group": null,
+   "reason": "The 2018 summer ban ran over the same waters and the same extended dates (1 May to 16 August) set in 2017 (CN201703, ongoing through 2021) — continuation."
+  },
+  {
+   "event_id": "ev-b0add85e7f",
+   "disposition": "continuation",
+   "of": "CN201703",
+   "criterion": null,
+   "group": null,
+   "reason": "Rejecting the Philippine protest against the annual moratorium defends the ban recorded in CN201703 (ongoing through 2021); a spokesperson's rebuttal adds no new method — continuation."
+  },
+  {
+   "event_id": "ev-b323dc161d",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A PLA Navy ship, a CCG ship and 42 militia vessels massed inside Pag-asa's 12 nm, with nothing like it in the 2022 record (only the CCG debris seizure, CN202203); the last Thitu swarm is CN201706, ended 2019, so this is new again. The coder may instead merge it into the 2023 Thitu move CN202306, or reject it if the swarming ran unrecorded through 2020–22."
+  },
+  {
+   "event_id": "ev-1f4bc23b24",
+   "disposition": "continuation",
+   "of": "CN202305",
+   "criterion": null,
+   "group": null,
+   "reason": "CCG ships blocking a Filipino fishing boat headed for Scarborough continue the 2023 denial of access to the shoal (barrier and expulsion, CN202305, ongoing through 2024); it is coercive (physical interference), not force — continuation."
+  },
+  {
+   "event_id": "ev-6978330d80",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge into CN202408: depositing the Huangyan Dao baselines and chart with the UN is the formal filing of the baselines China declared in November 2024 (CN202408), the same act rather than a new one; no pre-sort disposition names a merge into an existing move."
+  },
+  {
+   "event_id": "ev-afeff529de",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge into CN202501: CCG 5403 near Kasawari is one of the patrols in Malaysia's EEZ that the 2025 AIS move counts (the southwestern patrol's 261 days, CN202501). It is not a duplicate of ev-c0d57c1d4f, which is CCG 5901 off Zambales."
+  },
+  {
+   "event_id": "ev-9b5675da21",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "China's three UN communications against Vietnam's central-area CLCS submission: China's last coded objection to a submission is CN201904 (ended 2021), so by the year-on-year rule this is new again. Chubb's counterfactual argues against it (China objects whenever a submission is filed), so the coder may reject it."
+  },
+  {
+   "event_id": "ev-8db7aac8ea",
+   "disposition": "continuation",
+   "of": "CN202407",
+   "criterion": null,
+   "group": null,
+   "reason": "CCG 5901 inside Indonesia's North Natuna EEZ continues the CCG presence recorded in 2024 (CN202407), which also disrupted a seismic survey; presence without disruption is no intensification — continuation."
+  },
+  {
+   "event_id": "ev-92b326ec43",
+   "disposition": "continuation",
+   "of": "CN202407",
+   "criterion": null,
+   "group": null,
+   "reason": "The research vessel Nan Feng and CCG ships at three points in the North Natuna Sea continue the 2024 CCG operations there (CN202407), with no change of method — continuation."
+  },
+  {
+   "event_id": "ev-1e98c06e44",
+   "disposition": "continuation",
+   "of": "CN202404",
+   "criterion": null,
+   "group": null,
+   "reason": "The PLA warning and expelling a Philippine corvette near Huangyan Dao continues the military enforcement against Philippine units at Scarborough coded in 2024 (flares at a PAF aircraft, CN202404, ongoing through 2025) — continuation."
+  },
+  {
+   "event_id": "ev-e4a7d5de65",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Bei Dao 996 surveying about 1,100 sq km of Vietnam's EEZ near Cam Ranh: the 2024 record has no survey-ship incursion (the last is Xiang Yang Hong 10 in 2023, CN202303), so this is new again; it is the lead for the 2025 research-vessel incursions. The coder may reject it if survey activity ran unrecorded in 2024."
+  },
+  {
+   "event_id": "ev-515e8e3480",
+   "disposition": "same_move",
+   "of": "ev-e4a7d5de65",
+   "criterion": null,
+   "group": null,
+   "reason": "Xiang Yang Hong 10 and Zhu Hai Yun operating south of Scarborough are the same 2025 practice of research vessels in rival EEZs as ev-e4a7d5de65; the coder may split it into its own move by target state."
+  },
+  {
+   "event_id": "ev-1306db1859",
+   "disposition": "continuation",
+   "of": "CN202407",
+   "criterion": null,
+   "group": null,
+   "reason": "CCG 5204 entering Indonesian North Natuna waters again in September 2025 continues the CCG presence of 2024 (CN202407) — continuation."
+  },
+  {
+   "event_id": "ev-3985de2603",
+   "disposition": "continuation",
+   "of": "CN202404",
+   "criterion": null,
+   "group": null,
+   "reason": "Warning and expelling Philippine aircraft over Huangyan Dao continues the PLA's enforcement against Philippine aircraft at Scarborough (CN202404, ongoing through 2025) — continuation."
+  },
+  {
+   "event_id": "ev-b9679ec288",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Sansha opening the first commercial centre on Woody Island is a new step in the islands' civil administration, with nothing comparable in the 2024 record; MATS counts a like first (the first Paracel tourist cruise, CN201306). The coder may reject it as routine civil build-out."
+  },
+  {
+   "event_id": "ev-5038acad0c",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Three PLA Navy warships stopping and operating inside Indonesia's EEZ, alongside the CCG and research ships, is a step up from the CCG-only presence of 2024–25 (CN202407; ev-8db7aac8ea in this run) — novelty. If the coder reads it as the same presence, a continuation of ev-8db7aac8ea."
+  },
+  {
+   "event_id": "ev-fd91811923",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A nearly 3 km runway on reclaimed Antelope Reef, China's second in the Paracels, goes beyond the 2025 reclamation (CN202507); MATS codes a new airstrip as its own move (Triton, CN202304). The coder may instead treat it as a continuation of CN202507."
+  },
+  {
+   "event_id": "ev-c92724dbf0",
+   "disposition": "same_move",
+   "of": "ev-fd91811923",
+   "criterion": null,
+   "group": null,
+   "reason": "The Foreign Ministry defending construction at Antelope Reef against Vietnam's statement goes with the 2026 runway move ev-fd91811923."
+  },
+  {
+   "event_id": "ev-83b3419890",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "Keppres 71/1996 making Natuna an integrated economic development zone (KAPET) is a new method of developing the outer islands, with nothing like it in the 1995 record (air patrols ev-9af9a5f279, a diplomatic note ev-814e47453d)."
+  },
+  {
+   "event_id": "ev-88efd50369",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: a national fisheries law applying across all Indonesian waters, with nothing specific to the South China Sea dispute."
+  },
+  {
+   "event_id": "ev-33840b139c",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: setting up the national maritime security coordinating board (Bakorkamla) is an institutional arrangement for all Indonesian waters."
+  },
+  {
+   "event_id": "ev-af76032718",
+   "disposition": "continuation",
+   "of": "ev-f3324a9adb",
+   "criterion": null,
+   "group": null,
+   "reason": "The Navy detaining two Vietnamese boats off Tanjungberakit, Bintan, continues the 2012 seizures of Vietnamese boats in the same waters (ev-f3324a9adb, ID-2010-2015) — continuation (provisional on 2012)."
+  },
+  {
+   "event_id": "ev-275fa6b876",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: a national marine-affairs law for all Indonesian waters, like the fisheries law ev-88efd50369 that you rejected; if counted, merge it with the founding of Bakamla (ev-e1c4590f45, ID-2010-2015)."
+  },
+  {
+   "event_id": "ev-27e117a4c8",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: the police chief's inspection visit to Natuna, with a call for maximal security, changes no practice; the 2013 record has no comparable visit to continue."
+  },
+  {
+   "event_id": "ev-3e3b067db3",
+   "disposition": "continuation",
+   "of": "ev-2558ab896f",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing a Thai boat in the Anambas territorial sea continues the 2014 fisheries-patrol seizures around Natuna and Anambas (ev-2558ab896f, ID-2010-2015) — continuation (provisional on 2014)."
+  },
+  {
+   "event_id": "ev-80458587b0",
+   "disposition": "continuation",
+   "of": "ev-2558ab896f",
+   "criterion": null,
+   "group": null,
+   "reason": "Seizing two Vietnamese boats in the Natuna territorial sea continues the 2014 fisheries-patrol seizures (ev-2558ab896f) — continuation (provisional on 2014). It is a separate incident, not a duplicate of ev-3e3b067db3."
+  },
+  {
+   "event_id": "ev-9ae34ee2ae",
+   "disposition": "continuation",
+   "of": "ev-561125aa98",
+   "criterion": null,
+   "group": null,
+   "reason": "KRI Pattimura intercepting a Vietnamese boat in the Natuna Sea continues the 2014 naval seizures of Vietnamese boats (KRI Imam Bonjol, ev-561125aa98, ID-2010-2015) — continuation (provisional on 2014)."
+  },
+  {
+   "event_id": "ev-6e44f21108",
+   "disposition": "continuation",
+   "of": "ev-00d31aba18",
+   "criterion": null,
+   "group": null,
+   "reason": "Fourteen warships patrolling the Natuna area continues the 2014 naval patrols and seizures there (ev-00d31aba18, ID-2010-2015; the Navy's own seven-warship deployment of November 2015 is pre-sorted the same way) — continuation (provisional on 2014)."
+  },
+  {
+   "event_id": "ev-2f7bb1478d",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: a national regulation on maritime security and law enforcement for all Indonesian waters, like the 2004 and 2005 acts you rejected (ev-88efd50369, ev-33840b139c)."
+  },
+  {
+   "event_id": "ev-1446920cd4",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: a national quota-fishing regulation for all fisheries management areas, like the 2004 fisheries law you rejected (ev-88efd50369)."
+  },
+  {
+   "event_id": "ev-8ed1b28f4a",
+   "disposition": "continuation",
+   "of": "ev-89a7c2dcf9",
+   "criterion": null,
+   "group": null,
+   "reason": "Prabowo saying Indonesia will safeguard its sovereignty continues the line, taken since 2023, of rejecting China's line over the Natunas (ev-89a7c2dcf9, ID-2021-2026; the Foreign Ministry's 11 November statement ev-59bb4f8410 is pre-sorted the same way) — continuation (provisional on 2023)."
+  },
+  {
+   "event_id": "ev-89d99da096",
+   "disposition": "continuation",
+   "of": "ev-6a6c38585b",
+   "criterion": null,
+   "group": null,
+   "reason": "Bakamla patrolling the North Natuna Sea daily continues the 2023 monitoring of CCG ships there (ev-6a6c38585b, ID-2021-2026) — continuation (provisional on 2023)."
+  },
+  {
+   "event_id": "ev-dd4f9413bc",
+   "disposition": "continuation",
+   "of": "ev-172c2ceb83",
+   "criterion": null,
+   "group": null,
+   "reason": "Bakamla driving CCG 5901 out with radio warnings and manoeuvres repeats the 2024 shadowing-out of CCG 5402 (ev-172c2ceb83, ID-2021-2026) — continuation (provisional on 2024). It is the Indonesian side of the incident in ev-8db7aac8ea."
+  },
+  {
+   "event_id": "ev-b96e98c70b",
+   "disposition": "continuation",
+   "of": "ev-dd4f9413bc",
+   "criterion": null,
+   "group": null,
+   "reason": "Stepped-up naval surveillance tracking three Chinese warships continues the 2025 response to Chinese ships in the North Natuna Sea (ev-dd4f9413bc in this run) — continuation (provisional on 2025)."
+  },
+  {
+   "event_id": "ev-e346d69a81",
+   "disposition": "continuation",
+   "of": "ev-dd4f9413bc",
+   "criterion": null,
+   "group": null,
+   "reason": "Monitoring CCG 5901 with warships, aircraft and drones continues the 2025 response (ev-dd4f9413bc in this run) — continuation (provisional on 2025). It is a separate month's report, not a duplicate of ev-b96e98c70b."
+  },
+  {
+   "event_id": "ev-900b09e464",
+   "disposition": "continuation",
+   "of": "ev-102ca54fa3",
+   "criterion": null,
+   "group": null,
+   "reason": "The coordination meeting's rejection of traditional-fishing-ground and historical claims restates the 2025 rejection of China's claims over the North Natuna Sea (ev-102ca54fa3, ID-2021-2026) — continuation (provisional on 2025)."
+  },
+  {
+   "event_id": "ev-46b228ca2c",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge into PH202304: the PCG–BFAR patrol that found and publicised the floating barrier is the first step of the removal operation coded as PH202304; the coder may prefer PH202306 for the subsidy run."
+  },
+  {
+   "event_id": "ev-2c3d1b1e17",
+   "disposition": "continuation",
+   "of": "PH202203",
+   "criterion": null,
+   "group": null,
+   "reason": "BRP Benguet's radio challenges to PLAN 621 on a routine resupply run continue the escorted resupply practice of PH202203 (ongoing through 2023); it is the Philippine side of CN202306 — continuation."
+  },
+  {
+   "event_id": "ev-88dbdd8d22",
+   "disposition": "continuation",
+   "of": "PH202302",
+   "criterion": null,
+   "group": null,
+   "reason": "The 43rd note verbale of the year, over the Escoda collisions, continues the routine diplomatic protests coded in 2023 (PH202302); no new method — continuation."
+  },
+  {
+   "event_id": "ev-75657b8e01",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge into PH202502: the National Maritime Council's rejection of China's Sandy Cay claim is the statement accompanying the Philippine landing on the Pag-asa Cays the same week (PH202502)."
+  },
+  {
+   "event_id": "ev-ee53a86746",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Not an assertive act of the claimant — likely reject: a PCG spokesperson answering China's protest over caricatures in a university talk claims nothing about the sea."
+  },
+  {
+   "event_id": "ev-79741218f2",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Likely reject: a routine reaffirmation of sovereignty over Bajo de Masinloc and the KIG in reply to an embassy statement; the 2025 record has no declarative move to continue, but a reaffirmation is no new method beyond the 2024 Maritime Zones Act (PH202406)."
+  },
+  {
+   "event_id": "ev-82c162f97a",
+   "disposition": "continuation",
+   "of": "ev-aecd64893a",
+   "criterion": null,
+   "group": null,
+   "reason": "The Executive Yuan restating the South China Sea claim continues the 2009 sovereignty statements (ev-aecd64893a, TW-2000s) — continuation (provisional on 2009)."
+  },
+  {
+   "event_id": "ev-f234a089d9",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "The Coast Guard driving off Vietnamese armed patrol boats at Taiping, reportedly with warning shots, is coercive, with nothing comparable in the 2011 record (the marines' return, ev-0f2946457c, is a deployment) — novelty. The CGA denied being fired on, which the coder should weigh."
+  },
+  {
+   "event_id": "ev-ede1f26e03",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge with ev-0679358160 (TW-2010-2015, the 2013 Taiping transport upgrade): Ma announcing the Taiping pier and the airfield repair is the declaration of that same project; on its own a presidential statement of plans."
+  },
+  {
+   "event_id": "ev-8df0d6b3a5",
+   "disposition": "continuation",
+   "of": "ev-857caefe60",
+   "criterion": null,
+   "group": null,
+   "reason": "The Executive Yuan restating the claim and calling the pier works humanitarian continues the 2013 Foreign Ministry statements (ev-857caefe60, TW-2010-2015) — continuation (provisional on 2013)."
+  },
+  {
+   "event_id": "ev-3af38b38bf",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge with ev-ba481f4ff5 (TW-2016-2020, the 2016 Taiping campaign) if that is a move: stamps depicting Taiping under the 'South China Sea Peace Initiative' belong to the same push. On its own a symbolic act (the 2020 lighthouse stamps, ev-5b0dc3e2b3, are also unclear)."
+  },
+  {
+   "event_id": "ev-f5ef230e38",
+   "disposition": "unclear",
+   "of": null,
+   "criterion": null,
+   "group": null,
+   "reason": "Merge with ev-8666c321f6 (TW-2016-2020, the March 2016 Pratas crackdown on Chinese poachers) if that is a move: the Kaohsiung ban on taking coral and protected species in Pratas waters is the rule behind that enforcement. On its own an environmental ban in waters only the PRC disputes."
+  },
+  {
+   "event_id": "ev-d6b68b4411",
+   "disposition": "continuation",
+   "of": "ev-4598fcf4bc",
+   "criterion": null,
+   "group": null,
+   "reason": "The Foreign Ministry restating the claim and asking to join the code-of-conduct talks repeats the 2017 statements (ev-4598fcf4bc, TW-2016-2020) — continuation (provisional on 2017)."
+  },
+  {
+   "event_id": "ev-09071a3f12",
+   "disposition": "continuation",
+   "of": "ev-c00bfcbcbb",
+   "criterion": null,
+   "group": null,
+   "reason": "Rejecting the Philippine complaint and defending routine drills at Taiping continues the 2021 statements on the Taiping defences (ev-c00bfcbcbb, TW-2021-2026); the December 2022 rebuttal ev-8bca16eb68 is pre-sorted the same way — continuation (provisional on 2021)."
+  },
+  {
+   "event_id": "ev-b769b65700",
+   "disposition": "new_move",
+   "of": "",
+   "criterion": "novelty",
+   "group": null,
+   "reason": "A minister landing on uninhabited Zhongzhou Reef, last done by officials in 2012 (ev-854e396905) and absent in 2025, is new again — novelty. The coder may merge in the same trip's Taiping visit (ev-1d6fa9449f, TW-2021-2026)."
+  }
+ ]
+}
