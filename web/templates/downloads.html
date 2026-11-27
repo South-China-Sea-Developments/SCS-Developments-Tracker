@@ -27,6 +27,7 @@
     {% endfor %}
     </tbody>
   </table>
+  <p>A note on method: <a href="data/process-note.md" download>process-note.md</a>, how candidate events are compiled and checked, where AI tools help, and how often the suggested coding was kept (with <a href="data/agreement.json" download>agreement.json</a>, the same figures as data).</p>
   <p>CSV files are UTF-8 with a header row; column definitions are in <code>COLUMNS.md</code> (<a href="{{ meta.repo_url }}/blob/{{ release.tag if release.tag != 'unreleased' else 'main' }}/data/README.md">data/README.md</a> at this version), the coding rules in Chubb's appendix, both included. The sub-region polygons are WGS84 GeoJSON. To check a file: <code>sha256sum -c SHA256SUMS</code> in the folder you unzipped.</p>
 
   <p>What changed in each version: <a href="{{ meta.repo_url }}/blob/main/CHANGELOG.md">CHANGELOG.md</a>. Release procedure: <a href="{{ meta.repo_url }}/blob/main/docs/releases.md">docs/releases.md</a>.</p>
