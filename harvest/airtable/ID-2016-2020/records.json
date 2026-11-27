@@ -1,0 +1,2254 @@
+{
+ "run_id": "ID-2016-2020",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "recBJbXBj1LtgnNW6",
+   "archived_on": "2026-11-27",
+   "actors": "Maritime Security Agency (Bakamla), chief Vice Adm. Achmad Taufiqoerrochman; Indonesian Navy (TNI AL)",
+   "suggestion_reasoning": "Expelling and blocking Chinese fishing and coast guard vessels in the contested EEZ is physical interference with another claimant's vessels; coercive. [confidence: medium]",
+   "date_end": "2019-12-31",
+   "new_dyads": "IC",
+   "excerpt": "We chased them out, but after Dec. 24, they returned to our EEZ and insisted that it was their fishing ground\n\nWe then blocked them.\n\nat least 63 Chinese fishing and coast guard vessels had entered Natuna waters",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "North Natuna Sea (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia Protests Beijing's Alleged Encroachments Around Natuna Islands — Radio Free Asia / BenarNews 2019-12-30\nhttps://www.rfa.org/english/news/china/indonesia-natuna-12302019160748.html\nBakamla: Chinese Ship Trespassing Indonesian Waters Again — Tempo.co 2019-12-31\nhttps://en.tempo.co/amp/1289703/bakamla-chinese-ship-trespassing-indonesian-waters-again\nBakamla eyes coordinated response to Chinese activity in the Natunas — The Jakarta Post 2019-12-29\nhttps://www.thejakartapost.com/news/2019/12/29/bakamla-eyes-coordinated-response-to-chinese-activity-in-the-natunas",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:51:37.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-03fee649f2",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 19 December 2019 Bakamla patrols found at least 63 Chinese fishing boats escorted by China Coast Guard ships in the Natuna EEZ; Bakamla said it chased them out, but after 24 December they returned insisting it was their fishing ground, and on 31 December Bakamla, with two Navy ships, blocked a further China Coast Guard vessel it found in North Natuna waters while reporting the violations to the Foreign Ministry.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-12-19",
+   "presort": "new move (novelty) — Chasing out a CCG-escorted Chinese fleet and blocking a CCG vessel with Bakamla and Navy ships is a new method against 2018, which has no confrontation with Chinese state vessels (nothing comparable among the 2018 candidates). (group 2019-natuna-standoff) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recxdyPFGcv5wrmdO",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (spokesman Teuku Faizasyah)",
+   "suggestion_reasoning": "A diplomatic demarche to China's embassy over a coast guard incursion is a verbal assertion of Indonesia's EEZ rights; declarative. [confidence: medium]",
+   "date_end": "2020-09-13",
+   "new_dyads": "IC",
+   "excerpt": "discussed the issue with the Chinese deputy ambassador to Indonesia in Jakarta on Sunday\n\nhas communicated to the Chinese Embassy in Jakarta to explain the coast guard's presence",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:45.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia talks sovereignty with China following foreign vessel controversy — The Jakarta Post 2020-09-14\nhttps://www.thejakartapost.com/news/2020/09/14/indonesia-talks-sovereignty-with-china-following-foreign-vessel-controversy\nIndonesian patrol confronts Chinese ship in economic zone — Philippine Daily Inquirer (Associated Press) 2020-09-15\nhttps://newsinfo.inquirer.net/1335642/indonesian-patrol-confronts-chinese-ship-in-economic-zone/amp",
+   "pull_request": 45,
+   "new_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:05:53.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-1022594932",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-c750c4bf67 ",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On Sunday 13 September 2020 the Foreign Ministry raised the presence of China Coast Guard ship 5204 in Indonesia's EEZ with China's deputy ambassador in Jakarta, asking the Chinese Embassy to explain the intent of the coast guard deployment and reiterating Indonesia's sovereign rights in the North Natuna Sea, spokesman Teuku Faizasyah said.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-09-13",
+   "presort": "continuation of ev-c750c4bf67 (a candidate, provisional) — A demarche to China's deputy ambassador over CCG 5204 repeats the 2019 protests to China (ev-c750c4bf67); same practice, no new form. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recTumj2rAobgLC2a",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Cabinet; Indonesian Navy (KRI Imam Bonjol)",
+   "suggestion_reasoning": "A head-of-state visit and cabinet meeting on a warship in the contested EEZ is a display of administration and presence without confrontation; demonstrative. [confidence: high]",
+   "date_end": "2016-06-23",
+   "new_dyads": "IC",
+   "excerpt": "limited Cabinet meeting on board the Imam Bonjol in the Natuna Sea",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna Sea, aboard KRI Imam Bonjol",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Jokowi marks RI's turf — The Jakarta Post 2016-06-24\nhttps://www.thejakartapost.com/news/2016/06/24/jokowi-marks-ris-turf.html",
+   "pull_request": 45,
+   "new_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:27:37.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-11870bdaba",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 23 June 2016 President Joko Widodo made his first visit to Natuna and held a limited Cabinet meeting aboard the Navy corvette KRI Imam Bonjol, the ship that had fired on Chinese boats six days earlier, instructing ministers to develop Natuna's economy while protecting territorial integrity, in what was widely read as a show of sovereignty directed at China.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-06-23",
+   "presort": "new move (novelty) — A presidential visit and cabinet meeting aboard a warship in Natuna waters is a new display of state presence; the 2015 record (prev-run candidates) shows ministerial visits (ev-011cac594b) but nothing at head-of-state level in the EEZ. (group 2016-natuna-president) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reclr0GfuFiJmtL7T",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Kemlu); Minister of Maritime Affairs and Fisheries Susi Pudjiastuti",
+   "suggestion_reasoning": "Summoning Vietnam's envoy to protest interference with Indonesian enforcement in the Natuna EEZ is a verbal assertion of Indonesia's jurisdiction; declarative. [confidence: high]",
+   "date_end": "2019-04-29",
+   "new_dyads": "IV",
+   "excerpt": "This morning the deputy ambassador of Vietnam was summoned to the foreign ministry.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.rfa.org/english/news/vietnam/indonesia-boats-04292019170113.html.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia to Sink More Foreign Boats Amid New Maritime Tensions with Vietnam — Radio Free Asia / BenarNews 2019-04-29\nhttps://www.rfa.org/english/news/vietnam/indonesia-boats-04292019170113.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:42:51.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-12bf9726c5",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On 29 April 2019 the Foreign Ministry summoned Vietnam's deputy ambassador in Jakarta and said Indonesia deeply regretted the 27 April incident involving Vietnamese fisheries surveillance ships, which it said had endangered Indonesian naval personnel and violated international law; Fisheries Minister Susi Pudjiastuti announced Indonesia would resume sinking confiscated foreign boats on 4 May.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-04-29",
+   "merge_into_candidate": "ev-1936193d8d",
+   "presort": "same move as ev-1936193d8d — Summoning Vietnam's deputy ambassador over the 27 April incident belongs with the 2019 confrontations with Vietnamese state vessels (ev-1936193d8d, ev-d1751229a0); 2018 has no protest to Vietnam. A coder may prefer a separate declarative move for the two protests. (group 2019-vietnam-escorts) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recaFtslDE7AwABHJ",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), KRI Sutanto; Tarempa naval base (Lt. Col. Johan Wahyudi)",
+   "suggestion_reasoning": "Warning shots and seizure of a Vietnamese boat and crew in the overlapping EEZ area are physical interference and punishment; coercive. [confidence: high]",
+   "date_end": "2017-07-22",
+   "new_dyads": "IV",
+   "excerpt": "The [Vietnamese] boat immediately stopped after we fired warning shots in the air.\n\nthe Indonesian navy opened fire on a Vietnamese fishing vessel on Saturday evening",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Indonesian EEZ north of the Natuna Islands (about 130 nm southeast of Con Dao per Vietnam)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "RI denies wrongdoing in maritime standoff with VN — The Jakarta Post 2017-07-25\nhttps://www.thejakartapost.com/news/2017/07/25/ri-denies-wrongdoing-in-maritime-standoff-with-vn.html\nIndonesian Navy Opens Fire on Vietnamese Fishermen — The Maritime Executive 2017-07-24\nhttps://maritime-executive.com/article/indonesian-navy-opens-fire-on-vietnamese-fishermen",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:35:41.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-156343700b",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-aec79b383a",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Saturday night 22 July 2017 the Indonesian Navy patrol vessel KRI Sutanto chased a Vietnamese fishing boat suspected of illegal fishing in the EEZ north of Natuna, fired warning shots in the air until it stopped, inspected its 12 crew and towed the boat to the Tarempa naval base; Vietnam said four fishermen were wounded by gunfire, which Indonesia denied.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-07-22",
+   "presort": "continuation of ev-aec79b383a (a candidate, provisional) — Warning shots to stop and seize a Vietnamese boat repeat the method first used in 2016 against Chinese boats (ev-aec79b383a, ev-26aeb5a373); a different target is not a new method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reckT7x3tASXwgxBE",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), KRI Tom-357",
+   "suggestion_reasoning": "Seizure of Vietnamese boats in the overlapping EEZ area and gunfire to drive off Vietnamese government vessels is physical interference and imposition of punishment; coercive (a coder may weigh the cannon fire against state vessels as bordering on force). [confidence: high]",
+   "date_end": "2019-02-24",
+   "new_dyads": "IV",
+   "excerpt": "had to shoot a 76-millimeter cannon to drive the two VFRS patrol boats off\n\nFour KIA Vietnam were captured by KRI TOM-357 in the northern part of the Natuna Sea continental shelf, Riau Islands.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "northern Natuna Sea (continental shelf), Riau Islands",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "RI slams Vietnam for disrupting arrests — The Jakarta Post 2019-02-27\nhttps://www.thejakartapost.com/seasia/2019/02/27/ri-slams-vietnam-for-disrupting-arrests.html\nMinister Pudjiastuti Denounces Vietnam's Government Over Illegal Fishing — Indomaritim.com 2019-02-26\nhttps://www.indomaritim.com/2019/02/26/minister-pudjiastuti-denounces-vietnams-government-over-illegal-fishing/",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:41:54.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-1936193d8d",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Sunday morning 24 February 2019 the Navy patrol ship KRI Tom-357 arrested four Vietnamese fishing boats in the northern Natuna Sea; when two escorting Vietnam Fisheries Resources Surveillance vessels made dangerous manoeuvres to obstruct the arrest, the Indonesian captain fired the ship's 76 mm cannon to drive them off and the four boats were seized.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-02-24",
+   "presort": "new move (novelty) — Firing a 76 mm gun to drive off Vietnamese fisheries-surveillance vessels obstructing an arrest is a new method against 2018, when seizures of Vietnamese boats (ev-1a41921e8b) met no state escorts and involved no gunfire; warning shots last seen in 2017 are new again. (group 2019-vietnam-escorts) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec7iHUZFeHlLyHAY",
+   "archived_on": "2026-11-27",
+   "actors": "Maritime Security Agency (Bakamla); spokesman Mardiono",
+   "suggestion_reasoning": "Seizing another claimant's fishing boats and crews in the Natuna EEZ, where Indonesian and Vietnamese EEZ claims overlap, is physical enforcement imposing punishment; coercive. Recorded as the year's representative instance of an established practice. [confidence: medium]",
+   "date_end": "2018-04-25",
+   "new_dyads": "IV",
+   "excerpt": "The boats were spotted sailing side-by-side near Indonesia's Natuna islands, on the fringes of the South China Sea",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "near the Natuna Islands",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia seizes two Vietnamese fishing boats in crackdown — The Star (Malaysia) / AFP 2018-04-25\nhttps://www.thestar.com.my/news/regional/2018/04/25/indonesia-seizes-two-vietnamese-fishing-boats-in-crackdown",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:35:51.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-1a41921e8b",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-dd021d9ea0 ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Wednesday 25 April 2018 the Maritime Security Agency (Bakamla) chased and seized two Vietnamese fishing boats sailing side by side near the Natuna Islands after they ignored an order to slow down, taking their combined 21 crew into custody (one of the regular seizures of Vietnamese boats in Natuna waters that year).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-04-25",
+   "presort": "continuation of ev-dd021d9ea0 (a candidate, provisional) — Bakamla's seizure of two Vietnamese boats near Natuna continues the 2017 arrests (ev-dd021d9ea0, ev-971339b446) at the same level. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recshy2qRfHfexqL0",
+   "archived_on": "2026-11-27",
+   "actors": "Coordinating Ministry for Maritime Affairs (Arif Havas Oegroseno); Geospatial Information Agency (BIG)",
+   "suggestion_reasoning": "Renaming the contested EEZ waters on the official state map is a unilateral administrative act without confrontation; demonstrative (naming). [confidence: high]",
+   "date_end": "2017-07-14",
+   "new_dyads": "IC",
+   "excerpt": "agreed to name it the North Natuna Sea in order to provide certainty\n\nlaunched by the Office of the Coordinating Maritime Affairs Minister last week",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "North Natuna Sea (EEZ waters north of the Natuna Islands)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "New map asserts sovereignty over Natuna — The Jakarta Post 2017-07-15\nhttps://www.thejakartapost.com/news/2017/07/15/new-map-asserts-sovereignty-over-natuna.html\nIndonesia shrugs off China's protest over North Natuna Sea's name — The Jakarta Post 2017-07-18\nhttps://www.thejakartapost.com/news/2017/07/18/indonesia-shrugs-off-chinas-protest-over-north-natuna-seas-name",
+   "pull_request": 45,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:35:12.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-25c041495e",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On Friday 14 July 2017 the Office of the Coordinating Maritime Affairs Minister launched an updated official map of Indonesia, signed by 21 ministries and agencies, that renamed the EEZ waters north of the Natuna Islands the 'North Natuna Sea'; Deputy Coordinating Minister Arif Havas Oegroseno said the name gave certainty and matched the continental shelf boundary. China objected that the renaming made no sense.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-07-14",
+   "presort": "new move (novelty) — Renaming the EEZ waters north of Natuna the 'North Natuna Sea' on the official map is a new method against 2016, which has no naming or cartographic act (nothing comparable among the 2016 candidates). Naming is declarative in Chubb's practice (CN198302) despite the demonstrative suggestion. (group 2017-north-natuna-sea) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recxKbo4eW1VMU2Jc",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), KRI Imam Bonjol; Foreign Minister Retno Marsudi",
+   "suggestion_reasoning": "Warning shots by warships and detention of a Chinese boat and crew in the contested EEZ are physical interference and punishment; coercive. [confidence: high]",
+   "date_end": "2016-06-17",
+   "new_dyads": "IC",
+   "excerpt": "After several hours of pursuit, warning shots were fired into the air and sea, all in accordance with procedure\n\nWhatever flags that vessels might carry, if they violate the law in Indonesian jurisdiction",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna waters (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia denies injuring Chinese crewman in Natuna waters spat — The Jakarta Post 2016-06-20\nhttps://www.thejakartapost.com/news/2016/06/20/indonesia-denies-injuring-chinese-crewman-in-natuna-waters-spat.html\nChina warns Indonesia over Natuna fishing rights — The Jakarta Post 2016-06-20\nhttps://www.thejakartapost.com/news/2016/06/20/china-warns-indonesia-over-natuna-fishing-rights.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:27:10.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-26aeb5a373",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 17 June 2016 four Indonesian Navy warships, led by the corvette KRI Imam Bonjol, pursued a group of about a dozen Chinese fishing boats in the Natuna EEZ, fired warning shots into the air and sea after the boats ignored orders to stop, and intercepted and detained the Chinese-flagged boat 19038 (Han Tan Cou) with its seven crew; China protested and said one fisherman was injured, which the Navy denied. Foreign Minister Retno Marsudi told the House that the Navy's actions were lawful law enforcement.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-06-17",
+   "merge_into_candidate": " ev-aec79b383a",
+   "presort": "same move as ev-aec79b383a — Four warships firing warning shots and detaining a Chinese boat on 17 June is the same 2016 escalation to armed enforcement against Chinese boats as ev-aec79b383a. (group 2016-warning-shots) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJ0euat1Rj0cUe4",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Kemlu); Foreign Minister Retno Marsudi; Fisheries Minister Susi Pudjiastuti",
+   "suggestion_reasoning": "A formal diplomatic protest with a summons is a verbal assertion of Indonesia's EEZ rights against China; declarative. [confidence: high]",
+   "date_end": "2016-03-21",
+   "new_dyads": "IC",
+   "excerpt": "has summoned Sun Weide, Minister Counselor\n\nThe Chinese coast guard violated Indonesia's sovereign rights and jurisdiction in the EEZ and continental shelf",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna waters (Indonesian EEZ and continental shelf)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesian Sends a Note of Protest against China in South China Sea Fishing Dispute — Cabinet Secretariat of the Republic of Indonesia (Setkab) 2016-03-21\nhttps://setkab.go.id/en/indonesian-sends-a-note-of-protest-against-china-in-south-china-sea-fishing-dispute/\nRI - China sea spat continues — The Jakarta Post 2016-03-22\nhttps://www.thejakartapost.com/news/2016/03/22/ri-china-sea-spat-continues.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:24:16.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-2f13166d74",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 21 March 2016 the Foreign Ministry summoned Sun Weide, Minister Counsellor and chargé d'affaires of the Chinese Embassy in Jakarta, and Foreign Minister Retno Marsudi lodged a formal protest over the China Coast Guard's interference with the arrest of the Kway Fey, protesting violations of Indonesia's sovereign rights and jurisdiction in its EEZ and continental shelf and asking Beijing for clarification. The same day Fisheries Minister Susi Pudjiastuti said Indonesia might take the case to ITLOS.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-21",
+   "presort": "new move (novelty) — Summoning China's chargé and lodging a formal protest over CCG interference in the EEZ is a new kind of declarative act against 2015, when Jakarta only stated non-recognition of the nine-dash line and asked for clarification (ev-47783c4ac1, ev-c60cba9dbf, prev-run candidates). (group 2016-protest-china) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recp7XoxT2kTkAjI6",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Military (TNI); Joint Regional Defence Command I (Rear Adm. Yudo Margono); Coordinating Ministry for Political, Legal and Security Affairs (Mahfud MD)",
+   "suggestion_reasoning": "Deploying warships and aircraft to the contested EEZ as a show of presence, without direct physical interference reported, is demonstrative. [confidence: high]",
+   "date_end": "2020-01-03",
+   "new_dyads": "IC",
+   "excerpt": "Indonesia has sent three warships, one maritime surveillance plane and one Boeing airplane as reinforcements.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesian military on full alert in North Natuna Sea after border trespass by Chinese vessels — Jakarta Globe (reprinted by Asia Pacific Solidarity Network) 2020-01-03\nhttps://www.asia-pacific-solidarity.net/news/2020-01-03/indonesian-military-full-alert-north-natuna-sea-after-border-trespass-chinese-vessels.html",
+   "pull_request": 45,
+   "new_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:52:23.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-39f2da0c71",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 2-3 January 2020, after Coordinating Minister Mahfud MD convened ministers and agency heads on 2 January, the Indonesian Military sent three warships, a maritime surveillance aircraft and a Boeing 737 to the North Natuna Sea and placed forces on combat alert under Joint Regional Defence Command I commander Rear Adm. Yudo Margono, who flew to Natuna, to respond to the Chinese coast guard and fishing presence in the EEZ.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-02",
+   "presort": "new move (frequency) — Sending warships, patrol aircraft and placing forces on combat alert in the North Natuna Sea is a step up from December 2019, when Bakamla worked with two Navy ships (ev-03fee649f2): two ships against eight warships plus F-16s by 7 January. (group 2020-01-natuna-surge) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "frequency",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recqsq6pGaT14DN0q",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP); Minister Susi Pudjiastuti",
+   "suggestion_reasoning": "Destruction of seized Vietnamese and Chinese fishing boats, announced as a response to the Natuna confrontation, is imposition of punishment on other claimants' nationals; coercive. Sinking sites are not named in the source. [confidence: medium]",
+   "date_end": "2019-05-04",
+   "new_dyads": "IV IC",
+   "excerpt": "The seized vessels sunk included 38 Vietnamese-flagged ships, 6 Malaysian, 2 Chinese and 1 Filipino.\n\nthe ships were sunk Saturday at five ports across the archipelago",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "five ports across Indonesia (video from off Datuk island, West Kalimantan)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Kalimantan Barat coast).",
+   "reviewer": "Angelo",
+   "sources": "Indonesia sinks 51 foreign boats to fight against poaching — Arab News (Associated Press) 2019-05-04\nhttps://arabnews.com/node/1492511\nIndonesia sinks 51 foreign boats to fight against poaching — Fox News (Associated Press) 2019-05-04\nhttps://www.foxnews.com/world/indonesia-sinks-51-foreign-boats-to-fight-against-poaching",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:43:08.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-3ba3d55bb4",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-f37027dca4 ",
+   "suggested_dyads": [
+    "IV",
+    "IC"
+   ],
+   "summary": "On Saturday 4 May 2019 the Maritime Affairs and Fisheries Ministry sank 51 seized foreign fishing vessels at five ports, including 38 Vietnamese-flagged, 6 Malaysian, 2 Chinese and 1 Philippine boat, a week after the Natuna clash with Vietnamese vessels; Indonesia said it had sunk more than 500 vessels since October 2014 (the year's main mass sinking; a further 21 mostly Vietnamese boats were sunk in West Kalimantan on 6 October).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-05-04",
+   "presort": "continuation of ev-f37027dca4 (a candidate, provisional) — The May mass sinking continues the 2018 sinkings (ev-f37027dca4); being announced after the Natuna clash does not change the method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recvGOSvV1CNVS8A9",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Naval Fleet Command I (Rear Adm. Ahmadi Heri Purwono)",
+   "suggestion_reasoning": "A large naval exercise in waters adjoining the contested area is a show of force without confrontation; demonstrative. Low confidence because the exercise area (Singkep, Java Sea) lies well south of the Natuna EEZ that China contests. [confidence: low]",
+   "date_end": "2020-07-26",
+   "new_dyads": "IC",
+   "excerpt": "2,000 personnel, 26 warships, 19 aircraft and 18 marine combat vehicles are taking part in the drills",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Java Sea and South China Sea (Singkep, Riau Islands)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Sub-regions suggested: 10 Far South (Kepulauan Riau coast).",
+   "reviewer": "Angelo",
+   "sources": "Indonesian Navy Conducts Major Exercise Amid South China Sea Tensions — Radio Free Asia / BenarNews 2020-07-22\nhttps://www.rfa.org/english/news/china/indonesia-southchinasea-07222020212724.html",
+   "pull_request": 45,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:03:54.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-433c825f3d",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Precedents",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 18 to 26 July 2020 the Indonesian Navy's Fleet Command I held its most complex exercise of the year in the Java Sea and the South China Sea, with 2,000 personnel, 26 warships, 19 aircraft and 18 marine combat vehicles, including an amphibious landing at Singkep in the Riau Islands, staged amid the Natuna tensions and described by officials as designed to be like real operations.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-07-18",
+   "presort": "unclear — The exercise was held in the Java Sea and off Singkep, south of the Natuna EEZ; it is only an act on the claim if part of it took place in the contested North Natuna waters. The fleet's exercise plan or area would settle it, and no 2019 exercise is on the record to judge it against. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reczzWevGNAj1ZXXj",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Retno Marsudi; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A public ministerial rejection of China's legal basis for fishing in the Natuna EEZ is a verbal assertion of claim; declarative. [confidence: high]",
+   "date_end": "2016-03-24",
+   "new_dyads": "IC",
+   "excerpt": "We don't recognize this terminology at all.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "flags": [
+    "Excerpt not found",
+    "Possible duplicate"
+   ],
+   "location_name": "Natuna waters",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text. Possible duplicate of ev-2f13166d74.",
+   "reviewer": "Angelo",
+   "sources": "Govt: RI does not recognize China's traditional fishing zone — The Jakarta Post 2016-03-25\nhttps://www.thejakartapost.com/news/2016/03/25/govt-ri-does-not-recognize-chinas-traditional-fishing-zone.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:26:27.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-4e92c6e045",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 24 March 2016 Foreign Minister Retno Marsudi told reporters in Jakarta that Indonesia did not recognise China's so-called 'traditional fishing zone' around Natuna at all, a position she said she had conveyed to the Chinese representative after the Kway Fey incident.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-24",
+   "merge_into_candidate": "ev-2f13166d74",
+   "presort": "same move as ev-2f13166d74 — Retno's rejection of China's 'traditional fishing zone' is the public side of the same March 2016 protest over the Kway Fey (ev-2f13166d74). (group 2016-protest-china) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recwR1MZlQk7VL6To",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Foreign Minister Retno Marsudi; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "Head-of-state and ministerial statements refusing to negotiate sovereignty and rejecting the nine-dash line are verbal assertions of claim; declarative. [confidence: high]",
+   "date_end": "2020-01-06",
+   "new_dyads": "IC",
+   "excerpt": "the sovereignty of our territory is non-negotiable\n\nKita hanya ingin Tiongkok mematuhi hukum internasional termasuk di UNCLOS.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "Natuna",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia Will Not Negotiate Natuna Sovereignty, President Says — Radio Free Asia / BenarNews 2020-01-06\nhttps://www.rfa.org/english/news/china/indonesia-natuna-01062020171056.html\nTak Akan Akui 'Nine Dash Line', Menlu: China Harus Patuhi UNCLOS — Sekretariat Kabinet Republik Indonesia 2020-01-06\nhttps://setkab.go.id/tak-akan-akui-nine-dash-line-menlu-china-harus-patuhi-unclos/",
+   "pull_request": 45,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:59:27.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-513803d5d6",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-c750c4bf67",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 6 January 2020 President Joko Widodo told a plenary cabinet meeting that Indonesia's territorial sovereignty was non-negotiable in the Natuna dispute, and Foreign Minister Retno Marsudi said afterwards that Indonesia would never recognise the nine-dash line and only wanted China to comply with UNCLOS; the Chinese ambassador was called to the ministry's Asia-Pacific director-general that afternoon.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-06",
+   "presort": "continuation of ev-c750c4bf67 (a candidate, provisional) — Widodo's 'non-negotiable' and Retno's non-recognition of the nine-dash line repeat the December 2019 position (ev-c750c4bf67); one more reaffirmation is continuation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recBq0CLuOaF4C9nL",
+   "archived_on": "2026-11-27",
+   "actors": "Maritime Security Agency (Bakamla), KN Pulau Dana-323 (Lt. Col. Hananto Widhi)",
+   "suggestion_reasoning": "Firing on and seizing a Vietnamese fishing boat in the overlapping EEZ area is physical interference imposing punishment; coercive. Recorded as the year's representative instance of continuing arrests of Vietnamese boats. [confidence: medium]",
+   "date_end": "2020-07-26",
+   "new_dyads": "IV",
+   "excerpt": "the foreign vessel had been detected on Sunday by Indonesian patrol boat KN Pulau Dana-323",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "North Natuna Sea off Natuna Regency, Riau Islands",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Bakamla nabs Vietnamese fishing boat crew after cat-and-mouse game in Natuna — The Jakarta Post 2020-07-27\nhttps://www.thejakartapost.com/news/2020/07/27/bakamla-nabs-vietnamese-fishing-boat-crew-after-cat-and-mouse-game-in-natuna",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:05:34.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-57d6723d07",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-1936193d8d ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Sunday 26 July 2020 the Bakamla patrol boat KN Pulau Dana-323 chased a Vietnamese-flagged fishing boat suspected of illegal fishing in the North Natuna Sea, which discarded its net, burned tyres to obscure visibility and attempted to ram the patrol boat; after a warning shot the patrol boat fired on the vessel until it slowed and was captured with about two tons of fish aboard (one of several Vietnamese boats seized in the North Natuna Sea that year).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-07-26",
+   "presort": "continuation of ev-1936193d8d (a candidate, provisional) — Firing on and seizing a Vietnamese boat continues the 2019 armed enforcement against Vietnamese boats and escorts (ev-1936193d8d); same method, and less than firing on state vessels. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recW4pGMu7CUYI5MP",
+   "archived_on": "2026-11-27",
+   "actors": "Maritime Security Agency (Bakamla), KN Nipah 321",
+   "suggestion_reasoning": "Intercepting, warning and shadowing a Chinese government vessel until it left the EEZ is physical interference and a warning directed at another claimant's vessel; coercive (a coder may see it as demonstrative since no force was used). [confidence: high]",
+   "date_end": "2020-09-14",
+   "new_dyads": "IC",
+   "excerpt": "The Chinese coast guard vessel finally left the North Natuna Sea on Monday at 11:20 a.m.\n\nThe vessel, identified as Chinese coast guard ship 5204, was detected by Bakamla patrol ship KN Nipah 321",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "North Natuna Sea (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://newsinfo.inquirer.net/1335642/indonesian-patrol-confronts-chinese-ship-in-economic-zone.",
+   "reviewer": "Angelo",
+   "sources": "Indonesian patrol confronts Chinese ship in economic zone — Philippine Daily Inquirer (Associated Press) 2020-09-15\nhttps://newsinfo.inquirer.net/1335642/indonesian-patrol-confronts-chinese-ship-in-economic-zone/amp\nIndonesia talks sovereignty with China following foreign vessel controversy — The Jakarta Post 2020-09-14\nhttps://www.thejakartapost.com/news/2020/09/14/indonesia-talks-sovereignty-with-china-following-foreign-vessel-controversy",
+   "pull_request": 45,
+   "new_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:05:43.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-63d7872263",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-03fee649f2 ",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From the night of 11 September 2020 Bakamla tracked China Coast Guard ship 5204 inside Indonesia's EEZ in the North Natuna Sea; on 12 September the patrol ship KN Nipah 321 closed to within a kilometre, and the two ships exchanged radio messages each affirming its nation's claim to the area, Bakamla shadowing the vessel until it left the North Natuna Sea at 11:20 on Monday 14 September after almost three days.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-09-11",
+   "presort": "continuation of ev-03fee649f2 (a candidate, provisional) — Shadowing CCG 5204 until it left continues December 2019's interception and expulsion of CCG vessels (ev-03fee649f2) at the same level. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reca6TFfsCh5VvPdU",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Kemlu)",
+   "suggestion_reasoning": "A formal statement rejecting China's historic-rights claim and refusing talks on the Natuna EEZ is a verbal assertion of Indonesia's legal position; declarative. [confidence: high]",
+   "date_end": "2020-01-01",
+   "new_dyads": "IC",
+   "excerpt": "have no legal basis and have never been recognized by the 1982 UNCLOS\n\nthere are no overlapping claims there",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "Natuna waters (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 402); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.rfa.org/english/news/china/indonesia-natuna-01022020165115.html.",
+   "reviewer": "Angelo",
+   "sources": "China Has Right to Sail Near Indonesia's Natuna Islands, Beijing Says — Radio Free Asia / BenarNews (reprinted by GlobalSecurity.org) 2020-01-02\nhttps://www.globalsecurity.org/military/library/news/2020/01/mil-200102-rfa02.htm\n'Nothing to discuss': Indonesia says no legal basis for China's claim on the Natunas — The Jakarta Post 2020-01-01\nhttps://www.thejakartapost.com/news/2020/01/01/nothing-to-discuss-indonesia-says-no-legal-basis-for-chinas-claim-on-the-natunas.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:52:08.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-7326de379c",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-c750c4bf67",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 1 January 2020 the Foreign Ministry issued a statement dismissing China's claim that its fishermen had long operated in the waters off Natuna, saying China's unilateral claims had no legal basis and had never been recognised by UNCLOS 1982, asking Beijing to explain the legal basis of its claim to Indonesia's EEZ, and rejecting China's invitation to dialogue on the ground that there was nothing to discuss.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-01",
+   "presort": "continuation of ev-c750c4bf67 (a candidate, provisional) — The 1 January statement rejecting China's historic-rights claim restates the 30 December 2019 protest (ev-c750c4bf67) two days later; refusing talks adds no new method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "reccIZi6CoyhcZvlq",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP); Minister Susi Pudjiastuti; Satgas 115",
+   "suggestion_reasoning": "Destroying seized foreign vessels is the imposition of punishment on foreign fishers in waters Indonesia claims as EEZ, much of it the Natuna/North Natuna Sea where Vietnam's claim overlaps; coercive. Recorded as the year's representative instance of a repeated practice; nationalities of the 60 were not disclosed. [confidence: low]",
+   "date_end": "2016-08-17",
+   "new_dyads": "IV IU",
+   "excerpt": "the ships were sunk off Ranai, Batam, Tarempa, Kalimantan, Maluku, and Sorong in West Papua to create artificial reefs",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Ranai and Tarempa (Natuna/Anambas), among eight locations",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia marks Independence Day by sinking illegal ships — The Jakarta Post (Associated Press) 2016-08-17\nhttps://www.thejakartapost.com/news/2016/08/17/indonesia-marks-independence-day-by-sinking-illegal-ships-.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:30:31.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-79e24ce1de",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-169a8b7241",
+   "suggested_dyads": [
+    "IV",
+    "IU"
+   ],
+   "summary": "On Independence Day, 17 August 2016, the Maritime Affairs and Fisheries Ministry scuttled 60 foreign fishing boats seized for illegal fishing, including at Ranai and Tarempa in the Natuna area, bringing the total destroyed since late 2014 to more than 200 (the year's largest of several mass sinkings, which mostly involved Vietnamese and Malaysian boats caught in Natuna waters).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-08-17",
+   "presort": "continuation of ev-169a8b7241 (a candidate, provisional) — The Independence Day mass sinking repeats the 18 August 2015 sinking (ev-169a8b7241, prev-run candidate) and the 2015 sinkings in May and October; a larger batch reflects more seized boats, not a new method. Provisional until 2015 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec6qDhnbyadPavt9",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP); Minister Susi Pudjiastuti; Satgas 115",
+   "suggestion_reasoning": "Destroying seized foreign vessels is imposition of punishment on foreign fishers in waters Indonesia claims as EEZ, most of them Vietnamese boats taken in the North Natuna Sea; coercive. Recorded as the year's representative mass sinking. [confidence: medium]",
+   "date_end": "2017-04-01",
+   "new_dyads": "IV IU",
+   "excerpt": "The most destroyed in one area was 26 in Natuna on the edge of South China Sea and 10 in the nearby seaport of Tarempa.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna and Tarempa, among 12 locations",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia destroys 81 foreign ships for poaching — The Philippine Star (Associated Press) 2017-04-03\nhttps://www.philstar.com/nation/2017/04/03/1683750/indonesia-destroys-81-foreign-ships-poaching",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:33:59.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-80d81293ae",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-79e24ce1de",
+   "suggested_dyads": [
+    "IV",
+    "IU"
+   ],
+   "summary": "On Saturday 1 April 2017 the Maritime Affairs and Fisheries Ministry blew up and sank 81 seized foreign fishing boats in 12 locations, the largest group being 26 at Natuna on the edge of the South China Sea and 10 at nearby Tarempa; most were Vietnamese, Malaysian, Thai and Philippine boats, bringing the total destroyed since late 2014 to 317.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-04-01",
+   "presort": "continuation of ev-79e24ce1de (a candidate, provisional) — The 1 April mass sinking repeats the 2016 mass sinkings (ev-79e24ce1de) at the same level; the batch size tracks the number of boats seized. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recD13M3PfAFUHeY7",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Military (TNI); Joint Regional Defence Command I (Rear Adm. Yudo Margono); Indonesian Air Force (TNI AU), Air Commodore Ronny Irianto Moningka",
+   "suggestion_reasoning": "Surging warships and fighter aircraft to the contested EEZ is a show of military presence; demonstrative, with radio demands to Chinese vessels edging towards coercion. [confidence: high]",
+   "date_end": "2020-01-07",
+   "new_dyads": "IC",
+   "excerpt": "The four F-16s departed today,\n\nactively communicating with Chinese coast guard vessels so that they immediately leave the waters",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "North Natuna Sea / Ranai (Raden Sadjad) airbase, Natuna",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia Deploys Fighter Jets to Natunas Amid Tensions with China — Radio Free Asia / BenarNews 2020-01-07\nhttps://rfa.org/english/news/china/indonesia-natuna-01072020170050.html\nIndonesia Will Not Negotiate Natuna Sovereignty, President Says — Radio Free Asia / BenarNews 2020-01-06\nhttps://www.rfa.org/english/news/china/indonesia-natuna-01062020171056.html",
+   "pull_request": 45,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:55:38.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-8e08535a13",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Between 5 and 7 January 2020 Indonesia reinforced Natuna further: Rear Adm. Yudo Margono announced on 5 January that four more warships were being dispatched (making eight) and said his ships were communicating with Chinese coast guard vessels to make them leave, and on 7 January four Air Force F-16s flew from Roesmin Nurjadin airbase in Riau to Natuna; about 30 Chinese ships escorted by coast guard and fisheries vessels were still in the EEZ.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-05",
+   "merge_into_candidate": "ev-39f2da0c71",
+   "presort": "same move as ev-39f2da0c71 — The 5-7 January reinforcement to eight warships and four F-16s is the same January surge as ev-39f2da0c71. (group 2020-01-natuna-surge) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recMojTaPLbJN73jm",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP), patrol vessel KM Hiu Macan 001; Minister Susi Pudjiastuti",
+   "suggestion_reasoning": "Arresting Vietnamese boats and crews in waters where the two states' EEZ claims overlap north of Natuna is physical enforcement imposing punishment; coercive. Indonesia's diplomatic follow-up was conciliatory and is not coded. [confidence: high]",
+   "date_end": "2017-05-21",
+   "new_dyads": "IV",
+   "excerpt": "the clash Sunday took place north of the Natuna island chain\n\ncaught the five boats at around 11 a.m. on Sunday",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "north of the Natuna island chain (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnam, Indonesia vessels clash in South China Sea — Fox News (Associated Press) 2017-05-23\nhttps://www.foxnews.com/world/vietnam-indonesia-vessels-clash-in-south-china-sea\nRI, Vietnam vessels clash in Natuna — The Jakarta Post 2017-05-23\nhttps://www.thejakartapost.com/news/2017/05/23/ri-vietnam-vessels-clash-in-natuna",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:34:55.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-971339b446",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b5c063aa94",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Sunday 21 May 2017 the fisheries ministry patrol vessel KM Hiu Macan 001 intercepted five Vietnamese fishing boats north of Natuna and arrested their crews; a Vietnam Coast Guard ship intervened, rammed and sank one of the boats with an Indonesian fisheries officer aboard and took him into Vietnamese custody, and the Indonesian vessel withdrew holding 11 Vietnamese crew. Indonesia then dealt with the matter through diplomatic channels and the officer was released on 30 May.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-05-21",
+   "presort": "continuation of ev-b5c063aa94 (a candidate, provisional) — Arresting Vietnamese boats north of Natuna is the same seizure practice as 2016 (ev-b5c063aa94, which also met rival coast-guard interference); the VCG's ramming is Vietnam's act, and Indonesia's diplomatic follow-up is conciliatory. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reczDkkumEWzUfXds",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Indonesian Military (TNI); Maritime Security Agency (Bakamla)",
+   "possible_duplicate_of": "ev-8e08535a13",
+   "suggestion_reasoning": "A presidential visit to the forces facing the Chinese flotilla is a show of state presence and administration without direct confrontation; demonstrative. [confidence: high]",
+   "date_end": "2020-01-08",
+   "new_dyads": "IC",
+   "excerpt": "Indonesia has sovereignty rights to arrest or expel foreign vessels that are trying to exploit the resources illegally",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Natuna (Ranai; Integrated Marine and Fisheries Centre, Selat Lampa)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Possible duplicate of ev-8e08535a13.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia: Jokowi Vows to Enforce Maritime Rights amid China Tensions — Radio Free Asia / BenarNews 2020-01-08\nhttps://www.rfa.org/english/news/china/indonesia-natuna-01082020155021.html",
+   "pull_request": 45,
+   "new_issues": [
+    "politics",
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:59:52.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9a0f9944d1",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "duplicate_of": "ev-8e08535a13",
+   "summary": "On 8 January 2020 President Widodo visited Natuna, inspected two warships and the air force base near Ranai and told fishermen at the Integrated Marine and Fisheries Centre that Natuna had always been Indonesia, saying he was there to ensure Indonesia's sovereign rights over EEZ resources were enforced; Bakamla said the Chinese ships were being expelled and moving north.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-08",
+   "merge_into_candidate": "ev-39f2da0c71",
+   "presort": "same move as ev-39f2da0c71 — Widodo's visit to the ships and airbase facing the Chinese flotilla is part of the January 2020 surge (ev-39f2da0c71); 2019 has no presidential visit. (group 2020-01-natuna-surge) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recC7fgmmogXodPGR",
+   "archived_on": "2026-11-27",
+   "actors": "Coordinating Ministry for Political, Legal and Security Affairs (Mahfud MD); Ministry of Maritime Affairs and Fisheries",
+   "suggestion_reasoning": "State-organised deployment of a civilian fishing fleet into the contested EEZ is state-sanctioned resource activity asserting jurisdiction without confrontation; demonstrative (announced 6 January, with departures following in stages). [confidence: medium]",
+   "date_end": "2020-01-06",
+   "new_dyads": "IC",
+   "excerpt": "We want to mobilize fishermen from Pantura [Java's northern coast] and maybe eventually from other areas outside of Pantura\n\nIndonesia will send around 120 fishermen from the island of Java to the Natuna islands in the Riau Islands Province",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "First line of defense: Indonesia to populate Natuna waters with fishers — The Jakarta Post (reprinted by Asia Pacific Solidarity Network) 2020-01-06\nhttps://www.asia-pacific-solidarity.net/news/2020-01-06/first-line-of-defense-indonesia-populate-natuna-waters-fishers.html\nIndonesia to send 120 fishermen to Natuna — The Star (Malaysia) / VNA 2020-01-08\nhttps://thestar.com.my/news/regional/2020/01/08/indonesia-to-send-120-fishermen-to-natuna",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:01:40.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-a2d85c0cb2",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Announcement but no enforcement",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 6 January 2020 Coordinating Minister Mahfud MD received fishers' representatives and announced that the government would mobilise about 120 fishermen and their boats from Java's north coast (Pantura) to fish in the Natuna EEZ where Chinese coast guard vessels were operating, as a first line of defence exercising Indonesia's exclusive rights to the sea's resources.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-01-06",
+   "presort": "new move (novelty) — State mobilisation of some 120 Pantura fishing boats into the contested EEZ as a 'first line of defence' is a new method against 2019 (nothing comparable among the 2019 candidates). It could also be folded into the January surge (ev-39f2da0c71) as one linked response. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reclZ6US7AUZvBzvp",
+   "archived_on": "2026-11-27",
+   "actors": "Minister of Maritime Affairs and Fisheries Susi Pudjiastuti",
+   "suggestion_reasoning": "A ministerial public rejection of China's objection and assertion of Indonesia's rights over the renamed waters is a verbal assertion of claim; declarative. [confidence: high]",
+   "date_end": "2017-07-18",
+   "new_dyads": "IC",
+   "excerpt": "The North Natuna Sea falls within our territory, not within the South China Sea\n\nWe have the right [to rename the waters], the North Natuna Sea is ours",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia shrugs off China's protest over North Natuna Sea's name — The Jakarta Post 2017-07-18\nhttps://www.thejakartapost.com/news/2017/07/18/indonesia-shrugs-off-chinas-protest-over-north-natuna-seas-name\nChina demands Indonesia drop new name for Natuna waters — The Jakarta Post 2017-09-03\nhttps://www.thejakartapost.com/news/2017/09/03/china-demands-indonesia-drop-new-name-for-natuna-waters.html",
+   "pull_request": 45,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:35:31.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-a490d1574c",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 18 July 2017 Maritime Affairs and Fisheries Minister Susi Pudjiastuti rejected China's protest against the North Natuna Sea name, saying the North Natuna Sea fell within Indonesian territory, not the South China Sea, and that Indonesia had the right to rename it; she repeated in August that Indonesia would keep the name, and China's 25 August note demanding its withdrawal was not acted on.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-07-18",
+   "merge_into_candidate": "ev-25c041495e",
+   "presort": "same move as ev-25c041495e — Susi's rejection of China's protest against the new name defends the renaming (ev-25c041495e); same move. (group 2017-north-natuna-sea) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recVHRVh7TOnqTE0k",
+   "archived_on": "2026-11-27",
+   "actors": "Coordinating Minister Luhut Pandjaitan; Indonesian Navy spokesman First Adm. Edi Sucipto",
+   "suggestion_reasoning": "A senior minister's public rejection of China's claimed fishing rights in the Natuna EEZ is a verbal assertion of claim; declarative. [confidence: high]",
+   "date_end": "2016-06-20",
+   "new_dyads": "IC",
+   "excerpt": "We have never acknowledged the so-called traditional fishing grounds.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "Natuna waters",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.thejakartapost.com/news/2016/06/21/indonesia-sees-no-basis-for-territorial-dispute-with-china-minister.html.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia sees no basis for territorial dispute with China: Minister — The Jakarta Post 2016-06-21\nhttps://www.thejakartapost.com/news/2016/06/21/indonesia-sees-no-basis-for-territorial-dispute-with-china-minister",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:27:25.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-ac86336b1d",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 20 June 2016, after a Cabinet meeting at the State Palace, Coordinating Minister for Political, Legal and Security Affairs Luhut Pandjaitan said Indonesia had never acknowledged China's so-called 'traditional fishing grounds' around Natuna, rejecting Beijing's protest over the 17 June warning shots; the Navy the previous day vowed to clear Natuna waters of poachers and increase patrol vessels.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-06-20",
+   "merge_into_candidate": " ev-2f13166d74",
+   "presort": "same move as ev-2f13166d74 — Luhut's renewed rejection of China's 'traditional fishing grounds' after the 17 June shots repeats the position formed in the March protest (ev-2f13166d74, ev-4e92c6e045); one more statement of it belongs with that move, not a move of its own. (group 2016-protest-china) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recApJEfUItKHq1si",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Western Fleet Command (Koarmabar), KRI Oswald Siahaan-354",
+   "suggestion_reasoning": "Warning shots and arrest of a Chinese fishing vessel and crew by a warship in the Natuna EEZ are physical interference and imposition of punishment; coercive. [confidence: high]",
+   "date_end": "2016-05-27",
+   "new_dyads": "IC",
+   "excerpt": "our men on the Oswald Siahaan pursued it and fired another shot before it was finally stopped and arrested\n\nThe Indonesian frigate ultimately seized the fishing vessel, the Gui Bei Yu-27088, and arrested its eight crewmembers.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna waters (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Fresh Natuna incident roils RI-China relations — The Jakarta Post 2016-05-30\nhttps://www.thejakartapost.com/news/2016/05/30/fresh-natuna-incident-roils-ri-china-relations.html\nSouth China Sea: Indonesian Navy Fires at and Arrests Chinese Fishermen — The Diplomat 2016-05-31\nhttps://thediplomat.com/2016/05/south-china-sea-indonesian-navy-fires-at-and-arrests-chinese-fishermen",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:26:54.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-aec79b383a",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On Friday 27 May 2016 the Indonesian Navy frigate KRI Oswald Siahaan-354 fired warning shots at and then arrested the Chinese trawler Gui Bei Yu 27088 and its eight crew for illegal fishing in the Natuna EEZ, blocking a China Coast Guard vessel from freeing the trawler; the crew were taken to the Ranai naval base and the Navy said the case would go to prosecutors.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-05-27",
+   "presort": "new move (novelty) — A warship firing warning shots to arrest a Chinese trawler and blocking a CCG vessel from freeing it is a change of method against 2015, when seizures in Natuna (ev-e29ae434b2, ev-7d261f9658, prev-run candidates) involved boarding and escort to port without gunfire. (group 2016-warning-shots) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recYTHTzMfpkAlsuZ",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Indonesian Air Force (TNI AU)",
+   "suggestion_reasoning": "A large military exercise in the contested area attended by the head of state is a show of presence without direct confrontation; demonstrative. [confidence: high]",
+   "date_end": "2016-10-06",
+   "new_dyads": "IC",
+   "excerpt": "Setibanya di Bandar Udara Rinai, Kabupaten Natuna, Provinsi Kepulauan Riau (Kepri), Kamis (6/10)\n\nThis military training exercise will be conducted by the Indonesian Military in Indonesian territory.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna (Ranai airbase)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tiba di Natuna, Presiden Jokowi Saksikan Latihan Tempur Angkasa Yudha 2016 — Sekretariat Kabinet Republik Indonesia 2016-10-06\nhttps://setkab.go.id/tiba-di-natuna-presiden-jokowi-saksikan-latihan-tempur-angkasa-yudha-2016/\nIndonesia says military training over Natuna regular exercise — The Jakarta Post 2016-10-05\nhttps://www.thejakartapost.com/news/2016/10/05/indonesia-says-military-training-over-natuna-regular-exercise",
+   "pull_request": 45,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:30:45.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b089ffb9bc",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 6 October 2016 President Widodo flew to Ranai, Natuna, on his second visit in four months to witness the Air Force's Angkasa Yudha 2016 combat exercise, which concentrated nearly all of the Air Force's main fighter types (Su-27/30, F-16, Hawk, T-50i, Super Tucano) plus a paratroop drop over the islands bordering the South China Sea; Foreign Minister Retno Marsudi described it as a regular exercise within Indonesian territory.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-10-06",
+   "merge_into_candidate": "ev-11870bdaba",
+   "presort": "same move as ev-11870bdaba — Widodo's second Natuna visit in four months, to watch a combat exercise concentrated over the islands, continues the 2016 head-of-state display formed by ev-11870bdaba; if the coder treats Angkasa Yudha as a routine yearly exercise it is instead a continuation, but no 2015 Natuna exercise is on the record. (group 2016-natuna-president) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recLCsPcAHfksvKIn",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Kemlu)",
+   "suggestion_reasoning": "An official statement on the award that implicitly backs UNCLOS over China's historic claims is a verbal statement of Indonesia's SCS position; declarative, but it is restrained and does not name China, so a coder may judge it non-assertive. [confidence: low]",
+   "date_end": "2016-07-12",
+   "new_dyads": "IU",
+   "excerpt": "to respect international law including UNCLOS 1982",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "South China Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia urges parties to respect laws following South China Sea ruling — The Jakarta Post 2016-07-12\nhttps://www.thejakartapost.com/seasia/2016/07/12/indonesia-urges-parties-to-respect-laws-following-south-china-sea-ruling.html",
+   "pull_request": 45,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:30:13.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-b30f806eed",
+   "run_id": "ID-2016-2020",
+   "note": "Not an assertive move",
+   "suggested_dyads": [
+    "IU"
+   ],
+   "summary": "On 12 July 2016, the day of the Philippines v. China arbitral award, Indonesia's Foreign Ministry issued a statement calling on all parties to exercise self-restraint, to protect Southeast Asia from military activity that could threaten peace and stability, and to respect international law including UNCLOS 1982.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-07-12",
+   "presort": "unclear — Not an assertive act of the claimant — likely reject: the award-day statement calls for restraint and respect for UNCLOS without asserting anything about Indonesia's own claim or naming China. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recR4M3Ee6xZLV5R9",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP), patrol vessel KP Hiu 011",
+   "suggestion_reasoning": "Boarding, arresting and attempting to tow a Chinese fishing vessel in the Natuna EEZ is physical enforcement imposing punishment on another claimant's nationals; coercive. [confidence: high]",
+   "date_end": "2016-03-19",
+   "new_dyads": "IC",
+   "excerpt": "KP HIU 011 detained the vessel along with eight crew members\n\nWe may take it to the International Tribunal for the Law of the Sea [ITLOS]",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna waters (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "RI confronts China on fishing — The Jakarta Post 2016-03-21\nhttps://www.thejakartapost.com/news/2016/03/21/ri-confronts-china-fishing\nRI - China sea spat continues — The Jakarta Post 2016-03-22\nhttps://www.thejakartapost.com/news/2016/03/22/ri-china-sea-spat-continues.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:23:54.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-b5c063aa94",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-e29ae434b2",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 19 March 2016 the Maritime Affairs and Fisheries Ministry patrol vessel KP Hiu 011 detained the Chinese trawler Kway Fey 10078 and its eight crew for illegal trawling in Indonesia's EEZ off Natuna and began towing it to port; an armed China Coast Guard ship collided with the towed trawler and a second Chinese coast guard ship ordered its release, so Indonesia kept the crew but lost the vessel.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-19",
+   "presort": "continuation of ev-e29ae434b2 (a candidate, provisional) — KKP arrest and tow of a poaching trawler in the Natuna EEZ is the 2015 practice of seizing foreign boats there (ev-e29ae434b2, prev-run candidate); that the boat was Chinese changes the target, not the method, and Indonesia lost the boat to CCG interference. Provisional until 2015 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recOLtFsA34Osa84h",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Kemlu)",
+   "suggestion_reasoning": "A formal protest note and summons rejecting China's nine-dash line is a verbal assertion of Indonesia's EEZ rights; declarative. [confidence: high]",
+   "date_end": "2019-12-30",
+   "new_dyads": "IC",
+   "excerpt": "The Foreign Ministry has summoned Chinese Ambassador to Indonesia Xiao Qian to lodge a diplomatic protest\n\nIndonesia will never recognize China's Nine-Dash Line because the drawing of the line is in violation of UNCLOS",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not found",
+    "Possible duplicate"
+   ],
+   "location_name": "Natuna waters (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text. Possible duplicate of ev-03fee649f2.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.thejakartapost.com/news/2020/01/01/indonesia-lodges-strong-protestagainst-china-for-trespassing-poaching-in-natunas.html.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia lodges strong protest against China for trespassing, poaching in Natunas — The Jakarta Post 2019-12-30\nhttps://www.thejakartapost.com/news/2020/01/01/indonesia-lodges-strong-protestagainst-china-for-trespassing-poaching-in-natunas.html\nIndonesia Protests Beijing's Alleged Encroachments Around Natuna Islands — Radio Free Asia / BenarNews 2019-12-30\nhttps://www.rfa.org/english/news/china/indonesia-natuna-12302019160748.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:51:54.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c750c4bf67",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On Monday 30 December 2019 the Foreign Ministry summoned Chinese Ambassador Xiao Qian and lodged a strong protest, with a diplomatic note, over violations of Indonesia's EEZ including IUU fishing and violations by China's Coast Guard in Natuna waters, stating that Indonesia would never recognise China's nine-dash line because it is contrary to UNCLOS as confirmed by the 2016 arbitral ruling.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-12-30",
+   "merge_into_candidate": "ev-03fee649f2",
+   "presort": "same move as ev-03fee649f2 — Summoning China's ambassador with a protest note over the CCG violations is the diplomatic side of the December standoff (ev-03fee649f2); 2018 has no protest to China, so if the coder splits it off it is its own declarative novelty. (group 2019-natuna-standoff) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recVCc3VNKAIlqItN",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Indonesian Military (TNI) Quick Response Strike Force (PPRC)",
+   "suggestion_reasoning": "A large tri-service exercise in the islands facing the contested EEZ, attended by the head of state, is a show of military presence without confrontation; demonstrative. [confidence: high]",
+   "date_end": "2017-05-19",
+   "new_dyads": "IC",
+   "excerpt": "Whether on land, in the sky, or on water, our military force is ready when the nation needs it.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "Tanjung Datuk, Bunguran Island, Natuna",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.thejakartapost.com/news/2017/05/20/jokowi-observes-massive-tni-exercise-near-s-china-sea.html.",
+   "reviewer": "Angelo",
+   "sources": "Jokowi observes massive TNI exercise near S. China Sea — The Jakarta Post 2017-05-20\nhttps://www.thejakartapost.com/news/2017/05/20/jokowi-observes-massive-tni-exercise-near-s-china-sea.html",
+   "pull_request": 45,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:34:14.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-cf6460705c",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b089ffb9bc",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 19 May 2017 President Widodo observed the Indonesian Military's Quick Response Strike Force (PPRC) exercise at Tanjung Datuk on Natuna's main island, involving some 5,900 troops with air, sea and land assets, the largest exercise yet staged in the Natunas, saying it showed the TNI's readiness to maintain the unitary state.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-05-19",
+   "presort": "continuation of ev-b089ffb9bc (a candidate, provisional) — A large exercise in Natuna watched by the President continues 2016's Angkasa Yudha over Natuna with Widodo present (ev-b089ffb9bc); 'largest yet' is size, not a new method or area. Least sure of this one: a coder may read a 5,900-troop tri-service exercise as a frequency step. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recRLzWfqDT9V6zHe",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Military (TNI); Commander Air Marshal Hadi Tjahjanto; Natuna Integrated TNI Unit",
+   "suggestion_reasoning": "Opening a new tri-service military base on the islands facing the contested EEZ is unilateral construction and a show of presence without confrontation; demonstrative. [confidence: high]",
+   "date_end": "2018-12-18",
+   "new_dyads": "IC",
+   "excerpt": "The base, which opened on Tuesday, is located in Selat Lampa on Natuna Besar Island.\n\nOn December 18, Indonesian military (TNI) Commander Air Marshall Hadi Tjahjanto inaugurated a new base in Natuna Besar",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "Selat Lampa, Natuna Besar Island",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.asia-pacific-solidarity.net/news/2018-12-19/indonesia-opens-military-base-edge-of-south-china-sea-deter-security-threats.html.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia opens military base on edge of South China Sea to deter security threats — South China Morning Post (reprinted by Asia Pacific Solidarity Network) 2018-12-19\nhttps://www.asia-pacific-solidarity.net/news/2018-12-19/indonesia-opens-military-base-edge-of-south-china-sea-deter-security-threats.html\nIndonesia's Natuna Base: Not About Deterring China — CSIS Asia Maritime Transparency Initiative 2019-01-25\nhttps://amti.csis.org/indonesias-natuna-base-not-about-deterring-china/",
+   "pull_request": 45,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:41:44.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-d11db7990b",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 18 December 2018 Indonesian Military commander Air Marshal Hadi Tjahjanto inaugurated the Natuna Integrated TNI Unit base at Selat Lampa on Natuna Besar, with an army composite battalion (launched in August 2018), marine, engineer and artillery companies and a hangar for a UAV squadron, saying it was designed as a deterrent against security threats in border areas.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-12-18",
+   "presort": "new move (novelty) — Inaugurating a new integrated tri-service base with a UAV hangar at Selat Lampa is a new fixed facility; 2017 has no construction or garrison act (nothing comparable among the 2017 candidates), the base having been announced in 2015-16 (ev-eb13b3fa8a). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recKZxJTaJxKP6Kik",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), KRI Tjiptadi-381; Fleet I commander Rear Adm. Yudo Margono",
+   "suggestion_reasoning": "Arrest of a Vietnamese trawler and crew in the contested EEZ despite obstruction by Vietnamese state vessels is physical enforcement imposing punishment; coercive. [confidence: high]",
+   "date_end": "2019-04-27",
+   "new_dyads": "IV",
+   "excerpt": "the Vietnamese coast guard ship struck the left side of the Indonesian vessel and also hit the fishing boat, which eventually capsized\n\nThe navy subsequently arrested a dozen Vietnamese fishermen",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "location_name": "North Natuna Sea (Indonesian EEZ)",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia to Sink More Foreign Boats Amid New Maritime Tensions with Vietnam — Radio Free Asia / BenarNews 2019-04-29\nhttps://www.rfa.org/english/news/vietnam/indonesia-boats-04292019170113.html\nIndonesia detains Vietnamese fishermen after high-seas clash — Malay Mail (AFP) 2019-04-29\nhttps://www.malaymail.com/amp/news/world/2019/04/29/indonesia-detains-vietnamese-fishermen-after-high-seas-clash/1748033",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:42:38.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-d1751229a0",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On Saturday 27 April 2019 the Navy corvette KRI Tjiptadi-381, while moving to arrest a Vietnamese trawler fishing illegally in the Natuna EEZ, was obstructed by Vietnam Coast Guard/fisheries surveillance ships, one of which struck the Indonesian ship's side and hit the trawler, which capsized; the Navy nonetheless arrested the trawler's 12 Vietnamese crew and held them at the Natuna naval base.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-04-27",
+   "merge_into_candidate": "ev-1936193d8d",
+   "presort": "same move as ev-1936193d8d — Arresting a trawler's crew despite Vietnamese state ships striking the Indonesian corvette is the second confrontation with Vietnamese escorts that year, the same 2019 pattern as ev-1936193d8d. (group 2019-vietnam-escorts) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJ5VV7mytBhCEKH",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP); Maritime Security Agency (Bakamla); patrol boat Hiu Macan 01",
+   "suggestion_reasoning": "Mass arrest of another claimant's fishing boats and crews in the Natuna EEZ, where Indonesia's and Vietnam's EEZ claims overlap, is physical enforcement imposing punishment; coercive. Recorded as the year's representative instance of a frequent practice. [confidence: medium]",
+   "date_end": "2017-03-21",
+   "new_dyads": "IV",
+   "excerpt": "arrested 13 boats flying Vietnamese flags for fishing illegally",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "eastern Natuna Sea, Riau Islands province",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "13 Vietnamese fishing boats nabbed in Natuna waters — The Jakarta Post 2017-03-22\nhttps://www.thejakartapost.com/news/2017/03/22/13-vietnamese-fishing-boats-nabbed-in-natuna-waters",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:33:35.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-dd021d9ea0",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-b5c063aa94",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On 21 March 2017 a joint patrol of the Maritime Affairs and Fisheries Ministry and the Maritime Security Agency (Bakamla), after the patrol boat Hiu Macan 01 detected a fleet of fishing boats in Natuna waters, arrested 13 Vietnamese-flagged fishing boats and 94 crew for fishing illegally in the eastern Natuna Sea (one of many such arrests of Vietnamese boats in the Natuna EEZ that year).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2017-03-21",
+   "presort": "continuation of ev-b5c063aa94 (a candidate, provisional) — Mass arrest of Vietnamese boats in the Natuna EEZ is the standing seizure practice shown in 2016 (ev-b5c063aa94; boats seized in Natuna fed the ev-79e24ce1de sinking); more arrests because more boats came is not a frequency move. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recQcTC3MYne9vXFc",
+   "archived_on": "2026-11-27",
+   "actors": "Permanent Mission of the Republic of Indonesia to the United Nations; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A circular note to the UN contesting China's claim is a formal verbal assertion of Indonesia's legal position; declarative. The note itself is a scanned UN PDF that could not be checked, so press/analysis sources are cited. [confidence: high]",
+   "date_end": "2020-05-26",
+   "new_dyads": "IC",
+   "excerpt": "rejected China's Nine-Dash Line map or claim of historical rights\n\nJakarta further affirmed in the note that it has no territorial dispute with Beijing.\n\na note verbale addressed to UN Secretary General António Guterres on May 26",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "South China Sea / North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 402); excerpt not checked.\n\n[Excerpt re-check 2026-11-24] Confirmed on https://www.globalsecurity.org/military/library/news/2020/06/mil-200618-rfa01.htm.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia Rejects China's Offer for South China Sea Talks — Radio Free Asia / BenarNews (reprinted by GlobalSecurity.org) 2020-06-18\nhttps://www.globalsecurity.org/military/library/news/2020/06/mil-200618-rfa01.htm\nSouth China Sea: Indonesia Crosses Swords with China — ISEAS - Yusof Ishak Institute (Commentary 2020/86, Leo Suryadinata) 2020-06-26\nhttps://www.iseas.edu.sg/media/commentaries/south-china-sea-indonesia-crosses-swords-with-china/\nDOCUMENT: Indonesia invokes Hague ruling in United Nations note — Rappler 2020-05-29\nhttps://www.rappler.com/world/262335-document-indonesia-invokes-hague-ruling-in-united-nations-note/",
+   "pull_request": 45,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:02:36.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-dd7720f962",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 26 May 2020 Indonesia's Permanent Mission to the UN sent a note verbale to Secretary-General António Guterres, in the exchange triggered by Malaysia's December 2019 CLCS submission, stating that China's nine-dash line map and claim of historic rights lacked any basis in international law, invoking the 12 July 2016 arbitral award, and affirming that Indonesia has no territorial dispute with China.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-05-26",
+   "presort": "new move (novelty) — A note verbale to the UN Secretary-General rejecting the nine-dash line and historic rights is a new kind of declarative act against 2019, when Indonesia protested only bilaterally (ev-c750c4bf67) — the guide's own example of a declarative novelty. (group 2020-un-notes) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recHhuOFNAkg4ugrP",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Defence; Defence Minister Ryamizard Ryacudu; Coordinating Minister Luhut Pandjaitan",
+   "suggestion_reasoning": "An announced military reinforcement of the contested EEZ's garrison is a verbal assertion of Indonesia's position (the deployment itself came later); declarative, with a coder free to treat later deployments as demonstrative. [confidence: medium]",
+   "date_end": "2016-03-31",
+   "new_dyads": "IC",
+   "excerpt": "Natuna is a door, if the door is not guarded then thieves will come inside\n\nWe will certainly look to strengthen the naval base in Natuna",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia to deploy F-16s to guard South China Sea territory — The Japan Times (Bloomberg) 2016-04-01\nhttps://japantimes.co.jp/news/2016/04/01/asia-pacific/indonesia-to-deploy-f-16s-to-guard-south-china-sea-territory\nRI - China sea spat continues — The Jakarta Post 2016-03-22\nhttps://www.thejakartapost.com/news/2016/03/22/ri-china-sea-spat-continues.html",
+   "pull_request": 45,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:26:38.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e142237919",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-35e97bc7d1",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 31 March 2016 Defence Minister Ryamizard Ryacudu told Bloomberg News that Indonesia would deploy F-16 fighter jets to the Natuna Islands and strengthen the military presence there, saying 'Natuna is a door, if the door is not guarded then thieves will come inside'; Coordinating Minister Luhut Pandjaitan had earlier (21 March) said the Natuna naval base would be strengthened with better patrol boats.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-03-31",
+   "presort": "continuation of ev-35e97bc7d1 (a candidate, provisional) — Announcing F-16s and a stronger Natuna base continues 2015's announced and funded reinforcement of the Natuna base (ev-35e97bc7d1, ev-2bd4d6e45b, prev-run candidates) at the same level; the deployment itself had not happened. Provisional until 2015 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "reciRfuXPnN99HbjL",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Cabinet; Ministry of Maritime Affairs and Fisheries; Ministry of Defence",
+   "suggestion_reasoning": "A cabinet decision to populate the Natuna EEZ with licensed fishing fleets, accelerate gas exploration and expand military infrastructure is unilateral administration of the contested area; demonstrative (announced policy rather than a physical act, so a coder may prefer declarative). [confidence: medium]",
+   "date_end": "2016-06-29",
+   "new_dyads": "IC",
+   "excerpt": "The government will allow local fishing vessels above 30 deadweight tonnage and which are registered outside Natuna",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:15:34.000Z",
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Govt to fortify flashpoint island — The Jakarta Post 2016-06-30\nhttps://www.thejakartapost.com/news/2016/06/30/govt-fortify-flashpoint-island.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "energy",
+    "military",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:30:01.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-eb13b3fa8a",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 29 June 2016 President Widodo chaired a limited Cabinet meeting in Jakarta that adopted measures to develop and fortify Natuna: fishing vessels above 30 GT registered outside Natuna would be licensed to fish in Natuna waters, gas exploration in Natuna blocks would be accelerated, the Ranai airbase runway would be extended for F-16s and port facilities for three frigates would be built.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2016-06-29",
+   "merge_into_candidate": "ev-11870bdaba",
+   "presort": "same move as ev-11870bdaba — The 29 June cabinet package (fishing fleets licensed into Natuna waters, faster gas exploration, runway and frigate port) turns the instructions given aboard KRI Imam Bonjol on 23 June (ev-11870bdaba) into measures; one linked series. The military-infrastructure part alone would be a continuation of ev-35e97bc7d1. (group 2016-natuna-president) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "energy",
+    "military",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recwDtAzKYOmreGSa",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Maritime Affairs and Fisheries (KKP); Minister Susi Pudjiastuti; Satgas 115",
+   "suggestion_reasoning": "Destruction of seized foreign fishing vessels is imposition of punishment on foreign fishers, the bulk of them Vietnamese boats taken in the contested Natuna EEZ; coercive. The sources do not list the sinking sites, so the Natuna share is not confirmed. [confidence: low]",
+   "date_end": "2018-08-20",
+   "new_dyads": "IV IU",
+   "excerpt": "The vessels sunk on Monday included 86 Vietnamese-flagged ships, 20 Malaysian and 14 from the Philippines.\n\nIndonesian authorities on Monday scuttled 125 foreign vessels at 11 different locations in the country",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable",
+    "Low confidence"
+   ],
+   "location_name": "11 locations across Indonesia",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 403); excerpt not checked.\nSub-regions suggested: 10 Far South (Natuna Sea).",
+   "reviewer": "Angelo",
+   "sources": "Indonesia sinks 125 mostly foreign illegal fishing vessels — The Washington Times (Associated Press) 2018-08-21\nhttps://m.washingtontimes.com/news/2018/aug/21/indonesia-sinks-125-mostly-foreign-illegal-fishing/\nIndonesia sinks 86 Vietnamese fishing boats — VnExpress International 2018-08-23\nhttps://e.vnexpress.net/news/news/indonesia-sinks-86-vietnamese-fishing-boats-3797210.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:41:30.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-f37027dca4",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-80d81293ae ",
+   "suggested_dyads": [
+    "IV",
+    "IU"
+   ],
+   "summary": "On Monday 20 August 2018 the Maritime Affairs and Fisheries Ministry simultaneously scuttled 125 seized vessels at 11 locations, including 86 Vietnamese-flagged, 20 Malaysian and 14 Philippine boats, bringing the total destroyed since October 2014 to 488 (the year's largest mass sinking; most Vietnamese boats had been caught in the North Natuna Sea).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2018-08-20",
+   "presort": "continuation of ev-80d81293ae (a candidate, provisional) — The August mass sinking continues the 2017 sinkings (ev-80d81293ae); 125 boats rather than 81 reflects more seizures, and the Natuna share is not confirmed. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recKVQMZfQ4jwf9VD",
+   "archived_on": "2026-11-27",
+   "actors": "Permanent Mission of the Republic of Indonesia to the United Nations; Foreign Minister Retno Marsudi",
+   "suggestion_reasoning": "A UN note rejecting China's offer of boundary talks and denying any overlap is a verbal assertion of Indonesia's EEZ position; declarative. The original is a scanned UN PDF not checked by the importer. [confidence: high]",
+   "date_end": "2020-06-12",
+   "new_dyads": "IC",
+   "excerpt": "sees no legal reasoning under international law",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not checked",
+    "Source unreachable"
+   ],
+   "location_name": "South China Sea / North Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Source page could not be fetched (HTTP 402); excerpt not checked.",
+   "reviewer": "Angelo",
+   "sources": "Indonesia Rejects China's Offer for South China Sea Talks — Radio Free Asia / BenarNews (reprinted by GlobalSecurity.org) 2020-06-18\nhttps://www.globalsecurity.org/military/library/news/2020/06/mil-200618-rfa01.htm",
+   "pull_request": 45,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:02:54.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-fbc674a7d4",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 12 June 2020 Indonesia sent a second note to the UN Secretary-General replying to China's 2 June letter, which had proposed negotiating 'overlapping claims': Indonesia stated that under UNCLOS 1982 there were no overlapping claims with China and that it saw no legal reasoning under international law to negotiate maritime boundaries with China; Foreign Minister Retno Marsudi said there was no reason to negotiate.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2020-06-12",
+   "merge_into_candidate": "ev-dd7720f962",
+   "presort": "same move as ev-dd7720f962 — The second UN note, denying any overlapping claim and refusing boundary talks, belongs to the same 2020 UN-note exchange as ev-dd7720f962. (group 2020-un-notes) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec50nkn8NvfeOrYt",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (spokesman Arrmanatha Nasir); Minister of Maritime Affairs and Fisheries Susi Pudjiastuti",
+   "suggestion_reasoning": "Official statements condemning Vietnamese government vessels' interference and asserting Indonesia's enforcement rights in the Natuna EEZ are verbal assertions of claim; declarative. [confidence: medium]",
+   "date_end": "2019-02-26",
+   "new_dyads": "IV",
+   "excerpt": "We request that Vietnam's government explain about and apologize for the incident.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T16:19:29.000Z",
+   "flags": [
+    "Excerpt not found"
+   ],
+   "location_name": "northern Natuna Sea",
+   "run": [
+    "ID-2016-2020"
+   ],
+   "machine_note": "Excerpt not found verbatim in the captured text.",
+   "reviewer": "Angelo",
+   "sources": "RI slams Vietnam for disrupting arrests — The Jakarta Post 2019-02-27\nhttps://www.thejakartapost.com/seasia/2019/02/27/ri-slams-vietnam-for-disrupting-arrests.html",
+   "pull_request": 45,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T20:42:26.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-fe9e0db5e6",
+   "run_id": "ID-2016-2020",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On 26 February 2019 Foreign Ministry spokesman Arrmanatha Nasir said Indonesia regretted the disruption of its law-enforcement measures by Vietnamese fisheries surveillance vessels two days earlier; on 25 February Fisheries Minister Susi Pudjiastuti had demanded that Vietnam's government explain and apologise for the incident and said she would discuss a formal protest with the Foreign Minister.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2019-02-26",
+   "merge_into_candidate": "ev-1936193d8d",
+   "presort": "same move as ev-1936193d8d — Statements demanding an explanation and apology from Vietnam are the declarative side of the 24 February confrontation (ev-1936193d8d). (group 2019-vietnam-escorts) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  }
+ ]
+}

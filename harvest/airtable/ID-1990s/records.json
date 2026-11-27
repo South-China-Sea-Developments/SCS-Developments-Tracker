@@ -1,0 +1,1469 @@
+{
+ "run_id": "ID-1990s",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "recpdeOjSHNZtz6eU",
+   "archived_on": "2026-11-27",
+   "actors": "ABRI Joint Chiefs of Staff",
+   "suggestion_reasoning": "Adopting a military plan to defend the Natuna field against a rival claim is unilateral military preparation; demonstrative, though it was prepared with a non-claimant (Australia) and its approval is reported only as scheduled. [confidence: low]",
+   "date_end": "1997-04-30",
+   "new_dyads": "IC",
+   "excerpt": "The Natuna strategy was due to be considered for approval by the Indonesian armed forces Joint Chiefs of Staff at the end of April.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Natuna gas field (D-Alpha), 280 km north-east of Natuna Island",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Australia and Indonesia plan a defence for disputed territory — Flight International (FlightGlobal) 1997-05-07\nhttps://flightglobal.com/australia-and-indonesia-plan-a-defence-for-disputed-territory/665.article",
+   "pull_request": 68,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:59:43.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-102ba7ae35",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "No clear decision, statement, or enforcement",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "A defence strategy for the Natuna gas field, the subject of a Chinese territorial claim, drawn up since November 1996 with Australian defence officials, was due to be considered for approval by the Indonesian armed forces' Joint Chiefs of Staff at the end of April 1997; Australian officials later said it included surface-to-air missiles on gas production platforms.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1997-04-01",
+   "presort": "unclear — A Natuna field defence strategy (reportedly with SAMs on platforms) was only scheduled for approval, drafted with a non-claimant; it is a plan, not behaviour. Settle by whether it was adopted and any missiles deployed, and when. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec2sT4WkUqLVYC06",
+   "archived_on": "2026-11-27",
+   "actors": "Tanjung Pinang District Court; Riau prosecution office",
+   "suggestion_reasoning": "Prosecution, imprisonment and confiscation of a claimant's fishing boats caught in the Natuna waters is the imposition of punishment to enforce Indonesia's maritime jurisdiction; coercive. The ANTARA item (19 Sep 1991) says the deportation took place 'on Tuesday', i.e. mid-September; the arrest date is not given. Source is FBIS OCR text on the Internet Archive. [confidence: medium]",
+   "date_end": "1991-09-30",
+   "new_dyads": "IV",
+   "excerpt": "Sixty-four Vietnamese fishermen were deported to their home country on Tuesday after serving a two-month prison term in Tanjung Pinang for illegally fishing in the Indonesian waters.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Islands waters; Tanjung Pinang (Riau)",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Vietnamese Fishermen Deported After Prison Term (ANTARA, 19 Sep 1991), FBIS-EAS-91-182 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1991-09-19\nhttps://archive.org/download/micro_IA1176901_0500/micro_IA1176901_0500_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:44:31.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-11f379bf83",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Indonesia deported 64 Vietnamese fishermen in September 1991 after they had served a two-month prison term imposed by the Tanjung Pinang court for illegal fishing in Indonesian waters off the Natuna Islands; the court confiscated their three fishing vessels. A local prosecution spokesman said foreign vessels were often seen fishing illegally in Natuna waters.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1991-09-01",
+   "presort": "new move (novelty) — Prosecuting, jailing and confiscating the boats of 64 Vietnamese fishermen caught off Natuna is coercive enforcement with nothing comparable in 1990 (no candidates) or in the 1989 prev file (empty), so new against last year. Doubt: the prosecutor says foreign boats were 'often' seen, so such arrests may have been routine and simply unreported earlier. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recNe5s9JH0FTtsoH",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Ali Alatas; Department of Foreign Affairs",
+   "suggestion_reasoning": "A written diplomatic challenge to China's baselines, with a warning against extending them to the Spratlys (which would push China's claim towards the Natuna waters), is a declarative act. The aide-memoire's date is not given (mid-1996; disclosed 20-21 July). [confidence: medium]",
+   "date_end": "1996-07-31",
+   "new_dyads": "IC",
+   "excerpt": "Ali Alatas said that China was not entitled to call itself an archipelago state.\n\nthe Indonesian Government sent an official note to Beijing protesting against China's decision",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "South China Sea (Paracel baselines; Spratlys; Natuna waters)",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Alatas Comments on South China Sea Issue (Kompas, 22 Jul 1996), FBIS-EAS-96-141 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1996-07-22\nhttps://archive.org/download/micro_IA1176901_1761/micro_IA1176901_1761_djvu.txt\n'Indonesian Defence Strategy and Security: Time for a Rethink?', Contemporary Southeast Asia 20 (1998) (Internet Archive scan of vol. 20) — Contemporary Southeast Asia (ISEAS), via Internet Archive 1998-01-01\nhttps://archive.org/download/ahiw_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2020%20Journal%201998%20Trimonthly%20International%20Relations%20Strategic%20Affairs%20Singapore%20-%20Insti_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:55:25.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-1be56357ec",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-814e47453d",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Indonesia delivered an aide-memoire to China's ambassador in Jakarta questioning the legal basis of the straight baselines China declared on 15 May 1996 and, according to a 1998 account, warning that drawing similar baselines in the Spratlys would be considered provocative. Foreign Minister Ali Alatas disclosed the aide-memoire around the ASEAN ministerial meeting in Jakarta on 20-21 July 1996, saying China was not entitled to call itself an archipelagic state.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1996-07-01",
+   "presort": "continuation of ev-814e47453d (a candidate, provisional) — The aide-memoire questioning China's baselines continues the 1995 written challenges to China's claim (ev-814e47453d) by the same method; the warning against Spratly baselines is the strongest element but not a change of method; continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recKCFZKuBAojM4fk",
+   "archived_on": "2026-11-27",
+   "actors": "General Feisal Tanjung, ABRI Commander; DPR Commission I",
+   "suggestion_reasoning": "A military commander's public statement of readiness to defend Indonesian sovereignty against spill-over from the Spratly dispute is a verbal assertion; declarative. [confidence: medium]",
+   "date_end": "1995-02-20",
+   "new_dyads": "IC",
+   "excerpt": "ABRI is ready to face any eventuality if the dispute has any impact on Indonesia's sovereignty.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "South China Sea",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Military Chief Views Spratly Islands Dispute (Radio Republik Indonesia, 20 Feb 1995), FBIS-EAS-95-034 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-02-21\nhttps://archive.org/download/micro_IA1176901_1394/micro_IA1176901_1394_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:49:32.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-254f046a37",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Armed Forces Commander General Feisal Tanjung told the House of Representatives' Commission I on 20 February 1995 that, whatever happened in the Spratly dispute between the Philippines and China, ABRI was ready to face any eventuality if the dispute had any impact on Indonesia's sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-02-20",
+   "merge_into_candidate": "ev-9af9a5f279 ",
+   "presort": "same move as ev-9af9a5f279 — Feisal Tanjung's February readiness statement to parliament is part of ABRI's 1995 military posture over Natuna led by ev-9af9a5f279; one move. (group ID1995-natuna-military-posture) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec2lX1K3dnKHyEN3",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy Western Fleet (Commodore Bambang Surjanto); Indonesian Air Force; KRI Teluk Banten, KRI Fatahillah, KRI Nala, KRI Nanggala",
+   "suggestion_reasoning": "A combined naval and air exercise in the Natuna area with a scenario of enemies coming from the Spratlys is a unilateral show of military presence; demonstrative. The Jakarta Post report (18 Dec 1993) gives the climax as 'Wednesday', i.e. mid-December, without a calendar date; no state is named as the target, so the dyad is unclear. [confidence: medium]",
+   "date_end": "1993-12-31",
+   "new_dyads": "IU",
+   "excerpt": "Indonesian warships and fighter planes successfully intercepted and destroyed a cargo ship and a tanker near Kayuara Island, a member of the Natuna archipeiago.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "South China Sea near Kayuara Island and Ranai (Natuna Islands)",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "South China Sea Joint Military Exercise (The Jakarta Post, 18 Dec 1993), FBIS-EAS-93-247 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1993-12-28\nhttps://archive.org/download/micro_IA1176901_1084/micro_IA1176901_1084_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:47:54.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-2f5c759ff2",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IU"
+   ],
+   "summary": "The Indonesian Navy and Air Force held a four-day joint exercise in the South China Sea around the Natuna Islands involving 1,500 personnel, seven warships (including a submarine) and six aircraft; the scenario had Indonesian forces intercept an enemy supply convoy and aircraft operating from a base in the Spratly Islands, and an officer said the drill was meant to make regional countries aware of the need to respect their neighbours' sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1993-12-01",
+   "presort": "new move (novelty) — A four-day joint naval-air exercise with seven warships, a submarine and a Spratly-based enemy scenario is a different method from the 1992 stepped-up patrols (ev-532ff4c1d7); demonstrative. Doubt: a coder may see it as the same military presence at a similar level, i.e. a continuation of ev-532ff4c1d7. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec2zbY0kBDBPzWgT",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Ali Alatas; President Suharto",
+   "suggestion_reasoning": "A public statement denying any Chinese basis for an overlap and demanding clarification of the line is a verbal assertion; declarative. Reuters (26 Jun 1995) reported it as 'Indonesia says no sea border problem with China'. [confidence: medium]",
+   "date_end": "1995-06-26",
+   "new_dyads": "IC",
+   "excerpt": "We have asked the Chinese Government to clarify the broken boundary lines on its map. I think the PRC has to clarify the map first.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Southern South China Sea; Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Alatas: 'No Boundary Dispute' With PRC (Radio Republik Indonesia, 26 Jun 1995), FBIS-EAS-95-123 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-06-27\nhttps://archive.org/download/micro_IA1176901_1487/micro_IA1176901_1487_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:54:27.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-3488966987",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "After briefing President Suharto on 26 June 1995, Foreign Minister Ali Alatas said there was no boundary dispute between Indonesia and China in the South China Sea, that China had never claimed the Natunas, and that Indonesia had asked China to clarify the broken lines on its map, which China had to do first; he added that a continental shelf boundary with Vietnam was being marked out.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-06-26",
+   "merge_into_candidate": "ev-814e47453d",
+   "presort": "same move as ev-814e47453d — Alatas saying China never claimed Natuna and must clarify its line first is part of the same 1995 diplomatic challenge led by ev-814e47453d; one move. (group ID1995-china-line-diplomacy) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recxOEtjHiBqvbF4e",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy Western Fleet (spokesman Lt Col Sunarto Wibowo)",
+   "suggestion_reasoning": "A named two-month naval patrol operation in the Natuna waters is unilateral presence and policing without confrontation; demonstrative. Its stated targets are boat people and piracy, not a rival claimant, so the dyad is unclear and a coder may treat it as routine. [confidence: medium]",
+   "date_end": "1994-01-14",
+   "new_dyads": "IU",
+   "excerpt": "The Indonesian navy has deployed four ships, including three frigates, in a two-month naval operation to safeguard the waters near Natuna islands",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Waters near the Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Navy Sends Ships to Natuna Island Waters (AFP, 14 Jan 1994), FBIS-EAS-94-011 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1994-01-18\nhttps://archive.org/download/micro_IA1176901_1099/micro_IA1176901_1099_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:48:10.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-3ffea871c9",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-2f5c759ff2",
+   "suggested_dyads": [
+    "IU"
+   ],
+   "summary": "An Indonesian Western Fleet spokesman announced on 14 January 1994 that the navy had deployed four ships, including three frigates and a tanker, in a two-month 'Natuna Jaya' operation to safeguard the waters near the Natuna Islands, aimed at maintaining security and intercepting Cambodian and Vietnamese boat people.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1994-01-14",
+   "presort": "continuation of ev-2f5c759ff2 (a candidate, provisional) — The two-month Natuna Jaya naval operation keeps up the naval presence shown in 1993 (ev-2f5c759ff2) at no higher level, and its stated targets are boat people and piracy rather than a rival claimant; continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec3ZgnIfnpsANsGi",
+   "archived_on": "2026-11-27",
+   "actors": "Department of Foreign Affairs (Izhar Ibrahim, Director-General for Political Affairs)",
+   "suggestion_reasoning": "Formally objecting to China's 15 May 1996 straight baselines is a verbal diplomatic challenge to a Chinese maritime claim; declarative. The baselines concern the Paracels, so a coder may decide whether this counts as Indonesia acting as a claimant; the report ties it to the Natuna waters. [confidence: medium]",
+   "date_end": "1996-06-11",
+   "new_dyads": "IC",
+   "excerpt": "The sources noted that Indonesia also objects to the way the PRC draws its base line",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "South China Sea (Paracel baselines)",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "PRC Adopts 'Increasingly Open Stance' Toward ASEAN (Suara Pembaruan, 11 Jun 1996), FBIS-EAS-96-115 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1996-06-13\nhttps://archive.org/download/micro_IA1176901_1734/micro_IA1176901_1734_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:55:13.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-49353bad83",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-814e47453d",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "At the second ASEAN-China senior officials' consultations, held in Bukittinggi on 10-11 June 1996 and chaired by Indonesia's Director-General for Political Affairs Izhar Ibrahim, Indonesia objected to the way China drew its new baselines from its outermost reefs, which it considered contrary to UNCLOS; Indonesian officials noted that Indonesia shares a border with China in the Natuna waters.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1996-06-10",
+   "presort": "continuation of ev-814e47453d (a candidate, provisional) — Objecting to China's new baselines at the ASEAN-China consultations is a diplomatic challenge to a Chinese claim at the same level as the 1995 challenges (ev-814e47453d); more to react to, not a new method; continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recpdzRv77JtxQfyQ",
+   "archived_on": "2026-11-27",
+   "actors": "President Suharto; House of Representatives (DPR)",
+   "suggestion_reasoning": "Legislation defining the extent of Indonesia's waters and its baseline regime is a legal assertion of maritime jurisdiction; declarative. It is general rather than aimed at one state; the Natuna basepoints followed in PP 61/1998. The second source (UN DOALOS English text) is a PDF the importer cannot check. [confidence: medium]",
+   "date_end": "1996-08-08",
+   "new_dyads": "IA",
+   "excerpt": "Negara Republik Indonesia adalah Negara Kepulauan.\n\nAct No. 6 of 8 August 1996 regarding Indonesian Waters",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "location_name": "Indonesian archipelagic waters, including the Natuna Sea",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Undang-Undang Republik Indonesia Nomor 6 Tahun 1996 tentang Perairan Indonesia — JDIH Kementerian Keuangan 1996-08-08\nhttps://jdih.kemenkeu.go.id/api/download/fulltext/1996/6TAHUN~1996UU.htm\nAct No. 6 of 8 August 1996 regarding Indonesian Waters — UN DOALOS\nhttps://www.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/IDN_1996_Act.pdf",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:56:00.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-4d09642bdc",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IA"
+   ],
+   "summary": "Indonesia enacted Law No. 6 of 1996 on Indonesian Waters on 8 August 1996, replacing the 1960 law, restating that Indonesia is an archipelagic state and providing for archipelagic baselines to be drawn under UNCLOS Part IV, the basis for the later Natuna Sea baseline regulation.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1996-08-08",
+   "presort": "new move (novelty) — Law 6/1996 replaces the 1960 waters law and sets the archipelagic-baseline regime later applied to Natuna; legislation is a new method against 1995 (statements, patrols, contracts); declarative. Doubt: it is nationwide UNCLOS implementation, so a coder may treat it as routine and wait for the Natuna baselines (ev-c7a0d24a85). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recF4iPqWaT8sgOYX",
+   "archived_on": "2026-11-27",
+   "actors": "President B.J. Habibie; House of Representatives (DPR)",
+   "suggestion_reasoning": "Creating a dedicated local administration for the frontier islands is unilateral administrative consolidation; demonstrative, low intensity. It was part of a nationwide decentralisation package and names no rival claimant, so a coder may treat it as domestic routine. [confidence: low]",
+   "date_end": "1999-10-04",
+   "new_dyads": "IU",
+   "excerpt": "Kabupaten Karimun dan Kabupaten Natuna sebagai pemekaran Kabupaten Kepulauan Riau",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Natuna Regency (Kabupaten Natuna), Riau",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Undang-Undang Republik Indonesia Nomor 53 Tahun 1999 tentang Pembentukan Kabupaten Pelalawan, ... Kabupaten Natuna, ... dan Kota Batam — JDIH Kementerian Keuangan 1999-10-04\nhttps://jdih.kemenkeu.go.id/api/download/fulltext/1999/53TAHUN1999UU.htm",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T19:00:17.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-4d5b0cdec2",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IU"
+   ],
+   "summary": "Law No. 53 of 1999, enacted on 4 October 1999, created Natuna Regency (Kabupaten Natuna) by splitting it from Riau Islands Regency, giving the Natuna island group its own local government.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1999-10-04",
+   "presort": "new move (novelty) — Creating Natuna Regency gives the islands their own local government, a change of administrative arrangement against 1998 (baselines only, ev-c7a0d24a85); demonstrative or declarative. Doubt: part of a nationwide decentralisation package naming no claimant, so a coder may see domestic routine. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recJVFd1VeI62m2yD",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Transmigration",
+   "suggestion_reasoning": "State-organised settlement of a frontier island group justified by the need to protect it against rival claims is unilateral administration; demonstrative. Storey cites Reuters, 15 May 1993 ('Indonesia sends families to safeguard islands'); the scanned page is partly garbled, so the excerpt is a clean fragment. [confidence: low]",
+   "date_end": "1993-05-31",
+   "new_dyads": "IU",
+   "excerpt": "3,000 families would be resettled on the Natuna Islands",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ian James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:47:29.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-502251531b",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IU"
+   ],
+   "summary": "In May 1993 Indonesia's Ministry of Transmigration announced that 3,000 families would be resettled on the Natuna Islands under the transmigration programme, a decision reported as taken to help protect the islands from would-be rival claimants.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1993-05-01",
+   "presort": "new move (novelty) — State resettlement of 3,000 families on Natuna, justified as protecting the islands from rival claimants, is new administrative presence with nothing comparable in 1992 (patrols only, ev-532ff4c1d7); demonstrative. Single garbled Reuters fragment via Storey. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rechyvPIE94ut2SLa",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Armed Forces (ABRI)",
+   "suggestion_reasoning": "Increased air and naval patrolling of the Natuna area in reaction to China's legislation is unilateral military presence without confrontation; demonstrative. The only source is Storey's 2000 article, whose footnote cites Reuters, 1 August, with the year lost in the OCR of the scan; 1992 is inferred from the context (after the Crestone contract), so the date is low-confidence. [confidence: low]",
+   "date_end": "1992-08-31",
+   "new_dyads": "IC",
+   "excerpt": "ABRI announced that it was stepping up air and naval patrols around the Natuna Islands.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ian James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:45:16.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-532ff4c1d7",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Announcement but no clear actions as of that moment",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In response to China's February 1992 Law on the Territorial Sea and Contiguous Zone and its May 1992 Crestone oil exploration contract, the Indonesian armed forces (ABRI) announced that they were stepping up air and naval patrols around the Natuna Islands.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1992-08-01",
+   "presort": "new move (novelty) — Stepped-up air and naval patrols around Natuna in reaction to China's 1992 territorial-sea law are military presence the 1991 record does not show (a fishing prosecution only, ev-11f379bf83); demonstrative. The year is inferred from context (Storey's footnote lost it), so check the date before accepting. [claude-code/opus]",
+   "decision": "reject",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recfmCRCN3OUzpiPY",
+   "archived_on": "2026-11-27",
+   "actors": "Ambassador Hasjim Djalal",
+   "suggestion_reasoning": "A senior Indonesian official publicly pressing China over its unanswered note and warning of possible conflict is a verbal assertion; declarative. [confidence: medium]",
+   "date_end": "1995-06-19",
+   "new_dyads": "IC",
+   "excerpt": "Indonesia will continue to monitor China's intention to place the Natuna Islands within broken boundary lines on a map issued by that country.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "'Potential Conflict?' With PRC Over Natunas (Radio Republik Indonesia, 20 Jun 1995), FBIS-EAS-95-120 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-06-22\nhttps://archive.org/download/micro_IA1176901_1484/micro_IA1176901_1484_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "politics",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:53:58.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-5907a9182a",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Roving ambassador for the law of the sea Hasjim Djalal said in Denpasar on 19 June 1995 that Indonesia would continue to monitor China's intention to place the Natuna Islands within broken boundary lines on its map because China had not answered Indonesia's diplomatic note asking it to clarify the map, and he foresaw a potential conflict over the Natuna gas.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-06-19",
+   "merge_into_candidate": "ev-814e47453d",
+   "presort": "same move as ev-814e47453d — Hasjim Djalal pressing China over the unanswered note is part of the same 1995 diplomatic challenge led by ev-814e47453d; one move. (group ID1995-china-line-diplomacy) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "energy"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recPqbj1OuVXgqKST",
+   "archived_on": "2026-11-27",
+   "actors": "Department of Foreign Affairs (Kusnadi Pujiwinarto, Director of Asia-Pacific Affairs)",
+   "suggestion_reasoning": "A note demanding that China clarify a line that overlaps Indonesia's EEZ is a verbal diplomatic challenge to China's claim; declarative. The note's date is not given: the Foreign Ministry official said in April 1995 that it was sent 'soon after' the Surabaya map and 'almost two years ago', and Storey (2000) dates the workshop wrongly to July 1993; the FBIS reports date the workshop 23-25 August 1993, so the year is the safe precision. [confidence: medium]",
+   "date_end": "1993-12-31",
+   "new_dyads": "IC",
+   "excerpt": "We submitted the diplomatic note soon after a Chinese delegate distributed a maritime map at a workshop on the South China Sea in Surabaya in 1993.\n\nseemed to include the waters around the Natuna Islands",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Islands waters",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "PRC 'Claim' Over Natuna Island Area Discussed (ANTARA, 10 Apr 1995), FBIS-EAS-95-069 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-04-11\nhttps://archive.org/download/micro_IA1176901_1431/micro_IA1176901_1431_djvu.txt\nIan James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:47:03.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-681d0f31dc",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "After a Chinese delegate distributed a map at the fourth Workshop on Managing Potential Conflicts in the South China Sea (Surabaya, 23-25 August 1993) whose dashed line appeared to take in part of the waters north-east of the Natuna Islands, the Indonesian Foreign Ministry sent China a diplomatic note asking it to clarify its claims near the Natunas. China did not give a formal reply; the note was disclosed only in April 1995.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "1993-01-01",
+   "presort": "new move (novelty) — The first diplomatic note to China over its dashed line near Natuna is a new method against 1992, whose record shows only patrols (ev-532ff4c1d7), and against the baseline (no position on China's claim before 1993); declarative. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recA1borLUwCYqTMw",
+   "archived_on": "2026-11-27",
+   "actors": "State Minister for Research and Technology B.J. Habibie (Natuna project chairman); Indonesian Navy",
+   "suggestion_reasoning": "Planning a naval port and airport on Natuna to secure resource development in the overlap area is unilateral construction and development; demonstrative (announced, not yet built). [confidence: low]",
+   "date_end": "1995-07-06",
+   "new_dyads": "IC",
+   "excerpt": "The port for the Navy is designed for ensuring security of the project",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ports, Airport Planned for Natuna LNG Project (ANTARA, 6 Jul 1995), FBIS-EAS-95-132 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-07-11\nhttps://archive.org/download/micro_IA1176901_1497/micro_IA1176901_1497_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:55:04.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-6f08af8ccb",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "No move or development at that moment",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "B.J. Habibie, chairman of the Natuna development committee, announced on 6 July 1995 that three ports, one of them for the Indonesian Navy to secure the project, and an airport would be built for the US$42 billion Natuna LNG project, saying that as Natuna lay on Indonesia's maritime boundary the megaproject had to be seriously safeguarded.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-07-06",
+   "presort": "unclear — Habibie's announced naval port and airport for the gas project are plans, not built, and the series dates behaviour rather than decisions. Settle by when the naval port was actually built: that year would carry a demonstrative construction move. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "rec9yPVgC0XYsIod2",
+   "archived_on": "2026-11-27",
+   "actors": "Minister of Transmigration Siswono Yudohusodo",
+   "suggestion_reasoning": "Settling population on the frontier islands explicitly for security and defence is unilateral administrative consolidation of the claim; demonstrative. Storey cites The Jakarta Post, 28 February 1995 ('Big plans for Natuna Islands') and Reuters, 29 August 1994. [confidence: low]",
+   "date_end": "1995-02-28",
+   "new_dyads": "IU",
+   "excerpt": "resettling families on the Natuna Islands were “security and defence rather than commercial”",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ian James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:49:14.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-6f97d09d98",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Statement on a previous move - nothing new",
+   "suggested_dyads": [
+    "IU"
+   ],
+   "summary": "Transmigration Minister Siswono Yudohusodo declared in February 1995 that the government's primary considerations in resettling families on the Natuna Islands were security and defence rather than commercial; the ministry had said in 1994 that Natuna would be one of Indonesia's largest resettlement areas in line with defence and security policy.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1995-02-01",
+   "presort": "unclear — A minister's statement that Natuna resettlement is for security and defence states a motive rather than new behaviour; the 1994 record has no resettlement candidate (only ev-3ffea871c9, ev-7fd58a53ba), though the summary says the ministry announced large-scale Natuna resettlement in 1994. Settle by whether 1994 resettlement is evidenced (then a continuation of the 1993 programme, ev-502251531b) or settlements expanded in 1995. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recfbDcUDSOVMyEOp",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Indonesia; Pertamina; Exxon (Esso Exploration and Production Natuna Inc.)",
+   "suggestion_reasoning": "Contracting a foreign major to develop the D-Alpha field, which lies inside the area enclosed by China's dashed line, is unilateral resource development in an overlapping area; demonstrative. The NYT/IHT article (17 Nov 1994) says the deal was signed 'on Wednesday', i.e. 16 November 1994. [confidence: medium]",
+   "date_end": "1994-11-16",
+   "new_dyads": "IC",
+   "excerpt": "Exxon Corp. on Wednesday signed an agreement with Indonesia to proceed with the world's largest offshore gas development project at a cost of up to $40 billion.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Natuna D-Alpha gas field (East Natuna), South China Sea",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia Signs Major Gas Pact With Exxon — International Herald Tribune / The New York Times 1994-11-17\nhttps://www.nytimes.com/1994/11/17/business/worldbusiness/17iht-gas.html",
+   "pull_request": 68,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:48:25.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7fd58a53ba",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 16 November 1994, the last day of President Clinton's visit to Indonesia, the Indonesian government and the state oil company Pertamina signed an agreement with Exxon to proceed with developing the giant Natuna gas field in the South China Sea, about 1,200 km north of Jakarta, at an estimated cost of up to US$40 billion, owned 50-50 by Pertamina and Exxon's Esso unit.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1994-11-16",
+   "presort": "new move (novelty) — The Exxon agreement to develop D-Alpha, inside China's dashed line, moves the field from contract to development; the 1993 record shows no resource activity (note, resettlement, exercise: ev-681d0f31dc, ev-502251531b, ev-2f5c759ff2), so it is new against last year; demonstrative. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "reclLNkClWkKQA5Ys",
+   "archived_on": "2026-11-27",
+   "actors": "ABRI (Army, Navy, Air Force, Police); Gen. Wiranto (Kostrad); Army spokesman Brig. Gen. Robik Mukav",
+   "suggestion_reasoning": "A large unilateral joint-forces exercise in the disputed Natuna waters signalling readiness to defend them is a demonstrative military act. The 9-18 September dates come from the August announcement (Jakarta Post 10 Aug 1996 via FBIS); press reports of the manoeuvres date from 2-3 September (AFP, Straits Times) and Storey elsewhere mentions 'November 1996' exercises, so the month is the safe precision. [confidence: high]",
+   "date_end": "1996-09-30",
+   "new_dyads": "IC",
+   "excerpt": "In September 1996, several months after Jakarta had asked Beijing to clarify its baseline claims in the South China Sea, ABRI conducted large-scale military exercises in the area of the Natuna Islands.\n\nThe joint exercise will start September 9 and last for 10 days.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Islands and surrounding South China Sea",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ian James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt\nArmy Announces Regional Command Chiefs Reshuffle (The Jakarta Post, 10 Aug 1996), FBIS-EAS-96-160 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1996-08-16\nhttps://archive.org/download/micro_IA1176901_1780/micro_IA1176901_1780_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:56:14.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-80d2f0ea55",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In September 1996 ABRI staged its largest-ever combined exercise in and around the Natuna Islands, involving about 19,000-20,000 troops, some 40 aircraft and 50 warships under Strategic Command chief Gen. Wiranto. ABRI had announced in August that the 10-day exercise would start on 9 September; officials said it aimed at protecting the Natuna gas project and denied a show of force against any particular country, though it was widely read as a signal to China.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1996-09-01",
+   "presort": "new move (novelty) — ABRI's largest-ever combined exercise around Natuna (about 20,000 troops, 50 warships, 40 aircraft) is a large exercise the 1995 record does not show (air patrols and statements, ev-9af9a5f279); demonstrative. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recLmti9oKKOySF6i",
+   "archived_on": "2026-11-27",
+   "actors": "Department of Foreign Affairs (Kusnadi Pujiwinarto)",
+   "suggestion_reasoning": "An official's public rejection of the historical basis of China's line and disclosure of a protest note is a verbal assertion; declarative. AFP (7 Apr 1995) reports a note 'a few weeks ago', while the official dates the note to 1993; a coder may treat these as two notes. [confidence: medium]",
+   "date_end": "1995-04-10",
+   "new_dyads": "IC",
+   "excerpt": "The historical to the claim is very hard to justify and it is high time for them to abandon this approach\n\nWe have sent a diplomatic note to China a few weeks ago. The question is currently under negotiation",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Waters north-east of Natuna Besar",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "PRC 'Claim' Over Natuna Island Area Discussed (ANTARA, 10 Apr 1995), FBIS-EAS-95-069 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-04-11\nhttps://archive.org/download/micro_IA1176901_1431/micro_IA1176901_1431_djvu.txt\n'Clarification' of PRC Maritime Maps Sought (AFP, 7 Apr 1995), FBIS-EAS-95-067 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-04-07\nhttps://archive.org/download/micro_IA1176901_1429/micro_IA1176901_1429_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:50:00.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-814e47453d",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Kusnadi Pujiwinarto, the Foreign Ministry's director of Asia-Pacific affairs, said on 10 April 1995 that China had not replied to Indonesia's diplomatic note over a Chinese map that put part of the Natuna area in China's EEZ, and that the historical basis of China's claim was very hard to justify and it was high time for Beijing to abandon it. Three days earlier diplomatic sources had told AFP that Jakarta had sent a note seeking clarification of the maps a few weeks before.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-04-10",
+   "presort": "new move (novelty) — Lead of the 1995 public diplomatic challenge to China's dashed line over Natuna: disclosing the note (AFP reports a fresh one weeks earlier) and calling China's historical basis unjustifiable is declarative pressure absent from the 1994 record (naval operation and gas deal only, ev-3ffea871c9, ev-7fd58a53ba), so new again after the 1993 note (ev-681d0f31dc). (group ID1995-china-line-diplomacy) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "rec9yVmEnQKcMXpN1",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Ali Alatas",
+   "suggestion_reasoning": "Publicly denying legal weight to China's dashed line over the Natuna waters is a verbal assertion of Indonesia's position, although meant to calm the issue; declarative, low intensity. [confidence: medium]",
+   "date_end": "1995-06-03",
+   "new_dyads": "IC",
+   "excerpt": "is simply illustrative because the map is not supported by coordinates and topographic details.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Alatas Says PRC Maritime Map 'Illustrative' (Radio Republik Indonesia, 3 Jun 1995), FBIS-EAS-95-107 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-06-05\nhttps://archive.org/download/micro_IA1176901_1471/micro_IA1176901_1471_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:53:41.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-8d94958b34",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Foreign Minister Ali Alatas told reporters on 3 June 1995 that China's map claiming part of the Natuna Islands area was merely illustrative because it was not supported by coordinates and topographic details.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-06-03",
+   "merge_into_candidate": "ev-814e47453d",
+   "presort": "same move as ev-814e47453d — Alatas calling China's map 'merely illustrative' is part of the same 1995 public denial of China's line led by ev-814e47453d; one move. (group ID1995-china-line-diplomacy) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recEC07Uc5d57t7aU",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Air Force (Marshal Rilo Pambudi); ABRI Commander Gen. Feisal Tanjung",
+   "suggestion_reasoning": "Intensified military air surveillance over the Natuna area, announced with an assertion of sovereignty, is unilateral presence without confrontation; demonstrative. [confidence: medium]",
+   "date_end": "1995-04-10",
+   "new_dyads": "IC",
+   "excerpt": "the Indonesian Air Force has lately intensified surveillance",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "South China Sea; Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Air Surveillance in South China Sea Intensified (Suara Karya, 11 Apr 1995), FBIS-EAS-95-071 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-04-13\nhttps://archive.org/download/micro_IA1176901_1433/micro_IA1176901_1433_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:49:42.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9af9a5f279",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Air Force Chief of Staff Marshal Rilo Pambudi told reporters on 10 April 1995, at the Air Force's 49th anniversary, that the Air Force had lately intensified air patrols to help the navy monitor Indonesian waters, particularly around the South China Sea, and that Indonesia clearly had sovereignty over the Natuna Islands.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-04-10",
+   "presort": "new move (novelty) — Lead of ABRI's 1995 posture over Natuna: intensified air patrols over the South China Sea, announced with a sovereignty claim, are military air presence the 1994 record does not show (a naval anti-boat-people operation only, ev-3ffea871c9); demonstrative. No numbers are given for the increase, hence novelty against last year rather than frequency. (group ID1995-natuna-military-posture) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJVVvbCHgFcbQYJ",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Ali Alatas; DPR Commission I",
+   "possible_duplicate_of": "ev-5907a9182a",
+   "suggestion_reasoning": "Reporting to parliament a formal demand for clarification of China's line is a verbal assertion of Indonesia's position; declarative. [confidence: medium]",
+   "date_end": "1995-06-21",
+   "new_dyads": "IC",
+   "excerpt": "has formally asked the Chinese Government to clarify the placement of the Natuna Islands",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "machine_note": "Possible duplicate of ev-5907a9182a.",
+   "reviewer": "Angelo",
+   "sources": "Alatas Discusses Natunas, East Timor Refugees (Suara Pembaruan, 21 Jun 1995), FBIS-EAS-95-121 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-06-23\nhttps://archive.org/download/micro_IA1176901_1485/micro_IA1176901_1485_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:54:11.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-9f6d4b98b9",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "duplicate_of": "ev-5907a9182a",
+   "summary": "Foreign Minister Ali Alatas told the House of Representatives' Commission I on 21 June 1995 that Indonesia had formally asked the Chinese government to clarify the placement of the Natuna Islands within the nine broken lines on its map, and that China had not yet answered with a formal note.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-06-21",
+   "merge_into_candidate": "ev-814e47453d ",
+   "presort": "same move as ev-814e47453d — Alatas telling parliament of the formal clarification request is part of the same 1995 diplomatic challenge led by ev-814e47453d; one move. (group ID1995-china-line-diplomacy) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recfWlYsI2mdVM2rZ",
+   "archived_on": "2026-11-27",
+   "actors": "Pertamina (Faisal Abda'oe); Esso Natuna Inc.; Minister of Mines and Energy I.B. Sujana",
+   "suggestion_reasoning": "Signing the production contract for the D-Alpha field inside China's dashed line commits Indonesia to unilateral resource development there; demonstrative. Follows the November 1994 heads of agreement; the Ministry of Energy dates the 'Basic Agreement' to 9 January 1995. [confidence: medium]",
+   "date_end": "1995-01-09",
+   "new_dyads": "IC",
+   "excerpt": "Pertamina and Esso will each hold a 50-percent stake in the project",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Natuna gas field, Riau",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Esso Signs Deal To Construct Natuna Project (The Jakarta Post, 10 Jan 1995), FBIS-EAS-95-007 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-01-11\nhttps://archive.org/download/micro_IA1176901_1366/micro_IA1176901_1366_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:48:38.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-b3745afbc7",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-7fd58a53ba",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Pertamina and Esso Natuna Inc. signed the final contract on 9 January 1995 for the US$35 billion Natuna gas liquefaction project, in the presence of Mines and Energy Minister I.B. Sujana, with each holding a 50 per cent stake.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-01-09",
+   "presort": "continuation of ev-7fd58a53ba (a candidate, provisional) — The final Natuna gas contract follows the November 1994 heads of agreement (ev-7fd58a53ba) for the same field and partners, at the same level; continuation, provisional until 1994 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recmMumbHGpdv7XB6",
+   "archived_on": "2026-11-27",
+   "actors": "President B.J. Habibie; Government of Indonesia",
+   "suggestion_reasoning": "Promulgating archipelagic baselines around the Natunas fixes the starting line of the territorial sea and EEZ in the area overlapping China's and Vietnam's claims; declarative legal act. First source is the FAO/FAOLEX record (HTML); the DOALOS text is a PDF that the importer cannot check. [confidence: high]",
+   "date_end": "1998-06-16",
+   "new_dyads": "IC IV",
+   "excerpt": "This Regulation indicates baselines in the Natuna Sea, which have been established taking into account existing treaties and agreements with neighbouring States.\n\nDONE at Jakarta on 16 June 1998",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "location_name": "Natuna Sea (Anambas, Natuna Utara, Natuna Besar, Natuna Selatan islands)",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Government Regulation on the List of Geographical Coordinates of the Base Points of the Archipelagic Baselines of Indonesia in the Natuna Sea (No. 61 of 1998) — FAO FAOLEX (via UNEP LEAP) 1998-06-16\nhttps://leap.unep.org/en/countries/id/national-legislation/government-regulation-list-geographical-coordinates-base-points\nGovernment Regulation No. 61 of 1998 on the list of geographical coordinates of the base points of the archipelagic baselines of Indonesia in the Natuna Sea — UN DOALOS 1998-06-16\nhttps://www.un.org/depts/los/LEGISLATIONANDTREATIES/PDFFILES/IDN_1998_Regulation61.pdf",
+   "pull_request": 68,
+   "new_issues": [
+    "administrative"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T19:00:01.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c7a0d24a85",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC",
+    "IV"
+   ],
+   "summary": "Indonesia issued Government Regulation No. 61 of 1998 on 16 June 1998, listing the geographical coordinates of the base points of its archipelagic baselines in the Natuna Sea, from Tanjung Berakit on Bintan through the Anambas and Natuna island groups, as an urgent first designation pending a full baseline list; the text was published in the UN Law of the Sea Bulletin No. 38 (1999).",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1998-06-16",
+   "presort": "new move (novelty) — PP 61/1998 fixes archipelagic basepoints around Natuna, the first Natuna-specific baseline act since 1960, with nothing comparable in 1997 (military statements and plans, ev-e124cf8bc5, ev-e854dbb162); declarative (a coder may type it coercive under Chubb's baseline rule). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recLvNdElLhuXyir8",
+   "archived_on": "2026-11-27",
+   "actors": "General Feisal Tanjung, ABRI Commander; Coordinating Minister Soesilo Soedarman",
+   "suggestion_reasoning": "A public pledge by the armed forces commander to defend the Natunas against another country's claim is a verbal assertion backed by a military threat in general terms; declarative. [confidence: medium]",
+   "date_end": "1995-05-30",
+   "new_dyads": "IC",
+   "excerpt": "the ABRI commander said Natuna Island clearly belongs to Indonesia and it is therefore ABRI's duty to defend it.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:46:19.000Z",
+   "location_name": "Natuna Islands",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "ABRI 'Ready' To Defend Natuna Island (Radio Republik Indonesia, 30 May 1995), FBIS-EAS-95-104 — FBIS Daily Report: East Asia (Internet Archive OCR text) 1995-05-31\nhttps://archive.org/download/micro_IA1176901_1467/micro_IA1176901_1467_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:50:59.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-c827b9dc74",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Armed Forces Commander General Feisal Tanjung said in Surabaya on 30 May 1995 that ABRI was ready to defend any Indonesian territory claimed by other countries, including Natuna, which clearly belonged to Indonesia, that ABRI would upgrade its forces in stages, and that Indonesia had sent a letter to the claimant country requesting clarification. He was responding to Coordinating Minister for Politics and Security Soesilo Soedarman, who had told a seminar on 20 May that an Asia-Pacific country had claimed sovereignty over Natuna.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1995-05-30",
+   "merge_into_candidate": "ev-9af9a5f279",
+   "presort": "same move as ev-9af9a5f279 — Feisal Tanjung's May pledge to defend Natuna and upgrade forces in stages is part of ABRI's 1995 military posture led by ev-9af9a5f279; it could instead sit with the diplomatic group (ev-814e47453d), since it also cites the clarification letter. (group ID1995-natuna-military-posture) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recdKKqVtMytlW77k",
+   "archived_on": "2026-11-27",
+   "actors": "General Feisal Tanjung, ABRI Commander",
+   "suggestion_reasoning": "A public statement that air-combat assets are dedicated to defending the Natuna field is a verbal military assertion; declarative. Storey cites The Jakarta Post, 19 February 1997 ('Military to shield Natuna gas'); the exact day of the remark is not given. [confidence: low]",
+   "date_end": "1997-02-28",
+   "new_dyads": "IC",
+   "excerpt": "specifically to safeguard the Natuna project",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "flags": [
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Natuna gas field",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ian James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:59:13.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e124cf8bc5",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-80d2f0ea55",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Armed Forces Commander General Feisal Tanjung said in February 1997 that the Hawk ground-attack aircraft Indonesia had bought from Britain had been purchased specifically to safeguard the Natuna gas project, as ABRI sought to assure investors it had made adequate preparations to protect the field.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "1997-02-01",
+   "presort": "continuation of ev-80d2f0ea55 (a candidate, provisional) — Saying the Hawk aircraft were bought to guard the Natuna gas project restates the protective military posture shown in 1996 by the exercise 'aimed at protecting the Natuna gas project' (ev-80d2f0ea55), at no higher level; continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recVkrRgOpxU74D6T",
+   "archived_on": "2026-11-27",
+   "actors": "National Development Planning Minister Ginanjar Kartasasmita; Vice Air Marshal Richard Haryono (Indonesian Air Force)",
+   "suggestion_reasoning": "Announcing combat-aircraft procurement explicitly to defend the Natuna gas fields is a verbal military assertion over the disputed area; declarative (the order was cancelled in 1999). [confidence: low]",
+   "date_end": "1997-08-05",
+   "new_dyads": "IC",
+   "excerpt": "primarily to Indonesia's strategic Natuna gas fields in the South China Sea\n\nUjangpandang in South Sulawesi to provide further air cover",
+   "fldDaG8ZsjVVmdNQt": "2026-11-16T22:47:48.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "Natuna gas fields",
+   "run": [
+    "ID-1990s"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Jakarta to buy Russian Sukhoi fighters, helicopters (Agence France Presse, 5 Aug 1997) — ASIET NetNews / APSN archive (AFP reprint) 1997-08-05\nhttps://www.archive.asia-pacific-solidarity.net/southeastasia/indonesia/netnews/1997/and31_v1.htm\nIan James Storey, 'Indonesia's China Policy in the New Order and Beyond: Problems and Prospects', Contemporary Southeast Asia 22(1), April 2000 (Internet Archive scan of vol. 22) — Contemporary Southeast Asia (ISEAS), via Internet Archive 2000-04-01\nhttps://archive.org/download/pfrq_contemporary-southeast-asia-a-journal-of-international-and-strategic-affair/Contemporary%20Southeast%20Asia%20A%20Journal%20of%20International%20and%20Strategic%20Affairs%20Volume%2022%20Issue%201%202%203%20Thrice%20Yearly%20Journal%202000%20Singapore%20-%20Institute%20of%20Southeast%20Asian%20Stu_djvu.txt",
+   "pull_request": 68,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T18:59:52.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-e854dbb162",
+   "run_id": "ID-1990s",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-80d2f0ea55",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Indonesia announced on 5 August 1997 that it would buy 12 Sukhoi Su-30K fighters and eight Mi-17 helicopters from Russia; the air force planning assistant said the fighters would be based at Ujung Pandang primarily to protect Indonesia's strategic Natuna gas fields in the South China Sea.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "1997-08-05",
+   "presort": "continuation of ev-80d2f0ea55 (a candidate, provisional) — Announcing Su-30 and Mi-17 purchases 'primarily to protect' the Natuna fields continues the 1996 protective posture (ev-80d2f0ea55) in words; the aircraft were to be based at Ujung Pandang and the order was cancelled; continuation, likely reject. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  }
+ ]
+}

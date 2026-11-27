@@ -1,0 +1,1644 @@
+{
+ "run_id": "ID-2021-2026",
+ "exported_on": "2026-11-27",
+ "records": [
+  {
+   "airtable_id": "recIBTG4Sdx0H5nFI",
+   "archived_on": "2026-11-27",
+   "actors": "Speaker of the House of Representatives (DPR) Puan Maharani",
+   "possible_duplicate_of": "ev-3d0fe78efa",
+   "suggestion_reasoning": "A formal statement by the head of the legislature framing foreign fishing in the EEZ as a sovereignty violation is a verbal assertion of claim; declarative. [confidence: medium]",
+   "date_end": "2025-04-29",
+   "new_dyads": "IV",
+   "excerpt": "“Ini bukan sekadar soal pencurian ikan. Ini adalah pelanggaran terhadap kedaulatan negara. Kedaulatan NKRI harus dijaga,” tegas Puan dalam keterangan resminya di Jakarta, Selasa (29/4/2025).",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Possible duplicate of ev-3d0fe78efa.",
+   "reviewer": "Angelo",
+   "sources": "Ketua DPR RI: Illegal Fishing di Natuna Pelanggaran Kedaulatan Negara — InfoPublik (Ministry of Communication and Digital Affairs) 2025-04-29\nhttps://infopublik.id/kategori/nasional-politik-hukum/916988/ketua-dpr-ri-illegal-fishing-di-natuna-pelanggaran-kedaulatan-negara",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:15:18.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-102ca54fa3",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-a9b24bbd02 ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "duplicate_of": "ev-3d0fe78efa",
+   "summary": "On 29 April 2025 DPR Speaker Puan Maharani, reacting to the 14 April seizure of two Vietnamese trawlers, called illegal fishing by foreign vessels in the North Natuna Sea a serious violation of Indonesia's sovereignty, urged KKP and the Navy to act firmly against foreign vessels and called for a stronger military presence at sea in the EEZ.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-04-29",
+   "presort": "continuation of ev-a9b24bbd02 (a candidate, provisional) — The Speaker's call to treat foreign fishing as a sovereignty violation repeats the 2024 parliamentary-level sovereignty statements (ev-a9b24bbd02); no new form or wider claim. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recvgQIC83iLF39os",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Army (TNI AD): Kodam XIX/Tuanku Tambusai (Maj. Gen. Agus Hadi Waluyo); 1st Composite Battalion Gardapati (Yonkomposit 1/GP)",
+   "suggestion_reasoning": "Live-fire exercises with rocket artillery and air-defence missiles by the Natuna garrison are a show of military capability on the frontier islands; demonstrative. Described as unit training, not aimed at any named state. [confidence: medium]",
+   "date_end": "2025-10-29",
+   "new_dyads": "IC",
+   "excerpt": "Masyarakat diminta tidak beraktivitas di luar ruangan pada 22-24 Oktober 2025 karena akan digelar latihan tembak menggunakan peluru daya ledak tinggi.\n\nIn the shooting practice, the Indonesian Army deployed a number of Main Defense System Equipment (defense equipment), including Starstreak and Astros.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "location_name": "Natuna Besar (Air Lengit, Sebadai Ulu, Kelarik, Batubi, Teluk Buton)",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Warga Natuna Diminta Tak Keluar Rumah 22-24 Oktober, Ini Penyebabnya — Metro TV News (ANTARA) 2025-10-19\nhttps://www.metrotvnews.com/read/k8oCVPWJ-warga-natuna-diminta-tak-keluar-rumah-22-24-oktober-ini-penyebabnya\nTNI Exercises High-Legal Bullets In Natuna, Including Astros Rockets — VOI 2025-10-30\nhttps://voi.id/en/news/528601",
+   "pull_request": 74,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:16:13.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-13e0bc2dae",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 22 to 24 October 2025 the Army's Gardapati 1st Composite Battalion (Yonkomposit 1/GP) in Natuna held heavy-weapons live-fire training with high-explosive rounds, asking residents to stay indoors, and on 29 October 2025 the Army held an integrated company combat-readiness test with live ammunition in Bunguran Batubi under the commander of the new Kodam XIX/Tuanku Tambusai, Maj. Gen. Agus Hadi Waluyo, firing Starstreak air-defence missiles and Astros rocket systems.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-10-22",
+   "merge_into_candidate": "ev-7d18b123c8",
+   "presort": "same move as ev-7d18b123c8 — Live-fire with Starstreak and Astros under the new Kodam XIX is the same 2025 strengthening of the Natuna garrison as ev-7d18b123c8. Least sure: it may be routine unit training, and 2024 has no exercise to compare it with. (group 2025-natuna-garrison) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recXY4Nq6wBIysbeo",
+   "archived_on": "2026-11-27",
+   "actors": "Maritime Security Agency (Bakamla): KN Tanjung Datu-301, KN Pulau Dana-323, patrol aircraft; Indonesian Navy: KRI Sutedi Senoputra-378, KRI Bontang; Bakamla spokesman Capt. Yuhanes Antara",
+   "suggestion_reasoning": "Repeatedly escorting another claimant's coast guard vessel out of the claimed shelf and challenging it by radio is physical interference short of force; coercive. New for Indonesia in scale and publicity (three announced expulsions in five days, with video released). [confidence: high]",
+   "date_end": "2024-10-27",
+   "new_dyads": "IC",
+   "excerpt": "Earlier on Monday (October 21, 2024), Bakamla patrol ship KN Tanjung Datu-301 had expelled the CCG 5402 from Indonesian waters.\n\nBakamla spokesperson, Captain Yuhanes Antara, informed that the incident occurred on Friday (October 25, 2024).\n\nThe CCG 5402 has remained at the survey location since October 25, continually shadowed by the KN Pulau Dana 323.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "North Natuna Sea (Indonesian continental shelf, Natuna D-Alpha survey area)",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China coast guard ship again expelled from North Natuna Sea — ANTARA News (English) 2024-10-24\nhttps://en.antaranews.com/news/331069/china-coast-guard-ship-again-expelled-from-north-natuna-sea\nIndonesia again expels China coast guard ship from Natuna Sea — ANTARA News (English) 2024-10-26\nhttps://en.antaranews.com/news/331441/indonesia-again-expels-china-coast-guard-ship-from-natuna-sea\nSeismic Strife: China and Indonesia Clash over Natuna Survey — CSIS Asia Maritime Transparency Initiative 2024-10-28\nhttps://amti.csis.org/seismic-strife-china-and-indonesia-clash-over-natuna-survey/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:13:55.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-172c2ceb83",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 21 October 2024 the Bakamla patrol ship KN Tanjung Datu-301, supported by the warship KRI Sutedi Senoputra-378 and a Bakamla patrol aircraft, shadowed China Coast Guard ship 5402, which had disrupted Pertamina's seismic survey and insisted by radio that the waters were Chinese jurisdiction, and drove it out of the North Natuna Sea; KN Pulau Dana-323, with KRI Sutedi Senoputra and KRI Bontang, expelled the returning ship again on 24 October and a third time on 25 October, then kept shadowing it at the survey site. Bakamla publicised each expulsion with statements, photographs and video.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-10-21",
+   "presort": "new move (novelty) — Driving CCG 5402 out of the North Natuna Sea three times in five days and publicising each expulsion is a change of method against 2023, when Indonesia only monitored CCG 5901 near the Tuna block (ev-6a6c38585b). (group 2024-d-alpha-standoff) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recI54SnzyerrRtY5",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Marine Affairs and Fisheries (KKP, PSDKP), KP Hiu 003; acting Director General Pung Nugroho Saksono",
+   "possible_duplicate_of": "ev-23d91fb5b9",
+   "suggestion_reasoning": "Seizing Vietnamese boats in the overlapping EEZ area, here with warning shots, is physical enforcement imposing punishment; coercive. Summarised as one event for the year; the national totals include arrests outside the South China Sea (Philippine boats are mostly seized off North Sulawesi). [confidence: medium]",
+   "date_end": "2024-12-31",
+   "new_dyads": "IV",
+   "excerpt": "petugas PSDKP sempat mengeluarkan tembakan peringatan\n\n\"Tujuh kapal ikan dari Malaysia, 17 dari Filipina, 3 dari Vietnam, 1 dari Rusia dan 2 dari Sierra Leone.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Possible duplicate of ev-23d91fb5b9. Source's wording for the place: “North Natuna Sea (Laut Natuna Utara)”.",
+   "reviewer": "Angelo",
+   "sources": "Dua Kapal Pencuri Ikan Ditangkap di Laut Natuna Utara — Mongabay Indonesia 2024-05-06\nhttps://mongabay.co.id/2024/05/06/dua-kapal-pencuri-ikan-ditangkap-di-laut-natuna-utara-psdkp-kerugian-besar-ekologi-indonesia/\nTrenggono Tangkap 240 Kapal Maling Ikan di 2024, Ada dari Rusia — CNBC Indonesia 2024-12-25\nhttps://www.cnbcindonesia.com/news/20241225215631-4-598742/trenggono-tangkap-240-kapal-maling-ikan-di-2024-ada-dari-rusia",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:11:53.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-1873f7e15f",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-23d91fb5b9",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "duplicate_of": "ev-23d91fb5b9",
+   "summary": "During 2024 KKP's fisheries surveillance seized 30 foreign-flagged boats nationwide, of which three were Vietnamese, seven Malaysian and 17 Philippine; in the North Natuna Sea, on 4 May 2024 the patrol ship Hiu 003, led by acting PSDKP Director General Pung Nugroho Saksono and acting on fishermen's reports, fired warning shots and seized the Vietnamese boats BV 4417 TS and BV 1182 TS with 15 crew.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2024-01-01",
+   "presort": "continuation of ev-23d91fb5b9 (a candidate, provisional) — The 2024 seizures of Vietnamese boats continue the 2023 practice (ev-23d91fb5b9) at a lower count. Warning shots on 4 May are not on the 2023 record; if 2023's seizures used none, a coder may call the method new again. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recjzL6vdVacinZoo",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), KRI Bontang (907)",
+   "suggestion_reasoning": "Close tailing of a Chinese state survey ship conducting seabed survey in Indonesia's claimed shelf is physical interference; coercive (could be read as demonstrative monitoring). Start date from ship-tracking data reported by BenarNews. [confidence: high]",
+   "date_end": "2021-09-17",
+   "new_dyads": "IC",
+   "excerpt": "On Monday, the Indonesian navy deployed the KRI Bontang (907) to the same area, ship tracking records show, suggesting it was closely following the Chinese vessel’s movement\n\nshadowed the Haiyang Dizhi 10’s operations from September 14 to 17",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "North Natuna Sea, about 90 nm north of the Natuna Islands",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia Sends Navy Ship to Tail Chinese Survey Ship, Data Show — Radio Free Asia / BenarNews 2021-09-15\nhttps://www.rfa.org/english/news/china/indonesia-navy-09152021165543.html\nNervous Energy: China Targets New Indonesian, Malaysian Drilling — CSIS Asia Maritime Transparency Initiative 2021-11-12\nhttps://amti.csis.org/nervous-energy-china-targets-new-indonesian-malaysian-drilling/",
+   "pull_request": 74,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:07:15.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-22b4b17494",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 13 September 2021 the Indonesian Navy tanker KRI Bontang (907) shadowed the Chinese survey ship Haiyang Dizhi 10, which had been surveying Indonesia's continental shelf near the Tuna block since late August, coming at times within about 400 yards; AMTI records the shadowing from 14 to 17 September.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-09-13",
+   "merge_into_candidate": "ev-42478fa105",
+   "presort": "same move as ev-42478fa105 — Shadowing Haiyang Dizhi 10 while it surveyed the shelf near the Tuna block is part of the same 2021 Tuna standoff (ev-42478fa105). (group 2021-tuna-standoff) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rec5VHKJFnEbQMRCb",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Marine Affairs and Fisheries (KKP, PSDKP), KP Orca 03; Maritime Security Agency (Bakamla), KN Marore-322; National Police Water and Air Police (Korpolairud), KP Bisma 8001",
+   "possible_duplicate_of": "ev-ed50c6b9db",
+   "suggestion_reasoning": "Seizing Vietnamese fishing boats in the overlapping EEZ area is physical enforcement imposing punishment; coercive. Summarised as one event for the year's routine arrests. [confidence: medium]",
+   "date_end": "2023-12-31",
+   "new_dyads": "IV",
+   "excerpt": "Masing-masing dua kapal Malaysia, dan enam kapal Vietnam.\n\nBadan Keamanan Laut (Bakamla) RI berhasil menangkap kapal ikan asing (KIA) berbendera Vietnam di Laut Natuna Utara pada Minggu 13 Agustus 2023.\n\nmelakukan patroli di WPP711 Laut Natuna Utara, Senin, 27 Maret 2023.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "North Natuna Sea (WPP 711)",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Possible duplicate of ev-ed50c6b9db. Source's wording for the place: “North Natuna Sea (Laut Natuna Utara, WPP 711)”.",
+   "reviewer": "Angelo",
+   "sources": "Kapal Ikan Vietnam Ditangkap di Natuna, Mulai Mengancam Zona Konservasi — Mongabay Indonesia 2023-10-26\nhttps://mongabay.co.id/2023/10/26/kapal-ikan-vietnam-ditangkap-di-natuna-mulai-mengancam-zona-konservasi/\nBakamla Tangkap KIA Vietnam di Natuna, Apa Kabar Kesepakatan Bilateral Kedua Negara? — Mongabay Indonesia 2023-08-20\nhttps://mongabay.co.id/2023/08/20/bakamla-tangkap-kia-vietnam-di-natuna-apa-kabar-kesepakatan-bilateral-kedua-negara/\nSiskamling Laut KKP: Kapal Asing Vietnam Ditangkap di Natuna Utara — Mongabay Indonesia 2023-04-03\nhttps://mongabay.co.id/2023/04/03/siskamling-laut-kkp-kapal-asing-vietnam-ditangkap-di-natuna-utara/",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:09:01.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-23d91fb5b9",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-ed50c6b9db ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "duplicate_of": "ev-ed50c6b9db",
+   "summary": "During 2023 Indonesian agencies seized at least six Vietnamese boats in the North Natuna Sea (PSDKP's count of eight foreign boats for the year, six Vietnamese and two Malaysian): KKP's patrol ship Orca 03 seized the pair-trawler TG 9817 TS on 27 March, Bakamla's KN Marore-322 seized a Vietnamese boat with 12 crew and 5 tonnes of fish on 11-13 August, and the police patrol ship KP Bisma 8001 seized KG 95514 TS and KG 94793 TS with 39 crew on 22 October 2023.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2023-01-01",
+   "presort": "continuation of ev-ed50c6b9db (a candidate, provisional) — The 2023 seizures of Vietnamese boats continue the 2022 practice (ev-ed50c6b9db) at about the same level. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recUNB7XYfqQPoCmJ",
+   "archived_on": "2026-11-27",
+   "actors": "President Joko Widodo; Cabinet Secretariat",
+   "suggestion_reasoning": "A presidential zoning regulation for the frontier islands and their EEZ waters is unilateral administrative action asserting jurisdiction; demonstrative. The regulation's number and signing day are not given in the source (BenarNews says only that it was signed in March). [confidence: medium]",
+   "date_end": "2022-03-31",
+   "new_dyads": "IC",
+   "excerpt": "measures to be taken in the defense and security zone include revamping infrastructure and facilities “to support sovereignty and secure state boundaries.”",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna Islands and surrounding waters, Riau Islands",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesian presidential decree establishes zoning regulations for Natuna Islands — BenarNews 2022-04-14\nhttps://www.benarnews.org/english/news/indonesian/presidential-decree-04142022161655.html",
+   "pull_request": 74,
+   "new_issues": [
+    "administrative",
+    "military",
+    "fisheries"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:08:07.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-2c8286f52c",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In March 2022 President Joko Widodo signed a presidential regulation on spatial planning for the Natuna border area, made public in April, which designated defence and security zones in the Natunas' South China Sea waters, called for revamped infrastructure 'to support sovereignty and secure state boundaries', security posts and a surveillance system, and zoned fishing areas up to the 200-mile EEZ.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2022-03-01",
+   "presort": "new move (novelty) — A presidential spatial-planning regulation zoning defence areas and fishing grounds out to the 200-mile EEZ is a new legal-administrative method against 2021, which has no regulation or administrative act over the waters (nothing comparable among the 2021 candidates). [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "administrative",
+    "military",
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recMKTE40utyw2gv7",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Marine Affairs and Fisheries (KKP, PSDKP), Director General Pung Nugroho Saksono; Maritime Security Agency (Bakamla)",
+   "possible_duplicate_of": "ev-1873f7e15f",
+   "suggestion_reasoning": "Seizing Vietnamese fishing boats in the North Natuna Sea, which Indonesia treats as its EEZ, is physical enforcement imposing punishment; coercive. Summarised as one event for the year; the November seizure is included because it was part of the same year's tally. [confidence: medium]",
+   "date_end": "2025-12-31",
+   "new_dyads": "IV",
+   "excerpt": "Sehingga total di tahun 2025 ini sudah 6 kapal asing pelaku illegal fishing ditangkap di Laut Natuna Utara,\n\nPada  18 April, KKP sebut penangkapan itu bagian operasi terpadu bersama Bakamla Patma Yudhistira/2025.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate"
+   ],
+   "location_name": "North Natuna Sea (WPP 711)",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Possible duplicate of ev-1873f7e15f. Source's wording for the place: “North Natuna Sea (Laut Natuna Utara, WPP 711)”.",
+   "reviewer": "Angelo",
+   "sources": "Bagaimana Memberantas Pencurian Ikan di Natuna? — Mongabay Indonesia 2025-11-14\nhttps://mongabay.co.id/2025/11/14/bagaimana-memberantas-pencurian-ikan-di-natuna/\nKKP Tangkap Dua KIA Vietnam, Dua Spot Ini Jadi Pintu Masuk — Mongabay Indonesia 2025-04-21\nhttps://mongabay.co.id/2025/04/21/kkp-tangkap-dua-kia-vietnam-dua-spot-ini-jadi-pintu-masuk/",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:14:56.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-3d0fe78efa",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-1873f7e15f ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "duplicate_of": "ev-1873f7e15f",
+   "summary": "During 2025 KKP's PSDKP, in joint operations with Bakamla, seized at least five Vietnamese boats for illegal fishing in the North Natuna Sea (six foreign boats in all there, against one Vietnamese boat in 2023 and three in 2024 by KKP's count): two trawlers, 936 TS and 5762 TS, on 14 April 2025 in the integrated operation Patma Yudhistira/2025, and HP 9213 TS, announced on 6 November 2025 after detection by KKP's command centre and airborne surveillance.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2025-01-01",
+   "presort": "continuation of ev-1873f7e15f (a candidate, provisional) — Five Vietnamese boats seized in 2025 against three in 2024 (ev-1873f7e15f) is more of the same arrests as more boats came; the counterfactual makes it continuation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recNWLVwtLNTyst5s",
+   "archived_on": "2026-11-27",
+   "actors": "Licensed operator Premier Oil / Harbour Energy under Indonesia's upstream regulator",
+   "suggestion_reasoning": "State-licensed hydrocarbon appraisal drilling inside the area China claims is unilateral resource development asserting Indonesia's continental-shelf rights; demonstrative. End date from the Reuters report that the rig operated until 19 November. [confidence: high]",
+   "date_end": "2021-11-19",
+   "new_dyads": "IC",
+   "excerpt": "began on June 30 when a semi-submersible rig, the Noble Clyde Boudreaux, arrived to drill two appraisal wells in Indonesia’s Tuna block located approximately 140 nautical miles north of Natuna Besar\n\nThe temporary rig operated until November 19",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "Tuna Block, about 140 nm north of Natuna Besar",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Nervous Energy: China Targets New Indonesian, Malaysian Drilling — CSIS Asia Maritime Transparency Initiative 2021-11-12\nhttps://amti.csis.org/nervous-energy-china-targets-new-indonesian-malaysian-drilling/\nChina protests Indonesian drilling, military exercises — Malay Mail (Reuters) 2021-12-01\nhttps://www.malaymail.com/news/world/2021/12/01/china-protests-indonesian-drilling-military-exercises/2025121",
+   "pull_request": 74,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:06:23.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-42478fa105",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 30 June 2021 the semi-submersible rig Noble Clyde Boudreaux drilled two appraisal wells in Indonesia's Tuna gas block, about 140 nautical miles north of Natuna Besar, under Indonesian licence (operator Premier Oil/Harbour Energy), inside China's nine-dash line; the rig operated until 19 November 2021 despite China's demands that drilling stop.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-06-30",
+   "presort": "new move (novelty) — State-licensed appraisal drilling in the Tuna block inside the nine-dash line, kept going against China's demands, is a new method against 2020, whose record (prev-run candidates) has no hydrocarbon activity in the contested area. (group 2021-tuna-standoff) [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recJovt46V1NjtspO",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Marine Affairs and Fisheries (KKP, PSDKP); Maritime Security Agency (Bakamla), KN Pulau Dana-323; Indonesian Navy",
+   "suggestion_reasoning": "Seizing and detaining claimant-flagged fishing boats in waters Indonesia treats as its EEZ is physical enforcement imposing punishment; coercive. Summarised as one event for the year's routine arrests; the count is an NGO tally of state seizures, not an official figure. Dyad given as IV only: the Malaysian and Philippine boats in the national tally were mostly seized outside the South China Sea (Malacca Strait, Sulawesi Sea). [confidence: medium]",
+   "date_end": "2021-12-31",
+   "new_dyads": "IV",
+   "excerpt": "Dari jumlah itu, Vietnam menjadi yang terbanyak dengan jumlah 39 kapal.\n\nKapal Ikan Asing (KIA) kembali ditangkap oleh kapal patroli KN Pulau Dana-323 milik Badan Keamanan Laut Republik Indonesia (Bakamla RI), Jumat (24/12/2021).",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “North Natuna Sea (Laut Natuna Utara)”.",
+   "reviewer": "Angelo",
+   "sources": "75 Kapal Asing Pencuri Ikan Diciduk di 2021, Terbanyak dari Vietnam — IDX Channel 2022-01-13\nhttps://www.idxchannel.com/economics/75-kapal-asing-pencuri-ikan-diciduk-di-2021-terbanyak-dari-vietnam/all\nCatatan Akhir Tahun: Masa Depan Laut Natuna Utara — Mongabay Indonesia 2021-12-31\nhttps://mongabay.co.id/2021/12/31/catatan-akhir-tahun-masa-depan-laut-natuna-utara/",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:06:03.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-4610eaed84",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-57d6723d07",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "Throughout 2021 Indonesian enforcement agencies (KKP fisheries patrols, Bakamla and the Navy) seized foreign boats for illegal fishing, 75 in all according to a year-end count by DFW Indonesia, of which 39 were Vietnamese, 27 Malaysian, 6 Philippine and 1 Taiwanese, with half the arrests in the Natuna Sea; among them, on 24 December 2021 the Bakamla patrol ship KN Pulau Dana-323 stopped the Vietnamese boat KG 2118 TS with 20 crew in the North Natuna Sea and escorted it to Batam.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2021-01-01",
+   "presort": "continuation of ev-57d6723d07 (a candidate, provisional) — The year's seizures of Vietnamese and other boats in the North Natuna Sea continue the 2020 arrests (ev-57d6723d07, prev-run candidate) at the same level; a higher count tracks more intrusions. Provisional until 2020 is decided. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "reciAdfnsKBdnAggJ",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Indonesia (upstream licensing)",
+   "suggestion_reasoning": "Awarding an exploration contract for a block in waters China claims is unilateral administration of resources; demonstrative. [confidence: medium]",
+   "date_end": "2026-09-30",
+   "new_dyads": "IC",
+   "excerpt": "the contract was ultimately awarded in September to Indonesian firm PT Nations, a subsidiary of the Arsari Group headed by Prabowo’s brother Hashim Djojohadikusumo",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Natuna D-Alpha block",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:20:28.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-515aa42946",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-8af5e8fd2b",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In September 2026 Indonesia awarded the contract for the Natuna D-Alpha exploration block, northeast of the Natuna Islands within China's nine-dash line and the site of the 2024 CCG-Bakamla standoff, to PT Nations, a subsidiary of the Arsari Group headed by President Prabowo's brother Hashim Djojohadikusumo.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-09-01",
+   "presort": "continuation of ev-8af5e8fd2b (a candidate, provisional) — Awarding the D-Alpha exploration contract continues the 2025 resource development of the same East Natuna area (ev-8af5e8fd2b) by administrative means; who received it does not change the method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recMgJTIMYgSXrres",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs (Kemlu)",
+   "suggestion_reasoning": "A public ministry statement restating non-recognition of China's claim is a verbal assertion of position; declarative. The joint statement itself is cooperative and is not listed. [confidence: high]",
+   "date_end": "2024-11-11",
+   "new_dyads": "IC",
+   "excerpt": "\"Kerja sama ini tidak dapat dimaknai sebagai pengakuan atas klaim '9-Dash-Lines',\" demikian rilis Kemlu RI.\n\nIndonesia said on Monday (Nov 11) it does not recognise China's claims over the South China Sea",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "South China Sea / North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Pakar Kritik Pernyataan Indonesia-China soal LCS, Kemlu RI Buka Suara — CNN Indonesia 2024-11-11\nhttps://www.cnnindonesia.com/internasional/20241111115118-113-1165215/pakar-kritik-pernyataan-indonesia-china-soal-lcs-kemlu-ri-buka-suara\nIndonesia says it has no overlapping South China Sea claims with China, despite deal — The Star (Reuters) 2024-11-11\nhttps://thestar.com.my/aseanplus/aseanplus-news/2024/11/11/indonesia-says-it-has-no-overlapping-south-china-sea-claims-with-china-despite-deal",
+   "pull_request": 74,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:14:14.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-59bb4f8410",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-89a7c2dcf9",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 11 November 2024, after the 9 November Prabowo-Xi joint statement referred to joint development in areas of 'overlapping claims', the Foreign Ministry issued a statement saying the cooperation could not be read as recognition of China's nine-dash-line claim, reiterating that the claim had no basis in international law and was not in accordance with UNCLOS 1982, and that the agreement had no impact on Indonesia's sovereignty, sovereign rights or jurisdiction in the North Natuna Sea.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-11-11",
+   "presort": "continuation of ev-89a7c2dcf9 (a candidate, provisional) — The statement that the joint statement does not recognise the nine-dash line restates Indonesia's standing non-recognition, voiced in 2023 (ev-89a7c2dcf9); one more reaffirmation is continuation, and it qualifies a cooperative act. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recYSYgaDjoydY5Pn",
+   "archived_on": "2026-11-27",
+   "actors": "PT Pertamina East Natuna (state-owned Pertamina); survey ship MV Geo Coral (Shearwater GeoServices)",
+   "suggestion_reasoning": "A state-company seismic survey of a gas field in waters China claims is unilateral resource development; demonstrative. End date is approximate (the survey was still under way at the end of October). [confidence: high]",
+   "date_end": "2024-10-31",
+   "new_dyads": "IC",
+   "excerpt": "The Geo Coral began its survey operations on October 5",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "Natuna D-Alpha gas field (Arwana 3D seismic survey), northeast of the Natuna Islands",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Seismic Strife: China and Indonesia Clash over Natuna Survey — CSIS Asia Maritime Transparency Initiative 2024-10-28\nhttps://amti.csis.org/seismic-strife-china-and-indonesia-clash-over-natuna-survey/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:13:09.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-635f4bebfd",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 5 October 2024 the state oil company Pertamina, through PT Pertamina East Natuna, conducted the Arwana 3D seismic survey of the Natuna D-Alpha gas field, northeast of the Natuna Islands and inside China's nine-dash line, using the chartered survey ship Geo Coral; the survey continued under Bakamla and Navy escort after China Coast Guard ships began shadowing it on 16 October.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-10-05",
+   "merge_into_candidate": "ev-172c2ceb83",
+   "presort": "same move as ev-172c2ceb83 — Pertamina's Arwana seismic survey of the D-Alpha field is the activity the expulsions protected (ev-172c2ceb83); one linked move. On its own it would be a scope step on 2023's Tuna development (ev-e75b9338a8), to a new block northeast of Natuna. (group 2024-d-alpha-standoff) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recg3HhL181ad4se9",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Chief of Staff Adm. Muhammad Ali",
+   "suggestion_reasoning": "Deploying naval and air assets to monitor another claimant's coast guard ship in the EEZ is a show of presence without reported confrontation; demonstrative (coercive if a coder treats close shadowing as interference). [confidence: high]",
+   "date_end": "2023-01-17",
+   "new_dyads": "IC",
+   "excerpt": "A warship, maritime patrol plane and drone had been deployed to monitor the vessel, Laksamana Muhammad Ali, the chief of the Indonesian navy, told Reuters.\n\n“we have at least three to four warships in Natuna on the ready and one marine patrol aircraft.”",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "North Natuna Sea, near the Tuna Block and Chim Sao field",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia sends warship to monitor Chinese coast guard vessel — The Kathmandu Post (Reuters) 2023-01-14\nhttps://kathmandupost.com/world/2023/01/14/indonesia-sends-warship-to-monitor-chinese-coast-guard-vessel\nIndonesia sends warships to monitor Chinese coast guard vessel — Radio Free Asia / BenarNews 2023-01-17\nhttps://www.rfa.org/english/news/china/indonesia-china-coast-guard-01172023061935.html",
+   "pull_request": 74,
+   "new_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:10:29.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-6a6c38585b",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-8a99f7b256",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 14 January 2023 Navy Chief Adm. Muhammad Ali said Indonesia had deployed a warship, a maritime patrol aircraft and a drone to monitor China Coast Guard ship 5901, the world's largest coast guard vessel, which had been sailing near the Tuna block since 30 December 2022; on 17 January he said three to four warships and a patrol aircraft were on standby in Natuna.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-01-14",
+   "presort": "continuation of ev-8a99f7b256 (a candidate, provisional) — Deploying a warship, aircraft and a drone to monitor CCG 5901 continues 2022's warship-and-aircraft deployment to the North Natuna Sea (ev-8a99f7b256) by the same method. Least sure: monitoring a CCG ship near Tuna was absent in 2022, so a coder may treat it as new again against 2021's escort of the rig (ev-b7895e69d6). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military",
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recQl4eSkIsob5yz2",
+   "archived_on": "2026-11-27",
+   "actors": "Government of Indonesia (upstream licensing: Ministry of Energy and Mineral Resources / SKK Migas)",
+   "suggestion_reasoning": "Awarding an exploration licence in waters China claims is unilateral administration of resources; demonstrative. The licensing authority is not named in the source. [confidence: medium]",
+   "date_end": "2026-05-31",
+   "new_dyads": "IC",
+   "excerpt": "a new exploration block just south of Tuna, Arwana III, was licensed to Indonesia’s Prime Energy in May 2026",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Arwana III block, just south of the Tuna block, North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:16:25.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7b87238a9f",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-8af5e8fd2b",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In May 2026 Indonesia licensed a new exploration block, Arwana III, just south of the Tuna block in the northern part of its continental shelf within China's nine-dash line, to the Indonesian company Prime Energy.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-05-01",
+   "presort": "continuation of ev-8af5e8fd2b (a candidate, provisional) — Licensing the Arwana III block continues the 2025 resource development inside the nine-dash line (ev-8af5e8fd2b, East Natuna seismic and rig contracting) by the same administrative means. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "reckMcUCZHn9IG386",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Marine Affairs and Fisheries (KKP): Deputy Minister Didit Herdiawan; Director General of PSDKP Pung Nugroho Saksono",
+   "suggestion_reasoning": "A fleet expansion and new enforcement hub dedicated to the North Natuna Sea is capacity-building for unilateral administration of the EEZ; demonstrative. Date is the Friday of the statement reported on Saturday 11 July. [confidence: medium]",
+   "date_end": "2026-07-10",
+   "new_dyads": "IV",
+   "excerpt": "Indonesia is strengthening the protection of marine resources in the North Natuna Sea by building 10 new patrol vessels and expanding the pier at the Batam Marine and Fisheries Resources Surveillance (PSDKP) Base.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "location_name": "North Natuna Sea (WPPNRI 711); PSDKP Batam base",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia strengthens North Natuna Sea surveillance — ANTARA News (English) 2026-07-11\nhttps://en.antaranews.com/news/422259/indonesia-strengthens-north-natuna-sea-surveillance",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:19:25.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7cfc76ed97",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Announcement but not implementation yet",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "On 10 July 2026 Deputy Minister of Marine Affairs and Fisheries Didit Herdiawan said Indonesia was building ten new Class I patrol vessels and expanding the pier at the Batam PSDKP base, to be the main hub for surveillance operations in the North Natuna Sea (WPPNRI 711), to combat illegal fishing there.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-07-10",
+   "presort": "unclear — Building ten patrol vessels and expanding the Batam pier is an announced capacity plan, not yet an act in the area; 2025 has the military garrison build-up (ev-7d18b123c8) but nothing on fisheries enforcement capacity. Their deployment to the North Natuna Sea would settle it. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recVCGEntAhYbHJmg",
+   "archived_on": "2026-11-27",
+   "actors": "Joint Regional Defence Command I (Kogabwilhan I), Lt. Gen. Kunto Arief Wibowo; Indonesian Air Force; Indonesian Marine Corps",
+   "suggestion_reasoning": "Announced upgrades of the air base and a permanent Marine garrison on the frontier islands are military build-up asserting control without confrontation; demonstrative. Dated by the announcement; implementation dates are not given. [confidence: medium]",
+   "date_end": "2025-08-17",
+   "new_dyads": "IC",
+   "excerpt": "Wibowo also announced plans to upgrade military infrastructure in the region, including elevating Raden Sadjad Air Force Base to Type A status and converting the existing Marine Corps task unit into a permanent, organic force stationed in Natuna.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "location_name": "Natuna (Raden Sadjad Air Force Base, Ranai)",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Natuna naval base ready to guard borders near South China Sea — ANTARA News (English) 2025-10-23\nhttps://en.antaranews.com/news/387645/natuna-naval-base-ready-to-guard-borders-near-south-china-sea",
+   "pull_request": 74,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:15:47.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-7d18b123c8",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Plans but no actions yet",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 17 August 2025, visiting Natuna, the commander of the Joint Regional Defence Command I (Kogabwilhan I), Lt. Gen. Kunto Arief Wibowo, said the forces were fully prepared to defend the homeland there and announced plans to upgrade military infrastructure, including raising Raden Sadjad Air Force Base to Type A status and converting the Marine Corps task unit into a permanent organic force stationed in Natuna, as steps to enhance deterrence.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2025-08-17",
+   "presort": "new move (novelty) — Announcing a Type A air base and a permanent Marine force in Natuna is a new garrison build-up against 2024, which has no military infrastructure or garrison act (nothing comparable among the 2024 candidates). (group 2025-natuna-garrison) [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "recfdBaiJfHRHn3OR",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Retno Marsudi; Ministry of Foreign Affairs",
+   "suggestion_reasoning": "A ministerial statement rejecting, by reference to UNCLOS, a Chinese map whose line overlaps Indonesia's EEZ is a verbal assertion of position; declarative. Indonesia did not announce a formal protest note. [confidence: high]",
+   "date_end": "2023-08-31",
+   "new_dyads": "IC",
+   "excerpt": "\"Penarikan garis apa pun, klaim apa pun yang dilakukan harus sesuai dengan UNCLOS 1982,\" kata Retno usai rapat kerja bersama Komisi I DPR RI di Kompleks Parlemen, Senayan, Jakarta, Kamis.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "South China Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Menlu soal peta baru China: Klaim wilayah harus sesuai UNCLOS 1982 — ANTARA 2023-08-31\nhttps://www.antaranews.com/berita/3704943/menlu-soal-peta-baru-china-klaim-wilayah-harus-sesuai-unclos-1982",
+   "pull_request": 74,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "feature",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:11:11.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-89a7c2dcf9",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "Routine statement",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 31 August 2023, after a working meeting with the DPR's Commission I, Foreign Minister Retno Marsudi responded to China's 2023 standard map, released on 28 August, by stating that the drawing of any line and any claim made must be in accordance with UNCLOS 1982.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-08-31",
+   "presort": "unclear — Saying any line and claim 'must be in accordance with UNCLOS' does not name or reject China's map or assert Indonesia's own rights, close to a call to comply with international law — likely reject; a formal protest note or an explicit rejection of the 2023 map would settle it. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic",
+    "domestic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic",
+    "domestic"
+   ]
+  },
+  {
+   "airtable_id": "reccavZ4lVUxdnrOJ",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Chief of Staff Adm. Yudo Margono; Sea Combat Group (Guspurla)",
+   "suggestion_reasoning": "A precautionary deployment of a warship and patrol aircraft to the North Natuna Sea is a show of presence without confrontation; demonstrative. Low confidence: the trigger was an incident involving a non-claimant, and the deployment is small. [confidence: low]",
+   "date_end": "2022-06-08",
+   "new_dyads": "IC",
+   "excerpt": "Guspurla pun langsung mengerahkan satu unit pesawat patroli dan satu unit kapal Korvet kelas Parchim guna memastikan keamanan Laut Natuna Utara pasca-insiden pencegatan di Laut China Selatan.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Low confidence"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "KSAL Jamin Laut Natuna Aman Terkendali — Republika (ANTARA) 2022-06-08\nhttps://news.republika.co.id/berita/rd63mf377/ksal-jamin-laut-natuna-aman-terkendali",
+   "pull_request": 74,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:08:52.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-8a99f7b256",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-9c9a8bcede",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 8 June 2022 Navy Chief of Staff Adm. Yudo Margono said that after a Chinese J-16 intercepted an Australian P-8 over the South China Sea on 26 May, the Navy's sea combat group (Guspurla) had deployed a patrol aircraft and a Parchim-class corvette to secure the North Natuna Sea, and that Natuna remained safe and under control.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2022-06-08",
+   "presort": "continuation of ev-9c9a8bcede (a candidate, provisional) — Sending a corvette and a patrol aircraft to the North Natuna Sea continues the 2021 standing naval patrols there (ev-9c9a8bcede) at a lower level; the trigger was a Chinese-Australian incident. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recOEo2i7y920TjHW",
+   "archived_on": "2026-11-27",
+   "actors": "PT Pertamina (state-owned)",
+   "suggestion_reasoning": "A state-company seismic survey of a block inside the area China claims is unilateral resource development; demonstrative. [confidence: medium]",
+   "date_end": "2025-03-31",
+   "new_dyads": "IC",
+   "excerpt": "Indonesian state-owned firm Pertamina conducted seismic surveys of East Natuna in March 2025",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "East Natuna block",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:15:05.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-8af5e8fd2b",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-635f4bebfd ",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In March 2025 the state oil company Pertamina conducted seismic surveys of the East Natuna block, in the northern reaches of Indonesia's continental shelf within China's nine-dash line, and was later contracting rigs for exploration of the block as early as December 2026.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2025-03-01",
+   "presort": "continuation of ev-635f4bebfd (a candidate, provisional) — Pertamina's seismic survey of the East Natuna block continues its 2024 seismic work on the D-Alpha field in the same area (ev-635f4bebfd), same method and area. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recuoKBUxRyMSlytg",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Fleet Command I (Koarmada I), Rear Adm. Arsyad Abdullah; KRI Silas Papare-386",
+   "suggestion_reasoning": "A stepped-up standing naval patrol operation in the EEZ is a show of presence without confrontation; demonstrative. [confidence: high]",
+   "date_end": "2021-09-16",
+   "new_dyads": "IC",
+   "excerpt": "Ia menyampaikan pihaknya menggelar operasi dengan sandi Siaga Segara 21 dengan mengoperasikan lima KRI.\n\nFive navy vessels, assisted by an air patrol, have been deployed in North Natuna Sea to secure the area",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "TNI AL kerahkan lima KRI jaga Laut Natuna Utara — ANTARA (Jawa Timur) 2021-09-17\nhttps://jatim.antaranews.com/berita/525957/tni-al-kerahkan-lima-kri-jaga-laut-natuna-utara\nIndonesia increase patrols after foreign vessels detected near Natuna — The Jakarta Post (Reuters) 2021-09-17\nhttps://www.thejakartapost.com/news/2021/09/17/indonesia-increase-patrols-after-foreign-vessels-detected-near-natuna",
+   "pull_request": 74,
+   "new_issues": [
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:07:26.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-9c9a8bcede",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-39f2da0c71",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 16 September 2021 the commander of the Navy's Fleet Command I, Rear Adm. Arsyad Abdullah, speaking aboard KRI Silas Papare-386 off Natuna, said the Navy was running Operation Siaga Segara 21 with five warships and a patrol aircraft so that at least three warships were in the North Natuna Sea around the clock, after Chinese and US vessels were sighted near the area.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-09-16",
+   "presort": "continuation of ev-39f2da0c71 (a candidate, provisional) — Keeping at least three warships in the North Natuna Sea under Operation Siaga Segara continues the 2020 naval presence there (ev-39f2da0c71, prev-run candidate, eight warships in January) at no higher level; the trigger partly involved US ships. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recm5sq7JxiXEHGFu",
+   "archived_on": "2026-11-27",
+   "actors": "Foreign Minister Sugiono; DPR Commission I",
+   "suggestion_reasoning": "A ministerial statement to parliament restating non-recognition of China's claim is a verbal assertion of position; declarative. [confidence: medium]",
+   "date_end": "2024-12-02",
+   "new_dyads": "IC",
+   "excerpt": "Sugiono told a hearing with the House of Representative’s (DPR) Foreign affairs and Defense Commission I on Monday, December 2, 2024.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "FM: Indonesia does not recognize China’s nine dash line claim over South China Sea — Indonesia Business Post 2024-12-03\nhttps://indonesiabusinesspost.com/3267/national-resilience/fm-indonesia-does-not-recognize-china-s-nine-dash-line-claim-over-south-china-sea",
+   "pull_request": 74,
+   "new_issues": [
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:14:44.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-a9b24bbd02",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-89a7c2dcf9",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "Answering a hearing of the DPR's Commission I on 2 December 2024, Foreign Minister Sugiono said Indonesia did not recognise China's claim over the North Natuna Sea and that the 9 November joint statement with China had recognised nothing and specified no area or coordinates for joint development.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-12-02",
+   "presort": "continuation of ev-89a7c2dcf9 (a candidate, provisional) — Sugiono's statement to the DPR repeats the same non-recognition line as ev-59bb4f8410; continuation of the reaffirmations on the 2023 record (ev-89a7c2dcf9). [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recDKX6NQMgwiFXQb",
+   "archived_on": "2026-11-27",
+   "actors": "Maritime Security Agency (Bakamla): KN Pulau Dana, KN Tanjung Datu, KN Pulau Marore, KN Pulau Nipah; Indonesian Navy: KRI John Lie, KRI Bung Tomo",
+   "suggestion_reasoning": "Sustained close shadowing and pursuit of another claimant's coast guard ships to protect licensed drilling is physical interference short of force; coercive (a coder might treat escort patrols as demonstrative). End date is AMTI's publication date, when the standoff was continuing. [confidence: high]",
+   "date_end": "2021-11-12",
+   "new_dyads": "IC",
+   "excerpt": "The Pulau Dana was the first in a long series of patrol vessels from both Bakamla and the Indonesian Navy that visited the rig and pursued Chinese vessels over the past four months",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "Tuna Block, North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Nervous Energy: China Targets New Indonesian, Malaysian Drilling — CSIS Asia Maritime Transparency Initiative 2021-11-12\nhttps://amti.csis.org/nervous-energy-china-targets-new-indonesian-malaysian-drilling/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:06:56.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-b7895e69d6",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "From 3 July 2021, when the Bakamla patrol ship KN Pulau Dana arrived after China Coast Guard ship 5202 began patrolling near the Tuna block rig, Bakamla and Navy ships (KN Tanjung Datu, KN Pulau Marore, KN Pulau Nipah, KRI John Lie, KRI Bung Tomo) took turns at the rig for four months, often pursuing the Chinese coast guard vessels (5202, 5305, then 6305) at less than one nautical mile; on 11 August KRI Bung Tomo was imaged half a mile from CCG 5305.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-07-03",
+   "merge_into_candidate": "ev-42478fa105",
+   "presort": "same move as ev-42478fa105 — Four months of Bakamla and Navy ships guarding the rig and pursuing CCG ships protect the Tuna drilling (ev-42478fa105); same move, which this makes coercive. If split off, it is a frequency step on 2020's three-day shadowing of CCG 5204 (ev-63d7872263, prev-run candidate). (group 2021-tuna-standoff) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recf6TJUzwKGuh31r",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Foreign Affairs; DPR Commission I (Muhammad Farhan)",
+   "suggestion_reasoning": "A formal diplomatic reply rejecting China's demand is a verbal assertion of sovereign rights; declarative. The reply is undated in the sources (some time during the July-November 2021 drilling), hence the month-range dating; the public disclosure is dated 1 December 2021. [confidence: medium]",
+   "date_end": "2021-11-30",
+   "new_dyads": "IC",
+   "excerpt": "“Our reply was very firm, that we are not going to stop the drilling because it is our sovereign right,” Farhan told Reuters.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "Tuna Block, North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "China protests Indonesian drilling, military exercises — Malay Mail (Reuters) 2021-12-01\nhttps://www.malaymail.com/news/world/2021/12/01/china-protests-indonesian-drilling-military-exercises/2025121",
+   "pull_request": 74,
+   "new_issues": [
+    "energy",
+    "politics"
+   ],
+   "suggested_type": "declarative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:06:41.000Z",
+   "new_type": "declarative",
+   "event_id": "ev-d58dd0d126",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "In reply to a Chinese diplomatic letter received during the 2021 Tuna block standoff that told Indonesia to halt drilling at the temporary offshore rig because it was in Chinese territory, Indonesia answered, according to Muhammad Farhan of the DPR's Commission I who was briefed on it, that it would not stop drilling because it was its sovereign right; the exchange was disclosed by Reuters on 1 December 2021, and the Foreign Ministry declined to comment.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2021-07-01",
+   "merge_into_candidate": "ev-42478fa105",
+   "presort": "same move as ev-42478fa105 — The diplomatic reply refusing China's demand to halt drilling is the declarative side of the Tuna block drilling (ev-42478fa105). (group 2021-tuna-standoff) [claude-code/opus]",
+   "decision": "merge",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy",
+    "politics"
+   ],
+   "suggested_domains": [
+    "diplomatic"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "diplomatic"
+   ]
+  },
+  {
+   "airtable_id": "recNh4ikj4zkq5Arb",
+   "archived_on": "2026-11-27",
+   "actors": "Coordinating Minister Mahfud MD; Home Minister Tito Karnavian; Indonesian Navy (KRI Semarang-594)",
+   "suggestion_reasoning": "A ministerial visit to frontier islands abutting the contested EEZ, made aboard a warship, is a show of state presence; demonstrative. [confidence: medium]",
+   "date_end": "2021-11-24",
+   "new_dyads": "IC",
+   "excerpt": "The ministers are also scheduled to tour the archipelago’s northernmost outpost, Laut Island, by helicopter on Wednesday.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "Natuna Islands and Laut Island, Riau Islands",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Ministers in Natuna to bolster frontier — The Jakarta Post 2021-11-23\nhttps://www.thejakartapost.com/paper/2021/11/23/ministers-in-natuna-to-bolster-frontier",
+   "pull_request": 74,
+   "new_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:07:36.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-dceab18de2",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-9a0f9944d1 ",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 23-24 November 2021 Coordinating Minister for Political, Legal and Security Affairs Mahfud MD and Home Minister Tito Karnavian toured the Natuna island chain aboard the Navy landing platform dock KRI Semarang-594 and visited Laut Island, Indonesia's northernmost outpost near the EEZ, in a visit reaffirming the state's commitment to safeguarding its maritime borders.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2021-11-23",
+   "presort": "continuation of ev-9a0f9944d1 (a candidate, provisional) — A ministerial tour of the Natunas aboard a warship continues the 2020 senior visits to Natuna (ev-9a0f9944d1, the President's) at a lower level; nothing new in method. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "politics",
+    "administrative"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recrXeHkwTDdnjh0o",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Fleet Command I Sea Combat Group (Guspurla Koarmada I), Rear Adm. Nurlan; KRI John Lie-358",
+   "suggestion_reasoning": "An intensified warship patrol of the EEZ against foreign fishing incursions is a show of presence without confrontation; demonstrative. Dyad IV is inferred from the area's usual intruders (the source names no flag). [confidence: medium]",
+   "date_end": "2026-06-11",
+   "new_dyads": "IV",
+   "excerpt": "Following the reports, Nurlan ordered warship KRI John Lie-358 to intensify patrols and surveillance in the area to safeguard Indonesia's waters and sovereignty near neighboring countries' maritime boundaries.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesian navy hunts suspected foreign fishing vessels — ANTARA News (English) 2026-06-11\nhttps://en.antaranews.com/news/418883/indonesian-navy-hunts-suspected-foreign-fishing-vessels",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:18:05.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-dd0e7657bd",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "No assertive escalation or tool to enforce a claim",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "After a 10 June 2026 meeting in Natuna at which fishermen reported foreign fishing vessels operating almost daily in the North Natuna Sea, the commander of Fleet Command I's Sea Combat Group, Rear Adm. Nurlan, ordered the warship KRI John Lie-358 to intensify patrols and surveillance; a patrol on 11 June found no foreign vessels, and the ship stayed on heightened alert for sector patrols to deter incursions.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2026-06-10",
+   "presort": "unclear — An order to one warship to step up sector patrols, finding no foreign vessels, looks like routine North Natuna patrolling; the 2025 record has no patrol candidate to compare it with. The Fleet Command I patrol pattern for 2025 would settle whether this is continuation. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries",
+    "military"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recdXjmT6EdcPOgIY",
+   "archived_on": "2026-11-27",
+   "actors": "SKK Migas (chairman Dwi Soetjipto); Ministry of Energy and Mineral Resources; Indonesian Navy",
+   "suggestion_reasoning": "Government approval of a hydrocarbon development plan in waters China claims, framed as an affirmation of sovereignty, is unilateral resource administration; demonstrative. [confidence: high]",
+   "date_end": "2023-01-02",
+   "new_dyads": "IC",
+   "excerpt": "\"The Indonesian navy will also participate in securing the upstream oil and gas project so that economically and politically, it becomes an affirmation of Indonesia's sovereignty.\"",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "location_name": "Tuna Block, North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "reviewer": "Angelo",
+   "sources": "Indonesia Approves US$ 3 Billion Development Plan for South China Sea Gas Block — Kontan (Reuters) 2023-01-02\nhttps://amp.kontan.co.id/news/indonesia-approves-us-3-billion-development-plan-for-south-china-sea-gas-block",
+   "pull_request": 74,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:09:29.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-e75b9338a8",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "The agreement is already assertive in and of itself through the assertive claim over a maritime territory",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "summary": "On 2 January 2023 the upstream regulator SKK Migas announced Indonesia's approval of the first plan of development for the Tuna offshore gas field (Harbour Energy, about US$3.07 billion), in the South China Sea between Indonesia and Vietnam and inside China's nine-dash line; SKK Migas chairman Dwi Soetjipto said the Navy would help secure the project so that it became an affirmation of Indonesia's sovereignty.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2023-01-02",
+   "presort": "new move (novelty) — Approving the first development plan for the Tuna gas field, with the Navy to secure it as an 'affirmation of sovereignty', is a new step against 2022, which has no energy activity in the contested area (nothing comparable among the 2022 candidates); the 2021 drilling (ev-42478fa105) was appraisal, and its absence in 2022 makes resource development new again. [claude-code/opus]",
+   "decision": "new_move",
+   "new_criterion": "novelty",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "domestic",
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "domestic",
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "rect7gLOw4dcpXPAE",
+   "archived_on": "2026-11-27",
+   "actors": "Indonesian Navy (TNI AL), Fleet Command I (KRI Tjiptadi-381, KRI Tuanku Imam Bonjol-383); Ministry of Marine Affairs and Fisheries (KKP, PSDKP), KP Hiu Macan 01",
+   "suggestion_reasoning": "Seizing and detaining Vietnamese fishing boats in the overlapping EEZ area is physical enforcement imposing punishment; coercive. Summarised as one event for the year's routine arrests. [confidence: medium]",
+   "date_end": "2022-12-31",
+   "new_dyads": "IV",
+   "excerpt": "Tangkapan terakhir kapal Vietnam pada 24 Juli 2022, ditangkap oleh Kapal Pengawas Hiu Macan 01.\n\nTNI AL menangkap tiga kapal asing berbendera Vietnam yang mencuri ikan di ZEE Laut Natuna Utara.\n\nPSDKP menyampaikan baru menangkap dua kapal ikan asing Vietnam di perairan Natuna belum lama ini.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Date approximate"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Source's wording for the place: “North Natuna Sea (Laut Natuna Utara)”.",
+   "reviewer": "Angelo",
+   "sources": "KKP tangkap 83 kapal ikan ilegal sepanjang 2022 — ANTARA 2022-08-08\nhttps://www.antaranews.com/berita/3044737\nTiga Kapal Vietnam Ditangkap di Natuna, Ini Permintaan Nelayan — Mongabay Indonesia 2022-01-15\nhttps://mongabay.co.id/2022/01/15/tiga-kapal-vietnam-ditangkap-di-natuna-ini-permintaan-nelayan/\nDiintimidasi Kapal Penjaga Pantai China, Nelayan Natuna Teriak NKRI Harga Mati — Mongabay Indonesia 2022-09-14\nhttps://mongabay.co.id/2022/09/14/diintimidasi-kapal-penjaga-pantai-china-nelayan-natuna-teriak-nkri-harga-mati/",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:07:47.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-ed50c6b9db",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-4610eaed84",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "summary": "During 2022 Indonesian forces continued to seize Vietnamese boats fishing in the North Natuna Sea, though at a lower rate than in 2021: in January the warships KRI Tjiptadi-381 and KRI Tuanku Imam Bonjol-383 of Fleet Command I's sea combat group captured three Vietnamese boats and took them to Lanal Ranai; KKP counted two Vietnamese boats seized in the North Natuna Sea between January and July (the last on 24 July 2022 by the patrol ship Hiu Macan 01, a pair-trawl team with 11 tonnes of fish and 14 crew), with two more seized by PSDKP in September.",
+   "dataset_status": "In review",
+   "date_precision": "year",
+   "date_start": "2022-01-01",
+   "presort": "continuation of ev-4610eaed84 (a candidate, provisional) — The 2022 seizures of Vietnamese boats continue the 2021 practice (ev-4610eaed84), at a lower rate; a coder may add a diminished note. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recHVxKtoXPuGTpQ0",
+   "archived_on": "2026-11-27",
+   "actors": "Ministry of Marine Affairs and Fisheries (KKP), PSDKP Batam base; Director General Pung Nugroho Saksono",
+   "possible_duplicate_of": "ev-1873f7e15f",
+   "suggestion_reasoning": "Completing a seizure in the face of another claimant's state vessel demanding release is physical enforcement in a direct state-to-state encounter; coercive. Listed separately from the 2024 annual summary because of the encounter with Vietnamese state vessels. [confidence: medium]",
+   "date_end": "2024-08-17",
+   "new_dyads": "IV",
+   "excerpt": "\"Sempat ada aksi provokasi dari Kapal Coast Guard negara itu mencoba menghalang-halangi proses penangkapan. Mereka meminta untuk melepas kapal asing ini.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:57:30.000Z",
+   "flags": [
+    "Possible duplicate"
+   ],
+   "location_name": "North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Possible duplicate of ev-1873f7e15f.",
+   "reviewer": "Angelo",
+   "sources": "KKP Tangkap Kapal Ikan Vietnam di Natuna, 1 Ton Ikan Hasil Curian Disita — Warta Ekonomi 2024-08-21\nhttps://wartaekonomi.co.id/read542517/kkp-tangkap-kapal-ikan-vietnam-di-natuna-1-ton-ikan-hasil-curian-disita",
+   "pull_request": 74,
+   "new_issues": [
+    "fisheries"
+   ],
+   "suggested_type": "coercive",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:12:05.000Z",
+   "new_type": "coercive",
+   "event_id": "ev-efae97a1aa",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-23d91fb5b9 ",
+   "suggested_dyads": [
+    "IV"
+   ],
+   "duplicate_of": "ev-1873f7e15f",
+   "summary": "On 17 August 2024 a KKP fisheries patrol from the PSDKP Batam base, acting on Natuna fishermen's reports, seized the Vietnamese trawler BV 93481 with nine crew in the North Natuna Sea, despite a Vietnamese coast guard vessel that, according to PSDKP Director General Pung Nugroho Saksono, tried to obstruct the arrest and asked that the boat be released.",
+   "dataset_status": "In review",
+   "date_precision": "day",
+   "date_start": "2024-08-17",
+   "presort": "continuation of ev-23d91fb5b9 (a candidate, provisional) — Completing a seizure despite a Vietnamese coast guard vessel's request continues the 2023 seizure practice (ev-23d91fb5b9); the encounter is Vietnam's act, and Indonesia's method did not change. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "fisheries"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  },
+  {
+   "airtable_id": "recdnNbMv3XhBpklj",
+   "archived_on": "2026-11-27",
+   "actors": "Zarubezhneft (contractor under Indonesia's Tuna production sharing contract)",
+   "possible_duplicate_of": "ev-7b87238a9f",
+   "suggestion_reasoning": "Resumed state-licensed development of a gas field in waters China claims is resource activity sanctioned by the Indonesian state; demonstrative. Low confidence because the actor is a foreign contractor and the source gives no Indonesian government act. [confidence: low]",
+   "date_end": "2026-06-30",
+   "new_dyads": "IC",
+   "excerpt": "The Russian firm stayed on, however, and resumed development in June 2026.",
+   "fldDaG8ZsjVVmdNQt": "2026-11-17T01:59:27.000Z",
+   "flags": [
+    "Possible duplicate",
+    "Date approximate",
+    "Low confidence"
+   ],
+   "location_name": "Tuna Block, North Natuna Sea",
+   "run": [
+    "ID-2021-2026"
+   ],
+   "machine_note": "Possible duplicate of ev-7b87238a9f.",
+   "reviewer": "Angelo",
+   "sources": "Tapping Out or Tapping In? South China Sea Oil and Gas in 2026 — CSIS Asia Maritime Transparency Initiative 2026-11-16\nhttps://amti.csis.org/tapping-out-or-tapping-in-south-china-sea-oil-and-gas-in-2026/",
+   "pull_request": 74,
+   "new_issues": [
+    "energy"
+   ],
+   "suggested_type": "demonstrative",
+   "location_precision": "subregion",
+   "subregion": "10 Far South",
+   "fldWsFH4vyPE1xjxg": "2026-11-27T21:16:35.000Z",
+   "new_type": "demonstrative",
+   "event_id": "ev-fc5872ffac",
+   "run_id": "ID-2021-2026",
+   "new_subregions": [
+    "10 Far South"
+   ],
+   "note": "continuation of ev-8af5e8fd2b",
+   "suggested_dyads": [
+    "IC"
+   ],
+   "duplicate_of": "ev-7b87238a9f",
+   "summary": "In June 2026 development of the Tuna gas field, in the northern reaches of Indonesia's continental shelf inside China's nine-dash line, resumed under the Russian state-owned partner Zarubezhneft after operator Harbour Energy announced in 2025 that it was selling its interest.",
+   "dataset_status": "In review",
+   "date_precision": "month",
+   "date_start": "2026-06-01",
+   "presort": "continuation of ev-8af5e8fd2b (a candidate, provisional) — Resumed Tuna development under a new foreign partner continues state-licensed gas development in the contested shelf (ev-8af5e8fd2b); no new Indonesian government act is reported. [claude-code/opus]",
+   "decision": "reject",
+   "fldxtFtzSLOFoALEB": "✓",
+   "suggested_issues": [
+    "energy"
+   ],
+   "suggested_domains": [
+    "physical"
+   ],
+   "claimant": "ID",
+   "new_domains": [
+    "physical"
+   ]
+  }
+ ]
+}

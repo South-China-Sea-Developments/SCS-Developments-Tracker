@@ -1,0 +1,337 @@
+{
+ "decisions": [
+  {
+   "event_id": "ev-11ee0efd6f",
+   "action": "reject",
+   "note": "Outside the SCS disputed waters"
+  },
+  {
+   "event_id": "ev-1fd25090cc",
+   "action": "reject",
+   "note": "continuation of ev-cdd40a3eca"
+  },
+  {
+   "event_id": "ev-2d42351825",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-8356b4f7df"
+  },
+  {
+   "event_id": "ev-463d6a1ab1",
+   "action": "reject",
+   "note": "Not a SCS-facing action"
+  },
+  {
+   "event_id": "ev-574d7e8a33",
+   "action": "reject",
+   "note": "continuation of ev-c30e71a054"
+  },
+  {
+   "event_id": "ev-595186f568",
+   "action": "reject",
+   "note": "continuation of ev-ce262c6747"
+  },
+  {
+   "event_id": "ev-59b17deec7",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-76df87e6ee",
+   "action": "reject",
+   "note": "continuation of ev-e15b562893"
+  },
+  {
+   "event_id": "ev-7887a06047",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-79ad7dc38f",
+   "action": "merge",
+   "note": "",
+   "move_of_event": "ev-e15b562893"
+  },
+  {
+   "event_id": "ev-7d76d254ae",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "physical"
+    ],
+    "issues": [
+     "military"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-8356b4f7df",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IC"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-868363285a",
+   "action": "reject",
+   "note": "continuation of ev-e15b562893"
+  },
+  {
+   "event_id": "ev-869335de93",
+   "action": "reject",
+   "note": "No enforcement yet"
+  },
+  {
+   "event_id": "ev-a364a20719",
+   "action": "new_move",
+   "note": "Not enforced but the threat can act as an assertive move",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-c30e71a054",
+   "action": "reject",
+   "note": "continuation of ev-ce262c6747"
+  },
+  {
+   "event_id": "ev-c717a29256",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IA"
+    ],
+    "domains": [
+     "diplomatic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-cdd40a3eca",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV"
+    ],
+    "domains": [
+     "physical",
+     "domestic"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-ce262c6747",
+   "action": "reject",
+   "note": "continuation of ev-1fd25090cc"
+  },
+  {
+   "event_id": "ev-d7d1ea6d0a",
+   "action": "reject",
+   "note": "Not an assertive move"
+  },
+  {
+   "event_id": "ev-da4d8bf65e",
+   "action": "reject",
+   "note": "continuation of ev-c30e71a054"
+  },
+  {
+   "event_id": "ev-dbad155a5b",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "demonstrative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "politics",
+     "administrative"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-dcfa42a2fc",
+   "action": "reject",
+   "note": "Rejected because it maintained previous claims"
+  },
+  {
+   "event_id": "ev-e15b562893",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "coercive",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IV",
+     "IC",
+     "IR"
+    ],
+    "domains": [
+     "physical",
+     "diplomatic"
+    ],
+    "issues": [
+     "fisheries"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-e5f5cfa5e2",
+   "action": "new_move",
+   "note": "",
+   "new_move": {
+    "type": "declarative",
+    "intensification_criterion": "novelty",
+    "year": "",
+    "ongoing_through": "",
+    "dyads": [
+     "IU"
+    ],
+    "domains": [
+     "domestic"
+    ],
+    "issues": [
+     "administrative"
+    ],
+    "subregions": [
+     "10"
+    ],
+    "description": ""
+   }
+  },
+  {
+   "event_id": "ev-fa327c4f28",
+   "action": "reject",
+   "note": "continuation of ev-cdd40a3eca"
+  },
+  {
+   "event_id": "ev-fddacb9915",
+   "action": "reject",
+   "note": "continuation of ev-59b17deec7"
+  }
+ ],
+ "reviewer": "Angelo"
+}
