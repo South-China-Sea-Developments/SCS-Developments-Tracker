@@ -2,15 +2,17 @@
  "run_id": "GAPS-20261124",
  "table": "Candidates",
  "record_ids": [
-  "recORv1nWRQ7FhYZp",
-  "recQXZMCBHP62AjM6",
-  "recsAtYsirYBwexHJ",
-  "rece6x3wJbJYVL18t"
+  "rec3akrnSKxZIKb5k",
+  "recjb4lhRApmF5Z7T",
+  "recU5TwdPAqcwdqyy",
+  "recP9EFAAYt3SCJik",
+  "recIOA7MVCjoQCxMV"
  ],
  "event_ids": [
-  "ev-37f3848d90",
-  "ev-39c7feddf8",
-  "ev-5fcdbb2293",
-  "ev-ad017b31fe"
+  "ev-9457f3aa93",
+  "ev-9c2f8e1dc5",
+  "ev-b088992f0c",
+  "ev-d32010b527",
+  "ev-eac0b5d654"
  ]
 }
