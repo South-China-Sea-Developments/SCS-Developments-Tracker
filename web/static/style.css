@@ -938,3 +938,40 @@ html.embed .bc-stage { grid-template-columns: 1fr; height: 100vh; max-height: no
 @media (max-width: 600px) {
   .ep-pin-label { left: 50%; top: calc(100% + 4px); transform: translateX(-50%); align-items: center; }
 }
+
+/* ---- What moved the score (wave 1) ------------------------------------------------------------------- */
+.amap-change { margin: var(--s2) 0 var(--s3); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; }
+.amap-change summary { cursor: pointer; font-weight: 600; font-size: 0.875rem; min-height: 28px; display: flex; align-items: center; }
+.amap-change p { margin: 6px 0; font-size: 0.8125rem; line-height: 1.45; }
+.amap-change-table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.amap-change-table th, .amap-change-table td { padding: 3px 4px; text-align: left; font-weight: 400; border-bottom: 1px solid var(--rule); }
+.amap-change-table thead th { color: var(--muted); font-size: 0.75rem; }
+.amap-change-table .num { text-align: right; }
+.amap-change-table th.grp { padding-top: 8px; color: var(--muted); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---- How complete the record is (wave 1) ------------------------------------------------------------- */
+.cov-block { margin: var(--s5) 0 var(--s6); }
+.cov-block h2 { margin-bottom: var(--s2); }
+.cov-note { color: var(--muted); font-size: 0.9375rem; line-height: 1.5; max-width: 70ch; }
+.cov-scroll { overflow-x: auto; }
+.cov-table { border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.875rem; min-width: 100%; }
+.cov-table th, .cov-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; font-weight: 400; }
+.cov-table thead th { color: var(--muted); font-size: 0.8125rem; }
+.cov-table .num { text-align: right; }
+.cov-cell { background: color-mix(in srgb, #3987e5 calc(var(--f) * 32%), transparent); }
+.cov-cell b { display: block; font-size: 1rem; }
+.cov-sub { display: block; color: var(--muted); font-size: 0.75rem; white-space: nowrap; }
+.cov-empty { color: var(--muted); }
+.per-claimant-head { flex-wrap: wrap; gap: var(--s2); }
+.per-claimant-head .figure-controls { flex-wrap: wrap; }
+.prose .cov-block { margin: var(--s4) 0 var(--s5); }
+.prose .cov-table { font-size: 0.8125rem; }
+.prose .cov-table th, .prose .cov-table td { padding: 6px 7px; }
+
+/* ---- Follow a claimant or a pair (wave 1) ---------------------------------------------------------------- */
+.news-follow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 var(--s4); }
+.chip-btn { font: inherit; font-size: 0.875rem; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); cursor: pointer; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.news-feed-link { margin-left: auto; font-size: 0.875rem; }
+.news-none { color: var(--muted); }
+.bc-follow { display: inline-flex; align-items: center; min-height: 32px; margin-left: 8px; font-size: 0.875rem; }

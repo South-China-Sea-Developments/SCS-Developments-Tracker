@@ -72,4 +72,9 @@ treats them as binding.
 - Built 2026-11-25: `pipeline/rereview.py` (rows, apply, archive) with tests; the Re-review table in the
   base (`tblR8Lb34BDuu6KjF`); `docs/audit-prompt.md`; the weekly task applies decided Re-review rows.
 - The references repository holds both texts (2026-11-25).
-- Waiting: his go-ahead once the candidates are decided.
+- 2026-11-28: go-ahead given, then held by the maintainer until he has decided every candidate in the base
+  (about 4–6 days). The kit is ready in `docs/audit-kit/`: `make_packets.py` writes one packet per
+  claimant-year (140 on 2026-11-28, 1,332 records: 248 project moves, 410 accepted and 674 rejected
+  events); `reviewer.md` is each reviewer's brief, on Fable, about 30 records a job, six at a time, newest
+  years first. A pilot on Vietnam 2026 (17 rejected events) gave one finding (a sub-region, 8 → 5) and ran
+  into the account's Fable limit; the run starts afresh from new packets when he says so.

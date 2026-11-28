@@ -47,6 +47,8 @@
     mapClaimant: "ALL",    // sub-regions page: one claimant or ALL
     bin: "all",            // sub-regions map: period key
     tableOn: {},           // figure id -> table view on?
+    claimDim: "types",     // the per-claimant charts: "types" | "domains" | "issues"
+    claimShape: "years",   // ... per year, or each decade's mix ("decades")
     width: window.innerWidth
   };
   CLAIMANTS.forEach(function (c) { state.selected[c] = true; });
@@ -109,8 +111,8 @@
 
     var totals = categories.map(function (c) { return sum(series.map(function (sr) { return sr.values[c.key] || 0; })); });
     var maxV = Math.max(1, Math.max.apply(null, totals));
-    var step = niceStep(maxV, small ? 3 : 5);
-    var yMax = Math.ceil(maxV / step) * step;
+    var step = opts.yMax ? opts.yMax / (small ? 2 : 4) : niceStep(maxV, small ? 3 : 5);
+    var yMax = opts.yMax || Math.ceil(maxV / step) * step;
     function yScale(v) { return m.top + ph - (v / yMax) * ph; }
 
     var svg = el("svg", { viewBox: "0 0 " + width + " " + height, role: "img", "aria-label": opts.ariaLabel || "" }, container);
@@ -215,6 +217,26 @@
 
   // ---- data access -------------------------------------------------------
   var YEAR_CATS = YEARS.map(function (y) { return { key: String(y), label: String(y), short: String(y) }; });
+  var DECADES = [];
+  YEARS.forEach(function (y) { var d = Math.floor(y / 10) * 10; if (DECADES.indexOf(d) < 0) DECADES.push(d); });
+  var DEC_CATS = DECADES.map(function (d) { return { key: String(d), label: d + "s", short: "’" + String(d).slice(2) }; });
+  // each decade's mix: the shares (per cent, rounded) of the dimension's keys in that decade's moves; a decade
+  // with fewer than 10 moves gets no mix, as a pair with fewer than 10 gets no share on Between claimants
+  var SMALL_N = 10;
+  function decadeShares(codes, keys) {
+    var out = {};
+    keys.forEach(function (k) { out[k] = {}; });
+    DECADES.forEach(function (d) {
+      var tot = 0, raw = {};
+      keys.forEach(function (k) {
+        raw[k] = sum(YEARS.filter(function (y) { return y >= d && y < d + 10; }).map(function (y) { return sum(codes.map(function (c) { return AGG.by_claimant[c].years[String(y)][k] || 0; })); }));
+        tot += raw[k];
+      });
+      var n = sum(YEARS.filter(function (y) { return y >= d && y < d + 10; }).map(function (y) { return sum(codes.map(function (c) { return AGG.by_claimant[c].years[String(y)].total || 0; })); }));
+      keys.forEach(function (k) { out[k][String(d)] = tot && n >= SMALL_N ? Math.round(100 * raw[k] / tot) : 0; });
+    });
+    return out;
+  }
   var LOC_CATS = LOCS.map(function (l) { return { key: l.n, label: l.n + " " + l.name, short: l.n }; });
   function shownClaimants() { return CLAIMANTS.filter(function (c) { return state.selected[c] && hasMoves(c); }); }   // a claimant with no moves is not on the page
   function mapClaimants() { return state.mapClaimant === "ALL" ? CLAIMANTS : [state.mapClaimant]; }
@@ -285,8 +307,15 @@
       renderFigure(fig, YEAR_CATS, series, { yearAxis: true, partsOfWhole: true, empty: empty, describedBy: "fig-all-desc",
         ariaLabel: state.stackBy === "type" ? "Assertive moves per year by type, all shown claimants" : "Assertive moves per year by claimant" });
     } else if (kind === "by-type") {
-      renderFigure(fig, YEAR_CATS, dimSeries("types", function (k) { return perYear(codes, k); }),
-        { yearAxis: true, partsOfWhole: true, small: small, empty: empty, ariaLabel: "Assertive moves per year by type, " + who });
+      var dimName = { types: "type", domains: "domain", issues: "issue" }[state.claimDim];
+      if (state.claimShape === "decades") {
+        var shares = decadeShares(codes, DIMS[state.claimDim].keys);
+        renderFigure(fig, DEC_CATS, dimSeries(state.claimDim, function (k) { return shares[k]; }),
+          { partsOfWhole: true, small: small, empty: empty, firstHeader: "Decade", yMax: 100, ariaLabel: "Share of moves by " + dimName + " in each decade, per cent, " + who });
+      } else {
+        renderFigure(fig, YEAR_CATS, dimSeries(state.claimDim, function (k) { return perYear(codes, k); }),
+          { yearAxis: true, partsOfWhole: state.claimDim === "types", small: small, empty: empty, ariaLabel: "Assertive moves per year by " + dimName + ", " + who });
+      }
     } else if (kind === "years" && dim === "subregion") {
       var loc = chart.getAttribute("data-loc");
       var name = (AGG.subregion_names || {})[loc] || loc;
@@ -434,6 +463,17 @@
   });
   document.querySelectorAll("#stack-by input").forEach(function (radio) {
     radio.addEventListener("change", function () { if (radio.checked) { state.stackBy = radio.value; renderAll(); } });
+  });
+  function claimHead() {
+    var h = document.getElementById("per-claimant-h"), n = document.getElementById("per-claimant-note");
+    if (h) h.textContent = "Each claimant, by " + { types: "type", domains: "domain", issues: "issue" }[state.claimDim] + (state.claimShape === "decades" ? ": the mix in each decade" : "");
+    if (n) n.hidden = state.claimShape !== "decades";
+  }
+  document.querySelectorAll("#claim-dim input").forEach(function (radio) {
+    radio.addEventListener("change", function () { if (radio.checked) { state.claimDim = radio.value; claimHead(); renderAll(); } });
+  });
+  document.querySelectorAll("#claim-shape input").forEach(function (radio) {
+    radio.addEventListener("change", function () { if (radio.checked) { state.claimShape = radio.value; claimHead(); renderAll(); } });
   });
   document.querySelectorAll("#map-claimant input").forEach(function (radio) {
     radio.addEventListener("change", function () { if (radio.checked) { state.mapClaimant = radio.value; renderAll(); } });

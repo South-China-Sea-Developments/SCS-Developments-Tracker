@@ -77,6 +77,11 @@
               <option value="">anyone</option>
               {% for code, name in dyad_targets.items() %}{% if code not in ('A', 'U') %}<option value="{{ code }}">{{ name }}</option>{% endif %}{% endfor %}
             </select></label>
+          <label><span class="amap-select-label">Issue</span>
+            <select id="amap-issue" aria-label="Issue">
+              <option value="">every issue</option>
+              {% for key, label in issue_labels.items() %}<option value="{{ key }}">{{ label|lower }}</option>{% endfor %}
+            </select></label>
         </div>
       </fieldset>
       <fieldset class="fgroup amap-lines"><legend>On the map</legend>
