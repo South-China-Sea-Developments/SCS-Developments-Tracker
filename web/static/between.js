@@ -1,5 +1,5 @@
 /* Between claimants (ticket 44): how claimants direct their moves at one another, on the homepage's
-   measure. A five-year window (or all years); each move weighted by its highest type, declarative 1,
+   measure. A five-year window (or the build-up: all years up to the one chosen); each move weighted by its highest type, declarative 1,
    demonstrative 2, coercive 3, force 4; scales fixed across every window, shown on a square-root ramp; an
    arrow for a change of a fifth or more against the five years before. A move counts for a pair when its
    dyads name the other claimant; moves aimed at all claimants are counted in the lists (in grey) but left
@@ -85,8 +85,9 @@
     return now > prev * (1 + CHANGE) && now - prev >= 1 ? "▲" : now < prev * (1 - CHANGE) && prev - now >= 1 ? "▼" : "";
   }
   function prevEnd() { return state.all || state.end - SPAN < FIRST ? null : state.end - SPAN; }
-  function windowText() { return state.all ? FIRST_YEAR + "–" + LAST : (state.end - SPAN + 1) + "–" + state.end; }
-  // fixed scales: the highest score over every window (and over all years, for that switch)
+  function windowText() { return state.all ? FIRST_YEAR + "–" + state.end : (state.end - SPAN + 1) + "–" + state.end; }
+  // fixed scales: the highest score over every window, and for the build-up (all years from the first to the
+  // year chosen, as on the homepage) its highest, reached in the last year, so a build-up only darkens
   var MAXP = 0, MAXD = 0, MAXALLP = 0, MAXALLD = 0;
   (function () {
     var keep = state.all;
@@ -391,7 +392,7 @@
       });
       var hit = svg("rect", { x: X0 + i * BW, y: 0, width: BW, height: H - 20, fill: "transparent", style: "cursor:pointer" });
       var tt = svg("title", {}); tt.textContent = yr; hit.appendChild(tt);
-      hit.addEventListener("click", function () { if (!state.all) { setEnd(Math.max(FIRST, Math.min(LAST, yr + 2))); } });
+      hit.addEventListener("click", function () { setEnd(Math.max(FIRST, Math.min(LAST, state.all ? yr : yr + 2))); });
       s.appendChild(hit);
     });
     yearAxis(s, X0, BW, H - 6, years);
@@ -504,18 +505,19 @@
   ENDS.forEach(function (e, i) {
     var b = el("button"); b.type = "button"; b.style.height = Math.max(2, Math.round(38 * SPARK[i] / SPARK_MAX)) + "px";
     b.setAttribute("aria-label", "Five years to " + e + ": score " + fmt(SPARK[i])); b.title = (e - SPAN + 1) + "–" + e;
-    b.addEventListener("click", function () { state.all = false; allBox.checked = false; setEnd(e); });
+    b.addEventListener("click", function () { setEnd(e); });
     spark.appendChild(b);
   });
   function paintTime() {
     label.textContent = windowText();
-    var lg = $("bc-time-legend"); if (lg) lg.textContent = state.all ? "All years" : "Five years to";
-    slider.value = String(state.end); slider.disabled = state.all; play.disabled = state.all;
-    Array.prototype.forEach.call(spark.children, function (b, i) { b.className = !state.all && ENDS[i] === state.end ? "on" : ""; });
+    var lg = $("bc-time-legend"); if (lg) lg.textContent = state.all ? "Build-up since " + FIRST_YEAR : "Five years to";
+    slider.value = String(state.end);
+    // in the build-up every bar up to the year is lit; in a window, the window's own bar
+    Array.prototype.forEach.call(spark.children, function (b, i) { b.className = (state.all ? ENDS[i] <= state.end : ENDS[i] === state.end) ? "on" : ""; });
   }
   function setEnd(e) { state.end = e; render(); }
   slider.addEventListener("input", function () { setEnd(parseInt(slider.value, 10)); });
-  allBox.addEventListener("change", function () { state.all = allBox.checked; stopPlay(); render(); });
+  allBox.addEventListener("change", function () { state.all = allBox.checked; render(); });
   var timer = null;
   function stopPlay() { if (timer) { clearInterval(timer); timer = null; } play.setAttribute("aria-pressed", "false"); play.textContent = "▶"; }
   play.addEventListener("click", function () {
