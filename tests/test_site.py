@@ -58,7 +58,7 @@ def test_known_counts_appear_in_aggregates(dist):
 
 def test_bundle_is_self_contained_and_relative(dist):
     for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html", "downloads.html", "map.html",
-                 "between-claimants.html", "between-claimants/china-vietnam.html", "episodes.html"):
+                 "between-claimants.html", "between-claimants/china-vietnam.html"):
         html = (dist / page).read_text(encoding="utf-8")
         # every src/href that is not an external link is relative and resolves from the page's own folder
         for attr, target in re.findall(r'(src|href)="([^"]+)"', html):
@@ -102,7 +102,7 @@ def _tile_stub(tiles):
 
 
 @pytest.mark.parametrize("page_name", ["index.html", "map.html", "trends.html", "methodology.html", "cases.html", "downloads.html",
-                                       "between-claimants.html", "between-claimants/china-vietnam.html", "episodes.html"])
+                                       "between-claimants.html", "between-claimants/china-vietnam.html"])
 @pytest.mark.parametrize("viewport", [(1280, 900), (1024, 768), (390, 800)])
 def test_pages_render_without_errors(browser, dist, page_name, viewport):
     page, problems = _open(browser, dist, page_name, viewport)
@@ -1104,18 +1104,26 @@ def test_a_pair_page_draws_and_its_tabs_open(browser, dist):
 
 
 # ---- Episodes (ticket 45) ----------------------------------------------------------------------------------
-def test_episodes_page_without_confirmed_episodes(browser, dist):
-    """No data/episodes.csv: the view exists, says so plainly, and the pair tab says the same."""
-    assert json.loads((dist / "data/episodes.json").read_text(encoding="utf-8")) == []
-    page, problems = _open(browser, dist, "episodes.html")
+def test_episodes_are_off_the_public_site(dist):
+    """Ticket 45, 2026-11-27: the maintainer took episodes off the site (built from the event layer, they read as
+    a count of confrontations MATS does not make). The default build has no trace of them."""
+    assert not (dist / "episodes.html").exists() and not (dist / "episodes").exists() and not (dist / "data/episodes.json").exists()
+    for page in ("map.html", "methodology.html", "between-claimants/china-vietnam.html"):
+        html = (dist / page).read_text(encoding="utf-8")
+        assert "episodes.html" not in html and 'id="bc-t-episodes"' not in html and 'class="ev-views"' not in html, page
+
+
+def test_episodes_page_without_confirmed_episodes(browser, tmp_path):
+    """Built for internal use with no data/episodes.csv: the view exists and says so plainly."""
+    out = tmp_path / "site"
+    build(DATA_DIR, out, build_date="2026-01-01", episodes=True)
+    assert json.loads((out / "data/episodes.json").read_text(encoding="utf-8")) == []
+    page, problems = _open(browser, out, "episodes.html")
     assert "No confirmed episodes" in page.inner_text(".side")
     assert page.locator(".ev-views a[aria-current=page]").inner_text().startswith("Episodes")
     assert not problems, problems
     page.close()
-    page, problems = _open(browser, dist, "map.html")
-    assert page.locator(".ev-views a").count() == 2 and page.locator(".ev-views a[aria-current=page]").inner_text().startswith("Events")
-    page.close()
-    page, problems = _open(browser, dist, "between-claimants/china-vietnam.html")
+    page, problems = _open(browser, out, "between-claimants/china-vietnam.html")
     page.wait_for_timeout(800)
     page.click("#bc-t-episodes")
     assert page.locator("#bc-p-episodes").is_visible() and "No confirmed episode" in page.inner_text("#bc-p-episodes")
@@ -1163,7 +1171,7 @@ def dist_episodes(tmp_path_factory):
         w.writerow(["episode_id", "name", "claimants", "event_ids", "status", "reviewer", "review_date", "note"])
         w.writerows([[*e, "t", "2026-11-27", ""] for e in eps])
     out = tmp_path_factory.mktemp("dist-episodes")
-    build(d, out, build_date="2026-01-01")
+    build(d, out, build_date="2026-01-01", episodes=True)
     return out
 
 

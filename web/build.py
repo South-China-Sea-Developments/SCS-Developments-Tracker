@@ -384,6 +384,10 @@ def between_pairs(bmoves: list[dict], events_by_move: dict, sources_by_event: di
 
 
 # ---- episodes (ticket 45) -------------------------------------------------------------------------------
+# Off the public site since 2026-11-27: built from the event layer, which is dense only from 2016 on, the
+# episodes read as a count of confrontations that MATS does not make (it observes steps up in assertiveness,
+# not every incident). The views stay buildable (`--episodes`) for internal use and are tested.
+EPISODES_ON_SITE = False
 PLACE_KM = 3          # an episode's events this close share one marker on its map
 
 
@@ -793,7 +797,7 @@ def git_describe(root: Path = ROOT) -> str:
         return "unversioned"
 
 
-def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Path = ROOT) -> dict:
+def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Path = ROOT, episodes: bool = EPISODES_ON_SITE) -> dict:
     moves = read_csv(data_dir / "moves.csv")
     order = {c: i for i, c in enumerate(schema.DISPLAY_ORDER)}
     claimants = sorted(read_csv(data_dir / "claimants.csv"), key=lambda c: (order.get(c["code"], len(order)), c["name"]))
@@ -917,6 +921,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                dyad_targets=DYAD_NAMES, latest_moves=latest_moves(views, names), lang_names=LANG_NAMES)
     eps = episode_views(data_dir, events, published, names)
     ctx["n_episodes"] = len(eps)
+    ctx["show_episodes"] = episodes
     ctx["prose"] = prose_names(names)
     # claimants with no published move yet: their records are still being reviewed (the pair pages say so)
     ctx["unrecorded"] = [c["code"] for c in claimants if not any(m["claimant"] == c["code"] for m in published)]
@@ -966,22 +971,23 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         a, b = bp["a"], bp["b"]
         own = [m for m in bmoves if (m["c"] == a and (b in m["to"] or m["a"])) or (m["c"] == b and (a in m["to"] or m["a"]))]
         (out_dir / "between-claimants" / f"{bp['slug']}.html").write_text(pair_tmpl.render(
-            page="between", root="../", pair=bp, bc_pairs=bpairs, pair_eps=[x for x in eps if {x['a'], x['b']} == {a, b}], bc_json=bjson({**bbase, "mode": "pair", "pair": bp, "moves": own}), **ctx), encoding="utf-8")
-    # Episodes (ticket 45): the list beside the events, and one page per confirmed episode
-    ejbase = {"names": names, "prose": prose_names(names), "subregions": mapd["subregions"], "type_labels": TYPE_LABELS}
-    elist = [{k: x[k] for k in ("id", "slug", "name", "a", "b", "pair", "pair_slug", "span", "first", "last", "n", "n_by", "lat", "lon", "k")}
-             | {"dots": [[x2["d"], x2["c"]] for x2 in x["events"]]} for x in eps]
-    epairs = sorted({(x["pair_slug"], x["pair"]) for x in eps}, key=lambda t: t[1])
-    (out_dir / "episodes.html").write_text(env.get_template("episodes.html").render(
-        page="map.html", root="", episodes=eps, epairs=epairs, map_style_json=map_style_json,
-        ep_json=bjson({**ejbase, "mode": "list", "episodes": elist}), **{k: v for k, v in ctx.items() if k != "map_style_json"}), encoding="utf-8")
-    (out_dir / "episodes").mkdir(exist_ok=True)
-    ep_tmpl = env.get_template("episode.html")
-    for x in eps:
-        (out_dir / "episodes" / f"{x['slug']}.html").write_text(ep_tmpl.render(
-            page="map.html", root="../", ep=x, map_style_json=map_style_json, ep_json=bjson({**ejbase, "mode": "one", "episode": x}),
-            **{k: v for k, v in ctx.items() if k != "map_style_json"}), encoding="utf-8")
-    (out_dir / "data" / "episodes.json").write_text(json.dumps(eps, ensure_ascii=False, indent=1), encoding="utf-8")
+            page="between", root="../", pair=bp, bc_pairs=bpairs, pair_eps=[x for x in eps if {x['a'], x['b']} == {a, b}] if episodes else [], bc_json=bjson({**bbase, "mode": "pair", "pair": bp, "moves": own}), **ctx), encoding="utf-8")
+    if episodes:
+        # Episodes (ticket 45): the list beside the events, and one page per confirmed episode
+        ejbase = {"names": names, "prose": prose_names(names), "subregions": mapd["subregions"], "type_labels": TYPE_LABELS}
+        elist = [{k: x[k] for k in ("id", "slug", "name", "a", "b", "pair", "pair_slug", "span", "first", "last", "n", "n_by", "lat", "lon", "k")}
+                 | {"dots": [[x2["d"], x2["c"]] for x2 in x["events"]]} for x in eps]
+        epairs = sorted({(x["pair_slug"], x["pair"]) for x in eps}, key=lambda t: t[1])
+        (out_dir / "episodes.html").write_text(env.get_template("episodes.html").render(
+            page="map.html", root="", episodes=eps, epairs=epairs, map_style_json=map_style_json,
+            ep_json=bjson({**ejbase, "mode": "list", "episodes": elist}), **{k: v for k, v in ctx.items() if k != "map_style_json"}), encoding="utf-8")
+        (out_dir / "episodes").mkdir(exist_ok=True)
+        ep_tmpl = env.get_template("episode.html")
+        for x in eps:
+            (out_dir / "episodes" / f"{x['slug']}.html").write_text(ep_tmpl.render(
+                page="map.html", root="../", ep=x, map_style_json=map_style_json, ep_json=bjson({**ejbase, "mode": "one", "episode": x}),
+                **{k: v for k, v in ctx.items() if k != "map_style_json"}), encoding="utf-8")
+        (out_dir / "data" / "episodes.json").write_text(json.dumps(eps, ensure_ascii=False, indent=1), encoding="utf-8")
     return agg
 
 
@@ -990,13 +996,14 @@ def main(argv=None) -> None:
     p.add_argument("--data", type=Path, default=ROOT / "data")
     p.add_argument("--out", type=Path, default=ROOT / "web" / "dist")
     p.add_argument("--build-date", default=None)
+    p.add_argument("--episodes", action="store_true", help="also build the Episodes view and pages (off the public site; ticket 45)")
     a = p.parse_args(argv)
     if a.build_date:
         try:
             dt.date.fromisoformat(a.build_date)
         except ValueError:
             p.error(f"--build-date {a.build_date!r} is not YYYY-MM-DD")
-    agg = build(a.data, a.out, a.build_date)
+    agg = build(a.data, a.out, a.build_date, episodes=a.episodes)
     print(f"built {a.out}: {agg['n_moves']} moves, {agg['years'][0]}-{agg['years'][-1]}, "
           f"{len(list((a.out / 'cases').glob('*.html')))} case pages")
 

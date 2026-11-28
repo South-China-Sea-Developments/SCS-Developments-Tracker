@@ -570,7 +570,7 @@
     var y = parseInt(m[1], 10); if (y >= FIRST && y <= LAST) state.end = y;
     state.all = !!m[2];
     if (!PAIR && m[3] && NAMES[m[3].toUpperCase()]) { state.who = m[3].toUpperCase(); state.dir = m[4] ? "from" : "to"; }
-    if (PAIR) { state.pdir = m[5] || "both"; state.coer = !!m[6]; state.shared = !m[7]; if (m[8]) state.tab = m[8]; }
+    if (PAIR) { state.pdir = m[5] || "both"; state.coer = !!m[6]; state.shared = !m[7]; if (m[8] && $("bc-t-" + m[8])) state.tab = m[8]; }
   }
   function remember() {
     if (!history.replaceState) return;

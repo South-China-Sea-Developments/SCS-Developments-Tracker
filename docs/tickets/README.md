@@ -36,4 +36,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 30 | [The whole banner: folding and a curtain](30-banner-fold-and-curtain.md) | 28 | built |
 | 42 | [Brunei, the seventh claimant](42-brunei.md) | 11 | built; candidates await review |
 | 44 | [Between claimants: how claimants direct their moves at one another](44-between-claimants.md) | 27 | built; fine-tuning on the live site |
-| 45 | [Episodes: following an exchange between two claimants](45-episodes.md) | 44 | built: pipeline, Airtable, the Episodes view and pages |
+| 45 | [Episodes: following an exchange between two claimants](45-episodes.md) | 44 | built, then taken off the public site (2026-11-27); see 46 |

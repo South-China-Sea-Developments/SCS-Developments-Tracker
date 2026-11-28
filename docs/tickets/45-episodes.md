@@ -38,6 +38,22 @@ within six months of the last. It shows a sequence, never a claim that one act c
   Round 1 drew the events as bubbles fanned around a single point; the maintainer found it odd, so the
   map shows where and the strip shows when.
 
+## Taken off the public site (2026-11-27)
+
+The maintainer, on seeing the 15 proposals: fifteen episodes in 56 years reads as if only fifteen had happened,
+and an incident catalogue goes against the spirit of MATS, which observes steps up in assertiveness rather
+than tracking every item. All fifteen were from 2016 on: episodes come from the event layer, which has
+precise dates and positions mostly from then, so their number measures the data's density, not the sea.
+
+- The Episodes view, the episode pages, the pair-page tab and the methodology section are no longer built
+  for the site (`EPISODES_ON_SITE = False` in `web/build.py`); `python -m web.build --episodes` still builds
+  them for internal use, and the tests cover both.
+- The weekly task no longer applies answers (A4) or proposes episodes (C9); the 15 proposals were cleared
+  from the base's Episodes table, which is kept, empty. `pipeline/episodes.py` and the validator's check of
+  `data/episodes.csv` (absent) stay.
+- Next: ticket 46 explores the same question from the moves, which cover 1970–2026 evenly: a move by one
+  claimant followed, at the same place, by a move of the other directed back at it.
+
 ## To do
 
 - Episodes before 2016 stay rare until older events gain coordinates.
