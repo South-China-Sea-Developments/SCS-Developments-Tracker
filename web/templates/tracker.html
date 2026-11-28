@@ -13,7 +13,7 @@
   <aside class="side" aria-label="Filters and events in view">
     <div class="side-head">
       <h1>Events</h1>
-      {% include "_event_views.html" %}
+      {% if show_episodes %}{% include "_event_views.html" %}{% endif %}
       <p class="byline">Every dated event behind the moves, on the map and in a list. <a href="{{ root }}methodology.html#map">How to read the map</a>.</p>
     </div>
     <div class="side-count">

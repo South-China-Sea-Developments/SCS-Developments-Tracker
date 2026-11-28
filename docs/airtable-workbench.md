@@ -176,6 +176,9 @@ The rows count toward the base's 1,000-record cap.
 
 ## The Episodes table (ticket 45)
 
+*Not in use since 2026-11-27: episodes were taken off the public site and the weekly task no longer fills or
+reads this table (ticket 45). It is kept, empty; what follows describes how it worked.*
+
 `Episodes` (`tblgnx0ydOXJsJskT`) holds the episodes the pipeline proposes: runs of accepted events by two
 claimants at the same place (within 25 km), each within six months of the last, with events by both sides.
 One row per proposal: the proposed name, the pair, the span, the number of events and one line per event
