@@ -476,13 +476,13 @@
   }
   function setTab(t) {
     state.tab = t;
-    ["time", "long", "where", "moves", "about"].forEach(function (k) {
+    ["time", "long", "where", "moves", "episodes", "about"].forEach(function (k) {
       var b = $("bc-t-" + k), panel = $("bc-p-" + k); if (!b || !panel) return;
       b.setAttribute("aria-selected", k === t ? "true" : "false"); b.tabIndex = k === t ? 0 : -1; panel.hidden = k !== t;
     });
     renderTab(); remember();
   }
-  ["time", "long", "where", "moves", "about"].forEach(function (k, i, all) {
+  ["time", "long", "where", "moves", "episodes", "about"].forEach(function (k, i, all) {
     var b = $("bc-t-" + k); if (!b) return;
     b.addEventListener("click", function () { setTab(k); });
     b.addEventListener("keydown", function (e) {
@@ -563,7 +563,7 @@
     return h;
   }
   function readHash() {
-    var m = /^#y(\d{4})(-all)?(?:-c-([a-z]{2}))?(-from)?(?:-d-(ab|ba))?(-co)?(-full)?(?:-tab-(time|long|where|moves|about))?(-rev)?$/.exec(location.hash);
+    var m = /^#y(\d{4})(-all)?(?:-c-([a-z]{2}))?(-from)?(?:-d-(ab|ba))?(-co)?(-full)?(?:-tab-(time|long|where|moves|episodes|about))?(-rev)?$/.exec(location.hash);
     if (!m) return;
     var y = parseInt(m[1], 10); if (y >= FIRST && y <= LAST) state.end = y;
     state.all = !!m[2];

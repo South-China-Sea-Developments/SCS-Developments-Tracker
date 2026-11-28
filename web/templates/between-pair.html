@@ -40,12 +40,26 @@
       <button type="button" role="tab" id="bc-t-long" aria-controls="bc-p-long" aria-selected="false" tabindex="-1">For how long</button>
       <button type="button" role="tab" id="bc-t-where" aria-controls="bc-p-where" aria-selected="false" tabindex="-1">Where</button>
       <button type="button" role="tab" id="bc-t-moves" aria-controls="bc-p-moves" aria-selected="false" tabindex="-1">The moves</button>
+      <button type="button" role="tab" id="bc-t-episodes" aria-controls="bc-p-episodes" aria-selected="false" tabindex="-1">Episodes{% if pair_eps %} <span class="ev-n">{{ pair_eps|length }}</span>{% endif %}</button>
       <button type="button" role="tab" id="bc-t-about" aria-controls="bc-p-about" aria-selected="false" tabindex="-1">About the data</button>
     </div>
     <div class="bc-panel" role="tabpanel" id="bc-p-time" aria-labelledby="bc-t-time"></div>
     <div class="bc-panel" role="tabpanel" id="bc-p-long" aria-labelledby="bc-t-long" hidden></div>
     <div class="bc-panel" role="tabpanel" id="bc-p-where" aria-labelledby="bc-t-where" hidden></div>
     <div class="bc-panel" role="tabpanel" id="bc-p-moves" aria-labelledby="bc-t-moves" hidden></div>
+    <div class="bc-panel" role="tabpanel" id="bc-p-episodes" aria-labelledby="bc-t-episodes" hidden>
+      {% if pair_eps %}
+      <ol class="bc-episodes">
+        {% for x in pair_eps %}
+        <li><a class="ep-card" href="../episodes/{{ x.slug }}.html" style="--a: var(--{{ x.a|lower }}); --b: var(--{{ x.b|lower }})">
+          <span class="ep-card-name">{{ x.name }}</span>
+          <span class="ep-card-meta"><i class="ep-pair-dots" aria-hidden="true"></i>{{ x.span }} · {{ x.n }} events, {{ x.n_by[x.a] }} by {{ prose[x.a] }} and {{ x.n_by[x.b] }} by {{ prose[x.b] }}</span>
+        </a></li>
+        {% endfor %}
+      </ol>
+      {% else %}<p>No confirmed episode between {{ prose[pair.a] }} and {{ prose[pair.b] }} to show.</p>{% endif %}
+      <p>An episode is a run of events by the two claimants at the same place, each within six months of the last: a sequence, not a claim that one act caused another. <a href="../episodes.html">All episodes</a> · <a href="../methodology.html#episodes">How episodes are found</a></p>
+    </div>
     <div class="bc-panel" role="tabpanel" id="bc-p-about" aria-labelledby="bc-t-about" hidden>
       {% set n_pair = pair.n_ab + pair.n_ba %}{% set n_src = pair.languages.values()|sum %}
       {% if n_pair %}
