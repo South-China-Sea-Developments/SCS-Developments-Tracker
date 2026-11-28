@@ -370,14 +370,15 @@ dfn { font-style: normal; font-weight: 600; color: var(--ink); }
 .case-main h2:first-child, .case-side h2:first-child { margin-top: 0; }
 .description { font-family: var(--font-display); font-weight: 400; font-size: 1.125rem; line-height: 1.6; margin: 0; max-width: 42rem; white-space: pre-line; }
 .events { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--grid); }
-.events li { position: relative; padding: 0 0 14px 18px; }
-.events li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); border: 2px solid var(--surface); box-sizing: border-box; }
+.events > li { position: relative; padding: 0 0 14px 18px; }
+.events > li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); border: 2px solid var(--surface); box-sizing: border-box; }
 .events p { margin: 0 0 4px; }
 .event-date { font-weight: 600; }
 .event-precision, .event-note { color: var(--muted); font-size: 0.875rem; font-weight: 400; }
 .event-seed { color: var(--ink-2); }
 .case-main > .event-note { margin: 0 0 10px; }
 .sources { margin: 4px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 0.9375rem; }
+.sources li + li { margin-top: 2px; }
 .coding { margin: 0; display: grid; grid-template-columns: 9em 1fr; gap: 4px 10px; font-size: 0.9375rem; }
 .coding dt { color: var(--muted); }
 .coding dd { margin: 0; }

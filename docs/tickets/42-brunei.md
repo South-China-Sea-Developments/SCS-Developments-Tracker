@@ -19,4 +19,4 @@ and British acts for Brunei are baseline context (decision 03, amendment of 2026
   Letters and outer-shelf filing, the 2020 and 2023 statements), opened as run `BN-1970-2026` for review
   in Airtable.
 
-Status: built; candidates await the maintainer's review.
+Status: built; the maintainer decided its candidates (#139, 2026-11-23).
