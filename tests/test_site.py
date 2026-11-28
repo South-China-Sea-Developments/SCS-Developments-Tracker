@@ -998,15 +998,25 @@ def test_cite_download_and_embed_a_view(browser, dist):
     page.close()
 
 
-def test_whats_new_and_its_feed(tmp_path):
+@pytest.fixture(scope="module")
+def dist_full(tmp_path_factory):
+    """One build of the full data (the MATS-only copy the other site tests use holds no project moves), shared
+    by the tests of new developments and their feeds."""
+    from web.build import build as build_site
+    from tests.conftest import DATA_DIR as FULL
+    out = tmp_path_factory.mktemp("site-full")
+    build_site(FULL, out, build_date="2026-11-28")
+    return out
+
+
+def test_whats_new_and_its_feed(dist_full):
     """Ticket 40: the project's added moves, corrections and retractions, newest first, as a page and an
     Atom feed with absolute links; Chubb's own moves are not news. Built from the full data (the MATS-only
     copy the other site tests use holds no project moves)."""
     from xml.dom import minidom
-    from web.build import SITE_URL, build as build_site
+    from web.build import SITE_URL
     from tests.conftest import DATA_DIR as FULL
-    out = tmp_path / "site"
-    build_site(FULL, out, build_date="2026-11-23")
+    out = dist_full
     page = (out / "whats-new.html").read_text(encoding="utf-8")
     project = [m for m in read_csv(FULL / "moves.csv") if m["coded_by"] != "chubb" and m["status"] == "accepted"]
     assert project and all(f'href="cases/{m["move_id"]}.html"' in page for m in project)
@@ -1360,14 +1370,12 @@ def test_the_coverage_section_counts_every_move(dist):
     assert 'href="methodology.html#coverage"' in (dist / "index.html").read_text(encoding="utf-8")
 
 
-def test_follow_a_claimant_or_a_pair(browser, tmp_path):
+def test_follow_a_claimant_or_a_pair(browser, dist_full):
     """A feed per claimant and per pair; What's new narrows to one claimant and points at its feed; each pair's
     page links its own. Built from the full data (the MATS-only copy has no news)."""
     from xml.dom import minidom
-    from web.build import build as build_site
     from tests.conftest import DATA_DIR as FULL
-    out = tmp_path / "site"
-    build_site(FULL, out, build_date="2026-11-28")
+    out = dist_full
     moves = {m["move_id"]: m for m in read_csv(FULL / "moves.csv")}
     my = minidom.parse(str(out / "feeds/my.xml")).getElementsByTagName("entry")
     assert my.length and all(", Malaysia" in e.getElementsByTagName("title")[0].firstChild.data for e in my)
@@ -1388,4 +1396,25 @@ def test_follow_a_claimant_or_a_pair(browser, tmp_path):
     page.click("#news-follow button[data-code='']")
     assert page.get_attribute("#news-feed", "href") == "feed.xml"
     assert not problems, problems
+    page.close()
+
+
+def test_by_place_and_whats_new_are_one_click_from_cases_and_the_map(browser, dist):
+    """2026-11-28: Cases, By place and What's new share a switch at the top, under the Cases tab of the menu;
+    the homepage's latest moves link to What's new, and the map's panel to every place."""
+    for name, current in (("cases.html", "All moves"), ("features.html", "By place"), ("whats-new.html", "New")):
+        html = (dist / name).read_text(encoding="utf-8")
+        nav = html[html.index('class="ev-views case-views"'):]
+        nav = nav[:nav.index("</nav>")]
+        assert nav.count("<a ") == 3 and re.search(r'aria-current="page">' + re.escape(current) + "<", nav), name
+        assert re.search(r'href="cases.html" aria-current="page">Cases<', html), name
+    home = (dist / "index.html").read_text(encoding="utf-8")
+    assert 'href="whats-new.html">New developments' in home
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.wait_for_timeout(1000)
+    assert page.locator("#amap-detail .amap-places-link a[href='features.html']").count() == 1
+    page.evaluate("location.hash = '#y2014-s6'")
+    page.wait_for_timeout(400)
+    assert page.locator("#amap-detail .amap-places-link a[href='features.html']").count() == 1
+    assert problems == []
     page.close()

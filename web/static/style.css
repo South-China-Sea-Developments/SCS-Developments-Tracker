@@ -975,3 +975,8 @@ html.embed .bc-stage { grid-template-columns: 1fr; height: 100vh; max-height: no
 .news-feed-link { margin-left: auto; font-size: 0.875rem; }
 .news-none { color: var(--muted); }
 .bc-follow { display: inline-flex; align-items: center; min-height: 32px; margin-left: 8px; font-size: 0.875rem; }
+
+/* ---- Cases: all moves, by place, what's new (2026-11-28) ---------------------------------------------- */
+.case-views { max-width: 30rem; margin: var(--s4) 0 0; }
+.amap-latest-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; }
+.amap-places-link { margin: var(--s3) 0 0; font-size: 0.875rem; font-weight: 600; }

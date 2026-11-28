@@ -1,0 +1,7 @@
+{# The three views of Cases (2026-11-28): every move, by place, new developments ("New"). Links, not tabs, so each keeps
+   its own address; the same look as the Events page's switch. #}
+<nav class="ev-views case-views" aria-label="Ways to browse the moves">
+  <a href="{{ root }}cases.html"{% if page in ('cases.html', 'case') %} aria-current="page"{% endif %}>All moves</a>
+  <a href="{{ root }}features.html"{% if page in ('features.html', 'feature') %} aria-current="page"{% endif %}>By place</a>
+  <a href="{{ root }}whats-new.html"{% if page == 'whats-new.html' %} aria-current="page"{% endif %}>New</a>
+</nav>

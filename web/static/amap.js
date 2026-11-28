@@ -346,6 +346,8 @@
     if (ms.length > 40) el("p", "popup-more", "and " + (ms.length - 40) + " more", detail);
   }
   function back(text, fn) { detail.appendChild(button("amap-sr", text, "", fn)); }
+  // every place (2026-11-28): the reefs, shoals and islands, each with its page, one click from the map
+  function placesLink() { var p = el("p", "amap-places-link", undefined, detail), a = el("a", "", "Every place, by sub-region ›", p); a.href = "features.html"; }
   function summary(ms, extra) {
     var hard = ms.filter(function (m) { return m.w >= 3; }).length;
     el("p", "amap-sum", ms.length + (ms.length === 1 ? " move" : " moves") + (extra || "") + "; " + hard + " coercive or force.", detail);
@@ -458,6 +460,7 @@
       if (!fm.length) el("p", "amap-empty", none("moves naming it"), detail);
       else { summary(fm); list(fm); }
       back(state.sel ? "Back to " + state.sel + " " + SR_NAMES[state.sel] : "Back to the whole sea", function () { state.feat = null; render(); });
+      placesLink();
       return;
     }
     if (state.sel !== null) {
@@ -475,6 +478,7 @@
         list(ms);
       }
       back("Back to the whole sea", function () { select(n); });
+      placesLink();
       return;
     }
     el("h3", "amap-detail-head", "Across the sea, " + wl, detail);
@@ -483,6 +487,7 @@
     el("p", "amap-hint", state.mode === "cumulative"
       ? "Numbers: moves since " + FIRST_YEAR + ", building up year by year."
       : "Numbers: moves in these five years. ▲ ▼ a rise or fall of a fifth or more on the five years before.", detail);
+    placesLink();
   }
 
   // ---- the timeline: moves per year by type, the years shown highlighted ------------------------

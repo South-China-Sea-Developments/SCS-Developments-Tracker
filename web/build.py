@@ -628,7 +628,7 @@ def whats_new(data_dir: Path, published: list[dict], names: dict) -> list[dict]:
     return sorted(out, key=lambda e: (e["date"], -order[e["kind"]], e["id"]), reverse=True)
 
 
-def atom_feed(entries: list[dict], names: dict, title: str = "what's new", path: str = "feed.xml") -> str:
+def atom_feed(entries: list[dict], names: dict, title: str = "new developments", path: str = "feed.xml") -> str:
     """The entries as an Atom feed (the 50 newest), with absolute links to the public site. `title` and `path`
     make the feeds for one claimant or one pair (wave 1: follow a claimant or a pair)."""
     from xml.sax.saxutils import escape, quoteattr
@@ -1008,13 +1008,13 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     targets_of = {m["move_id"]: {d[1] if len(d) == 2 else d for d in m.get("dyads", "").split()} for m in published}
     for code in schema.DISPLAY_ORDER:
         mine = [e for e in news if e["claimant"] == code]
-        (out_dir / "feeds" / f"{code.lower()}.xml").write_text(atom_feed(mine, names, f"what's new for {names[code]}", f"feeds/{code.lower()}.xml"), encoding="utf-8")
+        (out_dir / "feeds" / f"{code.lower()}.xml").write_text(atom_feed(mine, names, f"new developments for {names[code]}", f"feeds/{code.lower()}.xml"), encoding="utf-8")
     for bp in bpairs:
         a_, b_ = bp["a"], bp["b"]
         la, lb = CLAIMANT_LETTER[a_], CLAIMANT_LETTER[b_]
         ours = [e for e in news if (e["claimant"] == a_ and (lb in targets_of.get(e["id"], ()) or "A" in targets_of.get(e["id"], ())))
                 or (e["claimant"] == b_ and (la in targets_of.get(e["id"], ()) or "A" in targets_of.get(e["id"], ())))]
-        (out_dir / "feeds" / f"{bp['slug']}.xml").write_text(atom_feed(ours, names, f"what's new between {names[a_]} and {names[b_]}", f"feeds/{bp['slug']}.xml"), encoding="utf-8")
+        (out_dir / "feeds" / f"{bp['slug']}.xml").write_text(atom_feed(ours, names, f"new developments between {names[a_]} and {names[b_]}", f"feeds/{bp['slug']}.xml"), encoding="utf-8")
     bbase = {"span": WINDOW_SPAN, "ends": mapd["assert"]["ends"], "names": names, "subregion_names": mapd["subregion_names"],
              "subregions": mapd["subregions"], "anchors": CLAIMANT_ANCHOR, "small_n": SMALL_N,
              "pairs": [{k: p[k] for k in ("a", "b", "slug", "title", "apart")} for p in bpairs],

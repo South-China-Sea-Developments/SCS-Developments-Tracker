@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-{% block title %}What's new — South China Sea Developments Tracker{% endblock %}
+{% block title %}New developments — South China Sea Developments Tracker{% endblock %}
 {% block description %}Moves added, updated and retracted in the South China Sea Developments Tracker, newest first.{% endblock %}
 {% block content %}
 <section class="lede">
   <p class="kicker">Cases</p>
-  <h1>What's new</h1>
+  <h1>New developments</h1>
   <p class="lede-text">Moves added to the dataset, moves updated and moves retracted, newest first. Follow it in a feed reader with the <a href="feed.xml">Atom feed</a>.</p>
+  {% include "_case_views.html" %}
 </section>
 {# follow a claimant (wave 1): the list narrowed to one claimant, with that claimant's own feed; each pair's
    feed is on its page under Between claimants #}
-<div class="news-follow" id="news-follow" role="group" aria-label="Show what's new for">
+<div class="news-follow" id="news-follow" role="group" aria-label="Show new developments for">
   <button type="button" class="chip-btn" data-code="" aria-pressed="true">Every claimant</button>
   {% for c in claimants %}<button type="button" class="chip-btn" data-code="{{ c.code }}" aria-pressed="false">{{ c.name }}</button>{% endfor %}
   <a class="news-feed-link" id="news-feed" href="feed.xml" data-all="feed.xml">Feed for every claimant</a>
