@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -218,6 +219,9 @@ def validate(data_dir: Path, xlsx_path: Path | None, mavd_path: Path | None = No
         if s["event_id"] not in event_ids:
             errors.append(f"SOURCE_EVENT: sources {s['source_id']} event_id {s['event_id']!r} does not exist")
         sourced[s["event_id"]] += 1
+        # a language is a short code (en, vi, zh-Hant); a sentence there means the columns were swapped (2026-11-28)
+        if s.get("language") and not re.fullmatch(r"[a-z]{2,3}(-[A-Za-z]{2,8})?", s["language"]):
+            errors.append(f"SOURCE_LANGUAGE: sources {s['source_id']} language {s['language'][:40]!r} is not a language code")
     for e in events:
         if e["status"] == "accepted" and not sourced[e["event_id"]]:
             errors.append(f"EVENT_NO_SOURCE: events {e['event_id']} is accepted but has no source")
