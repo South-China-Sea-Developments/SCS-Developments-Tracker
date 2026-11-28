@@ -1,4 +1,4 @@
-/* What's new: narrow the list to one claimant and point the feed link at that claimant's own feed (wave 1). */
+/* New developments: narrow the list to one claimant and point the feed link at that claimant's own feed (wave 1). */
 (function () {
   "use strict";
   var box = document.getElementById("news-follow");
