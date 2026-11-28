@@ -1279,3 +1279,14 @@ def test_a_pair_page_names_only_claimants_with_no_moves_as_in_review(tmp_path):
         for code, name in (("ID", "Indonesia"), ("TW", "Taiwan"), ("MY", "Malaysia"), ("BN", "Brunei")):
             if code in moved:
                 assert f"{name}’s moves are still in review" not in text and f"{name} and" not in text.split("still in review")[0][-40:], page.name
+
+
+def test_a_case_page_marks_each_event_once_and_each_source_once(browser, dist):
+    """The timeline's dot is the event's; a source under it has its list bullet only (two marks each before)."""
+    with_sources = next(p for p in sorted((dist / "cases").glob("*.html")) if 'class="sources"' in p.read_text(encoding="utf-8"))
+    page, problems = _open(browser, dist, f"cases/{with_sources.name}")
+    n = page.evaluate("""() => [...document.querySelectorAll('.events .sources li')].filter(li => getComputedStyle(li, '::before').content !== 'none').length""")
+    assert page.locator(".events .sources li").count() > 0 and n == 0
+    assert page.evaluate("getComputedStyle(document.querySelector('.events > li'), '::before').content") != "none"
+    assert not problems, problems
+    page.close()

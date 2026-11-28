@@ -14,7 +14,7 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 
 **Decision** — A coder's verdict on a candidate: *merge* it into a move (an existing one, or one formed from another candidate in the same batch), form a *new move* from it (stating the intensification criterion), mark it a *duplicate* of an accepted event (status `merged`, same move), or *reject* it with a note — a note beginning *continuation of X* also keeps move X running through the event's year (ticket 24). Applied by `pipeline.queue decide`; the event keeps the machine's suggestions beside the decision.
 
-**Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`); this project adds Malaysia (`MY`), Indonesia (`ID`) and Taiwan (`TW`) (decision 03).
+**Claimant** — A state whose assertive moves are coded. MATS 1.0 covers three: China (`CN`), Vietnam (`VN`), the Philippines (`PH`); this project adds Malaysia (`MY`), Indonesia (`ID`), Taiwan (`TW`) and, since 2026-11-23, Brunei (`BN`) (decision 03 and its amendment), seven in all. The site lists them in alphabetical order of their names (2026-11-27).
 
 **Project coding** — A move or event coded by this project rather than taken from MATS (`coded_by = project`); labelled as such wherever it appears and outside the comparability guarantee.
 
@@ -73,6 +73,14 @@ Definitions only. Terms are added as they are resolved; nothing here is a to-do 
 **Dataset version** — The number this project gives the dataset (`DATASET_VERSION`, `MAJOR.MINOR.PATCH`, a `-dev` suffix while it is being built), written on every project-coded move as `data_version`. Versions 1.x are Chubb's MATS; this project's are 2.x.
 
 **Release** — A dataset version fixed as a git tag `vX.Y.Z[-suffix]` on `main`; what the Downloads page and the GitHub Release serve, with checksums and a citation.
+
+**Score** — The homepage map's measure, used again on Between claimants: the moves in a five-year window (or the build-up), each weighted by its most severe type (declarative 1, demonstrative 2, coercive 3, force 4), on a scale fixed across every window and shaded on one square-root ramp; an arrow marks a rise or fall of a fifth or more against the five years before. A move covering several sub-regions shares its weight among them by default.
+
+**Build-up** — The alternative to the five-year window on the homepage map and on Between claimants: every year from 1970 to the year chosen, which the slider and Play move through. It only grows, so it carries no arrows; on Between claimants the switch was a frozen 1970–2026 view until 2026-11-27.
+
+**Between claimants** — The page of all pairs of claimants (ticket 44): lines between the claimants' anchors, wider and darker for a higher score of the moves either has directed at the other (a move counts for a pair when one of its dyads names the other claimant); choosing a claimant turns the lines into arrows for one direction. Each pair has its own **pair page** (`between-claimants/<a>-<b>.html`): its sub-regions shaded by the pair's score and the tabs Over time, For how long, Where, The moves, About the data. Moves aimed at all claimants (dyad `A`) are counted, in grey, but left out of the share coded coercive or force and off the maps; China and Taiwan are drawn apart.
+
+**Episode** *(retired)* — A run of accepted events by two claimants at one place, each within six months of the last (ticket 45). Built, then taken off the public site on 2026-11-27: drawn from the event layer, which is dense only from 2016 on, episodes read as a count of confrontations that MATS does not make. `python -m web.build --episodes` still builds them for internal use; ticket 46 found the moves show synchrony between claimants, not who answers whom.
 
 **MATS** — Maritime Assertiveness Time Series, Chubb's dataset. Version 1.02 is the raw input to this project.
 

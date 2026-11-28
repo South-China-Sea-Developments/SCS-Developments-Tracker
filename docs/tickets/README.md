@@ -34,7 +34,19 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 28 | [The other pages in the home page's style](28-site-restyle.md) | 27 | built |
 | 29 | [Map polish after launch](29-map-polish.md) | 27 | built |
 | 30 | [The whole banner: folding and a curtain](30-banner-fold-and-curtain.md) | 28 | built |
-| 42 | [Brunei, the seventh claimant](42-brunei.md) | 11 | built; candidates await review |
+| 31 | [Official logo, EEZ boundaries, more place names](31-logo-eez-geonames.md) | — | built |
+| 32 | [English names on every map](32-english-names.md) | — | built |
+| 33 | [Sub-regions suggested at harvest time](33-subregion-suggestions.md) | — | built |
+| 34 | [A position for every move that has one](34-move-positions.md) | — | built |
+| 35 | [Feature pages](35-feature-pages.md) | — | built |
+| 36 | [Who holds what](36-who-holds-what.md) | — | built |
+| 37 | [A sub-region's score over time](37-subregion-history.md) | — | built |
+| 38 | [One small map per claimant](38-claimant-maps.md) | — | built |
+| 39 | [Cite, download or embed a view](39-cite-embed.md) | — | built |
+| 40 | [What's new, and a feed](40-whats-new.md) | — | built |
+| 41 | [Every record to the same place rules](41-uniform-places.md) | — | built; 15 Chubb place checks for the maintainer |
+| 42 | [Brunei, the seventh claimant](42-brunei.md) | 11 | built; its candidates decided (#139) |
+| 43 | [Deep review of every decided record, and the re-review loop](43-deep-review.md) | — | built; the audit waits for the maintainer's go-ahead |
 | 44 | [Between claimants: how claimants direct their moves at one another](44-between-claimants.md) | 27 | built; fine-tuning on the live site |
 | 45 | [Episodes: following an exchange between two claimants](45-episodes.md) | 44 | built, then taken off the public site (2026-11-27); see 46 |
 | 46 | [Move sequences: does one claimant's move draw the other's?](46-move-sequences.md) | 45 | explored: the data show synchrony, not who answers whom |
