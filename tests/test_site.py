@@ -1255,3 +1255,19 @@ def test_the_build_up_since_the_first_year_moves_with_the_slider_and_play(browse
     assert pair.inner_text("#bc-label") == "1970–1988" and pair.evaluate("location.hash").startswith("#y1988-all")
     assert not problems, problems
     pair.close()
+
+
+def test_a_pair_page_names_only_claimants_with_no_moves_as_in_review(tmp_path):
+    """The note follows the data: a claimant with published moves is never called "in review"."""
+    import csv
+    import shutil
+    d = tmp_path / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    out = tmp_path / "site"
+    build(d, out, build_date="2026-01-01")
+    moved = {m["claimant"] for m in csv.DictReader(open(d / "moves.csv", encoding="utf-8")) if m["status"] == "accepted"}
+    for page in (out / "between-claimants").glob("*.html"):
+        text = page.read_text(encoding="utf-8")
+        for code, name in (("ID", "Indonesia"), ("TW", "Taiwan"), ("MY", "Malaysia"), ("BN", "Brunei")):
+            if code in moved:
+                assert f"{name}’s moves are still in review" not in text and f"{name} and" not in text.split("still in review")[0][-40:], page.name

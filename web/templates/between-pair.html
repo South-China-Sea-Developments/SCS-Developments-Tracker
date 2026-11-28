@@ -68,7 +68,7 @@
       {% if n_src %}<p>{{ n_src }} source{{ '' if n_src == 1 else 's' }} stand behind the pair’s {{ pair.n_events }} events:
         {% for lang, n in pair.languages.items() %}{{ n }} in {{ lang_names.get(lang, lang) }}{% if not loop.last %}, {% endif %}{% endfor %}. Coverage depends on what each side and the press make public, so a lower count can mean fewer reports as well as fewer moves.</p>
       {% else %}<p>The moves are known from Chubb’s case list; the pair has no separately sourced events yet.</p>{% endif %}
-      {% else %}<p>No moves by either claimant directed at the other are recorded yet.{% if pair.a in ('ID', 'TW') or pair.b in ('ID', 'TW') %} The records for Indonesia and Taiwan are still in review.{% endif %}</p>{% endif %}
+      {% else %}<p>No moves by either claimant directed at the other are recorded yet.{% set waiting = [pair.a, pair.b]|select('in', unrecorded)|list %}{% if waiting|length == 1 %} {{ names[waiting[0]] }}’s moves are still in review.{% elif waiting %} The moves of {{ names[waiting[0]] }} and {{ names[waiting[1]] }} are still in review.{% endif %}</p>{% endif %}
       <p>A move marks a step up in a claimant’s assertiveness on the year before, not every incident at sea, so a standoff held at the same level shows in how long a move lasts rather than in new moves. Moves aimed at all claimants are counted in the figures (in grey) but left out of the share coded coercive or force and off the map. <a href="../methodology.html#between">How this page is worked out</a></p>
     </div>
     {% include "_between_tools.html" %}
