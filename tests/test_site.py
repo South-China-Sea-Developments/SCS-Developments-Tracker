@@ -1225,3 +1225,33 @@ def test_a_pair_page_lists_its_episodes(browser, dist_episodes):
     assert "Episodes 2" in page.inner_text("#bc-t-episodes").replace("\n", " ")
     assert not problems, problems
     page.close()
+
+
+def test_the_build_up_since_the_first_year_moves_with_the_slider_and_play(browser, dist):
+    """'All years' is the homepage's build-up: every year from the first to the one chosen. The slider and
+    Play move through it, on the page of all pairs with or without a claimant chosen, and on a pair's page."""
+    page, problems = _open(browser, dist, "between-claimants.html")
+    page.wait_for_timeout(1000)
+    page.select_option("#bc-first", "CN")
+    page.click("#bc-all")
+    assert page.is_enabled("#bc-year") and page.is_enabled("#bc-play")
+    full = page.inner_text("#bc-card")
+    page.fill("#bc-year", "1990")
+    page.dispatch_event("#bc-year", "input")
+    assert page.inner_text("#bc-label") == "1970–1990"
+    assert page.evaluate("location.hash") == "#y1990-all-c-cn"
+    assert page.inner_text("#bc-card").startswith("CHINA, 1970–1990") and page.inner_text("#bc-card") != full
+    page.click("#bc-play")
+    page.wait_for_function("document.getElementById('bc-label').textContent !== '1970–1990'", timeout=5000)
+    assert page.inner_text("#bc-label").startswith("1970–") and page.is_checked("#bc-all")
+    page.click("#bc-play")
+    assert not problems, problems
+    page.close()
+    pair, problems = _open(browser, dist, "between-claimants/china-vietnam.html")
+    pair.wait_for_timeout(1000)
+    pair.click("#bc-all")
+    pair.fill("#bc-year", "1988")
+    pair.dispatch_event("#bc-year", "input")
+    assert pair.inner_text("#bc-label") == "1970–1988" and pair.evaluate("location.hash").startswith("#y1988-all")
+    assert not problems, problems
+    pair.close()
