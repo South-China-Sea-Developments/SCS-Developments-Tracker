@@ -918,6 +918,8 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     eps = episode_views(data_dir, events, published, names)
     ctx["n_episodes"] = len(eps)
     ctx["prose"] = prose_names(names)
+    # claimants with no published move yet: their records are still being reviewed (the pair pages say so)
+    ctx["unrecorded"] = [c["code"] for c in claimants if not any(m["claimant"] == c["code"] for m in published)]
     pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
              "downloads.html": "downloads.html"}
