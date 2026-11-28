@@ -1,0 +1,7 @@
+{# The two views of the Events page (ticket 45): every event, or the episodes they form. Links, not tabs,
+   so each view keeps its own address. #}
+{% set ev_view = ev_view|default('events') %}
+<nav class="ev-views" aria-label="What the page shows">
+  <a href="{{ root }}map.html"{% if ev_view == 'events' %} aria-current="page"{% endif %}>Events <span class="ev-n">{{ n_map_events }}</span></a>
+  <a href="{{ root }}episodes.html"{% if ev_view == 'episodes' %} aria-current="page"{% endif %}>Episodes <span class="ev-n">{{ n_episodes }}</span></a>
+</nav>

@@ -383,6 +383,85 @@ def between_pairs(bmoves: list[dict], events_by_move: dict, sources_by_event: di
     return out
 
 
+# ---- episodes (ticket 45) -------------------------------------------------------------------------------
+PLACE_KM = 3          # an episode's events this close share one marker on its map
+
+
+def _short_place(name: str) -> str:
+    first = re.split(r"[;(,]", name or "")[0].strip(" ,")
+    return re.sub(r"^(about|near|off|some)\s+[^A-Z]*", "", first).strip() or first
+
+
+def prose_names(names: dict) -> dict:
+    """Claimant names as they read inside a sentence: "the Philippines"."""
+    return {c: ("the " + n if c == "PH" else n) for c, n in names.items()}
+
+
+def episode_views(data_dir: Path, events: list[dict], published: list[dict], names: dict) -> list[dict]:
+    """The maintainer's confirmed episodes (data/episodes.csv), with their events, places and pair; newest first.
+    Only accepted events of published moves are shown, so an episode whose events were later withdrawn shrinks
+    (or goes) rather than pointing at nothing."""
+    from pipeline import episodes as ep
+    prose = prose_names(names)
+    ev = {e["event_id"]: e for e in events}
+    mv = {m["move_id"]: m for m in published}
+    order = {c: i for i, c in enumerate(schema.DISPLAY_ORDER)}
+    out, used = [], set()
+    for r in ep.read_episodes(data_dir):
+        if r["status"] != "confirmed":
+            continue
+        evs = []
+        for eid in r["event_ids"].split():
+            e = ev.get(eid)
+            m = mv.get(e["move_id"]) if e else None
+            if not e or not m or e["status"] != "accepted" or not e["date_start"]:
+                continue
+            t = max((t for t in schema.TYPE_FLAGS if m.get(t) == "1"), key=lambda t: TYPE_WEIGHT[t], default="")
+            evs.append({"id": eid, "d": e["date_start"], "dl": date_label(e["date_start"], e["date_end"], e["date_precision"]),
+                        "c": m["claimant"], "m": m["move_id"], "t": t, "tl": TYPE_LABELS.get(t, ""), "s": e["summary"],
+                        "lat": round(float(e["lat"]), 4) if e["lat"] else None, "lon": round(float(e["lon"]), 4) if e["lon"] else None,
+                        "pl": e["location_name"]})
+        pair = sorted(set(r["claimants"].split()), key=lambda c: order.get(c, 99))
+        if len(evs) < 2 or len(pair) != 2:
+            continue
+        evs.sort(key=lambda x: (x["d"], x["id"]))
+        places: list[dict] = []
+        for x in evs:
+            if x["lat"] is None:
+                x["p"] = -1
+                continue
+            hit = next((i for i, P in enumerate(places) if 111.2 * ((P["lat"] - x["lat"]) ** 2 + ((P["lon"] - x["lon"]) * 0.97) ** 2) ** 0.5 <= PLACE_KM), None)
+            if hit is None:
+                places.append({"lat": x["lat"], "lon": x["lon"], "names": {}, "n": {c: 0 for c in pair}})
+                hit = len(places) - 1
+            P = places[hit]
+            P["n"][x["c"]] = P["n"].get(x["c"], 0) + 1
+            nm = _short_place(x["pl"])
+            if nm:
+                P["names"][nm] = P["names"].get(nm, 0) + 1
+            x["p"] = hit
+        for P in places:
+            P["name"] = max(P["names"], key=lambda k: (P["names"][k], -len(k))) if P["names"] else ""
+            del P["names"]
+        a, b = pair
+        slug = re.sub(r"[^a-z0-9]+", "-", (r["name"] or r["episode_id"]).lower()).strip("-") or r["episode_id"]
+        if slug in used:
+            slug = f"{slug}-{r['episode_id'][3:9]}"
+        used.add(slug)
+        pts = [x for x in evs if x["lat"] is not None]
+        out.append({"id": r["episode_id"], "slug": slug, "name": r["name"] or ep.proposed_name([{"place": x["pl"], "date": x["d"]} for x in evs]),
+                    "a": a, "b": b, "pair": f"{prose.get(a, a)} and {prose.get(b, b)}", "pair_slug": pair_slug(names, a, b),
+                    "span": ep.span([{"date": x["d"]} for x in evs]), "first": evs[0]["d"], "last": evs[-1]["d"], "n": len(evs),
+                    "n_by": {c: sum(1 for x in evs if x["c"] == c) for c in pair},
+                    "lat": round(sum(x["lat"] for x in pts) / len(pts), 4) if pts else None,
+                    "lon": round(sum(x["lon"] for x in pts) / len(pts), 4) if pts else None,
+                    "note": r.get("note", ""), "events": evs, "places": places})
+    out.sort(key=lambda x: (x["first"], x["id"]), reverse=True)
+    for i, x in enumerate(out, 1):
+        x["k"] = i
+    return out
+
+
 def move_places(m: dict, events=()) -> list[dict]:
     """The points a move is placed at (ticket 34), first mention first: the features its description names,
     then those its accepted events' places name, then its events' own coordinates (a position the coder
@@ -836,6 +915,9 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES, latest_moves=latest_moves(views, names), lang_names=LANG_NAMES)
+    eps = episode_views(data_dir, events, published, names)
+    ctx["n_episodes"] = len(eps)
+    ctx["prose"] = prose_names(names)
     pages = {"index.html": "home.html", "map.html": "tracker.html", "trends.html": "trends.html",
              "methodology.html": "methodology.html", "cases.html": "cases.html",
              "downloads.html": "downloads.html"}
@@ -882,7 +964,22 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
         a, b = bp["a"], bp["b"]
         own = [m for m in bmoves if (m["c"] == a and (b in m["to"] or m["a"])) or (m["c"] == b and (a in m["to"] or m["a"]))]
         (out_dir / "between-claimants" / f"{bp['slug']}.html").write_text(pair_tmpl.render(
-            page="between", root="../", pair=bp, bc_pairs=bpairs, bc_json=bjson({**bbase, "mode": "pair", "pair": bp, "moves": own}), **ctx), encoding="utf-8")
+            page="between", root="../", pair=bp, bc_pairs=bpairs, pair_eps=[x for x in eps if {x['a'], x['b']} == {a, b}], bc_json=bjson({**bbase, "mode": "pair", "pair": bp, "moves": own}), **ctx), encoding="utf-8")
+    # Episodes (ticket 45): the list beside the events, and one page per confirmed episode
+    ejbase = {"names": names, "prose": prose_names(names), "subregions": mapd["subregions"], "type_labels": TYPE_LABELS}
+    elist = [{k: x[k] for k in ("id", "slug", "name", "a", "b", "pair", "pair_slug", "span", "first", "last", "n", "n_by", "lat", "lon", "k")}
+             | {"dots": [[x2["d"], x2["c"]] for x2 in x["events"]]} for x in eps]
+    epairs = sorted({(x["pair_slug"], x["pair"]) for x in eps}, key=lambda t: t[1])
+    (out_dir / "episodes.html").write_text(env.get_template("episodes.html").render(
+        page="map.html", root="", episodes=eps, epairs=epairs, map_style_json=map_style_json,
+        ep_json=bjson({**ejbase, "mode": "list", "episodes": elist}), **{k: v for k, v in ctx.items() if k != "map_style_json"}), encoding="utf-8")
+    (out_dir / "episodes").mkdir(exist_ok=True)
+    ep_tmpl = env.get_template("episode.html")
+    for x in eps:
+        (out_dir / "episodes" / f"{x['slug']}.html").write_text(ep_tmpl.render(
+            page="map.html", root="../", ep=x, map_style_json=map_style_json, ep_json=bjson({**ejbase, "mode": "one", "episode": x}),
+            **{k: v for k, v in ctx.items() if k != "map_style_json"}), encoding="utf-8")
+    (out_dir / "data" / "episodes.json").write_text(json.dumps(eps, ensure_ascii=False, indent=1), encoding="utf-8")
     return agg
 
 

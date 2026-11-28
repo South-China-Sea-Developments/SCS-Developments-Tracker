@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Episodes — South China Sea Developments Tracker{% endblock %}
+{% block body_class %}is-tracker{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="epdata" type="application/json">{{ ep_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+{# Episodes (ticket 45), the second view of the Events page: the confirmed episodes in a list beside a map
+   with one numbered ring per episode. episodes.js finds its parts by id. #}
+<main id="main" class="tracker">
+  <aside class="side" aria-label="Episodes">
+    <div class="side-head">
+      <h1>Events</h1>
+      {% set ev_view = 'episodes' %}{% include "_event_views.html" %}
+      <p class="byline">An episode is a run of events by two claimants at the same place, each within six months of the last. It shows a sequence; it does not suggest that one act caused another. <a href="{{ root }}methodology.html#episodes">How episodes are found</a>.</p>
+      {% if epairs|length > 1 %}
+      <label class="ep-pair">Pair
+        <select id="ep-pair">
+          <option value="">All pairs</option>
+          {% for slug, label in epairs %}<option value="{{ slug }}">{{ label }}</option>{% endfor %}
+        </select></label>
+      {% endif %}
+    </div>
+    {% if episodes %}
+    <ol class="ep-cards" id="ep-list">
+      {% for x in episodes %}
+      <li data-pair="{{ x.pair_slug }}" data-k="{{ x.k }}"><a class="ep-card" href="{{ root }}episodes/{{ x.slug }}.html" style="--a: var(--{{ x.a|lower }}); --b: var(--{{ x.b|lower }})">
+        <span class="ep-card-name"><span class="ep-k" aria-hidden="true">{{ x.k }}</span>{{ x.name }}</span>
+        <span class="ep-card-meta"><i class="ep-pair-dots" aria-hidden="true"></i>{{ x.pair }} · {{ x.span }} · {{ x.n }} events</span>
+        <span class="ep-mini" aria-hidden="true"></span>
+      </a></li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="ep-empty">No confirmed episodes to show. Episodes appear here once the maintainer has confirmed them from the pipeline’s proposals.</p>
+    {% endif %}
+  </aside>
+  <div class="map-stage">
+    <div id="map" class="map-canvas" role="region" aria-label="Map of the South China Sea with one numbered ring for each episode, larger for more events"></div>
+    {% if episodes %}<div class="ep-map-note">Each ring is an episode, numbered as in the list, larger for more events, in the colours of its two claimants. Choose one to follow it.</div>{% endif %}
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/episodes.js"></script>{% endblock %}

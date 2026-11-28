@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ ep.name }} — Episodes — South China Sea Developments Tracker{% endblock %}
+{% block body_class %}is-tracker{% endblock %}
+{% block head_data %}<link rel="stylesheet" href="{{ root }}assets/vendor/maplibre/maplibre-gl.css">
+<script id="epdata" type="application/json">{{ ep_json|safe }}</script>
+<script id="mapstyle" type="application/json">{{ map_style_json|safe }}</script>{% endblock %}
+{% block app %}
+{# One episode (ticket 45): its events in two columns, one per claimant, beside a map that shows where
+   (one marker per place, its ring split by claimant) and a strip that shows when. Play lights the
+   events in order. episodes.js finds its parts by id. #}
+{% set an = names[ep.a] %}{% set bn = names[ep.b] %}
+<main id="main" class="tracker ep-one">
+  <aside class="side" aria-label="The episode's events">
+    <div class="side-head ep-head">
+      <a class="ep-back" href="{{ root }}episodes.html">‹ All episodes</a>
+      <p class="eyebrow">Episode</p>
+      <h1>{{ ep.name }}</h1>
+      <p class="byline">{{ ep.pair }} · {{ ep.span }} · {{ ep.n }} events, {{ ep.n_by[ep.a] }} by {{ prose[ep.a] }} and {{ ep.n_by[ep.b] }} by {{ prose[ep.b] }}</p>
+      <div class="ep-actions">
+        <button type="button" class="ep-play" id="ep-play" aria-pressed="false">▶ Play the episode</button>
+        <a class="ep-pairlink" href="{{ root }}between-claimants/{{ ep.pair_slug }}.html">{{ ep.pair }} ›</a>
+      </div>
+      <p class="ep-fine">Proposed by the pipeline from the events’ places and dates; confirmed and named by the maintainer. A sequence, not a claim that one act caused another.{% if ep.note %} {{ ep.note }}{% endif %}</p>
+    </div>
+    <div class="ep-cols" aria-hidden="true"><span style="--c: var(--{{ ep.a|lower }})">{{ an }}</span><span></span><span style="--c: var(--{{ ep.b|lower }})">{{ bn }}</span></div>
+    <ol class="ep-steps" id="ep-steps">
+      {% for x in ep.events %}{% set left = x.c == ep.a %}
+      <li class="ep-step{{ ' is-left' if left else ' is-right' }}" data-i="{{ loop.index0 }}" style="--c: var(--{{ x.c|lower }})">
+        <div class="ep-side ep-l">{% if left %}<p class="ep-when">{{ x.dl }} · {{ x.tl }} · <a href="{{ root }}cases/{{ x.m }}.html">{{ x.m }}</a></p><p class="ep-what">{{ x.s }}</p>{% endif %}</div>
+        <div class="ep-rail"><button type="button" class="ep-num" data-i="{{ loop.index0 }}" aria-label="Event {{ loop.index }}, {{ x.dl }}, {{ names[x.c] }}: show it on the map and the strip">{{ loop.index }}</button></div>
+        <div class="ep-side ep-r">{% if not left %}<p class="ep-when">{{ x.dl }} · {{ x.tl }} · <a href="{{ root }}cases/{{ x.m }}.html">{{ x.m }}</a></p><p class="ep-what">{{ x.s }}</p>{% endif %}</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </aside>
+  <div class="map-stage ep-stage">
+    <div id="map" class="map-canvas" role="region" aria-label="Map of {{ ep.name }}: one marker per place, its ring split between the two claimants' events"></div>
+    <div class="ep-strip">
+      <p class="ep-strip-head"><span>When</span><span id="ep-strip-status" aria-live="polite"></span></p>
+      <div id="ep-strip" role="img" aria-label="Timeline of the episode, {{ ep.span }}: {{ an }}'s events on the upper row, {{ bn }}'s on the lower row, numbered as in the list"></div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/vendor/maplibre/maplibre-gl.js"></script><script src="{{ root }}assets/episodes.js"></script>{% endblock %}

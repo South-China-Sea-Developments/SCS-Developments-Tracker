@@ -58,7 +58,7 @@ def test_known_counts_appear_in_aggregates(dist):
 
 def test_bundle_is_self_contained_and_relative(dist):
     for page in ("index.html", "methodology.html", "cases.html", "cases/VN197301.html", "cases/CN201105.html", "downloads.html", "map.html",
-                 "between-claimants.html", "between-claimants/china-vietnam.html"):
+                 "between-claimants.html", "between-claimants/china-vietnam.html", "episodes.html"):
         html = (dist / page).read_text(encoding="utf-8")
         # every src/href that is not an external link is relative and resolves from the page's own folder
         for attr, target in re.findall(r'(src|href)="([^"]+)"', html):
@@ -102,7 +102,7 @@ def _tile_stub(tiles):
 
 
 @pytest.mark.parametrize("page_name", ["index.html", "map.html", "trends.html", "methodology.html", "cases.html", "downloads.html",
-                                       "between-claimants.html", "between-claimants/china-vietnam.html"])
+                                       "between-claimants.html", "between-claimants/china-vietnam.html", "episodes.html"])
 @pytest.mark.parametrize("viewport", [(1280, 900), (1024, 768), (390, 800)])
 def test_pages_render_without_errors(browser, dist, page_name, viewport):
     page, problems = _open(browser, dist, page_name, viewport)
@@ -1101,3 +1101,127 @@ def test_a_pair_page_draws_and_its_tabs_open(browser, dist):
     assert "No moves" in empty.inner_text("#bc-summary")
     assert not problems, problems
     empty.close()
+
+
+# ---- Episodes (ticket 45) ----------------------------------------------------------------------------------
+def test_episodes_page_without_confirmed_episodes(browser, dist):
+    """No data/episodes.csv: the view exists, says so plainly, and the pair tab says the same."""
+    assert json.loads((dist / "data/episodes.json").read_text(encoding="utf-8")) == []
+    page, problems = _open(browser, dist, "episodes.html")
+    assert "No confirmed episodes" in page.inner_text(".side")
+    assert page.locator(".ev-views a[aria-current=page]").inner_text().startswith("Episodes")
+    assert not problems, problems
+    page.close()
+    page, problems = _open(browser, dist, "map.html")
+    assert page.locator(".ev-views a").count() == 2 and page.locator(".ev-views a[aria-current=page]").inner_text().startswith("Events")
+    page.close()
+    page, problems = _open(browser, dist, "between-claimants/china-vietnam.html")
+    page.wait_for_timeout(800)
+    page.click("#bc-t-episodes")
+    assert page.locator("#bc-p-episodes").is_visible() and "No confirmed episode" in page.inner_text("#bc-p-episodes")
+    assert not problems, problems
+    page.close()
+
+
+@pytest.fixture(scope="module")
+def dist_episodes(tmp_path_factory):
+    """A build from a data copy with two confirmed episodes between China and the Philippines (one at
+    Scarborough Shoal with an event a few kilometres off, one at Second Thomas Shoal) and one rejected."""
+    import csv
+    import shutil
+    d = tmp_path_factory.mktemp("episodes") / "data"
+    shutil.copytree(DATA_DIR, d, ignore=shutil.ignore_patterns("raw"))
+    moves = list(csv.DictReader(open(d / "moves.csv", newline="", encoding="utf-8")))
+    cn = next(m["move_id"] for m in moves if m["claimant"] == "CN" and m["status"] == "accepted" and m["year"] == "2012")
+    ph = next(m["move_id"] for m in moves if m["claimant"] == "PH" and m["status"] == "accepted" and m["year"] == "2012")
+    rows = list(csv.DictReader(open(d / "events.csv", newline="", encoding="utf-8")))
+    cols = list(rows[0])
+    extra = [(cn, "2012-04-10", "Scarborough Shoal", "15.18", "117.77", "Standoff begins at the shoal."),
+             (ph, "2012-04-11", "Scarborough Shoal", "15.18", "117.77", "Protest lodged."),
+             (cn, "2012-04-12", "Scarborough Shoal", "15.18", "117.77", "Ships stay on."),
+             (cn, "2012-05-15", "near Scarborough Shoal", "15.10", "117.70", "Fishing ban extended to the shoal."),
+             (ph, "2012-06-20", "Scarborough Shoal", "15.18", "117.77", "Ships withdrawn."),
+             (cn, "2012-08-01", "Second Thomas Shoal", "9.73", "115.86", "Blocking."),
+             (ph, "2012-09-01", "Second Thomas Shoal", "9.73", "115.86", "Resupply."),
+             (cn, "2012-10-01", "Mischief Reef", "9.90", "115.53", "Not in any confirmed episode."),
+             (ph, "2012-10-05", "Mischief Reef", "9.90", "115.53", "Not in any confirmed episode.")]
+    ids = []
+    for i, (m, ds, n, lat, lon, summary) in enumerate(extra):
+        ids.append(f"{m}-E{i}")
+        rows.append({c: "" for c in cols} | {"event_id": ids[-1], "move_id": m, "claimant": m[:2], "date_start": ds, "date_end": "",
+                     "date_precision": "day", "lat": lat, "lon": lon, "location_name": n, "location_precision": "feature", "subregion": "4",
+                     "summary": summary, "status": "accepted", "harvest_run_id": "test", "reviewer": "t", "review_date": "2026-11-27"})
+    with open(d / "events.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    eps = [("ep-aaaaaaaaaa", "Scarborough Shoal, 2012", "CN PH", " ".join(ids[:5]), "confirmed"),
+           ("ep-bbbbbbbbbb", "Second Thomas Shoal, 2012", "CN PH", " ".join(ids[5:7]), "confirmed"),
+           ("ep-cccccccccc", "Mischief Reef, 2012", "CN PH", " ".join(ids[7:]), "rejected")]
+    with open(d / "episodes.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["episode_id", "name", "claimants", "event_ids", "status", "reviewer", "review_date", "note"])
+        w.writerows([[*e, "t", "2026-11-27", ""] for e in eps])
+    out = tmp_path_factory.mktemp("dist-episodes")
+    build(d, out, build_date="2026-01-01")
+    return out
+
+
+def test_episodes_are_built_from_the_confirmed_rows_only(dist_episodes):
+    eps = json.loads((dist_episodes / "data/episodes.json").read_text(encoding="utf-8"))
+    assert [e["name"] for e in eps] == ["Second Thomas Shoal, 2012", "Scarborough Shoal, 2012"]   # newest first; the rejected one is left out
+    sc = eps[1]
+    assert sc["n"] == 5 and sc["n_by"] == {"CN": 3, "PH": 2} and sc["pair"] == "China and the Philippines"
+    # the event 9 km off has a marker of its own; the four at the shoal share one
+    assert sorted(p["n"]["CN"] + p["n"]["PH"] for p in sc["places"]) == [1, 4]
+    assert (dist_episodes / "episodes/scarborough-shoal-2012.html").exists() and not (dist_episodes / "episodes/mischief-reef-2012.html").exists()
+    html = (dist_episodes / "episodes/scarborough-shoal-2012.html").read_text(encoding="utf-8")
+    for attr, target in re.findall(r'(src|href)="([^"]+)"', html):
+        if not target.startswith(("http://", "https://", "#", "mailto:")):
+            assert ((dist_episodes / "episodes") / target.split("#")[0]).resolve().exists(), target
+
+
+def test_the_episodes_list_and_its_map(browser, dist_episodes):
+    page, problems = _open(browser, dist_episodes, "episodes.html")
+    page.wait_for_timeout(1200)
+    assert page.locator("#ep-list li").count() == 2
+    assert page.locator(".ep-ring").count() == 2
+    assert page.locator(".ev-views a").nth(1).inner_text().replace("\n", " ").strip() == "Episodes 2"
+    page.click(".ep-ring >> nth=0")
+    page.wait_for_load_state()
+    assert page.url.endswith("episodes/second-thomas-shoal-2012.html")
+    assert not problems, problems
+    page.close()
+
+
+@pytest.mark.parametrize("viewport", [(1280, 900), (390, 800)])
+def test_an_episode_page_shows_where_and_when_and_plays(browser, dist_episodes, viewport):
+    page, problems = _open(browser, dist_episodes, "episodes/scarborough-shoal-2012.html", viewport)
+    page.wait_for_timeout(1200)
+    assert page.locator("#ep-steps .ep-step").count() == 5
+    assert page.locator("#ep-steps .ep-step.is-left").count() == 3   # China's column, the first in name order
+    assert page.locator(".ep-pin").count() == 2
+    assert page.locator("#ep-strip .ep-dot").count() == 5
+    assert "3 by China and 2 by the Philippines" in page.inner_text(".ep-head")
+    page.click("#ep-steps .ep-num >> nth=2")
+    assert page.inner_text("#ep-strip-status").startswith("Event 3 of 5")
+    assert page.locator("#ep-steps .ep-step.is-current").count() == 1 and page.locator("#ep-steps .ep-step.is-later").count() == 2
+    assert page.locator(".ep-pin.is-current").count() == 1
+    page.click("#ep-play")
+    assert page.get_attribute("#ep-play", "aria-pressed") == "true"
+    page.wait_for_function("document.getElementById('ep-play').getAttribute('aria-pressed') === 'false'", timeout=12000)
+    assert page.inner_text("#ep-strip-status").startswith("Event 5 of 5")
+    assert page.evaluate("window.scrollY") == 0 or viewport[0] < 700   # playing scrolls the list, never the page on a desktop
+    assert not problems, problems
+    page.close()
+
+
+def test_a_pair_page_lists_its_episodes(browser, dist_episodes):
+    page, problems = _open(browser, dist_episodes, "between-claimants/china-philippines.html")
+    page.wait_for_timeout(1000)
+    page.click("#bc-t-episodes")
+    assert page.locator("#bc-p-episodes a.ep-card").count() == 2
+    assert page.evaluate("location.hash").endswith("-tab-episodes")
+    assert "Episodes 2" in page.inner_text("#bc-t-episodes").replace("\n", " ")
+    assert not problems, problems
+    page.close()

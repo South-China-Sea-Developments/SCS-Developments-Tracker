@@ -28,8 +28,16 @@ within six months of the last. It shows a sequence, never a claim that one act c
 - The weekly task: step A4 applies his answers and merges them once CI passes (decision 07); step C9
   proposes new episodes; the base's room count includes the table.
 
+- The site (2026-11-27, after design round 2 on the canvas): the Events page has two views, Events and
+  Episodes (`episodes.html`: the confirmed episodes in a list, each a numbered ring in its two claimants'
+  colours on the map, rings at the same feature side by side, a pair filter); each confirmed episode has its
+  own page (`episodes/<name>.html`): its events in two columns, one per claimant, a map with one marker per
+  place (events within 3 km share one; its ring split by claimant) and a strip below with one row per
+  claimant, and Play to light the events in order. The pair pages of Between claimants have an Episodes
+  tab; the methodology page has an Episodes section; `data/episodes.json` holds what the pages show.
+  Round 1 drew the events as bubbles fanned around a single point; the maintainer found it odd, so the
+  map shows where and the strip shows when.
+
 ## To do
 
-- The site: the Episodes view on the Events page and an episode's own view (after the design rounds); the
-  Episodes tab on the pair pages; the methodology note.
 - Episodes before 2016 stay rare until older events gain coordinates.
