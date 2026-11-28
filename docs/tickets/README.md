@@ -37,3 +37,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 42 | [Brunei, the seventh claimant](42-brunei.md) | 11 | built; candidates await review |
 | 44 | [Between claimants: how claimants direct their moves at one another](44-between-claimants.md) | 27 | built; fine-tuning on the live site |
 | 45 | [Episodes: following an exchange between two claimants](45-episodes.md) | 44 | built, then taken off the public site (2026-11-27); see 46 |
+| 46 | [Move sequences: does one claimant's move draw the other's?](46-move-sequences.md) | 45 | explored: the data show synchrony, not who answers whom |
