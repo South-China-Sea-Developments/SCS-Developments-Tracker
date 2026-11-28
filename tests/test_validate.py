@@ -165,6 +165,15 @@ def test_source_with_missing_event(good):
     assert "SOURCE_EVENT" in codes(validate(good, RAW_XLSX, RAW_MAVD))
 
 
+def test_source_language_must_be_a_code(good):
+    """2026-11-28: one source had its excerpt and language swapped; the validator now refuses that."""
+    def fn(rows):
+        rows[0]["language"] = "Phía Việt Nam còn điều thêm tàu Kiểm ngư 475 từ Cam Ranh."
+        return rows
+    edit(good, "sources", fn)
+    assert "SOURCE_LANGUAGE" in codes(validate(good, RAW_XLSX, RAW_MAVD))
+
+
 def test_accepted_event_without_source(good):
     def fn(rows):
         return rows[1:]
