@@ -7,13 +7,21 @@
   <h1>What's new</h1>
   <p class="lede-text">Moves added to the dataset, moves updated and moves retracted, newest first. Follow it in a feed reader with the <a href="feed.xml">Atom feed</a>.</p>
 </section>
+{# follow a claimant (wave 1): the list narrowed to one claimant, with that claimant's own feed; each pair's
+   feed is on its page under Between claimants #}
+<div class="news-follow" id="news-follow" role="group" aria-label="Show what's new for">
+  <button type="button" class="chip-btn" data-code="" aria-pressed="true">Every claimant</button>
+  {% for c in claimants %}<button type="button" class="chip-btn" data-code="{{ c.code }}" aria-pressed="false">{{ c.name }}</button>{% endfor %}
+  <a class="news-feed-link" id="news-feed" href="feed.xml" data-all="feed.xml">Feed for every claimant</a>
+</div>
+<p class="news-none" id="news-none" hidden>Nothing new for this claimant in the period shown.</p>
 <div class="news">
   {% for day, entries in days %}
   <section class="news-day">
     <h2><time datetime="{{ day }}">{{ day }}</time> <span class="news-n">{{ entries|selectattr('kind', 'equalto', 'added')|list|length }} added{% set u = entries|selectattr('kind', 'equalto', 'updated')|list|length %}{% if u %}, {{ u }} updated{% endif %}{% set r = entries|selectattr('kind', 'equalto', 'retracted')|list|length %}{% if r %}, {{ r }} retracted{% endif %}</span></h2>
     <ol class="feature-moves news-list">
       {% for e in entries %}
-      <li class="news-{{ e.kind }}">{% if e.page %}<a href="cases/{{ e.id }}.html">{% endif %}<span class="news-kind">{{ {'added': 'New', 'updated': 'Updated', 'retracted': 'Retracted'}[e.kind] }}</span>
+      <li class="news-{{ e.kind }}" data-claimant="{{ e.claimant }}">{% if e.page %}<a href="cases/{{ e.id }}.html">{% endif %}<span class="news-kind">{{ {'added': 'New', 'updated': 'Updated', 'retracted': 'Retracted'}[e.kind] }}</span>
         <span class="fm-year">{{ e.year or '' }}</span> <span class="case-claimant" data-code="{{ e.claimant }}">{{ names.get(e.claimant, e.claimant) }}</span>
         <span class="fm-types">{{ e.id }}{% if e.types %} · {{ e.types|join(', ') }}{% endif %}</span>{% if e.page %}</a>{% endif %}
         <p>{{ e.text }}{% if e.kind == 'added' and e.text|length >= 280 %}…{% endif %}</p></li>
@@ -25,3 +33,4 @@
   {% endfor %}
 </div>
 {% endblock %}
+{% block scripts %}<script src="{{ root }}assets/news.js"></script>{% endblock %}

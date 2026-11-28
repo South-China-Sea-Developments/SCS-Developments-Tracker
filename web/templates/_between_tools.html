@@ -1,6 +1,7 @@
 {# copy a link, cite, embed: as on the homepage (ticket 44) #}
 <div class="bc-tools">
   <button type="button" class="bc-link-btn" id="bc-link">Copy a link to this view</button> <span class="bc-done" id="bc-link-done" aria-live="polite"></span>
+  {% if pair is defined and pair %}<a class="bc-follow" href="../feeds/{{ pair.slug }}.xml" title="New and updated moves between {{ pair.title }}, as an Atom feed">Follow this pair (feed)</a>{% endif %}
   <details class="bc-cite">
     <summary>Cite or embed this view</summary>
     <label class="bc-field"><span>Citation</span><textarea rows="4" readonly>{{ citation.text }}</textarea></label>

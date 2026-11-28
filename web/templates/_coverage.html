@@ -1,0 +1,45 @@
+{# How complete the record is (wave 1, view 6): the record's coverage by claimant and decade, so a thin
+   decade is not read as a quiet one. Part of the methodology page, at #coverage. #}
+<section id="coverage">
+<h2>How complete the record is</h2>
+<p>The moves are coded the same way for every claimant and year, but the material behind them is not even. Andrew Chubb coded China, the Philippines and Vietnam from 1970 to {{ meta.mats_last_year }}; the project coded the years since and the other claimants. Read a quiet decade against how much there was to code.</p>
+<section class="cov-block">
+  <h3>Moves, by claimant and decade</h3>
+  <p class="cov-note">Each cell: the moves published, with Chubb's and the project's share, and how many name a reef, shoal or island (the rest count on their sub-regions only). Darker cells hold more moves.</p>
+  <div class="cov-scroll">
+  <table class="cov-table">
+    <thead><tr><th scope="col">Claimant</th>{% for d in cov.decades %}<th scope="col" class="num">{{ d }}s</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for c in cov.claimants %}<tr>
+      <th scope="row"><span class="case-claimant" data-code="{{ c }}">{{ names[c] }}</span></th>
+      {% for d in cov.decades %}{% set x = cov.cells[c][d] %}
+      <td class="num cov-cell{{ ' cov-empty' if not x.n }}" style="--f: {{ '%.2f' % ((x.n / cov.peak) ** 0.5) }}">{% if x.n %}<b>{{ x.n }}</b>
+        <span class="cov-sub">{% if x.chubb and x.project %}{{ x.chubb }} Chubb · {{ x.project }} project{% elif x.chubb %}Chubb{% else %}project{% endif %}</span>
+        <span class="cov-sub">{{ x.placed }} at a feature</span>{% else %}<span class="cov-sub">none</span>{% endif %}</td>
+      {% endfor %}
+    </tr>{% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+<section class="cov-block">
+  <h3>The sources behind the project's coding</h3>
+  <p class="cov-note">Sources of the events behind the project’s moves, by language. Chubb's own sources are listed in his narratives, not counted here. Where most sources are in English, a claimant is seen largely through foreign reporting.</p>
+  <table class="cov-table cov-langs">
+    <thead><tr><th scope="col">Claimant</th><th scope="col">Sources, by language</th></tr></thead>
+    <tbody>
+    {% for c in cov.claimants %}<tr><th scope="row"><span class="case-claimant" data-code="{{ c }}">{{ names[c] }}</span></th>
+      <td>{% if cov.langs[c] %}{% for lg, n in cov.langs[c] %}{{ lang_names.get(lg, 'other') }} {{ n }}{{ ' · ' if not loop.last }}{% endfor %}{% else %}<span class="cov-sub">none yet published</span>{% endif %}</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="cov-block">
+  <h3>Events with a date and a position</h3>
+  <p class="cov-note">The events page and the feature pages show the events dated to the day or month and placed at a point. Before 2010 few are, so the maps of events thin out in the earlier decades while the moves do not.</p>
+  <div class="cov-scroll"><table class="cov-table">
+    <thead><tr><th scope="col">Decade</th>{% for d in cov.decades %}<th scope="col" class="num">{{ d }}s</th>{% endfor %}</tr></thead>
+    <tbody><tr><th scope="row">Events, all</th>{% for d in cov.decades %}<td class="num">{{ cov.events[d].all }}</td>{% endfor %}</tr>
+    <tr><th scope="row">Dated and placed</th>{% for d in cov.decades %}<td class="num">{{ cov.events[d].dated_placed }}</td>{% endfor %}</tr></tbody>
+  </table></div>
+  </section>
+</section>

@@ -40,7 +40,25 @@
     <div class="table-view" hidden></div>
   </section>
   <section class="figure-grid" id="per-claimant">
-    <h3>Each claimant, by type</h3>
+    {# how each claimant asserts (wave 1): the same small charts, by type, domain or issue, per year or as
+       each decade's mix, so the claimants' toolkits compare whatever their numbers of moves #}
+    <div class="figure-head per-claimant-head">
+      <h3 id="per-claimant-h">Each claimant, by type</h3>
+      <div class="figure-controls">
+        <fieldset class="segmented" id="claim-dim">
+          <legend class="sr-only">Split each claimant's moves by</legend>
+          <label><input type="radio" name="claim-dim" value="types" checked><span>Type</span></label>
+          <label><input type="radio" name="claim-dim" value="domains"><span>Domain</span></label>
+          <label><input type="radio" name="claim-dim" value="issues"><span>Issue</span></label>
+        </fieldset>
+        <fieldset class="segmented" id="claim-shape">
+          <legend class="sr-only">Show</legend>
+          <label><input type="radio" name="claim-shape" value="years" checked><span>Per year</span></label>
+          <label><input type="radio" name="claim-shape" value="decades"><span>Mix by decade</span></label>
+        </fieldset>
+      </div>
+    </div>
+    <p class="filters-note" id="per-claimant-note" hidden>Each decade's moves as shares, so the claimants' mixes compare whatever their number of moves. A move with two domains or issues counts once under each. A decade with fewer than 10 moves is left blank.</p>
     <div class="grid">
       {% for c in claimants %}
       <section class="figure small" data-claimant="{{ c.code }}" id="fig-{{ c.code }}">

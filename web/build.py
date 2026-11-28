@@ -299,7 +299,8 @@ def window_moves(moves: list[dict], features: dict | None = None, events_by_move
         out.append({"m": m["move_id"], "c": m["claimant"], "y": int(m["year"]), "w": w,
                     "t": next((t for t, v in TYPE_WEIGHT.items() if v == w), ""), "sr": move_subregions(m),
                     "cb": m.get("coded_by", ""), "x": re.sub(r"\s+", " ", m["description"]).strip()[:220],
-                    "f": move_features(m, features, (events_by_move or {}).get(m["move_id"], ())), "g": sorted({d[1] for d in m.get("dyads", "").split() if len(d) == 2})})
+                    "f": move_features(m, features, (events_by_move or {}).get(m["move_id"], ())), "g": sorted({d[1] for d in m.get("dyads", "").split() if len(d) == 2}),
+                    "i": [i for i in schema.ISSUE_FLAGS if m.get(i) == "1"]})
     return out
 
 
@@ -466,6 +467,49 @@ def episode_views(data_dir: Path, events: list[dict], published: list[dict], nam
     return out
 
 
+# ---- how complete the record is (wave 1) ------------------------------------------------------------------
+def coverage(moves: list[dict], events: list[dict], sources: list[dict], names: dict) -> dict:
+    """Claimant by decade: the published moves (Chubb's and the project's), the share naming a feature, and the
+    harvested events behind them with their sources' languages, so a thin decade is not read as a quiet one."""
+    order = list(schema.DISPLAY_ORDER)
+    pub = [m for m in moves if m["status"] == "accepted"]
+    first = min(int(m["year"]) for m in pub) // 10 * 10
+    last = max(int(m["year"]) for m in pub)
+    decades = list(range(first, last + 1, 10))
+    ebm: dict[str, list] = {}
+    for e in events:
+        ebm.setdefault(e["move_id"], []).append(e)
+    cells = {c: {d: {"n": 0, "chubb": 0, "project": 0, "placed": 0} for d in decades} for c in order}
+    for m in pub:
+        c, d = m["claimant"], int(m["year"]) // 10 * 10
+        if c not in cells:
+            continue
+        x = cells[c][d]
+        x["n"] += 1
+        x["chubb" if m.get("coded_by") == "chubb" else "project"] += 1
+        if move_places(m, ebm.get(m["move_id"], ())):
+            x["placed"] += 1
+    acc = {e["event_id"]: e for e in events if e["status"] == "accepted" and e.get("extractor")}
+    langs: dict[str, dict[str, int]] = {c: {} for c in order}
+    for s_ in sources:
+        e = acc.get(s_["event_id"])
+        if not e or e["claimant"] not in langs:
+            continue
+        lg = s_["language"] if s_["language"] in LANG_NAMES else "other"
+        langs[e["claimant"]][lg] = langs[e["claimant"]].get(lg, 0) + 1
+    ev = {d: {"all": 0, "dated_placed": 0} for d in decades}
+    for e in events:
+        if e["status"] != "accepted" or not e["date_start"][:4].isdigit():
+            continue
+        d = int(e["date_start"][:4]) // 10 * 10
+        if d in ev:
+            ev[d]["all"] += 1
+            ev[d]["dated_placed"] += int(e["date_precision"] in ("day", "month") and bool(e["lat"]))
+    peak = max((x["n"] for c in cells for x in cells[c].values()), default=1) or 1
+    return {"decades": decades, "claimants": order, "cells": cells, "peak": peak,
+            "langs": {c: sorted(v.items(), key=lambda t: -t[1]) for c, v in langs.items()}, "events": ev}
+
+
 def move_places(m: dict, events=()) -> list[dict]:
     """The points a move is placed at (ticket 34), first mention first: the features its description names,
     then those its accepted events' places name, then its events' own coordinates (a position the coder
@@ -584,13 +628,14 @@ def whats_new(data_dir: Path, published: list[dict], names: dict) -> list[dict]:
     return sorted(out, key=lambda e: (e["date"], -order[e["kind"]], e["id"]), reverse=True)
 
 
-def atom_feed(entries: list[dict], names: dict) -> str:
-    """The entries as an Atom feed (the 50 newest), with absolute links to the public site."""
+def atom_feed(entries: list[dict], names: dict, title: str = "what's new", path: str = "feed.xml") -> str:
+    """The entries as an Atom feed (the 50 newest), with absolute links to the public site. `title` and `path`
+    make the feeds for one claimant or one pair (wave 1: follow a claimant or a pair)."""
     from xml.sax.saxutils import escape, quoteattr
     updated = (entries[0]["date"] if entries else "2026-01-01") + "T00:00:00Z"
     parts = ['<?xml version="1.0" encoding="utf-8"?>', '<feed xmlns="http://www.w3.org/2005/Atom">',
-             "<title>SCS Developments Tracker: what's new</title>", f"<id>{escape(SITE_URL)}</id>", f"<updated>{updated}</updated>",
-             f'<link rel="self" href={quoteattr(SITE_URL + "feed.xml")}/>', f'<link rel="alternate" href={quoteattr(SITE_URL + "whats-new.html")}/>',
+             f"<title>{escape('SCS Developments Tracker: ' + title)}</title>", f"<id>{escape(SITE_URL + ('' if path == 'feed.xml' else path))}</id>", f"<updated>{updated}</updated>",
+             f'<link rel="self" href={quoteattr(SITE_URL + path)}/>', f'<link rel="alternate" href={quoteattr(SITE_URL + "whats-new.html")}/>',
              "<author><name>South-China-Sea-Developments project</name></author>"]
     for e in entries[:50]:
         verb = {"added": "New move", "updated": "Updated", "retracted": "Retracted"}[e["kind"]]
@@ -919,6 +964,7 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
                subregion_names=dict(zip(range(1, 11), schema.SUBREGION_NAMES)),
                domain_labels=DOMAIN_LABELS, issue_labels=ISSUE_LABELS,
                dyad_targets=DYAD_NAMES, latest_moves=latest_moves(views, names), lang_names=LANG_NAMES)
+    ctx["cov"] = coverage(moves, events, read_csv(data_dir / "sources.csv"), names)   # the methodology's #coverage
     eps = episode_views(data_dir, events, published, names)
     ctx["n_episodes"] = len(eps)
     ctx["show_episodes"] = episodes
@@ -957,6 +1003,18 @@ def build(data_dir: Path, out_dir: Path, build_date: str | None = None, repo: Pa
     # Between claimants (ticket 44): the page of all pairs, and one page per pair carrying only its own moves
     bmoves = between_moves(published)
     bpairs = between_pairs(bmoves, events_by_move, sources_by_event, names)
+    # follow a claimant or a pair (wave 1): a feed of what's new for each claimant and each pair
+    (out_dir / "feeds").mkdir(exist_ok=True)
+    targets_of = {m["move_id"]: {d[1] if len(d) == 2 else d for d in m.get("dyads", "").split()} for m in published}
+    for code in schema.DISPLAY_ORDER:
+        mine = [e for e in news if e["claimant"] == code]
+        (out_dir / "feeds" / f"{code.lower()}.xml").write_text(atom_feed(mine, names, f"what's new for {names[code]}", f"feeds/{code.lower()}.xml"), encoding="utf-8")
+    for bp in bpairs:
+        a_, b_ = bp["a"], bp["b"]
+        la, lb = CLAIMANT_LETTER[a_], CLAIMANT_LETTER[b_]
+        ours = [e for e in news if (e["claimant"] == a_ and (lb in targets_of.get(e["id"], ()) or "A" in targets_of.get(e["id"], ())))
+                or (e["claimant"] == b_ and (la in targets_of.get(e["id"], ()) or "A" in targets_of.get(e["id"], ())))]
+        (out_dir / "feeds" / f"{bp['slug']}.xml").write_text(atom_feed(ours, names, f"what's new between {names[a_]} and {names[b_]}", f"feeds/{bp['slug']}.xml"), encoding="utf-8")
     bbase = {"span": WINDOW_SPAN, "ends": mapd["assert"]["ends"], "names": names, "subregion_names": mapd["subregion_names"],
              "subregions": mapd["subregions"], "anchors": CLAIMANT_ANCHOR, "small_n": SMALL_N,
              "pairs": [{k: p[k] for k in ("a", "b", "slug", "title", "apart")} for p in bpairs],

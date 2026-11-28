@@ -1290,3 +1290,102 @@ def test_a_case_page_marks_each_event_once_and_each_source_once(browser, dist):
     assert page.evaluate("getComputedStyle(document.querySelector('.events > li'), '::before').content") != "none"
     assert not problems, problems
     page.close()
+
+
+# ---- Wave 1 (2026-11-28): fronts, what moved the score, how each claimant asserts, coverage, follow -----------
+def test_the_map_keeps_to_one_issue(browser, dist):
+    """The fronts: an issue chosen on the homepage keeps the map, its counts and the address to moves about it."""
+    moves = [m for m in read_csv(DATA_DIR / "moves.csv") if m["status"] == "accepted"]
+    want = sum(1 for m in moves if 2010 <= int(m["year"]) <= 2014 and m["fisheries"] == "1" and m["loc06_spratly_ne"] == "1")
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-i-fis-s6")
+    page.reload()
+    page.wait_for_timeout(1200)
+    assert page.input_value("#amap-issue") == "fisheries"
+    assert page.locator("#amap-detail .amap-sum").inner_text().startswith(f"{want} move")
+    page.select_option("#amap-issue", "")
+    page.wait_for_timeout(300)
+    assert "-i-" not in page.evaluate("location.hash")
+    assert problems == []
+    page.close()
+
+
+def test_what_moved_the_score_adds_up(browser, dist):
+    """Beside an arrow: the score of the five years and of the five before, split by claimant and by type; each
+    split adds up to the scores the panel states."""
+    page, problems = _open(browser, dist, "index.html", (1440, 900))
+    page.goto((dist / "index.html").resolve().as_uri() + "#y2014-s6")
+    page.reload()
+    page.wait_for_timeout(1200)
+    box = page.locator("#amap-detail .amap-change")
+    assert box.count() == 1
+    rows = page.evaluate("""() => { const out = {}; let g = null;
+      for (const tr of document.querySelectorAll('#amap-detail .amap-change tbody tr')) {
+        const th = tr.querySelector('th.grp'); if (th) { g = th.textContent; out[g] = []; continue; }
+        out[g].push([...tr.querySelectorAll('td')].map(td => parseFloat(td.textContent.replace('−', '-').replace('±', ''))));
+      } return out; }""")
+    score = float(re.search(r"score ([\d.]+);", page.locator("#amap-detail .amap-sum").inner_text()).group(1))
+    for group in ("By claimant", "By type"):
+        assert abs(sum(r[1] for r in rows[group]) - score) < 0.2 * len(rows[group]), (group, rows[group], score)
+        assert all(abs((r[1] - r[0]) - r[2]) < 0.15 for r in rows[group])
+    assert problems == []
+    page.close()
+
+
+def test_each_claimant_by_domain_or_issue_and_by_decade(browser, dist):
+    """How each claimant asserts: the per-claimant charts on Trends switch to domains or issues, and to each
+    decade's mix on a 0–100 scale."""
+    page, problems = _open(browser, dist, "trends.html")
+    page.wait_for_timeout(800)
+    page.click("#claim-dim label:has-text('Issue')")
+    page.wait_for_timeout(300)
+    assert "Fisheries" in page.inner_text("#fig-CN")
+    assert page.inner_text("#per-claimant-h") == "Each claimant, by issue"
+    page.click("#claim-shape label:has-text('Mix by decade')")
+    page.wait_for_timeout(300)
+    assert page.inner_text("#per-claimant-h").endswith("the mix in each decade")
+    ticks = page.evaluate("[...document.querySelectorAll('#fig-CN .tick')].map(t => t.textContent)")
+    assert "100" in ticks and "1970s" in ticks and not any(t.isdigit() and int(t) > 100 for t in ticks)
+    assert problems == []
+    page.close()
+
+
+def test_the_coverage_section_counts_every_move(dist):
+    """How complete the record is: on the methodology page, the cells add up to every published move."""
+    html = (dist / "methodology.html").read_text(encoding="utf-8")
+    sec = html[html.index('<section id="coverage">'):]
+    sec = sec[:sec.index("</section>\n", sec.index("Events with a date"))]
+    total = sum(int(n) for n in re.findall(r'<td class="num cov-cell[^"]*"[^>]*><b>(\d+)</b>', sec))
+    assert total == sum(1 for m in read_csv(DATA_DIR / "moves.csv") if m["status"] == "accepted")
+    assert 'href="methodology.html#coverage"' in (dist / "index.html").read_text(encoding="utf-8")
+
+
+def test_follow_a_claimant_or_a_pair(browser, tmp_path):
+    """A feed per claimant and per pair; What's new narrows to one claimant and points at its feed; each pair's
+    page links its own. Built from the full data (the MATS-only copy has no news)."""
+    from xml.dom import minidom
+    from web.build import build as build_site
+    from tests.conftest import DATA_DIR as FULL
+    out = tmp_path / "site"
+    build_site(FULL, out, build_date="2026-11-28")
+    moves = {m["move_id"]: m for m in read_csv(FULL / "moves.csv")}
+    my = minidom.parse(str(out / "feeds/my.xml")).getElementsByTagName("entry")
+    assert my.length and all(", Malaysia" in e.getElementsByTagName("title")[0].firstChild.data for e in my)
+    pair = minidom.parse(str(out / "feeds/china-philippines.xml")).getElementsByTagName("entry")
+    for e in pair:
+        mid = re.search(r": (\w+),", e.getElementsByTagName("title")[0].firstChild.data).group(1)
+        m = moves.get(mid)
+        if m:
+            other = "P" if m["claimant"] == "CN" else "C"
+            assert m["claimant"] in ("CN", "PH") and any(d.endswith(other) or d.endswith("A") or d == "A" for d in m["dyads"].split()), mid
+    html = (out / "between-claimants/china-philippines.html").read_text(encoding="utf-8")
+    assert 'href="../feeds/china-philippines.xml"' in html
+    page, problems = _open(browser, out, "whats-new.html")
+    page.click("#news-follow button[data-code='MY']")
+    shown = page.evaluate("[...document.querySelectorAll('li[data-claimant]')].filter(li => !li.hidden).map(li => li.dataset.claimant)")
+    assert shown and set(shown) == {"MY"}
+    assert page.get_attribute("#news-feed", "href") == "feeds/my.xml" and page.evaluate("location.hash") == "#my"
+    page.click("#news-follow button[data-code='']")
+    assert page.get_attribute("#news-feed", "href") == "feed.xml"
+    assert not problems, problems
+    page.close()

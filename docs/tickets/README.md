@@ -50,3 +50,4 @@ Tracer-bullet tickets in dependency order. Work the frontier: any ticket whose b
 | 44 | [Between claimants: how claimants direct their moves at one another](44-between-claimants.md) | 27 | built; fine-tuning on the live site |
 | 45 | [Episodes: following an exchange between two claimants](45-episodes.md) | 44 | built, then taken off the public site (2026-11-27); see 46 |
 | 46 | [Move sequences: does one claimant's move draw the other's?](46-move-sequences.md) | 45 | explored: the data show synchrony, not who answers whom |
+| 47 | [Wave 1: new ways to read the moves, on the pages that exist](47-wave1.md) | 44 | built: fronts, what moved the score, mixes, coverage, feeds |
